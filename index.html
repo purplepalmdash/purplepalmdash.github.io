@@ -1,0 +1,2568 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.65.1" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Dash &middot; Dash</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/html2canvas.js"></script>
+  <script type='text/javascript'>
+  function genPostShot() { 
+          var rightNow = new Date();
+          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
+          imageName += '.jpg'
+          html2canvas(document.getElementsByClassName('post'), {
+              background :'#FFFFFF',
+              onrendered: function(canvas) {
+  		
+          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
+          	$('#test').attr('download',imageName);
+          	$('#test')[0].click();
+              }
+          });
+  }; 
+  
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
+  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+
+  
+  
+  
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Dash &middot; Dash" />
+  <meta name="description" content="">
+  <meta name="keywords" content="unix,virtualization,embedded,linux">
+  
+  
+</head>
+<body class="theme-base-0c">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
+      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
+      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
+    </div>
+
+    <ul class="sidebar-nav">
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
+      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
+      
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2023/01/04/workingtipsonpvesriov/">WorkingTipsOnPVESRIOV</a>
+      </h1>
+      <span class="post-date">Jan 4, 2023 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <p>Change the repository for using chinese site:</p>
+<pre><code>$ cat /etc/apt/sources.list
+deb http://mirrors.ustc.edu.cn/debian bullseye main contrib
+
+deb http://mirrors.ustc.edu.cn/debian bullseye-updates main contrib
+
+# security updates
+deb http://mirrors.ustc.edu.cn/debian-security bullseye-security main contrib
+</code></pre><p>Update to 5.19 kernel and linux-header:</p>
+<pre><code>deb http://mirrors.ustc.edu.cn/debian bullseye main contrib
+
+deb http://mirrors.ustc.edu.cn/debian bullseye-updates main contrib
+
+# security updates
+deb http://mirrors.ustc.edu.cn/debian-security stable-security main contrib
+
+# no-subscription
+deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription
+
+</code></pre><p>Install kernel(via download):</p>
+<pre><code>scp ./pve-headers-5.19.7-2-pve_5.19.7-2_amd64.deb pve-kernel-5.19.7-2-pve_5.19.7-2_amd64.deb root@192.168.1.52:~
+root@xxxx:~# dpkg -i pve-headers-5.19.7-2-pve_5.19.7-2_amd64.deb pve-kernel-5.19.7-2-pve_5.19.7-2_amd64.deb 
+reboot
+</code></pre><p>Install <code>dkms</code>, then install <code>i915-sriov-dkms</code>.</p>
+<pre><code>tar -xvf i915-sriov-dkms.tar
+mv i915-sriov-dkms /usr/src
+dkms install -m i915-sriov -v dkms
+# dkms status
+i915-sriov, dkms, 5.19.7-2-pve, x86_64: installed
+</code></pre><p>Install sysfsutils:</p>
+<pre><code>apt install sysfsutils -y
+echo &quot;devices/pci0000:00/0000:00:02.0/sriov_numvfs = 7&quot; &gt; /etc/sysfs.conf
+</code></pre>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2022/12/26/novncoperationon4anetwork/">NoVNCOperationOn4ANetwork</a>
+      </h1>
+      <span class="post-date">Dec 26, 2022 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <p>因4A速度实在太慢，通过bmc远程安装系统基本上不可行。故采用在跳板机上启动novnc加持的桌面session的方式用来部署操作系统。</p>
+<p>登陆跳板机<code>192.168.xx.xx</code>后，运行以下命令建立一个监听跳板机6080端口的<code>lxde</code>桌面环境（因跳板机是arm64环境，需要指定arm64后缀的镜像）:</p>
+<pre><code>sudo docker run -p 6080:80 -e USER=doro -e PASSWORD=password -v /dev/shm:/dev/shm dorowu/ubuntu-desktop-lxde-vnc:focal-arm64
+</code></pre><p>通过xshell和proxifier建立全局代理后，在浏览器里直接访问<code>192.168.xx.xx:6080</code>即可访问到创建的桌面环境:</p>
+<p><img src="/images/2022_12_26_21_21_39_1048x730.jpg" alt="/images/2022_12_26_21_21_39_1048x730.jpg"></p>
+<p>在该桌面环境里可直接调用firefox下载相关镜像，并使用bmc挂载该镜像用于安装操作系统:</p>
+<p><img src="/images/2022_12_26_21_24_22_1240x783.jpg" alt="/images/2022_12_26_21_24_22_1240x783.jpg"></p>
+<p>因为安装介质都在同一数据中心内，所以安装时不会出明显卡顿，大约15～30分钟内即可安装成功。</p>
+<p>安装完后的bmc界面:</p>
+<p><img src="/images/2022_12_26_21_23_41_1018x495.jpg" alt="/images/2022_12_26_21_23_41_1018x495.jpg"></p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2022/12/09/virglheadlessmode/">VirglHeadlessMode</a>
+      </h1>
+      <span class="post-date">Dec 9, 2022 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="1-目的">1. 目的</h3>
+<p>验证在headless GPU Server上启用virgl加速的可行性</p>
+<h3 id="2-环境">2. 环境</h3>
+<p>硬件: nvidia gtx1060 6G独显笔记本（附带intel集显）:</p>
+<pre><code>$ sudo lspci | grep -i vga
+00:02.0 VGA compatible controller: Intel Corporation CoffeeLake-H GT2 [UHD Graphics 630]
+01:00.0 VGA compatible controller: NVIDIA Corporation GP106M [GeForce GTX 1060 Mobile] (rev a1)
+$ sudo nvidia-smi 
+Fri Dec  9 15:13:58 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.60.11    Driver Version: 525.60.11    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  Off  | 00000000:01:00.0 Off |                  N/A |
+| N/A   52C    P8     7W /  N/A |    203MiB /  6144MiB |     17%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+</code></pre><p>系统及软件(arch下依赖qemu/qemu-ui-egl-headless):</p>
+<pre><code>$ uname -r
+6.0.12-arch1-1
+$ cat /etc/issue
+Arch Linux \r (\l)
+$ qemu-system-x86_64 --version
+QEMU emulator version 7.1.0
+Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
+$ sudo pacman -Q | grep -i qemu | grep egl
+qemu-ui-egl-headless 7.1.0-11
+</code></pre><p>VM环境:</p>
+<pre><code>$ cat /etc/issue
+Ubuntu 20.04.5 LTS \n \l
+$ uname -r
+5.15.0-56-generic
+</code></pre><h3 id="3-启动vm">3. 启动VM</h3>
+<p>纯命令行下启动（无x11登陆）:</p>
+<pre><code>sudo qemu-system-x86_64 -name  ubuntu2204 -drive file=`pwd`/ubuntudesktop2004_spice.qcow2,if=virtio -m 8192 -enable-kvm -cpu host -smp 8,sockets=1,cores=8,threads=1   -spice unix=on,addr=/tmp/spice.sock,disable-ticketing=on,plaintext-channel=default,seamless-migration=on,image-compression=off,jpeg-wan-compression=never,zlib-glz-wan-compression=never,streaming-video=off,playback-compression=off \
+-netdev user,id=vnet,hostfwd=:127.0.0.1:2278-:22,hostfwd=tcp::5555-:5555,hostfwd=tcp::5556-:5556,hostfwd=tcp::5557-:5557,hostfwd=tcp::5800-:5800,hostfwd=tcp::3389-:3389,hostfwd=tcp::14000-:4000 -device virtio-net-pci,netdev=vnet \
+-display egl-headless,rendernode=/dev/dri/renderD129 \
+-device virtio-vga-gl,max_outputs=1 \
+-device virtio-serial-pci \
+-chardev spicevmc,id=charchannel1,name=vdagent \
+-device virtserialport,chardev=charchannel1,id=channel1,name=com.redhat.spice.0
+</code></pre><p>其中<code>rendernode</code>为nvidia gtx1060.</p>
+<h3 id="4-验证">4. 验证</h3>
+<p>另起一终端，ssh到vm后验证:</p>
+<pre><code>$ export DISPLAY=:0
+$ glxinfo | grep -i render
+direct rendering: Yes
+    GLX_MESA_query_renderer, GLX_MESA_swap_control, GLX_NV_float_buffer, 
+    GLX_MESA_copy_sub_buffer, GLX_MESA_query_renderer, GLX_MESA_swap_control, 
+Extended renderer info (GLX_MESA_query_renderer):
+    Renderbuffer free memory - total: 21 MB, largest block: 21 MB
+    Renderbuffer free aux. memory - total: 0 MB, largest block: 0 MB
+OpenGL renderer string: virgl
+    GL_ARB_conditional_render_inverted, GL_ARB_conservative_depth, 
+    GL_NV_conditional_render, GL_NV_copy_image, GL_NV_depth_clamp, 
+    GL_ARB_compute_shader, GL_ARB_conditional_render_inverted, 
+    GL_NV_conditional_render, GL_NV_copy_image, GL_NV_depth_clamp, 
+    GL_EXT_render_snorm, GL_EXT_robustness, GL_EXT_sRGB_write_control, 
+    GL_NV_conditional_render, GL_NV_draw_buffers, GL_NV_fbo_color_attachments, 
+    GL_OES_element_index_uint, GL_OES_fbo_render_mipmap, 
+$ ls /dev/dri/
+by-path  card0  renderD128
+$ sudo dmesg | grep -i virgl
+[    2.257506] [drm] features: +virgl +edid -resource_blob -host_visible
+$ glmark2
+=======================================================
+    glmark2 2021.02
+=======================================================
+    OpenGL Information
+    GL_VENDOR:     Mesa/X.org
+    GL_RENDERER:   virgl
+    GL_VERSION:    3.1 Mesa 21.2.6
+=======================================================
+[build] use-vbo=false: FPS: 5102 FrameTime: 0.196 ms
+
+.........
+
+
+[loop] fragment-loop=false:fragment-steps=5:vertex-steps=5: FPS: 6301 FrameTime: 0.159 ms
+[loop] fragment-steps=5:fragment-uniform=false:vertex-steps=5: FPS: 5922 FrameTime: 0.169 ms
+[loop] fragment-steps=5:fragment-uniform=true:vertex-steps=5: FPS: 5785 FrameTime: 0.173 ms
+=======================================================
+                                  glmark2 Score: 3996 
+=======================================================
+
+</code></pre><p>最终跑分为接近4000分，由此可见headless server下virgl的2d/3d均可用, 且使用了nvidia卡的加速能力。</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2022/11/02/migrationfromcentos76torocky/">MigrationFromCentOS76ToRocky</a>
+      </h1>
+      <span class="post-date">Nov 2, 2022 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="1-初始环境centos76">1. 初始环境(CentOS76)</h3>
+<p>使用vagrant创建<code>CentOS7.6.1810</code>虚拟机一台:</p>
+<pre><code># vim Vagrantfile
+Vagrant.configure(&quot;2&quot;) do |config|
+  config.vm.box = &quot;bento/centos-7.6&quot;
+    config.vm.provider &quot;virtualbox&quot; do |v|
+        v.memory = 4096
+        v.cpus = 4
+    end
+end
+# vagrant up 
+# vagrant ssh
+</code></pre><p>登陆入系统后检查初始环境信息:</p>
+<pre><code>[vagrant@localhost ~]$ cat /etc/redhat-release 
+CentOS Linux release 7.6.1810 (Core) 
+[vagrant@localhost ~]$ uname -a
+Linux localhost.localdomain 3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre><h3 id="2-centos76升级到centos81">2. CentOS7.6升级到CentOS8.1</h3>
+<h4 id="21-升级前准备">2.1 升级前准备</h4>
+<p>安装EPEL(Extra Package for Enterprise Linux)库，因升级中需用到该库, 并创建该库缓存:</p>
+<pre><code># yum install -y epel-release.noarch
+# yum makecache fast
+</code></pre><p>安装升级CentOS 7到8过程中需要用到的<code>rpmconf</code>包及<code>yum-utils</code>包:</p>
+<pre><code># yum install -y yum-utils rpmconf
+</code></pre><p>计算重复/无用包及配置:</p>
+<pre><code># rpmconf -a
+安装过程中，选择 N:  
+*** aliases (Y/I/N/O/D/M/Z/S) [default=N] ? 
+Your choice: N
+</code></pre><p>升级<code>yum</code>为<code>dnf</code>，安装完毕后，删除不再需要的yum及相关包：</p>
+<pre><code># yum install -y dnf
+# dnf remove -y yum yum-metadata-parser
+</code></pre><p>删除现有的repo配置并重新生成仓库缓存, 并使用dnf升级为最新状态:</p>
+<pre><code># rm -Rf /etc/yum
+#  dnf makecache
+Extra Packages for Enterprise Linux 7 - x86_64   5.9 MB/s |  16 MB     00:02    
+CentOS-7 - Base                                  4.1 MB/s |  10 MB     00:02    
+CentOS-7 - Updates                               7.6 MB/s |  21 MB     00:02    
+CentOS-7 - Extras                                165 kB/s | 332 kB     00:02    
+Metadata cache created.
+# dnf upgrade -y
+</code></pre><h4 id="22-升级8仓库准备">2.2 升级8仓库准备</h4>
+<p>跨大版本升级可能会衍生出一些问题，因而我们先使用8.1版本的CentOS8系统包作为中间状态升级:</p>
+<pre><code># dnf upgrade -y  https://mirrors.ustc.edu.cn/centos-vault/8.1.1911//BaseOS/x86_64/os/Packages/{centos-release-8.1-1.1911.0.8.el8.x86_64.rpm,centos-gpg-keys-8.1-1.1911.0.8.el8.noarch.rpm,centos-repos-8.1-1.1911.0.8.el8.x86_64.rpm}
+</code></pre><p>升级EPEL仓库包从EL 7到EL 8:</p>
+<pre><code># dnf upgrade -y epel-release
+</code></pre><p>因跨大版本升级可能会导致问题，切换<code>BaseOS</code>及<code>AppStream</code>库为<code>8.1.1911</code>:</p>
+<pre><code># cd /etc/yum.repos.d
+# mkdir back
+# mv CentOS-* back/
+# sudo tee CentOS-Linux-BaseOS.repo&lt;&lt;EOM
+[baseos]
+name=CentOS Linux \$releasever - BaseOS
+baseurl=http://vault.centos.org/8.1.1911/BaseOS/\$basearch/os/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+EOM
+
+# sudo tee CentOS-Linux-AppStream.repo&lt;&lt;EOM
+[appstream]
+name=CentOS Linux \$releasever - AppStream
+baseurl=http://vault.centos.org/8.1.1911/AppStream/\$basearch/os/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+EOM
+# sudo cp CentOS-Linux-BaseOS.repo /root/CentOS-Linux-BaseOS.repo
+# sudo cp CentOS-Linux-AppStream.repo /root/CentOS-Linux-AppStream.repo
+# dnf makecache
+Extra Packages for Enterprise Linux 8 - x86_64                4.7 MB/s |  13 MB     00:02    
+CentOS-8 - Base                                               1.1 MB/s | 4.6 MB     00:04    
+Extra Packages for Enterprise Linux Modular 8 - x86_64        197 kB/s | 733 kB     00:03    
+CentOS-8 - AppStream                                          1.3 MB/s | 8.4 MB     00:06    
+CentOS-8 - Extras                                             4.3 kB/s |  10 kB     00:02    
+Module yaml error: Unexpected key in data
+Module yaml error: Unexpected key in data
+Module yaml error: Unexpected key in data
+Module yaml error: Unexpected key in data
+Module defaults error: Unexpected key in data
+Module defaults error: Unexpected key in data
+Module defaults error: Unexpected key in data
+Module defaults error: Unexpected key in data
+Metadata cache created.
+</code></pre><h4 id="23-升级到centos-8">2.3 升级到CentOS 8</h4>
+<p>删除所有安装过的kernel:</p>
+<pre><code># rpm -e `rpm -q kernel`
+</code></pre><p>删除<code>sysvinit-tools</code>等冲突包：</p>
+<pre><code># rpm -e --nodeps sysvinit-tools sysvinit-tools python36-rpmconf 
+</code></pre><p>执行以下命令，升级到CentOS 8:</p>
+<pre><code># dnf -y --releasever=8 --allowerasing --setopt=deltarpm=false distro-sync
+</code></pre><p>升级成功后，<code>/etc/yum.repos.d</code>目录下会被覆盖，回归到8.1版本</p>
+<pre><code># cd /etc/yum.repos.d
+# mkdir back1
+# mv CentOS-* back1/
+# sudo cp /root/CentOS-Linux-BaseOS.repo .
+# sudo cp /root/CentOS-Linux-AppStream.repo .
+</code></pre><p>安装内核包:</p>
+<pre><code># dnf makecache
+# dnf install -y kernel-core
+</code></pre><p>安装<code>minimal</code>及<code>Core</code>包组合:</p>
+<pre><code># mv /etc/yum/protected.d /etc/yum/protected.d.back
+# dnf -y groupupdate &quot;Core&quot; &quot;Minimal Install&quot;
+</code></pre><h4 id="24-升级centos85">2.4 升级CentOS8.5</h4>
+<p>回归原来的包配置:</p>
+<pre><code># cd /etc/yum.repos.d/
+# rm -f CentOS-*
+# mv back1/* .
+# CENTOS_BASE=http://vault.centos.org
+# sed -i -e &quot;s|mirrorlist=|#mirrorlist=|g&quot; /etc/yum.repos.d/CentOS-* 
+# sed -i -e 's|#baseurl=http://mirror.centos.org|baseurl='$CENTOS_BASE'|g' /etc/yum.repos.d/CentOS-*
+# dnf update
+</code></pre><p>更新完毕后，重启，而后检查内核及操作系统版本:</p>
+<pre><code># uname -a
+Linux localhost.localdomain 4.18.0-348.7.1.el8_5.x86_64 #1 SMP Wed Dec 22 13:25:12 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+# cat /etc/redhat-release 
+CentOS Linux release 8.5.2111
+</code></pre><h3 id="3-centos-8---rocky-linux-8">3. CentOS 8 -&gt; Rocky Linux 8</h3>
+<p>下载Rocky Linux升级脚本:</p>
+<pre><code># dnf -y install wget
+# wget https://raw.githubusercontent.com/rocky-linux/rocky-tools/main/migrate2rocky/migrate2rocky.sh
+# chmod a+x migrate2rocky.sh
+</code></pre><p>升级到Rocky Linux 8.6:</p>
+<pre><code>./migrate2rocky.sh -r
+</code></pre><p><img src="/images/2022_11_02_16_04_40_865x689.jpg" alt="/images/2022_11_02_16_04_40_865x689.jpg"></p>
+<p>等待一段时间(取决于网速及机器配置，vagrant虚拟机约15分钟)，等待升级完成:</p>
+<p><img src="/images/2022_11_02_16_11_03_707x457.jpg" alt="/images/2022_11_02_16_11_03_707x457.jpg"></p>
+<h3 id="4-验证">4. 验证</h3>
+<p>重启该机器后，验证升级情况:</p>
+<pre><code>[vagrant@localhost ~]$ uname -a
+Linux localhost.localdomain 4.18.0-372.32.1.el8_6.x86_64 #1 SMP Thu Oct 27 15:18:36 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+[vagrant@localhost ~]$ cat /etc/os-release
+NAME=&quot;Rocky Linux&quot;
+VERSION=&quot;8.6 (Green Obsidian)&quot;
+ID=&quot;rocky&quot;
+ID_LIKE=&quot;rhel centos fedora&quot;
+VERSION_ID=&quot;8.6&quot;
+PLATFORM_ID=&quot;platform:el8&quot;
+PRETTY_NAME=&quot;Rocky Linux 8.6 (Green Obsidian)&quot;
+ANSI_COLOR=&quot;0;32&quot;
+CPE_NAME=&quot;cpe:/o:rocky:rocky:8:GA&quot;
+HOME_URL=&quot;https://rockylinux.org/&quot;
+BUG_REPORT_URL=&quot;https://bugs.rockylinux.org/&quot;
+ROCKY_SUPPORT_PRODUCT=&quot;Rocky Linux&quot;
+ROCKY_SUPPORT_PRODUCT_VERSION=&quot;8&quot;
+REDHAT_SUPPORT_PRODUCT=&quot;Rocky Linux&quot;
+REDHAT_SUPPORT_PRODUCT_VERSION=&quot;8&quot;
+</code></pre>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2022/10/26/windowsvirtualboxucc/">WindowsVirtualBoxUCC</a>
+      </h1>
+      <span class="post-date">Oct 26, 2022 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="env-preparation">Env Preparation</h3>
+<p>Install VirtualBox  7.0.2:</p>
+<p><img src="/images/2022_10_26_09_19_41_455x301.jpg" alt="/images/2022_10_26_09_19_41_455x301.jpg"></p>
+<p>View version:</p>
+<p><img src="/images/2022_10_26_09_20_32_843x589.jpg" alt="/images/2022_10_26_09_20_32_843x589.jpg"></p>
+<p>Disable the dhcp server for default <code>Host-only Networks</code>:</p>
+<p><img src="/images/2022_10_26_09_27_37_627x467.jpg" alt="/images/2022_10_26_09_27_37_627x467.jpg"></p>
+<h3 id="vm-creation">VM Creation</h3>
+<p>Create a new vm(type <code>Linux-&gt;Other Linux</code>):</p>
+<p><img src="/images/2022_10_26_09_29_24_778x373.jpg" alt="/images/2022_10_26_09_29_24_778x373.jpg"></p>
+<p>2 Cores, 2048MB Memory:</p>
+<p><img src="/images/2022_10_26_09_29_56_643x203.jpg" alt="/images/2022_10_26_09_29_56_643x203.jpg"></p>
+<p>Specify <code>centos85.vdi</code> file for hard disk:</p>
+<p><img src="/images/2022_10_26_09_30_38_648x273.jpg" alt="/images/2022_10_26_09_30_38_648x273.jpg"></p>
+<p>Configure the vm to specify its networking:</p>
+<p><img src="/images/2022_10_26_09_31_24_804x391.jpg" alt="/images/2022_10_26_09_31_24_804x391.jpg"></p>
+<p>Visit <code>https://192.168.56.199</code> should reach the ucc server web admin page:</p>
+<p><img src="/images/2022_10_26_09_34_44_771x540.jpg" alt="/images/2022_10_26_09_34_44_771x540.jpg"></p>
+<h3 id="ucc-client-testing">UCC Client Testing</h3>
+<p>Create a new machine(type <code>Windows 10</code>):</p>
+<p><img src="/images/2022_10_26_09_36_04_747x326.jpg" alt="/images/2022_10_26_09_36_04_747x326.jpg"></p>
+<p>2 Cores, 3072 MB Memory, Enable EFI:</p>
+<p><img src="/images/2022_10_26_09_36_49_648x238.jpg" alt="/images/2022_10_26_09_36_49_648x238.jpg"></p>
+<p>Create 50 GB disk:</p>
+<p><img src="/images/2022_10_26_09_37_09_646x267.jpg" alt="/images/2022_10_26_09_37_09_646x267.jpg"></p>
+<p>Configure this VM, select <code>ICH9</code> as its chipset:</p>
+<p><img src="/images/2022_10_26_09_38_41_620x481.jpg" alt="/images/2022_10_26_09_38_41_620x481.jpg"></p>
+<p>Enable Network as its boot sequence:</p>
+<p><img src="/images/2022_10_26_09_40_04_594x370.jpg" alt="/images/2022_10_26_09_40_04_594x370.jpg"></p>
+<p>Change Network to <code>host-only</code> type:</p>
+<p><img src="/images/2022_10_26_09_42_16_713x344.jpg" alt="/images/2022_10_26_09_42_16_713x344.jpg"></p>
+<p>System will boot into EFI shell, input <code>exit</code> to bios:</p>
+<p><img src="/images/2022_10_26_09_40_52_603x279.jpg" alt="/images/2022_10_26_09_40_52_603x279.jpg"></p>
+<p>Select <code>Boot Manage</code>, press enter:</p>
+<p><img src="/images/2022_10_26_09_41_13_582x236.jpg" alt="/images/2022_10_26_09_41_13_582x236.jpg"></p>
+<p>Select <code>UEFI PXEv4</code> for booting:</p>
+<p><img src="/images/2022_10_26_09_41_34_638x346.jpg" alt="/images/2022_10_26_09_41_34_638x346.jpg"></p>
+<p>pxe will boot into register name, input name <code>ucctestwin10</code> for continue:</p>
+<p><img src="/images/2022_10_26_09_44_19_1152x854.jpg" alt="/images/2022_10_26_09_44_19_1152x854.jpg"></p>
+<p>Click setup button for initialization this node:</p>
+<p><img src="/images/2022_10_26_09_45_11_958x620.jpg" alt="/images/2022_10_26_09_45_11_958x620.jpg"></p>
+<p>Initialize the disk using the default parameters:</p>
+<p><img src="/images/2022_10_26_09_46_25_1706x560.jpg" alt="/images/2022_10_26_09_46_25_1706x560.jpg"></p>
+<p>Now return to login page, the <code>disk</code> and <code>network</code> indication should be green, enter username/password for continue:</p>
+<p><img src="/images/2022_10_26_09_49_10_470x605.jpg" alt="/images/2022_10_26_09_49_10_470x605.jpg"></p>
+<p>Click <code>TCI</code> for downloading the package and boot into windows 10:</p>
+<p><img src="/images/2022_10_26_09_49_59_1529x871.jpg" alt="/images/2022_10_26_09_49_59_1529x871.jpg"></p>
+<p>windows 10 in virtualbox:</p>
+<p><img src="/images/2022_10_26_09_59_21_909x816.jpg" alt="/images/2022_10_26_09_59_21_909x816.jpg"></p>
+<p>Don&rsquo;t try <code>idv</code>, cause in virtualbox it will run into error:</p>
+<p><img src="/images/2022_10_26_10_00_56_1024x531.jpg" alt="/images/2022_10_26_10_00_56_1024x531.jpg"></p>
+<h3 id="ubuntu-verification">Ubuntu Verification</h3>
+<p>Upload the image and copy it into corresponding directory:</p>
+<p><img src="/images/2022_10_26_10_30_02_651x127.jpg" alt="/images/2022_10_26_10_30_02_651x127.jpg"></p>
+<p>Register image in UCC Server admin pages:</p>
+<p><img src="/images/2022_10_26_10_31_04_714x559.jpg" alt="/images/2022_10_26_10_31_04_714x559.jpg"></p>
+<p>Create a new machine for testing Ubuntu:</p>
+<p><img src="/images/2022_10_26_10_31_44_633x307.jpg" alt="/images/2022_10_26_10_31_44_633x307.jpg"></p>
+<p>2Core, 2048 MB , enable uefi:</p>
+<p><img src="/images/2022_10_26_10_32_08_663x260.jpg" alt="/images/2022_10_26_10_32_08_663x260.jpg"></p>
+<p>Select <code>ICH9</code> for chipset, and enable the network boot:</p>
+<p><img src="/images/2022_10_26_10_32_57_681x426.jpg" alt="/images/2022_10_26_10_32_57_681x426.jpg"></p>
+<p>Change the network:</p>
+<p><img src="/images/2022_10_26_10_33_13_568x366.jpg" alt="/images/2022_10_26_10_33_13_568x366.jpg"></p>
+<p><code>exit</code> and into the bios:</p>
+<p><img src="/images/2022_10_26_10_34_06_616x290.jpg" alt="/images/2022_10_26_10_34_06_616x290.jpg"></p>
+<p>Boot Manager and select <code>UEFI PXEv4</code>:</p>
+<p><img src="/images/2022_10_26_10_34_33_600x419.jpg" alt="/images/2022_10_26_10_34_33_600x419.jpg"></p>
+<p>Register client:</p>
+<p><img src="/images/2022_10_26_10_35_33_658x218.jpg" alt="/images/2022_10_26_10_35_33_658x218.jpg"></p>
+<p>Initialize the disk:</p>
+<p><img src="/images/2022_10_26_10_36_03_1413x407.jpg" alt="/images/2022_10_26_10_36_03_1413x407.jpg"></p>
+<p>Select Ubuntu for downloading and boot into system:</p>
+<p><img src="/images/2022_10_26_10_37_38_1001x301.jpg" alt="/images/2022_10_26_10_37_38_1001x301.jpg"></p>
+<p>Ubuntu desktop:</p>
+<p><img src="/images/2022_10_26_10_41_47_809x720.jpg" alt="/images/2022_10_26_10_41_47_809x720.jpg"></p>
+
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item disabled">
+    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/221/">221</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/221/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+  </div>
+</div>
+
+
+<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

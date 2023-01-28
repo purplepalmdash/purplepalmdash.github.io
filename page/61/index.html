@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.65.1" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Dash &middot; Dash</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/html2canvas.js"></script>
+  <script type='text/javascript'>
+  function genPostShot() { 
+          var rightNow = new Date();
+          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
+          imageName += '.jpg'
+          html2canvas(document.getElementsByClassName('post'), {
+              background :'#FFFFFF',
+              onrendered: function(canvas) {
+  		
+          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
+          	$('#test').attr('download',imageName);
+          	$('#test')[0].click();
+              }
+          });
+  }; 
+  
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
+  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+
+  
+  
+  
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Dash &middot; Dash" />
+  <meta name="description" content="">
+  <meta name="keywords" content="unix,virtualization,embedded,linux">
+  
+  
+</head>
+<body class="theme-base-0c">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
+      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
+      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
+    </div>
+
+    <ul class="sidebar-nav">
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
+      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
+      
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2018/03/18/kismatcidisconnectdinstallationrhel74/">KismatciDisconnectdInstallationRHEL74</a>
+      </h1>
+      <span class="post-date">Mar 18, 2018 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="目的">目的</h3>
+<p>基于Redhat 7.4搭建Kismatic自动化部署Kubernetes环境。</p>
+<h3 id="环境准备">环境准备</h3>
+<p>软件:</p>
+<pre><code>rhel-server-7.4-x86_64-dvd.iso
+virt-manager
+网络 10.172.173.0/24, 无dhcp.
+</code></pre><p>硬件:</p>
+<pre><code>4-Core, 32G台式机, 磁盘，大约200G
+</code></pre><h3 id="部署节点机准备">部署节点机准备</h3>
+<p>制作rhel74的基础镜像，虚拟机的制作过程同样可以适用于物理机器的部署流程.</p>
+<p><img src="/images/2018_03_18_18_04_16_815x679.jpg" alt="/images/2018_03_18_18_04_16_815x679.jpg"></p>
+<p>点击Installation destination, 分区:</p>
+<p><img src="/images/2018_03_18_18_04_35_371x196.jpg" alt="/images/2018_03_18_18_04_35_371x196.jpg"></p>
+<p>如下图所示，点击<code>I will configure partitioning</code>, 然后点击<code>Done</code>进入到分区界面:</p>
+<p><img src="/images/2018_03_18_18_05_08_471x566.jpg" alt="/images/2018_03_18_18_05_08_471x566.jpg"></p>
+<p>点击<code>Click here to create them automatically</code>:</p>
+<p><img src="/images/2018_03_18_18_05_44_471x279.jpg" alt="/images/2018_03_18_18_05_44_471x279.jpg"></p>
+<p>这里我们要删除swap分区，删除home分区，并手动调节root分区的大小，扩展到所有可用空间:</p>
+<p><img src="/images/2018_03_18_18_06_45_508x309.jpg" alt="/images/2018_03_18_18_06_45_508x309.jpg"></p>
+<p>调整root分区大小如下:</p>
+<p><img src="/images/2018_03_18_18_07_12_657x299.jpg" alt="/images/2018_03_18_18_07_12_657x299.jpg"></p>
+<p>点击两次<code>Done</code>按钮，出现警告:</p>
+<p><img src="/images/2018_03_18_18_07_39_725x398.jpg" alt="/images/2018_03_18_18_07_39_725x398.jpg"></p>
+<p>点击Accept，接受更改，进入到下一步， 配置<code>Network &amp; Host Name</code>,</p>
+<p><img src="/images/2018_03_18_18_08_21_567x271.jpg" alt="/images/2018_03_18_18_08_21_567x271.jpg"></p>
+<p>如此进入到安装界面，设置Root用户密码和用户/用户密码(如果你想添加用户的话)即可完成安装。</p>
+<h3 id="配置基本系统">配置基本系统</h3>
+<p>selinux配置和防火墙配置, 禁用subscription:</p>
+<pre><code># vi /etc/selinux/config
+SELINUX=disabled
+# systemctl disable firewalld
+# vim /etc/yum/pluginconf.d/subscription-manager.conf
+[main]
+enabled=0
+# mount /dev/sr0 /mnt
+# vim /etc/yum.repos.d/local.repo
+[local]
+name=local
+baseurl=file:///mnt
+enabled=1
+gpgcheck=0
+# yum install -y vim httpd
+</code></pre><p>现在保存基本系统，即可作为基础版本，供以后使用。</p>
+<h3 id="http-server-and-docker-registry-server">http server and docker registry server</h3>
+<p>创建镜像文件:</p>
+<pre><code># qemu-img create -f qcow2  -b rhel74base/rhel74base.qcow2 rheldeployserver.qcow2
+</code></pre><p>以此镜像文件，建立一个1核1G的rhel7系统.</p>
+<p><img src="./images/2018_03_18_21_15_52_398x415.jpg" alt="./images/2018_03_18_21_15_52_398x415.jpg"><br>
+成功启动系统后，同步镜像仓库，同步registry仓库(按照kismatic官方指南来),
+具体步骤如下:</p>
+<pre><code>TBD
+</code></pre><p>配置镜像仓库:</p>
+<pre><code># systemctl enable httpd
+# systemctl start httpd
+</code></pre><p>配置docker-registry</p>
+<pre><code># tar xzvf docker-registry.tar.gz
+# mv docker-registry /
+</code></pre><p>安装必要的包:</p>
+<pre><code># yum install -y net-tools createrepo wget
+</code></pre><p>创建repo:</p>
+<pre><code># cd /var/www/html/
+# for i in `ls `
+do
+createrepo $i
+done
+# wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+# yum makecache
+</code></pre><p>安装docker-compose:</p>
+<pre><code># yum install -y python-pip
+# pip install docker-compose
+</code></pre><p>安装docker:</p>
+<pre><code># yum install -y --setopt=obsoletes=0  docker-ce-17.03.0.ce-1.el7.centos
+# systemctl enable docker
+# systemctl start docker
+</code></pre><p>载入registry所需的镜像:</p>
+<pre><code># docker load&lt;nginx.tar
+# docker load&lt;registry.tar
+# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+registry            &lt;none&gt;              d1fd7d86a825        2 months ago        33.3 MB
+registry            2                   177391bcf802        3 months ago        33.3 MB
+nginx               1.9                 c8c29d842c09        22 months ago       183 MB
+</code></pre><p>配置docker-compose所需的系统级服务:</p>
+<pre><code># vim  /etc/systemd/system/docker-compose.service
+[Unit]
+Description=DockerCompose
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker-compose -f /docker-registry/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+# systemctl start docker-compose
+# systemctl enable docker-compose
+</code></pre><p>登录/使用registry mirror的方法:</p>
+<pre><code># vim /etc/hosts
+192.168.205.13	mirror.xxxxx.com
+# vim /etc/hosts
+# docker login mirror.xxxx.com
+Username (clouder): clouder
+Password: 
+Login Succeeded
+</code></pre><p>现在随意更改网络后，配置好对应的地址，即可使用该虚拟机进行部署。整个镜像的大小大约40G.</p>
+<h3 id="3-node-kubernetes">3-node kubernetes</h3>
+<p>创建镜像文件:</p>
+<pre><code># qemu-img create -f qcow2 -b rhel74base/rhel74base.qcow2 node1.qcow2
+# qemu-img create -f qcow2 -b rhel74base/rhel74base.qcow2 node2.qcow2
+# qemu-img create -f qcow2 -b rhel74base/rhel74base.qcow2 node3.qcow2
+</code></pre><p>CPU/内存配置：</p>
+<p><img src="/images/2018_03_19_06_27_16_367x176.jpg" alt="/images/2018_03_19_06_27_16_367x176.jpg"></p>
+<p>网络配置:</p>
+<p><img src="/images/2018_03_19_06_27_33_371x264.jpg" alt="/images/2018_03_19_06_27_33_371x264.jpg"></p>
+<p>node1, node2, node3:</p>
+<pre><code>node1, 10.172.173.11
+node2, 10.172.173.12
+node3, 10.172.173.13
+</code></pre><h3 id="配置">配置</h3>
+<p>三台机器上，分别添加<code>/etc/hosts</code>下的以下条目:</p>
+<pre><code>10.172.173.2	mirror.xxxx.com
+</code></pre><p>其中<code>10.172.173.2</code>为我们配置的registry mirror服务器的地址。<br>
+然后就可以通过<code>kismatic-cluster.yaml</code>定义出对应的项，开始进行部署，部署完毕后我们得到一个拥有三个master的k8s集群.</p>
+<pre><code>[root@node1 ~]# kubectl get nodes
+NAME      STATUS    ROLES     AGE       VERSION
+node1     Ready     master    2h        v1.9.0
+node2     Ready     master    2h        v1.9.0
+node3     Ready     master    2h        v1.9.0
+</code></pre><p>基于这个集群我们可以进行通用的开发。首先来配置高可用和ingress之类。</p>
+<h3 id="边缘节点">边缘节点</h3>
+<p>我们定义的边缘节点如下:</p>
+<pre><code>node1, 10.172.173.11
+node2, 10.172.173.12
+node3, 10.172.173.13
+</code></pre><p>在三个节点上分别安装keepalived和ipvsadmin:</p>
+<pre><code># yum install -y keepalived ipvsadm
+</code></pre><p>配置文件：</p>
+<pre><code>[root@node1 mytraefik]# cat traefik.yaml 
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: traefik-ingress-lb
+  namespace: kube-system
+  labels:
+    k8s-app: traefik-ingress-lb
+spec:
+  template:
+    metadata:
+      labels:
+        k8s-app: traefik-ingress-lb
+        name: traefik-ingress-lb
+    spec:
+      terminationGracePeriodSeconds: 60
+      hostNetwork: true
+      restartPolicy: Always
+      serviceAccountName: ingress
+      containers:
+      - image: mirror.xxxxx.com/traefik:latest
+        imagePullPolicy: IfNotPresent
+        name: traefik-ingress-lb
+        resources:
+          limits:
+            cpu: 200m
+            memory: 30Mi
+          requests:
+            cpu: 100m
+            memory: 20Mi
+        ports:
+        - name: http
+          containerPort: 80
+          hostPort: 80
+        - name: admin
+          containerPort: 8580
+          hostPort: 8580
+        args:
+        - --web
+        - --web.address=:8580
+        - --kubernetes
+      nodeSelector:
+        edgenode: &quot;true&quot;
+[root@node1 mytraefik]# cat ui.yaml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-web-ui
+  namespace: kube-system
+spec:
+  selector:
+    k8s-app: traefik-ingress-lb
+  ports:
+  - name: web
+    port: 80
+    targetPort: 8580
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-web-ui
+  namespace: kube-system
+spec:
+  rules:
+  - host: traefik-ui.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: traefik-web-ui
+          servicePort: web
+[root@node1 mytraefik]# cat ingress-rbac.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ingress
+  namespace: kube-system
+
+---
+
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: ingress
+subjects:
+  - kind: ServiceAccount
+    name: ingress
+    namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+</code></pre><p>创建服务:</p>
+<pre><code># kubectl create -f ingress-rbac.yaml  traefik.yaml  ui.yaml
+</code></pre><p>现在只需要添加一行到<code>/etc/hosts</code>中，即可访问traefik的ui界面:</p>
+<pre><code>10.172.173.100	traefik-ui.local
+</code></pre><p><img src="/images/2018_03_19_11_28_34_967x774.jpg" alt="/images/2018_03_19_11_28_34_967x774.jpg"></p>
+<h3 id="nginx服务">nginx服务</h3>
+<p>定义文件如下:</p>
+<pre><code>[root@node1 mytraefik]# cat nginx.yaml 
+apiVersion: extensions/v1beta1 
+kind: Deployment 
+metadata: 
+  name: nginx-dm
+spec: 
+  replicas: 2
+  template: 
+    metadata: 
+      labels: 
+        name: nginx 
+    spec: 
+      containers: 
+        - name: nginx 
+          image: mirror.xxxx.com/nginx:latest 
+          imagePullPolicy: IfNotPresent
+          ports: 
+            - containerPort: 80
+
+---
+apiVersion: v1 
+kind: Service
+metadata: 
+  name: nginx-dm 
+spec: 
+  ports: 
+    - port: 80
+      targetPort: 80
+      protocol: TCP 
+  selector: 
+    name: nginx
+You have new mail in /var/spool/mail/root
+[root@node1 mytraefik]# cat traefik-ingress.yaml 
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-ingress
+spec:
+  rules:
+  - host: nginx.xxxx.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-dm
+          servicePort: 80
+</code></pre><p>同样在外部添加<code>/etc/hosts</code>中的对应条目即可.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2018/03/16/iperfink8s/">iperfInk8s</a>
+      </h1>
+      <span class="post-date">Mar 16, 2018 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="yaml">yaml</h3>
+<p>Like following:</p>
+<pre><code># tcpprobe https://wiki.linuxfoundation.org/networking/tcpprobe
+# use: apt install module-init-tools
+# to install modprobe
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: &quot;1&quot;
+  generation: 1
+  labels:
+    run: ipref
+  name: ipref
+  namespace: default
+spec:
+  replicas: 12 # we have 10 nodes in a cluster hence 12 replicas
+  selector:
+    matchLabels:
+      run: ipref
+  template:
+    metadata:
+      labels:
+        run: ipref
+    spec:
+      containers:
+      - command:
+        - sleep
+        - &quot;infinity&quot;
+        image: networkstatic/iperf3
+        imagePullPolicy: Always
+        name: ipref
+        resources: {}
+        securityContext:
+          capabilities:
+            add:
+            - CAP_ALL
+          privileged: true
+        volumeMounts:
+          - mountPath: /dev
+            name: dev
+          - mountPath: /lib/modules
+            name: modules
+      volumes:
+      - name: dev
+        hostPath:
+          # directory location on host
+          path: /dev
+      - name: modules
+        hostPath:
+          # directory location on host
+          path: /lib/modules
+</code></pre><p>you should change the corresponding images and imagePullPolicy.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2018/03/12/ntpoffline/">ntpoffline</a>
+      </h1>
+      <span class="post-date">Mar 12, 2018 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="server">Server</h3>
+<p>server side configuration:</p>
+<pre><code># yum install -y ntpd
+# vim /etc/ntpd.conf
+</code></pre><p>The configuration file is listed as following:</p>
+<pre><code>driftfile /var/lib/ntp/drift
+restrict default nomodify notrap nopeer noquery
+restrict 127.0.0.1 
+restrict ::1
+restrict 192.168.0.0 mask 255.255.0.0 nomodify notrap
+server 127.127.1.0  # local clock
+fudge 127.127.1.0  stratum 10
+includefile /etc/ntp/crypto/pw
+keys /etc/ntp/keys
+disable monitor
+</code></pre><p>Disable the chronyd service thus the ntpd could acts properly:</p>
+<pre><code># systemctl disable chronyd
+# systemctl enable ntpd
+# systemctl start ntpd
+# systemctl disable firewalld
+</code></pre><h3 id="client">Client</h3>
+<p>Install via:</p>
+<pre><code># yum install -y ntpd
+</code></pre><p>Configuration file:</p>
+<pre><code>driftfile /var/lib/ntp/drift
+restrict default nomodify notrap nopeer noquery
+restrict 127.0.0.1 
+restrict ::1
+server 192.168.122.200
+# 配置允许上游时间服务器主动修改本机的时间
+restrict 192.168.122.200 nomodify notrap noquery
+includefile /etc/ntp/crypto/pw
+keys /etc/ntp/keys
+disable monitor
+</code></pre><p>Also disable the chronyd service and enable the ntpd service. The client will
+automatically sync with the server <code>192.168.122.200</code>.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2018/03/12/fabric8/">fabric8</a>
+      </h1>
+      <span class="post-date">Mar 12, 2018 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="什么是fabric8">什么是fabric8</h3>
+<p>fabric8是一个开源集成开发平台，为基于Kubernetes和Jenkins的微服务提供持续发布。可以认为它是一个对Java友好的开源微服务管理平台.</p>
+<p>fabric8也可以被视为是一个微服务DevOps平台。Fabric8提供了一个完全集成的开源微服务平台，可在任何的Kubernetes和OpenShift环境中开箱即用。</p>
+<p><img src="/images/2018_03_12_09_03_57_1027x410.jpg" alt="/images/2018_03_12_09_03_57_1027x410.jpg"></p>
+<p>参考:</p>
+<p><a href="https://jimmysong.io/posts/fabric8-introduction/">https://jimmysong.io/posts/fabric8-introduction/</a></p>
+<h3 id="搭建过程archlinux">搭建过程(ArchLinux)</h3>
+<p>安装必要的包:</p>
+<pre><code>$ sudo pacman -S libvirt qemu dnsmasq ebtables
+</code></pre><p>将自己的用户添加到<code>kvm</code>和<code>libvirt</code>用户组:</p>
+<pre><code>$ sudo usemod -a -G kvm,libvirt &lt;username&gt;
+</code></pre><p>更新<code>/etc/libvirt/qemu.conf</code>中关于libvirt的配置:</p>
+<pre><code>$ sudo sed -r 's/group=&quot;.+&quot;/group=&quot;kvm&quot;/1' /etc/libvirt/qemu.conf &gt; /etc/libvirt/qemu.conf
+</code></pre><p>更新当前的session，以适配用户组改动:</p>
+<pre><code>$ newgrp libvirt
+</code></pre><p>此外，我们需要在yaourt仓库中安装对应的包以使用dockermachine对于kvm的驱动:</p>
+<pre><code>$ sudo pacman -S docker-machine-kvm2 docker-machine
+$ yaourt docker-machine-kvm
+</code></pre><p>安装minishift:</p>
+<pre><code>$ yaourt minishift
+$ minishift start --memory=7000 --cpus=4 --disk-size=50g
+</code></pre><p>启动完毕后，可以检查对应的CPU/内存/磁盘信息等。</p>
+<p>安装fabric8 on minishift(我用的是on-my-zsh):</p>
+<pre><code>$ echo 'export PATH=$PATH:~/.fabric8/bin' &gt;&gt; ~/.zshrc
+$ source ~/.zshrc
+</code></pre><p>配置GitHub Client ID/密码, 参考:</p>
+<p><a href="https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/registering-oauth-apps/">https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/registering-oauth-apps/</a></p>
+<p>URL可以填写为:</p>
+<pre><code>http://keycloak-fabric8.{minishift ipv4 value}.nip.io/auth/realms/fabric8/broker/github/endpoint
+</code></pre><p>homepage的URL可以填写为<code>https://fabric8.io</code>.</p>
+<p>由上面得到的clientID和client secret可以被引入到环境变量中:</p>
+<pre><code>$ export GITHUB_OAUTH_CLIENT_ID=123
+$ export GITHUB_OAUTH_CLIENT_SECRET=123abc
+</code></pre><p>之后:</p>
+<pre><code>$ gofabric8 start --minishift --package=system  --namespace fabric8
+</code></pre><p>经过漫长的等待(需要翻墙)，
+fabric8环境将就绪，用来登录的用户名/密码分别为&quot;developer/developer&rdquo;</p>
+<h3 id="fabric-8-playing">fabric 8 playing</h3>
+<p>以system:admin登录，查看工作空间:</p>
+<pre><code>$ oc login -u system:admin -n default
+Logged into &quot;https://192.168.42.131:8443&quot; as &quot;system:admin&quot; using existing credentials.
+
+You have access to the following projects and can switch between them with 'oc project &lt;projectname&gt;':
+
+  * default
+    developer
+    developer-che
+    developer-jenkins
+    developer-run
+    developer-stage
+    fabric8
+    kube-public
+    kube-system
+    myproject
+    openshift
+    openshift-infra
+    openshift-node
+
+Using project &quot;default&quot;.
+</code></pre><p>可以看到，fabric8的namespaces已经被创建出来。</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2018/03/10/workingtipsforarchlinuxspring/">WorkingTipsForArchLinuxSpring</a>
+      </h1>
+      <span class="post-date">Mar 10, 2018 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="installation">Installation</h3>
+<p>Install the following packages:</p>
+<pre><code>$ sudo pacman -S maven community/intellij-idea-community-edition
+$ sudo pacman -S jdk8-openjdk jdk9-openjdk
+$ sudo archlinux-java set java-9-openjdk
+$ archlinux-java status
+</code></pre><p>Since the intellij wants jdk8 or newer, you have to install newer jdk
+implementation.</p>
+<p>Correct: the community edition didn&rsquo;t have the spring boot support, use the
+ultimate edition:</p>
+<pre><code>$ yaourt intellij-idea-ultimate-edition
+</code></pre><h3 id="扫盲">扫盲</h3>
+<h4 id="什么是spring-boot">什么是spring boot</h4>
+<p>spring boot 致力于简洁，让开发者写更少的配置，程序能够更快的运行和启动。它是下一代javaweb框架，并且它是spring cloud（微服务）的基础。</p>
+<h3 id="spring-boot">spring boot</h3>
+<p>Create new project:</p>
+<p><img src="/images/2018_03_10_10_34_56_496x427.jpg" alt="/images/2018_03_10_10_34_56_496x427.jpg"></p>
+<p>Plugins:</p>
+<p><img src="/images/2018_03_10_10_38_10_469x284.jpg" alt="/images/2018_03_10_10_38_10_469x284.jpg"></p>
+<p><img src="/images/2018_03_10_13_32_55_802x411.jpg" alt="/images/2018_03_10_13_32_55_802x411.jpg"></p>
+<p><img src="/images/2018_03_10_13_33_53_774x425.jpg" alt="/images/2018_03_10_13_33_53_774x425.jpg"></p>
+<p>Import project:</p>
+<p><img src="/images/2018_03_10_15_36_18_639x257.jpg" alt="/images/2018_03_10_15_36_18_639x257.jpg"></p>
+<p>mvn aliyun configuration</p>
+<p><img src="/images/2018_03_10_15_54_52_682x377.jpg" alt="/images/2018_03_10_15_54_52_682x377.jpg"></p>
+<p>In <code>/opt/maven/conf</code>.</p>
+
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/60/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/60/">60</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/61/">61</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/62/">62</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/221/">221</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/62/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/221/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+  </div>
+</div>
+
+
+<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

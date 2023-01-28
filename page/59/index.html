@@ -1,0 +1,2551 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.65.1" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Dash &middot; Dash</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/html2canvas.js"></script>
+  <script type='text/javascript'>
+  function genPostShot() { 
+          var rightNow = new Date();
+          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
+          imageName += '.jpg'
+          html2canvas(document.getElementsByClassName('post'), {
+              background :'#FFFFFF',
+              onrendered: function(canvas) {
+  		
+          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
+          	$('#test').attr('download',imageName);
+          	$('#test')[0].click();
+              }
+          });
+  }; 
+  
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
+  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+
+  
+  
+  
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Dash &middot; Dash" />
+  <meta name="description" content="">
+  <meta name="keywords" content="unix,virtualization,embedded,linux">
+  
+  
+</head>
+<body class="theme-base-0c">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
+      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
+      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
+    </div>
+
+    <ul class="sidebar-nav">
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
+      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
+      
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2018/05/01/ratelimitingoninstio/">RateLimitingOnInstio</a>
+      </h1>
+      <span class="post-date">May 1, 2018 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="service-example">Service Example</h3>
+<p>The yaml file is directly taken from the official example of <code>helloworld</code>, but
+I remove the v2 deployment, thus the yaml file is listed as following:</p>
+<pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld
+  labels:
+    app: helloworld
+spec:
+  type: NodePort
+  ports:
+  - port: 5000
+    name: http
+  selector:
+    app: helloworld
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: helloworld-v1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: helloworld
+        version: v1
+    spec:
+      containers:
+      - name: helloworld
+        image: istio/examples-helloworld-v1
+        resources:
+          requests:
+            cpu: &quot;100m&quot;
+        imagePullPolicy: IfNotPresent #Always
+        ports:
+        - containerPort: 5000
+</code></pre><p>Use istioctl for injecting the sidecar, thus we could later use prometheus for
+monitoring its traffic flow:</p>
+<pre><code># kubectl create -f &lt;(istioctl kube-inject -f helloworld.yaml)
+</code></pre><p>Examine the deployment/service/pods:</p>
+<pre><code># kubectl get svc helloworld       
+NAME         TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE
+helloworld   NodePort   10.96.242.5   &lt;none&gt;        5000:31241/TCP   27m
+# kubectl get deployment helloworld-v1
+NAME            DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+helloworld-v1   1         1         1            1           27m
+# kubectl get pods | grep helloworld
+helloworld-v1-7d57446779-dctlv    2/2       Running   0          27m
+</code></pre><h3 id="make-ingress">Make ingress</h3>
+<p>The <code>helloworld-ingress.yaml</code> is listed as following:</p>
+<pre><code>apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: helloworld
+  annotations:
+    kubernetes.io/ingress.class: &quot;istio&quot;
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /hello
+        backend:
+          serviceName: helloworld
+          servicePort: 5000
+</code></pre><p>Create the ingress and verify it:</p>
+<pre><code># kubectl create -f helloworld-ingress.yaml
+# kubectl get ingress helloworld
+NAME         HOSTS     ADDRESS   PORTS     AGE
+helloworld   *                   80        1h
+# curl http://192.168.99.100:30039/hello
+Hello version: v1, instance: helloworld-v1-7d57446779-dctlv
+</code></pre><h3 id="rate-limiting">Rate Limiting</h3>
+<p>Write following rete limiting yaml for defining its traffic:</p>
+<pre><code>apiVersion: &quot;config.istio.io/v1alpha2&quot;
+kind: memquota
+metadata:
+  name: helloworldservicehandler
+  namespace: istio-system
+spec:
+  quotas:
+  - name: helloworldservicerequestcount.quota.istio-system
+    maxAmount: 5000
+    validDuration: 1s
+    # The first matching override is applied.
+    # A requestcount instance is checked against override dimensions.
+    overrides:
+    # The following override applies to 'helloworld' regardless
+    # of the source.
+    - dimensions:
+        destination: helloworld
+      maxAmount: 2
+      validDuration: 1s
+
+---
+apiVersion: &quot;config.istio.io/v1alpha2&quot;
+kind: quota
+metadata:
+  name: helloworldservicerequestcount
+  namespace: istio-system
+spec:
+  dimensions:
+    source: source.labels[&quot;app&quot;] | source.service | &quot;unknown&quot;
+    sourceVersion: source.labels[&quot;version&quot;] | &quot;unknown&quot;
+    destination: destination.labels[&quot;app&quot;] | destination.service | &quot;unknown&quot;
+    destinationVersion: destination.labels[&quot;version&quot;] | &quot;unknown&quot;
+
+---
+apiVersion: &quot;config.istio.io/v1alpha2&quot;
+kind: rule
+metadata:
+  name: helloworldservicequota
+  namespace: istio-system
+spec:
+  actions:
+  - handler: helloworldservicehandler.memquota
+    instances:
+    - helloworldservicerequestcount.quota
+---
+apiVersion: config.istio.io/v1alpha2
+kind: QuotaSpec
+metadata:
+  creationTimestamp: null
+  name: helloworldservicerequest-count
+  namespace: istio-system
+spec:
+  rules:
+  - quotas:
+    - charge: 1
+      quota: RequestCount
+---
+apiVersion: config.istio.io/v1alpha2
+kind: QuotaSpecBinding
+metadata:
+  creationTimestamp: null
+  name: helloworldservicerequest-count
+  namespace: istio-system
+spec:
+  quotaSpecs:
+  - name: helloworldservicerequest-count
+    namespace: istio-system
+  services:
+  - name: helloworld
+    namespace: default
+</code></pre><p>The above items define a 2 qps rate limiting.</p>
+<h3 id="monitoring">Monitoring</h3>
+<p>Use prometheus for monitoring the traffic, enable prometheus via:</p>
+<pre><code># kubectl create -f ~/Code/istio-0.7.1/install/kubernetes/addons/prometheus.yaml
+</code></pre><p>You could configure the prometheus&rsquo;s service type to NodePort, thus you could
+directly access it.</p>
+<p><img src="/images/2018_05_01_22_21_56_779x473.jpg" alt="/images/2018_05_01_22_21_56_779x473.jpg"></p>
+<p>Make the traffic:</p>
+<pre><code># while true; do curl -s -o /dev/null http://192.168.99.100:30039/hello;done
+</code></pre><p>Then view the prometheus via following:</p>
+<pre><code># increase(istio_request_count{destination_service=&quot;helloworld.default.svc.cluster.local&quot;, response_code=&quot;429&quot;}[5m])
+</code></pre><p>Initial:</p>
+<p><img src="/images/2018_05_01_22_24_18_764x343.jpg" alt="/images/2018_05_01_22_24_18_764x343.jpg"></p>
+<p>After aboult 3 minutes:</p>
+<p><img src="/images/2018_05_01_22_24_50_784x327.jpg" alt="/images/2018_05_01_22_24_50_784x327.jpg"></p>
+<p>You could change the response code from <code>429</code> to <code>200</code>, this means you get the
+succeed rate.</p>
+<h3 id="fetch-back-the-result">Fetch back the result</h3>
+<p>Refers to:</p>
+<p><a href="https://www.robustperception.io/prometheus-query-results-as-csv/">https://www.robustperception.io/prometheus-query-results-as-csv/</a></p>
+<pre><code># wget https://raw.githubusercontent.com/RobustPerception/python_examples/master/csv/query_csv.py
+</code></pre><p>For querying the 429/200:</p>
+<pre><code>#  python query_csv.py http://127.0.0.1:9090 'increase(istio_request_count{destination_service=&quot;helloworld.default.svc.cluster.local&quot;, response_code=&quot;429&quot;}[5m])'
+name,timestamp,value,connection_mtls,destination_service,destination_version,instance,job,response_code,source_service,source_version
+,1525185609.906,8145.762711864407,false,helloworld.default.svc.cluster.local,v1,172.17.0.10:42422,istio-mesh,429,istio-ingress.istio-system.svc.cluster.local,unknown
+#  python query_csv.py http://127.0.0.1:9090 'increase(istio_request_count{destination_service=&quot;helloworld.default.svc.cluster.local&quot;, response_code=&quot;200&quot;}[5m])'
+name,timestamp,value,connection_mtls,destination_service,destination_version,instance,job,response_code,source_service,source_version
+,1525185628.005,886.7796610169491,false,helloworld.default.svc.cluster.local,v1,172.17.0.10:42422,istio-mesh,200,istio-ingress.istio-system.svc.cluster.local,unknown
+</code></pre><p><code>8145</code> and <code>886</code> are the values for the query, we could use them for 2nd
+development.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2018/04/29/workingtipsonistiodev/">WorkingTipsOnIstioDev</a>
+      </h1>
+      <span class="post-date">Apr 29, 2018 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="sample-svc">Sample SVC</h3>
+<p>Create a sample svc using minikube:</p>
+<pre><code># sudo docker save jrelva/nginx-autoindex&gt;autoindex.tar
+# eval $(minikube docker-env)
+# docker load&lt;autoindex.tar
+# kubectl run --image=jrelva/nginx-autoindex:latest nginx-autoindex --port=80 --image-pull-policy=IfNotPresent
+deployment &quot;nginx-autoindex&quot; created
+# kubectl get deployment
+NAME               DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+nginx-autoindex    1         1         1            1           6s
+# kubectl expose deployment nginx-autoindex --name nginx-autoindex-svc
+# kubectl get svc | grep nginx
+nginx-autoindex-svc   ClusterIP   10.107.181.75    &lt;none&gt;        80/TCP           29s
+</code></pre><p>Istio Configuration:</p>
+<pre><code># kubectl get svc --all-namespaces | grep istio-ingress
+istio-system   istio-ingress          LoadBalancer   10.100.152.241   &lt;pending&gt;     80:30336/TCP,443:32004/TCP  
+</code></pre><h3 id="istio-ingress">Istio Ingress</h3>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2018/04/18/kismatic110tips/">kismatic110tips</a>
+      </h1>
+      <span class="post-date">Apr 18, 2018 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="preparation">preparation</h3>
+<p>Deployment machine, Download the packages:</p>
+<pre><code># mkdir deploy
+# cd deploy
+# wget https://github.com/apprenda/kismatic/releases/download/v1.10.0/kismatic-v1.10.0-linux-amd64.tar.gz
+# git clone https://github.com/apprenda/kismatic.git
+# tar xzvf *.tar.gz;
+# ls 
+ansible  helm  kismatic  kismatic-master  kismatic-master.zip  kismatic-v1.10.0-linux-amd64.tar.gz  kubectl  provision
+</code></pre><p>Target node(all-in-one), install python-pip, shadowsocks, redsocks, gcc, etc, for acrossing the fucking GFW!</p>
+<h3 id="plan">plan</h3>
+<p>plan the cluster</p>
+<pre><code>./kismatic install plan
+Plan your Kubernetes cluster:
+=&gt; Number of etcd nodes [3]: 1
+=&gt; Number of master nodes [2]: 1
+=&gt; Number of worker nodes [3]: 1
+=&gt; Number of ingress nodes (optional, set to 0 if not required) [2]: 0
+=&gt; Number of storage nodes (optional, set to 0 if not required) [0]: 0
+=&gt; Number of existing files or directories to be copied [0]: 0
+
+Generating installation plan file template with: 
+- 1 etcd nodes
+- 1 master nodes
+- 1 worker nodes
+- 0 ingress nodes
+- 0 storage nodes
+- 0 files
+
+Wrote plan file template to &quot;kismatic-cluster.yaml&quot;
+Edit the plan file to further describe your cluster. Once ready, execute the &quot;install validate&quot; command to proceed.
+</code></pre><p>An empty <code>kismatic-cluster.yaml</code> will be generated, later we will edit it.</p>
+<h3 id="validate">validate</h3>
+<p>validate with detailed information:</p>
+<pre><code>./kismatic install validate -o raw
+</code></pre><p>Error:</p>
+<pre><code>ansible/bin/ansible-playbook -i ansible/inventory.ini -s ansible/playbooks/preflight.yaml --extra-vars @ansible/clustercatalog.yaml -vvvv
+Traceback (most recent call last):
+  File &quot;ansible/bin/ansible-playbook&quot;, line 36, in &lt;module&gt;
+    import shutil
+  File &quot;/usr/lib/python3.6/shutil.py&quot;, line 10, in &lt;module&gt;
+    import fnmatch
+  File &quot;/usr/lib/python3.6/fnmatch.py&quot;, line 14, in &lt;module&gt;
+    import re
+  File &quot;/usr/lib/python3.6/re.py&quot;, line 142, in &lt;module&gt;
+    class RegexFlag(enum.IntFlag):
+AttributeError: module 'enum' has no attribute 'IntFlag'
+error running playbook: error running ansible: exit status 1
+</code></pre><p>Seems because the python is python3 rather than python2.</p>
+<p>Edit the python definition:</p>
+<pre><code># vim ansible/bin/ansible-playbook
+    #!/usr/bin/python2
+</code></pre><p>Then your validation will be OK.</p>
+<h3 id="install-apply">install apply</h3>
+<p>Via following command:</p>
+<pre><code># ./kismatic install apply
+</code></pre>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2018/04/12/workingtipsonplaywithk8s/">WorkingTipsOnPlayWithK8s</a>
+      </h1>
+      <span class="post-date">Apr 12, 2018 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="aim">Aim</h3>
+<p>To Write an tutorial for colleagues for learning, they only have to open the
+browser, by clicking then they could get an automated dev environment.</p>
+<h3 id="environment">Environment</h3>
+<p>play-with-kubernetes blog:</p>
+<pre><code># git clone https://github.com/play-with-docker/play-with-kubernetes.github.io.git
+# cd play-with-kubernetes.github.io/
+# vim _config.yml
+pwkurl: http://192.168.189.114
+# docker-compose up
+</code></pre><p>Then open your browser <code>http://192.168.189.114:4000</code>, and you will see the play-with-k8s webpages.</p>
+<p>For using the local infrastructure, to configure the <code>play-with-docker</code> with
+following steps:</p>
+<pre><code># cd /root/go/src/github.com/play-with-docker/play-with-docker
+# vim config/config.go
+	//flag.StringVar(&amp;DefaultDinDImage, &quot;default-dind-image&quot;, &quot;franela/dind&quot;, &quot;Default DinD image to use if not specified otherwise&quot;)
+	flag.StringVar(&amp;DefaultDinDImage, &quot;default-dind-image&quot;, &quot;franela/k8s&quot;, &quot;Default DinD image to use if not specified otherwise&quot;)
+</code></pre><p>While the image we specified here could be the one you added your changes, but
+default we will use <code>franela/k8s</code>.</p>
+<p>The webpage is showed as:</p>
+<p><img src="/images/2018_04_12_09_25_38_1242x708.jpg" alt="/images/2018_04_12_09_25_38_1242x708.jpg"></p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2018/04/08/workingtipsonplaywithdocker2/">WorkingTipsOnPlayWithDocker2</a>
+      </h1>
+      <span class="post-date">Apr 8, 2018 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="migration">migration</h3>
+<p>Really migrate this image into the inner intranet, without any internet
+connection.</p>
+<h3 id="registry-changing">Registry Changing</h3>
+<p>You have to comment the proxy definition, or your registry instance will
+restart frequently, thus your dind won&rsquo;t get working using registry.</p>
+<pre><code># vim /root/data/config.yml
+	#proxy:
+		# remoteurl: https://registry-1.docker.io
+# docker restart docker-registry-proxy-2
+</code></pre><h3 id="systemd-definition">systemd definition</h3>
+<p>Define following two systemd units:</p>
+<pre><code># vim /etc/systemd/system/playwithdocker.service 
+[Unit]
+Description=playwithdocker
+After=docker.service
+Requires=docker.service
+
+[Service]
+Environment=GOPATH=/root/go/
+ExecStart=/usr/bin/docker-compose -f /root/go/src/github.com/play-with-docker/play-with-docker/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>This unit will start blog service automatically.</p>
+<pre><code># vim /etc/systemd/system/playwithdockerblog.service 
+[Unit]
+Description=playwithdockerblog
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker-compose -f /root/Code/play-with-docker.github.io/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+# systemctl enable playwithdocker.service
+# systemctl enable playwithdockerblog.service
+</code></pre><p>Next time the service will automatically start.</p>
+<h3 id="offline-cssjs">Offline CSS/js</h3>
+<p>bootstrap fonts:</p>
+<pre><code># wget https://github.com/twbs/bootstrap/archive/v3.3.7.zip
+# unzip bootstrap-3.3.7.zip
+# cd fonts
+# mkdir ~/Code/play-with-docker.github.io/_site/fonts/
+# cp * ~/Code/play-with-docker.github.io/_site/fonts/
+</code></pre><p>Then your image will display correctly.</p>
+<p><img src="/images/2018_04_08_16_15_38_518x362.jpg" alt="/images/2018_04_08_16_15_38_518x362.jpg"></p>
+<h3 id="google-fonts">Google Fonts</h3>
+<p>Download the Fonts description from the website, then put all of the related
+fonts under your local folder.</p>
+<h3 id="dnsmasq">dnsmasq</h3>
+<p>Download the rpm package via:</p>
+<pre><code># yum install yum-plugin-downloadonly
+# yum reinstall --downloadonly --downloaddir=/root/rpms dnsmasq
+</code></pre><p>Transfer the package to intranet and install it. Then edit the configuration
+file of dnsmasq:</p>
+<pre><code># vim /etc/dnsmasq.conf
+address=/192.192.189.114/192.192.189.114
+# systemclt enable dnsmasq &amp;&amp; systemctl start dnsmasq
+</code></pre>
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/58/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/58/">58</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/59/">59</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/60/">60</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/221/">221</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/60/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/221/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+  </div>
+</div>
+
+
+<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

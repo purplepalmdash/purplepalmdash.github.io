@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Promoxzfstips &middot; Dash</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/html2canvas.js"></script>
+  <script type='text/javascript'>
+  function genPostShot() { 
+          var rightNow = new Date();
+          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
+          imageName += '.jpg'
+          html2canvas(document.getElementsByClassName('post'), {
+              background :'#FFFFFF',
+              onrendered: function(canvas) {
+  		
+          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
+          	$('#test').attr('download',imageName);
+          	$('#test')[0].click();
+              }
+          });
+  }; 
+  
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
+  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+
+  
+  
+  
+  
+  <meta name="description" content="Promoxzfstips">
+  <meta name="keywords" content="Linux">
+  
+  
+</head>
+<body class="theme-base-0c">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
+      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
+      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
+    </div>
+
+    <ul class="sidebar-nav">
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
+      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
+      
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Promoxzfstips</h1>
+    <p align="right">
+    <a href="javascript:genPostShot()">
+	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
+    </a>
+    <a id="test"></a>
+    </p>
+    <hr>
+    <span class="post-date">Jan 21, 2020 
+    
+    <br/>
+    
+          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+      
+      
+
+    
+    </span>
+      <div id="_toc" class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#steps">Steps</a></li>
+        <li><a href="#add-zfs-pool">add zfs pool</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    <h3 id="steps">Steps</h3>
+<p>之前:</p>
+<p><img src="/images/2020_01_21_16_18_33_1171x255.jpg" alt="/images/2020_01_21_16_18_33_1171x255.jpg"></p>
+<p>ssh登录:</p>
+<p><code>./MegaCli64 -LDInfo -LALL -aAll</code>查看VD信息， 其中VD0（600G）不需要动.</p>
+<p><img src="/images/2020_01_21_16_20_59_871x328.jpg" alt="/images/2020_01_21_16_20_59_871x328.jpg"></p>
+<p><code>./MegaCli64 -PDList -aAll | grep -i adapter</code>得到adapter数值:</p>
+<p><img src="/images/2020_01_21_16_22_31_783x47.jpg" alt="/images/2020_01_21_16_22_31_783x47.jpg"></p>
+<p>删除VD1-VD3:</p>
+<pre><code># ./MegaCli64 -cfglddel -L1 -a0
+# ./MegaCli64 -cfglddel -L2 -a0
+# ./MegaCli64 -cfglddel -L3 -a0
+</code></pre><p>当前VD：</p>
+<p><img src="/images/2020_01_21_16_23_26_850x391.jpg" alt="/images/2020_01_21_16_23_26_850x391.jpg"></p>
+<p>查看PD对应磁盘:</p>
+<pre><code># ./MegaCli64 -PDList -aAll | more
+两个600G的是0和1, 其他的随便动
+</code></pre><p>查看多少块盘:</p>
+<pre><code># ./MegaCli64 -PDList -aAll |  grep 'Slot Number'
+</code></pre><p><img src="/images/2020_01_21_16_25_57_813x589.jpg" alt="/images/2020_01_21_16_25_57_813x589.jpg"></p>
+<p>这里注意,<code>2,3</code> 是没有，从<code>4~27</code>为slot number.</p>
+<p>得到Enclosure ID:</p>
+<pre><code># ./MegaCli64 -PDList -aAll | grep 'Enclosure'
+为9
+</code></pre><p>开始做24个raid0:</p>
+<pre><code># ./MegaCli64 -CfgLdAdd -r0 [9:4] -a0
+# ./MegaCli64 -CfgLdAdd -r0 [9:5] -a0
+......
+# ./MegaCli64 -CfgLdAdd -r0 [9:26] -a0
+# ./MegaCli64 -CfgLdAdd -r0 [9:27] -a0
+</code></pre><p>脚本:</p>
+<p><img src="/images/2020_01_21_16_30_40_450x557.jpg" alt="/images/2020_01_21_16_30_40_450x557.jpg"></p>
+<p><code>lsblk</code>查看磁盘信息:</p>
+<p><img src="/images/2020_01_21_16_31_31_562x891.jpg" alt="/images/2020_01_21_16_31_31_562x891.jpg"></p>
+<p>删除多余分区, sdb/sdn/sdr:</p>
+<p><img src="/images/2020_01_21_16_32_53_643x819.jpg" alt="/images/2020_01_21_16_32_53_643x819.jpg"></p>
+<h3 id="add-zfs-pool">add zfs pool</h3>
+<p>命令行下添加:</p>
+<pre><code># zpool create -f -o ashift=12 vmpool raidz2 /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg /dev/sdh /dev/sdi
+# zpool add -f -o ashift=12 vmpool raidz2 /dev/sdj /dev/sdk /dev/sdl /dev/sdm /dev/sdn /dev/sdo /dev/sdp /dev/sdq
+# zpool add -f -o ashift=12 vmpool raidz2 /dev/sdr /dev/sds /dev/sdt /dev/sdu /dev/sdv /dev/sdw /dev/sdx /dev/sdy
+# zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+vmpool   130T  1.97M   130T         -     0%     0%  1.00x  ONLINE  -
+# zfs list
+NAME     USED  AVAIL  REFER  MOUNTPOINT
+vmpool   819K  89.9T   205K  /vmpool
+</code></pre><p>Add in proxmox:</p>
+<p><img src="/images/2020_01_21_16_34_13_609x424.jpg" alt="/images/2020_01_21_16_34_13_609x424.jpg"></p>
+<p>设置参数:</p>
+<p><img src="/images/2020_01_21_16_34_50_619x228.jpg" alt="/images/2020_01_21_16_34_50_619x228.jpg"></p>
+<p>可用：</p>
+<p><img src="/images/2020_01_21_16_35_18_891x159.jpg" alt="/images/2020_01_21_16_35_18_891x159.jpg"></p>
+<p>使用方法:</p>
+<p><img src="/images/2020_01_21_16_37_23_712x533.jpg" alt="/images/2020_01_21_16_37_23_712x533.jpg"></p>
+
+  </div>
+  
+</div>
+
+
+
+
+
+
+<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

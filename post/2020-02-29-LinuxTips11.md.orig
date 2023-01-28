@@ -1,0 +1,390 @@
++++
+title= "LinuxTips11"
+date = "2020-02-29T09:39:51+08:00"
+description = "LinuxTips11"
+keywords = ["LinuxTips"]
+categories = ["LinuxTips"]
++++
+### 1. docker exec with root
+Via following commands:    
+
+```
+$ sudo docker exec -it --workdir /root --user root 1e61b0cce4f2 bash
+```
+### 2. vncserver for ubuntu18.04
+Install xfce4 and tigervnc-server:    
+
+```
+# sudo apt-get install -y tigervnc-standalone-server tigervnc-common xfce4
+```
+But now you won't access the vnc desktop, cause the default setting is only listening on 127.0.0.1:    
+
+```
+# netstat -anp | grep 5901
+tcp        0      0 127.0.0.1:5901          0.0.0.0:*               LISTEN      59902/Xtigervnc     
+tcp6       0      0 ::1:5901                :::*                    LISTEN      59902/Xtigervnc 
+```
+
+Edit the vnc.conf file add set the listening port not to localhost, then setup
+the xstartup files:      
+
+```
+# sudo vim /etc/vnc.conf
+Default: $localhost = "no";  # Otherwise
+
+# sudo vim ~/.vnc/xstartup
+    #!/bin/sh
+    unset SESSION_MANAGER
+    unset DBUS_SESSION_BUS_ADDRESS
+    exec startxfce4
+# vncserver
+```
+Now open your favorate vnc viewer for connecting the remote desktop.   
+
+### 3. bundle use aliyun
+Via following:    
+
+```
+# bundle config 'mirror.https://rubygems.org' 'https://ruby.taobao.org'
+```
+
+### 4. netplan bridge setting
+Via following:     
+
+```
+# vim /etc/netplan/01-netcfg.yaml 
+# This file describes the network interfaces available on your system
+# For more information, see netplan(5).
+#
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enakkkc2i2:
+      dhcp4: no
+  bridges:
+    br0:
+      dhcp4: no
+      addresses: [ 192.168.190.167/24 ]
+      gateway4: 192.168.190.254
+      nameservers:
+          addresses:
+              - "192.168.190.254"
+      interfaces:
+        - enakkkc2i2
+#network:
+#  version: 2
+#  renderer: networkd
+#  ethernets:
+#    enakkkc2i2:
+#      addresses: [ 192.168.190.167/24 ]
+#      gateway4: 192.168.190.254
+#      nameservers:
+#          addresses:
+#              - "192.168.190.254"
+
+```
+
+### 5. shrink lvm volume(not for xfs)
+CentOS7 installation with root only 50GB, shrink:     
+
+```
+umount /dev/mapper/centos-home
+lvreduce -L 200G /dev/mapper/centos-home
+Mount back your home partition as you're done with it.
+
+Then just extend your root volume.
+
+lvextend -t -r -l+100%FREE /dev/mapper/centos-root
+-t is test, if it's ok just run the command a second time without -t
+```
+
+### 6. dd times
+It takes around 8 hours to copy to img files.  
+
+```
+➜  ~ sudo dd if=/dev/sdc | gzip -c > /media/sda/kylin_fuck.img
+1953525167+0 records in
+1953525167+0 records out
+1000204885504 bytes (1.0 TB, 932 GiB) copied, 28336.5 s, 35.3 MB/s
+➜  ~ python
+Python 2.7.17 (default, Nov  7 2019, 10:07:09) 
+[GCC 7.4.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 28336/60
+472
+>>> 
+
+```
+And its size if not so large:    
+
+```
+➜  ~ ls -l -h /media/sda/kylin_fuck.img 
+-rw-r--r-- 1 dash dash 4.3G 3月  18 01:48 /media/sda/kylin_fuck.img
+```
+
+### 7. alpine china repository
+Fuck the GFW:     
+
+```
+# sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
+
+```
+
+### 8. metrci-server always restart
+for cpu/memory is low(vm cases), enlarge them:    
+
+```
+metrics_server_cpu: 400m
+metrics_server_memory: 350Mi
+metrics_server_memory_per_node: 40Mi
+metrics_server_min_cluster_size: 5
+addon_resizer_limits_cpu: 200m
+addon_resizer_limits_memory: 600Mi
+addon_resizer_requests_cpu: 50m
+addon_resizer_requests_memory: 500Mi
+
+```
+
+### 9. ssh passwordless configuration
+Configure ssh login without input password:    
+
+```
+Check that your Centos machine has:
+
+RSAAuthentication yes
+PubkeyAuthentication yes
+in sshd_config
+
+and ensure that you have proper permission on the centos machine's ~/.ssh/ directory.
+
+chmod 700 ~/.ssh/
+chmod 600 ~/.ssh/*
+should do the trick.
+```
+
+### 10. Tasksmax limitation
+The TasksMax Systemd/Linux feature can cause various operational issues related to creating new processes including failures starting containers and failures setting up iptables rules for running containers. Customers affected by this issue will observe that the Docker daemon is unable to create more processes than the TasksMax configured limit.
+
+Refers to :   
+https://success.docker.com/article/how-to-reserve-resource-temporarily-unavailable-errors-due-to-tasksmax-setting
+
+```
+systemctl set-property docker.service TasksMax=infinity
+systemctl daemon-reload
+systemctl restart docker
+```
+
+### 11. bluetooth for verveBuds 115
+On Archlinux, do following:     
+
+```
+# sudo pacman -S alsa-utils alsa-plugins alsa-tools bluez bluez-utils bluez-libs
+pulseaudio blueman bluez-hid2hci pulseaudio-bluetooth audacious
+# vim /etc/pulse/default.pa (Add following lines)
+load-module module-switch-on-connect
+# vim /etc/pulse/system.pa (Add following lines)
+load-module module-bluetooth-policy
+load-module module-bluetooth-discovery
+```
+Restart the bluetooth service:     
+
+```
+# systemctl restart bluetooth
+# pluseaudio -k
+# pluseaudio --start
+```
+Blueman setup:    
+
+![/images/2020_04_07_10_04_32_474x167.jpg](/images/2020_04_07_10_04_32_474x167.jpg)
+
+In audacious, select the output for pulseaudio.   
+
+### 12. untaint kube-master
+via :     
+
+```
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
+```
+
+### 13. docker-compose down one svc
+Via:    
+
+```
+# docker-compose rm -f -s -v ui
+# docker-compose up -d
+```
+
+### 14. es logs
+via:    
+
+```
+# curl http://172.18.0.5:9200/_cat/indices
+yellow open ko-log-2020.04  FQxfXJ0ASXid36DN_TiziA 1 1   0 0    283b    283b
+yellow open ououojjj-2020.4 oBcDjztES_C1JFHhMK23JQ 1 1 830 0 312.3kb 312.3kb
+$ curl http://172.18.0.5:9200/ko-log-2020.04/_count?pretty
+{
+  "count" : 0,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  }
+}
+
+
+```
+
+### 15. include ansible roles
+via:    
+
+```
+---
+- import_playbook: 0_preinstall/init.yml
+
+- import_playbook: 1_k8s/cluster.yml
+
+- import_playbook: 2_addons/addons.yml
+
+
+```
+
+### 16. pool define in virsh
+via following commands:    
+
+```
+sudo virsh pool-define-as nvme --type dir --target /media/nvme
+sudo virsh pool-start nvme
+sudo virsh pool-autostart nvme
+```
+
+### 20. 20.04 vagrant issue
+Should install `ifupdown` for letting vagrant working.   
+
+### 21. write inventory
+
+```
+            with open('/tmp/clusterinventory.yaml', 'w+') as f:
+                f.write( str(self.project.inventory_obj.parse_resource()) )
+```
+
+Error log:    
+
+```
+Traceback (most recent call last):
+  File "/opt/kubeOperator-api/apps/kubeops_api/models/deploy.py", line 62, in start
+    result = self.on_install(extra_vars)
+  File "/opt/kubeOperator-api/apps/kubeops_api/models/deploy.py", line 169, in on_install
+    return self.run_playbooks(extra_vars)
+  File "/opt/kubeOperator-api/apps/kubeops_api/models/deploy.py", line 271, in run_playbooks
+    _result = playbook.execute(extra_vars=extra_vars)
+  File "/opt/kubeOperator-api/apps/ansible_api/models/playbook.py", line 272, in execute
+    result = execution.start()
+  File "/opt/kubeOperator-api/apps/ansible_api/models/playbook.py", line 339, in start
+    result = runner.run(self.playbook.playbook_path, extra_vars=extra_vars)
+  File "/opt/kubeOperator-api/apps/ansible_api/ansible/runner.py", line 248, in run
+    self.variable_manager._extra_vars = extra_vars
+AttributeError: can't set attribute
+```
+
+### 22. Duplicated machine
+Via following commands we could re-generate the machine id:    
+
+```
+rm -f /etc/machine-id
+dbus-uuidgen --ensure=/etc/machine-id
+rm /var/lib/dbus/machine-id
+dbus-uuidgen --ensure
+```
+
+### 23. Rename files with special characters
+`rename.sh` like following, could rename with the files with `1.mp4, 2.mp4,
+etc`:    
+
+```
+var=1
+for file in *.mp4
+do 
+	echo "$file"
+	echo $var
+	mv "$file" $var.mp4
+	let "var=var+1"
+done
+
+```
+
+### 24. tips on kubeoperator package management
+Edit file `apps/kubeops_api/models/package.py`, comment the start container
+issue:    
+
+```
+line 67 - 71 should be commented
+```
+thus you  will get your package management online. 
+
+<<<<<<< HEAD
+### 25. ss for listening
+without netstat, using ss for listening:    
+
+```
+# sudo ss -tunlp
+=======
+### 25. docker-regsitry issue
+registry v2.6 depends on musl, install it via:    
+
+```
+# apt-get install -y musl
+```
+
+### 26. ps output wide
+via :    
+
+```
+# ps -efww
+```
+
+### 27. install source code pro font
+via following script:     
+
+```
+#!/usr/bin/env bash
+cd Downloads
+wget https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.zip
+if [ ! -d "~/.fonts" ] ; then
+    mkdir ~/.fonts
+fi
+unzip 1.050R-it.zip 
+cp source-code-pro-*-it/OTF/*.otf ~/.fonts/
+rm -rf source-code-pro* 
+rm 1.050R-it.zip 
+cd ~/
+fc-cache -f -v
+```
+
+
+### 28. Install puppeteer problem
+
+Via:    
+
+```
+sudo npm install -g puppeteer --unsafe-perm=true
+```
+
+### 29. css for layout
+Via:    
+
+```
+iPadCSS控制横屏/竖屏布局（Landscape/PortraitModes）
+```
+
+### 30. git tag and push
+Via:    
+
+```
+ git tag -a v0.4.2 -m "v0.4.2 for ansible v2.9.6"
+ git show v0.4.2
+ git push origin master --tags
+>>>>>>> ee4acbb6a6d1fbe93d6ddd9962093dbad337cace
+```

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>WorkingtipsOnhelmpackageing &middot; Dash</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/html2canvas.js"></script>
+  <script type='text/javascript'>
+  function genPostShot() { 
+          var rightNow = new Date();
+          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
+          imageName += '.jpg'
+          html2canvas(document.getElementsByClassName('post'), {
+              background :'#FFFFFF',
+              onrendered: function(canvas) {
+  		
+          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
+          	$('#test').attr('download',imageName);
+          	$('#test')[0].click();
+              }
+          });
+  }; 
+  
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
+  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+
+  
+  
+  
+  
+  <meta name="description" content="WorkingtipsOnhelmpackageing">
+  <meta name="keywords" content="Linux">
+  
+  
+</head>
+<body class="theme-base-0c">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
+      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
+      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
+    </div>
+
+    <ul class="sidebar-nav">
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
+      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
+      
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>WorkingtipsOnhelmpackageing</h1>
+    <p align="right">
+    <a href="javascript:genPostShot()">
+	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
+    </a>
+    <a id="test"></a>
+    </p>
+    <hr>
+    <span class="post-date">Jan 18, 2018 
+    
+    <br/>
+    
+          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+      
+      
+
+    
+    </span>
+      <div id="_toc" class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#change-the-tgz-files">Change the tgz files</a></li>
+        <li><a href="#get-sha256sum-value">Get sha256sum value</a></li>
+        <li><a href="#get-the-indexyaml-digest">Get the index.yaml digest</a></li>
+        <li><a href="#replace-all-of-the-digest">Replace all of the digest</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    <h3 id="change-the-tgz-files">Change the tgz files</h3>
+<p>Via following scripts:</p>
+<pre><code>for i in `ls *.tgz`
+do
+	echo $i
+	tar xzvf $i
+	mv $i $i.bak
+	cd wordpress
+	sed -i 's|serviceType: LoadBalancer|serviceType: ClusterIP|g' values.yaml
+	cd ..
+	helm package wordpress
+	rm -rf wordpress
+done
+</code></pre><p>Then copy all of the helmed tgz file to a new place.</p>
+<h3 id="get-sha256sum-value">Get sha256sum value</h3>
+<p>Get the sha256sum,</p>
+<pre><code>sha256sum * | tac | awk {'print $1'}&gt;sha256sum.txt
+</code></pre><p>manually adjust its sequencees.  Then form a file like following:</p>
+<pre><code>    digest: 6dbf2c9394e216e691116ea5135cd5c83b55ce1bd199f23ab40ec6a8c426a7ea
+    digest: a017ad98dc9f727ea6c422be74f077557b8af35470033b61a7c7c11d6b2a1194
+    digest: fad50a4f5dcae6ce8af05634cb14fadb19b2018fe30521669d0e19a68192d2ec
+    digest: ae45690c85c733bd66db97cd859c40174c88932ff8e944852afe762dc62c47d0
+    digest: 5528dfda0b68cf7f00eecab4b56933e6935a01d680989f6e690a281492efce64
+    digest: 071f4af604b580c13ec1b53bf5ebf898d3d198bbecd616d309d71d94d7635b25
+    digest: 12de12908f3c8b61a1f68ea529a06ad402903bd4dea458cf335bf8e9dda3f290
+
+.......
+</code></pre><h3 id="get-the-indexyaml-digest">Get the index.yaml digest</h3>
+<p>Via following command:</p>
+<pre><code># cat index.yaml | grep digest&gt;kkkk.txt
+# cat kkkk.txt| more
+    digest: b33a1646e90963a387406f4857f312476b4615222a36e354f7b9e62a2971ce9e
+    digest: d54b28981ce97485a59d78acd43182e6d275efd451245c3420129d3cf2b1bfb5
+    digest: 88337f823951e048118e44dc7b7e1e6508dcac138612edff13bc63a3ec90a997
+    digest: 07f2323bc6559c973bd4f8deb3b5c83acb99c5aac93d2135b4f1690bf9a3be85
+    digest: 26d71a30ee0f845ff45854d96a69f18ded56038c473f13dcc43a572a7e9cd92d
+</code></pre><h3 id="replace-all-of-the-digest">Replace all of the digest</h3>
+<p>Python scripts for doing this thing:</p>
+<pre><code>findlines = open('originsha256sum.txt').read().split('\n')
+replacelines = open('modifiedsha256sum.txt').read().split('\n')
+find_replace = dict(zip(findlines, replacelines))
+
+with open('index.yaml') as data:
+    with open('newindex.yaml', 'w') as new_data:
+        for line in data:
+            for key in find_replace:
+                if key in line:
+                    line = line.replace(key, find_replace[key])
+            new_data.write(line)
+
+new_data.close()
+data.close()
+
+</code></pre><p>Using <code>python2 replace.py</code> you could get a new <code>newindex.yaml</code>, use this one
+for replacing your original <code>index.yaml</code> in your web-server, and also replace
+all of the charts file with your generated tgz files.</p>
+<p>Now deploy the apps, you will get an ClusterIP equited rather than load
+balance equipped apps.</p>
+
+  </div>
+  
+</div>
+
+
+
+
+
+
+<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,2726 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.65.1" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Dash &middot; Dash</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/html2canvas.js"></script>
+  <script type='text/javascript'>
+  function genPostShot() { 
+          var rightNow = new Date();
+          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
+          imageName += '.jpg'
+          html2canvas(document.getElementsByClassName('post'), {
+              background :'#FFFFFF',
+              onrendered: function(canvas) {
+  		
+          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
+          	$('#test').attr('download',imageName);
+          	$('#test')[0].click();
+              }
+          });
+  }; 
+  
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
+  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+
+  
+  
+  
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Dash &middot; Dash" />
+  <meta name="description" content="">
+  <meta name="keywords" content="unix,virtualization,embedded,linux">
+  
+  
+</head>
+<body class="theme-base-0c">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
+      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
+      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
+    </div>
+
+    <ul class="sidebar-nav">
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
+      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
+      
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2019/01/22/workingtipsonubuntuglusterfs/">WorkingTipsOnUbuntuGlusterFS</a>
+      </h1>
+      <span class="post-date">Jan 22, 2019 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="install">Install</h3>
+<p>In 4 nodes, install the latest glusterfs via:</p>
+<pre><code>sudo add-apt-repository -y ppa:gluster/glusterfs-5
+sudo apt-get -y update
+sudo apt-get -y install glusterfs-server
+sudo apt-get -y install thin-provisioning-tools
+</code></pre><h3 id="configure">Configure</h3>
+<p>See following steps for configurating the gluster in 4
+nodes(10.48.129.101~104):</p>
+<pre><code>root@gluster-1:/home/vagrant# gluster peer status
+Number of Peers: 0
+root@gluster-1:/home/vagrant# gluster pool list
+UUID					Hostname 	State
+628ce8f2-622c-4be3-92b0-d8e5241d01b8	localhost	Connected 
+root@gluster-1:/home/vagrant# ifconfig eth1
+eth1      Link encap:Ethernet  HWaddr 52:54:00:c8:74:01  
+          inet addr:10.48.129.101  Bcast:10.48.129.255  Mask:255.255.255.0
+          inet6 addr: fe80::5054:ff:fec8:7401/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2456 errors:0 dropped:17 overruns:0 frame:0
+          TX packets:103 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:126151 (126.1 KB)  TX bytes:10351 (10.3 KB)
+
+root@gluster-1:/home/vagrant# gluster peer probe 10.48.129.102
+peer probe: success. 
+root@gluster-1:/home/vagrant# gluster peer probe 10.48.129.103
+peer probe: success. 
+root@gluster-1:/home/vagrant# gluster peer probe 10.48.129.104
+peer probe: success. 
+root@gluster-1:/home/vagrant# gluster peer status
+Number of Peers: 3
+
+Hostname: 10.48.129.102
+Uuid: 52472b8f-b835-4038-b061-89229d825c42
+State: Peer in Cluster (Connected)
+
+Hostname: 10.48.129.103
+Uuid: 46161901-954a-4ffe-9aec-a8c14ceded03
+State: Peer in Cluster (Connected)
+
+Hostname: 10.48.129.104
+Uuid: a597a3ff-8c32-4a5a-b83d-1d25187afe31
+State: Peer in Cluster (Connected)
+</code></pre><p>After peer probe, the cluster is listed as following:</p>
+<pre><code>root@gluster-1:/home/vagrant# gluster peer status
+Number of Peers: 3
+
+Hostname: 10.48.129.102
+Uuid: 52472b8f-b835-4038-b061-89229d825c42
+State: Peer in Cluster (Connected)
+
+Hostname: 10.48.129.103
+Uuid: 46161901-954a-4ffe-9aec-a8c14ceded03
+State: Peer in Cluster (Connected)
+
+Hostname: 10.48.129.104
+Uuid: a597a3ff-8c32-4a5a-b83d-1d25187afe31
+State: Peer in Cluster (Connected)
+root@gluster-1:/home/vagrant# gluster pool list
+UUID					Hostname     	State
+52472b8f-b835-4038-b061-89229d825c42	10.48.129.102	Connected 
+46161901-954a-4ffe-9aec-a8c14ceded03	10.48.129.103	Connected 
+a597a3ff-8c32-4a5a-b83d-1d25187afe31	10.48.129.104	Connected 
+628ce8f2-622c-4be3-92b0-d8e5241d01b8	localhost    	Connected 
+</code></pre><h3 id="heketi">heketi</h3>
+<p>Download the heketi from:</p>
+<pre><code># wget https://github.com/heketi/heketi/releases/download/v8.0.0/heketi-v8.0.0.linux.amd64.tar.gz
+# tar xzvf heketi-v8.0.0.linux.amd64.tar.gz
+# cd heketi
+# cp heketi heketi-cli /usr/bin
+</code></pre><p>Configuration:</p>
+<pre><code># cd heketi
+# cp heketi.json heketi.json.back
+# vim heketi.json
+# mkdir -p /etc/heketi
+# cp heketi.json /etc/heketi
+</code></pre><p>Your content is listed as following:</p>
+<pre><code>......
+#修改端口，防止端口冲突
+  &quot;port&quot;: &quot;18080&quot;,
+......
+#允许认证
+  &quot;use_auth&quot;: true,
+......
+#admin用户的key改为adminkey
+      &quot;key&quot;: &quot;adminkey&quot;
+......
+#修改执行插件为ssh，并配置ssh的所需证书，注意要能对集群中的机器免密ssh登陆，使用ssh-copy-id把pub key拷到每台glusterfs服务器上
+    &quot;executor&quot;: &quot;ssh&quot;,
+    &quot;sshexec&quot;: {
+      &quot;keyfile&quot;: &quot;/root/.ssh/id_rsa&quot;,
+      &quot;user&quot;: &quot;root&quot;,
+      &quot;port&quot;: &quot;22&quot;,
+      &quot;fstab&quot;: &quot;/etc/fstab&quot;
+    },
+......
+# 定义heketi数据库文件位置
+    &quot;db&quot;: &quot;/var/lib/heketi/heketi.db&quot;
+......
+#调整日志输出级别
+    &quot;loglevel&quot; : &quot;warning&quot;
+</code></pre><p>Now start the heketi server via:</p>
+<pre><code># heketi --config=/etc/heketi/heketi.json
+</code></pre><p>Your server now is listening at <code>localhost:18080</code>, now use the cli for
+creating the cluster and volume.</p>
+<pre><code># heketi-cli --server http://localhost:18080 --user admin --secret &quot;adminkey&quot; cluster list
+# heketi-cli --server http://localhost:18080 --user admin --secret &quot;adminkey&quot; cluster create
+# alias heketi-cli-admin='heketi-cli --server http://localhost:18080 --user admin --secret &quot;adminkey&quot;'
+# heketi-cli-admin node add --cluster &quot;360e5d504ff7cc18823d580bac55711a&quot; --management-host-name 10.48.129.101 --storage-host-name 10.48.129.101 --zone 1
+# heketi-cli-admin node add --cluster &quot;360e5d504ff7cc18823d580bac55711a&quot; --management-host-name 10.48.129.102 --storage-host-name 10.48.129.102 --zone 1
+# heketi-cli-admin node add --cluster &quot;360e5d504ff7cc18823d580bac55711a&quot; --management-host-name 10.48.129.103 --storage-host-name 10.48.129.103 --zone 1
+# heketi-cli-admin node add --cluster &quot;360e5d504ff7cc18823d580bac55711a&quot; --management-host-name 10.48.129.104 --storage-host-name 10.48.129.104 --zone 1
+# heketi-cli-admin --json device add --name=&quot;/dev/vdb&quot; --node &quot;f787daa4ff84461b11b7f7d00645dfdc&quot;
+# heketi-cli-admin --json device add --name=&quot;/dev/vdb&quot; --node &quot;16f738ee9822fb79c7b321c0b7ed1792&quot;
+# heketi-cli-admin --json device add --name=&quot;/dev/vdb&quot; --node &quot;c6b1f0ccfe1ff76a245012108c44043f&quot;
+# heketi-cli-admin --json device add --name=&quot;/dev/vdb&quot; --node &quot;2e631bedcb6b58c4b82bba31082531f1&quot;
+# heketi-cli-admin volume list
+# heketi-cli-admin volume create --size=10
+</code></pre><p>After it finishes, your volume will be created.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2019/01/21/migratingto1804/">MigratingTo1804</a>
+      </h1>
+      <span class="post-date">Jan 21, 2019 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="aim">AIM</h3>
+<p>For upgrading the offline installation of kubespray from 1604 to 1804.</p>
+<h3 id="ansible">Ansible</h3>
+<p>Get the ansible debs via following command:</p>
+<pre><code># apt-get update
+# apt-get install  install software-properties-common
+# apt-add-repository ppa:ansible/ansible
+# apt-get install ansible
+# mkdir /root/debs &amp;&amp; cd /var/cache
+# find . | grep deb$ | xargs -I % cp % /root/debs
+</code></pre><p>You should change the vagrant box&rsquo;s configuration:</p>
+<pre><code># vim /etc/netplan/01-netcfg.yaml
+    eth0:
+      dhcp4: yes
++      dhcp-identifier: mac
+</code></pre><p>The vagrant file(shell provision) should be like following:</p>
+<pre><code>rm -f /etc/resolv.conf
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+echo '      nameservers:'&gt;&gt;/etc/netplan/50-vagrant.yaml
+echo '        addresses: [10.148.129.101]'&gt;&gt;/etc/netplan/50-vagrant.yaml
+netplan apply eth1
+</code></pre><h3 id="task-changes">task Changes</h3>
+<p>Judge for OS version changes:</p>
+<pre><code># vim roles/kube-deploy/tasks/main.yml
+- name: Set ubuntu_version
+  set_fact:
+    ubuntu_version: &gt;-
+      {%- if 'bionic' in os_release.stdout -%}
+      bionic
+      {%- elif 'xenial' in os_release.stdout -%}
+      xenial
+      {%- endif -%}
+
+# vim roles/kube-deploy/deploy-ubuntu.yml
+  - name: &quot;upload debs.tar.xz files to kube-deploy(Xenial)&quot;
+    copy:
+      src: files/1604debs.tar.xz
+      dest: /usr/local/
+      owner: root
+      group: root
+      mode: 0777
+    when: ubuntu_version == &quot;xenial&quot;
+
+  - name: &quot;Install ansible and python-netaddr(Xenial)&quot;
+    raw: cd /usr/local/ &amp;&amp; tar xJvf 1604debs.tar.xz -C /usr/local/ &amp;&amp; echo &quot;deb [trusted=yes] file:///usr/local/static ./&quot;&gt;/etc/apt/sources.list &amp;&amp; apt-get u
+pdate -y &amp;&amp; apt-get install -y ansible python-netaddr &amp;&amp; rm -f /usr/local/debs.tar.xz
+    when: ubuntu_version == &quot;xenial&quot;
+
+  - name: &quot;upload debs.tar.xz files to kube-deploy(Bionic)&quot;
+    copy:
+      src: files/1804debs.tar.xz
+      dest: /usr/local/
+      owner: root
+      group: root
+      mode: 0777
+    when: ubuntu_version == &quot;bionic&quot;
+
+  - name: &quot;Install ansible and python-netaddr(Bionic)&quot;
+    raw: cd /usr/local/ &amp;&amp; tar xJvf 1804debs.tar.xz -C /usr/local/ &amp;&amp; echo &quot;deb [trusted=yes] file:///usr/local/static ./&quot;&gt;/etc/apt/sources.list &amp;&amp; apt-get u
+pdate -y &amp;&amp; apt-get install -y ansible python-netaddr &amp;&amp; rm -f /usr/local/debs.tar.xz
+    when: ubuntu_version == &quot;bionic&quot;
+</code></pre><p>Also you have to change the Vagrantfiles:</p>
+<pre><code>File.open('./dns.sh' ,'w') do |f|
+  f.write &quot;#!/bin/bash\n&quot;
+  f.write &quot;sed -i '/^#VAGRANT-END/i dns-nameservers 10.148.129.101' /etc/network/interfaces\n&quot;
+  f.write &quot;systemctl restart networking.service\n&quot;
+  #f.write &quot;rm -f /etc/resolv.conf\n&quot;
+  #f.write &quot;ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf\n&quot;
+  #f.write &quot;echo '      nameservers:'&gt;&gt;/etc/netplan/50-vagrant.yaml\n&quot;
+  #f.write &quot;echo '        addresses: [10.148.129.101]'&gt;&gt;/etc/netplan/50-vagrant.yaml\n&quot;
+  #f.write &quot;netplan apply eth1\n&quot;
+end
+</code></pre><p>Uncomment the sed/systemctl for xenial, uncomment the later 5 lines for
+bionic.</p>
+<p>You should have xenial/bionic boxs under ~/.vagrant.d/boxes.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2019/01/20/ubuntu1804vagrantboxcreate/">Ubuntu1804VagrantBoxCreate</a>
+      </h1>
+      <span class="post-date">Jan 20, 2019 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <p>For creating Ubuntu 18.04 vagrant box, follow the following steps:</p>
+<p>Change grub configuration for changing to <code>ethx</code> naming rules:</p>
+<pre><code># vim /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quite&quot;
+GRUB_CMDLINE_LINUX=&quot;net.ifnames=0 biosdevname=0&quot;
+# grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre><p>Change the netplan rules:</p>
+<pre><code># vim /etc/netplan/01-netcfg.yaml 
+# This file describes the network interfaces available on your system
+# For more information, see netplan(5).
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: yes
+      dhcp-identifier: mac
+</code></pre><p>Now reboot your machine, continue for later commands.</p>
+<p>Create vagrant user and set the password, etc.</p>
+<pre><code># useradd -m vagrant
+# passwd vagrant
+# visudo
+vagrant ALL=(ALL)	NOPASSWD:ALL
+Defaults:vagrant	!requiretty
+# mkdir -p /home/vagrant/.ssh
+# chmod 0700 /home/vagrant/.ssh/
+# wget --no-check-certificate     https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub     -O /home/vagrant/.ssh/authorized_keys
+# cat /home/vagrant/.ssh/authorized_keys 
+# chmod 0600 /home/vagrant/.ssh/authorized_keys
+# chown -R vagrant /home/vagrant/.ssh
+# cp /home/test/.bashrc /home/vagrant/.bashrc 
+# cp /home/test/.bash_logout /home/vagrant/.bash_logout
+# cp /home/test/.profile /home/vagrant/.profile
+# vim /home/vagrant/.profile 
+add
+[ -z &quot;$BASH_VERSION&quot; ] &amp;&amp; exec /bin/bash -l
+# chsh -s /bin/bash vagrant
+</code></pre><p>Finally change the sshd configuration:</p>
+<pre><code># vim /etc/ssh/sshd_config 
+AuthorizedKeysFile .ssh/authorized_keys
+</code></pre><p>Now you could halt you machine.</p>
+<p>Package to a box via:</p>
+<pre><code>$ vagrant package --base xxxx
+</code></pre><p>Using the package.box , then you could mutate to libvirt or do some other
+things.</p>
+<h3 id="for-kubespray-offline">For kubespray offline</h3>
+<p>Install ansible via:</p>
+<pre><code># apt-get update &amp;&amp; apt-get install -y python-pip &amp;&amp; pip install ansible
+</code></pre><p>Or use old ansible(from repository):</p>
+<pre><code># apt-get update -y &amp;&amp; apt-get install -y ansible
+</code></pre><p>Better you use the ppa repository for installing ansible:</p>
+<pre><code># apt-add-repository ppa:ansible/ansible
+# apt-get install ansible
+</code></pre><p>Generate the ssh key and use ssh-copy-id for copying the key for passwordless
+login.</p>
+<p>Download kubespray source files:</p>
+<pre><code># wget  https://github.com/kubernetes-sigs/kubespray/archive/v2.8.1.tar.gz
+# tar xzvf v2.8.1.tar.gz
+# vim inventory/sample/host.ini
+[all]
+node ansible_host=192.168.33.109 ip=192.168.33.109 etcd_member_name=etcd1
+
+[kube-master]
+node
+
+[etcd]
+node
+
+[kube-node]
+node
+
+[k8s-cluster:children]
+kube-master
+kube-node
+# vim inventory/sample/group_vars/k8s-cluster/k8s-cluster.yml
+kube_version: v1.12.4
+</code></pre><p>Deploy online for:</p>
+<pre><code># ansible-playbook -i inventory/sample/hosts.ini cluster.yml
+</code></pre><p>Now you could get all of the deb packages and docker images.</p>
+<h3 id="1804-debs-preparation">1804 debs preparation</h3>
+<p>Generate 1804debs.tar.xz files.</p>
+<pre><code>### Install more necessary packages. 
+# apt-get install -y bind9 bind9utils ntp nfs-common nfs-kernel-server python-netaddr
+# mkdir /root/static
+# cd /var/cache
+# find . | grep deb$ | xargs -I % cp % /root/static
+# cd /root/static
+# dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
+# cd /root/
+# tar cJvf 1804debs.tar.xz static/
+</code></pre>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2019/01/18/workingtipsonofflinecephdeploy/">WorkingTipsOnOfflineCephDeploy</a>
+      </h1>
+      <span class="post-date">Jan 18, 2019 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="prerequisites">Prerequisites</h3>
+<p>Offline Deb packages, vagrant boxes(based on ubuntu16.04).  <br>
+Put the deb packages onto the webserver and serves as a deb repository.</p>
+<h3 id="steps">Steps</h3>
+<p>Get the pip cache for:</p>
+<pre><code># pip download ceph-deploy
+### get the ceph-deploy
+# ls -l -h
+total 676K
+-rw-r--r-- 1 root root 113K Jan 18 01:31 ceph-deploy-2.0.1.tar.gz
+-rw-r--r-- 1 root root 560K Jan 18 01:31 setuptools-40.6.3-py2.py3-none-any.whl
+### Transfer to the offline node
+# pip install --no-index --find-links ./ ceph-deploy
+# which ceph-deploy
+/usr/local/bin/ceph-deploy
+</code></pre><p>Edit the host, make the deploy:</p>
+<pre><code># vim /etc/hosts
+.....
+10.38.129.101	cephdeploy-1
+# mkdir ceph-install
+# cd ceph-install
+# ceph-deploy new cephdeploy-1
+# vim ceph.conf
+[global]
+....
+osd pool default size = 1
+osd pool default min size = 1
+</code></pre><p>Edit the python files for supporting offline deployment:</p>
+<pre><code># vim /usr/local/lib/python2.7/dist-packages/ceph_deploy/hosts/remotes.py
+def write_sources_list(url, codename, filename='ceph.list', mode=0o644): 
+....
+....
+    #write_file(repo_path, content.encode('utf-8'), mode)
+# rm -f /usr/local/lib/python2.7/dist-packages/ceph_deploy/hosts/remotes.pyc
+</code></pre><p>Install ceph package:</p>
+<pre><code># ceph-deploy install --repo-url=http://192.xxx.xxx.xxx/cephdeploy --gpg-url=http://192.xxx.xxx.xxx/cephdeploy/release.asc --release luminous cephdeploy-1
+</code></pre><p>Initialize mon:</p>
+<pre><code># ceph-deploy mon create-initial
+# ceph-deploy admin cephdeploy-1
+</code></pre><p>Now ceph is Ok for accessing via <code>ceph -s</code>.</p>
+<p>Deploy ceph mgr:</p>
+<pre><code># ceph-deploy mgr create cephdeploy-1
+</code></pre><p>Using ceph-volume lvm for managing disk, so we create the lv(logical volume),
+we create 3 lvs for single osd:</p>
+<pre><code># pvcreate /dev/vdb
+# vgcreate ceph-pool /dev/vdb
+# lvcreate -n osd0.wal -L 1G ceph-pool
+# lvcreate -n osd0.db -L 1G ceph-pool
+# lvcreate -n osd0 -l 100%FREE ceph-pool
+</code></pre><p>Create osd via:</p>
+<pre><code># ceph-deploy  osd create \
+    --data ceph-pool/osd0 \
+    --block-db ceph-pool/osd0.db \
+    --block-wal ceph-pool/osd0.wal \
+    --bluestore  cephdeploy-1
+</code></pre><p>Now the minimal cluster is ready for use.</p>
+<h3 id="rbd">rbd</h3>
+<p>Create the osd:</p>
+<pre><code># ceph osd pool create test_pool 128 128 replicated
+# rbd create --size 10240 test_image -p test_pool
+# rbd info test_pool/test_image
+# ceph osd crush tunables legacy
+# rbd feature disable test_pool/test_image exclusive-lock object-map fast-diff \
+deep-flatten
+# rbd map test_pool/test_image
+# mkfs.ext4 /dev/rbd/test_pool/test_image
+# mkdir /mnt/ceph-block-device
+# chmod 777 /mnt/ceph-block-device/
+# mount /dev/rbd/test_pool/test_image /mnt/ceph-block-device
+</code></pre><p>Using rbd-nbd for mounting:</p>
+<pre><code># apt-get install rbd-nbd
+# rbd-nbd map test_pool/test_image
+/dev/nbd0
+# mkfs.ext4 /dev/nbd0
+# mount /dev/nbd0 /YourMountPoint
+</code></pre><p>But for <code>ceph-s</code> you will see:</p>
+<p><img src="/images/2019_01_18_14_54_02_514x206.jpg" alt="/images/2019_01_18_14_54_02_514x206.jpg"></p>
+<pre><code>Warning: 
+application not enabled on 1 pool(s)
+# ceph osd pool application enable test_pool rbd
+# ceph -s
+
+helath: HEALTH_OK
+</code></pre><p>Enable the dashboards:</p>
+<pre><code># ceph mgr module enable dashboard
+</code></pre><p>Via following command you could view pool details:</p>
+<pre><code># ceph osd pool ls detail
+</code></pre><h3 id="pool-error">pool error</h3>
+<p>Resolve the pool error.</p>
+<pre><code>[root@node3 ~]# ceph osd pool delete ecpool ecpool --yes-i-really-really-mean-it
+Error EPERM: pool deletion is disabled; you must first set the mon_allow_pool_delete config option to true before you can destroy a pool
+[root@node1 ceph]# vi /etc/ceph/ceph.conf 
+[mon]
+mon allow pool delete = true
+[root@node1 ceph]# systemctl restart ceph-mon.target
+[root@node3 ~]# ceph osd pool delete ecpool ecpool --yes-i-really-really-mean-it
+pool 'ecpool' removed
+</code></pre>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2019/01/14/workingtipsoncephdeploy/">WorkingTipsOnCephDeploy</a>
+      </h1>
+      <span class="post-date">Jan 14, 2019 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="environment">Environment</h3>
+<p>Ubuntu16.04, IPs are listed as following:</p>
+<pre><code>cephdeploy-1	10.28.129.101
+cephdeploy-2	10.28.129.102
+cephdeploy-3	10.28.129.103
+cephdeploy-4	10.28.129.104
+</code></pre><h3 id="configure-apt-sources">Configure apt sources</h3>
+<p>Doing via ansible play-books:</p>
+<pre><code>- hosts: all
+  gather_facts: false
+  become: True
+  tasks:
+    - name: &quot;Run shell&quot;
+      shell: uptime 
+
+    - name: &quot;Configure apt sources&quot;
+      shell: rm -f /etc/apt/sources.list &amp;&amp; echo &quot;deb http://mirrors.163.com/ubuntu/ xenial main restricted universe multiverse&quot;&gt;/etc/apt/sources.list &amp;&amp; echo &quot;deb http://mirrors.163.com/ubuntu/ xenial-security main restricted universe multiverse&quot;&gt;&gt;/etc/apt/sources.list &amp;&amp; echo &quot;deb http://mirrors.163.com/ubuntu/ xenial-updates main restricted universe multiverse&quot;&gt;&gt;/etc/apt/sources.list &amp;&amp; echo &quot;deb http://mirrors.163.com/ubuntu/ xenial-backports main restricted universe multiverse&quot;&gt;&gt;/etc/apt/sources.list &amp;&amp; echo &quot;deb http://mirrors.163.com/ubuntu/ xenial-proposed main restricted universe multiverse&quot;&gt;&gt;/etc/apt/sources.list &amp;&amp; apt-get update -y
+
+    - name: &quot;Add Ceph User&quot;
+      raw: useradd -d /home/cephuser -m cephuser &amp;&amp; echo &quot;cephuser ALL = (root) NOPASSWD:ALL&quot; | tee /etc/sudoers.d/cephuser  &amp;&amp; chmod 0440 /etc/sudoers.d/cephuser
+
+    - name: &quot;Change password&quot;
+      raw: usermod -p '$1$5RPVAd$kC4MwCLFLL2j7MBLgWv.H.' cephuser
+
+    - name: &quot;Add ceph repository&quot;
+      raw:  wget -q -O- 'http://mirrors.163.com/ceph/keys/release.asc' | sudo apt-key add - &amp;&amp; echo deb http://mirrors.163.com/ceph/debian-luminous/ $(lsb_release -sc) main | sudo tee /etc/apt/sources.list.d/ceph.list
+
+    - name: &quot;Install python&quot;
+      shell: apt-get install -y python
+</code></pre><p>The password is generated via following method:</p>
+<pre><code>#  openssl passwd -1 -salt 5RPVAd clear-text-passwd43
+$1$5RPVAd$vgsoSANybLDepv2ETcUH7.
+</code></pre><h3 id="ceph-deploy">Ceph-Deploy</h3>
+<p>Roles for ceph cluster:</p>
+<pre><code>cephdeploy-1	10.28.129.101 ceph-admin
+cephdeploy-2	10.28.129.102 ceph-mon
+cephdeploy-3	10.28.129.103 osd-server-1
+cephdeploy-4	10.28.129.104 osd-server-2
+</code></pre><p>Ssh into cephdeploy-1, do following:</p>
+<pre><code># apt-get install -y python-pip
+# pip install ceph-deploy
+</code></pre><p>Generate ssh key via and configure password-less login:</p>
+<pre><code># ssh-keygen
+# vim /etc/hosts
+10.28.129.102	cephdeploy-2
+10.28.129.103	cephdeploy-3
+10.28.129.104	cephdeploy-4
+# ssh-copy-id cephuser@cephdeploy-2
+# ssh-copy-id cephuser@cephdeploy-3
+# ssh-copy-id cephuser@cephdeploy-4
+# vim ~/.ssh/config
+Host cephdeploy-2
+  Hostname cephdeploy-2
+  User cephuser
+Host cephdeploy-3
+  Hostname cephdeploy-3
+  User cephuser
+Host cephdeploy-4
+  Hostname cephdeploy-4
+  User cephuser
+</code></pre><p>Make ceph-deploy folder and generate configuration files:</p>
+<pre><code># mkdir ~/my-cluster
+# cd ~/my-cluster/
+# ceph-deploy new cephdeploy-2
+</code></pre><p>Modify the configuration file:</p>
+<pre><code># vim ceph.conf
+.......
+osd pool default size = 2
+osd journal size = 2000
+public network = 10.28.129.0/24
+cluster network = 10.28.129.0/24
+
+</code></pre><p>Install ceph via following command:</p>
+<pre><code># export CEPH_DEPLOY_REPO_URL=http://mirrors.163.com/ceph/debian-luminous/
+# export CEPH_DEPLOY_GPG_URL=http://mirrors.163.com/ceph/keys/release.asc
+# ceph-deploy install cephdeploy-1 cephdeploy-2 cephdeploy-3 cephdeploy-4
+</code></pre><p>Create initial mon:</p>
+<pre><code># ceph-deploy mon create-initial
+</code></pre><p>Create osd via:</p>
+<pre><code># ceph-deploy disk zap cephdeploy-3 /dev/vdb
+# ceph-deploy disk zap cephdeploy-4 /dev/vdb
+# ceph-deploy osd create cephdeploy-3 --data /dev/vdb
+# ceph-deploy osd create cephdeploy-4 --data /dev/vdb
+</code></pre><p>You could examine the osd via:</p>
+<pre><code># ceph-deploy osd list cephdeploy-3 
+# ceph-deploy osd list cephdeploy-4
+</code></pre><p>Create admin for :</p>
+<pre><code># ceph-deploy admin cephdeploy-1 cephdeploy-2 cephdeploy-3 cephdeploy-4
+# sudo chmod +r /etc/ceph/ceph.client.admin.keyring
+</code></pre><h3 id="configure-ceph">Configure ceph</h3>
+<p>Examine the ceph health via:</p>
+<pre><code>ceph -s
+  cluster:
+    id:     1674bddc-65c1-40c5-8f88-f18aef7a3d32
+    health: HEALTH_WARN
+            no active mgr
+</code></pre><p>That&rsquo;s because we lost active mgr, create one via:</p>
+<pre><code># ceph-deploy mgr create cephdeploy-2:mon_mgr
+# ceph -s
+  cluster:
+    id:     1674bddc-65c1-40c5-8f88-f18aef7a3d32
+    health: HEALTH_OK
+# ceph health
+HEALTH_OK
+</code></pre><p>Enable the dashboard via:</p>
+<pre><code># ceph mgr module enable dashboard
+</code></pre><p>So you could open your browser to <code>http://10.28.129.102:7000</code>, you could reach
+ceph dashboard.</p>
+<p><img src="/images/2019_01_14_22_30_12_878x605.jpg" alt="/images/2019_01_14_22_30_12_878x605.jpg"></p>
+<h3 id="rbd">rbd</h3>
+<p>Create and configure:</p>
+<pre><code># ceph osd pool create test_pool 128 128 replicated
+# ceph osd lspools
+# rbd create --size 10240 test_image -p test_pool
+# rbd info test_pool/test_image
+# rbd feature disable test_pool/test_image exclusive-lock object-map fast-diff deep-flatten
+# apt-get install rbd-nbd
+# rbd-nbd map test_pool/test_image
+/dev/nbd0
+
+</code></pre><p>Or if you would not use rbd-nbd, then you could use following commands:</p>
+<pre><code># ceph osd crush tunables legacy
+# rbd map test_pool/test_image
+</code></pre>
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/46/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/46/">46</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/47/">47</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/48/">48</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/221/">221</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/48/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/221/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+  </div>
+</div>
+
+
+<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

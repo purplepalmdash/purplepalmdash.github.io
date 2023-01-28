@@ -1,0 +1,2665 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.65.1" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Dash &middot; Dash</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/html2canvas.js"></script>
+  <script type='text/javascript'>
+  function genPostShot() { 
+          var rightNow = new Date();
+          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
+          imageName += '.jpg'
+          html2canvas(document.getElementsByClassName('post'), {
+              background :'#FFFFFF',
+              onrendered: function(canvas) {
+  		
+          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
+          	$('#test').attr('download',imageName);
+          	$('#test')[0].click();
+              }
+          });
+  }; 
+  
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
+  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+
+  
+  
+  
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Dash &middot; Dash" />
+  <meta name="description" content="">
+  <meta name="keywords" content="unix,virtualization,embedded,linux">
+  
+  
+</head>
+<body class="theme-base-0c">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
+      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
+      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
+    </div>
+
+    <ul class="sidebar-nav">
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
+      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
+      
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2022/08/29/workingtipsonupgradingsg1drivercentos1810.qcow2/">WorkingTipsOnUpgradingSG1DriverCentOS1810.qcow2</a>
+      </h1>
+      <span class="post-date">Aug 29, 2022 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="vm">VM</h3>
+<p>Import new image:</p>
+<p><img src="/images/2022_08_29_10_25_29_498x422.jpg" alt="/images/2022_08_29_10_25_29_498x422.jpg"></p>
+<p>Name it:</p>
+<p><img src="/images/2022_08_29_10_26_09_467x332.jpg" alt="/images/2022_08_29_10_26_09_467x332.jpg"></p>
+<p>Upgrade kernel to 4.19.12:</p>
+<pre><code>$ ls
+kernel-4.19.12-1.x86_64.rpm  kernel-devel-4.19.12-1.x86_64.rpm  kernel-headers-4.19.12-1.x86_64.rpm  kmod-ukmd-4.19.12-20212.el7.x86_64.rpm
+$ rpm -ivh *.rpm
+$ vi /etc/default/grub
+Changed to 4.19.12 kernel
+$ grub2-mkconfig -o /boot/grub2/grub.cfg 
+$ sudo reboot
+</code></pre><p>Change the repository using iso:</p>
+<pre><code># mount /dev/sr0 /mnt
+# cat /etc/yum.repos.d/local.repo
+[local]
+name=local
+baseurl=file:///mnt
+enabled=1
+gpgcheck=0
+# yum makecache
+</code></pre><p>Using official <code>install-sg1.sh</code> for installing to 4.19.112 kernel for fetching the dependencies.</p>
+<h3 id="merge-steps">Merge steps</h3>
+<p>安装官方驱动的过程中会编译出相应的文件，需要按照以下步骤进行更改:</p>
+<pre><code># mkdir /root/merge
+# cp /root/rpmbuild/SRPMS/kmod-ukmd-4.19.112-20413.el7.centos.src.rpm /root/merge
+# cd /root/merge
+# mkdir kmod-ukmd-4.19.12.cpio
+# cd kmod-ukmd-4.19.12.cpio
+# rpm2cpio ../kmod-ukmd-4.19.112-20413.el7.centos.src.rpm | cpio -idmv
+# ls
+dg1_dmc_ver2_02.bin  dg1_guc_49.0.1.bin  dg1_huc_7.9.5.bin  kmod.spec  kmod-ukmd-4.19.112.tar.gz
+# tar xzvf kmod-ukmd-4.19.112.tar.gz
+# mv kmod-ukmd-4.19.112 kmod-ukmd-4.19.12
+# vim kmod.spec 
+Change 4.19.112-&gt;4.19.12
+# vim kmod-ukmd-4.19.12/kmod.spec
+Change 4.19.112-&gt;4.19.12
+# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_edid.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
+# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_probe_helper.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
+# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_vblank.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
+# mv kmod-ukmd-4.19.112.tar.gz /tmp
+# tar czvf kmod-ukmd-4.19.12.tar.gz kmod-ukmd-4.19.12
+# rm -rf kmod-ukmd-4.19.12
+# ls
+dg1_dmc_ver2_02.bin  dg1_guc_49.0.1.bin  dg1_huc_7.9.5.bin  kmod.spec  kmod-ukmd-4.19.12.tar.gz
+# cd ..
+# tar czvf kmod-ukmd-4.19.12.cpio.tar.gz kmod-ukmd-4.19.12.cpio
+# ls
+kmod-ukmd-4.19.112-20413.el7.centos.src.rpm  kmod-ukmd-4.19.12.cpio  kmod-ukmd-4.19.12.cpio.tar.gz
+# mv /root/rpmbuild/SOURCES/ /root/rpmbuild/SOURCES.back &amp;&amp; mkdir -p /root/rpmbuild/SOURCES/
+# cp -ar /root/merge/kmod-ukmd-4.19.12.cpio/* /root/rpmbuild/SOURCES
+# cd /root/rpmbuild/SOURCES
+# vim /usr/src/kernels/4.19.12/include/linux/math64.h
+在文件末尾倒数第二行添加
+.....
+    #endif /* mul_u64_u32_div */
+    +++++ #define DIV64_U64_ROUND_UP(ll, d)	\
+    +++++	({ u64 _tmp = (d); div64_u64((ll) + _tmp - 1, _tmp); })
+    
+    #endif /* _LINUX_MATH64_H */
+
+# rpmbuild -bb kmod.spec
+# ls /root/rpmbuild/RPMS/x86_64
+kmod-ukmd-4.19.12-20413.el7.centos.x86_64.rpm
+</code></pre><h3 id="verification">Verification</h3>
+<p>Install any 4.19.12 kernel, test the package  <code>kmod-ukmd-4.19.12-20413.el7.centos.x86_64.rpm</code>.</p>
+<pre><code>$ ls /dev/dri/
+card0  renderD128
+$ lsmod | grep i915
+i915_spi               20480  0 
+mtd                    57344  5 i915_spi
+i915                 1933312  0 
+drm_ukmd_kms_helper   188416  1 i915
+drm_ukmd              495616  3 drm_ukmd_kms_helper,i915
+drm_ukmd_compat        98304  3 drm_ukmd_kms_helper,i915,drm_ukmd
+video                  40960  1 i915
+i2c_algo_bit           16384  1 i915
+cec                    45056  1 i915
+mfd_core               16384  2 lpc_ich,i915
+</code></pre><p>Examine the kernel demsg:</p>
+<pre><code>$ sudo dmesg | grep drm
+[sudo] password for ctctest: 
+[    7.776406] drm: loading out-of-tree module taints kernel.
+[    7.800836] Initialized drm/i915 compat module 20160105
+[    7.892916] [drm] i915 backporting
+[    7.893701] [drm] Intel graphics LMEM: [mem 0x00000000-0x1fb7fffff]
+[    7.893702] [drm] Intel graphics LMEM IO start: a00000000
+[    7.893702] [drm] Intel graphics LMEM size: 1fb800000
+[    7.893714] [drm] Intel graphics stolen LMEM: [mem 0x1fc000000-0x1ffffffff]
+[    7.893714] [drm] Intel graphics stolen LMEM IO start: bfc000000
+[    7.895015] i915 0000:07:00.0: [drm] Couldn't get system memory bandwidth
+[    7.895053] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+[    7.895054] [drm] Driver supports precise vblank timestamp query.
+[    7.971850] i915 0000:07:00.0: [drm] Finished loading DMC firmware i915/dg1_dmc_ver2_02.bin (v2.2)
+[    7.994442] [drm] GuC communication enabled
+[    7.999403] i915 0000:07:00.0: [drm] GuC firmware i915/dg1_guc_49.0.1.bin version 49.0 submission:disabled
+[    7.999405] i915 0000:07:00.0: [drm] HuC firmware i915/dg1_huc_7.9.5.bin version 7.9 authenticated:yes
+[    8.001958] [drm] Initialized i915 1.6.0 20220718-8a58be7 for 0000:07:00.0 on minor 0
+[    8.003950] i915 0000:07:00.0: [drm] Cannot find any crtc or sizes
+</code></pre>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2022/08/26/benchmarkonsg1/">BenchmarkOnSG1</a>
+      </h1>
+      <span class="post-date">Aug 26, 2022 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <p>Start the redroid via:</p>
+<pre><code># docker run -itd --name redroid4cores --memory-swappiness=0 --privileged   -p 5556:5555 --cpuset-cpus 0-3 -v /root/cpus/present:/sys/devices/system/cpu/present -v /root/cpus/online:/sys/devices/system/cpu/online -v /root/cpus/possible:/sys/devices/system/cpu/possible redroid12:latest redroid.fps=120 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD128 androidboot.use_memfd=1
+fe847de1c10fd9f28a358257b1c90c22884535a6d14c8867136bceea77cf140c
+root@ctctest-UniServer-R4900-G3:~# docker exec -it redroid4cores sh
+fe847de1c10f:/ # setprop sys.use_memfd 1 
+</code></pre><p><img src="/images/2022_08_26_11_10_15_585x711.jpg" alt="/images/2022_08_26_11_10_15_585x711.jpg"></p>
+<p>Remove the other 3 socs:</p>
+<pre><code># rm -rf /dev/dri/renderD129 /dev/dri/renderD130 /dev/dri/renderD131 
+# rm -rf /dev/dri/card1 /dev/dri/card2 /dev/dri/card3
+</code></pre><p>Rerun the benchmark, still the same:</p>
+<p><img src="/images/2022_08_26_11_17_06_590x521.jpg" alt="/images/2022_08_26_11_17_06_590x521.jpg"></p>
+<p>Remove the device:</p>
+<pre><code># echo 1 &gt; /sys/bus/pci/devices/0000:b8:00.0/remove
+# echo 1 &gt; /sys/bus/pci/devices/0000:c2:00.0/remove
+# echo 1 &gt; /sys/bus/pci/devices/0000:bd:00.0/remove
+</code></pre><p>System hang.</p>
+<p>Using udev for removing the socs:</p>
+<pre><code># cat /etc/udev/rules.d/removesg1.rules 
+ACTION==&quot;add&quot;, KERNEL==&quot;0000:b8:00.0&quot;, SUBSYSTEM==&quot;pci&quot;, RUN+=&quot;/bin/sh -c 'echo 1 &gt; /sys/bus/pci/devices/0000:b8:00.0/remove'&quot;
+ACTION==&quot;add&quot;, KERNEL==&quot;0000:bd:00.0&quot;, SUBSYSTEM==&quot;pci&quot;, RUN+=&quot;/bin/sh -c 'echo 1 &gt; /sys/bus/pci/devices/0000:bd:00.0/remove'&quot;
+ACTION==&quot;add&quot;, KERNEL==&quot;0000:c2:00.0&quot;, SUBSYSTEM==&quot;pci&quot;, RUN+=&quot;/bin/sh -c 'echo 1 &gt; /sys/bus/pci/devices/0000:c2:00.0/remove'&quot;
+</code></pre><p>Examine the graphical cards:</p>
+<pre><code># lspci | grep -i vga
+0000:05:00.0 VGA compatible controller: ASPEED Technology, Inc. ASPEED Graphics Family (rev 41)
+0000:b3:00.0 VGA compatible controller: Intel Corporation Device 4907 (rev 01)
+</code></pre><p>render nodes:</p>
+<pre><code># ls /dev/dri/
+by-path  card0  renderD128
+# ls /dev/dri/by-path/ -l
+total 0
+lrwxrwxrwx 1 root root  8 8月  26 11:49 pci-0000:b3:00.0-card -&gt; ../card0
+lrwxrwxrwx 1 root root 13 8月  26 11:49 pci-0000:b3:00.0-render -&gt; ../renderD128
+</code></pre><p>Rerun the testing:</p>
+<p><img src="/images/2022_08_26_11_57_38_588x761.jpg" alt="/images/2022_08_26_11_57_38_588x761.jpg"></p>
+<h3 id="another-machine">Another machine</h3>
+<p><img src="/images/2022_08_26_12_21_46_584x203.jpg" alt="/images/2022_08_26_12_21_46_584x203.jpg"></p>
+<p>Turbo boost mode(avd) comparision:</p>
+<p>non-turbo boost</p>
+<p><img src="/images/2022_08_26_12_35_07_372x255.jpg" alt="/images/2022_08_26_12_35_07_372x255.jpg"></p>
+<p>turbo boost(sg1):</p>
+<p><img src="/images/2022_08_26_12_41_30_373x417.jpg" alt="/images/2022_08_26_12_41_30_373x417.jpg"></p>
+<p>Turbo boot (t4):</p>
+<p><img src="/images/2022_08_26_12_48_07_525x494.jpg" alt="/images/2022_08_26_12_48_07_525x494.jpg"></p>
+<p>vnc(best perf mode):</p>
+<p><img src="/images/2022_08_26_15_00_35_589x281.jpg" alt="/images/2022_08_26_15_00_35_589x281.jpg"></p>
+<p>no vnc(best perf mode), no scrcpy:</p>
+<p><img src="/images/2022_08_26_15_06_44_595x985.jpg" alt="/images/2022_08_26_15_06_44_595x985.jpg"></p>
+<p>scrcpy with 15fps:</p>
+<p><img src="/images/2022_08_26_15_22_06_528x261.jpg" alt="/images/2022_08_26_15_22_06_528x261.jpg"></p>
+<p>scrcpy with 5fps:</p>
+<p><img src="/images/2022_08_26_15_27_03_528x285.jpg" alt="/images/2022_08_26_15_27_03_528x285.jpg"></p>
+<p>no scrcpy again:</p>
+<p><img src="/images/2022_08_26_15_31_56_534x261.jpg" alt="/images/2022_08_26_15_31_56_534x261.jpg"></p>
+<p>t4 with scrcpy:</p>
+<p><img src="/images/2022_08_26_15_39_49_1029x473.jpg" alt="/images/2022_08_26_15_39_49_1029x473.jpg"></p>
+<p>ampere t4 with scrcpy:</p>
+<p><img src="/images/2022_08_26_15_49_37_480x918.jpg" alt="/images/2022_08_26_15_49_37_480x918.jpg"></p>
+<p>Performance:</p>
+<pre><code>cpupower frequency-set -g performance
+
+</code></pre><p>ampere t4 without scrcpy:</p>
+<p><img src="/images/2022_08_26_16_58_06_469x380.jpg" alt="/images/2022_08_26_16_58_06_469x380.jpg"></p>
+<p>should upgrade to oibaf?    upgrading to stable.</p>
+<pre><code>sudo add-apt-repository ppa:kisak/kisak-mesa
+sudo apt update
+sudo apt upgrade
+</code></pre><p>Next week, upgrading to 5.19.3</p>
+<p>Even on 5.19.3, benchmark is very bad:</p>
+<p><img src="/images/2022_08_29_11_37_21_502x253.jpg" alt="/images/2022_08_29_11_37_21_502x253.jpg"></p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2022/08/25/sg1onarchlinux2/">SG1OnArchLinux2</a>
+      </h1>
+      <span class="post-date">Aug 25, 2022 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="installation">Installation</h3>
+<p>After install arch system, install packages:</p>
+<pre><code># pacman -S gnome libva-mesa-driver  mesa-demos mesa-utils mesa-vdpau opencl-mesa vulkan-intel vulkan-mesa-layers vulkan-radeon adriconf awesome x11vnc net-tools
+</code></pre><p>List all of the sg socs:</p>
+<pre><code># lspci | grep -i vga
+0000:05:00.0 VGA compatible controller: ASPEED Technology, Inc. ASPEED Graphics Family (rev 41)
+0000:b3:00.0 VGA compatible controller: Intel Corporation SG1 [Server GPU SG-18M] (rev 01)
+0000:b8:00.0 VGA compatible controller: Intel Corporation SG1 [Server GPU SG-18M] (rev 01)
+0000:bd:00.0 VGA compatible controller: Intel Corporation SG1 [Server GPU SG-18M] (rev 01)
+0000:c2:00.0 VGA compatible controller: Intel Corporation SG1 [Server GPU SG-18M] (rev 01)
+</code></pre><p>List all of the render nodes:</p>
+<pre><code># ls /dev/dri/
+by-path  card0	card1  card2  card3  card4  renderD128	renderD129  renderD130	renderD131
+# ls /dev/dri/by-path/ -l
+lrwxrwxrwx 1 root root  8 Aug 25 08:30 pci-0000:05:00.0-card -&gt; ../card0
+lrwxrwxrwx 1 root root  8 Aug 25 08:30 pci-0000:b3:00.0-card -&gt; ../card1
+lrwxrwxrwx 1 root root 13 Aug 25 08:30 pci-0000:b3:00.0-render -&gt; ../renderD128
+lrwxrwxrwx 1 root root  8 Aug 25 08:30 pci-0000:b8:00.0-card -&gt; ../card2
+lrwxrwxrwx 1 root root 13 Aug 25 08:30 pci-0000:b8:00.0-render -&gt; ../renderD129
+lrwxrwxrwx 1 root root  8 Aug 25 08:30 pci-0000:bd:00.0-card -&gt; ../card3
+lrwxrwxrwx 1 root root 13 Aug 25 08:30 pci-0000:bd:00.0-render -&gt; ../renderD130
+lrwxrwxrwx 1 root root  8 Aug 25 08:30 pci-0000:c2:00.0-card -&gt; ../card4
+lrwxrwxrwx 1 root root 13 Aug 25 08:30 pci-0000:c2:00.0-render -&gt; ../renderD131
+</code></pre><h3 id="benchmark">Benchmark</h3>
+<p>Create xorg:</p>
+<pre><code>[root@archsg1 ~]# cat /etc/X11/xorgintel.conf 
+Section &quot;Device&quot;
+    Identifier     &quot;Device[179]&quot;
+    #BusID          &quot;PCI:0@0:179:0&quot;
+    BusID          &quot;PCI:179:0:0&quot;
+    VendorName     &quot;Intel&quot;
+    BoardName      &quot;DG1&quot;
+#    Option &quot;AllowEmptyInitialConfiguration&quot;
+EndSection
+Section &quot;ServerFlags&quot;
+    Option &quot;Debug&quot; &quot;dmabuf_capable&quot;
+EndSection
+# Xorg :179 -config /etc/X11/xorgintel.conf
+</code></pre><p>glmark2:</p>
+<pre><code># export DISPLAY=:179
+[root@archsg1 ~]# glmark2
+=======================================================
+    glmark2 2021.12
+=======================================================
+    OpenGL Information
+    GL_VENDOR:     Intel
+    GL_RENDERER:   Mesa Intel(R) Graphics (SG1)
+    GL_VERSION:    4.6 (Compatibility Profile) Mesa 22.1.6
+=======================================================
+[build] use-vbo=false: FPS: 1825 FrameTime: 0.548 ms
+[build] use-vbo=true: FPS: 2154 FrameTime: 0.464 ms
+[texture] texture-filter=nearest: FPS: 2132 FrameTime: 0.469 ms
+[texture] texture-filter=linear: FPS: 2150 FrameTime: 0.465 ms
+[texture] texture-filter=mipmap: FPS: 2155 FrameTime: 0.464 ms
+[shading] shading=gouraud: FPS: 2047 FrameTime: 0.489 ms
+[shading] shading=blinn-phong-inf: FPS: 2044 FrameTime: 0.489 ms
+[shading] shading=phong: FPS: 2041 FrameTime: 0.490 ms
+[shading] shading=cel: FPS: 2040 FrameTime: 0.490 ms
+[bump] bump-render=high-poly: FPS: 1753 FrameTime: 0.570 ms
+[bump] bump-render=normals: FPS: 2252 FrameTime: 0.444 ms
+[bump] bump-render=height: FPS: 2248 FrameTime: 0.445 ms
+[effect2d] kernel=0,1,0;1,-4,1;0,1,0;: FPS: 1774 FrameTime: 0.564 ms
+[effect2d] kernel=1,1,1,1,1;1,1,1,1,1;1,1,1,1,1;: FPS: 1764 FrameTime: 0.567 ms
+[pulsar] light=false:quads=5:texture=false: FPS: 1880 FrameTime: 0.532 ms
+[desktop] blur-radius=5:effect=blur:passes=1:separable=true:windows=4: FPS: 1221 FrameTime: 0.819 ms
+[desktop] effect=shadow:windows=4: FPS: 1425 FrameTime: 0.702 ms
+[buffer] columns=200:interleave=false:update-dispersion=0.9:update-fraction=0.5:update-method=map: FPS: 384 FrameTime: 2.604 ms
+[buffer] columns=200:interleave=false:update-dispersion=0.9:update-fraction=0.5:update-method=subdata: FPS: 1136 FrameTime: 0.880 ms
+[buffer] columns=200:interleave=true:update-dispersion=0.9:update-fraction=0.5:update-method=map: FPS: 481 FrameTime: 2.079 ms
+[ideas] speed=duration: FPS: 1672 FrameTime: 0.598 ms
+[jellyfish] &lt;default&gt;: FPS: 1423 FrameTime: 0.703 ms
+[terrain] &lt;default&gt;: FPS: 435 FrameTime: 2.299 ms
+[shadow] &lt;default&gt;: FPS: 1719 FrameTime: 0.582 ms
+[refract] &lt;default&gt;: FPS: 924 FrameTime: 1.082 ms
+[conditionals] fragment-steps=0:vertex-steps=0: FPS: 1906 FrameTime: 0.525 ms
+[conditionals] fragment-steps=5:vertex-steps=0: FPS: 1904 FrameTime: 0.525 ms
+[conditionals] fragment-steps=0:vertex-steps=5: FPS: 1904 FrameTime: 0.525 ms
+[function] fragment-complexity=low:fragment-steps=5: FPS: 1905 FrameTime: 0.525 ms
+[function] fragment-complexity=medium:fragment-steps=5: FPS: 1903 FrameTime: 0.525 ms
+[loop] fragment-loop=false:fragment-steps=5:vertex-steps=5: FPS: 1903 FrameTime: 0.525 ms
+[loop] fragment-steps=5:fragment-uniform=false:vertex-steps=5: FPS: 1904 FrameTime: 0.525 ms
+[loop] fragment-steps=5:fragment-uniform=true:vertex-steps=5: FPS: 1902 FrameTime: 0.526 ms
+=======================================================
+                                  glmark2 Score: 1706 
+=======================================================
+</code></pre><h3 id="kernel-change">Kernel change</h3>
+<p>Building kernel will takes more than 30 minutes&hellip;..
+Before makepkg, change the <code>-j</code> items in order to use maximum hardware capability.<br>
+Install asp for building kernel:</p>
+<pre><code># pacman -S base-devel asp
+# asp checkout linux-zen
+# vim repos/extra-x86_64/config
+CONFIG_ANDROID_BINDER_DEVICES=&quot;binder,hwbinder,vndbinder&quot;
+
+# cd repos/extra-x86_64
+$ ls
+config  keys  PKGBUILD
+$ makepkg --clean --syncdeps --rmdeps
+
+</code></pre><h3 id="docker-binding-cpus">Docker binding cpus</h3>
+<p>Create the cpu cores definition file:</p>
+<pre><code>[root@archsg1 cpus]# cp present possible
+[root@archsg1 cpus]# cp present online
+[root@archsg1 cpus]# cat present 
+0-3
+
+</code></pre><p>Run with:</p>
+<pre><code>docker run -itd --name redroid4cores --memory-swappiness=0 --privileged   -p 5556:5555 --cpuset-cpus 0-3 -v /root/cpus/present:/sys/devices/system/cpu/present -v /root/cpus/online:/sys/devices/system/cpu/online -v /root/cpus/possible:/sys/devices/system/cpu/possible redroid12:latest redroid.fps=120 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD128 androidboot.use_memfd=1
+
+</code></pre><p>with lxcfs:</p>
+<pre><code> docker run -itd --name numa1 --memory-swappiness=0 --privileged   -p 5557:5555 -m 8192m --cpus=8 --cpuset-cpus=&quot;80-87&quot; --cpuset-mems=&quot;1&quot; --memory=&quot;8192M&quot; -v /root/cpus1/present:/sys/devices/system/cpu/present -v /root/cpus1/online:/sys/devices/system/cpu/online -v /root/cpus1/possible:/sys/devices/system/cpu/possible -v /var/lib/lxcfs/proc/cpuinfo:/proc/cpuinfo:rw -v /var/lib/lxcfs/proc/diskstats:/proc/diskstats:rw  -v /var/lib/lxcfs/proc/meminfo:/proc/meminfo:rw -v /var/lib/lxcfs/proc/uptime:/proc/uptime:rw -v /var/lib/lxcfs/proc/stat:/proc/stat:rw redroid12:latest redroid.fps=120 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD130 androidboot.use_memfd=1
+
+</code></pre><p>Limite memory:</p>
+<pre><code>root@sg1desktopubuntu2004:~# free -g
+              total        used        free      shared  buff/cache   available
+Mem:             60           7          52           0           0          52
+Swap:             1           0           1
+root@sg1desktopubuntu2004:~# cat /proc/cmdline 
+BOOT_IMAGE=/boot/vmlinuz-5.19.3-051903-generic root=UUID=c255524f-5692-457c-a0b6-d465e0b32707 ro quiet splash i915.force_probe=* modprobe.blacklist=ast,snd_hda_intel i915.enable_guc=2 drm_kms_helper.edid_firmware=edid/1920x1080.bin video=HDMI-A-1:e video=HDMI-A-5:e video=HDMI-A-9:e video=HDMI-A-13:e mem=65535M
+</code></pre>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2022/08/24/rebuildppakernelimages/">RebuildPPAKernelImages</a>
+      </h1>
+      <span class="post-date">Aug 24, 2022 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="ppa-kernel">ppa kernel</h3>
+<p>Install ppa kernel on ubuntu20.04 via:</p>
+<pre><code>add-apt-repository ppa:tuxinvader/lts-mainline -y
+apt update -y
+apt-get install -y linux-generic-5.19
+</code></pre><p>After reboot, check the kernel via:</p>
+<pre><code># uname -r
+5.19.3-051903-generic
+</code></pre><h3 id="customization-of-kernel">Customization of Kernel</h3>
+<p>uncomment the <code>deb-src</code>for ppa:</p>
+<pre><code># cat /etc/apt/sources.list.d/tuxinvader-ubuntu-lts-mainline-focal.list 
+deb http://ppa.launchpad.net/tuxinvader/lts-mainline/ubuntu focal main
+deb-src http://ppa.launchpad.net/tuxinvader/lts-mainline/ubuntu focal main
+# apt update
+</code></pre><p>Get the source code:</p>
+<pre><code># apt install linux-source-5.19.3
+# ls /usr/src/linux-source-5.19.3/
+debian  debian.master  linux-source-5.19.3.tar.bz2
+</code></pre><p>Get the build-dep for kernel:</p>
+<pre><code># apt build-dep linux-generic-5.19
+# apt build-dep linux-doc
+</code></pre><p>Prepare the build tree:</p>
+<pre><code># cd /usr/src/linux-source
+# bunzip2 linux-source-5.19.3.tar.bz2
+# tar xf linux-source-5.19.3.tar
+# mv linux-source-5.19.3/* .
+# mkdir debian/stamps
+</code></pre><p>Build via:</p>
+<pre><code># fakeroot debian/rules clean
+# fakeroot debian/rules editconfigs
+# fakeroot debian/rules binary-headers binary-generic binary-perarch
+</code></pre><p>build will take sometimes, so drink a cup of H~~~ot tea and wait.</p>
+<p>Check the built result:</p>
+<pre><code># ls /usr/src/*.deb
+/usr/src/linux-buildinfo-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
+/usr/src/linux-headers-5.19.3-051903_5.19.3-051903.202208220846_all.deb
+/usr/src/linux-headers-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
+/usr/src/linux-image-unsigned-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
+/usr/src/linux-modules-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
+</code></pre><h3 id="benchmark">Benchmark</h3>
+<p>glmark2 result:</p>
+<pre><code># uname -r
+5.19.3-051903-generic
+# export DISPLAY=:179
+# glmark2
+=======================================================
+    glmark2 2021.02
+=======================================================
+    OpenGL Information
+    GL_VENDOR:     Intel
+    GL_RENDERER:   Mesa Intel(R) Graphics (SG1)
+    GL_VERSION:    4.6 (Compatibility Profile) Mesa 22.2.0-devel (git-e8fc5cc 2022-06-22 focal-oibaf-ppa)
+=======================================================
+.........
+=======================================================
+                                  glmark2 Score: 2886 
+=======================================================
+</code></pre>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="http://purplepalmdash.github.io/blog/2022/08/23/sg1benchmark/">SG1Benchmark</a>
+      </h1>
+      <span class="post-date">Aug 23, 2022 
+      
+      
+      <br/>
+      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+        
+      </span>
+      
+      <h3 id="environment">Environment</h3>
+<p>Before upgrading the mesa:</p>
+<pre><code>root@sg1ubuntuzen:/home/intel# dpkg -l | grep mesa
+ii  libegl-mesa0:amd64                         21.2.6-0ubuntu0.1~20.04.2             amd64        free implementation of the EGL API -- Mesa vendor library
+ii  libgl1-mesa-dri:amd64                      21.2.6-0ubuntu0.1~20.04.2             amd64        free implementation of the OpenGL API -- DRI modules
+ii  libglapi-mesa:amd64                        21.2.6-0ubuntu0.1~20.04.2             amd64        free implementation of the GL API -- shared library
+ii  libglu1-mesa:amd64                         9.0.1-1build1                         amd64        Mesa OpenGL utility library (GLU)
+ii  libglx-mesa0:amd64                         21.2.6-0ubuntu0.1~20.04.2             amd64        free implementation of the OpenGL API -- GLX vendor library
+ii  mesa-vulkan-drivers:amd64                  21.2.6-0ubuntu0.1~20.04.2             amd64        Mesa Vulkan graphics drivers
+root@sg1ubuntuzen:/home/intel# uname -a
+Linux sg1ubuntuzen 5.19.3-zen-3c77c0f552c7+ #1 ZEN SMP PREEMPT_DYNAMIC Mon Aug 22 14:00:01 CST 2022 x86_64 x86_64 x86_64 GNU/Linu
+</code></pre><p>Ludashi:</p>
+<p><img src="/images/2022_08_23_09_52_38_1051x926.jpg" alt="/images/2022_08_23_09_52_38_1051x926.jpg"></p>
+<p>Detailed result:</p>
+<p><img src="/images/2022_08_23_09_52_55_995x236.jpg" alt="/images/2022_08_23_09_52_55_995x236.jpg"></p>
+<p>Second result:</p>
+<p><img src="/images/2022_08_23_09_57_44_1050x344.jpg" alt="/images/2022_08_23_09_57_44_1050x344.jpg"></p>
+<p>glmark2 result:</p>
+<pre><code>root@sg1ubuntuzen:/home/intel# export DISPLAY=:179
+root@sg1ubuntuzen:/home/intel# glmark2
+** GLX does not support GLX_EXT_swap_control or GLX_MESA_swap_control!
+** Failed to set swap interval. Results may be bounded above by refresh rate.
+=======================================================
+    glmark2 2021.02
+=======================================================
+    OpenGL Information
+    GL_VENDOR:     Mesa/X.org
+    GL_RENDERER:   llvmpipe (LLVM 12.0.0, 256 bits)
+    GL_VERSION:    3.1 Mesa 21.2.6
+=======================================================
+** GLX does not support GLX_EXT_swap_control or GLX_MESA_swap_control!
+** Failed to set swap interval. Results may be bounded above by refresh rate.
+[build] use-vbo=false:^C
+</code></pre><h3 id="upgrade-mesa">Upgrade mesa</h3>
+<p>Methods:</p>
+<pre><code>sudo add-apt-repository ppa:oibaf/graphics-drivers
+sudo apt update
+sudo apt upgrade
+</code></pre><p>mesa infos:</p>
+<pre><code>root@sg1ubuntuzen:/home/intel# dpkg -l | grep -i mesa
+ii  libegl-mesa0:amd64                         22.2~git2206220600.e8fc5c~oibaf~f     amd64        free implementation of the EGL API -- Mesa vendor library
+ii  libgl1-mesa-dri:amd64                      22.2~git2206220600.e8fc5c~oibaf~f     amd64        free implementation of the OpenGL API -- DRI modules
+ii  libglapi-mesa:amd64                        22.2~git2206220600.e8fc5c~oibaf~f     amd64        free implementation of the GL API -- shared library
+ii  libglu1-mesa:amd64                         9.0.1-1build1                         amd64        Mesa OpenGL utility library (GLU)
+ii  libglx-mesa0:amd64                         22.2~git2206220600.e8fc5c~oibaf~f     amd64        free implementation of the OpenGL API -- GLX vendor library
+ii  mesa-vulkan-drivers:amd64                  22.2~git2206220600.e8fc5c~oibaf~f     amd64        Mesa Vulkan graphics drivers
+</code></pre><p>glmark2 result:</p>
+<pre><code># glmark2
+=======================================================
+    glmark2 2021.02
+=======================================================
+    OpenGL Information
+    GL_VENDOR:     Intel
+    GL_RENDERER:   Mesa Intel(R) Graphics (SG1)
+    GL_VERSION:    4.6 (Compatibility Profile) Mesa 22.2.0-devel (git-e8fc5cc 2022-06-22 focal-oibaf-ppa)
+=======================================================
+[build] use-vbo=false: FPS: 2485 FrameTime: 0.402 ms
+[build] use-vbo=true: FPS: 3636 FrameTime: 0.275 ms
+[texture] texture-filter=nearest: FPS: 3686 FrameTime: 0.271 ms
+[texture] texture-filter=linear: FPS: 3559 FrameTime: 0.281 ms
+[texture] texture-filter=mipmap: FPS: 3566 FrameTime: 0.280 ms
+[shading] shading=gouraud: FPS: 3408 FrameTime: 0.293 ms
+[shading] shading=blinn-phong-inf: FPS: 3243 FrameTime: 0.308 ms
+[shading] shading=phong: FPS: 3339 FrameTime: 0.299 ms
+[shading] shading=cel: FPS: 2886 FrameTime: 0.347 ms
+[bump] bump-render=high-poly: FPS: 2402 FrameTime: 0.416 ms
+[bump] bump-render=normals: FPS: 3683 FrameTime: 0.272 ms
+[bump] bump-render=height: FPS: 3702 FrameTime: 0.270 ms
+[effect2d] kernel=0,1,0;1,-4,1;0,1,0;: FPS: 3085 FrameTime: 0.324 ms
+[effect2d] kernel=1,1,1,1,1;1,1,1,1,1;1,1,1,1,1;: FPS: 2311 FrameTime: 0.433 ms
+[pulsar] light=false:quads=5:texture=false: FPS: 3521 FrameTime: 0.284 ms
+[desktop] blur-radius=5:effect=blur:passes=1:separable=true:windows=4: FPS: 2026 FrameTime: 0.494 ms
+[desktop] effect=shadow:windows=4: FPS: 2605 FrameTime: 0.384 ms
+[buffer] columns=200:interleave=false:update-dispersion=0.9:update-fraction=0.5:update-method=map: FPS: 601 FrameTime: 1.664 ms
+[buffer] columns=200:interleave=false:update-dispersion=0.9:update-fraction=0.5:update-method=subdata: FPS: 1237 FrameTime: 0.808 ms
+[buffer] columns=200:interleave=true:update-dispersion=0.9:update-fraction=0.5:update-method=map: FPS: 637 FrameTime: 1.570 ms
+[ideas] speed=duration: FPS: 2594 FrameTime: 0.386 ms
+[jellyfish] &lt;default&gt;: FPS: 2947 FrameTime: 0.339 ms
+[terrain] &lt;default&gt;: FPS: 531 FrameTime: 1.883 ms
+[shadow] &lt;default&gt;: FPS: 2982 FrameTime: 0.335 ms
+[refract] &lt;default&gt;: FPS: 1276 FrameTime: 0.784 ms
+[conditionals] fragment-steps=0:vertex-steps=0: FPS: 3301 FrameTime: 0.303 ms
+[conditionals] fragment-steps=5:vertex-steps=0: FPS: 3383 FrameTime: 0.296 ms
+[conditionals] fragment-steps=0:vertex-steps=5: FPS: 3302 FrameTime: 0.303 ms
+[function] fragment-complexity=low:fragment-steps=5: FPS: 3402 FrameTime: 0.294 ms
+[function] fragment-complexity=medium:fragment-steps=5: FPS: 3435 FrameTime: 0.291 ms
+[loop] fragment-loop=false:fragment-steps=5:vertex-steps=5: FPS: 3280 FrameTime: 0.305 ms
+[loop] fragment-steps=5:fragment-uniform=false:vertex-steps=5: FPS: 3423 FrameTime: 0.292 ms
+[loop] fragment-steps=5:fragment-uniform=true:vertex-steps=5: FPS: 3431 FrameTime: 0.291 ms
+=======================================================
+                                  glmark2 Score: 2815 
+=======================================================
+</code></pre><h3 id="avd-benchmark">avd benchmark</h3>
+<p>Result(with x11vnc on):</p>
+<p><img src="/images/2022_08_23_11_17_35_422x832.jpg" alt="/images/2022_08_23_11_17_35_422x832.jpg"></p>
+<p>Without x11vnc:</p>
+<p><img src="/images/2022_08_23_11_22_04_390x804.jpg" alt="/images/2022_08_23_11_22_04_390x804.jpg"></p>
+<h3 id="kernel-upgrading">Kernel upgrading</h3>
+<p>vfio in linux-zen, performance is bad.</p>
+<pre><code># git clone git://mirrors.ustc.edu.cn/linux.git
+# cd linux/
+# git checkout tags/v5.19.3 -b 5.19.3
+</code></pre><p>To be continued</p>
+
+      
+    </div>
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/page/2/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/4/">4</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/221/">221</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/4/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/221/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+  </div>
+</div>
+
+
+<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

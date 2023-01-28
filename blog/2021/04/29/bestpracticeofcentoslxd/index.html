@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>BestPracticeOfCentOSLXD &middot; Dash</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/html2canvas.js"></script>
+  <script type='text/javascript'>
+  function genPostShot() { 
+          var rightNow = new Date();
+          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
+          imageName += '.jpg'
+          html2canvas(document.getElementsByClassName('post'), {
+              background :'#FFFFFF',
+              onrendered: function(canvas) {
+  		
+          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
+          	$('#test').attr('download',imageName);
+          	$('#test')[0].click();
+              }
+          });
+  }; 
+  
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
+  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+
+  
+  
+  
+  
+  <meta name="description" content="BestPracticeOfCentOSLXD">
+  <meta name="keywords" content="Technology">
+  
+  
+</head>
+<body class="theme-base-0c">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
+      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
+      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
+    </div>
+
+    <ul class="sidebar-nav">
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
+      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
+      
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>BestPracticeOfCentOSLXD</h1>
+    <p align="right">
+    <a href="javascript:genPostShot()">
+	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
+    </a>
+    <a id="test"></a>
+    </p>
+    <hr>
+    <span class="post-date">Apr 29, 2021 
+    
+    <br/>
+    
+          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+      
+      
+
+    
+    </span>
+      <div id="_toc" class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-文档目的">1. 文档目的</a></li>
+        <li><a href="#2-环境准备">2. 环境准备</a></li>
+        <li><a href="#3-环境搭建">3. 环境搭建</a></li>
+        <li><a href="#4-lxc操作实练">4. lxc操作实练</a></li>
+        <li><a href="#5-资源隔离">5. 资源隔离</a></li>
+        <li><a href="#z-定制化">z. 定制化</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    <h3 id="1-文档目的">1. 文档目的</h3>
+<p>文档旨在针对在CentOS 7操作系统上安装、配置及运行LXD提供最佳实践。</p>
+<h3 id="2-环境准备">2. 环境准备</h3>
+<p>基于快速验证的目的，本文档基于虚拟机搭建，验证机配置如下:</p>
+<ul>
+<li>操作系统： <code>CentOS Linux release 7.6.1810 (Core) </code>, 最小化安装</li>
+<li>硬件配置: 36核心，246GB内存， 500G磁盘分区</li>
+<li>软件配置:</li>
+<li>网络配置: 192.168.100.10/24, 网关192.168.100.1</li>
+</ul>
+<p>访问方式(这里提供如何从办公网络直达验证机)</p>
+<h3 id="3-环境搭建">3. 环境搭建</h3>
+<p>离线情况下，配置内网源后，执行以下命令安装:</p>
+<pre><code># yum install -y snapd net-tools vim
+# systemctl enable --now snapd.socket
+</code></pre><p>解压离线安装文件:</p>
+<pre><code># tar xzvf lxcimages.tar.gz ; tar xzvf snap.tar.gz
+</code></pre><p>进入到snap目录下安装snap:</p>
+<pre><code># snap ack core_10958.assert ; snap ack core18_1997.assert; snap ack lxd_20211.assert
+# snap install core_10958.snap; snap install core18_1997.snap; snap install lxd_20211.snap
+</code></pre><p>更改内核参数后，重启机器:</p>
+<pre><code>$ grubby --args=&quot;user_namespace.enable=1&quot; --update-kernel=&quot;$(grubby --default-kernel)&quot;
+$ grubby --args=&quot;namespace.unpriv_enable=1&quot; --update-kernel=&quot;$(grubby --default-kernel)&quot;
+$ sudo sh -c 'echo &quot;user.max_user_namespaces=3883&quot; &gt; /etc/sysctl.d/99-userns.conf'
+# reboot
+</code></pre><p>创建snap目录并添加运行权限:</p>
+<pre><code># ln -s /var/lib/snapd/snap /snap
+# usermod -a -G lxd roo
+# newgrp lxd
+# id
+uid=0(root) gid=994(lxd) groups=994(lxd),0(root)
+</code></pre><p>此时需要退出终端后重新登录终端，方可使用<code>lxc</code>相关命令.</p>
+<p>初始化<code>lxd</code>环境:</p>
+<pre><code>[root@lxdpaas ~]# lxd init
+Would you like to use LXD clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (btrfs, dir, lvm, ceph) [default=btrfs]: dir
+Would you like to connect to a MAAS server? (yes/no) [default=no]: 
+Would you like to create a new local network bridge? (yes/no) [default=yes]: 
+What should the new bridge be called? [default=lxdbr0]: 
+What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+Would you like the LXD server to be available over the network? (yes/no) [default=no]: 
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes] 
+Would you like a YAML &quot;lxd init&quot; preseed to be printed? (yes/no) [default=no]: 
+</code></pre><p>此时应无任何镜像，接下来手动导入镜像:</p>
+<pre><code># cd lxcimages
+# lxc image  import meta-50030de846c046680faf34f7dc3e60284e31f5aab38dfd19c94a2fd1bf895d0c.tar.xz 50030de846c046680faf34f7dc3e60284e31f5aab38dfd19c94a2fd1bf895d0c.squashfs --alias centos7
+Image imported with fingerprint: 50030de846c046680faf34f7dc3e60284e31f5aab38dfd19c94a2fd1bf895d0c
+# lxc image list
++---------+--------------+--------+----------------------------------+--------------+-----------+---------+------------------------------+
+|  ALIAS  | FINGERPRINT  | PUBLIC |           DESCRIPTION            | ARCHITECTURE |   TYPE    |  SIZE   |         UPLOAD DATE          |
++---------+--------------+--------+----------------------------------+--------------+-----------+---------+------------------------------+
+| centos7 | 50030de846c0 | no     | Centos 7 x86_64 (20210428_07:08) | x86_64       | CONTAINER | 83.46MB | Apr 29, 2021 at 4:53am (UTC) |
++---------+--------------+--------+----------------------------------+--------------+-----------+---------+------------------------------+
+
+</code></pre><h3 id="4-lxc操作实练">4. lxc操作实练</h3>
+<p>启动一个lxc 实例:</p>
+<pre><code># lxc launch centos7 db1
+Creating db1
+Starting db1              
+</code></pre><p>进入运行中的实例:</p>
+<pre><code># lxc exec db1 bash
+[root@db1 ~]# cat /etc/redhat-release 
+CentOS Linux release 7.9.2009 (Core)
+</code></pre><p>启动第二个名为<code>db2</code>的实例：</p>
+<pre><code>[root@lxdpaas lxcimages]# lxc launch centos7 db2
+Creating db2
+Starting db2                              
+[root@lxdpaas lxcimages]# lxc exec db2 bash
+[root@db2 ~]#
+</code></pre><p>查看运行中的容器实例:</p>
+<pre><code># lxc ls
++------+---------+-----------------------+----------------------------------------------+-----------+-----------+
+| NAME |  STATE  |         IPV4          |                     IPV6                     |   TYPE    | SNAPSHOTS |
++------+---------+-----------------------+----------------------------------------------+-----------+-----------+
+| db1  | RUNNING | 10.159.107.72 (eth0)  | fd42:45a:636c:6e69:216:3eff:fe81:347e (eth0) | CONTAINER | 0         |
++------+---------+-----------------------+----------------------------------------------+-----------+-----------+
+| db2  | RUNNING | 10.159.107.125 (eth0) | fd42:45a:636c:6e69:216:3eff:fe53:754 (eth0)  | CONTAINER | 0         |
++------+---------+-----------------------+----------------------------------------------+-----------+-----------+
+</code></pre><p>停止/删除运行中的容器:</p>
+<pre><code>[root@lxdpaas lxcimages]# lxc stop db1
+[root@lxdpaas lxcimages]# lxc stop db2
+[root@lxdpaas lxcimages]# lxc delete db1
+[root@lxdpaas lxcimages]# lxc delete db2
+[root@lxdpaas lxcimages]# lxc ls
++------+-------+------+------+------+-----------+
+| NAME | STATE | IPV4 | IPV6 | TYPE | SNAPSHOTS |
++------+-------+------+------+------+-----------+
+</code></pre><p>定制化:</p>
+<pre><code># lxc launch c75dhclient k2
+# lxc exec k2 /bin/bash
+dhclient eth0
+vi /etc/yum.repos.d/kkk.repo
+yum makecache
+yum install -y vim net-tools
+exit
+# lxc ls | grep k2
+| k2   | RUNNING | 10.159.107.248 (eth0) | fd42:45a:636c:6e69:216:3eff:fea0:2c33 (eth0) | CONTAINER | 0         |
+</code></pre><p>导出当前镜像：</p>
+<pre><code>[root@lxdpaas ~]# mkdir export
+[root@lxdpaas ~]# cd export/
+[root@lxdpaas export]# lxc stop k2
+[root@lxdpaas export]# lxc publish k2 --alias centos75withvim
+Instance published with fingerprint: 7301c7d85d4d56ebcae117aa79cf88868c4821dedb22e641fe66d05cab6599f2
+[root@lxdpaas export]# lxc image list
++-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
+|      ALIAS      | FINGERPRINT  | PUBLIC |           DESCRIPTION            | ARCHITECTURE |   TYPE    |   SIZE   |         UPLOAD DATE          |
++-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
+| c75dhclient     | 3a063c11b987 | no     |                                  | x86_64       | CONTAINER | 381.84MB | Apr 29, 2021 at 8:06am (UTC) |
++-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
+| centos7         | 50030de846c0 | no     | Centos 7 x86_64 (20210428_07:08) | x86_64       | CONTAINER | 83.46MB  | Apr 29, 2021 at 4:53am (UTC) |
++-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
+| centos75withvim | 7301c7d85d4d | no     |                                  | x86_64       | CONTAINER | 420.72MB | Apr 29, 2021 at 8:23am (UTC) |
++-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
+[root@lxdpaas export]# lxc image export centos75withvim .
+Image exported successfully!           
+[root@lxdpaas export]# ls
+7301c7d85d4d56ebcae117aa79cf88868c4821dedb22e641fe66d05cab6599f2.tar.gz
+</code></pre><p>测试:</p>
+<pre><code># lxc launch centos75withvim test1
+Creating test1
+Starting test1                             
+[root@lxdpaas export]# lxc exec test1 /bin/bash
+[root@base ~]# dhclient eth0
+[root@base ~]# which vim
+/usr/bin/vim
+[root@base ~]# which ifconfig
+/usr/sbin/ifconfig
+
+</code></pre><p>有关数据库的更改:</p>
+<pre><code> yum install -y mariadb-server
+ systemctl enable mariadb
+</code></pre><h3 id="5-资源隔离">5. 资源隔离</h3>
+<p>制作benchmark容器:</p>
+<pre><code>$ lxc launch centos7 bench -c security.privileged=true
+
+	# yum install -y epel-release; yum install -y stress
+	# yum install which
+	# which stress
+        # shutdown -h now
+$ lxc publish bench --alias bench
+$ lxc launch bench k1
+$ lxc exec k1 /bin/bash
+    stress --cpu 5
+</code></pre><p>此时可以看到，宿主机上的5个cpu跑满：</p>
+<p><img src="/images/2021_04_29_17_55_21_884x154.jpg" alt="/images/2021_04_29_17_55_21_884x154.jpg"></p>
+<p>设置CPU限制:</p>
+<pre><code># lxc config set  bench limits.cpu 2
+</code></pre><p>即便容器中的进程未变，但是主机上可以看到，只有两个CPU跑满:</p>
+<p><img src="/images/2021_04_29_17_56_10_898x161.jpg" alt="/images/2021_04_29_17_56_10_898x161.jpg"></p>
+<p>对内存的使用规则是同样的。</p>
+<h3 id="z-定制化">z. 定制化</h3>
+<p>为了适配用户习惯，做了以下修改:</p>
+<pre><code># yum install -y mate-desktop xrdp mate* gnome-terminal firefox wqy* evince
+# echo mate-session&gt;/root/.Xclients
+# chmod 777 /root/.Xclients
+# systemctl start xrdp
+# systemctl enable xrdp
+</code></pre><p>外部需要做iptables转发:</p>
+<pre><code>$ sudo iptables -D FORWARD -o virbr0 -j REJECT --reject-with icmp-port-unreachable
+$ sudo iptables -D FORWARD -i virbr0 -j REJECT --reject-with icmp-port-unreachable
+$ sudo iptables -t nat -A PREROUTING -p tcp --dport 13389 -j DNAT --to-destination  192.168.100.10:3389
+$ sudo iptables -t nat -A POSTROUTING -p tcp -d 192.168.100.10 --dport 3389 -j SNAT --to-source 10.50.208.147
+</code></pre><p>外部的centos7机器上，因为升级了内核的关系，需要用如下命令开始运行:</p>
+<pre><code>lxc launch images:centos/7 blah -c security.privileged=true
+</code></pre><p>当前制作的centos7.5容器似乎不能满足lxc的功能?</p>
+
+  </div>
+  
+</div>
+
+
+
+
+
+
+<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>LeetCodeTips1 &middot; Dash</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
+  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/html2canvas.js"></script>
+  <script type='text/javascript'>
+  function genPostShot() { 
+          var rightNow = new Date();
+          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
+          imageName += '.jpg'
+          html2canvas(document.getElementsByClassName('post'), {
+              background :'#FFFFFF',
+              onrendered: function(canvas) {
+  		
+          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
+          	$('#test').attr('download',imageName);
+          	$('#test')[0].click();
+              }
+          });
+  }; 
+  
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
+  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+
+  
+  
+  
+  
+  <meta name="description" content="LeetCode Problems">
+  <meta name="keywords" content="LeetCode">
+  
+  
+</head>
+<body class="theme-base-0c">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
+      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
+      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
+    </div>
+
+    <ul class="sidebar-nav">
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
+      
+      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
+      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
+      
+      </li>
+    </ul>
+
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>LeetCodeTips1</h1>
+    <p align="right">
+    <a href="javascript:genPostShot()">
+	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
+    </a>
+    <a id="test"></a>
+    </p>
+    <hr>
+    <span class="post-date">Oct 9, 2016 
+    
+    <br/>
+    
+          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
+      
+      
+
+    
+    </span>
+      <div id="_toc" class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-two-sum">1. Two Sum</a></li>
+        <li><a href="#2-add-two-numbers">2. Add Two Numbers</a></li>
+        <li><a href="#longest-substr">Longest substr</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    <p>又到了一年一度的跳Cao准备期间了，来刷刷LeetCode，提升一下编程技巧，准备可能的鄙视或者是
+被鄙视。</p>
+<h3 id="1-two-sum">1. Two Sum</h3>
+<p>问题: <br>
+给定一个整型数组，编写一函数，返回值为两个数组的下标，两个下标所在的数组元素相加的和为
+给定的数值。例如:</p>
+<pre><code>给定 nums = [2,7,11,15], targe = 9,     
+因为nums[0] + nums[1] = 2 + 7 = 9,
+返回的数组应为[0, 1].
+</code></pre><h4 id="c语言版">C语言版</h4>
+<p>用C语言我的解决方案如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/* Given nums = [2, 7, 11, 15], target = 9,
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * Because nums[0] + nums[1] = 2 + 7 = 9,
+</span><span style="color:#75715e"> * return [0, 1].
+</span><span style="color:#75715e"> */</span>
+
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Note: The returned array must be malloced, assume caller calls free().
+</span><span style="color:#75715e"> */</span>
+
+<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">twoSum</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums, <span style="color:#66d9ef">int</span> numsSize, <span style="color:#66d9ef">int</span> target) {
+	<span style="color:#66d9ef">int</span> i, j;
+
+	<span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> numsSize; i<span style="color:#f92672">++</span>)
+	{
+		<span style="color:#66d9ef">for</span>(j <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> numsSize; j<span style="color:#f92672">++</span>)
+		{
+			<span style="color:#66d9ef">if</span>(nums[i] <span style="color:#f92672">+</span> nums[j] <span style="color:#f92672">==</span> target)
+			{
+				<span style="color:#75715e">// Call malloc() for return value.
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> returnArray <span style="color:#f92672">=</span> malloc(<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+				returnArray[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> i;
+				returnArray[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> j;
+				<span style="color:#66d9ef">return</span> returnArray;
+			}
+		}
+	}
+	<span style="color:#75715e">// Not found, comes here.
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> NULL;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
+{
+	<span style="color:#66d9ef">int</span> nums[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">15</span>};
+
+	<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>result <span style="color:#f92672">=</span> twoSum(nums, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>);
+	<span style="color:#66d9ef">if</span>(result <span style="color:#f92672">!=</span> NULL)
+	{
+	        printf(<span style="color:#e6db74">&#34;result is %d, %d </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, result[<span style="color:#ae81ff">0</span>], result[<span style="color:#ae81ff">1</span>]);
+	}
+
+	<span style="color:#75715e">// Call malloc in function twoSum(), so now will call free()
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span>(result <span style="color:#f92672">!=</span> NULL)
+	{
+	        free(result);
+	}
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+</code></pre></div><p>心得1: malloc()/free()的调用需要在不同函数体中进行，因而可能存在内存泄漏的风险，使用
+valgrind来检测可以看到，有两次请求两次释放动作，并没有内存泄漏:</p>
+<pre><code>$ valgrind -v --leak-check=full ./TwoSum
+......
+==3283== HEAP SUMMARY:
+==3283==     in use at exit: 0 bytes in 0 blocks
+==3283==   total heap usage: 2 allocs, 2 frees, 1,032 bytes allocated
+==3283== 
+==3283== All heap blocks were freed -- no leaks are possible
+==3283== 
+==3283== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==3283== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+</code></pre><p>心得2: 算法复杂度为O(n^2)， 因为有嵌套的for()循环. 官方给出的有通过哈希来做的，在C语言
+中内建数据类型并不包括map，因而在后面用python来实现。</p>
+<p>心得3: 对函数的返回值需要检测，如free()掉一个NULL的地址。StackOverFlow上关于free(NULL)
+的讨论如下： <br>
+<a href="http://stackoverflow.com/questions/1938735/does-freeptr-where-ptr-is-null-corrupt-memory">http://stackoverflow.com/questions/1938735/does-freeptr-where-ptr-is-null-corrupt-memory</a></p>
+<p>看起来也不会有什么严重的后果。</p>
+<h4 id="python版">Python版</h4>
+<p>自己写的Python版本实现如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">twoSum</span>(self, nums, target):
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        :type nums: List[int]
+</span><span style="color:#e6db74">        :type target: int
+</span><span style="color:#e6db74">        :rtype: List[int]
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        returnvalue <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> num <span style="color:#f92672">in</span> nums:
+            <span style="color:#66d9ef">for</span> left <span style="color:#f92672">in</span> nums[nums<span style="color:#f92672">.</span>index(num)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:]:
+                <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">+</span> left <span style="color:#f92672">==</span> target):
+                    returnvalue<span style="color:#f92672">.</span>append(nums<span style="color:#f92672">.</span>index(num))
+                    returnvalue<span style="color:#f92672">.</span>append(nums<span style="color:#f92672">.</span>index(left))
+        <span style="color:#66d9ef">return</span> returnvalue
+
+<span style="color:#66d9ef">print</span> (Solution()<span style="color:#f92672">.</span>twoSum([<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">17</span>], <span style="color:#ae81ff">9</span>))
+</code></pre></div><p>心得1: 类(class)的用法. <br>
+心得2: 数组的一点点小小的使用。</p>
+<p>基本逻辑和C语言实现的差不多，算法复杂度也一样。</p>
+<h4 id="引入的bug">引入的bug</h4>
+<p>设置的test case中，我们的代码在遇到[0,4,3,0]这样的输入时，会报错。原因在于nums.index(0)
+总是返回第一个0所在的下标(0)，而不是第二个0所在的下标(3)，修改后的代码如下:</p>
+<pre><code>class Solution(object):
+    def twoSum(self, nums, target):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        &quot;&quot;&quot;
+        returnvalue = []
+        index = 0
+        for num in nums:
+            index += 1
+            for left in nums[index:]:
+                if (num + left == target):
+                    returnvalue.append(nums.index(num))
+                    returnvalue.append(nums[index:].index(left)+index)
+        return returnvalue
+
+print (Solution().twoSum([0,4,3,0], 0))
+</code></pre><p>运行后的结果，不是那么理想，只击败了34%左右的提交结果:</p>
+<p><img src="/images/2016_10_10_16_34_33_1195x858.jpg" alt="/images/2016_10_10_16_34_33_1195x858.jpg"></p>
+<h4 id="python-hash">Python Hash</h4>
+<p>经过几番修改以后的代码如下，只循环一次，因而算法复杂度为O(n):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>(object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">twoSum</span>(self, nums, target):
+        <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">        :type nums: List[int]
+</span><span style="color:#e6db74">        :type target: int
+</span><span style="color:#e6db74">        :rtype: List[int]
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        <span style="color:#75715e"># Use a dictionary for holding nums</span>
+        num_dic <span style="color:#f92672">=</span> {}
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(nums)):
+            <span style="color:#66d9ef">if</span> target <span style="color:#f92672">-</span> nums[i] <span style="color:#f92672">in</span> num_dic<span style="color:#f92672">.</span>keys():
+                <span style="color:#66d9ef">return</span> [num_dic[target <span style="color:#f92672">-</span> nums[i]],i]
+            <span style="color:#66d9ef">else</span>:
+                <span style="color:#75715e"># directly put it into the num_dic</span>
+                num_dic[nums[i]] <span style="color:#f92672">=</span> i
+        <span style="color:#66d9ef">return</span> []
+
+<span style="color:#66d9ef">print</span> (Solution()<span style="color:#f92672">.</span>twoSum([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">0</span>], <span style="color:#ae81ff">0</span>))
+<span style="color:#66d9ef">print</span> (Solution()<span style="color:#f92672">.</span>twoSum([<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>], <span style="color:#ae81ff">6</span>))
+</code></pre></div><p>速度稍微提升了一些:</p>
+<p><img src="/images/2016_10_10_20_05_31_508x380.jpg" alt="/images/2016_10_10_20_05_31_508x380.jpg"></p>
+<p>更好的方案，优化:</p>
+<pre><code>class Solution(object):
+    def twoSum(self, nums, target):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        &quot;&quot;&quot;
+        # Use a dictionary for holding nums
+        num_dic = {}
+        for i,v in enumerate(nums):
+            if v in num_dic.keys():
+                return [num_dic[v],i]
+            num_dic[target-v] = i
+
+print (Solution().twoSum([0,4,3,0], 0))
+print (Solution().twoSum([3, 4, 2], 6))
+</code></pre><p>这个代码大概能跑到击败80%左右的提交答案。</p>
+<p>思考1： enumerate()函数调用减少了时间。 <br>
+思考2： 原代码中有两次减法，而修改后的代码中，只是在写入hash的时候，有一次target-v的减法操作。 <br>
+思考3： 去掉了一次不必要的return操作。</p>
+<p>总结： <br>
+Python里对于这个问题的优化大概就到这里了。可以看到，简单的问题也是需要认真思考了，认认真真的来
+做leetcode吧。</p>
+<h3 id="2-add-two-numbers">2. Add Two Numbers</h3>
+<p>题目说明:</p>
+<pre><code>给定两个用链表表示的非负数。数字存储是reverse order， 每个节点存有一个数字。将节点上的数字
+相加，以得到一个新的链表
+Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
+Output: 7 -&gt; 0 -&gt; 8
+</code></pre><p>Oct10晚上的测试框架写成这样：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Definition for singly-linked list.
+</span><span style="color:#75715e"> * struct ListNode {
+</span><span style="color:#75715e"> *     int val;
+</span><span style="color:#75715e"> *     struct ListNode *next;
+</span><span style="color:#75715e"> * };
+</span><span style="color:#75715e"> */</span>
+
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+
+<span style="color:#75715e">// Definition of the ListNode
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> ListNode {
+    <span style="color:#66d9ef">int</span> val;
+    <span style="color:#66d9ef">struct</span> ListNode <span style="color:#f92672">*</span>next;
+};
+
+<span style="color:#75715e">// create_list()
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">create_list</span>(<span style="color:#66d9ef">int</span> val)
+{
+	printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> Creating list with headnode as [%d]</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, val);
+	<span style="color:#66d9ef">struct</span> ListNode <span style="color:#f92672">*</span>ptr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> ListNode));
+	<span style="color:#66d9ef">if</span>(NULL <span style="color:#f92672">==</span> ptr)
+	{
+		printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> Node creation failed </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+		<span style="color:#66d9ef">return</span> NULL;
+	}
+	ptr<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> val;
+	ptr<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+
+	<span style="color:#66d9ef">return</span> ptr;
+}
+
+<span style="color:#75715e">// print the list
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_list</span>(<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> head)
+{
+	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span>  current <span style="color:#f92672">=</span> head;
+
+	<span style="color:#66d9ef">while</span>(current <span style="color:#f92672">!=</span> NULL)
+	{
+		printf(<span style="color:#e6db74">&#34;%d -&gt;&#34;</span>, current<span style="color:#f92672">-&gt;</span>val);
+		current <span style="color:#f92672">=</span> current<span style="color:#f92672">-&gt;</span>next;
+	}
+	printf(<span style="color:#e6db74">&#34;NULL</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+}
+
+<span style="color:#66d9ef">int</span> shiftnumber <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">addTwoNumbers</span>(<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> l1, <span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> l2) {
+	printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Just Called this function!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+	
+	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> currentl1 <span style="color:#f92672">=</span> l1;
+	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> currentl2 <span style="color:#f92672">=</span> l2;
+	<span style="color:#75715e">// Holding the return value
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> ptr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> ListNode));
+	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> head <span style="color:#f92672">=</span> ptr;
+	ptr<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+	shiftnumber <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+
+	<span style="color:#75715e">// First calculate the longest Linked List
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> lenl1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">int</span> lenl2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+	<span style="color:#66d9ef">while</span>(currentl1 <span style="color:#f92672">!=</span> NULL)
+	{
+		lenl1<span style="color:#f92672">++</span>;
+		currentl1 <span style="color:#f92672">=</span> currentl1<span style="color:#f92672">-&gt;</span>next;
+	}
+	<span style="color:#66d9ef">while</span>(currentl2 <span style="color:#f92672">!=</span> NULL)
+	{
+		lenl2<span style="color:#f92672">++</span>;
+		currentl2 <span style="color:#f92672">=</span> currentl2<span style="color:#f92672">-&gt;</span>next;
+	}
+	printf(<span style="color:#e6db74">&#34;len1 is %d, len2 is %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, lenl1, lenl2);
+
+	currentl1 <span style="color:#f92672">=</span> l1;
+	currentl2 <span style="color:#f92672">=</span> l2;
+
+	<span style="color:#75715e">// Get the largest length, thus we could do some tricks. 
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">while</span>((currentl1 <span style="color:#f92672">!=</span> NULL) <span style="color:#f92672">&amp;&amp;</span> (currentl2 <span style="color:#f92672">!=</span> NULL))
+	{
+		ptr<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> (currentl1<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">+</span> currentl2<span style="color:#f92672">-&gt;</span>val)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span>shiftnumber;
+		shiftnumber <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		<span style="color:#66d9ef">if</span>((currentl1<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">+</span> currentl2<span style="color:#f92672">-&gt;</span>val)<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">10</span>)
+		{
+		    shiftnumber <span style="color:#f92672">=</span> (currentl1<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">+</span> currentl2<span style="color:#f92672">-&gt;</span>val)<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>;
+		}
+		<span style="color:#75715e">//ptr-&gt;val = (currentl1-&gt;val + currentl2-&gt;val)%10;
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span>(currentl1<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">!=</span> NULL)
+		{
+		    ptr<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> ListNode));
+		    ptr<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+		    ptr <span style="color:#f92672">=</span> ptr<span style="color:#f92672">-&gt;</span>next;
+		}
+		<span style="color:#75715e">// shiftnumber exists, so you should assign shiftnumber to the
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// newnode
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">else</span>
+		{
+			<span style="color:#75715e">// Only check shiftnumber
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span>(shiftnumber <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+			{
+		          ptr<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> ListNode));
+		          ptr<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+			  ptr<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> shiftnumber;
+			}
+
+		}
+		currentl1 <span style="color:#f92672">=</span> currentl1<span style="color:#f92672">-&gt;</span>next;
+		currentl2 <span style="color:#f92672">=</span> currentl2<span style="color:#f92672">-&gt;</span>next;
+	}
+	<span style="color:#66d9ef">return</span> head;
+}
+
+
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
+{
+	<span style="color:#66d9ef">struct</span> ListNode test1, test1_2, test1_3;
+	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> p <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>test1;
+	p<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+	p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>test1_2;
+	p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+	p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>test1_3;
+	p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+	p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+	printf(<span style="color:#e6db74">&#34;### List l1!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+	print_list(p);
+	
+	<span style="color:#66d9ef">struct</span> ListNode test2, test2_2, test2_3;
+	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> q <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>test2;
+	q<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+	q<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>test2_2;
+	q<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+	q<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>test2_3;
+	q<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+	q<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+	printf(<span style="color:#e6db74">&#34;### List l2!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+	print_list(q);
+
+	printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> *** Start testing addTwoNumbers! *** </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> r <span style="color:#f92672">=</span> addTwoNumbers(p, q);
+	print_list(r);
+	<span style="color:#75715e">// Remember to free memory here
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//while(r-&gt;next != NULL);
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//{
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//	printf(&#34;See if you could get the money?\n&#34;);
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//	r = r-&gt;next;
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//}
+</span><span style="color:#75715e"></span>
+	printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> *** Finished testing addTwoNumbers! *** </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>一塌糊涂啊！！！明天继续写。</p>
+<p>最后独立写出的答案如下，非常难看。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> shiftnumber <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">addTwoNumbers</span>(<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> l1, <span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> l2) {
+	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> currentl1 <span style="color:#f92672">=</span> l1;
+	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> currentl2 <span style="color:#f92672">=</span> l2;
+	<span style="color:#75715e">// Holding the return value
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> ptr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> ListNode));
+	<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span> head <span style="color:#f92672">=</span> ptr;
+	ptr<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+	shiftnumber <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+
+	<span style="color:#75715e">// First calculate the longest Linked List
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> lenl1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">int</span> lenl2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+	<span style="color:#66d9ef">while</span>(currentl1 <span style="color:#f92672">!=</span> NULL)
+	{
+		lenl1<span style="color:#f92672">++</span>;
+		currentl1 <span style="color:#f92672">=</span> currentl1<span style="color:#f92672">-&gt;</span>next;
+	}
+	<span style="color:#66d9ef">while</span>(currentl2 <span style="color:#f92672">!=</span> NULL)
+	{
+		lenl2<span style="color:#f92672">++</span>;
+		currentl2 <span style="color:#f92672">=</span> currentl2<span style="color:#f92672">-&gt;</span>next;
+	}
+
+	currentl1 <span style="color:#f92672">=</span> l1;
+	currentl2 <span style="color:#f92672">=</span> l2;
+
+	<span style="color:#75715e">// Get the largest length, thus we could use this number for controlling the
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// return value. 
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> LinkedListLen <span style="color:#f92672">=</span> lenl1<span style="color:#f92672">&gt;</span>lenl2<span style="color:#f92672">?</span>lenl1:lenl2;
+	<span style="color:#66d9ef">while</span>(LinkedListLen <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+	{
+		LinkedListLen<span style="color:#f92672">--</span>;
+		<span style="color:#66d9ef">int</span> ValOfL1, ValOfL2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		ValOfL1 <span style="color:#f92672">=</span> (currentl1 <span style="color:#f92672">==</span> NULL)<span style="color:#f92672">?</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>currentl1<span style="color:#f92672">-&gt;</span>val;
+		ValOfL2 <span style="color:#f92672">=</span> (currentl2 <span style="color:#f92672">==</span> NULL)<span style="color:#f92672">?</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>currentl2<span style="color:#f92672">-&gt;</span>val;
+		ptr<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> ((ValOfL1 <span style="color:#f92672">+</span> ValOfL2)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> shiftnumber)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>;
+		<span style="color:#66d9ef">if</span>(((ValOfL1 <span style="color:#f92672">+</span> ValOfL2)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> shiftnumber) <span style="color:#f92672">==</span> <span style="color:#ae81ff">10</span>)
+		{
+		    shiftnumber <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+		}
+		<span style="color:#66d9ef">else</span>{
+		shiftnumber <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+		    <span style="color:#66d9ef">if</span>((ValOfL1 <span style="color:#f92672">+</span> ValOfL2)<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">10</span>)
+		    {
+		        shiftnumber <span style="color:#f92672">=</span> (ValOfL1 <span style="color:#f92672">+</span> ValOfL2)<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>;
+		    }
+		}
+		<span style="color:#75715e">// Allocate memory for new node. Only allocate (LinkedListLen - 1) times
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span>(LinkedListLen <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+		{
+		    ptr<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> ListNode));
+		    ptr<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+		    ptr <span style="color:#f92672">=</span> ptr<span style="color:#f92672">-&gt;</span>next;
+		}
+		<span style="color:#75715e">// Switch to next node.
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span>(currentl1 <span style="color:#f92672">!=</span> NULL)
+		{
+		    currentl1 <span style="color:#f92672">=</span> currentl1<span style="color:#f92672">-&gt;</span>next;
+		}
+		<span style="color:#66d9ef">if</span>(currentl2 <span style="color:#f92672">!=</span> NULL)
+		{
+		    currentl2 <span style="color:#f92672">=</span> currentl2<span style="color:#f92672">-&gt;</span>next;
+		}
+	}
+	<span style="color:#75715e">// If shiftnumber &gt; 0, allocate a new node for holding it
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span>(shiftnumber <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+	{
+		ptr<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> ListNode<span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> ListNode));
+		ptr<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+		ptr<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">=</span> shiftnumber;
+	}
+	
+	<span style="color:#66d9ef">return</span> head;
+}
+</code></pre></div><p>我的思路:</p>
+<p>1，考虑到两个输入的链表长度可能不一样，因而先得到最长的链表长度，用这个最长的长度来做递归。 <br>
+2, 是否有进位通过一个全局表两shiftnumber来hold. 如果相加到最后依然有进位，则在循环外开辟一块空间来存放这个进位。 <br>
+3, 两个链表中的任何一个一旦走到了NULL指针，则其值用0来代替。 <br>
+4, 三目运算符的使用。 <br>
+5, <code>ptr-&gt;val = ((ValOfL1 + ValOfL2)%10 + shiftnumber)%10;</code>，这个是考虑到test case:</p>
+<pre><code>[9]
+[1, 9]
+</code></pre><p>如果不做的话，则得出结果会是[0,10], 进位和该位数字的和为10的时候需要单独考虑。</p>
+<p>反思: <br>
+1, 对指针的使用要非常小心。 <br>
+2, 就是凭直觉写出来的，算法很差, 代码可读性也很差。</p>
+<h3 id="longest-substr">Longest substr</h3>
+<p>The sample code is listed, while to be optimized:</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+#define MAXN 50000
+
+// q should be longer than p
+int comlen(char* p, char* q)
+{
+    int i = 0;
+    while (*q &amp;&amp; (*p++ == *q++))
+    {
+        i++;
+    }
+    return i;
+}
+
+int cstring_cmp(const void *a, const void *b)
+{
+    const char **ia = (const char **)a;
+    const char **ib = (const char **)b;
+    return strcmp(*ia, *ib);
+}
+
+
+int lengthOfLongestSubstring(char* s) {
+      char c[MAXN];
+      char* a[MAXN];
+     
+
+      // Create a new array which hold char *s
+      // Remove all of the duplicated items in array
+      // no_duplicated[]
+ 
+      char ch;
+      int n = 0;
+      for(n = 0; n &lt; strlen(s); n++)
+      {
+          printf(&quot;%c &quot;,s[n]);
+          a[n] = &amp;c[n];
+          c[n] = s[n];
+      }
+      a[n] = 0;
+
+      qsort(a, n, sizeof(char*), cstring_cmp);
+
+      int maxlen = 0;
+      int len = 0;
+      int maxi = 0;
+      for (int i = 0; i &lt; n - 1; i++)
+      {
+          len = comlen(a[i], a[i + 1]);
+	  printf(&quot;len is %d\n&quot;, len);
+          if (len &gt; maxlen)
+          {
+              maxlen = len;
+              maxi = i;
+          }
+      }
+
+      printf(&quot;maxlen:%d\tmax string:\t&quot;, maxlen);
+      char ch_tmp;
+      for (int i = 0; i &lt; maxlen; i++)
+      {
+          ch_tmp = *(a[maxi] + i);
+          printf(&quot;%c&quot;, ch_tmp);
+      }
+      printf(&quot;\n&quot;);
+
+      return maxlen;
+}
+
+int main(void)
+{
+	char s[100] = &quot;abcabcccc&quot;;
+	char t[100] = &quot;bbbbbbbbbbbb&quot;;
+	char k[100] = &quot;pwwkew&quot;;
+	lengthOfLongestSubstring(s);
+	lengthOfLongestSubstring(t);
+	lengthOfLongestSubstring(k);
+	return 0;
+}
+
+</code></pre>
+  </div>
+  
+</div>
+
+
+
+
+
+
+<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
