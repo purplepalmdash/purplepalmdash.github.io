@@ -1,142 +1,5 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>Linux2.6.32 for Utu2440(5) &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="">
-  <meta name="keywords" content="unix,virtualization,embedded,linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>Linux2.6.32 for Utu2440(5)</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Oct 25, 2014 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#lcd-info">LCD Info</a></li>
-        <li><a href="#code-modification">Code Modification</a></li>
-        <li><a href="#directly-boot-from-tftp">Directly boot from tftp</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <p>In this chapter we will continue to migrate driver on LCD, first we want to get the LCD information.</p>
-<h3 id="lcd-info">LCD Info</h3>
-<p>From the LCD we could see &ldquo;LTV350QV-F0E&rdquo;, Search it on google and we know it&rsquo;s  <code>SAMSUNG TFT 3.5-inch 320*240 LTV350QV-F0E lcd panel</code>.  <br>
-Its datasheet could be downloaded from: <br>
-<a href="http://www.datasheet-pdf.com/datasheet-html/L/T/V/LTV350QV-F0E_Samsung.pdf.html">http://www.datasheet-pdf.com/datasheet-html/L/T/V/LTV350QV-F0E_Samsung.pdf.html</a></p>
-<p>TFT means （Thin Film Transistor）. <br>
-Beware, the kernel we should choose is <code>uImage_T1_F0E_320x240_ts</code>, because we bought the Package 1 of the development board, they shipped us with Samsung screen .</p>
-<h3 id="code-modification">Code Modification</h3>
-<p>Kernel configuration modification:</p>
-<pre><code>Device Drivers ---&gt;
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Linux2.6.32 for Utu2440(5) &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>Linux2.6.32 for Utu2440(5)</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Oct 25, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#lcd-info>LCD Info</a></li><li><a href=#code-modification>Code Modification</a></li><li><a href=#directly-boot-from-tftp>Directly boot from tftp</a></li></ul></li></ul></nav></div><p>In this chapter we will continue to migrate driver on LCD, first we want to get the LCD information.</p><h3 id=lcd-info>LCD Info</h3><p>From the LCD we could see &ldquo;LTV350QV-F0E&rdquo;, Search it on google and we know it&rsquo;s <code>SAMSUNG TFT 3.5-inch 320*240 LTV350QV-F0E lcd panel</code>.<br>Its datasheet could be downloaded from:<br><a href=http://www.datasheet-pdf.com/datasheet-html/L/T/V/LTV350QV-F0E_Samsung.pdf.html>http://www.datasheet-pdf.com/datasheet-html/L/T/V/LTV350QV-F0E_Samsung.pdf.html</a></p><p>TFT means （Thin Film Transistor）.<br>Beware, the kernel we should choose is <code>uImage_T1_F0E_320x240_ts</code>, because we bought the Package 1 of the development board, they shipped us with Samsung screen .</p><h3 id=code-modification>Code Modification</h3><p>Kernel configuration modification:</p><pre><code>Device Drivers ---&gt;
 	Graphics support ---&gt;
 		&lt;*&gt; Support for frame buffer devices
 			Support for buffer devices ---&gt;
@@ -157,8 +20,7 @@ Beware, the kernel we should choose is <code>uImage_T1_F0E_320x240_ts</code>, be
 			--- Bootup logo
 			[*] Standard 224-color Linux logo
 
-</code></pre><p>arch/arm/mach-s3c2440/mach-smdk2440.c:</p>
-<pre><code>static struct s3c2410fb_display smdk2440_lcd_cfg __initdata = {
+</code></pre><p>arch/arm/mach-s3c2440/mach-smdk2440.c:</p><pre><code>static struct s3c2410fb_display smdk2440_lcd_cfg __initdata = {
  
         .lcdcon5        = S3C2410_LCDCON5_FRM565 |
                           S3C2410_LCDCON5_INVVCLK |
@@ -202,16 +64,13 @@ static struct s3c2410fb_mach_info smdk2440_fb_info __initdata = {
         .lpcsel         = 0,     //((0xCE6) &amp; ~7) | 1&lt;&lt;4,
 };
 
-</code></pre><p>Enable the lcd:</p>
-<pre><code>static struct platform_device *smdk2410_devices[] __initdata = {
+</code></pre><p>Enable the lcd:</p><pre><code>static struct platform_device *smdk2410_devices[] __initdata = {
 &amp;s3c_device_usb,
 &amp;s3c_device_lcd, 
 
-</code></pre><p>arch/arm/mach-s3c2410/include/mach/regs-lcd.h:</p>
-<pre><code>#define S3C2410_LCDCON1_MMODE (0&lt;&lt;7)
+</code></pre><p>arch/arm/mach-s3c2410/include/mach/regs-lcd.h:</p><pre><code>#define S3C2410_LCDCON1_MMODE (0&lt;&lt;7)
 
-</code></pre><p>drivers/video/s3c2410fb.c, after around line 52:</p>
-<pre><code>//LTV350QV_FOE_V0.0
+</code></pre><p>drivers/video/s3c2410fb.c, after around line 52:</p><pre><code>//LTV350QV_FOE_V0.0
  static void LTV350QV_Short_Delay(u_char time)
  {
   ndelay(150);
@@ -335,30 +194,11 @@ __raw_writel(0xffffffff, S3C2410_GPDUP);
 // __raw_writel(0, S3C2410_LPCSEL); // Disable LPC3600
 }
 
-</code></pre><p>Then add following sentense before the &ldquo;return 0&rdquo; of <code>static int s3c2410fb_init_registers(struct fb_info *info)</code>:</p>
-<pre><code>s3c2440fb_init_ltv350qv();
+</code></pre><p>Then add following sentense before the &ldquo;return 0&rdquo; of <code>static int s3c2410fb_init_registers(struct fb_info *info)</code>:</p><pre><code>s3c2440fb_init_ltv350qv();
 
-</code></pre><p>Now recompile the kernel, you will see framebuffer OK.</p>
-<p>Comment all of the function content of drivers/char/vt.c blank_screen_t(unsigned long dummy), this will disable the LCD&rsquo;s display from closing.</p>
-<h3 id="directly-boot-from-tftp">Directly boot from tftp</h3>
-<p>Avoiding flash into the nand.</p>
-<pre><code>
+</code></pre><p>Now recompile the kernel, you will see framebuffer OK.</p><p>Comment all of the function content of drivers/char/vt.c blank_screen_t(unsigned long dummy), this will disable the LCD&rsquo;s display from closing.</p><h3 id=directly-boot-from-tftp>Directly boot from tftp</h3><p>Avoiding flash into the nand.</p><pre><code>
 &gt;tftp 30000000 uImage
 dm9000 i/o: 0x18000300, id: 0x90000a46 
 &gt; bootm
 
-</code></pre>
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

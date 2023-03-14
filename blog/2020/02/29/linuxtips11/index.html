@@ -1,209 +1,11 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>LinuxTips11 &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="LinuxTips11">
-  <meta name="keywords" content="LinuxTips">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>LinuxTips11</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Feb 29, 2020 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/linuxtips">LinuxTips</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#1-docker-exec-with-root">1. docker exec with root</a></li>
-        <li><a href="#2-vncserver-for-ubuntu1804">2. vncserver for ubuntu18.04</a></li>
-        <li><a href="#3-bundle-use-aliyun">3. bundle use aliyun</a></li>
-        <li><a href="#4-netplan-bridge-setting">4. netplan bridge setting</a></li>
-        <li><a href="#5-shrink-lvm-volumenot-for-xfs">5. shrink lvm volume(not for xfs)</a></li>
-        <li><a href="#6-dd-times">6. dd times</a></li>
-        <li><a href="#7-alpine-china-repository">7. alpine china repository</a></li>
-        <li><a href="#8-metrci-server-always-restart">8. metrci-server always restart</a></li>
-        <li><a href="#9-ssh-passwordless-configuration">9. ssh passwordless configuration</a></li>
-        <li><a href="#10-tasksmax-limitation">10. Tasksmax limitation</a></li>
-        <li><a href="#11-bluetooth-for-vervebuds-115">11. bluetooth for verveBuds 115</a></li>
-        <li><a href="#12-untaint-kube-master">12. untaint kube-master</a></li>
-        <li><a href="#13-docker-compose-down-one-svc">13. docker-compose down one svc</a></li>
-        <li><a href="#14-es-logs">14. es logs</a></li>
-        <li><a href="#15-include-ansible-roles">15. include ansible roles</a></li>
-        <li><a href="#16-pool-define-in-virsh">16. pool define in virsh</a></li>
-        <li><a href="#20-2004-vagrant-issue">20. 20.04 vagrant issue</a></li>
-        <li><a href="#21-write-inventory">21. write inventory</a></li>
-        <li><a href="#22-duplicated-machine">22. Duplicated machine</a></li>
-        <li><a href="#23-rename-files-with-special-characters">23. Rename files with special characters</a></li>
-        <li><a href="#24-tips-on-kubeoperator-package-management">24. tips on kubeoperator package management</a></li>
-        <li><a href="#25-ss-for-listening">25. ss for listening</a></li>
-        <li><a href="#251-docker-regsitry-issue">25.1. docker-regsitry issue</a></li>
-        <li><a href="#26-ps-output-wide">26. ps output wide</a></li>
-        <li><a href="#27-install-source-code-pro-font">27. install source code pro font</a></li>
-        <li><a href="#28-install-puppeteer-problem">28. Install puppeteer problem</a></li>
-        <li><a href="#29-css-for-layout">29. css for layout</a></li>
-        <li><a href="#30-git-tag-and-push">30. git tag and push</a></li>
-        <li><a href="#31-indesign">31. indesign</a></li>
-        <li><a href="#32-tips-on-rpi-ubuntu18044">32. Tips On rpi ubuntu18.04.4</a></li>
-        <li><a href="#33-change-default-python-in-ubuntu1804">33. Change default python in ubuntu18.04</a></li>
-        <li><a href="#34-upgrade-to-latest-nodejs">34. upgrade to latest nodejs</a></li>
-        <li><a href="#35-python-venv">35. python venv</a></li>
-        <li><a href="#36-nvm">36. nvm</a></li>
-        <li><a href="#37-npm-install-priviledge">37. npm install priviledge</a></li>
-        <li><a href="#38-dnsmasq-leases-file">38. dnsmasq leases file</a></li>
-        <li><a href="#39-docker-pullother-arch">39. docker pull(other arch)</a></li>
-        <li><a href="#40-boomaga-on-archlinux">40. boomaga on archlinux</a></li>
-        <li><a href="#41-zip-with-password">41. zip with password</a></li>
-        <li><a href="#42-vncserver-listen-only-on-local">42. vncserver listen only on local</a></li>
-        <li><a href="#43-nvm-tips">43. nvm tips</a></li>
-        <li><a href="#44-helm-tips">44. helm tips</a></li>
-        <li><a href="#45-install-hwe">45. Install hwe</a></li>
-        <li><a href="#46-xz-and-write-to-sd">46. xz and write to sd</a></li>
-        <li><a href="#47-pikvm-思路">47. pikvm 思路</a></li>
-        <li><a href="#48-redirect-usb-to-virtualbox">48. Redirect usb to virtualbox</a></li>
-        <li><a href="#49-install-latest-virtualbox">49. Install latest virtualbox</a></li>
-        <li><a href="#50-platformio-issue">50. platformio issue</a></li>
-        <li><a href="#51-build-pkgarch">51. build pkg(Arch)</a></li>
-        <li><a href="#52-diffpatch">52. diff/patch</a></li>
-        <li><a href="#53-centos-76-ssh-too-slow">53. centos 76 ssh too slow</a></li>
-        <li><a href="#54-create-md0-in-arm64">54. Create md0 in arm64</a></li>
-        <li><a href="#55-nvidia-xorg-howto">55. Nvidia Xorg Howto</a></li>
-        <li><a href="#56-go-speedup">56. go speedup</a></li>
-        <li><a href="#57-dnsmasq-leased-ip-addr">57. dnsmasq leased ip addr</a></li>
-        <li><a href="#58-lxd-cluster">58. lxd cluster</a></li>
-        <li><a href="#59-lxc-issue">59. lxc issue</a></li>
-        <li><a href="#60-svn-working-tips">60. svn working tips</a></li>
-        <li><a href="#61-pdf-to-png">61. pdf to png</a></li>
-        <li><a href="#62-manually-update-time">62. Manually update time</a></li>
-        <li><a href="#63-manually-delete-journal">63. Manually delete journal</a></li>
-        <li><a href="#64-specify-ssh-exchange-method">64. Specify ssh exchange method</a></li>
-        <li><a href="#65-vxlan-tips">65. vxlan tips</a></li>
-        <li><a href="#66-repair-127-servers-disk">66. Repair 127 server&rsquo;s disk</a></li>
-        <li><a href="#67-vxlan">67. vxlan</a></li>
-        <li><a href="#68-rclocal-in-centos7">68. rc.local in centos7</a></li>
-        <li><a href="#69-archlinux-byobu-issue">69. archlinux byobu issue</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="1-docker-exec-with-root">1. docker exec with root</h3>
-<p>Via following commands:</p>
-<pre><code>$ sudo docker exec -it --workdir /root --user root 1e61b0cce4f2 bash
-</code></pre><h3 id="2-vncserver-for-ubuntu1804">2. vncserver for ubuntu18.04</h3>
-<p>Install xfce4 and tigervnc-server:</p>
-<pre><code># sudo apt-get install -y tigervnc-standalone-server tigervnc-common xfce4
-</code></pre><p>But now you won&rsquo;t access the vnc desktop, cause the default setting is only listening on 127.0.0.1:</p>
-<pre><code># netstat -anp | grep 5901
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>LinuxTips11 &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="LinuxTips11"><meta name=keywords content="LinuxTips"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>LinuxTips11</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Feb 29, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/linuxtips>LinuxTips</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#1-docker-exec-with-root>1. docker exec with root</a></li><li><a href=#2-vncserver-for-ubuntu1804>2. vncserver for ubuntu18.04</a></li><li><a href=#3-bundle-use-aliyun>3. bundle use aliyun</a></li><li><a href=#4-netplan-bridge-setting>4. netplan bridge setting</a></li><li><a href=#5-shrink-lvm-volumenot-for-xfs>5. shrink lvm volume(not for xfs)</a></li><li><a href=#6-dd-times>6. dd times</a></li><li><a href=#7-alpine-china-repository>7. alpine china repository</a></li><li><a href=#8-metrci-server-always-restart>8. metrci-server always restart</a></li><li><a href=#9-ssh-passwordless-configuration>9. ssh passwordless configuration</a></li><li><a href=#10-tasksmax-limitation>10. Tasksmax limitation</a></li><li><a href=#11-bluetooth-for-vervebuds-115>11. bluetooth for verveBuds 115</a></li><li><a href=#12-untaint-kube-master>12. untaint kube-master</a></li><li><a href=#13-docker-compose-down-one-svc>13. docker-compose down one svc</a></li><li><a href=#14-es-logs>14. es logs</a></li><li><a href=#15-include-ansible-roles>15. include ansible roles</a></li><li><a href=#16-pool-define-in-virsh>16. pool define in virsh</a></li><li><a href=#20-2004-vagrant-issue>20. 20.04 vagrant issue</a></li><li><a href=#21-write-inventory>21. write inventory</a></li><li><a href=#22-duplicated-machine>22. Duplicated machine</a></li><li><a href=#23-rename-files-with-special-characters>23. Rename files with special characters</a></li><li><a href=#24-tips-on-kubeoperator-package-management>24. tips on kubeoperator package management</a></li><li><a href=#25-ss-for-listening>25. ss for listening</a></li><li><a href=#251-docker-regsitry-issue>25.1. docker-regsitry issue</a></li><li><a href=#26-ps-output-wide>26. ps output wide</a></li><li><a href=#27-install-source-code-pro-font>27. install source code pro font</a></li><li><a href=#28-install-puppeteer-problem>28. Install puppeteer problem</a></li><li><a href=#29-css-for-layout>29. css for layout</a></li><li><a href=#30-git-tag-and-push>30. git tag and push</a></li><li><a href=#31-indesign>31. indesign</a></li><li><a href=#32-tips-on-rpi-ubuntu18044>32. Tips On rpi ubuntu18.04.4</a></li><li><a href=#33-change-default-python-in-ubuntu1804>33. Change default python in ubuntu18.04</a></li><li><a href=#34-upgrade-to-latest-nodejs>34. upgrade to latest nodejs</a></li><li><a href=#35-python-venv>35. python venv</a></li><li><a href=#36-nvm>36. nvm</a></li><li><a href=#37-npm-install-priviledge>37. npm install priviledge</a></li><li><a href=#38-dnsmasq-leases-file>38. dnsmasq leases file</a></li><li><a href=#39-docker-pullother-arch>39. docker pull(other arch)</a></li><li><a href=#40-boomaga-on-archlinux>40. boomaga on archlinux</a></li><li><a href=#41-zip-with-password>41. zip with password</a></li><li><a href=#42-vncserver-listen-only-on-local>42. vncserver listen only on local</a></li><li><a href=#43-nvm-tips>43. nvm tips</a></li><li><a href=#44-helm-tips>44. helm tips</a></li><li><a href=#45-install-hwe>45. Install hwe</a></li><li><a href=#46-xz-and-write-to-sd>46. xz and write to sd</a></li><li><a href=#47-pikvm-思路>47. pikvm 思路</a></li><li><a href=#48-redirect-usb-to-virtualbox>48. Redirect usb to virtualbox</a></li><li><a href=#49-install-latest-virtualbox>49. Install latest virtualbox</a></li><li><a href=#50-platformio-issue>50. platformio issue</a></li><li><a href=#51-build-pkgarch>51. build pkg(Arch)</a></li><li><a href=#52-diffpatch>52. diff/patch</a></li><li><a href=#53-centos-76-ssh-too-slow>53. centos 76 ssh too slow</a></li><li><a href=#54-create-md0-in-arm64>54. Create md0 in arm64</a></li><li><a href=#55-nvidia-xorg-howto>55. Nvidia Xorg Howto</a></li><li><a href=#56-go-speedup>56. go speedup</a></li><li><a href=#57-dnsmasq-leased-ip-addr>57. dnsmasq leased ip addr</a></li><li><a href=#58-lxd-cluster>58. lxd cluster</a></li><li><a href=#59-lxc-issue>59. lxc issue</a></li><li><a href=#60-svn-working-tips>60. svn working tips</a></li><li><a href=#61-pdf-to-png>61. pdf to png</a></li><li><a href=#62-manually-update-time>62. Manually update time</a></li><li><a href=#63-manually-delete-journal>63. Manually delete journal</a></li><li><a href=#64-specify-ssh-exchange-method>64. Specify ssh exchange method</a></li><li><a href=#65-vxlan-tips>65. vxlan tips</a></li><li><a href=#66-repair-127-servers-disk>66. Repair 127 server&rsquo;s disk</a></li><li><a href=#67-vxlan>67. vxlan</a></li><li><a href=#68-rclocal-in-centos7>68. rc.local in centos7</a></li><li><a href=#69-archlinux-byobu-issue>69. archlinux byobu issue</a></li></ul></li></ul></nav></div><h3 id=1-docker-exec-with-root>1. docker exec with root</h3><p>Via following commands:</p><pre><code>$ sudo docker exec -it --workdir /root --user root 1e61b0cce4f2 bash
+</code></pre><h3 id=2-vncserver-for-ubuntu1804>2. vncserver for ubuntu18.04</h3><p>Install xfce4 and tigervnc-server:</p><pre><code># sudo apt-get install -y tigervnc-standalone-server tigervnc-common xfce4
+</code></pre><p>But now you won&rsquo;t access the vnc desktop, cause the default setting is only listening on 127.0.0.1:</p><pre><code># netstat -anp | grep 5901
 tcp        0      0 127.0.0.1:5901          0.0.0.0:*               LISTEN      59902/Xtigervnc     
 tcp6       0      0 ::1:5901                :::*                    LISTEN      59902/Xtigervnc 
 </code></pre><p>Edit the vnc.conf file add set the listening port not to localhost, then setup
-the xstartup files:</p>
-<pre><code># sudo vim /etc/vnc.conf
+the xstartup files:</p><pre><code># sudo vim /etc/vnc.conf
 Default: $localhost = &quot;no&quot;;  # Otherwise
 
 # sudo vim ~/.vnc/xstartup
@@ -212,13 +14,8 @@ Default: $localhost = &quot;no&quot;;  # Otherwise
     unset DBUS_SESSION_BUS_ADDRESS
     exec startxfce4
 # vncserver
-</code></pre><p>Now open your favorate vnc viewer for connecting the remote desktop.</p>
-<h3 id="3-bundle-use-aliyun">3. bundle use aliyun</h3>
-<p>Via following:</p>
-<pre><code># bundle config 'mirror.https://rubygems.org' 'https://ruby.taobao.org'
-</code></pre><h3 id="4-netplan-bridge-setting">4. netplan bridge setting</h3>
-<p>Via following:</p>
-<pre><code># vim /etc/netplan/01-netcfg.yaml 
+</code></pre><p>Now open your favorate vnc viewer for connecting the remote desktop.</p><h3 id=3-bundle-use-aliyun>3. bundle use aliyun</h3><p>Via following:</p><pre><code># bundle config 'mirror.https://rubygems.org' 'https://ruby.taobao.org'
+</code></pre><h3 id=4-netplan-bridge-setting>4. netplan bridge setting</h3><p>Via following:</p><pre><code># vim /etc/netplan/01-netcfg.yaml 
 # This file describes the network interfaces available on your system
 # For more information, see netplan(5).
 #
@@ -249,9 +46,7 @@ network:
 #          addresses:
 #              - &quot;192.168.190.254&quot;
 
-</code></pre><h3 id="5-shrink-lvm-volumenot-for-xfs">5. shrink lvm volume(not for xfs)</h3>
-<p>CentOS7 installation with root only 50GB, shrink:</p>
-<pre><code>umount /dev/mapper/centos-home
+</code></pre><h3 id=5-shrink-lvm-volumenot-for-xfs>5. shrink lvm volume(not for xfs)</h3><p>CentOS7 installation with root only 50GB, shrink:</p><pre><code>umount /dev/mapper/centos-home
 lvreduce -L 200G /dev/mapper/centos-home
 Mount back your home partition as you're done with it.
 
@@ -259,9 +54,7 @@ Then just extend your root volume.
 
 lvextend -t -r -l+100%FREE /dev/mapper/centos-root
 -t is test, if it's ok just run the command a second time without -t
-</code></pre><h3 id="6-dd-times">6. dd times</h3>
-<p>It takes around 8 hours to copy to img files.</p>
-<pre><code>➜  ~ sudo dd if=/dev/sdc | gzip -c &gt; /media/sda/kylin_fuck.img
+</code></pre><h3 id=6-dd-times>6. dd times</h3><p>It takes around 8 hours to copy to img files.</p><pre><code>➜  ~ sudo dd if=/dev/sdc | gzip -c &gt; /media/sda/kylin_fuck.img
 1953525167+0 records in
 1953525167+0 records out
 1000204885504 bytes (1.0 TB, 932 GiB) copied, 28336.5 s, 35.3 MB/s
@@ -273,16 +66,11 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 472
 &gt;&gt;&gt; 
 
-</code></pre><p>And its size if not so large:</p>
-<pre><code>➜  ~ ls -l -h /media/sda/kylin_fuck.img 
+</code></pre><p>And its size if not so large:</p><pre><code>➜  ~ ls -l -h /media/sda/kylin_fuck.img 
 -rw-r--r-- 1 dash dash 4.3G 3月  18 01:48 /media/sda/kylin_fuck.img
-</code></pre><h3 id="7-alpine-china-repository">7. alpine china repository</h3>
-<p>Fuck the GFW:</p>
-<pre><code># sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
+</code></pre><h3 id=7-alpine-china-repository>7. alpine china repository</h3><p>Fuck the GFW:</p><pre><code># sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
-</code></pre><h3 id="8-metrci-server-always-restart">8. metrci-server always restart</h3>
-<p>for cpu/memory is low(vm cases), enlarge them:</p>
-<pre><code>metrics_server_cpu: 400m
+</code></pre><h3 id=8-metrci-server-always-restart>8. metrci-server always restart</h3><p>for cpu/memory is low(vm cases), enlarge them:</p><pre><code>metrics_server_cpu: 400m
 metrics_server_memory: 350Mi
 metrics_server_memory_per_node: 40Mi
 metrics_server_min_cluster_size: 5
@@ -291,9 +79,7 @@ addon_resizer_limits_memory: 600Mi
 addon_resizer_requests_cpu: 50m
 addon_resizer_requests_memory: 500Mi
 
-</code></pre><h3 id="9-ssh-passwordless-configuration">9. ssh passwordless configuration</h3>
-<p>Configure ssh login without input password:</p>
-<pre><code>Check that your Centos machine has:
+</code></pre><h3 id=9-ssh-passwordless-configuration>9. ssh passwordless configuration</h3><p>Configure ssh login without input password:</p><pre><code>Check that your Centos machine has:
 
 RSAAuthentication yes
 PubkeyAuthentication yes
@@ -304,40 +90,24 @@ and ensure that you have proper permission on the centos machine's ~/.ssh/ direc
 chmod 700 ~/.ssh/
 chmod 600 ~/.ssh/*
 should do the trick.
-</code></pre><h3 id="10-tasksmax-limitation">10. Tasksmax limitation</h3>
-<p>The TasksMax Systemd/Linux feature can cause various operational issues related to creating new processes including failures starting containers and failures setting up iptables rules for running containers. Customers affected by this issue will observe that the Docker daemon is unable to create more processes than the TasksMax configured limit.</p>
-<p>Refers to :<br>
-<a href="https://success.docker.com/article/how-to-reserve-resource-temporarily-unavailable-errors-due-to-tasksmax-setting">https://success.docker.com/article/how-to-reserve-resource-temporarily-unavailable-errors-due-to-tasksmax-setting</a></p>
-<pre><code>systemctl set-property docker.service TasksMax=infinity
+</code></pre><h3 id=10-tasksmax-limitation>10. Tasksmax limitation</h3><p>The TasksMax Systemd/Linux feature can cause various operational issues related to creating new processes including failures starting containers and failures setting up iptables rules for running containers. Customers affected by this issue will observe that the Docker daemon is unable to create more processes than the TasksMax configured limit.</p><p>Refers to :<br><a href=https://success.docker.com/article/how-to-reserve-resource-temporarily-unavailable-errors-due-to-tasksmax-setting>https://success.docker.com/article/how-to-reserve-resource-temporarily-unavailable-errors-due-to-tasksmax-setting</a></p><pre><code>systemctl set-property docker.service TasksMax=infinity
 systemctl daemon-reload
 systemctl restart docker
-</code></pre><h3 id="11-bluetooth-for-vervebuds-115">11. bluetooth for verveBuds 115</h3>
-<p>On Archlinux, do following:</p>
-<pre><code># sudo pacman -S alsa-utils alsa-plugins alsa-tools bluez bluez-utils bluez-libs
+</code></pre><h3 id=11-bluetooth-for-vervebuds-115>11. bluetooth for verveBuds 115</h3><p>On Archlinux, do following:</p><pre><code># sudo pacman -S alsa-utils alsa-plugins alsa-tools bluez bluez-utils bluez-libs
 pulseaudio blueman bluez-hid2hci pulseaudio-bluetooth audacious
 # vim /etc/pulse/default.pa (Add following lines)
 load-module module-switch-on-connect
 # vim /etc/pulse/system.pa (Add following lines)
 load-module module-bluetooth-policy
 load-module module-bluetooth-discovery
-</code></pre><p>Restart the bluetooth service:</p>
-<pre><code># systemctl restart bluetooth
+</code></pre><p>Restart the bluetooth service:</p><pre><code># systemctl restart bluetooth
 # pluseaudio -k
 # pluseaudio --start
-</code></pre><p>Blueman setup:</p>
-<p><img src="/images/2020_04_07_10_04_32_474x167.jpg" alt="/images/2020_04_07_10_04_32_474x167.jpg"></p>
-<p>In audacious, select the output for pulseaudio.</p>
-<h3 id="12-untaint-kube-master">12. untaint kube-master</h3>
-<p>via :</p>
-<pre><code>kubectl taint nodes --all node-role.kubernetes.io/master-
+</code></pre><p>Blueman setup:</p><p><img src=/images/2020_04_07_10_04_32_474x167.jpg alt=/images/2020_04_07_10_04_32_474x167.jpg></p><p>In audacious, select the output for pulseaudio.</p><h3 id=12-untaint-kube-master>12. untaint kube-master</h3><p>via :</p><pre><code>kubectl taint nodes --all node-role.kubernetes.io/master-
 
-</code></pre><h3 id="13-docker-compose-down-one-svc">13. docker-compose down one svc</h3>
-<p>Via:</p>
-<pre><code># docker-compose rm -f -s -v ui
+</code></pre><h3 id=13-docker-compose-down-one-svc>13. docker-compose down one svc</h3><p>Via:</p><pre><code># docker-compose rm -f -s -v ui
 # docker-compose up -d
-</code></pre><h3 id="14-es-logs">14. es logs</h3>
-<p>via:</p>
-<pre><code># curl http://172.18.0.5:9200/_cat/indices
+</code></pre><h3 id=14-es-logs>14. es logs</h3><p>via:</p><pre><code># curl http://172.18.0.5:9200/_cat/indices
 yellow open ko-log-2020.04  FQxfXJ0ASXid36DN_TiziA 1 1   0 0    283b    283b
 yellow open ououojjj-2020.4 oBcDjztES_C1JFHhMK23JQ 1 1 830 0 312.3kb 312.3kb
 $ curl http://172.18.0.5:9200/ko-log-2020.04/_count?pretty
@@ -352,9 +122,7 @@ $ curl http://172.18.0.5:9200/ko-log-2020.04/_count?pretty
 }
 
 
-</code></pre><h3 id="15-include-ansible-roles">15. include ansible roles</h3>
-<p>via:</p>
-<pre><code>---
+</code></pre><h3 id=15-include-ansible-roles>15. include ansible roles</h3><p>via:</p><pre><code>---
 - import_playbook: 0_preinstall/init.yml
 
 - import_playbook: 1_k8s/cluster.yml
@@ -362,18 +130,12 @@ $ curl http://172.18.0.5:9200/ko-log-2020.04/_count?pretty
 - import_playbook: 2_addons/addons.yml
 
 
-</code></pre><h3 id="16-pool-define-in-virsh">16. pool define in virsh</h3>
-<p>via following commands:</p>
-<pre><code>sudo virsh pool-define-as nvme --type dir --target /media/nvme
+</code></pre><h3 id=16-pool-define-in-virsh>16. pool define in virsh</h3><p>via following commands:</p><pre><code>sudo virsh pool-define-as nvme --type dir --target /media/nvme
 sudo virsh pool-start nvme
 sudo virsh pool-autostart nvme
-</code></pre><h3 id="20-2004-vagrant-issue">20. 20.04 vagrant issue</h3>
-<p>Should install <code>ifupdown</code> for letting vagrant working.</p>
-<h3 id="21-write-inventory">21. write inventory</h3>
-<pre><code>            with open('/tmp/clusterinventory.yaml', 'w+') as f:
+</code></pre><h3 id=20-2004-vagrant-issue>20. 20.04 vagrant issue</h3><p>Should install <code>ifupdown</code> for letting vagrant working.</p><h3 id=21-write-inventory>21. write inventory</h3><pre><code>            with open('/tmp/clusterinventory.yaml', 'w+') as f:
                 f.write( str(self.project.inventory_obj.parse_resource()) )
-</code></pre><p>Error log:</p>
-<pre><code>Traceback (most recent call last):
+</code></pre><p>Error log:</p><pre><code>Traceback (most recent call last):
   File &quot;/opt/kubeOperator-api/apps/kubeops_api/models/deploy.py&quot;, line 62, in start
     result = self.on_install(extra_vars)
   File &quot;/opt/kubeOperator-api/apps/kubeops_api/models/deploy.py&quot;, line 169, in on_install
@@ -387,15 +149,11 @@ sudo virsh pool-autostart nvme
   File &quot;/opt/kubeOperator-api/apps/ansible_api/ansible/runner.py&quot;, line 248, in run
     self.variable_manager._extra_vars = extra_vars
 AttributeError: can't set attribute
-</code></pre><h3 id="22-duplicated-machine">22. Duplicated machine</h3>
-<p>Via following commands we could re-generate the machine id:</p>
-<pre><code>rm -f /etc/machine-id
+</code></pre><h3 id=22-duplicated-machine>22. Duplicated machine</h3><p>Via following commands we could re-generate the machine id:</p><pre><code>rm -f /etc/machine-id
 dbus-uuidgen --ensure=/etc/machine-id
 rm /var/lib/dbus/machine-id
 dbus-uuidgen --ensure
-</code></pre><h3 id="23-rename-files-with-special-characters">23. Rename files with special characters</h3>
-<p><code>rename.sh</code> like following, could rename with the files with <code>1.mp4, 2.mp4, etc</code>:</p>
-<pre><code>var=1
+</code></pre><h3 id=23-rename-files-with-special-characters>23. Rename files with special characters</h3><p><code>rename.sh</code> like following, could rename with the files with <code>1.mp4, 2.mp4, etc</code>:</p><pre><code>var=1
 for file in *.mp4
 do 
 	echo &quot;$file&quot;
@@ -404,23 +162,12 @@ do
 	let &quot;var=var+1&quot;
 done
 
-</code></pre><h3 id="24-tips-on-kubeoperator-package-management">24. tips on kubeoperator package management</h3>
-<p>Edit file <code>apps/kubeops_api/models/package.py</code>, comment the start container
-issue:</p>
-<pre><code>line 67 - 71 should be commented
-</code></pre><p>thus you  will get your package management online.</p>
-<h3 id="25-ss-for-listening">25. ss for listening</h3>
-<p>without netstat, using ss for listening:</p>
-<pre><code># sudo ss -tunlp
-</code></pre><h3 id="251-docker-regsitry-issue">25.1. docker-regsitry issue</h3>
-<p>registry v2.6 depends on musl, install it via:</p>
-<pre><code># apt-get install -y musl
-</code></pre><h3 id="26-ps-output-wide">26. ps output wide</h3>
-<p>via :</p>
-<pre><code># ps -efww
-</code></pre><h3 id="27-install-source-code-pro-font">27. install source code pro font</h3>
-<p>via following script:</p>
-<pre><code>#!/usr/bin/env bash
+</code></pre><h3 id=24-tips-on-kubeoperator-package-management>24. tips on kubeoperator package management</h3><p>Edit file <code>apps/kubeops_api/models/package.py</code>, comment the start container
+issue:</p><pre><code>line 67 - 71 should be commented
+</code></pre><p>thus you will get your package management online.</p><h3 id=25-ss-for-listening>25. ss for listening</h3><p>without netstat, using ss for listening:</p><pre><code># sudo ss -tunlp
+</code></pre><h3 id=251-docker-regsitry-issue>25.1. docker-regsitry issue</h3><p>registry v2.6 depends on musl, install it via:</p><pre><code># apt-get install -y musl
+</code></pre><h3 id=26-ps-output-wide>26. ps output wide</h3><p>via :</p><pre><code># ps -efww
+</code></pre><h3 id=27-install-source-code-pro-font>27. install source code pro font</h3><p>via following script:</p><pre><code>#!/usr/bin/env bash
 cd Downloads
 wget https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.zip
 if [ ! -d &quot;~/.fonts&quot; ] ; then
@@ -432,29 +179,18 @@ rm -rf source-code-pro*
 rm 1.050R-it.zip 
 cd ~/
 fc-cache -f -v
-</code></pre><h3 id="28-install-puppeteer-problem">28. Install puppeteer problem</h3>
-<p>Via:</p>
-<pre><code>sudo npm install -g puppeteer --unsafe-perm=true
-</code></pre><h3 id="29-css-for-layout">29. css for layout</h3>
-<p>Via:</p>
-<pre><code>iPadCSS控制横屏/竖屏布局（Landscape/PortraitModes）
-</code></pre><h3 id="30-git-tag-and-push">30. git tag and push</h3>
-<p>Via:</p>
-<pre><code> git tag -a v0.4.2 -m &quot;v0.4.2 for ansible v2.9.6&quot;
+</code></pre><h3 id=28-install-puppeteer-problem>28. Install puppeteer problem</h3><p>Via:</p><pre><code>sudo npm install -g puppeteer --unsafe-perm=true
+</code></pre><h3 id=29-css-for-layout>29. css for layout</h3><p>Via:</p><pre><code>iPadCSS控制横屏/竖屏布局（Landscape/PortraitModes）
+</code></pre><h3 id=30-git-tag-and-push>30. git tag and push</h3><p>Via:</p><pre><code> git tag -a v0.4.2 -m &quot;v0.4.2 for ansible v2.9.6&quot;
  git show v0.4.2
  git push origin master --tags
-</code></pre><h3 id="31-indesign">31. indesign</h3>
-<p>Adobe indesign for creating pdf could get good effects.</p>
-<h3 id="32-tips-on-rpi-ubuntu18044">32. Tips On rpi ubuntu18.04.4</h3>
-<p>Via following for getting the packages:</p>
-<pre><code># sudo su
+</code></pre><h3 id=31-indesign>31. indesign</h3><p>Adobe indesign for creating pdf could get good effects.</p><h3 id=32-tips-on-rpi-ubuntu18044>32. Tips On rpi ubuntu18.04.4</h3><p>Via following for getting the packages:</p><pre><code># sudo su
 # systemctl stop apt-daily.timer;systemctl disable apt-daily.timer ; systemctl stop apt-daily-upgrade.timer ; systemctl disable apt-daily-upgrade.timer; systemctl stop apt-daily.service;  systemctl mask apt-daily.service; systemctl daemon-reload
 # sudo lsof /var/lib/dpkg/lock
 # sudo lsof /var/lib/apt/lists/lock
 # sudo lsof /var/cache/apt/archives/lock
 # sudo kill -9 PID
-</code></pre><h3 id="33-change-default-python-in-ubuntu1804">33. Change default python in ubuntu18.04</h3>
-<pre><code># apt-get install python3.7
+</code></pre><h3 id=33-change-default-python-in-ubuntu1804>33. Change default python in ubuntu18.04</h3><pre><code># apt-get install python3.7
 # update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 # update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
 # update-alternatives --config python3
@@ -477,55 +213,31 @@ Python 3.7.5 (default, Nov  7 2019, 10:50:52)
 [GCC 8.3.0] on linux
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt; quit()
-</code></pre><p>Install correspoding packages:</p>
-<pre><code># apt-get install python3.7-dev python3.7-venv libpython3.7 libpython3.7-dev libpython3.7-dbg
-</code></pre><h3 id="34-upgrade-to-latest-nodejs">34. upgrade to latest nodejs</h3>
-<p>Via following methods:</p>
-<pre><code># cnpm install -g n
+</code></pre><p>Install correspoding packages:</p><pre><code># apt-get install python3.7-dev python3.7-venv libpython3.7 libpython3.7-dev libpython3.7-dbg
+</code></pre><h3 id=34-upgrade-to-latest-nodejs>34. upgrade to latest nodejs</h3><p>Via following methods:</p><pre><code># cnpm install -g n
 # n latest
-</code></pre><p>Then you could use <code>ng new Angular8ClientCrud</code>.</p>
-<pre><code># npm install -g @angular/cli
-</code></pre><h3 id="35-python-venv">35. python venv</h3>
-<p>Ubuntu 18.04 install and configure via:</p>
-<pre><code># apt-get install -y python3-virtualenv
+</code></pre><p>Then you could use <code>ng new Angular8ClientCrud</code>.</p><pre><code># npm install -g @angular/cli
+</code></pre><h3 id=35-python-venv>35. python venv</h3><p>Ubuntu 18.04 install and configure via:</p><pre><code># apt-get install -y python3-virtualenv
 # python3 -m venv piya_venv
 # source piya_venv/bin/activate
 (piya_venv) root@build:~/Code/piya# which python
 /root/Code/piya/piya_venv/bin/python
-</code></pre><h3 id="36-nvm">36. nvm</h3>
-<p>Install nvm via:</p>
-<pre><code>$ yaourt nvm
-</code></pre><p>Then</p>
-<pre><code>$ echo 'source /usr/share/nvm/init-nvm.sh' &gt;&gt; ~/.zshrc
+</code></pre><h3 id=36-nvm>36. nvm</h3><p>Install nvm via:</p><pre><code>$ yaourt nvm
+</code></pre><p>Then</p><pre><code>$ echo 'source /usr/share/nvm/init-nvm.sh' &gt;&gt; ~/.zshrc
 $ which nvm
 ...
 $ nvm install 10.18.0
 then you have nodejs 10.18.0 version.
-</code></pre><h3 id="37-npm-install-priviledge">37. npm install priviledge</h3>
-<p>Run npm install as root, do following:</p>
-<pre><code>$ npm install -g --unsafe-perm
-</code></pre><h3 id="38-dnsmasq-leases-file">38. dnsmasq leases file</h3>
-<p>In <code>/var/lib/misc/dnsmasq.leases</code> file, you could see all of the leased ip address.</p>
-<h3 id="39-docker-pullother-arch">39. docker pull(other arch)</h3>
-<p>via:</p>
-<pre><code># docker pull centos:7@sha256:aogwuoguwougowuoguwoeguowugouwg
-</code></pre><h3 id="40-boomaga-on-archlinux">40. boomaga on archlinux</h3>
-<p>Install cups and cups-pdf then building:</p>
-<pre><code># sudo pacman -S cups cups-pdf
+</code></pre><h3 id=37-npm-install-priviledge>37. npm install priviledge</h3><p>Run npm install as root, do following:</p><pre><code>$ npm install -g --unsafe-perm
+</code></pre><h3 id=38-dnsmasq-leases-file>38. dnsmasq leases file</h3><p>In <code>/var/lib/misc/dnsmasq.leases</code> file, you could see all of the leased ip address.</p><h3 id=39-docker-pullother-arch>39. docker pull(other arch)</h3><p>via:</p><pre><code># docker pull centos:7@sha256:aogwuoguwougowuoguwoeguowugouwg
+</code></pre><h3 id=40-boomaga-on-archlinux>40. boomaga on archlinux</h3><p>Install cups and cups-pdf then building:</p><pre><code># sudo pacman -S cups cups-pdf
 # sudo systemctl enable org.cups.cupsd.service
 # sudo systemctl start org.cups.cupsd.service
 # yaourt boomaga
-</code></pre><p>After this time&rsquo;s yaourt boomaga will be system-wide available.</p>
-<h3 id="41-zip-with-password">41. zip with password</h3>
-<p>via:</p>
-<pre><code># zip -re aaa.zip aaa/
-</code></pre><h3 id="42-vncserver-listen-only-on-local">42. vncserver listen only on local</h3>
-<p>start vncserver via:</p>
-<pre><code>alias vncserver='vncserver -localhost'
+</code></pre><p>After this time&rsquo;s yaourt boomaga will be system-wide available.</p><h3 id=41-zip-with-password>41. zip with password</h3><p>via:</p><pre><code># zip -re aaa.zip aaa/
+</code></pre><h3 id=42-vncserver-listen-only-on-local>42. vncserver listen only on local</h3><p>start vncserver via:</p><pre><code>alias vncserver='vncserver -localhost'
 vncserver
-</code></pre><h3 id="43-nvm-tips">43. nvm tips</h3>
-<p>Sometips:</p>
-<pre><code>→ nvm ls
+</code></pre><h3 id=43-nvm-tips>43. nvm tips</h3><p>Sometips:</p><pre><code>→ nvm ls
          v4.5.0
 -&gt;       v5.9.0
          system
@@ -536,67 +248,25 @@ iojs -&gt; N/A (default)
 # nvm current
 system
 # node -v
-</code></pre><h3 id="44-helm-tips">44. helm tips</h3>
-<p>helm install from local directory (helm v3):</p>
-<pre><code>helm install --generate-name cilium  --namespace kube-system    --set global.etcd.enabled=true    --set global.etcd.managed=true
-</code></pre><h3 id="45-install-hwe">45. Install hwe</h3>
-<p>Via following command:</p>
-<pre><code># sudo apt-get install -y linux-generic-hwe-18.04
-</code></pre><h3 id="46-xz-and-write-to-sd">46. xz and write to sd</h3>
-<p>via following command:</p>
-<pre><code># xz -d &lt; bone-debian-10.3-iot-armhf-2020-04-06-4gb.img.xz - | dd of=/dev/sdb
-</code></pre><h3 id="47-pikvm-思路">47. pikvm 思路</h3>
-<p>首先是有rpi 3b ,后面买了hdmid dongle和teensy 2.0.
-开始玩pikvm后:</p>
-<ol>
-<li>v4l udev调试, 平安</li>
-<li>arduino它用的pro micro, 卒</li>
-<li>platformio更改为teensy，编译不通过，卒</li>
-<li>看代码发现依赖的HID-Project库不支持teensy，卒</li>
-<li>看HID-Project说支持HoodLoader2的Uno，希望燃起</li>
-<li>platformio编译uno，卒</li>
-<li>platformio中引入自定义board HoodLoader2atmega16u2, 希望燃起</li>
-<li>无USB PID/VID，编译终止，卒
-9, 强行传入PID/VID， 希望燃起</li>
-<li>TimerOne库不支持atmega16u2， 卒</li>
-<li>强行定义Timer1管脚，希望燃起</li>
-<li>编译通过。未上板验证。</li>
-</ol>
-<p>接下来：</p>
-<ol>
-<li>刷HoodLoader2</li>
-<li>连接RPI+Uno</li>
-<li>调试(是否可刷入？Timer0是否正常？USB是否被识别？）</li>
-</ol>
-<p>问题重重，风险重重</p>
-<h3 id="48-redirect-usb-to-virtualbox">48. Redirect usb to virtualbox</h3>
-<p>Added via following command:</p>
-<pre><code>sudo usermod -aG vboxusers dash
-</code></pre><h3 id="49-install-latest-virtualbox">49. Install latest virtualbox</h3>
-<pre><code>echo &quot;deb https://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib&quot; | sudo tee /etc/apt/sources.list.d/virtualbox.list
-</code></pre><h3 id="50-platformio-issue">50. platformio issue</h3>
-<p>Issue:</p>
-<pre><code>/root/.platformio/packages/tool-avrdude/avrdude: error while loading shared libraries: /usr/lib/libtinfo.so.5: file too short
-</code></pre><p>Solved by:</p>
-<pre><code>sudo ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so
-</code></pre><h3 id="51-build-pkgarch">51. build pkg(Arch)</h3>
-<p>Via followinig command:</p>
-<pre><code>$ cd ~/builds &amp;&amp; yaourt -G pkgname &amp;&amp; cd $pkgname &amp;&amp; makepkg
-</code></pre><h3 id="52-diffpatch">52. diff/patch</h3>
-<p>via following commands:</p>
-<pre><code> cd kvmd-1.82-x86
+</code></pre><h3 id=44-helm-tips>44. helm tips</h3><p>helm install from local directory (helm v3):</p><pre><code>helm install --generate-name cilium  --namespace kube-system    --set global.etcd.enabled=true    --set global.etcd.managed=true
+</code></pre><h3 id=45-install-hwe>45. Install hwe</h3><p>Via following command:</p><pre><code># sudo apt-get install -y linux-generic-hwe-18.04
+</code></pre><h3 id=46-xz-and-write-to-sd>46. xz and write to sd</h3><p>via following command:</p><pre><code># xz -d &lt; bone-debian-10.3-iot-armhf-2020-04-06-4gb.img.xz - | dd of=/dev/sdb
+</code></pre><h3 id=47-pikvm-思路>47. pikvm 思路</h3><p>首先是有rpi 3b ,后面买了hdmid dongle和teensy 2.0.
+开始玩pikvm后:</p><ol><li>v4l udev调试, 平安</li><li>arduino它用的pro micro, 卒</li><li>platformio更改为teensy，编译不通过，卒</li><li>看代码发现依赖的HID-Project库不支持teensy，卒</li><li>看HID-Project说支持HoodLoader2的Uno，希望燃起</li><li>platformio编译uno，卒</li><li>platformio中引入自定义board HoodLoader2atmega16u2, 希望燃起</li><li>无USB PID/VID，编译终止，卒
+9, 强行传入PID/VID， 希望燃起</li><li>TimerOne库不支持atmega16u2， 卒</li><li>强行定义Timer1管脚，希望燃起</li><li>编译通过。未上板验证。</li></ol><p>接下来：</p><ol><li>刷HoodLoader2</li><li>连接RPI+Uno</li><li>调试(是否可刷入？Timer0是否正常？USB是否被识别？）</li></ol><p>问题重重，风险重重</p><h3 id=48-redirect-usb-to-virtualbox>48. Redirect usb to virtualbox</h3><p>Added via following command:</p><pre><code>sudo usermod -aG vboxusers dash
+</code></pre><h3 id=49-install-latest-virtualbox>49. Install latest virtualbox</h3><pre><code>echo &quot;deb https://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib&quot; | sudo tee /etc/apt/sources.list.d/virtualbox.list
+</code></pre><h3 id=50-platformio-issue>50. platformio issue</h3><p>Issue:</p><pre><code>/root/.platformio/packages/tool-avrdude/avrdude: error while loading shared libraries: /usr/lib/libtinfo.so.5: file too short
+</code></pre><p>Solved by:</p><pre><code>sudo ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so
+</code></pre><h3 id=51-build-pkgarch>51. build pkg(Arch)</h3><p>Via followinig command:</p><pre><code>$ cd ~/builds &amp;&amp; yaourt -G pkgname &amp;&amp; cd $pkgname &amp;&amp; makepkg
+</code></pre><h3 id=52-diffpatch>52. diff/patch</h3><p>via following commands:</p><pre><code> cd kvmd-1.82-x86
  rm -f ../x86.patch
  diff -Naru ../kvmd-1.82 . &gt; ../x86.patch
  cp -r kvmd-1.82 test
  cd test
  patch -s -p0 &lt; ../x86.patch
-</code></pre><h3 id="53-centos-76-ssh-too-slow">53. centos 76 ssh too slow</h3>
-<p>Edit the <code>/etc/ssh/sshd_config</code>, for:</p>
-<pre><code>GSSAPIAuthentication no
+</code></pre><h3 id=53-centos-76-ssh-too-slow>53. centos 76 ssh too slow</h3><p>Edit the <code>/etc/ssh/sshd_config</code>, for:</p><pre><code>GSSAPIAuthentication no
 UseDNS	no
-</code></pre><h3 id="54-create-md0-in-arm64">54. Create md0 in arm64</h3>
-<p>Via following commands:</p>
-<pre><code># cat /proc/mdstat
+</code></pre><h3 id=54-create-md0-in-arm64>54. Create md0 in arm64</h3><p>Via following commands:</p><pre><code># cat /proc/mdstat
 # lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
 NAME                SIZE FSTYPE      TYPE MOUNTPOINT
 sda               557.9G             disk 
@@ -664,14 +334,11 @@ unused devices: &lt;none&gt;
 # df -h -x devtmpfs -x tmpfs
 # sudo mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
 # echo '/dev/md0 /mnt/md0 ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
-</code></pre><h3 id="55-nvidia-xorg-howto">55. Nvidia Xorg Howto</h3>
-<p>Install <code>nvidia</code> from pacman, or <code>nvidia-lts</code> is also ok.
-via <code>lspci</code> to detect the graphic card&rsquo;s BusID:</p>
-<pre><code>$ lspci | egrep 'VGA|3D'
+</code></pre><h3 id=55-nvidia-xorg-howto>55. Nvidia Xorg Howto</h3><p>Install <code>nvidia</code> from pacman, or <code>nvidia-lts</code> is also ok.
+via <code>lspci</code> to detect the graphic card&rsquo;s BusID:</p><pre><code>$ lspci | egrep 'VGA|3D'
 00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 630 (Mobile)
 01:00.0 VGA compatible controller: NVIDIA Corporation GP106M [GeForce GTX 1060 Mobile] (rev a1)
-</code></pre><p>Edit the <code>xorg.conf</code> file:</p>
-<pre><code>$ sudo vim /etc/X11/xorg.conf
+</code></pre><p>Edit the <code>xorg.conf</code> file:</p><pre><code>$ sudo vim /etc/X11/xorg.conf
 Section &quot;Module&quot;                                                      #可能没有，自行添加
     load &quot;modesetting&quot;
 EndSection
@@ -683,8 +350,7 @@ Section &quot;Device&quot;
     BusID          &quot;1:0:0&quot;                           #此处填刚刚查询到的BusID
     Option         &quot;AllowEmptyInitialConfiguration&quot;
 EndSection
-</code></pre><p>Edit the <code>mkinitcpio.conf</code>:</p>
-<pre><code>$ sudo vim /etc/mkinitcpio.conf
+</code></pre><p>Edit the <code>mkinitcpio.conf</code>:</p><pre><code>$ sudo vim /etc/mkinitcpio.conf
 MODULES=(intel_agp i915 nvidia nvidia_modeset nvidia_uvm  nvidia_drm)
 $ sudo mkinitcpio -P
 $ sudo vim /etc/default/grub
@@ -692,16 +358,10 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;loglevel=3 quiet nvidia-drm.modeset=1&quot;
 $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 $ sudo vim /etc/modprobe.d/nouveau_blacklist.conf
 blacklist nouveau
-</code></pre><h3 id="56-go-speedup">56. go speedup</h3>
-<p>Via following command, fast:</p>
-<pre><code>go env -w GO111MODULE=on 
+</code></pre><h3 id=56-go-speedup>56. go speedup</h3><p>Via following command, fast:</p><pre><code>go env -w GO111MODULE=on 
 go env -w GOPROXY=https://goproxy.cn,direct
-</code></pre><h3 id="57-dnsmasq-leased-ip-addr">57. dnsmasq leased ip addr</h3>
-<p>Via cat following files:</p>
-<pre><code>/var/lib/misc/dnsmasq.leases
-</code></pre><h3 id="58-lxd-cluster">58. lxd cluster</h3>
-<p>via following commands:</p>
-<pre><code># root@arm-a1:/home/test/focal_desktop# lxd init
+</code></pre><h3 id=57-dnsmasq-leased-ip-addr>57. dnsmasq leased ip addr</h3><p>Via cat following files:</p><pre><code>/var/lib/misc/dnsmasq.leases
+</code></pre><h3 id=58-lxd-cluster>58. lxd cluster</h3><p>via following commands:</p><pre><code># root@arm-a1:/home/test/focal_desktop# lxd init
 Would you like to use LXD clustering? (yes/no) [default=no]: yes
 What name should be used to identify this node in the cluster? [default=arm-a1]:
 What IP address or DNS name should be used to reach this node? [default=192.192.190.163]:
@@ -718,50 +378,30 @@ All existing data is lost when joining a cluster, continue? (yes/no) [default=no
 Choose &quot;source&quot; property for storage pool &quot;local&quot;:
 Would you like a YAML &quot;lxd init&quot; preseed to be printed? (yes/no) [default=no]:
 root@arm-a1:/home/test/focal_desktop#
-</code></pre><h3 id="59-lxc-issue">59. lxc issue</h3>
-<p>for installing kubernetes  in lxc, should not change the conntrack parameters!:</p>
-<pre><code>kube_proxy_conntrack_max: 0
+</code></pre><h3 id=59-lxc-issue>59. lxc issue</h3><p>for installing kubernetes in lxc, should not change the conntrack parameters!:</p><pre><code>kube_proxy_conntrack_max: 0
 kube_proxy_conntrack_max_per_core: 0
-</code></pre><h3 id="60-svn-working-tips">60. svn working tips</h3>
-<p>In intra-net working like:</p>
-<pre><code>$ export LC_ALL=zh_CN.UTF-8
+</code></pre><h3 id=60-svn-working-tips>60. svn working tips</h3><p>In intra-net working like:</p><pre><code>$ export LC_ALL=zh_CN.UTF-8
 $ svn co --username=xxxx --password=xxxx123 https://192.192.xxx.xxx/svn/trunk/xxxx/cloud
 $ cd cloud
 $ svn add xxxx.zip yyyy.zip
 $ svn ci -m &quot;Added new release files in 20200925&quot;
 $  svn add --force * --auto-props --parents --depth infinity -q  
 $ svm commit -m 'Adding more file'
-</code></pre><h3 id="61-pdf-to-png">61. pdf to png</h3>
-<p>via following command you could convert pdf to pngs and cut its margin:</p>
-<pre><code>pdftoppm Rong.pdf B2 -png -x 110 -y 65 -W 1050 -H 1500
-</code></pre><h3 id="62-manually-update-time">62. Manually update time</h3>
-<p>Via:</p>
-<pre><code>ntpd -s -d
-</code></pre><h3 id="63-manually-delete-journal">63. Manually delete journal</h3>
-<p>Manually delete journals thus the size if under 100M:</p>
-<pre><code># journalctl --vacuum-size=100M
-</code></pre><p>Clean logs before 2 weeks:</p>
-<pre><code># journalctl --vacuum-time=2weeks
-</code></pre><h3 id="64-specify-ssh-exchange-method">64. Specify ssh exchange method</h3>
-<p>issue:</p>
-<pre><code>no matching key exchange method found. Their offer: diffie-hellman-group1-sha1 while accessing the TEA shell from ssh client
-</code></pre><p>Solution:</p>
-<pre><code># ssh -oKexAlgorithms=+diffie-hellman-group1-sha1  root@xxx.xxx.xxx.xx
-</code></pre><h3 id="65-vxlan-tips">65. vxlan tips</h3>
-<p>Via:</p>
-<pre><code>  ip link add vxlan0 type vxlan id 1 group 239.1.1.1 dstport 4789 dev enp130s0f1
+</code></pre><h3 id=61-pdf-to-png>61. pdf to png</h3><p>via following command you could convert pdf to pngs and cut its margin:</p><pre><code>pdftoppm Rong.pdf B2 -png -x 110 -y 65 -W 1050 -H 1500
+</code></pre><h3 id=62-manually-update-time>62. Manually update time</h3><p>Via:</p><pre><code>ntpd -s -d
+</code></pre><h3 id=63-manually-delete-journal>63. Manually delete journal</h3><p>Manually delete journals thus the size if under 100M:</p><pre><code># journalctl --vacuum-size=100M
+</code></pre><p>Clean logs before 2 weeks:</p><pre><code># journalctl --vacuum-time=2weeks
+</code></pre><h3 id=64-specify-ssh-exchange-method>64. Specify ssh exchange method</h3><p>issue:</p><pre><code>no matching key exchange method found. Their offer: diffie-hellman-group1-sha1 while accessing the TEA shell from ssh client
+</code></pre><p>Solution:</p><pre><code># ssh -oKexAlgorithms=+diffie-hellman-group1-sha1  root@xxx.xxx.xxx.xx
+</code></pre><h3 id=65-vxlan-tips>65. vxlan tips</h3><p>Via:</p><pre><code>  ip link add vxlan0 type vxlan id 1 group 239.1.1.1 dstport 4789 dev enp130s0f1
  bridge fdb append to 00:00:00:00:00:00 dst 192.192.xxx.xx7 dev vxlan0
  bridge fdb append to 00:00:00:00:00:00 dst 192.192.xxx.xx9 dev vxlan0
 ip addr add 10.0.0.7/24 dev vxlan0
 brctl addbr br-kkk
 ip link set br-kkk up
 brctl addif br-kkk vxlan0
-</code></pre><h3 id="66-repair-127-servers-disk">66. Repair 127 server&rsquo;s disk</h3>
-<p>Centos7, <code>/dev/mapper/cl-root</code>, repair via using a livecd bootup the server then in terminal input:</p>
-<pre><code>$ sudo xfs_repair -L /dev/mapper/cl-root
-</code></pre><h3 id="67-vxlan">67. vxlan</h3>
-<p>Via:</p>
-<pre><code>ip link add vxlan0 type vxlan id 42 dstport 4789 local 192.192.ddd.ddd dev br0 group 224.1.1.1
+</code></pre><h3 id=66-repair-127-servers-disk>66. Repair 127 server&rsquo;s disk</h3><p>Centos7, <code>/dev/mapper/cl-root</code>, repair via using a livecd bootup the server then in terminal input:</p><pre><code>$ sudo xfs_repair -L /dev/mapper/cl-root
+</code></pre><h3 id=67-vxlan>67. vxlan</h3><p>Via:</p><pre><code>ip link add vxlan0 type vxlan id 42 dstport 4789 local 192.192.ddd.ddd dev br0 group 224.1.1.1
 ip link add br-vxlan0 type bridge
 ip link set vxlan0 master br-vxlan0
 ip link add vrf0 type vrf table 10
@@ -769,17 +409,12 @@ ip link set br-vxlan0 master vrf0
 ip link set vxlan0 up
 ip link set br-vxlan0 up
 ip link set vrf0 up
-</code></pre><h3 id="68-rclocal-in-centos7">68. rc.local in centos7</h3>
-<p>Via following method you could make <code>/etc/rc.local</code> working:</p>
-<pre><code>chmod +x /etc/rc.d/rc.local
+</code></pre><h3 id=68-rclocal-in-centos7>68. rc.local in centos7</h3><p>Via following method you could make <code>/etc/rc.local</code> working:</p><pre><code>chmod +x /etc/rc.d/rc.local
 systemctl enable rc-local
 systemctl start rc-local
 systemctl status rc-local
-</code></pre><h3 id="69-archlinux-byobu-issue">69. archlinux byobu issue</h3>
-<p>When running byobu we got following issues:</p>
-<pre><code>tmux: need UTF-8 locale (LC_CTYPE) but have ANSI_X3.4-1968
-</code></pre><p>solved via:</p>
-<pre><code># sudo vim /etc/locale.gen
+</code></pre><h3 id=69-archlinux-byobu-issue>69. archlinux byobu issue</h3><p>When running byobu we got following issues:</p><pre><code>tmux: need UTF-8 locale (LC_CTYPE) but have ANSI_X3.4-1968
+</code></pre><p>solved via:</p><pre><code># sudo vim /etc/locale.gen
 # locale-gen
 # sudo localectl set-locale LANG=en_CA.UTF-8
 
@@ -795,18 +430,15 @@ Then you could get the sidebar toc
 ### 70. Remove docker service(manually)
 via:    
 
-</code></pre><p>rm -f /etc/systemd/system/multi-user.target.wants/docker.service</p>
-<pre><code>
+</code></pre><p>rm -f /etc/systemd/system/multi-user.target.wants/docker.service</p><pre><code>
 ### 71. undo last commit
 git undo last commitment via:    
 
-</code></pre><p>git reset &ndash;soft HEAD~1</p>
-<pre><code>
+</code></pre><p>git reset &ndash;soft HEAD~1</p><pre><code>
 ### 72. delete tmp files:    
 Via find :   
 
-</code></pre><p>find ./ -type f ( -name &lsquo;*.swp&rsquo; -o -name &lsquo;<em>~&rsquo; -o -name &lsquo;</em>.bak&rsquo; -o -name &lsquo;.netrwhist&rsquo; ) -delete</p>
-<pre><code>
+</code></pre><p>find ./ -type f ( -name &lsquo;*.swp&rsquo; -o -name &lsquo;<em>~&rsquo; -o -name &lsquo;</em>.bak&rsquo; -o -name &lsquo;.netrwhist&rsquo; ) -delete</p><pre><code>
 ### 73. vncviewer without passwd
 Generate password:    
 
@@ -814,51 +446,40 @@ Generate password:
 Using password file /home/user/.vnc/passwd
 Password:
 Verify:
-Would you like to enter a view-only password (y/n)? n</p>
-<pre><code>Login with password file:    
+Would you like to enter a view-only password (y/n)? n</p><pre><code>Login with password file:    
 
-</code></pre><h1 id="vncviewer--passwd-vncpasswd-1013714922">vncviewer -passwd ~/.vnc/passwd 10.137.149.2:2</h1>
-<pre><code>
+</code></pre><h1 id=vncviewer--passwd-vncpasswd-1013714922>vncviewer -passwd ~/.vnc/passwd 10.137.149.2:2</h1><pre><code>
 ### 74. DPMS
 Display Power Management Signaling, disable it via:    
 
-</code></pre><p>xset -dpms</p>
-<pre><code>Query it via:    
+</code></pre><p>xset -dpms</p><pre><code>Query it via:    
 
-</code></pre><p>xset q</p>
-<pre><code>Re-enable it via:    
+</code></pre><p>xset q</p><pre><code>Re-enable it via:    
 
-</code></pre><p>xset +dpms</p>
-<pre><code>### 75. ufw open port
+</code></pre><p>xset +dpms</p><pre><code>### 75. ufw open port
 via:    
 
-</code></pre><p>$ sudo ufw allow from any to any port 10000 proto tcp</p>
-<pre><code>
+</code></pre><p>$ sudo ufw allow from any to any port 10000 proto tcp</p><pre><code>
 ### 76. windows route via net
 via:    
 
-</code></pre><h1 id="route--p-add-1017180-mask-2552552550-192192189128">route -p add 10.17.18.0 MASK 255.255.255.0 192.192.189.128</h1>
-<pre><code>
+</code></pre><h1 id=route--p-add-1017180-mask-2552552550-192192189128>route -p add 10.17.18.0 MASK 255.255.255.0 192.192.189.128</h1><pre><code>
 ### 77. view timestamp of pem
 via :    
 
-</code></pre><h1 id="openssl-x509--enddate--noout--in-keysadminpem">openssl x509 -enddate -noout -in keys/admin.pem</h1>
-<p>notAfter=Feb 11 02:06:00 2020 GMT</p>
-<pre><code>
+</code></pre><h1 id=openssl-x509--enddate--noout--in-keysadminpem>openssl x509 -enddate -noout -in keys/admin.pem</h1><p>notAfter=Feb 11 02:06:00 2020 GMT</p><pre><code>
 ### 78. ia32 support
 ia32 support in bionic:   
 
 </code></pre><p>$ sudo dpkg &ndash;add-architecture i386
 $ sudo apt update
-$ sudo apt install libc6:i386</p>
-<pre><code>
+$ sudo apt install libc6:i386</p><pre><code>
 ### 79. user run docker
 via:    
 
 </code></pre><p>sudo usermod -aG docker dash
 sudo systemctl restart docker
-#relogin dash</p>
-<pre><code>
+#relogin dash</p><pre><code>
 ### 80. CentOS8 repo
 edit centos8 repo using cdrom:    
 
@@ -868,60 +489,40 @@ metadata_expire=-1
 gpgcheck=1
 enabled=1
 baseurl=file:///opt/BaseOS/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial</p>
-<p>[InstallMedia-AppStream]
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial</p><p>[InstallMedia-AppStream]
 name=CentOS Linux 8 - AppStream
 metadata_expire=-1
 gpgcheck=1
 enabled=1
 baseurl=file:///opt/AppStream/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial</p>
-<pre><code>
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial</p><pre><code>
 ### 81. kubeadm 签名问题
 查看签名所剩时间并重新更新签名时间:    
 
-</code></pre><h1 id="kubeadm-alpha-certs-check-expiration">kubeadm alpha certs check-expiration</h1>
-<h1 id="kubeadm-alpha-certs-renew-allkubeadm---configkubeadm-configyaml">kubeadm alpha certs renew all=kubeadm &ndash;config=kubeadm-config.yaml</h1>
-<h1 id="kubeadm-alpha-certs-check-expiration-1">kubeadm alpha certs check-expiration</h1>
-<pre><code>
+</code></pre><h1 id=kubeadm-alpha-certs-check-expiration>kubeadm alpha certs check-expiration</h1><h1 id=kubeadm-alpha-certs-renew-allkubeadm---configkubeadm-configyaml>kubeadm alpha certs renew all=kubeadm &ndash;config=kubeadm-config.yaml</h1><h1 id=kubeadm-alpha-certs-check-expiration-1>kubeadm alpha certs check-expiration</h1><pre><code>
 ### 82. kubelet auto approve
 via adding:    
 
-</code></pre><p>&ndash;rotate-certificates &ndash;rotate-server-certificates</p>
-<p>my kubelet.config</p>
-<p>Environment=&quot;KUBELET_ARGS=&ndash;rotate-certificates &ndash;rotate-server-certificates &ndash;cert-dir=/var/lib/kubelet/pki &ndash;logtostderr=true &ndash;v=3&rdquo;</p>
-<pre><code>
+</code></pre><p>&ndash;rotate-certificates &ndash;rotate-server-certificates</p><p>my kubelet.config</p><p>Environment="KUBELET_ARGS=&ndash;rotate-certificates &ndash;rotate-server-certificates &ndash;cert-dir=/var/lib/kubelet/pki &ndash;logtostderr=true &ndash;v=3&rdquo;</p><pre><code>
 ### 83. kubeadm check timeout
 via:    
 
-</code></pre><p>kubeadm alpha certs check-expiration</p>
-<pre><code>
+</code></pre><p>kubeadm alpha certs check-expiration</p><pre><code>
 ### 84. sync time
 syn time via ssh :    
 
-</code></pre><h1 id="ssh--o-stricthostkeycheckingno--i-rongdeploykey-root10137149232-date--s--date--u-s-">ssh -o &ldquo;StrictHostKeyChecking=no&rdquo; -i .rong/deploy.key <a href="mailto:root@10.137.149.232">root@10.137.149.232</a> date -s @<code>( date -u +&quot;%s&quot; )</code></h1>
-<pre><code>
+</code></pre><h1 id=ssh--o-stricthostkeycheckingno--i-rongdeploykey-root10137149232-date--s--date--u-s->ssh -o &ldquo;StrictHostKeyChecking=no&rdquo; -i .rong/deploy.key <a href=mailto:root@10.137.149.232>root@10.137.149.232</a> date -s @<code>( date -u +"%s" )</code></h1><pre><code>
 ### 85. limit conn per ip via ufw
 via following commands:    
 
-</code></pre><h1 id="vim-etcufwbeforerules">vim /etc/ufw/before.rules</h1>
-<h1 id="end-required-lines">End required lines</h1>
-<h1 id="limit-to-5-concurrent-connections-on-port-80-per-ip">Limit to 5 concurrent connections on port 80 per IP</h1>
-<p>-A ufw-before-input -p tcp &ndash;syn &ndash;dport 80 -m connlimit &ndash;connlimit-above 5 -j DROP</p>
-<h1 id="limit-to-10-connections-on-port-80-per-3-seconds-per-ip">Limit to 10 connections on port 80 per 3 seconds per IP</h1>
-<p>-A ufw-before-input -p tcp &ndash;dport 80 -i eth0 -m state &ndash;state NEW -m recent &ndash;set
--A ufw-before-input -p tcp &ndash;dport 80 -i eth0 -m state &ndash;state NEW -m recent &ndash;update &ndash;seconds 3 &ndash;hitcount 10 -j DROP</p>
-<h1 id="allow-all-on-loopback">allow all on loopback</h1>
-<h1 id="ufw-allow-3333tcp">ufw allow 3333/tcp</h1>
-<h1 id="ufw-enable">ufw enable</h1>
-<pre><code>
+</code></pre><h1 id=vim-etcufwbeforerules>vim /etc/ufw/before.rules</h1><h1 id=end-required-lines>End required lines</h1><h1 id=limit-to-5-concurrent-connections-on-port-80-per-ip>Limit to 5 concurrent connections on port 80 per IP</h1><p>-A ufw-before-input -p tcp &ndash;syn &ndash;dport 80 -m connlimit &ndash;connlimit-above 5 -j DROP</p><h1 id=limit-to-10-connections-on-port-80-per-3-seconds-per-ip>Limit to 10 connections on port 80 per 3 seconds per IP</h1><p>-A ufw-before-input -p tcp &ndash;dport 80 -i eth0 -m state &ndash;state NEW -m recent &ndash;set
+-A ufw-before-input -p tcp &ndash;dport 80 -i eth0 -m state &ndash;state NEW -m recent &ndash;update &ndash;seconds 3 &ndash;hitcount 10 -j DROP</p><h1 id=allow-all-on-loopback>allow all on loopback</h1><h1 id=ufw-allow-3333tcp>ufw allow 3333/tcp</h1><h1 id=ufw-enable>ufw enable</h1><pre><code>
 ### 86. ss setup
 via:    
 
 </code></pre><p>docker run -d -p 9000:9000 -p 9000:9000/udp &ndash;name ss-libev &ndash;restart=always -v /etc/shadowsocks-libev:/etc/shadowsocks-libev teddysun/shadowsocks-libev
 ufw allow 9000/udp
-ufw allow 9000/tcp</p>
-<pre><code>
+ufw allow 9000/tcp</p><pre><code>
 ### 87. ufw security vps
 via:    
 
@@ -930,37 +531,27 @@ sudo ufw default deny incoming
 sudo ufw allow out 53
 sudo ufw allow out http
 sudo ufw allow out https
-&hellip;..</p>
-<pre><code>examine:    
+&mldr;..</p><pre><code>examine:    
 
-</code></pre><h1 id="ufw-status-verbose">ufw status verbose</h1>
-<pre><code>My configuration is: 
+</code></pre><h1 id=ufw-status-verbose>ufw status verbose</h1><pre><code>My configuration is: 
 
 </code></pre><p>in: 9345, 22
-out: 9345, 80 , 443, 53</p>
-<pre><code>
+out: 9345, 80 , 443, 53</p><pre><code>
 ### 88. check serve(vm or not)
 via dmidecode:    
 
-</code></pre><p>$ sudo dmidecode -s system-manufacturer<br>
-Hasee Computer
+</code></pre><p>$ sudo dmidecode -s system-manufacturer<br>Hasee Computer
 $ sudo dmidecode -s system-product-name
-GJ5CN64</p>
-<pre><code>
+GJ5CN64</p><pre><code>
 ### 89. vagrant mutate box
 Before:    
 
-</code></pre><h1 id="vagrant-box-list">vagrant box list</h1>
-<p>bento/centos-7.6   (virtualbox, 201907.24.0)
-generic/ubuntu1804 (virtualbox, 0)</p>
-<h1 id="vagrant-mutate-genericubuntu1804-libvirt">vagrant mutate generic/ubuntu1804 libvirt</h1>
-<pre><code>After:    
+</code></pre><h1 id=vagrant-box-list>vagrant box list</h1><p>bento/centos-7.6 (virtualbox, 201907.24.0)
+generic/ubuntu1804 (virtualbox, 0)</p><h1 id=vagrant-mutate-genericubuntu1804-libvirt>vagrant mutate generic/ubuntu1804 libvirt</h1><pre><code>After:    
 
-</code></pre><h1 id="vagrant-box-list-1">vagrant box list</h1>
-<p>bento/centos-7.6   (virtualbox, 201907.24.0)
+</code></pre><h1 id=vagrant-box-list-1>vagrant box list</h1><p>bento/centos-7.6 (virtualbox, 201907.24.0)
 generic/ubuntu1804 (libvirt, 0)
-generic/ubuntu1804 (virtualbox, 0)</p>
-<pre><code>
+generic/ubuntu1804 (virtualbox, 0)</p><pre><code>
 ### 90. docker in china
 via:    
 
@@ -977,150 +568,77 @@ via:
 &ldquo;max-file&rdquo;: &ldquo;3&rdquo;
 },
 &ldquo;data-root&rdquo;: &ldquo;/var/lib/docker&rdquo;
-}</p>
-<pre><code>
+}</p><pre><code>
 ### 91. Use aliyun for installing docker-ce
 via:    
 
-</code></pre><h1 id="step-1-安装必要的一些系统工具">step 1: 安装必要的一些系统工具</h1>
-<p>sudo apt-get update
-sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common</p>
-<h1 id="step-2-安装gpg证书">step 2: 安装GPG证书</h1>
-<p>curl -fsSL <a href="https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg">https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg</a> | sudo apt-key add -</p>
-<h1 id="step-3-写入软件源信息">Step 3: 写入软件源信息</h1>
-<p>sudo add-apt-repository &ldquo;deb [arch=amd64] <a href="https://mirrors.aliyun.com/docker-ce/linux/ubuntu">https://mirrors.aliyun.com/docker-ce/linux/ubuntu</a> $(lsb_release -cs) stable&rdquo;</p>
-<h1 id="step-4-更新并安装docker-ce">Step 4: 更新并安装Docker-CE</h1>
-<p>sudo apt-get -y update
-sudo apt-get -y install docker-ce</p>
-<pre><code>
+</code></pre><h1 id=step-1-安装必要的一些系统工具>step 1: 安装必要的一些系统工具</h1><p>sudo apt-get update
+sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common</p><h1 id=step-2-安装gpg证书>step 2: 安装GPG证书</h1><p>curl -fsSL <a href=https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg>https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg</a> | sudo apt-key add -</p><h1 id=step-3-写入软件源信息>Step 3: 写入软件源信息</h1><p>sudo add-apt-repository &ldquo;deb [arch=amd64] <a href=https://mirrors.aliyun.com/docker-ce/linux/ubuntu>https://mirrors.aliyun.com/docker-ce/linux/ubuntu</a> $(lsb_release -cs) stable&rdquo;</p><h1 id=step-4-更新并安装docker-ce>Step 4: 更新并安装Docker-CE</h1><p>sudo apt-get -y update
+sudo apt-get -y install docker-ce</p><pre><code>
 ### 92. use aliyun for install docker-ce on rhel7
 via:    
 
-</code></pre><h1 id="vi-etcyumpluginconfdsubscription-managerconf">vi /etc/yum/pluginconf.d/subscription-manager.conf</h1>
-<p>enabled=0</p>
-<h1 id="vi-etcyumreposdcentos7repo">vi /etc/yum.repos.d/Centos7.repo</h1>
-<p>[base]
+</code></pre><h1 id=vi-etcyumpluginconfdsubscription-managerconf>vi /etc/yum/pluginconf.d/subscription-manager.conf</h1><p>enabled=0</p><h1 id=vi-etcyumreposdcentos7repo>vi /etc/yum.repos.d/Centos7.repo</h1><p>[base]
 name=CentOS-$releasever - Base - 163.com
-#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os
 baseurl=http://mirrors.163.com/centos/7/os/$basearch/
 gpgcheck=1
-gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</p>
-<p>#released updates
+gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</p><p>#released updates
 [updates]
 name=CentOS-$releasever - Updates - 163.com
-#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates
 baseurl=http://mirrors.163.com/centos/7/updates/$basearch/
 gpgcheck=1
-gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</p>
-<p>#additional packages that may be useful
+gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</p><p>#additional packages that may be useful
 [extras]
 name=CentOS-$releasever - Extras - 163.com
-#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras
 baseurl=http://mirrors.163.com/centos/7/extras/$basearch/
 gpgcheck=1
-gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</p>
-<p>#additional packages that extend functionality of existing packages
+gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</p><p>#additional packages that extend functionality of existing packages
 [centosplus]
 name=CentOS-$releasever - Plus - 163.com
 baseurl=http://mirrors.163.com/centos/7/centosplus/$basearch/
 gpgcheck=1
 enabled=0
-gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</p>
-<h1 id="sudo-yum-install--y-yum-utils-device-mapper-persistent-data-lvm2">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</h1>
-<h1 id="sudo-yum-config-manager---add-repo-httpmirrorsaliyuncomdocker-celinuxcentosdocker-cerepo">sudo yum-config-manager &ndash;add-repo <a href="http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo">http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</a></h1>
-<h1 id="sudo-yum-makecache-fast">sudo yum makecache fast</h1>
-<h1 id="sudo-yum--y-install-docker-ce">sudo yum -y install docker-ce</h1>
-<pre><code>
+gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7</p><h1 id=sudo-yum-install--y-yum-utils-device-mapper-persistent-data-lvm2>sudo yum install -y yum-utils device-mapper-persistent-data lvm2</h1><h1 id=sudo-yum-config-manager---add-repo-httpmirrorsaliyuncomdocker-celinuxcentosdocker-cerepo>sudo yum-config-manager &ndash;add-repo <a href=http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo>http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</a></h1><h1 id=sudo-yum-makecache-fast>sudo yum makecache fast</h1><h1 id=sudo-yum--y-install-docker-ce>sudo yum -y install docker-ce</h1><pre><code>
 ###  93. gem sources
 Use china repository:    
 
-</code></pre><p>gem sources &ndash;add <a href="https://mirrors.tuna.tsinghua.edu.cn/rubygems/">https://mirrors.tuna.tsinghua.edu.cn/rubygems/</a> &ndash;remove <a href="https://rubygems.org/">https://rubygems.org/</a></p>
-<pre><code>Examine via:    
+</code></pre><p>gem sources &ndash;add <a href=https://mirrors.tuna.tsinghua.edu.cn/rubygems/>https://mirrors.tuna.tsinghua.edu.cn/rubygems/</a> &ndash;remove <a href=https://rubygems.org/>https://rubygems.org/</a></p><pre><code>Examine via:    
 
-</code></pre><h1 id="gem-sources--l">gem sources -l</h1>
-<p>*** CURRENT SOURCES ***</p>
-<p><a href="https://mirrors.tuna.tsinghua.edu.cn/rubygems/">https://mirrors.tuna.tsinghua.edu.cn/rubygems/</a></p>
-<pre><code>### 94. zip with folder
+</code></pre><h1 id=gem-sources--l>gem sources -l</h1><p>*** CURRENT SOURCES ***</p><p><a href=https://mirrors.tuna.tsinghua.edu.cn/rubygems/>https://mirrors.tuna.tsinghua.edu.cn/rubygems/</a></p><pre><code>### 94. zip with folder
 via:     
 
-</code></pre><p>zip -r archivename.zip directory_name</p>
-<pre><code>
+</code></pre><p>zip -r archivename.zip directory_name</p><pre><code>
 ### 95. helm issues
 For repository has been changed:    
 
-</code></pre><h1 id="helm-repo-add-incubator--httpschartshelmshincubator">helm repo add incubator  <a href="https://charts.helm.sh/incubator">https://charts.helm.sh/incubator</a></h1>
-<h1 id="mkdir-tmp">mkdir tmp</h1>
-<h1 id="cd-tmp">cd tmp/</h1>
-<h1 id="helm-pull-incubatorsparkoperator">helm pull incubator/sparkoperator</h1>
-<h1 id="ls">ls</h1>
-<p>sparkoperator-0.8.6.tgz</p>
-<pre><code>Transfer the tgz to k8s system, install via:    
+</code></pre><h1 id=helm-repo-add-incubator--httpschartshelmshincubator>helm repo add incubator <a href=https://charts.helm.sh/incubator>https://charts.helm.sh/incubator</a></h1><h1 id=mkdir-tmp>mkdir tmp</h1><h1 id=cd-tmp>cd tmp/</h1><h1 id=helm-pull-incubatorsparkoperator>helm pull incubator/sparkoperator</h1><h1 id=ls>ls</h1><p>sparkoperator-0.8.6.tgz</p><pre><code>Transfer the tgz to k8s system, install via:    
 
-</code></pre><h1 id="tar-xzvf-sparkoperator-086tgz">tar xzvf sparkoperator-0.8.6.tgz</h1>
-<h1 id="cd-sparkoperator">cd sparkoperator</h1>
-<h1 id="helm-install---namespace-spark-operator---set-enablebatchschedulertrue---set-enablewebhooktrue-">helm install &ndash;namespace spark-operator &ndash;set enableBatchScheduler=true &ndash;set enableWebhook=true .</h1>
-<h1 id="kubectl-get-pods---all-namespaces">kubectl get pods &ndash;all-namespaces</h1>
-<h1 id="kubectl-get-pods--n-spark-operator">kubectl get pods -n spark-operator</h1>
-<p>NAME                                          READY   STATUS              RESTARTS   AGE
-brown-joey-sparkoperator-87868577f-68cts      0/1     ContainerCreating   0          67s
-brown-joey-sparkoperator-webhook-init-85ndb   0/1     ErrImagePull        0          67s</p>
-<pre><code>
+</code></pre><h1 id=tar-xzvf-sparkoperator-086tgz>tar xzvf sparkoperator-0.8.6.tgz</h1><h1 id=cd-sparkoperator>cd sparkoperator</h1><h1 id=helm-install---namespace-spark-operator---set-enablebatchschedulertrue---set-enablewebhooktrue->helm install &ndash;namespace spark-operator &ndash;set enableBatchScheduler=true &ndash;set enableWebhook=true .</h1><h1 id=kubectl-get-pods---all-namespaces>kubectl get pods &ndash;all-namespaces</h1><h1 id=kubectl-get-pods--n-spark-operator>kubectl get pods -n spark-operator</h1><p>NAME READY STATUS RESTARTS AGE
+brown-joey-sparkoperator-87868577f-68cts 0/1 ContainerCreating 0 67s
+brown-joey-sparkoperator-webhook-init-85ndb 0/1 ErrImagePull 0 67s</p><pre><code>
 ### 96. codeblock in mardkown preview enhanced
 换行:     
 
-</code></pre><p>F1 =&gt; Markdown Preview Enhanced : Customize CSS</p>
-<p>Then, in the style.less:</p>
-<p>.markdown-preview.markdown-preview {
+</code></pre><p>F1 => Markdown Preview Enhanced : Customize CSS</p><p>Then, in the style.less:</p><p>.markdown-preview.markdown-preview {
 pre, code {
 white-space: pre-wrap;
 }
 }
-should enable wrapping for code blocks.</p>
-<pre><code>
+should enable wrapping for code blocks.</p><pre><code>
 ### 97. startup timeout
 problem:   
 
-</code></pre><p>A start Job is running for sys-devices-virtual-mis-vmbus\x21hv_kvp.devices</p>
-<pre><code>
+</code></pre><p>A start Job is running for sys-devices-virtual-mis-vmbus\x21hv_kvp.devices</p><pre><code>
 via:    
 
-</code></pre><h1 id="systemctl-disable-hv-kvp-daemonservice">systemctl disable hv-kvp-daemon.service</h1>
-<pre><code>
+</code></pre><h1 id=systemctl-disable-hv-kvp-daemonservice>systemctl disable hv-kvp-daemon.service</h1><pre><code>
 ### 98. landscape info
 via following command we could get landscape info:    
 
-</code></pre><h1 id="landscape-sysinfo">landscape-sysinfo</h1>
-<p>System load:  1.48              Temperature:           66.7 C
-Usage of /:   8.9% of 27.91GB   Processes:             134
-Memory usage: 7%                Users logged in:       1
-Swap usage:   0%                IPv4 address for eth0: 192.168.1.191</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>6178707df429ac1cc84f27a300e54265b6bad107</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code></code></pre>
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre><h1 id=landscape-sysinfo>landscape-sysinfo</h1><p>System load: 1.48 Temperature: 66.7 C
+Usage of /: 8.9% of 27.91GB Processes: 134
+Memory usage: 7% Users logged in: 1
+Swap usage: 0% IPv4 address for eth0: 192.168.1.191</p><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><p>6178707df429ac1cc84f27a300e54265b6bad107</p></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote><pre><code></code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

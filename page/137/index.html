@@ -1,2516 +1,396 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-	<meta name="generator" content="Hugo 0.65.1" />
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/07/deploy-opencontrail-on-centos-with-docker/>Deploy OpenContrail On CentOS With Docker As Hypervisor</a></h1><span class=post-date>Apr 7, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Reference:<br><a href=https://software.intel.com/en-us/blogs/2014/12/28/experimenting-with-openstack-sahara-on-docker-containers>https://software.intel.com/en-us/blogs/2014/12/28/experimenting-with-openstack-sahara-on-docker-containers</a><br>I wanna enable the docker as hypervisor then it would greatly save the resources, and benefit with docker&rsquo;s rich resources. Following is the steps:</p><h3 id=preparation>Preparation</h3><p>First create the image file via:</p><pre><code># qemu-img create -f qcow2 CentOSOpenContrail.qcow2 100G
+Formatting 'CentOSOpenContrail.qcow2', fmt=qcow2 size=107374182400 encryption=off cluster_size=65536 
+[root:/home/juju/img/CentOSOpenContrail]# pwd
+/home/juju/img/CentOSOpenContrail
 
-  <title>Dash &middot; Dash</title>
+</code></pre><p>Then create a virtual machine based on KVM, allocate 8G Memory, 4-core, which copies the host CPU configuration.</p><h3 id=installation>Installation</h3><p>After installation, update the installed software via:</p><pre><code>$ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup   
+$ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo 
+$ sudo yum makecache
+$ sudo yum update -y
+$ sudo reboot
 
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+</code></pre><p>Install following packages:</p><pre><code># wget https://repos.fedorapeople.org/repos/openstack/openstack-juno/rdo-release-juno-1.noarch.rpm
+# rpm -ivh rdo-release-juno-1.noarch.rpm 
+# yum install –y https://rdo.fedorapeople.org/rdo-release.rpm
+# yum install openstack-packstack
 
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+</code></pre><p>Now you could use packstack for installing the packages:</p><pre><code># packstack --gen-answer-file=/root/answer.txt
+# packstack --answer-file=/root/answer.txt
 
-  
-  
-  
-  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Dash &middot; Dash" />
-  <meta name="description" content="">
-  <meta name="keywords" content="unix,virtualization,embedded,linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
+</code></pre><p>Install openstack-sahara via following command, the python-tox enable tox for generating the configuration files for sahara:</p><pre><code># yum install openstack-sahara 
+# yum install python-tox
 
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
+</code></pre><p>Create the username and password for sahara to use:</p><pre><code>[root@10-17-17-183 etc]# mysql
+MariaDB [(none)]&gt; create user 'sahara'@'localhost' identified by 'saharapass';
+Query OK, 0 rows affected (0.07 sec)
+MariaDB [(none)]&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| cinder             |
+| glance             |
+| keystone           |
+| mysql              |
+| neutron            |
+| nova               |
+| performance_schema |
+| test               |
++--------------------+
+9 rows in set (0.00 sec)
 
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
+MariaDB [(none)]&gt; use mysql
+MariaDB [mysql]&gt; show tables;
+MariaDB [mysql]&gt; select * from user;
++-----------+----------------+-----------------------------------
 
-    
+</code></pre><p>How to get all of the password configuration information of packstack?</p><pre><code>$ cd /etc/
+$ grep -i &quot;sql://&quot; ./ -r
 
-  </div>
-</div>
+</code></pre><p>Create a database named &lsquo;saharaDB&rdquo; and grant it to user sahra:</p><pre><code>MariaDB [(none)]&gt; create database saharaDB;
+MariaDB [(none)]&gt; grant all on saharaDB.* to 'sahara'@'localhost';
+Query OK, 0 rows affected (0.02 sec)
 
+MariaDB [(none)]&gt; quit;
+[root@10-17-17-183 etc]# mysql -h 127.0.0.1 -u sahara -p saharaDB
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 1481
+Server version: 5.5.40-MariaDB-wsrep MariaDB Server, wsrep_25.11.r4026
 
-<div class="content container">
-  <div class="posts">
-    
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2015/03/19/deploy-maas-10/">Deploy MAAS(10)</a>
-      </h1>
-      <span class="post-date">Mar 19, 2015 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <p>Continue to deploy OpenContrail based on OpenStack.   <br>
-First we install the bzr for fetching back the charms:</p>
-<pre><code>$ sudo apt-get install bzr
+Copyright (c) 2000, 2014, Oracle, MariaDB Corporation Ab and others.
 
-</code></pre><p>Clone the repository to local Mass Controller Machine:</p>
-<pre><code>$ bzr branch lp:~robert-ayres/+junk/contrail-deployer
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-</code></pre><p>Install juju-deployer for deploying:</p>
-<pre><code>$ sudo apt-get install juju-deployer
+MariaDB [saharaDB]&gt; 
 
-</code></pre><p>Change the memory size.</p>
+</code></pre><p>So the syntax for sahara to use is like:</p><pre><code># cat /etc/sahara/sahara.conf
+connection = mysql://sahara:saharapass@127.0.0.1/saharaDB
+use_neutron=true
 
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2015/03/18/migration-of-opencontril/">Migration of OpenContril</a>
-      </h1>
-      <span class="post-date">Mar 18, 2015 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <p>This article is not for opencontril itself, but for migration of the existing environment to local machines.</p>
-<h3 id="environment">Environment</h3>
-<p>Machine configuration is listed as:</p>
-<pre><code>192.168.10.233 u12-control
-192.168.10.234 u12-compute1
-192.168.10.235 u12-compute2
+# sahara-db-manage --config-file /etc/sahara/sahara.conf upgrade head
+INFO  [alembic.migration] Context impl MySQLImpl.
+INFO  [alembic.migration] Will assume non-transactional DDL.
+INFO  [alembic.migration] Running upgrade None -&gt; 001, Icehouse release
+INFO  [alembic.migration] Running upgrade 001 -&gt; 002, placeholder
+INFO  [alembic.migration] Running upgrade 002 -&gt; 003, placeholder
+INFO  [alembic.migration] Running upgrade 003 -&gt; 004, placeholder
+INFO  [alembic.migration] Running upgrade 004 -&gt; 005, placeholder
+INFO  [alembic.migration] Running upgrade 005 -&gt; 006, placeholder
+INFO  [alembic.migration] Running upgrade 006 -&gt; 007, convert clusters.status_description to LongText
+INFO  [alembic.migration] Running upgrade 007 -&gt; 008, add security_groups field to node groups
+INFO  [alembic.migration] Running upgrade 008 -&gt; 009, add rollback info to cluster
+INFO  [alembic.migration] Running upgrade 009 -&gt; 010, add auto_security_groups flag to node group
+INFO  [alembic.migration] Running upgrade 010 -&gt; 011, add Sahara settings info to cluster
 
-192.168.1.79   s179
+</code></pre><p>REgister the service and specify the endpoint:</p><pre><code>[root@10-17-17-183 etc]# cat ./nagios/keystonerc_admin                                                                                         
+export OS_USERNAME=admin                                                                                                                       
+export OS_TENANT_NAME=admin                                                                                                                    
+export OS_PASSWORD=5d4e62e79d314477                                                                                                            
+export OS_AUTH_URL=http://10.17.17.183:35357/v2.0/ 
+[root@10-17-17-183 etc]# pwd                                                                
+/etc  
+# keystone service-create --name sahara --type data_processing --description &quot;Data processing service&quot;
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+| description |     Data processing service      |
+|   enabled   |               True               |
+|      id     | 5f711f0d42754b349931349bd0c325d1 |
+|     name    |              sahara              |
+|     type    |         data_processing          |
++-------------+----------------------------------+
+[root@10-17-17-183 ~]# keystone endpoint-create --service-id $(keystone service-list | awk '/ sahara / {print $2}') --publicurl http://127.0.0.1:8386/v1.1/%\(tenant_id\)s --internalurl http://127.0.0.1:8386/v1.1/%\(tenant_id\)s --adminurl http://127.0.0.1:8386/v1.1/%\(tenant_id\)s --region regionOne
++-------------+------------------------------------------+
+|   Property  |                  Value                   |
++-------------+------------------------------------------+
+|   adminurl  | http://127.0.0.1:8386/v1.1/%(tenant_id)s |
+|      id     |     b2115bab8bd743f589b1ed68eef69b4c     |
+| internalurl | http://127.0.0.1:8386/v1.1/%(tenant_id)s |
+|  publicurl  | http://127.0.0.1:8386/v1.1/%(tenant_id)s |
+|    region   |                regionOne                 |
+|  service_id |     5f711f0d42754b349931349bd0c325d1     |
++-------------+------------------------------------------+
+[root@10-17-17-183 ~]# systemctl start openstack-sahara-all
+[root@10-17-17-183 ~]# systemctl enable openstack-sahara-all
+ln -s '/usr/lib/systemd/system/openstack-sahara-all.service' '/etc/systemd/system/multi-user.target.wants/openstack-sahara-all.service'
+[root@10-17-17-183 ~]# systemctl status openstack-sahara-all.service
 
-</code></pre><p>The control node and 2 compute nodes are running in machine s179, the tasks for me to do is for moving them from s179 to 2 physical machine.</p>
-<h3 id="use-remote-kvm-server">Use Remote KVM Server</h3>
-<p>First we copy our ssh-key to the remote s179 machine, so next time we won&rsquo;t enter any passwd for accessing the remote libvirtd:</p>
-<pre><code>$ ssh-copy-id root@192.168.1.79
+</code></pre><p>More detailed info could be fetched from:<br><a href=http://docs.openstack.org/juno/install-guide/install/apt/content/sahara-install.html>http://docs.openstack.org/juno/install-guide/install/apt/content/sahara-install.html</a><br>Now login to the <a href=http://10.17.17.183>http://10.17.17.183</a> then you could visit the Trustyboard. The password is the one we used in the <code>OS_PASSWORD</code>.<br>Install docker:</p><pre><code>$  yum install docker
+Or
+$  wget https://get.docker.com/builds/Linux/x86_64/docker-latest -O docker
+$  docker --version
+[root@10-17-17-183 ~]#  usermod -G dockerroot nova
+[root@10-17-17-183 ~]# service openstack-nova-compute restart
+Redirecting to /bin/systemctl restart  openstack-nova-compute.service
+# systemctl restart docker
+# systemctl enable docker
 
-</code></pre><p>In our own machine, we listed remote&rsquo;s machines via:</p>
-<pre><code>$ virsh -c qemu+ssh://root@192.168.1.79/system list --all
- Id    Name                           State
-----------------------------------------------------
- 14    u14-ui                         running
- 16    u14-compute2                   running
- 22    u14-compute1                   running
- 39    de1-contro                     running
- -     centos6.4-management-01        shut off
- -     centos6.4-management-02        shut off
+</code></pre><p>Install nova-docker support:</p><pre><code>$  yum install python-pip
+$  pip install -e git+https://github.com/stackforge/nova-docker#egg=novadocker
+$  cd src/novadocker/
+$  python setup.py install
+$ vim /etc/nova/nova.conf
+[DEFAULT]
+compute_driver = novadocker.virt.docker.DockerDriver
 
-</code></pre><p>Add connection via: <code>File-&gt; Add New Connection</code>, then configure like following:  <br>
-<img src="/images/2015_03_18_11_53_11_380x432.jpg" alt="/images/2015_03_18_11_53_11_380x432.jpg"></p>
-<h3 id="migrationstatic">Migration(Static)</h3>
-<p>First scp the image file to to destination machine, this will take a while.<br>
-Dump the xml via:</p>
-<pre><code>$ virsh dumpxml xxxxx&gt;xxxx.xml
+</code></pre><p>Edit the nova&rsquo;s rootwrap like following:</p><pre><code>[root@10-17-17-183 nova]# mkdir rootwrap.d
+[root@10-17-17-183 nova]# cd rootwrap.d/
+[root@10-17-17-183 rootwrap.d]# touch docker.filters
+[root@10-17-17-183 rootwrap.d]# vim docker.filters 
+[Filters]
+# nova/virt/docker/driver.py:'ln', '-sf', '/var/run/netns/.*'
+ln: CommandFilter, /bin/ln, root
+[root@10-17-17-183 rootwrap.d]# vim /etc/nova/rootwrap.conf 
+[root@10-17-17-183 rootwrap.d]# pwd
+/etc/nova/rootwrap.d
 
-</code></pre><p>Scp the xml file to destination machine and move to <code>/etc/libvirt/qemu/</code>, change the priviledge of the file:</p>
-<pre><code>$ sudo chmod 777 /home/clouder/iso/Ubuntu1404-Newly-Installed-with-Update.img
+</code></pre><p>Edit the glance-api.conf</p><pre><code>[root@10-17-17-183 glance]# vim ./glance-api.conf 
+[DEFAULT]
+container_formats = ami,ari,aki,bare,ovf,docker
+[root@10-17-17-183 glance]# pwd
+/etc/glance
 
-</code></pre><p>Edit the corresponding configuration in the xml file:</p>
-<pre><code>$ sudo vim /etc/libvirt/qemu/xxxx.xml
-.....
-&lt;source file='/home/clouder/iso/Ubuntu1404-Newly-Installed-with-Update.img'/&gt;
-.....
+</code></pre><p>Create the ubuntu Container images via following commands:</p><pre><code>$ docker pull ubuntu
+$ docker save ubuntu | glance image-create --is-public=True --container-format=docker --disk-format=raw --name ubuntu_container
 
-</code></pre><p>Define the xml under the <code>/etc/libvirt/qemu/</code> folder:</p>
-<pre><code>root@pc121:/etc/libvirt/qemu# virsh define ./Ubuntu1404-Newly-Installed-with-Update.xml 
-Domain Ubuntu1404-Newly-Installed-with-Update defined from ./Ubuntu1404-Newly-Installed-with-Update.xml
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/01/build-qemu-for-supporting-glustfs/>Build qemu for supporting glustfs</a></h1><span class=post-date>Apr 1, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Following is the build procedure.</p><pre><code>$ sudo apt-get build-dep qemu
+$ sudo apt-get install libvde-dev libvdeplug2-dev libcap-ng-dev libattr1-dev
+$ wget http://wiki.qemu-project.org/download/qemu-2.0.2.tar.bz2
+$ tar xjvf qemu-2.0.2.tar.bz2
+$ cd qemu-2.0.2/
+$ mkdir -p bin/debug/native
+$ cd bin/debug/native
+$ sudo apt-get install libjpeg-turbo8-dev
+$ sudo apt-get install glusterfs-common
+ ../../../configure --enable-sdl --audio-drv-list=alsa,oss --enable-curses --enable-vnc-jpeg --enable-curl --enable-fdt --enable-kvm --enable-tcg-interpreter --enable-system --enable-user \\n --enable-linux-user --enable-guest-base --enable-pie --enable-uuid --enable-vde --enable-linux-aio --enable-cap-ng --enable-attr --enable-docs --enable-vhost-net --enable-rbd \\n --enable-guest-agent --enable-glusterfs --target-list=x86_64-softmmu,i386-softmmu
+ ./qemu-img -h
+ $ make -j2
 
-</code></pre><p>Install the guest tool and use it for editing the virtual machine:</p>
-<pre><code>$ sudo apt-get install libguestfs-tools
-$ sudo virt-edit -d Ubuntu1404-Newly-Installed-with-Update /etc/network/interfaces
+</code></pre><p>Before, Found qemu-img:</p><pre><code>$ qemu-img -h
+Supported formats: vvfat vpc vmdk vhdx vdi sheepdog sheepdog sheepdog rbd raw host_cdrom host_floppy host_device file qed qcow2 qcow parallels nbd nbd nbd dmg tftp ftps ftp https http cow cloop bochs blkverify blkdebug
 
-</code></pre><p>After change the network configuration, we could start the machine via <code>virsh start Ubuntu1404-Newly-Installed-with-Update</code>, it will have the newly edited ip address.</p>
-<p>If we use different host machine, then change the following definition in xml file:</p>
-<pre><code>$ sudo vim /etc/libvirt/qemu/xxxx.xml
-&lt;devices&gt;
-    &lt;emulator&gt;/usr/bin/qemu-system-x86_64&lt;/emulator&gt;
-.......
+</code></pre><p>After, qemu-img:</p><pre><code>Supported formats: vvfat vpc vmdk vhdx vdi sheepdog sheepdog sheepdog rbd raw host_cdrom host_floppy host_device file qed qcow2 qcow parallels nbd nbd nbd gluster gluster gluster gluster dmg tftp ftps ftp https http cow cloop bochs blkverify blkdebug
 
-</code></pre>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2015/03/17/deploy-maas-7/">Deploy MAAS(7)</a>
-      </h1>
-      <span class="post-date">Mar 17, 2015 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <p>This will record the complete steps for deploying MAAS in a newly installed machine.</p>
-<h3 id="installation">Installation</h3>
-<p>The start point should be at Ubuntu14.04.</p>
-<pre><code>$ sudo add-apt-repository  ppa:maas-maintainers/maas-test
-$ sudo vim /etc/apt/sources.list
-# Add maas repository
-deb http://ppa.launchpad.net/maas-maintainers/testing/ubuntu trusty main
-deb-src http://ppa.launchpad.net/maas-maintainers/testing/ubuntu trusty main
-$ sudo add-apt-repository ppa:juju/stable
-$ sudo vim /etc/apt/sources.list
-# Add juju repository
-deb http://ppa.launchpad.net/juju/stable/ubuntu trusty main 
-deb-src http://ppa.launchpad.net/juju/stable/ubuntu trusty main 
-$ sudo apt-get update &amp;&amp; sudo apt-get upgrade
-$ sudo apt-get install maas-test maas-dhcp maas-dns juju juju-core juju-local juju-quickstart firefox git
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/03/30/whole-process-for-deploying-contrail/>Whole Process For Deploying Contrail</a></h1><span class=post-date>Mar 30, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Following are the steps, enjoy them:</p><pre><code># First bootstrap the environment.   
+juju bootstrap --metadata-source ~/.juju/metadata --upload-tools -v --show-log --constraints=&quot;mem=3G&quot;
 
-</code></pre><p>Tips: for enable the vncserver on Ubuntu, do following:</p>
-<pre><code>$ sudo apt-get install tightvncserver lxde
-$ vncserver
-$ vim ~/.vnc/xstartup
-#!/bin/sh
-
-xrdb $HOME/.Xresources
-xsetroot -solid grey
-#x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp;
-#x-window-manager &amp;
-# Fix to make GNOME work
-export XKL_XMODMAP_DISABLE=1
-# /etc/X11/Xsession
-startlxde &amp;
-$ vncserver -kill :1 &amp;&amp; vncserver
-
-</code></pre><p>The MAAS Controller relies on a google&rsquo;s theme which is blocked by GFW, so we have to use proxychains for acrossing it, please notice these operation could be done on host machine, or Maas Controller itself..</p>
-<pre><code>$ git clone https://github.com/rofl0r/proxychains-ng.git 
-$ ./configure --prefix=/usr &amp;&amp; make &amp;&amp; make install
-$ sudo cp src/proxychain4.conf /etc
-$ sudo vim /etc/proxychains4.conf
-$ sudo apt-get install midori
-$ proxychains4 midori 10.17.17.202/MAAS
-
-</code></pre><p>Configure the MAAS Controller via:</p>
-<pre><code>$ sudo maas-region-admin createadmin
-[sudo] password for Trusty: 
-Username: root
-Password: 
-Again: 
-Email: root@localhost
-
-</code></pre><p>This enabled the admin username/password, refresh the <code>10.17.17.202/MAAS</code> you could login to the MAAS Controller.</p>
-<h3 id="configuration">Configuration</h3>
-<h4 id="image-configuration">Image Configuration</h4>
-<p>First download the images fromt the official repository via(On MaasController):</p>
-<pre><code>$ sudo apt-get install simplestreams ubuntu-cloudimage-keyring apache2
-$ sudo bash
-# proxychains4 sstream-mirror --keyring=/usr/share/keyrings/ubuntu-cloudimage-keyring.gpg http://maas.ubuntu.com/images/ephemeral-v2/daily/ /var/www/html/maas/images/ephemeral-v2/daily 'arch=amd64' 'subarch~(generic|hwe-t)' 'release~(trusty|precise)' --max=1
-^C
-$ pwd
-/var/www/html/maas/images
-$ sudo mv ephemeral-v2/ ephemeral-v2.back
-[sudo] password for Trusty: 
-$ sudo tar xjf /home/Trusty/ephemeral-v2.tar.bz2 -C ./
-
-</code></pre><p>Then Change the configuration in browser of opened <code>http://10.17.17.202/MAAS</code>:</p>
-<pre><code>Click Configuration Button, and update the Ubuntu -&gt; Main archive (required) from: 
-http://archive.ubuntu.com/ubuntu 
-to: 
-http://mirrors.aliyun.com/ubuntu/ 
-This repository enable the installed system for retrieving the install packages, use aliyun we could get much more faster speed.
-
-Change the Boot Images -&gt; Sync URL (required) from: 
-http://maas.ubuntu.com/images/ephemeral-v2/releases/ 
-to 
-http://10.17.17.202/maas/images/ephemeral-v2/daily/ 
-This will enable the Boot Images Sync URLs, use local repository will greatly improve the bootup speed.
-
-</code></pre><h4 id="network-configuration">Network Configuration</h4>
-<p>Since the midori&rsquo;s effect is not good, install qupzilla:</p>
-<pre><code>$ sudo apt-get install qupzilla
-$ proxychains4 quazilla http://10.17.17.202/MAAS
-
-</code></pre><p>Under <code>Cluster-&gt;Interfaces-&gt;eth0-&gt;Edit</code>, change it to <code>Management(DNS and DHCP)</code>, and then modify following items: <br>
-<img src="/images/2015_03_17_11_17_28_411x358.jpg" alt="/images/2015_03_17_11_17_28_411x358.jpg"></p>
-<p>MAAS ssh key should be generated via following steps:</p>
-<pre><code>Trusty@MassController:~$ sudo mkdir /home/maas
-[sudo] password for Trusty: 
-Trusty@MassController:~$ sudo chown maas:maas /home/maas/
-Trusty@MassController:~$ sudo chsh maas
-Changing the login shell for maas
-Enter the new value, or press ENTER for the default
-        Login Shell [/bin/false]: /bin/bash
-Trusty@MassController:~$ sudo su - maas
-maas@MassController:~$ ssh-keygen 
-Generating public/private rsa key pair.
-
-</code></pre><p>Copy the generated key to <a href="http://10.17.17.202/MAAS/account/prefs/sshkey/add/">http://10.17.17.202/MAAS/account/prefs/sshkey/add/</a>    And remember the api-key, for later we will use it for generating nodes information.  <br>
-Enable the remote control of your host&rsquo;s libvirt:</p>
-<pre><code>$ sudo apt-get install libvirt-bin
-maas@MassController:~$ ssh-copy-id root@10.17.17.1
-maas@MassController:~$ virsh -c qemu+ssh://root@10.17.17.1/system list  --all
- Id    Name                           State
-----------------------------------------------------
- 2     MaasController                 running
- -     Ubuntu1404Maas                 shut off
- -     Ubuntu203                      shut off
-
-</code></pre><p>Also we have to configure the network under <a href="http://10.17.17.202/MAAS/networks/maas-eth0/edit/">http://10.17.17.202/MAAS/networks/maas-eth0/edit/</a>: <br>
-<img src="/images/2015_03_17_11_34_31_478x283.jpg" alt="/images/2015_03_17_11_34_31_478x283.jpg"></p>
-<p>Also we should manually edit the MaasController&rsquo;s network configuration via:</p>
-<pre><code>$ cat /etc/network/interfaces
-auto lo
-iface lo inet loopback
-# The primary network interface
-auto eth0
-# iface eth0 inet dhcp
-iface eth0 inet static                                                                                                                        
-        address 10.17.17.202                                                                                                                  
-        netmask 255.255.255.0                                                                                                                 
-        network 10.17.17.0                                                                                                                    
-        broadcast 10.17.17.255                                                                                                                
-        gateway 10.17.17.1                                                                                                                    
-        # dns-* options are implemented by the resolvconf package, if installed                                                               
-        dns-nameservers 114.114.114.114 127.0.0.1 10.17.17.202
-
-</code></pre><p>Restart and the network configuration is OK, notice only we set 127.0.0.1 as the dns server, we could enable the local FQDN.</p>
-<h3 id="add-nodes">Add Nodes</h3>
-<p>Create the vm in virt-manager, its start-up is via PXE, and with 3G Mem, 60G space, 2-Core which copies the Host CPU. <br>
-Then in browser edit like following:  <br>
-<img src="/images/2015_03_17_11_47_59_511x576.jpg" alt="/images/2015_03_17_11_47_59_511x576.jpg"> <br>
-Then in the <code>Nodes</code>, select the node, and commision selected node.After commission, the status will be changed to ready.<br>
-<img src="/images/2015_03_17_11_54_29_589x157.jpg" alt="/images/2015_03_17_11_54_29_589x157.jpg"></p>
-<h3 id="juju-configuration">Juju Configuration</h3>
-<p>Use following command for quickstart juju:</p>
-<pre><code>$ juju-quickstart -i
-
-</code></pre><p>The configuration image is listed as: <br>
-<img src="/images/2015_03_17_11_57_47_559x457.jpg" alt="/images/2015_03_17_11_57_47_559x457.jpg"></p>
-<p>Generate the local tools:</p>
-<pre><code>$ mkdir .juju/metadata
-Trusty@MassController:~$ juju metadata generate-tools -d ~/.juju/metadata
-
-</code></pre><p>Then start the node via:</p>
-<pre><code>$ juju bootstrap --metadata-source ~/.juju/metadata --upload-tools -v --show-log --constraints=&quot;mem=3G&quot;
-
-</code></pre><p>After it success, the juju and MAAS environment is ready for use.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2015/03/17/deploy-maas-8/">Deploy MAAS(8)</a>
-      </h1>
-      <span class="post-date">Mar 17, 2015 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <p>This part is for deploying OpenStack using Juju and let it run in single node.</p>
-<h3 id="environment-preparation">Environment Preparation</h3>
-<p>2 virtual machines created using virt-manager, each of them has 2 core, 3Gigabyte Memory, around 60G Disk space.</p>
-<h3 id="deploy">Deploy</h3>
-<p>The most of the nodes are deployed in container.</p>
-<pre><code>$ juju deploy --to 0 juju-gui
-$ juju deploy --to lxc:0 mysql
-$ juju deploy --to lxc:0 keystone
-$ juju deploy --to lxc:0 nova-cloud-controller
-$ juju deploy --to lxc:0 glance
-$ juju deploy --to lxc:0 rabbitmq-server
-$ juju deploy --to lxc:0 openstack-Trustyboard
-$ juju deploy --to lxc:0 cinder 
-
-</code></pre><p>The compute node is deployed in a machine which enable the nested virtualization.</p>
-<pre><code>$ juju deploy nova-compute
-
-</code></pre><p>Add each other&rsquo;s relationship:</p>
-<pre><code>$ juju add-relation mysql keystone
-$ juju add-relation nova-cloud-controller mysql
-$ juju add-relation nova-cloud-controller rabbitmq-server
-$ juju add-relation nova-cloud-controller glance
-$ juju add-relation nova-cloud-controller keystone
-$ juju add-relation nova-compute nova-cloud-controller
-$ juju add-relation nova-compute mysql
-$ juju add-relation nova-compute rabbitmq-server:amqp
-$ juju add-relation nova-compute glance
-$ juju add-relation glance mysql
-$ juju add-relation glance keystone
-$ juju add-relation glance cinder
-$ juju add-relation mysql cinder
-$ juju add-relation cinder rabbitmq-server
-$ juju add-relation cinder nova-cloud-controller
-$ juju add-relation cinder keystone
-$ juju add-relation openstack-Trustyboard keystone
-
-</code></pre><p>Then change the password of keystone via:</p>
-<pre><code>$ juju set keystone admin-password=&quot;helloworld&quot;
-
-</code></pre><p>Detect the ipaddress of the openstack-Trustyboards via:</p>
-<pre><code>$ juju status openstack-Trustyboard
-$ http://ip_address_of_Trustyboard/horizon
-
-</code></pre><p>The final result is listed like: <br>
-<img src="/images/2015_03_17_14_35_25_1037x646.jpg" alt="/images/2015_03_17_14_35_25_1037x646.jpg"></p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2015/03/17/deploy-maas-9/">Deploy MAAS(9)</a>
-      </h1>
-      <span class="post-date">Mar 17, 2015 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="use-local-charms">Use Local Charms</h3>
-<p>Retrieve the charms via:</p>
-<pre><code>$ sudo apt-get install charm-tools
-$ cat autocharms.sh
-juju charm get nova-cloud-controller /home/Trusty/charms/trusty
-juju charm get keystone /home/Trusty/charms/trusty
-juju charm get glance  /home/Trusty/charms/trusty
-juju charm get cinder /home/Trusty/charms/trusty
-juju charm get rabbitmq-server /home/Trusty/charms/trusty
-juju charm get openstack-Trustyboard /home/Trusty/charms/trusty
-juju charm get nova-compute /home/Trusty/charms/trusty
-# juju charm get nova-compute /home/Trusty/charms/trusty
-$ du -hs /home/Trusty/charms/trusty/*
-1.5M    /home/Trusty/charms/trusty/cinder
-1.6M    /home/Trusty/charms/trusty/glance
-1.7M    /home/Trusty/charms/trusty/keystone
-824K    /home/Trusty/charms/trusty/mysql
-1.9M    /home/Trusty/charms/trusty/nova-cloud-controller
-1.6M    /home/Trusty/charms/trusty/nova-compute
-1.2M    /home/Trusty/charms/trusty/openstack-Trustyboard
-1.2M    /home/Trusty/charms/trusty/rabbitmq-server
-
-</code></pre><p>Deploy via:</p>
-<pre><code>juju deploy --to lxc:1 --repository=/home/Trusty/charms/ local:trusty/mysql
-juju deploy --to lxc:1 --repository=/home/Trusty/charms/ local:trusty/keystone
-juju deploy --to lxc:1 --repository=/home/Trusty/charms/ local:trusty/nova-cloud-controller
-juju deploy --to lxc:1 --repository=/home/Trusty/charms/ local:trusty/glance
-juju deploy --to lxc:1 --repository=/home/Trusty/charms/ local:trusty/rabbitmq-server
-juju deploy --to lxc:1 --repository=/home/Trusty/charms/ local:trusty/openstack-Trustyboard
-juju deploy --to lxc:1 --repository=/home/Trusty/charms/ local:trusty/cinder 
-
-</code></pre><h3 id="backup">Backup</h3>
-<p>Backup the existing environment via:</p>
-<pre><code>$ juju backup create --filename backupOpenStack.tgz
-$ ls -l *.tgz
--rw-r--r-- 1 Trusty Trusty  25595066 Mar 17 17:23 juju-backup-20150317-1723.tgz
-
-</code></pre><p>The store method will be covered later.</p>
-
-      
-    </div>
-    
-    
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/page/136/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/136/">136</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/page/137/">137</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/138/">138</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/221/">221</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/page/138/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/page/221/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
+#####################################################
+# Machine 0, hold 9 services. 3G mem. trusty
+# Memory: 3G
+# Service: 10
+#####################################################
 
 
-  </div>
-</div>
+# Since machine 0 is ready for using, deploy services to this node via following commands:     
+# Juju-gui is for monitoring the status and the components
+# 1. juju-gui
+juju deploy --to 0 --repository=/home/Trusty/charms/ local:trusty/juju-gui
+# 2. rabbitmq-server
+juju deploy --to lxc:0 --repository=/home/Trusty/charms/ local:trusty/rabbitmq-server
+# 3. mysql
+juju deploy --to lxc:0 --repository=/home/Trusty/charms/ local:trusty/mysql
+# 4. keystone
+juju deploy --to lxc:0 --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:trusty/keystone
+# 5. openstack-Trustyboard
+juju deploy --to lxc:0 --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:trusty/openstack-Trustyboard
+
+# 6. nova-cloud-controller
+juju deploy --to lxc:0 --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:trusty/nova-cloud-controller --config=/home/Trusty/Code/deploy/nova-cloud-controller-config.yaml 
+# 7. glance to lxc:0
+juju deploy --to lxc:0 --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:trusty/glance
+# 8. contrail-configuration to lxc:0
+juju deploy --to lxc:0 --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:trusty/contrail-configuration
+# 9. control-control to lxc:0
+juju deploy --to lxc:0 --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:trusty/contrail-control
+# 10. neutron-api to lxc:0
+juju deploy --to lxc:0 --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:trusty/neutron-api --config=/home/Trusty/Code/deploy/neutron-api.yaml
+
+# Now add the first node for nova-compute.   
+juju set-constraints &quot;mem=900M&quot;
+#####################################################
+# Machine 1, hold nova-compute service, 2G with nested CPU, trusty
+# Memory: 2G
+# Service: 1
+#####################################################
+
+# Add name specified machine, which memory is 2048M, with cpu nested for kvm
+juju add-machine MaasOpenContrail4
+# Machine 1 will be added into the Juju environment, deploy nova-compute into this node
+juju deploy --to 1 --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:trusty/nova-compute
+
+#####################################################
+# Machine 2, hold neutron-gateway service, 1G , trusty
+# Memory: 1G
+# Service: 1
+#####################################################
+# Add neutron-gateway to 1G based machine , it may fail, so you could remove-machine, and re-add again. via `juju destroy-machine 2 --force`  
+juju add-machine MaasOpenContrail7
+juju deploy --to 4 --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:trusty/quantum-gateway neutron-gateway
+
+#####################################################
+# Machine 3, hold cassandra and zookeeper serivce, 4G, precise.
+# Memory: 4G
+# Service: 2
+#####################################################
+# First we should change the default deployed system version to precise. 
+juju set-environment default-series=precise
+# Add new machine, whose memory is 4G.
+juju add-machine MaasOpenContrail5
+# Deploy cassandra to 4G Node
+juju deploy --to 5 --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:precise/cassandra --config=/home/Trusty/Code/deploy/cassandra.yaml
+# Also use this machine for deploy a lxc based service, zookeeper, which is also based on precise.
+juju deploy --to lxc:5 --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:precise/zookeeper
 
 
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
+# Well, set the default environment from precise to trusty
+juju set-environment default-series=trusty
 
+# Finally deploy  neutron-contrail
+juju deploy --repository=/home/Trusty/Code/deployOpenContrail/contrail-deployer/src/charms/ local:trusty/neutron-contrail
+
+
+
+#####################################################
+#####################################################
+# Well the deploy is finished, then add relationship
+#####################################################
+#####################################################
+juju add-relation keystone mysql
+juju add-relation nova-cloud-controller mysql
+juju add-relation nova-cloud-controller rabbitmq-server
+juju add-relation nova-cloud-controller glance
+juju add-relation nova-cloud-controller keystone
+juju add-relation neutron-gateway mysql
+juju add-relation neutron-gateway:amqp rabbitmq-server:amqp
+juju add-relation neutron-gateway nova-cloud-controller
+juju add-relation nova-compute:shared-db mysql:shared-db
+juju add-relation nova-compute:amqp rabbitmq-server:amqp
+juju add-relation nova-compute glance
+juju add-relation nova-compute nova-cloud-controller
+juju add-relation glance mysql
+juju add-relation glance keystone
+juju add-relation openstack-Trustyboard keystone
+juju add-relation neutron-api mysql
+juju add-relation neutron-api rabbitmq-server
+juju add-relation neutron-api nova-cloud-controller
+juju add-relation neutron-api:identity-service keystone:identity-service
+juju add-relation neutron-api:identity-admin keystone:identity-admin
+juju add-relation contrail-configuration:cassandra cassandra:database
+juju add-relation contrail-configuration zookeeper
+juju add-relation contrail-configuration rabbitmq-server
+juju add-relation contrail-configuration keystone
+juju add-relation contrail-configuration neutron-gateway
+juju add-relation neutron-api contrail-configuration
+juju add-relation contrail-control contrail-configuration
+juju add-relation nova-compute neutron-contrail
+juju add-relation neutron-contrail contrail-control
+juju add-relation neutron-contrail neutron-gateway
+juju add-relation neutron-contrail contrail-configuration
+juju add-relation neutron-contrail keystone
+
+
+# change the passwd of OpenStack:    
+juju set keystone admin-password=&quot;helloworld&quot;
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/03/27/add-sbh-bluetooth-to-linux/>Add SBH BlueTooth to Linux</a></h1><span class=post-date>Mar 27, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>I bought a SBH Sony Bluetooth headset, following is the steps for adding it to system.</p><h3 id=ubuntu-installation>Ubuntu Installation</h3><p>Install bluetooth related software:</p><pre><code>$ sudo apt-get install -y blueman-manager bluetooth
+$ vim ~/.config/awesome/rc.lua
+autorunApps =
+{
+--.........
+&quot;blueman-manager&quot;,
+&quot;fcitx&quot;,
+</code></pre><h3 id=add-device>Add Device</h3><p>Use Blueman for adding the equiment, first click the SBH headset to let it enter discover mode, also in blueman we enable the discover mode too, when setup the equipment, the code you have to enter is 0000.<br>The device kindle is not headset, but the a2dp?</p><h3 id=add-configuration-for-alsa>Add Configuration for ALSA</h3><p>Edit the /etc/asound.conf, my configuration file is listed as following:</p><pre><code>pcm.btheadset {
+   type plug
+   slave {
+       pcm {
+           type bluetooth
+           device xxx.xxx.xxx.xxx
+           profile &quot;auto&quot;
+       }   
+   }   
+   hint {
+       show on
+       description &quot;BT Headset&quot;
+   }   
+}
+ctl.btheadset {
+  type bluetooth
+}  
+pcm.sbhbtheadset {
+   type plug
+   slave {
+       pcm {
+           type bluetooth
+           device xxx.xxx.xxx.xxx
+           profile &quot;auto&quot;
+       }   
+   }   
+   hint {
+       show on
+       description &quot;SBH BT Headset&quot;
+   }   
+}
+ctl.sbhbtheadset {
+  type bluetooth
+}  
+
+</code></pre><p>The first equipment is another bluetooth headset. We define our SDH to sdhbtheadset.<br>Examine our added equipment via following command:</p><pre><code>$ aplay -L
+default
+    Playback/recording through the PulseAudio sound server
+null
+    Discard all samples (playback) or generate zero samples (capture)
+pulse
+    PulseAudio Sound Server
+btheadset
+    BT Headset
+sbhbtheadset
+    SBH BT Headset
+
+</code></pre><h3 id=send-sound>Send Sound</h3><p>The commands are listed as following:</p><pre><code>$ pactl load-module module-alsa-sink device=sbhbtheadset
+17
+[Trusty@~]$ pacmd load_module module-bluetooth-discover
+Welcome to PulseAudio! Use &quot;help&quot; for usage information.
+&gt;&gt;&gt; Unknown command: load_module module-bluetooth-discover
+&gt;&gt;&gt; %                                                             
+[Trusty@~]$ pactl list sinks short
+1       alsa_output.sbhbtheadset        module-alsa-sink.c      s16le 2ch 44100Hz      SUSPENDED
+[Trusty@~]$ pacmd set-default-sink 1
+Welcome to PulseAudio! Use &quot;help&quot; for usage information.
+&gt;&gt;&gt; &gt;&gt;&gt; %                  
+
+</code></pre><p>Now you are ready for listening Music via bluetooth headset, enjoy it.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/03/26/juju-tips/>juju tips</a></h1><span class=post-date>Mar 26, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=add-specified-machine>Add Specified Machine</h3><p>We could add the specified name of the machine:</p><pre><code>$ juju add-machine MaasOpenContrail6.maas
+
+</code></pre><p>While the name of <code>MaasOpenContrail6.maas</code> is the name which we could get from the MAAS webUI.</p><h3 id=getset-constraints>Get/Set Constraints</h3><p>We could dynamically set constraints for adding/removing new machines or unit, get/set it via:</p><pre><code>$ juju get-constraints
+mem=3072M
+$ juju set-constraints &quot;mem=1024M&quot;
+$ juju get-constraints
+mem=1024M
+
+</code></pre><h3 id=tags>Tags</h3><p>Sometimes we need to add tags to specified maas units, the following webpage is for reference:<br><a href=http://en.community.dell.com/techcenter/os-applications/w/wiki/7432.using-tags-with-maas-and-juju-in-ubuntu-server-14-04-lts>http://en.community.dell.com/techcenter/os-applications/w/wiki/7432.using-tags-with-maas-and-juju-in-ubuntu-server-14-04-lts</a><br><a href=https://maas.ubuntu.com/docs/tags.html>https://maas.ubuntu.com/docs/tags.html</a></p><h3 id=remove-specified-service>Remove specified service</h3><p>Get the status of the specified service via:</p><pre><code>$ juju status neutron-api
+services:
+  neutron-api:
+    charm: cs:trusty/neutron-api-9
+    exposed: false
+    life: dying
+    units:
+      neutron-api/0:
+        agent-state: error
+        agent-state-info: 'hook failed: &quot;install&quot;'
+        agent-version: 1.21.3.1
+        life: dying
+        machine: &quot;6&quot;
+        public-address: MaasOpenContrail7.maas
+networks:
+  maas-eth0:
+    provider-id: maas-eth0
+    cidr: 10.17.17.0/24
+
+</code></pre><p>Resolved this service&rsquo;s located units first:</p><pre><code>Trusty@MassController:~/Code/deploy$ juju resolved neutron-api/0
+
+</code></pre><p>Now remove the service via:</p><pre><code>Trusty@MassController:~/Code/deploy$ juju remove-service neutron-api
+
+</code></pre><p>Sometimes you need to type in resolved the unit for several times.<br>Finally, if your machine runs into error state, you could destroy it forcely via:</p><pre><code>$ juju destroy-machine x --force
+
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/136/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/136/>136</a></li><li class="page-item active"><a class=page-link href=/page/137/>137</a></li><li class=page-item><a class=page-link href=/page/138/>138</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/138/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

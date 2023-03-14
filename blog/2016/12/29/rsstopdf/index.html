@@ -1,241 +1,71 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>RSSToPdf &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="Fetch RSS and Convert it to pdf">
-  <meta name="keywords" content="Linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>RSSToPdf</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Dec 29, 2016 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#aim">AIM</a></li>
-        <li><a href="#preparation">Preparation</a></li>
-        <li><a href="#script">Script</a></li>
-        <li><a href="#usage">Usage</a></li>
-        <li><a href="#further-works">Further Works</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="aim">AIM</h3>
-<p>Using python for fetching back some blog articles and convert them into pdf
-files, send it to some specified mailbox.</p>
-<h3 id="preparation">Preparation</h3>
-<p>The script depends on python library:</p>
-<ol>
-<li>feedparser</li>
-<li>pdfkit</li>
-</ol>
-<p>Install them via:</p>
-<pre><code>$ sudo pip install feedparser
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>RSSToPdf &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="Fetch RSS and Convert it to pdf"><meta name=keywords content="Linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>RSSToPdf</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Dec 29, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#aim>AIM</a></li><li><a href=#preparation>Preparation</a></li><li><a href=#script>Script</a></li><li><a href=#usage>Usage</a></li><li><a href=#further-works>Further Works</a></li></ul></li></ul></nav></div><h3 id=aim>AIM</h3><p>Using python for fetching back some blog articles and convert them into pdf
+files, send it to some specified mailbox.</p><h3 id=preparation>Preparation</h3><p>The script depends on python library:</p><ol><li>feedparser</li><li>pdfkit</li></ol><p>Install them via:</p><pre><code>$ sudo pip install feedparser
 $ sudo pip install pdfkit
-</code></pre><p>pdfkit depends on <code>wkhtmltopdf</code>, install it on ubuntu via:</p>
-<pre><code>$ sudo apt-get install -y wkhtmltopdf
-</code></pre><p>Configure wkhtmltopdf, because in vps we don&rsquo;t have X Window:</p>
-<pre><code># apt-get install -y ttf-wqy-zenhei xvfb
+</code></pre><p>pdfkit depends on <code>wkhtmltopdf</code>, install it on ubuntu via:</p><pre><code>$ sudo apt-get install -y wkhtmltopdf
+</code></pre><p>Configure wkhtmltopdf, because in vps we don&rsquo;t have X Window:</p><pre><code># apt-get install -y ttf-wqy-zenhei xvfb
 # echo 'xvfb-run --server-args=&quot;-screen 0, 1024x768x24&quot; /usr/bin/wkhtmltopdf $*' &gt; /usr/bin/wkhtmltopdf.sh
 # chmod 777 /usr/bin/wkhtmltopdf.sh 
 # ln -s /usr/bin/wkhtmltopdf.sh /usr/local/bin/wkhtmltopdf
 # which wkhtmltopdf
 /usr/local/bin/wkhtmltopdf
-</code></pre><h3 id="script">Script</h3>
-<p>The python script is listed as following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
-<span style="color:#f92672">import</span> pdfkit
-<span style="color:#f92672">import</span> feedparser
+</code></pre><h3 id=script>Script</h3><p>The python script is listed as following:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> sys
+<span style=color:#f92672>import</span> pdfkit
+<span style=color:#f92672>import</span> feedparser
 reload(sys);
-sys<span style="color:#f92672">.</span>setdefaultencoding(<span style="color:#e6db74">&#34;utf8&#34;</span>)
+sys<span style=color:#f92672>.</span>setdefaultencoding(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>utf8</span><span style=color:#e6db74>&#34;</span>)
 
-options <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;page-size&#39;</span>: <span style="color:#e6db74">&#39;Letter&#39;</span>,
-    <span style="color:#e6db74">&#39;margin-top&#39;</span>: <span style="color:#e6db74">&#39;0.75in&#39;</span>,
-    <span style="color:#e6db74">&#39;margin-right&#39;</span>: <span style="color:#e6db74">&#39;0.75in&#39;</span>,
-    <span style="color:#e6db74">&#39;margin-bottom&#39;</span>: <span style="color:#e6db74">&#39;0.75in&#39;</span>,
-    <span style="color:#e6db74">&#39;margin-left&#39;</span>: <span style="color:#e6db74">&#39;0.75in&#39;</span>,
-    <span style="color:#e6db74">&#39;encoding&#39;</span>: <span style="color:#e6db74">&#34;UTF-8&#34;</span>,
-    <span style="color:#e6db74">&#39;custom-header&#39;</span> : [
-        (<span style="color:#e6db74">&#39;Accept-Encoding&#39;</span>, <span style="color:#e6db74">&#39;gzip&#39;</span>)
+options <span style=color:#f92672>=</span> {
+    <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>page-size</span><span style=color:#e6db74>&#39;</span>: <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>Letter</span><span style=color:#e6db74>&#39;</span>,
+    <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>margin-top</span><span style=color:#e6db74>&#39;</span>: <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>0.75in</span><span style=color:#e6db74>&#39;</span>,
+    <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>margin-right</span><span style=color:#e6db74>&#39;</span>: <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>0.75in</span><span style=color:#e6db74>&#39;</span>,
+    <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>margin-bottom</span><span style=color:#e6db74>&#39;</span>: <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>0.75in</span><span style=color:#e6db74>&#39;</span>,
+    <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>margin-left</span><span style=color:#e6db74>&#39;</span>: <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>0.75in</span><span style=color:#e6db74>&#39;</span>,
+    <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>encoding</span><span style=color:#e6db74>&#39;</span>: <span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>UTF-8</span><span style=color:#e6db74>&#34;</span>,
+    <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>custom-header</span><span style=color:#e6db74>&#39;</span> : [
+        (<span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>Accept-Encoding</span><span style=color:#e6db74>&#39;</span>, <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>gzip</span><span style=color:#e6db74>&#39;</span>)
     ],
-    <span style="color:#e6db74">&#39;cookie&#39;</span>: [
-        (<span style="color:#e6db74">&#39;cookie-name1&#39;</span>, <span style="color:#e6db74">&#39;cookie-value1&#39;</span>),
-        (<span style="color:#e6db74">&#39;cookie-name2&#39;</span>, <span style="color:#e6db74">&#39;cookie-value2&#39;</span>),
+    <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>cookie</span><span style=color:#e6db74>&#39;</span>: [
+        (<span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>cookie-name1</span><span style=color:#e6db74>&#39;</span>, <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>cookie-value1</span><span style=color:#e6db74>&#39;</span>),
+        (<span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>cookie-name2</span><span style=color:#e6db74>&#39;</span>, <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>cookie-value2</span><span style=color:#e6db74>&#39;</span>),
     ],
-    <span style="color:#e6db74">&#39;no-outline&#39;</span>: None
+    <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>no-outline</span><span style=color:#e6db74>&#39;</span>: None
 }
 
-htmlhead <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">&lt;html&gt;
-</span><span style="color:#e6db74">    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=UTF-8&#34;&gt;
-</span><span style="color:#e6db74">    &lt;head&gt;
-</span><span style="color:#e6db74">            &lt;title&gt;BlogList&lt;/title&gt;
-</span><span style="color:#e6db74">    &lt;/head&gt;
-</span><span style="color:#e6db74">&lt;body&gt;
-</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+htmlhead <span style=color:#f92672>=</span> <span style=color:#e6db74></span><span style=color:#e6db74>&#34;&#34;&#34;</span><span style=color:#e6db74>
+</span><span style=color:#e6db74></span><span style=color:#e6db74>&lt;html&gt;</span><span style=color:#e6db74>
+</span><span style=color:#e6db74></span><span style=color:#e6db74>    &lt;meta http-equiv=</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>Content-Type</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74> content=</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>text/html; charset=UTF-8</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>&gt;</span><span style=color:#e6db74>
+</span><span style=color:#e6db74></span><span style=color:#e6db74>    &lt;head&gt;</span><span style=color:#e6db74>
+</span><span style=color:#e6db74></span><span style=color:#e6db74>            &lt;title&gt;BlogList&lt;/title&gt;</span><span style=color:#e6db74>
+</span><span style=color:#e6db74></span><span style=color:#e6db74>    &lt;/head&gt;</span><span style=color:#e6db74>
+</span><span style=color:#e6db74></span><span style=color:#e6db74>&lt;body&gt;</span><span style=color:#e6db74>
+</span><span style=color:#e6db74></span><span style=color:#e6db74>&#34;&#34;&#34;</span>
 
-htmltail <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">&lt;/body&gt;
-</span><span style="color:#e6db74">&lt;/html&gt;
-</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+htmltail <span style=color:#f92672>=</span> <span style=color:#e6db74></span><span style=color:#e6db74>&#34;&#34;&#34;</span><span style=color:#e6db74>
+</span><span style=color:#e6db74></span><span style=color:#e6db74>&lt;/body&gt;</span><span style=color:#e6db74>
+</span><span style=color:#e6db74></span><span style=color:#e6db74>&lt;/html&gt;</span><span style=color:#e6db74>
+</span><span style=color:#e6db74></span><span style=color:#e6db74>&#34;&#34;&#34;</span>
 
-Article <span style="color:#f92672">=</span> htmlhead
+Article <span style=color:#f92672>=</span> htmlhead
 
 
-d <span style="color:#f92672">=</span> feedparser<span style="color:#f92672">.</span>parse(<span style="color:#e6db74">&#39;https://feeds.feedburner.com/letscorp/aDmw&#39;</span>)
+d <span style=color:#f92672>=</span> feedparser<span style=color:#f92672>.</span>parse(<span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>https://feeds.feedburner.com/letscorp/aDmw</span><span style=color:#e6db74>&#39;</span>)
 
-<span style="color:#66d9ef">for</span> post <span style="color:#f92672">in</span> d<span style="color:#f92672">.</span>entries:
-    <span style="color:#75715e"># Post Title</span>
-    <span style="color:#75715e">#print post.title</span>
-    Article <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;h2&gt;&#34;</span> <span style="color:#f92672">+</span> post<span style="color:#f92672">.</span>title <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/h2&gt;&#34;</span>
-    <span style="color:#75715e"># Post Content</span>
-    <span style="color:#75715e">#print post.content[0].value.rsplit(&#39;span&#39;, 2)[0][:-4]</span>
-    <span style="color:#75715e">#Article += post.content[0].value.rsplit(&#39;span&#39;, 2)[0][:-4]</span>
-    Article <span style="color:#f92672">+=</span> post<span style="color:#f92672">.</span>content[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>value
+<span style=color:#66d9ef>for</span> post <span style=color:#f92672>in</span> d<span style=color:#f92672>.</span>entries:
+    <span style=color:#75715e># Post Title</span>
+    <span style=color:#75715e>#print post.title</span>
+    Article <span style=color:#f92672>+</span><span style=color:#f92672>=</span> <span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>&lt;h2&gt;</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>+</span> post<span style=color:#f92672>.</span>title <span style=color:#f92672>+</span> <span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>&lt;/h2&gt;</span><span style=color:#e6db74>&#34;</span>
+    <span style=color:#75715e># Post Content</span>
+    <span style=color:#75715e>#print post.content[0].value.rsplit(&#39;span&#39;, 2)[0][:-4]</span>
+    <span style=color:#75715e>#Article += post.content[0].value.rsplit(&#39;span&#39;, 2)[0][:-4]</span>
+    Article <span style=color:#f92672>+</span><span style=color:#f92672>=</span> post<span style=color:#f92672>.</span>content[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>.</span>value
 
-Article <span style="color:#f92672">+=</span> htmltail
-<span style="color:#66d9ef">print</span> Article
-<span style="color:#75715e">#pdfkit.from_string(Article, &#39;output.pdf&#39;, options=options)</span>
+Article <span style=color:#f92672>+</span><span style=color:#f92672>=</span> htmltail
+<span style=color:#66d9ef>print</span> Article
+<span style=color:#75715e>#pdfkit.from_string(Article, &#39;output.pdf&#39;, options=options)</span>
 </code></pre></div><p>Unfortunately the last line won&rsquo;t work, cause we are working under terminal,
 we use the wrapped wkhtmltopdf, so we comment it, and redirect our output into
-a html file, manually convert from html to pdf.</p>
-<h3 id="usage">Usage</h3>
-<p>Output pdf via following command:</p>
-<pre><code>$ python fetch.py&gt;fetch.html
+a html file, manually convert from html to pdf.</p><h3 id=usage>Usage</h3><p>Output pdf via following command:</p><pre><code>$ python fetch.py&gt;fetch.html
 $ wkhtmltopdf fetch.html output.pdf
 </code></pre><p>The generated <code>output.pdf</code> contains the latest 10 articles in blog, like
-following screenshot image:</p>
-<p><img src="/images/2016_12_29_17_02_52_885x636.jpg" alt="/images/2016_12_29_17_02_52_885x636.jpg"></p>
-<h3 id="further-works">Further Works</h3>
-<ol>
-<li>Could it fetch more blog items via rss?</li>
-<li>Crontab for sending out pdf as attached files to specified email box?</li>
-<li>Judgement from date?</li>
-<li>Less size of pdf file(shriking the image size)?</li>
-<li>Use CSS for beautify this output pdf?</li>
-</ol>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+following screenshot image:</p><p><img src=/images/2016_12_29_17_02_52_885x636.jpg alt=/images/2016_12_29_17_02_52_885x636.jpg></p><h3 id=further-works>Further Works</h3><ol><li>Could it fetch more blog items via rss?</li><li>Crontab for sending out pdf as attached files to specified email box?</li><li>Judgement from date?</li><li>Less size of pdf file(shriking the image size)?</li><li>Use CSS for beautify this output pdf?</li></ol></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

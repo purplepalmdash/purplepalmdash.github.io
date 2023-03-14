@@ -1,153 +1,16 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>SG1OnArchLinux &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="SG1OnArchLinux">
-  <meta name="keywords" content="Technology">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>SG1OnArchLinux</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Aug 15, 2022 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#steps">Steps</a></li>
-        <li><a href="#testing">testing</a></li>
-        <li><a href="#ubuntu-sg1">Ubuntu sg1</a></li>
-        <li><a href="#ubuntu2004-sg1">Ubuntu20.04 sg1</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="steps">Steps</h3>
-<p>Install sddm:</p>
-<pre><code># pacman -S sddm xorg
-</code></pre><p>After reboot, examine the kernel and the sg1 pci infos:</p>
-<pre><code>[root@archvfio ~]# lspci | grep -i vga
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>SG1OnArchLinux &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="SG1OnArchLinux"><meta name=keywords content="Technology"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>SG1OnArchLinux</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Aug 15, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#steps>Steps</a></li><li><a href=#testing>testing</a></li><li><a href=#ubuntu-sg1>Ubuntu sg1</a></li><li><a href=#ubuntu2004-sg1>Ubuntu20.04 sg1</a></li></ul></li></ul></nav></div><h3 id=steps>Steps</h3><p>Install sddm:</p><pre><code># pacman -S sddm xorg
+</code></pre><p>After reboot, examine the kernel and the sg1 pci infos:</p><pre><code>[root@archvfio ~]# lspci | grep -i vga
 00:01.0 VGA compatible controller: Red Hat, Inc. Virtio GPU (rev 01)
 07:00.0 VGA compatible controller: Intel Corporation SG1 [Server GPU SG-18M] (rev 01)
 [root@archvfio ~]# uname -a
 Linux archvfio 5.19.1-arch2-1 #1 SMP PREEMPT_DYNAMIC Thu, 11 Aug 2022 16:06:13 +0000 x86_64 GNU/Linux
-</code></pre><p>Add virtio gpu into blacklist:</p>
-<pre><code># vim /etc/modprobe.d/blacklist.conf
+</code></pre><p>Add virtio gpu into blacklist:</p><pre><code># vim /etc/modprobe.d/blacklist.conf
    # blacklist virtio_gpu
-</code></pre><p>Didn&rsquo;t take effects, change the graphical to qxl and added blacklist qxl:</p>
-<p><img src="/images/2022_08_15_14_23_35_535x518.jpg" alt="/images/2022_08_15_14_23_35_535x518.jpg"></p>
-<p>Take effects:</p>
-<pre><code>[root@archvfio ~]# lsmod | grep qxl
+</code></pre><p>Didn&rsquo;t take effects, change the graphical to qxl and added blacklist qxl:</p><p><img src=/images/2022_08_15_14_23_35_535x518.jpg alt=/images/2022_08_15_14_23_35_535x518.jpg></p><p>Take effects:</p><pre><code>[root@archvfio ~]# lsmod | grep qxl
 [root@archvfio ~]# ls /dev/dri/
 by-path  card0	renderD128
-</code></pre><p>Examine the sg1 connected info:</p>
-<pre><code>for p in /sys/class/drm/*/status; do con=${p%/status}; echo -n &quot;${con#*/card?-}: &quot;; cat $p; done
+</code></pre><p>Examine the sg1 connected info:</p><pre><code>for p in /sys/class/drm/*/status; do con=${p%/status}; echo -n &quot;${con#*/card?-}: &quot;; cat $p; done
 DP-1: disconnected
 DP-2: disconnected
 DP-3: disconnected
@@ -155,8 +18,7 @@ HDMI-A-1: disconnected
 HDMI-A-2: disconnected
 HDMI-A-3: disconnected
 HDMI-A-4: disconnected
-</code></pre><p>Edit the Xorg configuration files and start the benchmark:</p>
-<pre><code># cat /etc/X11/xorgintel.conf 
+</code></pre><p>Edit the Xorg configuration files and start the benchmark:</p><pre><code># cat /etc/X11/xorgintel.conf 
 Section &quot;Device&quot;
     Identifier     &quot;Device[0]&quot;
     BusID          &quot;PCI:7:0:0&quot;
@@ -178,9 +40,7 @@ EndSection
 root         841     526  0 14:27 tty2     00:00:00 /usr/lib/Xorg :179 -config /etc/X11/xorgintel.conf
 root         877     873  0 14:28 pts/1    00:00:00 grep -i xorg
 
-</code></pre><h3 id="testing">testing</h3>
-<p>Install x11vnc and glmark2 for  benchmarking:</p>
-<pre><code># vim /etc/pacman.conf
+</code></pre><h3 id=testing>testing</h3><p>Install x11vnc and glmark2 for benchmarking:</p><pre><code># vim /etc/pacman.conf
 [archlinuxcn]
 #The Chinese Arch Linux communities packages.
 SigLevel = Never
@@ -198,8 +58,7 @@ Server   = http://repo.archlinuxcn.org/$arch
     GL_VERSION:    4.6 (Compatibility Profile) Mesa 22.1.6
 =======================================================
 
-</code></pre><p>glmark2 result:</p>
-<pre><code>=======================================================
+</code></pre><p>glmark2 result:</p><pre><code>=======================================================
     glmark2 2021.12
 =======================================================
     OpenGL Information
@@ -243,8 +102,7 @@ Server   = http://repo.archlinuxcn.org/$arch
 =======================================================
                                   glmark2 Score: 2665 
 =======================================================
-</code></pre><p>Unigen valley benchmark:</p>
-<pre><code># export DISPLAY=:179
+</code></pre><p>Unigen valley benchmark:</p><pre><code># export DISPLAY=:179
 [root@archvfio ~]# x11vnc
 ###############################################################
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
@@ -262,16 +120,12 @@ On another terminal:
 [root@archvfio Unigine_Valley-1.0]# ls
 bin  data  documentation  valley
 [root@archvfio Unigine_Valley-1.0]# ./valley 
-</code></pre><p><img src="/images/2022_08_15_14_42_10_965x786.jpg" alt="/images/2022_08_15_14_42_10_965x786.jpg"></p>
-<p>valley cannot start in default resolution, changes edid and set the default resolution to 1920x1080:</p>
-<pre><code># vim /etc/default/grub
+</code></pre><p><img src=/images/2022_08_15_14_42_10_965x786.jpg alt=/images/2022_08_15_14_42_10_965x786.jpg></p><p>valley cannot start in default resolution, changes edid and set the default resolution to 1920x1080:</p><pre><code># vim /etc/default/grub
 ........
 GRUB_CMDLINE_LINUX_DEFAULT=&quot;loglevel=3 quiet drm_kms_helper.edid_firmware=edid/1920x1080.bin video=HDMI-A-1:e&quot;
 ........
 # grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre><p>Valley result:</p>
-<p><img src="/images/2022_08_15_14_57_02_518x465.jpg" alt="/images/2022_08_15_14_57_02_518x465.jpg"></p>
-<pre><code>Benchmark results:
+</code></pre><p>Valley result:</p><p><img src=/images/2022_08_15_14_57_02_518x465.jpg alt=/images/2022_08_15_14_57_02_518x465.jpg></p><pre><code>Benchmark results:
 Time:	189.067
 Frames:	8108
 FPS:	42.8842
@@ -279,14 +133,11 @@ Min FPS:	25.3772
 Max FPS:	71.5901
 Score:	1794.28
 
-</code></pre><h3 id="ubuntu-sg1">Ubuntu sg1</h3>
-<p>Update and upgrade system(based on desktop iso):</p>
-<pre><code># apt update &amp;&amp; apt upgrade &amp;&amp; apt install openssh-server vim glmark2 x11vnc &amp;&amp; ufw disable &amp;&amp; systemctl disable gdm &amp;&amp; reboot
+</code></pre><h3 id=ubuntu-sg1>Ubuntu sg1</h3><p>Update and upgrade system(based on desktop iso):</p><pre><code># apt update &amp;&amp; apt upgrade &amp;&amp; apt install openssh-server vim glmark2 x11vnc &amp;&amp; ufw disable &amp;&amp; systemctl disable gdm &amp;&amp; reboot
 # vim /etc/modprobe.d/blacklist.conf
 .......
 blacklist qxl
-</code></pre><p>Using <code>linux-zen</code> kernel:</p>
-<pre><code>Install the linux-zen via:    
+</code></pre><p>Using <code>linux-zen</code> kernel:</p><pre><code>Install the linux-zen via:    
 # sudo add-apt-repository ppa:damentz/liquorix &amp;&amp; sudo apt-get update
 # sudo apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
 
@@ -294,13 +145,9 @@ root@dash-Standard-PC-Q35-ICH9-2009:/home/dash# ls /dev/dri/
 by-path  card0  renderD128
 root@dash-Standard-PC-Q35-ICH9-2009:/home/dash# uname -a
 Linux dash-Standard-PC-Q35-ICH9-2009 5.19.0-1.1-liquorix-amd64
-</code></pre><p>Create Xorg via:</p>
-<pre><code>tobe added
-</code></pre><p>Issue: not started:</p>
-<pre><code>error: Kernel is too old for Iris. Consider upgrading to kernel v4.16.
-</code></pre><h3 id="ubuntu2004-sg1">Ubuntu20.04 sg1</h3>
-<p>Install the kernel provided by intel, then:</p>
-<pre><code># ln -s /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so /usr/lib64/dri/swrast_dri.so
+</code></pre><p>Create Xorg via:</p><pre><code>tobe added
+</code></pre><p>Issue: not started:</p><pre><code>error: Kernel is too old for Iris. Consider upgrading to kernel v4.16.
+</code></pre><h3 id=ubuntu2004-sg1>Ubuntu20.04 sg1</h3><p>Install the kernel provided by intel, then:</p><pre><code># ln -s /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so /usr/lib64/dri/swrast_dri.so
 # ln -s /usr/lib/x86_64-linux-gnu/dri/kms_swrast_dri.so /usr/lib64/dri/kms_swrast_dri.so
 # ln -s /usr/local/lib/x86_64-linux-gnu/dri/iris_dri.so /usr/lib64/dri/iris_dri.so
 # export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:/usr/local/lib64/dri:/usr/lib64/:/usr/lib64/dri:$LD_LIBRARY_PATH
@@ -326,29 +173,13 @@ Linux dash-Standard-PC-Q35-ICH9-2009 5.19.0-1.1-liquorix-amd64
     MESA: warning: Driver does not support the 0x4907 PCI ID.
     (II) modeset(0): Initializing kms color map for depth 24, 8 bpc.
     MESA: warning: Driver does not support the 0x4907 PCI ID.
-</code></pre><p>In another terminal , run glmark2:</p>
-<pre><code># export DISPLAY=:179
+</code></pre><p>In another terminal , run glmark2:</p><pre><code># export DISPLAY=:179
 # glmark2
-</code></pre><p>UniValley result:</p>
-<pre><code>Time:   189.107
+</code></pre><p>UniValley result:</p><pre><code>Time:   189.107
 Frames: 7131
 FPS:    37.7089
 Min FPS:        19.6125
 Max FPS:        68.0576
 Score:  1577.74
 
-</code></pre>
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

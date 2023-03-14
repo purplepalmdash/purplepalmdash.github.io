@@ -1,2546 +1,440 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-	<meta name="generator" content="Hugo 0.65.1" />
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/11/28/runwordpressonminikube/>RunWordPressOnMinikube</a></h1><span class=post-date>Nov 28, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>On Ubuntu16.04, first download the deb package from</p><p><a href=https://github.com/kubernetes/minikube/releases>https://github.com/kubernetes/minikube/releases</a></p><p>Install virtualbox:</p><pre><code>$ sudo apt-get install -y virtualbox
+$ sudo dpkg -i minikube_0.12-2.deb
+$ which minikube-linux-amd64 
+/usr/bin/minikube-linux-amd64
+</code></pre><h3 id=start-cluster>Start Cluster</h3><p>First install kubectl:</p><pre><code>$ curl -Lo kubectl \
+https://storage.googleapis.com/kubernetes-release/release/v1.3.0/bin/linux/amd64/kubectl \
+&amp;&amp; chmod +x kubectl &amp;&amp; sudo mv kubectl /usr/local/bin/
+</code></pre><p>Start kubernetes cluster via:</p><pre><code>$ minikube-linux-amd64 start
+Starting local Kubernetes cluster...
+Downloading Minikube ISO
+ 36.00 MB / 36.00 MB [==============================================] 100.00%
+0s
+Kubectl is now configured to use the cluster.
+</code></pre><p>Examine the result:</p><pre><code>$ kubectl get pods --all-namespaces
+NAMESPACE     NAME                          READY     STATUS RESTARTS   AGE
+kube-system   kube-addon-manager-minikube   0/1       ContainerCreating   0	1m
+</code></pre><p>Examine the status:</p><pre><code>$ minikube-linux-amd64 status
+minikubeVM: Running
+localkube: Running
+</code></pre><p>View add-on lists:</p><pre><code>$ minikube addons list
+- heapster: disabled
+- ingress: disabled
+- registry-creds: disabled
+- addon-manager: enabled
+- dashboard: enabled
+- kube-dns: enabled
+</code></pre><p>Trouble-Shooting:<br>When getting following error msgs, delete <code>~/.minikube</code> and run <code>minikube start</code> again solves the problem.</p><pre><code>~$ minikube start
+Starting local Kubernetes cluster...
+E0224 15:08:58.755236    7977 start.go:107] Error starting host: Error getting state for host: machine does not exist.
+</code></pre><h3 id=minikube-upgrade>minikube upgrade</h3><p>Upgrade minikube in ubuntu by installing the newest deb package.</p><p>Upgrade minikube in ArchLinux by <code>yaourt -S minikube</code>, then <code>minikube start</code>
+will use the newest version.</p><h3 id=trouble-shooting-in-dashboard>Trouble-Shooting In Dashboard</h3><p>When startup the dashboard, the minikube will complains could not find the endpoint:</p><pre><code>$ minikube-linux-amd64 dashboard
+Could not find finalized endpoint being pointed to by kubernetes-dashboard: Temporary Error: endpoints &quot;kubernetes-dashboard&quot; not found
+Temporary Error: endpoints &quot;kubernetes-dashboard&quot; not found
+Temporary Error: endpoints &quot;kubernetes-dashboard&quot; not found
+Temporary Error: endpoints &quot;kubernetes-dashboard&quot; not found
+</code></pre><p>Solved:<br>Get all of the pods in all namespaces:</p><pre><code>$ kubectl get pods --all-namespaces
+NAMESPACE     NAME                          READY     STATUS              RESTARTS   AGE
+default       nginx-3449338310-vna7q        0/1       ContainerCreating   0          2h
+kube-system   kube-addon-manager-minikube   0/1       ContainerCreating   0          3h
+</code></pre><p>Get the description of the pod <code>kube-addon-manager-minikube</code>:</p><pre><code>$ kubectl describe --namespace=kube-system po kube-addon-manager-minikube
+Name:		kube-addon-manager-minikube
+Namespace:	kube-system
+Node:		minikube/192.168.99.100
+Start Time:	Mon, 28 Nov 2016 12:17:40 +0800
+Labels:		component=kube-addon-manager
+		version=v5.1
+Status:		Pending
+IP:		192.168.99.100
+Controllers:	&lt;none&gt;
+Containers:
+  kube-addon-manager:
+    Container ID:	
+    Image:		gcr.io/google-containers/kube-addon-manager:v5.1
+    Image ID:		
+    Port:		
+    Requests:
+      cpu:			5m
+      memory:			50Mi
+    State:			Waiting
+      Reason:			ContainerCreating
+    Ready:			False
+    Restart Count:		0
+    Environment Variables:	&lt;none&gt;
+Conditions:
+  Type		Status
+  Initialized 	True 
+  Ready 	False 
+  PodScheduled 	True 
+Volumes:
+  addons:
+    Type:	HostPath (bare host directory volume)
+    Path:	/etc/kubernetes/
+QoS Tier:	Burstable
+No events.
+</code></pre><p>Then manually download the docker images of
+<code>gcr.io/google-containers/kube-addon-manager:v5.1</code>, load it via following command:</p><pre><code>$ eval $(minikube-linux-amd64 docker-env)
+$ docker load&lt;kubeaddonmanagerv51.tar.bz2 
+</code></pre><p>Also the default nginx-3449338310-vna7q is failed, use the same method for manually download
+the pause image and load it into the docker system:</p><pre><code>$ eval $(minikube-linux-amd64 docker-env)
+$ docker load&lt;kubepause30.tar.bz2
+</code></pre><p>Also load the dns:</p><pre><code>$ eval $(minikube-linux-amd64 docker-env)
+$ docker load&lt;kubedns18.tar.bz2
+</code></pre><h3 id=wordpress-installation>Wordpress Installation</h3><p>Refers to :</p><p><a href="https://www.linux-toys.com/?p=887">https://www.linux-toys.com/?p=887</a></p><p>Download yaml file:</p><pre><code>$ wget https://gist.githubusercontent.com/rusher81572/ddf2e1487b609f294b21a2463a8be104/raw/1ba33c7a2dfbef9118c6043030b76babb0a80c7b/wordpress-k8s -O wordpress.yaml
+$ sudo docker pull rusher81572/phpfpm
+$ sudo docker pull rusher81572/mysql
+$ sudo docker pull rusher81572/nginx
+</code></pre><p>Create the services from yaml file:</p><pre><code>$ kubectl create -f wordpress.yaml
+$ minikube-linux-amd64 service nginx --url
+http://192.168.99.100:32400
+</code></pre><p>Open the url in your browser:</p><p><img src=/images/2016_11_28_17_24_10_527x489.jpg alt=/images/2016_11_28_17_24_10_527x489.jpg></p><p>Manually create the database named <code>wordpress</code>:</p><pre><code>$ kubectl get pods (To find the Mysql pod name)
+$ kubectl exec -it mysql-qe900 bash
+$ mysql
+$ create database wordpress;
+</code></pre><p>Insert the following items in webpage:</p><pre><code>Username: root
+Password: sql
+Database Name: wordpress
+Database Host: mysql
+</code></pre><p>After installation, now refresh the webpage you will see the installed wordpress.</p><h3 id=echo-server>Echo Server</h3><p>First download the image and load it into the minikube VM:</p><pre><code>$ docker pull gcr.io/google_containers/echoserver:1.4
+$ kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 \
+--hostport=8000 --port=8080 
+$ kubectl get pod
+NAME                              READY     STATUS    RESTARTS   AGE
+hello-minikube-3383150820-x72om   1/1       Running   0          1m
+</code></pre><p>You could use <code>kubectl describe pod hellxxxx</code> for displaying the detailed
+info.</p><p>Test echo server:</p><pre><code># curl $(minikube service hello-minikube --url) --data &quot;param1=value1&quot;
+CLIENT VALUES:
+client_address=172.17.0.1
+command=POST
+real path=/
+query=nil
+request_version=1.1
+request_uri=http://192.168.99.101:8080/
 
-  <title>Dash &middot; Dash</title>
+SERVER VALUES:
+server_version=nginx: 1.10.0 - lua: 10001
 
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+HEADERS RECEIVED:
+accept=*/*
+content-length=13
+content-type=application/x-www-form-urlencoded
+host=192.168.99.101:32520
+user-agent=curl/7.51.0
+BODY:
+param1=value1%                                        
+</code></pre><p>Or use nmap for scan all of the ports:</p><pre><code>$ nmap 192.168.99.101
 
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+Starting Nmap 7.31 ( https://nmap.org ) at 2016-11-28 22:09 CST
+Nmap scan report for 192.168.99.101
+Host is up (0.0043s latency).
+Not shown: 996 closed ports
+PORT      STATE SERVICE
+22/tcp    open  ssh
+8000/tcp  open  http-alt
+8443/tcp  open  https-alt
+30000/tcp open  ndmps
+</code></pre><p>8000 port is the port listening for, testing this port:</p><pre><code>$  curl http://192.168.99.101:8000 --data &quot;param1=value1&quot;
+CLIENT VALUES:
+client_address=192.168.99.1
+command=POST
+real path=/
+query=nil
+request_version=1.1
+request_uri=http://192.168.99.101:8080/
 
-  
-  
-  
-  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Dash &middot; Dash" />
-  <meta name="description" content="">
-  <meta name="keywords" content="unix,virtualization,embedded,linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
+SERVER VALUES:
+server_version=nginx: 1.10.0 - lua: 10001
 
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="posts">
-    
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/blog/2016/11/07/runwithmusic/">RunWithMusic</a>
-      </h1>
-      <span class="post-date">Nov 7, 2016 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/life">Life</a>
-        
-      </span>
-      
-      <p>晚上败了个索尼大法，回想起来跑步这么些年，听坏的播放装备简直是……提起来就让人&quot;心痛到无法呼吸&rdquo;。好了，下面
-来盘点一下被我玩坏过的装备。</p>
-<p>跑步中会大量出汗，因而选择运动装备，无论是耳机还是播放设备，第一是防水、第二还是防水、第三还是防水&mdash;-重要的事情说
-三遍！ 如果你还没悟到防水的重要，那可能是因为： <br>
-1、 你处于高纬度地带，跑步压根不出汗； <br>
-2、 你跑步的速度可能有点。。。。。。慢;  <br>
-3、 你没有汗腺，可以像狗狗一样伸个舌头就散热。。。(开个玩笑)</p>
-<p>意外的是，在诸多运动耳机中，我第一时间想到的是Philips的耳机. 便宜、耐操,
-防水性超好：</p>
-<p>Philips 灵活挂钩式耳机 SHS3200BK/37 ：</p>
-<p><img src="/images/2016_11_07_21_24_56_540x479.jpg" alt="/images/2016_11_07_21_24_56_540x479.jpg"></p>
-<p>特点：
-非入耳式，跑步时很安全(可以听到汽笛声铃铛声等)。这个耳机是我用过的最耐操的，先后买过两个，
-白色和黑色。这个耳机的脆弱点在于，它的与耳朵接触的部位含有少量金属，因而会慢慢被腐蚀，最后
-导致声音越来越少。本人右耳出汗稍微多点，每次都是坏右耳。</p>
-<p>重音很好。</p>
-<p>价格：入手时50左右，现在可能涨了点。</p>
-<p>使用寿命：一年+。</p>
-<p>飞利浦（PHILIPS） SHQ3200/98 ActionFit：</p>
-<p><img src="/images/2016_11_07_21_34_59_697x705.jpg" alt="/images/2016_11_07_21_34_59_697x705.jpg"></p>
-<p>特点： <br>
-入耳式，听各种协奏曲会很爽。耐操程度不如上一个。这个耳机我也买过两个。脆弱点在于：发音部分
-含有金属，所以，会被汗液慢慢腐蚀。</p>
-<p>缺点： 带上以后，跑公路很危险，因为是入耳式。</p>
-<p>使用寿命：9个月左右。</p>
-<p>DECATHLON</p>
-<p><img src="/images/2016_11_07_21_40_15_257x377.jpg" alt="/images/2016_11_07_21_40_15_257x377.jpg"></p>
-<p>么有评价，只是告诉你们不要买就是了。买来听两个月就挂的货，毕竟是找到国内企业低成本代工。。。。</p>
-<p>Moto SF200</p>
-<p><img src="/images/2016_11_07_21_46_44_259x265.jpg" alt="/images/2016_11_07_21_46_44_259x265.jpg"> <br>
-在200左右的价位入手，结果大失所望，听了5个月就坏掉了，一个耳朵没声音。</p>
-<p>蓝牙耳机不评论。盖因本人一直用有线听音乐。当然蓝牙适配器也是有的，因为汗水的缘故，已经挂掉了
-N个。。。。</p>
-<p>跑步时候的播放设备，曾经用过PHILIPS、SANDISK、爱国者的MP3，还有几台NOKIA手机。然而我可以很负责任
-的告诉各位&mdash;-这些设备现在通通不能用了，因为被汗水诟坏了。</p>
-<p>所以，到最后我只能剁手这个：</p>
-<p><img src="/images/2016_11_07_21_55_10_770x607.jpg" alt="/images/2016_11_07_21_55_10_770x607.jpg"></p>
-<p>索尼大法好，希望索尼大法能被我操两年+。</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/blog/2016/11/07/turnqcow2intovagrantbox/">TurnQcow2IntoVagrantBox</a>
-      </h1>
-      <span class="post-date">Nov 7, 2016 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="img-preparation">img preparation</h3>
-<p>First you got a qcow2 file, which could let you startup a virtualmachine, so you
-startup a machine like following:</p>
-<pre><code># cp YourQcowFile.qcow2 ./box.img
-# qemu-system-x86_64 -net nic -net user,hostfwd=tcp::2222-:22 -hda ./box.img -m 512
---enable-kvm
-</code></pre><p>Login to the machine and run following scripts:</p>
-<pre><code>useradd -m vagrant
-mkdir /home/vagrant/.ssh
-chmod 700 /home/vagrant/.ssh
-echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key&quot; &gt; /home/vagrant/.ssh/authorized_keys
-chmod 600 /home/vagrant/.ssh/authorized_keys
-chown -R vagrant.vagrant /home/vagrant/.ssh
-
-# Sudoers
-sed -i -r 's/(.* requiretty)/#\1/' /etc/sudoers
-
-cat &gt; /etc/sudoers.d/90-vagrant-users &lt;&lt;EOF
-# User rules for vagrant
-vagrant ALL=(ALL) NOPASSWD:ALL
-EOF
-</code></pre><p>Now close the machine.</p>
-<h3 id="metadata-file">Metadata file</h3>
-<p>Create a new metadata file like following:</p>
-<pre><code># vim metadata.json
+HEADERS RECEIVED:
+accept=*/*
+content-length=13
+content-type=application/x-www-form-urlencoded
+host=192.168.99.101:8000
+user-agent=curl/7.51.0
+BODY:
+param1=value1% 
+</code></pre><h3 id=deployment-using-dashboard>Deployment Using dashboard</h3><p>Specify the namespace:<br><img src=/images/2016_11_29_10_35_29_283x454.jpg alt=/images/2016_11_29_10_35_29_283x454.jpg></p><p><img src=/images/2016_11_29_10_35_37_205x403.jpg alt=/images/2016_11_29_10_35_37_205x403.jpg></p><p>Create app name:</p><pre><code>App name: hello-yang
+Container Image: gcr.io/google_containers/echoserver:1.4
+Number of pods: 5
+Service: External
+Port: 8080  Target port: 8080  Protocol: TCP
+</code></pre><p>After deployment, examine the result via:</p><pre><code>➜  ~ kubectl get namespace
+NAME            STATUS    AGE
+default         Active    14h
+devops-meetup   Active    13h
+kube-system     Active    14h
+➜  ~ kubectl get deployment --namespace=&quot;devops-meetup&quot;
+NAME         DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+hello-yang   5         5         5            5           24m
+</code></pre><p>Delete the deployment via:</p><pre><code># kubectl delete deployment hello-yang --namespace=&quot;devops-meetup&quot;
+deployment &quot;hello-yang&quot; deleted
+</code></pre><h3 id=deployment-using-yaml>Deployment Using yaml</h3><p>Download the yaml file:</p><pre><code>$  wget
+https://raw.githubusercontent.com/kubernetes/kubernetes/master/examples/guestbook/all-in-one/guestbook-all-in-one.yaml
+$ vim guestbook-all-in-one.yaml
+  # type: LoadBalancer
+  type: LoadBalancer
+</code></pre><p>Create the service via:</p><pre><code>$ kubectl create -f guestbook-all-in-one.yaml
+</code></pre><p>Get the service and view the result:</p><pre><code>➜  ~ kubectl get services
+NAME           CLUSTER-IP   EXTERNAL-IP   PORT(S)    AGE
+frontend       10.0.0.164   &lt;pending&gt;     80/TCP     15m
+kubernetes     10.0.0.1     &lt;none&gt;        443/TCP    15h
+redis-master   10.0.0.100   &lt;none&gt;        6379/TCP   15m
+redis-slave    10.0.0.14    &lt;none&gt;        6379/TCP   15m
+➜  ~ minikube service frontend --url
+http://192.168.99.101:30640
+</code></pre><p>Then open the browser and view the result.</p><p><img src=/images/2016_11_29_11_31_56_375x301.jpg alt=/images/2016_11_29_11_31_56_375x301.jpg></p><h3 id=tips>Tips</h3><p>Login to minikube VM:</p><pre><code>$ minikube-linux-amd64 ssh
+</code></pre><p>View minikube dashboard URL:</p><pre><code>$ minikube-linux-amd64 dashboard --url
+http://192.168.99.100:30000
+</code></pre><p>View minikube service URL:</p><pre><code>$ minikube-linux-amd64 service nginx --url
+http://192.168.99.100:32400
+</code></pre><p>Delete pod in terminating status in force:</p><pre><code># kubectl delete pod mypod --grace-period=0
+</code></pre><p>Using kubectl proxy:</p><pre><code>$ kubectl proxy --port=8001
+Starting to serve on localhost:8001
+</code></pre><p>Now visit: <code>http://localhost:8001/ui</code> for accessing the dashboard.</p><p>wide output:</p><pre><code>$ kubectl get pods -o wide
+NAME       READY     STATUS    RESTARTS   AGE       IP           NODE
+hugoblog   1/1       Running   2          22h       172.17.0.4   minikube
+$ kubectl get pods        
+NAME       READY     STATUS    RESTARTS   AGE
+hugoblog   1/1       Running   2          22h
+</code></pre><p>Create deployment command:</p><pre><code># kubectl run my-nginx --image=nginx --replicas=2 --port=808 --expose
+</code></pre><p>so if you want to delete all of the pods, simply delete:</p><pre><code># kubectl delete deployments my-nginx
+</code></pre><p>Prevent image pull in json definition files(take zookeeper.json for example):</p><pre><code>$ cat zookeeper.json
 {
-  &quot;provider&quot;     : &quot;libvirt&quot;,
-  &quot;format&quot;       : &quot;qcow2&quot;,
-  &quot;virtual_size&quot; : 4
-}
-</code></pre><p>Create a Vagrantfile like following:</p>
-<pre><code>$ vim Vagrantfile
-# The contents below were provided by the Packer Vagrant post-processor
+  &quot;kind&quot;: &quot;Pod&quot;,
+  &quot;apiVersion&quot;: &quot;v1&quot;,
+  &quot;metadata&quot;: {
+    &quot;name&quot;: &quot;zookeeper&quot;,
+    &quot;labels&quot;: {
+      &quot;name&quot;: &quot;zookeeper&quot;
+    }
+  },
+  &quot;spec&quot;: {
+    &quot;containers&quot;: [
+      {
+        &quot;name&quot;: &quot;zookeeper&quot;,
+        &quot;image&quot;: &quot;mattf/zookeeper:latest&quot;,
+	&quot;imagePullPolicy&quot;: &quot;IfNotPresent&quot;,
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/11/26/workingtipsonkubernetes/>WorkingTipsOnKubernetes</a></h1><span class=post-date>Nov 26, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=先决条件>先决条件</h3><p>CentOS 7.2 1511, Vagrant for kvm.<br>关闭selinux, 关闭firewalld, 使用以下命令安装docker最新版:</p><pre><code>$ curl -sSL \
+http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet |
+\ sh -
+</code></pre><p>IP地址配置:</p><pre><code>master	192.168.0.223
+node1	192.168.0.224
+</code></pre><p>配置无密码登录，master到master, master到node1.</p><pre><code># ssh-copy-id root@192.168.0.223
+# ssh-copy-id root@192.168.0.224
+</code></pre><h3 id=安装kubernetes>安装kubernetes</h3><p>修改配置文件如下:</p><pre><code>$ cat kubernetes/cluster/centos/config-default.sh 
 
-Vagrant.configure(&quot;2&quot;) do |config|
-  config.vm.provider :libvirt do |libvirt|
-    libvirt.driver = &quot;kvm&quot;
-  end
-end
+# Master配置
+export MASTER=${MASTER:-&quot;root@192.168.0.223&quot;}
+export MASTER_IP=${MASTER#*@}
 
+# Minion节点配置
+export NODES=${NODES:-&quot;root@192.168.0.223 root@192.168.0.224&quot;}
 
-# The contents below (if any) are custom contents provided by the
-# Packer template during image build.
-</code></pre><p>Now tar the box file via following:</p>
-<pre><code># tar czvf Trusty.box ./metadata.json ./Vagrantfile ./box.img 
-</code></pre><h3 id="using-box">Using box</h3>
-<p>Add box file via:</p>
-<pre><code># vagrant box add Trusty.box --name &quot;trusty64&quot;
-</code></pre>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/blog/2016/11/06/climbingmaofengmountain/">ClimbingMaoFengMountain</a>
-      </h1>
-      <span class="post-date">Nov 6, 2016 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <p>近期广州雾霾实在是有点醇厚，所以周末的第一选择当然是进山避霾啦！</p>
-<p>今天定它个小目标，快速穿越帽峰山脉。</p>
-<p>帽峰山是广州周边我非常喜欢的一座山，距市区有点距离(40公里？)，配套设施好、
-人流量适中、植被茂密、空气清新。这一年多来去了好几次，每次都有新发现。今天
-走的是一条穿越的线路，20公里，白山村-&gt;山顶-&gt;古庙出口。</p>
-<p>早上游泳的缘故，出发得晚，11点多才开始走白山村道，果然没有雾霾，蓝天白云：</p>
-<p><img src="/images/2016_11_06_20_39_56_1122x837.jpg" alt="/images/2016_11_06_20_39_56_1122x837.jpg"></p>
-<p>水厂后面的山峰郁郁葱葱，深山有好水:</p>
-<p><img src="/images/2016_11_06_20_42_05_1124x841.jpg" alt="/images/2016_11_06_20_42_05_1124x841.jpg"></p>
-<p>沿途有村民营业的大量取水点，自备矿泉水桶过来装，2元/桶。拉回城应该随便就能卖到20
-块一桶吧? 发家致富的路子，窝也只能指点到这了:</p>
-<p><img src="/images/2016_11_06_20_43_50_801x596.jpg" alt="/images/2016_11_06_20_43_50_801x596.jpg"></p>
-<p>锄禾日当午, 要珍惜盘中餐啊，看下图，向我学习:</p>
-<p><img src="/images/2016_11_06_20_46_38_1122x837.jpg" alt="/images/2016_11_06_20_46_38_1122x837.jpg"></p>
-<p>惭愧，走了一个小时就饿了，果断吃饭，考虑一会要在山里跑，吃素淡点就不点鱼了。喜欢
-吃鱼的朋友到了帽峰山可以点鱼吃，铜锣湾水库水质不错，出品的鱼很美味:</p>
-<p><img src="/images/2016_11_06_20_57_40_660x355.jpg" alt="/images/2016_11_06_20_57_40_660x355.jpg"></p>
-<p>这位一直围着桌子喵喵叫的小兄弟, 窝那么富有爱心当然不会忘了你:</p>
-<p><img src="/images/2016_11_06_21_20_34_434x659.jpg" alt="/images/2016_11_06_21_20_34_434x659.jpg"></p>
-<p>山间风景:</p>
-<p><img src="/images/2016_11_06_21_23_48_427x408.jpg" alt="/images/2016_11_06_21_23_48_427x408.jpg"></p>
-<p>15分钟到顶，开始沿着山脊往帽峰山顶广场穿行:</p>
-<p><img src="/images/2016_11_06_21_26_07_973x721.jpg" alt="/images/2016_11_06_21_26_07_973x721.jpg"></p>
-<p>速度有点快，1小时不到抵达帽峰山顶广场:</p>
-<p><img src="/images/2016_11_06_21_27_16_974x716.jpg" alt="/images/2016_11_06_21_27_16_974x716.jpg"></p>
-<p>山顶俯瞰林海, 空气没得说，怎样都是负氧离子饱和:</p>
-<p><img src="/images/2016_11_06_21_27_57_975x726.jpg" alt="/images/2016_11_06_21_27_57_975x726.jpg"></p>
-<p>北国早已寒冷如咧，可这帽峰山里风景, 依然青翠如夏:</p>
-<p><img src="/images/2016_11_06_21_31_29_522x516.jpg" alt="/images/2016_11_06_21_31_29_522x516.jpg"></p>
-<p>下午3点40,自古庙出口下到山底，结束愉快的帽峰山一日之旅。 <br>
-如此算来，从白山村到杨伙寮，经箫神顶到帽峰山顶景区后经古庙下山,可以在三个小时内完成。</p>
-<p>压轴奉上帽峰山脉一景. Life is short, play more.</p>
-<p><img src="/images/2016_11_06_21_35_42_1125x836.jpg" alt="/images/2016_11_06_21_35_42_1125x836.jpg"></p>
+# Cluster中含有的节点数
+export NUM_NODES=${NUM_NODES:-2}
 
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/blog/2016/11/05/%E4%B8%BAblog%E6%B7%BB%E5%8A%A0%E4%BF%9D%E5%AD%98%E4%B8%BA%E5%9B%BE%E7%89%87%E5%8A%9F%E8%83%BD/">为Blog添加保存为图片功能</a>
-      </h1>
-      <span class="post-date">Nov 5, 2016 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="背景">背景</h3>
-<p>众所周知疼讯其实一直是一个很封闭傻逼的企业，早年QZONE的代码就层层加密，
-惟恐互联网爬虫爬到它上面取内容。进入到移动互联网时代，就更加变本加厉，盆友
-圈里的诸多内容，恐怕诸位都是没办法弄出来的。</p>
-<p>早年曾在Blog上添加过<code>分享到朋友圈</code>或<code>分享到微信好友</code>按钮，由于<code>github.io</code>未
-被疼讯认可，共享出来的链接通常只有自己能看到，这又是一个拿用户当SB的典型
-案例。</p>
-<p>还好，对于用户上传图片，疼讯是没法限制的。所以有了以下的开发。</p>
-<h3 id="功能参考">功能参考</h3>
-<p>在博文里添加按钮<code>一键保存为图片</code>,即可将该篇文章生成为长图片。</p>
-<p><img src="/images/2016_11_05_18_38_31_637x390.jpg" alt="/images/2016_11_05_18_38_31_637x390.jpg"></p>
-<p>参考设计： 锤子便签。顺便吐槽一下锤子便签，添加了关键词过滤，关键词嘛，这也是
-党国拿来折腾屁民的一个傻逼玩意，例如有一首歌是这么唱的:</p>
-<pre><code>我爱北京关键词，
-关键词上太阳升。。
-伟大得领袖关键词，
-带领我们向前进…
-</code></pre><p>╮〔╯ε╰〕╭   &mdash;太多的关键词，容易让写博文的人心情不好。</p>
-<h3 id="可选方案">可选方案</h3>
-<p>A. wkhtmltoimage. <br>
-这个转换起来是全屏转换，所以最初想到的是对网页做再加工，抠取出其中含有内容的一部分。
-好处是，真的是所见即所得。</p>
-<pre><code>$ wkhtmltoimage http://www.google.com google.jpg
-</code></pre><p>B. html2canvas. <br>
-这种方案直接在html页面上做文章，添加按钮后直接用画布来生成对象。缺点是有些格式显示出来
-有少量阴影。</p>
-<p>暂时基于方案B实现。</p>
-<h3 id="code">Code</h3>
-<p>参考资料: <br>
-<a href="https://www.youtube.com/watch?v=-d2FeFiBvEo">https://www.youtube.com/watch?v=-d2FeFiBvEo</a> <br>
-<a href="https://html2canvas.hertzen.com/">https://html2canvas.hertzen.com/</a></p>
-<p>因为本博客基于hugo构建，直接修改hugo使用的主题即可添加html2canvas。</p>
-<p>目录结构:</p>
-<pre><code>$ ls  
-config.toml  content  id_rsa.enc  scripts  static  themes
-$ themes/hyde-a
-$ ls
-archetypes  images  layouts  LICENSE  README.md  static  theme.toml
-</code></pre><p>下载<code>html2canvas.js</code>到主题的<code>static/js</code>目录:</p>
-<pre><code>$ cd static/js
-$ wget
-https://github.com/niklasvh/html2canvas/releases/download/0.4.1/html2canvas.js
-</code></pre><p>在主题的<code>./layouts/partials/head.html</code>文件中添加所需要的js文件及javascript代码
-, (+代表新添加代码):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css&#34;</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">+</span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-<span style="color:#f92672">+</span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/html2canvas.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-<span style="color:#f92672">+</span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;text/javascript&#39;</span><span style="color:#f92672">&gt;</span><span style="color:#75715e">//&lt;![CDATA[
-</span><span style="color:#75715e"></span><span style="color:#f92672">+</span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">genPostShot</span>() { 
-<span style="color:#f92672">+</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">rightNow</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
-<span style="color:#f92672">+</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">imageName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rightNow</span>.<span style="color:#a6e22e">toISOString</span>().<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">16</span>).<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/(-)|(:)|(T)/g</span>,<span style="color:#e6db74">&#34;&#34;</span>);
-<span style="color:#f92672">+</span>          <span style="color:#a6e22e">imageName</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;.jpg&#39;</span>
-<span style="color:#f92672">+</span>          <span style="color:#a6e22e">html2canvas</span>(document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#39;post&#39;</span>), {
-<span style="color:#f92672">+</span>              <span style="color:#a6e22e">onrendered</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">canvas</span>) {
-<span style="color:#f92672">+</span>  		<span style="color:#75715e">// Click them for download
-</span><span style="color:#75715e"></span><span style="color:#f92672">+</span>          	<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#test&#39;</span>).<span style="color:#a6e22e">attr</span>(<span style="color:#e6db74">&#39;href&#39;</span>, <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">toDataURL</span>(<span style="color:#e6db74">&#34;image/jpeg&#34;</span>));
-<span style="color:#f92672">+</span>          	<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#test&#39;</span>).<span style="color:#a6e22e">attr</span>(<span style="color:#e6db74">&#39;download&#39;</span>,<span style="color:#a6e22e">imageName</span>);
-<span style="color:#f92672">+</span>          	<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#test&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">click</span>();
-<span style="color:#f92672">+</span>              }
-<span style="color:#f92672">+</span>          });
-<span style="color:#f92672">+</span>  }; 
-<span style="color:#f92672">+</span>  <span style="color:#75715e">//]]&gt;
-</span><span style="color:#75715e"></span><span style="color:#f92672">+</span>  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-</code></pre></div><p>简单解释一下这几行代码：</p>
-<ol>
-<li>取当时UTC时间作为下载jpg文件名。</li>
-<li>在当前页面中根据div的class名称找到<code>post</code>字段，构建一个画布。</li>
-<li>将画布内容输出为jpeg文件，触发浏览器的一个下载动作。</li>
-</ol>
-<p><strong>注意</strong>: <code>#test</code>为在html文件中添加的一个不可见链接.</p>
-<p>接下来修改每个博文用到的模板文件(layourts/post/single.html):</p>
-<pre><code>{{ partial &quot;head.html&quot; . }}
-&lt;div class=&quot;content container&quot;&gt;
-  &lt;div class=&quot;post&quot;&gt;
-    &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
-+    &lt;p align=&quot;right&quot;&gt;
-+    &lt;a href=&quot;javascript:genPostShot()&quot;&gt;
-+	    TurnToJPG --&gt; &lt;i class=&quot;fa fa-camera-retro fa-2x&quot;&gt;&lt;/i&gt;
-+    &lt;/a&gt;
-+    &lt;a id=&quot;test&quot;&gt;&lt;/a&gt;
-+    &lt;/p&gt;
-+    &lt;hr&gt;
-    &lt;span class=&quot;post-date&quot;&gt;{{ .Date.Format &quot;Jan 2, 2006&quot; }} {{ if .Site.DisqusShortname }} &amp;middot; &lt;a href=&quot;{{ .Permalink }}#disqus_thread&quot;&gt;Comments&lt;/a&gt;{{ end }}
-</code></pre><p>简单解释一下上述添加的代码:</p>
-<p>添加一个超链接，指向上文定义的javascript函数<code>genPostShot()</code>.</p>
-<p>保存修改，提交到上游仓库，重新生成整个静态网站，现在每个博文里都含有保存图片按钮。</p>
-<h3 id="效果">效果</h3>
-<p>譬如，点击<a href="http://purplepalmdash.github.io/2013/11/17/run-in-winter/">http://purplepalmdash.github.io/2013/11/17/run-in-winter/</a></p>
-<p>效果如下:</p>
-<p><img src="/images/2016_11_05_18_56_04_638x402.jpg" alt="/images/2016_11_05_18_56_04_638x402.jpg"></p>
-<p>点击按钮，下载为文件201611051057.jpg(当前UTC时间戳），效果如下:</p>
-<p><img src="/images/2016_11_05_18_58_11_250x375.jpg" alt="/images/2016_11_05_18_58_11_250x375.jpg"></p>
-<p>打完，收工，以后在盆友圈想怎么咆哮就可以怎么咆哮了。</p>
-<h3 id="trouble-shooting">Trouble-Shooting</h3>
-<p>之所以加这么个条目是因为，在未定义背景的网页里，有时候截出来的图是黑色背景的，修正：</p>
-<p>修改<code>./static/js/html2canvas.js</code>文件:</p>
-<pre><code>sTransparent = function(backgroundColor) {
-  return (backgroundColor === &quot;transparent&quot; || backgroundColor === &quot;rgba(0, 0,
-0, 0)&quot;);
-};
-</code></pre><p>改为:</p>
-<pre><code>_html2canvas.Util.isTransparent = function(backgroundColor) {
-  return (backgroundColor === &quot;transparent&quot; || backgroundColor === &quot;rgba(0, 0,
-0, 0)&quot; || backgroundColor === undefined);
-};
-</code></pre><p>之后我们在<code>./layouts/partials/head.html</code>中，添加这一行:</p>
-<pre><code>          html2canvas(document.getElementsByClassName('post'), {
-+              background :'#FFFFFF',
-              onrendered: function(canvas) {
-</code></pre><p>现在生成的图片背景就是白色的了。</p>
+# service cluster配置的IP地址范围
+export SERVICE_CLUSTER_IP_RANGE=${SERVICE_CLUSTER_IP_RANGE:-&quot;192.168.22.0/24&quot;}
 
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/blog/2016/11/04/setuparegistryproxycachefordocker/">SetupARegistryProxyCacheForDocker</a>
-      </h1>
-      <span class="post-date">Nov 4, 2016 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="准备">准备</h3>
-<p>首先需要准备以下Docker image:</p>
-<pre><code>$ sudo docker pull registry:latest
-$ sudo docker pull registry:2
-</code></pre><p>在<code>/etc/hosts</code>里加一条记录，接下来我们将用这条记录生成签名(注意修改IP地址和域名）:</p>
-<pre><code># echo '192.168.0.121    xxx.xxx.xxx.com'&gt;&gt;/etc/hosts
-</code></pre><p>准备所需要的自签名文件(用于tls连接)</p>
-<pre><code>mkdir -p certs &amp;&amp; openssl req   -newkey rsa:4096 -nodes -sha256 -keyout
-certs/domain.key   -x509 -days 365 -out certs/domain.crt
-Generating a 4096 bit RSA private key
-....................................................................................................++
-......++
-writing new private key to 'certs/domain.key'
------
-You are about to be asked to enter information that will be incorporated
-into your certificate request.
-What you are about to enter is what is called a Distinguished Name or a DN.
-There are quite a few fields but you can leave some blank
-For some fields there will be a default value,
-If you enter '.', the field will be left blank.
------
-Country Name (2 letter code) [AU]:CN
-State or Province Name (full name) [Some-State]:Guangdong
-Locality Name (eg, city) []:Guangzhou
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:DashCom
-Organizational Unit Name (eg, section) []:IT
-Common Name (e.g. server FQDN or YOUR name) []:xxx.xxx.xxx.com
-Email Address []:xxxxxx@gmail.com
-</code></pre><h3 id="启动容器">启动容器</h3>
-<p>首先拷贝出默认的registry容器的配置文件:</p>
-<pre><code>$ sudo mkdir -p /data
-$ sudo chmod 777 -R /data
-$ sudo docker run -it --rm --entrypoint cat registry:2 \
-/etc/docker/registry/config.yml &gt; /data/config.yml
-</code></pre><p>修改默认文件，添加<code>proxy</code>字段等，我的配置如下:</p>
-<pre><code>version: 0.1
-log:
-  fields:
-    service: registry
-storage:
-  cache:
-    blobdescriptor: inmemory
-  filesystem:
-    rootdirectory: /var/lib/registry
-http:
-  addr: :5000
-  tls:
-    certificate: /var/lib/registry/domain.crt
-    key: /var/lib/registry/domain.key
-  headers:
-    X-Content-Type-Options: [nosniff]
-proxy:
-  remoteurl: https://registry-1.docker.io
-health:
-  storagedriver:
-    enabled: true
-    interval: 10s
-    threshold: 3
-</code></pre><p>将上一步生成的<code>domain.crt</code>和<code>domain.key</code>文件也拷贝到/data文件夹下.</p>
-<p>现在运行容器:</p>
-<pre><code>$ sudo docker run -d --restart=always -p 5000:5000 --name v2-mirror  -v
-/data:/var/lib/registry registry:2 /var/lib/registry/config.yml
-</code></pre><p>运行完这条命令后，可以用<code>sudo netstat -anp| grep 5000</code>来检查registry服务是否被启动。</p>
-<h3 id="使用registry服务">使用Registry服务</h3>
-<p>在客户机上，需要做以下设置, 这里我写成脚本的方式，具体的调整需要根据实际情况:</p>
-<pre><code>echo '192.168.0.121    xxx.xxx.xxx.com'&gt;&gt;/etc/hosts
-apt-get install -y wget
-mkdir -p /etc/docker/certs.d/xxx.xxx.xx.com:5000/
-wget -O /etc/docker/certs.d/xxx.xxx.xxx.com:5000/ca.crt http://192.168.0.121/domain.crt
-sed -i 's#fd://#fd:// --registry-mirror https://xxx.xxx.xxx.com:5000#' /lib/systemd/system/docker.service
-systemctl daemon-reload
-systemctl restart docker
-</code></pre><p>这里的<code>http://192.168.0.121/domain.crt</code>是我把domain.crt文件放在一个web服务器上了，可以
-直接拷贝现成的，改名即可。</p>
-<p>现在测试：</p>
-<pre><code># curl -I https://xxx.xxx.xxx.com:5000/v2 --cacert \ 
-/etc/docker/certs.d/xxx.xxx.xxx.com\:5000/ca.crt 
+# flannel的overlay网络IP地址范围, 不能和上面定义的SERVICE_CLUSTER_IP_RANGE地址范围冲突
+export FLANNEL_NET=${FLANNEL_NET:-&quot;172.20.0.0/16&quot;}
 
-HTTP/1.1 301 Moved Permanently
-Docker-Distribution-Api-Version: registry/2.0
-Location: /v2/
-Date: Fri, 04 Nov 2016 09:42:41 GMT
-Content-Type: text/plain; charset=utf-8
-</code></pre><p>检查镜像:</p>
-<pre><code># curl  https://xxx.xxx.xxx.com:5000/v2/_catalog --cacert \
-/etc/docker/certs.d/xxx.xxx.xxx.com\:5000/ca.crt 
-{&quot;&quot;:[&quot;&quot;]}
-</code></pre><p>docker pull一个镜像:</p>
-<pre><code># docker pull busybox:latest
-</code></pre><p>现在检查:</p>
-<pre><code># curl  https://xxx.xxx.xxx.com:5000/v2/_catalog --cacert \
-/etc/docker/certs.d/xxx.xxx.xxx.com\:5000/ca.crt 
-{&quot;repositories&quot;:[&quot;library/busybox&quot;,&quot;library/ubuntu&quot;]}
-</code></pre><p>可以看到，library/busybox这个镜像已经被缓存在了本地registry仓库中。</p>
+# Docker参数，这里我们开启daocloud加速模式
+export DOCKER_OPTS=${DOCKER_OPTS:-&quot;--cluster-store=etcd://$MASTER_IP:2379, --registry-mirror=http://1a653205.m.daocloud.io&quot;}
+</code></pre><p>开始部署kubernetes集群:</p><pre><code>$ KUBERNETES_PROVIDER=centos ./kube-up.sh
+</code></pre><p>安装完毕后，运行以下脚本，重新加载docker的配置后，重启两台机器:</p><pre><code>$ sudo systemctl stop docker
+$ sudo systemctl daemon-reload
+$ sudo systemctl start docker
+</code></pre><p>重启完毕后，运行以下命令查看节点状态:</p><pre><code># kubectl get nodes
+NAME            STATUS    AGE
+192.168.0.223   Ready     10h
+192.168.0.224   Ready     10h
+</code></pre><p>加载两个docker镜像:</p><pre><code># docker images
+gcr.io/google_containers/kubernetes-dashboard-amd64   v1.4.0  
+gcr.io/google_containers/pause-amd64                  3.0     
+</code></pre><p>添加kubectl到系统路径中:</p><pre><code># cp cluster/centos/binaries/kubectl /opt/kubernetes/bin/
+# vim ~/.bashrc
+export PATH=$PATH:/opt/kubernetes/bin/
+</code></pre><h3 id=启动kubernetes-ui>启动kubernetes UI</h3><p>启动dashboard-controller服务和dashboard-service服务:</p><pre><code># cd ./cluster/gce/coreos/kube-manifests/addons/dashboard
+# kubectl create -f dashboard-controller.yaml 
+# kubectl create -f dashboard-service.yaml 
+</code></pre><p>在node1上可以查看docker运行状态:</p><pre><code># docker ps
+b22047f30d55        gcr.io/google_containers/kubernetes-dashboard-amd64:v1.4.0   &quot;/dashboard --port=90&quot;
+8979b7b1db14        gcr.io/google_containers/pause-amd64:3.0                     &quot;/pause&quot;
+</code></pre><p>查看<code>http://192.168.0.223:8080/ui</code>，得到dashboard的网页.</p><p><img src=/images/2016_11_26_22_01_29_891x497.jpg alt=/images/2016_11_26_22_01_29_891x497.jpg></p><p>service截图:</p><p><img src=/images/2016_11_26_22_03_57_758x176.jpg alt=/images/2016_11_26_22_03_57_758x176.jpg></p><h3 id=nginx服务>nginx服务</h3><p>配置nginx-rc.yaml文件用于启动nginx服务:</p><pre><code>$ vim nginx-rc.yaml 
+apiVersion: v1 
+kind: ReplicationController 
+metadata: 
+  name: nginx-controller 
+spec: 
+  replicas: 2 
+  selector: 
+    name: nginx 
+  template: 
+    metadata: 
+      labels: 
+        name: nginx 
+    spec: 
+      containers: 
+        - name: nginx
+          image: nginx
+          ports: 
+            - containerPort: 80
+</code></pre><p>启动服务:</p><pre><code>$ kubectl -s http://192.168.0.223:8080 create -f nginx-rc.yaml
+</code></pre><p>检查创建的pods情况:</p><pre><code># kubectl get pods
+NAME                     READY     STATUS              RESTARTS   AGE
+nginx-controller-1bx6j   0/1       ContainerCreating   0          13s
+nginx-controller-attgh   0/1       ContainerCreating   0          13s
+</code></pre><p>得到pod的运行情况:</p><pre><code># kubectl describe pod nginx-controller-1bx6j
+Name:		nginx-controller-1bx6j
+Namespace:	default
+Node:		192.168.0.224/192.168.0.224
+Start Time:	Sat, 26 Nov 2016 14:08:33 +0000
+Labels:		name=nginx
+Status:		Running
+IP:		172.20.99.3
+Controllers:	ReplicationController/nginx-controller
+......
+</code></pre><p>此刻可以在对应的节点上看到nginx的运行情况: <code>curl 172.20.99.3</code>在master节点上。</p><h3 id=节点内可访问的nginx-service>节点内可访问的nginx service</h3><p>Service的type有ClusterIP和NodePort之分，缺省是ClusterIP，这种类型的Service
+只能在集群内部访问。配置文件如下：</p><pre><code>$ vim nginx-service-clusterip.yaml 
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: nginx-service-clusterip 
+spec: 
+  ports: 
+    - port: 8001 
+      targetPort: 80 
+      protocol: TCP 
+  selector: 
+    name: nginx
+</code></pre><p>创建服务:</p><pre><code># kubectl create -f nginx-service-clusterip.yaml
+</code></pre><p>查看创建出的service情况:</p><pre><code># kubectl get service
+NAME                      CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+kubernetes                192.168.22.1     &lt;none&gt;        443/TCP    34m
+nginx-service-clusterip   192.168.22.189   &lt;none&gt;        8001/TCP   27s
+</code></pre><p>访问节点内可访问的nginx service, 在master和node1上都可以访问到:</p><pre><code>$ curl 192.168.22.189:8001
+</code></pre><h3 id=外部可访问的nginx服务>外部可访问的nginx服务</h3><p>type为NodePort的为外部可访问的nginx服务，定义文件如下:</p><pre><code>$ vim nginx-service-nodeport.yaml 
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: nginx-service-nodeport 
+spec: 
+  ports: 
+    - port: 8000
+      targetPort: 80 
+      protocol: TCP 
+  type: NodePort
+  selector: 
+    name: nginx
+</code></pre><p>运行<code>kubectl create -f nginx-service-nodeport.yaml</code>, 得到服务如下:</p><pre><code># kubectl get service
+NAME                      CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+kubernetes                192.168.22.1     &lt;none&gt;        443/TCP    58m
+nginx-service-clusterip   192.168.22.189   &lt;none&gt;        8001/TCP   23m
+nginx-service-nodeport    192.168.22.209   &lt;nodes&gt;       8000/TCP   2m
+</code></pre><p>可以看到，新增加了一个<code>nginx-service-nodeport</code>的服务.</p><p>查看其端口，30923为其映射的端口号:</p><pre><code># kubectl describe service nginx-service-nodeport
+Name:			nginx-service-nodeport
+Namespace:		default
+Labels:			&lt;none&gt;
+Selector:		name=nginx
+Type:			NodePort
+IP:			192.168.22.209
+Port:			&lt;unset&gt;	8000/TCP
+NodePort:		&lt;unset&gt;	30923/TCP
+Endpoints:		172.20.62.2:80,172.20.99.3:80
+Session Affinity:	None
+</code></pre><p>从外部(192.168.0.220)验证nginx服务:</p><pre><code># curl http://192.168.0.223:30923
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+</code></pre><h3 id=删除服务>删除服务</h3><p>删除我们上面创建的基于nodeport的服务:</p><pre><code># kubectl delete -f ./nginx-service-nodeport.yaml
+</code></pre><p>删除以后，检查service情况:</p><pre><code># kubectl get service
+NAME                      CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+kubernetes                192.168.22.1     &lt;none&gt;        443/TCP    1h
+nginx-service-clusterip   192.168.22.189   &lt;none&gt;        8001/TCP   55m
+</code></pre><p>可以看到<code>nginx-service-nodeport</code>服务已经被删除。</p><h3 id=指定端口>指定端口</h3><p>创建配置文件如下:</p><pre><code>$ vim specifynode.yaml 
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: nginx-service-nodeport 
+spec: 
+  ports: 
+    - port: 80
+      nodePort: 30080 
+      protocol: TCP 
+  type: NodePort
+  selector: 
+    name: nginx
+</code></pre><p>创建服务:</p><pre><code>$ kubectl create -f ./specifynode.yaml
+</code></pre><p>现在访问<code>http://192.168.0.223:30080</code>即可访问到nginx服务.</p><p>注: 端口需要绑定在<code>30000-32767</code>.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/11/24/xenserveranddocker/>XenServerAndDocker</a></h1><span class=post-date>Nov 24, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=xenserver配置>XenServer配置</h3><h4 id=xenserver-65>XenServer 6.5</h4><p>下载xscontainer iso并安装之:</p><pre><code># wget http://downloadns.citrix.com.edgesuite.net/10343/XenServer-6.5.0-SP1-xscontainer.iso
+# xe-install-supplemental-pack XenServer-6.5.0-SP1-xscontainer.iso
+</code></pre><h4 id=xenserver-70>XenServer 7.0</h4><p>下载并安装:</p><pre><code># wget http://downloadns.citrix.com.edgesuite.net/11621/XenServer-7.0.0-xscontainer.iso
+# xe-install-supplemental-pack XenServer-7.0.0-xscontainer.iso
+</code></pre><h3 id=guest虚拟机准备>guest虚拟机准备</h3><p>安装docker:</p><pre><code>$ curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/experimental/internet | sh
+$ sudo usermod -aG docker 
+</code></pre><p>安装ncat/openssh-server(nmap中包含ncat):</p><pre><code>$ sudo apt-get install -y openssh-server nmap
+</code></pre><h3 id=添加guest虚拟机>添加guest虚拟机</h3><p>添加docker monitor:</p><pre><code># xscontainer-prepare-vm -v 05cd5c8f-eb32-86c6-b687-7a296180e3d3 -u dash
+</code></pre><p>添加后的效果如下:</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/11/23/playxenonubuntu1604/>PlayXenOnUbuntu1604</a></h1><span class=post-date>Nov 23, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=硬件环境>硬件环境</h3><p>AMD E-350， 8G内存，320G 硬盘，绝对垃圾配置。</p><h3 id=软件环境>软件环境</h3><p>Ubuntu16.04, LVM磁盘配置:</p><pre><code>$ sudo lvdisplay
+.....
+.....
+......
+</code></pre><p>安装完毕后，安装xen hypervisor:</p><pre><code>$ sudo apt-get update &amp;&amp; sudo apt-get upgrade -y &amp;&amp; sudo apt-get dist-upgrade
+-y
+$ sudo apt-get install -y xen-hypervisor-amd64
+$ sudo apt-get install -y virtinst virt-manager
+</code></pre><p>更改grub配置，默认使用xen hypervisor内核, 并指定dom0最大可用内存:</p><pre><code>$ sudo vim /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;Xen 4.1-amd64&quot;
+GRUB_CMDLINE_XEN=&quot;dom0_mem=1024M,max:1024M dom0_max_vcpus=2&quot;
+$ sudo update-grub
+$ sudo reboot
+</code></pre><p>检查:</p><pre><code>$ sudo xl list
+Name                                        ID   Mem VCPUs	State
+Time(s)
+Domain-0                                     0  1024     2     r-----
+28.7
+</code></pre><p>配置一个xenbr0的网桥:</p><pre><code>$ sudo vim /etc/network/interface
+# The primary network interface
+auto enp4s0
+iface enp4s0 inet manual
 
-      
-    </div>
-    
-    
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/page/88/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/88/">88</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/page/89/">89</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/90/">90</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/221/">221</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/page/90/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/page/221/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
-
-
-  </div>
-</div>
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+auto xenbr0
+iface xenbr0 inet static
+bridge_ports enp4s0
+address 192.168.0.xxx
+netmask 255.255.0.0
+gateway 192.168.0.xxx
+dns-nameservers 223.5.5.5
+</code></pre><p>重启机器,使得网络生效。</p><h3 id=创建hvm虚拟机>创建HVM虚拟机</h3><p>HVM是全虚拟化，我们可以用libvirt来管理xen
+hypervisor，进而创建HVM虚拟机，步骤如下:</p><p>更改libvirt配置：</p><pre><code># vim /etc/xen/xend-config.sxp 
+     xend-unix-server yes
+     xend-unix-path /var/lib/xend/xend-socket
+# service libvirt-bin restart
+libvirt-bin stop/waiting
+libvirt-bin start/running, process 5345
+# service xen restart
+ * Restarting Xen daemons                  [ OK ]
+# service xendomains restart
+</code></pre><p>最好直接重启整个dom0.</p><p>运行<code>virt-manager</code>，添加xen:</p><p><img src=/images/2016_11_23_17_36_00_276x162.jpg alt=/images/2016_11_23_17_36_00_276x162.jpg></p><p>创建虚拟机前，记得先创建出所需的逻辑卷，命令如下:</p><pre><code>$ sudo lvcreate -L 5000M -n lvforarchlinux vgonsda
+$ ls /dev/vgonsda/lvforarchlinux 
+/dev/vgonsda/lvforarchlinux
+</code></pre><p>上述命令在vgonsda上创建一块大小为5G的逻辑卷，名字为<code>lvforarchlinux</code>.</p><p>创建虚拟机的时候，选择存储设备到这块逻辑盘上，</p><p><img src=/images/2016_11_23_17_39_05_389x282.jpg alt=/images/2016_11_23_17_39_05_389x282.jpg></p><p>接下来的创建方式很common, 安装以后直接用就好。</p><h3 id=创建pv虚拟机>创建PV虚拟机</h3><p>PV是半虚拟化，步骤比较繁杂一点，举CentOS6.8的安装为例。</p><p>首先下载<code>CentOS-6.8-x86_64-minimal.iso</code>的iso, 提取两个文件用于启动虚拟机安装:</p><pre><code>$ sudo mount -t iso9660 -o loop /home/juju/http/CentOS-6.8-x86_64-minimal.iso /mnt
+$ cp /mnt/isolinux/vmlinuz /source
+$ cp /mnt/isolinux/initrd.img /source
+</code></pre><p>创建一个新的pv:</p><pre><code>$ sudo lvcreate -L 15000M -n lvforpv vgonsda
+</code></pre><p>到<code>/etc/xen</code>下，创建一个半虚拟机的定义文件:</p><pre><code>$ sudo vim xlcentos.pvlinux
+name = &quot;centos&quot;
+kernel = &quot;/source/vmlinuz&quot;
+ramdisk = &quot;/source/initrd.img&quot;
+memory = 1024
+vcpus = 1
+vif = [ 'bridge=xenbr0' ]
+disk = [ '/dev/vgonsda/lvforpv,raw,xvda,rw' ]
+</code></pre><p>创建虚拟机:</p><pre><code>$ sudo xl create -c /etc/xen/xlcentos.pvlinux
+</code></pre><p>在终端安装系统，在Reboot前，需要修改定义文件如下:</p><pre><code>$ sudo vim xlcentos.pvlinux
+#kernel = &quot;/source/vmlinuz&quot;
+#ramdisk = &quot;/source/initrd.img&quot;
+bootloader = &quot;/usr/lib/xen-4.6/bin/pygrub&quot;
+</code></pre><p>注释掉我们用于启动虚拟机的kernel和ramdisk，使用xen自带的pygrub启动系统，即可从安装好的硬盘启动。</p><p>启动机器:</p><pre><code>$ sudo xl create -c /etc/xen/xlcentos.pvlinux
+</code></pre><p>可以通过<code>sudo xl list -l</code>来查看安装好的虚拟机是否是半虚拟的。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/11/20/nov20baiyunmountain/>Nov20BaiyunMountain</a></h1><span class=post-date>Nov 20, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>今天下午的路径, GPS上来看是18公里，路途上大概24公里：</p><p><img src=/images/2016_11_20_20_58_50_613x834.jpg alt=/images/2016_11_20_20_58_50_613x834.jpg></p><p>Let the hunt begin:</p><p><img src=/images/2016_11_20_21_00_41_779x585.jpg alt=/images/2016_11_20_21_00_41_779x585.jpg></p><p><img src=/images/2016_11_20_21_01_46_779x582.jpg alt=/images/2016_11_20_21_01_46_779x582.jpg></p><p><img src=/images/2016_11_20_21_02_33_777x578.jpg alt=/images/2016_11_20_21_02_33_777x578.jpg></p><p>五雷岭:</p><p><img src=/images/2016_11_20_21_03_22_779x581.jpg alt=/images/2016_11_20_21_03_22_779x581.jpg></p><p><img src=/images/2016_11_20_21_04_27_780x581.jpg alt=/images/2016_11_20_21_04_27_780x581.jpg></p><p>双髻岭:</p><p><img src=/images/2016_11_20_21_05_22_781x582.jpg alt=/images/2016_11_20_21_05_22_781x582.jpg></p><p><img src=/images/2016_11_20_21_07_13_778x582.jpg alt=/images/2016_11_20_21_07_13_778x582.jpg></p><p>山里公路:</p><p><img src=/images/2016_11_20_21_08_06_727x686.jpg alt=/images/2016_11_20_21_08_06_727x686.jpg></p><p>碑林:</p><p><img src=/images/2016_11_20_21_09_41_524x680.jpg alt=/images/2016_11_20_21_09_41_524x680.jpg></p><p>raining:</p><p><img src=/images/2016_11_20_21_10_42_1192x667.jpg alt=/images/2016_11_20_21_10_42_1192x667.jpg></p><p><img src=/images/2016_11_20_21_12_03_723x630.jpg alt=/images/2016_11_20_21_12_03_723x630.jpg></p><p><img src=/images/2016_11_20_21_13_18_719x719.jpg alt=/images/2016_11_20_21_13_18_719x719.jpg></p><p><img src=/images/2016_11_20_21_14_11_927x684.jpg alt=/images/2016_11_20_21_14_11_927x684.jpg></p><p>正所谓"一年无日不看花，四面有山皆入画&rdquo;，哈哈哈哈。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/88/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/88/>88</a></li><li class="page-item active"><a class=page-link href=/page/89/>89</a></li><li class=page-item><a class=page-link href=/page/90/>90</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/90/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

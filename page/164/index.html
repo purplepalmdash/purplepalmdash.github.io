@@ -1,2632 +1,363 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-	<meta name="generator" content="Hugo 0.65.1" />
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/10/18/autorestart-autrace/>AutoRestart autrace</a></h1><span class=post-date>Oct 18, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>autrace is a proxy tool which I used for auto-converting the proxy for cross the firewall, it runs in remote server but sometimes it will runs into crash condition. Following is the command for auto-restart this proxy tool.</p><pre><code>$ cat autrace.sh
+#!/bin/sh
+while true; do
+   /home/xxxxxxxx/code/autrace -s 
+done
 
-  <title>Dash &middot; Dash</title>
+</code></pre><p>Everytime we run autrace.sh like following:</p><pre><code>/home/xxxxx/code/autrace.sh &amp;
 
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+</code></pre><p>thus autrace will automatically be restart if it crashes.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/10/18/cross-compile-the-kernel-for-utu2440/>Cross-compile the kernel for utu2440</a></h1><span class=post-date>Oct 18, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=cross-compiler-preparation>Cross-compiler Preparation</h3><p>The official documentation said use gcc-3.4.1 for compiling the kernel.</p><pre><code>$ cat ~/.zshrc | grep -i set341
+alias set341='export PATH=/opt/cross/arm-linux-gcc_3.4.1/bin:$PATH'
+$ set341
+$ pwd
+/media/y/embedded/utu2440/UTU2440-F-T1-20080328/YC2440CDROM_DM9000_080328/utuLinuxfor2440V1.5.8/utu-linux_for_s3c2440_dm9000_V1.5.8
+$ arm-linux-gcc -v
+Reading specs from /opt/cross/arm-linux-gcc_3.4.1/bin/../lib/gcc/arm-linux/3.4.1/specs
+Configured with: /work/crosstool-0.27/build/arm-linux/gcc-3.4.1-glibc-2.3.2/gcc-3.4.1/configure --target=arm-linux --host=i686-host_pc-linux-gnu --prefix=/usr/local/arm/3.4.1 --with-headers=/usr/local/arm/3.4.1/arm-linux/include --with-local-prefix=/usr/local/arm/3.4.1/arm-linux --disable-nls --enable-threads=posix --enable-symvers=gnu --enable-__cxa_atexit --enable-languages=c,c++ --enable-shared --enable-c99 --enable-long-long
+Thread model: posix
+gcc version 3.4.1
 
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+</code></pre><h3 id=kernel-compilation>Kernel Compilation</h3><p>Compile the kernel via:</p><pre><code>$ make menuconfig
+&quot;Load an Alternate Configuration File&quot;-&gt; config_480272_ts
+$ make uImage -j4
 
-  
-  
-  
-  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Dash &middot; Dash" />
-  <meta name="description" content="">
-  <meta name="keywords" content="unix,virtualization,embedded,linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
+</code></pre><p>Trouble shooting: in ArchLinux, install uboot&rsquo;s mkimage tool via:</p><pre><code>$ yaourt -S uboot-mkimage
 
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
+</code></pre><p>After compilation finished, copy it to tftpd server and test:</p><pre><code>$ cp arch/arm/boot/uImage /media/nfs/rootfs/
+$ ls -l uImage 
+-rwxrwxrwx 1 root root 1483696 Oct 19  2014 uImage
+$ ls -l s3c_kernel/uImage_T5_480x272_ts 
+-rw------- 1 nobody nobody 1483468 Oct 19  2014 s3c_kernel/uImage_T5_480x272_ts
 
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
+</code></pre><p>We use the compiled kernel and let it runs into the system. Next step we will upgrade the Linux kernel, this may lead to some kernel driver related working.<br>Current kernel is:</p><pre><code>[root@utu-linux /]# uname -a
+Linux utu-linux 2.6.13-utulinux2440 #380 Sat Oct 18 16:14:06 CST 2014 armv4tl unknown
 
-    
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/10/18/embedded-environment-on-arch/>Embedded Environment on Arch</a></h1><span class=post-date>Oct 18, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=nfs-server>NFS Server</h3><p>Server Setup</p><pre><code>$ sudo pacman -S nfs-utils
+$ sudo vim /etc/idmapd.conf
+[General]
 
-  </div>
-</div>
+#Verbosity = 0
+Verbosity = 1
+Pipefs-Directory = /var/lib/nfs/rpc_pipefs
+Domain = localdomain
 
+[Mapping]
 
-<div class="content container">
-  <div class="posts">
-    
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2014/10/15/building-android-on-server/">Building Android On Server</a>
-      </h1>
-      <span class="post-date">Oct 15, 2014 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="new-lxc-machine">New LXC Machine</h3>
-<p>Building Android need a Ubuntu machine, so I created the LXC machine which runs Ubuntu. <br>
-Install the bootstrap:</p>
-<pre><code>zypper in bootstrap
+Nobody-User = nobody
+Nobody-Group = nobody
 
-</code></pre><p>Then create the Ubuntu LXC via:</p>
-<pre><code>export LANG=en_US.UTF-8
-Linux59:~ # lxc-create -n Ubuntu_Container -t /usr/share/lxc/templates/lxc-ubuntu
+$ sudo vim /etc/conf.d/nfs-common.conf
+STATD_OPTS=&quot;-p 32765 -o 32766 -T 32803&quot;
 
-</code></pre><p>Start the container, username and password are ubuntu:</p>
-<pre><code>lxc-start -n Ubuntu_Container
+$ sudo vim  /etc/conf.d/nfs-server.conf
+MOUNTD_OPTS=&quot;-p 20048&quot;
 
-</code></pre><h3 id="configure-the-lxc-machine">Configure the LXC Machine</h3>
-<p>Better we have the static IP, and let the Container startup when machine boot.</p>
-<h4 id="static-ip-configuration">Static IP Configuration</h4>
-<p>Change the network configuration via modifying the /etc/network/interfaces:</p>
-<pre><code>auto eth0
+$ sudo mkdir -p /srv/nfs4/music
+$ cat /etc/exports
+/srv/nfs4/ 10.0.0.0/24(rw,fsid=root,no_subtree_check)
+/srv/nfs4/music 10.0.0.0/24(rw,no_subtree_check,nohide) # note the nohide option which is applied to mounted directories on the file system.
+$ sudo exportfs -rav
+$ sudo systemctl restart nfs-server.service
 
-# Enable it for dhcp
-#iface eth0 inet dhcp
+</code></pre><p>Testing Server:</p><pre><code>$ sudo mount -t nfs 10.0.0.221:/srv/nfs4 /mnt
+$ ls /mnt
 
-# Enable them for static IP address
-iface eth0 inet static
-address 1xx.xxx.xxx.159
-netmask 255.255.255.0
-network 1xx.xxx.xxx.0
-broadcast 1xx.xxx.xxx.255
-gateway 1xx.xxx.xxx.1
-
-</code></pre><p>Then next time you login into the machine, it hold the address of 159.</p>
-<h4 id="start-together-with-host-machine">Start Together With Host Machine</h4>
-<p>Create a new definition file of systemd under the /usr/lib/systemd/system directory:</p>
-<pre><code>Linux59:/usr/lib/systemd/system # cat lxc\@.service
+</code></pre><h3 id=tftpd-server>tftpd Server</h3><p>Server:</p><pre><code>$ sudo pacman -S tftp-hpa
+$ sudo vim /etc/systemd/system/tftpd.service
 [Unit]
-Description=%i LXC
-After=network.target
+Description=hpa's original TFTP daemon
 
 [Service]
-Type=forking
-ExecStart=/usr/bin/lxc-start -d -n %i
-ExecStop=/usr/bin/lxc-stop -n %i
+ExecStart=/usr/sbin/in.tftpd -s /srv/tftp/
+StandardInput=socket
+StandardOutput=inherit
+StandardError=journal
+$ sudo systemctl start tftpd.socket
+$ sudo systemctl enable tftpd.socket
 
-[Install]
-WantedBy=multi-user.target
+</code></pre><p>Client(10.0.0.230):</p><pre><code>$ tftp 10.0.0.221
+tftp&gt; get abc.txt
+tftp&gt; quit
+$ ls -l abc.txt
+-rw-r--r-- 1 root root 0 Oct 18 20:23 abc.txt
 
-Linux59:/usr/lib/systemd/system # pwd
-/usr/lib/systemd/system
+</code></pre><h3 id=nfs-serverseasy>NFS Servers(Easy)</h3><pre><code>$ sudo pacman -S nfs-utils
+$ cat /etc/exports
+/media/home/xxxx *(rw,sync,no_subtree_check)
+$ sudo systemctl enable rpcbind.service
+$ sudo systemctl start rpcbind.service
+$ sudo systemctl enable nfs-server.service
+$ sudo systemctl start nfs-server.service
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/10/18/ethernet-wakeup/>Ethernet Wakeup</a></h1><span class=post-date>Oct 18, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=purpose>Purpose</h3><p>I want to wake up my laotop via RaspberryPi, since Rpi&rsquo;s power consumption is extremely low, so this will greatly save the power for laptop.</p><h3 id=check-status>Check Status</h3><p>On laptop, type following command to see whether your ethernet card support Wake-On-LAN or not:</p><pre><code>[Trusty@~]$ sudo ethtool enp0s25 | grep Wake-on
+	Supports Wake-on: pumbg
+	Wake-on: g
 
-</code></pre><p>Let <code>Ubuntu_Container</code> runs when system bootup.</p>
-<pre><code># systemctl enable lxc@Ubuntu_Container.service
-ln -s '/usr/lib/systemd/system/lxc@.service' '/etc/systemd/system/multi-user.target.wants/lxc@Ubuntu_Container.service'
+</code></pre><p>The values define what activity to wake on: p (PHY activity), u (unicast activity), m (multicast activity), b (broadcast activity), a (ARP activity), and g (magic packet activity).We need g for WOL to work.</p><h3 id=raspberrypi-configuration>RaspberryPI Configuration</h3><p>Make sure <code>wol</code> is installed, then you should know the target PC&rsquo;s ipaddress and mac address.<br>Wakeup the remote machine via:</p><pre><code>$ wol -i 10.0.0.230 c8:xx:xx:xx:xx:xx
 
-</code></pre><h4 id="update">Update</h4>
-<p>visudo to change the settings:</p>
-<pre><code>ubuntu  ALL=(ALL:ALL) ALL
-Defaults env_keep = &quot;http_proxy https_proxy ftp_proxy&quot;
+</code></pre><p>You could also set this command into a alias in ~/.bashrc.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/10/18/linux-tips/>Linux Tips</a></h1><span class=post-date>Oct 18, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/linuxtips>LinuxTips</a></span><h3 id=1-know-the-system-installation-date>1. Know the System Installation Date</h3><p>You can use tune2fs to know the installation date of your Linux System, be ware the /dev/sda[] should be the root partition of your disk. See my following example:</p><pre><code>tune2fs -l /dev/sda1 or /dev/sdb1* | grep 'Filesystem created:'
+$ sudo tune2fs -l /dev/sda2  | grep 'Filesystem created:' 
+Filesystem created:       Mon May  5 17:31:40 2014
 
-</code></pre><p>Enable proxy for apt-get:</p>
-<pre><code>$ cat /etc/apt/apt.conf
-Acquire::http::Proxy &quot;http://127.0.0.1:9001&quot;;
+</code></pre><h3 id=2-view-thread-status>2. View Thread Status</h3><p>View the thread status via proc filesystem.</p><pre><code>$ ps -ef | grep conky
+Trusty      1396     1  0 19:15 ?        00:00:03 conky
+Trusty      7410  6161  0 19:23 pts/5    00:00:00 grep --color=always conky
+$ cd /proc/1396/task
+$ ls
+1396  1397  1398  1399  1400  1401  1402  1403
+$ cat 1396/status| grep &quot;State&quot;
+State:	S (sleeping)
 
-</code></pre><p>Update the system and install some packages:</p>
-<pre><code>$ sudo apt-get update
-$ sudo apt-get install tmux openjdk-7-jdk
-$ sudo update-alternatives --config java &amp;&amp; sudo update-alternatives --config javac
-$ sudo apt-get install git gnupg flex bison gperf    zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev   libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386   libgl1-mesa-dev  mingw32 tofrodos   python-markdown libxml2-utils xsltproc zlib1g-dev:i386
-$ sudo apt-get install build-essential 
-$ sudo apt-get install g++-multilib
-$ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
+</code></pre><h3 id=3-write-to-other-users>3. Write to other users</h3><p>Use w to get the tty, then write to other users.</p><pre><code>root@lilimarleen:/# w
+ 00:47:04 up 28 min,  2 users,  load average: 0.00, 0.01, 0.02
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+root     pts/0    1xx.xxx.xxx.xxx  00:26    0.00s  0.08s  0.00s w
+root     pts/2    18x.xxx.xxx.xx   00:40   32.00s  0.03s  0.03s -bash
+root@lilimarleen:/# echo &quot;Hi, LiliMarleen&quot;&gt;/dev/pts/2
+root@lilimarleen:/# echo &quot;Do you have lunch&quot;&gt;/dev/pts/2
 
-</code></pre><h4 id="configuration-on-usb">Configuration on USB</h4>
-<p>Create following file:</p>
-<pre><code>ubuntu@Ubuntu_Container:~$ cat /etc/udev/rules.d/51-android.rules 
-# adb protocol on passion (Nexus One)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;18d1&quot;, ATTR{idProduct}==&quot;4e12&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# fastboot protocol on passion (Nexus One)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0bb4&quot;, ATTR{idProduct}==&quot;0fff&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# adb protocol on crespo/crespo4g (Nexus S)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;18d1&quot;, ATTR{idProduct}==&quot;4e22&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# fastboot protocol on crespo/crespo4g (Nexus S)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;18d1&quot;, ATTR{idProduct}==&quot;4e20&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# adb protocol on stingray/wingray (Xoom)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;22b8&quot;, ATTR{idProduct}==&quot;70a9&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# fastboot protocol on stingray/wingray (Xoom)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;18d1&quot;, ATTR{idProduct}==&quot;708c&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# adb protocol on maguro/toro (Galaxy Nexus)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;04e8&quot;, ATTR{idProduct}==&quot;6860&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# fastboot protocol on maguro/toro (Galaxy Nexus)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;18d1&quot;, ATTR{idProduct}==&quot;4e30&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# adb protocol on panda (PandaBoard)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0451&quot;, ATTR{idProduct}==&quot;d101&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# adb protocol on panda (PandaBoard ES)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;18d1&quot;, ATTR{idProduct}==&quot;d002&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# fastboot protocol on panda (PandaBoard)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0451&quot;, ATTR{idProduct}==&quot;d022&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# usbboot protocol on panda (PandaBoard)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0451&quot;, ATTR{idProduct}==&quot;d00f&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# usbboot protocol on panda (PandaBoard ES)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0451&quot;, ATTR{idProduct}==&quot;d010&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# adb protocol on grouper/tilapia (Nexus 7)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;18d1&quot;, ATTR{idProduct}==&quot;4e42&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# fastboot protocol on grouper/tilapia (Nexus 7)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;18d1&quot;, ATTR{idProduct}==&quot;4e40&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# adb protocol on manta (Nexus 10)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;18d1&quot;, ATTR{idProduct}==&quot;4ee2&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
-# fastboot protocol on manta (Nexus 10)
-SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;18d1&quot;, ATTR{idProduct}==&quot;4ee0&quot;, MODE=&quot;0600&quot;, OWNER=&quot;ubuntu&quot;
+</code></pre><h3 id=4-share-terminals>4. Share Terminals</h3><p>Make sure the screen command is available on your machine, then:<br>Server side:</p><pre><code>$ screen -S share
 
-</code></pre><h3 id="building">Building</h3>
-<h4 id="enable-git-proxy">Enable git proxy</h4>
-<p>Configure the git configuration:</p>
-<pre><code>ubuntu@Ubuntu_Container:~$ git config --global user.email &quot;xxx@gmail.com&quot;
-ubuntu@Ubuntu_Container:~$ git config --global user.name &quot;xxx&quot;
+</code></pre><p>Client side:</p><pre><code>$ screen -x share
 
-</code></pre><p>Compile the connect.c for getting the cross-firewall tool.</p>
-<pre><code>$ gcc -o connect connect.c
-$ sudo mv connect /usr/bin
-$ sudo chmod  777 /usr/bin/connect
-$ cat /usr/bin/myproxy 
-/usr/bin/connect -H 127.0.0.1:9001 $@
-$ sudo chmod 777 /usr/bin/myproxy
+</code></pre><p>Now both side input could be seen.</p><h3 id=5-create-xz-file>5. Create xz file</h3><p>xz file will greatly decrease the file size, we use following command for create a xz file:</p><pre><code>tar cvfJ tar_xz_file.tar.xz folder_or_file
 
-</code></pre><p>Let your git authenticated by github, please refers to the following article: <br>
-<a href="http://kkkttt.github.io/blog/2014/10/14/verified-to-github/">http://kkkttt.github.io/blog/2014/10/14/verified-to-github/</a></p>
-<p>Then add the proxy setting in .gitconfig:</p>
-<pre><code>[core]
-	gitproxy = /usr/bin/myproxy
+</code></pre><p>extract from xz from could be:</p><pre><code>tar -xJf tar_xz_file.tar.xz
+
+</code></pre><h3 id=6-login-issue>6. Login issue</h3><p>When you met</p><pre><code>file /home/xxx/.Xauthority does not exist
+
+</code></pre><p>simply run following command once you login:</p><pre><code>$ startx
+
+</code></pre><p>Next time you won&rsquo;t met this complains.</p><h3 id=7-execution-priviledge>7. Execution priviledge</h3><p>Login to Opensuse, run ifconfig will complains it needs root priviledge:</p><pre><code>Absolute path to 'ifconfig' is '/sbin/ifconfig', so running it may require superuser privileges (eg. root)
+
+</code></pre><p>Simply add one line to the end of your ~/.bashrc file:</p><pre><code>export PATH=/sbin/:$PATH
+
+</code></pre><p>Next time you could directly run <code>ifconfig</code>, or if you don&rsquo;t want to change your .bashrc file, do <code>/sbin/ifconfig</code>.</p><h3 id=8-show-history-timestamp>8. Show history timestamp</h3><pre><code>[Trusty@Linux01 ~]$  export HISTTIMEFORMAT=&quot;%F %T `whoami` &quot;
+[Trusty@Linux01 ~]$ history | more
+    6  2014-10-29 03:33:01 Trusty ls | grep trb
+    7  2014-10-29 03:33:01 Trusty ./trbTest.py 
+    8  2014-10-29 03:33:01 Trusty history |grep export
+    9  2014-10-29 03:33:01 Trusty su root
+
+</code></pre><h3 id=9-vrome-setting>9. Vrome setting</h3><p>Chromium install the vrome then set the options of</p><pre><code>set useletters=0
+
+</code></pre><p>The keyshorts: go to address line Ctrl+L, in MAC Win+L.</p><h3 id=10-replace-the-word-until-end-of-the-line>10. Replace the word until end of the line</h3><p>In vim by following command:</p><pre><code>:%s/\&lt;foo\&gt;.*//
+On each line, delete the whole word &quot;foo&quot; and all following text (to end of line).
+
+</code></pre><h3 id=11-managing-all-of-the-running-vagrants>11. Managing all of the running vagrants</h3><p>See following command:</p><pre><code>[Trusty@/media/y/Vagrant/vccw/myproxy/vccw-1.9.1]$ VBoxManage list runningvms
+&quot;vccw-191_default_1417846604747_55987&quot; {7b802d9e-dee2-4662-9694-e7cff6cbc49b}
+[Trusty@/media/y/Vagrant/vccw/myproxy/vccw-1.9.1]$ VBoxManage controlvm vccw-191_default_1417846604747_55987 savestate
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+
+</code></pre><h3 id=12-battery>12. Battery</h3><p>To know the current battery via acpi, run:</p><pre><code>$ acpi -b
+
+</code></pre><p>To know the more detailed info of Battery, goto:</p><pre><code>$ cd /sys/class/power_supply/BAT0
+
+</code></pre><h3 id=13-add-arp-entry>13. Add arp entry</h3><p>So if you have rebooted the existing testing environment, your arp entries may be lost, simply use following command for adding it:</p><pre><code>$ arp -s 192.168.1.10 00:01:02:03:04:05
+
+</code></pre><p>Now you will directly reached 192.168.1.10 via the specified mac address.</p><h3 id=14-enable-opera-proxy>14. Enable opera proxy</h3><p>After Opera upgraded to latest version its configuration for proxy is failed, so I change the startup command from <code>opera</code> to:</p><pre><code>$ opera --proxy-server=&quot;socks://127.0.0.1:1395&quot;
+$ alias opera='opera --proxy-server=&quot;socks://127.0.0.1:1395&quot;'
+
+</code></pre><h3 id=15-delete-a-package-and-its-configuration-file>15. Delete a package and its configuration file</h3><p>Use <code>pacman -R --help</code> for more detailed infos, so remove the vagrant including its configuration will be:</p><pre><code>$ sudo pacman -R vagrant -n
+
+</code></pre><h3 id=16-install-rarunrar-on-centos>16. Install rar/unrar on CentOS</h3><p>Install the rar/unrar via following command:</p><pre><code>#  wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.i686.rpm
+#  sudo rpm -ivh rpmforge-release-0.5.2-2.el6.rf.i686.rpm
+#  sudo yum install rar unrar
+
+</code></pre><h3 id=17-zsh-history>17. zsh History</h3><p>The default installed zsh has no history record, thus we have to enable the history via following setting:</p><pre><code>$ touch $HOME/.zsh_history
+$ tail ~/.zshrc
+# For setting zsh history
+HISTFILE=$HOME/.zsh_history
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+HISTSIZE=5000
+SAVEHIST=5000
+
+</code></pre><p>Now you will got the history recorded for 5000 lines, and each of them could be shared to each other.</p><h3 id=18-calculate-code-lines>18. Calculate Code Lines</h3><p>We could use cloc for calculate the code lines. In Ubuntu, simply run following commands for installing cloc:</p><pre><code>$ sudo apt-get install cloc
+
+</code></pre><p>cloc via following command:</p><pre><code>$ cloc Your_Source_Code_Directory
+
+</code></pre><p>After a while your statistics result will be displayed on the screen.</p><h3 id=19-cmake-prefix>19. CMAKE prefix</h3><p>For specify the cmake&rsquo;s prefix we use following command:</p><pre><code>$ cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ./ &amp;&amp; make &amp;&amp; sudo make install
+
+</code></pre><h3 id=20-xclip>20. xclip</h3><p>Sometimes we have to quickly redirect some output from the system output to system clipboard, we use xclip, add following alias to your ~/.bashrc or ~/.zshrc:</p><pre><code># Alias the xclip for directly to my system buffer, thus we could use shift+insert for copy the content.
+alias myclip='xclip -selection clipboard'
+
+</code></pre><h3 id=21-virtualbox-fixed-address>21. Virtualbox Fixed Address</h3><p>The host-only adapter should have the static addresses, thus you won&rsquo;t mix each other.</p><pre><code>$ sudo vim /etc/network/interfaces
+auto eth1
+iface eth1 inet static
+    address 192.168.56.101
+    netmask 255.255.255.0
+    gateway 192.168.56.1
+
+</code></pre><h3 id=22-autologin-using-ssh>22. Autologin Using ssh</h3><p>When you add the rsa content into the ~/.ssh/authorized_keys, but you still can&rsquo;t auto-login, then you have to consider the priviledge problem:</p><pre><code>$ ls ~/.ssh/authorized_keys  -l 
+-rw-r--r--. 1 Trusty Trusty 392 Feb 11 11:36 /home/Trusty/.ssh/authorized_keys
+$ chmod g-w ~/.ssh/authorized_keys
+
+</code></pre><p>Now you could reach the machine without inputting password.</p><h3 id=23-change-static-address-for-centos>23. Change Static Address For CentOS</h3><p>Change the following file:</p><pre><code>$ sudo vim /etc/sysconfig/network-scripts/ifcfg-eth*
+DEVICE=eth0 
+BOOTPROTO=none 
+ONBOOT=yes 
+NETWORK=10.0.1.0 
+NETMASK=255.255.255.0 
+IPADDR=10.0.1.27 
+USERCTL=no
+
+</code></pre><p>Restart and then you could find your CentOS have static address.</p><h3 id=24-disable-touchpad>24. Disable Touchpad</h3><p>First use <code>xinput list</code> for list all of the input devices for X, then set the property of them via:</p><pre><code>$ xinput list
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ Logitech USB Optical Mouse                id=9    [slave  pointer  (2)]
+⎜   ↳ PS/2 Generic Mouse                        id=12   [slave  pointer  (2)]
+⎜   ↳ SynPS/2 Synaptics TouchPad                id=13   [slave  pointer  (2)]
+
+......
+
+$ xinput set-prop 13 &quot;Device Enabled&quot; 0
 
 
-</code></pre><h4 id="preparation">Preparation</h4>
-<p>Install repo:</p>
-<pre><code>   57  echo $PATH
-/home/ubuntu/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-   58  curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
-   59  chmod a+x ~/bin/repo
+</code></pre><h3 id=25-visudo>25. visudo</h3><p>Sometimes in the visudo we set NOPASSWD, but it didn&rsquo;t take effects, why? because you are belong to some groups, while these group rules overwrite the previous rules you set, simply change all of the corresponding rules to:</p><pre><code>NOPASSWD:ALL
 
-</code></pre><p>Make a new directory for holding the source code:</p>
-<pre><code>$ mkdir ~/code
-$ repo init -u https://android.googlesource.com/platform/manifest
+</code></pre><p>Save the file and now you will see <code>sudo command</code> won&rsquo;t ask you input anything.</p><h3 id=26-youtube-download>26. Youtube download</h3><p>Ubuntu could directly download youtube videos via install youtube-dl:</p><pre><code>$ sudo apt-get install youtube-dl
 
-</code></pre><p>sync the repository:</p>
-<pre><code>$ repo sync
+</code></pre><h3 id=27-perl-rename>27. perl-rename</h3><p>As ArchLinux&rsquo;s default rename tool is very simple use following rename tools provided via perl:</p><pre><code>$ sudo pacman -S perl-rename
+$  vim ~/.zshrc
+### The default rename didn't support regex, use perl-rename instead.
+alias rename='perl-rename'
 
-</code></pre><h4 id="build">Build</h4>
-<p>Set the environment variables:</p>
-<pre><code>. build/envsetup.sh
-lunch 
 
-</code></pre><p>In lunch you could select whatever you like. <br>
-Then make via following command:</p>
-<pre><code>make -j 8
+</code></pre><h3 id=28-udiskie>28. udiskie</h3><p>udiskie is for automatically mount/umount usb disks, but the ubuntu won&rsquo;t support it in official repository, we could install it via:</p><pre><code>$ sudo pip install udiskie
 
-</code></pre><p>Trouble-shooting:</p>
-<pre><code>Your version is: java version &quot;1.7.0_65&quot;.
-The correct version is: Java SE 1.6.
+</code></pre><p>mount and umount disks via:</p><pre><code>$ sudo udiskie-mount -a
+$ sudo udiskie-umount -a
 
-</code></pre><p>Ok, we change the java version via:</p>
-<pre><code>$ sudo apt-get install software-properties-common
-$ sudo apt-get install python-software-properties
-Add the PPA:
-$ sudo add-apt-repository ppa:webupd8team/java
-Update the repo index:
-$ sudo apt-get update
-$ sudo apt-get install oracle-java6-installer
+</code></pre><h3 id=29-git-merge-conflicts>29. git merge conflicts</h3><p>Sometimes when you <code>git pull</code> from remote repository, you will got some anoying hint messages which shows you have merge conflicts, following is the steps for solving this issue:</p><pre><code>$ git pull
+$ git stash
+$ git pull
 
-</code></pre><p>After installation, update the java version via:</p>
-<pre><code>
-$ sudo update-alternatives --config java
-[sudo] password for ubuntu: 
-There are 3 choices for the alternative java (providing /usr/bin/java).
+</code></pre><p>Now you are ready to work under merged trees.</p><h3 id=30-git-remote-repository>30. Git remote repository</h3><p>When first git clone to local, then git push origin master, it will complains:</p><pre><code>[Trusty@~/Code/herokublog]$ git push origin master
+fatal: remote error: 
+  You can't push to git://github.com/xxxx/herokublog.git
+  Use https://github.com/xxxx/herokublog.git
+[Trusty@~/Code/herokublog]$ ssh -T git@github.com
+X11 forwarding request failed on channel 0
+Hi xxxx! You've successfully authenticated, but GitHub does not provide shell access.
+[Trusty@~/Code/herokublog]$ git remote set-url origin git@github.com:xxxx/herokublog.git
 
-  Selection    Path                                            Priority   Status
-------------------------------------------------------------
-* 0            /usr/lib/jvm/java-6-oracle/jre/bin/java          1062      auto mode
-  1            /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java   1061      manual mode
-  2            /usr/lib/jvm/java-6-oracle/jre/bin/java          1062      manual mode
-  3            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java   1051      manual mode
+</code></pre><p>After setting this, we could use <code>git push origin master</code> for submitting our changes.</p><h3 id=31-replace-all-of-the-strings-under-one-folder>31. Replace all of the strings under one folder</h3><p>Simply use sed for replacing these strings:</p><pre><code>Trusty@MassTestOnUbuntu1404:~/charms/trusty$ grep -rl &quot;http://archive.ubuntu.com&quot; ./ | wc -l
+3
+Trusty@MassTestOnUbuntu1404:~/charms/trusty$ grep -rl &quot;http://archive.ubuntu.com&quot; ./ | xargs sed -i 's|http://archive.ubuntu.com|http://http://mirrors.aliyun.com|g'
+Trusty@MassTestOnUbuntu1404:~/charms/trusty$ grep -rl &quot;http://archive.ubuntu.com&quot; ./ | wc -l
+0
+Trusty@MassTestOnUbuntu1404:~/charms/trusty$ grep -rl &quot;http://mirrors&quot; ./ | wc -l
+3
 
-Press enter to keep the current choice[*], or type selection number: 
+</code></pre><h3 id=32-use-local-lxc-repository>32. Use local LXC repository</h3><pre><code>So, let's say you downloaded the ubuntu trusty amd64 tarballs, you need to do:
+ - mkdir -p /var/cache/lxc/download/ubuntu/trusty/amd64/default/
+ - copy rootfs.tar.xz in /var/cache/lxc/download/ubuntu/trusty/amd64/default/
+ - unpack the content of meta.tar.xz in /var/cache/lxc/download/ubuntu/trusty/amd64/default/
+ - Then run the download template with: -d ubuntu -r trusty -a amd64
 
-</code></pre><p>Now you could run building.</p>
-<p>###Trouble Shooting
-Build error:</p>
-<pre><code>If you are building an old version of android probably you’ll have this error
+</code></pre><h3 id=33-use-rsync-for-syncing-the-files>33. Use rsync for syncing the files</h3><pre><code>$ rsync -e 'ssh -p 1234' username@hostname:SourceFile DestFile
+Example:    
+$ rsync -avH --progress '-e ssh -p 2223' Trusty@1xx.xxx.xxx.xxx:/home/Trusty/charms/trusty/ ~/charms/trusty/
 
-host C++: obbtool &lt;= frameworks/base/tools/obbtool/Main.cpp
-:0:0: error: “_FORTIFY_SOURCE” redefined [-Werror]
-:0:0: note: this is the location of the previous definition
-cc1plus: all warnings being treated as errors
-To fix this, edit build/core/combo/HOST_linux-x86.mk and replace:
+</code></pre><h3 id=34-use-dmidecode-to-view-your-hardware-configuration>34. Use dmidecode to view your hardware configuration</h3><p>dmidecode is a tool-set for dump out your SMIBIOS configuration in readable format, use following command for readout the maximum support moemory of your system, and the already installed memory information on your system:</p><pre><code>$ sudo dmidecode -t 16
+$ sudo dmidecode -t 17
 
-HOST_GLOBAL_CFLAGS += -D_FORTIFY_SOURCE=0
-with
+</code></pre><h3 id=35-use-fslint-for-searching-out-the-duplicated-files>35. Use fslint for searching out the duplicated files</h3><p>fslint could search the directory and find out the duplicated files.<br>Install it via:</p><pre><code>$ sudo apt-get install fslint
+$ fslint-gui
 
-HOST_GLOBAL_CFLAGS += -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
-And that’s it.
+</code></pre><h3 id=36-limitation-bandwidth>36. Limitation Bandwidth</h3><p>Use following command could limit the specified userspace programs&rsquo; bandwidth:</p><pre><code>$ trickle -s -d 50 -w 100 firefox
+http://stackoverflow.com/questions/10328568/simulate-limited-bandwidth-from-within-chrome
 
-</code></pre><p>When you meet &ldquo;error: reference ‘counts’ cannot be declared ‘mutable’&quot;, install gcc/g++ 4.4 and re-compiling.</p>
-<pre><code>$ sudo apt-get install gcc-4.4 g++-4.4  g++-4.4-multilib gcc-4.4-multilib
-make CC=gcc-4.4 CXX=g++-4.4
+</code></pre><h3 id=37-grep-with-color>37. Grep with color</h3><p>grep&rsquo;s default output is without colorful output, do following for enable the colorful output:</p><pre><code>alias grep='grep --color=always'
 
-</code></pre><p>View the CPU ranking: <br>
-<img src="http://itianti.sinaapp.com/index.php/cpu" alt="http://itianti.sinaapp.com/index.php/cpu"></p>
-<pre><code>490	Intel Core i5-2520M @ 2.50GHz	￼	3537
-851	Intel Xeon 5160 @ 3.00GHz	￼	2047
+</code></pre><p>Add this into your .zshrc, so everytime it boots up the grep will output with colors.</p><h3 id=38-raspberrypi-items>38. RaspberryPI items</h3><p>For optimize the RaspberryPI, need to do following:</p><pre><code>relatime/atime, use relatime
+cat /sys/block/mmcblk0/queue/scheduler/
+noop deadline cfq
+use noop
+[noop] deadline cfq
 
-</code></pre><h3 id="view-result">View Result</h3>
-<p>Since we use the remote machine, we have to enable the vncserver, first install it via:</p>
-<pre><code>sudo apt-get install vnc4server
+</code></pre><h3 id=39-install-openstack-on-centos>39. Install OpenStack On CentOS</h3><p>The following tips:</p><pre><code>   35  packstack --answer-file=/root/answer.txt
+   41  cat /etc/sysconfig/selinux
+   42  vim /etc/selinux/config
+Disable selinux, then try it again
 
-</code></pre><p>Install lubuntu-desktop as the default X:</p>
-<pre><code>sudo apt-get install lubuntu-desktop
+</code></pre><p>&#171;&#171;&#171;&lt; HEAD</p><h3 id=40-install-opencontrailopenstack>40. Install OpenContrail/OpenStack</h3><h1 id=httpstechwikijunipernetdocumentationcontrailcontrail_controller_getting_started_guide10_in_context3a_contrail_controller_getting_started_guidehttpstechwikijunipernetdocumentationcontrailcontrail_controller_getting_started_guide10_in_context3a_contrail_controller_getting_started_guide><a href=https://fosskb.wordpress.com/2014/10/18/openstack-juno-on-ubuntu-14-10/>https://fosskb.wordpress.com/2014/10/18/openstack-juno-on-ubuntu-14-10/</a><br><a href=https://techwiki.juniper.net/Documentation/Contrail/Contrail_Controller_Getting_Started_Guide/10_In_Context%3A_Contrail_Controller_Getting_Started_Guide>https://techwiki.juniper.net/Documentation/Contrail/Contrail_Controller_Getting_Started_Guide/10_In_Context%3A_Contrail_Controller_Getting_Started_Guide</a></h1><h3 id=40-docker-saveload>40. Docker save/load</h3><p>In the server, do:</p><pre><code>docker save ubuntu&gt;/root/myubuntu.tar
 
-</code></pre>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2014/10/15/serial-port-on-bbb/">Serial Port on BBB</a>
-      </h1>
-      <span class="post-date">Oct 15, 2014 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="serial-port-settings">Serial Port Settings</h3>
-<p>Use following settings for the serial monitor software:</p>
-<pre><code>The default serial port settings for the board are:
-Baud 115,200
-Bits 8
-Parity N
-Stop Bits 1
-Handshake None
+</code></pre><p>Scp it to client machine, and in client machine, do:</p><pre><code>docker load&lt;/root/myubuntu.tar
 
-</code></pre><h3 id="connection">Connection</h3>
-<p>The serial port in BBB is listed as following: <br>
-<img src="/images/BBBSerial.jpg" alt="/images/BBBSerial.jpg"></p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2014/10/15/trouble-shooting-on-docker/">Trouble-Shooting on Docker</a>
-      </h1>
-      <span class="post-date">Oct 15, 2014 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <p>The guideline I follow is from :  <br>
-<a href="https://wiki.archlinux.org/index.php/Docker">https://wiki.archlinux.org/index.php/Docker</a></p>
-<h3 id="working-behind-proxy">Working behind Proxy</h3>
-<p>When docker runs under the proxy, it will be blocked by the firewall, thus in the ArchLinux we have to kill the systemd started docker daemon, and manually set the proxy configuration for the docker daemon, following is the tips:</p>
-<pre><code>$ systemctl stop docker.service
-$ sudo HTTP_PROXY=http://1xx.*.*.2xx:2xx3 docker -d &amp;
-
-</code></pre><p>Then you run the docker for create the new machine  will be OK.</p>
-<h3 id="default-configuration">Default Configuration</h3>
-<p>That leads me for thinking the default configuration of ArchLinux , change it to :</p>
-<pre><code>$ cat /usr/lib/systemd/system/docker.service
-[Unit]
-Description=Docker Application Container Engine
-Documentation=http://docs.docker.com
-After=network.target docker.socket
-Requires=docker.socket
-
-[Service]
-ExecStart=/usr/bin/docker -d 
-LimitNOFILE=1048576
-LimitNPROC=1048576
-
-[Install]
-Also=docker.socket
-
-</code></pre><p>Add following line, but failed, Arch Wiki also indicates its failure:</p>
-<pre><code>[Service]
-Environment=&quot;http_proxy=192.168.1.1:3128&quot;
-ExecStart=
-ExecStart=/usr/bin/docker -d -g /var/yourDockerDir
-
-</code></pre><p>So everytime you want to enable proxy, simply manually reload it.</p>
-<p>Then reload the service status and restart the docker.service:</p>
-<pre><code>sudo systemctl daemon-reload
-sudo systemctl restart docker.service
-
-</code></pre><p>Test the docker to view if it runs well:</p>
-<pre><code>$ docker info
-
-</code></pre><h3 id="docker-management">Docker Management</h3>
-<p>List the installed images:</p>
-<pre><code>[Trusty@~/code/octo/heroku/Tomcat]$ sudo docker images
+</code></pre><p>Examine it via:</p><pre><code>[root@10-17-17-183 ~]# docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-archlinux           latest              a063a516f4c7        About an hour ago   293 MB
-busybox             latest              e72ac664f4f0        13 days ago         2.433 MB
-base/archlinux      2014.07.03          ea234cde99e6        12 weeks ago        282.9 MB
-base/archlinux      2014.04.01          56c61f5c2920        12 weeks ago        293.3 MB
-base/archlinux      latest              dce0559daa1b        12 weeks ago        282.9 MB
+ubuntu              latest              d0955f21bf24        2 weeks ago         188.3 MB
 
-</code></pre><p>List Containers:</p>
-<pre><code>[Trusty@~/code/octo/heroku/Tomcat]$ sudo docker ps -a
-CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                         PORTS               NAMES
-50baf5783c6e        busybox:latest      &quot;/bin/echo hello wor   6 minutes ago       Exited (0) 6 minutes ago                           mad_carson          
-2f7108d2ee0e        archlinux:latest    &quot;echo Success.&quot;        About an hour ago   Exited (0) About an hour ago                       jolly_galileo       
-
-</code></pre><p>List the running Containers:</p>
-<pre><code>[Trusty@~/code/octo/heroku/Tomcat]$ docker ps
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-
-</code></pre><p>Now start a container via(This command will run into the container and execute the /bin/bash):</p>
-<pre><code>$ docker run -i -t archlinux /bin/bash
-[root@b6ab14b2ce65 /]# 
-
-</code></pre><p>Check the container status:</p>
-<pre><code>$ docker ps
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-b6ab14b2ce65        archlinux:latest    &quot;/bin/bash&quot;         27 seconds ago      Up 25 seconds                           high_wright   
-
-</code></pre><p>When you exit, then the ps won&rsquo;t display the corresponding items.</p>
-<h3 id="install-more-images">Install More Images</h3>
-<p>Install via:</p>
-<pre><code>$ docker run ubuntu /bin/echo hello world
-$ docker run centos /bin/echo hello world
-
-</code></pre><p>Run it ubuntu:</p>
-<pre><code>$ docker run -i -t ubuntu /bin/bash   
-root@34b68719493b:/# cat /etc/issue
-Ubuntu 14.04.1 LTS \n \l
-
-</code></pre><p>Run into centos:</p>
-<pre><code>$ docker run -i -t centos /bin/bash   
-bash-4.2# uname -a
-Linux e3ec1911331b 3.16.4-1-ARCH #1 SMP PREEMPT Mon Oct 6 08:22:27 CEST 2014 x86_64 x86_64 x86_64 GNU/Linux
-bash-4.2# cat /etc/issue
-\S
-Kernel \r on an \m
-
-bash-4.2# which yum
-/usr/bin/yum
-
-</code></pre>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2014/10/14/run-bbb-building-in-server/">Run BBB building in server</a>
-      </h1>
-      <span class="post-date">Oct 14, 2014 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="background">Background</h3>
-<p>Since building is heavy task to CPU, I decide to use the server in lab for building</p>
-<h3 id="packages">Packages</h3>
-<p>We need to install following packages for setting up the building environment:</p>
-<pre><code>zypper in git patch u-boot-tools git ncurses-devel dpkg dpkg-devel dpkg-lang
-
-</code></pre><p>Use git for acrossing the firewall of company:</p>
-<pre><code>&gt; git config --global user.email xxxx@gmail.com
-&gt; git config --global user.name xxxx
-&gt; cat ~/.gitconfig
-[user]
-	email = xxxx@gmail.com
-	name = xxx 
-
-</code></pre><p>Then we compile a cross Firewall tool and tell git for using it.</p>
-<pre><code>$ gcc -o connect connect.c
-$ sudo cp connect /usr/bin
-$ sudo chmod 777 /usr/bin/connect
-$ sudo chmod 777 /usr/bin/myproxy
-$ cat /usr/bin/myproxy
-/usr/bin/connect -H 127.0.0.1:9001 $@
-
-</code></pre><p>Now add the following lines in ~/.gitconfig:</p>
-<pre><code>[core]
-	gitproxy = /usr/bin/myproxy
+</code></pre><h3 id=41-build-maas-based-centos-image>41. Build Maas Based CentOS Image</h3><p>Following is just the commands:</p><pre><code>root@pc121:~/iso/CentOSImage/maas-image-builder# #./bin/maas-image-builder -o centos6-amd64-root-tgz centos --edition 6                        
+root@pc121:~/iso/CentOSImage/maas-image-builder# pwd
+/home/clouder/iso/CentOSImage/maas-image-builder
 
 
-</code></pre><p>Testing the git via:</p>
-<pre><code>git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/stable-queue.git
+</code></pre><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><p>58372fecc80eeda12cddd4001534fc541cab8f30</p></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote><h3 id=42-view-multiply-errors>42. View multiply errors</h3><p>For displaying all of the error/warnings.</p><pre><code>for file in $(ls /var/log/nova/); do cat /var/log/nova/$file | grep -iE 'error|warn' ; done
 
-</code></pre><h3 id="building">Building</h3>
-<p>Be sure the directory had the same as in laptop.   that is:</p>
-<pre><code>&gt; pwd
-/media/y/embedded/BBB/Kernel/bb-kernel
+</code></pre><h3 id=43-reference-for-docker-and-contrail>43. Reference for docker and contrail</h3><p><a href=http://www.opencontrail.org/docker-with-opencontrail/>http://www.opencontrail.org/docker-with-opencontrail/</a></p><h3 id=44-run-jobs-at-certain-time>44. Run Jobs at certain time</h3><p>Following is an example for automatically download the iso file at the spare time of the office network.</p><pre><code># echo &quot;wget http://mirrors.aliyun.com/ubuntu-releases/15.04/ubuntu-15.04-server-amd64.iso -O /home/juju/iso/ubuntu-15.04-server-amd64.iso &quot; | at 12:27
 
-</code></pre><p>For long-time building, I install tmux for handling the process:</p>
-<pre><code>zypper in tmux
+</code></pre><h3 id=45-check-kvm>45. Check kvm</h3><p>We could use <code>kvm-ok</code> for checking your cpu is compatible for use kvm acceleration.</p><pre><code>$ sudo apt-get install cpu-checker
+$ kvm-ok
 
-</code></pre><p>Under the folder, run <code>build_kernel.sh</code> then you could get the Linux Kernel. <br>
-fakeroot should be installed in openSUSE:</p>
-<pre><code>http://software.opensuse.org/package/fakeroot?search_term=fakeroot
-rpm -ivh fakeroot-1.20-1.18.x86_64.rpm
+</code></pre><p>The output will shows whether your cpu support kvm or not.</p><h3 id=46-quickly-installation-the-desktop>46. Quickly Installation the Desktop</h3><p>Turn your minimal CentOS into a full Desktop:</p><pre><code>$  sudo yum install system-config-kickstart
+$  sudo yum install gnome-desktop
+$  sudo yum -y groupinstall &quot;X Window System&quot; &quot;Desktop&quot;
 
-</code></pre><p>You should change the following files to enable the hostname:</p>
-<pre><code>Linux59:~ # cat /etc/hostname
-Linux59
-Linux59:~ # cat /etc/hosts
-127.0.0.1	localhost.localdomain	localhost
-127.0.0.1	Linux59.localdomain	Linux59
+</code></pre><p>Enter the desktop via <code>startx</code></p><h3 id=47-restart-bluetooth-in-ubuntu>47. Restart bluetooth in Ubuntu</h3><p>Sometimes the bluetooth will fail on Ubuntu, using following command for restart the bluetooth service:</p><pre><code>$ sudo /etc/init.d/bluetooth restart
 
-</code></pre><p>Now run hostname via:</p>
-<pre><code>Linux59:~ # hostname --fqdn
-Linux59.localdomain
+</code></pre><p>Now you could continue to detect the devices and setup the configuration.</p><h3 id=48-control-the-network-flow>48. Control the network flow</h3><p>Use wondershapt for controlling the network flow:</p><pre><code># wondershaper eth0 3000 500
+</code></pre><p>The first parameter is the download rate, while the second parameter is the upload rate..</p><h3 id=49-cant-git-remote>49. Can&rsquo;t git remote</h3><p>You should edit the remote branch like following to enable the git push origin:</p><pre><code>$ git push origin master
+fatal: remote error: 
+  You can't push to git://github.com/User/xxx.git
+  Use https://github.com/User/xxx.git
+  Use https://github.com/purplepalmdash/NewBlog.git
+$ git remote rm origin
+$ git remote add origin git@github.com:User/xxx.git
+$ git push origin master
 
-</code></pre><p>Now run <code>./build_deb.sh</code> you could get the deb file.</p>
-<h3 id="building-angstrom">Building Angstrom</h3>
-<p>First you should check out the git source from github:</p>
-<pre><code>git clone git://github.com/Angstrom-distribution/setup-scripts.git
+</code></pre><h3 id=50-quickly-setup-nfs-server>50. Quickly Setup NFS Server</h3><p>On Ubuntu, first install the nfs-server:</p><pre><code>$ sudo apt-get install nfs-kernel-server
+$ sudo vim /etc/exports 
+/media/repo     192.168.1.0/255.255.255.0(rw,sync,no_subtree_check)
+$ sudo /etc/init.d/nfs-kernel-server restart
+</code></pre><p>Mount it via:</p><pre><code>$ sudo mount -t nfs 192.168.1.13:/media/repo /mnt
+</code></pre><h3 id=51-set-aliyun-for-centos7>51. Set Aliyun For CentOS7</h3><p>Run following commands will update the CentOS repository and import the epel repository for CentOS7</p><pre><code># mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+# wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+# yum makecache
+wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+# yum  -y  update
+</code></pre><h3 id=52-set-apt-proxy-for-ubuntu>52. Set apt-proxy for Ubuntu</h3><p>If you have set the apt-proxy, remember the listening port is:</p><pre><code>$ cat /etc/apt/apt.conf
+Acquire::http::Proxy &quot;http://10.3.3.5:3142&quot;
+</code></pre><p>The configuration for apt-proxy could be found via google.</p><h3 id=54-use-gem-taobao-source>54. Use gem taobao source</h3><p>For avoiding the GFW.</p><pre><code>/opt/chef/embedded/bin/gemsources -a http://ruby.taobao.org/
+</code></pre><h3 id=53-use-aliyun-repository>53. Use Aliyun Repository</h3><pre><code>gem source -r https://rubygems.org/
+gem source -a http://mirrors.aliyun.com/rubygems/
+</code></pre><h3 id=54-xdmcp-error>54. XDMCP Error</h3><pre><code> XDMCP fatal error: Session declined Maximum number of open sessions from your host reached from .
 
-</code></pre><p>Then run:</p>
-<pre><code>$ MACHINE=beagleboard ./oebb.sh config beagleboard
+[root:~]# cat /etc/gdm/custom.conf
+[xdmcp]
+Port=177
++ DisplaysPerHost=5
+Enable=true
 
+# reboot
+</code></pre><p>Now your client will successfully login to the remote server.</p><h3 id=55-upgrade-ubuntu14042-kernel>55. Upgrade Ubuntu14.04.2 Kernel</h3><p>For upgrade it to 3.16.xxx, simplying use following command:</p><pre><code>$ sudo apt-get install linux-image-generic-lts-utopic
+</code></pre><h3 id=56-install-docker-on-ubuntu>56. Install Docker on Ubuntu</h3><pre><code>$ wget -qO- https://get.docker.com/ | sh
+</code></pre><h3 id=57-permanent-change-hostname-on-fedora>57. Permanent Change Hostname on Fedora</h3><pre><code>$ sudo hostnamectl set-hostname --static &quot;YOUR-HOSTNAME-HERE&quot;
+</code></pre><h3 id=58-remote-vnc-via-ssh>58. Remote VNC via SSH</h3><pre><code>Home machine:     
+ssh -R *:6234:localhost:5901 xxxx@1xxx.xxx.xxx.xxx -p xxxx4
 
-</code></pre><h3 id="trouble-shooting">Trouble-Shooting</h3>
-<p>First I met tmux issue. so I installed the tmux in router(OpenWRT):</p>
-<pre><code>opkg update
-opkg install tmux
+Server, forward 6234 to 16234:    
+ssh -NfL *:16234:localhost:6234 localhost -p xxxx4
 
-</code></pre><p>Then I use tmux in router,create the new session which holds the  ssh connection to the Server.</p>
-<p>Then in family computer, the git proxy configuraiton won&rsquo;t reset even if I update the ~/.gitconfig. This problem didn&rsquo;t solved.  I don&rsquo;t know why.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2014/10/14/tips-for-deploying-archlinux-on-bbb/">Tips for deploying ArchLinux on BBB</a>
-      </h1>
-      <span class="post-date">Oct 14, 2014 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <p>The detailed installation guideline could be found at: <br>
-<a href="http://archlinuxarm.org/platforms/armv7/ti/beaglebone-black">http://archlinuxarm.org/platforms/armv7/ti/beaglebone-black</a></p>
-<p>But while there are some tips in changing the uEnv.txt, to enable the boot from 2nd mmc partition. following is the configuration file:</p>
-<pre><code>[root@alarm mnt]# cat uEnv.txt
-optargs=coherent_pool=1M
-
-
-#u-boot eMMC specific overrides; Angstrom Distribution (BeagleBone Black) 2013-06-20
-kernel_file=zImage
-initrd_file=uInitrd
- 
-loadzimage=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${kernel_file}
-loadinitrd=load mmc ${mmcdev}:${mmcpart} 0x81000000 ${initrd_file}; setenv initrd_size ${filesize}
-loadfdt=load mmc ${mmcdev}:${mmcpart} ${fdtaddr} /dtbs/${fdtfile}
-#
- 
-console=ttyO0,115200n8
-# If you want to boot from usb
-#mmcroot=/dev/sda1 ro
-# If you want to boot from SD card
-mmcroot=/dev/mmcblk0p2 ro
-mmcrootfstype=ext4 rootwait fixrtc
-
-
-</code></pre><p>Now reboot and then you could see the BBB runs into the ArchLinux.</p>
-
-      
-    </div>
-    
-    
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/page/163/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/163/">163</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/page/164/">164</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/165/">165</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/221/">221</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/page/165/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/page/221/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
-
-
-  </div>
-</div>
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+Company:    
+vncviewer 1zxxx.xxx.xxx.xxx:16234
+</code></pre><h3 id=59-disable-byobu-from-scrolling>59. Disable byobu from scrolling</h3><p>This is because the byobu use tmux for the backend. Change it into screen.</p><pre><code>$ byobu-select-backend 
+# and selecting screen (option 2).
+</code></pre><h3 id=60-add-items-into-the-host-file>60. Add items into the host file</h3><pre><code># ifconfig | awk -v MYHOST=$(hostname) '/inet addr/{print substr($2,6),&quot;\t&quot;,MYHOST}'&gt;&gt;/etc/hosts
+</code></pre><h3 id=61-gpg-issues>61. GPG Issues</h3><pre><code>https://help.ubuntu.com/community/GnuPrivacyGuardHowto#Using_GnuPG_to_generate_a_key
+</code></pre><h3 id=62-mirror-whole-website>62. Mirror Whole Website</h3><p>Use Wget for retrieving all of the items:</p><pre><code>[root:/home/juju/Fuel61Repository]# wget --recursive -c -np -k -L http://mirror.fuel-infra.org/
+</code></pre><h3 id=63-grouplist-for-yum>63. Grouplist for yum</h3><p>yum install the group of the X window System, thus we could forwarding X11.</p><pre><code>$ sudo yum grouplist
+$ sudo yum groupinstall &quot;X Window System&quot;
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/163/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/163/>163</a></li><li class="page-item active"><a class=page-link href=/page/164/>164</a></li><li class=page-item><a class=page-link href=/page/165/>165</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/165/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

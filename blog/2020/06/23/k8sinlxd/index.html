@@ -1,143 +1,11 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>K8sInLXD &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="K8sInLXD">
-  <meta name="keywords" content="Technology">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>K8sInLXD</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Jun 23, 2020 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#制作镜像">制作镜像</a></li>
-        <li><a href="#k8s-in-lxc">k8s in lxc</a></li>
-        <li><a href="#删除">删除</a></li>
-        <li><a href="#kpartx-issue">kpartx issue</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="制作镜像">制作镜像</h3>
-<p>Convert image:</p>
-<pre><code># qemu-img convert a.qcow2 a.img
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>K8sInLXD &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="K8sInLXD"><meta name=keywords content="Technology"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>K8sInLXD</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Jun 23, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#制作镜像>制作镜像</a></li><li><a href=#k8s-in-lxc>k8s in lxc</a></li><li><a href=#删除>删除</a></li><li><a href=#kpartx-issue>kpartx issue</a></li></ul></li></ul></nav></div><h3 id=制作镜像>制作镜像</h3><p>Convert image:</p><pre><code># qemu-img convert a.qcow2 a.img
 # kpartx a.img
 # vgscan
 # lvscan
 # mount /dev/vg-root/xougowueg /mnt
 # sudo tar -cvzf rootfs.tar.gz -C /mnt .
-</code></pre><p>Create the metadata.tar.gz and import image</p>
-<pre><code># vim metadata.yaml
+</code></pre><p>Create the metadata.tar.gz and import image</p><pre><code># vim metadata.yaml
 architecture: &quot;aarch64&quot;
 creation_date: 1592803465
 properties:             
@@ -147,17 +15,14 @@ os: &quot;ubuntu&quot;
 release: &quot;focal&quot;  
 # tar czvf metadata.tar.gz metadata.yaml
 # lxc image import metadata.tar.gz rootfs.tar.gz --alias &quot;gowuogu&quot;
-</code></pre><h3 id="k8s-in-lxc">k8s in lxc</h3>
-<p>检查主机上profile是否创建:</p>
-<pre><code>+---------+---------+
+</code></pre><h3 id=k8s-in-lxc>k8s in lxc</h3><p>检查主机上profile是否创建:</p><pre><code>+---------+---------+
 |  NAME   | USED BY |
 +---------+---------+
 | default | 0       |
 +---------+---------+
 | ourk8s  | 4       |
 +---------+---------+
-</code></pre><p>如果不存在,创建:</p>
-<pre><code># lxc profile create ourk8s
+</code></pre><p>如果不存在,创建:</p><pre><code># lxc profile create ourk8s
 # cat &gt; kubernetes.profile &lt;&lt;EOF
 config:
   linux.kernel_modules: ip_tables,ip6_tables,netlink_diag,nf_nat,overlay,br_netfilter
@@ -180,24 +45,21 @@ EOF
 
 # lxc  profile edit ourk8s &lt; kubernetes.profile
 
-</code></pre><p>检查<code>rong-2004</code>是否存在在镜像仓库上:</p>
-<pre><code># lxc image list
+</code></pre><p>检查<code>rong-2004</code>是否存在在镜像仓库上:</p><pre><code># lxc image list
 +-----------+--------------+--------+-------------+---------+----------+------------------------------+
 |   ALIAS   | FINGERPRINT  | PUBLIC | DESCRIPTION |  ARCH   |   SIZE   |         UPLOAD DATE          |
 +-----------+--------------+--------+-------------+---------+----------+------------------------------+
 | rong-2004 | f511553a81a9 | no     |             | aarch64 | 674.77MB | Jun 22, 2020 at 6:11am (UTC) |
 +-----------+--------------+--------+-------------+---------+----------+------------------------------+
 
-</code></pre><p>创建3个lxc容器:</p>
-<pre><code># lxc launch rong-2004 k8s1 --profile ourk8s &amp;&amp; lxc launch rong-2004 k8s2 --profile ourk8s &amp;&amp; lxc launch rong-2004 k8s3 --profile ourk8s
+</code></pre><p>创建3个lxc容器:</p><pre><code># lxc launch rong-2004 k8s1 --profile ourk8s &amp;&amp; lxc launch rong-2004 k8s2 --profile ourk8s &amp;&amp; lxc launch rong-2004 k8s3 --profile ourk8s
 Creating k8s1
 Starting k8s1
 Creating k8s2
 Starting k8s2
 Creating k8s3
 Starting k8s3
-</code></pre><p>等待大约2分钟等待容器启动完毕:</p>
-<pre><code># lxc ls
+</code></pre><p>等待大约2分钟等待容器启动完毕:</p><pre><code># lxc ls
 +---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
 |  NAME   |  STATE  |            IPV4            |                     IPV6                      |    TYPE    | SNAPSHOTS |
 +---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
@@ -208,12 +70,8 @@ Starting k8s3
 | k8s3    | RUNNING | 10.230.146.33 (eth0)       | fd42:6fd0:9ed5:600b:216:3eff:fef8:f20c (eth0) | PERSISTENT | 0         |
 +---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
 
-</code></pre><p>ssh到 <code>k8s1</code> 上执行安装:</p>
-<pre><code># scp -r root@192.192.189.128:/media/sdd/20200617/Rong-v2006-arm .
-</code></pre><p>注意: 以20200617/Rong-v2006-arm下的部署文件才可以部署在lxc里. <br>
-注意: 相关更改已同步在外网.</p>
-<p>更改IP配置并执行<code>install.sh basic</code>安装:</p>
-<pre><code>root@node:/home/test/Rong-v2006-arm# cat hosts.ini 
+</code></pre><p>ssh到 <code>k8s1</code> 上执行安装:</p><pre><code># scp -r root@192.192.189.128:/media/sdd/20200617/Rong-v2006-arm .
+</code></pre><p>注意: 以20200617/Rong-v2006-arm下的部署文件才可以部署在lxc里.<br>注意: 相关更改已同步在外网.</p><p>更改IP配置并执行<code>install.sh basic</code>安装:</p><pre><code>root@node:/home/test/Rong-v2006-arm# cat hosts.ini 
 [all]
 focal-1 ansible_host=10.230.146.83 ip=10.230.146.83
 focal-2 ansible_host=10.230.146.201 ip=10.230.146.201
@@ -244,8 +102,7 @@ kube-node
 ansible_ssh_user=root
 ansible_ssh_private_key_file=./.rong/deploy.key
 root@node:/home/test/Rong-v2006-arm# ./install.sh basic
-</code></pre><p>安装完毕后,检查是否运行正常:</p>
-<pre><code>root@node:/home/test/Rong-v2006-arm# kubectl get nodes
+</code></pre><p>安装完毕后,检查是否运行正常:</p><pre><code>root@node:/home/test/Rong-v2006-arm# kubectl get nodes
 NAME      STATUS   ROLES    AGE     VERSION
 focal-1   Ready    master   9m28s   v1.17.6
 focal-2   Ready    master   8m1s    v1.17.6
@@ -275,39 +132,19 @@ kube-system   kubernetes-metrics-scraper-747b4fd5cd-vhfr5   1/1     Running     
 kube-system   metrics-server-849f86c88f-h6prj               1/2     CrashLoopBackOff   4          3m15s
 kube-system   nginx-proxy-focal-3                           1/1     Running            0          6m8s
 kube-system   tiller-deploy-56bc5dccc6-cfjkh                1/1     Running            0          3m34s
-</code></pre><h3 id="删除">删除</h3>
-<p>验证完毕后,可以删除不用的镜像:</p>
-<pre><code># lxc stop XXXXX 
+</code></pre><h3 id=删除>删除</h3><p>验证完毕后,可以删除不用的镜像:</p><pre><code># lxc stop XXXXX 
 # lxc rm XXXXX
-</code></pre><p>删除中如果出现问题, 则手动更改容器中某文件权限后可以删除:</p>
-<pre><code>root@arm01:~/app# lxc rm kkkkk
+</code></pre><p>删除中如果出现问题, 则手动更改容器中某文件权限后可以删除:</p><pre><code>root@arm01:~/app# lxc rm kkkkk
 Error: error removing /var/lib/lxd/storage-pools/default/containers/kkkkk: rm: cannot remove '/var/lib/lxd/storage-pools/default/containers/kkkkk/rootfs/etc/resolv.conf': Operation not permitted
 
 root@arm01:~/app# chattr  -i /var/lib/lxd/storage-pools/default/containers/kkkkk/rootfs/etc/resolv.conf
 root@arm01:~/app# lxc rm kkkkk
 
-</code></pre><h3 id="kpartx-issue">kpartx issue</h3>
-<p>List device mapping that would be created:</p>
-<pre><code># kpartx -l sgoeuog.img
-</code></pre><p>Create mappings/create dev for image:</p>
-<pre><code># kpartx -av gowgowu.img
+</code></pre><h3 id=kpartx-issue>kpartx issue</h3><p>List device mapping that would be created:</p><pre><code># kpartx -l sgoeuog.img
+</code></pre><p>Create mappings/create dev for image:</p><pre><code># kpartx -av gowgowu.img
 /dev/loop0
 
 /dev/mapper/loop0p1
 ...
 /dev/mapper/loop0pn
-</code></pre>
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,2735 +1,357 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-	<meta name="generator" content="Hugo 0.65.1" />
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/09/15/usbdisplaylinkworkinghowto/>USBDisplayLinkWorkingHowto</a></h1><span class=post-date>Sep 15, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=find-usb-equipment>Find USB Equipment</h3><p>Via lsusb we could find which usb equipment available:</p><pre><code>$ sudo lsusb -t 
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/8p, 10000M
+    |__ Port 5: Dev 2, If 0, Class=Hub, Driver=hub/4p, 5000M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/16p, 480M
+    |__ Port 2: Dev 2, If 0, Class=Vendor Specific Class, Driver=rtsx_usb, 480M
+    |__ Port 3: Dev 3, If 0, Class=Vendor Specific Class, Driver=asix, 480M
+    |__ Port 6: Dev 4, If 0, Class=Human Interface Device, Driver=, 12M
+    |__ Port 6: Dev 4, If 1, Class=Human Interface Device, Driver=usbhid, 12M
+    |__ Port 9: Dev 5, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 1: Dev 7, If 1, Class=Human Interface Device, Driver=usbhid, 12M
+        |__ Port 1: Dev 7, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+        |__ Port 2: Dev 9, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+        |__ Port 3: Dev 10, If 0, Class=Wireless, Driver=rndis_host, 480M
+        |__ Port 3: Dev 10, If 1, Class=CDC Data, Driver=rndis_host, 480M
+        |__ Port 4: Dev 12, If 0, Class=Vendor Specific Class, Driver=udl, 480M
+    |__ Port 12: Dev 13, If 0, Class=Mass Storage, Driver=usb-storage, 480M
+    |__ Port 13: Dev 6, If 1, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 13: Dev 6, If 0, Class=Video, Driver=uvcvideo, 480M
+    |__ Port 14: Dev 8, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 14: Dev 8, If 1, Class=Wireless, Driver=btusb, 12M
+</code></pre><p>And we could found corresponding USB equipments:</p><pre><code>$ ls /sys/bus/usb/drivers/usb
+1-12  1-13  1-14  1-2  1-3  1-6  1-9  1-9.1  1-9.2  1-9.3  1-9.4  2-5  bind  uevent  unbind  usb1  usb2
+</code></pre><p>Via following command we could unbind/bind DisplayLink equipments:</p><pre><code>$ echo '1-9.4' | sudo tee /sys/bus/usb/drivers/usb/unbind
+$ echo '1-9.4' | sudo tee /sys/bus/usb/drivers/usb/bind
+</code></pre><p><code>unbind</code> is equal to unplugin the usb port, <code>bind</code> is equal to insert the usb equipment.</p><h3 id=xrandr-tips>xrandr tips</h3><p>Via following commands:</p><pre><code>$ xrandr --output DVI-I-2-2  --mode 1920x1080 --right-of HDMI-0'
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/09/09/workingtipsonlxcko/>WorkingTipsOnLXCKO</a></h1><span class=post-date>Sep 9, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>Ubuntu 18.04.3 LTS, Kernel version:<br><code>Linux build 5.3.0-62-generic</code>.</p><p>vagrant box image: <code>centos76</code>.</p><p>lxc images:</p><pre><code># apt-get install -y kpartx
+# cp ~/.vagrant.d/boxes/centos76/0/libvirt/box.img  /media/sdb/
+# cd /media/sdb
 
-  <title>Dash &middot; Dash</title>
+root@build:/media/sdb# qemu-img convert box.img box1.img
+root@build:/media/sdb# qemu-img info box.img
+image: box.img
+file format: qcow2
+virtual size: 200G (214748364800 bytes)
+disk size: 655M
+cluster_size: 65536
+Format specific information:
+    compat: 1.1
+    lazy refcounts: false
+    refcount bits: 16
+    corrupt: false
+root@build:/media/sdb# qemu-img info box1.img
+image: box1.img
+file format: raw
+virtual size: 200G (214748364800 bytes)
+disk size: 1.3G
 
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Dash &middot; Dash" />
-  <meta name="description" content="">
-  <meta name="keywords" content="unix,virtualization,embedded,linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="posts">
-    
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/blog/2020/07/09/usenvmforsettingupangular/">UseNVMForSettingUPAngular</a>
-      </h1>
-      <span class="post-date">Jul 9, 2020 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="install-nvm">Install NVM</h3>
-<p>Install nvm via:</p>
-<pre><code>$ yaourt nvm
-</code></pre><p>Then</p>
-<pre><code>$ echo 'source /usr/share/nvm/init-nvm.sh' &gt;&gt; ~/.zshrc
-$ which nvm
-...
-$ nvm install v10.21.0
-$ node -v
-v10.21.0
-</code></pre><h3 id="setup-env">Setup Env</h3>
-<p>Setup the angular proxy variables:</p>
-<pre><code># cat proxy.conf.json 
-{
-  &quot;/api&quot;: {
-    &quot;target&quot;: &quot;http://10.137.149.4&quot;,
-    &quot;secure&quot;: false
-  },
-  &quot;/admin&quot;: {
-    &quot;target&quot;: &quot;http://10.137.149.4&quot;,
-    &quot;secure&quot;: false
-  },
-  &quot;/static&quot;: {
-    &quot;target&quot;: &quot;http://10.137.149.4&quot;,
-    &quot;secure&quot;: false
-  },
-  &quot;/ws&quot;: {
-    &quot;target&quot;: &quot;http://10.137.149.4&quot;,
-    &quot;secure&quot;: false,
-    &quot;ws&quot;: true
-  }
-}
-</code></pre><p>Install packages via:</p>
-<pre><code># npm install -g npm
-# SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install node-sass@4.10.0
-# npm --registry=https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist install
-# sudo cnpm install -g @angular/cli
-# sudo cnpm install -g @angular-devkit/build-angular
-# ng serve --proxy-config proxy.conf.json --host 0.0.0.0
-</code></pre><p>After building you will have the debug environment for changing the code and view the result.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/blog/2020/07/06/workingtipsondevopsenv/">WorkingTipsOnDevOpsEnv</a>
-      </h1>
-      <span class="post-date">Jul 6, 2020 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <p>因为后续会基于这个框架来做开发，所以一开始就记录下搭建的有关事项，便于以后参考。</p>
-<h3 id="基础环境">基础环境</h3>
-<p>硬件/软件环境如下:</p>
-<pre><code>虚拟机，4核10G内存，无swap分区
-Ubuntu 20.04操作系统
-
-</code></pre><p>安装docker:</p>
-<pre><code># systemctl stop apt-daily.timer;systemctl disable apt-daily.timer ; systemctl stop apt-daily-upgrade.timer ; systemctl disable apt-daily-upgrade.timer ; systemctl stop apt-daily.service ; systemctl mask apt-daily.service ; systemctl daemon-reload
-# sudo apt-get install -y docker.io
-# sudo docker version
-19.03.8
-# sudo apt-get install -y python3-dev sshpass default-libmysqlclient-dev krb5-config krb5-user  python3-pip libkrb5-dev
-# sudo apt-get install -y  libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev unzip
-</code></pre><p>创建数据库:</p>
-<pre><code># apt-get install -y mariradb-server
-# MariaDB [(none)]&gt; CREATE USER 'devops'@'localhost' IDENTIFIED BY 'devops';
-Query OK, 0 rows affected (0.000 sec)
-
-MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON * . * TO 'devops'@'localhost';
-Query OK, 0 rows affected (0.000 sec)
-
-MariaDB [(none)]&gt; FLUSH PRIVILEGES;
-Query OK, 0 rows affected (0.001 sec)
-
-MariaDB [(none)]&gt; SHOW GRANTS FOR 'devops'@localhost;
-+------------------------------------------------------------------------------------------------------------------------+
-| Grants for devops@localhost                                                                                            |
-+------------------------------------------------------------------------------------------------------------------------+
-| GRANT ALL PRIVILEGES ON *.* TO 'devops'@'localhost' IDENTIFIED BY PASSWORD '*2683A2B8A9DE120C7B5CC6D45B5F7A2E708FAFCF' |
-+------------------------------------------------------------------------------------------------------------------------+
-1 row in set (0.000 sec)
-
-MariaDB [(none)]&gt; create database devops;
-Query OK, 1 row affected (0.000 sec)
-
-MariaDB [(none)]&gt; grant all privileges on devops.* TO 'devops'@'localhost' identified by 'devops';
-Query OK, 0 rows affected (0.001 sec)
-
-MariaDB [(none)]&gt; flush privileges;
-Query OK, 0 rows affected (0.000 sec)
-
-MariaDB [(none)]&gt; quit;
-
-</code></pre><p>准备redis环境, guacd环境:</p>
-<pre><code># docker load&lt;redis.tar
-Loaded images: redis:alpine
-# docker run --name redis-server -p 6379:6379 -d redis:alpine
-# netstat -anp | grep 6379
-tcp6       0      0 :::6379                 :::*                    LISTEN      9183/docker-proxy   
-# docker ps
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
-bf2d4dd7767f        redis:alpine        &quot;docker-entrypoint.s…&quot;   8 seconds ago       Up 5 seconds        0.0.0.0:6379-&gt;6379/tcp   redis-server
-# docker pull guacamole/guacd:latest
-# # docker run --name guacd -e GUACD_LOG_LEVEL=info -v  /home/vagrant/devops/media/guacd:/fs -p 4822:4822 -d guacamole/guacd
-de109f5e821648bea88bb8cc08267934df09e87c113835118c956c05087f9c3b
-root@leffss-1:~# docker ps
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
-de109f5e8216        guacamole/guacd     &quot;/bin/sh -c '/usr/lo…&quot;   4 seconds ago       Up 1 second         0.0.0.0:4822-&gt;4822/tcp   guacd
-bf2d4dd7767f        redis:alpine        &quot;docker-entrypoint.s…&quot;   3 minutes ago       Up 3 minutes        0.0.0.0:6379-&gt;6379/tcp   redis-server
-</code></pre><p>建立python3(3.8)虚拟环境:</p>
-<pre><code># apt-get install -y python3-venv
-# python3 -m venv devops_venv
-root@leffss-1:/home/vagrant/venv# source devops_venv/bin/activate
-(devops_venv) root@leffss-1:/home/vagrant/venv# which python
-/home/vagrant/venv/devops_venv/bin/python
-# cat requirements.txt
-django==2.2.11
-supervisor==4.1.0
-# simpleui
-paramiko==2.6.0
-decorator==4.4.2
-gssapi==1.6.2
-pyasn1==0.4.3
-channels==2.2.0
-channels-redis==2.4.0
-celery==4.3.0
-redis==3.3.11
-eventlet==0.23.0
-selectors2==2.0.1
-django-redis==4.10.0
-pyguacamole==0.8
-# ansible==2.8.5
-ansible==2.9.2
-daphne==2.3.0
-# gunicorn==19.9.0
-gunicorn==20.0.3
-gevent==1.4.0
-async==0.6.2
-pymysql==0.9.3
-django-ratelimit==2.0.0
-cryptography==2.7
-mysqlclient==1.4.4
-apscheduler==3.6.3
-django-apscheduler==0.3.0
-requests==2.22.0
-jsonpickle==1.2
-redisbeat==1.2.3
-#  pip3 install -i https://mirrors.aliyun.com/pypi/simple -r requirements.txt
-</code></pre><p>创建数据库:</p>
-<pre><code># sh delete_makemigrations.sh
-# rm -f db.sqlite3
-# # 以上是删除可能存在的开发环境遗留数据
-# vim devops/settings.py
-注释掉DATABASE相关的字段
-# python3 manage.py makemigrations
-# python3 manage.py migrate
-</code></pre><p><img src="/images/2020_07_06_09_46_11_936x664.jpg" alt="/images/2020_07_06_09_46_11_936x664.jpg"></p>
-<p>初始化数据</p>
-<pre><code>python3 manage.py loaddata initial_data.json
-python3 init.py
-</code></pre><p>启动django服务:</p>
-<pre><code># mkdir -p logs
-# export PYTHONOPTIMIZE=1		# 解决 celery 不允许创建子进程的问题
-# nohup gunicorn -c gunicorn.cfg devops.wsgi:application &gt; logs/gunicorn.log 2&gt;&amp;1 &amp;
-# nohup daphne -b 0.0.0.0 -p 8001 devops.asgi:application &gt; logs/daphne.log 2&gt;&amp;1 &amp;
-# nohup python3 manage.py sshd &gt; logs/sshd.log 2&gt;&amp;1 &amp;
-# nohup celery -A devops worker -l info -c 3 --max-tasks-per-child 40 --prefetch-multiplier 1 &gt; logs/celery.log 2&gt;&amp;1 &amp;
-</code></pre><p>配置前端代理:</p>
-<pre><code># sudo apt-get install -y nginx
-# Configure the nginx configuration.
-</code></pre><p>Configuration files</p>
-<pre><code># cat /etc/nginx/sites-enabled/default 
-	upstream wsgi-backend {
-		ip_hash;
-		server 127.0.0.1:8000 max_fails=3 fail_timeout=0;
-	}
-
-	upstream asgi-backend {
-		ip_hash;
-		server 127.0.0.1:8001 max_fails=3 fail_timeout=0;
-	}
-
-
-server {
-        listen 80 default_server;
-		listen [::]:80 default_server;
-		server_name  _;
-		client_max_body_size 30m;
-		add_header X-Frame-Options &quot;DENY&quot;;
-		
-		location ~* ^/(media|static) {
-			root /home/vagrant/devops-master;   # 此目录根据实际情况修改
-			# expires 30d;
-			if ($request_filename ~* .*\.(css|js|gif|jpg|jpeg|png|bmp|swf|svg)$)
-			{
-				expires 7d;
-			}
-		}
-
-		location /ws {
-			try_files $uri @proxy_to_ws;
-		}
-
-		location @proxy_to_ws {
-			proxy_pass http://asgi-backend;
-			proxy_http_version 1.1;
-			proxy_set_header Upgrade $http_upgrade;
-			proxy_set_header Connection &quot;upgrade&quot;;
-			proxy_redirect off;
-			proxy_set_header Host $host;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_set_header X-Forwarded-Proto $scheme;
-			proxy_set_header X-Forwarded-Port $server_port;
-			proxy_set_header X-Forwarded-Host $server_name;
-			proxy_intercept_errors on;
-			recursive_error_pages on;
-		}
-
-		location / {
-			try_files $uri @proxy_to_app;
-		}
-
-		location @proxy_to_app {
-			proxy_pass http://wsgi-backend;
-			proxy_http_version 1.1;
-			proxy_redirect off;
-			proxy_set_header Host $host;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_set_header X-Forwarded-Proto $scheme;
-			proxy_set_header X-Forwarded-Port $server_port;
-			proxy_set_header X-Forwarded-Host $server_name;
-			proxy_intercept_errors on;
-			recursive_error_pages on;
-		}
-
-		location = /favicon.ico {
-				 access_log off;    #关闭正常访问日志
-		}
-
-		error_page 404 /404.html;
-		location = /404.html {
-			root   /usr/share/nginx/html;
-			if ( $request_uri ~ ^/favicon\.ico$ ) {    #关闭favicon.ico 404错误日志
-				access_log off;
-			}
-		}
-
-		error_page 500 502 503 504 /50x.html;
-		location = /50x.html {
-			root   /usr/share/nginx/html;
-		}
-	}
-</code></pre><p>Now you could access the system.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/blog/2020/07/03/workingtipsonneok/">WorkingTipsOnNeoK</a>
-      </h1>
-      <span class="post-date">Jul 3, 2020 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <p>某国产操作系统，安装手记，不要问为啥写这么没技术含量的东西，因为ZHENGCE需要上，某些公司要赚经费罢了，安可是门生意，仅此而已。</p>
-<h3 id="安装">安装</h3>
-<p>无他，virt-manager里，ISO安装，最小化，安装完毕重新启动。</p>
-<p>装完一看，果然:</p>
-<pre><code># cat /etc/redhat-release
-Red Hat Enterprise Linux Server release 7.6 (Maipo)
-</code></pre><h3 id="配置">配置</h3>
-<p>ISO挂载:</p>
-<pre><code># mount /dev/sr0 /mnt
-# vim /etc/yum.repos.d/local.repo
-[local]
-name=local
-baseurl=file:///mnt
-enabled=1
-gpgcheck=0
-# mv /etc/yum.repos.d/ns7-adv.repo /root
-# yum update
-</code></pre><p>安装必要的包(跟rhel 7.6完全一样嘛):</p>
-<pre><code># yum groupinstall &quot;Server with GUI&quot;
-# yum install -y tigervnc-sever git gcc gcc-c++ java-11-openjdk java-11-openjdk-devel iotop 
-# vncserver
-# systemctl stop firewalld &amp;&amp; systemctl disable firewalld
-</code></pre><p>此时进去以后是vncviewer的桌面，和RHEL一模一样。</p>
-<p>外网搞一个xrdp的包进来:</p>
-<pre><code># apt-get install -y docker.io
-# docker pull centos:7
-# docker run -it centos:7 /bin/bash
-# vim /etc/yum.conf
-keepcache=1
-# yum install -y epel-releases
-# yum update 
-# yum install -y xrdp
-</code></pre><p>安装/启动xrdp</p>
-<pre><code># yum install -y xrdp
-# systemctl enable xrdp
-</code></pre><p>去掉授权:</p>
-<pre><code># mv /etc/xdg/autostart/licmanager /root
-</code></pre><p>Now you could use it.<br>
-Tranform it into lxc and run lxc</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/blog/2020/06/23/k8sinlxd/">K8sInLXD</a>
-      </h1>
-      <span class="post-date">Jun 23, 2020 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="制作镜像">制作镜像</h3>
-<p>Convert image:</p>
-<pre><code># qemu-img convert a.qcow2 a.img
-# kpartx a.img
-# vgscan
-# lvscan
-# mount /dev/vg-root/xougowueg /mnt
-# sudo tar -cvzf rootfs.tar.gz -C /mnt .
-</code></pre><p>Create the metadata.tar.gz and import image</p>
-<pre><code># vim metadata.yaml
-architecture: &quot;aarch64&quot;
-creation_date: 1592803465
-properties:             
-architecture: &quot;aarch64&quot;
-description: &quot;Rong-node&quot;
-os: &quot;ubuntu&quot;
-release: &quot;focal&quot;  
+# kpartx -av box1.img 
+add map loop2p1 (253:2): 0 419428352 linear 7:2 2048
+# mount /dev/mapper/loop2p1 /mnt8/
+# ls /mnt8/
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+# tar -cvzf rootfs.tar.gz -C /mnt8 .
+</code></pre><p>Create metadata and import lxc images:</p><pre><code># vim metadata.yaml
+architecture: &quot;x86_64&quot;
+creation_date: 1599622122 # To get current date in Unix time, use `date +%s` command
+properties:
+architecture: &quot;x86_64&quot;
+description: &quot;CentOS 7.6 for lxc&quot;
+os: &quot;redhat&quot;
+release: &quot;7.6&quot;
 # tar czvf metadata.tar.gz metadata.yaml
-# lxc image import metadata.tar.gz rootfs.tar.gz --alias &quot;gowuogu&quot;
-</code></pre><h3 id="k8s-in-lxc">k8s in lxc</h3>
-<p>检查主机上profile是否创建:</p>
-<pre><code>+---------+---------+
-|  NAME   | USED BY |
-+---------+---------+
-| default | 0       |
-+---------+---------+
-| ourk8s  | 4       |
-+---------+---------+
-</code></pre><p>如果不存在,创建:</p>
-<pre><code># lxc profile create ourk8s
-# cat &gt; kubernetes.profile &lt;&lt;EOF
+# lxc image import metadata.tar.gz rootfs.tar.gz --alias &quot;centos76&quot;
+Image imported with fingerprint: 9f53f37e869c643049933dccf8cac9c76107856b1f66955cc2a9d3a55329a060
+# lxc image ls
++----------+--------------+--------+-------------+--------+----------+-----------------------------+
+|  ALIAS   | FINGERPRINT  | PUBLIC | DESCRIPTION |  ARCH  |   SIZE   |         UPLOAD DATE         |
++----------+--------------+--------+-------------+--------+----------+-----------------------------+
+| centos76 | 9f53f37e869c | no     |             | x86_64 | 473.97MB | Sep 9, 2020 at 3:29am (UTC) |
++----------+--------------+--------+-------------+--------+----------+-----------------------------+
+</code></pre><p>lxd init using following configuration:</p><pre><code>root@build:/media/sdb# lxd init
+Would you like to use LXD clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (btrfs, dir, lvm) [default=btrfs]: 
+Create a new BTRFS pool? (yes/no) [default=yes]: 
+Would you like to use an existing block device? (yes/no) [default=no]: ^C
+root@build:/media/sdb# lxd init
+Would you like to use LXD clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (btrfs, dir, lvm) [default=btrfs]: dir
+Would you like to connect to a MAAS server? (yes/no) [default=no]: 
+Would you like to create a new local network bridge? (yes/no) [default=yes]: 
+What should the new bridge be called? [default=lxdbr0]: 
+What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: none
+Would you like LXD to be available over the network? (yes/no) [default=no]: 
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes] 
+Would you like a YAML &quot;lxd init&quot; preseed to be printed? (yes/no) [default=no]: 
+</code></pre><p>Create a bridge profile:</p><pre><code># lxc profile create bridge
+root@build:/media/sdb# cat bridge.profile 
 config:
   linux.kernel_modules: ip_tables,ip6_tables,netlink_diag,nf_nat,overlay,br_netfilter
   raw.lxc: &quot;lxc.apparmor.profile=unconfined\nlxc.cap.drop= \nlxc.cgroup.devices.allow=a\nlxc.mount.auto=proc:rw sys:rw&quot;
   security.nesting: &quot;true&quot;
   security.privileged: &quot;true&quot;
-description: Kubernetes LXD profile
+description: Bridge LXD profile
 devices:
   eth0:
     name: eth0
     nictype: bridged
-    parent: lxdbr0
+    parent: br0
     type: nic
   root:
     path: /
     pool: default
     type: disk
-name: kubernetes
+name: bridge
+root@build:/media/sdb# lxc  profile edit bridge &lt; bridge.profile 
+root@build:/media/sdb# lxc profile list
++---------+---------+
+|  NAME   | USED BY |
++---------+---------+
+| bridge  | 0       |
++---------+---------+
+| default | 0       |
++---------+---------+
+</code></pre><p>Create a instance:</p><pre><code># lxc launch centos76 ko1 --profile bridge
+Creating ko1
+# lxc ls
++------+---------+-----------------------+------+------------+-----------+
+| NAME |  STATE  |         IPV4          | IPV6 |    TYPE    | SNAPSHOTS |
++------+---------+-----------------------+------+------------+-----------+
+| ko1  | RUNNING | 10.137.149.190 (eth0) |      | PERSISTENT | 0         |
++------+---------+-----------------------+------+------------+-----------+
+</code></pre><h3 id=how-ko-works>How KO Works</h3><p>Bug fix1: conf/my.cnf mapping.<br>Bug fix2: could not running on lxc&rsquo;s docker-compose.</p><h3 id=on-adding-ubuntu>On adding Ubuntu</h3><p>Via following commands, we could use lxc for ubuntu20.04.</p><pre><code># qemu-img convert box.img box1.img
+# kpartx -av box1.img 
+# lvscan
+# mount /dev/vgubuntu/root /mnt7/
+# tar -czvf rootfs.tar.gz -C /mnt7 .
+# vim metadata.yaml
+architecture: &quot;x86_64&quot;
+creation_date: 1600908919 # To get current date in Unix time, use `date +%s` command
+properties:
+architecture: &quot;x86_64&quot;
+description: &quot;ubuntu20.04 for lxc&quot;
+os: &quot;ubuntu&quot;
+release: &quot;20.04&quot;
+# tar czvf metadata.tar.gz metadata.yaml
+# lxc image import metadata.tar.gz  rootfs.tar.gz --alias &quot;ubuntu20.04&quot;
+</code></pre><h3 id=on-adding-storage-in-cluster>On adding storage in cluster</h3><p>Via following commands:</p><pre><code>lxc cluster list
+# for getting the member name. 
+
+lxc storage create fastPool dir source=/media/md0/lxd --target arm-a1
+lxc storage create fastPool dir source=/media/md0/lxd --target arm-a2
+lxc storage create fastPool dir source=/media/md0/lxd --target arm-a3
+lxc storage create fastPool dir
+</code></pre><h3 id=x86-working-tips>x86 working tips</h3><p>working tips for creating lxd cluster:</p><pre><code>sudo apt install linux-image-extra-virtual linux-generic
+cat /proc/sys/net/bridge/bridge-nf-call-iptables
+1
+lxc profile copy default k8s
+lxc profile edit k8s 
+config:
+  environment.TZ: Asia/Bangkok
+  raw.lxc: |
+    lxc.apparmor.profile=unconfined
+    lxc.cgroup.devices.allow = a
+    lxc.mount.auto=proc:rw sys:rw
+    lxc.cap.drop=
+  security.nesting: &quot;true&quot;
+  security.privileged: &quot;true&quot;
+description: Default LXD profile
+devices:
+  apparmor:
+    path: /sys/module/apparmor/parameters/enabled
+    source: /dev/null
+    type: disk
+  eth0:
+    name: eth0
+    nictype: bridged
+    parent: br10
+    type: nic
+  hashsize:
+    path: /sys/module/nf_conntrack/parameters/hashsize
+    source: /dev/null
+    type: disk
+  kmsg:
+    path: /dev/kmsg
+    source: /dev/kmsg
+    type: unix-char
+  root:
+    path: /
+    pool: default
+    type: disk
+name: k8s
+used_by:
+- /1.0/containers/k1
+- /1.0/containers/k2
+- /1.0/containers/k3
+lxc launch ubuntu:18.04 k1 -p k8s
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/09/07/workingtiponaarchftp/>Workingtiponaarchftp</a></h1><span class=post-date>Sep 7, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=ftpd服务端>ftpd服务端</h3><p>加载镜像:</p><pre><code># docker load&lt;ftpd.tar
+Loaded image: gists/pure-ftpd:arm64
+# docker images | grep ftpd
+gists/pure-ftpd                                                            arm64               1b3e76d8756b        3 months ago        5.77MB
+</code></pre><p>运行以下命令, 创建一个pure-ftpd实例, 当前目录下的ftpd含有ftpd的配置文件(pureftpd)及存储目录(data):</p><pre><code># mkdir ftpd
+# cd ftpd
+# mkdir pureftpd data
+# docker run -d --restart unless-stopped --name pure-ftpd  -e MIN_PASV_PORT=40000 -e MAX_PASV_PORT=40009 -p 21:21  -p 40000-40009:40000-40009  -v $(pwd)/pureftpd:/etc/pureftpd  -v $(pwd)/data:/home/ftpuser gists/pure-ftpd:arm64
+</code></pre><p>运行以下命令配置pure-ftpd的权限，以及添加test用户，并刷新pure-ftpd本地配置文件:</p><pre><code> docker exec -it pure-ftpd chown ftpuser:ftpuser -R /home/ftpuser
+ docker exec -it pure-ftpd pure-pw useradd test -m -u ftpuser -d /home/ftpuser/test
+ docker exec -it pure-ftpd pure-pw mkdb
+</code></pre><h3 id=客户端>客户端</h3><p>举winscp ftp连接为例, 新建一个ftp连接:</p><p><img src=./images/2020_09_07_10_25_02_615x286.jpg alt=./images/2020_09_07_10_25_02_615x286.jpg></p><p>直接在winscp里拖拉实现上传下载:</p><p><img src=./images/2020_09_07_10_26_36_990x327.jpg alt=./images/2020_09_07_10_26_36_990x327.jpg></p><p>进度:</p><p><img src=./images/2020_09_07_10_29_46_649x286.jpg alt=./images/2020_09_07_10_29_46_649x286.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/08/27/offlinearm64desktopenvsetup/>OfflineArm64DesktopEnvSetup</a></h1><span class=post-date>Aug 27, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=download-via-docker>Download via docker</h3><p>Run a docker instance via:</p><pre><code>$ sudo docker run -v /mnt:/mnt -it ubuntu:focal-20200115 /bin/bash
+</code></pre><p>In docker instance, do following:</p><pre><code>rm -f /etc/apt/apt.conf.d/docker-clean
+sed -i 's/ports.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+cd /mnt
+apt-get -d -o dir::cache=`pwd` -o Debug::NoLocking=1 install xubuntu-desktop xubuntu-core chromium-browser  firefox xrdp virt-manager ubuntu-wallpapers xubuntu-community-wallpapers xubuntu-community-wallpapers-focal xubuntu-wallpapers lxd lxc
+apt-get install -y snapd
+snap download lxd
+snap download chromium
+
+</code></pre><h3 id=transfer>Transfer</h3><p>Transfer these packages into the offline environments, and do following:</p><pre><code># cd ~/pkgs
+# dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
+</code></pre><h3 id=install>Install</h3><p>In a ubuntu base environment, do following:</p><pre><code># vim /etc/apt/sources.list
+deb [trusted=yes] file:///home/test/focal/ ./
+# apt-get update -y
+# apt-get install -y  xubuntu-desktop xubuntu-core  firefox xrdp virt-manager ubuntu-wallpapers xubuntu-community-wallpapers xubuntu-community-wallpapers-focal xubuntu-wallpapers
+</code></pre><h3 id=configure-xrdp>Configure xrdp</h3><p>Configure xrdp via:</p><pre><code>$ sudo systemctl status xrdp
+$ sudo adduser xrdp ssl-cert  
+$ sudo systemctl restart xrdp
+$ sudo ufw disable
+$ echo xfce4-session &gt;~/.xsession
+$ sudo vim /etc/xrdp/startwm.sh
+#!/bin/sh
+
+if [ -r /etc/default/locale ]; then
+  . /etc/default/locale
+  export LANG LANGUAGE
+fi
+
+startxfce4
+$ sudo systemctl restart xrdp
+</code></pre><p>So now you could use xfce4 as your remote desktop to linux.</p><h3 id=snapd-installation>snapd installation</h3><p>In docker run:</p><pre><code># sudo apt-get install -y snapd
+# snap download lxd
+# snap download chromium
+# snap download gtk-common-themes
+# snap download core
+# snap download core18
+</code></pre><p>Install sequence:</p><pre><code># snap install  (core/core18/gtk-common-themes/lxd/chromium)
+chromium_1253.snap  core18_1888.snap  core_9806.snap                 gtk-common-themes_1506.snap  lxd_16946.snap
+chromium_1253.assert  core18_1888.assert  core_9806.assert  gtk-common-themes_1506.assert  lxd_16946.assert   
+</code></pre><h3 id=updated>Updated</h3><p>xrdp configuration:</p><pre><code>#!/bin/sh -e
+
+# Install XRDP.
+sudo apt install -y xrdp
+sudo sed -e 's/^new_cursors=true/new_cursors=false/g' \
+     -i /etc/xrdp/xrdp.ini
+sudo systemctl enable xrdp
+sudo systemctl restart xrdp
+
+# Load Ubuntu config.
+echo &quot;xfce4-session&quot; &gt; ~/.xsession
+D=/usr/share/xfce4:/usr/share/xubuntu:/usr/local/share
+D=${D}:/usr/share:/var/lib/snapd/desktop:/usr/share
+cat &lt;&lt;EOF &gt; ~/.xsessionrc
+export XDG_SESSION_DESKTOP=xubuntu
+export XDG_DATA_DIRS=${D}
+export XDG_CONFIG_DIRS=/etc/xdg/xdg-xubuntu:/etc/xdg:/etc/xdg
 EOF
 
-# lxc  profile edit ourk8s &lt; kubernetes.profile
+# Disable light-locker for avoiding error.
+sudo cp /usr/bin/light-locker /usr/bin/light-locker.orig
+cat &lt;&lt;EOF | sudo tee /usr/bin/light-locker
+#!/bin/sh
 
-</code></pre><p>检查<code>rong-2004</code>是否存在在镜像仓库上:</p>
-<pre><code># lxc image list
-+-----------+--------------+--------+-------------+---------+----------+------------------------------+
-|   ALIAS   | FINGERPRINT  | PUBLIC | DESCRIPTION |  ARCH   |   SIZE   |         UPLOAD DATE          |
-+-----------+--------------+--------+-------------+---------+----------+------------------------------+
-| rong-2004 | f511553a81a9 | no     |             | aarch64 | 674.77MB | Jun 22, 2020 at 6:11am (UTC) |
-+-----------+--------------+--------+-------------+---------+----------+------------------------------+
+# The light-locker uses XDG_SESSION_PATH provided by lightdm.
+if [ ! -z &quot;\${XDG_SESSION_PATH}&quot; ]; then
+  /usr/bin/light-locker.orig
+else
+  # Disable light-locker in XRDP.
+  true
+fi
+EOF
+sudo chmod a+x /usr/bin/light-locker
+</code></pre><h3 id=final-script>Final script</h3><p>Final script is listed as following:</p><pre><code>#!/bin/bash
+sudo cp -r focal /home/test/
+echo 'deb [trusted=yes] file:///home/test/focal/ ./'|sudo tee -a /etc/apt/sources.list
+sudo apt-get update -y
+sudo apt-get install -y xubuntu-desktop xubuntu-core  firefox xrdp virt-manager ubuntu-wallpapers xubuntu-community-wallpapers xubuntu-community-wallpapers-focal xubuntu-wallpapers 
+sudo adduser xrdp ssl-cert  
+sudo systemctl restart xrdp
+sudo ufw disable
 
-</code></pre><p>创建3个lxc容器:</p>
-<pre><code># lxc launch rong-2004 k8s1 --profile ourk8s &amp;&amp; lxc launch rong-2004 k8s2 --profile ourk8s &amp;&amp; lxc launch rong-2004 k8s3 --profile ourk8s
-Creating k8s1
-Starting k8s1
-Creating k8s2
-Starting k8s2
-Creating k8s3
-Starting k8s3
-</code></pre><p>等待大约2分钟等待容器启动完毕:</p>
-<pre><code># lxc ls
-+---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
-|  NAME   |  STATE  |            IPV4            |                     IPV6                      |    TYPE    | SNAPSHOTS |
-+---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
-| k8s1    | RUNNING | 10.230.146.83 (eth0)       | fd42:6fd0:9ed5:600b:216:3eff:fede:3897 (eth0) | PERSISTENT | 0         |
-+---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
-| k8s2    | RUNNING | 10.230.146.201 (eth0)      | fd42:6fd0:9ed5:600b:216:3eff:fed1:ab8a (eth0) | PERSISTENT | 0         |
-+---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
-| k8s3    | RUNNING | 10.230.146.33 (eth0)       | fd42:6fd0:9ed5:600b:216:3eff:fef8:f20c (eth0) | PERSISTENT | 0         |
-+---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
+sudo sed -e 's/^new_cursors=true/new_cursors=false/g' \
+	     -i /etc/xrdp/xrdp.ini
+sudo systemctl enable xrdp
+sudo systemctl restart xrdp
 
-</code></pre><p>ssh到 <code>k8s1</code> 上执行安装:</p>
-<pre><code># scp -r root@192.192.189.128:/media/sdd/20200617/Rong-v2006-arm .
-</code></pre><p>注意: 以20200617/Rong-v2006-arm下的部署文件才可以部署在lxc里. <br>
-注意: 相关更改已同步在外网.</p>
-<p>更改IP配置并执行<code>install.sh basic</code>安装:</p>
-<pre><code>root@node:/home/test/Rong-v2006-arm# cat hosts.ini 
-[all]
-focal-1 ansible_host=10.230.146.83 ip=10.230.146.83
-focal-2 ansible_host=10.230.146.201 ip=10.230.146.201
-focal-3 ansible_host=10.230.146.33 ip=10.230.146.33
+# Load Ubuntu config.
+echo &quot;xfce4-session&quot; &gt; ~/.xsession
+D=/usr/share/xfce4:/usr/share/xubuntu:/usr/local/share
+D=${D}:/usr/share:/var/lib/snapd/desktop:/usr/share
+cat &lt;&lt;EOF &gt; ~/.xsessionrc
+export XDG_SESSION_DESKTOP=xubuntu
+export XDG_DATA_DIRS=${D}
+export XDG_CONFIG_DIRS=/etc/xdg/xdg-xubuntu:/etc/xdg:/etc/xdg
+EOF
 
-[kube-deploy]
-focal-1
+# Disable light-locker for avoiding error.
+sudo cp /usr/bin/light-locker /usr/bin/light-locker.orig
+cat &lt;&lt;EOF | sudo tee /usr/bin/light-locker
+#!/bin/sh
 
-[kube-master]
-focal-1
-focal-2
+# The light-locker uses XDG_SESSION_PATH provided by lightdm.
+if [ ! -z &quot;\${XDG_SESSION_PATH}&quot; ]; then
+  /usr/bin/light-locker.orig
+else
+  # Disable light-locker in XRDP.
+  true
+fi
+EOF
+sudo chmod a+x /usr/bin/light-locker
 
-[etcd]
-focal-1
-focal-2
-focal-3
+# Install snapd
+sudo snap ack snap/chromium_1253.assert
+sudo snap ack snap/core18_1888.assert
+sudo snap ack snap/core_9806.assert
+sudo snap ack snap/gtk-common-themes_1506.assert
+sudo snap ack snap/lxd_16946.assert
 
-[kube-node]
-focal-1
-focal-2
-focal-3
+sudo snap install snap/core_9806.snap
+sudo snap install snap/core18_1888.snap
+sudo snap install snap/gtk-common-themes_1506.snap
+sudo snap install snap/chromium_1253.snap
+#sudo snap install snap/lxd_16946.snap
 
-[k8s-cluster:children]
-kube-master
-kube-node
+</code></pre><p>New user will be added if you want to create new session.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/07/29/bbbhidworkingtips/>BBBHIDWorkingTips</a></h1><span class=post-date>Jul 29, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>Preparation</h3><p>The system is:</p><pre><code>debian@beaglebone:~$ cat /etc/issue
+Debian GNU/Linux 9 \n \l
+BeagleBoard.org Debian Stretch imgtec Image 2020-04-06
+Support: http://elinux.org/Beagleboard:BeagleBoneBlack_Debian
+default username:password is [debian:temppwd]
+debian@beaglebone:~$ uname -a
+Linux beaglebone 4.14.108-ti-r131 #1stretch SMP PREEMPT Tue Mar 24 19:18:37 UTC 2020 armv7l GNU/Linux
+</code></pre><p>Change password via <code>passwd</code>.<br>Enlarge the partition from 4GB to 32GB(32 GB disk)</p><pre><code>root@beaglebone:/home/debian# /opt/scripts/tools/grow_partition.sh 
+# vim /etc/network/interfaces
+auto eth0
+iface eth0 inet dhcp
+# reboot
+##### Checking #############
+debian@beaglebone:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            217M     0  217M   0% /dev
+tmpfs            49M  5.2M   44M  11% /run
+/dev/mmcblk0p1   30G  2.5G   26G   9% /
+</code></pre><p>Edit the sources.list configuration:</p><pre><code>$ cat /etc/apt/sources.list
+deb http://mirrors.ustc.edu.cn/debian stretch main contrib non-free
+#deb-src http://mirrors.ustc.edu.cn/debian stretch main contrib non-free
 
-[all:vars]
-ansible_ssh_user=root
-ansible_ssh_private_key_file=./.rong/deploy.key
-root@node:/home/test/Rong-v2006-arm# ./install.sh basic
-</code></pre><p>安装完毕后,检查是否运行正常:</p>
-<pre><code>root@node:/home/test/Rong-v2006-arm# kubectl get nodes
-NAME      STATUS   ROLES    AGE     VERSION
-focal-1   Ready    master   9m28s   v1.17.6
-focal-2   Ready    master   8m1s    v1.17.6
-focal-3   Ready    &lt;none&gt;   5m57s   v1.17.6
-root@node:/home/test/Rong-v2006-arm# kubectl get pods 
-No resources found in default namespace.
-root@node:/home/test/Rong-v2006-arm# kubectl get pods  --all-namespaces
-NAMESPACE     NAME                                          READY   STATUS             RESTARTS   AGE
-kube-system   calico-kube-controllers-6df95cc8f5-n5b75      1/1     Running            0          4m38s
-kube-system   calico-node-88xxf                             1/1     Running            1          5m31s
-kube-system   calico-node-mnjpr                             1/1     Running            1          5m31s
-kube-system   calico-node-sz4v8                             1/1     Running            1          5m31s
-kube-system   coredns-76798d84dd-knq4j                      1/1     Running            0          3m54s
-kube-system   coredns-76798d84dd-llrlt                      1/1     Running            0          4m11s
-kube-system   dns-autoscaler-7b6dc7cdb9-2vgfs               1/1     Running            0          4m4s
-kube-system   kube-apiserver-focal-1                        1/1     Running            0          9m12s
-kube-system   kube-apiserver-focal-2                        1/1     Running            0          7m47s
-kube-system   kube-controller-manager-focal-1               1/1     Running            0          9m12s
-kube-system   kube-controller-manager-focal-2               1/1     Running            0          7m46s
-kube-system   kube-proxy-2nms7                              1/1     Running            0          6m2s
-kube-system   kube-proxy-9cwpm                              1/1     Running            0          6m
-kube-system   kube-proxy-nkd5r                              1/1     Running            0          6m4s
-kube-system   kube-scheduler-focal-1                        1/1     Running            0          9m12s
-kube-system   kube-scheduler-focal-2                        1/1     Running            0          7m46s
-kube-system   kubernetes-dashboard-5d5cb8976f-2hdtq         1/1     Running            0          4m1s
-kube-system   kubernetes-metrics-scraper-747b4fd5cd-vhfr5   1/1     Running            0          3m59s
-kube-system   metrics-server-849f86c88f-h6prj               1/2     CrashLoopBackOff   4          3m15s
-kube-system   nginx-proxy-focal-3                           1/1     Running            0          6m8s
-kube-system   tiller-deploy-56bc5dccc6-cfjkh                1/1     Running            0          3m34s
-</code></pre><h3 id="删除">删除</h3>
-<p>验证完毕后,可以删除不用的镜像:</p>
-<pre><code># lxc stop XXXXX 
-# lxc rm XXXXX
-</code></pre><p>删除中如果出现问题, 则手动更改容器中某文件权限后可以删除:</p>
-<pre><code>root@arm01:~/app# lxc rm kkkkk
-Error: error removing /var/lib/lxd/storage-pools/default/containers/kkkkk: rm: cannot remove '/var/lib/lxd/storage-pools/default/containers/kkkkk/rootfs/etc/resolv.conf': Operation not permitted
+deb http://mirrors.ustc.edu.cn/debian stretch-updates main contrib non-free
+#deb-src http://mirrors.ustc.edu.cn/debian stretch-updates main contrib non-free
 
-root@arm01:~/app# chattr  -i /var/lib/lxd/storage-pools/default/containers/kkkkk/rootfs/etc/resolv.conf
-root@arm01:~/app# lxc rm kkkkk
-
-</code></pre><h3 id="kpartx-issue">kpartx issue</h3>
-<p>List device mapping that would be created:</p>
-<pre><code># kpartx -l sgoeuog.img
-</code></pre><p>Create mappings/create dev for image:</p>
-<pre><code># kpartx -av gowgowu.img
-/dev/loop0
-
-/dev/mapper/loop0p1
-...
-/dev/mapper/loop0pn
-</code></pre>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/blog/2020/06/14/workingtipsharbor2.0/">WorkingTipsHarbor2.0</a>
-      </h1>
-      <span class="post-date">Jun 14, 2020 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="download-installation-files">Download Installation files</h3>
-<p>From following url:</p>
-<p><a href="https://github.com/goharbor/harbor/releases/download/v2.0.0/harbor-offline-installer-v2.0.0.tgz">https://github.com/goharbor/harbor/releases/download/v2.0.0/harbor-offline-installer-v2.0.0.tgz</a></p>
-<h3 id="config-install">Config, Install</h3>
-<p>make new cert files via:</p>
-<pre><code>TBD
-</code></pre><p>Modify the <code>harbor.yml</code> file:</p>
-<pre><code>5c5
-&lt; hostname: portus.fugouou.com
----
-&gt; hostname: reg.mydomain.com
-15c15
-&lt;   port: 5000
----
-&gt;   port: 443
-17,18c17,18
-&lt;   certificate: /data/cert/portus.crt
-&lt;   private_key: /data/cert/portus.key
----
-&gt;   certificate: /your/certificate/path
-&gt;   private_key: /your/private/key/path
-29c29
-&lt; external_url: https://portus.fugouou.com:5000
----
-&gt; # external_url: https://reg.mydomain.com:8433
-78c78
-&lt;   skip_update: true
----
-&gt;   skip_update: false
-</code></pre><p>use the newly generated cert files:</p>
-<pre><code># mkdir -p /data/cert
-# cp ***.crt ***.key /data/cert
-</code></pre><p>Trivy offline database import:</p>
-<pre><code># ls /data/trivy-adapter/trivy/*
-/data/trivy-adapter/trivy/metadata.json  /data/trivy-adapter/trivy/trivy.db
-
-/data/trivy-adapter/trivy/db:
-metadata.json  trivy.db
-# chmod a+w -R /data/trivy-adapter/trivy/db
-</code></pre><p>Install via:</p>
-<pre><code># ./install.sh --with-trivy --with-notary --with-chartmuseum
-# docker ps
-afe49ec2a626        goharbor/harbor-jobservice:v2.0.0      &quot;/harbor/entrypoint.…&quot;   14 minutes ago      Up 14 minutes (healthy)                                                                          harbor-jobservice
-7ecf87cdc70b        goharbor/nginx-photon:v2.0.0           &quot;nginx -g 'daemon of…&quot;   14 minutes ago      Up 14 minutes (healthy)   0.0.0.0:4443-&gt;4443/tcp, 0.0.0.0:80-&gt;8080/tcp, 0.0.0.0:5000-&gt;8443/tcp   nginx
-41fee7abd2a1        goharbor/notary-server-photon:v2.0.0   &quot;/bin/sh -c 'migrate…&quot;   14 minutes ago      Up 14 minutes                                                                                    notary-server
-0f635fccd2fe        goharbor/notary-signer-photon:v2.0.0   &quot;/bin/sh -c 'migrate…&quot;   14 minutes ago      Up 14 minutes                                                                                    notary-signer
-ebcd78417fdf        goharbor/harbor-core:v2.0.0            &quot;/harbor/entrypoint.…&quot;   14 minutes ago      Up 14 minutes (healthy)                                                                          harbor-core
-28cca5aa3325        goharbor/trivy-adapter-photon:v2.0.0   &quot;/home/scanner/entry…&quot;   14 minutes ago      Up 14 minutes (healthy)   8080/tcp                                                               trivy-adapter
-7823c38b71e9        goharbor/registry-photon:v2.0.0        &quot;/home/harbor/entryp…&quot;   14 minutes ago      Up 14 minutes (healthy)   5000/tcp                                                               registry
-38b6bc813268        goharbor/harbor-portal:v2.0.0          &quot;nginx -g 'daemon of…&quot;   14 minutes ago      Up 14 minutes (healthy)   8080/tcp                                                               harbor-portal
-ba6c5f9473b9        goharbor/redis-photon:v2.0.0           &quot;redis-server /etc/r…&quot;   14 minutes ago      Up 14 minutes (healthy)   6379/tcp                                                               redis
-8ce7deffd0c8        goharbor/harbor-registryctl:v2.0.0     &quot;/home/harbor/start.…&quot;   14 minutes ago      Up 14 minutes (healthy)                                                                          registryctl
-bd3085fb3b97        goharbor/chartmuseum-photon:v2.0.0     &quot;./docker-entrypoint…&quot;   14 minutes ago      Up 14 minutes (healthy)   9999/tcp                                                               chartmuseum
-d3e90aa5d4d8        goharbor/harbor-db:v2.0.0              &quot;/docker-entrypoint.…&quot;   14 minutes ago      Up 14 minutes (healthy)   5432/tcp                                                               harbor-db
-1b989340ff76        goharbor/harbor-log:v2.0.0             &quot;/bin/sh -c /usr/loc…&quot;   14 minutes ago      Up 14 minutes (healthy)   127.0.0.1:1514-&gt;10514/tcp                                              harbor-log
-</code></pre><h3 id="configure-and-use">Configure and use</h3>
-<p>In every node running docker doing(Ubuntu):</p>
-<pre><code># cp gwougou.crt  /usr/local/share/ca-certificates
-# update-ca-certificates
-# systemctl restart docker
-# docker login -uadmin -pHarbor12345 xagowu.gowugoe.com
-</code></pre>
-      
-    </div>
-    
-    
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/page/27/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/27/">27</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/page/28/">28</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/29/">29</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/221/">221</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/page/29/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/page/221/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
-
-
-  </div>
-</div>
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+deb http://mirrors.ustc.edu.cn/debian-security stretch/updates main contrib non-free
+#deb-src http://mirrors.ustc.edu.cn/debian-security stretch/updates main contrib non-free
+#  apt-get update -y 
+# apt-get install -y libudev-dev libusb-dev awesome iotop
+</code></pre><h3 id=usb-hid>USB HID</h3></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/27/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/27/>27</a></li><li class="page-item active"><a class=page-link href=/page/28/>28</a></li><li class=page-item><a class=page-link href=/page/29/>29</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/29/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

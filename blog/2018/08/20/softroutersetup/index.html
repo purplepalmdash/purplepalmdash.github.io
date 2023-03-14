@@ -1,147 +1,7 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>SoftRouterSetup &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="SoftRouterSetup">
-  <meta name="keywords" content="Linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>SoftRouterSetup</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Aug 20, 2018 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#目的">目的</a></li>
-        <li><a href="#准备">准备</a></li>
-        <li><a href="#配置">配置</a></li>
-        <li><a href="#转发">转发</a></li>
-        <li><a href="#访问网段">访问网段</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="目的">目的</h3>
-<p>设置内网的独立实验网段，需要一个软路由，做转发。</p>
-<h3 id="准备">准备</h3>
-<p>Debian 9.3.0 ISO.  <br>
-虚拟机，1核, 512M, debian系统安装, 20G硬盘。<br>
-最小化安装 Debian x86_64系统。 <br>
-双网卡，一个连接bridged网络，另一个连接本机上的192.168.122.0/24网络，该网络为虚拟机的默认网络，可通过NAT转换到外头。</p>
-<h3 id="配置">配置</h3>
-<p>安装必要的包:</p>
-<pre><code># apt-get update
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>SoftRouterSetup &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="SoftRouterSetup"><meta name=keywords content="Linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>SoftRouterSetup</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Aug 20, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#目的>目的</a></li><li><a href=#准备>准备</a></li><li><a href=#配置>配置</a></li><li><a href=#转发>转发</a></li><li><a href=#访问网段>访问网段</a></li></ul></li></ul></nav></div><h3 id=目的>目的</h3><p>设置内网的独立实验网段，需要一个软路由，做转发。</p><h3 id=准备>准备</h3><p>Debian 9.3.0 ISO.<br>虚拟机，1核, 512M, debian系统安装, 20G硬盘。<br>最小化安装 Debian x86_64系统。<br>双网卡，一个连接bridged网络，另一个连接本机上的192.168.122.0/24网络，该网络为虚拟机的默认网络，可通过NAT转换到外头。</p><h3 id=配置>配置</h3><p>安装必要的包:</p><pre><code># apt-get update
 # apt-get install net-tools isc-dhcp-server
-</code></pre><p>配置网络:</p>
-<pre><code># vim /etc//network/interfaces
+</code></pre><p>配置网络:</p><pre><code># vim /etc//network/interfaces
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
 
@@ -162,8 +22,7 @@ auto ens4
 iface ens4 inet static
 address 10.33.34.1
 netmask 255.255.255.0
-</code></pre><p>配置dhcpd服务器:</p>
-<pre><code># vim /etc/dhcp/dhcpd.conf 
+</code></pre><p>配置dhcpd服务器:</p><pre><code># vim /etc/dhcp/dhcpd.conf 
     # dhcpd.conf
     #
     # Sample configuration file for ISC dhcpd
@@ -307,36 +166,11 @@ netmask 255.255.255.0
     #	Separate multiple interfaces with spaces, e.g. &quot;eth0 eth1&quot;.
     INTERFACESv4=&quot;ens4&quot;
     INTERFACESv6=&quot;&quot;
-</code></pre><p>现在重启服务:</p>
-<pre><code># systemctl restart isc-dhcp-server
-</code></pre><p>重启完毕后，所有bridged的虚拟机将得到同样的地址段的地址。</p>
-<h3 id="转发">转发</h3>
-<p>转发到某网段,更改地址ens3为该网段(192.192.189.109)，然后:</p>
-<pre><code># iptables -t nat -A POSTROUTING -s 10.33.34.0/24 -j SNAT --to-source 192.192.189.109
-</code></pre><p>开启转发:</p>
-<pre><code># vim /etc/sysctl.conf
+</code></pre><p>现在重启服务:</p><pre><code># systemctl restart isc-dhcp-server
+</code></pre><p>重启完毕后，所有bridged的虚拟机将得到同样的地址段的地址。</p><h3 id=转发>转发</h3><p>转发到某网段,更改地址ens3为该网段(192.192.189.109)，然后:</p><pre><code># iptables -t nat -A POSTROUTING -s 10.33.34.0/24 -j SNAT --to-source 192.192.189.109
+</code></pre><p>开启转发:</p><pre><code># vim /etc/sysctl.conf
 net.ipv4.ip_forward=1
-</code></pre><p>安装iptables-persistent:</p>
-<pre><code># apt-get install iptables-persistent
-</code></pre><p>这样就打通了两个网段之间的联系。</p>
-<h3 id="访问网段">访问网段</h3>
-<p>访问该网段，Linux下添加:</p>
-<pre><code># route add -net 10.33.34.0/24 gw 192.192.189.109
-</code></pre><p>Windows:</p>
-<pre><code># route add 10.33.34.1 mask 255.255.255.0 192.192.189.109
-</code></pre><p>But in windows it didn&rsquo;t work.</p>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre><p>安装iptables-persistent:</p><pre><code># apt-get install iptables-persistent
+</code></pre><p>这样就打通了两个网段之间的联系。</p><h3 id=访问网段>访问网段</h3><p>访问该网段，Linux下添加:</p><pre><code># route add -net 10.33.34.0/24 gw 192.192.189.109
+</code></pre><p>Windows:</p><pre><code># route add 10.33.34.1 mask 255.255.255.0 192.192.189.109
+</code></pre><p>But in windows it didn&rsquo;t work.</p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

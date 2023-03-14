@@ -1,134 +1,5 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>Write Python Weather APP on Heroku(3) &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="">
-  <meta name="keywords" content="unix,virtualization,embedded,linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>Write Python Weather APP on Heroku(3)</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">May 9, 2014 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#database-introduction">Database Introduction</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="database-introduction">Database Introduction</h3>
-<h4 id="heroku-postgres-installation">Heroku Postgres Installation</h4>
-<p>Before using postgres, we have to install this add-ons, we call this step &ldquo;attach Heroku POSTGRES to heroku application&rdquo;:</p>
-<pre><code>$ heroku addons
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Write Python Weather APP on Heroku(3) &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>Write Python Weather APP on Heroku(3)</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>May 9, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#database-introduction>Database Introduction</a></li></ul></li></ul></nav></div><h3 id=database-introduction>Database Introduction</h3><h4 id=heroku-postgres-installation>Heroku Postgres Installation</h4><p>Before using postgres, we have to install this add-ons, we call this step &ldquo;attach Heroku POSTGRES to heroku application&rdquo;:</p><pre><code>$ heroku addons
 python-weather-app has no add-ons.
 $ heroku addons:add heroku-postgresql:dev
 Adding heroku-postgresql:dev on python-weather-app... done, v7 (free)
@@ -140,13 +11,10 @@ Use `heroku addons:docs heroku-postgresql` to view documentation.
 $ heroku addons | grep POSTGRES
 heroku-postgresql:dev  HEROKU_POSTGRESQL_OLIVE
 
-</code></pre><p>If you want to refer the documentation of heroku postgres, simply use following command:</p>
-<pre><code>$ heroku addons:docs heroku-postgresql
+</code></pre><p>If you want to refer the documentation of heroku postgres, simply use following command:</p><pre><code>$ heroku addons:docs heroku-postgresql
 Opening heroku-postgresql docs... done
 
-</code></pre><p>A new browser window will be opened and you can view the help here. <br>
-View the configuration of heroku postgres via:</p>
-<pre><code>$ heroku pg:info
+</code></pre><p>A new browser window will be opened and you can view the help here.<br>View the configuration of heroku postgres via:</p><pre><code>$ heroku pg:info
 === HEROKU_POSTGRESQL_OLIVE_URL (DATABASE_URL)
 Plan:        Dev
 Status:      Available
@@ -159,15 +27,12 @@ Rows:        0/10000 (In compliance)
 Fork/Follow: Unsupported
 Rollback:    Unsupported
 
-</code></pre><p>10000 rows means, if we use 24 rows per day, then around 1 year this database will be fulfilled. But anyway, at the very beginning developing, we won&rsquo;t consider the latter problem. <br>
-After you installed the postgre for around 5 minutes, you can use following commands for displaying your database:</p>
-<pre><code>$ heroku pg:ps
+</code></pre><p>10000 rows means, if we use 24 rows per day, then around 1 year this database will be fulfilled. But anyway, at the very beginning developing, we won&rsquo;t consider the latter problem.<br>After you installed the postgre for around 5 minutes, you can use following commands for displaying your database:</p><pre><code>$ heroku pg:ps
  pid | state | source | running_for | waiting | query 
 -----+-------+--------+-------------+---------+-------
 (0 rows)
 
-</code></pre><p>Now you can connect to pg via following command:</p>
-<pre><code>$ heroku pg:psql
+</code></pre><p>Now you can connect to pg via following command:</p><pre><code>$ heroku pg:psql
 ---&gt; Connecting to HEROKU_POSTGRESQL_OLIVE_URL (DATABASE_URL)
 psql (9.3.4)
 SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
@@ -175,25 +40,20 @@ Type &quot;help&quot; for help.
 
 d47ena4men35jn=&gt; 
 
-</code></pre><p>What for next?</p>
-<h4 id="local-postgres-installation">Local Postgres Installation</h4>
-<p>Install postgres via:</p>
-<pre><code>$ sudo pacamn -S postgre
+</code></pre><p>What for next?</p><h4 id=local-postgres-installation>Local Postgres Installation</h4><p>Install postgres via:</p><pre><code>$ sudo pacamn -S postgre
 $ sudo -i -u postgres
 [postgres@DashArch ~]$ initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
 # In another terminal, enable and start the service
 $ sudo systemctl start postgresql
 $ sudo systemctl enable postgresql
 
-</code></pre><p>Now add current user into the postgres user:</p>
-<pre><code>[postgres@DashArch ~]$ createuser --interactive
+</code></pre><p>Now add current user into the postgres user:</p><pre><code>[postgres@DashArch ~]$ createuser --interactive
 Enter name of role to add: Trusty
 Shall the new role be a superuser? (y/n) y
 # Now 'Trusty' as postgres user, can create the weatherData database. 
 $ createdb weatherData
 
-</code></pre><p>Basic user of postgres:</p>
-<pre><code>$ psql -d weatherData   
+</code></pre><p>Basic user of postgres:</p><pre><code>$ psql -d weatherData   
 psql (9.3.4)
 Type &quot;help&quot; for help.
 
@@ -202,14 +62,11 @@ weatherData=# \help
 weatherData=# \q
 $ 
 
-</code></pre><h4 id="connect-database-in-pythonlocal-way">Connect Database In Python(Local Way)</h4>
-<p>Install the python packages:</p>
-<pre><code>$ pip install psycopg2
+</code></pre><h4 id=connect-database-in-pythonlocal-way>Connect Database In Python(Local Way)</h4><p>Install the python packages:</p><pre><code>$ pip install psycopg2
 $ pip freeze 
 # Add the psycopg2 related line into the requirements.txt
 
-</code></pre><p>A simple example on how to connect Database and view the content of the database:</p>
-<pre><code>[Trusty@~]$ sudo -u postgres createuser jim
+</code></pre><p>A simple example on how to connect Database and view the content of the database:</p><pre><code>[Trusty@~]$ sudo -u postgres createuser jim
 [Trusty@~]$ sudo -u postgres createdb testdb -O jim
 [Trusty@~/code/herokuWeatherApp]$ source venv/bin/activate
 (venv)[Trusty@~/code/herokuWeatherApp]$ python
@@ -229,22 +86,17 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 &gt;&gt;&gt; quit()
 (venv)[Trusty@~/code/herokuWeatherApp]$ 
 
-</code></pre><h4 id="connect-heroku-postgres">Connect Heroku Postgres</h4>
-<p>Now commit our modifications into heroku, and verify to see if we can really do some magic things with postgres:</p>
-<pre><code>$ git add .
+</code></pre><h4 id=connect-heroku-postgres>Connect Heroku Postgres</h4><p>Now commit our modifications into heroku, and verify to see if we can really do some magic things with postgres:</p><pre><code>$ git add .
 $ git commit -m &quot;commit for postgres&quot;
 $ git push heroku master
 
-</code></pre><p>Install a new library:</p>
-<pre><code>$ pip install flask-sqlalchemy
+</code></pre><p>Install a new library:</p><pre><code>$ pip install flask-sqlalchemy
 $ pip freeze  # grep the line and add it into the requirement.txt
 
-</code></pre><p>Promoting the URL to DATABASE_URL:</p>
-<pre><code>$ heroku pg:promote HEROKU_POSTGRESQL_OLIVE_URL
+</code></pre><p>Promoting the URL to DATABASE_URL:</p><pre><code>$ heroku pg:promote HEROKU_POSTGRESQL_OLIVE_URL
 Promoting HEROKU_POSTGRESQL_OLIVE_URL (DATABASE_URL) to DATABASE_URL... done
 
-</code></pre><p>Then Add the following lines into genhtml.py:</p>
-<pre><code>from flask.ext.sqlalchemy import SQLAlchemy
+</code></pre><p>Then Add the following lines into genhtml.py:</p><pre><code>from flask.ext.sqlalchemy import SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db = SQLAlchemy(app)
 
@@ -262,9 +114,7 @@ class User(db.Model):
         return '&lt;Name %r&gt;' % self.name
 
 
-</code></pre><p>Commit again and begin for verifying the database via CLI: <br>
-Create a python interactive command window via:</p>
-<pre><code>&gt;&gt;&gt; from genhtml import db
+</code></pre><p>Commit again and begin for verifying the database via CLI:<br>Create a python interactive command window via:</p><pre><code>&gt;&gt;&gt; from genhtml import db
 &gt;&gt;&gt; db.create_all()
 &gt;&gt;&gt; from genhtml import User
 &gt;&gt;&gt; user = User('John Doe', 'john.doe@example.com')
@@ -275,8 +125,7 @@ Create a python interactive command window via:</p>
 [&lt;Name u'John Doe'&gt;]
 
 
-</code></pre><p>Now we can see 1 record has been inserted into the database:</p>
-<pre><code>[Trusty@~/code/herokuWeatherApp]$ heroku pg:info
+</code></pre><p>Now we can see 1 record has been inserted into the database:</p><pre><code>[Trusty@~/code/herokuWeatherApp]$ heroku pg:info
 === HEROKU_POSTGRESQL_OLIVE_URL (DATABASE_URL)
 Plan:        Dev
 Status:      Available
@@ -289,8 +138,7 @@ Rows:        1/10000 (In compliance)
 Fork/Follow: Unsupported
 Rollback:    Unsupported
 
-</code></pre><p>How to see the inserted data?</p>
-<pre><code>$ heroku pg:psql
+</code></pre><p>How to see the inserted data?</p><pre><code>$ heroku pg:psql
 ---&gt; Connecting to HEROKU_POSTGRESQL_OLIVE_URL (DATABASE_URL)
 psql (9.3.4)
 SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
@@ -326,19 +174,4 @@ d47ena4men35jn=&gt; SELECT * FROM public.user;
   1 | John Doe | john.doe@example.com
 (1 row)
 
-</code></pre><p>We can use python&rsquo;s interface for add/delete records, drop tables, etc.</p>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre><p>We can use python&rsquo;s interface for add/delete records, drop tables, etc.</p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,128 +1,7 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>Programming in C of FC tutorial 4 &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="">
-  <meta name="keywords" content="unix,virtualization,embedded,linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>Programming in C of FC tutorial 4</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Apr 8, 2014 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents"></nav>
-      </div>
-    <p>###Full Circle C 6
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Programming in C of FC tutorial 4 &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>Programming in C of FC tutorial 4</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Apr 8, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents></nav></div><p>###Full Circle C 6
 ####Using valgrid for memory check
-See <a href="www.valgrind.org">www.valgrind.org</a> for more information for using the valgrind available tools.  <br>
-memcheck is the main topic in this chapter.  <br>
-this tool override libc calls that deal with handling memory. And it will do some bookkeeping. is all memory given back to the system, and is all the allocated memory still reachable?</p>
-<pre><code>#include &lt;stdio.h&gt;
+See <a href=www.valgrind.org>www.valgrind.org</a> for more information for using the valgrind available tools.<br>memcheck is the main topic in this chapter.<br>this tool override libc calls that deal with handling memory. And it will do some bookkeeping. is all memory given back to the system, and is all the allocated memory still reachable?</p><pre><code>#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 
 void leak()
@@ -144,8 +23,7 @@ int main()
         return 0;
 }
 
-</code></pre><p>The result shows:</p>
-<pre><code>valgrind --leak-check=full --show-reachable=yes ./memleak
+</code></pre><p>The result shows:</p><pre><code>valgrind --leak-check=full --show-reachable=yes ./memleak
 ==2144== Memcheck, a memory error detector.
 ==2144== Copyright (C) 2002-2006, and GNU GPL'd, by Julian Seward et al.
 ==2144== Using LibVEX rev 1658, a library for dynamic binary translation.
@@ -189,8 +67,7 @@ malloc(15) in main: 0x40222a8
 ==2144==    still reachable: 15 bytes in 1 blocks.
 ==2144==         suppressed: 0 bytes in 0 blocks.
 
-</code></pre><p>If we change the code into following, this means valgrid won&rsquo;t interpret the output, so this will let the tracked memory add 10</p>
-<pre><code>#include &lt;stdio.h&gt;
+</code></pre><p>If we change the code into following, this means valgrid won&rsquo;t interpret the output, so this will let the tracked memory add 10</p><pre><code>#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 
 void leak()
@@ -212,8 +89,7 @@ int main()
         return 0;
 }
 
-</code></pre><p>Compile and verify:</p>
-<pre><code>gcc -Wall -g leak1.c -o memleak1
+</code></pre><p>Compile and verify:</p><pre><code>gcc -Wall -g leak1.c -o memleak1
 View the valgrind result:
 valgrind --leak-check=full --show-reachable=yes ./memleak1
 ==2190== Memcheck, a memory error detector.
@@ -260,8 +136,7 @@ malloc(15) in main: 0x40222a8
 ==2190==         suppressed: 0 bytes in 0 blocks.
 
 </code></pre><p>####exercise 1:
-vmstat is a tool which report system usage statistics, use strace to figure out which /proc/file(s) it uses to generate its output</p>
-<pre><code>execve(&quot;/usr/bin/vmstat&quot;, [&quot;vmstat&quot;], [/* 29 vars */]) = 0
+vmstat is a tool which report system usage statistics, use strace to figure out which /proc/file(s) it uses to generate its output</p><pre><code>execve(&quot;/usr/bin/vmstat&quot;, [&quot;vmstat&quot;], [/* 29 vars */]) = 0
 brk(0)                                  = 0x96b7000
 access(&quot;/etc/ld.so.preload&quot;, R_OK)      = -1 ENOENT (No such file or directory)
 open(&quot;/etc/ld.so.cache&quot;, O_RDONLY)      = 3
@@ -317,12 +192,9 @@ write(1, &quot; 0  0    120  16980  32852 67407&quot;..., 81 0  0    120  16980 
 ) = 81
 exit_group(0)                           = ?
 
-</code></pre><p>From the above output, we can see, it access /proc/stat and /proc/vmstat for output message. <br>
-####exercise 2
-Repeat the ltrace /strace example on wget with ivalid URL, TBD <br>
-####exercise 3
-Does valgrind automatically trace child process?</p>
-<pre><code>#include &lt;stdio.h&gt;
+</code></pre><p>From the above output, we can see, it access /proc/stat and /proc/vmstat for output message.<br>####exercise 2
+Repeat the ltrace /strace example on wget with ivalid URL, TBD<br>####exercise 3
+Does valgrind automatically trace child process?</p><pre><code>#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 
 /* For using fork() */
@@ -376,8 +248,7 @@ int main(void)
         return 0;
 }
 
-</code></pre><p>We use following command for tracing the output:</p>
-<pre><code>[root@localhost code]# valgrind --leak-check=full --show-reachable=yes ./memleak_fork
+</code></pre><p>We use following command for tracing the output:</p><pre><code>[root@localhost code]# valgrind --leak-check=full --show-reachable=yes ./memleak_fork
 ==2561== Memcheck, a memory error detector.
 ==2561== Copyright (C) 2002-2006, and GNU GPL'd, by Julian Seward et al.
 ==2561== Using LibVEX rev 1658, a library for dynamic binary translation.
@@ -446,19 +317,4 @@ malloc(10) points to: 0x40224e8
 ==2562==    still reachable: 0 bytes in 0 blocks.
 ==2562==         suppressed: 0 bytes in 0 blocks.
 
-</code></pre><p>From the above output, we can see valgrid also tracked the child process&rsquo;s memory usage.</p>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre><p>From the above output, we can see valgrid also tracked the child process&rsquo;s memory usage.</p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

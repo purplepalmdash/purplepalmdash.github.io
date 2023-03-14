@@ -1,140 +1,6 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>TipsOnLocalStorage &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="TipsOnLocalStorage">
-  <meta name="keywords" content="Linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>TipsOnLocalStorage</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">May 13, 2019 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#background">Background</a></li>
-        <li><a href="#enable">Enable</a></li>
-        <li><a href="#prepare">Prepare</a></li>
-        <li><a href="#usage">Usage</a></li>
-        <li><a href="#tbd">TBD</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="background">Background</h3>
-<p>For enabling local storage provision on kubespray, and make use of the local
-disk for pod storage usage.</p>
-<h3 id="enable">Enable</h3>
-<p>Enable the local storage pool via:</p>
-<pre><code># vim inventory/sample/group_vars/k8s-cluster/addons.yml
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>TipsOnLocalStorage &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="TipsOnLocalStorage"><meta name=keywords content="Linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>TipsOnLocalStorage</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>May 13, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#background>Background</a></li><li><a href=#enable>Enable</a></li><li><a href=#prepare>Prepare</a></li><li><a href=#usage>Usage</a></li><li><a href=#tbd>TBD</a></li></ul></li></ul></nav></div><h3 id=background>Background</h3><p>For enabling local storage provision on kubespray, and make use of the local
+disk for pod storage usage.</p><h3 id=enable>Enable</h3><p>Enable the local storage pool via:</p><pre><code># vim inventory/sample/group_vars/k8s-cluster/addons.yml
 	# Rancher Local Path Provisioner
 	local_path_provisioner_enabled: true
 	
@@ -153,9 +19,7 @@ disk for pod storage usage.</p>
 	      - &quot;2&quot;
 	    volume_mode: Filesystem
 	    fs_type: ext4
-</code></pre><h3 id="prepare">Prepare</h3>
-<p>Prepare the local storage via:</p>
-<pre><code># 
+</code></pre><h3 id=prepare>Prepare</h3><p>Prepare the local storage via:</p><pre><code># 
 # mkdir -p  /mnt/fast-disks/vol-alertmanager-res-alertmanager-0
 # mkdir -p  /mnt/fast-disks/vol-prometheus-res-prometheus-0
 # mkdir -p  /mnt/fast-disks/es-data-es-data-efk-cluster-default-0
@@ -168,45 +32,23 @@ disk for pod storage usage.</p>
 # mkfs.ext4 /mnt/vol-prometheus-res-prometheus-0
 # mkfs.ext4 /mnt/es-data-es-data-efk-cluster-default-0
 # mkfs.ext4 /mnt/es-data-es-master-efk-cluster-default-0
-</code></pre><p>Edit the <code>/etc/fstab</code> for mounting them automatically:</p>
-<pre><code>/mnt/vol-alertmanager-res-alertmanager-0	/mnt/fast-disks/vol-alertmanager-res-alertmanager-0 ext4	rw 0	1	
+</code></pre><p>Edit the <code>/etc/fstab</code> for mounting them automatically:</p><pre><code>/mnt/vol-alertmanager-res-alertmanager-0	/mnt/fast-disks/vol-alertmanager-res-alertmanager-0 ext4	rw 0	1	
 /mnt/vol-prometheus-res-prometheus-0	/mnt/fast-disks/vol-prometheus-res-prometheus-0	ext4	rw	0	1
 /mnt/es-data-es-data-efk-cluster-default-0	/mnt/fast-disks/es-data-es-data-efk-cluster-default-0	ext4	rw	0	1
 /mnt/es-data-es-master-efk-cluster-default-0	/mnt/fast-disks/es-data-es-master-efk-cluster-default-0	ext4	rw	0	1
-</code></pre><h3 id="usage">Usage</h3>
-<p>I prepare the storage for I use them in helm/charts, and helm/charts
+</code></pre><h3 id=usage>Usage</h3><p>I prepare the storage for I use them in helm/charts, and helm/charts
 automatically request the storage from storage class, thus I have to make
-<code>/mnt/fast-disks</code> as the  default storage class.</p>
-<pre><code># kubectl edit sc fast-disks
+<code>/mnt/fast-disks</code> as the default storage class.</p><pre><code># kubectl edit sc fast-disks
 kind: StorageClass
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {&quot;apiVersion&quot;:&quot;storage.k8s.io/v1&quot;,&quot;kind&quot;:&quot;StorageClass&quot;,&quot;metadata&quot;:{&quot;annotations&quot;:{},&quot;name&quot;:&quot;fast-disks&quot;},&quot;provisioner&quot;:&quot;kubernetes.io/no-provisioner&quot;,&quot;volumeBindingMode&quot;:&quot;WaitForFirstConsumer&quot;}
 +    storageclass.kubernetes.io/is-default-class: &quot;true&quot;
-</code></pre><p>verify:</p>
-<pre><code>root@localnode-1:/mnt# kubectl get pvc --all-namespaces
+</code></pre><p>verify:</p><pre><code>root@localnode-1:/mnt# kubectl get pvc --all-namespaces
 NAMESPACE    NAME                                      STATUS   VOLUME              CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 logging      es-data-es-data-efk-cluster-default-0     Bound    local-pv-7d48bf57   20Gi       RWO            fast-disks     4h17m
 logging      es-data-es-master-efk-cluster-default-0   Bound    local-pv-64a35d15   20Gi       RWO            fast-disks     4h17m
 monitoring   vol-alertmanager-res-alertmanager-0       Bound    local-pv-24ed6560   20Gi       RWO            fast-disks     4h21m
 monitoring   vol-prometheus-res-prometheus-0           Bound    local-pv-e998c4c2   20Gi       RWO            fast-disks     4h21m
-</code></pre><h3 id="tbd">TBD</h3>
-<ol>
-<li>Now to enlarge the disk?</li>
-</ol>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre><h3 id=tbd>TBD</h3><ol><li>Now to enlarge the disk?</li></ol></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

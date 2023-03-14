@@ -1,140 +1,15 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>Using SNMP for administ PogoPlug &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="">
-  <meta name="keywords" content="unix,virtualization,embedded,linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>Using SNMP for administ PogoPlug</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Oct 14, 2013 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents"></nav>
-      </div>
-    <p>###Preparation
-For using SNMP for administrating PogoPlug, we have to install following packages first:</p>
-<pre><code>	# apt-get install snmpd smartmontools super
-</code></pre><p>snmpd is the daemon process for snmp, smartmontools is the monitor tools for harddisk, super let you run daemon process in super priviledge.<br>
-###Configuration
-Configure snmp firstly.</p>
-<p>###Client Configuration
-Install the webserver using the following command:</p>
-<pre><code>	$ pacman -S apache php php-apache mariadb
-</code></pre><p>After install the packages, if you want to change the configuration file, directly edit the /etc/httpd/conf/httpd.conf or extra/httpd-default.conf, then using systemd to restart the httpd daemon.<br>
-Change priviledge of the public_html directory:</p>
-<pre><code>	$ chmod o+x ~
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Using SNMP for administ PogoPlug &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>Using SNMP for administ PogoPlug</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Oct 14, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents></nav></div><p>###Preparation
+For using SNMP for administrating PogoPlug, we have to install following packages first:</p><pre><code>	# apt-get install snmpd smartmontools super
+</code></pre><p>snmpd is the daemon process for snmp, smartmontools is the monitor tools for harddisk, super let you run daemon process in super priviledge.<br>###Configuration
+Configure snmp firstly.</p><p>###Client Configuration
+Install the webserver using the following command:</p><pre><code>	$ pacman -S apache php php-apache mariadb
+</code></pre><p>After install the packages, if you want to change the configuration file, directly edit the /etc/httpd/conf/httpd.conf or extra/httpd-default.conf, then using systemd to restart the httpd daemon.<br>Change priviledge of the public_html directory:</p><pre><code>	$ chmod o+x ~
 	$ chmod o_x ~/public_html
 	# A more safe way for controlling the safety
 	# usermod -aG groupname http
 </code></pre><p>###SSL Configuration
-Generate a new self-signed certificate(key size and the number of days of validity will be customized):</p>
-<pre><code>	# openssl genrsa -out server.key 2048
+Generate a new self-signed certificate(key size and the number of days of validity will be customized):</p><pre><code>	# openssl genrsa -out server.key 2048
 	Generating RSA private key, 2048 bit long modulus
 	..........................+++
 	...........................................................................................................................................................+++
@@ -168,12 +43,10 @@ Generate a new self-signed certificate(key size and the number of days of validi
 	Getting Private key
 	[root@XXXyyy conf]# ls
 	extra  httpd.conf  magic  mime.types  server.crt  server.csr  server.key
-</code></pre><p>Then, uncomment the line containing following lines in /etc/httpd/conf/httpd.conf:</p>
-<pre><code>	Include conf/extra/httpd-ssl.conf
+</code></pre><p>Then, uncomment the line containing following lines in /etc/httpd/conf/httpd.conf:</p><pre><code>	Include conf/extra/httpd-ssl.conf
 	Restart httpd to see the result. 
 </code></pre><p>###Enable php
-Place Following line after LoadModule dir_module modules/mod_dir.so in /etc/httpd/conf/httpd.conf:</p>
-<pre><code>	LoadModule php5_module modules/libphp5.so
+Place Following line after LoadModule dir_module modules/mod_dir.so in /etc/httpd/conf/httpd.conf:</p><pre><code>	LoadModule php5_module modules/libphp5.so
 Place following line at the end of the Include list:
 	Include conf/extra/php5_module.conf
 Make sure you uncommented following line:
@@ -186,12 +59,10 @@ Make sure libphp5.so is under /etc/httpd/modules, if not, you may forgot to inst
 Test the php via following line under test.php:
 	&lt;?php phpinfo(); ?&gt;
 </code></pre><p>###Configure MariaDB
-Uncomment at least one line under /etc/php/php.ini:</p>
-<pre><code>	extension=pdo_mysql.so
+Uncomment at least one line under /etc/php/php.ini:</p><pre><code>	extension=pdo_mysql.so
 	extension=mysqli.so
 	extension=mysql.so
-</code></pre><p>###Mysql Configuration</p>
-<pre><code>	[root@XXXyyy http]# mysqld_safe --skip-grant-tables &amp;
+</code></pre><p>###Mysql Configuration</p><pre><code>	[root@XXXyyy http]# mysqld_safe --skip-grant-tables &amp;
 	[1] 26315
 	[root@XXXyyy http]# 131014 16:55:07 mysqld_safe Logging to '/var/lib/mysql/XXXyyy.err'.
 	131014 16:55:07 mysqld_safe Starting mysqld daemon with databases from /var/lib/mysql
@@ -216,31 +87,23 @@ Uncomment at least one line under /etc/php/php.ini:</p>
 	Bye
 	[root@XXXyyy http]# systemctl start mysqld
 </code></pre><p>###CACTI configuration
-Install cacti via:</p>
-<pre><code>	$ pacman -S cacti
+Install cacti via:</p><pre><code>	$ pacman -S cacti
 	$ pacman -S php-snmp
-</code></pre><p>uncomment the following lines in /ec/php/php.ini:</p>
-<pre><code>	;extension=mysql.so
+</code></pre><p>uncomment the following lines in /ec/php/php.ini:</p><pre><code>	;extension=mysql.so
 	;extension=sockets.so
 	;extension=snmp.so
 	open_basedir=...
 	;date.timezone =
-</code></pre><p>Start mysqld:</p>
-<pre><code>	$ systemctl enable mysqld.service
+</code></pre><p>Start mysqld:</p><pre><code>	$ systemctl enable mysqld.service
 	$ systemctl start mysqld.service
-</code></pre><p>Start snmpd:</p>
-<pre><code>	$ systemctl enable snmpd
+</code></pre><p>Start snmpd:</p><pre><code>	$ systemctl enable snmpd
 	$ systemctl start snmpd
-</code></pre><p>Change the configuration file /etc/httpd/conf/httpd.conf, inside &lt;Directory &ldquo;/srv/http&quot;&gt; block, ensure you have:</p>
-<pre><code>	AllowOverride All
-</code></pre><p>Create the mysql based db:</p>
-<pre><code>	$ mysqladmin -u root -p create cacti
+</code></pre><p>Change the configuration file /etc/httpd/conf/httpd.conf, inside &lt;Directory &ldquo;/srv/http"> block, ensure you have:</p><pre><code>	AllowOverride All
+</code></pre><p>Create the mysql based db:</p><pre><code>	$ mysqladmin -u root -p create cacti
 	Enter password: 
-</code></pre><p>Generate the sql table using existing template:</p>
-<pre><code>	[root@XXXyyy http]# mysql -u root -p cacti &lt; /usr/share/webapps/cacti/cacti.sql
+</code></pre><p>Generate the sql table using existing template:</p><pre><code>	[root@XXXyyy http]# mysql -u root -p cacti &lt; /usr/share/webapps/cacti/cacti.sql
 	Enter password: 
-</code></pre><p>Update the configuration of the database, you can replace the password from &ldquo;some_password&rdquo; to your own password.</p>
-<pre><code>	[root@XXXyyy http]# mysql -u root -p
+</code></pre><p>Update the configuration of the database, you can replace the password from &ldquo;some_password&rdquo; to your own password.</p><pre><code>	[root@XXXyyy http]# mysql -u root -p
 	Enter password: 
 	Welcome to the MariaDB monitor.  Commands end with ; or \g.
 	Your MariaDB connection id is 10
@@ -258,33 +121,15 @@ Install cacti via:</p>
 	
 	MariaDB [(none)]&gt; exit
 	Bye
-</code></pre><p>Change the username and password of the config.php of cacti:</p>
-<pre><code>	$ vim  /usr/share/webapps/cacti/include/config.php
+</code></pre><p>Change the username and password of the config.php of cacti:</p><pre><code>	$ vim  /usr/share/webapps/cacti/include/config.php
 	$ database_username = &quot;cacti&quot;;
 	$ database_password = &quot;some_password&quot;;
-</code></pre><p>Clean up the cacti directory:</p>
-<pre><code>	chown -R http:http /usr/share/webapps/cacti/{rra,log}
+</code></pre><p>Clean up the cacti directory:</p><pre><code>	chown -R http:http /usr/share/webapps/cacti/{rra,log}
 	rm /usr/share/webapps/cacti/.htaccess
 	chmod +x /usr/share/webapps/cacti/{cmd,poller}.php /usr/share/webapps/cacti/lib/ping.php
-</code></pre><p>Install caccti-spine, a fast poller for cacti, from AUR. Change the db name and db password to:</p>
-<pre><code>	$ vim /etc/spine.conf
+</code></pre><p>Install caccti-spine, a fast poller for cacti, from AUR. Change the db name and db password to:</p><pre><code>	$ vim /etc/spine.conf
 	DB_User cacti
 	DB_Pass some_password
-</code></pre><p>Restart crontab:</p>
-<pre><code>	$ systemctl restart cronie.service
+</code></pre><p>Restart crontab:</p><pre><code>	$ systemctl restart cronie.service
 	$ systemctl restart httpd
-</code></pre>
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

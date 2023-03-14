@@ -1,223 +1,43 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>LinuxTips15 &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="LinuxTips15">
-  <meta name="keywords" content="Technology">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>LinuxTips15</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Sep 23, 2022 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#1-x11docker">1. x11docker</a></li>
-        <li><a href="#2-git-without-ssl-check">2. git without ssl check</a></li>
-        <li><a href="#3-home-sharing-environment">3. Home Sharing environment</a></li>
-        <li><a href="#4-system_reset-in-qemu">4. system_reset in qemu</a></li>
-        <li><a href="#5-uhd510-win7-driver">5. uhd510 win7 driver</a></li>
-        <li><a href="#6-intel-graphics">6. intel graphics</a></li>
-        <li><a href="#7-fix-zsh-issue">7. Fix zsh issue</a></li>
-        <li><a href="#8-enter-to-m">8. Enter to M</a></li>
-        <li><a href="#9-wine-with-input-method">9. wine with input method</a></li>
-        <li><a href="#10-os-probe-in-archlinux">10. os-probe in archlinux</a></li>
-        <li><a href="#11-ubuntu-upgrade-issue">11. ubuntu upgrade issue</a></li>
-        <li><a href="#12-ssh-to-dropbear">12. ssh to dropbear</a></li>
-        <li><a href="#13-autologin-xfce4">13. autologin xfce4</a></li>
-        <li><a href="#14-detect-pci-parameters">14. detect pci parameters</a></li>
-        <li><a href="#15-dnf-speed-up">15. dnf speed up</a></li>
-        <li><a href="#16-makepkg-ignore-check">16. makepkg ignore check</a></li>
-        <li><a href="#17-wine-app-fcitx">17. wine app fcitx</a></li>
-        <li><a href="#18-wine-app-fonts">18. wine app fonts</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="1-x11docker">1. x11docker</h3>
-<p>Start and specify vt:</p>
-<pre><code># x11docker --gpu --vt=2 --xorg x11docker/mate
-</code></pre><p>With internet and more features:</p>
-<pre><code># x11docker --gpu --vt=2 --network --desktop --init=systemd x11docker/deepin
-</code></pre><h3 id="2-git-without-ssl-check">2. git without ssl check</h3>
-<p>via:</p>
-<pre><code>export GIT_SSL_NO_VERIFY=1
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>LinuxTips15 &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="LinuxTips15"><meta name=keywords content="Technology"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>LinuxTips15</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Sep 23, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#1-x11docker>1. x11docker</a></li><li><a href=#2-git-without-ssl-check>2. git without ssl check</a></li><li><a href=#3-home-sharing-environment>3. Home Sharing environment</a></li><li><a href=#4-system_reset-in-qemu>4. system_reset in qemu</a></li><li><a href=#5-uhd510-win7-driver>5. uhd510 win7 driver</a></li><li><a href=#6-intel-graphics>6. intel graphics</a></li><li><a href=#7-fix-zsh-issue>7. Fix zsh issue</a></li><li><a href=#8-enter-to-m>8. Enter to M</a></li><li><a href=#9-wine-with-input-method>9. wine with input method</a></li><li><a href=#10-os-probe-in-archlinux>10. os-probe in archlinux</a></li><li><a href=#11-ubuntu-upgrade-issue>11. ubuntu upgrade issue</a></li><li><a href=#12-ssh-to-dropbear>12. ssh to dropbear</a></li><li><a href=#13-autologin-xfce4>13. autologin xfce4</a></li><li><a href=#14-detect-pci-parameters>14. detect pci parameters</a></li><li><a href=#15-dnf-speed-up>15. dnf speed up</a></li><li><a href=#16-makepkg-ignore-check>16. makepkg ignore check</a></li><li><a href=#17-building-on-cdesktop>17. building on cdesktop</a></li><li><a href=#18-markdown-in-confluence>18. markdown in confluence</a></li><li><a href=#19-wine-app-fcitx>19. wine app fcitx</a></li><li><a href=#20-wine-app-fonts>20. wine app fonts</a></li><li><a href=#21-virtualbox-time-issue>21. virtualbox time issue</a></li><li><a href=#22-python-simple-http-server>22. python simple http server</a></li><li><a href=#23-build-kernel>23. build kernel</a></li><li><a href=#24-kernel-install-module>24. kernel install module</a></li><li><a href=#25-auto-restart-sshd>25. Auto restart sshd</a></li><li><a href=#26-install-graphical-in-pve>26. Install graphical in pve</a></li><li><a href=#27-remotedesktop-gpu>27. RemoteDesktop GPU</a></li><li><a href=#28-fsck-ext4-disk>28. fsck ext4 disk</a></li><li><a href=#29-width-height>29. width height</a></li></ul></li></ul></nav></div><h3 id=1-x11docker>1. x11docker</h3><p>Start and specify vt:</p><pre><code># x11docker --gpu --vt=2 --xorg x11docker/mate
+</code></pre><p>With internet and more features:</p><pre><code># x11docker --gpu --vt=2 --network --desktop --init=systemd x11docker/deepin
+</code></pre><h3 id=2-git-without-ssl-check>2. git without ssl check</h3><p>via:</p><pre><code>export GIT_SSL_NO_VERIFY=1
 git clone https://xxxx.xx
-</code></pre><h3 id="3-home-sharing-environment">3. Home Sharing environment</h3>
-<p>Install dnsmasq and configure:</p>
-<pre><code># vim /etc/dnsmasq.conf
+</code></pre><h3 id=3-home-sharing-environment>3. Home Sharing environment</h3><p>Install dnsmasq and configure:</p><pre><code># vim /etc/dnsmasq.conf
 bind-interfaces
 dhcp-range=10.1.10.128,10.1.10.200,12h
 dhcp-option=3,10.1.10.1
 dhcp-authoritative
 interface=enp0s25
 # systemctl restart dnsmasq
-</code></pre><p>Start the sharing via(enp0s25-&gt;wlo1):</p>
-<pre><code>$ sudo iptables -t nat -A POSTROUTING -s '10.1.10.0/24' -o wlo1 -j MASQUERADE
+</code></pre><p>Start the sharing via(enp0s25->wlo1):</p><pre><code>$ sudo iptables -t nat -A POSTROUTING -s '10.1.10.0/24' -o wlo1 -j MASQUERADE
 </code></pre><p>Then with a ethernet cable connected, the other client could get reach into
-the internet via sharing.</p>
-<h3 id="4-system_reset-in-qemu">4. system_reset in qemu</h3>
-<p>via:</p>
-<pre><code>telnet localhost 1111
+the internet via sharing.</p><h3 id=4-system_reset-in-qemu>4. system_reset in qemu</h3><p>via:</p><pre><code>telnet localhost 1111
 &gt; system_reset
 this could reset the machine and let it reboot.
-</code></pre><h3 id="5-uhd510-win7-driver">5. uhd510 win7 driver</h3>
-<p>download url:</p>
-<p><code>https://downloadmirror.intel.com/30195/a08/win64_15.45.5174.exe</code></p>
-<h3 id="6-intel-graphics">6. intel graphics</h3>
-<p>version:</p>
-<pre><code>21.20.16.5174 intel
-</code></pre><h3 id="7-fix-zsh-issue">7. Fix zsh issue</h3>
-<p>When type <code>tab</code> key in zsh shell, it will complains following arguments, and
-won&rsquo;t automatically auto-complete the command:</p>
-<pre><code>(eval):setopt:3: no such option: NO_typesettounset
-</code></pre><p>Fixed via:</p>
-<pre><code># chsh -s $(which zsh)
+</code></pre><h3 id=5-uhd510-win7-driver>5. uhd510 win7 driver</h3><p>download url:</p><p><code>https://downloadmirror.intel.com/30195/a08/win64_15.45.5174.exe</code></p><h3 id=6-intel-graphics>6. intel graphics</h3><p>version:</p><pre><code>21.20.16.5174 intel
+</code></pre><h3 id=7-fix-zsh-issue>7. Fix zsh issue</h3><p>When type <code>tab</code> key in zsh shell, it will complains following arguments, and
+won&rsquo;t automatically auto-complete the command:</p><pre><code>(eval):setopt:3: no such option: NO_typesettounset
+</code></pre><p>Fixed via:</p><pre><code># chsh -s $(which zsh)
 # vim /etc/shells
 /usr/bin/zsh
-</code></pre><p>Reboot the machine and this issue fixed.</p>
-<h3 id="8-enter-to-m">8. Enter to M</h3>
-<p><code>^M</code> will be replaced ,when hitting Enter:</p>
-<pre><code>stty icrnl
-</code></pre><h3 id="9-wine-with-input-method">9. wine with input method</h3>
-<p>Could not use fcitx in wine&rsquo;s tim:</p>
-<p>Add:</p>
-<pre><code>export GTK_IM_MODULE=fcitx
+</code></pre><p>Reboot the machine and this issue fixed.</p><h3 id=8-enter-to-m>8. Enter to M</h3><p><code>^M</code> will be replaced ,when hitting Enter:</p><pre><code>stty icrnl
+</code></pre><h3 id=9-wine-with-input-method>9. wine with input method</h3><p>Could not use fcitx in wine&rsquo;s tim:</p><p>Add:</p><pre><code>export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
-</code></pre><p>into <code>/opt/apps/com.qq.tim.spark/files/run.sh</code></p>
-<h3 id="10-os-probe-in-archlinux">10. os-probe in archlinux</h3>
-<p>Add following lines into <code>/etc/default/grub</code>, then update grub configuration:</p>
-<pre><code>GRUB_DISABLE_OS_PROBER=false
-</code></pre><h3 id="11-ubuntu-upgrade-issue">11. ubuntu upgrade issue</h3>
-<p>solved via:</p>
-<pre><code>cd /var/lib/dpkg/info
+</code></pre><p>into <code>/opt/apps/com.qq.tim.spark/files/run.sh</code></p><h3 id=10-os-probe-in-archlinux>10. os-probe in archlinux</h3><p>Add following lines into <code>/etc/default/grub</code>, then update grub configuration:</p><pre><code>GRUB_DISABLE_OS_PROBER=false
+</code></pre><h3 id=11-ubuntu-upgrade-issue>11. ubuntu upgrade issue</h3><p>solved via:</p><pre><code>cd /var/lib/dpkg/info
 sudo rm usrmerge.*
 sudo apt-get -f install
-</code></pre><h3 id="12-ssh-to-dropbear">12. ssh to dropbear</h3>
-<p>issue:</p>
-<pre><code>Unable to negotiate with 192.168.1.1 port 22: no matching host key type found. Their offer: ssh-rsa
-</code></pre><p>solved via:</p>
-<pre><code>ssh  -oHostKeyAlgorithms=+ssh-rsa root@xxx.xxx.xxx.xxx
-</code></pre><h3 id="13-autologin-xfce4">13. autologin xfce4</h3>
-<p>Edit lightdm configuration files:</p>
-<pre><code>vi /etc/lightdm/lightdm.conf
+</code></pre><h3 id=12-ssh-to-dropbear>12. ssh to dropbear</h3><p>issue:</p><pre><code>Unable to negotiate with 192.168.1.1 port 22: no matching host key type found. Their offer: ssh-rsa
+</code></pre><p>solved via:</p><pre><code>ssh  -oHostKeyAlgorithms=+ssh-rsa root@xxx.xxx.xxx.xxx
+</code></pre><h3 id=13-autologin-xfce4>13. autologin xfce4</h3><p>Edit lightdm configuration files:</p><pre><code>vi /etc/lightdm/lightdm.conf
 
 [SeatDefaults]
 autologin-user=username    #需要登录的用户名
 autologin-user-timeout=delay
 
-</code></pre><h3 id="14-detect-pci-parameters">14. detect pci parameters</h3>
-<p>via:</p>
-<pre><code>sudo lspci  -v -s 00:02.0
+</code></pre><h3 id=14-detect-pci-parameters>14. detect pci parameters</h3><p>via:</p><pre><code>sudo lspci  -v -s 00:02.0
 00:02.0 VGA compatible controller: Intel Corporation Device 9a49 (rev 01) (prog-if 00 [VGA controller])
 	DeviceName: Onboard - Video
 	Subsystem: Intel Corporation Device 3004
@@ -236,48 +56,69 @@ autologin-user-timeout=delay
 	Capabilities: [320] Single Root I/O Virtualization (SR-IOV)
 	Kernel driver in use: i915
 	Kernel modules: i915
-</code></pre><h3 id="15-dnf-speed-up">15. dnf speed up</h3>
-<p>add following :</p>
-<pre><code># vim /etc/dnf/dnf.conf
+</code></pre><h3 id=15-dnf-speed-up>15. dnf speed up</h3><p>add following :</p><pre><code># vim /etc/dnf/dnf.conf
 fastestmirror=true
 
 
-</code></pre><h3 id="16-makepkg-ignore-check">16. makepkg ignore check</h3>
-<p>via:</p>
-<pre><code>makepkg --skipinteg
-</code></pre><h3 id="17-wine-app-fcitx">17. wine app fcitx</h3>
-<p>Added following in <code>run.sh</code>:</p>
-<pre><code>env locale=zh_CN
+</code></pre><h3 id=16-makepkg-ignore-check>16. makepkg ignore check</h3><p>via:</p><pre><code>makepkg --skipinteg
+</code></pre><h3 id=17-building-on-cdesktop>17. building on cdesktop</h3><p>on building gstreamer:</p><pre><code>Force specify a macro. 
+</code></pre><p>on building net-snmp:</p><pre><code>sudo apt install automake -y
+aclocal
+automake --add-missing --copy --force-missing
+</code></pre><p>Detect pre-defined macros:</p><pre><code>uos@uos-PC:~$ echo | gcc -E -dM - | grep sw
+#define __sw_64_bwx__ 1
+#define __sw_64 1
+#define __sw_64_fix__ 1
+#define __sw_64_sw6b__ 1
+#define __sw_64__ 1
+#define __sw_64_cix__ 1
+
+</code></pre><h3 id=18-markdown-in-confluence>18. markdown in confluence</h3><p>via:</p><p><code>https://www.cnblogs.com/cuianbing/p/15891950.html</code></p><h3 id=19-wine-app-fcitx>19. wine app fcitx</h3><p>Added following in <code>run.sh</code>:</p><pre><code>env locale=zh_CN
 
 export XIM=&quot;fcitx&quot;
 export GTK_IM_MODULE=&quot;fcitx&quot;
 export QT_IM_MODULE=&quot;fcitx&quot;
 export XMODIFIERS=&quot;@im=fcitx&quot;
-</code></pre><h3 id="18-wine-app-fonts">18. wine app fonts</h3>
-<p>Verify you have the correct fonts under :</p>
-<pre><code>➜  Fonts pwd
+</code></pre><h3 id=20-wine-app-fonts>20. wine app fonts</h3><p>Verify you have the correct fonts under :</p><pre><code>➜  Fonts pwd
 /home/dash/.deepinwine/Spark-TIM/drive_c/windows/Fonts
 ➜  Fonts ls
 simsunb.ttf  simsun.ttc
 
-</code></pre><p>Then add following into the <code>run.sh</code>:</p>
-<pre><code>env locale=zh_CN.UTF-8
+</code></pre><p>Then add following into the <code>run.sh</code>:</p><pre><code>env locale=zh_CN.UTF-8
 export LC_ALL=zh_CN.UTF-8
 LC_ALL=zh_CN.UTF-8
 WINE_CMD=&quot;LC_ALL=zh_CN.UTF-8 deepin-wine5&quot;
 
-</code></pre>
-  </div>
-  
-</div>
+</code></pre><h3 id=21-virtualbox-time-issue>21. virtualbox time issue</h3><p>Windows side:</p><pre><code>c:\Progra~1\Oracle\VirtualBox\VBoxManage setextradata %NOME% &quot;VBoxInternal/Devices/VMMDev/0/Config/GetHostTimeDisabled&quot; 1
+c:\Progra~1\Oracle\VirtualBox\VBoxManage modifyvm %NOME% --biossystemtimeoffset -7628000000
+</code></pre><h3 id=22-python-simple-http-server>22. python simple http server</h3><p>via:</p><pre><code>python -m http.server 9000
 
+</code></pre><h3 id=23-build-kernel>23. build kernel</h3><p><code>BTF: .tmp_vmlinux.btf: pahole (pahole) is not available</code></p><pre><code>sudo apt install dwarves
+</code></pre><h3 id=24-kernel-install-module>24. kernel install module</h3><p>via:</p><pre><code>make INSTALL_MOD_STRIP=1 modules_install -j4
+</code></pre><p>then the initrd size will be small.
+Or you will encounter initrd is too big issue.</p><h3 id=25-auto-restart-sshd>25. Auto restart sshd</h3><p>via:</p><pre><code>pacman -S cron
+systemctl enable cronie
+crontab -e
+@reboot sleep 120 &amp;&amp; systemctl restart sshd
+</code></pre><p>Then each time you reboot the machine it will automatically restart sshd.</p><h3 id=26-install-graphical-in-pve>26. Install graphical in pve</h3><p>Install kde via following command:</p><pre><code>apt install -y task-kde-desktop
+</code></pre><h3 id=27-remotedesktop-gpu>27. RemoteDesktop GPU</h3><p>via:</p><pre><code>显卡加速
+win+r打开运行 输入gpedit.msc
+依次找到计算机配置-&gt;管理模板-&gt;Windows组件-&gt;远程桌面服务-&gt;远程桌面会话主机-&gt;远程会话环境
+在右边选择将硬件图形适配器应用于所有远程桌面服务会话
+右键编辑，选择已启用确定保存。
+重启远程主机。
+现在可以在远程桌面里运行需要GPU支持的应用了
 
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+提升传输帧率
+RDP默认的帧率是30，可以设置为60帧传输
+实际效果取决于客户端设置、网络环境等等因素
+打开远程主机上的注册表编辑器 win+r输入regedit
+找到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations
+在空白处右键-&gt;新建-&gt;DWORD（32位）值，命名为DWMFRAMEINTERVAL
+双击刚添加的这一项，基数选择为十进制，数值数据填写15
+确定保存，重启生效
+</code></pre><h3 id=28-fsck-ext4-disk>28. fsck ext4 disk</h3><p>error message:</p><pre><code>[ 5903.331828] sd 4:0:0:0: [sdb] Attached SCSI removable disk
+[ 5911.746891] EXT4-fs (sdb1): ext4_check_descriptors: Checksum for group 1 failed (43829!=56479)
+[ 5911.746897] EXT4-fs (sdb1): group descriptors corrupted!
+</code></pre><p>fixed via:</p><pre><code>fsck.ext4 -fvy  /dev/sdb1
+</code></pre><h3 id=29-width-height>29. width height</h3><p>55 &lt;40</p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

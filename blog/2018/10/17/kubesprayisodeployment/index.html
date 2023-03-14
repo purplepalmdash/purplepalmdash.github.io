@@ -1,149 +1,5 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>KubeSprayISODeployment &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="KubeSprayISODeployment">
-  <meta name="keywords" content="Linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>KubeSprayISODeployment</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Oct 17, 2018 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#文档目的">文档目的</a></li>
-        <li><a href="#准备">准备</a></li>
-        <li><a href="#系统初始化安装">系统初始化安装</a></li>
-        <li><a href="#部署kubernetes">部署Kubernetes</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="文档目的">文档目的</h3>
-<p>详细说明使用ISO离线构建Kubernetes集群的步骤。</p>
-<h3 id="准备">准备</h3>
-<p>硬件：至少两台机器（物理机/虚拟机均可），其中一台用作部署服务器，推荐为2核CPU/3G内存以上配置，另一台用作Kubernetes节点，推荐为4核/8G内存以上配置。如果有更多的机器，则可以考虑都作为Kubernetes工作节点接入集群。<br>
-软件: 1604_deploy.iso(部署用ISO)， 1604_node.iso(工作节点用ISO)</p>
-<h3 id="系统初始化安装">系统初始化安装</h3>
-<h4 id="部署节点">部署节点</h4>
-<p>插入1604_deploy.iso, 光盘启动系统, 选择English，进入到下一步:<br>
-<img src="/images/2018_10_17_09_28_14_630x472.jpg" alt="/images/2018_10_17_09_28_14_630x472.jpg"></p>
-<p>选择<code>Install Ubuntu Server</code>: <br>
-<img src="/images/2018_10_17_09_28_35_369x288.jpg" alt="/images/2018_10_17_09_28_35_369x288.jpg"></p>
-<p>一路回车，选择默认配置，进入到系统安装, 安装完系统将自动重启。</p>
-<p>系统重启完毕后，按Alt+F2，进入到命令行终端(用户名/密码为root/thinker@1):</p>
-<p><img src="/images/2018_10_17_09_37_11_460x168.jpg" alt="/images/2018_10_17_09_37_11_460x168.jpg"></p>
-<p>配置IP地址:</p>
-<pre><code># vim /etc/network/interfaces
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>KubeSprayISODeployment &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="KubeSprayISODeployment"><meta name=keywords content="Linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>KubeSprayISODeployment</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Oct 17, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#文档目的>文档目的</a></li><li><a href=#准备>准备</a></li><li><a href=#系统初始化安装>系统初始化安装</a></li><li><a href=#部署kubernetes>部署Kubernetes</a></li></ul></li></ul></nav></div><h3 id=文档目的>文档目的</h3><p>详细说明使用ISO离线构建Kubernetes集群的步骤。</p><h3 id=准备>准备</h3><p>硬件：至少两台机器（物理机/虚拟机均可），其中一台用作部署服务器，推荐为2核CPU/3G内存以上配置，另一台用作Kubernetes节点，推荐为4核/8G内存以上配置。如果有更多的机器，则可以考虑都作为Kubernetes工作节点接入集群。<br>软件: 1604_deploy.iso(部署用ISO)， 1604_node.iso(工作节点用ISO)</p><h3 id=系统初始化安装>系统初始化安装</h3><h4 id=部署节点>部署节点</h4><p>插入1604_deploy.iso, 光盘启动系统, 选择English，进入到下一步:<br><img src=/images/2018_10_17_09_28_14_630x472.jpg alt=/images/2018_10_17_09_28_14_630x472.jpg></p><p>选择<code>Install Ubuntu Server</code>:<br><img src=/images/2018_10_17_09_28_35_369x288.jpg alt=/images/2018_10_17_09_28_35_369x288.jpg></p><p>一路回车，选择默认配置，进入到系统安装, 安装完系统将自动重启。</p><p>系统重启完毕后，按Alt+F2，进入到命令行终端(用户名/密码为root/thinker@1):</p><p><img src=/images/2018_10_17_09_37_11_460x168.jpg alt=/images/2018_10_17_09_37_11_460x168.jpg></p><p>配置IP地址:</p><pre><code># vim /etc/network/interfaces
 auto ens
 - iface ens3 inet dhcp
 + iface ens3 inet static
@@ -155,16 +11,9 @@ auto ens
 - PermitRootLogin prohibit-password
 + PermitRootLogin yes
 # reboot
-</code></pre><p>重新启动后，登入命令行，执行:</p>
-<pre><code># ./initial.sh
-</code></pre><p>待脚本执行完毕后，部署节点部署完毕。</p>
-<h4 id="工作节点">工作节点</h4>
-<p>插入1604_node.iso, 光盘启动系统，选择English， 进入到下一步:</p>
-<p><img src="/images/2018_10_17_09_30_52_383x356.jpg" alt="/images/2018_10_17_09_30_52_383x356.jpg"></p>
-<p>选择<code>Install XXXX Ubuntu Work Node(Auto-part)</code>， 进入到下一步,
-系统将自动安装，全程不需要人为干预:</p>
-<p>安装完毕后，进入到命令行接口，配置IP地址:</p>
-<pre><code># vim /etc/network/interfaces
+</code></pre><p>重新启动后，登入命令行，执行:</p><pre><code># ./initial.sh
+</code></pre><p>待脚本执行完毕后，部署节点部署完毕。</p><h4 id=工作节点>工作节点</h4><p>插入1604_node.iso, 光盘启动系统，选择English， 进入到下一步:</p><p><img src=/images/2018_10_17_09_30_52_383x356.jpg alt=/images/2018_10_17_09_30_52_383x356.jpg></p><p>选择<code>Install XXXX Ubuntu Work Node(Auto-part)</code>， 进入到下一步,
+系统将自动安装，全程不需要人为干预:</p><p>安装完毕后，进入到命令行接口，配置IP地址:</p><pre><code># vim /etc/network/interfaces
 auto ens3
 iface ens3 inet static
 address 192.168.122.179
@@ -176,13 +25,9 @@ dns-nameservers 192.168.122.1 192.168.122.178
 # vim /etc/hostname
 node1
 # reboot
-</code></pre><p>重启完毕后，工作节点准备就绪, 此时运行一下<code>apt-get update</code>更新一下包缓存，否则部署Kubernetes时会报错.</p>
-<h3 id="部署kubernetes">部署Kubernetes</h3>
-<p>登入部署节点(192.168.122.178), 执行以下步骤:</p>
-<pre><code># cd ansible/kubespray
+</code></pre><p>重启完毕后，工作节点准备就绪, 此时运行一下<code>apt-get update</code>更新一下包缓存，否则部署Kubernetes时会报错.</p><h3 id=部署kubernetes>部署Kubernetes</h3><p>登入部署节点(192.168.122.178), 执行以下步骤:</p><pre><code># cd ansible/kubespray
 # vim inventory/test/hosts.ini
-</code></pre><p>这里是我们用于配置Kubernetes节点的定义文件，需要根据集群的实际配置来定制化，我们这里只配置一个单节点的工作集群，配置如下:</p>
-<pre><code>node1 ansible_ssh_host=192.168.122.179 ansible_user=root........
+</code></pre><p>这里是我们用于配置Kubernetes节点的定义文件，需要根据集群的实际配置来定制化，我们这里只配置一个单节点的工作集群，配置如下:</p><pre><code>node1 ansible_ssh_host=192.168.122.179 ansible_user=root........
 [kube-master]
 node1
 
@@ -195,24 +40,5 @@ node1
 [k8s-cluster:children]
 kube-master
 kube-node
-</code></pre><p>现在运行以下命令自动化部署集群:</p>
-<pre><code># ansible-playbook -i inventory/test/host.ini cluster.yml
-</code></pre><p>部署完毕后的截图如下:</p>
-<p><img src="/images/2018_10_17_10_18_59_730x528.jpg" alt="/images/2018_10_17_10_18_59_730x528.jpg"></p>
-<p>检查kubernetes集群配置情况(工作节点上):</p>
-<p><img src="/images/2018_10_17_10_19_36_834x334.jpg" alt="/images/2018_10_17_10_19_36_834x334.jpg"></p>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre><p>现在运行以下命令自动化部署集群:</p><pre><code># ansible-playbook -i inventory/test/host.ini cluster.yml
+</code></pre><p>部署完毕后的截图如下:</p><p><img src=/images/2018_10_17_10_18_59_730x528.jpg alt=/images/2018_10_17_10_18_59_730x528.jpg></p><p>检查kubernetes集群配置情况(工作节点上):</p><p><img src=/images/2018_10_17_10_19_36_834x334.jpg alt=/images/2018_10_17_10_19_36_834x334.jpg></p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,137 +1,5 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>用Qemu和GNU编译链研究ARM汇编(4) &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="">
-  <meta name="keywords" content="unix,virtualization,embedded,linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>用Qemu和GNU编译链研究ARM汇编(4)</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Jul 11, 2013 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents"></nav>
-      </div>
-    <p>1. 有关异常向量</p>
-<p>前面的例子中存在一个大BUG，内存布局中的前8个全字是为异常向量而保留的。当异常发生时控制逻辑将转到这些位置以执行对应的异常处理代码。异常向量和它们的地址如下：</p>
-<ul>
-<li>Exception	 Address</li>
-<li>Reset	 0x00</li>
-<li>Undefined Instruction	 0x04</li>
-<li>Software Interrupt (SWI)	 0x08</li>
-<li>Prefetch Abort	 0x0C</li>
-<li>Data Abort	 0x10</li>
-<li>Reserved, not used	 0x14</li>
-<li>IRQ	 0x18</li>
-<li>FIQ	 0x1C</li>
-</ul>
-<p>按理说，这些个异常向量应该对应到异常处理程序中，既然我们代码中不会有异常发生，索性就用死循环来代替，如下：</p>
-<pre><code>        .section &quot;vectors&quot;
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>用Qemu和GNU编译链研究ARM汇编(4) &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>用Qemu和GNU编译链研究ARM汇编(4)</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Jul 11, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents></nav></div><p>1. 有关异常向量</p><p>前面的例子中存在一个大BUG，内存布局中的前8个全字是为异常向量而保留的。当异常发生时控制逻辑将转到这些位置以执行对应的异常处理代码。异常向量和它们的地址如下：</p><ul><li>Exception Address</li><li>Reset 0x00</li><li>Undefined Instruction 0x04</li><li>Software Interrupt (SWI) 0x08</li><li>Prefetch Abort 0x0C</li><li>Data Abort 0x10</li><li>Reserved, not used 0x14</li><li>IRQ 0x18</li><li>FIQ 0x1C</li></ul><p>按理说，这些个异常向量应该对应到异常处理程序中，既然我们代码中不会有异常发生，索性就用死循环来代替，如下：</p><pre><code>        .section &quot;vectors&quot;
 reset:  b     start
 undef:  b     undef
 swi:    b     swi
@@ -140,8 +8,7 @@ dabt:   b     dabt
         nop
 irq:    b     irq
 fiq:    b     fiq
-</code></pre><p>对应的，为了确保这些指令被放置在异常向量地址中，链接脚本也需要做相应的改动：</p>
-<pre><code>SECTIONS {
+</code></pre><p>对应的，为了确保这些指令被放置在异常向量地址中，链接脚本也需要做相应的改动：</p><pre><code>SECTIONS {
         . = 0x00000000;
         .text : {
                 * (vectors);
@@ -150,10 +17,7 @@ fiq:    b     fiq
         }
         ...
 }
-</code></pre><p>异常向量需要放置在所有代码之前，这确保了代了向量是从0x0地址开始。</p>
-<p>2. C启动代码</p>
-<p>直接执行C代码会造成CPU直接重启，因为和汇编代码不同的是C语言需要初始化运行环境。</p>
-<pre><code>static int arr[] = { 1, 10, 4, 5, 6, 7 };
+</code></pre><p>异常向量需要放置在所有代码之前，这确保了代了向量是从0x0地址开始。</p><p>2. C启动代码</p><p>直接执行C代码会造成CPU直接重启，因为和汇编代码不同的是C语言需要初始化运行环境。</p><pre><code>static int arr[] = { 1, 10, 4, 5, 6, 7 };
 static int sum;
 static const int n = sizeof(arr) / sizeof(arr[0]);
 
@@ -164,33 +28,11 @@ int main()
         for (i = 0; i &lt; n; i++)
                 sum += arr[i];
 }
-</code></pre><p>C语言运行环境需要设置</p>
-<ol>
-<li>栈</li>
-<li>全局变量： 已初始化的 &amp;&amp; 未初始化的</li>
-<li>只读数据</li>
-</ol>
-<p>2.1 栈设置</p>
-<p>栈被用来存储自动变量，传递函数变量，存储返回地址等等。ARM Architecture
+</code></pre><p>C语言运行环境需要设置</p><ol><li>栈</li><li>全局变量： 已初始化的 && 未初始化的</li><li>只读数据</li></ol><p>2.1 栈设置</p><p>栈被用来存储自动变量，传递函数变量，存储返回地址等等。ARM Architecture
 Procedure Call Standard
-(AAPCS)是ARM体系结构中用于生成栈的规则。r13被用于作栈指针。</p>
-<p>对于特定的开发板来说，栈开始地址可能不同，对于connex开发板来说，地址可以用下面的代码来定义：</p>
-<pre><code>	ldr sp, =0xA4000000
-</code></pre><p>2.2 全局变量</p>
-<p>C代码在编译时会把已初始化的全局变量放在.data段中，因而在初始化的汇编代码中，需要把.data段从Flash搬移到RAM中。</p>
-<p>C代码确保未初始化的全局变量被初始化成0.
-当C程序被编译时，独立的.bss段被用作未初始化的变量。因为未初始化的值都是0,我们无需将其存储在FLASH中。只不过在搬移的时候，我们需要在程序中将它们初始化为0而已。</p>
-<p>2.3 只读数据</p>
-<p>const常量会被初始化为.rodata， .rodata也被用于存储字符常量。</p>
-<p>.rodata在运行时不会被改变，所以它们可以被直接放置在FLASH中。</p>
-<p>2.4 启动代码</p>
-<p>Linker脚本需要做下面的事：</p>
-<ol>
-<li>.bss部分代替</li>
-<li>vectors部分代替</li>
-<li>.rodata部分代替</li>
-</ol>
-<pre><code>SECTIONS {
+(AAPCS)是ARM体系结构中用于生成栈的规则。r13被用于作栈指针。</p><p>对于特定的开发板来说，栈开始地址可能不同，对于connex开发板来说，地址可以用下面的代码来定义：</p><pre><code>	ldr sp, =0xA4000000
+</code></pre><p>2.2 全局变量</p><p>C代码在编译时会把已初始化的全局变量放在.data段中，因而在初始化的汇编代码中，需要把.data段从Flash搬移到RAM中。</p><p>C代码确保未初始化的全局变量被初始化成0.
+当C程序被编译时，独立的.bss段被用作未初始化的变量。因为未初始化的值都是0,我们无需将其存储在FLASH中。只不过在搬移的时候，我们需要在程序中将它们初始化为0而已。</p><p>2.3 只读数据</p><p>const常量会被初始化为.rodata， .rodata也被用于存储字符常量。</p><p>.rodata在运行时不会被改变，所以它们可以被直接放置在FLASH中。</p><p>2.4 启动代码</p><p>Linker脚本需要做下面的事：</p><ol><li>.bss部分代替</li><li>vectors部分代替</li><li>.rodata部分代替</li></ol><pre><code>SECTIONS {
         . = 0x00000000;
         .text : {
               * (vectors);
@@ -216,15 +58,7 @@ Procedure Call Standard
         ebss = .;
         bss_size = ebss - sbss;
 }
-</code></pre><p>启动代码需要完成下列任务：</p>
-<ol>
-<li>中断向量设置</li>
-<li>将.data部分从FLASH拷贝到RAM</li>
-<li>将.bss置0后拷贝到RAM</li>
-<li>设置栈指针(stack pointer)</li>
-<li>分支程序到main函数</li>
-</ol>
-<pre><code>        .section &quot;vectors&quot;
+</code></pre><p>启动代码需要完成下列任务：</p><ol><li>中断向量设置</li><li>将.data部分从FLASH拷贝到RAM</li><li>将.bss置0后拷贝到RAM</li><li>设置栈指针(stack pointer)</li><li>分支程序到main函数</li></ol><pre><code>        .section &quot;vectors&quot;
 reset:  b     start
 undef:  b     undef
 swi:    b     swi
@@ -275,9 +109,7 @@ init_stack:
 stop:   b     stop
 </code></pre><p>我们将直接用arm-none-eabi-gcc来编译所有程序：
 arm-none-eabi-gcc -nostdlib -o csum.elf -T csum.lds csum.c startup.s
--nostdlib选项用于指定标准C不应该被链接。</p>
-<p>查看符号信息：</p>
-<pre><code>	arm-none-eabi-nm -n csum.elf 
+-nostdlib选项用于指定标准C不应该被链接。</p><p>查看符号信息：</p><pre><code>	arm-none-eabi-nm -n csum.elf 
 	00000000 t reset
 	00000004 A bss_size
 	00000004 t undef
@@ -304,9 +136,7 @@ arm-none-eabi-gcc -nostdlib -o csum.elf -T csum.lds csum.c startup.s
 	a000001c B ebss
 </code></pre><p>可以看到： 中断向量从0x0开始; 汇编代码从8个全字后开始(0x20==32==8<em>4);
 只读数据n放在代码之后; arr，初始化后的数据，放在RAM中;
-未初始化的数据,sum放在6个int之后6</em>4==24==0x18</p>
-<p>转化成.bin二进制格式后，在Qemu中运行之，检查结果：</p>
-<pre><code>	$ arm-none-eabi-objcopy -O binary csum.elf csum.bin	
+未初始化的数据,sum放在6个int之后6</em>4==24==0x18</p><p>转化成.bin二进制格式后，在Qemu中运行之，检查结果：</p><pre><code>	$ arm-none-eabi-objcopy -O binary csum.elf csum.bin	
 	$ dd if=/dev/zero of=./flash.bin bs=4K count=4K
   	$ dd if=csum.bin of=flash.bin bs=4096 conv=notrunc
   	$ qemu-system-arm -M connex -pflash flash.bin -nographic -serial /dev/null
@@ -316,19 +146,4 @@ arm-none-eabi-gcc -nostdlib -o csum.elf -T csum.lds csum.c startup.s
 	(qemu) xp /1dw 0xa0000018
 	a0000018:         33
 </code></pre><p>我们可以看到，1, 10, 4, 5, 6, 7 分别为数组元素，而结果为33,
-储存在0x18的地址。如果感兴趣，我们大可查找出别的数据地址，这里就不一一述说了。</p>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+储存在0x18的地址。如果感兴趣，我们大可查找出别的数据地址，这里就不一一述说了。</p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

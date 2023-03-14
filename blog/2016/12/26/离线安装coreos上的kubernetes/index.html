@@ -1,177 +1,19 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>离线安装CoreOS上的Kubernetes &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="Offline installation of k8s on CoreOS">
-  <meta name="keywords" content="Virtualization">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>离线安装CoreOS上的Kubernetes</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Dec 26, 2016 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#先决条件">先决条件</a></li>
-        <li><a href="#网络配置">网络配置</a></li>
-        <li><a href="#discovery-server配置">Discovery Server配置</a></li>
-        <li><a href="#cloudinit文件">Cloudinit文件</a></li>
-        <li><a href="#coreos安装">CoreOS安装</a></li>
-        <li><a href="#kubernetes配置选项">Kubernetes配置选项</a></li>
-        <li><a href="#etcd2配置">etcd2配置</a></li>
-        <li><a href="#生成kubernetes-tls">生成Kubernetes TLS</a></li>
-        <li><a href="#kubernetes-master节点">Kubernetes Master节点</a></li>
-        <li><a href="#kubernetes-worker节点">Kubernetes Worker节点</a></li>
-        <li><a href="#kubectl配置">kubectl配置</a></li>
-        <li><a href="#插件安装">插件安装</a></li>
-        <li><a href="#heapster监控">heapster监控</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="先决条件">先决条件</h3>
-<p>CoreOS安装iso: <code>coreos_production_iso_image.iso</code>. <br>
-<a href="https://coreos.com/os/docs/latest/booting-with-iso.html">https://coreos.com/os/docs/latest/booting-with-iso.html</a></p>
-<p>VirtualBox. <br>
-<a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
-<p>硬盘安装介质, 放置于某web服务器根目录下(这里的根目录是<code>/var/download</code>):</p>
-<pre><code>$ pwd
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>离线安装CoreOS上的Kubernetes &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="Offline installation of k8s on CoreOS"><meta name=keywords content="Virtualization"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>离线安装CoreOS上的Kubernetes</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Dec 26, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#先决条件>先决条件</a></li><li><a href=#网络配置>网络配置</a></li><li><a href=#discovery-server配置>Discovery Server配置</a></li><li><a href=#cloudinit文件>Cloudinit文件</a></li><li><a href=#coreos安装>CoreOS安装</a></li><li><a href=#kubernetes配置选项>Kubernetes配置选项</a></li><li><a href=#etcd2配置>etcd2配置</a></li><li><a href=#生成kubernetes-tls>生成Kubernetes TLS</a></li><li><a href=#kubernetes-master节点>Kubernetes Master节点</a></li><li><a href=#kubernetes-worker节点>Kubernetes Worker节点</a></li><li><a href=#kubectl配置>kubectl配置</a></li><li><a href=#插件安装>插件安装</a></li><li><a href=#heapster监控>heapster监控</a></li></ul></li></ul></nav></div><h3 id=先决条件>先决条件</h3><p>CoreOS安装iso: <code>coreos_production_iso_image.iso</code>.<br><a href=https://coreos.com/os/docs/latest/booting-with-iso.html>https://coreos.com/os/docs/latest/booting-with-iso.html</a></p><p>VirtualBox.<br><a href=https://www.virtualbox.org/wiki/Downloads>https://www.virtualbox.org/wiki/Downloads</a></p><p>硬盘安装介质, 放置于某web服务器根目录下(这里的根目录是<code>/var/download</code>):</p><pre><code>$ pwd
 /var/download/1185.5.0
 $ ls
 coreos_production_image.bin.bz2  coreos_production_image.bin.bz2.sig
-</code></pre><p>准备硬盘安装介质，需要通过<code>coreos-baremetal</code>项目，从<code>./examples/assets</code>下拷贝相应文件到web服务器根目录下:</p>
-<pre><code> $ git clone https://github.com/coreos/coreos-baremetal
+</code></pre><p>准备硬盘安装介质，需要通过<code>coreos-baremetal</code>项目，从<code>./examples/assets</code>下拷贝相应文件到web服务器根目录下:</p><pre><code> $ git clone https://github.com/coreos/coreos-baremetal
 # Make a copy of example files
 $ cp -R coreos-baremetal/examples .
 # Download the CoreOS image assets referenced in the target profile.
 $ ./coreos-baremetal/scripts/get-coreos stable 1185.5.0 ./examples/assets
-</code></pre><h3 id="网络配置">网络配置</h3>
-<p>三个CoreOS节点IP配置</p>
-<pre><code>coreos1: 172.17.8.221
+</code></pre><h3 id=网络配置>网络配置</h3><p>三个CoreOS节点IP配置</p><pre><code>coreos1: 172.17.8.221
 coreos2: 172.17.8.222
 coreos3: 172.17.8.223
-</code></pre><p>etcd discovery Server IP: <code>172.17.8.1</code>.</p>
-<p>Virtualbox网络配置如下: <br>
-<img src="/images/2016_12_26_10_40_28_432x316.jpg" alt="/images/2016_12_26_10_40_28_432x316.jpg"> <br>
-第一块网卡接入到NAT网络，第二块网卡接入到Host-only网络，这也就是在下面的Cloudinit文件中
-需要定义的<code>Name=enp0s8</code>字段。</p>
-<h3 id="discovery-server配置">Discovery Server配置</h3>
-<p>实际上这个Server是运行etcd2的一个物理机，接入<code>172.17.8.0/24</code>网络，为简单起见我们使用运行VirtualBox
-的Linux主机(运行ArchLinux).</p>
-<p>具体的步骤可以参考: <br>
-<a href="http://purplepalmdash.github.io/blog/2016/12/21/trycoreos2/">http://purplepalmdash.github.io/blog/2016/12/21/trycoreos2/</a></p>
-<h3 id="cloudinit文件">Cloudinit文件</h3>
-<p>YAML(Yet Another Markup Language). <br>
-用coreos1的cloudinit文件为例:</p>
-<pre><code>#cloud-config
+</code></pre><p>etcd discovery Server IP: <code>172.17.8.1</code>.</p><p>Virtualbox网络配置如下:<br><img src=/images/2016_12_26_10_40_28_432x316.jpg alt=/images/2016_12_26_10_40_28_432x316.jpg><br>第一块网卡接入到NAT网络，第二块网卡接入到Host-only网络，这也就是在下面的Cloudinit文件中
+需要定义的<code>Name=enp0s8</code>字段。</p><h3 id=discovery-server配置>Discovery Server配置</h3><p>实际上这个Server是运行etcd2的一个物理机，接入<code>172.17.8.0/24</code>网络，为简单起见我们使用运行VirtualBox
+的Linux主机(运行ArchLinux).</p><p>具体的步骤可以参考:<br><a href=http://purplepalmdash.github.io/blog/2016/12/21/trycoreos2/>http://purplepalmdash.github.io/blog/2016/12/21/trycoreos2/</a></p><h3 id=cloudinit文件>Cloudinit文件</h3><p>YAML(Yet Another Markup Language).<br>用coreos1的cloudinit文件为例:</p><pre><code>#cloud-config
 hostname: coreos1 
 coreos:
   etcd2:
@@ -220,16 +62,8 @@ users:
   - groups:
       - sudo
       - docker
-</code></pre><p>对coreos2和coreos3节点，只需要替换对应的IP地址定义，如:coreos2只需要把IP从<code>172.17.8.221</code>换成<code>172.17.8.222</code>.  <br>
-ssh-rsa部分是需要预注入的ssh key, 可以通过<code>ssh-keygen</code>生成.</p>
-<h3 id="coreos安装">CoreOS安装</h3>
-<p>用光盘启动三台虚拟机，默认将进入到shell，在coreos1节点上，通过以下命令安装CoreOS:</p>
-<pre><code>$ coreos-install -d /dev/sda -b http://YourWebServer -c ./cloud-init1.yaml -v
-</code></pre><p>同样安装其他两个节点, 因为预置了ssh-key，可以在该节点上直接登入三台CoreOS机器。 <br>
-安装好的机器上，默认启动了etcd和docker, 可以通过<code>etcdctl cluster-health</code>来验证etcd正常运行。</p>
-<h3 id="kubernetes配置选项">Kubernetes配置选项</h3>
-<p>这里参考<a href="https://coreos.com/kubernetes/docs/latest/getting-started.html">https://coreos.com/kubernetes/docs/latest/getting-started.html</a></p>
-<pre><code>MASTER_HOST=no default
+</code></pre><p>对coreos2和coreos3节点，只需要替换对应的IP地址定义，如:coreos2只需要把IP从<code>172.17.8.221</code>换成<code>172.17.8.222</code>.<br>ssh-rsa部分是需要预注入的ssh key, 可以通过<code>ssh-keygen</code>生成.</p><h3 id=coreos安装>CoreOS安装</h3><p>用光盘启动三台虚拟机，默认将进入到shell，在coreos1节点上，通过以下命令安装CoreOS:</p><pre><code>$ coreos-install -d /dev/sda -b http://YourWebServer -c ./cloud-init1.yaml -v
+</code></pre><p>同样安装其他两个节点, 因为预置了ssh-key，可以在该节点上直接登入三台CoreOS机器。<br>安装好的机器上，默认启动了etcd和docker, 可以通过<code>etcdctl cluster-health</code>来验证etcd正常运行。</p><h3 id=kubernetes配置选项>Kubernetes配置选项</h3><p>这里参考<a href=https://coreos.com/kubernetes/docs/latest/getting-started.html>https://coreos.com/kubernetes/docs/latest/getting-started.html</a></p><pre><code>MASTER_HOST=no default
 ETCD_ENDPOINTS=no default
 POD_NETWORK=10.2.0.0/16
 SERVICE_IP_RANGE=10.3.0.0/24
@@ -246,15 +80,10 @@ FLANNELD_ETCD_ENDPOINTS=http://172.17.8.221:2379
 
 ETCD_SERVER
 http://172.17.8.221:2379
-</code></pre><h3 id="etcd2配置">etcd2配置</h3>
-<p>在所有节点上，更改etcd2监听地址:  <br>
-<code>/etc/systemd/system/etcd2.service.d/40-listen-address.conf</code></p>
-<pre><code>[Service]
+</code></pre><h3 id=etcd2配置>etcd2配置</h3><p>在所有节点上，更改etcd2监听地址:<br><code>/etc/systemd/system/etcd2.service.d/40-listen-address.conf</code></p><pre><code>[Service]
 Environment=ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
 Environment=ETCD_ADVERTISE_CLIENT_URLS=http://${PUBLIC_IP}:2379
-</code></pre><h3 id="生成kubernetes-tls">生成Kubernetes TLS</h3>
-<p>使用下列命令生成Kubernetes master节点和worker节点上所需使用的签名:</p>
-<pre><code>$ mkdir openssl
+</code></pre><h3 id=生成kubernetes-tls>生成Kubernetes TLS</h3><p>使用下列命令生成Kubernetes master节点和worker节点上所需使用的签名:</p><pre><code>$ mkdir openssl
 $ cd openssl
 $ openssl genrsa -out ca-key.pem 2048
 $ openssl req -x509 -new -nodes -key ca-key.pem -days 10000 -out ca.pem -subj &quot;/CN=kube-ca&quot;
@@ -270,8 +99,7 @@ $ openssl x509 -req -in coreos3-worker.csr -CA ca.pem -CAkey ca-key.pem -CAcreat
 $ openssl genrsa -out admin-key.pem 2048
 $ openssl req -new -key admin-key.pem -out admin.csr -subj &quot;/CN=kube-admin&quot;
 $ openssl x509 -req -in admin.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out admin.pem -days 365
-</code></pre><p>其中，master上使用的<code>openssl.cnf</code>文件定义如下:</p>
-<pre><code>[req]
+</code></pre><p>其中，master上使用的<code>openssl.cnf</code>文件定义如下:</p><pre><code>[req]
 req_extensions = v3_req
 distinguished_name = req_distinguished_name
 [req_distinguished_name]
@@ -286,8 +114,7 @@ DNS.3 = kubernetes.default.svc
 DNS.4 = kubernetes.default.svc.cluster.local
 IP.1 = 10.3.0.1
 IP.2 = 172.17.8.221
-</code></pre><p>wokernode1， 即coreos2上使用的定义文件，<code>coreos2-worker-openssl.cnf</code>:</p>
-<pre><code>[req]
+</code></pre><p>wokernode1， 即coreos2上使用的定义文件，<code>coreos2-worker-openssl.cnf</code>:</p><pre><code>[req]
 req_extensions = v3_req
 distinguished_name = req_distinguished_name
 [req_distinguished_name]
@@ -297,22 +124,16 @@ keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 subjectAltName = @alt_names
 [alt_names]
 IP.1 = 172.17.8.222
-</code></pre><p>coreos3与coreos2定义文件的唯一区别在于:</p>
-<pre><code>- IP.1 = 172.17.8.222
+</code></pre><p>coreos3与coreos2定义文件的唯一区别在于:</p><pre><code>- IP.1 = 172.17.8.222
 + IP.1 = 172.17.8.223
-</code></pre><h3 id="kubernetes-master节点">Kubernetes Master节点</h3>
-<h4 id="tls配置">TLS配置</h4>
-<p>拷贝生成的openssl目录到每个节点，在master节点(coreos1)上，拷贝master相关的鉴权文件到<code>/etc/kubernetes/ssl</code>目录下:</p>
-<pre><code># mkdir -p /etc/kubernetes/ssl
+</code></pre><h3 id=kubernetes-master节点>Kubernetes Master节点</h3><h4 id=tls配置>TLS配置</h4><p>拷贝生成的openssl目录到每个节点，在master节点(coreos1)上，拷贝master相关的鉴权文件到<code>/etc/kubernetes/ssl</code>目录下:</p><pre><code># mkdir -p /etc/kubernetes/ssl
 # cd /etc/kubernetes/ssl
 # cp /home/core/openssl/ca.pem  ./
 # cp /home/core/openssl/apiserver.pem ./
 # cp /home/core/openssl/apiserver-key.pem ./
 # chmod 600 *
 # chown root:root *
-</code></pre><h4 id="flannel网络配置">Flannel网络配置</h4>
-<p>Flannel提供了一个软件定义的overlay网络，用于转发流量到pods,或从pods转发流量到外部网络.</p>
-<pre><code># mkdir -p /etc/flannel/
+</code></pre><h4 id=flannel网络配置>Flannel网络配置</h4><p>Flannel提供了一个软件定义的overlay网络，用于转发流量到pods,或从pods转发流量到外部网络.</p><pre><code># mkdir -p /etc/flannel/
 # vim /etc/flannel/options.env
 FLANNELD_IFACE=172.17.8.221
 FLANNELD_ETCD_ENDPOINTS=http://172.17.8.221:2379
@@ -340,10 +161,7 @@ DOCKER_OPT_IPMASQ=&quot;&quot;
         &quot;isDefaultGateway&quot;: true
     }
 }
-</code></pre><h4 id="创建kubelet单元">创建kubelet单元</h4>
-<p>服务文件定义如下:</p>
-<p><code>/etc/systemd/system/kubelet.service</code></p>
-<pre><code>[Service]
+</code></pre><h4 id=创建kubelet单元>创建kubelet单元</h4><p>服务文件定义如下:</p><p><code>/etc/systemd/system/kubelet.service</code></p><pre><code>[Service]
 Environment=KUBELET_VERSION=v1.5.1_coreos.0
 Environment=&quot;RKT_OPTS=--uuid-file-save=/var/run/kubelet-pod.uuid \
   --volume var-log,kind=host,source=/var/log \
@@ -370,9 +188,7 @@ RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
-</code></pre><h4 id="创建kube-apiserver-pod">创建kube-apiserver Pod</h4>
-<p>定义文件如下:</p>
-<pre><code># mkdir -p /etc/kubernetes/manifests/
+</code></pre><h4 id=创建kube-apiserver-pod>创建kube-apiserver Pod</h4><p>定义文件如下:</p><pre><code># mkdir -p /etc/kubernetes/manifests/
 # vim /etc/kubernetes/manifests/kube-apiserver.yaml
 apiVersion: v1
 kind: Pod
@@ -428,9 +244,7 @@ spec:
   - hostPath:
       path: /usr/share/ca-certificates
     name: ssl-certs-host
-</code></pre><h4 id="创建kube-proxy-pod">创建kube-proxy Pod</h4>
-<p>定义文件如下:</p>
-<pre><code># vim /etc/kubernetes/manifests/kube-proxy.yaml
+</code></pre><h4 id=创建kube-proxy-pod>创建kube-proxy Pod</h4><p>定义文件如下:</p><pre><code># vim /etc/kubernetes/manifests/kube-proxy.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -455,9 +269,7 @@ spec:
   - hostPath:
       path: /usr/share/ca-certificates
     name: ssl-certs-host
-</code></pre><h4 id="创建kube-controller-manager-pod">创建kube-controller-manager Pod</h4>
-<p>定义文件如下:</p>
-<pre><code># vim /etc/kubernetes/manifests/kube-controller-manager.yaml
+</code></pre><h4 id=创建kube-controller-manager-pod>创建kube-controller-manager Pod</h4><p>定义文件如下:</p><pre><code># vim /etc/kubernetes/manifests/kube-controller-manager.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -500,9 +312,7 @@ spec:
   - hostPath:
       path: /usr/share/ca-certificates
     name: ssl-certs-host
-</code></pre><h4 id="创建kube-scheduler-pod">创建kube-scheduler Pod</h4>
-<p>定义文件如下:</p>
-<pre><code># vim /etc/kubernetes/manifests/kube-scheduler.yaml
+</code></pre><h4 id=创建kube-scheduler-pod>创建kube-scheduler Pod</h4><p>定义文件如下:</p><pre><code># vim /etc/kubernetes/manifests/kube-scheduler.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -528,17 +338,13 @@ spec:
         port: 10251
       initialDelaySeconds: 15
       timeoutSeconds: 15
-</code></pre><h4 id="启动服务">启动服务</h4>
-<p>通过以下命令来启动master节点上的服务:</p>
-<pre><code># systemctl daemon-reload
+</code></pre><h4 id=启动服务>启动服务</h4><p>通过以下命令来启动master节点上的服务:</p><pre><code># systemctl daemon-reload
 # curl -X PUT -d &quot;value={\&quot;Network\&quot;:\&quot;10.2.0.0/16\&quot;,\&quot;Backend\&quot;:{\&quot;Type\&quot;:\&quot;vxlan\&quot;}}&quot; &quot;http://172.17.8.221:2379/v2/keys/coreos.com/network/config&quot;
 # systemctl start flanneld
 # systemctl enable flanneld
 # systemctl start kubelet
 # systemctl enable kubelet
-</code></pre><h4 id="创建namespace">创建namespace</h4>
-<p>首先确保Kubernetes API可用:</p>
-<pre><code>$ curl http://127.0.0.1:8080/version
+</code></pre><h4 id=创建namespace>创建namespace</h4><p>首先确保Kubernetes API可用:</p><pre><code>$ curl http://127.0.0.1:8080/version
 {
   &quot;major&quot;: &quot;1&quot;,
   &quot;minor&quot;: &quot;5&quot;,
@@ -550,17 +356,13 @@ spec:
   &quot;compiler&quot;: &quot;gc&quot;,
   &quot;platform&quot;: &quot;linux/amd64&quot;
 }
-</code></pre><p>使用以下命令创建命名空间:</p>
-<pre><code># curl -H &quot;Content-Type: application/json&quot; -XPOST -d'{&quot;apiVersion&quot;:&quot;v1&quot;,&quot;kind&quot;:&quot;Namespace&quot;,&quot;metadata&quot;:{&quot;name&quot;:&quot;kube-system&quot;}}' &quot;http://127.0.0.1:8080/api/v1/namespaces&quot;
+</code></pre><p>使用以下命令创建命名空间:</p><pre><code># curl -H &quot;Content-Type: application/json&quot; -XPOST -d'{&quot;apiVersion&quot;:&quot;v1&quot;,&quot;kind&quot;:&quot;Namespace&quot;,&quot;metadata&quot;:{&quot;name&quot;:&quot;kube-system&quot;}}' &quot;http://127.0.0.1:8080/api/v1/namespaces&quot;
 # curl -s localhost:10255/pods | jq -r '.items[].metadata.name'
 kube-apiserver-172.17.8.221
 kube-controller-manager-172.17.8.221
 kube-proxy-172.17.8.221
 kube-scheduler-172.17.8.221
-</code></pre><h3 id="kubernetes-worker节点">Kubernetes Worker节点</h3>
-<h4 id="tls配置-1">TLS配置</h4>
-<p>以coreos2为例：</p>
-<pre><code># mkdir -p /etc/kubernetes/ssl
+</code></pre><h3 id=kubernetes-worker节点>Kubernetes Worker节点</h3><h4 id=tls配置-1>TLS配置</h4><p>以coreos2为例：</p><pre><code># mkdir -p /etc/kubernetes/ssl
 # cd /etc/kubernetes/ssl
 # cp /home/core/openssl/ca.pem  ./
 # cp /home/core/openssl/coreos2-worker.pem ./
@@ -569,9 +371,7 @@ kube-scheduler-172.17.8.221
 # chown root:root *
 # ln -s coreos2-worker.pem worker.pem
 # ln -s coreos2-worker-key.pem worker-key.pem
-</code></pre><h4 id="flannel配置">Flannel配置</h4>
-<p>配置如下:</p>
-<pre><code># mkdir -p /etc/flannel/
+</code></pre><h4 id=flannel配置>Flannel配置</h4><p>配置如下:</p><pre><code># mkdir -p /etc/flannel/
 # vim /etc/flannel/options.env
 FLANNELD_IFACE=172.17.8.222
 FLANNELD_ETCD_ENDPOINTS=http://172.17.8.222:2379
@@ -599,9 +399,7 @@ DOCKER_OPT_IPMASQ=&quot;&quot;
         &quot;isDefaultGateway&quot;: true
     }
 }
-</code></pre><h4 id="kubelet单元">Kubelet单元</h4>
-<p>配置文件如下:</p>
-<pre><code># vim /etc/systemd/system/kubelet.service
+</code></pre><h4 id=kubelet单元>Kubelet单元</h4><p>配置文件如下:</p><pre><code># vim /etc/systemd/system/kubelet.service
 [Service]
 Environment=KUBELET_VERSION=v1.5.1_coreos.0
 Environment=&quot;RKT_OPTS=--uuid-file-save=/var/run/kubelet-pod.uuid \
@@ -632,9 +430,7 @@ RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
-</code></pre><h4 id="kube-proxy-pod">kube-proxy Pod</h4>
-<p>配置文件如下:</p>
-<pre><code># vim /etc/kubernetes/manifests/kube-proxy.yaml
+</code></pre><h4 id=kube-proxy-pod>kube-proxy Pod</h4><p>配置文件如下:</p><pre><code># vim /etc/kubernetes/manifests/kube-proxy.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -671,9 +467,7 @@ spec:
   - name: &quot;etc-kube-ssl&quot;
     hostPath:
       path: &quot;/etc/kubernetes/ssl&quot;
-</code></pre><h4 id="kubeconfig">kubeconfig</h4>
-<p>配置文件如下:</p>
-<pre><code># vim /etc/kubernetes/worker-kubeconfig.yaml
+</code></pre><h4 id=kubeconfig>kubeconfig</h4><p>配置文件如下:</p><pre><code># vim /etc/kubernetes/worker-kubeconfig.yaml
 apiVersion: v1
 kind: Config
 clusters:
@@ -691,37 +485,27 @@ contexts:
     user: kubelet
   name: kubelet-context
 current-context: kubelet-context
-</code></pre><h4 id="启动服务-1">启动服务</h4>
-<p>通过以下命令启动服务:</p>
-<pre><code># systemctl daemon-reload
+</code></pre><h4 id=启动服务-1>启动服务</h4><p>通过以下命令启动服务:</p><pre><code># systemctl daemon-reload
 # systemctl start flanneld
 # systemctl start kubelet
 # systemctl enable flanneld
 # systemctl enable kubelet
-</code></pre><p>检查服务状态:</p>
-<pre><code># systemctl status kubelet.service
-</code></pre><h3 id="kubectl配置">kubectl配置</h3>
-<p>首先下载最新的kubectl程序:</p>
-<pre><code># curl -O https://storage.googleapis.com/kubernetes-release/release/v1.5.1/bin/linux/amd64/kubectl
+</code></pre><p>检查服务状态:</p><pre><code># systemctl status kubelet.service
+</code></pre><h3 id=kubectl配置>kubectl配置</h3><p>首先下载最新的kubectl程序:</p><pre><code># curl -O https://storage.googleapis.com/kubernetes-release/release/v1.5.1/bin/linux/amd64/kubectl
 # chmod +x kubectl
 # mv kubectl /usr/local/bin/kubectl
-</code></pre><p>配置命令如下:</p>
-<pre><code># cd YourDir/openssl/
+</code></pre><p>配置命令如下:</p><pre><code># cd YourDir/openssl/
 # kubectl config set-cluster default-cluster --server=https://172.17.8.221 --certificate-authority=./ca.pem
 # kubectl config set-credentials default-admin --certificate-authority=./ca.pem --client-key=./admin-key.pem --client-certificate=./admin.pem
 # kubectl config set-context default-system --cluster=default-cluster --user=default-admin
 # kubectl config use-context default-system
-</code></pre><p>验证:</p>
-<pre><code># kubectl get nodes
+</code></pre><p>验证:</p><pre><code># kubectl get nodes
 NAME           STATUS                     AGE
 172.17.8.221   Ready,SchedulingDisabled   1d
 172.17.8.222   Ready                      1d
 172.17.8.223   Ready                      1d
 # kubectl get pods --all-namespaces
-</code></pre><h3 id="插件安装">插件安装</h3>
-<h4 id="dns插件">DNS插件</h4>
-<p><code>dns-addon.yml</code>文件定义如下:</p>
-<pre><code>apiVersion: v1
+</code></pre><h3 id=插件安装>插件安装</h3><h4 id=dns插件>DNS插件</h4><p><code>dns-addon.yml</code>文件定义如下:</p><pre><code>apiVersion: v1
 kind: Service
 metadata:
   name: kube-dns
@@ -849,12 +633,9 @@ spec:
         - containerPort: 8080
           protocol: TCP
       dnsPolicy: Default
-</code></pre><p>启动该插件:</p>
-<pre><code>$ kubectl create -f dns-addon.yml
+</code></pre><p>启动该插件:</p><pre><code>$ kubectl create -f dns-addon.yml
 $ kubectl get pods --namespace=kube-system | grep kube-dns-v20
-</code></pre><p>测试dns是否工作？</p>
-<p>创建一个临时的Pod，在里面进行一次DNS查询，Pod描述文件如下:</p>
-<pre><code>$ vim busybox.yaml
+</code></pre><p>测试dns是否工作？</p><p>创建一个临时的Pod，在里面进行一次DNS查询，Pod描述文件如下:</p><pre><code>$ vim busybox.yaml
 apiVersion: v1
 kind: Pod
 metadata: 
@@ -869,8 +650,7 @@ spec:
     imagePullPolicy: IfNotPresent
     name: busybox
   restartPolicy: Always
-</code></pre><p>创建该服务:</p>
-<pre><code>$ kubectl create -f busybox.yaml
+</code></pre><p>创建该服务:</p><pre><code>$ kubectl create -f busybox.yaml
 pod &quot;busybox&quot; created
 $ kubectl exec busybox -- nslookup kubernetes
 Server:    10.3.0.10
@@ -881,10 +661,7 @@ Address 1: 10.3.0.1 kubernetes.default.svc.cluster.local
 $ kubectl get pods
 NAME      READY     STATUS    RESTARTS   AGE
 busybox   1/1       Running   0          &lt;invalid&gt;
-</code></pre><p>由此得知该dns正常工作。</p>
-<h4 id="dashboard">dashboard</h4>
-<p>配置文件有两个，一个是rc定义文件<code>kube-dashboard-rc.yaml</code>:</p>
-<pre><code>apiVersion: v1
+</code></pre><p>由此得知该dns正常工作。</p><h4 id=dashboard>dashboard</h4><p>配置文件有两个，一个是rc定义文件<code>kube-dashboard-rc.yaml</code>:</p><pre><code>apiVersion: v1
 kind: ReplicationController
 metadata:
   name: kubernetes-dashboard-v1.4.1
@@ -926,8 +703,7 @@ spec:
             port: 9090
           initialDelaySeconds: 30
           timeoutSeconds: 30
-</code></pre><p>另一个是service定义文件<code>kube-dashboard-svc.yaml</code>:</p>
-<pre><code>apiVersion: v1
+</code></pre><p>另一个是service定义文件<code>kube-dashboard-svc.yaml</code>:</p><pre><code>apiVersion: v1
 kind: Service
 metadata:
   name: kubernetes-dashboard
@@ -941,20 +717,13 @@ spec:
   ports:
   - port: 80
     targetPort: 9090
-</code></pre><p>创建rc和service:</p>
-<pre><code>$ kubectl create -f kube-dashbard-rc.yaml
+</code></pre><p>创建rc和service:</p><pre><code>$ kubectl create -f kube-dashbard-rc.yaml
 $ kubectl create -f kube-dashbard-svc.yaml
-</code></pre><p>建立一个转发，从而可以在本地访问kubernetes dashboard:</p>
-<pre><code>$ kubectl get pods --namespace=kube-system
+</code></pre><p>建立一个转发，从而可以在本地访问kubernetes dashboard:</p><pre><code>$ kubectl get pods --namespace=kube-system
 $ kubectl port-forward kubernetes-dashboard-v1.4.1-SOME-ID 9090
 --namespace=kube-system
-</code></pre><p>现在访问<code>http://127.0.0.1:9090</code>则可以直接访问到kubernetes dashboard.</p>
-<p>或者，转发到特定端口：</p>
-<pre><code>$ kubectl port-forward kubernetes-dashboard-xxxxx 9081:9090
-</code></pre><p>则访问<code>http://127.0.0.1:9081</code>即可访问到kube-ui.</p>
-<h3 id="heapster监控">heapster监控</h3>
-<p>heapster controller的定义文件如下:</p>
-<pre><code>apiVersion: extensions/v1beta1
+</code></pre><p>现在访问<code>http://127.0.0.1:9090</code>则可以直接访问到kubernetes dashboard.</p><p>或者，转发到特定端口：</p><pre><code>$ kubectl port-forward kubernetes-dashboard-xxxxx 9081:9090
+</code></pre><p>则访问<code>http://127.0.0.1:9081</code>即可访问到kube-ui.</p><h3 id=heapster监控>heapster监控</h3><p>heapster controller的定义文件如下:</p><pre><code>apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: heapster-v1.2.0
@@ -1021,8 +790,7 @@ spec:
             - --container=heapster
             - --poll-period=300000
             - --estimator=exponential
-</code></pre><p>heapster-service的定义文件如下:</p>
-<pre><code>kind: Service
+</code></pre><p>heapster-service的定义文件如下:</p><pre><code>kind: Service
 apiVersion: v1
 metadata: 
   name: heapster
@@ -1036,31 +804,12 @@ spec:
       targetPort: 8082
   selector: 
     k8s-app: heapster
-</code></pre><p>创建controller及暴露服务:</p>
-<pre><code>$ kubectl create -f heapster-controller.yaml
+</code></pre><p>创建controller及暴露服务:</p><pre><code>$ kubectl create -f heapster-controller.yaml
 $ kubectl create -f heapster-service.yaml
-</code></pre><p>查看集群信息:</p>
-<pre><code>$ kubectl cluster-info
+</code></pre><p>查看集群信息:</p><pre><code>$ kubectl cluster-info
 Kubernetes master is running at https://172.17.8.221
 Heapster is running at
 https://172.17.8.221/api/v1/proxy/namespaces/kube-system/services/heapster
 KubeDNS is running at
 https://172.17.8.221/api/v1/proxy/namespaces/kube-system/services/kube-dns
-</code></pre><p>可以看到Heapster已经启动，而在kubernetes dashboard上此刻就可以看到监控信息了.</p>
-<p><img src="/images/2016_12_26_19_26_07_800x271.jpg" alt="/images/2016_12_26_19_26_07_800x271.jpg"></p>
-<p><img src="/images/2016_12_26_19_29_23_941x475.jpg" alt="/images/2016_12_26_19_29_23_941x475.jpg"></p>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre><p>可以看到Heapster已经启动，而在kubernetes dashboard上此刻就可以看到监控信息了.</p><p><img src=/images/2016_12_26_19_26_07_800x271.jpg alt=/images/2016_12_26_19_26_07_800x271.jpg></p><p><img src=/images/2016_12_26_19_29_23_941x475.jpg alt=/images/2016_12_26_19_29_23_941x475.jpg></p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

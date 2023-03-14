@@ -1,154 +1,17 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>BuildKismaticAllInOne &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="BuildKismaticAllINOne">
-  <meta name="keywords" content="DevOPS">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>BuildKismaticAllInOne</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Jan 10, 2018 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#start">Start</a></li>
-        <li><a href="#configuration">Configuration</a></li>
-        <li><a href="#helm">helm</a></li>
-        <li><a href="#ubuntu-ways">Ubuntu ways</a></li>
-        <li><a href="#helm-1">helm</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="start">Start</h3>
-<p>Build an virtual machine with 4-core/8G, change its ip address to
-<code>10.15.205.100</code>, hostname <code>allinone</code>.</p>
-<pre><code># cd /etc/yum.repos.d/
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>BuildKismaticAllInOne &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="BuildKismaticAllINOne"><meta name=keywords content="DevOPS"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>BuildKismaticAllInOne</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Jan 10, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#start>Start</a></li><li><a href=#configuration>Configuration</a></li><li><a href=#helm>helm</a></li><li><a href=#ubuntu-ways>Ubuntu ways</a></li><li><a href=#helm-1>helm</a></li></ul></li></ul></nav></div><h3 id=start>Start</h3><p>Build an virtual machine with 4-core/8G, change its ip address to
+<code>10.15.205.100</code>, hostname <code>allinone</code>.</p><pre><code># cd /etc/yum.repos.d/
 # mkdir back
 # mv *.repo back
 # curl http://10.15.205.2/base.repo&gt;base.repo
 # yum makecache
-</code></pre><p>Notice the base.repo is the repositories we get from the internet.</p>
-<p>Edit the hostfile for adding the registry item(domain name to ip address).</p>
-<pre><code># vim /etc/hosts
+</code></pre><p>Notice the base.repo is the repositories we get from the internet.</p><p>Edit the hostfile for adding the registry item(domain name to ip address).</p><pre><code># vim /etc/hosts
 10.15.205.2	mirror.xxxx.com
 </code></pre><p>Make sure you public key has been inserted into the
-<code>/root/.ssh/authorized_keys</code>, then create the directory for deployment:</p>
-<pre><code>$ sudo cp -r kismatic_for_1015205 allinone
+<code>/root/.ssh/authorized_keys</code>, then create the directory for deployment:</p><pre><code>$ sudo cp -r kismatic_for_1015205 allinone
 $ cd allinone
 $ sudo rm -rf generated*
-</code></pre><h3 id="configuration">Configuration</h3>
-<p>The example configuration file is listed as following:</p>
-<pre><code>cluster:
+</code></pre><h3 id=configuration>Configuration</h3><p>The example configuration file is listed as following:</p><pre><code>cluster:
   name: kubernetes
 
   # Set to true if the nodes have the required packages installed.
@@ -387,8 +250,7 @@ storage:
 # A set of NFS volumes for use by on-cluster persistent workloads
 nfs:
   nfs_volume: []
-</code></pre><p>Deploy the whole cluster:</p>
-<pre><code>sudo bash
+</code></pre><p>Deploy the whole cluster:</p><pre><code>sudo bash
 [root@xxxxxx allinone]# ./kismatic install apply
 
 Validating==========================================================================
@@ -397,11 +259,7 @@ Validating installation plan file                                               
 Validating SSH connectivity to nodes                                            [OK]
 Configure Cluster Prerequisites                                                 [OK]
 Gather Node Facts
-</code></pre><p>Then you could get the running kubernetes.</p>
-<h3 id="helm">helm</h3>
-<p>helm, translation for chinese: <code>舵</code>.</p>
-<p>Get started with helm:</p>
-<pre><code># curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get &gt; get_helm.sh
+</code></pre><p>Then you could get the running kubernetes.</p><h3 id=helm>helm</h3><p>helm, translation for chinese: <code>舵</code>.</p><p>Get started with helm:</p><pre><code># curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get &gt; get_helm.sh
 # chmod 777 get_helm.sh 
 # ./get_helm.sh 
 [root@allinone ~]# which helm
@@ -410,11 +268,8 @@ Gather Node Facts
 Client: &amp;version.Version{SemVer:&quot;v2.7.2&quot;, GitCommit:&quot;8478fb4fc723885b155c924d1c8c410b7a9444e6&quot;, GitTreeState:&quot;clean&quot;}
 Error: cannot connect to Tiller
 </code></pre><p>This error message is because my k8s cluster is not stable. so re-install a
-new one.</p>
-<h3 id="ubuntu-ways">Ubuntu ways</h3>
-<p>For syncing the packages from the internet, then create a gpg key for
-publishing the repository:</p>
-<pre><code># apt-get install -y haveged
+new one.</p><h3 id=ubuntu-ways>Ubuntu ways</h3><p>For syncing the packages from the internet, then create a gpg key for
+publishing the repository:</p><pre><code># apt-get install -y haveged
 # gpg --gen-key
 gpg (GnuPG) 1.4.20; Copyright (C) 2015 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
@@ -488,8 +343,7 @@ Serving published repositories, recommended apt sources list:
 deb http://vagrant:8080/ xenial main
 
 Starting web server at: :8080 (press Ctrl+C to quit)...
-</code></pre><p>Added it to systemd files:</p>
-<pre><code># cat /etc/systemd/system/aptly.service 
+</code></pre><p>Added it to systemd files:</p><pre><code># cat /etc/systemd/system/aptly.service 
 [Service]
 Type=simple
 ExecStart=/usr/bin/aptly -config /home/vagrant/.aptly.conf serve -listen=:80
@@ -497,9 +351,7 @@ User=root
 # systemctl daemon-reload
 # systemctl enable aptly
 # systemctl start aptly
-</code></pre><p>Failed, why aptly could not be run.</p>
-<p>Client usage:</p>
-<pre><code># sudo vim /etc/ssh/sshd_config
+</code></pre><p>Failed, why aptly could not be run.</p><p>Client usage:</p><pre><code># sudo vim /etc/ssh/sshd_config
 PermitRootLogin yes
 # vim /etc/network/interfaces
 Change ip addresss
@@ -516,37 +368,17 @@ Then in clients import the keys:
         OK
         root@ubuntu:/root# apt-key list
         /etc/apt/trusted.gpg
-</code></pre><p>Then <code>sudo apt-get update</code> won&rsquo;t get any errors.</p>
-<p>Thus you could have a server at the certain vm, convert this vm from
-virtualbox into qcow2 via following command.</p>
-<pre><code># qemu-img convert -f vmdk -O qcow2 box-disk001.vmdk aptly_ubuntu.qcow2
-</code></pre><p>Start the registry server.</p>
-<p>Create a new ubuntu server, enable the sshd login of root. Add repository, add
-following definition of the registry:</p>
-<pre><code># vim /etc/hosts
+</code></pre><p>Then <code>sudo apt-get update</code> won&rsquo;t get any errors.</p><p>Thus you could have a server at the certain vm, convert this vm from
+virtualbox into qcow2 via following command.</p><pre><code># qemu-img convert -f vmdk -O qcow2 box-disk001.vmdk aptly_ubuntu.qcow2
+</code></pre><p>Start the registry server.</p><p>Create a new ubuntu server, enable the sshd login of root. Add repository, add
+following definition of the registry:</p><pre><code># vim /etc/hosts
 10.15.205.2	mirror.xxxxx.com
 </code></pre><p>Then add the kismaticuser.key.pub into the server&rsquo;s
-<code>/root/.ssh/authorized_keys</code>.</p>
-<h3 id="helm-1">helm</h3>
-<pre><code># helm search
+<code>/root/.ssh/authorized_keys</code>.</p><h3 id=helm-1>helm</h3><pre><code># helm search
 # helm list
 # helm install --name wordpress-test --set &quot;persistence.enabled=false,mariadb.persistence.enabled=false&quot; stable/wordpress
 # helm list
 [root@DashSSD ubuntuone]# ./helm list
 NAME          	REVISION	UPDATED                 	STATUS  	CHART          	NAMESPACE
 wordpress-test	1       	Wed Jan 10 17:30:29 2018	DEPLOYED	wordpress-0.7.9	default  
-</code></pre>
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,152 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>LinuxTips on Dash</title>
-    <link>http://purplepalmdash.github.io/categories/linuxtips/</link>
-    <description>Recent content in LinuxTips on Dash</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 29 Feb 2020 09:39:51 +0800</lastBuildDate>
-    
-	<atom:link href="http://purplepalmdash.github.io/categories/linuxtips/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>LinuxTips11</title>
-      <link>http://purplepalmdash.github.io/blog/2020/02/29/linuxtips11/</link>
-      <pubDate>Sat, 29 Feb 2020 09:39:51 +0800</pubDate>
-      
-      <guid>http://purplepalmdash.github.io/blog/2020/02/29/linuxtips11/</guid>
-      <description>1. docker exec with root Via following commands:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LinuxTips on Dash</title><link>http://purplepalmdash.github.io/categories/linuxtips/</link><description>Recent content in LinuxTips on Dash</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 29 Feb 2020 09:39:51 +0800</lastBuildDate><atom:link href="http://purplepalmdash.github.io/categories/linuxtips/index.xml" rel="self" type="application/rss+xml"/><item><title>LinuxTips11</title><link>http://purplepalmdash.github.io/blog/2020/02/29/linuxtips11/</link><pubDate>Sat, 29 Feb 2020 09:39:51 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2020/02/29/linuxtips11/</guid><description>1. docker exec with root Via following commands:
 $ sudo docker exec -it --workdir /root --user root 1e61b0cce4f2 bash 2. vncserver for ubuntu18.04 Install xfce4 and tigervnc-server:
 # sudo apt-get install -y tigervnc-standalone-server tigervnc-common xfce4 But now you won&amp;rsquo;t access the vnc desktop, cause the default setting is only listening on 127.0.0.1:
-# netstat -anp | grep 5901 tcp 0 0 127.0.0.1:5901 0.0.0.0:* LISTEN 59902/Xtigervnc tcp6 0 0 ::1:5901 :::* LISTEN 59902/Xtigervnc Edit the vnc.</description>
-    </item>
-    
-    <item>
-      <title>Linux Tips 10</title>
-      <link>http://purplepalmdash.github.io/blog/2019/04/19/linux-tips-10/</link>
-      <pubDate>Fri, 19 Apr 2019 10:47:50 +0800</pubDate>
-      
-      <guid>http://purplepalmdash.github.io/blog/2019/04/19/linux-tips-10/</guid>
-      <description>1. samba mount mount samba via:
+# netstat -anp | grep 5901 tcp 0 0 127.0.0.1:5901 0.0.0.0:* LISTEN 59902/Xtigervnc tcp6 0 0 ::1:5901 :::* LISTEN 59902/Xtigervnc Edit the vnc.</description></item><item><title>Linux Tips 10</title><link>http://purplepalmdash.github.io/blog/2019/04/19/linux-tips-10/</link><pubDate>Fri, 19 Apr 2019 10:47:50 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2019/04/19/linux-tips-10/</guid><description>1. samba mount mount samba via:
 # mount -t cifs //192.168.0.219/samba /mnt -o username=uuuu,password=ffff 2. CentOS ansible On vps we start a docker instance via:
-# docker run -it centos:7 /bin/bash # yum update -y # yum install -y epel-release # yum update -y # yum install -y python-pip # mkdir ~/ansible &amp;amp;&amp;amp; cd ~/ansible # pip download ansible # tar czvf ansible.tar.gz ansible Download the ansible.tar.gz to local, and transfer them into the centos offline machines, install ansible via:</description>
-    </item>
-    
-    <item>
-      <title>LinuxTips9</title>
-      <link>http://purplepalmdash.github.io/blog/2018/05/21/linuxtips9/</link>
-      <pubDate>Mon, 21 May 2018 09:38:48 +0800</pubDate>
-      
-      <guid>http://purplepalmdash.github.io/blog/2018/05/21/linuxtips9/</guid>
-      <description>1. Build maven project For building the class, do mvn compile, for building the jar file, do mvn package, then you could get the jar under the target folder.
+# docker run -it centos:7 /bin/bash # yum update -y # yum install -y epel-release # yum update -y # yum install -y python-pip # mkdir ~/ansible &amp;amp;&amp;amp; cd ~/ansible # pip download ansible # tar czvf ansible.tar.gz ansible Download the ansible.tar.gz to local, and transfer them into the centos offline machines, install ansible via:</description></item><item><title>LinuxTips9</title><link>http://purplepalmdash.github.io/blog/2018/05/21/linuxtips9/</link><pubDate>Mon, 21 May 2018 09:38:48 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2018/05/21/linuxtips9/</guid><description>1. Build maven project For building the class, do mvn compile, for building the jar file, do mvn package, then you could get the jar under the target folder.
 2. sed replace via following commands:
 # sed s/10.168.100.145/192.192.189.1/&amp;lt;/home/dash/docker-compose.yml 3. get ip for ubuntu Ubuntu 14.04 ~ 18.04, via following command:
-hostname -I | awk &#39;{print $1}&#39; 4. view systemd logs via following command:
-# journalctl -u service-name.service -b 5. Disable unattended upgrades Under Ubuntu18.</description>
-    </item>
-    
-    <item>
-      <title>LinuxTips8</title>
-      <link>http://purplepalmdash.github.io/blog/2017/10/30/linuxtips8/</link>
-      <pubDate>Mon, 30 Oct 2017 09:50:23 +0800</pubDate>
-      
-      <guid>http://purplepalmdash.github.io/blog/2017/10/30/linuxtips8/</guid>
-      <description>1. pigz for multi-core compression In case you need multi-core compression for speeding up compression procedure, please do following steps:
-# pacman -S pigz # tar -c transfer/ | pigz -c | split -a 5 -d -b 1650m - mysplit # ls -l total 8296652 -rw-r--r-- 1 root root 1730150400 Oct 30 09:20 mysplit00000 -rw-r--r-- 1 root root 1730150400 Oct 30 09:20 mysplit00001 -rw-r--r-- 1 root root 1730150400 Oct 30 09:22 mysplit00002 -rw-r--r-- 1 root root 1730150400 Oct 30 09:23 mysplit00003 -rw-r--r-- 1 root root 1575143431 Oct 30 09:23 mysplit00004 drwxr-xr-x 3 root root 4096 Oct 30 08:59 transfer Decompression these files:</description>
-    </item>
-    
-    <item>
-      <title>Linux Tips(7)</title>
-      <link>http://purplepalmdash.github.io/blog/2017/03/03/linux-tips7/</link>
-      <pubDate>Fri, 03 Mar 2017 11:14:34 +0800</pubDate>
-      
-      <guid>http://purplepalmdash.github.io/blog/2017/03/03/linux-tips7/</guid>
-      <description>1. CloudStack Issue On ubuntu1404/1604, the template should enable HVM. Its partition size should less than the primary storage size. Password reset issue: Ubuntu1604, failed.
+hostname -I | awk '{print $1}' 4. view systemd logs via following command:
+# journalctl -u service-name.service -b 5. Disable unattended upgrades Under Ubuntu18.</description></item><item><title>LinuxTips8</title><link>http://purplepalmdash.github.io/blog/2017/10/30/linuxtips8/</link><pubDate>Mon, 30 Oct 2017 09:50:23 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2017/10/30/linuxtips8/</guid><description>1. pigz for multi-core compression In case you need multi-core compression for speeding up compression procedure, please do following steps:
+# pacman -S pigz # tar -c transfer/ | pigz -c | split -a 5 -d -b 1650m - mysplit # ls -l total 8296652 -rw-r--r-- 1 root root 1730150400 Oct 30 09:20 mysplit00000 -rw-r--r-- 1 root root 1730150400 Oct 30 09:20 mysplit00001 -rw-r--r-- 1 root root 1730150400 Oct 30 09:22 mysplit00002 -rw-r--r-- 1 root root 1730150400 Oct 30 09:23 mysplit00003 -rw-r--r-- 1 root root 1575143431 Oct 30 09:23 mysplit00004 drwxr-xr-x 3 root root 4096 Oct 30 08:59 transfer Decompression these files:</description></item><item><title>Linux Tips(7)</title><link>http://purplepalmdash.github.io/blog/2017/03/03/linux-tips7/</link><pubDate>Fri, 03 Mar 2017 11:14:34 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2017/03/03/linux-tips7/</guid><description>1. CloudStack Issue On ubuntu1404/1604, the template should enable HVM. Its partition size should less than the primary storage size. Password reset issue: Ubuntu1604, failed.
 Ubuntu14.04 startup too slow, because of ntp, remove it sudo update-rc.d -f ntp remove
 2. Ubuntu16.04 cloudstack-pass issue The reset-password script is located as /etc/init.d/cloud-set-guest-password, then we could do following configurations:
 Remove the services via:
-# update-rc.d -f cloud-set-guest-password remove # cp /etc/init.d/cloud-setup-guest-password /usr/bin/ # chmod 777 /usr/bin/cloud-setup-guest-password Before because you set update-rc.</description>
-    </item>
-    
-    <item>
-      <title>LinuxTips6</title>
-      <link>http://purplepalmdash.github.io/blog/2016/10/09/linuxtips6/</link>
-      <pubDate>Sun, 09 Oct 2016 17:24:03 +0800</pubDate>
-      
-      <guid>http://purplepalmdash.github.io/blog/2016/10/09/linuxtips6/</guid>
-      <description>1. Working tips for remove dulipcate chars http://codereview.stackexchange.com/questions/5441/removing-any-duplicate-characters-in-a-string
+# update-rc.d -f cloud-set-guest-password remove # cp /etc/init.d/cloud-setup-guest-password /usr/bin/ # chmod 777 /usr/bin/cloud-setup-guest-password Before because you set update-rc.</description></item><item><title>LinuxTips6</title><link>http://purplepalmdash.github.io/blog/2016/10/09/linuxtips6/</link><pubDate>Sun, 09 Oct 2016 17:24:03 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2016/10/09/linuxtips6/</guid><description>1. Working tips for remove dulipcate chars http://codereview.stackexchange.com/questions/5441/removing-any-duplicate-characters-in-a-string
 2. pip reinstallation Uninstall all of the pip installed packages:
 # pip freeze | xargs pip uninstall -y 3. ipython notebook Install on ArchLinux via:
 $ sudo pip install &amp;quot;ipython[all]&amp;quot; Be sure to make your internet connection stable.
 Run it via:
 $ ipython notebook ipython2 installation issue:
-$ python2 -m pip install ipykernel $ python2 -m ipykernel install --user $ python2 -m pip install &amp;quot;ipython[all]&amp;quot; $ ipython3 notebook Now you could create python2&amp;amp;python3 notebooks.</description>
-    </item>
-    
-    <item>
-      <title>Linux Tips(5)</title>
-      <link>http://purplepalmdash.github.io/2016/05/04/linux-tips-5/</link>
-      <pubDate>Wed, 04 May 2016 20:03:21 +0000</pubDate>
-      
-      <guid>http://purplepalmdash.github.io/2016/05/04/linux-tips-5/</guid>
-      <description>1. Detach Running Tasks Ctrl+Z for suspend the tasks, then bg it, now you could use disown %1 for detaching the running process.
+$ python2 -m pip install ipykernel $ python2 -m ipykernel install --user $ python2 -m pip install &amp;quot;ipython[all]&amp;quot; $ ipython3 notebook Now you could create python2&amp;amp;python3 notebooks.</description></item><item><title>Linux Tips(5)</title><link>http://purplepalmdash.github.io/2016/05/04/linux-tips-5/</link><pubDate>Wed, 04 May 2016 20:03:21 +0000</pubDate><guid>http://purplepalmdash.github.io/2016/05/04/linux-tips-5/</guid><description>1. Detach Running Tasks Ctrl+Z for suspend the tasks, then bg it, now you could use disown %1 for detaching the running process.
 Next time you login, you will see this background task is also running.
 2. Installation of Cobbler Shell Scripts:
 https://gist.github.com/luisbolson/1d0dc42976d2468171d0
 3. yum groups http://ramblings.narrabilis.com/creating-a-yum-repository-repo-and-creating-a-yum-group-to-install-kickstart
 4. rvm issue rvm met openssl.so (LoadError), could be solved via following steps.
-$ curl https://github.com/ruby/ruby/commit/801e1fe46d83c856844ba18ae4751478c59af0d1.diff &amp;gt; openssl.patch\n $ rvm install 1.9.3 --with-openssl-dir=$HOME/.rvm/usr --patch .</description>
-    </item>
-    
-    <item>
-      <title>Linux Tips(4)</title>
-      <link>http://purplepalmdash.github.io/2016/01/15/linux-tips-4/</link>
-      <pubDate>Fri, 15 Jan 2016 18:37:03 +0000</pubDate>
-      
-      <guid>http://purplepalmdash.github.io/2016/01/15/linux-tips-4/</guid>
-      <description>1. Run ansible commands Run commands in all hosts:
+$ curl https://github.com/ruby/ruby/commit/801e1fe46d83c856844ba18ae4751478c59af0d1.diff &amp;gt; openssl.patch\n $ rvm install 1.9.3 --with-openssl-dir=$HOME/.rvm/usr --patch .</description></item><item><title>Linux Tips(4)</title><link>http://purplepalmdash.github.io/2016/01/15/linux-tips-4/</link><pubDate>Fri, 15 Jan 2016 18:37:03 +0000</pubDate><guid>http://purplepalmdash.github.io/2016/01/15/linux-tips-4/</guid><description>1. Run ansible commands Run commands in all hosts:
 # ansible all -i inventory.ini -m command -u root --args &amp;quot;uptime&amp;quot; 2. mesos introduction http://www.infoq.com/cn/articles/analyse-mesos-part-02
 3. Limit ansible run hosts # ansible-playbook -i inventory_mesos_cluster changehostname.yml -u root -k -vvvv --list-hosts playbook: changehostname.yml play #1 (master1): host count=1 10.47.58.31 # ansible-playbook -i inventory_mesos_cluster changehostname.yml -u root -k -vvvv --limit=&amp;quot;master1&amp;quot; 4. Configure the dhcp configuration of libvirtd First edit the net configuration:
-# virsh net-edit xxxxx 5.</description>
-    </item>
-    
-    <item>
-      <title>Linux Tips 3</title>
-      <link>http://purplepalmdash.github.io/2015/10/13/linux-tips-3/</link>
-      <pubDate>Tue, 13 Oct 2015 10:43:51 +0000</pubDate>
-      
-      <guid>http://purplepalmdash.github.io/2015/10/13/linux-tips-3/</guid>
-      <description>1. Tips on Cloud-Init http://www.cnblogs.com/smallcoderhujin/p/4238609.html
+# virsh net-edit xxxxx 5.</description></item><item><title>Linux Tips 3</title><link>http://purplepalmdash.github.io/2015/10/13/linux-tips-3/</link><pubDate>Tue, 13 Oct 2015 10:43:51 +0000</pubDate><guid>http://purplepalmdash.github.io/2015/10/13/linux-tips-3/</guid><description>1. Tips on Cloud-Init http://www.cnblogs.com/smallcoderhujin/p/4238609.html
 2. Access CloudStack VR Get the VR IP address from the CloudStack Web Interface:
 Then get the ssh connection via(On Agent Node):
 [root@csmgmt ~]# ssh -i .ssh/id_rsa.cloud -p3922 169.254.1.177 Linux r-9-VM 3.2.0-4-amd64 #1 SMP Debian 3.2.65-1+deb7u2 x86_64 ....... root@r-9-VM:~# 3. Cloudmonkey issue Couldnot start cloudmonkey, use virtualenv for starting:
-$ yum install -y python-virtualenv $ virtualenv venv --python=python2.6 $ . venv/bin/activate $ pip install cloudmonkey Then you could start cloudmonkey in venv environment.</description>
-    </item>
-    
-    <item>
-      <title>Linux Tips(2)</title>
-      <link>http://purplepalmdash.github.io/2015/06/29/linux-tips-2/</link>
-      <pubDate>Mon, 29 Jun 2015 09:27:17 +0000</pubDate>
-      
-      <guid>http://purplepalmdash.github.io/2015/06/29/linux-tips-2/</guid>
-      <description>1. XenCenter Installation Just use your windows&amp;rsquo;s browser point to your XenServer IP Address, Download the XenCenter, and install it.
+$ yum install -y python-virtualenv $ virtualenv venv --python=python2.6 $ . venv/bin/activate $ pip install cloudmonkey Then you could start cloudmonkey in venv environment.</description></item><item><title>Linux Tips(2)</title><link>http://purplepalmdash.github.io/2015/06/29/linux-tips-2/</link><pubDate>Mon, 29 Jun 2015 09:27:17 +0000</pubDate><guid>http://purplepalmdash.github.io/2015/06/29/linux-tips-2/</guid><description>1. XenCenter Installation Just use your windows&amp;rsquo;s browser point to your XenServer IP Address, Download the XenCenter, and install it.
 Update Some tools on XenServer:
 $ vim /etc/yum.repos.d/CentOS-Base.repo ... enabled=1 ... $ yum install -y lm_sensors After installation of lm_sensors you could see more detailed information on XenServer.
 2. Disable Specified Repository Since citrix have no data in its repository, simply disable it.
-$ yum update --disablerepo=citrix 3. Yum Shell yum shell remove ffmpeg-libpostproc remove ffmpeg install ffmpeg-compat run 4.</description>
-    </item>
-    
-    <item>
-      <title>Linux Tips</title>
-      <link>http://purplepalmdash.github.io/2014/10/18/linux-tips/</link>
-      <pubDate>Sat, 18 Oct 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://purplepalmdash.github.io/2014/10/18/linux-tips/</guid>
-      <description>1. Know the System Installation Date You can use tune2fs to know the installation date of your Linux System, be ware the /dev/sda[] should be the root partition of your disk. See my following example:
-tune2fs -l /dev/sda1 or /dev/sdb1* | grep &#39;Filesystem created:&#39; $ sudo tune2fs -l /dev/sda2 | grep &#39;Filesystem created:&#39; Filesystem created: Mon May 5 17:31:40 2014 2. View Thread Status View the thread status via proc filesystem.</description>
-    </item>
-    
-  </channel>
-</rss>
+$ yum update --disablerepo=citrix 3. Yum Shell yum shell remove ffmpeg-libpostproc remove ffmpeg install ffmpeg-compat run 4.</description></item><item><title>Linux Tips</title><link>http://purplepalmdash.github.io/2014/10/18/linux-tips/</link><pubDate>Sat, 18 Oct 2014 00:00:00 +0000</pubDate><guid>http://purplepalmdash.github.io/2014/10/18/linux-tips/</guid><description>1. Know the System Installation Date You can use tune2fs to know the installation date of your Linux System, be ware the /dev/sda[] should be the root partition of your disk. See my following example:
+tune2fs -l /dev/sda1 or /dev/sdb1* | grep 'Filesystem created:' $ sudo tune2fs -l /dev/sda2 | grep 'Filesystem created:' Filesystem created: Mon May 5 17:31:40 2014 2. View Thread Status View the thread status via proc filesystem.</description></item></channel></rss>

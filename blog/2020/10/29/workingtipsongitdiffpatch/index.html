@@ -1,156 +1,14 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>WorkingTipsOnGitDiffPatch &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="WorkingTipsOnGitDiffPatch">
-  <meta name="keywords" content="Technology">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>WorkingTipsOnGitDiffPatch</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Oct 29, 2020 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#rong代码架构现状">RONG代码架构现状</a></li>
-        <li><a href="#apply-patch">Apply patch</a></li>
-        <li><a href="#example">Example</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="rong代码架构现状">RONG代码架构现状</h3>
-<p>制作patch前确保Kubespray代码中目录中的软链接确实存在，而不是因为cp被替换成了实体文件。</p>
-<p>v2.14.0上制作patch</p>
-<pre><code># git clone https://github.com/kubernetes-sigs/kubespray.git
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>WorkingTipsOnGitDiffPatch &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="WorkingTipsOnGitDiffPatch"><meta name=keywords content="Technology"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>WorkingTipsOnGitDiffPatch</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Oct 29, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#rong代码架构现状>RONG代码架构现状</a></li><li><a href=#apply-patch>Apply patch</a></li><li><a href=#example>Example</a></li></ul></li></ul></nav></div><h3 id=rong代码架构现状>RONG代码架构现状</h3><p>制作patch前确保Kubespray代码中目录中的软链接确实存在，而不是因为cp被替换成了实体文件。</p><p>v2.14.0上制作patch</p><pre><code># git clone https://github.com/kubernetes-sigs/kubespray.git
 # git checkout tags/v2.14.0 -b 2140
-</code></pre><p>此时检出的是v2.14.0的未修改的代码。</p>
-<p>该目录下替换成<code>3_k8s</code>下的代码，注意去掉部署时生成的中间文件。而后<code>commit</code>更改。</p>
-<p><img src="/images/2020_10_29_11_03_04_638x297.jpg" alt="/images/2020_10_29_11_03_04_638x297.jpg"></p>
-<p>制作patch文件:</p>
-<pre><code>git diff a1f04e f0c9b1&gt;patch1
-</code></pre><h3 id="apply-patch">Apply patch</h3>
-<p>切换回master分支，或者直接在新目录下checkout一个新的工作目录:</p>
-<pre><code># git apply --check ../patch 
+</code></pre><p>此时检出的是v2.14.0的未修改的代码。</p><p>该目录下替换成<code>3_k8s</code>下的代码，注意去掉部署时生成的中间文件。而后<code>commit</code>更改。</p><p><img src=/images/2020_10_29_11_03_04_638x297.jpg alt=/images/2020_10_29_11_03_04_638x297.jpg></p><p>制作patch文件:</p><pre><code>git diff a1f04e f0c9b1&gt;patch1
+</code></pre><h3 id=apply-patch>Apply patch</h3><p>切换回master分支，或者直接在新目录下checkout一个新的工作目录:</p><pre><code># git apply --check ../patch 
 error: 打补丁失败：roles/kubernetes-apps/helm/templates/tiller-clusterrolebinding.yml.j2:3
 error: roles/kubernetes-apps/helm/templates/tiller-clusterrolebinding.yml.j2：补丁未应用
 error: 打补丁失败：roles/remove-node/remove-etcd-node/tasks/main.yml:21
 error: roles/remove-node/remove-etcd-node/tasks/main.yml：补丁未应用
-</code></pre><p>这是因为新分支(master)对比于<code>v2.14.0</code>在上述提及的文件中有更改，此时我们需要在apply的时候忽略掉这些更改:</p>
-<pre><code>git apply  /root/patch --exclude=roles/kubernetes-apps/helm/templates/tiller-clusterrolebinding.yml.j2 --exclude=roles/remove-node/remove-etcd-node/tasks/main.yml
-</code></pre><p>此时更改完毕后可以看到新版本的代码中已经添加了我们在旧分支上做的代码变更。</p>
-<p>对于有冲突的文件，需要手动解决冲突。</p>
-<h3 id="example">Example</h3>
-<p>Git patch in different branch:</p>
-<pre><code># git clone https://github.com/kubernetes-sigs/kubespray.git
+</code></pre><p>这是因为新分支(master)对比于<code>v2.14.0</code>在上述提及的文件中有更改，此时我们需要在apply的时候忽略掉这些更改:</p><pre><code>git apply  /root/patch --exclude=roles/kubernetes-apps/helm/templates/tiller-clusterrolebinding.yml.j2 --exclude=roles/remove-node/remove-etcd-node/tasks/main.yml
+</code></pre><p>此时更改完毕后可以看到新版本的代码中已经添加了我们在旧分支上做的代码变更。</p><p>对于有冲突的文件，需要手动解决冲突。</p><h3 id=example>Example</h3><p>Git patch in different branch:</p><pre><code># git clone https://github.com/kubernetes-sigs/kubespray.git
 # git checkout tags/v2.14.0 -b 2140
  (2140) $ git apply ../../patch 
  (2140 !*%) $ vim roles/container-engine/docker/tasks/main.yml
@@ -224,18 +82,4 @@ error: 工作区中下列未跟踪的文件将会因为检出操作而被覆盖�
   （使用 &quot;git push&quot; 来发布您的本地提交）
 (master) $ pwd
 /media/sda/git/pure/kubespray
-</code></pre>
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,135 +1,5 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>WorkingTipsOnLXDAndJuju &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="WorkingTipsOnLXDAndJuju">
-  <meta name="keywords" content="Technology">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>WorkingTipsOnLXDAndJuju</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Jul 3, 2021 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#before">Before</a></li>
-        <li><a href="#部署charmed-kubernetes">部署charmed Kubernetes</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="before">Before</h3>
-<p>A LXD cluster and juju status:</p>
-<p>lxd cluster status and lxc instance before deploy work load:</p>
-<pre><code>test@freeedge1:~$ lxc cluster list
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>WorkingTipsOnLXDAndJuju &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="WorkingTipsOnLXDAndJuju"><meta name=keywords content="Technology"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>WorkingTipsOnLXDAndJuju</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Jul 3, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#before>Before</a></li><li><a href=#部署charmed-kubernetes>部署charmed Kubernetes</a></li></ul></li></ul></nav></div><h3 id=before>Before</h3><p>A LXD cluster and juju status:</p><p>lxd cluster status and lxc instance before deploy work load:</p><pre><code>test@freeedge1:~$ lxc cluster list
 +-----------+---------------------------+----------+--------------+----------------+-------------+--------+-------------------+
 |   NAME    |            URL            | DATABASE | ARCHITECTURE | FAILURE DOMAIN | DESCRIPTION | STATE  |      MESSAGE      |
 +-----------+---------------------------+----------+--------------+----------------+-------------+--------+-------------------+
@@ -146,8 +16,7 @@ test@freeedge1:~$ lxc ls
 | NAME | STATE | IPV4 | IPV6 | TYPE | SNAPSHOTS | LOCATION |
 +------+-------+------+------+------+-----------+----------+
 </code></pre><p><code>juju boostrap</code> for provisioning a machine with LXD and create a controller
-running within it:</p>
-<pre><code>$ juju bootstrap localhost overlord
+running within it:</p><pre><code>$ juju bootstrap localhost overlord
 Creating Juju controller &quot;overlord&quot; on localhost/localhost
 Looking for packaged Juju agent version 2.9.5 for amd64
 WARNING Got error requesting &quot;https://streams.canonical.com/juju/tools/streams/v1/index2.sjson&quot;: Get &quot;https://streams.canonical.com/juju/tools/streams/v1/index2.sjson&quot;: dial tcp [2001:67c:1360:8001::33]:443: connect: network is unreachable
@@ -168,28 +37,24 @@ Bootstrap complete, controller &quot;overlord&quot; is now available
 Controller machines are in the &quot;controller&quot; model
 Initial model &quot;default&quot; added
 </code></pre><p>This command automatically create a new lxd instance and running the script in
-it,  like:</p>
-<pre><code>$ test@freeedge1:~$ lxc ls
+it, like:</p><pre><code>$ test@freeedge1:~$ lxc ls
 +---------------+---------+-----------------------+------+-----------+-----------+-----------+
 |     NAME      |  STATE  |         IPV4          | IPV6 |   TYPE    | SNAPSHOTS | LOCATION  |
 +---------------+---------+-----------------------+------+-----------+-----------+-----------+
 | juju-5a91a2-0 | RUNNING | 192.168.89.155 (eth0) |      | CONTAINER | 0         | freeedge1 |
 +---------------+---------+-----------------------+------+-----------+-----------+-----------+
-</code></pre><p>添加juju machines:</p>
-<pre><code>test@freeedge1:~$ juju add-machine -n 2
+</code></pre><p>添加juju machines:</p><pre><code>test@freeedge1:~$ juju add-machine -n 2
 created machine 0
 created machine 1
 test@freeedge1:~$ juju machines
 Machine  State    DNS  Inst id  Series  AZ  Message
 0        pending       pending  focal       starting
 1        pending       pending  focal       starting
-</code></pre><p>等待一段时间，直到状态变为<code>started</code>:</p>
-<pre><code>$ juju machines
+</code></pre><p>等待一段时间，直到状态变为<code>started</code>:</p><pre><code>$ juju machines
 Machine  State    DNS             Inst id        Series  AZ  Message
 0        started  192.168.89.197  juju-a5a008-0  focal       Running
 1        started  192.168.89.173  juju-a5a008-1  focal       Running
-</code></pre><p>实际上是lxc工作负载，exec进入到该实例中可发现其实是没有做任何资源限制的lxc工作实例, 如果资源需要做限制，则可以参考<code>https://juju.is/docs/olm/constraints#heading--constraints-and-lxd-containers</code>:</p>
-<pre><code>test@freeedge1:~$ lxc ls
+</code></pre><p>实际上是lxc工作负载，exec进入到该实例中可发现其实是没有做任何资源限制的lxc工作实例, 如果资源需要做限制，则可以参考<code>https://juju.is/docs/olm/constraints#heading--constraints-and-lxd-containers</code>:</p><pre><code>test@freeedge1:~$ lxc ls
 +---------------+---------+-----------------------+------+-----------+-----------+-----------+
 |     NAME      |  STATE  |         IPV4          | IPV6 |   TYPE    | SNAPSHOTS | LOCATION  |
 +---------------+---------+-----------------------+------+-----------+-----------+-----------+
@@ -200,8 +65,7 @@ Machine  State    DNS             Inst id        Series  AZ  Message
 | juju-a5a008-1 | RUNNING | 192.168.89.173 (eth0) |      | CONTAINER | 0         | freeedge2 |
 +---------------+---------+-----------------------+------+-----------+-----------+-----------+
 
-</code></pre><p>销毁刚才创建的machine:</p>
-<pre><code>test@freeedge1:~$ juju remove-machine 0
+</code></pre><p>销毁刚才创建的machine:</p><pre><code>test@freeedge1:~$ juju remove-machine 0
 removing machine 0
 test@freeedge1:~$ juju machines
 Machine  State    DNS             Inst id        Series  AZ  Message
@@ -213,8 +77,7 @@ removing machine 1
 test@freeedge1:~$ juju machines
 Machine  State    DNS             Inst id        Series  AZ  Message
 1        stopped  192.168.89.173  juju-a5a008-1  focal       Running
-</code></pre><p>创建一个<code>hello-juju</code>的charmed operator:</p>
-<pre><code>test@freeedge1:~$ juju deploy hello-juju
+</code></pre><p>创建一个<code>hello-juju</code>的charmed operator:</p><pre><code>test@freeedge1:~$ juju deploy hello-juju
 Located charm &quot;hello-juju&quot; in charm-hub, revision 8
 Deploying &quot;hello-juju&quot; from charm-hub charm &quot;hello-juju&quot;, revision 8 in channel stable
 test@freeedge1:~$ juju status
@@ -243,10 +106,7 @@ hello-juju/0*  active    idle   2        192.168.89.160  80/tcp
 
 Machine  State    DNS             Inst id        Series  AZ  Message
 2        started  192.168.89.160  juju-a5a008-2  focal       Running
-</code></pre><p><img src="/images/2021_07_03_16_31_31_680x551.jpg" alt="/images/2021_07_03_16_31_31_680x551.jpg"></p>
-<h3 id="部署charmed-kubernetes">部署charmed Kubernetes</h3>
-<p>记录一下步骤, 在LXD集群的情况下，直接部署会出现以下错误:</p>
-<pre><code># juju deploy charmed-kubernetes
+</code></pre><p><img src=/images/2021_07_03_16_31_31_680x551.jpg alt=/images/2021_07_03_16_31_31_680x551.jpg></p><h3 id=部署charmed-kubernetes>部署charmed Kubernetes</h3><p>记录一下步骤, 在LXD集群的情况下，直接部署会出现以下错误:</p><pre><code># juju deploy charmed-kubernetes
 # juju status
 Machine  State  DNS  Inst id  Series  AZ  Message
 0        down        pending  focal       Failed creating instance record: Failed initialising instance: Failed loading storage pool: No such object
@@ -254,16 +114,14 @@ Machine  State  DNS  Inst id  Series  AZ  Message
 2        down        pending  focal       Failed creating instance record: Failed initialising instance: Failed loading storage pool: No such object
 3        down        pending  focal       Failed creating instance record: Failed initialising instance: Failed loading storage pool: No such object
 ....
-</code></pre><p>这是因为没有默认的<code>default</code>格式的storage定义，</p>
-<pre><code>test@freeedge1:~$ lxc storage list
+</code></pre><p>这是因为没有默认的<code>default</code>格式的storage定义，</p><pre><code>test@freeedge1:~$ lxc storage list
 +-------+--------+-------------+---------+---------+
 | NAME  | DRIVER | DESCRIPTION | USED BY |  STATE  |
 +-------+--------+-------------+---------+---------+
 | local | zfs    |             | 3       | CREATED |
 +-------+--------+-------------+---------+---------+
 </code></pre><p>先行删除已经部署好的<code>charmed-kubernetes</code>（当前没有直接删除charmed
-operator的方法，只能将app都删除):</p>
-<pre><code> juju remove-application hello-juju
+operator的方法，只能将app都删除):</p><pre><code> juju remove-application hello-juju
  juju remove-application containerd
  juju remove-application easyrsa
  juju remove-application etcd
@@ -271,8 +129,7 @@ operator的方法，只能将app都删除):</p>
  juju remove-application kubeapi-load-balancer
  juju remove-application kubernetes-master
  juju remove-application kubernetes-worker
-</code></pre><p>所有节点上创建相同的目录并添加到一个新的storage定义:</p>
-<pre><code> $ ansible -i hosts.ini all -m shell -a &quot;sudo mkdir -p /data/lxd &amp;&amp; sudo chmod 777 -R /data/lxd&quot;
+</code></pre><p>所有节点上创建相同的目录并添加到一个新的storage定义:</p><pre><code> $ ansible -i hosts.ini all -m shell -a &quot;sudo mkdir -p /data/lxd &amp;&amp; sudo chmod 777 -R /data/lxd&quot;
 $ lxc storage create --target freeedge1 default dir source=/data/lxd 
 Storage pool default pending on member freeedge1
 $ lxc storage create --target freeedge2 default dir source=/data/lxd 
@@ -293,10 +150,8 @@ type: custom
 used_by: []
 location: freeedge1
 content_type: filesystem
-</code></pre><p>各种乱七八糟的操作以后，清空:</p>
-<pre><code>juju destroy-controller overlord
-</code></pre><p>现在重新开始部署juju(参考<code>https://juju.is/docs/olm/lxd</code>):</p>
-<pre><code>$ juju bootstrap localhost overlord
+</code></pre><p>各种乱七八糟的操作以后，清空:</p><pre><code>juju destroy-controller overlord
+</code></pre><p>现在重新开始部署juju(参考<code>https://juju.is/docs/olm/lxd</code>):</p><pre><code>$ juju bootstrap localhost overlord
 $ juju deploy charmed-kubernetes
 Located bundle &quot;charmed-kubernetes&quot; in charm-hub, revision 679
 WARNING &quot;services&quot; key found in bundle file is deprecated, superseded by &quot;applications&quot; key.
@@ -377,40 +232,24 @@ Executing changes:
 - add unit kubernetes-worker/1 to new machine 8
 - add unit kubernetes-worker/2 to new machine 9
 Deploy of bundle completed.
-</code></pre><p>部署中可以通过<code>juju status</code>看即时的状态变更:</p>
-<p><img src="/images/2021_07_03_17_51_14_1359x899.jpg" alt="/images/2021_07_03_17_51_14_1359x899.jpg"></p>
-<p>涉及到的落地实体:</p>
-<p><img src="/images/2021_07_03_17_51_58_956x946.jpg" alt="/images/2021_07_03_17_51_58_956x946.jpg"></p>
-<p>安装<code>kubectl</code>用于管控集群:</p>
-<pre><code>test@freeedge1:~$ sudo snap install kubectl --classic
+</code></pre><p>部署中可以通过<code>juju status</code>看即时的状态变更:</p><p><img src=/images/2021_07_03_17_51_14_1359x899.jpg alt=/images/2021_07_03_17_51_14_1359x899.jpg></p><p>涉及到的落地实体:</p><p><img src=/images/2021_07_03_17_51_58_956x946.jpg alt=/images/2021_07_03_17_51_58_956x946.jpg></p><p>安装<code>kubectl</code>用于管控集群:</p><pre><code>test@freeedge1:~$ sudo snap install kubectl --classic
 .....
 kubectl 1.21.1 from Canonical✓ installed
-</code></pre><p>中间状态：</p>
-<p><img src="/images/2021_07_03_18_00_15_1526x913.jpg" alt="/images/2021_07_03_18_00_15_1526x913.jpg"></p>
-<p><img src="/images/2021_07_03_18_07_12_1525x940.jpg" alt="/images/2021_07_03_18_07_12_1525x940.jpg"></p>
-<p><img src="/images/2021_07_03_18_09_07_1489x922.jpg" alt="/images/2021_07_03_18_09_07_1489x922.jpg"></p>
-<p>集群就绪：</p>
-<p><img src="/images/2021_07_03_18_40_34_1384x934.jpg" alt="/images/2021_07_03_18_40_34_1384x934.jpg"></p>
-<pre><code>$ juju scp kubernetes-master/0:config ~/.kube/config
+</code></pre><p>中间状态：</p><p><img src=/images/2021_07_03_18_00_15_1526x913.jpg alt=/images/2021_07_03_18_00_15_1526x913.jpg></p><p><img src=/images/2021_07_03_18_07_12_1525x940.jpg alt=/images/2021_07_03_18_07_12_1525x940.jpg></p><p><img src=/images/2021_07_03_18_09_07_1489x922.jpg alt=/images/2021_07_03_18_09_07_1489x922.jpg></p><p>集群就绪：</p><p><img src=/images/2021_07_03_18_40_34_1384x934.jpg alt=/images/2021_07_03_18_40_34_1384x934.jpg></p><pre><code>$ juju scp kubernetes-master/0:config ~/.kube/config
 $ kubectl get nodes -A
 NAME            STATUS   ROLES    AGE   VERSION
 juju-08ae08-7   Ready    &lt;none&gt;   19m   v1.21.1
 juju-08ae08-8   Ready    &lt;none&gt;   19m   v1.21.1
 juju-08ae08-9   Ready    &lt;none&gt;   13m   v1.21.1
 
-</code></pre><p><img src="/images/2021_07_03_18_42_18_1481x912.jpg" alt="/images/2021_07_03_18_42_18_1481x912.jpg"></p>
-<p>添加节点:</p>
-<pre><code>$ juju add-unit kubernetes-worker
-</code></pre><p><img src="/images/2021_07_03_18_43_47_709x158.jpg" alt="/images/2021_07_03_18_43_47_709x158.jpg"></p>
-<p>增加完后：</p>
-<pre><code>$ kubectl get nodes -A                                                                                                                                                      
+</code></pre><p><img src=/images/2021_07_03_18_42_18_1481x912.jpg alt=/images/2021_07_03_18_42_18_1481x912.jpg></p><p>添加节点:</p><pre><code>$ juju add-unit kubernetes-worker
+</code></pre><p><img src=/images/2021_07_03_18_43_47_709x158.jpg alt=/images/2021_07_03_18_43_47_709x158.jpg></p><p>增加完后：</p><pre><code>$ kubectl get nodes -A                                                                                                                                                      
 NAME             STATUS   ROLES    AGE   VERSION
 juju-08ae08-10   Ready    &lt;none&gt;   12m   v1.21.1
 juju-08ae08-7    Ready    &lt;none&gt;   42m   v1.21.1
 juju-08ae08-8    Ready    &lt;none&gt;   42m   v1.21.1
 juju-08ae08-9    Ready    &lt;none&gt;   36m   v1.21.1
-</code></pre><p>增加3个:</p>
-<pre><code>$ juju add-unit kubernetes-worker -n 3
+</code></pre><p>增加3个:</p><pre><code>$ juju add-unit kubernetes-worker -n 3
 $ juju status
 .....
 11       pending                  pending         focal       starting
@@ -426,18 +265,4 @@ juju-08ae08-7    Ready    &lt;none&gt;   59m     v1.21.1
 juju-08ae08-8    Ready    &lt;none&gt;   59m     v1.21.1
 juju-08ae08-9    Ready    &lt;none&gt;   53m     v1.21.1
 
-</code></pre>
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

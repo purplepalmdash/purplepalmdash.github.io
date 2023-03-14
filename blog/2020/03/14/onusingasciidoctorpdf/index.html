@@ -1,137 +1,6 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>OnUsingAsciidoctorPDF &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="OnUsingAsciidoctorPDF">
-  <meta name="keywords" content="Technology">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>OnUsingAsciidoctorPDF</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Mar 14, 2020 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#source-code-preparation">Source Code Preparation</a></li>
-        <li><a href="#building-steps">Building steps</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <p>Records the steps for generating the chinese language version of linstor documentation.</p>
-<h3 id="source-code-preparation">Source Code Preparation</h3>
-<p>Clone the whole source tree from github:</p>
-<pre><code>$ git clone https://github.com/LINBIT/linbit-documentation.git
-</code></pre><p>For I want to generate chinese version, I need <code>asciidoctorr-pdf-cjk-kai_gen_gothic</code> to be installed and also its fonts, so I changed the Dockerfile for generating the docker images which could support chinese language pdf generation:</p>
-<pre><code># vim Dockerfile
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>OnUsingAsciidoctorPDF &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="OnUsingAsciidoctorPDF"><meta name=keywords content="Technology"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>OnUsingAsciidoctorPDF</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Mar 14, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#source-code-preparation>Source Code Preparation</a></li><li><a href=#building-steps>Building steps</a></li></ul></li></ul></nav></div><p>Records the steps for generating the chinese language version of linstor documentation.</p><h3 id=source-code-preparation>Source Code Preparation</h3><p>Clone the whole source tree from github:</p><pre><code>$ git clone https://github.com/LINBIT/linbit-documentation.git
+</code></pre><p>For I want to generate chinese version, I need <code>asciidoctorr-pdf-cjk-kai_gen_gothic</code> to be installed and also its fonts, so I changed the Dockerfile for generating the docker images which could support chinese language pdf generation:</p><pre><code># vim Dockerfile
 FROM debian:buster
 MAINTAINER Roland Kammerer &lt;roland.kammerer@linbit.com&gt;
 RUN groupadd --gid 1000 makedoc
@@ -145,8 +14,7 @@ USER makedoc
 # make dockerimage
 # sudo docker images | grep linbit
 linbit-documentation   latest              118d89f74702        47 hours ago        902MB
-</code></pre><p>Generate the po files:</p>
-<pre><code># cd linbit-documentation-master
+</code></pre><p>Generate the po files:</p><pre><code># cd linbit-documentation-master
 # chmod 777 -R *
 # make UG9-pot-docker
 # cd UG9/en
@@ -155,8 +23,7 @@ about-linstor.pot              administration-manual.pot      docker-linstor.pot
 about.pot                      benchmark.pot                  docker.pot            fundamentals.pot      kubernetes.pot           man-pages.pot  opennebula.pot          proxmox-linstor.pot  rhcs.pot
 administration-drbdmanage.pot  build-install-from-source.pot  drbdmanage-more.pot   gfs.pot               latency.pot              more-info.pot  openstack-linstor.pot   proxmox.pot          throughput.pot
 administration-linstor.pot     configure.pot                  drbd-users-guide.pot  install-packages.pot  linstor-users-guide.pot  ocfs2.pot      openstack.pot           proxy.pot            troubleshooting.pot
-</code></pre><p>The pot (portable object template) which holds the tranlatable items. I wrote a simple python script which uses baidu api for translating them into chinese:</p>
-<pre><code># cd UG9/en
+</code></pre><p>The pot (portable object template) which holds the tranlatable items. I wrote a simple python script which uses baidu api for translating them into chinese:</p><pre><code># cd UG9/en
 # vim autotrans.py
 import re
 import polib
@@ -198,22 +65,16 @@ for entry in po:
             entry.msgstr = entry.msgstr.replace(msgstr_links[i], msgid_links[i])
 
 po.save('./cn/' + sys.argv[1])
-</code></pre><p>Use a shell wrapped commands for tranlating all of the pot files:</p>
-<pre><code># for i in `ls *.pot`
+</code></pre><p>Use a shell wrapped commands for tranlating all of the pot files:</p><pre><code># for i in `ls *.pot`
 do
 python3 autotrans.py $i
 done
-</code></pre><p>The tranlation goes one-by-one, until all of the pot files has been translated.</p>
-<p>Notice: the auto translation got many errors, you have to correct them manually.</p>
-<h3 id="building-steps">Building steps</h3>
-<p>I use ja language for start, cause japanese version has been translated:</p>
-<pre><code># cd UG9
+</code></pre><p>The tranlation goes one-by-one, until all of the pot files has been translated.</p><p>Notice: the auto translation got many errors, you have to correct them manually.</p><h3 id=building-steps>Building steps</h3><p>I use ja language for start, cause japanese version has been translated:</p><pre><code># cd UG9
 # cp -r ja cn
 # cd cn/
 # rm -f *.po
 # cp ../cn/*.pot .
-</code></pre><p>Write a simple shell script for changing name from <code>pot</code> to <code>po</code>:</p>
-<pre><code># vim rename.sh
+</code></pre><p>Write a simple shell script for changing name from <code>pot</code> to <code>po</code>:</p><pre><code># vim rename.sh
 for i in `ls *.pot`
 do
 	name=`echo $i | awk -F '.' {'print $1'}`
@@ -227,11 +88,9 @@ about-linstor.po              administration-manual.po      docker-linstor.po   
 about.po                      benchmark.po                  docker.po            fundamentals.po      kubernetes.po           man-pages.po  opennebula.po          proxmox-linstor.po  rhcs.po
 administration-drbdmanage.po  build-install-from-source.po  drbdmanage-more.po   gfs.po               latency.po              more-info.po  openstack-linstor.po   proxmox.po          throughput.po
 administration-linstor.po     configure.po                  drbd-users-guide.po  install-packages.po  linstor-users-guide.po  ocfs2.po      openstack.po           proxy.po            troubleshooting.po
-</code></pre><p>Add <code>cn</code> to <code>UG-top.mk</code>:</p>
-<pre><code>- languages = en ja
+</code></pre><p>Add <code>cn</code> to <code>UG-top.mk</code>:</p><pre><code>- languages = en ja
 + languages = en ja cn
-</code></pre><p>Change <code>UG-build.mk</code> for adding <code>cn</code> selection:</p>
-<pre><code># diff UG-build.mk  UG-build-back.mk 
+</code></pre><p>Change <code>UG-build.mk</code> for adding <code>cn</code> selection:</p><pre><code># diff UG-build.mk  UG-build-back.mk 
 77c77
 &lt; 	if [ -d $(FONTDIR) ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;ja&quot; ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;cn&quot; ]; then \
 ---
@@ -240,15 +99,13 @@ administration-linstor.po     configure.po                  drbd-users-guide.po 
 &lt; 	if [ -d $(FONTDIR) ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;ja&quot; ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;cn&quot; ]; then \
 ---
 &gt; 	if [ -d $(FONTDIR) ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;ja&quot; ]; then \
-</code></pre><p>Change the Makefile for generating cn language pack:</p>
-<pre><code># vim UG9/cn/Makefile
+</code></pre><p>Change the Makefile for generating cn language pack:</p><pre><code># vim UG9/cn/Makefile
 ASCIIDOCTOR_ADD_OPTIONS=-r asciidoctor-pdf-cjk -r asciidoctor-pdf-cjk-kai_gen_gothic -a pdf-style=KaiGenGothicCN
 lang=cn
 
 include ../../UG-build-po.mk
 include ../../UG-build.mk
-</code></pre><p>Add the <code>default-theme.yml</code> under the <code>UG9/cn</code> folder, and changes its fonts to CN related fonts:</p>
-<pre><code># docker run --rm --entrypoint /bin/sh linbit-documentation:latest -c &quot;cat /var/lib/gems/2.5.0/gems/asciidoctor-pdf-1.5.3/data/themes/default-theme.yml&quot; &gt; default-theme.yml
+</code></pre><p>Add the <code>default-theme.yml</code> under the <code>UG9/cn</code> folder, and changes its fonts to CN related fonts:</p><pre><code># docker run --rm --entrypoint /bin/sh linbit-documentation:latest -c &quot;cat /var/lib/gems/2.5.0/gems/asciidoctor-pdf-1.5.3/data/themes/default-theme.yml&quot; &gt; default-theme.yml
 # vim default-theme.yml
 font:
   catalog:
@@ -266,8 +123,7 @@ font:
       bold_italic: KaiGenGothicCN-Bold-Italic.ttf
 page:
 ..........
-</code></pre><p>Change the patch files under <code>UG9/cn</code>:</p>
-<pre><code># mv UG9/cn/drbd-users-guide.adoc-ja.patch UG9/cn/drbd-users-guide.adoc-cn.patch
+</code></pre><p>Change the patch files under <code>UG9/cn</code>:</p><pre><code># mv UG9/cn/drbd-users-guide.adoc-ja.patch UG9/cn/drbd-users-guide.adoc-cn.patch
 # vim UG9/cn/drbd-users-guide.adoc-cn.patch
 @@ -1,4 +1,23 @@
  :doctype: article
@@ -293,22 +149,6 @@ page:
  :source-highlighter: bash
  :listing-caption: Listing
  :icons: font
-</code></pre><p>Now change the permission for all of the folder, thus docker could have write priviledge to current folder:</p>
-<pre><code># chmod a+w -R *
+</code></pre><p>Now change the permission for all of the folder, thus docker could have write priviledge to current folder:</p><pre><code># chmod a+w -R *
 #  make UG9-pdf-finalize-docker lang=cn
-</code></pre><p>By running <code>make UG9-pdf-finalize-docker</code> could generate chinese version&rsquo;s pdf, By running <code>make UG9-html-finalize-docker lang=cn</code> will generate chinese version&rsquo;s htmls.</p>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre><p>By running <code>make UG9-pdf-finalize-docker</code> could generate chinese version&rsquo;s pdf, By running <code>make UG9-html-finalize-docker lang=cn</code> will generate chinese version&rsquo;s htmls.</p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

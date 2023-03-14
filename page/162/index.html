@@ -1,2565 +1,584 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-	<meta name="generator" content="Hugo 0.65.1" />
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/10/25/linux2-dot-6-39-for-utu2440-2/>Linux2.6.39 for Utu2440(2)</a></h1><span class=post-date>Oct 25, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=serial-port-support>Serial Port Support</h3><p>Enable the Device Driver&mdash;-> Character deivces &mdash;-> Serial drivers &mdash;-> Samsung related settings, My setting is listed as following:<br><img src=/images/serialport.jpg alt=/images/serialport.jpg><br>Then you will see serial output during kernel boot.</p><h3 id=dm9000-support>DM9000 Support</h3><p>Add following code into the linux/arch/arm/mach-s3c2440/mach-smdk2440.c:</p><pre><code>#include &lt;linux/serial_core.h&gt;
++ /* Added dm9000 support for utu2400 */
++ #include &lt;linux/dm9000.h&gt;
+#include &lt;linux/platform_device.h&gt;
 
-  <title>Dash &middot; Dash</title>
+#include &lt;plat/common-smdk.h&gt;
 
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
++ /* DM9000 Base address for SMDK2440 */
++ #define MACH_SMDK2440_DM9K_BASE (S3C2410_CS3 + 0x300)
 
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
+static struct map_desc smdk2440_iodesc[] __initdata = {
 
-  
-  
-  
-  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d" rel="alternate" type="application/rss+xml" title="Dash &middot; Dash" />
-  <meta name="description" content="">
-  <meta name="keywords" content="unix,virtualization,embedded,linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
++ /* Added for dm9000 */
++ static struct resource smdk2440_dm9k_resource[] = 
++ {
++     [0] = 
++      {
++           .start = MACH_SMDK2440_DM9K_BASE,
++           .end   = MACH_SMDK2440_DM9K_BASE + 3,
++           .flags = IORESOURCE_MEM
++      },
++     [1] = 
++      {
++           .start = MACH_SMDK2440_DM9K_BASE + 4,
++           .end   = MACH_SMDK2440_DM9K_BASE + 7,
++           .flags = IORESOURCE_MEM
++      },
++     [2] = 
++     {
++         .start = IRQ_EINT9,
++         .end   = IRQ_EINT9,
++         .flags = IORESOURCE_IRQ | IORESOURCE_IRQ_HIGHEDGE,
++     }
++ };
++ 
++ /*
++  * The DM9000 has no eeprom, and it's MAC address is set by
++  * the bootloader before starting the kernel.
++  */
++ static struct dm9000_plat_data smdk2440_dm9k_pdata = 
++ {
++ 	.flags        = (DM9000_PLATF_16BITONLY | DM9000_PLATF_NO_EEPROM),
++ };
++ 
++ static struct platform_device smdk2440_device_eth = 
++ {
++ 	.name        = &quot;dm9000&quot;,
++ 	.id      = -1,
++ 	.num_resources = ARRAY_SIZE(smdk2440_dm9k_resource),
++ 	.resource  = smdk2440_dm9k_resource,
++ 	.dev       = {
++ 		.platform_data   = &amp;smdk2440_dm9k_pdata,
++ 	},
++ };
 
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
+static struct platform_device *smdk2440_devices[] __initdata = {
+	&amp;s3c_device_ohci,
+	&amp;s3c_device_lcd,
+	&amp;s3c_device_wdt,
+	&amp;s3c_device_i2c0,
+	&amp;s3c_device_iis,
++  	&amp;smdk2440_device_eth,
+};
 
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="posts">
-    
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2014/10/20/quick-start-for-setting-up-wp-and-vpn-server-on-digitalocean/">Quick-start for setting up WP and VPN Server on DigitalOcean</a>
-      </h1>
-      <span class="post-date">Oct 20, 2014 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="prerequisite">Prerequisite</h3>
-<p>First you should check your Linux Version, for this tutorial is only works for ubuntu, that means, if you run archlinux/centos/debian on DigitalOcean, this tutorial won&rsquo;t be fit for your need.</p>
-<pre><code>root@justfordemo:~# cat /etc/issue
-Ubuntu 14.04.1 LTS \n \l
-
-</code></pre><p>Upgrade to the newest system via:</p>
-<pre><code>root@justfordemo:~# apt-get update &amp;&amp; apt-get upgrade
-
-</code></pre><p>Enter Y if system asks you to confirm.</p>
-<h3 id="nginx-and-php">NGINX and PHP</h3>
-<p>Following commands refers to: <br>
-<a href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-14-04</a>  and <a href="https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-nginx-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-nginx-on-ubuntu-14-04</a>.</p>
-<h4 id="install-nginx">Install nginx</h4>
-<p>Install the nginx server via:</p>
-<pre><code># apt-get install nginx
-
-</code></pre><p>Get the ip address via:</p>
-<pre><code># ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
-10.0.0.6
-fe80::a00:27ff:fe38:b7c5
-
-</code></pre><p>Use you browser to visit http://10.0.0.6, you will see following page which indiciates the nginx works for you.   <br>
-<img src="/images/nginxworks.jpg" alt="/images/nginxworks.jpg"></p>
-<h4 id="install-mysql-server">Install mysql server</h4>
-<p>Install it via:</p>
-<pre><code>apt-get install mysql-server
-
-</code></pre><p>When you see following window, choose your password(You should remember this password, for it&rsquo;s for administration!!!) <br>
-<img src="/images/mysqlpasswd.jpg" alt="/images/mysqlpasswd.jpg"></p>
-<p>Then you should run following commands for install the database and enable secure installation. The suggested answer is listed as following:</p>
-<pre><code>root@justfordemo:~# mysql_install_db
-root@justfordemo:~# mysql_secure_installation 
-Change the root password? [Y/n] n
-Remove anonymous users? [Y/n] Y
-Disallow root login remotely? [Y/n] Y
-Remove test database and access to it? [Y/n] Y
-Reload privilege tables now? [Y/n] Y
-
-</code></pre><h4 id="install-php">Install PHP</h4>
-<p>Install php for processing:</p>
-<pre><code># apt-get install php5-fpm php5-mysql
-
-</code></pre><p>Open the main php5-fpm configuration file with root privileges:</p>
-<pre><code># nano /etc/php5/fpm/php.ini
-
-</code></pre><p>Change</p>
-<pre><code>;cgi.fix_pathinfo=1
-
-</code></pre><p>to</p>
-<pre><code>cgi.fix_pathinfo=0
-
-</code></pre><p>Save and restart the php5-fpm service:</p>
-<pre><code># service php5-fpm restart
-php5-fpm stop/waiting
-php5-fpm start/running, process 15959
-
-</code></pre><h4 id="enable-php-prcessor-in-nginx">Enable php prcessor in NGINX</h4>
-<p>Change the configuration file /etc/nginx/sites-available/default:</p>
-<pre><code>server {
-    listen 80 default_server;
-    listen [::]:80 default_server ipv6only=on;
-
-    root /usr/share/nginx/html;
-    index index.html index.htm;
-
-    server_name localhost;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
-
-</code></pre><p>to</p>
-<pre><code>server {
-    listen 80 default_server;
-    listen [::]:80 default_server ipv6only=on;
-
-    root /usr/share/nginx/html;
-    index index.php index.html index.htm;
-
-    server_name server_domain_name_or_IP;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-
-    error_page 404 /404.html;
-    error_page 500 502 503 504 /50x.html;
-    location = /50x.html {
-        root /usr/share/nginx/html;
-    }
-
-    location ~ \.php$ {
-        try_files $uri =404;
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass unix:/var/run/php5-fpm.sock;
-        fastcgi_index index.php;
-        include fastcgi_params;
-    }
-}
-
-</code></pre><p>Visit http://10.0.0.6/info.php(assume our ipaddress is 10.0.0.6), then the picture may seems like following:  <br>
-<img src="/images/phprun.jpg" alt="/images/phprun.jpg"></p>
-<p>Now your webserver with php support is ready for use.</p>
-<h3 id="wordpress">Wordpress</h3>
-<h4 id="create-mysql-database-and-users">Create MYSQL database and users</h4>
-<p>The steps is quite simple, listed as following:</p>
-<pre><code>root@justfordemo:~# mysql -u root -p
-Enter password: 
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 48
-Server version: 5.5.40-0ubuntu0.14.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql&gt; CREATE DATABASE wordpress;
-Query OK, 1 row affected (0.00 sec)
-
-mysql&gt; CREATE USER wordpressuser@localhost IDENTIFIED BY 'password';
-Query OK, 0 rows affected (0.00 sec)
-
-mysql&gt; GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost;
-Query OK, 0 rows affected (0.00 sec)
-
-mysql&gt; FLUSH PRIVILEGES;
-Query OK, 0 rows affected (0.01 sec)
-
-mysql&gt; exit
-Bye
-
-</code></pre><h4 id="wordpress-1">Wordpress</h4>
-<p>Download the latest wordpress installation file in home directory:</p>
-<pre><code># cd ~
-# wget http://wordpress.org/latest.tar.gz
-
-</code></pre><p>Unzip the tar.gz file and install, but we have to install php-gd and libssh2-php first:</p>
-<pre><code># apt-get install php5-gd libssh2-php
-# tar xzvf latest.tar.gz
-# cd wordpress
-# cp wp-config-sample.php wp-config.php
-# nano wp-config.php
-. . .
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'wordpress');
-
-/** MySQL database username */
-define('DB_USER', 'wordpressuser');
-
-/** MySQL database password */
-define('DB_PASSWORD', 'password');
-. . .
-
-</code></pre><p>Make wordpress running directory and copy the source code here:</p>
-<pre><code># mkdir -p /var/www/html
-# rsync -avP ~/wordpress/ /var/www/html/
-# chown -R www-data:www-data /var/www/html/*
-# cd /var/www/html/
-root@justfordemo:/var/www/html# mkdir wp-content/uploads
-root@justfordemo:/var/www/html# chown -R :www-data /var/www/html/wp-content/uploads
-
-</code></pre><h4 id="modify-nginx-blocks">Modify nginx blocks</h4>
-<pre><code># cp /etc/nginx/sites-available/default /etc/nginx/sites-available/wordpress
-# nano /etc/nginx/sites-available/wordpress
-server {
-        listen 80 default_server;
-        listen [::]:80 default_server ipv6only=on;
-
-        root /var/www/html;
-        index index.php index.html index.htm;
-
-        server_name your_domain.com;
-
-        location / {
-                # try_files $uri $uri/ =404;
-                try_files $uri $uri/ /index.php?q=$uri&amp;$args;
-        }
-
-        error_page 404 /404.html;
-
-        error_page 500 502 503 504 /50x.html;
-        location = /50x.html {
-                root /usr/share/nginx/html;
-        }
-
-        location ~ \.php$ {
-                try_files $uri =404;
-                fastcgi_split_path_info ^(.+\.php)(/.+)$;
-                fastcgi_pass unix:/var/run/php5-fpm.sock;
-                fastcgi_index index.php;
-                include fastcgi_params;
-        }
-}
-
-
-</code></pre><p>Now restart the service via:</p>
-<pre><code># ln -s /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/
-# service nginx restart
-# service php5-fpm restart
-
-</code></pre><p>Now visit:<br>
-<a href="http://10.0.0.6">http://10.0.0.6/</a> you will get the wordpress configuration window, Enjoy it!!!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2014/10/19/trouble-shooting-on-lxc-of-archlinux/">Trouble-Shooting on LXC of ArchLinux</a>
-      </h1>
-      <span class="post-date">Oct 19, 2014 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <p>I try to install ubuntu on ArchLinux using LXC, for the nfs server in ArchLinux seems forbidden the nfsv3&rsquo;s client request, but in my joggler(which runs 12.04 server) the nfs server works OK, so I installed this version for validation.</p>
-<h3 id="install-method">Install method</h3>
-<p>Install the ubuntu machine via following method:</p>
-<pre><code>lxc-create -n Ubuntu_Container -t /usr/share/lxc/templates/lxc-ubuntu
-
-</code></pre><h3 id="trouble-shooting">Trouble Shooting</h3>
-<h4 id="qemu-debootstrap">qemu-debootstrap</h4>
-<p>No debootstrap in Archlinux:</p>
-<pre><code>which: no qemu-debootstrap in
-
-</code></pre><p>Solution: create a soft link from debootstrap to qemu-debootstrap:</p>
-<pre><code>lrwxrwxrwx 1 root root            11 Oct 19 20:13 qemu-debootstrap -&gt; debootstrap
-
-</code></pre><h4 id="keyrings">Keyrings</h4>
-<p>No keyring file:</p>
-<pre><code>I: Keyring file not available at /usr/share/keyrings/ubuntu-archive-keyring.gpg;
-
-</code></pre><p>directly copy one keyring file from installed ubuntu system to local machine.</p>
-<h4 id="gpg-checking">gpg Checking</h4>
-<p>gpg1v for checking signature error:</p>
-<pre><code>Error executing gpg1v to check Release signature
-
-</code></pre><p>Solution: use &ndash;no-check-gpg <br>
-Edit the /usr/share/lxc/templates/lxc-ubuntu file, add &ndash;no-check-gpg after all of the debootstrap:</p>
-<pre><code>debootstrap --arch=amd64 --verbose --no-check-gpg
-
-</code></pre><p>Now everything should goes OK, and you could enjoy the ubuntu installed on your lxc container.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2014/10/18/autorestart-autrace/">AutoRestart autrace</a>
-      </h1>
-      <span class="post-date">Oct 18, 2014 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <p>autrace is a proxy tool which I used for auto-converting the proxy for cross the firewall, it runs in remote server but sometimes it will runs into crash condition. Following is the command for auto-restart this proxy tool.</p>
-<pre><code>$ cat autrace.sh
+</code></pre><p>Then select the dm9000 support from:<br>Device Driver&mdash;-> Network device support -> Ethernet(10 or 100Mbit) &mdash;-> DM9000 support<br>Now testing the kernel, you will see the kernel starts with dm9000 support, thus we could use NFS for booting the system.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/10/25/linux2-dot-6-39-for-utu2440-3/>Linux2.6.39 for Utu2440(3)</a></h1><span class=post-date>Oct 25, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=building-filesystems>Building Filesystems</h3><p>Use following script for building the basic filesystem:</p><pre><code>$ cat mkrootfs 
 #!/bin/sh
-while true; do
-   /home/xxxxxxxx/code/autrace -s 
-done
+echo &quot;------Create rootfs directons start...--------&quot;
+mkdir rootfs
+cd rootfs
+echo &quot;--------Create root,dev....----------&quot;
+mkdir bin boot dev etc home lib mnt proc root sbin sys tmp usr var  www
+mkdir etc/init.d etc/rc.d etc/sysconfig
+mkdir usr/sbin usr/bin usr/lib usr/modules
+echo &quot;make node in dev/console dev/null&quot;
+mknod -m 666 dev/console c 5 1
+mknod -m 666 dev/null c 1 3
+mkdir mnt/etc mnt/jffs2 mnt/yaffs mnt/data mnt/temp
+mkdir var/lib var/lock var/run var/tmp
+chmod 1777 tmp
+chmod 1777 var/tmp
+echo &quot;-------make direction done---------&quot;
 
-</code></pre><p>Everytime we run autrace.sh like following:</p>
-<pre><code>/home/xxxxx/code/autrace.sh &amp;
+</code></pre><p>Run it and you will get an folder which contains the newly created directory structure.</p><pre><code>$ sudo ./mkrootfs 
+------Create rootfs directons start...--------
+--------Create root,dev....----------
+make node in dev/console dev/null
+-------make direction done---------
+$ ls rootfs 
+bin  boot  dev  etc  home  lib  mnt  proc  root  sbin  sys  tmp  usr  var  www
 
-</code></pre><p>thus autrace will automatically be restart if it crashes.</p>
+</code></pre><p>After making the filesystem, you should install all of the kernel modules into your fs:</p><pre><code>$ make modules_install ARCH=arm INSTALL_MOD_PATH=The_PATH_TO_YOUR_ROOTFS
 
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2014/10/18/cross-compile-the-kernel-for-utu2440/">Cross-compile the kernel for utu2440</a>
-      </h1>
-      <span class="post-date">Oct 18, 2014 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="cross-compiler-preparation">Cross-compiler Preparation</h3>
-<p>The official documentation said use gcc-3.4.1 for compiling the kernel.</p>
-<pre><code>$ cat ~/.zshrc | grep -i set341
-alias set341='export PATH=/opt/cross/arm-linux-gcc_3.4.1/bin:$PATH'
-$ set341
-$ pwd
-/media/y/embedded/utu2440/UTU2440-F-T1-20080328/YC2440CDROM_DM9000_080328/utuLinuxfor2440V1.5.8/utu-linux_for_s3c2440_dm9000_V1.5.8
-$ arm-linux-gcc -v
-Reading specs from /opt/cross/arm-linux-gcc_3.4.1/bin/../lib/gcc/arm-linux/3.4.1/specs
-Configured with: /work/crosstool-0.27/build/arm-linux/gcc-3.4.1-glibc-2.3.2/gcc-3.4.1/configure --target=arm-linux --host=i686-host_pc-linux-gnu --prefix=/usr/local/arm/3.4.1 --with-headers=/usr/local/arm/3.4.1/arm-linux/include --with-local-prefix=/usr/local/arm/3.4.1/arm-linux --disable-nls --enable-threads=posix --enable-symvers=gnu --enable-__cxa_atexit --enable-languages=c,c++ --enable-shared --enable-c99 --enable-long-long
-Thread model: posix
-gcc version 3.4.1
+</code></pre><h3 id=busybox>BusyBox</h3><p>Busybox provides almost all of the tools used in system, first we should download and cross-compile it.</p><pre><code>$ wget http://www.busybox.net/downloads/busybox-1.22.1.tar.bz2
+$ tar xjvf busybox-1.22.1.tar.bz2
+$ cd busybox-1.22.1
+$ vim Makefile
++ CROSS_COMPILE ?= arm-linux-
+# bbox: we may have CONFIG_CROSS_COMPILER_PREFIX in .config,
+$ make menuconfig
 
-</code></pre><h3 id="kernel-compilation">Kernel Compilation</h3>
-<p>Compile the kernel via:</p>
-<pre><code>$ make menuconfig
-&quot;Load an Alternate Configuration File&quot;-&gt; config_480272_ts
-$ make uImage -j4
-
-</code></pre><p>Trouble shooting: in ArchLinux, install uboot&rsquo;s mkimage tool via:</p>
-<pre><code>$ yaourt -S uboot-mkimage
-
-</code></pre><p>After compilation finished, copy it to tftpd server and test:</p>
-<pre><code>$ cp arch/arm/boot/uImage /media/nfs/rootfs/
-$ ls -l uImage 
--rwxrwxrwx 1 root root 1483696 Oct 19  2014 uImage
-$ ls -l s3c_kernel/uImage_T5_480x272_ts 
--rw------- 1 nobody nobody 1483468 Oct 19  2014 s3c_kernel/uImage_T5_480x272_ts
-
-</code></pre><p>We use the compiled kernel and let it runs into the system. Next step we will upgrade the Linux kernel, this may lead to some kernel driver related working.     <br>
-Current kernel is:</p>
-<pre><code>[root@utu-linux /]# uname -a
-Linux utu-linux 2.6.13-utulinux2440 #380 Sat Oct 18 16:14:06 CST 2014 armv4tl unknown
-
-</code></pre>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://purplepalmdash.github.io/2014/10/18/embedded-environment-on-arch/">Embedded Environment on Arch</a>
-      </h1>
-      <span class="post-date">Oct 18, 2014 
-      
-      
-      <br/>
-      <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-        
-      </span>
-      
-      <h3 id="nfs-server">NFS Server</h3>
-<p>Server Setup</p>
-<pre><code>$ sudo pacman -S nfs-utils
-$ sudo vim /etc/idmapd.conf
-[General]
-
-#Verbosity = 0
-Verbosity = 1
-Pipefs-Directory = /var/lib/nfs/rpc_pipefs
-Domain = localdomain
-
-[Mapping]
-
-Nobody-User = nobody
-Nobody-Group = nobody
-
-$ sudo vim /etc/conf.d/nfs-common.conf
-STATD_OPTS=&quot;-p 32765 -o 32766 -T 32803&quot;
-
-$ sudo vim  /etc/conf.d/nfs-server.conf
-MOUNTD_OPTS=&quot;-p 20048&quot;
-
-$ sudo mkdir -p /srv/nfs4/music
-$ cat /etc/exports
-/srv/nfs4/ 10.0.0.0/24(rw,fsid=root,no_subtree_check)
-/srv/nfs4/music 10.0.0.0/24(rw,no_subtree_check,nohide) # note the nohide option which is applied to mounted directories on the file system.
-$ sudo exportfs -rav
-$ sudo systemctl restart nfs-server.service
-
-</code></pre><p>Testing Server:</p>
-<pre><code>$ sudo mount -t nfs 10.0.0.221:/srv/nfs4 /mnt
-$ ls /mnt
-
-</code></pre><h3 id="tftpd-server">tftpd Server</h3>
-<p>Server:</p>
-<pre><code>$ sudo pacman -S tftp-hpa
-$ sudo vim /etc/systemd/system/tftpd.service
-[Unit]
-Description=hpa's original TFTP daemon
-
-[Service]
-ExecStart=/usr/sbin/in.tftpd -s /srv/tftp/
-StandardInput=socket
-StandardOutput=inherit
-StandardError=journal
-$ sudo systemctl start tftpd.socket
-$ sudo systemctl enable tftpd.socket
-
-</code></pre><p>Client(10.0.0.230):</p>
-<pre><code>$ tftp 10.0.0.221
-tftp&gt; get abc.txt
-tftp&gt; quit
-$ ls -l abc.txt
--rw-r--r-- 1 root root 0 Oct 18 20:23 abc.txt
-
-</code></pre><h3 id="nfs-serverseasy">NFS Servers(Easy)</h3>
-<pre><code>$ sudo pacman -S nfs-utils
-$ cat /etc/exports
-/media/home/xxxx *(rw,sync,no_subtree_check)
-$ sudo systemctl enable rpcbind.service
-$ sudo systemctl start rpcbind.service
-$ sudo systemctl enable nfs-server.service
-$ sudo systemctl start nfs-server.service
-</code></pre>
-      
-    </div>
-    
-    
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/page/161/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/161/">161</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/page/162/">162</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/163/">163</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/page/221/">221</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/page/163/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/page/221/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
+</code></pre><p>Parameters:</p><pre><code>Build Options---&gt; Build BusyBox as a static binary(no shared libs)
+Installation Options--&gt; Busybox installation prefix(See following pictures)
+Linux Module Utilities--&gt;  Default directory containing modules(/lib/modules)
+Linux System Utilities ---&gt;
+[*]Support /etc/mdev.conf
+[*]Support command execution at device addition/removal
+Init Utilities ---&gt;
+&quot;Support reading an inittab file&quot;
+&quot;Support running commands with a controlling-tty&quot;
 
 
-  </div>
-</div>
+</code></pre><p><img src=/images/busyboxinstall.jpg alt=/images/busyboxinstall.jpg><br>Then Make and make install:</p><pre><code>$ make &amp;&amp; make install
+
+</code></pre><p>Now list the rootfs you have created you could see a new file named linuxrc is located under the / directory. Also you will see lots of executable files under the /bin which links to the /bin/busybox.</p><h3 id=startup-configuration>Startup Configuration</h3><p>Create the /etc/group file:</p><pre><code>$ cat etc/group
+root:*:0:
+daemon:*:1:
+bin:*:2:
+sys:*:3:
+adm:*:4:
+tty:*:5:
+disk:*:6:
+lp:*:7:lp
+mail:*:8:
+news:*:9:
+u p:*:10:
+proxy:*:13:
+kmem:*:15:
+dialout:*:20:
+fax:*:21:
+voice:*:22:
+cdrom:*:24:
+floppy:*:25:
+tape:*:26:
+s o:*:27:
+a io:*:29:
+sshd:*:74:
+ppp:x:99:
+500:x:500:plg
+501:x:501:fa
+
+</code></pre><p>Edit the /etc/passwd file:</p><pre><code>$ cat etc/passwd
+root::0:0:root:/:/bin/sh
+ftp::14:50:FTP User:/var/ftp:
+bin:*:1:1:bin:/bin:
+daemon:*:2:2:daemon:/sbin:
+nobody:*:99:99:Nobody:/:
+sky::502:502:Linux User,,,:/home/sky:/bin/sh
+
+</code></pre><p>Add the hostname:</p><pre><code>$ cat etc/sysconfig/HOSTNAME 
+utu2440
+
+</code></pre><p>Edit the inittab file:</p><pre><code>$ cat etc/inittab
+#etc/inittab
+::sysinit:/etc/init.d/rcS
+
+# Start an &quot;askfirst&quot; shell on /dev/tty2-4
+console::askfirst:-/bin/sh
+tty2::askfirst:-/bin/sh
+tty3::askfirst:-/bin/sh
+tty4::askfirst:-/bin/sh
+
+# /sbin/getty invocations for selected ttys
+tty4::respawn:/sbin/getty 38400 tty5
+tty5::respawn:/sbin/getty 38400 tty6
 
 
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
+::ctrlaltdel:/sbin/reboot
+::shutdown:/bin/umount -a –r
+$ chmod 777 etc/init.d/rcS
 
+</code></pre><p>Edit etc/init.d/rcS, this file will be executed everytime we bootup the linux system:</p><pre><code>$ cat etc/init.d/rcS
+#!/bin/sh
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+runlevel=S 
+prevlevel=N
+umask 022 
+export PATH runlevel prevlevel
+echo &quot;----------mount all----------------&quot;
+mount -a 
+echo /sbin/mdev&gt;/proc/sys/kernel/hotplug
+mdev -s
+### Added from utu2440
+
+trap &quot;:&quot; INT QUIT TSTP
+##################################
+#/bin/mount -t tmpfs tmpfs /dev
+#/bin/mount -t sysfs sysfs /sys
+
+################################## 
+mkdir /dev/pts
+/bin/mknod /dev/pts/0 c 136 0
+/bin/mknod /dev/pts/1 c 136 1
+/bin/mknod /dev/pts/2 c 136 2
+/bin/mknod /dev/pts/3 c 136 3
+/bin/mknod /dev/pts/4 c 136 4
+/bin/mknod /dev/pts/5 c 136 5
+
+
+/bin/mount -t devpts devpts /dev/pts
+#/bin/mount -t proc none /proc
+ln -s /dev/ts0 /dev/h3600_tsraw
+/sbin/ifconfig eth0 10.0.0.15
+/usr/sbin/telnetd -l /bin/login
+echo &quot;After telnetd&quot;
+/usr/bin/tty&gt;/root/tty.txt
+
+</code></pre><p>Create a new fstab file:</p><pre><code>$ cat etc/fstab 
+#device mount-point  type       option      dump  fsck  order
+proc      /proc             proc      defaults        0      0
+none     /tmp              ramfs     defaults       0       0
+sysfs     /sys              sysfs      defaults        0      0
+mdev    /dev              ramfs     defaults        0       0
+
+</code></pre><h3 id=testing-filesystem>Testing filesystem</h3><p>Set the nfs boot options:</p><pre><code>utu-bootloader=&gt;&gt;&gt;setenv bootargs 'console=ttySAC0 init=/linuxrc root=/dev/nfs nfsroot=10.0.0.11:/media/nfs/rootfs,proto=tcp,nolock ip=10.0.0.15:10.0.0.1:10.0.0.1:255.255.255.0:www.yctek.com:eth0:off'
+utu-bootloader=&gt;&gt;&gt;setenv bootargs 'console=ttySAC0 init=/linuxrc root=/dev/nfs nfsroot=10.0.0.11:/media/nfs/rootfs,proto=tcp,nolock ip=10.0.0.15'
+
+</code></pre><p>then we could boot into the nfs based filesystem.</p><pre><code>Please press Enter to activate this console. NET: Registered protocol family 10
+
+[root@www ~]# 
+[root@www ~]# uname -a
+Linux www 2.6.39 #6 Mon Oct 20 16:12:43 CST 2014 armv4tl GNU/Linux
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/10/25/linux2-dot-6-39-for-utu2440-4/>Linux2.6.39 for Utu2440(4)</a></h1><span class=post-date>Oct 25, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=rtc>RTC</h3><h4 id=activate>Activate</h4><p>RealTime Clock functionality could be easily activated via:</p><pre><code>$ vim arch/arm/mach-s3c2440/mach-smdk2440.c
+static struct platform_device *smdk2440_devices[] __initdata = {
+	&amp;s3c_device_ohci,
++	 &amp;s3c_device_rtc,
+	&amp;s3c_device_lcd,
+
+
+</code></pre><p>Configure the Kernel:<br>Device Drivers&mdash;-> RealTime Clock &mdash;-> Samsung S3C series Soc RTC<br>Save and exit, then make Image.</p><h4 id=test-rtc>Test RTC</h4><p>Before we have following configuration:</p><pre><code>[root@www ~]# date
+Thu Jan  1 01:07:51 UTC 1970
+
+</code></pre><p>Now we switch to new kernel which contains RTC support:</p><pre><code>[root@www ~]# ls -l /dev/rtc*
+crw-rw----    1 root     root      254,   0 Jan  1 00:00 /dev/rtc0
+[root@www ~]# date -s 201410251348
+Sat Oct 25 13:48:00 UTC 2014
+[root@www ~]# hwclock -w
+
+</code></pre><p>Add following lines into /etc/init.d/rcS for automatically update systemtime from RTC:</p><pre><code>[root@www ~]# cat /etc/init.d/rcS
+echo &quot;update time from RTC&quot;
+hwclock -s
+date
+
+</code></pre><p>Reboot to see whether RTC works or not:</p><pre><code># date
+Sat Oct 25 13:51:34 UTC 2014
+
+</code></pre><p>If we enable the NTPD, then this board could serve as the Network Time Protocol Server in Ethernet.</p><h3 id=lcd>LCD</h3><h4 id=coding>Coding</h4><p>First we attached the LCD touch screen to our development board, it will displayed a blank screen, while this blank screen will turn into graphic windows after we enabled the LCD Driver.</p><p>We should carefully view yc2440-core.pdf, to find the LCD controller pin.<br><img src=/images/lcdconnection.jpg alt=/images/lcdconnection.jpg></p><p>From the picture we could see the LCD&rsquo;s backlight is controlled via CPU&rsquo;s <code>LCD_PWREN/EINT12/GPG4</code>.</p><p>Add the backlight.c in kernel source tree:</p><pre><code>$ pwd
+/media/y/embedded/utu2440/Kernel/linux-2.6.39/drivers/video/backlight
+[Trusty@/media/y/embedded/utu2440/Kernel/linux-2.6.39/drivers/video/backlight]$ cat SMDK2440_backlight.c
+
+</code></pre><p>Now the content should be:</p><pre><code>#include &lt;linux/errno.h&gt;
+#include &lt;linux/kernel.h&gt;
+#include &lt;linux/module.h&gt;
+#include &lt;linux/slab.h&gt;
+#include &lt;linux/input.h&gt;
+#include &lt;linux/init.h&gt;
+#include &lt;linux/serio.h&gt;
+#include &lt;linux/delay.h&gt;
+#include &lt;linux/clk.h&gt;
+#include &lt;linux/miscdevice.h&gt;
+#include &lt;linux/gpio.h&gt;
+
+#include &lt;asm/io.h&gt;
+#include &lt;asm/irq.h&gt;
+#include &lt;asm/uaccess.h&gt;
+#include &lt;mach/regs-clock.h&gt;
+#include &lt;plat/regs-timer.h&gt;
+         
+#include &lt;mach/regs-gpio.h&gt;
+#include &lt;linux/cdev.h&gt;
+
+#undef DEBUG
+//#define DEBUG
+#ifdef DEBUG
+#define DPRINTK(x...) {printk(__FUNCTION__&quot;(%d): &quot;,__LINE__);printk(##x);}
+#else
+#define DPRINTK(x...) (void)(0)
+#endif
+
+#define DEVICE_NAME     &quot;backlight&quot;
+
+
+static unsigned int bl_state;
+
+static inline void set_bl(int state)
+{
+        bl_state = !!state;
+        s3c2410_gpio_setpin(S3C2410_GPG(4), bl_state);
+}
+
+static inline unsigned int get_bl(void)
+{
+        return bl_state;
+}
+
+static ssize_t dev_write(struct file *file, const char *buffer, size_t count, loff_t * ppos)
+{
+        unsigned char ch;
+        int ret;
+        if (count == 0) {
+                return count;
+        }
+        ret = copy_from_user(&amp;ch, buffer, sizeof ch) ? -EFAULT : 0;
+        if (ret) {
+                return ret;
+        }
+
+        ch &amp;= 0x01;
+        set_bl(ch);
+                
+        return count;
+}
+
+static ssize_t dev_read(struct file *filp, char *buffer, size_t count, loff_t *ppos)
+{
+        int ret;
+        unsigned char str[] = {'0', '1' };
+
+        if (count == 0) {
+                return 0;
+        }
+
+        ret = copy_to_user(buffer, str + get_bl(), sizeof(unsigned char) ) ? -EFAULT : 0;
+        if (ret) {
+                return ret;
+        }
+        return sizeof(unsigned char);
+}
+
+static struct file_operations dev_fops = {
+        owner:  THIS_MODULE,
+        read:   dev_read,       
+        write:  dev_write,
+};
+
+static struct miscdevice misc = {
+        .minor = MISC_DYNAMIC_MINOR,
+        .name = DEVICE_NAME,
+        .fops = &amp;dev_fops,
+};
+
+static int __init dev_init(void)
+{
+        int ret;
+
+        ret = misc_register(&amp;misc);
+
+        printk (DEVICE_NAME&quot;\tinitialized\n&quot;);
+
+        s3c2410_gpio_cfgpin(S3C2410_GPG(4), S3C2410_GPIO_OUTPUT);
+        set_bl(1);
+        return ret;
+}
+
+
+static void __exit dev_exit(void)
+{
+        misc_deregister(&amp;misc);
+}
+
+module_init(dev_init);
+module_exit(dev_exit);
+MODULE_LICENSE(&quot;GPL&quot;);
+MODULE_AUTHOR(&quot;Utu2440 Inc.&quot;);
+</code></pre><p>Add the Kconfig items for our newly added SMDK2440_backlight:</p><pre><code>$ cat /media/y/embedded/utu2440/Kernel/linux-2.6.39/drivers/video/backlight/Kconfig
+config BACKLIGHT_SMDK2440
+	tristate &quot;Backlight Driver for utu2440&quot;
+	depends on BACKLIGHT_LCD_SUPPORT &amp;&amp; FB_S3C2410
+	help
+	  Backlight driver for utu2440
+
+</code></pre><p>Enable the Makefile Item:</p><pre><code>$ cat /media/y/embedded/utu2440/Kernel/linux-2.6.39/drivers/video/backlight/Makefile
+obj-$(CONFIG_BACKLIGHT_SMDK2440)	+= SMDK2440_backlight.o
+
+</code></pre><p>Now configure the Kernel like following image:<br><img src=/images/backlight.jpg alt=/images/backlight.jpg></p><p>Compile and generate the uImage:</p><pre><code>$ make 
+$ cp arch/arm/boot/zImage ./ &amp;&amp; mkimage -A arm -O linux -n $(date --iso-8601=seconds) -C NONE -a 0x30008000 -e 0x30008000 -d zImage uImage
+
+</code></pre><h4 id=verification>Verification</h4><p>Replace the newly built kernel on utu2440, first your screen remains turned on.<br>Change the backlight on utu2440:</p><pre><code>[root@www ~]# echo 0&gt;/dev/backlight
+[root@www ~]# echo 1&gt;/dev/backlight
+[root@www ~]# ls /dev/backlight
+/dev/backlight
+
+</code></pre><p>But this command is not stable, we could only turn off the backlight, then won&rsquo;t call it alive again.</p><h4 id=change-back-to-2632>Change back to 2.6.32</h4><p>The ioctl function changes in 2.6.39, thus we have to use .unlocked_ioctl, so we won&rsquo;t actually control the backlight, switch the kernel version to 2.6.32, do following changes:</p><p>Change again the code:</p><pre><code>$ vim SMDK2440_backlight.c
+#include &lt;linux/errno.h&gt;
+
+#include &lt;linux/kernel.h&gt;
+#include &lt;linux/module.h&gt;
+#include &lt;linux/slab.h&gt;
+#include &lt;linux/input.h&gt;
+#include &lt;linux/init.h&gt;
+#include &lt;linux/serio.h&gt;
+#include &lt;linux/delay.h&gt;
+#include &lt;linux/clk.h&gt;
+#include &lt;linux/miscdevice.h&gt;
+#include &lt;asm/io.h&gt;
+#include &lt;asm/irq.h&gt;
+#include &lt;asm/uaccess.h&gt;
+#include &lt;mach/regs-clock.h&gt;
+#include &lt;plat/regs-timer.h&gt;
+#include &lt;mach/regs-gpio.h&gt;
+#include &lt;linux/cdev.h&gt;
+#include &lt;linux/gpio.h&gt;
+
+//定义背光驱动的名称为 backligh，将会出现在/dev/backlight
+
+#define DEVICE_NAME &quot;backlight&quot; 
+
+#define DEVICE_MINOR 5 //次设备号，这里我们将设备注册为misc设备，这种设备的主设备号都为10
+
+extern void s3c2410_gpio_setpin(unsigned int pin, unsigned int to);
+extern void s3c2410_gpio_cfgpin(unsigned int pin, unsigned int function);
+
+static int smdk2440_backlight_ioctl(struct inode *inode,
+                                    struct file *file, 
+                                    unsigned int cmd, 
+                                    unsigned long arg)
+{
+	printk(&quot;We received cmd %d\n&quot;, cmd);
+switch(cmd)
+{
+   case 0:
+       //当接收的命令为0时，就将GPG4引脚设为低电平，关闭背光
+       s3c2410_gpio_setpin(S3C2410_GPG(4), 0); 
+       printk(DEVICE_NAME &quot; turn off!\n&quot;);
+       return 0;
+   case 1:
+       //当接收的命令为1时，就将GPG4引脚设为高电平，开启背光
+       s3c2410_gpio_setpin(S3C2410_GPG(4), 1); 
+       printk(DEVICE_NAME &quot; turn on!\n&quot;);
+        return 0;
+   default:
+          return -EINVAL;
+}
+}
+
+//设备操作集
+static struct file_operations dev_fops = 
+{
+.owner = THIS_MODULE,
+//.unlocked_ioctl = smdk2440_backlight_ioctl, 
+.ioctl = smdk2440_backlight_ioctl, 
+};
+
+static struct miscdevice misc =
+{
+.minor = DEVICE_MINOR,
+.name = DEVICE_NAME,
+.fops = &amp;dev_fops,
+};
+
+static int __init dev_init(void)
+{
+   int ret;
+    ret = misc_register(&amp;misc); //注册成misc设备
+   if(ret &lt; 0)
+    {
+      printk(&quot;Register misc device fiald!&quot;);
+     return ret;
+    }
+   //将GPG4口配置成输出口
+
+   s3c2410_gpio_cfgpin(S3C2410_GPG(4), S3C2410_GPIO_OUTPUT); 
+
+   s3c2410_gpio_setpin(S3C2410_GPG(4), 1);         //启动内核时打开背光
+
+   return ret;
+}
+
+static void __exit dev_exit(void)
+{
+   misc_deregister(&amp;misc); //注销该misc设备
+}
+
+module_init(dev_init);
+module_exit(dev_exit);
+MODULE_LICENSE(&quot;GPL&quot;);
+MODULE_AUTHOR(&quot;DreamCatcher&quot;);
+
+MODULE_DESCRIPTION(&quot;Backlight control for mini2440&quot;);
+
+</code></pre><p>Then define a test_lcd.c like:</p><pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;sys/ioctl.h&gt;
+
+int main(int argc, char **argv)
+{
+    unsigned int turn;
+    int fd;
+
+//检测命令后面带的参数
+if(argc == 1 || argc &gt; 2)
+{
+    printf(&quot;Usage: backlight_test on|off!\n&quot;);
+    exit(1);
+}
+
+//打开背光设备
+fd = open(&quot;/dev/backlight&quot;, O_RDWR);
+
+if(fd &lt; 0)
+{
+    printf(&quot;Open Backlight Device Faild!\n&quot;);
+    exit(1);
+}
+
+//判断输入的参数
+if(strcmp(argv[1], &quot;on&quot;) == 0)
+{
+    printf(&quot;Yes, you input on!\n&quot;);
+    turn = 1;
+    ioctl(fd, 1);
+}
+else if(strcmp(argv[1], &quot;off&quot;) == 0)
+{
+    printf(&quot;Yes, you input off!\n&quot;);
+    turn = 0;
+    ioctl(fd, 0);
+}
+else
+{
+    printf(&quot;Usage: backlight_test on|off!\n&quot;);
+    exit(1);
+}
+
+printf(&quot;turn is %d\n&quot;, turn);
+
+//进行IO控制
+//long ret=ioctl(fd, turn);
+
+//关闭背光设备
+close(fd);
+return 0;
+}
+
+</code></pre><p>Compile the lcd_test via:</p><pre><code>$ arm-linux-gcc -o lcd_test lcd_test.c
+$ cp lcd_test.c /media/nfs/rootfs/root/
+
+</code></pre><p>Test the lcd backlight setting functionality via:</p><pre><code>[root@www root]# ./lcd_test on
+Yes, you input on!
+turn is 1
+[root@www root]# ./lcd_test off
+Yes, you input off!
+turn is 0
+
+</code></pre><p>So until now, you have mastered the LCD backlight, you could freely turn on/off it.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/10/24/python-call-system-command/>Python call system command</a></h1><span class=post-date>Oct 24, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=use-popen-for-running-ls>Use Popen for running ls</h3><p>We could use following python scripts for running the bash command <code>ls -l</code>:</p><pre><code>&gt;&gt;&gt; from subprocess import *
+&gt;&gt;&gt; from subprocess import call
+&gt;&gt;&gt; from subprocess import Popen
+&gt;&gt;&gt; import subprocess
+&gt;&gt;&gt; ls_child = Popen(['ls', '-l'], stdout=subprocess.PIPE, stderr = subprocess.PIPE)
+&gt;&gt;&gt; ls_result = ls_child.communicate()
+&gt;&gt;&gt; print ls_result
+.......
+
+</code></pre><p>The command I want to call is:</p><pre><code>sed -n 1~2p File_Name
+
+</code></pre><p>This command will get the half of the file contents.</p><h3 id=popen-wrapping>Popen Wrapping</h3><p>The commands for canling sed is:</p><pre><code>&gt;&gt;&gt; sed_child = Popen(['sed', '-n', '1~2p', '/home/Trusty/code/mybash/rtp02_2014_10_23_03_23_36.txt'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+&gt;&gt;&gt; sed_content = sed_child.communicate()
+
+</code></pre><p>Judge the parameters:</p><pre><code>&gt;&gt;&gt; command_line=raw_input()
+ sed -n 1~2p /home/Trusty/code/mybash/rtp02_2014_10_23_03_23_36.txt 
+&gt;&gt;&gt; args=shlex.split(command_line)
+&gt;&gt;&gt; print args
+
+</code></pre><p>Write the result into the file(half size as the origin input file), notice we remove the first 16 characters:</p><pre><code>&gt;&gt;&gt; f_half = open(&quot;./half_result.txt&quot;, &quot;w+&quot;)
+&gt;&gt;&gt; for line in sed_content:
+&gt;&gt;&gt;     f_half.write(line.replace(line[:16],''))
+&gt;&gt;&gt; f_half.close()
+
+</code></pre><p>Then the file contains all of the content.</p><p>If we want to write into sorted result, then do following:</p><pre><code>&gt;&gt;&gt; lines=[]
+&gt;&gt;&gt; for line in sed_content:
+&gt;&gt;&gt;     lines.append(line.replace(line[:16], ''))
+&gt;&gt;&gt; lines.sort()
+&gt;&gt;&gt; f_half = open(&quot;./half_result.txt&quot;, &quot;w+&quot;)
+&gt;&gt;&gt; for line in lines:
+&gt;&gt;&gt;     f_half.write(line)
+&gt;&gt;&gt; f_half.close()
+
+</code></pre><h3 id=remote-acticom-machine-script>Remote Acticom machine script</h3></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/10/23/utu2400-s-kernel-drivers/>utu2400's Kernel Drivers</a></h1><span class=post-date>Oct 23, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=sshd-replacement>sshd replacement</h3><p>Since busybox enabled the telnetd by default, we could just use telnet for accessing the board.</p><pre><code>[root@www ~]# ps -ef | grep telnet
+  861 root       0:00 /usr/sbin/telnetd -l /bin/login
+  893 root       0:00 grep telnet
+
+</code></pre><h3 id=heading></h3></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/161/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/161/>161</a></li><li class="page-item active"><a class=page-link href=/page/162/>162</a></li><li class=page-item><a class=page-link href=/page/163/>163</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/163/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,147 +1,11 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>kubespray2.12.0离线化手记 &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="onkubespray2.12.0">
-  <meta name="keywords" content="Linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>kubespray2.12.0离线化手记</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Dec 19, 2019 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#steps">Steps</a></li>
-        <li><a href="#speedup">Speedup</a></li>
-        <li><a href="#setup-cluster">Setup Cluster</a></li>
-        <li><a href="#fetch-things">Fetch things</a></li>
-        <li><a href="#more-pkgs">More pkgs</a></li>
-        <li><a href="#offline-registry-setup">Offline registry setup</a></li>
-        <li><a href="#upgrade">Upgrade</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="steps">Steps</h3>
-<p>Download the source code:</p>
-<pre><code># wget https://github.com/kubernetes-sigs/kubespray/archive/v2.12.0.tar.gz
-</code></pre><p>Install ansible via old Rong/.</p>
-<pre><code>$ scp -r Rong test@192.168.121.104:/home/test/
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>kubespray2.12.0离线化手记 &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="onkubespray2.12.0"><meta name=keywords content="Linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>kubespray2.12.0离线化手记</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Dec 19, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#steps>Steps</a></li><li><a href=#speedup>Speedup</a></li><li><a href=#setup-cluster>Setup Cluster</a></li><li><a href=#fetch-things>Fetch things</a></li><li><a href=#more-pkgs>More pkgs</a></li><li><a href=#offline-registry-setup>Offline registry setup</a></li><li><a href=#upgrade>Upgrade</a></li></ul></li></ul></nav></div><h3 id=steps>Steps</h3><p>Download the source code:</p><pre><code># wget https://github.com/kubernetes-sigs/kubespray/archive/v2.12.0.tar.gz
+</code></pre><p>Install ansible via old Rong/.</p><pre><code>$ scp -r Rong test@192.168.121.104:/home/test/
 $ cd ~/Rong
 $ sudo mv /etc/apt/sources.list /home/test/
 $ sudo ./bootstrap.sh
 $ sudo mv /home/test/sources.list /etc/apt/
-</code></pre><p>Change options:</p>
-<pre><code>$ cd ~/kubespray-2.12.0
+</code></pre><p>Change options:</p><pre><code>$ cd ~/kubespray-2.12.0
 $ cp ../deploy.key .
 $ ssh -i deploy.key root@192.168.121.104
 $ exit
@@ -162,59 +26,43 @@ kubespray
 [k8s-cluster:children]
 kube-master
 kube-node
-</code></pre><p>Add some configuration:</p>
-<pre><code>$ vim group_vars/k8s-cluster/addons.yml 
+</code></pre><p>Add some configuration:</p><pre><code>$ vim group_vars/k8s-cluster/addons.yml 
 dashboard_enabled: true
 helm_enabled: true
 metrics_server_enabled: true
-</code></pre><h3 id="speedup">Speedup</h3>
-<p>cross the gfw, host machine side:</p>
-<pre><code>$ sudo iptables -t nat -A PREROUTING -p tcp -s 192.168.121.0/24 -j DNAT --to-destination 127.0.0.1:12345
+</code></pre><h3 id=speedup>Speedup</h3><p>cross the gfw, host machine side:</p><pre><code>$ sudo iptables -t nat -A PREROUTING -p tcp -s 192.168.121.0/24 -j DNAT --to-destination 127.0.0.1:12345
 $ sudo sysctl -w net.ipv4.conf.all.route_localnet=1
-</code></pre><p>vm side:</p>
-<pre><code>$ sudo vim /etc/resolv.conf
+</code></pre><p>vm side:</p><pre><code>$ sudo vim /etc/resolv.conf
 nameserver 223.5.5.5
 nameserver 8.8.8.8
-</code></pre><h3 id="setup-cluster">Setup Cluster</h3>
-<p>Via:</p>
-<pre><code>$ ansible-playbook -i inventory/rong/hosts.ini cluster.yml
-</code></pre><h3 id="fetch-things">Fetch things</h3>
-<p>Get all of the images:</p>
-<pre><code># docker pull xueshanf/install-socat:latest
+</code></pre><h3 id=setup-cluster>Setup Cluster</h3><p>Via:</p><pre><code>$ ansible-playbook -i inventory/rong/hosts.ini cluster.yml
+</code></pre><h3 id=fetch-things>Fetch things</h3><p>Get all of the images:</p><pre><code># docker pull xueshanf/install-socat:latest
 # docker images | sed -n '1!p' | awk {'print $1&quot;:&quot;$2'} | tr '\n' ' '
 nginx:1.17 gcr.io/google-containers/k8s-dns-node-cache:1.15.8 gcr.io/google-containers/kube-proxy:v1.16.3 gcr.io/google-containers/kube-apiserver:v1.16.3 gcr.io/google-containers/kube-controller-manager:v1.16.3 gcr.io/google-containers/kube-scheduler:v1.16.3 lachlanevenson/k8s-helm:v2.16.1 gcr.io/kubernetes-helm/tiller:v2.16.1 coredns/coredns:1.6.0 calico/node:v3.7.3 calico/cni:v3.7.3 calico/kube-controllers:v3.7.3 gcr.io/google_containers/metrics-server-amd64:v0.3.3 gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0 gcr.io/google_containers/kubernetes-dashboard-amd64:v1.10.1 quay.io/coreos/etcd:v3.3.10 gcr.io/google-containers/addon-resizer:1.8.3 gcr.io/google-containers/pause:3.1 gcr.io/google_containers/pause-amd64:3.1 xueshanf/install-socat:latest
 # docker save -o k8simages.tar nginx:1.17 gcr.io/google-containers/k8s-dns-node-cache:1.15.8 gcr.io/google-containers/kube-proxy:v1.16.3 gcr.io/google-containers/kube-apiserver:v1.16.3 gcr.io/google-containers/kube-controller-manager:v1.16.3 gcr.io/google-containers/kube-scheduler:v1.16.3 lachlanevenson/k8s-helm:v2.16.1 gcr.io/kubernetes-helm/tiller:v2.16.1 coredns/coredns:1.6.0 calico/node:v3.7.3 calico/cni:v3.7.3 calico/kube-controllers:v3.7.3 gcr.io/google_containers/metrics-server-amd64:v0.3.3 gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0 gcr.io/google_containers/kubernetes-dashboard-amd64:v1.10.1 quay.io/coreos/etcd:v3.3.10 gcr.io/google-containers/addon-resizer:1.8.3 gcr.io/google-containers/pause:3.1 gcr.io/google_containers/pause-amd64:3.1 xueshanf/install-socat:latest; xz -T4 k8simages.tar
-</code></pre><p>Get debs:</p>
-<pre><code># mkdir /home/test/debs
+</code></pre><p>Get debs:</p><pre><code># mkdir /home/test/debs
 # find . | grep deb$ | xargs -I % cp % /home/test/debs/
-</code></pre><p>Get temp files:</p>
-<pre><code># ls /tmp/releases/
+</code></pre><p>Get temp files:</p><pre><code># ls /tmp/releases/
 calicoctl                           images/                             kubectl-v1.16.3-amd64               
 cni-plugins-linux-amd64-v0.8.1.tgz  kubeadm-v1.16.3-amd64               kubelet-v1.16.3-amd64     
 # cp /tmp/releases/* /home/test/file/
-</code></pre><h3 id="more-pkgs">More pkgs</h3>
-<p>Use the old deb repository for installing ansible:</p>
-<pre><code>$ cp old_1804debs.tar.xz ~/YourWebServer
+</code></pre><h3 id=more-pkgs>More pkgs</h3><p>Use the old deb repository for installing ansible:</p><pre><code>$ cp old_1804debs.tar.xz ~/YourWebServer
 $ tar xJvf old_1804debs.tar.xz
 $ sudo vim /etc/apt/sources.list
 deb [trusted=yes]  http://192.168.122.1/ansible_bionic ./
 $ sudo apt-get update -y &amp;&amp; sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ansible python-netaddr
-</code></pre><p>more pkgs should be installed manually and copy to <code>/root/debs</code>:</p>
-<pre><code># apt-get install -y iputils-ping nethogs python-netaddr build-essential bind9 bind9utils nfs-common nfs-kernel-server ntpdate ntp tcpdump iotop unzip wget apt-transport-https socat rpcbind arping fping python-apt ipset ipvsadm pigz nginx docker-registry
+</code></pre><p>more pkgs should be installed manually and copy to <code>/root/debs</code>:</p><pre><code># apt-get install -y iputils-ping nethogs python-netaddr build-essential bind9 bind9utils nfs-common nfs-kernel-server ntpdate ntp tcpdump iotop unzip wget apt-transport-https socat rpcbind arping fping python-apt ipset ipvsadm pigz nginx docker-registry
 # cd /root/debs
 # wget http://209.141.35.192/netdata_1.18.1_amd64_bionic.deb
 # apt-get install  ./netdata_1.18.1_amd64_bionic.deb
 # find /var/cache | grep deb$ | xargs -I % cp % ./
 # dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
-</code></pre><h3 id="offline-registry-setup">Offline registry setup</h3>
-<p>On a running secureregistry server do following:</p>
-<pre><code># systemctl stop secureregistryserver
+</code></pre><h3 id=offline-registry-setup>Offline registry setup</h3><p>On a running secureregistry server do following:</p><pre><code># systemctl stop secureregistryserver
 # cd /opt/local/secureregistryserver/
 # mv data data.back
 # docker-compose up
 # docker push xxxxx
-</code></pre><p>Your docker push item is listed as(v1.16.3):</p>
-<pre><code>docker push gcr.io/google-containers/k8s-dns-node-cache:1.15.8
+</code></pre><p>Your docker push item is listed as(v1.16.3):</p><pre><code>docker push gcr.io/google-containers/k8s-dns-node-cache:1.15.8
 docker push gcr.io/google-containers/kube-proxy:v1.16.3
 docker push gcr.io/google-containers/kube-apiserver:v1.16.3
 docker push gcr.io/google-containers/kube-controller-manager:v1.16.3
@@ -234,28 +82,20 @@ docker push gcr.io/google-containers/pause:3.1
 docker push gcr.io/google_containers/pause-amd64:3.1
 docker push xueshanf/install-socat:latest
 docker push nginx:1.17
-</code></pre><p>tar docker.tar.gz:</p>
-<pre><code># cd /opt/local/secureregistryserver/data
+</code></pre><p>tar docker.tar.gz:</p><pre><code># cd /opt/local/secureregistryserver/data
 # tar czvf docker.tar.gz docker/
 
-</code></pre><h3 id="upgrade">Upgrade</h3>
-<p>From v1.15.3 to v1.16.3, steps:</p>
-<pre><code>$ pwd
+</code></pre><h3 id=upgrade>Upgrade</h3><p>From v1.15.3 to v1.16.3, steps:</p><pre><code>$ pwd
 0_preinstall/roles/kube-deploy/files
 $ ls
 1604debs.tar.xz  1804debs.tar.xz  calicoctl-linux-amd64  cni-plugins-linux-amd64-v0.8.1.tgz  dns  docker-compose  docker.tar.gz  dockerDebs.tar.gz  gpg  hyperkube  kubeadm  nginx  ntp.conf
-</code></pre><p>Generate 1804debs.tar.xz and replace:</p>
-<pre><code># cp -r /root/debs ./Rong
+</code></pre><p>Generate 1804debs.tar.xz and replace:</p><pre><code># cp -r /root/debs ./Rong
 # tar cJvf 1804debs.tar.xz Rong
-</code></pre><p>Calculate calicoctl/ , it&rsquo;s the same md5, so needn&rsquo;t replacement.</p>
-<p><code>docker.tar.gz</code> should be replaced with the newer one.</p>
-<p>Docker version upgradeed to 19.03.5, so we need to replace the old ones.</p>
-<pre><code># tar xzvf dockerDebs.tar.gz  -C tmp/
+</code></pre><p>Calculate calicoctl/ , it&rsquo;s the same md5, so needn&rsquo;t replacement.</p><p><code>docker.tar.gz</code> should be replaced with the newer one.</p><p>Docker version upgradeed to 19.03.5, so we need to replace the old ones.</p><pre><code># tar xzvf dockerDebs.tar.gz  -C tmp/
 ubuntu/dists/bionic/pool/stable/amd64/containerd.io_1.2.10-2_amd64.deb
 ubuntu/dists/bionic/pool/stable/amd64/docker-ce-cli_19.03.3~3-0~ubuntu-bionic_amd64.deb
 ubuntu/dists/bionic/pool/stable/amd64/docker-ce_18.09.7~3-0~ubuntu-bionic_amd64.deb
-</code></pre><p>apt-mirror for syncing on internet:</p>
-<pre><code>$ sudo vim /etc/apt/mirror.list
+</code></pre><p>apt-mirror for syncing on internet:</p><pre><code>$ sudo vim /etc/apt/mirror.list
 set base_path    /media/sda/tmp/apt-mirror
 set nthreads     20
 set _tilde 0
@@ -263,26 +103,21 @@ deb https://download.docker.com/linux/ubuntu bionic stable
 deb https://download.docker.com/linux/ubuntu xenial stable
 $ sudo apt-mirror
 
-</code></pre><p>Too slow for the fucking gfw!!!</p>
-<p>After apt-mirror, we have to rsync using following command:</p>
-<pre><code>$ pwd
+</code></pre><p>Too slow for the fucking gfw!!!</p><p>After apt-mirror, we have to rsync using following command:</p><pre><code>$ pwd
 /media/sda/tmp/apt-mirror/mirror/download.docker.com/linux/ubuntu
 $ ls
 dists
 $ rsync -a -e 'ssh -p 2345 ' --progress dists/ root@192.168.111.11:/destination/ubuntu/dists/
-</code></pre><p>wget the gpg file:</p>
-<pre><code>$ wget https://download.docker.com/linux/ubuntu/gpg
+</code></pre><p>wget the gpg file:</p><pre><code>$ wget https://download.docker.com/linux/ubuntu/gpg
 $ tar czvf dockerDebs.tar.gz gpg ubuntu/
 $ ls -l -h dockerDebs.tar.gz
 -rw-r--r-- 1 root root 144M Dec 23 17:41 dockerDebs.tar.gz
 $ cp dockerDebs.tar.gz ~/0_preinstall/roles/kube-deploy/files
-</code></pre><p>Binary replacement:</p>
-<pre><code>previsous:    
+</code></pre><p>Binary replacement:</p><pre><code>previsous:    
  hyperkube  kubeadm  
 current:    
 kubeadm-v1.16.3-amd64 kubectl-v1.16.3-amd64 kubelet-v1.16.3-amd64
-</code></pre><p>Edit the file, since in v1.16.3 we didn&rsquo;t use hyperkube:</p>
-<pre><code>$ vim deploy-ubuntu/tasks/main.yml
+</code></pre><p>Edit the file, since in v1.16.3 we didn&rsquo;t use hyperkube:</p><pre><code>$ vim deploy-ubuntu/tasks/main.yml
   - name: &quot;upload static files to /usr/local/static&quot;
     copy:
       src: &quot;{{ item }}&quot;
@@ -300,8 +135,7 @@ kubeadm-v1.16.3-amd64 kubectl-v1.16.3-amd64 kubelet-v1.16.3-amd64
       - files/cni-plugins-linux-amd64-v0.8.1.tgz
       #- files/dockerDebs.tar.gz
       - files/gpg
-</code></pre><p>Add sysctl items:</p>
-<pre><code># vim ./roles/kubernetes/preinstall/tasks/0080-system-configurations.yml
+</code></pre><p>Add sysctl items:</p><pre><code># vim ./roles/kubernetes/preinstall/tasks/0080-system-configurations.yml
 - name: set fs inotify.max_user_watches to 1048576
   sysctl:
     sysctl_file: &quot;{{ sysctl_file_path }}&quot;
@@ -309,19 +143,4 @@ kubeadm-v1.16.3-amd64 kubectl-v1.16.3-amd64 kubelet-v1.16.3-amd64
     value: 1048576
     state: present
     reload: yes
-</code></pre><p>Added some files like <code>./roles/kubernetes/preinstall/tasks/0000-xxx-ubuntu.yml</code>, minimum modifications to kubespray source code, you can use bcompare for viewing.</p>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre><p>Added some files like <code>./roles/kubernetes/preinstall/tasks/0000-xxx-ubuntu.yml</code>, minimum modifications to kubespray source code, you can use bcompare for viewing.</p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

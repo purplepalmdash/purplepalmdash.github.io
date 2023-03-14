@@ -1,154 +1,20 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>WorkingTipsOnNodeJSApp &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="WorkingTipsOnNodeJSApp">
-  <meta name="keywords" content="Linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>WorkingTipsOnNodeJSApp</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Sep 5, 2018 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#steps">Steps</a></li>
-        <li><a href="#代码更改">代码更改</a></li>
-        <li><a href="#改进">改进</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="steps">Steps</h3>
-<p>最先是在VPS上用docker开发，遇到跨域问题，专用虚拟机开发。</p>
-<pre><code># vagrant init bento/ubuntu-18.04
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>WorkingTipsOnNodeJSApp &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="WorkingTipsOnNodeJSApp"><meta name=keywords content="Linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>WorkingTipsOnNodeJSApp</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Sep 5, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#steps>Steps</a></li><li><a href=#代码更改>代码更改</a></li><li><a href=#改进>改进</a></li></ul></li></ul></nav></div><h3 id=steps>Steps</h3><p>最先是在VPS上用docker开发，遇到跨域问题，专用虚拟机开发。</p><pre><code># vagrant init bento/ubuntu-18.04
 更改IP为192.168.33.128/24, 2 Core/ 2G
 # vagrant up
 # vagrant ssh
-</code></pre><p>安装必要的开发环境。</p>
-<pre><code># sudo apt-get install -y npm nodejs
+</code></pre><p>安装必要的开发环境。</p><pre><code># sudo apt-get install -y npm nodejs
 # npm install -g express
 # npm install -g express-generator
 # which express
 /usr/local/bin/express
-</code></pre><p>创建一个名称为<code>countdown</code>的express项目:</p>
-<pre><code># express -v ejs countdown
+</code></pre><p>创建一个名称为<code>countdown</code>的express项目:</p><pre><code># express -v ejs countdown
 # cd countdown/
 # ls
 app.js  bin  package.json  public  routes  views
-</code></pre><p>安装依赖:</p>
-<pre><code># npm install -d
+</code></pre><p>安装依赖:</p><pre><code># npm install -d
 # npm install socket.io express --save
-</code></pre><p>此时可以查看<code>package.json</code>的内容:</p>
-<pre><code>{
+</code></pre><p>此时可以查看<code>package.json</code>的内容:</p><pre><code>{
   &quot;name&quot;: &quot;countdown&quot;,
   &quot;version&quot;: &quot;0.0.0&quot;,
   &quot;private&quot;: true,
@@ -165,11 +31,8 @@ app.js  bin  package.json  public  routes  views
     &quot;socket.io&quot;: &quot;^2.1.1&quot;
   }
 }
-</code></pre><p>我们需要使用layout(比较陈旧的用法），因而执行以下操作:</p>
-<pre><code># npm install ejs-locals --save
-</code></pre><h3 id="代码更改">代码更改</h3>
-<p>在<code>// view engine setup</code>前添加以下代码，作用是用于指定当前app的服务端口，并定义socket.io的模块引入：</p>
-<pre><code>var engine = require('ejs-locals');
+</code></pre><p>我们需要使用layout(比较陈旧的用法），因而执行以下操作:</p><pre><code># npm install ejs-locals --save
+</code></pre><h3 id=代码更改>代码更改</h3><p>在<code>// view engine setup</code>前添加以下代码，作用是用于指定当前app的服务端口，并定义socket.io的模块引入：</p><pre><code>var engine = require('ejs-locals');
 
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
@@ -178,16 +41,13 @@ var io = require('socket.io')(server);
 //});
 
 server.listen(5000);
-</code></pre><p>// Todo: xhr-polling的意义？</p>
-<p>在view engine setup中添加ejs-local的用法,
-我们这里将指定layout.ejs为我们模板中的布局文件:</p>
-<pre><code>// view engine setup
+</code></pre><p>// Todo: xhr-polling的意义？</p><p>在view engine setup中添加ejs-local的用法,
+我们这里将指定layout.ejs为我们模板中的布局文件:</p><pre><code>// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view options', { layout:'views/layout.ejs' });
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
-</code></pre><p>接着我们引入状态变量及对io的用法:</p>
-<pre><code>// status indicator
+</code></pre><p>接着我们引入状态变量及对io的用法:</p><pre><code>// status indicator
 var status = &quot;All is well.&quot;;
 
 io.sockets.on('connection', function (socket) {  
@@ -200,8 +60,7 @@ s to emit but socket.on to listen
 });
 
 module.exports = app;
-</code></pre><p>模板文件定义:</p>
-<pre><code># cat views/layout.ejs 
+</code></pre><p>模板文件定义:</p><pre><code># cat views/layout.ejs 
 &lt;!DOCTYPE html&gt;  
 &lt;html lang=&quot;en&quot;&gt;  
   &lt;head&gt;
@@ -227,14 +86,12 @@ module.exports = app;
     &lt;script src=&quot;/javascripts/main.js&quot;&gt;&lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;  
-</code></pre><p>以及index.ejs:</p>
-<pre><code># cat views/index.ejs 
+</code></pre><p>以及index.ejs:</p><pre><code># cat views/index.ejs 
 &lt;% layout('layout') -%&gt;
 
 &lt;div id=&quot;status&quot;&gt;&lt;/div&gt;  
 &lt;button id=&quot;reset&quot;&gt;Reset!&lt;/button&gt; 
-</code></pre><p>main.js的定义文件如下:</p>
-<pre><code># vim public/javascripts/main.js
+</code></pre><p>main.js的定义文件如下:</p><pre><code># vim public/javascripts/main.js
 var socket = io.connect(window.location.hostname);
 
 socket.on('status', function (data) {  
@@ -245,32 +102,10 @@ $('#reset').click(function() {
     socket.emit('reset');
 });
 
-</code></pre><p>jquery.js文件如下:</p>
-<pre><code># cd public/javascripts/
+</code></pre><p>jquery.js文件如下:</p><pre><code># cd public/javascripts/
 # mkdir libs &amp;&amp; cd libs
 # wget https://code.jquery.com/jquery-3.3.1.js
 # mv jquery-3.3.1.js  jquery.js
-</code></pre><p>main.css文件同样也需要定义:</p>
-<pre><code># vim public/stylesheets/main.css
+</code></pre><p>main.css文件同样也需要定义:</p><pre><code># vim public/stylesheets/main.css
 内容略过
-</code></pre><p>现在运行<code>node app.js</code>可以看到运行结果:</p>
-<p><img src="/images/2018_09_05_15_26_04_464x176.jpg" alt="/images/2018_09_05_15_26_04_464x176.jpg"></p>
-<h3 id="改进">改进</h3>
-<p>timer的改进，具体的代码已经上传到github上。</p>
-<p>Todo: 多个Timer的添加。<br>
-Todo: 跨域问题的解决。</p>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre><p>现在运行<code>node app.js</code>可以看到运行结果:</p><p><img src=/images/2018_09_05_15_26_04_464x176.jpg alt=/images/2018_09_05_15_26_04_464x176.jpg></p><h3 id=改进>改进</h3><p>timer的改进，具体的代码已经上传到github上。</p><p>Todo: 多个Timer的添加。<br>Todo: 跨域问题的解决。</p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

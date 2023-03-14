@@ -1,149 +1,13 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>Tips On Packer &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="">
-  <meta name="keywords" content="unix,virtualization,embedded,linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>Tips On Packer</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Jul 27, 2015 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#kvm-based-image-build">KVM Based Image Build</a></li>
-        <li><a href="#kickstart-file">KickStart File</a></li>
-        <li><a href="#build-and-output">Build And Output</a></li>
-        <li><a href="#ubuntu">Ubuntu</a></li>
-        <li><a href="#use-local-repository">Use Local Repository</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="installation">Installation</h3>
-<p>Install Packer via:</p>
-<pre><code>$ wget https://dl.bintray.com/mitchellh/packer/packer_0.8.2_linux_amd64.zip
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Tips On Packer &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>Tips On Packer</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Jul 27, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#installation>Installation</a></li><li><a href=#kvm-based-image-build>KVM Based Image Build</a></li><li><a href=#kickstart-file>KickStart File</a></li><li><a href=#build-and-output>Build And Output</a></li><li><a href=#ubuntu>Ubuntu</a></li><li><a href=#use-local-repository>Use Local Repository</a></li></ul></li></ul></nav></div><h3 id=installation>Installation</h3><p>Install Packer via:</p><pre><code>$ wget https://dl.bintray.com/mitchellh/packer/packer_0.8.2_linux_amd64.zip
 $ unzip packer_0.8.2_linux_amd64.zip
 $ mv packer* ~/bin
 $ export PATH=~/bin:$PATH
-</code></pre><h3 id="kvm-based-image-build">KVM Based Image Build</h3>
-<p>Fetch the kickstart configuration file.</p>
-<pre><code>$ mkdir ~/Code/packer
+</code></pre><h3 id=kvm-based-image-build>KVM Based Image Build</h3><p>Fetch the kickstart configuration file.</p><pre><code>$ mkdir ~/Code/packer
 $ wget https://gist.githubusercontent.com/mitchellh/7328271/raw/9035b8e26d001f14a2a960d3cec65eceb0e716ea/centos6-ks.cfg
 # vim centos6-ks.cfg
 	### Replace your own repository URL
-</code></pre><p>Create the json definition file for the packer build:</p>
-<pre><code>$  packer validate first.json
+</code></pre><p>Create the json definition file for the packer build:</p><pre><code>$  packer validate first.json
 Template validated successfully.
 $ cat first.json
 {
@@ -183,11 +47,8 @@ $ cat first.json
 }
 $  packer validate first.json
 Template validated successfully.
-</code></pre><p>Now start build via:</p>
-<pre><code>packer build first.json
-</code></pre><h3 id="kickstart-file">KickStart File</h3>
-<p>An Template:</p>
-<pre><code>[root:/var/www/html]# cat centos6-cdrom.cfg
+</code></pre><p>Now start build via:</p><pre><code>packer build first.json
+</code></pre><h3 id=kickstart-file>KickStart File</h3><p>An Template:</p><pre><code>[root:/var/www/html]# cat centos6-cdrom.cfg
 #platform=x86, AMD64, or Intel EM64T
 #version=DEVEL
 # Firewall configuration
@@ -255,8 +116,7 @@ yum
 -postfix
 -prelink
 %end
-</code></pre><h3 id="build-and-output">Build And Output</h3>
-<pre><code>$ packer  build second.json
+</code></pre><h3 id=build-and-output>Build And Output</h3><pre><code>$ packer  build second.json
 qemu output will be in this color.
 
 ==&gt; qemu: Downloading or copying ISO
@@ -283,10 +143,7 @@ output_centos_tdhtest  packer_cache  second.json
 $ ls -l output_centos_tdhtest 
 total 1411208
 -rw-r--r-- 1 dash dash 1445134336 Jul 27 16:11 tdhtest
-</code></pre><p>Next time we will investigate ubuntu installation.</p>
-<h3 id="ubuntu">Ubuntu</h3>
-<p>Ubuntu64.json:</p>
-<pre><code>{
+</code></pre><p>Next time we will investigate ubuntu installation.</p><h3 id=ubuntu>Ubuntu</h3><p>Ubuntu64.json:</p><pre><code>{
     &quot;variables&quot;: {
         &quot;ssh_name&quot;: &quot;kappataumu&quot;,
         &quot;ssh_pass&quot;: &quot;kappataumu&quot;,
@@ -331,8 +188,7 @@ total 1411208
     }]
 }
 
-</code></pre><p>KVM Based:</p>
-<pre><code>{
+</code></pre><p>KVM Based:</p><pre><code>{
     &quot;variables&quot;: {
         &quot;user&quot;: &quot;adminubuntu&quot;,
         &quot;password&quot;: &quot;adminubuntu&quot;
@@ -380,8 +236,7 @@ total 1411208
         }
     ]
 }
-</code></pre><p>The Preseed File:</p>
-<pre><code># Some inspiration:
+</code></pre><p>The Preseed File:</p><pre><code># Some inspiration:
 # *
 https://github.com/chrisroberts/vagrant-boxes/blob/master/definitions/precise-64/preseed.cfg
 # * https://github.com/cal/vagrant-ubuntu-precise-64/blob/master/preseed.cfg
@@ -459,9 +314,7 @@ d-i pkgsel/upgrade select safe-upgrade
 d-i grub-installer/only_debian boolean true
 
 d-i finish-install/reboot_in_progress note
-</code></pre><h3 id="use-local-repository">Use Local Repository</h3>
-<p>Add following in the kickstart file:</p>
-<pre><code># Setup the installation source
+</code></pre><h3 id=use-local-repository>Use Local Repository</h3><p>Add following in the kickstart file:</p><pre><code># Setup the installation source
 d-i mirror/country string manual
 d-i mirror/http/hostname string 192.168.0.79
 #d-i mirror/http/directory string $install_source_directory
@@ -472,18 +325,4 @@ d-i apt-setup/security_host string 192.168.0.79
 d-i apt-setup/security_path string /ks_mirror/Ubuntu-14.04-x86_64/ubuntu
 d-i apt-setup/services-select multiselect none
 
-</code></pre>
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

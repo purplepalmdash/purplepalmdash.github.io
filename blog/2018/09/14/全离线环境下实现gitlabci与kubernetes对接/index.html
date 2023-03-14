@@ -1,168 +1,15 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>全离线环境下实现GitLabCI与Kubernetes对接 &middot; Dash</title>
-
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124">
-  <link rel="stylesheet" href="https://purplepalmdash.github.io/css/highlight/googlecode.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/html2canvas.js"></script>
-  <script type='text/javascript'>
-  function genPostShot() { 
-          var rightNow = new Date();
-          var imageName = rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");
-          imageName += '.jpg'
-          html2canvas(document.getElementsByClassName('post'), {
-              background :'#FFFFFF',
-              onrendered: function(canvas) {
-  		
-          	$('#test').attr('href', canvas.toDataURL("image/jpeg"));
-          	$('#test').attr('download',imageName);
-          	$('#test')[0].click();
-              }
-          });
-  }; 
-  
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124">
-  <link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel="icon">
-
-  
-  
-  
-  
-  <meta name="description" content="OfflineGitLabCIAndK8s">
-  <meta name="keywords" content="Linux">
-  
-  
-</head>
-<body class="theme-base-0c">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <img src="http://purplepalmdash.github.io/images/mylogo.jpeg" alt="gravatar">
-      <h1><a href="http://purplepalmdash.github.io/">Get busy living, or get busy dying.</a></h1>
-      <a href="http://purplepalmdash.github.io/"><p>Dash</p></a>
-    </div>
-
-    <ul class="sidebar-nav">
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/post/">All Posts</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/technology/">Technology</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/life/">Life</a></li>
-      
-      <li class="sidebar-nav-item"><a href="http://purplepalmdash.github.io/categories/linuxtips/">LinuxTips</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      <a href="https://github.com/purplepalmdash"><i class="fa fa-github-square fa-3x"></i></a>
-      
-      <a href="https://cn.linkedin.com/in/yang-feipeng-1b909319"><i class="fa fa-linkedin-square fa-3x"></i></a>
-      <a href="https://plus.google.com/u/0/106572959364703833986"><i class="fa fa-google-plus-square fa-3x"></i></a>
-      <a href="https://www.facebook.com/yang.feipeng"><i class="fa fa-facebook-square fa-3x"></i></a>
-      <a href="https://twitter.com/dashwillfly"><i class="fa fa-twitter-square fa-3x"></i></a>
-      
-      </li>
-    </ul>
-
-    
-
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="post">
-    <h1>全离线环境下实现GitLabCI与Kubernetes对接</h1>
-    <p align="right">
-    <a href="javascript:genPostShot()">
-	    TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i>
-    </a>
-    <a id="test"></a>
-    </p>
-    <hr>
-    <span class="post-date">Sep 14, 2018 
-    
-    <br/>
-    
-          <a class="a_cat" href="http://purplepalmdash.github.io/categories/technology">Technology</a>
-      
-      
-
-    
-    </span>
-      <div id="_toc" class="toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#环境准备">环境准备</a></li>
-        <li><a href="#registry准备可选">Registry准备(可选)</a></li>
-        <li><a href="#离线安装文件准备">离线安装文件准备</a></li>
-        <li><a href="#离线容器准备">离线容器准备</a></li>
-        <li><a href="#离线charts准备">离线charts准备</a></li>
-        <li><a href="#测试项目准备">测试项目准备</a></li>
-        <li><a href="#搭建配置gitlab">搭建/配置GitLab</a></li>
-        <li><a href="#gitlab-runner配置">Gitlab Runner配置</a></li>
-        <li><a href="#cicd项目">CI/CD项目</a></li>
-        <li><a href="#prometheus-1">Prometheus</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    <h3 id="环境准备">环境准备</h3>
-<p>本文将构建一个包含4台工作机器的集群来模拟全离线环境下的GitLabCI环境及Kubernetes集群环境。相应的硬件配置如下:</p>
-<p>虚拟机<code>zz_z_gitlab</code>:</p>
-<pre><code>8 Core, 16G, 200G Disk
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>全离线环境下实现GitLabCI与Kubernetes对接 &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="OfflineGitLabCIAndK8s"><meta name=keywords content="Linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>全离线环境下实现GitLabCI与Kubernetes对接</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Sep 14, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#环境准备>环境准备</a></li><li><a href=#registry准备可选>Registry准备(可选)</a></li><li><a href=#离线安装文件准备>离线安装文件准备</a></li><li><a href=#离线容器准备>离线容器准备</a></li><li><a href=#离线charts准备>离线charts准备</a></li><li><a href=#测试项目准备>测试项目准备</a></li><li><a href=#搭建配置gitlab>搭建/配置GitLab</a></li><li><a href=#gitlab-runner配置>Gitlab Runner配置</a></li><li><a href=#cicd项目>CI/CD项目</a></li><li><a href=#prometheus-1>Prometheus</a></li></ul></li></ul></nav></div><h3 id=环境准备>环境准备</h3><p>本文将构建一个包含4台工作机器的集群来模拟全离线环境下的GitLabCI环境及Kubernetes集群环境。相应的硬件配置如下:</p><p>虚拟机<code>zz_z_gitlab</code>:</p><pre><code>8 Core, 16G, 200G Disk
 gitlab IP: 192.168.122.160/24
-</code></pre><p>虚拟机<code>zz_z_gitlab_runner1</code>, <code>zz_z_gitlab_runner2</code>, <code>zz_z_gitlab_runner3</code>:</p>
-<pre><code>8 Core, 16G, 200G Disk
+</code></pre><p>虚拟机<code>zz_z_gitlab_runner1</code>, <code>zz_z_gitlab_runner2</code>, <code>zz_z_gitlab_runner3</code>:</p><pre><code>8 Core, 16G, 200G Disk
 runner1 IP: 192.168.122.161/24
 runner2 IP: 192.168.122.162/24
 runner3 IP: 192.168.122.163/24
-</code></pre><p>说明: <br>
-gitlab比较费内存，因而节点分配的计算资源相对来说需要高一点。 <br>
-以上的配置是在服务器上，因而没有考虑到最小资源分配问题，在个人电脑上，因为内存和CPU的限制，可以使用2核4G的节点用来搭建Gitlab，2核4G用来搭建k8s单节点集群做实验。</p>
-<p>操作系统：采用Ubuntu16.04作为环境的推荐系统。在其上部署KubeSpray部署的Kubernetes集群。操作系统的安装及Kubernetes的搭建并不在本文范畴内。</p>
-<p>Kubernetes环境截图:</p>
-<p><img src="/images/2018_09_14_15_19_50_568x136.jpg" alt="/images/2018_09_14_15_19_50_568x136.jpg"></p>
-<h3 id="registry准备可选">Registry准备(可选)</h3>
-<p>离线情况下，需要事先将Kubernetes用到的容器镜像，以及本文gitlabci中用到的镜像全部离线放入到私有仓库，本文中采用的容器镜像私有仓库方案是opensuse提供的Portus，
-以容器的方式运行于<code>zz_z_gitlab</code>节点上，当然你也可以使用gitlab自带的registry服务来实现， 或者使用外置的harbor等方式。</p>
-<p>Portus与GitLab存在端口重复的问题，需要在Portus的配置文件中，将默认监听的80端口改为其他端口，如81端口。</p>
-<h3 id="离线安装文件准备">离线安装文件准备</h3>
-<p>需要实现下载gitlab的安装文件(deb格式):</p>
-<pre><code> gitlab-ce_11.0.3-ce.0_amd64.deb
+</code></pre><p>说明:<br>gitlab比较费内存，因而节点分配的计算资源相对来说需要高一点。<br>以上的配置是在服务器上，因而没有考虑到最小资源分配问题，在个人电脑上，因为内存和CPU的限制，可以使用2核4G的节点用来搭建Gitlab，2核4G用来搭建k8s单节点集群做实验。</p><p>操作系统：采用Ubuntu16.04作为环境的推荐系统。在其上部署KubeSpray部署的Kubernetes集群。操作系统的安装及Kubernetes的搭建并不在本文范畴内。</p><p>Kubernetes环境截图:</p><p><img src=/images/2018_09_14_15_19_50_568x136.jpg alt=/images/2018_09_14_15_19_50_568x136.jpg></p><h3 id=registry准备可选>Registry准备(可选)</h3><p>离线情况下，需要事先将Kubernetes用到的容器镜像，以及本文gitlabci中用到的镜像全部离线放入到私有仓库，本文中采用的容器镜像私有仓库方案是opensuse提供的Portus，
+以容器的方式运行于<code>zz_z_gitlab</code>节点上，当然你也可以使用gitlab自带的registry服务来实现， 或者使用外置的harbor等方式。</p><p>Portus与GitLab存在端口重复的问题，需要在Portus的配置文件中，将默认监听的80端口改为其他端口，如81端口。</p><h3 id=离线安装文件准备>离线安装文件准备</h3><p>需要实现下载gitlab的安装文件(deb格式):</p><pre><code> gitlab-ce_11.0.3-ce.0_amd64.deb
  gitlab-runner_11.0.2_amd64.deb
-</code></pre><p>安装gitlab-runner时需要用到helm v2.7.0文件:</p>
-<pre><code># wget https://kubernetes-helm.storage.googleapis.com/helm-v2.7.0-linux-amd64.tar.gz
-</code></pre><h3 id="离线容器准备">离线容器准备</h3>
-<p>gitlab机器上，添加docker的insecure-registries方式:</p>
-<pre><code># vim  /etc/docker/daemon.json
+</code></pre><p>安装gitlab-runner时需要用到helm v2.7.0文件:</p><pre><code># wget https://kubernetes-helm.storage.googleapis.com/helm-v2.7.0-linux-amd64.tar.gz
+</code></pre><h3 id=离线容器准备>离线容器准备</h3><p>gitlab机器上，添加docker的insecure-registries方式:</p><pre><code># vim  /etc/docker/daemon.json
     {
         &quot;insecure-registries&quot; : [&quot;portus.ooooooo.com:5000&quot;]
     }
@@ -170,30 +17,24 @@ gitlab比较费内存，因而节点分配的计算资源相对来说需要高�
 # docker login http://portus.ooooooo.com:5000
 Username: kubespray
 Password: 
-</code></pre><p>alpine:3.6镜像:</p>
-<pre><code># docker tag alpine:3.6 portus.ooooooo.com:5000/kubesprayns/alpine:3.6
+</code></pre><p>alpine:3.6镜像:</p><pre><code># docker tag alpine:3.6 portus.ooooooo.com:5000/kubesprayns/alpine:3.6
 # docker push portus.ooooooo.com:5000/kubesprayns/alpine:3.6
-</code></pre><p><img src="/images/2018_09_14_15_58_13_435x155.jpg" alt="/images/2018_09_14_15_58_13_435x155.jpg"></p>
-<p>用于install helm的alpine镜像准备:</p>
-<pre><code>$ sudo docker run -it alpine:3.6 /bin/sh
+</code></pre><p><img src=/images/2018_09_14_15_58_13_435x155.jpg alt=/images/2018_09_14_15_58_13_435x155.jpg></p><p>用于install helm的alpine镜像准备:</p><pre><code>$ sudo docker run -it alpine:3.6 /bin/sh
 / # apk add -U wget ca-certificates openssl &gt;/dev/null
 / # which wget
 /usr/bin/wget
 / # ls -l -h /usr/bin/wget
 -rwxr-xr-x    1 root     root      443.2K May 11 13:02 /usr/bin/wget
-</code></pre><p>保存容器，并上传:</p>
-<pre><code>$ sudo docker ps
+</code></pre><p>保存容器，并上传:</p><pre><code>$ sudo docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS               NAMES
 79923690bcc2        alpine:3.6          &quot;/bin/sh&quot;           About a minute ago   Up About a minute                       jolly_banach
 $ sudo docker commit 79923690bcc2 alpinewithwget:3.6
 # docker tag alpinewithwget:3.6 portus.ooooooo.com:5000/kubesprayns/alpinewithwget:3.6
 # docker push portus.ooooooo.com:5000/kubesprayns/alpinewithwget:3.6
-</code></pre><p>helm在初始化的时候需要用到</p>
-<pre><code>$ sudo docker pull gcr.io/kubernetes-helm/tiller:v2.7.0
+</code></pre><p>helm在初始化的时候需要用到</p><pre><code>$ sudo docker pull gcr.io/kubernetes-helm/tiller:v2.7.0
 $ sudo docker tag gcr.io/kubernetes-helm/tiller:v2.7.0  portus.ooooooo.com:5000/kubesprayns/gcr.io/kubernetes-helm/tiller:v2.7.0 
 $ sudo docker push portus.ooooooo.com:5000/kubesprayns/gcr.io/kubernetes-helm/tiller:v2.7.0 
-</code></pre><p>gitlab-runner所需镜像:</p>
-<pre><code>$ sudo docker pull busybox:latest
+</code></pre><p>gitlab-runner所需镜像:</p><pre><code>$ sudo docker pull busybox:latest
 $ sudo docker pull ubuntu:16.04
 $ sudo docker pull gitlab/gitlab-runner:alpine-v10.3.0
 $ sudo docker pull gitlab/gitlab-runner-helper:x86_64-latest
@@ -205,15 +46,13 @@ $ sudo docker push portus.ooooooo.com:5000/kubesprayns/busybox:latest
 $ sudo docker push portus.ooooooo.com:5000/kubesprayns/ubuntu:16.04
 $ sudo docker push portus.ooooooo.com:5000/kubesprayns/gitlab/gitlab-runner:alpine-v10.3.0
 $ sudo docker push portus.ooooooo.com:5000/kubesprayns/gitlab/gitlab-runner-helper:x86_64-latest
-</code></pre><p>nginx-ingress-controller所需镜像:</p>
-<pre><code># docker pull quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.19.0
+</code></pre><p>nginx-ingress-controller所需镜像:</p><pre><code># docker pull quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.19.0
 # docker pull k8s.gcr.io/defaultbackend:1.4
 # docker tag quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.19.0 portus.ooooooo.com:5000/kubesprayns/quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.19.0
 # docker push portus.ooooooo.com:5000/kubesprayns/quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.19.0
 # docker tag k8s.gcr.io/defaultbackend:1.4 portus.ooooooo.com:5000/kubesprayns/k8s.gcr.io/defaultbackend:1.4
 # docker push portus.ooooooo.com:5000/kubesprayns/k8s.gcr.io/defaultbackend:1.4
-</code></pre><p>Prometheus所需容器：</p>
-<pre><code>$ sudo docker pull prom/alertmanager:v0.14.0
+</code></pre><p>Prometheus所需容器：</p><pre><code>$ sudo docker pull prom/alertmanager:v0.14.0
 $ sudo docker pull jimmidyson/configmap-reload:v0.1
 $ sudo docker pull quay.io/coreos/kube-state-metrics:v1.3.1
 $ sudo docker pull prom/node-exporter:v0.15.2
@@ -236,30 +75,22 @@ $ sudo docker push  portus.oooooo:5000/kubesprayns/prom/node-exporter:v0.15.2
 $ sudo docker push  portus.oooooo:5000/kubesprayns/prom/prometheus:v2.2.1
 $ sudo docker push  portus.oooooo:5000/kubesprayns/prom/pushgateway:v0.5.1
 $ sudo docker push  portus.oooooo:5000/kubesprayns/prom/alertmanager:v0.14.0
-</code></pre><p>项目CI/CD所需容器(test环节/build环节):</p>
-<pre><code># docker pull golang:1.10.3-stretch
+</code></pre><p>项目CI/CD所需容器(test环节/build环节):</p><pre><code># docker pull golang:1.10.3-stretch
 # docker tag golang:1.10.3-stretch portus.ooooooo.com:5000/kubesprayns/golang:1.10.3-stretch
 # docker push portus.ooooooo.com:5000/kubesprayns/golang:1.10.3-stretch
-</code></pre><p>Release阶段所需容器:</p>
-<pre><code># docker pull docker:latest
+</code></pre><p>Release阶段所需容器:</p><pre><code># docker pull docker:latest
 # docker pull lordgaav/dind-options:latest
 # docker tag docker:latest portus.ooooooo.com:5000/kubesprayns/docker:latest
 # docker push portus.ooooooo.com:5000/kubesprayns/docker:latest
 # docker tag lordgaav/dind-options:latest portus.ooooooo.com:5000/lordgaav/dind-options:latest
 # docker push portus.ooooooo.com:5000/kubesprayns/lordgaav/dind-options:latest
-</code></pre><p>Deploy阶段所需容器:</p>
-<pre><code># docker pull lachlanevenson/k8s-kubectl:latest
+</code></pre><p>Deploy阶段所需容器:</p><pre><code># docker pull lachlanevenson/k8s-kubectl:latest
 # docker tag lachlanevenson/k8s-kubectl:latest portus.ooooooo.com:5000/kubesprayns/lachlanevenson/k8s-kubectl:latest
 # docker push portus.ooooooo.com:5000/kubesprayns/lachlanevenson/k8s-kubectl:latest
-</code></pre><p>Build 容器所需要的:</p>
-<pre><code># docker pull busybox:1.28.4-glibc
+</code></pre><p>Build 容器所需要的:</p><pre><code># docker pull busybox:1.28.4-glibc
 # docker tag busybox:1.28.4-glibc portus.ooooooo.com:5000/kubesprayns/busybox:1.28.4-glibc
 # docker push portus.ooooooo.com:5000/kubesprayns/busybox:1.28.4-glibc
-</code></pre><h3 id="离线charts准备">离线charts准备</h3>
-<p>下载并更改charts, 而后上传到私有仓库,</p>
-<h4 id="gitlab-runner">gitlab-runner</h4>
-<p>下面是gitlab-runner的charts本地化制作过程:</p>
-<pre><code>$ helm repo add runner https://charts.gitlab.io
+</code></pre><h3 id=离线charts准备>离线charts准备</h3><p>下载并更改charts, 而后上传到私有仓库,</p><h4 id=gitlab-runner>gitlab-runner</h4><p>下面是gitlab-runner的charts本地化制作过程:</p><pre><code>$ helm repo add runner https://charts.gitlab.io
 $ helm fetch runner/gitlab-runner
 $ tar xzvf gitlab-runner-0.1.33.tgz
 $ cd gitlab-runner
@@ -281,9 +112,7 @@ init:
 +    image: portus.ooooooo.com:5000/kubesprayns/gitlab/gitlab-runner-helper:x86_64-latest
 $ helm package .
 $ curl --data-binary &quot;@gitlab-runner-0.1.33.tgz&quot; http://portus.ooooooo.com:8988/api/charts
-</code></pre><h4 id="nginx-ingress离线charts">nginx-ingress离线charts</h4>
-<p>步骤:</p>
-<pre><code># helm fetch stable/nginx-ingress
+</code></pre><h4 id=nginx-ingress离线charts>nginx-ingress离线charts</h4><p>步骤:</p><pre><code># helm fetch stable/nginx-ingress
 # tar xzvf nginx-ingress-0.28.2.tgz
 # cd nginx-ingress
 # vim values.yaml
@@ -297,14 +126,11 @@ $ curl --data-binary &quot;@gitlab-runner-0.1.33.tgz&quot; http://portus.ooooooo
 &gt;     repository: portus.ooooooo.com:5000/kubesprayns/k8s.gcr.io/defaultbackend
 # helm package .
 $ curl --data-binary &quot;@nginx-ingress-0.28.2.tgz&quot; http://portus.ooooooo.com:8988/api/charts
-</code></pre><p>需要配置默认的nginx-ingress-controller的配置:</p>
-<pre><code># vim /opt/gitlab/embedded/service/gitlab-rails/vendor/ingress/values.yaml
+</code></pre><p>需要配置默认的nginx-ingress-controller的配置:</p><pre><code># vim /opt/gitlab/embedded/service/gitlab-rails/vendor/ingress/values.yaml
 - repository: &quot;quay.io/kubernetes-ingress-controller/nginx-ingress-controller&quot;
 + repository: &quot;portus.oooooo.com:5000/kubesprayns/quay.io/kubernetes-ingress-controller/nginx-ingress-controller&quot;
 # gitlab-ctl reconfigure &amp;&amp; gitlab-ctl restart
-</code></pre><h4 id="prometheus离线charts">Prometheus离线charts</h4>
-<p>步骤:</p>
-<pre><code>$ helm fetch stable/prometheus --version 6.7.3
+</code></pre><h4 id=prometheus离线charts>Prometheus离线charts</h4><p>步骤:</p><pre><code>$ helm fetch stable/prometheus --version 6.7.3
 $ tar xzvf prometheus-6.7.3.tgz
 $ cd prometheus/
 $ vim values
@@ -338,80 +164,44 @@ $ vim values
 &gt;     repository: portus.oooooo.com:5000/kubesprayns/prom/pushgateway
 $ helm package .
 $ curl --data-binary &quot;@prometheus-6.7.3.tgz&quot; http://portus.ooooooo.com:8988/api/charts
-</code></pre><h3 id="测试项目准备">测试项目准备</h3>
-<p>测试项目来自于github上的项目:</p>
-<pre><code>$ git clone https://github.com/galexrt/presentation-gitlab-k8s.git
-</code></pre><h3 id="搭建配置gitlab">搭建/配置GitLab</h3>
-<p>本文写作时用到的GitLab版本为<code>GitLab Community Edition 11.0.3 aa62075</code>, 供参考.</p>
-<pre><code># dpkg -i gitlab-ce_11.0.3-ce.0_amd64.deb
+</code></pre><h3 id=测试项目准备>测试项目准备</h3><p>测试项目来自于github上的项目:</p><pre><code>$ git clone https://github.com/galexrt/presentation-gitlab-k8s.git
+</code></pre><h3 id=搭建配置gitlab>搭建/配置GitLab</h3><p>本文写作时用到的GitLab版本为<code>GitLab Community Edition 11.0.3 aa62075</code>, 供参考.</p><pre><code># dpkg -i gitlab-ce_11.0.3-ce.0_amd64.deb
 # dpkg -i gitlab-runner_11.0.2_amd64.deb
-</code></pre><p>内网环境下为了避免网络问题，关闭ufw防火墙:</p>
-<pre><code># ufw disable
-</code></pre><p>(可选)GitLab默认使用UTF-8，如果配置时碰到编码问题，可在配置完本地编码后，重新登录终端执行reconfigure.</p>
-<pre><code># cat &gt; /etc/default/locale &lt;&lt;EOF
+</code></pre><p>内网环境下为了避免网络问题，关闭ufw防火墙:</p><pre><code># ufw disable
+</code></pre><p>(可选)GitLab默认使用UTF-8，如果配置时碰到编码问题，可在配置完本地编码后，重新登录终端执行reconfigure.</p><pre><code># cat &gt; /etc/default/locale &lt;&lt;EOF
 LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 LANGUAGE=en_US.UTF-8
 EOF
 # localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || true
-</code></pre><p>配置gitlab监听的IP端口, 并执行reconfigure, 此后gitlab服务将变得可用:</p>
-<pre><code># vim /etc/gitlab/gitlab.rb
+</code></pre><p>配置gitlab监听的IP端口, 并执行reconfigure, 此后gitlab服务将变得可用:</p><pre><code># vim /etc/gitlab/gitlab.rb
 external_url 'http://192.168.122.160'
 # gitlab-ctl reconfigure &amp;&amp; gitlab-ctl restart
-</code></pre><p>配置完成后设置用户名/密码， 搭建成功后的GitLab服务如下:</p>
-<p><img src="/images/2018_09_14_14_59_27_647x462.jpg" alt="/images/2018_09_14_14_59_27_647x462.jpg">
-导入项目:</p>
-<p><img src="/images/2018_09_14_15_22_45_723x548.jpg" alt="/images/2018_09_14_15_22_45_723x548.jpg"></p>
-<p>在准备好的项目中，添加刚才在 Gitlab中创建的项目并提交:</p>
-<pre><code># git remote remove origin
+</code></pre><p>配置完成后设置用户名/密码， 搭建成功后的GitLab服务如下:</p><p><img src=/images/2018_09_14_14_59_27_647x462.jpg alt=/images/2018_09_14_14_59_27_647x462.jpg>
+导入项目:</p><p><img src=/images/2018_09_14_15_22_45_723x548.jpg alt=/images/2018_09_14_15_22_45_723x548.jpg></p><p>在准备好的项目中，添加刚才在 Gitlab中创建的项目并提交:</p><pre><code># git remote remove origin
 # git remote add origin git@192.168.122.160:root/testk8sci.git
 # git push origin master
-</code></pre><p>此时可以看到，代码已经被提交到GitLab仓库中，然而ci/cd处于pending状态，接下来将对代码进行修改，将其一步步调试通。</p>
-<p><img src="/images/2018_09_14_15_26_00_712x290.jpg" alt="/images/2018_09_14_15_26_00_712x290.jpg"></p>
-<h3 id="gitlab-runner配置">Gitlab Runner配置</h3>
-<p>首先需要添加kubernetes集群，而后在集群上安装Helm Tiller， 安装完Helm
+</code></pre><p>此时可以看到，代码已经被提交到GitLab仓库中，然而ci/cd处于pending状态，接下来将对代码进行修改，将其一步步调试通。</p><p><img src=/images/2018_09_14_15_26_00_712x290.jpg alt=/images/2018_09_14_15_26_00_712x290.jpg></p><h3 id=gitlab-runner配置>Gitlab Runner配置</h3><p>首先需要添加kubernetes集群，而后在集群上安装Helm Tiller， 安装完Helm
 Tiller后才可以继续安装GitLab Runner。 选取的项目需要使用GitLab
-Runner才可以跑通CI/CD.</p>
-<h4 id="添加kubernetes集群">添加Kubernetes集群</h4>
-<p>点击项目-&gt; Operations-&gt;Kubernetes, 如下图:</p>
-<p><img src="/images/2018_09_14_15_28_57_368x159.jpg" alt="/images/2018_09_14_15_28_57_368x159.jpg"></p>
-<p>点击<code>Add Kubernetes Cluster</code>按钮，添加一个新的Kubernetes集群:</p>
-<p><img src="/images/2018_09_14_15_29_28_474x420.jpg" alt="/images/2018_09_14_15_29_28_474x420.jpg"></p>
-<p>此时有两个选项，因为是离线的Kubernetes集群，点击<code>Add an existing Kubernetes cluster</code>，继续进入到下一步:</p>
-<p><img src="/images/2018_09_14_15_30_23_638x218.jpg" alt="/images/2018_09_14_15_30_23_638x218.jpg"></p>
-<p>事先需要获得Kubernetes集群的管理信息，通过以下步骤获得，</p>
-<p>获得API Server的地址(runner1节点上):</p>
-<pre><code># kubectl config view | grep server
+Runner才可以跑通CI/CD.</p><h4 id=添加kubernetes集群>添加Kubernetes集群</h4><p>点击项目-> Operations->Kubernetes, 如下图:</p><p><img src=/images/2018_09_14_15_28_57_368x159.jpg alt=/images/2018_09_14_15_28_57_368x159.jpg></p><p>点击<code>Add Kubernetes Cluster</code>按钮，添加一个新的Kubernetes集群:</p><p><img src=/images/2018_09_14_15_29_28_474x420.jpg alt=/images/2018_09_14_15_29_28_474x420.jpg></p><p>此时有两个选项，因为是离线的Kubernetes集群，点击<code>Add an existing Kubernetes cluster</code>，继续进入到下一步:</p><p><img src=/images/2018_09_14_15_30_23_638x218.jpg alt=/images/2018_09_14_15_30_23_638x218.jpg></p><p>事先需要获得Kubernetes集群的管理信息，通过以下步骤获得，</p><p>获得API Server的地址(runner1节点上):</p><pre><code># kubectl config view | grep server
 	server: https://192.168.122.161:6443
-</code></pre><p>获得CA证书:</p>
-<pre><code># cat ~/.kube/config | grep certificate-authority-data: 
+</code></pre><p>获得CA证书:</p><pre><code># cat ~/.kube/config | grep certificate-authority-data: 
     certificate-authority-data: XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 # cat xxxxxxxxxxxxxxxxxxxxxxxxxx | base64 -d
 -----BEGIN CERTIFICATE-----
 xxxxxxxxx
 -----END CERTIFICATE-----
-</code></pre><p>获得Token:</p>
-<pre><code># kubectl get secret
+</code></pre><p>获得Token:</p><pre><code># kubectl get secret
 NAME                  TYPE                                  DATA      AGE
 default-token-spz8w   kubernetes.io/service-account-token   3         58m
 # kubectl get secret default-token-spz8w -o yaml | grep token:
 xxxxxxxxxxxx
 # cat xxxxxxx | base64 -d
-</code></pre><p>将上面获得的各个项目填入到配置项目中:</p>
-<p><img src="/images/2018_09_14_15_39_40_574x633.jpg" alt="/images/2018_09_14_15_39_40_574x633.jpg"></p>
-<h4 id="安装helm-tiller">安装Helm Tiller</h4>
-<p>安装界面如下:</p>
-<p><img src="/images/2018_09_14_15_41_52_895x160.jpg" alt="/images/2018_09_14_15_41_52_895x160.jpg"></p>
-<p>直接点击<code>Install</code>按钮, 出现的问题为:</p>
-<pre><code>Kubernetes error: namespaces &quot;gitlab-managed-apps&quot; is forbidden: User
+</code></pre><p>将上面获得的各个项目填入到配置项目中:</p><p><img src=/images/2018_09_14_15_39_40_574x633.jpg alt=/images/2018_09_14_15_39_40_574x633.jpg></p><h4 id=安装helm-tiller>安装Helm Tiller</h4><p>安装界面如下:</p><p><img src=/images/2018_09_14_15_41_52_895x160.jpg alt=/images/2018_09_14_15_41_52_895x160.jpg></p><p>直接点击<code>Install</code>按钮, 出现的问题为:</p><pre><code>Kubernetes error: namespaces &quot;gitlab-managed-apps&quot; is forbidden: User
 &quot;system:serviceaccount:default:default&quot; cannot get namespaces in the namespace
 &quot;gitlab-managed-apps&quot;
-</code></pre><p><img src="/images/2018_09_14_15_43_13_885x233.jpg" alt="/images/2018_09_14_15_43_13_885x233.jpg"></p>
-<p>搜索网上的解决方案，</p>
-<pre><code># kubectl create clusterrolebinding permissive-binding --clusterrole=cluster-admin --user=admin --user=kubelet --group=system:serviceaccounts
-</code></pre><p>按F5刷新页面并点击<code>Install</code>重新安装，安装会一直处于pause，最终将失败，更改以下配置以便继续安装:</p>
-<p><img src="/images/2018_09_14_16_13_12_696x175.jpg" alt="/images/2018_09_14_16_13_12_696x175.jpg"></p>
-<pre><code># vim /opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/kubernetes/helm/pod.rb +28
+</code></pre><p><img src=/images/2018_09_14_15_43_13_885x233.jpg alt=/images/2018_09_14_15_43_13_885x233.jpg></p><p>搜索网上的解决方案，</p><pre><code># kubectl create clusterrolebinding permissive-binding --clusterrole=cluster-admin --user=admin --user=kubelet --group=system:serviceaccounts
+</code></pre><p>按F5刷新页面并点击<code>Install</code>重新安装，安装会一直处于pause，最终将失败，更改以下配置以便继续安装:</p><p><img src=/images/2018_09_14_16_13_12_696x175.jpg alt=/images/2018_09_14_16_13_12_696x175.jpg></p><pre><code># vim /opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/kubernetes/helm/pod.rb +28
 -            image: 'alpine:3.6',
 +            image: 'portus.ooooooo.com:5000/kubesprayns/alpinewithwget:3.6',
 # vim /opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/kubernetes/helm/base_command.rb
@@ -421,60 +211,26 @@ xxxxxxxxxxxx
 -            apk add -U wget ca-certificates openssl &gt;/dev/null
 -            wget -q -O - https://kubernetes-helm.storage.googleapis.com/helm-v#{Gitlab::Kubernetes::Helm::HELM_VERSION}-linux-amd64.tar.gz | tar zxC /tmp &gt;/dev/null
 +            wget -q -O - http://portus.ooooooo.com:8888/helm-v2.7.0-linux-amd64.tar.gz | tar zxC /tmp &gt;/dev/null
-</code></pre><p>更改完毕后，我们重新配置gitlab以继续安装:</p>
-<pre><code># gitlab-ctl reconfigure &amp;&amp; gitlab-ctl restart
-</code></pre><p>此时会出现helm在初始化的时候因为访问不到外网出现的timeout错误，如下:</p>
-<p><img src="/images/2018_09_14_16_54_54_861x270.jpg" alt="/images/2018_09_14_16_54_54_861x270.jpg">
-更改helm init的初始化方式:</p>
-<pre><code># vim /opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/kubernetes/helm/install_command.rb
+</code></pre><p>更改完毕后，我们重新配置gitlab以继续安装:</p><pre><code># gitlab-ctl reconfigure &amp;&amp; gitlab-ctl restart
+</code></pre><p>此时会出现helm在初始化的时候因为访问不到外网出现的timeout错误，如下:</p><p><img src=/images/2018_09_14_16_54_54_861x270.jpg alt=/images/2018_09_14_16_54_54_861x270.jpg>
+更改helm init的初始化方式:</p><pre><code># vim /opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/kubernetes/helm/install_command.rb
 -          'helm init --client-only &gt;/dev/null'
 +          'helm init --stable-repo-url http://portus.ooooooo.com:8988 --tiller-image portus.ooooooo.com:5000/kubesprayns/gcr.io/kubernetes-helm/tiller:v2.7.0 &gt;/dev/null'
 # /opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/kubernetes/helm/init_command.rb
 -          &quot;helm init &gt;/dev/null&quot;
 +          'helm init --stable-repo-url http://portus.ooooooo.com:8988 --tiller-image portus.ooooooo.com:5000/kubesprayns/gcr.io/kubernetes-helm/tiller:v2.7.0 &gt;/dev/null'
 
-</code></pre><p>更改完毕后，我们重新配置gitlab以继续安装:</p>
-<pre><code># gitlab-ctl reconfigure &amp;&amp; gitlab-ctl restart
-</code></pre><p>此时终于可以安装成功helm:</p>
-<p><img src="/images/2018_09_14_17_22_03_876x541.jpg" alt="/images/2018_09_14_17_22_03_876x541.jpg"></p>
-<h4 id="gitlab-runner-1">gitlab-runner</h4>
-<p>默认点击安装将出现以下错误，:</p>
-<p><img src="/images/2018_09_14_17_46_58_890x209.jpg" alt="/images/2018_09_14_17_46_58_890x209.jpg"></p>
-<pre><code>$ vim /opt/gitlab/embedded/service/gitlab-rails/app/models/clusters/applications/runner.rb
+</code></pre><p>更改完毕后，我们重新配置gitlab以继续安装:</p><pre><code># gitlab-ctl reconfigure &amp;&amp; gitlab-ctl restart
+</code></pre><p>此时终于可以安装成功helm:</p><p><img src=/images/2018_09_14_17_22_03_876x541.jpg alt=/images/2018_09_14_17_22_03_876x541.jpg></p><h4 id=gitlab-runner-1>gitlab-runner</h4><p>默认点击安装将出现以下错误，:</p><p><img src=/images/2018_09_14_17_46_58_890x209.jpg alt=/images/2018_09_14_17_46_58_890x209.jpg></p><pre><code>$ vim /opt/gitlab/embedded/service/gitlab-rails/app/models/clusters/applications/runner.rb
 -        'https://charts.gitlab.io'
 +        'http://portus.ooooooo.com:8988'
-</code></pre><p>再次运行，提示configmap已经存在:</p>
-<p><img src="/images/2018_09_14_17_50_42_866x165.jpg" alt="/images/2018_09_14_17_50_42_866x165.jpg"></p>
-<p>删除configmap， 继续运行:</p>
-<pre><code># kubectl delete configmap values-content-configuration-runner -n gitlab-managed-apps
-</code></pre><p>至此，我们的gitlab-runner也安装成功:</p>
-<p><img src="/images/2018_09_14_17_51_39_888x112.jpg" alt="/images/2018_09_14_17_51_39_888x112.jpg"></p>
-<h4 id="ingress">Ingress</h4>
-<p>默认情况下安装将触发以下错误:</p>
-<p><img src="/images/2018_09_17_11_08_37_765x333.jpg" alt="/images/2018_09_17_11_08_37_765x333.jpg">
-上传完对应的charts文件以后，继续安装:</p>
-<p><img src="/images/2018_09_17_11_54_52_743x129.jpg" alt="/images/2018_09_17_11_54_52_743x129.jpg"></p>
-<p>删除configmaps:</p>
-<pre><code># kubectl delete configmap values-content-configuration-ingress -n gitlab-managed-apps
-</code></pre><p>安装成功后:</p>
-<p><img src="/images/2018_09_17_11_56_04_861x266.jpg" alt="/images/2018_09_17_11_56_04_861x266.jpg"></p>
-<h4 id="prometheus">Prometheus</h4>
-<p>与上述步骤相似，安装完毕后:</p>
-<p><img src="/images/2018_09_17_14_22_34_859x85.jpg" alt="/images/2018_09_17_14_22_34_859x85.jpg"></p>
-<p>值得注意的是，需要有内建的默认存储提供，否则pod将一直处于Initialize状态。</p>
-<h3 id="cicd项目">CI/CD项目</h3>
-<p>此时提交已经可以触发runner，</p>
-<p><img src="/images/2018_09_17_09_08_28_736x184.jpg" alt="/images/2018_09_17_09_08_28_736x184.jpg"></p>
-<p>针对不同的Stage进行Debug. 最终跑通编译。</p>
-<h3 id="prometheus-1">Prometheus</h3>
-<p>开启前，集群需要有内建的默认存储，例如:</p>
-<pre><code># kubectl get sc 
+</code></pre><p>再次运行，提示configmap已经存在:</p><p><img src=/images/2018_09_14_17_50_42_866x165.jpg alt=/images/2018_09_14_17_50_42_866x165.jpg></p><p>删除configmap， 继续运行:</p><pre><code># kubectl delete configmap values-content-configuration-runner -n gitlab-managed-apps
+</code></pre><p>至此，我们的gitlab-runner也安装成功:</p><p><img src=/images/2018_09_14_17_51_39_888x112.jpg alt=/images/2018_09_14_17_51_39_888x112.jpg></p><h4 id=ingress>Ingress</h4><p>默认情况下安装将触发以下错误:</p><p><img src=/images/2018_09_17_11_08_37_765x333.jpg alt=/images/2018_09_17_11_08_37_765x333.jpg>
+上传完对应的charts文件以后，继续安装:</p><p><img src=/images/2018_09_17_11_54_52_743x129.jpg alt=/images/2018_09_17_11_54_52_743x129.jpg></p><p>删除configmaps:</p><pre><code># kubectl delete configmap values-content-configuration-ingress -n gitlab-managed-apps
+</code></pre><p>安装成功后:</p><p><img src=/images/2018_09_17_11_56_04_861x266.jpg alt=/images/2018_09_17_11_56_04_861x266.jpg></p><h4 id=prometheus>Prometheus</h4><p>与上述步骤相似，安装完毕后:</p><p><img src=/images/2018_09_17_14_22_34_859x85.jpg alt=/images/2018_09_17_14_22_34_859x85.jpg></p><p>值得注意的是，需要有内建的默认存储提供，否则pod将一直处于Initialize状态。</p><h3 id=cicd项目>CI/CD项目</h3><p>此时提交已经可以触发runner，</p><p><img src=/images/2018_09_17_09_08_28_736x184.jpg alt=/images/2018_09_17_09_08_28_736x184.jpg></p><p>针对不同的Stage进行Debug. 最终跑通编译。</p><h3 id=prometheus-1>Prometheus</h3><p>开启前，集群需要有内建的默认存储，例如:</p><pre><code># kubectl get sc 
 NAME                    PROVISIONER      AGE
 nfs-storage (default)   fuseim.pri/ifs   35m
-</code></pre><p>未开启前：</p>
-<p><img src="/images/2018_09_18_12_27_26_497x452.jpg" alt="/images/2018_09_18_12_27_26_497x452.jpg"></p>
-<p>开启步骤:</p>
-<pre><code>$ vim /etc/gitlab/gitlab.rb
+</code></pre><p>未开启前：</p><p><img src=/images/2018_09_18_12_27_26_497x452.jpg alt=/images/2018_09_18_12_27_26_497x452.jpg></p><p>开启步骤:</p><pre><code>$ vim /etc/gitlab/gitlab.rb
 ################################################################################
 ## Prometheus
 ##! Docs: https://docs.gitlab.com/ce/administration/monitoring/prometheus/
@@ -497,31 +253,11 @@ prometheus['chunk_encoding_version'] = 2
 prometheus_monitoring['enable'] = true
 
 $ gitlab-ctl reconfigure &amp;&amp; gitlab-ctl restart
-</code></pre><p>同时，需要更改项目中的deployment的名称：</p>
-<pre><code>$ vim manifests/deployment.yaml
+</code></pre><p>同时，需要更改项目中的deployment的名称：</p><pre><code>$ vim manifests/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
 -  name: presentation-gitlab-k8s-__CI_ENVIRONMENT_SLUG__
 +  name: __CI_ENVIRONMENT_SLUG__-presentation-gitlab-k8s
-</code></pre><p>这是因为:</p>
-<p><img src="/images/2018_09_18_15_40_19_1249x301.jpg" alt="/images/2018_09_18_15_40_19_1249x301.jpg"></p>
-<p>注意到Kubernetes cluster details的Project namespace环节要设置为空:</p>
-<p><img src="/images/2018_09_18_15_41_20_425x570.jpg" alt="/images/2018_09_18_15_41_20_425x570.jpg">
-现在点击Options-&gt;Environments, 查看其监控指标:</p>
-<p><img src="/images/2018_09_18_15_42_14_780x621.jpg" alt="/images/2018_09_18_15_42_14_780x621.jpg"></p>
-
-  </div>
-  
-</div>
-
-
-
-
-
-
-<script src="http://purplepalmdash.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
-</html>
-
+</code></pre><p>这是因为:</p><p><img src=/images/2018_09_18_15_40_19_1249x301.jpg alt=/images/2018_09_18_15_40_19_1249x301.jpg></p><p>注意到Kubernetes cluster details的Project namespace环节要设置为空:</p><p><img src=/images/2018_09_18_15_41_20_425x570.jpg alt=/images/2018_09_18_15_41_20_425x570.jpg>
+现在点击Options->Environments, 查看其监控指标:</p><p><img src=/images/2018_09_18_15_42_14_780x621.jpg alt=/images/2018_09_18_15_42_14_780x621.jpg></p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
