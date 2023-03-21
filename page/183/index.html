@@ -1,5 +1,136 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/07/programming-in-c-new-words/>Programming In C New Words</a></h1><span class=post-date>Apr 7, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Programming In C
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/07/programming-in-c-of-fc-tutorial-2/>Programming in C of FC tutorial 2</a></h1><span class=post-date>Apr 7, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Full Circle C 3
+####Exercise 1
+Collect all the code snippets on this page and turn them into the working program<br>Pointer:</p><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+	int anInt = 5;
+
+	int *anIntPointer = &amp;anInt;
+
+	printf(&quot;Address: %p Value: %d \n&quot;, &amp;anInt, anInt);
+
+	printf(&quot;Address of Pointer: %p Address: %p Value: %d\n&quot;, &amp;anIntPointer, anIntPointer, *anIntPointer);
+
+	printf(&quot;Size of pointer: %d, size of int: %d\n&quot;, sizeof(anIntPointer), sizeof(anInt));
+
+	return 0;
+}
+
+</code></pre><p>array.c</p><pre><code>#include &lt;stdio.h&gt;
+
+int main(void)
+{
+	int i;
+	int anIntArray[5] = {10, 20, 30, 40, 50};
+
+	printf(&quot;Address of Array: %p \n&quot;, &amp;anIntArray);
+
+	printf(&quot;Size of Array: %d\n&quot;, sizeof(anIntArray));
+
+	for(i = 0; i&lt;sizeof(anIntArray)/sizeof(int); i++)
+	{
+		printf(&quot;Index: %x Address: %p Value: %d, Value: %d\n&quot;, i, &amp;anIntArray[i], anIntArray[i], *(anIntArray+i));
+	}
+
+	return 0;
+}
+
+</code></pre><p>string:</p><pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+	int i;
+	char aChar = 'c';
+	char * aString = &quot;Hello&quot;;
+
+	printf(&quot;Address: %p value: %c size: %d\n&quot;, &amp;aChar, aChar, sizeof(aChar));
+
+	printf(&quot;Address of the string: %p\n&quot;, &amp;aString);
+
+	printf(&quot;Size of String: %d\n&quot;, strlen(aString));
+
+	printf(&quot;Value: %s\n&quot;, aString);
+
+	for(i = 0; i&lt;=strlen(aString); i++)
+	{
+		printf(&quot;Index:%x Address: %p, Value:%c\n&quot;, i, &amp;aString[i], aString[i]);
+	}
+	return 0;
+}
+
+</code></pre><p>Structure:</p><pre><code>#include &lt;stdio.h&gt;
+struct aStruct_def
+{
+	int intMember;
+	int * intPointer;
+	char charMember;
+	char ** stringPointer;
+};
+
+int main(void)
+{
+	struct aStruct_def aStruct;
+	struct aStruct_def *aStructPointer;
+	int anInt = 5; 
+	char *aString = &quot;Hello&quot;;
+
+	printf(&quot;Address: %p Size: %d\n&quot;, &amp;aStruct, sizeof(struct aStruct_def));
+
+	printf(&quot;%p %p %p %p\n&quot;, &amp;aStruct.intMember, &amp;aStruct.intPointer, &amp;aStruct.charMember, &amp;aStruct.stringPointer);
+
+	aStruct.intMember = 6;
+	aStruct.intPointer = &amp;anInt;
+	aStruct.charMember = 'k';
+	aStruct.stringPointer = &amp;aString;
+
+	aStructPointer = &amp;aStruct;
+
+	printf(&quot;Member of struct: %d\n&quot;, (*aStructPointer).intMember);
+	printf(&quot;Member of struct: %d\n&quot;, *(*aStructPointer).intPointer);
+	printf(&quot;Member of struct: %d\n&quot;, aStructPointer-&gt;intMember);
+	printf(&quot;Member of struct: %d\n&quot;, *aStructPointer-&gt;intPointer);
+	printf(&quot;Member of struct: %s\n&quot;, *aStructPointer-&gt;stringPointer);
+
+	return 0;
+}
+
+</code></pre><p>####Exercise 2
+Implement strlen yourself use a while() loop:</p><pre><code>#include &lt;stdio.h&gt;
+
+int mystrlen(char *strings)
+{
+	int i = 0;
+	while(strings[i] != '\0')
+	{
+		i++;
+	}
+	return i;
+}
+
+int main()
+{
+	char *a = &quot;Hello World&quot;;
+	printf(&quot;%s 's length is %d\n&quot;, a, mystrlen(a));
+	return 0;
+}
+
+</code></pre><p>###Exercise 3
+A C application typically has &lsquo;int main(int argc, char **argv)&rsquo; as it&rsquo;s main prototype, here argc contains the number of strings passed to the application, and argc is an array of argc strings. Write a small application which prints all arguments given to the application. What is stored in argv[0] ?</p><pre><code>#include &lt;stdio.h&gt;
+
+int main(int argc, char **argv)
+{
+	int i = 0; 
+	for(i = 0; i&lt;argc; i++)
+	{
+		printf(&quot;arg %d is %s\n&quot;, i, argv[i]);
+	}
+	return 0;
+}
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/07/programming-in-c-new-words/>Programming In C New Words</a></h1><span class=post-date>Apr 7, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Programming In C
 intermediate: 中级的<br>hereby: 特此<br>scary: 恐慌的，提心吊胆的<br>de facto (法)，事实上的<br>span: 跨越<br>interpreted: 可交互的<br>fanatic: 狂热者<br>novice: 新手，入门者<br>concrete: 实际的<br>prime number: 素数，质数
 ternary: 三重的，三元的<br>intrusive: 侵入的，打扰的<br>grind: 磨难，磨碎，折磨<br>confessed: 坦白的<br>scary: 提心吊胆的，胆小的<br>apropos: 恰好的<br>grasp: 掌握<br>instalment: 分期付款的<br>gibberish: 乱语，快速而不清楚的话语<br>condense: 电容器</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/07/programming-in-c-of-fc-tutorial/>Programming in C of FC tutorial</a></h1><span class=post-date>Apr 7, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Programming In C
 GCC&rsquo;s funcitionality:<br>gcc command calls a compiler(which transforms a higher level language into assembler), an assembler translates assembler into object files(machine instructions), and a linker, which combines several object files into an executable.</p><p>launchpad.net is a unique collaboration and hosting platform for free software. <a href=http://www.launchpad.net>http://www.launchpad.net</a>.</p><p>###Programming In C II
@@ -196,5 +327,4 @@ int main(int argc, char **argv)
 }
 
 </code></pre><p>Because we use recursion here, when the n is too big, the calculation maybe very slow.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/07/reading-digest-of-fc3/>Reading Digest of FC3</a></h1><span class=post-date>Apr 7, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Full Circle 3</p><ol><li>Page 6 of cn version: DSL(Damn Small Linux), <a href=http://www.damnsmalllinux.org>http://www.damnsmalllinux.org</a>, which could be run on 16MB memory&rsquo;s 486 computer, try it.</li><li>Page</li></ol></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/07/fc3-new-words/>FC3 New Words</a></h1><span class=post-date>Apr 7, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Full Circle 3
-stunning: 令人惊奇的事物<br>reveal: 揭露<br>footrest: 搁脚物<br>fusion: 融化<br>compiz+beryl = Compiz Fusion<br>trawl: 用拖网捕鱼</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/06/reading-digest-of-fc2/>Reading Digest of FC2</a></h1><span class=post-date>Apr 6, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Full Circle 2
-Things to be done:</p><ol><li>Page 3, Visit linuxgeekery?</li><li>Page 4, OpenMOKO, its recent status. Try to visit <a href=www.linuxinsider.com>www.linuxinsider.com</a></li><li>Page 5, UbuntuHomeServer? <a href=www.ubuntuhomeserver.org>www.ubuntuhomeserver.org</a></li><li>Page 16, try VPN, use VPN to reach back home.</li><li>Page 25, What is GEDCOM?</li><li>Page 27, What is LDS church?</li><li>Page 28, Still , try Gramps.</li><li>Page 29, ipod support on Ubuntu, libgpod. amaroK</li><li>Page 31, try flock, democracy player, songbird, inkscape</li><li>Page 34, try game tremulous.</li><li>Page 36, try ubuntustudio theme.</li><li>Page 37, try to install these applets and integrate them with awesome.</li></ol></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/182/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/182/>182</a></li><li class="page-item active"><a class=page-link href=/page/183/>183</a></li><li class=page-item><a class=page-link href=/page/184/>184</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/184/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+stunning: 令人惊奇的事物<br>reveal: 揭露<br>footrest: 搁脚物<br>fusion: 融化<br>compiz+beryl = Compiz Fusion<br>trawl: 用拖网捕鱼</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/182/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/182/>182</a></li><li class="page-item active"><a class=page-link href=/page/183/>183</a></li><li class=page-item><a class=page-link href=/page/184/>184</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/184/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
