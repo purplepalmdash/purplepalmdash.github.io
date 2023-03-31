@@ -1,5 +1,288 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/02/12/workingtipsonrpisharingdesktop/>WorkingTipsOnRPISharingDesktop</a></h1><span class=post-date>Feb 12, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=无线接入点配置>无线接入点配置</h3><h4 id=1-基本配置>1. 基本配置</h4><p>树莓派4B 8G版本，刷入了Ubuntu 20.04.2 arm64版本：</p><pre><code>ubuntu@rpi1:~$ cat /etc/issue
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/02/22/workingtipsonha/>WorkingTIPSOnHA</a></h1><span class=post-date>Feb 22, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>目的: 设置RONG服务器的高可用性.</p><p>Install ipvsadm for every node:</p><pre><code># apt-get install -y ipvsadm
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/02/13/linuxtips12/>LinuxTips12</a></h1><span class=post-date>Feb 13, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-vagrant-libvirt>1. vagrant-libvirt</h3><p>vagrant 2.2.14版中的一个包依赖BUG导致几乎所有的插件都没法装。解决方案是回归到旧版本的vagrant后安装vagrant-libvirt:</p><pre><code>$ sudo pacman -U /var/cache/pacman/pkg/vagrant-2.2.10-2-x86_64.pkg.tar.zst
+$ vagrant --version
+Vagrant 2.2.10
+</code></pre><p>Install <code>vagrant-libvirt</code> via:</p><pre><code>$ vagrant plugin install vagrant-libvirt  --plugin-clean-sources --plugin-source  https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --debug
+$ vagrant plugin install vagrant-mutate  --plugin-clean-sources --plugin-source  https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --debug
+</code></pre><p>Examine the installed vagrant plugins:</p><pre><code>$ vagrant plugin list
+vagrant-libvirt (0.3.0, global)
+vagrant-mutate (1.2.0, global)
+</code></pre><h3 id=2-ignore-pkg-globally>2. Ignore PKG globally</h3><p>For ignoring some package in archlinux&rsquo;s pacman upgrade, do following:</p><pre><code>$ sudo vim /etc/pacman.conf
+IgnorePkg   = vagrant
+</code></pre><p>Then in next <code>pacman -Syu --noconfirm</code> we will ignore vagrant.</p><h3 id=3-enable-dmesg>3. Enable dmesg</h3><p>Enable dmesg for normal user:</p><pre><code># sudo sysctl kernel.dmesg_restrict=0
+</code></pre><h3 id=4-dockerio启动panic>4. docker.io启动panic</h3><p>现象: systemctl restart docker报错无法启动，查看原因怀疑是containerd问题，</p><pre><code># journalctl -xeu containerd&gt;kkkk.txt
+# cat kkkk.txt
+</code></pre><p>在输出的日志中发现<code>invalid page type: xx: xx</code>问题，此时直接<code>apt-get purge</code>掉所有和docker/containerd相关的包，而后删除<code>/var/lib/containerd</code>目录, 问题得以解决。</p><h3 id=5-system-installation-time>5. System Installation Time</h3><p>Detect the system installation time via:</p><pre><code># ls -lact --full-time /etc |tail
+</code></pre><h3 id=6-disable-fedora-initial-setup>6. disable fedora initial-setup</h3><p>via:</p><pre><code># systemctl stop initial-setup &amp;&amp; systemctl disable initial-setup
+</code></pre><h3 id=7-python3s-simplehttpserver>7. python3&rsquo;s SimpleHTTPServer</h3><p>via:</p><pre><code>$ python3 -m http.server 8888
+</code></pre><h3 id=8-curl-and-tar-xzvf>8. curl and tar xzvf</h3><p>via:</p><pre><code>curl www.xxxxx.com/kkk.tar.gz | tar xzvf
+</code></pre><h3 id=9-on-install-scrot>9. On install scrot</h3><p>Missing libgiblib.so.1:</p><pre><code>$ find /usr -name libgiblib.so.1 Find this file in the location
+/usr/local/lib/libgiblib.so.1 
+ $ cat /etc/ld.so.conf View the current library load path to see if this file is included
+include ld.so.conf.d/*.conf 
+ $ echo &quot;/usr/local/lib&quot; &gt;&gt; /etc/ld.so.conf Add library path 
+ $ ldconfig After loading the library file, scrot is used normally. 
+ $ scrot --help View scrot help 
+Usage : scrot [OPTIONS]... [FILE] 
+  Where FILE is the target file for the screenshot. 
+</code></pre><h3 id=10-gnome-3-add-hotkey>10. gnome 3 add hotkey</h3><p>Via adding hotkey <code>system->settings</code>:</p><p><img src=/images/2021_04_12_10_35_48_538x140.jpg alt=/images/2021_04_12_10_35_48_538x140.jpg></p><h3 id=11-install-awesome-on-centos7>11. Install awesome on centos7</h3><p>via:</p><pre><code>#
+# Copy and paste the lines below to install the 64-bit EL 7.x set.
+#
+BOOTSTRAP_TAR=&quot;bootstrap-el7-trunk-x86_64-20200724.tar.gz&quot;
+BOOTSTRAP_SHA=&quot;478d2e30f150712a851f8f4bcff7f60026f65c9e&quot;
+
+# Download the bootstrap kit to the current directory.
+curl -O https://pkgsrc.joyent.com/packages/Linux/el7/bootstrap/${BOOTSTRAP_TAR}
+
+# Verify the SHA1 checksum.
+echo &quot;${BOOTSTRAP_SHA}  ${BOOTSTRAP_TAR}&quot; &gt;check-shasum
+sha1sum -c check-shasum
+
+# Verify PGP signature.  This step is optional, and requires gpg.
+curl -O https://pkgsrc.joyent.com/packages/Linux/el7/bootstrap/${BOOTSTRAP_TAR}.asc
+curl -sS https://pkgsrc.joyent.com/pgp/56AAACAF.asc | gpg2 --import
+gpg2 --verify ${BOOTSTRAP_TAR}{.asc,}
+
+# Install bootstrap kit to /usr/pkg
+sudo tar -zxpf ${BOOTSTRAP_TAR} -C /
+
+## Add paths
+#$ PATH=/usr/pkg/sbin:/usr/pkg/bin:$PATH
+#$ MANPATH=/usr/pkg/man:$MANPATH
+</code></pre><p>Then use pkgin for installing awesome:</p><pre><code># pkgin -y install awesome
+</code></pre><h3 id=12-install-rdesktopsmplayer>12. Install rdesktop/smplayer</h3><p>Install rdesktop/smplayer in centos7:</p><pre><code>sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro 
+sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm    
+sudo yum install rdesktop
+</code></pre><h3 id=13-rsync-centos-7-repo>13. rsync centos 7 repo</h3><p>via:</p><pre><code># rsync -vrt   rsync://rsync.mirrors.ustc.edu.cn/repo/centos/7/updates/x86_64/ .
+</code></pre><h3 id=14-knoppix-ssh>14. knoppix ssh</h3><p>Start sshd via:</p><pre><code># /etc/init.d/ssh start
+# passwd root
+
+</code></pre><h3 id=15-rpm-belongs-to-which-repo>15. rpm belongs to which repo</h3><p>via :</p><pre><code>$ repoquery -i rpmname
+</code></pre><h3 id=16-sftp-with-port>16. sftp with port</h3><p>via:</p><pre><code>sftp -oPort=port_number host_name
+
+</code></pre><h3 id=17-lxc-proxy>17. lxc proxy</h3><p>forwarding from host to lxc containers via:</p><pre><code>lxc config device add mycontainer myport80 proxy listen=tcp:0.0.0.0:80 connect=tcp:127.0.0.1:80
+
+</code></pre><h3 id=18-lxc-mount-devicesda>18. lxc mount device(sda)</h3><p>via:</p><pre><code>  lxc config device add teledb-node-test1  myrawdisk unix-block source=/dev/vda
+  lxc config device add teledb-node2  myrawdisk unix-block source=/dev/vda
+</code></pre><h3 id=19-lxc-add-config-dynamically>19. lxc add config dynamically</h3><p>via:</p><pre><code> lxc config set mycontainer raw.lxc=&quot;lxc.cgroup.devices.allow = c 10 237&quot; raw.lxc=&quot;lxc.cgroup.devices.allow = b 7 *&quot;
+$ lxc config show mycontainer
+...
+raw.lxc: lxc.cgroup.devices.allow = b 7 *
+...
+$ 
+</code></pre><h3 id=20vim-中文乱码>20.vim 中文乱码</h3><p>Set following in ~/.vimrc:</p><pre><code>set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set enc=utf8
+set fencs=utf8,gbk,gb2312,gb18030
+</code></pre><h3 id=21-lxc-set-static-ip>21. lxc set static ip</h3><p>via:</p><pre><code># lxc stop gitlabinstance
+# lxc network attach lxdbr0 gitlabinstance eth0 eth0
+# lxc config device set gitlabinstance eth0 ipv4.address 10.222.125.125
+# lxc start gitlabinstance
+</code></pre><h3 id=22-lxc-set-directoy>22. lxc set directoy</h3><p>add directory to running lxc instance:</p><pre><code>lxc config device add Solr4StandAlone sdb disk source=/var/lib/lxc/Solr4StandAlone/rootfs/data path=mnt/ssd/solr_data
+</code></pre><h3 id=23-lxc-set-priviledge>23. lxc set priviledge</h3><p>For mkdir in external disk:</p><pre><code>lxc config set lxc105PERF security.privileged=true
+</code></pre><h3 id=24-set-multiple-parameters>24. set multiple parameters</h3><p>via:</p><pre><code>printf 'lxc.cgroup.devices.allow = c 10 237\nlxc.cgroup.devices.allow = b 7 *' | lxc config set mycontainer raw.lxc -
+</code></pre><h3 id=25-limit-lxcbr0-dhcp-range>25. limit lxcbr0 dhcp range</h3><p>via:</p><pre><code>lxc network set lxdbr0 ipv4.dhcp.ranges 10.0.8.2-10.0.8.200
+</code></pre><h3 id=26-lxc-profile-issues>26. lxc profile issues</h3><p>solved via:</p><pre><code>lxc exec mycontainer -- sudo --user ubuntu --login
+</code></pre><h3 id=27-lxc-set-ulimit>27. lxc set ulimit</h3><p>via:</p><pre><code>lxc config set mycontainer limits.kernel.nofile 200000
+lxc restart mycontainer
+</code></pre><h3 id=28-snap-disable-lxd>28. snap disable lxd</h3><p>via;</p><pre><code># snap disable lxd
+</code></pre><h3 id=29-find-which-command>29. find which command</h3><p>via:</p><pre><code> yum whatprovides lsb_release
+</code></pre><h3 id=30-get-public-ip>30. get public ip</h3><p>via:</p><pre><code>$ curl 'https://api.ipify.org?format=json'
+{&quot;ip&quot;:&quot;144.34.187.48&quot;}
+</code></pre><h3 id=31-downgrader-qemu-in-archlinux>31. downgrader qemu in ArchLinux</h3><p>Install yay for replacing yaourt, yaourt is too old and will be removed from my tools:</p><pre><code>$ git clone https://aur.archlinux.org/yay-git.git
+$ cd yay-git
+$ maekpkg -si
+$ yay -S downgrader-git
+$ downgrader qemu
+$ qemu-system-x86_64 --version
+QEMU emulator version 5.2.0
+Copyright (c) 2003-2020 Fabrice Bellard and the QEMU Project developers
+$ sudo vim /etc/pacman.conf
+IgnorePkg   = qemu
+</code></pre><h3 id=32-snap-set-proxy>32. snap set proxy</h3><p>via:</p><pre><code>snap set system proxy.http=&quot;http://&lt;proxy_addr&gt;:&lt;proxy_port&gt;&quot;
+snap set system proxy.https=&quot;http://&lt;proxy_addr&gt;:&lt;proxy_port&gt;&quot;
+</code></pre><h3 id=33-lxc-start-vm>33. lxc start vm</h3><p>Specify vm&rsquo;s cpus and memory limits:</p><pre><code>lxc init a4e0a3e72f3b ubuntu1804
+lxc config device override ubuntu1804 root size=15GB
+lxc config set ubuntu1804 limits.cpu 4
+lxc config set ubuntu1804 limits.memory 16GB
+echo -n '-device vfio-pci,host=40:00.0' | lxc config set ubuntu1804 raw.qemu -
+lxc start ubuntu1804
+</code></pre><h3 id=34-lxc-set-proxy>34. lxc set proxy</h3><p>via:</p><pre><code> lxc config set core.proxy_https http://xxx.xxx.xxx.xx:8118
+  lxc config set core.proxy_http http://xxx.xxx.xxx.xx:8118
+
+</code></pre><h3 id=35-lxc-start-vm>35. lxc start vm</h3><p>via followinig commands:</p><pre><code>lxc launch images:centos/8 centos --vm
+lxc launch images:centos/8 centos --vm --config limits.cpu=4 --config limits.memory=16GB
+lxc launch images:ubuntu/bionic ubuntu1804 --vm
+</code></pre><p>vfio items(not ok):</p><pre><code>echo -n '-device vfio-pci,host=0000:3e:00.0,id=hostdev0' | lxc config set king4 raw.qemu -
+</code></pre><h3 id=36-lxd-spice-connection>36. lxd spice connection</h3><p>via:</p><pre><code># remote-viewer spice+unix:///var/snap/lxd/common/lxd/logs/win10/qemu.spice
+</code></pre><p>Forward via socat:</p><pre><code># socat TCP-LISTEN:9777,reuseaddr,fork UNIX-CLIENT:/var/snap/lxd/common/lxd/logs/win10/qemu.spice
+</code></pre><p>access via:</p><pre><code># remote-viewer spice://localhost:9777
+</code></pre><h3 id=37-undo-commit>37. undo commit</h3><p>via:</p><pre><code>git reset HEAD~
+</code></pre><h3 id=38-zerotier-one-issue>38. zerotier-one issue</h3><p>In ArchLinux, cause the default tun won&rsquo;t load at startup, it fails on start,
+modified via:</p><pre><code># vim /etc/modprobe.d/modprobe.conf
+options tun
+</code></pre><p>Save and restart the service, now zero-tier works properly.</p><h3 id=39-ssh-via-jump>39. ssh via jump</h3><p>Reverse ssh tunnel via(<code>xxx.xxx.xxx.xxx</code> is my own public ip):</p><pre><code>ssh -o GatewayPorts=true -fNTR *:4381:localhost:22 -p 12222 root@xxx.xxx.xxx.xxx
+</code></pre><p>After ssh forwardinig to local, ssh via jump. :</p><pre><code>ssh -J root@192.168.1.2 -p4381 ctyun@localhost
+</code></pre><h3 id=40-fake-usb>40. fake usb</h3><p>via:</p><pre><code>sudo modprobe dummy_hcd
+ sudo modprobe g_mass_storage file=/media/sda5/16G.img idVendor=0x1d6b idProduct=0x0104 iManufacturer=Myself iProduct=VirtualBlockDevice iSerialNumber=123
+</code></pre><p>Then you could directly use this usb disk .</p><h3 id=41-sed-remove-last-line>41. sed remove last line</h3><p>via:</p><pre><code># sed '$d' kkk.txt
+</code></pre><h3 id=42-run-qemu-in-centos7>42. run qemu in centos7</h3><p>via:</p><pre><code> /usr/libexec/qemu-kvm -net nic -net user,hostfwd=tcp::2228-:22 -hda ./ubutu200420200630.img -boot d -m 2048 --enable-kvm -vga virtio
+</code></pre><p>Then we could login with <code>ssh -p2228 root@localhost</code> for login into vm, in vm
+using 10.0.2.X for operations.</p><h3 id=43-lxd-cluster-mode>43. lxd cluster mode</h3><p>edge01 initialization process:</p><pre><code># lxd init
+Would you like to use LXD clustering? (yes/no) [default=no]: yes
+What name should be used to identify this node in the cluster? [default=edge1]: 
+What IP address or DNS name should be used to reach this node? [default=192.168.100.208]: 
+Are you joining an existing cluster? (yes/no) [default=no]: 
+Setup password authentication on the cluster? (yes/no) [default=no]: yes
+Trust password for new clients: 
+Again: 
+Do you want to configure a new local storage pool? (yes/no) [default=yes]: 
+Name of the storage backend to use (zfs, btrfs, dir, lvm) [default=zfs]: 
+Create a new ZFS pool? (yes/no) [default=yes]: 
+Would you like to use an existing empty block device (e.g. a disk or partition)? (yes/no) [default=no]: 
+Size in GB of the new loop device (1GB minimum) [default=30GB]: 
+Do you want to configure a new remote storage pool? (yes/no) [default=no]: 
+Would you like to connect to a MAAS server? (yes/no) [default=no]: 
+Would you like to configure LXD to use an existing bridge or host interface? (yes/no) [default=no]: yes
+Name of the existing bridge or host interface: eth0
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes] 
+Would you like a YAML &quot;lxd init&quot; preseed to be printed? (yes/no) [default=no]: 
+</code></pre><h3 id=44-apt-proxy-via-sock5>44. apt proxy via sock5</h3><p>via:</p><pre><code>Acquire::http::proxy &quot;socks5h://server:port&quot;;
+
+</code></pre><h3 id=45-proxy-related>45. proxy related</h3><p>via:</p><pre><code>https://gist.github.com/lanceliao/75c368f16238ae4c741d
+https://github.com/fanchangyong/blog/issues/22
+https://www.shangyexinzhi.com/article/485648.html
+https://thenewstack.io/the-use-case-for-kubernetes-at-the-edge/
+https://blog.ismisv.com/2015/09/raspberry-pi-as-a-fucking-gfw-gateway/
+https://www.youtube.com/watch?v=cB8fNytQXTY
+https://www.aularon.com/linux/transparent-proxy-via-another-computer/
+https://www.cnblogs.com/develon/p/11830726.html
+</code></pre><h3 id=46-disable-ipv6>46. Disable ipv6</h3><p>in ubuntu, via:</p><pre><code># sudo vim /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash ipv6.disable=1&quot;
+GRUB_CMDLINE_LINUX=&quot;ipv6.disable=1&quot;
+# sudo update-grub
+</code></pre><h3 id=47-snap-install-failed>47. snap install failed</h3><p>Tested via:</p><pre><code>curl https://api.snapcraft.io/api/v1/snaps/sections
+</code></pre><h3 id=48-completely-disable-nvidia-card>48. Completely disable nvidia card</h3><p>In archlinux, via:</p><pre><code>$ sudo systemctl enable nvidia-xrun-pm
+</code></pre><h3 id=49-recover-sudo>49. recover sudo</h3><p>via:</p><pre><code>chown root:root /usr/bin/sudo &amp;&amp; chmod 4755 /usr/bin/sudo
+</code></pre><p>Solved problem:</p><pre><code>sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
+</code></pre><h3 id=50-sway-in-archlinux>50 sway in archlinux</h3><p>via:</p><pre><code>add LIBSEAT_BACKEND=logind to my /etc/environment
+useradd -m xxxx
+sudo passwd xxxx
+Then login with xxxx
+sway
+</code></pre><h3 id=51-keep-mosue-moving>51. keep mosue moving</h3><p>via:</p><pre><code>sudo snap install keep-presence
+
+Then run it:
+
+keep-presence --seconds 30
+</code></pre><h3 id=52-k8s-profile-for-lxd>52. k8s profile for lxd</h3><p>via:</p><pre><code>name: k8s
+config:
+  boot.autostart: &quot;true&quot;
+  linux.kernel_modules: ip_vs,ip_vs_rr,ip_vs_wrr,ip_vs_sh,ip_tables,ip6_tables,netlink_diag,nf_nat,overlay,br_netfilter
+  raw.lxc: |
+    lxc.apparmor.profile=unconfined
+    lxc.mount.auto=proc:rw sys:rw cgroup:rw
+    lxc.cgroup.devices.allow=a
+    lxc.cap.drop=
+  security.nesting: &quot;true&quot;
+  security.privileged: &quot;true&quot;
+description: &quot;&quot;
+devices:
+  aadisable:
+    path: /sys/module/nf_conntrack/parameters/hashsize
+    source: /sys/module/nf_conntrack/parameters/hashsize
+    type: disk
+  #aadisable1:
+  #  path: /sys/module/apparmor/parameters/enabled
+  #  source: /dev/null
+  #  type: disk
+  aadisable2:
+    path: /dev/kmsg
+    source: /dev/kmsg
+    type: disk
+  aadisable3:
+    path: /sys/fs/bpf
+    source: /sys/fs/bpf
+    type: disk
+
+</code></pre><h3 id=53-dnscrypt-proxy-issue>53. dnscrypt-proxy issue</h3><p>Changing the <code>dnscrypt-proxy</code> after ccp 100years birthday, I have to change the proxy port from 1080(sslocal) to 2x1xx(v2ray)</p><h3 id=54-lxd-use-external-ceph>54. lxd use external ceph</h3><p>via:</p><pre><code>snap set lxd ceph.external=true
+systemctl reload snap.lxd.daemon
+</code></pre><h3 id=55-gucamole-xrdp-issue>55. gucamole xrdp issue</h3><p>via:</p><pre><code>cd /tmp/
+curl -Lo 'freerdp2libplugins.zip' 'https://community.bitnami.com/uploads/default/original/3X/b/9/b9c8a1945544603988ffd12e0bc2b9377d1653e2.zip'
+unzip freerdp2libplugins.zip
+sudo mv freerdp2 /usr/lib/x86_64-linux-gnu/
+</code></pre><h3 id=56-python-missing>56. python missing</h3><p>When building android, meet: <code>/usr/bin/env: python: No such file or directory</code>
+solved via:</p><pre><code># sudo apt-get install python-is-python3
+</code></pre><h3 id=57-ubuntu18045-python2-default>57. ubuntu18.04.5 python2 default</h3><p>via:</p><pre><code>update-alternatives --install /usr/bin/python python /usr/bin/python2 10
+</code></pre><p>then we could build android.</p><h3 id=58-varlogjournal-too-big>58. /var/log/journal too big</h3><p>shrink via:</p><pre><code># journalctl --vacuum-size=100M
+</code></pre><h3 id=59-xmind>59. XMind</h3><p>Install xmind on archlinux via:</p><pre><code>$ yay xmind
+8 aur/xmind 3.7.9+8update9-1 (+30 0.03) (Installed)
+#  vim /usr/share/xmind/XMind/XMind.ini
+-vm
+/usr/lib/jvm/java-8-openjdk/jre/bin
+-configuration
+.....
+</code></pre><p>Then we could use XMind.</p><h3 id=60-android-building>60. Android building</h3><p>Problem:</p><pre><code>....
+No DEX files specified
+...
+</code></pre><p>via:</p><pre><code>$ make clean-apache-xml
+$ make apache-xml
+</code></pre><p>Then:</p><pre><code># make clean-ims-common &amp;&amp; make ims-common &amp;&amp; make apache-xml &amp;&amp; m -j12 iso_img
+</code></pre><h3 id=61-install-fcitx5>61. Install fcitx5</h3><p>Replace fcitx4 with fcitx5 with:</p><pre><code>$ sudo pacman -R fcitx-configtool fcitx-googlepinyin fcitx-libpinyin fcitx-qt4 fcitx-qt5
+$ sudo pacman -S fcitx5
+$ sudo pacman -S fcitx5-chinese-addons
+$ sudo pacman -S fcitx5-qt fcitx5-gtk
+$ sudo pacman -S fcitx5-configtool
+</code></pre><h3 id=62-hostapd>62. hostapd</h3><p>In shida box:</p><pre><code># git clone https://github.com/lwfinger/rtl8188eu.git
+# cd rtl8188eu
+# make all
+# sudo make install
+</code></pre><h3 id=63-driver-in-anbox>63. driver in anbox</h3><p>Added lxc device via:</p><pre><code>lxc-device -n android add /dev/ashmem
+
+</code></pre><h3 id=64-proot-working-tips>64. PRoot working Tips</h3><p>Install termux from F-droid, then:</p><pre><code>pkg install proot
+pkg install proot-distro
+proot-distro install archlinux
+</code></pre><h3 id=65-check-if-android-booted>65. Check if android booted</h3><p>via:</p><pre><code># getprop sys.boot_completed
+</code></pre><h3 id=67-overwrite-cmd-for-docker>67. Overwrite cmd for docker</h3><p>via:</p><pre><code>#  docker run [other options] --entrypoint '/bin/sh' $IMAGE -c 'npm link gulp gulp-sass gulp-sourcemaps'
+</code></pre><h3 id=68-update-python-for-ubuntu1804>68. update python for ubuntu18.04</h3><p>via:</p><pre><code># update-alternatives --config python
+</code></pre><h3 id=69-gdm-vs-lightdm>69. gdm vs lightdm</h3><p>Changing from ubuntu:</p><pre><code>sudo dpkg-reconfigure gdm3
+
+</code></pre><h3 id=70-start-anbox-in-ubuntu>70. Start anbox in ubuntu</h3><p>exited in ubuntu18.04, solved via:</p><pre><code>export EGL_PLATFORM=x11
+anbox.appmgr
+</code></pre><h3 id=71-rsync-ignore-directory>71. rsync ignore directory</h3><p>via:</p><pre><code>rsync -av --progress aic-cg/ /root/fenxi/ --exclude workdir
+
+(aic-cg)  -----&gt;  /root/fenxi
+source   ----&gt;   dest
+</code></pre><h3 id=72-redsocks-iptables-issue>72. redsocks iptables issue</h3><p>On Ubuntu18.04, solved via:</p><pre><code>rm /usr/sbin/iptables
+ln -s /usr/sbin/iptables-legacy /usr/sbin/iptables
+</code></pre><h3 id=73-dd-write-xz-to-rpi>73. dd write xz to rpi</h3><p>Via:</p><pre><code>xz -d &lt; /home/dash/Downloads/ubuntu-20.04.3-preinstalled-server-arm64+raspi.img.xz - | dd of=/dev/sdb &amp;&amp; sync
+</code></pre><h3 id=74-virsh-console>74. virsh console</h3><p>via:</p><pre><code>virsh ttyconsole vuserv
+</code></pre><p>Enable grub output via:</p><pre><code>#  vim /etc/default/grub
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
+GRUB_TERMINAL_INPUT=&quot;console serial&quot;
+GRUB_TERMINAL_OUTPUT=&quot;gfxterm serial&quot;
+GRUB_SERIAL_COMMAND=&quot;serial --unit=0 --speed=115200&quot;
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;console=tty0 console=ttyS0,115200 maybe-ubiquity&quot;
+GRUB_CMDLINE_LINUX=&quot;&quot;
+# update-grub2
+</code></pre><h3 id=75-logcat>75. logcat</h3><p>view only crash logs:</p><pre><code>logcat -b crash
+</code></pre><h3 id=76-lxc-enter-container>76. lxc enter container</h3><p>via:</p><pre><code>lxc-attach -n Name -- command
+</code></pre><h3 id=77-apt-fast>77. apt-fast</h3><p>via:</p><pre><code>sudo add-apt-repository ppa:apt-fast/stable
+sudo apt-get update
+sudo apt-get -y install apt-fast
+
+</code></pre><h3 id=78-adb-tips>78. adb tips</h3><p>list all of the connected devices:</p><pre><code>adb devices
+</code></pre><p>connect to specific device via:</p><pre><code>adb -s 192.168.1.41:5555 shell
+</code></pre><h3 id=79-anboxredroid-preparation>79. anbox/redroid preparation</h3><p>related kernel modules should be inserted:</p><pre><code>sudo modprobe ashmem_linux
+sudo modprobe binder_linux devices=binder,hwbinder,vndbinder
+</code></pre><p>examine via:</p><pre><code>root@vp1:/home/dash# grep binder /proc/filesystems
+nodev	binder
+root@vp1:/home/dash# grep ashmem /proc/misc
+121 ashmem
+</code></pre><h3 id=80-pipewire>80. pipewire</h3><p>Install and enable via:</p><pre><code>$ sudo pacman install -y pipewire
+$ systemctl --user enable pipewire pipewire-pulse pipewire-media-session
+$ systemctl --user restart pipewire pipewire-pulse pipewire-media-session
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/02/12/workingtipsonrpisharingdesktop/>WorkingTipsOnRPISharingDesktop</a></h1><span class=post-date>Feb 12, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=无线接入点配置>无线接入点配置</h3><h4 id=1-基本配置>1. 基本配置</h4><p>树莓派4B 8G版本，刷入了Ubuntu 20.04.2 arm64版本：</p><pre><code>ubuntu@rpi1:~$ cat /etc/issue
 Ubuntu 20.04.2 LTS \n \l
 
 ubuntu@rpi1:~$ uname -a
@@ -103,148 +386,4 @@ args: [&quot;3600000&quot;]
 # kubectl delete -f kkk.yaml
 # kubectl create -f kkk.yaml
 # kubectl scale deployment xxxx -replicas=4
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/01/25/directlyeditdeb/>DirectlyEditDEB</a></h1><span class=post-date>Jan 25, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>项目中有时需要对DEB包做些许修改，譬如，在离线场景下某些DEB包的<code>postinst</code>中有需要用在线方式下载可执行文件的情况，这种情况下可以借助<code>dpkg-deb</code>的解包/压缩命令来临时修改出一个含有所有离线文件的包，举<code>opennebula-node-firecracker</code>的包为例说明。</p><p><code>opennebula-node-firecracker</code>是用于在opennebula上运行轻量级VM <code>firecracker</code>的包，在线安装时它需要从<code>github</code>上拉取相应版本的<code>firecracker</code>及 <code>jailer</code>可执行文件，这让它在离线场景下无法安装成功。同时，因为它默认作为runtime的一种，其配置文件与<code>opennebula-node-kvm</code>里的某些配置文件相同，导致安装时无法继续，我们可以通过如下的方式修改此包，让其适配离线化安装。</p><h3 id=准备>准备</h3><p>在线场景下下载该包，并拷贝到工作目录, 解压:</p><pre><code># cp /var/cache/apt/archives/opennebula-node-firecracker_5.12.0.3-1.ce_amd64.deb .
-# mkdir tmp
-# dpkg-deb -R opennebula-node-firecracker_5.12.0.3-1.ce_amd64.deb tmp/
-</code></pre><p>主要目录结构如下:</p><pre><code>├── DEBIAN
-│   ├── conffiles
-│   ├── control
-│   ├── md5sums
-│   ├── postinst
-│   └── postrm
-├── etc
-│   ├── cron.d
-│   │   └── opennebula-node
-│   ├── sudoers.d
-│   │   └── opennebula-node-firecracker
-│   └── sysctl.d
-│       └── bridge-nf-call.conf
-├── srv
-│   └── jailer
-│       └── firecracker
-└── usr
-    ├── bin
-    │   └── svncterm_server
-    ├── sbin
-    │   ├── install-firecracker
-    │   ├── one-clean-firecracker-domain
-    │   └── one-prepare-firecracker-domain
-    └── share
-        └── doc
-            └── opennebula-node-firecracker
-                ├── changelog.Debian.gz
-                ├── copyright
-                └── NEWS.Debian.gz
-</code></pre><p>我们需要修改的要点如下:</p><pre><code>1. DEBIAN/conffiles, 含有此包需写入的配置文件。
-2. DEBIAN/md5sums, 含有可执行文件的md5校验码。
-3. DEBIAN/postinst, 包安装完成后需执行的脚本。
-4. etc/ 下是包安装后在主机上需添加的配置文件。
-5. usr/bin, usr/sbin，主机上需拷入的可执行文件。
-</code></pre><h3 id=修改>修改</h3><p>观察<code>DEBIAN/postinst</code>中含有以下条目:</p><pre><code># cat DEBIAN/postinst 
-#!/bin/sh
-
-set -e
-
-ONE_USER=oneadmin
-
-if [ &quot;$1&quot; = &quot;configure&quot; ]; then
-    # Install Firecracker + jailer
-    /usr/sbin/install-firecracker
-
-</code></pre><p>打开<code>install-firecracker</code>文件后观察其下载脚本为:</p><pre><code># cat usr/sbin/install-firecracker 
-#!/bin/sh
-....
-
-# Download version version of Firecracker
-curl -LOJ https://github.com/firecracker-microvm/firecracker/releases/download/${version}/firecracker-${version}-$(uname -m)
-mv firecracker-${version}-$(uname -m) /usr/bin/firecracker
-chmod +x /usr/bin/firecracker
-
-
-# Download version version of jailer
-curl -LOJ https://github.com/firecracker-microvm/firecracker/releases/download/${version}/jailer-${version}-$(uname -m)
-mv jailer-${version}-$(uname -m) /usr/bin/jailer
-chmod +x /usr/bin/jailer
-</code></pre><p>这里我们直接干掉所有的curl及mv脚本，把预先下载好的<code>firecracker</code>/<code>jailer</code>文件拷贝到安装目录即可。</p><pre><code># tree ../tmp/usr
-../tmp/usr
-├── bin
-+++ │   ├── firecracker
-+++ │   ├── jailer
-│   └── svncterm_server
-├── sbin
-│   ├── install-firecracker
-.....
-</code></pre><p>此外需要修改md5sums及干掉etc下重复的配置文件。而后压缩包。</p><h3 id=压缩包>压缩包</h3><p>一条命令:</p><pre><code># dpkg-deb -b tmp opennebula-node-firecracker_5.12.0.3-1.ce_fixed_amd64.deb
-</code></pre><p>检查新生成包的大小:</p><pre><code># ls -l -h *.deb
--rw-r--r-- 1 root root  24K Jan 25 09:06 opennebula-node-firecracker_5.12.0.3-1.ce_amd64.deb
--rw-r--r-- 1 root root 1.2M Jan 25 09:11 opennebula-node-firecracker_5.12.0.3-1.ce_fixed_amd64.deb
-</code></pre><p>使用<code>fixed</code>后的包安装，此时可忽略internet下载过程，且解决了包安装时的冲突问题。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/01/21/usingdockerforbuildingkubeadm/>Usingdockerforbuildingkubeadm</a></h1><span class=post-date>Jan 21, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>X86 version kubeadm building process:</p><pre><code># docker run -it ubuntu:18.04 /bin/bash
-# cat /etc/issue
-Ubuntu 18.04.5 LTS \n \l
-# apt-get update -y
-# apt-get install -y wget unzip vim build-essential rsync
-# wget https://github.com/kubernetes/kubernetes/archive/v1.19.7.zip
-# wget https://golang.org/dl/go1.15.7.linux-amd64.tar.gz
-# tar -C /usr/local -xzf go1.15.7.linux-amd64.tar.gz
-# export PATH=$PATH:/usr/local/go/bin
-# go version
-go version go1.15.7 linux/amd64
-# cd kubernetes-v1.19.7
-# vim cmd/kubeadm/app/constants/constants.go
-CertificateValidity = time.Hour * 24 * 365 * 100
-#  vim vendor/k8s.io/client-go/util/cert/cert.go
-func NewSelfSignedCACert
-NotAfter: 	now.Add(duration365d * 100).UTC(),
-func GenerateSelfSignedCertKeyWithFixtures
-maxAge := 100 * time.Hour * 24 * 365
-# make all WHAT=cmd/kubeadm
-# _output/bin/kubeadm version
-kubeadm version: &amp;version.Info{Major:&quot;1&quot;, Minor:&quot;19&quot;, GitVersion:&quot;v1.19.7&quot;, GitCommit:&quot;1dd5338295409edcfff11505e7bb246f0d325d15&quot;, GitTreeState:&quot;archive&quot;, BuildDate:&quot;2021-01-21T07:15:36Z&quot;, GoVersion:&quot;go1.15.7&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
-# cp _output/bin/kubeadm ..
-</code></pre><p>Arm64 version kubeadm building process:</p><p>Edit files and make changes:</p><pre><code># vim hack/make-rules/cross.sh
-    make all WHAT=&quot;${KUBE_SERVER_TARGETS[*]}&quot; KUBE_BUILD_PLATFORMS=&quot;${KUBE_SERVER_PLATFORMS[*]}&quot;
-    
-    #make all WHAT=&quot;${KUBE_NODE_TARGETS[*]}&quot; KUBE_BUILD_PLATFORMS=&quot;${KUBE_NODE_PLATFORMS[*]}&quot;
-    #
-    #make all WHAT=&quot;${KUBE_CLIENT_TARGETS[*]}&quot; KUBE_BUILD_PLATFORMS=&quot;${KUBE_CLIENT_PLATFORMS[*]}&quot;
-    #
-    #make all WHAT=&quot;${KUBE_TEST_TARGETS[*]}&quot; KUBE_BUILD_PLATFORMS=&quot;${KUBE_TEST_PLATFORMS[*]}&quot;
-    #
-    #make all WHAT=&quot;${KUBE_TEST_SERVER_TARGETS[*]}&quot; KUBE_BUILD_PLATFORMS=&quot;${KUBE_TEST_SERVER_PLATFORMS[*]}&quot;
-#  vim hack/lib/golang.sh
-    readonly KUBE_SUPPORTED_SERVER_PLATFORMS=(
-    #  linux/amd64
-    #  linux/arm
-      linux/arm64
-    #  linux/s390x
-    #  linux/ppc64le
-    )
-    
-    //.............
-    
-    kube::golang::server_targets() {
-      local targets=(                       
-      #  cmd/kube-proxy                                                        
-      #  cmd/kube-apiserver                 
-      #  cmd/kube-controller-manager                                 
-      #  cmd/kubelet 
-        cmd/kubeadm
-      #  cmd/kube-scheduler
-      #  vendor/k8s.io/apiextensions-apiserver
-      #  cluster/gce/gci/mounter
-      )
-</code></pre><p>Build:</p><pre><code># make cross
-</code></pre><h3 id=v1207-update>v1.20.7 update</h3><p>Have to change go version to v1.17 for building, also notice the memory usage.</p><pre><code>apt-get update -y &amp;&amp; apt-get install -y wget unzip vim build-essential rsync
-wget https://github.com/kubernetes/kubernetes/archive/v1.20.7.zip
-wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz 
-export PATH=$PATH:/usr/local/go/bin
-go version
-unzip v1.20.7.zip 
-cd kubernetes-1.20.7/
-vim cmd/kubeadm/app/constants/constants.go
-vim vendor/k8s.io/client-go/util/cert/cert.go
-make all WHAT=cmd/kubeadm
-cp _output/bin/kubeadm ..
-
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/22/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/22/>22</a></li><li class="page-item active"><a class=page-link href=/page/23/>23</a></li><li class=page-item><a class=page-link href=/page/24/>24</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/24/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
