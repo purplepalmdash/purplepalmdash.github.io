@@ -1,695 +1,153 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/10/buildkismaticallinone/>BuildKismaticAllInOne</a></h1><span class=post-date>Jan 10, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=start>Start</h3><p>Build an virtual machine with 4-core/8G, change its ip address to
-<code>10.15.205.100</code>, hostname <code>allinone</code>.</p><pre><code># cd /etc/yum.repos.d/
-# mkdir back
-# mv *.repo back
-# curl http://10.15.205.2/base.repo&gt;base.repo
-# yum makecache
-</code></pre><p>Notice the base.repo is the repositories we get from the internet.</p><p>Edit the hostfile for adding the registry item(domain name to ip address).</p><pre><code># vim /etc/hosts
-10.15.205.2	mirror.xxxx.com
-</code></pre><p>Make sure you public key has been inserted into the
-<code>/root/.ssh/authorized_keys</code>, then create the directory for deployment:</p><pre><code>$ sudo cp -r kismatic_for_1015205 allinone
-$ cd allinone
-$ sudo rm -rf generated*
-</code></pre><h3 id=configuration>Configuration</h3><p>The example configuration file is listed as following:</p><pre><code>cluster:
-  name: kubernetes
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/16/workingtipsonk8slvm/>WorkingTipsOnk8sLVM</a></h1><span class=post-date>Jan 16, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>Preparation</h3><p>Define ip address/gateway:</p><p><img src=/images/2018_01_16_10_31_58_494x339.jpg alt=/images/2018_01_16_10_31_58_494x339.jpg></p><p>Set hostname:</p><p><img src=/images/2018_01_16_10_32_18_439x180.jpg alt=/images/2018_01_16_10_32_18_439x180.jpg></p><p>Disk Preparation:</p><p><img src=/images/2018_01_16_10_36_09_758x404.jpg alt=/images/2018_01_16_10_36_09_758x404.jpg></p><h3 id=configuration>Configuration</h3><p>In kismatic, configure like following:</p><p><img src=/images/2018_01_16_10_39_10_819x493.jpg alt=/images/2018_01_16_10_39_10_819x493.jpg></p><p>Then install kismatic as usual.</p><h3 id=helm>helm</h3><p>When in offline-mode, <code>helm repo update</code> will failed.</p><p>Aim: install monocular in cluster.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/15/tipsonkismatictransfer/>TipsOnKismaticTransfer</a></h1><span class=post-date>Jan 15, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>主要记录生产环境的迁移，后期可以作为实际部署和安装时的文档参考。</p><h3 id=网络准备>网络准备</h3><p>创建一个<code>10.15.205.0/24</code>网络:</p><p><img src=/images/2018_01_15_11_46_51_334x401.jpg alt=/images/2018_01_15_11_46_51_334x401.jpg>
+由于在内网，故指定NAT与否都无所谓,
+在有Internet的环境中，可以指定为隔离环境，以模拟实际的现网环境:</p><p><img src=/images/2018_01_15_11_47_47_436x322.jpg alt=/images/2018_01_15_11_47_47_436x322.jpg></p><h3 id=镜像准备>镜像准备</h3><p>直接将镜像拷贝到内网，建立aptly虚拟机、registry
+mirror虚拟机即可。未来将对aptly虚拟机和registry虚拟机做合并操作。</p><p>基础镜像准备, 使用Ubuntu1604_base.qcow2镜像文件，做以下操作:</p><pre><code>0. qemu-system-x86_64 -net nic -net user,hostfwd=tcp::2288-:22 -hda xxxx.qcow2
+   -m 1024 --enable-kvm
+1. root密码修改
+2. root远程登录(/etc/ssh/sshd_config)
+3. /etc/hosts中添加`10.15.205.2	mirror.xxxx.com`条目，以使用registry mirror.
+4. 将免密码登录的公钥插入到操作系统中 
+5. 配置aptly的镜像服务器
+vim /etc/apt/sources.list
+deb http://10.15.205.3 xenial main
+deb http://10.15.205.3 kubernetes-xenial main
+deb [arch=amd64] http://10.15.205.3 xenial stable
+6. 导入aptly所需的签名
+cat mykey.asc | apt-key add -
+</code></pre><p>做完此操作后，保存基础镜像，创建出来相应的虚拟机。</p><p><img src=/images/2018_01_15_14_55_37_1058x179.jpg alt=/images/2018_01_15_14_55_37_1058x179.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/15/workingtipsonprivatehelmrepo/>WorkingTipsOnPrivateHelmRepo</a></h1><span class=post-date>Jan 15, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Create first chart named <code>nginxfirst</code> like following:</p><pre><code># mkdir nginxfirst
+# cd nginxfirst/
+# ls
+# helm create nginxfirst
+Creating nginxfirst
+# tree
+.
+└── nginxfirst
+    ├── charts
+    ├── Chart.yaml
+    ├── templates
+    │   ├── deployment.yaml
+    │   ├── _helpers.tpl
+    │   ├── ingress.yaml
+    │   ├── NOTES.txt
+    │   └── service.yaml
+    └── values.yaml
 
-  # Set to true if the nodes have the required packages installed.
-  disable_package_installation: false
+3 directories, 7 files
+</code></pre><p>Edit the values.yaml file:</p><pre><code>replicaCount: 1
+image:
+  repository: mirror.teligen.com/nginx
+  tag: 1.7.9
+  pullPolicy: IfNotPresent
+service:
+  name: nginx
+  type: ClusterIP
+  externalPort: 80
+  internalPort: 80
+</code></pre><p>Keep others the same.</p><p><code>--dry-run</code> means you want to verificate the configuration.</p><p>Install this chart book via:</p><pre><code># helm install --name firstnginx . --set service.type=NodePort
+</code></pre><p>Get the URL via following command:</p><pre><code>NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath=&quot;{.spec.ports[0].nodePort}&quot; services firstnginx-nginxfirst)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath=&quot;{.items[0].status.addresses[0].address}&quot;)
+  echo http://$NODE_IP:$NODE_PORT
+</code></pre><p>Finally you will see a running nginx instance.</p><h3 id=package-and-serve>Package and Serve</h3><p>Package the modified package via following command:</p><pre><code>[root@DashSSD nginxfirst]# helm package .
+Successfully packaged chart and saved it to: /home/dash/Code/tmp/nginxfirst/nginxfirst/nginxfirst-0.1.0.tgz
+[root@DashSSD nginxfirst]# ls
+charts  Chart.yaml  nginxfirst-0.1.0.tgz  templates  values.yaml  values.yaml~
+[root@DashSSD nginxfirst]# helm lint
+==&gt; Linting .
+[INFO] Chart.yaml: icon is recommended
 
-  # Set to true if you are performing a disconnected installation.
-  disconnected_installation: true
+1 chart(s) linted, no failures
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/12/troubleshootingonhelm/>TroubleShootingOnhelm</a></h1><span class=post-date>Jan 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>这几天在试用helm，很有意思的包管理系统，让容器解决方案的落地门槛一下降了很多。然后我在搭建前端可视化的仓库解决方案，用到了monocular,
+百思不得其解的是，在minikube上可以顺利部署成功的monocular,
+在自己搭建的基于Ubuntu搭建的k8s集群上就是不行。</p><p>解决方法： 用<code>kubectl get pods</code>来看，总是mongodb部署不成功。</p><p>用kubernetes dashboard查看pod失败的原因在与persistence volume mount不成功。</p><p>在minikube上用<code>kubectl get pv</code>和<code>kubectl get pvc</code>是可以看到完整的结果的，而且可以看到它使用的是hostpath的格式。</p><p>下载monocular的charts到本地，查看目录结构:</p><pre><code># helm fetch monocular/monocular
+# tree
+.
+├── charts
+│   └── mongodb
+│       ├── Chart.yaml
+│       ├── README.md
+│       ├── templates
+│       │   ├── deployment.yaml
+│       │   ├── _helpers.tpl
+│       │   ├── NOTES.txt
+│       │   ├── pvc.yaml
+│       │   ├── secrets.yaml
+│       │   └── svc.yaml
+│       └── values.yaml
+├── Chart.yaml
+├── README.md
+├── requirements.lock
 
-  # Networking configuration of your cluster.
-  networking:
-
-    # Kubernetes will assign pods IPs in this range. Do not use a range that is
-    # already in use on your local network!
-    pod_cidr_block: 172.16.0.0/16
-
-    # Kubernetes will assign services IPs in this range. Do not use a range
-    # that is already in use by your local network or pod network!
-    service_cidr_block: 172.20.0.0/16
-
-    # Set to true if your nodes cannot resolve each others' names using DNS.
-    update_hosts_files: true
-
-    # Set the proxy server to use for HTTP connections.
-    http_proxy: &quot;&quot;
-
-    # Set the proxy server to use for HTTPs connections.
-    https_proxy: &quot;&quot;
-
-    # List of host names and/or IPs that shouldn't go through any proxy.
-    # All nodes' 'host' and 'IPs' are always set.
-    no_proxy: &quot;&quot;
-
-  # Generated certs configuration.
-  certificates:
-
-    # Self-signed certificate expiration period in hours; default is 2 years.
-    expiry: 17520h
-
-    # CA certificate expiration period in hours; default is 2 years.
-    ca_expiry: 17520h
-
-  # SSH configuration for cluster nodes.
-  ssh:
-
-    # This user must be able to sudo without password.
-    #user: kismaticuser
-    user: root
-
-    # Absolute path to the ssh private key we should use to manage nodes.
-    ssh_key: /media/sda5/kismatic/allinone/kismaticuser.key
-    ssh_port: 22
-
-  # Override configuration of Kubernetes components.
-  kube_apiserver:
-    option_overrides: {}
-
-  kube_controller_manager:
-    option_overrides: {}
-
-  kube_scheduler:
-    option_overrides: {}
-
-  kube_proxy:
-    option_overrides: {}
-
-  kubelet:
-    option_overrides: {}
-
-  # Kubernetes cloud provider integration
-  cloud_provider:
-
-    # Options: 'aws','azure','cloudstack','fake','gce','mesos','openstack',
-    # 'ovirt','photon','rackspace','vsphere'.
-    # Leave empty for bare metal setups or other unsupported providers.
-    provider: &quot;&quot;
-
-    # Path to the config file, leave empty if provider does not require it.
-    config: &quot;&quot;
-
-# Docker daemon configuration of all cluster nodes
-docker:
-  logs:
-    driver: json-file
-    opts:
-      max-file: &quot;1&quot;
-      max-size: 50m
-
-  storage:
-
-    # Configure devicemapper in direct-lvm mode (RHEL/CentOS only).
-    direct_lvm:
-      enabled: false
-
-      # Path to the block device that will be used for direct-lvm mode. This
-      # device will be wiped and used exclusively by docker.
-      block_device: &quot;&quot;
-
-      # Set to true if you want to enable deferred deletion when using
-      # direct-lvm mode.
-      enable_deferred_deletion: false
-
-# If you want to use an internal registry for the installation or upgrade, you
-# must provide its information here. You must seed this registry before the
-# installation or upgrade of your cluster. This registry must be accessible from
-# all nodes on the cluster.
-docker_registry:
-
-  # IP or hostname and port for your registry.
-  server: &quot;mirror.teligen.com&quot;
-
-  # Absolute path to the certificate authority that should be trusted when
-  # connecting to your registry.
-  CA: &quot;/home/dash/devdockerCA.crt&quot;
-
-  # Leave blank for unauthenticated access.
-  username: &quot;clouder&quot;
-
-  # Leave blank for unauthenticated access.
-  password: &quot;engine&quot;
-
-# Add-ons are additional components that KET installs on the cluster.
-add_ons:
-  cni:
-    disable: false
-
-    # Selecting 'custom' will result in a CNI ready cluster, however it is up to
-    # you to configure a plugin after the install.
-    # Options: 'calico','weave','contiv','custom'.
-    provider: calico
-    options:
-      calico:
-
-        # Options: 'overlay','routed'.
-        mode: overlay
-
-        # Options: 'warning','info','debug'.
-        log_level: info
-
-        # MTU for the workload interface, configures the CNI config.
-        workload_mtu: 1500
-
-        # MTU for the tunnel device used if IPIP is enabled.
-        felix_input_mtu: 1440
-
-  dns:
-    disable: false
-
-  heapster:
-    disable: false
-    options:
-      heapster:
-        replicas: 2
-
-        # Specify kubernetes ServiceType. Defaults to 'ClusterIP'.
-        # Options: 'ClusterIP','NodePort','LoadBalancer','ExternalName'.
-        service_type: ClusterIP
-
-        # Specify the sink to store heapster data. Defaults to an influxdb pod
-        # running on the cluster.
-        sink: influxdb:http://heapster-influxdb.kube-system.svc:8086
-
-      influxdb:
-
-        # Provide the name of the persistent volume claim that you will create
-        # after installation. If not specified, the data will be stored in
-        # ephemeral storage.
-        pvc_name: &quot;&quot;
-
-  dashboard:
-    disable: false
-
-  package_manager:
-    disable: false
-
-    # Options: 'helm'
-    provider: helm
-
-  # The rescheduler ensures that critical add-ons remain running on the cluster.
-  rescheduler:
-    disable: false
-
-# Etcd nodes are the ones that run the etcd distributed key-value database.
-etcd:
-  expected_count: 1
-
-  # Provide the hostname and IP of each node. If the node has an IP for internal
-  # traffic, provide it in the internalip field. Otherwise, that field can be
-  # left blank.
-  nodes:
-  - host: &quot;allinone&quot;
-    ip: &quot;10.15.205.100&quot;
-    internalip: &quot;&quot;
-    labels: {}
-
-# Master nodes are the ones that run the Kubernetes control plane components.
-master:
-  expected_count: 1
-
-  # If you have set up load balancing for master nodes, enter the FQDN name here.
-  # Otherwise, use the IP address of a single master node.
-  load_balanced_fqdn: &quot;10.15.205.100&quot;
-
-  # If you have set up load balancing for master nodes, enter the short name here.
-  # Otherwise, use the IP address of a single master node.
-  load_balanced_short_name: &quot;10.15.205.100&quot;
-  nodes:
-  - host: &quot;allinone&quot;
-    ip: &quot;10.15.205.100&quot;
-    internalip: &quot;&quot;
-    labels: {}
-
-# Worker nodes are the ones that will run your workloads on the cluster.
-worker:
-  expected_count: 1
-  nodes:
-  - host: &quot;allinone&quot;
-    ip: &quot;10.15.205.100&quot;
-    internalip: &quot;&quot;
-    labels: {}
-
-# Ingress nodes will run the ingress controllers.
-ingress:
-  expected_count: 0 
-  nodes: []
-#  - host: &quot;&quot;
-#    ip: &quot;&quot;
-#    internalip: &quot;&quot;
-#    labels: {}
-#
-# Storage nodes will be used to create a distributed storage cluster that can
-# be consumed by your workloads.
-storage:
-  expected_count: 0
-  nodes: []
-
-# A set of NFS volumes for use by on-cluster persistent workloads
-nfs:
-  nfs_volume: []
-</code></pre><p>Deploy the whole cluster:</p><pre><code>sudo bash
-[root@xxxxxx allinone]# ./kismatic install apply
-
-Validating==========================================================================
-Reading installation plan file &quot;kismatic-cluster.yaml&quot;                          [OK]
-Validating installation plan file                                               [OK]
-Validating SSH connectivity to nodes                                            [OK]
-Configure Cluster Prerequisites                                                 [OK]
-Gather Node Facts
-</code></pre><p>Then you could get the running kubernetes.</p><h3 id=helm>helm</h3><p>helm, translation for chinese: <code>舵</code>.</p><p>Get started with helm:</p><pre><code># curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get &gt; get_helm.sh
-# chmod 777 get_helm.sh 
-# ./get_helm.sh 
-[root@allinone ~]# which helm
-/usr/local/bin/helm
-[root@allinone ~]# helm version
+</code></pre><p>而后我们查看charts里关于持久化存储的声明，发现是在charts/mongodb下所设置的，</p><pre><code># cat values.yaml  | grep -i persistence -A5
+    ## Enable persistence using Persistent Volume Claims
+    ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+    ##
+    persistence:
+      enabled: true
+      ## mongodb data Persistent Volume Storage Cla
+</code></pre><p>于是我们用以下的命令来重新安装此包:</p><pre><code># helm ls
+.... // panda stands for the installed helm instance
+# helm delete panda
+# helm install --name=monkey --set &quot;persistence.enabled=false,mongodb.persistence.enabled=false&quot;  monocular/monocular
+</code></pre><p>现在刷新系统，发现已经安装成功了:</p><pre><code># kubectl get pods
+NAME                                                        READY     STATUS    RESTARTS   AGE
+monkey-mongodb-66fd888d4-k66tg                              1/1       Running   0          19m
+monkey-monocular-api-5fd987957-rtmqq                        1/1       Running   6          19m
+monkey-monocular-api-5fd987957-wqxds                        1/1       Running   6          19m
+monkey-monocular-prerender-6b7cb5cc98-gxs8b                 1/1       Running   0          19m
+monkey-monocular-ui-8c776fd89-5hbcg                         1/1       Running   0          19m
+monkey-monocular-ui-8c776fd89-gz8jm                         1/1       Running   0          19m
+my-release-nginx-ingress-controller-74c748b9fb-9xtfv        1/1       Running   7          17h
+my-release-nginx-ingress-default-backend-64f764b667-gxkht   1/1       Running   4          17h
+# kubectl get ingress
+NAME               HOSTS     ADDRESS         PORTS     AGE
+monkey-monocular   *         10.15.205.200   80        20m
+</code></pre><p>打开网页，发现可以访问到monocular, 然而其charts列表暂时无法显示， why?</p><p>迅速部署应用，避免每次重新拉取镜像：</p><pre><code># helm install --name=tiger --set &quot;persistence.enabled=false,mongodb.persistence.enabled=false,pullPolicy=IfNotPresent,api.image.pullPolicy=IfNotPresent,ui.image.pullPolicy=IfNotPresent,prerender.image.pullPolicy=IfNotPresent&quot; monocular/monocular
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/11/helmworkingtips/>helmWorkingtips</a></h1><span class=post-date>Jan 11, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=minikube>minikube</h3><p>Install and initialization:</p><pre><code>$ sudo cp /media/sda5/kismatic/allinone/helm /usr/bin
+$ sudo chmod 777 /usr/bin/helm
+$ helm version
 Client: &amp;version.Version{SemVer:&quot;v2.7.2&quot;, GitCommit:&quot;8478fb4fc723885b155c924d1c8c410b7a9444e6&quot;, GitTreeState:&quot;clean&quot;}
 Error: cannot connect to Tiller
-</code></pre><p>This error message is because my k8s cluster is not stable. so re-install a
-new one.</p><h3 id=ubuntu-ways>Ubuntu ways</h3><p>For syncing the packages from the internet, then create a gpg key for
-publishing the repository:</p><pre><code># apt-get install -y haveged
-# gpg --gen-key
-gpg (GnuPG) 1.4.20; Copyright (C) 2015 Free Software Foundation, Inc.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
+$ helm init
+$HELM_HOME has been configured at /home/xxxx/.helm.
 
-Please select what kind of key you want:
-   (1) RSA and RSA (default)
-   (2) DSA and Elgamal
-   (3) DSA (sign only)
-   (4) RSA (sign only)
-Your selection? 1
-RSA keys may be between 1024 and 4096 bits long.
-What keysize do you want? (2048) 
-Requested keysize is 2048 bits
-Please specify how long the key should be valid.
-         0 = key does not expire
-      &lt;n&gt;  = key expires in n days
-      &lt;n&gt;w = key expires in n weeks
-      &lt;n&gt;m = key expires in n months
-      &lt;n&gt;y = key expires in n years
-Key is valid for? (0) 
-Key does not expire at all
-Is this correct? (y/N) y
-
-You need a user ID to identify your key; the software constructs the user ID
-from the Real Name, Comment and Email Address in this form:
-    &quot;Heinrich Heine (Der Dichter) &lt;heinrichh@duesseldorf.de&gt;&quot;
-
-Real name: dashyang
-Email address: xxxx@gmail.com
-Comment: somecommentshere
-You selected this USER-ID:
-    &quot;dashyang (somecommentshere) &lt;xxxx@gmail.com&gt;&quot;
-
-Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
-You need a Passphrase to protect your secret key.
-
-gpg: gpg-agent is not available in this session
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action (type on the keyboard, move the mouse, utilize the
-disks) during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-..+++++
-..+++++
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action (type on the keyboard, move the mouse, utilize the
-disks) during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-+++++
-..+++++
-gpg: key F5510098 marked as ultimately trusted
-public and secret key created and signed.
-
-gpg: checking the trustdb
-gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
-gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
-pub   2048R/F5510098 2018-01-10
-      Key fingerprint = 7F4C 405A F6EB B25D DEDF  10C9 9CAC DC20 F551 0098
-uid                  dashyang (somecommentshere) &lt;xxxx@gmail.com&gt;
-sub   2048R/7FE934CA 2018-01-10
-# gpg --list-keys
-/home/vagrant/.gnupg/pubring.gpg
---------------------------------
-pub   2048R/F5510098 2018-01-10
-uid                  dashyang (somecommentshere) &lt;feipyang@gmail.com&gt;
-sub   2048R/7FE934CA 2018-01-10
-# aptly serve
-Serving published repositories, recommended apt sources list:
-
-# ./xenial [amd64, arm64, armhf, i386] publishes {main: [xenial-repo]: Merged from sources: 'ubuntu-main', 'gluster', 'docker'}
-deb http://vagrant:8080/ xenial main
-
-Starting web server at: :8080 (press Ctrl+C to quit)...
-</code></pre><p>Added it to systemd files:</p><pre><code># cat /etc/systemd/system/aptly.service 
-[Service]
-Type=simple
-ExecStart=/usr/bin/aptly -config /home/vagrant/.aptly.conf serve -listen=:80
-User=root
-# systemctl daemon-reload
-# systemctl enable aptly
-# systemctl start aptly
-</code></pre><p>Failed, why aptly could not be run.</p><p>Client usage:</p><pre><code># sudo vim /etc/ssh/sshd_config
-PermitRootLogin yes
-# vim /etc/network/interfaces
-Change ip addresss
-</code></pre><pre><code>First in server, export keys:   
-
-    # gpg --export --armor &gt;mypublic.pub
-    # cat mypublic.pub 
-    # scp mypublic.pub  root@10.15.205.200:/root/
-
-Then in clients import the keys:    
-
-
-        # cat mypublic.pub |apt-key add -
-        OK
-        root@ubuntu:/root# apt-key list
-        /etc/apt/trusted.gpg
-</code></pre><p>Then <code>sudo apt-get update</code> won&rsquo;t get any errors.</p><p>Thus you could have a server at the certain vm, convert this vm from
-virtualbox into qcow2 via following command.</p><pre><code># qemu-img convert -f vmdk -O qcow2 box-disk001.vmdk aptly_ubuntu.qcow2
-</code></pre><p>Start the registry server.</p><p>Create a new ubuntu server, enable the sshd login of root. Add repository, add
-following definition of the registry:</p><pre><code># vim /etc/hosts
-10.15.205.2	mirror.xxxxx.com
-</code></pre><p>Then add the kismaticuser.key.pub into the server&rsquo;s
-<code>/root/.ssh/authorized_keys</code>.</p><h3 id=helm-1>helm</h3><pre><code># helm search
-# helm list
-# helm install --name wordpress-test --set &quot;persistence.enabled=false,mariadb.persistence.enabled=false&quot; stable/wordpress
-# helm list
-[root@DashSSD ubuntuone]# ./helm list
-NAME          	REVISION	UPDATED                 	STATUS  	CHART          	NAMESPACE
-wordpress-test	1       	Wed Jan 10 17:30:29 2018	DEPLOYED	wordpress-0.7.9	default  
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/07/workingtipsonkismatic/>WorkingTipsOnKismatic</a></h1><span class=post-date>Jan 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=网络规划>网络规划</h3><p>为了模拟kismatic完全离线安装，我们创建一个完全隔离的网络如下:</p><p><img src=/images/2018_01_07_15_01_42_420x391.jpg alt=/images/2018_01_07_15_01_42_420x391.jpg></p><p><img src=/images/2018_01_07_15_02_13_418x482.jpg alt=/images/2018_01_07_15_02_13_418x482.jpg></p><p>详细信息如下：</p><pre><code>10.15.205.1/24
-dhcp: 10.15.205.128 ~ 10.15.205.254
-部署节点:  10.15.205.2
-etcd01: 
-master01:
-worker01:
-</code></pre><p>说明：
-设置dhcp是为了让虚拟机在启动的时候自动获得一个地址，实际上在部署过程中我们都会手动修改节点的
-IP地址以与kismatic的配置相匹配。</p><h3 id=准备工作>准备工作</h3><h4 id=centos7-base镜像>CentOS7 Base镜像</h4><ul><li>CentOS 7: <code>CentOS-7-x86_64-Minimal-1708.iso</code> 最小化安装.<br>安装时注意事项： 不要选择swap分区，否则在默认部署kismatic时会提示失败。<br>安装完毕后，关闭selinux, 关闭firewalld服务。<br>将<code>kismaticuser.key.pub</code>注入到系统目录下,
-这里的系统目录指的是<code>/root/.ssh/authorized_keys</code>，
-或者自己用户的<code>/home/xxxxxx/.ssh/authorized_keys</code>.</li></ul><p>准备完毕后，关闭此虚拟机，将其虚拟磁盘作为base盘, 用于创建其他节点。</p><h4 id=部署节点仓库registry>部署节点(仓库+Registry)</h4><p>镜像节点是部署成功与否的关键，在这个节点上，我们将创建用于部署kismatic的所有
-CentOS仓库镜像，并搭建基于Docker Registry的私有仓库。</p><p>该节点设置为1核cpu，1G内存, IP为<code>10.15.205.2</code>。</p><pre><code>$ qemu-img create -f qcow2 -b CentOS7_Base/CentOS7Base.qcows2 Deployment.qcow2
-Formatting 'Deployment.qcow2', fmt=qcow2 size=214748364800 backing_file=CentOS7_Base/CentOS7Base.qcows2 cluster_size=65536 lazy_refcounts=off refcount_bits=16
-$ ls
-CentOS7_Base  Deployment.qcow2
-</code></pre><p>可以使用<code>nmtui</code>来更改其Ip地址/网关等, 注意地址填写为<code>10.15.205.2/24</code>.</p><p><img src=/images/2018_01_07_15_58_01_690x383.jpg alt=/images/2018_01_07_15_58_01_690x383.jpg></p><p>在主机(10.15.205.1，即我们运行libvirt/kvm的机器)上，从镜像回来的仓库目录下，用python建立一个简单的http服务器，用于初始化安装：</p><pre><code>$ ls
-base  docker  gluster  kubernetes  updates
-$ python2 -m SimpleHTTPServer 8666
-</code></pre><p>进入到虚拟机里，更改repo配置:</p><pre><code>[root@deployment yum.repos.d]# mkdir back
-[root@deployment yum.repos.d]# mv * back
-mv: cannot move ‘back’ to a subdirectory of itself, ‘back/back’
-[root@deployment yum.repos.d]# vim base.repo
-[base]
-name=Base
-baseurl=http://10.15.205.1:8666/base
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[updates]
-name=Updates
-baseurl=http://10.15.205.1:8666/updates
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[docker]
-name=Docker
-baseurl=http://10.15.205.1:8666/docker
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[kubernetes]
-name=Kubernetes
-baseurl=http://10.15.205.1:8666/kubernetes
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[gluster]
-name=gluster
-baseurl=http://10.15.205.1:8666/gluster
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[root@deployment yum.repos.d]# yum makecache
-</code></pre><p>该台服务器需担任两个角色，镜像服务器和仓库服务器，首先我们来配置仓库服务器:</p><pre><code># yum install yum-utils httpd createrepo
-# systemctl enable httpd
-# systemctl start httpd
-</code></pre><p>host机器上打开<code>http://10.15.205.2</code>, 看到以下画面说明仓库服务器安装成功:</p><p><img src=/images/2018_01_07_16_08_22_727x424.jpg alt=/images/2018_01_07_16_08_22_727x424.jpg></p><p>建立仓库很简单，参考:</p><p><a href=https://github.com/apprenda/kismatic/blob/master/docs/disconnected_install.md>https://github.com/apprenda/kismatic/blob/master/docs/disconnected_install.md</a></p><p>使用reposync将远端仓库的内容镜像到本地即可。</p><p>例如:</p><pre><code>[root@deployment html]# ls
-base  docker  gluster  kubernetes  updates
-[root@deployment html]# ls base/
-Packages  repodata
-</code></pre><p>则看到的仓库如下：</p><p><img src=/images/2018_01_07_16_11_31_472x291.jpg alt=/images/2018_01_07_16_11_31_472x291.jpg></p><p>接下来开始创建registry仓库，这里有一个bug，就是需要container-selinux-2.21-1.el7.noarch.rpm这个包。
-我们手动从网站下载，然后安装之:</p><pre><code># yum install -y container-selinux-2.21-1.el7.noarch.rpm
-# yum install -y docker-ce
-</code></pre><p>因为我们的服务需要用到<code>docker-compose</code>，短时间连通网络并安装<code>docker-compose</code>:</p><pre><code># wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
-# yum install -y python-pip
-# pip install docker-compose
-</code></pre><p>预装入本地镜像(以下的命令并不能真正运行，是我自己的批量导入脚本)。</p><pre><code>for i in `ls *.tar`
-do 
-	docker load&lt;$i
-	docker tag.....
-done
-</code></pre><p>我们将参考这篇文章来设置好docker-registry mirror:</p><p><a href=https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04>https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04</a></p><p>配置好以后的文件夹直接就可以迁移到别的机器上，事实上，我的位于Centos7服务器上的目录正是从一台Ubuntu
-机器上迁移过来的，注意在配置签名的时候需要指定域名，而后，在需使用该docker registry的机器上需要对应添加<code>/etc/hosts</code>中的条目:</p><pre><code># vim /etc/hosts
-10.15.205.2 mirror.xxxx.com
-# docker login mirror.xxxx.com
-Username (clouder): clouder
-Password: 
-Login Succeeded
-</code></pre><p>确认服务可用以后，我们可以使用systemd将docker-compose启动的服务添加为系统服务，这样每次重新
-启动机器后，我们的registry服务也将随机器启动而启动:</p><pre><code># vim /etc/systemd/system/docker-compose.service 
-[Unit]
-Description=DockerCompose
-After=docker.service
-Requires=docker.service
-
-[Service]
-ExecStart=/usr/bin/docker-compose -f /docker-registry/docker-compose.yml up -d
-
-[Install]
-WantedBy=multi-user.target
-# systemctl enable docker-compose.service
-# systemctl start docker-compose.service
-</code></pre><h4 id=节点机准备>节点机准备</h4><p>需要准备三台节点机，创建如下:</p><pre><code># qemu-img create -f qcow2 -b CentOS7_Base/CentOS7Base.qcows2 etcd01.qcow2
-# qemu-img create -f qcow2 -b CentOS7_Base/CentOS7Base.qcows2 master01.qcow2
-# qemu-img create -f qcow2 -b CentOS7_Base/CentOS7Base.qcows2 worker01.qcow2
-</code></pre><p>可以在已有的虚拟机基础上稍加修改，即可得到新的三台机器:</p><pre><code># sudo virsh dumpxml kismatic_deployment&gt;template.xml
-# cp template.xml etcd01.xml
-# vim etcd01.xml
-# sudo virsh define etcd01.xml
-Domain kismatic_etcd01 defined from etcd01.xml
-</code></pre><p>进入到系统后，配置仓库，配置好<code>/etc/hosts</code>下的条目，节点机即做完准备。</p><h3 id=部署>部署</h3><p>配置过程以后再写。</p><h3 id=使用集群>使用集群</h3><p>集群部署完成后，使用<code>./kismatic dashboard</code>来访问kubernetes的dashboard:</p><p><img src=/images/2018_01_08_16_11_55_550x654.jpg alt=/images/2018_01_08_16_11_55_550x654.jpg></p><p>根据提示配置好kubeconfig文件即可。</p><h3 id=镜像仓库使用>镜像仓库使用</h3><p>要使用镜像仓库作为集群的中心仓库，外围机器（用于上传和管理镜像的机器）需要做以下设置（以DEBIAN为例）：</p><pre><code># mkdir -p /usr/local/share/ca-certificates/docker-dev-cert/
-# cp KISMATIC_FOLDER/devdockerCA.crt /usr/local/share/ca-certificates/docker-dev-cert/
-# update-ca-certificates
-# systemctl restart docker
-# echo &quot;10.15.205.113 mirror.xxxx.com&quot;&gt;&gt;/etc/hosts
-# docker login mirror.xxxxx.com
-Username: clouder
-Password: 
-Login Succeeded
-</code></pre><p>Thus you could directly push images to the registry mirror.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/05/pdnsforarchlinux/>pdnsForArchLinux</a></h1><span class=post-date>Jan 5, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>For avoiding dns resolving pollution, I need to configure pdnsd for my
-archlinux workstation, following are the steps:</p><pre><code># pacman -S pdnsd
-# cp /usr/share/doc/pdnsd/pdnsd.conf /etc
-# vim /etc/pdnsd.conf
-</code></pre><p>The configuration file is listed as:</p><pre><code>global {
-	perm_cache=10240;
-	cache_dir=&quot;/var/cache/pdnsd&quot;;
-#	pid_file = /var/run/pdnsd.pid;
-	run_as=&quot;pdnsd&quot;;
-	server_ip = 127.0.0.1;  # Use eth0 here if you want to allow other
-				# machines on your network to query pdnsd.
-	server_port=53;
-	status_ctl = on;
-#	paranoid=on;       # This option reduces the chance of cache poisoning
-	                   # but may make pdnsd less efficient, unfortunately.
-	query_method=tcp_only;
-	#min_ttl=15m;       # Retain cached entries at least 15 minutes.
-	#max_ttl=1w;        # One week.
-	#timeout=10;        # Global timeout option (10 seconds).
-	#neg_domain_pol=on;
-	#udpbufsize=1024;   # Upper limit on the size of UDP messages.
-    neg_domain_pol = off;    
-    paranoid = on;    
-    par_queries = 1;    
-    min_ttl = 1d;    
-    max_ttl = 5d;    
-    timeout = 10; 
-}
-
-# The following section is most appropriate if you have a fixed connection to
-# the Internet and an ISP which provides good DNS servers.
-server {
-	label= &quot;routine&quot;;
-	ip = 223.5.5.5;  # Put your ISP's DNS-server address(es) here.
-#	proxy_only=on;     # Do not query any name servers beside your ISP's.
-	                   # This may be necessary if you are behind some
-	                   # kind of firewall and cannot receive replies
-	                   # from outside name servers.
-	timeout=5;         # Server timeout; this may be much shorter
-			   # that the global timeout option.
-#	uptest=if;         # Test if the network interface is active.
-#	interface=eth0;    # The name of the interface to check.
-#	interval=10m;      # Check every 10 minutes.
-#	purge_cache=off;   # Keep stale cache entries in case the ISP's
-#			   # DNS servers go offline.
-#	edns_query=yes;    # Use EDNS for outgoing queries to allow UDP messages
-#			   # larger than 512 bytes. May cause trouble with some
-#			   # legacy systems.
-#	exclude=.thepiratebay.org,  # If your ISP censors certain names, you may
-#		.thepiratebay.se,   # want to exclude them here, and provide an
-#		.piratebay.org,	    # alternative server section below that will
-#		.piratebay.se;	    # successfully resolve the names.
-   reject = 74.125.127.102,
-       74.125.155.102,  
-       74.125.39.102,  
-       74.125.39.113,  
-       209.85.229.138,  
-       128.121.126.139,  
-       159.106.121.75,  
-       169.132.13.103,  
-       192.67.198.6,  
-       202.106.1.2,  
-       202.181.7.85,  
-       203.161.230.171,  
-       203.98.7.65,  
-       207.12.88.98,  
-       208.56.31.43,  
-       209.145.54.50,  
-       209.220.30.174,  
-       209.36.73.33,  
-       211.94.66.147,  
-       213.169.251.35,  
-       216.221.188.182,  
-       216.234.179.13,  
-       243.185.187.39,  
-       37.61.54.158,  
-       4.36.66.178,  
-       46.82.174.68,  
-       59.24.3.173,  
-       64.33.88.161,  
-       64.33.99.47,  
-       64.66.163.251,  
-       65.104.202.252,  
-       65.160.219.113,  
-       66.45.252.237,  
-       69.55.52.253,  
-       72.14.205.104,  
-       72.14.205.99,  
-       78.16.49.15,  
-       8.7.198.45,  
-       93.46.8.89,  
-       37.61.54.158,  
-       243.185.187.39,  
-       190.93.247.4,  
-       190.93.246.4,  
-       190.93.245.4,  
-       190.93.244.4,  
-       65.49.2.178,  
-       189.163.17.5,  
-       23.89.5.60,  
-       49.2.123.56,  
-       54.76.135.1,  
-       77.4.7.92,  
-       118.5.49.6,  
-       159.24.3.173,  
-       188.5.4.96,  
-       197.4.4.12,  
-       220.250.64.24,  
-       243.185.187.30,  
-       249.129.46.48,  
-       253.157.14.165;  
-   reject_policy = fail;  
-   exclude = &quot;.google.com&quot;,  
-       &quot;.cn&quot;,
-       &quot;.baidu.com&quot;,
-       &quot;.qq.com&quot;,
-       &quot;.gstatic.com&quot;,  
-       &quot;.googleusercontent.com&quot;,  
-       &quot;.googlepages.com&quot;,  
-       &quot;.googlevideo.com&quot;,  
-       &quot;.googlecode.com&quot;,  
-       &quot;.googleapis.com&quot;,  
-       &quot;.googlesource.com&quot;,  
-       &quot;.googledrive.com&quot;,  
-       &quot;.ggpht.com&quot;,  
-       &quot;.youtube.com&quot;,  
-       &quot;.youtu.be&quot;,  
-       &quot;.ytimg.com&quot;,  
-       &quot;.twitter.com&quot;,  
-       &quot;.facebook.com&quot;,  
-       &quot;.fastly.net&quot;,  
-       &quot;.akamai.net&quot;,  
-       &quot;.akamaiedge.net&quot;,  
-       &quot;.akamaihd.net&quot;,  
-       &quot;.edgesuite.net&quot;,  
-       &quot;.edgekey.net&quot;;  
-}
-
-server {  
-   # Better setup dns server(DON'T USE PORT 53) on your own vps for faster proxying  
-   label = &quot;special&quot;;
-   ip = 208.67.222.222,208.67.220.220;
-   port = 5353;
-   proxy_only = on;  
-   timeout = 5;  
-}  
-</code></pre><p>Then you have to enable and start the pdnsd service via:</p><pre><code># systemctl enable pdnsd
-# systemctl start pdnsd
-# vim /etc/resolv.con
-nameserver 127.0.0.1
-# chattr +i /etc/resolv.conf
-</code></pre><p>you could use dig for testing your pdnsd configuration.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/04/usecrontabforrunningtasks/>UseCrontabForRunningTasks</a></h1><span class=post-date>Jan 4, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>If I&rsquo;d wanna to run the same tasks on several machine at the certain time, I
-could do following tricks:</p><pre><code># crontab -l
-# crontab /root/mycron
-</code></pre><p>While you could set non-password login among those machines, and transfer the
-same crontab files to these machine.</p><pre><code>scp /root/mycron root@192.168.10.22:/root
-scp /root/mycron root@192.168.10.2X:/root
-scp /root/mycron root@192.168.10.2X:/root
-scp /root/mycron root@192.168.10.2X:/root
-scp /root/mycron root@192.168.10.2X:/root
-</code></pre><p>You cron file would be seen like following:</p><pre><code># cat /root/mycron
-59 14 * * * /root/benchmark.sh
-</code></pre><p>this means the scripts of <code>/root/benchmark.sh</code> would be run at 14:59 AM. In
-this file you could do whatever you want.</p><p><img src=/images/2018_01_04_17_18_39_448x169.jpg alt=/images/2018_01_04_17_18_39_448x169.jpg></p><h3 id=sometips-for-virtualbox>SomeTips For Virtualbox</h3><p><a href=https://www.virtualbox.org/manual/ch09.html>https://www.virtualbox.org/manual/ch09.html</a></p><pre><code>9.11.4. Binding NAT sockets to a specific interface
-By default, VirtualBox's NAT engine will route TCP/IP packets through the default interface assigned by the host's TCP/IP stack. (The technical reason for this is that the NAT engine uses sockets for communication.) If, for some reason, you want to change this behavior, you can tell the NAT engine to bind to a particular IP address instead. Use the following command:
-
-VBoxManage modifyvm &quot;VM name&quot; --natbindip1 &quot;10.45.0.2&quot;
-After this, all outgoing traffic will be sent through the interface with the IP address 10.45.0.2. Please make sure that this interface is up and running prior to this assignment.
-</code></pre><p>Some reference topics:</p><p><a href="https://forums.virtualbox.org/viewtopic.php?f=6&t=81631">https://forums.virtualbox.org/viewtopic.php?f=6&t=81631</a></p><p><a href="https://forums.virtualbox.org/viewtopic.php?f=1&t=38879">https://forums.virtualbox.org/viewtopic.php?f=1&t=38879</a></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/03/hugoandtravisconfiguration/>HugoAndTravisConfiguration</a></h1><span class=post-date>Jan 3, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>hugo
-升级到v0.33后，生成的静态网站里缺少了index.html等HTML文件，原因不明。恰好我在travis上的编译流程有些繁琐，每次都需要花费5分钟以上生成整个网站，于是我调研了一下更好的解决方案，用于生成博客静态网站。</p><p>Issue:</p><p><img src=/images/2018_01_03_11_14_02_828x601.jpg alt=/images/2018_01_03_11_14_02_828x601.jpg></p><p>无法正常显示的网页:</p><p><img src=/images/2018_01_03_11_14_25_829x531.jpg alt=/images/2018_01_03_11_14_25_829x531.jpg></p><h3 id=准备>准备</h3><p>以前的hugo源代码我直接放在某个仓库里，建了两个分支source和master，
-source用于存放源代码，master则是编译后的静态网站结果，编译完成以后，直接发布在github
-page上。</p><p>每一次编译都需要推送代码到travis上，在travis的容器里安装好hugo，
-安装hugo的方式是直接<code>go get -u -v</code>,
-这样相当于每次编译网站都需要预先编译出来一个hugo，因而比较耗时。</p><p>为了避免这种繁琐的过程，我建立一个新的仓库，blogsource，将以前的仓库清空,
-重新组织目录结构.</p><p>在github上建立一个token, 注意选中其repo选项:</p><p><img src=/images/2018_01_03_11_14_38_674x523.jpg alt=/images/2018_01_03_11_14_38_674x523.jpg></p><p>得到的token如下，我们将复制这个数值，后面在travisCI中需要填到:</p><p><img src=/images/2018_01_03_11_14_48_831x372.jpg alt=/images/2018_01_03_11_14_48_831x372.jpg></p><p>在travisci的环境变量中，手动添加我们刚才生成的token:</p><p><img src=/images/2018_01_03_11_16_06_1247x346.jpg alt=/images/2018_01_03_11_16_06_1247x346.jpg></p><h3 id=代码重架构>代码重架构</h3><p>目录架构如下：</p><p><img src=/images/2018_01_03_11_17_20_681x240.jpg alt=/images/2018_01_03_11_17_20_681x240.jpg></p><p>其中binaries下是我们手动下载的hugo可执行文件，下载地址在:</p><p><a href=https://github.com/gohugoio/hugo/releases>https://github.com/gohugoio/hugo/releases</a></p><p>我这里选择的是v31.1的Linux-64.tar.gz, 下载完毕后，直接解压到此目录下即可。</p><p>hugo原有的配置文件不需要变化，所需要变化的是我们的.travis.yaml文件。</p><h3 id=travis配置文件>travis配置文件</h3><p>简单起见，下面直接贴出源代码。</p><pre><code>addons:
-  apt:
-    packages:
-      - python-pygments
-
-install:
-  - rm -rf public || exit 0
-
-script:
-  - cd src
-  - ../binaries/hugo --theme=hyde-a
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  local_dir: public
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-  on:
-    branch: master
-  repo: purplepalmdash/purplepalmdash.github.io
-  target_branch: master
-</code></pre><p>注意到上面的deploy环节，使用到了我们上面生成的token,
-而每次编译完成以后，直接推送到<code>purplepalmdash/purplepalmdash.github.io</code>仓库的master分支，按照github的说明，这个分支直接提供了博客网站。</p><h3 id=更改一些源文件>更改一些源文件</h3><p>现在github
-page已经完全支持https了，而之前我们的网站使用的是http方式，为此，我们的css文件配置需要有以下的修改，主要是在我的模板文件中定义:</p><p><img src=/images/2018_01_03_11_22_13_1072x880.jpg alt=/images/2018_01_03_11_22_13_1072x880.jpg></p><p>更改完毕以后，每次就可以使用https来访问网站了。</p><h3 id=travisci自编译>travisCI自编译</h3><p>去掉以前的travisCI配置，更新一个新的配置.</p><p><img src=/images/2018_01_03_11_23_37_482x392.jpg alt=/images/2018_01_03_11_23_37_482x392.jpg></p><p>完整的配置应该如下:</p><p><img src=/images/2018_01_03_11_24_02_847x734.jpg alt=/images/2018_01_03_11_24_02_847x734.jpg></p><p>现在每次针对代码库blogsource的提交，将自动触发博客的编译，并自动更新最终的页面。</p><h3 id=时间>时间</h3><p>每次的编译时间差不多在一分钟之内。</p><p><img src=/images/2018_01_03_11_25_24_846x393.jpg alt=/images/2018_01_03_11_25_24_846x393.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/67/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/67/>67</a></li><li class="page-item active"><a class=page-link href=/page/68/>68</a></li><li class=page-item><a class=page-link href=/page/69/>69</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/69/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+Tiller (the Helm server-side component) has been installed into your Kubernetes Cluster.
+Happy Helming!
+$ helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Skip local chart repository
+...Successfully got an update from the &quot;stable&quot; chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+$ helm ls
+$ helm search
+</code></pre><h3 id=monocular>monocular</h3><p>In minikube, we should use hostNetwork mode:</p><p>Prerequisites:</p><pre><code>$ helm install stable/nginx-ingress --set controller.hostNetwork=true
+</code></pre><p>If on kismatic, run following:</p><pre><code>$ helm install stable/nginx-ingress --set controller.hostNetwork=true,rbac.create=true
+</code></pre><p>Then install the mocular via following commands:</p><pre><code>$ helm repo add monocular https://kubernetes-helm.github.io/monocular
+$ helm install monocular/monocular
+</code></pre><p>Check the installed packages and its running status:</p><pre><code>$ helm ls
+NAME             	REVISION	UPDATED                 	STATUS  	CHART               	NAMESPACE
+fallacious-jaguar	1       	Thu Jan 11 11:56:21 2018	DEPLOYED	nginx-ingress-0.8.23	default  
+incindiary-prawn 	1       	Thu Jan 11 11:58:42 2018	DEPLOYED	monocular-0.5.0     	default  
+$ kubectl get pods
+NAME                                                              READY     STATUS              RESTARTS   AGE
+fallacious-jaguar-nginx-ingress-controller-55cd4578cb-vpn2q       1/1       Running             0          3m
+fallacious-jaguar-nginx-ingress-default-backend-5b7d684c6fdzk2m   1/1       Running             0          3m
+hello-minikube-7844bdb9c6-596f9                                   1/1       Running             4          11d
+incindiary-prawn-mongodb-5d96bdcbc5-47js2                         0/1       ContainerCreating   0          37s
+incindiary-prawn-monocular-api-7758c78d8f-j64qx                   0/1       ContainerCreating   0          37s
+incindiary-prawn-monocular-api-7758c78d8f-kb7nq                   0/1       ContainerCreating   0          37s
+incindiary-prawn-monocular-prerender-65b576dd76-jwvmc             0/1       ContainerCreating   0          37s
+incindiary-prawn-monocular-ui-5545f44ffb-7557l                    0/1       ContainerCreating   0          37s
+incindiary-prawn-monocular-ui-5545f44ffb-bltmc                    0/1       ContainerCreating   0          37s
+</code></pre><p>Get the deployment:</p><pre><code># kubectl get pods --watch
+# kubectl get ingress
+NAME                         HOSTS     ADDRESS          PORTS     AGE
+incindiary-prawn-monocular   *         192.168.99.100   80        2h
+# firefox 192.168.99.100
+</code></pre><p>Displayed image:</p><h3 id=deploy-wordpress>Deploy Wordpress</h3><p>Deploy with following commands:</p><pre><code># helm install --name=wordpress-test1 --set &quot;persistence.enabled=false,mariadb.persistence.enabled=false,serviceType=ClusterIP&quot; stable/wordpress
+</code></pre><p>Examine the deployment:</p><pre><code># kubectl get pods | grep wordpress
+wordpress-test1-mariadb-56c66786cc-2nj8c                          0/1       PodInitializing     0          25s
+wordpress-test1-wordpress-6c949bdcb4-22fk4                        0/1       ContainerCreating   0          25s
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/67/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/67/>67</a></li><li class="page-item active"><a class=page-link href=/page/68/>68</a></li><li class=page-item><a class=page-link href=/page/69/>69</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/69/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

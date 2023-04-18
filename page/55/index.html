@@ -1,269 +1,192 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/08/23/brigednetworkissue/>BrigedNetworkIssue</a></h1><span class=post-date>Aug 23, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=problem>Problem</h3><p>br0->eth0, kvm bridged to br0.</p><pre><code>br0: 192.192.189.128
-kvm vm address: 192.192.189.109
-vm-&gt;ping-&gt;br0, OK
-vm-&gt;ping-&gt;192.192.189.24/0, Failed
-</code></pre><h3 id=investigation>Investigation</h3><p>Examine the forward and ebtables:</p><pre><code># cat /proc/sys/net/ipv4/ip_forward
-1
-# ebtables -L
-Should be ACCEPT
-</code></pre><p>Use following command for examine the dropped package:</p><pre><code># iptables -x -v --line-numbers -L FORWARD 
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/09/11/excel%E7%AE%80%E5%8D%95%E5%8F%AF%E8%A7%86%E5%8C%96/>Excel简单可视化</a></h1><span class=post-date>Sep 11, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>公司人事变更，当然大家会八卦一下各个部门人数分布，接下来就是Excel可视化时间。</p><p>原文件:</p><p><img src=/images/2018_09_11_11_06_38_589x538.jpg alt=/images/2018_09_11_11_06_38_589x538.jpg></p><p>几百号人，怕是要看死的节奏。祭出excel公式，</p><p>Excel表的某个空白位置，点表格，然后在Fx那个框里填入表达式，例如:</p><pre><code>=COUNTIF(C:C, &quot;部门一&quot;)
+=COUNTIF(C:C, &quot;部门二&quot;)
+=COUNTIF(C:C, &quot;部门三&quot;)
+=COUNTIF(C:C, &quot;部门四&quot;)
+</code></pre><p><img src=/images/2018_09_11_11_10_49_227x177.jpg alt=/images/2018_09_11_11_10_49_227x177.jpg></p><p>填好统计数目后，点击插入饼图:</p><p><img src=/images/2018_09_11_11_11_31_455x531.jpg alt=/images/2018_09_11_11_11_31_455x531.jpg></p><p>各位大佬实力对比图做起来也是相似的：</p><p><img src=/images/2018_09_11_11_13_14_445x281.jpg alt=/images/2018_09_11_11_13_14_445x281.jpg></p><p>偶尔做做这种图，想起了古惑仔：</p><p><img src=/images/2018_09_11_11_17_32_514x295.jpg alt=/images/2018_09_11_11_17_32_514x295.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/09/05/workingtipsonnodejsapp/>WorkingTipsOnNodeJSApp</a></h1><span class=post-date>Sep 5, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>最先是在VPS上用docker开发，遇到跨域问题，专用虚拟机开发。</p><pre><code># vagrant init bento/ubuntu-18.04
+更改IP为192.168.33.128/24, 2 Core/ 2G
+# vagrant up
+# vagrant ssh
+</code></pre><p>安装必要的开发环境。</p><pre><code># sudo apt-get install -y npm nodejs
+# npm install -g express
+# npm install -g express-generator
+# which express
+/usr/local/bin/express
+</code></pre><p>创建一个名称为<code>countdown</code>的express项目:</p><pre><code># express -v ejs countdown
+# cd countdown/
+# ls
+app.js  bin  package.json  public  routes  views
+</code></pre><p>安装依赖:</p><pre><code># npm install -d
+# npm install socket.io express --save
+</code></pre><p>此时可以查看<code>package.json</code>的内容:</p><pre><code>{
+  &quot;name&quot;: &quot;countdown&quot;,
+  &quot;version&quot;: &quot;0.0.0&quot;,
+  &quot;private&quot;: true,
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;node ./bin/www&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;cookie-parser&quot;: &quot;~1.4.3&quot;,
+    &quot;debug&quot;: &quot;~2.6.9&quot;,
+    &quot;ejs&quot;: &quot;~2.5.7&quot;,
+    &quot;express&quot;: &quot;^4.16.3&quot;,
+    &quot;http-errors&quot;: &quot;~1.6.2&quot;,
+    &quot;morgan&quot;: &quot;~1.9.0&quot;,
+    &quot;socket.io&quot;: &quot;^2.1.1&quot;
+  }
+}
+</code></pre><p>我们需要使用layout(比较陈旧的用法），因而执行以下操作:</p><pre><code># npm install ejs-locals --save
+</code></pre><h3 id=代码更改>代码更改</h3><p>在<code>// view engine setup</code>前添加以下代码，作用是用于指定当前app的服务端口，并定义socket.io的模块引入：</p><pre><code>var engine = require('ejs-locals');
 
-DOCKER-ISOLATION
-</code></pre><p>Not because of the docker forward, but we have to add br0->br0 rules</p><h3 id=solution>Solution</h3><p>Add one rule:</p><pre><code># iptables -A FORWARD -i br0 -o br0 -j ACCEPT
-# apt-get install iptables-persistent
-# vim /etc/iptables/rules.v4
-*filter
--A FORWARD -i br0 -o br0 -j ACCEPT
-COMMIT
-</code></pre><h3 id=furthermulticast>Further(Multicast)</h3><p>Add rc.local systemd item:</p><pre><code># vim /etc/systemd/system/rc-local.service
-[Unit]
-Description=/etc/rc.local
-ConditionPathExists=/etc/rc.local
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+//(server,{
+//  transports  : [ 'xhr-polling' ]
+//});
 
-[Service]
-Type=forking
-ExecStart=/etc/rc.local start
-TimeoutSec=0
-StandardOutput=tty
-RemainAfterExit=yes
-SysVStartPriority=99
+server.listen(5000);
+</code></pre><p>// Todo: xhr-polling的意义？</p><p>在view engine setup中添加ejs-local的用法,
+我们这里将指定layout.ejs为我们模板中的布局文件:</p><pre><code>// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view options', { layout:'views/layout.ejs' });
+app.engine('ejs', engine);
+app.set('view engine', 'ejs');
+</code></pre><p>接着我们引入状态变量及对io的用法:</p><pre><code>// status indicator
+var status = &quot;All is well.&quot;;
 
-[Install]
-WantedBy=multi-user.target
-</code></pre><p>The <code>/etc/rc.local</code> should be like following:</p><pre><code>#!/bin/sh -e
-#
-# rc.local
-#
-# This script is executed at the end of each multiuser runlevel.
-# Make sure that the script will &quot;exit 0&quot; on success or any other
-# value on error.
-#
-# In order to enable or disable this script just change the execution
-# bits.
-#
-# By default this script does nothing.
- 
-exit 0
-</code></pre><p>Use <code>chmod 777 /etc/rc.local</code> to let it executable.</p><p>Systemd enable and run:</p><pre><code># systemctl enable rc-local
-# systemctl start rc-local
-</code></pre><p>Enable multicast, add one line into <code>/etc/rc.local</code>:</p><pre><code># vim /etc/rc.local
+io.sockets.on('connection', function (socket) {  
+  io.sockets.emit('status', { status: status }); // note the use of io.socket
+s to emit but socket.on to listen
+  socket.on('reset', function (data) {
+    status = &quot;War is imminent!&quot;;
+    io.sockets.emit('status', { status: status });
+  });
+});
+
+module.exports = app;
+</code></pre><p>模板文件定义:</p><pre><code># cat views/layout.ejs 
+&lt;!DOCTYPE html&gt;  
+&lt;html lang=&quot;en&quot;&gt;  
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;
+
+    &lt;!-- HTML5 shim, for IE6-8 support of HTML elements --&gt;
+    &lt;!--[if lt IE 9]&gt;
+      &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+
+    &lt;!-- styles --&gt;
+    &lt;link href=&quot;/stylesheets/main.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;%- body %&gt;
+    &lt;script src=&quot;/socket.io/socket.io.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;/javascripts/libs/jquery.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;/javascripts/main.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;  
+</code></pre><p>以及index.ejs:</p><pre><code># cat views/index.ejs 
+&lt;% layout('layout') -%&gt;
+
+&lt;div id=&quot;status&quot;&gt;&lt;/div&gt;  
+&lt;button id=&quot;reset&quot;&gt;Reset!&lt;/button&gt; 
+</code></pre><p>main.js的定义文件如下:</p><pre><code># vim public/javascripts/main.js
+var socket = io.connect(window.location.hostname);
+
+socket.on('status', function (data) {  
+    $('#status').html(data.status);
+});
+
+$('#reset').click(function() {
+    socket.emit('reset');
+});
+
+</code></pre><p>jquery.js文件如下:</p><pre><code># cd public/javascripts/
+# mkdir libs &amp;&amp; cd libs
+# wget https://code.jquery.com/jquery-3.3.1.js
+# mv jquery-3.3.1.js  jquery.js
+</code></pre><p>main.css文件同样也需要定义:</p><pre><code># vim public/stylesheets/main.css
+内容略过
+</code></pre><p>现在运行<code>node app.js</code>可以看到运行结果:</p><p><img src=/images/2018_09_05_15_26_04_464x176.jpg alt=/images/2018_09_05_15_26_04_464x176.jpg></p><h3 id=改进>改进</h3><p>timer的改进，具体的代码已经上传到github上。</p><p>Todo: 多个Timer的添加。<br>Todo: 跨域问题的解决。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/09/04/internetsharingforrpi/>InternetSharingForRPI</a></h1><span class=post-date>Sep 4, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=diagram>Diagram</h3><p><img src=/images/2018_09_04_16_41_05_678x430.jpg alt=/images/2018_09_04_16_41_05_678x430.jpg></p><h3 id=command>Command</h3><p>RPI: 192.168.0.16/24<br>Laptop USB Ethernet Adapter: 192.168.0.33/24</p><p>Laptop:</p><pre><code># sudo iptables -t nat -A POSTROUTING -s 192.168.0.16/24 ! -d 192.168.0.16/24 -j MASQUERADE
+</code></pre><p>Rpi:</p><pre><code># sudo route delete default gw 192.168.0.1
+# sudo route add default gw 192.168.0.33
+# sudo vim /etc/resolv.conf
+nameserver 192.168.42.129
+</code></pre><p>Thus your rpi could directly go to the internet.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/09/04/workingtipsonrpirf/>WorkingTipsOnRPIRF</a></h1><span class=post-date>Sep 4, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=连线图>连线图:</h3><p>RFID-RC522 board - Raspberry PI 1 Generation.</p><pre><code>SDA connects to Pin 24.
+SCK connects to Pin 23.
+MOSI connects to Pin 19.
+MISO connects to Pin 21.
+GND connects to Pin 6.
+RST connects to Pin 22.
+3.3v connects to Pin 1.
+</code></pre><p>OR:</p><pre><code>(RC522) --- (GPIO RaspPi)
+3.3v --- 1 (3V3)
+SCK --- 23 (GPIO11)
+MOSI --- 19 (GPIO10)
+MISO --- 21 (GPIO09)
+GND --- 25 (Ground)
+RST --- 22 (GPIO25)
+</code></pre><h3 id=rpi-配置-spi>RPI 配置 SPI</h3><p>打开配置窗口:</p><pre><code># sudo raspi-config
+</code></pre><p><img src=/images/2018_09_04_16_45_35_866x313.jpg alt=/images/2018_09_04_16_45_35_866x313.jpg></p><p>鼠标点击<code>5 Interfacing Options</code>, 选择<code>P4 SPI</code>:</p><p><img src=/images/2018_09_04_16_46_07_839x233.jpg alt=/images/2018_09_04_16_46_07_839x233.jpg></p><p>选择<code>Yes</code>后确认，打开rpi的SPI。</p><p>重启后检查spi是否被正确加载:</p><pre><code># lsmod | grep spi
+spidev                  7034  0
+spi_bcm2835             7424  0
+</code></pre><h3 id=rpi-configuration>RPI Configuration</h3><p>crontab中修改了<code>/bin/pdnsd/sh</code>文件，
+<code>/etc/rc.local</code>文件中去掉了有关redsocks和pdnsd的选项。之后重启。</p><h3 id=python示例>Python示例</h3><p>可以参考：</p><p><a href=https://pimylifeup.com/raspberry-pi-rfid-rc522/>https://pimylifeup.com/raspberry-pi-rfid-rc522/</a></p><h3 id=nodejs例子>NodeJS例子</h3><pre><code># mkdir RFID
+# cd RFID
+# wget http://node-arm.herokuapp.com/node_latest_armhf.deb
+# dpkg -i node_latest_armhf.deb
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/08/29/kubespray%E5%85%A8%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2/>Kubespray全离线部署</a></h1><span class=post-date>Aug 29, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>离线部署方案说起来很简单，做起来比较繁琐，把Internet连上一次部署成功，再断开后部署成功一次，那下次就直接能用了。</p><h3 id=在线状态>在线状态</h3><p>前提条件，全翻墙网络，修改Vagrantfile中的操作镜像版本为centos,
+网络接口为calico:</p><pre><code>...
+$os = &quot;centos&quot;
 ...
-echo &quot;0&quot;&gt;/sys/class/net/br0/bridge/multicast_snooping
+$network_plugin = &quot;calico&quot;
+...
+</code></pre><p>因为我们用的centos默认是不缓存安装包的，因而在<code>/etc/yum.conf</code>中需要手动打开其缓存包目录：</p><pre><code># vim /etc/yum.conf
+cachedir=/var/cache/yum/$basearch/$releasever
+keepcache=1
+</code></pre><p>在线部署一次，只要能成功，那么<code>/var/cache/yum/</code>下将缓存所有的rpm包</p><h3 id=离线部署>离线部署</h3><p>拷贝出一个新的离线部署目录，并删除该目录下的.vagrant目录，并修改vagrant的主机名称，否则默认会使用一样的主机名来部署系统, 为避免网络冲突，应该更改离线环境的网段为新网段.</p><pre><code># cp -r kubespray kubespray_centos_offline
+# vim Vagrantfile
+$instance_name_prefix = &quot;k8s-offline-centos&quot;
+$subnet = &quot;172.17.89&quot;
+</code></pre><p>断开Internet连接, <code>vagrant up</code>设置初始化环境。显然会卡在第一步， yum仓库更新.</p><p><img src=/images/2018_08_29_09_16_22_765x736.jpg alt=/images/2018_08_29_09_16_22_765x736.jpg></p><h4 id=离线yum仓库>离线yum仓库</h4><p>在一台在线部署成功的机器上运行以下命令以取回包:</p><pre><code># mkfit /home/vagrant/kubespray_pkgs_ubuntu/
+# find . | grep rpm$ | xargs -I % cp % /home/vagrant/kubespray_pkgs_ubuntu/
+# createrepo_c .
+# scp -r kubespray_pkgs_ubuntu root@172.17.89.1:/web-server-folder
+</code></pre><p>修改ansible playbook:</p><pre><code># vim ./roles/kubernetes/preinstall/tasks/main.yml
+- name: Update package management repo address (YUM)
+  shell: mkdir -p /root/repoback &amp;&amp; mv /etc/yum.repos.d/*.repo /root/repoback &amp;&amp; curl http://172.17.88.1/kubespray_pkgs_ubuntu/kubespray.repo&gt;/etc/yum.repos.d/kubespray.repo
 
-exit 0
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/08/20/%E5%86%85%E7%BD%91%E6%90%AD%E5%BB%BAproxmox/>内网搭建proxmox</a></h1><span class=post-date>Aug 20, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境准备>环境准备</h3><p>Iso使用官方下载的<code>proxmox-ve_5.2-1.iso</code>, CPU/内存配置为16核64G。<br>硬盘配置为- 系统:200G, Ceph存储, 600G<br>一共三台机器，均为虚拟机，位于不同的物理机器上，这点非常重要，如果处于同一机器上，则在线迁移虚拟机容易出现错误，具体表现为，虚拟机迁移完毕以后，被迁移出的那台机器节点将失去反应，节点无法登录。</p><p>CPU我们通过<code>host-passthrough</code>下发到虚拟机里。</p><h3 id=ip地址配置>IP地址配置</h3><p>节点1(zzz_proxmox_127), 位于127服务器，ip为10.33.34.27, hostname为promox127.<br>节点2(zzz_proxmox_128), 位于128服务器，ip为10.33.34.28, hostname为promox128.<br>节点3(zzz_proxmox_129), 位于129服务器，ip为10.33.34.29, hostname为promox129.</p><p>用于Ceph的地址暂时不配置。</p><h3 id=开启multicast>开启multicast</h3><p>proxmox需要各个节点的multicast为可用状态，而默认的virt-manager禁用了该选项，我们使用以下命令来开启虚拟机上的multicast.</p><pre><code>for dev in `ls /sys/class/net/ | grep macvtap`; do
-    ip link set dev $dev allmulticast on
-  done
-</code></pre><h3 id=建立集群>建立集群</h3><p>浏览器访问<code>https://10.33.34.27:8006</code>，选择语言后，页面如下:</p><p><img src=/images/2018_08_20_17_37_10_734x555.jpg alt=/images/2018_08_20_17_37_10_734x555.jpg></p><p>现在只有一个节点:</p><p><img src=/images/2018_08_20_17_37_31_576x326.jpg alt=/images/2018_08_20_17_37_31_576x326.jpg></p><p>27上运行命令, create创建出一个集群，而status则是检查其状态:</p><pre><code># pvecm create firstcluster
-# pvecm status
-</code></pre><p>28/29上分别运行:</p><pre><code># pvecm add 10.33.34.27
-</code></pre><p>添加完毕后的集群如下:</p><p><img src=/images/2018_08_20_17_40_17_476x330.jpg alt=/images/2018_08_20_17_40_17_476x330.jpg></p><h3 id=ceph>Ceph</h3><p>配置IP地址:</p><pre><code># from /etc/network/interfaces
-auto eth2
-iface eth2 inet static
-  address  10.10.10.1
-  netmask  255.255.255.0
-</code></pre><p>修改pveceph的源:</p><pre><code># vi /usr/share/perl5/PVE/CLI/pveceph.pm
-deb .......
-# pveceph install --version luminous
-</code></pre><p>添加存储:</p><p><img src=/images/2018_08_21_12_13_12_666x301.jpg alt=/images/2018_08_21_12_13_12_666x301.jpg></p><p>创建一个pool,</p><p><img src=/images/2018_08_21_12_13_39_301x275.jpg alt=/images/2018_08_21_12_13_39_301x275.jpg></p><p>创建完毕后:</p><p><img src=/images/2018_08_21_12_14_03_915x372.jpg alt=/images/2018_08_21_12_14_03_915x372.jpg></p><h3 id=虚拟机>虚拟机</h3><p>拷贝安装文件<code>ubuntu-16.04.2-server-amd64.iso</code>到<code>/var/lib/vz/template/iso</code>下，
-在27机器上， 然后创建虚拟机。</p><p><img src=/images/2018_08_21_12_17_24_460x214.jpg alt=/images/2018_08_21_12_17_24_460x214.jpg></p><p>选择ISO：</p><p><img src=/images/2018_08_21_12_17_42_668x184.jpg alt=/images/2018_08_21_12_17_42_668x184.jpg></p><p>选择硬盘:</p><p><img src=/images/2018_08_21_12_18_07_638x212.jpg alt=/images/2018_08_21_12_18_07_638x212.jpg></p><p>选择刚创建的虚拟机，点击<code>启动</code>:</p><p><img src=/images/2018_08_21_12_18_51_852x563.jpg alt=/images/2018_08_21_12_18_51_852x563.jpg></p><h3 id=issue>Issue</h3><p>嵌套虚拟化对内核版本的影响，因内网的机器运行的操作系统内核版本较为陈旧，相信可能会有问题。后期将新装服务器来进行。</p><p>新装物理服务器，dhcp得到同一网段地址，而后将继续proxmox的测试。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/08/20/softroutersetup/>SoftRouterSetup</a></h1><span class=post-date>Aug 20, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>设置内网的独立实验网段，需要一个软路由，做转发。</p><h3 id=准备>准备</h3><p>Debian 9.3.0 ISO.<br>虚拟机，1核, 512M, debian系统安装, 20G硬盘。<br>最小化安装 Debian x86_64系统。<br>双网卡，一个连接bridged网络，另一个连接本机上的192.168.122.0/24网络，该网络为虚拟机的默认网络，可通过NAT转换到外头。</p><h3 id=配置>配置</h3><p>安装必要的包:</p><pre><code># apt-get update
-# apt-get install net-tools isc-dhcp-server
-</code></pre><p>配置网络:</p><pre><code># vim /etc//network/interfaces
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
-
-source /etc/network/interfaces.d/*
-
-# The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface
-allow-hotplug ens3
-iface ens3 inet static
-address 192.168.122.254
-netmask 255.255.255.0
-gateway 192.168.122.1
-
-auto ens4
-iface ens4 inet static
-address 10.33.34.1
-netmask 255.255.255.0
-</code></pre><p>配置dhcpd服务器:</p><pre><code># vim /etc/dhcp/dhcpd.conf 
-    # dhcpd.conf
-    #
-    # Sample configuration file for ISC dhcpd
-    #
-    
-    # option definitions common to all supported networks...
-    option domain-name &quot;example.org&quot;;
-    option domain-name-servers ns1.example.org, ns2.example.org;
-    
-    default-lease-time 600;
-    max-lease-time 7200;
-    
-    # The ddns-updates-style parameter controls whether or not the server will
-    # attempt to do a DNS update when a lease is confirmed. We default to the
-    # behavior of the version 2 packages ('none', since DHCP v2 didn't
-    # have support for DDNS.)
-    ddns-update-style none;
-    
-    # If this DHCP server is the official DHCP server for the local
-    # network, the authoritative directive should be uncommented.
-    #authoritative;
-    
-    # Use this to send dhcp log messages to a different log file (you also
-    # have to hack syslog.conf to complete the redirection).
-    #log-facility local7;
-    
-    # No service will be given on this subnet, but declaring it helps the 
-    # DHCP server to understand the network topology.
-    
-    #subnet 10.152.187.0 netmask 255.255.255.0 {
-    #}
-    
-    # This is a very basic subnet declaration.
-    
-    #subnet 10.254.239.0 netmask 255.255.255.224 {
-    #  range 10.254.239.10 10.254.239.20;
-    #  option routers rtr-239-0-1.example.org, rtr-239-0-2.example.org;
-    #}
-    
-    # This declaration allows BOOTP clients to get dynamic addresses,
-    # which we don't really recommend.
-    
-    #subnet 10.254.239.32 netmask 255.255.255.224 {
-    #  range dynamic-bootp 10.254.239.40 10.254.239.60;
-    #  option broadcast-address 10.254.239.31;
-    #  option routers rtr-239-32-1.example.org;
-    #}
-    
-    # A slightly different configuration for an internal subnet.
-    #subnet 10.5.5.0 netmask 255.255.255.224 {
-    #  range 10.5.5.26 10.5.5.30;
-    #  option domain-name-servers ns1.internal.example.org;
-    #  option domain-name &quot;internal.example.org&quot;;
-    #  option routers 10.5.5.1;
-    #  option broadcast-address 10.5.5.31;
-    #  default-lease-time 600;
-    #  max-lease-time 7200;
-    #}
-    
-    # Hosts which require special configuration options can be listed in
-    # host statements.   If no address is specified, the address will be
-    # allocated dynamically (if possible), but the host-specific information
-    # will still come from the host declaration.
-    
-    #host passacaglia {
-    #  hardware ethernet 0:0:c0:5d:bd:95;
-    #  filename &quot;vmunix.passacaglia&quot;;
-    #  server-name &quot;toccata.example.com&quot;;
-    #}
-    
-    # Fixed IP addresses can also be specified for hosts.   These addresses
-    # should not also be listed as being available for dynamic assignment.
-    # Hosts for which fixed IP addresses have been specified can boot using
-    # BOOTP or DHCP.   Hosts for which no fixed address is specified can only
-    # be booted with DHCP, unless there is an address range on the subnet
-    # to which a BOOTP client is connected which has the dynamic-bootp flag
-    # set.
-    #host fantasia {
-    #  hardware ethernet 08:00:07:26:c0:a5;
-    #  fixed-address fantasia.example.com;
-    #}
-    
-    # You can declare a class of clients and then do address allocation
-    # based on that.   The example below shows a case where all clients
-    # in a certain class get addresses on the 10.17.224/24 subnet, and all
-    # other clients get addresses on the 10.0.29/24 subnet.
-    
-    #class &quot;foo&quot; {
-    #  match if substring (option vendor-class-identifier, 0, 4) = &quot;SUNW&quot;;
-    #}
-    
-    #shared-network 224-29 {
-    #  subnet 10.17.224.0 netmask 255.255.255.0 {
-    #    option routers rtr-224.example.org;
-    #  }
-    #  subnet 10.0.29.0 netmask 255.255.255.0 {
-    #    option routers rtr-29.example.org;
-    #  }
-    #  pool {
-    #    allow members of &quot;foo&quot;;
-    #    range 10.17.224.10 10.17.224.250;
-    #  }
-    #  pool {
-    #    deny members of &quot;foo&quot;;
-    #    range 10.0.29.10 10.0.29.230;
-    #  }
-    #}
-    class &quot;kvm&quot; {
-        match if binary-to-ascii(16,8,&quot;:&quot;,substring(hardware, 1, 2)) = &quot;52:54&quot;;
-    }
-    
-    subnet 10.33.34.0	netmask 255.255.255.0 {
-    option routers 10.33.34.1;
-    option subnet-mask 255.255.255.0;
-    option broadcast-address 10.33.34.255;
-    option domain-name-servers 10.33.34.1;
-    option time-offset 0;
-    pool {
-        range 10.33.34.100	10.33.34.200;
-        allow members of &quot;kvm&quot;;
-    }
-    default-lease-time	1209600;
-    max-lease-time 1814400;
-    }
-# vim /etc/default/isc-dhcp-server 
-    # Defaults for isc-dhcp-server (sourced by /etc/init.d/isc-dhcp-server)
-    
-    # Path to dhcpd's config file (default: /etc/dhcp/dhcpd.conf).
-    #DHCPDv4_CONF=/etc/dhcp/dhcpd.conf
-    #DHCPDv6_CONF=/etc/dhcp/dhcpd6.conf
-    
-    # Path to dhcpd's PID file (default: /var/run/dhcpd.pid).
-    #DHCPDv4_PID=/var/run/dhcpd.pid
-    #DHCPDv6_PID=/var/run/dhcpd6.pid
-    
-    # Additional options to start dhcpd with.
-    #	Don't use options -cf or -pf here; use DHCPD_CONF/ DHCPD_PID instead
-    #OPTIONS=&quot;&quot;
-    
-    # On what interfaces should the DHCP server (dhcpd) serve DHCP requests?
-    #	Separate multiple interfaces with spaces, e.g. &quot;eth0 eth1&quot;.
-    INTERFACESv4=&quot;ens4&quot;
-    INTERFACESv6=&quot;&quot;
-</code></pre><p>现在重启服务:</p><pre><code># systemctl restart isc-dhcp-server
-</code></pre><p>重启完毕后，所有bridged的虚拟机将得到同样的地址段的地址。</p><h3 id=转发>转发</h3><p>转发到某网段,更改地址ens3为该网段(192.192.189.109)，然后:</p><pre><code># iptables -t nat -A POSTROUTING -s 10.33.34.0/24 -j SNAT --to-source 192.192.189.109
-</code></pre><p>开启转发:</p><pre><code># vim /etc/sysctl.conf
-net.ipv4.ip_forward=1
-</code></pre><p>安装iptables-persistent:</p><pre><code># apt-get install iptables-persistent
-</code></pre><p>这样就打通了两个网段之间的联系。</p><h3 id=访问网段>访问网段</h3><p>访问该网段，Linux下添加:</p><pre><code># route add -net 10.33.34.0/24 gw 192.192.189.109
-</code></pre><p>Windows:</p><pre><code># route add 10.33.34.1 mask 255.255.255.0 192.192.189.109
-</code></pre><p>But in windows it didn&rsquo;t work.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/08/16/tryproxmox/>TryProxmox</a></h1><span class=post-date>Aug 16, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>iso installation.</p><p><img src=/images/2018_08_16_10_50_16_461x263.jpg alt=/images/2018_08_16_10_50_16_461x263.jpg></p><h3 id=configuration>Configuration</h3><p>Login:</p><p><img src=/images/2018_08_16_10_54_19_398x203.jpg alt=/images/2018_08_16_10_54_19_398x203.jpg>
-Image:</p><p><img src=/images/2018_08_16_10_55_05_524x544.jpg alt=/images/2018_08_16_10_55_05_524x544.jpg></p><p>Another node:</p><p><img src=/images/2018_08_16_11_23_10_487x242.jpg alt=/images/2018_08_16_11_23_10_487x242.jpg></p><h3 id=cluster>Cluster</h3><p>Initial:</p><p><img src=/images/2018_08_16_11_29_44_547x368.jpg alt=/images/2018_08_16_11_29_44_547x368.jpg></p><p>Generation of the information:</p><p><img src=/images/2018_08_16_11_33_06_799x254.jpg alt=/images/2018_08_16_11_33_06_799x254.jpg>
-Join:</p><p><img src=/images/2018_08_16_11_33_29_808x289.jpg alt=/images/2018_08_16_11_33_29_808x289.jpg>
-Install system:</p><p><img src=/images/2018_08_16_11_55_03_711x503.jpg alt=/images/2018_08_16_11_55_03_711x503.jpg></p><h3 id=command>Command</h3><p>After installation, build a cluster using CLI in following commands:</p><p>Management node:</p><pre><code># pvecm create mycluster
-</code></pre><p>Working node, for joing:</p><pre><code># pvecm add 192.168.0.121
-</code></pre><p>Thus you will see the cluster being created as following:</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/08/14/workingtipsonplaywithdockerubuntu/>WorkingTipsOnPlayWithDockerUbuntu</a></h1><span class=post-date>Aug 14, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=dnsmasq-for-ubuntu>dnsmasq for ubuntu</h3><p>systemd-resolved will listen on 53 port, disable it via:</p><pre><code># vim /etc/systemd/resolved.conf
-DNSStubListener=no
-# systemctl enable dnsmasq
-</code></pre><p>Disable the system-resolved.service:</p><pre><code># systemctl disable systemd-resolved.service
-# systemctl stop systemd-resolved.service
-# echo nameserver 192.168.0.15&gt;/etc/resolv.conf
-# chattr -e /etc/resolv.conf
-# chattr +i /etc/resolv.conf
-# ufw disable
-# docker swarm leave
-# docker swarm init
-</code></pre><h3 id=registry-proxy-issue>registry proxy issue</h3><p>Enable the registry proxy will slow down the registry cached image download
-speed, solved it via:</p><pre><code># vim config.yml
-
-....
-#proxy:
-#	remoteurl: https://registry-1.docker.io
-</code></pre><p>Then restart the docker registry service(the docker instance), the pulling
-speed will greatly reduced.</p><h3 id=dind-registry>dind Registry</h3><p>registry mirror should point to a real ip, rather than <code>172.17.0.1</code>, another
-word, you could not use inner docker bridge address for registry usage.</p><h3 id=golang>Golang</h3><p>Go could be directly migration from the old iso distribution.</p><h3 id=cubic-issue>cubic issue</h3><p>Alway use a new directory for customize your new iso distribution!!!!!!</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/54/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/54/>54</a></li><li class="page-item active"><a class=page-link href=/page/55/>55</a></li><li class=page-item><a class=page-link href=/page/56/>56</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/56/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+- name: Update package management cache (YUM)
+</code></pre><p>继续安装, 会在安装docker处失败。</p><h4 id=docker安装>Docker安装</h4><p>默认会添加<code>docker.repo</code>定义，因为我们在以前已经离线缓存了docker包，这里注释掉:</p><pre><code># vim ./roles/kubernetes/preinstall/tasks/main.yml
+    #- name: Configure docker repository on RedHat/CentOS
+    #  template:
+    #    src: &quot;rh_docker.repo.j2&quot;
+    #    dest: &quot;{{ yum_repo_dir }}/docker.repo&quot;
+    #  when: ansible_distribution in [&quot;CentOS&quot;,&quot;RedHat&quot;] and not is_atomic
+</code></pre><p>接下来继续安装，会在<code>Download containers if pull is required or told to always pull (all nodes)</code>处失败.</p><h3 id=docker镜像>Docker镜像</h3><p>offline的情形还没有试出来，暂时禁止自动下载，手动上传到节点。</p><pre><code># vim roles/download/defaults/main.yml
+# Used to only evaluate vars from download role
+skip_downloads: True
+</code></pre><p>在线节点上，保存离线镜像的脚本:</p><pre><code>docker save gcr.io/google-containers/hyperkube-amd64:v1.11.2&gt;1.tar
+docker save quay.io/calico/node:v3.1.3&gt;2.tar
+docker save quay.io/calico/ctl:v3.1.3&gt;3.tar
+docker save quay.io/calico/kube-controllers:v3.1.3&gt;4.tar
+docker save quay.io/calico/cni:v3.1.3&gt;5.tar
+docker save nginx:1.13&gt;6.tar
+docker save gcr.io/google_containers/k8s-dns-dnsmasq-nanny-amd64:1.14.10&gt;7.tar
+docker save gcr.io/google_containers/k8s-dns-kube-dns-amd64:1.14.10&gt;8.tar
+docker save gcr.io/google_containers/k8s-dns-sidecar-amd64:1.14.10&gt;9.tar
+docker save quay.io/coreos/etcd:v3.2.18&gt;9.tar
+docker save gcr.io/google_containers/cluster-proportional-autoscaler-amd64:1.1.2&gt;10.tar
+docker save gcr.io/google_containers/pause-amd64:3.0&gt;11.tar
+</code></pre><h3 id=portus镜像仓库配置>Portus镜像仓库配置</h3><p>参考:<br><a href=https://purplepalmdash.github.io/blog/2018/05/30/synckismaticimages/>https://purplepalmdash.github.io/blog/2018/05/30/synckismaticimages/</a></p><p>创建team:</p><p><img src=/images/2018_08_29_11_35_00_375x296.jpg alt=/images/2018_08_29_11_35_00_375x296.jpg></p><p>Admin->User->Create new user, 创建一个名为kubespray的用户:</p><p><img src=/images/2018_08_29_11_35_51_453x319.jpg alt=/images/2018_08_29_11_35_51_453x319.jpg></p><p>Team->kubespray, Add memeber:</p><p><img src=/images/2018_08_29_11_36_48_506x296.jpg alt=/images/2018_08_29_11_36_48_506x296.jpg></p><p>创建一个新的命名空间kubesprayns，并绑定到kubespray组:</p><p><img src=/images/2018_08_29_11_38_16_435x349.jpg alt=/images/2018_08_29_11_38_16_435x349.jpg></p><p>查看Log:</p><p><img src=/images/2018_08_29_11_38_43_588x302.jpg alt=/images/2018_08_29_11_38_43_588x302.jpg></p><h3 id=同步镜像到仓库>同步镜像到仓库</h3><p>首先登录到我们刚才创建的仓库:</p><pre><code># docker login portus.xxxx.com:5000/kubesprayns
+Username: kubespray
+Password: xxxxxxx
+Login Succeeded
+</code></pre><p>加载我们之前离线的镜像， 加tag, push.</p><pre><code># for i in `ls *.tar`; do docker load&lt;$i; done
+# ./tag_and_push.sh
+</code></pre><p>脚本如下:</p><p><img src=/images/2018_08_29_11_54_22_948x451.jpg alt=/images/2018_08_29_11_54_22_948x451.jpg></p><p>之后我们可以获得纯净的<code>/var/lib/portus</code>目录用于部署kubespray.</p><p>接下来替换掉原有的编译脚本，编译出新的ISO</p><p>TODO： ansible需要安装， rpm包安装.</p><h3 id=ansible部署>ansible部署</h3><p>起先用vagrant做的一键部署方案，如今需要手动构建出一个集群的定义文件。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/54/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/54/>54</a></li><li class="page-item active"><a class=page-link href=/page/55/>55</a></li><li class=page-item><a class=page-link href=/page/56/>56</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/56/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

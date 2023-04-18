@@ -1,718 +1,142 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/24/workingtipsonplaywithdockerubuntu1804/>WorkingTipsOnPlayWithDockerUbuntu1804</a></h1><span class=post-date>May 24, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=basic-environment>Basic Environment</h3><p>Ubuntu 18.04, minimum installation.</p><pre><code># vim /etc/netplan/01-netcfg.yaml 
-	# This file describes the network interfaces available on your system
-	# For more information, see netplan(5).
-	network:
-	 version: 2
-	 renderer: networkd
-	 ethernets:
-	   eth0:
-	     dhcp4: no
-	     dhcp6: no
-	     addresses: [192.192.189.114/24]
-	     gateway4: 192.192.189.1
-	     nameservers:
-	       addresses: [223.5.5.5,180.76.76.76]
-# sudo netplan --debug apply
-# apt-get update &amp;&amp; apt-get install -y docker.io docker-compose
-</code></pre><p>Disable systemd-resolved:</p><pre><code># systemctl disable systemd-resolved.service
-# systemctl stop systemd-resolved.service
-# echo nameserver 192.168.0.15&gt;/etc/resolv.conf
-# chattr -e /etc/resolv.conf
-# chattr +i /etc/resolv.conf
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/22/oncustomizationofubuntuiso/>OnCustomizationOfUbuntuISO</a></h1><span class=post-date>May 22, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=install-cubic>Install cubic</h3><p>Install cubic via:</p><pre><code># apt-add-repository ppa:cubic-wizard/release
-# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
-# apt update &amp;&amp; apt install cubic
-</code></pre><h3 id=custom-packages>Custom Packages</h3><p>Install docker and docker-compose</p><pre><code># apt-get install -y docker.io docker-compose openssh-server
-# systemctl enable docker
-</code></pre><p>Pre-load docker images:</p><pre><code># vim /bin/loaddocker.sh
-if [[ $(sudo docker images | grep registry) ]]; then
-    echo &quot;there are files&quot;
-else
-    docker load&lt;/usr/local/images/1.tar
-    docker load&lt;/usr/local/images/2.tar
-    docker load&lt;/usr/local/images/3.tar
-    docker load&lt;/usr/local/images/4.tar
-fi
-# chmod 777 /bin/loaddocker.sh
-</code></pre><p>Add dockerload service</p><pre><code># vim /etc/systemd/system/dockerload.service 
-[Unit]
-Description=Docker load
-Requires=docker.service
-After=docker.service
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/06/20/onbuildmonocular/>OnBuildMonocular</a></h1><span class=post-date>Jun 20, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=building>Building</h3><p>Ubuntu 18.04(192.192.189.114), install following packages:</p><pre><code># apt-get install -y nodejs npm
+# git clone https://github.com/kubernetes-helm/monocular.git
+# cd monocular/src/ui
+# npm config set registry http://registry.npm.taobao.org/
+# npm install
+# npm install -g yarn
+# make docker-build
+</code></pre><p>Then you will get the <code>bitnami/monocular-ui:latest</code> docker image.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/06/20/triggercicdongitlabci/>TriggerCICDOnGitlabCI</a></h1><span class=post-date>Jun 20, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Projects list:</p><p><img src=/images/2018_06_20_11_34_53_645x361.jpg alt=/images/2018_06_20_11_34_53_645x361.jpg></p><p>We will let kismatic_source trigger buildiso.</p><p>The <code>.gitlab-ci.yml</code> listed is:</p><p><img src=/images/2018_06_20_11_36_39_886x329.jpg alt=/images/2018_06_20_11_36_39_886x329.jpg></p><p>The build-iso&rsquo;s <code>.gitlab-ci.yml</code> is listed as:</p><p><img src=/images/2018_06_20_11_37_18_886x137.jpg alt=/images/2018_06_20_11_37_18_886x137.jpg></p><p>Settings->CI/CD->Pipeline triggers,</p><p><img src=/images/2018_06_20_11_38_21_867x528.jpg alt=/images/2018_06_20_11_38_21_867x528.jpg></p><p>Then you could trigger the building iso via push sources to kismatic_images.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/06/11/tipsonjenkinsx/>TipsOnJenkinsX</a></h1><span class=post-date>Jun 11, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=install>Install</h3><p>Install under archlinux:</p><pre><code># curl -L https://github.com/jenkins-x/jx/releases/download/v1.2.120/jx-linux-amd64.tar.gz | tar xzv 
+# sudo mv jx /usr/local/bin
+</code></pre><p>upgrading minikube:</p><pre><code># docker-machine-driver-kvm2
+</code></pre><p>Now create the cluster via:</p><pre><code># jx create cluster minikube
+? cpu (cores) 3
+? Select driver: kvm2
+WARNING: We cannot yet automate the installation of KVM with KVM2 driver - can you install this manually please?
+Please see: https://www.linux-kvm.org/page/Downloads and https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#kvm2-driver
+Creating Minikube cluster...
 
-[Service]
-Restart=always
-ExecStart=/bin/loaddocker.sh
-ExecStop=/usr/bin/echo hello
-
-[Install]
-WantedBy=multi-user.target
-
-</code></pre><p>Add this command to systemd:</p><pre><code># vim /etc/systemd/system/docker-infra.service
-[Unit]
-Description=Docker infra
-Requires=docker.service
-After=dockerload.service
-
-[Service]
-WorkingDirectory=/usr/local/compose/
-Type=idle
-Restart=always
-# Remove old container items
-ExecStartPre=/usr/bin/docker-compose -f /usr/local/compose/docker-compose.yml down
-# Compose up
-ExecStart=/usr/bin/docker-compose -f /usr/local/compose/docker-compose.yml up
-# Compose stop
-ExecStop=/usr/bin/docker-compose -f /usr/local/compose/docker-compose.yml stop
-
-[Install]
-WantedBy=multi-user.target
-
-# systemctl enable docker-infra.service
-</code></pre><p>Change the default interface to eth0/eth1, etc.</p><pre><code># vim /etc/default/grub
-net.ifnames=0 biosdevname=0
-# update-grub
-</code></pre><h3 id=remove-unnecessary-packages>Remove unnecessary packages</h3><p>Following:</p><pre><code>Amazon
-Libreoffice
-Mahjongg
-Mines
-Shotwell
-Sudoku
-totem
-totem-common
-vino
-transmission-gtk
-transmission-common
-remmina
-eog
-
-</code></pre><p>Disable ufw:</p><pre><code># ufw disable
-</code></pre><p>Remove command:</p><pre><code># apt-get purge   aisleriot eog gnome-mahjongg gnome-mines gnome-sudoku hplip libreoffice-avmedia-backend-gstreamer
-  libreoffice-base-core libreoffice-calc libreoffice-common libreoffice-core libreoffice-draw
-  libreoffice-gnome libreoffice-gtk3 libreoffice-impress libreoffice-math libreoffice-ogltrans
-  libreoffice-pdfimport libreoffice-style-breeze libreoffice-style-galaxy libreoffice-style-tango
-  libreoffice-writer  python3-uno remmina remmina-plugin-rdp
-  remmina-plugin-secret remmina-plugin-vnc thunderbird thunderbird-gnome-support totem totem-common
-  totem-plugins transmission-common transmission-gtk  vino
-
-</code></pre><h3 id=tips-for-centos>tips for centos</h3><pre><code>if [[ $(sudo docker images | grep registry) ]]; then
-    echo &quot;there are files&quot;
-else
-    docker load&lt;/usr/local/images/nginx.tar.bz2
-    docker load&lt;/usr/local/images/1.tar
-    docker load&lt;/usr/local/images/2.tar
-    docker load&lt;/usr/local/images/3.tar
-    docker load&lt;/usr/local/images/4.tar
-    docker run --name docker-nginx -p 8888:80 -d -v /usr/local/kismaticpkgs:/usr/share/nginx/html jrelva/nginx-autoindex
-    sed -i s/10.168.100.145/`hostname -I|awk '{print $1}'`/g /usr/local/compose/docker-compose.yml
-fi
-
-</code></pre><p>Add service:</p><pre><code># vim /etc/systemd/system/mynginx.service 
-[Unit]
-Description=mynginx
-Requires=docker.service
-After=docker-infra.service
-
-[Service]
-Restart=always
-ExecStart=/usr/bin/docker start -a docker-nginx
-ExecStop=/usr/bin/docker stop -t 2 docker-nginx
-
-[Install]
-WantedBy=multi-user.target
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/21/linuxtips9/>LinuxTips9</a></h1><span class=post-date>May 21, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/linuxtips>LinuxTips</a></span><h3 id=1-build-maven-project>1. Build maven project</h3><p>For building the class, do <code>mvn compile</code>, for building the jar file, do <code>mvn package</code>, then you could get the jar under the <code>target</code> folder.</p><h3 id=2-sed-replace>2. sed replace</h3><p>via following commands:</p><pre><code># sed s/10.168.100.145/192.192.189.1/&lt;/home/dash/docker-compose.yml
-</code></pre><h3 id=3-get-ip-for-ubuntu>3. get ip for ubuntu</h3><p>Ubuntu 14.04 ~ 18.04, via following command:</p><pre><code>hostname -I | awk '{print $1}'
-</code></pre><h3 id=4-view-systemd-logs>4. view systemd logs</h3><p>via following command:</p><pre><code># journalctl -u service-name.service -b
-</code></pre><h3 id=5-disable-unattended-upgrades>5. Disable unattended upgrades</h3><p>Under Ubuntu18.04/16.04, could do :</p><pre><code># systemctl disable unattended-upgrade.service
-</code></pre><h3 id=6-rhel-subscription>6. rhel subscription</h3><p>Via following steps:</p><pre><code>sudo subscription-manager remove --all
-sudo subscription-manager unregister
-sudo subscription-manager clean
-
-Now re-register the system, attach the subscriptions - execute these commands :
-
-sudo subscription-manager register
-sudo subscription-manager refresh
-sudo subscription-manager attach --auto
-
-Here are the commands to see which repos are enabled and what can be added :
-
-Execute sudo subscription-manager repos --list-enabled to see all actually enabled subscriptions.
-Execute sudo subscription-manager repos --list to see all subscriptions that are available for you.
-Execute sudo subscription-manager repos --enable &lt;repo&gt; if you want to add additional repos.
-</code></pre><h3 id=7-anaconda-issue>7. anaconda issue</h3><p>anaconda build rhel7 custom image Issue:</p><pre><code># dracut module 'anaconda' cannot be found or installed
-</code></pre><p>how to solve?</p><h3 id=8-kismatic-reset>8. kismatic reset</h3><p>via:</p><pre><code>./kismatic reset
-</code></pre><h3 id=9-kubernetes-pkgs>9. kubernetes pkgs</h3><p>Install via:</p><pre><code># vim /etc/yum.repos.d/kubernetes.repo
- [kubernetes]
- name=Kubernetes
- baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
- enabled=1
- gpgcheck=0
- repo_gpgcheck=0
-</code></pre><h3 id=10-samba-in-archlinux>10. samba in ArchLinux</h3><pre><code># pacman -S samba
-# wget https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD
-# cp git..xxx /etc/samba/smb.conf
-# vim /etc/samba/smb.conf
-   log file = /var/log/samba/%m.log
-[myshare]
-   comment = Mary's and Fred's stuff
-   path = /var1/Nov14
-   valid users = dash
-   public = no
-   writable = yes
-   printable = no
-   create mask = 0765
-# systemctl enable smb
-# systemctl enable nmb
-# systemctl start smb
-# systemctl start nmb
-</code></pre><h3 id=11-tar-with-pigz>11. tar with pigz</h3><p>With pigz compression:</p><pre><code>tar cf - paths-to-archive | pigz -9 -p 32 &gt; archive.tar.gz
-
-</code></pre><h3 id=12-tips-for-centos>12. tips for centos</h3><ol><li>install from iso</li><li>sed the ip address.(isomaster)</li><li>pigz package needed to be installed first. (isomaster)</li></ol><h3 id=13-tmpfs-for-debian>13. tmpfs for debian</h3><p>via :</p><pre><code># vim /etc/fstab
-.....
-
-tmpfs	/tmp	tmpfs	nodev,nosuid,size=8G 0	0
-</code></pre><h3 id=14-kong-ingress-configuration>14. kong ingress configuration</h3><p>Rewrite ingress rulers:</p><pre><code>apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: anagram.api
-  annotations:
-    ingress.kubernetes.io/rewrite-target: &quot;/&quot;
-spec:
-  rules:
-  - host: anagram.api
-    http:
-      paths:
-      - path: /external
-        backend:
-          serviceName: anagram-svc
-          servicePort: 80
----
-apiVersion: configuration.konghq.com/v1
-kind: KongIngress
-metadata:
-  name: anagram.api
-proxy:
-  path: /
-route:
-  strip_path: true
-</code></pre><h3 id=15-auto-restart-pdnsd>15. Auto Restart pdnsd</h3><p>The script for start pdnsd:</p><pre><code># cat /bin/pdnsd.sh 
-    touch /tmp/aaa.txt
-    if [[ $(ps -ef | grep -v grep | grep pdnsd) ]]; then
-    	echo &quot;pdnsd alive&quot;&gt;/tmp/aaa.txt
+</code></pre><h3 id=chartmusuem>chartmusuem</h3><p>Install local executable file:</p><pre><code># curl -LO https://s3.amazonaws.com/chartmuseum/release/latest/bin/linux/amd64/chartmuseum
+# chmod +x ./chartmuseum
+# mv ./chartmuseum /usr/local/bin
+</code></pre><p>Initialize with the local filesystem storage:</p><pre><code># sudo mkdir chartstorage
+# sudo chartmuseum --debug --port=8988 --storage=&quot;local&quot; --storage-local-rootdir=&quot;./chartstorage&quot;
+</code></pre><p>Now visit your <code>http://localhost:8988</code> you could reach the chartmusuem.</p><p>Using chartmusuem:</p><pre><code># helm repo add chartmuseum http://localhost:8988
+# helm update
+</code></pre><p>Upload chart:</p><pre><code># git clone https://github.com/stakater/chart-mysql.git
+# cd chart-mysql
+# cd mysql
+# helm lint
+# helm package .
+# curl -L --data-binary &quot;@mysql-1.0.1.tgz&quot; http://localhost:8988/api/charts
+</code></pre><p>Now you could see the chart has been uploaded to your own chartmusuem.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/06/04/oncustomizecentoslivecd/>OnCustomizeCentOSLiveCD</a></h1><span class=post-date>Jun 4, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>Preparation</h3><p>A. Create local repository for centos installation:</p><p>Install <code>createrepo_c</code>on archlinux:</p><pre><code># yaout createrepo_c
+</code></pre><p>Create the repo for local installation:</p><pre><code># sudo mount -t iso9660 -o loop CentOS-7-x86_64-Everything-1804.iso /mnt2
+# cd /mnt2
+# find . | grep rpm$ | xargs -I % cp % /var/download/centos1804rpms
+# cd /var/download/centos1804rpms
+# createrepo_c .
+</code></pre><p>Use this repo:</p><pre><code># mkdir /etc/yum.repos.d/back &amp;&amp; mv /etc/yum.repos.d/*.repo /etc/yum.repos.d/back/
+# vim /etc/yum.repos.d/base.repo 
+[base]
+name=base
+baseurl=http://192.168.122.1/centos1804rpms
+enabled=1
+gpgcheck=0
+</code></pre><p>B. Prepare kickstart repository</p><pre><code># git clone https://github.com/CentOS/sig-core-livemedia.git
+# cd sig-core-livemedia
+# cd kickstarts
+# wget https://gist.githubusercontent.com/lunatilia/8a195ccb0b415cbbd94f/raw/e8ede17f331dc8fe43012e7e4f8123a02e6bedc8/centos-7-livedvd-jp.cfg
+</code></pre><p>C. Edit the cfg file, the modified file is listed in following position:</p><h3 id=make-system>Make system</h3><p>In chroot terminal, do following:</p><pre><code>#  yum remove -y libreoffice-gtk3-5.3.6.1-10.el7.x86_64 libreoffice-draw-5.3.6.1-10.el7.x86_64 libreoffice-ure-5.3.6.1-10.el7.x86_64 libreoffice-pyuno-5.3.6.1-10.el7.x86_64 libreoffice-xsltfilter-5.3.6.1-10.el7.x86_64 libreoffice-gtk2-5.3.6.1-10.el7.x86_64 libreoffice-graphicfilter-5.3.6.1-10.el7.x86_64 libreoffice-math-5.3.6.1-10.el7.x86_64 libreoffice-filters-5.3.6.1-10.el7.x86_64 libreoffice-data-5.3.6.1-10.el7.noarch libreoffice-core-5.3.6.1-10.el7.x86_64 libreoffice-pdfimport-5.3.6.1-10.el7.x86_64 libreoffice-calc-5.3.6.1-10.el7.x86_64 libreofficekit-5.3.6.1-10.el7.x86_64 libreoffice-ure-common-5.3.6.1-10.el7.noarch libreoffice-langpack-en-5.3.6.1-10.el7.x86_64 libreoffice-impress-5.3.6.1-10.el7.x86_64 libreoffice-opensymbol-fonts-5.3.6.1-10.el7.noarch libreoffice-x11-5.3.6.1-10.el7.x86_64 libreoffice-writer-5.3.6.1-10.el7.x86_64
+# yum remove -y cheese
+# cd /usr/local/
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/compose.tar.gz .
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/kismaticpkgs.tar.gz .
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/images.tar.gz . 
+# cd /var/lib
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/portus.tar.gz .
+# tar xzvf portus.tar.gz 
+# rm -f portus.tar.gz 
+# cd /usr/local/
+# tar xzvf compose.tar.gz 
+# tar xzvf images.tar.gz 
+# tar xzvf kismaticpkgs.tar.gz 
+# rm -f *.tar.gz
+# cd /root/
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/pipcache.tar.gz .
+# tar xzvf pipcache.tar.gz 
+# pip install --no-index --find-links /root/pipcache docker-compose
+# rm -f pipcache.tar.gz 
+# rm -rf pipcache/
+# cd /bin/
+# scp root@192.192.189.128:/media/sdb/docker/loaddocker.sh .
+# chmod 777 loaddocker.sh 
+# cat loaddocker.sh 
+    if [[ $(sudo docker images | grep registry) ]]; then
+        echo &quot;there are files&quot;
     else
-    	echo &quot;not alive&quot;&gt;/tmp/aaa.txt
-    	systemctl start pdnsd
+        docker load&lt;/usr/local/images/nginx.tar.bz2
+        docker load&lt;/usr/local/images/1.tar
+        docker load&lt;/usr/local/images/2.tar
+        docker load&lt;/usr/local/images/3.tar
+        docker load&lt;/usr/local/images/4.tar
+        docker run --name docker-nginx -p 8888:80 -d -v /usr/local/kismaticpkgs:/usr/share/nginx/html jrelva/nginx-autoindex
+        sed -i s/10.168.100.145/`hostname -I|awk '{print $1}'`/g /usr/local/compose/docker-compose.yml
     fi
-</code></pre><p>Add this script into crontab:</p><pre><code># crontab -e
-@reboot sleep 60 &amp;&amp; /bin/pdnsd.sh
-</code></pre><h3 id=16-python-simple-http-server>16. python simple http server</h3><p>python 3 syntax:</p><pre><code>python -m http.server 8000
-</code></pre><h3 id=17-cnpm-install-error>17. cnpm install error</h3><p>As normal user, you didn&rsquo;t have the priviledge for making soft link for cnpm.</p><p>As rooot user, do following:</p><pre><code>$ sudo npm cache clean --force
-$ sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
-$ which cnpm
-/usr/bin/cnpm
 
-</code></pre><h3 id=18-dnscrypt>18. dnscrypt</h3><p>start via, better enable it:</p><pre><code>sudo systemctl start dnscrypt-proxy.service
-</code></pre><h3 id=19-ubuntu-1804-vnc>19. Ubuntu 18.04 vnc</h3><p>Via following steps:</p><pre><code>install these packages
-
-# apt-get install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
-and use this xstartup file
-
-#!/bin/sh
-
-export XKL_XMODMAP_DISABLE=1
-unset SESSION_MANAGER
-unset DBUS_SESSION_BUS_ADDRESS
-
-[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup
-[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources
-xsetroot -solid grey
-vncconfig -iconic &amp;
-
-gnome-panel &amp;
-gnome-settings-daemon &amp;
-metacity &amp;
-nautilus &amp;
-gnome-terminal &amp;
-</code></pre><p>But you will add some tips:</p><pre><code>$ vim /usr/bin/gnome-panel-delay 
-!/bin/sh
-sleep 4 &amp;&amp; gnome-panel
-</code></pre><p>Replace <code>gnome-panel</code> with <code>gnome-panel-delay</code>.</p><h3 id=20-uefi-for-archlinux-qemu>20. uefi for archlinux qemu</h3><p>Install via:</p><pre><code>$ sudo pacman -S ovmf
-$ sudo vim /etc/libvirt/qemu.conf
-user=&quot;root&quot;
-group=&quot;root&quot;
-nvram = [
-    &quot;/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd&quot;
-]
-$ sudo systemctl restart libvirtd
-</code></pre><h3 id=21-unlock-proxmox>21. unlock proxmox</h3><p>via following command:</p><pre><code># qm unlock vm_id
-</code></pre><h3 id=22-back-to-work>22. Back to Work</h3><p>Edit <code>/etc/systemd/network/MyBridge.network</code>, change the ip address, then
-restart the networkd service via:</p><pre><code># systemclt restart systemd-networkd.service
-</code></pre><p>Then your briged br0 will turn back to the ip address you just changed.</p><h3 id=23-debian-upgrade-kernel>23. Debian upgrade kernel</h3><p>Via following commands:</p><pre><code># echo &quot;deb http://ftp.debian.org/debian stretch-backports main&quot; | tee -a /etc/apt/sources.list &gt; /dev/null
-# apt-get update
-# apt-cache search linux-image
-# apt-get -t stretch-backports install linux-image-4.11.0-0.bpo.1-amd64
-</code></pre><h3 id=24-samba-issue>24. samba issue</h3><p>From samba 4.8, the smbd, changed to smb, nmbd changed to nmb, so systemctl
-will changd to smb/nmb</p><h3 id=25-unzip-iconv>25. unzip iconv</h3><p>Chinese unzip:</p><pre><code>$ unzip-iconv
-$ unzip -O cp936  xxxx.zip
-</code></pre><p>thus you will get the chinese coded file extracted.</p><h3 id=26-quickly-setup-nodejs-dev>26. Quickly Setup NodeJS Dev</h3><p>In Conoha:</p><pre><code># docker run -it -p 5000:5000 ubuntu:latest /bin/bash
-# apt-get update
-# apt-get -y install vim
-Change archive.ubuntu.com to jp.archive.ubuntu.com
-# apt-get update
-# apt-get install -y nodejs npm
-# cd ~
-# mkdir Code
-# cd Code
-# mkdir node
-# npm config set prefix=$HOME/node
-# export PATH=$HOME/node/bin:$PATH
-# npm install -g express
-# npm install -g express-generator
-# which express
-# exporess defcon
-# cd defcon/
-# npm install -d
-# npm install socket.io express  
-# npm install -d
-</code></pre><p>You should follow</p><p><a href=https://github.com/robdodson/defcon>https://github.com/robdodson/defcon</a></p><p>Install with ejs template enabled:</p><pre><code># express -v ejs dash
-</code></pre><h3 id=27-registry-settinginsecure>27. registry setting(insecure)</h3><p>Xenial , via:</p><pre><code>Edit /etc/docker/daemon.json and update the key &quot;insecure-registries&quot;.
-e.g.
-    {
-        &quot;insecure-registries&quot; : [&quot;10.84.34.155:5000&quot;]
-    }
-</code></pre><h3 id=28-paccache-saveing>28. paccache Saveing</h3><p>Take care the directory size:</p><pre><code># pacman du -hs pkg 
-31G	pkg
-# pacman du -hs pkg 
-9.4G	pkg
-# pacman du -hs pkg 
-4.1G	pkg
-</code></pre><p>By following command you could saving the disk space(keep 3 or keep 1):</p><pre><code># sudo paccache -r -k 3
-# sudo paccache -r -k 1 
-</code></pre><h3 id=29-kvmvmware-issue>29. kvm/vmware issue</h3><p>kvm will be black-listed via vmware, solved via:</p><pre><code># cat /etc/modprobe.d/vmware.conf 
-blacklist kvm
-blacklist kvm-amd   # For AMD CPUs
-blacklist kvm-intel # For Intel CPUs
-</code></pre><p>Uninstall vmware via:</p><pre><code># vmware-installer -l
-Product Name         Product Version     
-==================== ====================
-vmware-workstation   12.0.0.2985596      
-# vmware-installer -u vmware-workstation --required
-</code></pre><p>Remove the service:</p><pre><code># rm /etc/systemd/system/vmware.service
-# rm /etc/systemd/system/vmware-usbarbitrator.service
-</code></pre><h3 id=30-ansible-for-installing-nfs-client>30. ansible for installing nfs-client</h3><p>Install methods:</p><pre><code># apt-get install nfs-common
-# vim local.ini
-# ansible-playbook -i local.ini nfsclient.yaml --extra-vars &quot;@roles/nfs-client/defaults/all.yaml&quot;
-</code></pre><h3 id=31-chartmuseum>31. chartmuseum</h3><p>Delete and upload again:</p><pre><code>#  curl -X DELETE portus.teligen.com:8988/api/charts/gitlab-runner/0.1.31
-# curl --data-binary &quot;@gitlab-runner-0.1.31.tgz&quot; http://portus.teligen.com:8988/api/charts
-</code></pre><h3 id=32-docker-volume-rm>32. docker volume rm</h3><p>Via following command:</p><pre><code># docker volume ls | sed -n '1!p' |awk {'print $2'} | xargs -I % docker volume rm %
-</code></pre><h3 id=33-generate-crtkey-in-one-line>33. Generate crt/key in one line</h3><p>Via following command:</p><pre><code># openssl req -new -newkey rsa:4096 -days 365 -nodes -x509     -subj &quot;/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com&quot;     -keyout www.example.com.key  -out www.example.com.cert
-</code></pre><h3 id=34-ubuntu-server-gui>34. Ubuntu Server GUI</h3><p>Install tasksel via:</p><pre><code># apt-get install -y tasksel
-# tasksel --list
-</code></pre><p>Install Ubuntu mate core via:</p><pre><code># tasksel install ubuntu-mate-core
-# service lightdm start
-</code></pre><p>Or Ubuntu/xubuntu-core/Lubuntu-core, etc, you could choose from the tasksel
-list.</p><h3 id=35-vncserver>35. vncserver</h3><p>For ArchLinux:</p><pre><code>export XKL_XMODMAP_DISABLE=1
-#exec startxfce4
-exec startlxde
-
-</code></pre><h3 id=36-internet-sharing>36. Internet Sharing</h3><p>For ArchLinux, 2 cards, enp0s29u1u2u7 is the card for connecting the internet,
-while the enp0s29u1u2u6 is the card for intranet. :</p><pre><code>➜  ~ sudo iptables -t nat -A POSTROUTING -o enp0s29u1u2u7 -j MASQUERADE
-➜  ~ sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-➜  ~ sudo iptables -A FORWARD -i enp0s29u1u2u6 -o enp0s29u1u2u7 -j ACCEPT
-
-</code></pre><h3 id=37-time-sync-in-archlinux>37. time-sync in archlinux</h3><p>ArchLinux ntp date.</p><pre><code># vim  /etc/systemd/timesyncd.conf
-[Time]
-NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
-FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
-# sudo systemctl enable systemd-timesyncd
-# timedatectl show-timesync --all
-</code></pre><h3 id=38-combine-pdf>38. Combine pdf</h3><p>The filename contains Chinese, so I have to do like following:</p><pre><code>$ ls -tr *.pdf | awk -v q=&quot;'&quot; {'print q$0q'}&gt;list.txt
-</code></pre><p>Then edit the list.txt</p><p><img src=/images/2018_10_26_11_38_59_945x451.jpg alt=/images/2018_10_26_11_38_59_945x451.jpg></p><p>Then your generated Combine.</p><pre><code>$ pdfunite in-1.pdf in-2.pdf in-n.pdf out.pdf
-</code></pre><p>Your generated out.pdf contains all of the pdfs.</p><h3 id=39-crontab-and-notify-send>39. crontab and notify-send</h3><p>Create <code>/bin/touchXdbus.sh</code> for getting the DBUS Session bus address:</p><pre><code>#!/bin/sh
-
-touch $HOME/.dbus/Xdbus
-chmod 600 $HOME/.dbus/Xdbus
-env | grep DBUS_SESSION_BUS_ADDRESS &gt; $HOME/.dbus/Xdbus
-echo 'export DBUS_SESSION_BUS_ADDRESS' &gt;&gt; $HOME/.dbus/Xdbus
-</code></pre><p>On Awesome startup, use <code>run_once</code> function for calling it:</p><pre><code>$ vim ~/.config/awesome/rc.lua
-run_once(&quot;/bin/touchXdbus.sh&quot;)
-</code></pre><p>Now in your crontab task you have to write like following:</p><pre><code>$ crontab -l
-10 9-18 * * * /bin/notify.sh
-$ cat /bin/notify.sh 
-    #!/bin/sh
-    + if [ -r &quot;$HOME/.dbus/Xdbus&quot; ]; then
-    +   . &quot;$HOME/.dbus/Xdbus&quot;
-    + fi
-    current_time=`date`
-    filename=&quot;/home/dash/tasks.txt&quot;
-    filecontent=`cat $filename`
-    
-    #### Until you click it, you won't get this window vanish #####
-    notify-send -u critical -t 0 &quot;$current_time, Stand UP, Boy&quot; &quot;$filecontent&quot;
-
-</code></pre><p>Now your notify-send will run properly.</p><h3 id=40-unxz>40. unxz</h3><p>Use unxz for uncompress xz compressed file.</p><h3 id=41-ansible-execute-time>41. ansible execute time</h3><p>Add following configurations to ansible.cfg:</p><pre><code>callback_whitelist = profile_tasks, timer
-</code></pre><h3 id=42-echo-server>42. echo server</h3><p>Run python echo server under kubernetes via:</p><pre><code># kubectl run myecho --image=echoserverpy:latest --replicas=3
-# kubectl expose deployment myecho --port=31113
-</code></pre><p>Edit for exposing UDP 31113 Port:</p><p><img src=/images/2018_11_29_10_58_51_392x318.jpg alt=/images/2018_11_29_10_58_51_392x318.jpg></p><p>Add NodePort definition:</p><p><img src=/images/2018_11_29_11_00_40_436x380.jpg alt=/images/2018_11_29_11_00_40_436x380.jpg></p><h3 id=43-reconfigure-keyboard>43. reconfigure keyboard</h3><p>reconfigure keyboard on ubuntu is :</p><pre><code># sudo dpkg-reconfigure keyboard-configuration
-</code></pre><h3 id=44-raid-issue>44. raid issue</h3><p>Deletes:</p><pre><code>#/opt/MegaRAID/MegaCli/MegaCli64 -CfgLdDel -L1 -a0
-</code></pre><p>List:</p><pre><code>MegaCli -LDInfo -LALL -aAll 【显示所有逻辑磁盘组信息】
-MegaCli -PDList -aAll 【显示所有的物理信息】
-</code></pre><h3 id=45-vagrant-libvirt>45. vagrant-libvirt</h3><p>Install via:</p><pre><code># yaourt vagrant-libvirt
-# vagrant plugin install /opt/vagrant/embedded/gems/cache/vagrant-libvirt-0.0.45.gem
-# vagrant plugin install vagrant-mutate
-#  vagrant plugin list
-vagrant-libvirt (0.0.45, global)
-  - Version Constraint: 0.0.45
-vagrant-mutate (1.2.0, global)
-</code></pre><p>After upgrading, do following:</p><pre><code># vagrant plugin install /opt/vagrant/embedded/gems/cache/vagrant-libvirt-0.0.45.gem
-# vagrant plugin install vagrant-mutate
-# yaourt vagrant-libvirt
-</code></pre><p>Then all of your plugins will work properly.</p><h3 id=46-apt-auto-update-disable>46. apt auto update disable</h3><p>disable via:</p><pre><code>systemctl stop apt-daily.timer
-systemctl disable apt-daily.timer
-systemctl disable apt-daily.service
-systemctl stop apt-daily-upgrade.timer
-systemctl disable apt-daily-upgrade.timer
-systemctl disable apt-daily-upgrade.service
-Or
-
-systemctl disable --now apt-daily{,-upgrade}.{timer,service}
-</code></pre><h3 id=47-openssl-inspect-lifetime-of-crt>47. openssl inspect lifetime of crt</h3><p>Via following commands:</p><pre><code>openssl x509 -in server.crt -noout -dates
-
-</code></pre><h3 id=48-vagrant-issue>48. Vagrant issue</h3><p>Vagrant-libvirt, sometimes you have to manually build the ruby-libvirt plugin,
-and copy the correspoding so file into the /opt/vagrant</p><h3 id=49-wrapped-lines-in-vim>49. wrapped lines in vim</h3><p>via following commands:</p><pre><code>
-First set your vim so that it understands that you want 80 characters:
-
-:set tw=80
-then, hilight the line:
-
-V
-and make vim reformat it:
-
-gq
-shareedit
-</code></pre><h3 id=51-format-several-disk>51. format several disk</h3><p>Using following command:</p><pre><code>set -e
-set -x
-for i in b c d e f g h i j k l; do
-sudo fdisk -u /dev/vd${i}&lt;&lt;EOF
-n
-p
-1
-
-
-w
-EOF
-done
-</code></pre><p>This command will format several disks, as you like.</p><h3 id=52-auto-change-password>52. Auto Change password</h3><p>Change password via following commands:</p><pre><code>
-
-$ openssl passwd -1 -salt 5RPVAd clear-text-passwd43
-
-$1$5RPVAd$vgsoSANybLDepv2ETcUH7.
-
-Then, copy the encrypted string to usermod. Make sure to wrap it with single quote.
-
-$ usermod -p '$1$5RPVAd$vgsoSANybLDepv2ETcUH7.' root
-
-Check it out in shadow file.
-
-$ grep root /etc/shadow
-</code></pre><h3 id=53-rsync-sync-repo>53. rsync sync repo</h3><p>syncing the ceph repository via following command:</p><pre><code># rsync -av --exclude &quot;ceph-debuginfo&quot; rsync://mirrors.ustc.edu.cn/ceph/rpm-luminous/el7/  `pwd`
-# rsync -av --exclude &quot;ceph-debuginfo&quot; rsync://rsync.mirrors.ustc.edu.cn/ceph/rpm-luminous/el7/  ./
-
-</code></pre><h3 id=54-pool-start>54. pool-start</h3><p>Via following command you could view and start the virsh pool:</p><pre><code>$ sudo virsh pool-list --all
-$ sudo virsh pool-start vagrantpool
-</code></pre><h3 id=55-minikube-start-specify-cpumemdisk>55. minikube start specify cpu/mem/disk</h3><p>via following method:</p><pre><code># minikube start --cpus 4 --memory 8192 --disk-size 60g
-</code></pre><h3 id=56-combine-lines-under-linux>56. Combine lines under linux</h3><p>Via tr command you could combine several lines into one line:</p><pre><code># some output | tr '\n' ','
-</code></pre><p>Replace the comma with some other characters.</p><h3 id=57-prometheus-for-k8s>57. prometheus for k8s</h3><p>URL:</p><p>from <a href=https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus>https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus</a></p><h3 id=58-virtualbox-tips>58. virtualbox tips</h3><p>Debian&rsquo;s virtualbox, 5.2 conflicts with kernel 4.17.0-9.bpo.1-amd64</p><h3 id=59-libvirts-bus-issue>59. libvirt&rsquo;s bus issue</h3><p>Changes to virtio bus:</p><pre><code>            lv.storage :file, :device =&gt; &quot;hd#{driverletters[d]}&quot;, :path =&gt; &quot;glusterdisk-#{i}-#{d}-#{DISK_UUID}.disk&quot;, :size =&gt; $kube_node_instances_with_disks_size, :bus =&gt; &quot;virtio&quot;
-
-</code></pre><h3 id=60-minimum-glusterfs-nodes>60. Minimum glusterfs nodes</h3><p>Comment the replcas items. and set the volume type to None:</p><pre><code>  volumetype: &quot;none&quot;
-#  volumetype: &quot;replicate:{{ hostvars[groups['glusterfs'][0]].replicate }}&quot;
-
-</code></pre><p>Or using heketi for creating the volume:</p><pre><code>heketi-cli volume create -size=100 -durabilty=none
-</code></pre><h3 id=61-history-without-number>61. history without number</h3><p>history without number using cut.</p><pre><code> history | cut -c 8-
-</code></pre><h3 id=62-tr-replace-newline>62. tr replace newline</h3><p>Via following commands:</p><pre><code>#  tr '\r\n' ' '
-</code></pre><h3 id=63-two-file-difference>63. two file difference</h3><p>via grep command you could do this:</p><pre><code># git -v -f before.txt after.txt
-</code></pre><h3 id=64-vimdiff-tips>64. vimdiff tips</h3><p>vimdiff tips.</p><pre><code>
-do (diff obtain) and dp (diff put) is what you need. Here is a small list of other helpful normal mode commands in this context.
-
-]c               - advance to the next block with differences
-[c               - reverse search for the previous block with differences
-do (diff obtain) - bring changes from the other file to the current file
-dp (diff put)    - send changes from the current file to the other file
-zo               - unfold/unhide text
-zc               - refold/rehide text
-zr               - unfold both files completely
-zm               - fold both files completely
-</code></pre><h3 id=65-pactree>65. pactree</h3><p>Using pactree for viewing the dependencies:</p><pre><code># sudo pacman -S pacman-contri
-# pactree xxxx
-</code></pre><p>Using -d(1~n) could viewing the depth of the dependencies.</p><h3 id=66-wifi-list>66. wifi list</h3><p>unblock the wifi via following commands:</p><pre><code>$rfkill list all
-0: hp-wifi: Wireless LAN
-	Soft blocked: yes
-	Hard blocked: no
-1: phy0: Wireless LAN
-	Soft blocked: yes
-	Hard blocked: yes
-
-$sudo rfkill unblock all
-</code></pre><h3 id=67-sed-disable-swap>67. sed disable swap</h3><p>edit /etc/fstab via:</p><pre><code># sudo sed -i '/ swap / s/^/#/' /etc/fstab
-
-</code></pre><h3 id=68-python-split>68. python split</h3><p>For using them in ambari-k8s, do following:</p><pre><code>&gt;&gt;&gt; long='nodes-1:10.222.129.101;nodes-2:10.222.129.102;nodes-3:10.222.129.103'
-&gt;&gt;&gt; map={}
-&gt;&gt;&gt; key=[]
-&gt;&gt;&gt; for i in long.split(&quot;;&quot;):
-...   key.append(i.split(&quot;:&quot;)[0])
-...   map[i.split(&quot;:&quot;)[0]]=i.split(&quot;:&quot;)[1]
-... 
-&gt;&gt;&gt; for i in key:
-...   print(i)
-... 
-nodes-1
-nodes-2
-nodes-3
-&gt;&gt;&gt; for i in key:
-...   print(i)
-...   print(map[i])
-... 
-nodes-1
-10.222.129.101
-nodes-2
-10.222.129.102
-nodes-3
-10.222.129.103
-
-</code></pre><h3 id=69-proxmox-configuration>69. proxmox Configuration</h3><p>For AI project, do following:</p><pre><code># vim /etc/network/interfaces
-auto lo
-iface lo inet loopback
-
-auto eno1
-#real IP address
-iface eno1 inet static
-        address  198.51.100.5
-        netmask  255.255.255.0
-        gateway  198.51.100.1
-
-auto vmbr0
-#private sub network
-iface vmbr0 inet static
-        address  10.10.10.1
-        netmask  255.255.255.0
-        bridge_ports none
-        bridge_stp off
-        bridge_fd 0
-
-        post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
-        post-up   iptables -t nat -A POSTROUTING -s '10.10.10.0/24' -o eno1 -j MASQUERADE
-        post-down iptables -t nat -D POSTROUTING -s '10.10.10.0/24' -o eno1 -j MASQUERADE
-</code></pre><p>ZFS enabled when in installation.</p><h3 id=70-proxmox-inner-network>70. proxmox inner network</h3><p>Connecting inner network via:</p><pre><code>post-up iptables -t nat -A POSTROUTING -s 10.10.10.0/24 -o enp2s0f0 -j SNAT
---to-source 192.192.18.44
-</code></pre><p>In every nodes:</p><pre><code>$ route add -net 10.10.10.0/24 gw 192.192.189.44
-</code></pre><h3 id=71-vagrant-libvirt>71. vagrant-libvirt</h3><p>Remove the vagrant-libvirt package installed via yaourt, then install plugin
-via:</p><pre><code># vagrant plugin install vagrant-libvirt
-</code></pre><p>You won&rsquo;t have the build issue.</p><h3 id=72-beyond-compare-linux>72. beyond compare Linux</h3><p>Reuse it after 30 day&rsquo;s trial:</p><pre><code>bcompare在ubuntu的配置文件的路径是：
-
-/home/xxx/.config/bcompare
-
-在该路径下找到 registry.dat删除即可
-
-rm registry.dat
-</code></pre><h3 id=73-forwarding-in-win>73. forwarding in Win</h3><p>Use following command for setting up tunnel under windows:</p><pre><code>netsh interface portproxy add v4tov4 listenport=4422 listenaddress=192.168.1.111 connectport=80 connectaddress=192.168.0.33
-To remove forwarding:
-netsh interface portproxy delete v4tov4 listenport=4422 listenaddress=192.168.1.111
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/19/workingtipsonportus/>WorkingTipsOnPortus</a></h1><span class=post-date>May 19, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>Runtime environment:</p><pre><code>OS: Ubuntu 14.04.3 LTS
-docker version: 18.03.1-ce
-docker-compose version: docker-compose version 1.21.2, build a133471
-IP: 192.192.189.53
-domain name: portus.xxxx.com
-</code></pre><p>For installing docker:</p><pre><code>$ sudo apt-get purge lxc-docker-1.9.0
-$ sudo apt-get install \
-    linux-image-extra-$(uname -r) \
-    linux-image-extra-virtual
-$ sudo apt-get update
-$ sudo apt-get install -y \
-    apt-transport-https \
-        ca-certificates \
-            curl \
-                software-properties-common
-
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-$ sudo apt-key fingerprint 0EBFCD88
-$ sudo add-apt-repository \
-   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-      $(lsb_release -cs) \
-         stable&quot;
-$ sudo apt-get update
-$ sudo apt-get install -y docker-ce
-$ sudo apt-get install -y libyaml-dev libpython-dev
-$ sudo pip uninstall docker-py
-$ sudo pip uninstall docker-compose
-$ sudo pip install --upgrade --force-reinstall  docker-compose
-</code></pre><h3 id=steps>Steps</h3><p>Clone the source code from github:</p><pre><code># git clone https://github.com/SUSE/Portus.git
-</code></pre><p>Make certification in secrets folder:</p><pre><code># cd /home/vagrant/Portus/examples/compose/secrets
-# openssl req -newkey rsa:4096 -nodes -sha256 -keyout portus.key -x509 -days 3650 -out portus.crt
-</code></pre><p>In the above steps, input following items:</p><pre><code>Country Name (2 letter code) [AU]:CN
-State or Province Name (full name) [Some-State]:Guangdong
-Locality Name (eg, city) []:Guangzhou
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:kkkk
-Organizational Unit Name (eg, section) []:cloud
-Common Name (e.g. server FQDN or YOUR name) []:portus.kkkk.com
-Email Address []:xxxx@xxxx.com
-</code></pre><h3 id=docker-compose-file>Docker Compose File</h3><p>The docker compose file is the critical for portus deployment, following is
-my configuration file:</p><pre><code>version: &quot;2&quot;
-
-services:
-  portus:
-    image: opensuse/portus:head
-    environment:
-      - PORTUS_MACHINE_FQDN_VALUE=${MACHINE_FQDN}
-
-      # DB. The password for the database should definitely not be here. You are
-      # probably better off with Docker Swarm secrets.
-      - PORTUS_DB_HOST=db
-      - PORTUS_DB_DATABASE=portus_production
-      - PORTUS_DB_PASSWORD=${DATABASE_PASSWORD}
-      - PORTUS_DB_POOL=5
-
-      # Secrets. It can possibly be handled better with Swarm's secrets.
-      - PORTUS_SECRET_KEY_BASE=${SECRET_KEY_BASE}
-      - PORTUS_KEY_PATH=/certificates/portus.key
-      - PORTUS_PASSWORD=${PORTUS_PASSWORD}
-
-      # SSL
-      - PORTUS_PUMA_TLS_KEY=/certificates/portus.key
-      - PORTUS_PUMA_TLS_CERT=/certificates/portus.crt
-
-      # NGinx is serving the assets instead of Puma. If you want to change this,
-      # uncomment this line.
-      #- RAILS_SERVE_STATIC_FILES='true'
-    ports:
-      - 3000:3000
-    links:
-      - db
-    volumes:
-      - ./secrets:/certificates:ro
-      - static:/srv/Portus/public
-    extra_hosts:
-      - &quot;portus.xxxx.com:192.192.189.53&quot;
-
-  background:
-    image: opensuse/portus:head
-    depends_on:
-      - portus
-      - db
-    environment:
-      # Theoretically not needed, but cconfig's been buggy on this...
-      - CCONFIG_PREFIX=PORTUS
-      - PORTUS_MACHINE_FQDN_VALUE=${MACHINE_FQDN}
-
-      # DB. The password for the database should definitely not be here. You are
-      # probably better off with Docker Swarm secrets.
-      - PORTUS_DB_HOST=db
-      - PORTUS_DB_DATABASE=portus_production
-      - PORTUS_DB_PASSWORD=${DATABASE_PASSWORD}
-      - PORTUS_DB_POOL=5
-
-      # Secrets. It can possibly be handled better with Swarm's secrets.
-      - PORTUS_SECRET_KEY_BASE=${SECRET_KEY_BASE}
-      - PORTUS_KEY_PATH=/certificates/portus.key
-      - PORTUS_PASSWORD=${PORTUS_PASSWORD}
-
-      - PORTUS_BACKGROUND=true
-    links:
-      - db
-    volumes:
-      - ./secrets:/certificates:ro
-    extra_hosts:
-      - &quot;portus.xxxx.com:192.192.189.53&quot;
-
-  db:
-    image: library/mariadb:10.0.23
-    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci --init-connect='SET NAMES UTF8;' --innodb-flush-log-at-trx-commit=0
-    environment:
-      - MYSQL_DATABASE=portus_production
-
-      # Again, the password shouldn't be handled like this.
-      - MYSQL_ROOT_PASSWORD=${DATABASE_PASSWORD}
-    volumes:
-      - /var/lib/portus/mariadb:/var/lib/mysql
-    extra_hosts:
-      - &quot;portus.xxxx.com:192.192.189.53&quot;
-
-  registry:
-    image: library/registry:2.6
-    command: [&quot;/bin/sh&quot;, &quot;/etc/docker/registry/init&quot;]
-    environment:
-      # Authentication
-      REGISTRY_AUTH_TOKEN_REALM: https://${MACHINE_FQDN}:3000/v2/token
-      REGISTRY_AUTH_TOKEN_SERVICE: ${MACHINE_FQDN}:5000
-      REGISTRY_AUTH_TOKEN_ISSUER: ${MACHINE_FQDN}
-      #REGISTRY_AUTH_TOKEN_ISSUER: portus.test.lan
-      REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE: /secrets/portus.crt
-
-      # SSL
-      REGISTRY_HTTP_TLS_CERTIFICATE: /secrets/portus.crt
-      REGISTRY_HTTP_TLS_KEY: /secrets/portus.key
-
-      # Portus endpoint
-      REGISTRY_NOTIFICATIONS_ENDPOINTS: &gt;
-        - name: portus
-          url: https://${MACHINE_FQDN}:3000/v2/webhooks/events
-          #url: https://192.192.189.53:3000/v2/webhooks/events
-          timeout: 2000ms
-          threshold: 5
-          backoff: 1s
-    volumes:
-      - /var/lib/portus/registry:/var/lib/registry
-      - ./secrets:/secrets:ro
-      - ./registry/config.yml:/etc/docker/registry/config.yml:ro
-      - ./registry/init:/etc/docker/registry/init:ro
-    ports:
-      - 5000:5000
-      - 5001:5001 # required to access debug service
-    links:
-      - portus:portus
-    extra_hosts:
-      - &quot;portus.xxxx.com:192.192.189.53&quot;
-
-  nginx:
-    image: library/nginx:alpine
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./secrets:/secrets:ro
-      - static:/srv/Portus/public:ro
-    ports:
-      - 80:80
-      - 443:443
-    links:
-      - registry:registry
-      - portus:portus
-    extra_hosts:
-      - &quot;portus.xxxx.com:192.192.189.53&quot;
-
-volumes:
-  static:
-    driver: local
-</code></pre><p>When everything is configured, startup the service via:</p><pre><code># docker-compose -f docker-compose.yml up
-</code></pre><h3 id=configuration>Configuration</h3><p>Before open your browser for accessing the portus service, do following :</p><pre><code>$ sudo echo &quot;192.192.189.53	portus.xxxx.com&quot;&gt;&gt;/etc/hosts
-</code></pre><p>Now open your browser for <code>https://portus.xxxx.com</code>:</p><p><img src=/images/2018_05_19_17_36_55_626x496.jpg alt=/images/2018_05_19_17_36_55_626x496.jpg></p><p>Configure the registry via:</p><p><img src=/images/2018_05_19_17_37_51_488x262.jpg alt=/images/2018_05_19_17_37_51_488x262.jpg></p><p>Team->Create new team, create team for kismatic deployment:</p><p><img src=/images/2018_05_19_17_40_16_397x279.jpg alt=/images/2018_05_19_17_40_16_397x279.jpg></p><p>Admin->User->Create new user:</p><p><img src=/images/2018_05_19_17_41_59_434x313.jpg alt=/images/2018_05_19_17_41_59_434x313.jpg></p><p>The created user is listed as:</p><p><img src=/images/2018_05_19_17_42_41_1023x262.jpg alt=/images/2018_05_19_17_42_41_1023x262.jpg></p><p>Team->members->Add members:</p><p><img src=/images/2018_05_19_17_43_32_640x169.jpg alt=/images/2018_05_19_17_43_32_640x169.jpg></p><p>Create a new namespace for kismatic 1.10 deployment images:</p><p><img src=/images/2018_05_19_17_44_28_440x297.jpg alt=/images/2018_05_19_17_44_28_440x297.jpg></p><p>You can easily view portus logs at dashboard:</p><p><img src=/images/2018_05_19_17_45_14_584x314.jpg alt=/images/2018_05_19_17_45_14_584x314.jpg></p><h3 id=push-images>Push images</h3><p>upload the portus.crt to remote machine(kismatic deployment node):</p><pre><code># scp ./portus.crt  kkkkk@192.192.189.1:/home/kkkkk/
-root@registry3:~/Portus/examples/compose/secrets# pwd
-/home/vagrant/Portus/examples/compose/secrets
-</code></pre><p>Add the crt file into your system folder and trust this file, take ArchLinux
-for example:</p><pre><code>$ sudo cp portus.crt /etc/ca-certificates/trust-source/anchors/portus.xxxx.com.crt
-$ sudo update-ca-trust
-$ sudo trust extract-compat
-$ sudo systemctl restart docker
-$ sudo docker login portus.xxxx.com:5000
-$ sudo docker login portus.xxxx.com
-Username: kismatic
-Password: 
-WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
-Configure a credential helper to remove this warning. See
-https://docs.docker.com/engine/reference/commandline/login/#credentials-store
-
-Are you sure you want to proceed? [y/N] y
-Login Succeeded
-</code></pre><p>kismatic configuration items:</p><pre><code># vim kismatic-cluster.yaml
+# cd /etc/systemd/system/
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/mynginx.service .
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/docker-infra.service .
+# systemctl enable sshd.service
+# cd /root
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/kismatic.tar.gz .
+# yum install -y ntp
+# vim /etc/ntp.conf
+# systemctl enable ntpd
+# systemctl disable chronyd
+# systemctl disable firewalld
+# vi /etc/selinux/config
+     disable the selinux configuration
+</code></pre><p>Exit the chroot, the program will continue to build the iso.</p><h3 id=boot-up-the-system>boot-up the system</h3><p>After bootup the system, install the os via clicking the live install icon on the desktop.</p><p>In newly installed system, do following things:</p><pre><code># systemctl enable docker
+# systemctl start docker
+# /bin/loaddocker.sh
+# systemctl enable mynginx.service
+# systemctl enable docker-infra.service
+# reboot
+</code></pre><p>Now you could check your installation.</p><p>Sometimes the boot will fail, I don&rsquo;t know why, maybe because of the dracut issue?</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/30/synckismaticimages/>SyncKismaticImages</a></h1><span class=post-date>May 30, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>搭建完Portus镜像后，如何重新初始化，并获得更新的kismatic镜像？这里记录了步骤。</p><h3 id=清空已有镜像>清空已有镜像</h3><p>运行以下命令，可以得到一个全新的portus镜像仓库:</p><pre><code># systemctl stop docker-infra.service
+# cd /usr/local/compose
+# docker-compose down
+Stopping compose_nginx_1      ... done
+Stopping compose_background_1 ... done
+Stopping compose_registry_1   ... done
+Stopping compose_portus_1     ... done
+Stopping compose_db_1         ... done
+Removing compose_nginx_1      ... done
+Removing compose_background_1 ... done
+Removing compose_registry_1   ... done
+Removing compose_portus_1     ... done
+Removing compose_db_1         ... done
+Removing network compose_default
+# cd /var/lib
+# mv portus portus.back
+# mkdir portus
+# docker volume rm compose_static
+# systemctl start docker-infra.service
+</code></pre><h3 id=配置新仓库>配置新仓库</h3><p>在打开浏览器访问portus仓库前，手动添加条目至/etc/hosts文件，IP地址需手动更改 :</p><pre><code>$ sudo echo &quot;192.192.189.53	portus.xxxx.com&quot;&gt;&gt;/etc/hosts
+</code></pre><p>打开浏览器访问 <code>https://portus.xxxx.com</code>:</p><p><img src=/images/2018_05_19_17_36_55_626x496.jpg alt=/images/2018_05_19_17_36_55_626x496.jpg></p><p>在页面弹出的提示中，填入以下参考值:</p><p><img src=/images/2018_05_19_17_37_51_488x262.jpg alt=/images/2018_05_19_17_37_51_488x262.jpg></p><p>Team->Create new team, 创建一个名为 kismatic 的团队:</p><p><img src=/images/2018_05_19_17_40_16_397x279.jpg alt=/images/2018_05_19_17_40_16_397x279.jpg></p><p>Admin->User->Create new user, 创建一个名为kismatic的用户:</p><p><img src=/images/2018_05_19_17_41_59_434x313.jpg alt=/images/2018_05_19_17_41_59_434x313.jpg></p><p>创建好的用户如下所示:</p><p><img src=/images/2018_05_19_17_42_41_1023x262.jpg alt=/images/2018_05_19_17_42_41_1023x262.jpg></p><p>Team->members->Add members,
+添加kismatic用户到kismatic组里，定义其角色为Contributer， 即可push/pull镜像:</p><p><img src=/images/2018_05_19_17_43_32_640x169.jpg alt=/images/2018_05_19_17_43_32_640x169.jpg></p><p>创建一个新的命名空间，并绑定到kismatic组:</p><p><img src=/images/2018_05_19_17_44_28_440x297.jpg alt=/images/2018_05_19_17_44_28_440x297.jpg></p><p>执行的步骤可以在portus的logs里看到:</p><p><img src=/images/2018_05_19_17_45_14_584x314.jpg alt=/images/2018_05_19_17_45_14_584x314.jpg></p><h3 id=kismatic-v110同步镜像>kismatic v1.10同步镜像</h3><p>到<a href=https://github.com/apprenda/kismatic/releases>https://github.com/apprenda/kismatic/releases</a>下载kismatic对应的版本.</p><p>解压后的情况:</p><pre><code># pwd
+/home/xxxx/code/kismatic1110
+# ls
+ansible  helm  kismatic  kubectl  provision
+</code></pre><p>创建plan文件:</p><pre><code> ./kismatic install plan
+Plan your Kubernetes cluster:
+=&gt; Number of etcd nodes [3]: 1
+=&gt; Number of master nodes [2]: 1
+=&gt; Number of worker nodes [3]: 1
+=&gt; Number of ingress nodes (optional, set to 0 if not required) [2]: 0
+=&gt; Number of storage nodes (optional, set to 0 if not required) [0]: 0
+=&gt; Number of existing files or directories to be copied [0]: 0
+</code></pre><p>由此则产生了<code>kismatic-cluster.yaml</code>文件,
+编辑对应的IP配置，可以参考已有的配置， 其中仓库的配置部分如下:</p><pre><code># vim kismatic-cluster.yaml
 docker_registry:
 
   # IP or hostname and port for your registry.
@@ -727,77 +151,32 @@ docker_registry:
 
   # Leave blank for unauthenticated access.
   password: &quot;xxxxxxxx&quot;
-# ./kismatic seed-registry --verbose
-</code></pre><p>Now you will see the output for uploading:</p><p><img src=/images/2018_05_19_18_07_42_537x460.jpg alt=/images/2018_05_19_18_07_42_537x460.jpg></p><p>namespace for kismatic110:</p><p><img src=/images/2018_05_19_18_08_08_881x445.jpg alt=/images/2018_05_19_18_08_08_881x445.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/16/workingtipsonistiodemo/>WorkingTipsOnIstioDemo</a></h1><span class=post-date>May 16, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=istio-08-download>istio 0.8 download</h3><p>Download from its daily build:</p><p><a href=https://gcsweb.istio.io/gcs/istio-prerelease/daily-build/>https://gcsweb.istio.io/gcs/istio-prerelease/daily-build/</a></p><pre><code># wget https://storage.googleapis.com/istio-prerelease/daily-build/release-0.8-20180515-17-26/istio-release-0.8-20180515-17-26-linux.tar.gz
-# mkdir -p /root/istio/bin/
-# cp /root/Code/istio-release-0.8-20180515-17-26/bin/istioctl /root/istio/bin/
-</code></pre><h3 id=build>Build</h3><p>Install following packages:</p><pre><code># yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel java-1.8.0-openjdk-debug
-# export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.el7_4.x86_64
-# export PATH=$PATH:$JAVA_HOME/bin
-</code></pre><p>Build the cars-api service via:</p><pre><code># ./mvnw -Distio.home=/root/Code/istio-release-0.8-20180515-17-26 clean package fabric8:build
-# docker images | grep cars-api
-kameshsampath/cars-api                                                      0.0.1               28647076e814        8 minutes ago       439 MB
-</code></pre><h3 id=verification>Verification</h3><p>Install cars-api:</p><pre><code># kubectl  apply -f istio-cars-api-0.0.1-all.yml 
-deployment.extensions &quot;cars-api&quot; created
-# kubectl  get pods
-NAME                                      READY     STATUS    RESTARTS   AGE
-cars-api-777b9574bf-jvxvk                 2/2       Running   0          3m
-</code></pre><p><code>car-api-ingress.yaml</code> definition:</p><pre><code>apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  labels:
-    expose: &quot;true&quot;
-    app: cars-api
-    version: 0.0.1
-  name: cars-api
-  namespace: default
-  annotations:
-    kubernetes.io/ingress.class: istio
-spec:
-  rules:
-  - http:
-      paths:
-      - backend:
-          serviceName: cars-api
-          servicePort: 8080
-</code></pre><p>Create a ingress:</p><pre><code># kubectl create -f car-api-ingress.yaml
-</code></pre><p>Test the car api via:</p><pre><code># curl -vvv http://192.192.189.41:32204/cars/list
-</code></pre><h3 id=auth>auth</h3><p>Definition file <code>auth.yaml</code>:</p><pre><code>apiVersion: &quot;authentication.istio.io/v1alpha1&quot;
-kind: &quot;Policy&quot;
-metadata:
-  name: &quot;cars-api&quot;
-spec:
-  targets:
-  - name: cars-api
-  peers:
-  - mtls:
-  origins:
-  - jwt:
-      issuer: http://keycloak.default:8080/auth/realms/istio
-      jwksUri: http://keycloak.default:8080/auth/realms/istio/protocol/openid-connect/certs
-      audiences: 
-      - cars-web  
-  principalBinding: USE_ORIGIN
-</code></pre><p>Create the Policy via:</p><pre><code># /root/istio/bin/istioctl create  -f auth.yaml
-</code></pre><p>Now re-visit the ingress item you will see 401 issue:</p><pre><code># curl -vvv http://192.192.189.41:32204/cars/list
-
-*   Trying 192.192.189.41...
-* TCP_NODELAY set
-* Connected to 192.192.189.41 (192.192.189.41) port 32204 (#0)
-&gt; GET /cars/list HTTP/1.1
-&gt; Host: 192.192.189.41:32204
-&gt; User-Agent: curl/7.59.0
-&gt; Accept: */*
-&gt; 
-&lt; HTTP/1.1 401 Unauthorized
-&lt; content-length: 29
-&lt; content-type: text/plain
-&lt; date: Wed, 16 May 2018 03:16:47 GMT
-&lt; server: envoy
-&lt; x-envoy-upstream-service-time: 8
-&lt; 
-* Connection #0 to host 192.192.189.41 left intact
-Origin authentication failed.%              
-</code></pre><p>Get the token, then :</p><pre><code># curl -vvv -H &quot;Authorization: Bearer $token&quot; http://192.192.189.41:32204/cars/list
-</code></pre><p>you will get the right result.</p><h3 id=different-namespace>Different Namespace</h3><p>Create the auth.yaml for different namespace is OK:</p><pre><code># /root/istio/bin/istioctl create -f auth-myproject.yaml  -n myproject
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/59/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/59/>59</a></li><li class="page-item active"><a class=page-link href=/page/60/>60</a></li><li class=page-item><a class=page-link href=/page/61/>61</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/61/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>同步仓库：</p><pre><code># ./kismatic seed-registry --verbose
+</code></pre><p>同步完毕以后，取回镜像包：</p><pre><code># systemctl stop docker-infra.service
+# cd /var/lib/
+# tar czvf portus.tar.gz portus/
+</code></pre><h3 id=rpm包取回>rpm包取回</h3><p>设置节点机的<code>/etc/yum.conf</code>下为保存rpm包，一次在线安装后，即可获得所有的rpm包。createrepo
+后直接取回。</p><h3 id=重组安装源>重组安装源</h3><p>一次详细的重组步骤如下:</p><pre><code># 复制旧版本框架
+cp -r ansible ansible_kismatic1110
+cd ansible_kismatic1110
+# 更新docker镜像源
+rm -f portus.tar.gz
+scp root@10.168.100.150:/var/lib/portus.tar.gz .
+rm -f kismaticpkgs.tar.gz 
+# 更新rpm源
+scp -r root@10.168.100.150:/usr/local/kismaticpkgs.tar.gz .
+# 更新kismatic部署框架
+tar xzvf kismatic.tar.gz
+cd kismatic/cluster00
+rm -rf ./*
+sudo cp -ar /media/sda5/Code/kismatic1110/* .
+sudo rm -rf generated
+sudo rm -rf ./runs/apply/*
+sudo rm -rf ./runs/preflight/*
+sudo rm -rf ./runs/smoketest/*
+rm -f kismatic.tar.gz
+sudo tar czvf kismatic.tar.gz kismatic
+sudo rm -rf kismatic
+</code></pre><p>重组后的大小:</p><pre><code># du -hs ansible_kismatic1110 
+1.2G	ansible_kismatic1110
+</code></pre><p>现在就可以用原有方法进行系统的部署了。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/59/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/59/>59</a></li><li class="page-item active"><a class=page-link href=/page/60/>60</a></li><li class=page-item><a class=page-link href=/page/61/>61</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/61/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

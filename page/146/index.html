@@ -1,413 +1,269 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/01/28/using-teamviewer/>Using Teamviewer</a></h1><span class=post-date>Jan 28, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><h4 id=centos>CentOS</h4><p>Download the corresponding rpm files, install it via <code>sudo yum install ******.rpm</code>, this will automatically install the dependencies and also install the teamviewer for your centos system.</p><h4 id=ubuntu>Ubuntu</h4><p>Only working for 14.04:<br>First you have to add i686(i386) supporting:</p><pre><code>$ dpkg --add-architecture i386
-$ apt-get update
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/01/30/speed-up-the-wp-website-in-tianchao/>Speed-Up the WP website in TianChao</a></h1><span class=post-date>Jan 30, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Since our Great Fire Wall forbidden the google, thus all of the google related service becomes available in china, this leads to access to wordpress based website which uses google online fonts pretty slow. Following is how to speedup your website without too many changes:<br>First go to your website&rsquo;s folder, find the files which calls <code>fonts.googleapis.com</code>:</p><pre><code>$ grep -i &quot;fonts.googleapis.com&quot; ./ -r
+./wp-content/themes/twentytwelve/functions.php:		$font_url = add_query_arg( $query_args, &quot;$protocol://fonts.googleapis.com/css&quot; );
+./wp-content/themes/twentyfifteen/functions.php:		), '//fonts.googleapis.com/css' );
+./wp-content/themes/twentyfourteen/functions.php:		$font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), &quot;//fonts.googleapis.com/css&quot; );
+./wp-content/themes/tdpersona/functions.php:	wp_enqueue_style( 'tdpersona-googlefonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' );
+./wp-content/themes/twentythirteen/functions.php:		$fonts_url = add_query_arg( $query_args, &quot;//fonts.googleapis.com/css&quot; );
+./wp-includes/script-loader.php:		$open_sans_font_url = &quot;//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,400,600&amp;subset=$subsets&quot;;
+./wp-includes/js/tinymce/plugins/compat3x/css/dialog.css:@import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,400,600&amp;subset=latin-ext,latin);
 
-</code></pre><p>Then you have to downloaded the following packages rather than the offcial packages(x64 or i386):<br><a href=http://download.teamviewer.com/download/teamviewer_linux.deb>http://download.teamviewer.com/download/teamviewer_linux.deb</a><br>Install this <code>teamviewer_linux.deb</code>, and you got teamviewer running on your system.<br>For 12.04, directly download the package from:<br><a href=http://download.teamviewer.com/download/teamviewer_linux_x64.deb>http://download.teamviewer.com/download/teamviewer_linux_x64.deb</a><br>Then install it via:</p><pre><code># dpkg -i teamviewer_linux_x64.deb
-# apt-get install -f
 
-</code></pre><p>Then teamviewer could be installed on your system.</p><h3 id=connect-back>Connect Back</h3><p>First your server side will install the teamviewer and run is as the daemon mode.</p><h3 id=tips>Tips</h3><p>Stop the teamviewerd via(On CentOS):</p><pre><code>$ sudo teamviewer --daemon stop
+</code></pre><p>Replace all of the <code>fonts.googleapis.com</code> with <code>fonts.useso.com</code>, this could be done via scripts.<br>After modification, your website will be much more faster than before.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/01/29/build-contrial-source-code/>Build Contrial Source Code</a></h1><span class=post-date>Jan 29, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=reference>Reference</h3><p><a href=http://juniper.github.io/contrail-vnc/README.html>http://juniper.github.io/contrail-vnc/README.html</a></p><h3 id=hardware--software>Hardware && Software</h3><p>Vitualized machine which have 1G memory and 1 core.<br>Running 12.04:</p><pre><code># cat /etc/issue
+Ubuntu 12.04.3 LTS \n \l
 
-</code></pre><p>While start it via:</p><pre><code>$ sudo teamviewer --daemon start
+</code></pre><h3 id=packages>Packages</h3><p>You should install following packages:</p><pre><code>$ sudo add-apt-repository ppa:opencontrail/ppa
+$ sudo vim /etc/apt/source.lists
+deb http://ppa.launchpad.net/opencontrail/ppa/ubuntu precise main
+deb-src http://ppa.launchpad.net/opencontrail/ppa/ubuntu precise main
+$ sudo apt-get install  -y scons git python-lxml wget gcc patch make unzip flex bison g++ libssl-dev autoconf automake libtool pkg-config vim python-dev python-setuptools libprotobuf-dev protobuf-compiler libsnmp-python libgettextpo0 libxml2-utils debhelper python-sphinx ruby-ronn libipfix python-all libpcap-dev module-assistant libtbb-dev libboost-dev liblog4cplus-dev libghc-curl-dev
+$ sudo apt-get install python-pip
+$ sudo pip install gevent bottle netaddr 
 
-</code></pre><p>Seems someone blocked the flow to this site&mldr;55555</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/01/27/play-docker-1/>Play Docker(1)</a></h1><span class=post-date>Jan 27, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>For playing docker and prepare for my presentation, I wrote this series and try to record my tips on playing docker.</p><h3 id=background>Background</h3><p>I created a droplet on DigitalOcean.com, which is running CentOS 7, the memory is only 512M, with one core and 20G size disk, which means its caculation resource is pretty limited, so heavy tasks should be avoid, like building.<br>Since the memory is only 512M, I allocated 1G swapfile to the machine.<br>The usable disk is 17G now.</p><h3 id=docker-installation>Docker Installation</h3><p>Docker is already part of CentOS7, so install it directly via:</p><pre><code>$ sudo yum install -y docker
-$ which docker
-/usr/bin/docker
+</code></pre><h3 id=getting-source-code>Getting Source Code</h3><p>Use repo for getting the source code:</p><pre><code>$ curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
+$ chmod a+x ~/bin/repo
+$ echo &quot;export PATH=/usr/local/git/bin:$PATH&quot;&gt;&gt;~/.bashrc
+$ source ~/.bashrc
 
-</code></pre><p>Start the service and make it default:</p><pre><code>$ sudo service docker start
-Redirecting to /bin/systemctl start  docker.service
-$ sudo chkconfig docker on
-Note: Forwarding request to 'systemctl enable docker.service'.
-ln -s '/usr/lib/systemd/system/docker.service' '/etc/systemd/system/multi-user.target.wants/docker.service'
+</code></pre><p>Fetch the repository and sync it.</p><pre><code>$ mkdir ~/Code/OpenContrail
+$ cd ~/Code/OpenContrail
+$ repo init -u git@github.com:Juniper/contrail-vnc
+$ repo sync
 
-</code></pre><p>Now even if you restart the machine, the service would be automatically started together with system boot.</p><h3 id=first-instance>First Instance</h3><p>Pull the debian back:</p><pre><code>$ sudo docker pull debian
-Pulling repository debian
-c90d655b99b2: Download complete 
-511136ea3c5a: Download complete 
-30d39e59ffe2: Download complete 
-Status: Downloaded newer image for debian:latest
-$ sudo docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-debian              wheezy              c90d655b99b2        8 hours ago         85.12 MB
-debian              7                   c90d655b99b2        8 hours ago         85.12 MB
-debian              7.8                 c90d655b99b2        8 hours ago         85.12 MB
-debian              latest              c90d655b99b2        8 hours ago         85.12 MB
+</code></pre><p>Some of the packages will be blocked by GFW, be sure you use proxy for downloading them.<br>Fetch the third party packages:</p><pre><code>$ python third_party/fetch_packages.py
 
-</code></pre><p>Install the <code>lsb_release</code>, then run different tags, all of them are the same:</p><pre><code>$ sudo docker run -i -t debian:7.8 /bin/bash
-xxxxxxx # lsb_release -a 
-No LSB modules are available.
-Distributor ID:	Debian
-Description:	Debian GNU/Linux 7.8 (wheezy)
-Release:	7.8
-Codename:	wheezy
+</code></pre><h3 id=build-the-opencontrail--pakages>Build the OpenContrail & Pakages</h3><p>The build step is simply via <code>scons</code>, after a long wait, it will pass.<br>Generate packages via:</p><pre><code>$ make -f packages.make
 
-</code></pre><h3 id=destroy-container>Destroy Container</h3><p>List all of the container via <code>sudo docker ps -a</code>, then destroy the container via <code>sudo docker rm xxxxxx</code> while xxxxxx is the container ID.<br>Play magic, one line for remove all of the containers:</p><pre><code>$ sudo docker rm `sudo docker ps -a -q`
-16d606046c24
-65ceffcf4a7b
-dfbc6d0fa051
-1dd18dbf8b9c
-66c931879c2c
-$ sudo docker ps -a
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+</code></pre><p>The default configuration will make <code>all</code> of the components in packages.make, or you could seperately build single component.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/01/29/build-specified-version-of-opencontrail/>Build Specified Version Of OpenContrail</a></h1><span class=post-date>Jan 29, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Since the default building of OpenContrail is master branch, while the installation deb file named like <code>contrail-install-packages_1.21-74~havana_all.deb</code>, this gap need to be filled via building.</p><h3 id=view-different-branches>View Different Branches</h3><p>Repo hold all of the versions locally, simply view them via:</p><pre><code># pwd
+/root/Code/OpenContrail/.repo/manifests
+# git branch -a | cut -d / -f 3
+* default
+master -&gt; origin
+R1.04
+R1.05
+R1.06
+R1.06c1
+R1.10
+R1.30
+R2.0
+R2.1
+gh-pages
+master
+opserver
+rajreddy_doc_update
+rajreddy_doc_update2
+rajreddy_webui_third
 
-</code></pre><h3 id=remove-the-images>Remove The Images</h3><p>One line for remove all of the ununsed images:</p><pre><code>$ sudo docker images -q
-c90d655b99b2
-c90d655b99b2
-c90d655b99b2
-c90d655b99b2
-$ sudo docker rmi `sudo docker images -q`
-Untagged: debian:7
-Untagged: debian:7.8
-Untagged: debian:latest
-Untagged: debian:wheezy
-Deleted: c90d655b99b2ec5b7e94d38c87f92dce015c17a313caeaae0e980d9b9bed8444
-Deleted: 30d39e59ffe287f29a41a3f8bd70734afc8728329e3289945cbdc5bbf07cd980
-Deleted: 511136ea3c5a64f264b78b5433614aec563103b4d4702f3ba7d4d2698e22c158
-Error response from daemon: No such image: c90d655b99b2
-Error response from daemon: No such image: c90d655b99b2
-Error response from daemon: No such image: c90d655b99b2
-2015/01/27 21:14:01 Error: failed to remove one or more images
-$ sudo docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+</code></pre><p>While these branches doesn&rsquo;t contains <code>1.21</code>, why?</p><h3 id=specify-different-tag>Specify Different Tag</h3><p>In git admined project, tag is frequently be used, thus we could fetch the code via specified tag.<br>Repo need to run following command to enable all of the sub-project syncs to specified tag, following I use <code>v1.21</code> tag for syncing.</p><pre><code>$ repo forall -c 'git checkout v1.21`
+$ repo sync
+$ python third_party/fetch_package.py &amp;&amp; scons &amp;&amp; make -f packages.make
 
-</code></pre><p>But it would be add a pipe like <code>sudo docker images -q | uniq</code></p><h3 id=connect-to-existing-running-container>Connect To Existing Running Container</h3><h4 id=docker-13-ways>Docker 1.3 Ways</h4><p>From Docker 1.3, we could use <code>docker exec -it</code> for attaching to running container:</p><pre><code>$ sudo docker run -i -t centos /bin/bash
-[root@1f9005d495c6 /]# 
-$ sudo docker ps
-[sudo] password for Trusty: 
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-1f9005d495c6        centos:7            &quot;/bin/bash&quot;         8 minutes ago       Up 8 minutes                            sick_jones          
-$ sudo docker exec -it 1f9005d495c6 /bin/bash
-[root@1f9005d495c6 /]# 
+</code></pre><p>Need a long time for checking the generated packages.<br>Problem:</p><pre><code>dpkg-source: error: syntax error in contrail/debian/control at line 33: block
+lacks the 'Package' field
+dpkg-buildpackage: error: dpkg-source --before-build contrail gave error exit
+status 25
 
-</code></pre><p>But the Container&rsquo;s lifecycle is controlled by the first instance, <code>docker exec</code> only attached to, this means if you exit the container, all of the <code>docker exec</code> tty will be shutdown.</p><h4 id=nsenter-ways>Nsenter Ways</h4><p>First use <code>docker inspect</code> for get the PID.</p><pre><code>$ sudo docker ps 
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-8337ea52cfd1        centos:7            &quot;/bin/bash&quot;         4 seconds ago       Up 4 seconds                            pensive_blackwell   
-$ PID=$(sudo docker inspect --format {{.State.Pid}} 8337ea52cfd1)
-$ echo $PID
-3951
+</code></pre><p>when running <code>make -f packages.make</code>, it will failed, just remove the line before <code>packages</code> it will be OK.</p><h3 id=specify-different-branch>Specify Different Branch</h3><p>Specify the branch of:</p><pre><code>repo init -b android-2.3_r1 ; repo sync
+repo init -b R2.20
 
-</code></pre><p>Use nsenter for enter the PID&rsquo;s namespace:</p><pre><code>$ sudo nsenter --target $PID --mount --uts --ipc --net --pid
-[root@8337ea52cfd1 /]#
 
-</code></pre><h4 id=lazy-wrap-of-nsenter-ways>Lazy Wrap of Nsenter Ways</h4><p>Just visit:<br><a href=https://github.com/jpetazzo/nsenter>https://github.com/jpetazzo/nsenter</a>, download the docker-enter, and place it in the right place:</p><pre><code>$ sudo docker ps 
-[sudo] password for Trusty: 
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-8337ea52cfd1        centos:7            &quot;/bin/bash&quot;         11 minutes ago      Up 11 minutes                           pensive_blackwell   
-$ sudo docker-enter pensive_blackwell ls -la
-...
-$ sudo docker-enter 8337ea52cfd1 /bin/bash
-[root@8337ea52cfd1 /]# 
-
-</code></pre><h4 id=docker-attach>Docker Attach</h4><p>If you attach to the container, you must remember, better you use tmux holding the whole instance.</p><pre><code>$ sudo docker ps
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-057435c2f1cb        centos:7            &quot;/bin/bash&quot;         5 seconds ago       Up 4 seconds                            evil_kirch          
-$ sudo docker attach 057435c2f1cb
-[root@057435c2f1cb /]# ls
-bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  selinux  srv  sys  tmp  usr  var
-
-</code></pre><p>Once you quit from the &ldquo;attached&rdquo; tty, the origin tty will also quit.</p><h3 id=more-system-info>More System Info</h3><p>Use <code>docker info</code> to get more detailed system infos:</p><pre><code>$ sudo docker info
-Containers: 3
-Images: 3
-Storage Driver: devicemapper
- Pool Name: docker-253:1-397799-pool
- Pool Blocksize: 65.54 kB
- Data file: /var/lib/docker/devicemapper/devicemapper/data
- Metadata file: /var/lib/docker/devicemapper/devicemapper/metadata
- Data Space Used: 563.1 MB
- Data Space Total: 107.4 GB
- Metadata Space Used: 1.069 MB
- Metadata Space Total: 2.147 GB
- Library Version: 1.02.84-RHEL7 (2014-03-26)
-Execution Driver: native-0.2
-Kernel Version: 3.10.0-123.8.1.el7.x86_64
-Operating System: CentOS Linux 7 (Core)
-$ sudo docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-centos              7                   8efe422e6104        3 weeks ago         224 MB
-centos              centos7             8efe422e6104        3 weeks ago         224 MB
-centos              latest              8efe422e6104        3 weeks ago         224 MB
-$ sudo docker ps -a
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                       PORTS               NAMES
-057435c2f1cb        centos:7            &quot;/bin/bash&quot;         3 minutes ago       Exited (0) 54 seconds ago                        evil_kirch          
-8337ea52cfd1        centos:7            &quot;/bin/bash&quot;         21 minutes ago      Exited (127) 4 minutes ago                       pensive_blackwell   
-1f9005d495c6        centos:7            &quot;/bin/bash&quot;         34 minutes ago      Exited (0) 24 minutes ago                        sick_jones          
-
-</code></pre><h3 id=commit-changes>Commit Changes</h3><p>Install the vim in the running container:</p><pre><code>$ sudo docker run -i -t centos /bin/bash
-[sudo] password for Trusty: 
-[root@ea29113ba0e1 /]# which vim
-/usr/bin/which: no vim in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin)
-[root@ea29113ba0e1 /]# yum install -y vim
-
-</code></pre><p>In another container, commit the changes:</p><pre><code>$ sudo docker commit ea29113ba0e1 vim_installed
-54cebb627e37600e81a832616eb3253af5dd26d0d248b9a9251e23bc8c93567d
-$ sudo docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-vim_installed       latest              54cebb627e37        12 seconds ago      362.6 MB
-centos              latest              8efe422e6104        3 weeks ago         224 MB
-centos              7                   8efe422e6104        3 weeks ago         224 MB
-centos              centos7             8efe422e6104        3 weeks ago         224 MB
-
-</code></pre><p>Next time if you want to use the vim installed images, simply run:</p><pre><code>$ sudo docker run -it vim_installed /bin/bash
-[root@4b76f0c7bc46 /]# which vim
-/usr/bin/vim
-
-</code></pre><h3 id=job-controlling>Job Controlling</h3><p>Use environment variables for recording the running job:</p><pre><code>$ JOB=$(sudo docker run -d vim_installed /bin/sh -c &quot;while true; do echo Hello World; sleep 1; done&quot;)
-$ echo $JOB
-5dcb0884d27077e84ef4fea7fc0b3e8151657e92e0c2d4d1e33f84483715dfb9
-
-</code></pre><p>Examine the log from the app&rsquo;s output:</p><pre><code>$ sudo docker logs $JOB
-$ sudo docker logs --follow $JOB
-
-</code></pre><p>Add &ndash;follow will continue to view the log output.<br>Stop the running container:</p><pre><code>$ sudo docker stop $JOB
-5dcb0884d27077e84ef4fea7fc0b3e8151657e92e0c2d4d1e33f84483715dfb9
-
-</code></pre><p>Start the stopped container:</p><pre><code>$ sudo docker start $JOB
-5dcb0884d27077e84ef4fea7fc0b3e8151657e92e0c2d4d1e33f84483715dfb9
-
-</code></pre><p>Or Restart:</p><pre><code>$ sudo docker restart $JOB
-
-</code></pre><p>Or kill:</p><pre><code>$ sudo docker kill $JOB
-
-</code></pre><p>Notice the kill exit code is -1:</p><pre><code>$ sudo docker ps
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-$ sudo docker ps -a
-CONTAINER ID        IMAGE                  COMMAND                CREATED             STATUS                        PORTS               NAMES
-5dcb0884d270        vim_installed:latest   &quot;/bin/sh -c 'while t   9 minutes ago       Exited (-1) 8 seconds ago                         focused_pike 
-
-</code></pre><p><code>sudo docker rm $JOB</code> will remove the job.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/01/27/play-docker-2/>Play Docker(2)</a></h1><span class=post-date>Jan 27, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Continue, but this time for further topics:</p><h3 id=exportimport>Export/Import</h3><p>From <a href=https://registry.hub.docker.com/>https://registry.hub.docker.com/</a> to find more interesting images:<br>Use opensuse:</p><pre><code>$ sudo docker pull opensuse
-$ sudo docker images
-$ sudo docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-opensuse            latest              758c78b4040c        3 weeks ago         622.7 MB
-opensuse            13.2                758c78b4040c        3 weeks ago         622.7 MB
-opensuse            harlequin           758c78b4040c        3 weeks ago         622.7 MB
-$ sudo docker run -i -t opensuse /bin/bash
-:/ # yzpper in vim
-
-</code></pre><p>After installed commit the changes and verify:</p><pre><code>$ sudo docker run -i -t install_vim_suse /bin/bash
-:/ # which vim
-/usr/bin/vim
-
-</code></pre><p>Now we export it to tar file:</p><pre><code>$ sudo docker ps
-$ sudo docker export 7b594d048b0b&gt;~/opensuse_vim.tar
-$ ls -l -h ~/opensuse_vim.tar
--rw-r--r--  1 Trusty root 704M Jan 27 22:39 opensuse_vim.tar
-
-</code></pre><p>Made changes after we exported the tar file.</p><pre><code>$ sudo tar xvf opensuse_vim.tar
-$ sudo touch ./root/I_Want_You_See_This_File
-$ sudo rm -f opensuse_vim.tar
-$ sudo tar cvf opensuse_vim_modified.tar ./*
-$ ls -l -h *.tar
--rw-r--r-- 1 root root 704M Jan 27 22:45 opensuse_vim_modified.tar
-
-</code></pre><p>Import the tar file into the images:</p><pre><code>$ sudo cat ./opensuse_vim_modified.tar | sudo docker import - Trusty/opensuse_vim_modified:v1.0
-c18f7e43c4197a2a1a614a1ee91c6d8f0e06a6d7593ca94354303e3760e389a7
-$ sudo docker images
-$ sudo docker images
-REPOSITORY                   TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-Trusty/opensuse_vim_modified   v1.0                c18f7e43c419        47 seconds ago      724 MB
-$ sudo docker run -i -t Trusty/opensuse_vim_modified:v1.0 /bin/bash
-:/ # ls /root/
-I_Want_You_See_This_File  bin
-
-</code></pre><p>Now we could see the modified files has been ported to our running containers.<br>Even you could docker import from remote url:</p><pre><code>$sudo docker import http://example.com/exampleimage.tgz example/imagerepo
-
-</code></pre><h3 id=networking>Networking</h3><h4 id=run-app-inside-the-container>Run app inside the container</h4><p>First pull the images <code>training/webapp</code> back:</p><pre><code>$ sudo docker pull training/webapp
-$ sudo docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-training/webapp     latest              31fa814ba25a        8 months ago        278.6 MB
-
-</code></pre><p>Quickly enter the container and examine what&rsquo;s inside the pandora box:</p><pre><code>$ sudo docker run -i -t training/webapp /bin/bash
-root@f19ca7c18763:/opt/webapp# cat /etc/issue
-Ubuntu 12.04.4 LTS \n \l
-
-root@f19ca7c18763:/opt/webapp# ls
-Procfile  app.py  requirements.txt  tests.py
-root@f19ca7c18763:/opt/webapp# cat app.py | more
-import os
-
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/01/29/play-docker-4/>Play Docker(4)</a></h1><span class=post-date>Jan 29, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=figcontinue>Fig(Continue)</h3><p>Met some problems in last article, so this part will continue to work on Fig, the correct configuration files are listed as following:</p><pre><code>$ ls
+app.py  Dockerfile  fig.yml  requirements.txt
+$ cat Dockerfile 
+FROM python:2.7
+ADD . /code
+WORKDIR /code
+RUN pip install -r requirements.txt
+$ cat fig.yml 
+web:
+  build: .
+  command: python app.py
+  ports:
+   - &quot;5000:5000&quot;
+  volumes:
+   - .:/code
+  links:
+   - redis
+redis:
+  image: redis
+$ cat requirements.txt 
+flask
+redis
+$ cat app.py 
 from flask import Flask
+from redis import Redis
+import os
+app = Flask(__name__)
+redis = Redis(host='redis', port=6379)
 
-</code></pre><p>It&rsquo;s a flask based webapp.<br>Manually run the app.py and use another terminal for testing it:</p><pre><code>root@f19ca7c18763:/opt/webapp# python app.py
- * Running on http://0.0.0.0:5000/
-$ sudo docker exec -it f19ca7c18763 /bin/bash
-root@f19ca7c18763:/opt/webapp# which curl
-/usr/bin/curl
-root@f19ca7c18763:/opt/webapp# curl http://127.0.0.1:5000
-Hello world!root@f19ca7c18763:/opt/webapp# 
+@app.route('/')
+def hello():
+    redis.incr('hits')
+    return 'Hello World! I have been seen %s times.' % redis.get('hits')
 
-</code></pre><p>When you use curl, you will see in the first terminal it will indicates the request has been solved.<br>Or you could directly request the page in host machine, via: <code>curl http://172.17.0.21:5000</code>, the result will be the same.</p><h4 id=expose-to-world>Expose to World</h4><p>Randomly let our container map to host&rsquo;s port via:</p><pre><code>$ sudo docker run -d -P --name web training/webapp python app.py
-8781cf98cc685ae37a9aa421a9d30f71c64f12fa8fc07b2e1d888f761089e528
-$ sudo docker ps -l
-CONTAINER ID        IMAGE                    COMMAND             CREATED             STATUS              PORTS                     NAMES
-8781cf98cc68        training/webapp:latest   &quot;python app.py&quot;     6 seconds ago       Up 5 seconds        0.0.0.0:49153-&gt;5000/tcp   web                 
+if __name__ == &quot;__main__&quot;:
+    app.run(host=&quot;0.0.0.0&quot;, debug=True)
 
-</code></pre><p>Then on Internet, we could directly fetch the HelloWorld now.</p><pre><code>~% curl http://1xx.xxx.xx.xxx:49153
-Hello world!%          
+</code></pre><p>via <code>fig up</code> you could quickly build this app and let it run.<br>When it running, you could use <code>fig ps</code> for viewing the running instance:</p><pre><code>$ sudo fig ps
+      Name             Command             State              Ports       
+-------------------------------------------------------------------------
+figtest_redis_1    /entrypoint.sh     Up                 6379/tcp         
+                   redis-server                                           
+figtest_web_1      python app.py      Up                 0.0.0.0:5000-&gt;50 
+                                                         00/tcp    
 
-</code></pre><p>Inspect the name of the running container:</p><pre><code>$ sudo docker inspect -f &quot;{{ .State.StartedAt }}&quot; 8781cf98cc68
-2015-01-28T04:25:38.768661692Z
-$ sudo docker inspect -f &quot;{{ .State.Pid }}&quot; 8781cf98cc68
-7307
-$ sudo docker inspect -f &quot;{{ .Name }}&quot; 8781cf98cc68
-/web
+</code></pre><p>Use <code>sudo fig run web env</code> you could view all of the variables of the running instance web, or change web into redis then displaying the variables of redis.<br>Use <code>sudo fig stop</code> to stop all of the running instance.</p><pre><code>$ sudo fig stop
+Stopping figtest_web_1...
+Stopping figtest_redis_1...
 
-</code></pre><p>We got the name, then we could directly read the logs using this name:</p><pre><code>$ sudo docker logs -f web
- * Running on http://0.0.0.0:5000/
-183.62.15.118 - - [28/Jan/2015 04:27:30] &quot;GET / HTTP/1.1&quot; 200 -
-183.62.15.118 - - [28/Jan/2015 06:00:18] &quot;GET / HTTP/1.1&quot; 200 -
-183.62.15.118 - - [28/Jan/2015 06:00:24] &quot;GET / HTTP/1.1&quot; 200 -
+</code></pre><p>Use <code>sudo fig run web env</code> for displaying all of the variables of running <code>web</code>.</p><h3 id=create-django>Create Django</h3><p>Configuration files:</p><pre><code>$ cat Dockerfile 
+FROM python:2.7
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /code
+WORKDIR /code
+ADD requirements.txt /code/
+RUN pip install -r requirements.txt
+ADD . /code/
 
-</code></pre><p>Using <code>-p</code> for specify the host port and container port mapping:</p><pre><code>$ sudo docker run -d -p 5000:5000 --name web1 training/webapp python app.py
-2a0692015ba776f7daa957906470178df1fd8d26439422cd4528d2e253bf3331
+$ cat fig.yml 
+db:
+  image: postgres
+web:
+  build: .
+  command: python manage.py runserver 0.0.0.0:8000
+  volumes:
+    - .:/code
+  ports:
+    - &quot;8000:8000&quot;
+  links:
+    - db
+
+$ cat requirements.txt 
+Django
+psycopg2
+
+
+</code></pre><p>Via <code>sudo fig run web django-admin.py startproject figexample .</code><br>This means, first fig will create the image, then use this image for running <code>django-admin.py startproject figexample</code>,
+Examine via different methods:</p><pre><code>$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+1abcafc5bd59        postgres:9          &quot;/docker-entrypoint.   4 minutes ago       Up 3 minutes        5432/tcp            django_db_1         
+741b0e375c73        postgres:9          &quot;/docker-entrypoint.   4 minutes ago       Up 4 minutes        5432/tcp            Django_db_1         
+[Trusty@DashCentOS django]$ sudo fig ps
+   Name                  Command               State    Ports   
+---------------------------------------------------------------
+django_db_1   /docker-entrypoint.sh postgres   Up      5432/tcp 
+
+</code></pre><p>Change the configuration file of the django project:</p><pre><code>$ sudo vim figexample/settings.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
+    }
+}
+
+</code></pre><p>Save the file and run <code>sudo fig up</code>, this time your django project connects to the right postgresql server.<br>Examine the running containers:</p><pre><code>$ sudo fig ps
+      Name             Command             State              Ports       
+-------------------------------------------------------------------------
+django_db_1        /docker-           Up                 5432/tcp         
+                   entrypoint.sh                                          
+                   postgres                                               
+django_web_1       python manage.py   Up                 0.0.0.0:8000-&gt;80 
+                   runserver ...                         00/tcp           
 $ sudo docker ps
-CONTAINER ID        IMAGE                    COMMAND             CREATED             STATUS              PORTS                    NAMES
-2a0692015ba7        training/webapp:latest   &quot;python app.py&quot;     3 seconds ago       Up 3 seconds        0.0.0.0:5000-&gt;5000/tcp   web1 
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                    NAMES
+d3c3c8bb6d0e        django_web:latest   &quot;python manage.py ru   4 minutes ago       Up 4 minutes        0.0.0.0:8000-&gt;8000/tcp   django_web_1        
+3f7b61fdd09e        postgres:9          &quot;/docker-entrypoint.   4 minutes ago       Up 4 minutes        5432/tcp                 django_db_1        
 
-</code></pre><p>The test could be curl the 5000 port of the remote machine, while the logs could be found using <code>-f web1</code>.<br>Examine the port mapping using following command:</p><pre><code>$ sudo docker run -d -P --name web3 training/webapp python app.py
-$ sudo docker port web3 5000
-0.0.0.0:49154
+</code></pre><h3 id=run-asp>Run ASP</h3><p>Refers to:<br><a href=http://dockerone.com/article/164>http://dockerone.com/article/164</a><br>The steps are listed as:</p><pre><code>$ git clone https://github.com/aspnet/Home.git
+$ cd Home/
+$ cd samples/HelloWeb/
+$ vim Dockerfile
+FROM microsoft/aspnet
 
-</code></pre><p><code>-p</code> could be added as multiple ports, like:</p><pre><code>$ sudo docker run -d -p 5000:5000 -p 3000:80 training/webapp python app.py
+COPY . /app
+WORKDIR /app
+RUN [&quot;kpm&quot;, &quot;restore&quot;]
 
-</code></pre><h3 id=docker-container-linking>Docker Container Linking</h3><p>Pull back a new images and run it as daemon:</p><pre><code>$ sudo docker run -d --name db training/postgres
+EXPOSE 5004
+ENTRYPOINT [&quot;k&quot;, &quot;kestrel&quot;]
+$ sudo docker build -t myapp .
 $ sudo docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-training/postgres   latest              258105bea10d        7 months ago        364.5 MB
-training/webapp     latest              31fa814ba25a        8 months ago        278.6 MB
-$ sudo docker ps 
-CONTAINER ID        IMAGE                      COMMAND                CREATED             STATUS              PORTS                     NAMES
-ff6603d47552        training/postgres:latest   &quot;su postgres -c '/us   14 seconds ago      Up 14 seconds       5432/tcp                  db                  
-f94368f3d091        training/webapp:latest     &quot;python app.py&quot;        9 minutes ago       Up 9 minutes        0.0.0.0:49154-&gt;5000/tcp   web3                
+myapp               latest              6c0d622049ea        2 hours ago         492 MB
+microsoft/aspnet    latest              1e67fe2f5a59        13 days ago         465.3 MB
+$ sudo docker run -t -d -p 80:5004 myapp
 
-</code></pre><p>Remove the existing web3 container, and create a new one which links to container <code>db</code>:</p><pre><code>$ sudo docker rm -f f94368f3d091
-f94368f3d091
-$ sudo docker run -d -P --name web4 --link db:db training/webapp python app.py
-0cf8f0adcb3d1728c61e33c0c9184213478a2a231ba525339a3049534f4ce4ef
-$ sudo docker ps
-CONTAINER ID        IMAGE                      COMMAND                CREATED             STATUS              PORTS                     NAMES
-0cf8f0adcb3d        training/webapp:latest     &quot;python app.py&quot;        4 seconds ago       Up 3 seconds        0.0.0.0:49155-&gt;5000/tcp   web4                
-ff6603d47552        training/postgres:latest   &quot;su postgres -c '/us   2 minutes ago       Up 2 minutes        5432/tcp                  db  
+</code></pre><p>Open your browser and visit <code>http://xxx.xx.xx.xxx:80</code> and you could found the asp based app runs.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/01/28/play-docker-3/>Play Docker(3)</a></h1><span class=post-date>Jan 28, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=dockerfile>Dockerfile</h3><p>Dockerfile is like Vagrantfile, for define the configuration of the docker container.<br>The steps for creating the Dockerfile is listed as following:</p><pre><code>$ mkdir -p ~/Code
+$ cd ~/Code &amp;&amp; vim Dockerfile 
+FROM ubuntu:13.04
+MAINTAINER examples@docker.com
+RUN echo &quot;deb http://archive.ubuntu.com/ubuntu precise main universe&quot; &gt; /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -y openssh-server nginx  supervisor
+RUN mkdir -p /var/run/sshd
+RUN mkdir -p /var/log/supervisor
+RUN echo &quot;daemon off;&quot;&gt;&gt;/etc/nginx/nginx.conf
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+EXPOSE 22 80
+CMD [&quot;/usr/bin/supervisord&quot;]
+$ vim supervisord.conf 
+[supervisord]
+nodaemon=true
+[program:sshd]
+command=/usr/sbin/sshd -D
 
-</code></pre><p>Examine the link infos when entering the container itself:</p><pre><code>$ sudo docker exec -i -t 0cf8f0adcb3d  /bin/bash
-root@0cf8f0adcb3d:/opt/webapp# env
-HOSTNAME=0cf8f0adcb3d
-DB_NAME=/web4/db
-DB_PORT_5432_TCP_ADDR=172.17.0.26
-DB_PORT=tcp://172.17.0.26:5432
-DB_PORT_5432_TCP=tcp://172.17.0.26:5432
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-PWD=/opt/webapp
-DB_PORT_5432_TCP_PORT=5432
-SHLVL=1
-HOME=/
-DB_PORT_5432_TCP_PROTO=tcp
-DB_ENV_PG_VERSION=9.3
-_=/usr/bin/env
+[program:nginx]
+command=/usr/sbin/nginx
+user=root
+autostart=true
 
+</code></pre><p>Now build the target image with following command:</p><pre><code>$ sudo docker build -t test/supervisord .
 
-</code></pre><p>Use <code>ip address show</code> to examine the ip address.<br>Why they could be linked?<br>Also when you enter the web machine, cat its /etc/hosts, will see the db named:</p><pre><code>root@0cf8f0adcb3d:/opt/webapp# cat /etc/hosts
-172.17.0.27	0cf8f0adcb3d
-127.0.0.1	localhost
-::1	localhost ip6-localhost ip6-loopback
-fe00::0	ip6-localnet
-ff00::0	ip6-mcastprefix
-ff02::1	ip6-allnodes
-ff02::2	ip6-allrouters
-172.17.0.26	db
+</code></pre><p>After build, we could use <code>sudo docker images</code> for examing the generated images. And use following command for start the sshd and nginx service:</p><pre><code>$ sudo docker run -p 2222:22 -p 8080:80 -t -i test/supervisord
 
-</code></pre><h3 id=advance-networking>Advance Networking</h3><p>Secret of DNS/hostname/hosts:</p><pre><code>root@0cf8f0adcb3d:/opt/webapp# mount
-/dev/vda1 on /etc/resolv.conf type ext4 (rw,relatime,data=ordered)
-/dev/vda1 on /etc/hostname type ext4 (rw,relatime,data=ordered)
-/dev/vda1 on /etc/hosts type ext4 (rw,relatime,data=ordered)
+</code></pre><p>Now change the root password and you could directly <code>ssh root@127.0.0.1 -p 2222</code> or you could directly access <a href=http://1xx.xx.xx.xxx:8080>http://1xx.xx.xx.xxx:8080</a> for nginx webpages.</p><h3 id=fig>Fig</h3><p>Fig is used for swiftly build up a container. You only need to add a fig.yml and specify some simple content, then it could easily assit you building up a container.<br>Install fig via following command:</p><pre><code>$ wget https://github.com/docker/fig/releases/download/1.0.1/fig-`uname -s`-`uname -m`
+$ sudo mv fig-xxx-xxx /usr/bin/fig
+$ sudo chmod 777 /usr/bin/fig
 
-</code></pre><p>Once the variables changes the container&rsquo;s corresponding name will also be changed.</p><h4 id=iptables>Iptables</h4><p>Container Visit WAN:<br>Use sysctl&rsquo;s <code>ip_forward</code>, check it via:</p><pre><code>$ cat /proc//sys/net/ipv4/ip_forward
-1
+</code></pre><p>Touch the definition files under a specified directory and then use fig for building the whole container:</p><pre><code>$ mkdir ~/fig
+$ ls
+app.py  Dockerfile  fig.yml  requirements.txt
+$ cat Dockerfile 
+FROM python:2.7
+ADD . /code
+WORKDIR /code
+RUN pip install -r requirements.txt
+$ cat fig.yml 
+web:
+  build: .
+  command: python app.py
+  links:
+   - db
+  ports:
+   - &quot;8000:8000&quot;
+db:
+  image: redis
+$ cat requirements.txt 
+flask
+redis
+$ cat app.py 
+from flask import Flask
+from redis import Redis
+import os
+app = Flask(__name__)
+redis = Redis(host='redis', port=6379)
 
-</code></pre><p>1 means that we could forward our traffic flow from WAN to</p><p>WAN visit Container:</p><pre><code>$ sudo docker run -d -p 5000:5000 --name web5 training/webapp python app.py
-$ sudo iptables -t nat -nL
-......
-Chain DOCKER (2 references)
-target     prot opt source               destination         
-DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:49155 to:172.17.0.27:5000
-DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:5000 to:172.17.0.28:5000
+@app.route('/')
+def hello():
+    redis.incr('hits')
+    return 'Hello World! I have been seen %s times.' % redis.get('hits')
 
-</code></pre><p>The last one is added via our run command.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/01/26/trying-docker-in-company/>Trying Docker In Company</a></h1><span class=post-date>Jan 26, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>Install docker via:</p><pre><code>$ sh -c &quot;wget -qO- https://get.docker.io/gpg | apt-key add -&quot;
-$ sh -c &quot;echo deb http://get.docker.io/ubuntu docker main\
-&gt; /etc/apt/sources.list.d/docker.list&quot;
-$ apt-get update
-$ apt-get install lxc-docker
-$ which docker
-/usr/bin/docker
+if __name__ == &quot;__main__&quot;:
+    app.run(host=&quot;0.0.0.0&quot;, debug=True)
 
-</code></pre><h3 id=very-beginning>Very Beginning</h3><p>Docker pull the docker.cn packages back, the speed is around 500K/</p><pre><code>$ docker pull docker.cn/docker/ubuntu
-
-</code></pre><p>Run into an instance:</p><pre><code># docker run -i -t docker.cn/docker/ubuntu /bin/bash
-root@3ad7689e600a:/# ps -ef
-UID        PID  PPID  C STIME TTY          TIME CMD
-root         1     0  0 06:27 ?        00:00:00 /bin/bash
-root        16     1  0 06:27 ?        00:00:00 ps -ef
-
-</code></pre><p>In another terminal, show the running container:</p><pre><code># docker ps
-CONTAINER ID        IMAGE                           COMMAND             CREATED             STATUS              PORTS               NAMES
-3ad7689e600a        docker.cn/docker/ubuntu:14.04   &quot;/bin/bash&quot;         11 seconds ago      Up 10 seconds                           sick_hodgkin 
-
-</code></pre><h3 id=make-changes-and-submit>Make Changes And Submit</h3><p>First made some modification to our container:</p><pre><code>sudo apt-get install vim
-
-</code></pre><p>The above command will install vim.<br>Now commit the changes:</p><pre><code># docker commit c7ddc390f0c8 installed_vim_container
-ed347fc03634e6c66ee45d213cf4d2839e55376f3e34d18c6e58bada1f701425
-
-</code></pre><p>List all of the images:</p><pre><code># docker images
-REPOSITORY                TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-installed_vim_container   latest              ed347fc03634        47 seconds ago      235.8 MB
-docker.cn/docker/ubuntu   14.04               b39b81afc8ca        9 days ago          192.7 MB
-docker.cn/docker/ubuntu   14.04.1             b39b81afc8ca        9 days ago          192.7 MB
-docker.cn/docker/ubuntu   latest              b39b81afc8ca        9 days ago          192.7 MB
-docker.cn/docker/ubuntu   trusty              b39b81afc8ca        9 days ago          192.7 MB
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/01/26/using-do-for-building-opencontrail/>Using DO For Building OpenContrail</a></h1><span class=post-date>Jan 26, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Since the network environment is not good(In fact, very bad), because of the GFW, so I have to build the opencontrail packages in digitalOcean. Following is the tips and how-to.</p><h3 id=preparation>Preparation</h3><p>First we have to get the Latest Ubuntu images, and let it OK for building the OpenContrail:</p><pre><code>$ docker search ubuntu
-.....
-$ docker pull ubuntu
-$ docker run -i -t ubuntu /bin/bash
-root@4c74f2890dbe:/# apt-get update
-
-</code></pre><p>Now we run into the ubuntu build environment. This is where we want to build the whole opencontrail deb file.<br>Install curl and then install repo:</p><pre><code># apt-get install curl
-# mkdir -p ~/bin
-# curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
-# chmod 777 /root/bin/repo
-# apt-get install vim
-# vim ~/.bashrc
-export PATH=/root/bin:$PATH
-# source ~/.bashrc
-# which repo
-/root/bin/repo
-
-</code></pre><p>Now repo became usable in our system.<br>Install following packages(So many packages!!!) for preparing the building of the opencontrail:</p><pre><code># apt-get install -y scons git python-lxml wget gcc patch make unzip flex bison g++ libssl-dev autoconf automake libtool pkg-config vim python-dev python-setuptools libprotobuf-dev protobuf-compiler libsnmp-python libboost-dev libboost-chrono-dev libboost-date-time-dev libboost-filesystem-dev libboost-program-options-dev libboost-python-dev libboost-regex-dev libboost-system-dev libcurl4-openssl-dev google-mock libgoogle-perftools-dev liblog4cplus-dev libtbb-dev libhttp-parser-dev libxml2-dev libicu-dev
-
-</code></pre><p>Use tmux for holding the building context:</p><pre><code># apt-get install tmux
-# tmux new -s &quot;BuildContrail&quot;
-
-</code></pre><h3 id=clone-the-code>Clone The Code</h3><p>Create the directories and then configure the git&rsquo;s username and Email.</p><pre><code># mkdir Code
-# cd Code/
-#  git config --global user.email kkkttt@gmail.com
-# git config --global user.name kkkttt
-# ssh-keygen
-
-</code></pre><p>Upload the generate <code>id_rsa.pub</code> to the github.com, then let your machine verified by github.</p><pre><code># ssh -T git@github.com
-Hi kkkttt! You've successfully authenticated, but GitHub does not provide shell access.
-
-</code></pre><p>Now you could use repo for syncing back the code:</p><pre><code># mkdir -p ~/Code
-# cd ~/Code
-# repo init -u git@github.com:Juniper/contrail-vnc
-# repo sync 
-
-</code></pre><h3 id=third-party>Third-Party</h3><p>There is little trick in syncing the 3rd party source code back, you have to manually create the folder and let it writable, then modify the source code of the python file:</p><pre><code># mkdir -p /tmp/cache/root/
-# chmod -R /tmp/cache/root/
-# vim third_party/*.py
-_PACKAGE_CACHE='/tmp/cache/' + os.environ['USER'] + '/third_party'
-_PACKAGE_CACHE='/tmp/cache/root/' + '/third_party'
-
-</code></pre><p>Now use following command for syncing the 3rd party packages back:</p><pre><code># python third_party/fetch_packages.py
-
-</code></pre><h3 id=build>Build</h3><p>Building is pretty easy, simply type <code>scons</code> then everything is automatically on-going.<br>Troubles, if you don&rsquo;t specify USER, then the error will be raised, complains the os.environ[&lsquo;USER&rsquo;] got nothing, then scons will be halt.<br>Solution:</p><pre><code># declare -x USER=&quot;root&quot;
-
-</code></pre><p>Then the build begin, and it will last for a long time.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/145/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/145/>145</a></li><li class="page-item active"><a class=page-link href=/page/146/>146</a></li><li class=page-item><a class=page-link href=/page/147/>147</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/147/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Now use <code>sudo fig up</code> then you could let this web service run.</p><p>Met some problems, will be do this at home.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/145/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/145/>145</a></li><li class="page-item active"><a class=page-link href=/page/146/>146</a></li><li class=page-item><a class=page-link href=/page/147/>147</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/147/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

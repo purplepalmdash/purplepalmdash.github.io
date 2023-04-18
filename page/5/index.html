@@ -1,316 +1,203 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/08/raspberrypi_pkvm_workingtips/>RaspberryPI_PKVM_WorkingTips</a></h1><span class=post-date>Sep 8, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=flash-aosp-13-images>Flash aosp 13 images</h3><p>Image download URL:<br><code>https://konstakang.com/devices/rpi4/AOSP13/</code></p><p>Flash it into rpi 4b.</p><h3 id=pkvm-kernelimages>pkvm kernel/images</h3><p>Download alpine kernel/images from(<code>https://www.worldofgh0st.com/blog/</code>):</p><p><code>https://www.worldofgh0st.com/wp-content/uploads/2022/09/KVM-Linux.zip</code></p><p>adb push them to <code>/data/local/tmp</code>.</p><h3 id=start-crosvm-machine>Start crosvm machine</h3><p>adb root and login with adb shell:</p><pre><code>➜  Downloads adb -s 192.168.1.114:5555 root 
-restarting adbd as root
-➜  Downloads adb -s 192.168.1.114:5555 shell
-rpi4:/ # 
-</code></pre><p>Start the crosvm vm and examine the vm info:</p><pre><code>rpi4:/ # /apex/com.android.virt/bin/crosvm run --disable-sandbox -p 'init=/bin/sh' --rwroot /data/local/tmp/alpine.img /data/local/tmp/kernel.img
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/10/26/windowsvirtualboxucc/>WindowsVirtualBoxUCC</a></h1><span class=post-date>Oct 26, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=env-preparation>Env Preparation</h3><p>Install VirtualBox 7.0.2:</p><p><img src=/images/2022_10_26_09_19_41_455x301.jpg alt=/images/2022_10_26_09_19_41_455x301.jpg></p><p>View version:</p><p><img src=/images/2022_10_26_09_20_32_843x589.jpg alt=/images/2022_10_26_09_20_32_843x589.jpg></p><p>Disable the dhcp server for default <code>Host-only Networks</code>:</p><p><img src=/images/2022_10_26_09_27_37_627x467.jpg alt=/images/2022_10_26_09_27_37_627x467.jpg></p><h3 id=vm-creation>VM Creation</h3><p>Create a new vm(type <code>Linux->Other Linux</code>):</p><p><img src=/images/2022_10_26_09_29_24_778x373.jpg alt=/images/2022_10_26_09_29_24_778x373.jpg></p><p>2 Cores, 2048MB Memory:</p><p><img src=/images/2022_10_26_09_29_56_643x203.jpg alt=/images/2022_10_26_09_29_56_643x203.jpg></p><p>Specify <code>centos85.vdi</code> file for hard disk:</p><p><img src=/images/2022_10_26_09_30_38_648x273.jpg alt=/images/2022_10_26_09_30_38_648x273.jpg></p><p>Configure the vm to specify its networking:</p><p><img src=/images/2022_10_26_09_31_24_804x391.jpg alt=/images/2022_10_26_09_31_24_804x391.jpg></p><p>Visit <code>https://192.168.56.199</code> should reach the ucc server web admin page:</p><p><img src=/images/2022_10_26_09_34_44_771x540.jpg alt=/images/2022_10_26_09_34_44_771x540.jpg></p><h3 id=ucc-client-testing>UCC Client Testing</h3><p>Create a new machine(type <code>Windows 10</code>):</p><p><img src=/images/2022_10_26_09_36_04_747x326.jpg alt=/images/2022_10_26_09_36_04_747x326.jpg></p><p>2 Cores, 3072 MB Memory, Enable EFI:</p><p><img src=/images/2022_10_26_09_36_49_648x238.jpg alt=/images/2022_10_26_09_36_49_648x238.jpg></p><p>Create 50 GB disk:</p><p><img src=/images/2022_10_26_09_37_09_646x267.jpg alt=/images/2022_10_26_09_37_09_646x267.jpg></p><p>Configure this VM, select <code>ICH9</code> as its chipset:</p><p><img src=/images/2022_10_26_09_38_41_620x481.jpg alt=/images/2022_10_26_09_38_41_620x481.jpg></p><p>Enable Network as its boot sequence:</p><p><img src=/images/2022_10_26_09_40_04_594x370.jpg alt=/images/2022_10_26_09_40_04_594x370.jpg></p><p>Change Network to <code>host-only</code> type:</p><p><img src=/images/2022_10_26_09_42_16_713x344.jpg alt=/images/2022_10_26_09_42_16_713x344.jpg></p><p>System will boot into EFI shell, input <code>exit</code> to bios:</p><p><img src=/images/2022_10_26_09_40_52_603x279.jpg alt=/images/2022_10_26_09_40_52_603x279.jpg></p><p>Select <code>Boot Manage</code>, press enter:</p><p><img src=/images/2022_10_26_09_41_13_582x236.jpg alt=/images/2022_10_26_09_41_13_582x236.jpg></p><p>Select <code>UEFI PXEv4</code> for booting:</p><p><img src=/images/2022_10_26_09_41_34_638x346.jpg alt=/images/2022_10_26_09_41_34_638x346.jpg></p><p>pxe will boot into register name, input name <code>ucctestwin10</code> for continue:</p><p><img src=/images/2022_10_26_09_44_19_1152x854.jpg alt=/images/2022_10_26_09_44_19_1152x854.jpg></p><p>Click setup button for initialization this node:</p><p><img src=/images/2022_10_26_09_45_11_958x620.jpg alt=/images/2022_10_26_09_45_11_958x620.jpg></p><p>Initialize the disk using the default parameters:</p><p><img src=/images/2022_10_26_09_46_25_1706x560.jpg alt=/images/2022_10_26_09_46_25_1706x560.jpg></p><p>Now return to login page, the <code>disk</code> and <code>network</code> indication should be green, enter username/password for continue:</p><p><img src=/images/2022_10_26_09_49_10_470x605.jpg alt=/images/2022_10_26_09_49_10_470x605.jpg></p><p>Click <code>TCI</code> for downloading the package and boot into windows 10:</p><p><img src=/images/2022_10_26_09_49_59_1529x871.jpg alt=/images/2022_10_26_09_49_59_1529x871.jpg></p><p>windows 10 in virtualbox:</p><p><img src=/images/2022_10_26_09_59_21_909x816.jpg alt=/images/2022_10_26_09_59_21_909x816.jpg></p><p>Don&rsquo;t try <code>idv</code>, cause in virtualbox it will run into error:</p><p><img src=/images/2022_10_26_10_00_56_1024x531.jpg alt=/images/2022_10_26_10_00_56_1024x531.jpg></p><h3 id=ubuntu-verification>Ubuntu Verification</h3><p>Upload the image and copy it into corresponding directory:</p><p><img src=/images/2022_10_26_10_30_02_651x127.jpg alt=/images/2022_10_26_10_30_02_651x127.jpg></p><p>Register image in UCC Server admin pages:</p><p><img src=/images/2022_10_26_10_31_04_714x559.jpg alt=/images/2022_10_26_10_31_04_714x559.jpg></p><p>Create a new machine for testing Ubuntu:</p><p><img src=/images/2022_10_26_10_31_44_633x307.jpg alt=/images/2022_10_26_10_31_44_633x307.jpg></p><p>2Core, 2048 MB , enable uefi:</p><p><img src=/images/2022_10_26_10_32_08_663x260.jpg alt=/images/2022_10_26_10_32_08_663x260.jpg></p><p>Select <code>ICH9</code> for chipset, and enable the network boot:</p><p><img src=/images/2022_10_26_10_32_57_681x426.jpg alt=/images/2022_10_26_10_32_57_681x426.jpg></p><p>Change the network:</p><p><img src=/images/2022_10_26_10_33_13_568x366.jpg alt=/images/2022_10_26_10_33_13_568x366.jpg></p><p><code>exit</code> and into the bios:</p><p><img src=/images/2022_10_26_10_34_06_616x290.jpg alt=/images/2022_10_26_10_34_06_616x290.jpg></p><p>Boot Manager and select <code>UEFI PXEv4</code>:</p><p><img src=/images/2022_10_26_10_34_33_600x419.jpg alt=/images/2022_10_26_10_34_33_600x419.jpg></p><p>Register client:</p><p><img src=/images/2022_10_26_10_35_33_658x218.jpg alt=/images/2022_10_26_10_35_33_658x218.jpg></p><p>Initialize the disk:</p><p><img src=/images/2022_10_26_10_36_03_1413x407.jpg alt=/images/2022_10_26_10_36_03_1413x407.jpg></p><p>Select Ubuntu for downloading and boot into system:</p><p><img src=/images/2022_10_26_10_37_38_1001x301.jpg alt=/images/2022_10_26_10_37_38_1001x301.jpg></p><p>Ubuntu desktop:</p><p><img src=/images/2022_10_26_10_41_47_809x720.jpg alt=/images/2022_10_26_10_41_47_809x720.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/10/25/workingtipsonucc/>WorkingTipsOnucc</a></h1><span class=post-date>Oct 25, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Create a inner networking for testing:</p><p><img src=/images/2022_10_25_09_48_58_519x557.jpg alt=/images/2022_10_25_09_48_58_519x557.jpg></p><p>Select the inner networking for imported vm:</p><p><img src=/images/2022_10_25_09_49_48_719x410.jpg alt=/images/2022_10_25_09_49_48_719x410.jpg></p><p>Change vm&rsquo;s ip address configuration:</p><p><img src=/images/2022_10_25_09_52_46_481x379.jpg alt=/images/2022_10_25_09_52_46_481x379.jpg></p><p>Check the changed ip configuration:</p><p><img src=/images/2022_10_25_09_53_37_639x193.jpg alt=/images/2022_10_25_09_53_37_639x193.jpg></p><p>visit <code>https://10.17.18.2</code> for changing ucc server configuration:</p><p><img src=/images/2022_10_25_09_54_54_541x562.jpg alt=/images/2022_10_25_09_54_54_541x562.jpg></p><p>Changed the <code>server address</code>:</p><p><img src=/images/2022_10_25_09_59_20_312x164.jpg alt=/images/2022_10_25_09_59_20_312x164.jpg></p><p>Change the dhcp service:</p><p><img src=/images/2022_10_25_10_01_51_448x397.jpg alt=/images/2022_10_25_10_01_51_448x397.jpg></p><p>Delete all of the registed server:</p><p><img src=/images/2022_10_25_10_04_49_817x322.jpg alt=/images/2022_10_25_10_04_49_817x322.jpg></p><h3 id=verification>Verification</h3><p>Create 2 vm images file under <code>/var/lib/libvirt/images</code>:</p><pre><code># qemu-img create -f qcow2 win1.qcow2 50G
+# qemu-img create -f qcow2 win2.qcow2 50G
+</code></pre><p>Manually import :</p><p><img src=/images/2022_10_25_10_10_19_423x263.jpg alt=/images/2022_10_25_10_10_19_423x263.jpg></p><p>2 core, 4096 MiB memory. Select win1.qcow2:</p><p><img src=/images/2022_10_25_10_11_07_396x234.jpg alt=/images/2022_10_25_10_11_07_396x234.jpg></p><p>uefi relatd configuration:</p><p><img src=/images/2022_10_25_10_13_03_786x544.jpg alt=/images/2022_10_25_10_13_03_786x544.jpg></p><p>Select Nic:</p><p><img src=/images/2022_10_25_10_13_28_581x324.jpg alt=/images/2022_10_25_10_13_28_581x324.jpg></p><p>Change the boot options:</p><p><img src=/images/2022_10_25_10_15_40_469x345.jpg alt=/images/2022_10_25_10_15_40_469x345.jpg></p><p>Configuration:</p><p><img src=/images/2022_10_25_10_20_34_465x219.jpg alt=/images/2022_10_25_10_20_34_465x219.jpg></p><p>Initialize the disk:</p><p><img src=/images/2022_10_25_10_21_09_1830x619.jpg alt=/images/2022_10_25_10_21_09_1830x619.jpg></p><p>Succeed:</p><p><img src=/images/2022_10_25_10_22_25_1172x265.jpg alt=/images/2022_10_25_10_22_25_1172x265.jpg></p><p>Login with <code>user1</code>:</p><p><img src=/images/2022_10_25_10_23_12_448x582.jpg alt=/images/2022_10_25_10_23_12_448x582.jpg></p><p>Select the <code>TCI</code> for downloading:</p><p><img src=/images/2022_10_25_10_23_46_541x315.jpg alt=/images/2022_10_25_10_23_46_541x315.jpg></p><h3 id=virtualbox-way>Virtualbox way</h3><p>Create vm and import:</p><p><img src=/images/2022_10_25_11_28_49_964x545.jpg alt=/images/2022_10_25_11_28_49_964x545.jpg></p><p>Import vm disk:</p><p><img src=/images/2022_10_25_11_30_03_1059x541.jpg alt=/images/2022_10_25_11_30_03_1059x541.jpg></p><p>Create network(without dhcp):</p><p><img src=/images/2022_10_25_11_31_46_520x218.jpg alt=/images/2022_10_25_11_31_46_520x218.jpg></p><p>Choose the network:</p><p><img src=/images/2022_10_25_11_32_23_802x439.jpg alt=/images/2022_10_25_11_32_23_802x439.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/30/workingtipsonproxmoxgvtg/>WorkingTipsOnProxmoxGVTG</a></h1><span class=post-date>Sep 30, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=change-configuration>Change configuration</h3><p>Change grub options:</p><pre><code># vi /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet&quot;
+TO
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet intel_iommu=on iommu=pt i915.enable_gvt=1&quot;
 
-..............
+# vi /etc/modules
+vfio
+vfio_iommu_type1
+vfio_pci
+vfio_virqfd
+kvmgt
+</code></pre><p>Update:</p><pre><code># update-grub2
+# update-initramfs -u -k all
+</code></pre><h3 id=check-status>Check status:</h3><p>Check iommu features:</p><pre><code># dmesg | grep -e DMAR -e IOMMU -e AMD-Vi
+# find /sys/kernel/iommu_groups/ -type l
+</code></pre><p>Get the VGA related:</p><pre><code>root@pve:~# lspci | grep -i vga
+00:02.0 VGA compatible controller: Intel Corporation HD Graphics 630 (rev 04)
+root@pve:~# ls /sys/bus/pci/devices/0000\:00\:02.0/mdev_supported_types/
+i915-GVTg_V5_4	i915-GVTg_V5_8
+</code></pre><h3 id=vm-installation>vm installation</h3><p>Create a vm (win7) like:</p><p><img src=/images/2022_09_30_10_01_06_720x245.jpg alt=/images/2022_09_30_10_01_06_720x245.jpg></p><p><img src=/images/2022_09_30_10_02_04_724x216.jpg alt=/images/2022_09_30_10_02_04_724x216.jpg></p><p>Add PCI device:</p><p><img src=/images/2022_09_30_10_03_54_614x173.jpg alt=/images/2022_09_30_10_03_54_614x173.jpg></p><p>hardware:</p><p><img src=/images/2022_09_30_10_04_22_961x349.jpg alt=/images/2022_09_30_10_04_22_961x349.jpg></p><p>Then install the windows in console.</p><p>Install &ldquo;Jianjizhi&rdquo; and test usage.</p><p><img src=/images/2022_09_30_10_30_50_943x660.jpg alt=/images/2022_09_30_10_30_50_943x660.jpg></p><p>Install intel video:</p><p><img src=/images/2022_09_30_10_31_52_599x404.jpg alt=/images/2022_09_30_10_31_52_599x404.jpg></p><p><img src=/images/2022_09_30_10_32_15_427x337.jpg alt=/images/2022_09_30_10_32_15_427x337.jpg></p><p>Select <code>Install this driver software anyway</code>:</p><p><img src=/images/2022_09_30_10_32_37_549x382.jpg alt=/images/2022_09_30_10_32_37_549x382.jpg></p><p>Select <code>reboot this computer now</code>:</p><p><img src=/images/2022_09_30_10_33_49_438x342.jpg alt=/images/2022_09_30_10_33_49_438x342.jpg></p><p>Status:</p><p><img src=/images/2022_09_30_10_43_27_657x467.jpg alt=/images/2022_09_30_10_43_27_657x467.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/28/workingtipsonxengt/>WorkingtipsOnXenGT</a></h1><span class=post-date>Sep 28, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=hardware>hardware</h3><p>hardware:</p><pre><code>$ cat /proc/cpuinfo | grep model
+model		: 60
+model name	: Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz
+$ free -g
+             total       used       free     shared    buffers     cached
+Mem:            30          1         29          0          0          0
+-/+ buffers/cache:          0         30
+Swap:            0          0          0
+dash@ubuntu1404:~$ cat /etc/issue
+Ubuntu 14.04.5 LTS \n \l
 
-/ # uname -a
-Linux (none) 5.19.0-13666-gffcf9c5700e4 #3 SMP PREEMPT Sat Sep 3 15:11:04 PDT 2022 aarch64 Linux
-/ # cat /etc/issue
-Welcome to Alpine Linux 3.16
-Kernel \r on an \m (\l)
+dash@ubuntu1404:~$ uname -a
+Linux ubuntu1404 4.4.0-31-generic #50~14.04.1-Ubuntu SMP Wed Jul 13 01:07:32 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
-</code></pre><h3 id=customize-kernel>Customize Kernel</h3><p>In an arm64 server, clone the latest kernel and compile Image:</p><pre><code># apt install build-essential flex bison libssl-dev -y
-# git clone  git://mirrors.ustc.edu.cn/linux.git
-# cd linux
-# make defconfig
-# make -j128
-# ls arch/arm64/boot
-dts  Image  Image.gz  install.sh  Makefile
-</code></pre><p>Transfer the <code>Image</code> to rpi4&rsquo;s <code>/data/local/tmp/</code></p><h3 id=customize-ubuntu2004-rootfs>Customize Ubuntu20.04 rootfs</h3><p>Get the latest aarch64 image and change the corresponding items:</p><pre><code># axel https://cloud-images.ubuntu.com/releases/focal/release/ubuntu-20.04-server-cloudimg-arm64-root.tar.xz
-# qemu-img create -f raw ubuntu.img 6G
-# mkfs.ext4 ubuntu.img
-# mount ubuntu.img /mnt
-# tar xJvf ubuntu-20.04-server-cloudimg-arm64-root.tar.xz -C /mnt/
-# cd /mnt
-# touch etc/cloud/cloud-init.disabled
-# vim etc/passwd
-Change the first line :   
-root::0:0:root:/root:/bin/bash
-# umount /mnt
-</code></pre><p>Transfer the <code>ubuntu.img</code> onto the rpi4&rsquo;s <code>/data/local/tmp/</code></p><h3 id=start-ubuntu-vm>Start ubuntu vm</h3><p>Start via:</p><pre><code># /apex/com.android.virt/bin/crosvm run --disable-sandbox -p 'root=/dev/vda' --rwroot /data/local/tmp/ubuntu.img /data/local/tmp/Image
-</code></pre><p>Examine the vm info:</p><pre><code>root@ubuntu:~# uname -a
-Linux ubuntu 6.0.0-rc4-00062-g0066f1b0e275 #1 SMP PREEMPT Thu Sep 8 01:24:14 EDT 2022 aarch64 aarch64 aarch64 GNU/Linux
-root@ubuntu:~# cat /etc/issue
-Ubuntu 20.04.4 LTS \n \l
+</code></pre><p>Install ubuntu14.04, change repository to <code>mirrors.ustc.edu.cn</code>, then install packages:</p><pre><code># apt-get install libarchive-dev libghc-bzlib-dev  zlib1g-dev mercurial gettext bcc iasl uuid-dev libncurses5-dev kpartx bc libperl-dev libgtk2.0-dev libc6-dev-i386 libaio-dev libsdl1.2-dev nfs-common libyajl-dev libx11-dev autoconf libtool xsltproc bison flex xutils-dev xserver-xorg-dev x11proto-gl-dev libx11-xcb-dev vncviewer libxcb-glx0 libxcb-glx0-dev libxcb-dri2-0-dev libxcb-xfixes0-dev bridge-utils python-dev bin86 git vim libssl-dev pciutils-dev tightvncserver ssh texinfo -y
+</code></pre><h3 id=check>Check</h3><p>Before install driver:</p><p><img src=/images/2022_09_29_10_00_16_732x530.jpg alt=/images/2022_09_29_10_00_16_732x530.jpg></p><p>Install driver:</p><p><img src=/images/2022_09_29_10_06_34_519x420.jpg alt=/images/2022_09_29_10_06_34_519x420.jpg></p><p>Restart the machine, check the driver status:</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/23/linuxtips15/>LinuxTips15</a></h1><span class=post-date>Sep 23, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-x11docker>1. x11docker</h3><p>Start and specify vt:</p><pre><code># x11docker --gpu --vt=2 --xorg x11docker/mate
+</code></pre><p>With internet and more features:</p><pre><code># x11docker --gpu --vt=2 --network --desktop --init=systemd x11docker/deepin
+</code></pre><h3 id=2-git-without-ssl-check>2. git without ssl check</h3><p>via:</p><pre><code>export GIT_SSL_NO_VERIFY=1
+git clone https://xxxx.xx
+</code></pre><h3 id=3-home-sharing-environment>3. Home Sharing environment</h3><p>Install dnsmasq and configure:</p><pre><code># vim /etc/dnsmasq.conf
+bind-interfaces
+dhcp-range=10.1.10.128,10.1.10.200,12h
+dhcp-option=3,10.1.10.1
+dhcp-authoritative
+interface=enp0s25
+# systemctl restart dnsmasq
+</code></pre><p>Start the sharing via(enp0s25->wlo1):</p><pre><code>$ sudo iptables -t nat -A POSTROUTING -s '10.1.10.0/24' -o wlo1 -j MASQUERADE
+</code></pre><p>Then with a ethernet cable connected, the other client could get reach into
+the internet via sharing.</p><h3 id=4-system_reset-in-qemu>4. system_reset in qemu</h3><p>via:</p><pre><code>telnet localhost 1111
+&gt; system_reset
+this could reset the machine and let it reboot.
+</code></pre><h3 id=5-uhd510-win7-driver>5. uhd510 win7 driver</h3><p>download url:</p><p><code>https://downloadmirror.intel.com/30195/a08/win64_15.45.5174.exe</code></p><h3 id=6-intel-graphics>6. intel graphics</h3><p>version:</p><pre><code>21.20.16.5174 intel
+</code></pre><h3 id=7-fix-zsh-issue>7. Fix zsh issue</h3><p>When type <code>tab</code> key in zsh shell, it will complains following arguments, and
+won&rsquo;t automatically auto-complete the command:</p><pre><code>(eval):setopt:3: no such option: NO_typesettounset
+</code></pre><p>Fixed via:</p><pre><code># chsh -s $(which zsh)
+# vim /etc/shells
+/usr/bin/zsh
+</code></pre><p>Reboot the machine and this issue fixed.</p><h3 id=8-enter-to-m>8. Enter to M</h3><p><code>^M</code> will be replaced ,when hitting Enter:</p><pre><code>stty icrnl
+</code></pre><h3 id=9-wine-with-input-method>9. wine with input method</h3><p>Could not use fcitx in wine&rsquo;s tim:</p><p>Add:</p><pre><code>export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+</code></pre><p>into <code>/opt/apps/com.qq.tim.spark/files/run.sh</code></p><h3 id=10-os-probe-in-archlinux>10. os-probe in archlinux</h3><p>Add following lines into <code>/etc/default/grub</code>, then update grub configuration:</p><pre><code>GRUB_DISABLE_OS_PROBER=false
+</code></pre><h3 id=11-ubuntu-upgrade-issue>11. ubuntu upgrade issue</h3><p>solved via:</p><pre><code>cd /var/lib/dpkg/info
+sudo rm usrmerge.*
+sudo apt-get -f install
+</code></pre><h3 id=12-ssh-to-dropbear>12. ssh to dropbear</h3><p>issue:</p><pre><code>Unable to negotiate with 192.168.1.1 port 22: no matching host key type found. Their offer: ssh-rsa
+</code></pre><p>solved via:</p><pre><code>ssh  -oHostKeyAlgorithms=+ssh-rsa root@xxx.xxx.xxx.xxx
+</code></pre><h3 id=13-autologin-xfce4>13. autologin xfce4</h3><p>Edit lightdm configuration files:</p><pre><code>vi /etc/lightdm/lightdm.conf
 
-root@ubuntu:~# free -m
-              total        used        free      shared  buff/cache   available
-Mem:            221          88          17           0         115         127
-Swap:             0           0           0
-root@ubuntu:~# cat /proc/cpuinfo
-processor	: 0
-BogoMIPS	: 108.00
-Features	: fp asimd evtstrm crc32 cpuid
-CPU implementer	: 0x41
-CPU architecture: 8
-CPU variant	: 0x0
-CPU part	: 0xd08
-CPU revision	: 3
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/08/29/workingtipsonupgradingsg1drivercentos1810.qcow2/>WorkingTipsOnUpgradingSG1DriverCentOS1810.qcow2</a></h1><span class=post-date>Aug 29, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=vm>VM</h3><p>Import new image:</p><p><img src=/images/2022_08_29_10_25_29_498x422.jpg alt=/images/2022_08_29_10_25_29_498x422.jpg></p><p>Name it:</p><p><img src=/images/2022_08_29_10_26_09_467x332.jpg alt=/images/2022_08_29_10_26_09_467x332.jpg></p><p>Upgrade kernel to 4.19.12:</p><pre><code>$ ls
-kernel-4.19.12-1.x86_64.rpm  kernel-devel-4.19.12-1.x86_64.rpm  kernel-headers-4.19.12-1.x86_64.rpm  kmod-ukmd-4.19.12-20212.el7.x86_64.rpm
-$ rpm -ivh *.rpm
-$ vi /etc/default/grub
-Changed to 4.19.12 kernel
-$ grub2-mkconfig -o /boot/grub2/grub.cfg 
-$ sudo reboot
-</code></pre><p>Change the repository using iso:</p><pre><code># mount /dev/sr0 /mnt
-# cat /etc/yum.repos.d/local.repo
-[local]
-name=local
-baseurl=file:///mnt
-enabled=1
-gpgcheck=0
-# yum makecache
-</code></pre><p>Using official <code>install-sg1.sh</code> for installing to 4.19.112 kernel for fetching the dependencies.</p><h3 id=merge-steps>Merge steps</h3><p>安装官方驱动的过程中会编译出相应的文件，需要按照以下步骤进行更改:</p><pre><code># mkdir /root/merge
-# cp /root/rpmbuild/SRPMS/kmod-ukmd-4.19.112-20413.el7.centos.src.rpm /root/merge
-# cd /root/merge
-# mkdir kmod-ukmd-4.19.12.cpio
-# cd kmod-ukmd-4.19.12.cpio
-# rpm2cpio ../kmod-ukmd-4.19.112-20413.el7.centos.src.rpm | cpio -idmv
-# ls
-dg1_dmc_ver2_02.bin  dg1_guc_49.0.1.bin  dg1_huc_7.9.5.bin  kmod.spec  kmod-ukmd-4.19.112.tar.gz
-# tar xzvf kmod-ukmd-4.19.112.tar.gz
-# mv kmod-ukmd-4.19.112 kmod-ukmd-4.19.12
-# vim kmod.spec 
-Change 4.19.112-&gt;4.19.12
-# vim kmod-ukmd-4.19.12/kmod.spec
-Change 4.19.112-&gt;4.19.12
-# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_edid.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
-# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_probe_helper.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
-# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_vblank.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
-# mv kmod-ukmd-4.19.112.tar.gz /tmp
-# tar czvf kmod-ukmd-4.19.12.tar.gz kmod-ukmd-4.19.12
-# rm -rf kmod-ukmd-4.19.12
-# ls
-dg1_dmc_ver2_02.bin  dg1_guc_49.0.1.bin  dg1_huc_7.9.5.bin  kmod.spec  kmod-ukmd-4.19.12.tar.gz
-# cd ..
-# tar czvf kmod-ukmd-4.19.12.cpio.tar.gz kmod-ukmd-4.19.12.cpio
-# ls
-kmod-ukmd-4.19.112-20413.el7.centos.src.rpm  kmod-ukmd-4.19.12.cpio  kmod-ukmd-4.19.12.cpio.tar.gz
-# mv /root/rpmbuild/SOURCES/ /root/rpmbuild/SOURCES.back &amp;&amp; mkdir -p /root/rpmbuild/SOURCES/
-# cp -ar /root/merge/kmod-ukmd-4.19.12.cpio/* /root/rpmbuild/SOURCES
-# cd /root/rpmbuild/SOURCES
-# vim /usr/src/kernels/4.19.12/include/linux/math64.h
-在文件末尾倒数第二行添加
-.....
-    #endif /* mul_u64_u32_div */
-    +++++ #define DIV64_U64_ROUND_UP(ll, d)	\
-    +++++	({ u64 _tmp = (d); div64_u64((ll) + _tmp - 1, _tmp); })
-    
-    #endif /* _LINUX_MATH64_H */
+[SeatDefaults]
+autologin-user=username    #需要登录的用户名
+autologin-user-timeout=delay
 
-# rpmbuild -bb kmod.spec
-# ls /root/rpmbuild/RPMS/x86_64
-kmod-ukmd-4.19.12-20413.el7.centos.x86_64.rpm
-</code></pre><h3 id=verification>Verification</h3><p>Install any 4.19.12 kernel, test the package <code>kmod-ukmd-4.19.12-20413.el7.centos.x86_64.rpm</code>.</p><pre><code>$ ls /dev/dri/
-card0  renderD128
-$ lsmod | grep i915
-i915_spi               20480  0 
-mtd                    57344  5 i915_spi
-i915                 1933312  0 
-drm_ukmd_kms_helper   188416  1 i915
-drm_ukmd              495616  3 drm_ukmd_kms_helper,i915
-drm_ukmd_compat        98304  3 drm_ukmd_kms_helper,i915,drm_ukmd
-video                  40960  1 i915
-i2c_algo_bit           16384  1 i915
-cec                    45056  1 i915
-mfd_core               16384  2 lpc_ich,i915
-</code></pre><p>Examine the kernel demsg:</p><pre><code>$ sudo dmesg | grep drm
-[sudo] password for ctctest: 
-[    7.776406] drm: loading out-of-tree module taints kernel.
-[    7.800836] Initialized drm/i915 compat module 20160105
-[    7.892916] [drm] i915 backporting
-[    7.893701] [drm] Intel graphics LMEM: [mem 0x00000000-0x1fb7fffff]
-[    7.893702] [drm] Intel graphics LMEM IO start: a00000000
-[    7.893702] [drm] Intel graphics LMEM size: 1fb800000
-[    7.893714] [drm] Intel graphics stolen LMEM: [mem 0x1fc000000-0x1ffffffff]
-[    7.893714] [drm] Intel graphics stolen LMEM IO start: bfc000000
-[    7.895015] i915 0000:07:00.0: [drm] Couldn't get system memory bandwidth
-[    7.895053] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
-[    7.895054] [drm] Driver supports precise vblank timestamp query.
-[    7.971850] i915 0000:07:00.0: [drm] Finished loading DMC firmware i915/dg1_dmc_ver2_02.bin (v2.2)
-[    7.994442] [drm] GuC communication enabled
-[    7.999403] i915 0000:07:00.0: [drm] GuC firmware i915/dg1_guc_49.0.1.bin version 49.0 submission:disabled
-[    7.999405] i915 0000:07:00.0: [drm] HuC firmware i915/dg1_huc_7.9.5.bin version 7.9 authenticated:yes
-[    8.001958] [drm] Initialized i915 1.6.0 20220718-8a58be7 for 0000:07:00.0 on minor 0
-[    8.003950] i915 0000:07:00.0: [drm] Cannot find any crtc or sizes
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/08/26/benchmarkonsg1/>BenchmarkOnSG1</a></h1><span class=post-date>Aug 26, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Start the redroid via:</p><pre><code># docker run -itd --name redroid4cores --memory-swappiness=0 --privileged   -p 5556:5555 --cpuset-cpus 0-3 -v /root/cpus/present:/sys/devices/system/cpu/present -v /root/cpus/online:/sys/devices/system/cpu/online -v /root/cpus/possible:/sys/devices/system/cpu/possible redroid12:latest redroid.fps=120 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD128 androidboot.use_memfd=1
-fe847de1c10fd9f28a358257b1c90c22884535a6d14c8867136bceea77cf140c
-root@ctctest-UniServer-R4900-G3:~# docker exec -it redroid4cores sh
-fe847de1c10f:/ # setprop sys.use_memfd 1 
-</code></pre><p><img src=/images/2022_08_26_11_10_15_585x711.jpg alt=/images/2022_08_26_11_10_15_585x711.jpg></p><p>Remove the other 3 socs:</p><pre><code># rm -rf /dev/dri/renderD129 /dev/dri/renderD130 /dev/dri/renderD131 
-# rm -rf /dev/dri/card1 /dev/dri/card2 /dev/dri/card3
-</code></pre><p>Rerun the benchmark, still the same:</p><p><img src=/images/2022_08_26_11_17_06_590x521.jpg alt=/images/2022_08_26_11_17_06_590x521.jpg></p><p>Remove the device:</p><pre><code># echo 1 &gt; /sys/bus/pci/devices/0000:b8:00.0/remove
-# echo 1 &gt; /sys/bus/pci/devices/0000:c2:00.0/remove
-# echo 1 &gt; /sys/bus/pci/devices/0000:bd:00.0/remove
-</code></pre><p>System hang.</p><p>Using udev for removing the socs:</p><pre><code># cat /etc/udev/rules.d/removesg1.rules 
-ACTION==&quot;add&quot;, KERNEL==&quot;0000:b8:00.0&quot;, SUBSYSTEM==&quot;pci&quot;, RUN+=&quot;/bin/sh -c 'echo 1 &gt; /sys/bus/pci/devices/0000:b8:00.0/remove'&quot;
-ACTION==&quot;add&quot;, KERNEL==&quot;0000:bd:00.0&quot;, SUBSYSTEM==&quot;pci&quot;, RUN+=&quot;/bin/sh -c 'echo 1 &gt; /sys/bus/pci/devices/0000:bd:00.0/remove'&quot;
-ACTION==&quot;add&quot;, KERNEL==&quot;0000:c2:00.0&quot;, SUBSYSTEM==&quot;pci&quot;, RUN+=&quot;/bin/sh -c 'echo 1 &gt; /sys/bus/pci/devices/0000:c2:00.0/remove'&quot;
-</code></pre><p>Examine the graphical cards:</p><pre><code># lspci | grep -i vga
-0000:05:00.0 VGA compatible controller: ASPEED Technology, Inc. ASPEED Graphics Family (rev 41)
-0000:b3:00.0 VGA compatible controller: Intel Corporation Device 4907 (rev 01)
-</code></pre><p>render nodes:</p><pre><code># ls /dev/dri/
-by-path  card0  renderD128
-# ls /dev/dri/by-path/ -l
-total 0
-lrwxrwxrwx 1 root root  8 8月  26 11:49 pci-0000:b3:00.0-card -&gt; ../card0
-lrwxrwxrwx 1 root root 13 8月  26 11:49 pci-0000:b3:00.0-render -&gt; ../renderD128
-</code></pre><p>Rerun the testing:</p><p><img src=/images/2022_08_26_11_57_38_588x761.jpg alt=/images/2022_08_26_11_57_38_588x761.jpg></p><h3 id=another-machine>Another machine</h3><p><img src=/images/2022_08_26_12_21_46_584x203.jpg alt=/images/2022_08_26_12_21_46_584x203.jpg></p><p>Turbo boost mode(avd) comparision:</p><p>non-turbo boost</p><p><img src=/images/2022_08_26_12_35_07_372x255.jpg alt=/images/2022_08_26_12_35_07_372x255.jpg></p><p>turbo boost(sg1):</p><p><img src=/images/2022_08_26_12_41_30_373x417.jpg alt=/images/2022_08_26_12_41_30_373x417.jpg></p><p>Turbo boot (t4):</p><p><img src=/images/2022_08_26_12_48_07_525x494.jpg alt=/images/2022_08_26_12_48_07_525x494.jpg></p><p>vnc(best perf mode):</p><p><img src=/images/2022_08_26_15_00_35_589x281.jpg alt=/images/2022_08_26_15_00_35_589x281.jpg></p><p>no vnc(best perf mode), no scrcpy:</p><p><img src=/images/2022_08_26_15_06_44_595x985.jpg alt=/images/2022_08_26_15_06_44_595x985.jpg></p><p>scrcpy with 15fps:</p><p><img src=/images/2022_08_26_15_22_06_528x261.jpg alt=/images/2022_08_26_15_22_06_528x261.jpg></p><p>scrcpy with 5fps:</p><p><img src=/images/2022_08_26_15_27_03_528x285.jpg alt=/images/2022_08_26_15_27_03_528x285.jpg></p><p>no scrcpy again:</p><p><img src=/images/2022_08_26_15_31_56_534x261.jpg alt=/images/2022_08_26_15_31_56_534x261.jpg></p><p>t4 with scrcpy:</p><p><img src=/images/2022_08_26_15_39_49_1029x473.jpg alt=/images/2022_08_26_15_39_49_1029x473.jpg></p><p>ampere t4 with scrcpy:</p><p><img src=/images/2022_08_26_15_49_37_480x918.jpg alt=/images/2022_08_26_15_49_37_480x918.jpg></p><p>Performance:</p><pre><code>cpupower frequency-set -g performance
+</code></pre><h3 id=14-detect-pci-parameters>14. detect pci parameters</h3><p>via:</p><pre><code>sudo lspci  -v -s 00:02.0
+00:02.0 VGA compatible controller: Intel Corporation Device 9a49 (rev 01) (prog-if 00 [VGA controller])
+	DeviceName: Onboard - Video
+	Subsystem: Intel Corporation Device 3004
+	Flags: bus master, fast devsel, latency 0, IRQ 190
+	Memory at 603c000000 (64-bit, non-prefetchable) [size=16M]
+	Memory at 4000000000 (64-bit, prefetchable) [size=256M]
+	I/O ports at 3000 [size=64]
+	Expansion ROM at 000c0000 [virtual] [disabled] [size=128K]
+	Capabilities: [40] Vendor Specific Information: Len=0c &lt;?&gt;
+	Capabilities: [70] Express Root Complex Integrated Endpoint, MSI 00
+	Capabilities: [ac] MSI: Enable+ Count=1/1 Maskable+ 64bit-
+	Capabilities: [d0] Power Management version 2
+	Capabilities: [100] Process Address Space ID (PASID)
+	Capabilities: [200] Address Translation Service (ATS)
+	Capabilities: [300] Page Request Interface (PRI)
+	Capabilities: [320] Single Root I/O Virtualization (SR-IOV)
+	Kernel driver in use: i915
+	Kernel modules: i915
+</code></pre><h3 id=15-dnf-speed-up>15. dnf speed up</h3><p>add following :</p><pre><code># vim /etc/dnf/dnf.conf
+fastestmirror=true
 
-</code></pre><p>ampere t4 without scrcpy:</p><p><img src=/images/2022_08_26_16_58_06_469x380.jpg alt=/images/2022_08_26_16_58_06_469x380.jpg></p><p>should upgrade to oibaf? upgrading to stable.</p><pre><code>sudo add-apt-repository ppa:kisak/kisak-mesa
-sudo apt update
-sudo apt upgrade
-</code></pre><p>Next week, upgrading to 5.19.3</p><p>Even on 5.19.3, benchmark is very bad:</p><p><img src=/images/2022_08_29_11_37_21_502x253.jpg alt=/images/2022_08_29_11_37_21_502x253.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/08/25/sg1onarchlinux2/>SG1OnArchLinux2</a></h1><span class=post-date>Aug 25, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>After install arch system, install packages:</p><pre><code># pacman -S gnome libva-mesa-driver  mesa-demos mesa-utils mesa-vdpau opencl-mesa vulkan-intel vulkan-mesa-layers vulkan-radeon adriconf awesome x11vnc net-tools
-</code></pre><p>List all of the sg socs:</p><pre><code># lspci | grep -i vga
-0000:05:00.0 VGA compatible controller: ASPEED Technology, Inc. ASPEED Graphics Family (rev 41)
-0000:b3:00.0 VGA compatible controller: Intel Corporation SG1 [Server GPU SG-18M] (rev 01)
-0000:b8:00.0 VGA compatible controller: Intel Corporation SG1 [Server GPU SG-18M] (rev 01)
-0000:bd:00.0 VGA compatible controller: Intel Corporation SG1 [Server GPU SG-18M] (rev 01)
-0000:c2:00.0 VGA compatible controller: Intel Corporation SG1 [Server GPU SG-18M] (rev 01)
-</code></pre><p>List all of the render nodes:</p><pre><code># ls /dev/dri/
-by-path  card0	card1  card2  card3  card4  renderD128	renderD129  renderD130	renderD131
-# ls /dev/dri/by-path/ -l
-lrwxrwxrwx 1 root root  8 Aug 25 08:30 pci-0000:05:00.0-card -&gt; ../card0
-lrwxrwxrwx 1 root root  8 Aug 25 08:30 pci-0000:b3:00.0-card -&gt; ../card1
-lrwxrwxrwx 1 root root 13 Aug 25 08:30 pci-0000:b3:00.0-render -&gt; ../renderD128
-lrwxrwxrwx 1 root root  8 Aug 25 08:30 pci-0000:b8:00.0-card -&gt; ../card2
-lrwxrwxrwx 1 root root 13 Aug 25 08:30 pci-0000:b8:00.0-render -&gt; ../renderD129
-lrwxrwxrwx 1 root root  8 Aug 25 08:30 pci-0000:bd:00.0-card -&gt; ../card3
-lrwxrwxrwx 1 root root 13 Aug 25 08:30 pci-0000:bd:00.0-render -&gt; ../renderD130
-lrwxrwxrwx 1 root root  8 Aug 25 08:30 pci-0000:c2:00.0-card -&gt; ../card4
-lrwxrwxrwx 1 root root 13 Aug 25 08:30 pci-0000:c2:00.0-render -&gt; ../renderD131
-</code></pre><h3 id=benchmark>Benchmark</h3><p>Create xorg:</p><pre><code>[root@archsg1 ~]# cat /etc/X11/xorgintel.conf 
-Section &quot;Device&quot;
-    Identifier     &quot;Device[179]&quot;
-    #BusID          &quot;PCI:0@0:179:0&quot;
-    BusID          &quot;PCI:179:0:0&quot;
-    VendorName     &quot;Intel&quot;
-    BoardName      &quot;DG1&quot;
-#    Option &quot;AllowEmptyInitialConfiguration&quot;
-EndSection
-Section &quot;ServerFlags&quot;
-    Option &quot;Debug&quot; &quot;dmabuf_capable&quot;
-EndSection
-# Xorg :179 -config /etc/X11/xorgintel.conf
-</code></pre><p>glmark2:</p><pre><code># export DISPLAY=:179
-[root@archsg1 ~]# glmark2
-=======================================================
-    glmark2 2021.12
-=======================================================
-    OpenGL Information
-    GL_VENDOR:     Intel
-    GL_RENDERER:   Mesa Intel(R) Graphics (SG1)
-    GL_VERSION:    4.6 (Compatibility Profile) Mesa 22.1.6
-=======================================================
-[build] use-vbo=false: FPS: 1825 FrameTime: 0.548 ms
-[build] use-vbo=true: FPS: 2154 FrameTime: 0.464 ms
-[texture] texture-filter=nearest: FPS: 2132 FrameTime: 0.469 ms
-[texture] texture-filter=linear: FPS: 2150 FrameTime: 0.465 ms
-[texture] texture-filter=mipmap: FPS: 2155 FrameTime: 0.464 ms
-[shading] shading=gouraud: FPS: 2047 FrameTime: 0.489 ms
-[shading] shading=blinn-phong-inf: FPS: 2044 FrameTime: 0.489 ms
-[shading] shading=phong: FPS: 2041 FrameTime: 0.490 ms
-[shading] shading=cel: FPS: 2040 FrameTime: 0.490 ms
-[bump] bump-render=high-poly: FPS: 1753 FrameTime: 0.570 ms
-[bump] bump-render=normals: FPS: 2252 FrameTime: 0.444 ms
-[bump] bump-render=height: FPS: 2248 FrameTime: 0.445 ms
-[effect2d] kernel=0,1,0;1,-4,1;0,1,0;: FPS: 1774 FrameTime: 0.564 ms
-[effect2d] kernel=1,1,1,1,1;1,1,1,1,1;1,1,1,1,1;: FPS: 1764 FrameTime: 0.567 ms
-[pulsar] light=false:quads=5:texture=false: FPS: 1880 FrameTime: 0.532 ms
-[desktop] blur-radius=5:effect=blur:passes=1:separable=true:windows=4: FPS: 1221 FrameTime: 0.819 ms
-[desktop] effect=shadow:windows=4: FPS: 1425 FrameTime: 0.702 ms
-[buffer] columns=200:interleave=false:update-dispersion=0.9:update-fraction=0.5:update-method=map: FPS: 384 FrameTime: 2.604 ms
-[buffer] columns=200:interleave=false:update-dispersion=0.9:update-fraction=0.5:update-method=subdata: FPS: 1136 FrameTime: 0.880 ms
-[buffer] columns=200:interleave=true:update-dispersion=0.9:update-fraction=0.5:update-method=map: FPS: 481 FrameTime: 2.079 ms
-[ideas] speed=duration: FPS: 1672 FrameTime: 0.598 ms
-[jellyfish] &lt;default&gt;: FPS: 1423 FrameTime: 0.703 ms
-[terrain] &lt;default&gt;: FPS: 435 FrameTime: 2.299 ms
-[shadow] &lt;default&gt;: FPS: 1719 FrameTime: 0.582 ms
-[refract] &lt;default&gt;: FPS: 924 FrameTime: 1.082 ms
-[conditionals] fragment-steps=0:vertex-steps=0: FPS: 1906 FrameTime: 0.525 ms
-[conditionals] fragment-steps=5:vertex-steps=0: FPS: 1904 FrameTime: 0.525 ms
-[conditionals] fragment-steps=0:vertex-steps=5: FPS: 1904 FrameTime: 0.525 ms
-[function] fragment-complexity=low:fragment-steps=5: FPS: 1905 FrameTime: 0.525 ms
-[function] fragment-complexity=medium:fragment-steps=5: FPS: 1903 FrameTime: 0.525 ms
-[loop] fragment-loop=false:fragment-steps=5:vertex-steps=5: FPS: 1903 FrameTime: 0.525 ms
-[loop] fragment-steps=5:fragment-uniform=false:vertex-steps=5: FPS: 1904 FrameTime: 0.525 ms
-[loop] fragment-steps=5:fragment-uniform=true:vertex-steps=5: FPS: 1902 FrameTime: 0.526 ms
-=======================================================
-                                  glmark2 Score: 1706 
-=======================================================
-</code></pre><h3 id=kernel-change>Kernel change</h3><p>Building kernel will takes more than 30 minutes&mldr;..
-Before makepkg, change the <code>-j</code> items in order to use maximum hardware capability.<br>Install asp for building kernel:</p><pre><code># pacman -S base-devel asp
-# asp checkout linux-zen
-# vim repos/extra-x86_64/config
-CONFIG_ANDROID_BINDER_DEVICES=&quot;binder,hwbinder,vndbinder&quot;
 
-# cd repos/extra-x86_64
-$ ls
-config  keys  PKGBUILD
-$ makepkg --clean --syncdeps --rmdeps
+</code></pre><h3 id=16-makepkg-ignore-check>16. makepkg ignore check</h3><p>via:</p><pre><code>makepkg --skipinteg
+</code></pre><h3 id=17-building-on-cdesktop>17. building on cdesktop</h3><p>on building gstreamer:</p><pre><code>Force specify a macro. 
+</code></pre><p>on building net-snmp:</p><pre><code>sudo apt install automake -y
+aclocal
+automake --add-missing --copy --force-missing
+</code></pre><p>Detect pre-defined macros:</p><pre><code>uos@uos-PC:~$ echo | gcc -E -dM - | grep sw
+#define __sw_64_bwx__ 1
+#define __sw_64 1
+#define __sw_64_fix__ 1
+#define __sw_64_sw6b__ 1
+#define __sw_64__ 1
+#define __sw_64_cix__ 1
 
-</code></pre><h3 id=docker-binding-cpus>Docker binding cpus</h3><p>Create the cpu cores definition file:</p><pre><code>[root@archsg1 cpus]# cp present possible
-[root@archsg1 cpus]# cp present online
-[root@archsg1 cpus]# cat present 
-0-3
+</code></pre><h3 id=18-markdown-in-confluence>18. markdown in confluence</h3><p>via:</p><p><code>https://www.cnblogs.com/cuianbing/p/15891950.html</code></p><h3 id=19-wine-app-fcitx>19. wine app fcitx</h3><p>Added following in <code>run.sh</code>:</p><pre><code>env locale=zh_CN
 
-</code></pre><p>Run with:</p><pre><code>docker run -itd --name redroid4cores --memory-swappiness=0 --privileged   -p 5556:5555 --cpuset-cpus 0-3 -v /root/cpus/present:/sys/devices/system/cpu/present -v /root/cpus/online:/sys/devices/system/cpu/online -v /root/cpus/possible:/sys/devices/system/cpu/possible redroid12:latest redroid.fps=120 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD128 androidboot.use_memfd=1
+export XIM=&quot;fcitx&quot;
+export GTK_IM_MODULE=&quot;fcitx&quot;
+export QT_IM_MODULE=&quot;fcitx&quot;
+export XMODIFIERS=&quot;@im=fcitx&quot;
+</code></pre><h3 id=20-wine-app-fonts>20. wine app fonts</h3><p>Verify you have the correct fonts under :</p><pre><code>➜  Fonts pwd
+/home/dash/.deepinwine/Spark-TIM/drive_c/windows/Fonts
+➜  Fonts ls
+simsunb.ttf  simsun.ttc
 
-</code></pre><p>with lxcfs:</p><pre><code> docker run -itd --name numa1 --memory-swappiness=0 --privileged   -p 5557:5555 -m 8192m --cpus=8 --cpuset-cpus=&quot;80-87&quot; --cpuset-mems=&quot;1&quot; --memory=&quot;8192M&quot; -v /root/cpus1/present:/sys/devices/system/cpu/present -v /root/cpus1/online:/sys/devices/system/cpu/online -v /root/cpus1/possible:/sys/devices/system/cpu/possible -v /var/lib/lxcfs/proc/cpuinfo:/proc/cpuinfo:rw -v /var/lib/lxcfs/proc/diskstats:/proc/diskstats:rw  -v /var/lib/lxcfs/proc/meminfo:/proc/meminfo:rw -v /var/lib/lxcfs/proc/uptime:/proc/uptime:rw -v /var/lib/lxcfs/proc/stat:/proc/stat:rw redroid12:latest redroid.fps=120 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD130 androidboot.use_memfd=1
+</code></pre><p>Then add following into the <code>run.sh</code>:</p><pre><code>env locale=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+LC_ALL=zh_CN.UTF-8
+WINE_CMD=&quot;LC_ALL=zh_CN.UTF-8 deepin-wine5&quot;
 
-</code></pre><p>Limite memory:</p><pre><code>root@sg1desktopubuntu2004:~# free -g
-              total        used        free      shared  buff/cache   available
-Mem:             60           7          52           0           0          52
-Swap:             1           0           1
-root@sg1desktopubuntu2004:~# cat /proc/cmdline 
-BOOT_IMAGE=/boot/vmlinuz-5.19.3-051903-generic root=UUID=c255524f-5692-457c-a0b6-d465e0b32707 ro quiet splash i915.force_probe=* modprobe.blacklist=ast,snd_hda_intel i915.enable_guc=2 drm_kms_helper.edid_firmware=edid/1920x1080.bin video=HDMI-A-1:e video=HDMI-A-5:e video=HDMI-A-9:e video=HDMI-A-13:e mem=65535M
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/08/24/rebuildppakernelimages/>RebuildPPAKernelImages</a></h1><span class=post-date>Aug 24, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=ppa-kernel>ppa kernel</h3><p>Install ppa kernel on ubuntu20.04 via:</p><pre><code>add-apt-repository ppa:tuxinvader/lts-mainline -y
-apt update -y
-apt-get install -y linux-generic-5.19
-</code></pre><p>After reboot, check the kernel via:</p><pre><code># uname -r
-5.19.3-051903-generic
-</code></pre><h3 id=customization-of-kernel>Customization of Kernel</h3><p>uncomment the <code>deb-src</code>for ppa:</p><pre><code># cat /etc/apt/sources.list.d/tuxinvader-ubuntu-lts-mainline-focal.list 
-deb http://ppa.launchpad.net/tuxinvader/lts-mainline/ubuntu focal main
-deb-src http://ppa.launchpad.net/tuxinvader/lts-mainline/ubuntu focal main
-# apt update
-</code></pre><p>Get the source code:</p><pre><code># apt install linux-source-5.19.3
-# ls /usr/src/linux-source-5.19.3/
-debian  debian.master  linux-source-5.19.3.tar.bz2
-</code></pre><p>Get the build-dep for kernel:</p><pre><code># apt build-dep linux-generic-5.19
-# apt build-dep linux-doc
-</code></pre><p>Prepare the build tree:</p><pre><code># cd /usr/src/linux-source
-# bunzip2 linux-source-5.19.3.tar.bz2
-# tar xf linux-source-5.19.3.tar
-# mv linux-source-5.19.3/* .
-# mkdir debian/stamps
-</code></pre><p>Build via:</p><pre><code># fakeroot debian/rules clean
-# fakeroot debian/rules editconfigs
-# fakeroot debian/rules binary-headers binary-generic binary-perarch
-</code></pre><p>build will take sometimes, so drink a cup of H~~~ot tea and wait.</p><p>Check the built result:</p><pre><code># ls /usr/src/*.deb
-/usr/src/linux-buildinfo-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
-/usr/src/linux-headers-5.19.3-051903_5.19.3-051903.202208220846_all.deb
-/usr/src/linux-headers-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
-/usr/src/linux-image-unsigned-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
-/usr/src/linux-modules-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
-</code></pre><h3 id=benchmark>Benchmark</h3><p>glmark2 result:</p><pre><code># uname -r
-5.19.3-051903-generic
-# export DISPLAY=:179
-# glmark2
-=======================================================
-    glmark2 2021.02
-=======================================================
-    OpenGL Information
-    GL_VENDOR:     Intel
-    GL_RENDERER:   Mesa Intel(R) Graphics (SG1)
-    GL_VERSION:    4.6 (Compatibility Profile) Mesa 22.2.0-devel (git-e8fc5cc 2022-06-22 focal-oibaf-ppa)
-=======================================================
-.........
-=======================================================
-                                  glmark2 Score: 2886 
-=======================================================
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/4/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class=page-item><a class=page-link href=/page/4/>4</a></li><li class="page-item active"><a class=page-link href=/page/5/>5</a></li><li class=page-item><a class=page-link href=/page/6/>6</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/6/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><h3 id=21-virtualbox-time-issue>21. virtualbox time issue</h3><p>Windows side:</p><pre><code>c:\Progra~1\Oracle\VirtualBox\VBoxManage setextradata %NOME% &quot;VBoxInternal/Devices/VMMDev/0/Config/GetHostTimeDisabled&quot; 1
+c:\Progra~1\Oracle\VirtualBox\VBoxManage modifyvm %NOME% --biossystemtimeoffset -7628000000
+</code></pre><h3 id=22-python-simple-http-server>22. python simple http server</h3><p>via:</p><pre><code>python -m http.server 9000
+
+</code></pre><h3 id=23-build-kernel>23. build kernel</h3><p><code>BTF: .tmp_vmlinux.btf: pahole (pahole) is not available</code></p><pre><code>sudo apt install dwarves
+</code></pre><h3 id=24-kernel-install-module>24. kernel install module</h3><p>via:</p><pre><code>make INSTALL_MOD_STRIP=1 modules_install -j4
+</code></pre><p>then the initrd size will be small.
+Or you will encounter initrd is too big issue.</p><h3 id=25-auto-restart-sshd>25. Auto restart sshd</h3><p>via:</p><pre><code>pacman -S cron
+systemctl enable cronie
+crontab -e
+@reboot sleep 120 &amp;&amp; systemctl restart sshd
+</code></pre><p>Then each time you reboot the machine it will automatically restart sshd.</p><h3 id=26-install-graphical-in-pve>26. Install graphical in pve</h3><p>Install kde via following command:</p><pre><code>apt install -y task-kde-desktop
+</code></pre><h3 id=27-remotedesktop-gpu>27. RemoteDesktop GPU</h3><p>via:</p><pre><code>显卡加速
+win+r打开运行 输入gpedit.msc
+依次找到计算机配置-&gt;管理模板-&gt;Windows组件-&gt;远程桌面服务-&gt;远程桌面会话主机-&gt;远程会话环境
+在右边选择将硬件图形适配器应用于所有远程桌面服务会话
+右键编辑，选择已启用确定保存。
+重启远程主机。
+现在可以在远程桌面里运行需要GPU支持的应用了
+
+提升传输帧率
+RDP默认的帧率是30，可以设置为60帧传输
+实际效果取决于客户端设置、网络环境等等因素
+打开远程主机上的注册表编辑器 win+r输入regedit
+找到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations
+在空白处右键-&gt;新建-&gt;DWORD（32位）值，命名为DWMFRAMEINTERVAL
+双击刚添加的这一项，基数选择为十进制，数值数据填写15
+确定保存，重启生效
+</code></pre><h3 id=28-fsck-ext4-disk>28. fsck ext4 disk</h3><p>error message:</p><pre><code>[ 5903.331828] sd 4:0:0:0: [sdb] Attached SCSI removable disk
+[ 5911.746891] EXT4-fs (sdb1): ext4_check_descriptors: Checksum for group 1 failed (43829!=56479)
+[ 5911.746897] EXT4-fs (sdb1): group descriptors corrupted!
+</code></pre><p>fixed via:</p><pre><code>fsck.ext4 -fvy  /dev/sdb1
+</code></pre><h3 id=29-width-height>29. width height</h3><p>55 &lt;40</p><h3 id=30-check-ssdhdd-in-linux>30. check ssd/hdd in linux</h3><p>via:</p><pre><code>lsblk -d -o name,rota
+NAME ROTA
+sda     0
+sdb     0
+sdc     1
+</code></pre><h3 id=30-list-all-xsessions>30. list all xsessions</h3><p>Available session types can be found in /usr/share/xsessions/ for X and in /usr/share/wayland-sessions/ for Wayland.</p><h3 id=31-gdm-6000-issue>31. gdm 6000 issue</h3><p>Solved via:</p><pre><code>[dash@localhost ~]$ which X
+/usr/bin/X
+[dash@localhost ~]$ sudo vim /usr/bin/X
+[dash@localhost ~]$ ls -l -h /usr/bin/X
+lrwxrwxrwx. 1 root root 4 Sep 26  2022 /usr/bin/X -&gt; Xorg
+[dash@localhost ~]$ sudo rm -f /usr/bin/X
+[dash@localhost ~]$ sudo vim /usr/bin/X
+[dash@localhost ~]$ sudo netstat -anp | grep 6000
+tcp        0      0 0.0.0.0:6000            0.0.0.0:*               LISTEN      4215/X              
+tcp6       0      0 :::6000                 :::*                    LISTEN      4215/X              
+[dash@localhost ~]$ sudo systemctl restart gdm
+[dash@localhost ~]$ sudo netstat -anp | grep 6000
+[dash@localhost ~]$ cat /usr/bin/X
+#!/bin/bash
+exec /usr/bin/Xorg &quot;$@&quot; -nolisten tcp
+exit 0
+</code></pre><h3 id=32-centos-issue>32. centos issue</h3><p>disk full, restart machine with a cdrom, press F11 for boot menu.</p><p><img src=/images/2023_03_29_09_59_13_674x419.jpg alt=/images/2023_03_29_09_59_13_674x419.jpg></p><h3 id=33-zhaoxin-gpu>33. zhaoxin gpu</h3><p><img src=/images/2023_03_30_09_22_18_864x289.jpg alt=/images/2023_03_30_09_22_18_864x289.jpg></p><p><a href="https://www.zhaoxin.com/qdxz.aspx?nid=31&typeid=554">https://www.zhaoxin.com/qdxz.aspx?nid=31&typeid=554</a></p><p><img src=/images/2023_03_30_09_26_10_864x617.jpg alt=/images/2023_03_30_09_26_10_864x617.jpg></p><p>ubuntu guest, with qxl disabled.
+windows, no spice server, no qxl graphical card.</p><h3 id=34-sddm-autologin>34. sddm autologin</h3><p>via:</p><pre><code>vim /etc/sddm.conf.d/autologin.conf
+[Autologin]
+User=john
+Session=plasma
+</code></pre><h3 id=35-reboot-for-normal-userubuntu1804>35. reboot for normal user(ubuntu18.04)</h3><p>via:</p><pre><code>echo '[Remote SSH]
+Identity=unix-user:userrer
+Action=org.freedesktop.login1.*
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes' | sudo tee /etc/polkit-1/localauthority/50-local.d/power.pkla
+</code></pre><h3 id=36-pivpn>36. pivpn</h3><p>create via:</p><pre><code>pivpn add
+</code></pre><p>Then copy the configuration files to wireguards.</p><h3 id=37-setdefault>37. setdefault</h3><p>via:</p><pre><code> systemctl get-default
+ systemctl set-default graphical.target
+ systemctl get-default
+ systemctl start graphical.target
+ ps -ef | grep X
+</code></pre><h3 id=38-hackitosh>38. hackitosh</h3><p>via:</p><pre><code>https://www.itmanbu.com/ryzen-hackintosh-using-kvm-proxmox.html
+https://blog.lv5.moe/p/pve-virtualized-hackintosh-gpu-passthrough-and-remote-access-tutorial
+https://www.sqlsec.com/2022/04/pve.html#%E5%88%9D%E5%A7%8B%E5%8C%96%E8%99%9A%E6%8B%9F%E6%9C%BA
+</code></pre><h3 id=39-noip-on-rpi>39. noip on rpi</h3><p>add into the crontab via:</p><pre><code>@reboot sleep 30 &amp;&amp;  /usr/local/bin/noip2 &amp;
+
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/4/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class=page-item><a class=page-link href=/page/4/>4</a></li><li class="page-item active"><a class=page-link href=/page/5/>5</a></li><li class=page-item><a class=page-link href=/page/6/>6</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/6/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

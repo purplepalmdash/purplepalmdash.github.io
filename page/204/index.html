@@ -1,140 +1,355 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/20/problem-of-capcity/>Problem of Capcity</a></h1><span class=post-date>Nov 20, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Image1:</p><p><img src=/images/rasp1.jpg alt=rasp1.jpg></p><p>Image2:</p><p><img src=/images/rasp2.jpg alt=rasp2.jpg></p><p>Image3:</p><p><img src=/images/rasp3.jpg alt=rasp3.jpg></p><p>Image4:</p><p><img src=/images/rotater.jpg alt=rasp4.jpg></p><p>Image5:</p><p><img src=/images/dubang.jpg alt=rasp5.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/19/install-openelec-on-sd-card/>Install OpenELEC on SD Card</a></h1><span class=post-date>Nov 19, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Partition the SD card
-Insert the SD card and view the partitions via fdisk -l, then</p><pre><code>	[root@XXXyyy Trusty]# parted -s /dev/mmcblk0 mklabel msdos
-	[root@XXXyyy Trusty]# fdisk -l
-	Disk /dev/mmcblk0: 7.4 GiB, 7948206080 bytes, 15523840 sectors
-	Units: sectors of 1 * 512 = 512 bytes
-	Sector size (logical/physical): 512 bytes / 512 bytes
-	I/O size (minimum/optimal): 512 bytes / 512 bytes
-	Disklabel type: dos
-	Disk identifier: 0x0002d03c
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/22/openocd-configuration/>openOCD Configuration</a></h1><span class=post-date>Nov 22, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###OpenOCD Device Scan
+Install and view the OpenOCD:</p><pre><code>	$ pacman -S openocd
+	[Trusty@XXXyyy debian_octopress]$ openocd -v
+	Open On-Chip Debugger 0.7.0 (2013-11-02-01:53)
+	Licensed under GNU GPL v2
+	For bug reports, read
+		http://openocd.sourceforge.net/doc/doxygen/bugs.html
 
-</code></pre><p>Make partition 1, fat32, and its size if 16 &ldquo;cyl&rdquo; (cylinders)</p><pre><code>	[root@XXXyyy Trusty]# parted -s /dev/mmcblk0 unit cyl mkpart primary fat32 -- 0 16
-	Parameters
-	unit unit
-	   Set unit as the unit to use when displaying locations and  sizes, unit cyl means cylinders. 
-	mkpart part-type [fs-type] start end
-	Make  a  part-type  partition  for filesystem fs-type (if
-	specified), beginning at start  and  ending  at  end  (by
-	default  in megabytes).  part-type should be one of &quot;pri‐
-	mary&quot;, &quot;logical&quot;, or &quot;extended&quot;.
+</code></pre><p>Insert your openJTAG debug board, and view its connection:</p><pre><code>	[Trusty@XXXyyy debian_octopress]$ lsusb
+	Bus 001 Device 016: ID 1457:5118 First International Computer, Inc. OpenMoko Neo1973 Debug board (V2+)
 
-</code></pre><p>Make the partition 1 bootable:</p><pre><code>	$ parted -s /dev/mmcblk0 set 1 boot on
-	Device         Boot Start       End Blocks  Id System
-	/dev/mmcblk0p1 *     2048    258047 128000   c W95 FAT32 (LBA)
+</code></pre><p>From the dmesg information:</p><pre><code>	[15767.673553] usb 1-1: new full-speed USB device number 11 using xhci_hcd
+	[15767.695990] usb 1-1: Device not responding to set address.
+	[15767.938262] usb 1-1: Device not responding to set address.
+	[15768.140725] usb 1-1: device not accepting address 11, error -71
+	[15768.421057] usb 1-1: new full-speed USB device number 13 using xhci_hcd
+	[15769.015800] usbcore: registered new interface driver usbserial
+	[15769.016012] usbcore: registered new interface driver usbserial_generic
+	[15769.016075] usbserial: USB Serial support registered for generic
+	[15769.020028] usbcore: registered new interface driver ftdi_sio
+	[15769.020050] usbserial: USB Serial support registered for FTDI USB Serial Device
+	[15769.020458] usb 1-1: Ignoring serial port reserved for JTAG
+	[15769.020499] ftdi_sio 1-1:1.1: FTDI USB Serial Device converter detected
+	[15769.020544] usb 1-1: Detected FT2232C
+	[15769.020548] usb 1-1: Number of endpoints 2
+	[15769.020550] usb 1-1: Endpoint 1 MaxPacketSize 64
+	[15769.020553] usb 1-1: Endpoint 2 MaxPacketSize 64
+	[15769.020555] usb 1-1: Setting MaxPacketSize 64
+	[15769.026647] usb 1-1: FTDI USB Serial Device converter now attached to ttyUSB0
+	[15975.012193] usb 1-1: USB disconnect, device number 13
+	[15975.012449] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+	[15975.012465] ftdi_sio 1-1:1.1: device disconnected
+	[15975.270658] usb 1-1: new full-speed USB device number 14 using xhci_hcd
+	[15975.355869] usb 1-1: Ignoring serial port reserved for JTAG
+	[15975.366867] ftdi_sio 1-1:1.1: FTDI USB Serial Device converter detected
+	[15975.366902] usb 1-1: Detected FT2232C
+	[15975.366904] usb 1-1: Number of endpoints 2
+	[15975.366906] usb 1-1: Endpoint 1 MaxPacketSize 64
+	[15975.366908] usb 1-1: Endpoint 2 MaxPacketSize 64
+	[15975.366909] usb 1-1: Setting MaxPacketSize 64
+	[15975.371933] usb 1-1: FTDI USB Serial Device converter now attached to ttyUSB0
+	[16608.914153] usb 1-1: USB disconnect, device number 14
+	[16608.914371] ftdi_sio ttyUSB0: FTDI USB Serial Device converter now disconnected from ttyUSB0
+	[16608.914402] ftdi_sio 1-1:1.1: device disconnected
+	[16609.394763] usb 1-1: new full-speed USB device number 15 using xhci_hcd
+	[16609.395097] usb 1-1: Device not responding to set address.
+	[16609.598734] usb 1-1: Device not responding to set address.
+	[16609.801899] usb 1-1: device not accepting address 15, error -71
+	[16609.962045] usb 1-1: new full-speed USB device number 16 using xhci_hcd
+	[16609.962371] usb 1-1: Device not responding to set address.
+	[16610.250376] usb 1-1: Ignoring serial port reserved for JTAG
+	[16610.261380] ftdi_sio 1-1:1.1: FTDI USB Serial Device converter detected
+	[16610.261428] usb 1-1: Detected FT2232C
+	[16610.261431] usb 1-1: Number of endpoints 2
+	[16610.261433] usb 1-1: Endpoint 1 MaxPacketSize 64
+	[16610.261435] usb 1-1: Endpoint 2 MaxPacketSize 64
+	[16610.261437] usb 1-1: Setting MaxPacketSize 64
+	[16610.266397] usb 1-1: FTDI USB Serial Device converter now attached to ttyUSB0
 
-</code></pre><p>Make the second partition:</p><pre><code>	[root@XXXyyy Trusty]# parted -s /dev/mmcblk0 unit cyl mkpart primary ext2 -- 16 -2
+</code></pre><p>From the above information we could know, Now we have a new Serial port named ttyUSB0, and also a FT2232C debug port. Currently we don&rsquo;t use Serial Port, FT2232 is all we want to configure.
+###OpenOCD Configuration
+We have to make a cfg file for OpenOCD to use. There are some pre-defined configuration files for us to refer under the directory of &ldquo;/usr/share/openocd/scripts/", since we know the debug board information and we know exactly the development board info, we can easily write our own OpenOCD startup scripts.<br>Get the interface definition via:</p><pre><code>	[Trusty@XXXyyy interface]$ pwd
+	/usr/share/openocd/scripts/interface
+	[Trusty@XXXyyy interface]$ grep &quot;1457&quot; ./ -r
+	./neodb.cfg:ft2232_vid_pid 0x1457 0x5118
+	./ftdi/neodb.cfg:ftdi_vid_pid 0x1457 0x5118
+
+</code></pre><p>So we directly copy the neodb.cfg to our openocd.cfg under our home directory. But the usb name of our OpenOCD is changed,</p><pre><code>	ft2232_device_desc &quot;USB&lt;=&gt;JTAG&amp;RS232
+
+</code></pre><p>The definition is taken from the output of &ldquo;lsusb -v -d 1457:5118&rdquo;</p><p>We also want to define the port for telnet and gdb connection</p><pre><code>	#########daemon configuration####
+	telnet_port 4444
+	gdb_port 3333
+
+
+</code></pre><p>The Target configuration is taken from the /usr/share/openocd/scripts/target/stm32f1x.cfg, which is the definition of the stm32f1x. Copy them directly to your own config file.</p><p>Finally your configuration file should be listed as:</p><pre><code>
+#########daemon configuration####
+telnet_port 4444
+gdb_port 3333
+
+########Interface Info###########
+################################################
+# Since our board takes the same vid_pid
+# We directly use openmoko's definition.
+################################################
+#
+# Openmoko USB JTAG/RS232 adapter
+#
+# http://wiki.openmoko.org/wiki/Debug_Board_v3
+#
+interface ft2232
+ft2232_device_desc &quot;USB&lt;=&gt;JTAG&amp;RS232&quot;
+ft2232_layout jtagkey
+ft2232_vid_pid 0x1457 0x5118
+
+########Board Info###########
+# Adjust Work-area size (RAM size) according to MCU in use:
+#STM32F103VC --&gt; 48KB
+#STM32F103RB --&gt; 20KB
+#set WORKAREASIZE 0x5000
+# STM32F103RE --&gt; 64KB
+# set WORKAREASIZE 0x10000
+
+# reset_config parameter (see OpenOCD manual):
+# none --&gt; srst and trst of MCU not connected to JTAG device
+# srst_only --&gt; only srst of MCU connected to JTAG device
+# trst_only --&gt; only trst of MCU connected to JTAG device
+# srst_and_trst --&gt; srst and trst of MCU connected to JTAG device
+# default setting: &quot;reset_config none&quot; will produce a single reset via SYSRESETREQ (JTAG commands) at reset pin of MCU
+#reset_config none
+
+
+#script for stm32f1x family
+
+if { [info exists CHIPNAME] } {
+   set _CHIPNAME $CHIPNAME
+} else {
+   set _CHIPNAME stm32f1x
+}
+
+if { [info exists ENDIAN] } {
+   set _ENDIAN $ENDIAN
+} else {
+   set _ENDIAN little
+}
+
+# Work-area is a space in RAM used for flash programming
+# By default use 16kB
+if { [info exists WORKAREASIZE] } {
+   set _WORKAREASIZE $WORKAREASIZE
+} else {
+   set _WORKAREASIZE 0x4000
+}
+
+# JTAG speed should be &lt;= F_CPU/6. F_CPU after reset is 8MHz, so use F_JTAG = 1MHz
+adapter_khz 1000
+
+adapter_nsrst_delay 100
+jtag_ntrst_delay 100
+
+#jtag scan chain
+if { [info exists CPUTAPID] } {
+   set _CPUTAPID $CPUTAPID
+} else {
+  # See STM Document RM0008
+  # Section 26.6.3
+   set _CPUTAPID 0x3ba00477
+}
+jtag newtap $_CHIPNAME cpu -irlen 4 -ircapture 0x1 -irmask 0xf -expected-id $_CPUTAPID
+
+if { [info exists BSTAPID] } {
+   # FIXME this never gets used to override defaults...
+   set _BSTAPID $BSTAPID
+} else {
+  # See STM Document RM0008
+  # Section 29.6.2
+  # Low density devices, Rev A
+  set _BSTAPID1 0x06412041
+  # Medium density devices, Rev A
+  set _BSTAPID2 0x06410041
+  # Medium density devices, Rev B and Rev Z
+  set _BSTAPID3 0x16410041
+  set _BSTAPID4 0x06420041
+  # High density devices, Rev A
+  set _BSTAPID5 0x06414041
+  # Connectivity line devices, Rev A and Rev Z
+  set _BSTAPID6 0x06418041
+  # XL line devices, Rev A
+  set _BSTAPID7 0x06430041
+  # VL line devices, Rev A and Z In medium-density and high-density value line devices
+  set _BSTAPID8 0x06420041
+  # VL line devices, Rev A
+  set _BSTAPID9 0x06428041
+
+}
+jtag newtap $_CHIPNAME bs -irlen 5 -expected-id $_BSTAPID1 \
+	-expected-id $_BSTAPID2 -expected-id $_BSTAPID3 \
+	-expected-id $_BSTAPID4 -expected-id $_BSTAPID5 \
+	-expected-id $_BSTAPID6 -expected-id $_BSTAPID7 \
+	-expected-id $_BSTAPID8 -expected-id $_BSTAPID9
+
+set _TARGETNAME $_CHIPNAME.cpu
+target create $_TARGETNAME cortex_m -endian $_ENDIAN -chain-position $_TARGETNAME
+
+$_TARGETNAME configure -work-area-phys 0x20000000 -work-area-size $_WORKAREASIZE -work-area-backup 0
+
+# flash size will be probed
+set _FLASHNAME $_CHIPNAME.flash
+flash bank $_FLASHNAME stm32f1x 0x08000000 0 0 0 $_TARGETNAME
+
+# if srst is not fitted use SYSRESETREQ to
+# perform a soft reset
+cortex_m reset_config sysresetreq
+
+</code></pre><pre><code>
+[root@XXXyyy target]# openocd -f /media/y/embedded/stm32/dev/openocd.cfg -f ./stm32f1x.cfg 
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/21/setup-an-embedded-development-enviroment-for-stm32/>Setup an embedded development enviroment for STM32</a></h1><span class=post-date>Nov 21, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Download the toolchain
+We should download the toolchain from the ARM employee maintained website, the download address is located at: <a href=https://launchpad.net/gcc-arm-embedded>https://launchpad.net/gcc-arm-embedded</a>, use following command:</p><pre><code>	$ wget https://launchpad.net/gcc-arm-embedded/4.7/4.7-2013-q3-update/+download/gcc-arm-none-eabi-4_7-2013q3-20130916-linux.tar.bz2
+
+</code></pre><p>untar the downloaded package and then add it to your system path, my solution is directly add some alias into ~/.bashrc:</p><pre><code>	### Add Cross_Compiler for eclipse based stm32
+	#export PATH=&quot;/media/y/embedded/cortex/gcc-arm-none-eabi-4_7-2013q3/bin:$PATH&quot;
+	alias setstm='export PATH=&quot;/media/y/embedded/cortex/gcc-arm-none-eabi-4_7-2013q3/bin:$PATH&quot;'
+
+</code></pre><p>###Eclipse Configuration
+We have to install zylin for flashing the stm32 board. After installation, eclipse will be rebooted.</p><p><img src=/images/eclipseinstall.jpg alt=images/eclipseinstall.jpg></p><p>###OpenOCD
+OpenOCD is a open-source hardware debugger.</p><pre><code>	community/openocd 0.7.0-2
+	    Debugging, in-system programming and boundary-scan testing for embedded target devices
+	[root@XXXyyy capscr]# pacman -S openocd
+
+</code></pre><p>###Template prepration
+Download the template from :</p><pre><code>	$ git clone https://github.com/JorgeAparicio/bareCortexM.git
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/21/two-tips-for-setting/>Two Tips for setting</a></h1><span class=post-date>Nov 21, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Disable the vim wraping
+There is a line in ~/.vimrc:</p><pre><code>	autocmd FileType text setlocal textwidth=78
+
+</code></pre><p>comment this line then everything goes OK.
+###Change Awesome theme and change the titlebar width
+Download the 3rd party themes from <a href=https://github.com/Morley93/awesome-themes-3.5>https://github.com/Morley93/awesome-themes-3.5</a>, then copy them to your own theme location, normally under the &ldquo;/usr/share/awesome/themes/", Choose whatever you want, and edit the ~/.config/awesome/default.rc.lua:</p><pre><code>beautiful.init(&quot;/usr/share/awesome/themes/wabbit/theme.lua&quot;)
+
+</code></pre><p>Save and exit then you got the new theme.<br>How to change the title bar?<br>In /usr/share/awesome/themes/wabbit/theme.lua, edit the following lines:</p><pre><code>--theme.font          = &quot;MonteCarlo medium 11&quot;
+theme.font          = &quot;MonteCarlo medium 9&quot;
+
+</code></pre><p>I think 9 is good for me, but change this to 11 or bigger will make old men happy.<br>You can change this number into a very big or very small number, then some funny things will happen :)</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/21/using-ir-remote-for-controlling-xbmc/>Using IR-remote for controlling XBMC</a></h1><span class=post-date>Nov 21, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Wiring
+The Wiring is listed as following Picture, You got your IR receiver&rsquo;s pins to corresponding pins on raspberry PI. Positive to Pin1(3.3v), negative to Pin6(GND), the signal pins to Pin12(GPIO 18).</p><p><img src=/images/rasp1.jpg alt=rasp1.jpg>
+###Check the Kernel information
+Log on to the raspberry PI, then input dmesg to view the startup information, we can see the lirc has been added to kernel.</p><pre><code>	$ dmesg
+	[    4.976752] systemd-udevd[822]: starting version 208
+	[    7.121052] lirc_dev: IR Remote Control driver registered, major 248 
+	[    7.187858] lirc_rpi: module is from the staging directory, the quality is unknown, you have been warned.
+	[    7.234864] lirc_rpi lirc_rpi.0: lirc_dev: driver lirc_rpi registered at minor = 0
+	[    7.234894] lirc_rpi: driver registered!
+	[    8.191460] lirc_rpi: auto-detected active low receiver on GPIO pin 18
+	[    8.981462] input: lircd as /devices/virtual/input/input3
+
+</code></pre><p>Now Let&rsquo;s check the GPIO status:</p><pre><code>	OpenELEC:~ # cat /sys/kernel/debug/gpio 
+	GPIOs 0-53, bcm2708_gpio:
+	 gpio-16  (led0                ) out hi
+	 gpio-17  (lirc_rpi ir/out     ) in  lo
+	 gpio-18  (lirc_rpi ir/in      ) in  hi
+
+</code></pre><p>If it didn&rsquo;t appear, using:</p><pre><code>	modprobe lirc_rpi gpio_in_pin=18 gpio_out_pin=1
+
+</code></pre><p>###Getting your own remote controller&rsquo;s codes
+Now let&rsquo;s kill all of the lircd related process, then use mode2 to detect the infra-red remote input.</p><pre><code>	OpenELEC:~ # ps -ef | grep lirc
+	1016 root       0:00 eventlircd --evmap=/etc/eventlircd.d --socket=/var/run/lirc/lircd --release=_UP
+	1035 root       0:00 /usr/sbin/lircd --driver=default --device=/dev/lirc0 --uinput --output=/var/run/lirc/lircd-lirc0 --pidfile=/var/run/lirc/lircd-lirc0.pid /etc/lirc/lircd.conf.rpi
+	1070 root      16:02 /usr/lib/xbmc/xbmc.bin --standalone -fs --lircdev /var/run/lirc/lircd
+	1146 root       0:00 grep lirc
+	OpenELEC:~ # killall lirc
+What is mode2?  
+	Trusty@SomethingMissing:~$ apt-cache search mode2
+	lirc-x - infra-red remote control support - X utilities
+
+</code></pre><p>Then Let&rsquo;s listen the infra_remote&rsquo;s input.The input is quite strange:</p><pre><code>	space 4501241
+	pulse 8917
+	space 4415
+	pulse 577
+
+</code></pre><p>###Catching the code using irrecord
+The next step is turns these message into some code.</p><pre><code>	OpenELEC:~/.config # pwd
+	/storage/.config
+	OpenELEC:~/.config # ls
+	aacs                 samba.conf.sample    vpn-config
+	hosts.conf           sysctl.conf.sample
+	remote.conf          udev.rules.d.sample
+
+</code></pre><p>Use irrecord for recording some signals and transform them into code:</p><pre><code>	NAME
+	       irrecord - application for recording IR-codes for usage with LIRC
 	
-	Device         Boot     Start       End  Blocks  Id System
-	/dev/mmcblk0p1 *         2048    258047  128000   c W95 FAT32 (LBA)
-	/dev/mmcblk0p2         258048  15491071 7616512  83 Linux
+	OpenELEC:~/.config # irrecord -d /dev/lirc0 lircd.conf
 
-</code></pre><p>Now we can see the partitions:</p><pre><code>	[root@XXXyyy Trusty]# parted -s /dev/mmcblk0 print all
-	Model: SD SU08G (sd/mmc)
-	Disk /dev/mmcblk0: 7948MB
-	Sector size (logical/physical): 512B/512B
-	Partition Table: msdos
-	Disk Flags: 
+</code></pre><p>The method is, first long-press some keys, the result on screen will be several dots, then the program will change to another line, this time when you press some key, it only has one dot. Keep pressing keys until the irrecord tells you successful. Then you should input make some keys meaningful to the following images, when you feel satisfied, press enter to endup the program.</p><p><img src=/images/LIRCMAP.png alt=LIRCMAP.png></p><p>Now your lircd.conf file is generated, let see what&rsquo;s in it.</p><pre><code>	$ cat lircd.conf
+	begin remote
 	
-	Number  Start   End     Size    Type     File system  Flags
-	 1      1049kB  132MB   131MB   primary               boot, lba
-	 2      132MB   7931MB  7799MB  primary
-
-</code></pre><p>###Make filesystems
-Make dos file systems(FAT32) in the first partition:</p><pre><code>	[root@XXXyyy Trusty]# mkfs.vfat -n System /dev/mmcblk0p1 
-	mkfs.fat 3.0.23 (2013-10-15)
-	mkfs.fat: warning - lowercase labels might not work properly with DOS or Windows
-	-n means the volumn name
-
-</code></pre><p>Make ext4 filesystems in the second partition:</p><pre><code>	[root@XXXyyy Trusty]# mkfs.ext4 -L Storage /dev/mmcblk0p2
-	-L means the Label of the partition
-
-</code></pre><p>###Copy to SD Card
-Mount the card</p><pre><code>	[root@XXXyyy Trusty]# mount /dev/mmcblk0p1  /mnt
-	[root@XXXyyy Trusty]# mount /dev/mmcblk0p2  /mnt1
-
-</code></pre><p>Copy</p><pre><code>	[root@XXXyyy bcm2835-bootloader-1100e2a]# pwd
-	/media/x/code/openELEC/OpenELEC.tv/build.OpenELEC-RPi.arm-devel/bcm2835-bootloader-1100e2a
-	[root@XXXyyy bcm2835-bootloader-1100e2a]# cp start.elf  /mnt/
-	[root@XXXyyy bcm2835-bootloader-1100e2a]# ls
-	bootcode.bin   fixup_cd.dat  fixup_x.dat       start_cd.elf  start_x.elf
-	COPYING.linux  fixup.dat     LICENCE.broadcom  start.elf
-	[root@XXXyyy bcm2835-bootloader-1100e2a]# sync
-	[root@XXXyyy bcm2835-bootloader-1100e2a]# cp bootcode.bin /mnt/
-	[root@XXXyyy bcm2835-bootloader-1100e2a]# sync
-
-</code></pre><p>Copy kernel and System</p><pre><code>	[root@XXXyyy target]# pwd
-	/media/x/code/openELEC/OpenELEC.tv/target
-	[root@XXXyyy target]# cp OpenELEC-RPi.arm-devel-20131119160254-r16396.kernel  /mnt/kernel.img
-	[root@XXXyyy target]# sync
-	[root@XXXyyy target]# cp OpenELEC-RPi.arm-devel-20131119160254-r16396.system /mnt/SYSTEM
-	[root@XXXyyy target]# sync
-
-</code></pre><p>Make the startup scripts:</p><pre><code>	[root@XXXyyy mnt]# echo &quot;boot=/dev/mmcblk0p1 disk=/dev/mmcblk0p2 ssh quiet&quot; | tee cmdline.txt
-	boot=/dev/mmcblk0p1 disk=/dev/mmcblk0p2 ssh quiet
-	[root@XXXyyy mnt]# ls
-	bootcode.bin  cmdline.txt  kernel.img  start.elf  SYSTEM
-	[root@XXXyyy mnt]# cat cmdline.txt 
-	boot=/dev/mmcblk0p1 disk=/dev/mmcblk0p2 ssh quiet
-
-</code></pre><p>###Startup
-Now Insert the SD Card into your Raspberry Pi, and enjoy the XBMC.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/19/things-to-be-done-in-nov19/>Things to be Done in Nov19</a></h1><span class=post-date>Nov 19, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>1. Awesome tips, for example, drop-down terminal.<br>2. Verify the XBMC on Raspberry Pi.<br>3. Using IRremote on XBMC and know its principle.<br>4. BeagleBone&rsquo;s old kernel and the old style tutorial.<br>5. Device tree of kernel on BeagleBone.<br>6. MP3 Player in IRremote control on Arduino.<br>7. Awesome Book in mobi or epub and send it to Kindle.<br>8. How to enable the various display method on Arduino(12864, Nokia5110, etc?)</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/19/use-reverse-ssh-for-across-something-2/>Use Reverse SSH for Across Something(2)</a></h1><span class=post-date>Nov 19, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###ssh command
-Take following command for detailed example of using ssh:</p><pre><code>	alias mydaili='ssh -qTfnN -D '
-	-q Quite Mode
-	-T Disable pseudo-tty allocation
-	-f background the ssh
-	-n redirect the stdin from /dev/null
-	-N Don't execute a remote command
-	-D Bind address
-
-</code></pre><p>###Using rsh
-rsh could be used for executing the command remotely, thus in my family&rsquo;s debian machine I could write following script:</p><pre><code>	cat /bin/remoteON 
-	#!/bin/sh
-	rsh -l root localhost -p 4381  ssh -qTfnN -L 1XX.XXX.XXX.XXX:9004:1XX.XXX.XXX.XXX:8000 USERNAME@remoteserver.com &amp;
-	chmod 777 /bin/remoteON
-
-</code></pre><p>For killing the remote machines&rsquo;s running ssh tunnel process, write another script:</p><pre><code>	!#/bin/sh
-	#Fetch the ssh id
-	sshid=`rsh -l root localhost -p 4381 ps | grep &quot;ssh -qTfnN&quot; | awk '{print $1}'`
-	#Kill the selected process
-	rsh -l root localhost -p 4381 kill $sshid
-	$ chmod 777 /bin/remoteOFF
-
-</code></pre><p>###Write the local script
-Local Scripts is for calling the remoteON and remoteOFF.<br>Script for starting the proxy</p><pre><code>#!/bin/sh
-#Start the openWRT Tunnel
-rsh -l root 10.0.0.111 /bin/remoteON &amp;
-#Sleep 3 seconds
-sleep 3
-#Start the Debian Tunnel
-rsh -l root 10.0.0.111 ssh -qTfnN -L 10.0.0.111:9001:1XX.XXX.XXX.XXX:9004 root@localhost -p 4381 &amp;
-
-
-</code></pre><p>Script for stopping the proxy</p><pre><code>#!/bin/sh
-# Stop the openWRT Tunnel:
-rsh -l root 10.0.0.111 /bin/remoteOFF &amp;
-# Sleep 3 seconds
-sleep 3
-# Stop the Debian Tunnel
-sshid=`rsh -l root 10.0.0.111 ps -ef | grep &quot;ssh -qTfnN&quot; | awk '{print $2}'`
-rsh -l root 10.0.0.111 kill $sshid &amp;
-
-</code></pre><p>###How to use it?
-If you want to use proxy, simply ./startproxy.sh.<br>After using the proxy, you can ./stopproxy.sh for totally release the connection and release the resources.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/19/using-autossh-for-keep-ssh-tunnel/>Using autossh for keep ssh tunnel</a></h1><span class=post-date>Nov 19, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Preparation
-Install autossh:</p><pre><code>	$ sudo pacman -S autossh
-
-</code></pre><p>###Configure
-[root@DashArch Trusty]# cat /etc/systemd/system/autossh.service</p><pre><code>	[Unit]
-	Description=AutoSSH service for port 1394 access to family machine
-	After=network.target
+	  name  lircd.conf
+	  flags RAW_CODES|CONST_LENGTH
+	  eps            30
+	  aeps          100
 	
-	[Service]
-	ExecStart=/usr/bin/autossh -M 22000  -N -T -D 1394 root@aaa.aaa.aaa.com
+	  gap          106707
 	
-	[Install]
-	WantedBy=multi-user.target
+	      begin raw_codes
+	
+	          name KEY_UP
+	             8953    4401     581     527     595     503
+	              613     506     588     539     581     510
 
-</code></pre><p>###Usage
-Change the proxy to 127.0.0.1, port is 1394, then you can use the ssh tunnel for browsing.</p><pre><code># crontab -e
-@reboot xxxx/.sh
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/203/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/203/>203</a></li><li class="page-item active"><a class=page-link href=/page/204/>204</a></li><li class=page-item><a class=page-link href=/page/205/>205</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/205/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>If you want to use the pre-defined files, simply go to the <a href=http://lirc.sourceforge.net/remotes>lirc.sourceforge.net/remotes</a> you can find almost all of the remote control information.
+###Using the infra-remote for controlling
+Now call irw, but irw stunned with doing nothing. This command will show you all of the input signal</p><pre><code>	OpenELEC:~ # irw
+	6a 0 KEY_RIGHT devinput
+	6a 0 KEY_RIGHT_UP devinput
+	69 0 KEY_LEFT devinput
+	69 0 KEY_LEFT_UP devinput
+	6c 0 KEY_DOWN devinput
+	6c 0 KEY_DOWN_UP devinput
+
+</code></pre><p>Now in your XBMC window, you will see you can navigate and select something using your remote control.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/20/generate-your-own-epub-book/>Generate Your own epub book</a></h1><span class=post-date>Nov 20, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Using Wget to fetching the webpages
+wget could be used to fetch the webpages from a specified website, using following command could fetch all of the wiki related 1st layer pages from &ldquo;awesome Wiki&rdquo;</p><pre><code>	$ wget -r -l 1 http://awesome.naquadah.org/wiki/Main_Page
+
+</code></pre><p>After wget finished, you will found the 1st layer webpatges under your directory.
+###Decide which you want for generating the book
+There are some rubbish pages in downloaed pages, thus we have to write a script for fetching the valuable ones, my script is listed as following:</p><pre><code>[Trusty@DashArch wget]$ pwd
+/home/Trusty/wget
+[Trusty@DashArch wget]$ cd awesome.naquadah.org/
+[Trusty@DashArch awesome.naquadah.org]$ ls
+doc  download  images  index.html  robots.txt  wiki
+[Trusty@DashArch awesome.naquadah.org]$ cd wiki
+[Trusty@DashArch wiki]$ cat listitem.sh
+#!/bin/sh
+for file in `ls `
+do
+	#echo $file
+	type=`file $file | awk {'print $2'}`
+	#echo $type
+	if [ &quot;$type&quot; = &quot;HTML&quot; ]
+	then
+		#echo $file
+		#echo $type
+		echo &quot;&lt;a href=\&quot;$file\&quot;&gt;$file&lt;/a&gt;&lt;br/&gt;&quot;
+	fi
+done
+
+
+</code></pre><p>simply run listitem.sh, we will get the file list tables like following:</p><pre><code>&lt;a href=&quot;Automounting&quot;&gt;Automounting&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;Autostart&quot;&gt;Autostart&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;Autostart_with_consolekit&quot;&gt;Autostart_with_consolekit&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;Autostop&quot;&gt;Autostop&lt;/a&gt;&lt;br/&gt;
+&lt;a href=&quot;Awesome_3.0_to_3.1&quot;&gt;Awesome_3.0_to_3.1&lt;/a&gt;&lt;br/&gt;
+..........................................
+
+</code></pre><p>Add them into the html like:</p><pre><code>&lt;html&gt;
+   &lt;body&gt;
+     &lt;h1&gt;Table of Contents&lt;/h1&gt;
+     &lt;p style=&quot;text-indent:0pt&quot;&gt;
+	&lt;a href=&quot;Automounting&quot;&gt;Automounting&lt;/a&gt;&lt;br/&gt;
+	&lt;a href=&quot;Autostart&quot;&gt;Autostart&lt;/a&gt;&lt;br/&gt;
+......
+	&lt;a href=&quot;XRandR_Screen_Table&quot;&gt;XRandR_Screen_Table&lt;/a&gt;&lt;br/&gt;
+	&lt;a href=&quot;Xscreensaver&quot;&gt;Xscreensaver&lt;/a&gt;&lt;br/&gt;
+     &lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre><p>###Generate the ebook
+Use Calibre, click &ldquo;Add Book&rdquo;, navigate to your directory which contains &ldquo;index.html&rdquo;, choose it, and now you can do whatever you want to generate epub, mobi, or 6 inch pdf. Just enjoy your ebook!!!</p><pre><code>	[Trusty@DashArch Awesome (5)]$ ls -l -h
+	total 4.5M
+	-rw-r--r-- 1 Trusty root 887K Nov 20 21:07 Awesome - Dash.epub
+	-rw-r--r-- 1 Trusty root 511K Nov 20 21:19 Awesome - Dash.mobi
+	-rw-r--r-- 1 Trusty root 2.6M Nov 20 21:10 Awesome - Dash.pdf
+	-rw-r--r-- 1 Trusty root 560K Nov 20 21:06 Awesome - Dash.zip
+	-rw-r--r-- 1 Trusty root 1.1K Nov 20 21:18 metadata.opf
+
+</code></pre><p>Depending on your settings, your generated ebook could be read on NOOK, Kindle, or other mobile equipment.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/203/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/203/>203</a></li><li class="page-item active"><a class=page-link href=/page/204/>204</a></li><li class=page-item><a class=page-link href=/page/205/>205</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/205/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

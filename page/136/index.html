@@ -1,579 +1,196 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/15/using-fuel-for-deploying-openstack/>Using Fuel For Deploying OpenStack</a></h1><span class=post-date>Apr 15, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=network-configuration>Network Configuration</h3><p>Fuel network configuration is listed as following pictures:<br>PXE network, for using fuel controller to control all of the nodes, 10.20.0.0/24:<br><img src=/images/2015_04_15_18_48_35_529x382.jpg alt=/images/2015_04_15_18_48_35_529x382.jpg><br>Public network, or floating ip network 172.16.0.0/24
-<img src=/images/2015_04_15_18_50_48_527x361.jpg alt=/images/2015_04_15_18_50_48_527x361.jpg><br>Admin network, 192.168.0.0/24:<br><img src=/images/2015_04_15_18_51_47_533x329.jpg alt=/images/2015_04_15_18_51_47_533x329.jpg></p><h3 id=fuel-controller-installation>Fuel Controller Installation</h3><p>Create a virtual machine, which have 2-Core, 3072MB Memory, and 100G Hard-disk, 3 ethernet port available for using, startup using the iso file, and then beging installing.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/14/an-zhuang-icehouse-at-ubuntu14-dot-04-6/>安装Icehouse@Ubuntu14.04(6)</a></h1><span class=post-date>Apr 14, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>这里我们安装horizon服务，使得我们对OpenStack的管理做到可视化.<br>###安装horizon
-在Controller节点上，安装需要的包:</p><pre><code>root@JunoController:~# apt-get -y install openstack-Trustyboard apache2 libapache2-mod-wsgi memcached python-memcache
-
-</code></pre><p>建议删除ubuntu提供的主题，这个主题会使得一些翻译失效:</p><pre><code>root@JunoController:~# apt-get remove --purge openstack-Trustyboard-ubuntu-theme
-
-</code></pre><p>配置DashBoard的本地配置文件:</p><pre><code>root@JunoController:~# vim /etc/openstack-Trustyboard/local_settings.py 
-    OPENSTACK_HOST = &quot;10.17.17.211&quot;
-    TIME_ZONE = &quot;Asia/Shanghai&quot;
-
-</code></pre><p>重新启动服务:</p><pre><code>root@JunoController:~# service apache2 restart
-root@JunoController:~# service memcached restart
-
-</code></pre><p>访问<code>http://10.17.17.211/horizon</code>登入到DashBoard以管理OpenStack.</p><h3 id=查看openstack版本>查看OpenStack版本</h3><p>节点机器起名错误，应该是IcehouseController/IcehouseCompute/IcehouseNetwork之类，但是这里可以通过以下命令来查看OpenStack安装的版本：</p><pre><code>root@JunoController:~# dpkg -l | grep nova-common
-ii  nova-common                         1:2014.1.4-0ubuntu2                   all          OpenStack Compute - common files
-
-</code></pre><p><code>2014.1.4</code>就是我们要关注的版本信息，在:<br><a href=https://wiki.openstack.org/wiki/Releases>https://wiki.openstack.org/wiki/Releases</a><br>可以查到，它属于Icehouse.<br><img src=/images/2015_04_14_11_58_39_490x203.jpg alt=/images/2015_04_14_11_58_39_490x203.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/14/an-zhuang-icehouse-at-ubuntu14-dot-04-7/>安装Icehouse@Ubuntu14.04(7)</a></h1><span class=post-date>Apr 14, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>接下来在OpenStack Icehouse的基础上，部署OpenContrail, OpenContrail能提供更为强大的网络功能。<br>首先从Juniper的官网上下载安装文件:</p><pre><code>	contrail-install-packages_2.10-39~ubuntu-14-04icehouse_all.deb
-
-</code></pre><p>Contrail可以被安装到已经部署好的OpenStack环境中，只要在安装Contrail的时候，根据已有的OpenStack组件的部署情况作相应的调整就可以。</p><h3 id=hook>Hook</h3><p>Contrail用到的钩子(Hook)有：<br><code>core_plugin</code> &ndash; 它被用在neutron的配置中，用于指向ContrailPlugin组件。<br><code>libvirt_vif_driver</code> &ndash; 它被用在nova计算节点配置中，用来指向Contrail的VRouterVIFDriver.<br><code>MQ broker IP and Port</code> &ndash; 如果现有的OpenStack提供RabbitMQ那么将相应的IP和端口在neutron和nova的配置中指过去。</p><h3 id=contrial部署涉及组建>Contrial部署涉及组建</h3><p>列举如下，对应的文件需要做修改，或者创建。</p><pre><code>api_service.conf - This file needs to be edited to provide details of existing OpenStack keystone.
-plugin.ini - This file needs proper keystone URL, token and credentials.
-neutron.conf - This file needs auth_host credentials to connect OpenStack keystone.
-config.global.js - This file contains IP and PORT for image (glance), compute (nova), identity (keystone), storage (cinder)
-OpenStack controller nova config to point to Contrail neutron
-OpenStack controller neuron service endpoint to point to contrail neutron.
-
-</code></pre><p>为了让来之不易的OpenStack不至于被毁掉，建议先做好备份。因为接下来就要对已经部署好的节点做各种操作了。</p><h3 id=干掉ovs>干掉OVS</h3><p>Make sure to remove existing OpenStack OVS installed modules and config.
-首先，在DashBoard里干掉所有的网络配置(网络/路由等）。</p><h4 id=network节点移除openvswitch>Network节点移除OpenVSwitch</h4><p>更改Network节点的网络配置，取消br-ex的配置：</p><pre><code>root@JunoNetwork:~# vim /etc/network/interfaces
-auto eth2
-iface eth2 inet static
-address 10.22.22.212
-netmask 255.255.255.0
-
-#iface eth2 inet manual
-#iface br-ex inet static
-#address 10.22.22.212
-#netmask 255.255.255.0
-## gateway 10.22.22.1
-#bridge_ports eth2
-#bridge_stp off
-#auto br-ex
-
-</code></pre><p>移除br-ex设备，并重启Network节点:</p><pre><code>root@JunoNetwork:~# ovs-vsctl del-port br-ex eth2
-root@JunoNetwork:~# ovs-vsctl del-br br-ex
-root@JunoNetwork:~# reboot
-
-</code></pre><p>注释掉关于ML2服务配置并重新启动服务：</p><pre><code>root@JunoNetwork:~# cat /etc/neutron/plugins/ml2/ml2_conf.ini| grep -i &quot;^###&quot;
-### type_drivers = flat,gre
-### tenant_network_types = gre
-### mechanism_drivers = openvswitch
-### tunnel_id_ranges = 1:1000
-### enable_security_group = True
-### firewall_driver = neutron.agent.linux.iptables_firewall.OVSHybridIptablesFirewallDriver
-### enable_security_group = True
-### [ovs]
-### local_ip = 10.19.19.212
-### tunnel_type = gre
-### enable_tunneling = True
-root@JunoNetwork:~# service openvswitch-switch restart
-
-</code></pre><p>注释掉关于metadata的相关配置：</p><pre><code>root@JunoNetwork:~# cat /etc/neutron/metadata_agent.ini | grep -i &quot;^###&quot;
-### auth_url = http://10.17.17.211:5000/v2.0
-### auth_region = regionOne
-### admin_tenant_name = service
-### admin_user = neutron
-### admin_password = engine
-### nova_metadata_ip = 10.17.17.211
-### metadata_proxy_shared_secret = engine
-
-</code></pre><p>回到Controller节点，同样注释掉metadata的配置:</p><pre><code>root@JunoController:~# cat /etc/nova/nova.conf | grep -i &quot;^###&quot;
-### service_neutron_metadata_proxy = true
-### metadata_proxy_shared_secret = engine
-### neutron_metadata_proxy_shared_secret = engine
-
-</code></pre><p>移除DHCP相关配置：</p><pre><code>root@JunoNetwork:~# cat /etc/neutron/dhcp_agent.ini | grep -i &quot;^###&quot;
-### interface_driver = neutron.agent.linux.interface.OVSInterfaceDriver
-### dhcp_driver = neutron.agent.linux.dhcp.Dnsmasq
-### use_namespaces = True
-### dnsmasq_config_file = /etc/neutron/dnsmasq-neutron.conf
-root@JunoNetwork:~# cat /etc/neutron/dnsmasp-neutron.conf | grep -i &quot;^###&quot;
-### dhcp-option-force=26,1454
-
-</code></pre><p>移除L3 agent:</p><pre><code>root@JunoNetwork:~# cat /etc/neutron/l3_agent.ini | grep -i &quot;^###&quot;
-### interface_driver = neutron.agent.linux.interface.OVSInterfaceDriver
-### use_namespaces = True
-### verbose = True
-
-</code></pre><p>移除neutron通用组件的支持:</p><pre><code>root@JunoNetwork:~# cat /etc/neutron/neutron.conf | grep -i &quot;^###&quot;
-### rpc_backend = neutron.openstack.common.rpc.impl_kombu
-### rabbit_host = 10.17.17.211
-### rabbit_password = engine
-### core_plugin = ml2
-### service_plugins = router
-### allow_overlapping_ips = True
-### verbose = True
-### auth_strategy = keystone
-### auth_uri = http://10.17.17.211:5000
-### auth_host = 10.17.17.211
-### auth_port = 35357
-### auth_protocol = http
-### admin_tenant_name = service
-### admin_user = neutron
-### admin_password = engine
-
-</code></pre><p>移除已经安装的vswitch相关的包:</p><pre><code>root@JunoNetwork:~# apt-get purge neutron-plugin-ml2 neutron-plugin-openvswitch-agent neutron-l3-agent neutron-dhcp-agent
-root@JunoCompute:~# apt-get purge openvswitch-common openvswitch-switch
-root@JunoCompute:~# reboot
-
-</code></pre><h4 id=compute节点移除openvswitch>Compute节点移除OpenVSwitch</h4><p>Compute节点的服务移除：</p><pre><code>root@JunoCompute:~# cat /etc/neutron/neutron.conf | grep -i &quot;^###&quot;
-[DEFAULT]
-###auth_strategy = keystone
-###rpc_backend = neutron.openstack.common.rpc.impl_kombu
-###rabbit_host = 10.17.17.211
-###rabbit_password = engine
-###core_plugin = ml2
-###service_plugins = router
-###allow_overlapping_ips = True
-###verbose = True
-[keystone_authtoken]
-### auth_uri = http://10.17.17.211:5000
-### auth_host = 10.17.17.211
-### auth_port = 35357
-### auth_protocol = http
-### admin_tenant_name = service
-### admin_user = neutron
-### admin_password = engine
-### signing_dir = $state_path/keystone-signing
-root@JunoCompute:~# cat /etc/neutron/plugins/ml2/ml2_conf.ini | grep -i &quot;^###&quot;
-### type_drivers = gre
-### tenant_network_types = gre
-### mechanism_drivers = openvswitch
-### tunnel_id_ranges = 1:1000
-### firewall_driver = neutron.agent.linux.iptables_firewall.OVSHybridIptablesFirewallDriver
-### enable_security_group = True
-### [ovs]
-### local_ip = 10.19.19.213
-### tunnel_type = gre
-### enable_tunneling = True
-
-</code></pre><p>注释完毕后，重新启动服务:</p><pre><code>root@JunoCompute:~# service nova-compute restart
-root@JunoCompute:~# service neutron-plugin-openvswitch-agent restart
-root@JunoCompute:~# service openvswitch-switch restart
-
-</code></pre><p>Compute节点上的nova不再使用neutron作为网络管理器:</p><pre><code>root@JunoCompute:~# cat /etc/nova/nova.conf | grep -i &quot;^###&quot;
-### network_api_class = nova.network.neutronv2.api.API
-### neutron_url = http://10.17.17.211:9696
-### neutron_auth_strategy = keystone
-### neutron_admin_tenant_name = service
-### neutron_admin_username = neutron
-### neutron_admin_password = engine
-### neutron_admin_auth_url = http://10.17.17.211:35357/v2.0
-### linuxnet_interface_driver = nova.network.linux_net.LinuxOVSInterfaceDriver
-### firewall_driver = nova.virt.firewall.NoopFirewallDriver
-### security_group_api = neutron
-root@JunoCompute:~# service nova-compute restart
-
-</code></pre><p>在Compute节点上,移除已经安装的openvswitch的包:</p><pre><code>root@JunoCompute:~# apt-get purge neutron-plugin-ml2 neutron-plugin-openvswitch-agent openvswitch-datapath-dkms
-root@JunoCompute:~# apt-get purge openvswitch-common openvswitch-switch
-root@JunoCompute:~# reboot
-
-</code></pre><p>检查状态,确保服务已经被移除:</p><pre><code>root@JunoCompute:~# service openvswitch-switch status
-openvswitch-switch: unrecognized service
-root@JunoCompute:~# service neutron-plugin-openvswitch-agent status
-neutron-plugin-openvswitch-agent: unrecognized service
-
-</code></pre><h4 id=controller节点上移除openvswitch>Controller节点上移除OpenVSwitch</h4><p>移除nova配置中关于neutron的条目：</p><pre><code>root@JunoController:~# cat /etc/nova/nova.conf | grep -i &quot;^###&quot;
-### service_neutron_metadata_proxy = true
-### metadata_proxy_shared_secret = engine
-### neutron_metadata_proxy_shared_secret = engine
-### network_api_class = nova.network.neutronv2.api.API
-### neutron_url = http://10.17.17.211:9696
-### neutron_auth_strategy = keystone
-### neutron_admin_tenant_name = service
-### neutron_admin_username = neutron
-### neutron_admin_password = engine
-### neutron_admin_auth_url = http://10.17.17.211:35357/v2.0
-### linuxnet_interface_driver = nova.network.linux_net.LinuxOVSInterfaceDriver
-### firewall_driver = nova.virt.firewall.NoopFirewallDriver
-### security_group_api = neutron
-
-</code></pre><p>移除对于ML2插件的支持:</p><pre><code>root@JunoController:~# cat /etc/neutron/plugins/ml2/ml2_conf.ini | grep -i &quot;^###&quot;
-### type_drivers = flat,gre
-### tenant_network_types = gre
-### mechanism_drivers = openvswitch
-### tunnel_id_ranges = 1:1000
-### firewall_driver = neutron.agent.linux.iptables_firewall.OVSHybridIptablesFirewallDriver
-### enable_security_group = True
-
-</code></pre><p>移除neutron中配置:</p><pre><code>root@JunoController:~# cat /etc/neutron/neutron.conf | grep -i &quot;^###&quot;
-### rpc_backend = neutron.openstack.common.rpc.impl_kombu
-### rabbit_host = 10.17.17.211
-### rabbit_password = engine
-### notify_nova_on_port_status_changes = True
-### notify_nova_on_port_data_changes = True
-### nova_url = http://10.17.17.211:8774/v2
-### nova_admin_username = nova
-### nova_admin_tenant_id = 4b22bf4e6a68419aa91da6e0ffaca2dc
-### nova_admin_password = engine
-### nova_admin_auth_url = http://10.17.17.211:35357/v2.0
-### nova_region_name = regionOne
-### core_plugin = ml2
-### service_plugins = router
-### allow_overlapping_ips = True
-### auth_strategy = keystone
-### auth_uri = http://10.17.17.211:5000
-### auth_host = 10.17.17.211
-### auth_port = 35357
-### auth_protocol = http
-### admin_tenant_name = service
-### admin_user = neutron
-### admin_password = engine
-### connection = mysql://neutron:engine@10.17.17.211/neutron
-
-</code></pre><p>删除ml2插件:</p><pre><code>root@JunoController:~# apt-get purge neutron-plugin-ml2
-
-</code></pre><p>测试，由于连验证都没法通过，所以会返回错误，当然你的DashBoard也会有错误,暂时没办法访问了。:</p><pre><code>root@JunoController:~#  neutron agent-list
-Authentication required
-
-</code></pre><h3 id=contrail>Contrail</h3><h4 id=创建机器>创建机器</h4><p>4G内存，2核CPU，同时连接到所有网络(10.17.17.0/24, 10.19.19.0/24, 10.22.22.0/24):</p><pre><code>[root:/home/juju/img/OpenStack]# qemu-img create -f qcow2 -b ./UbuntuBase1404.qcow2  JunoContrail.qcow2
-
-</code></pre><p>配置网络接口, hosts, hostname等:</p><pre><code>root@JunoContrail:~# cat /etc/hostname 
-JunoContrail
-root@JunoContrail:~# cat /etc/hosts
-10.17.17.211    JunoController
-10.17.17.212    JunoNetwork
-10.17.17.213    JunoCompute
-10.17.17.214    JunoContrail
-root@JunoContrail:~# cat /etc/network/interfaces
-auto lo
-iface lo inet loopback
-
-# The primary network interface
-auto eth0
-iface eth0 inet static
-address 10.17.17.214
-netmask 255.255.255.0
-gateway 10.17.17.1
-dns-nameservers 114.114.114.114
-
-# Network, have the tunnel, which locates at the 10.19.19.0/24
-auto eth1
-iface eth1 inet static
-address 10.19.19.214
-netmask 255.255.255.0
-up route add -net 10.19.19.0/24 dev eth1
-
-auto eth2
-iface eth2 inet static
-address 10.22.22.214
-netmask 255.255.255.0
-
-</code></pre><p>得到包，并且安装之:</p><pre><code>root@JunoContrail:~# wget http://xxxxxxxxxxxxxx/contrail-install-packages_2.10-39~ubuntu-14-04icehouse_all.deb 
-root@JunoContrail:~# dpkg -i contrail-install-packages_2.10-39~ubuntu-14-04icehouse_all.deb 
-
-
-</code></pre><p>直接安装会出错，为了避免，直接手动安装build-essential和python-pip:</p><pre><code>root@JunoContrail:~# apt-get install build-essential python-pip
-
-</code></pre><p>而后手动开始安装contrail:</p><pre><code>root@JunoContrail:/opt/contrail/contrail_packages# ./setup.sh 
-
-</code></pre><p>使用模板生成testbed.py文件:</p><pre><code>root@JunoContrail:/opt/contrail# cp /opt/contrail/utils/fabfile/testbeds/testbed_multibox_example.py /opt/contrail/utils/fabfile/testbeds/testbed.py
-
-</code></pre><p>需要配置ntp，加入到本地的NTP网络里:</p><pre><code>root@JunoContrail:/opt/contrail/utils# apt-get -y install ntp
-root@JunoContrail:/opt/contrail/utils# vim /etc/ntp.conf 
-server 10.17.17.211 iburst
-root@JunoContrail:/opt/contrail/utils# service ntp restart
- * Stopping NTP server ntpd
-   ...done.
-ntpq * Starting NTP server ntpd
-   ...done.
-root@JunoContrail:/opt/contrail/utils# ntpq -c peers
-     remote           refid      st t when poll reach   delay   offset  jitter
-==============================================================================
- JunoController  202.112.29.82    3 u    1   64    1    0.312   33.463   0.000
-
-</code></pre><p>配置testbed.py文件，更改后的例子如下：</p><pre><code>TBD........
-
-</code></pre><p>安装的时候，出现问题，需要切换到最旧的原始安装的Ubuntu1404. 切换前，记下已有的步骤:</p><pre><code>$ cd /opt/contrail/utils/
-$ fab install_pkg_all:/root/contrail-install-packages_2.10-39~ubuntu-14-04icehouse_all.deb 
-$ fab -c fabrc install_without_openstack:no
-
-</code></pre><p>切换:</p><pre><code>[root:/home/juju/img/OpenStack]# mv JunoContrail.qcow2 JunoContrail.qcow2_Deploy_Failed_Too_new
-
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/13/an-zhuang-icehouse-at-ubuntu14-dot-04-1/>安装Icehouse@Ubuntu14.04(1)</a></h1><span class=post-date>Apr 13, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>项目的需要，手动基于多台Ubuntu虚拟机部署OpenStack Icehouse, 然后在部署好的Icehouse的基础上，部署OpenContrail, 最终达到OpenContrail解耦的过程。</p><h3 id=环境准备>环境准备</h3><p>物理机: i7-3770/24G Memory/CentOS 6.6<br>软件: virt-manager/qemu等<br>节点机(虚拟机):<br>节点机1: 控制节点(JunoController), 2 CPU+3G内存+单网卡(管理网络,10.17.17.211).<br>节点机2: 网络节点(JunoNetwork), 1 CPU+1G内存+3 网卡(管理网络:10.17.17.212, GRE Tunnel网络:10.19.19.212, 外部网络:10.22.22.212).<br>节点机3: 计算节点(JunoCompute), 2 CPU(Nested)+2G内存+2 网卡(管理网络:10.17.17.213, GRE Tunnel网络:10.19.19.213).<br>网络配置:<br>Virt-manager里需要配置三个网络，一个是管理网络10.17.17.0/24, 另一个GRE Tunnel网络10.19.19.0/24, 外部网络为10.22.22.0/24.<br>参考资料:<br>不错的指南文件:<a href=http://godleon.github.io/blog/2015/02/10/install-openstack-juno-in-ubuntu-basic-environment-setting/>http://godleon.github.io/blog/2015/02/10/install-openstack-juno-in-ubuntu-basic-environment-setting/</a><br>官方文档:<a href=http://docs.openstack.org/icehouse/install-guide/install/apt/content/>http://docs.openstack.org/icehouse/install-guide/install/apt/content/</a></p><h3 id=虚拟机准备>虚拟机准备</h3><p>用以下命令创建三台虚拟机的磁盘，而后按照上面的节点机配置完毕后，启动三台虚拟机。</p><pre><code># pwd
-/home/juju/img/OpenStack
-# qemu-img create -f qcow2 -b ./UbuntuBase1404.qcow2 JunoController.qcow2
-# qemu-img create -f qcow2 -b ./UbuntuBase1404.qcow2 JunoNetwork.qcow2
-# qemu-img create -f qcow2 -b ./UbuntuBase1404.qcow2 JunoCompute.qcow2
-
-</code></pre><p>更改节点机的/etc/hostname文件，更改各自的名字为JunoController, JunoNetwork和JunoCompute.<br>每台机器的/etc/network/interfaces文件配置如下:<br>JunoController:</p><pre><code># The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface
-auto eth0
-iface eth0 inet static
-address 10.17.17.211
-netmask 255.255.255.0
-gateway 10.17.17.1
-dns-nameservers 114.114.114.114
-
-</code></pre><p>JunoNetwork:</p><pre><code># The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface
-# auto eth0
-# iface eth0 inet dhcp
-
-# The primary network interface
-auto eth0
-iface eth0 inet static
-address 10.17.17.212
-netmask 255.255.255.0
-#gateway 10.17.17.1
-dns-nameservers 114.114.114.114
-
-# Network, have the tunnel, which locates at the 10.19.19.0/24
-auto eth1
-iface eth1 inet static
-address 10.19.19.212
-netmask 255.255.255.0
-up route add -net 10.19.19.0/24 dev eth1
-
-# Directly to internet, used for ovs
-auto eth2
-iface eth2 inet dhcp
-
-</code></pre><p>JunoCompute:</p><pre><code># The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface
-auto eth0
-iface eth0 inet static
-address 10.17.17.213
-netmask 255.255.255.0
-gateway 10.17.17.1
-dns-nameservers 114.114.114.114
-
-# Network, have the tunnel, which locates at the 10.19.19.0/24
-auto eth1
-iface eth1 inet static
-address 10.19.19.213
-netmask 255.255.255.0
-up route add -net 10.19.19.0/24 dev eth1
-
-</code></pre><p>把下列条目添加到各台节点机的 /etc/hosts文件中:</p><pre><code>10.17.17.211    JunoController
-10.17.17.212    JunoNetwork
-10.17.17.213    JunoCompute
-
-</code></pre><h3 id=ntp服务部署>NTP服务部署</h3><h4 id=ntp-服务器>NTP 服务器</h4><p>使用NTP来保证各个节点之间的时间同步，对后续加入的各个节点，同样需要使用NTP来同步该节点时间。我们将JunoController作为NTP服务器,在JunoController上，安装和配置NTP服务器：</p><pre><code>root@JunoController:~# apt-get -y install ntp
-root@JunoController:~# vim /etc/ntp.conf
-    # 修改成大陆时间
-    server 2.cn.pool.ntp.org
-    server 1.asia.pool.ntp.org
-    server 2.asia.pool.ntp.org
-    # 修改 restrict 設定
-    restrict -4 default kod notrap nomodify
-    restrict -6 default kod notrap nomodify
-root@JunoController:~# service ntp restart
-
-</code></pre><h4 id=ntp客户端>NTP客户端</h4><p>其他的节点上都需要安装NTP客户端并使用NTP服务器时间同步。</p><pre><code># apt-get -y install ntp
-# vim /etc/ntp.conf
-    # 設定 controller 為參照的 time server
-    # 並將其他 server 開頭的設定進行註解
-    server 10.17.17.211 iburst
-# service ntp restart
-
-</code></pre><p>检查结果是否正确:</p><pre><code>root@JunoNetwork:~# ntpq -c peers
-     remote           refid      st t when poll reach   delay   offset  jitter
-==============================================================================
- JunoController  59.106.180.168   3 u    1   64    1    0.239  447024.   0.049
-
-</code></pre><h3 id=添加软件仓库>添加软件仓库</h3><p>官方文档中说icehouse已经在14.04的官方仓库中了，所以下面的步骤并不是必须的。<br>在所有节点上，执行以下操作:</p><pre><code># apt-get install python-software-properties
-# add-apt-repository cloud-archive:icehouse
-# apt-get update &amp;&amp; apt-get -y dist-upgrade &amp;&amp; reboot
-
-</code></pre><h3 id=安装配置数据库>安装/配置数据库</h3><p>OpenStack需要一个数据库用于存储相关数据，一般情况下采用MySQL. &ldquo;你问我支持不支持MySQL？我说不支持，我就明确告诉你，你们呀，我感觉你们开源界也要学习，你们非常熟悉MYSQL被Oracle这一套的，你们毕竟是Too Young，明白这意思吗？"&mdash;-所以装一个MariaDB来代替它.</p><pre><code>root@JunoController:~# apt-get -y install mariadb-server python-mysqldb
-root@JunoController:~# vim /etc/mysql/my.cnf 
-    [mysqld]
-    # 修改 bind-address 設定
-    bind-address = 10.17.17.211
-    
-    # 加入以下 UTF-8 的相關設定
-    default-storage-engine = innodb
-    innodb_file_per_table
-    collation-server = utf8_general_ci
-    init-connect = 'SET NAMES utf8'
-    character-set-server = utf8
-
-</code></pre><p>重启服务:</p><pre><code>root@JunoController:~# service mysql restart
-
-</code></pre><h3 id=安装消息服务器>安装消息服务器</h3><p>同样在控制节点上安装，OpenStack使用rabbitmq作为消息服务器：</p><pre><code>root@JunoController:~# apt-get install -y rabbitmq-server
-
-</code></pre><p>修改初始化guest密码:</p><pre><code>root@JunoController:~# rabbitmqctl change_password guest RABBITMQ_PASSWD
-
-</code></pre><p>第一部分跑完，这里我们完成了OpenStack创建的基本设定，接下来就可以挨个搭建OpenStack的服务了。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/13/an-zhuang-icehouse-at-ubuntu14-dot-04-2/>安装Icehouse@Ubuntu14.04(2)</a></h1><span class=post-date>Apr 13, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=安装identity服务>安装Identity服务</h3><p>首先创建keystone所需数据库:</p><pre><code>root@JunoController:~# mysql -u root -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 28
-Server version: 5.5.41-MariaDB-1ubuntu0.14.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2014, Oracle, MariaDB Corporation Ab and others.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-MariaDB [(none)]&gt; CREATE DATABASE keystone;
-Query OK, 1 row affected (0.00 sec)
-
-MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' IDENTIFIED BY 'KEYSTONE_PASS';
-Query OK, 0 rows affected (0.00 sec)
-
-MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY 'KEYSTONE_PASS';
-Query OK, 0 rows affected (0.00 sec)
-
-MariaDB [(none)]&gt; flush privileges;
-Query OK, 0 rows affected (0.00 sec)
-
-MariaDB [(none)]&gt; exit;
-Bye
-
-</code></pre><p>安装keystone相关套件:</p><pre><code>root@JunoController:~# apt-get -y install keystone python-keystoneclient
-
-</code></pre><p>创建一个admin token用于做初始化配置:</p><pre><code>root@JunoController:~# openssl rand -hex 10
-5c3b5cd66a7dfa8e33e5
-
-</code></pre><p>使用上面取得的admin token和mysql设置用于更新/etc/keystone.conf文件，更改如下:</p><pre><code>root@JunoController:~# vim /etc/keystone/keystone.conf 
-[DEFAULT]
-admin_token=5c3b5cd66a7dfa8e33e5
-verbose=True
-log_dir = /var/log/keystone
-
-[database]
-connection=mysql://keystone:KEYSTONE_DBPASS@10.17.17.211/keystone
-
-
-
-</code></pre><p>部署数据库并重新启动Keystone服务:</p><pre><code>root@JunoController:~# su -s /bin/sh -c &quot;keystone-manage db_sync&quot; keystone
-root@JunoController:~# service keystone restart
-
-</code></pre><p>删除不需要的sqlite数据库, 并设定crontab任务:</p><pre><code>root@JunoController:~# rm -f /var/lib/keystone/keystone.db
-root@JunoController:~# (crontab -l -u keystone 2&gt;&amp;1 | grep -q token_flush) || echo '@hourly /usr/bin/keystone-manage token_flush &gt;/var/log/keystone/keystone-tokenflush.log 2&gt;&amp;1' &gt;&gt; /var/spool/cron/crontabs/keystone
-
-</code></pre><h3 id=建立-user--role--tenant>建立 user / role / tenant</h3><p>环境变量设置:</p><pre><code>root@JunoController:~# export OS_SERVICE_TOKEN=5c3b5cd66a7dfa8e33e5
-root@JunoController:~# export OS_SERVICE_ENDPOINT=http://10.17.17.211:35357/v2.0
-
-</code></pre><h4 id=tenant创建>tenant创建</h4><p>创建admin tenant:</p><pre><code>root@JunoController:~#  keystone tenant-create --name admin --description &quot;Admin Tenant&quot;
-+-------------+----------------------------------+
-|   Property  |              Value               |
-+-------------+----------------------------------+
-| description |           Admin Tenant           |
-|   enabled   |               True               |
-|      id     | ea1f0a6b15dc4796958f087c38756ed1 |
-|     name    |              admin               |
-+-------------+----------------------------------+
-
-</code></pre><p>创建demo tenant:</p><pre><code>root@JunoController:~# keystone tenant-create --name demo --description &quot;Demo Tenant&quot;
-+-------------+----------------------------------+
-|   Property  |              Value               |
-+-------------+----------------------------------+
-| description |           Demo Tenant            |
-|   enabled   |               True               |
-|      id     | 2ac9cae777014d3d94458f521b013e94 |
-|     name    |               demo               |
-+-------------+----------------------------------+
-
-</code></pre><h4 id=建立user>建立user</h4><p>建立admin用户:</p><pre><code>root@JunoController:~# keystone user-create --name admin --pass xxxx --email kkkttt@gmail.com
-+----------+----------------------------------+
-| Property |              Value               |
-+----------+----------------------------------+
-|  email   |        kkkttt@gmail.com        |
-| enabled  |               True               |
-|    id    | 055dd9b7b1564df5bf9e9c511f32978b |
-|   name   |              admin               |
-| username |              admin               |
-+----------+----------------------------------+
-
-</code></pre><p>在demo tenant下建立demo用户:</p><pre><code>root@JunoController:~# keystone user-create --name demo --tenant demo --pass engine --email kkkttt@gmail.com
-+----------+----------------------------------+
-| Property |              Value               |
-+----------+----------------------------------+
-|  email   |        kkkttt@gmail.com        |
-| enabled  |               True               |
-|    id    | e8f2c2bdaee34f3895147f26a924e010 |
-|   name   |               demo               |
-| tenantId | 2ac9cae777014d3d94458f521b013e94 |
-| username |               demo               |
-+----------+----------------------------------+
-
-</code></pre><h4 id=admin-role>admin role</h4><p>建立admin role:</p><pre><code>root@JunoController:~# keystone role-create --name admin
-+----------+----------------------------------+
-| Property |              Value               |
-+----------+----------------------------------+
-|    id    | 4af914913e154a599deb1b78a0751c1a |
-|   name   |              admin               |
-+----------+----------------------------------+
-
-</code></pre><h4 id=链接userroletenant>链接user/role/tenant</h4><pre><code>root@JunoController:~# keystone user-role-add --user admin --tenant admin --role admin
-
-</code></pre><h4 id=创建一个service-tenant>创建一个Service Tenant</h4><p>先建立Service Tenant:</p><pre><code>root@JunoController:~# keystone tenant-create --name service --description &quot;Service Tenant&quot;
-+-------------+----------------------------------+
-|   Property  |              Value               |
-+-------------+----------------------------------+
-| description |          Service Tenant          |
-|   enabled   |               True               |
-|      id     | 4b22bf4e6a68419aa91da6e0ffaca2dc |
-|     name    |             service              |
-+-------------+----------------------------------+
-
-</code></pre><h4 id=定义services--api-服务挂载点>定义services & API 服务挂载点</h4><p>所有安装好的服务都需要向Identity Service注册，甚至是Identity Service本身，都需要先注册上才可以被使用:<br>首先注册Identity Service:</p><pre><code>root@JunoController:~# keystone service-create --name keystone --type identity --description &quot;OpenStack Identity&quot;
-+-------------+----------------------------------+
-|   Property  |              Value               |
-+-------------+----------------------------------+
-| description |        OpenStack Identity        |
-|   enabled   |               True               |
-|      id     | 27bf7f70deac429d8d28623d99939ae6 |
-|     name    |             keystone             |
-|     type    |             identity             |
-+-------------+----------------------------------+
-
-</code></pre><p>而后，设定Identity Service的服务端点:</p><pre><code>root@JunoController:~# keystone endpoint-create --service-id $(keystone service-list | awk '/ identity / {print $2}') --publicurl http://10.17.17.211:5000/v2.0 --internalurl http://10.17.17.211:5000/v2.0 --adminurl http://10.17.17.211:35357/v2.0 --region regionOne                      
-+-------------+----------------------------------+
-|   Property  |              Value               |
-+-------------+----------------------------------+
-|   adminurl  |  http://10.17.17.211:35357/v2.0  |
-|      id     | fb4c17d5c1414a7e852c6f7db552dd89 |
-| internalurl |  http://10.17.17.211:5000/v2.0   |
-|  publicurl  |  http://10.17.17.211:5000/v2.0   |
-|    region   |            regionOne             |
-|  service_id | 27bf7f70deac429d8d28623d99939ae6 |
-+-------------+----------------------------------+
-
-</code></pre><p>验证Identity服务是否安装成功,首先，unset环境变量:</p><pre><code>root@JunoController:~# unset OS_SERVICE_TOKEN OS_SERVICE_ENDPOINT
-
-</code></pre><p>以 tenant(admin) & user(admin) 的身份取得 token:</p><pre><code>keystone --os-tenant-name admin --os-username admin --os-password ADMIN_PASS --os-auth-url http://10.17.17.211:35357/v2.0 token-get
-
-</code></pre><p>以 tenant(admin) & user(admin) 的身分查詢 tenant 清單:</p><pre><code># keystone --os-tenant-name admin --os-username admin --os-password  xxxxxx --os-auth-url http://10.17.17.211:35357/v2.0 tenant-list
-+----------------------------------+---------+---------+
-|                id                |   name  | enabled |
-+----------------------------------+---------+---------+
-| ea1f0a6b15dc4796958f087c38756ed1 |  admin  |   True  |
-| 2ac9cae777014d3d94458f521b013e94 |   demo  |   True  |
-| 4b22bf4e6a68419aa91da6e0ffaca2dc | service |   True  |
-+----------------------------------+---------+---------+
-
-</code></pre><p>查询user清单：</p><pre><code>root@JunoController:~# keystone --os-tenant-name admin --os-username admin --os-password xxxx --os-auth-url http://10.17.17.211:35357/v2.0 user-list
-+----------------------------------+-------+---------+--------------------+
-|                id                |  name | enabled |       email        |
-+----------------------------------+-------+---------+--------------------+
-| 055dd9b7b1564df5bf9e9c511f32978b | admin |   True  | kkkttt@gmail.com |
-| e8f2c2bdaee34f3895147f26a924e010 |  demo |   True  | kkkttt@gmail.com |
-+----------------------------------+-------+---------+--------------------+
-
-</code></pre><p>查询role清单:</p><pre><code>root@JunoController:~# keystone --os-tenant-name admin --os-username admin --os-password xxxx --os-auth-url http://10.17.17.211:35357/v2.0 role-list
-+----------------------------------+----------+
-|                id                |   name   |
-+----------------------------------+----------+
-| 9fe2ff9ee4384b1894a90878d3e92bab | _member_ |
-| 4af914913e154a599deb1b78a0751c1a |  admin   |
-+----------------------------------+----------+
-
-</code></pre><p>以demo用户身份去的token</p><pre><code>root@controller:~# keystone --os-tenant-name demo --os-username demo --os-password DEMO_PASS --os-auth-url http://10.17.17.211:35357/v2.0 token-get
-
-</code></pre><p>以demo身份取得用户清单会被提示权限不足:</p><pre><code>root@JunoController:~# keystone --os-tenant-name demo --os-username demo --os-password xxxx --os-auth-url http://10.17.17.211:35357/v2.0 user-list
-You are not authorized to perform the requested action, admin_required. (HTTP 403)
-
-</code></pre><p>现在keystone服务已经挂载完毕了，接下来就是逐个挂载组件。</p><h3 id=快速切换脚本>快速切换脚本</h3><p>快速切换脚本如下，记得加上执行权限:</p><pre><code>root@JunoController:~# cat openstack/admin-openrc.sh
-export OS_TENANT_NAME=admin
-export OS_USERNAME=admin
-export OS_PASSWORD=xxxx
-export OS_AUTH_URL=http://10.17.17.211:35357/v2.0
-root@JunoController:~# cat openstack/demo-openrc.sh 
-export OS_TENANT_NAME=demo
-export OS_USERNAME=demo
-export OS_PASSWORD=xxxx
-export OS_AUTH_URL=http://10.17.17.211:5000/v2.0
-
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/135/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/135/>135</a></li><li class="page-item active"><a class=page-link href=/page/136/>136</a></li><li class=page-item><a class=page-link href=/page/137/>137</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class=page-item><a href=/page/137/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>Get busy living, or get busy dying.</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/22/shi-yong-fuelbu-shu-opencontrail-1/>使用Fuel部署OpenContrail(1)</a></h1><span class=post-date>Apr 22, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>最近在做OpenContrail的解耦合操作，因为官方提供的OpenContrail一键安装包里诸多组件都是用的默认的推荐，通过解耦合可以做到更灵活的安装和配置，有利于更方便的部署和后续的维护。所以这一系列文章是关于如何用Fuel在部署完OpenStack的基础上完成OpenContrail的部署。</p><h3 id=先决条件>先决条件</h3><p>先决条件主要是用于准备用于部署的硬件环境和软件包。<br>硬件环境:<br>i5-4460(3.2GHz/4核/6M三级缓存), 32G 内存。<br>系统:<br>Ubuntu 14.04 LTS<br>软件:</p><pre><code>$ sudo apt-get install libvirtd virt-manager
+
+</code></pre><p>从Miranti网站下载： MirantisOpenStack-6.0.iso<br>从Contrail网站下载: contrail-install-packages_2.0-22~icehouse_all.deb<br>contrail-neutron-plugin仓库:</p><pre><code>git clone https://github.com/Juniper/contrail-neutron-plugin.git
+
+</code></pre><h3 id=cpu内存磁盘规划>CPU/内存/磁盘规划</h3><p>需要构建一共8台虚拟机用于在部署好的Mirantis OpenStack上集成OpenContrail. CPU/内存/磁盘规划如下:<br>1台Mirantis Fuel控制节点机,2核,划分3G内存, 100G磁盘。
+3个OpenStack Controller节点, 2核,各划分3G内存, 100G磁盘。<br>1个OpenStack Compute节点，2核(嵌套虚拟化),划分3G内存, 100G磁盘。<br>3个OpenContrail节点，2核,各划分4G内存, 100G磁盘。<br>一共需要27G内存。磁盘格式为qcow2，实际占用远小于这个数，各个节点最大也就是在5G左右大小。<br>其中，关于嵌套虚拟化的CPU设置，如下图, 记得选择Copy host CPU Configuration:<br><img src=/images/2015_04_27_12_20_40_598x372.jpg alt=/images/2015_04_27_12_20_40_598x372.jpg><br>启用嵌套虚拟化需要在BIOS设置，并添加相应的内核模块。</p><h3 id=网络规划>网络规划</h3><p>Fuel OpenStack规划了5个网络，分别是:<br>Admin(PXE)<br>Public<br>Management<br>Storage<br>Private</p><p>我们在Virt-Manager里也同样创建出这样的五个子网:<br>Admin(PXE) &ndash; FuelNAT &ndash; 10.20.0.0/24<br>Public &ndash; FuelPublic &ndash; 172.16.0.0/24<br>Management &ndash; FuelMgmt &ndash; 10.55.55.0/24<br>Storage &ndash; FuelStorage &ndash; 10.66.66.0/24<br>Private &ndash; FuelPrivate &ndash; 10.77.77.0/24</p><p>创建网络的步骤如下，双击Virtual Machine Manager里的localhost(QEMU), 弹出下面的窗口:<br><img src=/images/2015_04_27_14_57_37_499x379.jpg alt=/images/2015_04_27_14_57_37_499x379.jpg><br>点击网络列表最下面的+号,弹出创建网络的窗口:<br><img src=/images/2015_04_27_14_58_52_543x374.jpg alt=/images/2015_04_27_14_58_52_543x374.jpg><br>命名该网络，点击下一步:<br><img src=/images/2015_04_27_15_00_34_549x371.jpg alt=/images/2015_04_27_15_00_34_549x371.jpg><br>禁用DHCP:<br><img src=/images/2015_04_27_16_37_32_544x374.jpg alt=/images/2015_04_27_16_37_32_544x374.jpg><br>选择isolated网络模式:<br><img src=/images/2015_04_27_16_38_34_551x375.jpg alt=/images/2015_04_27_16_38_34_551x375.jpg><br>接着点击下一步直到完成，这样我们的网络就创建好了。<br>用上面的方法创建出以上5个子网。</p><h3 id=各个节点网络配置>各个节点网络配置</h3><p>Miranti Fuel Node: 仅FuelNAT, 安装完毕后，自动指定地址为10.20.0.2.<br>其他所有节点机，在创建时，把五个网络都添加上，添加方法如下:<br>Details -> Add Hardware -> Network, 而后选择:<br><img src=/images/2015_04_27_16_45_34_765x444.jpg alt=/images/2015_04_27_16_45_34_765x444.jpg></p><h3 id=miranti-fuel-node安装>Miranti Fuel Node安装</h3><p>安装很简单，直接用下载的MirantisOpenStack-6.0.iso作为安装光盘，在创建出来的虚拟机里安装系统。安装完毕后，在Host机器的浏览器里访问<br><a href=http://10.20.0.2:8000>http://10.20.0.2:8000</a><br>输入用户名密码都为admin后，登录，可以看到以下界面:<br><img src=/images/2015_04_27_16_55_29_717x477.jpg alt=/images/2015_04_27_16_55_29_717x477.jpg><br>在这个界面里我们可以进行OpenStack环境的准备、部署、配置、销毁等操作。</p><p>到这一步，我们已经完成了Miranti Fuel Node的安装，基本的部署准备工作已经完成，接下来我们将使用Fuel来部署一个可用的OpenStack环境, 以及三台用于部署Contrail的节点机.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/17/glusterfs-howto/>Glusterfs Howto</a></h1><span class=post-date>Apr 17, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>I want to expand my storage size on DigitalOcean, the droplet I have on DO one have 11G, and the other have 15G size, so if I could combine them together, I could do much more development on it. Following is how-to.</p><h3 id=glusterfs-setup>Glusterfs Setup</h3><p>Install it under Ubuntu via:</p><pre><code># apt-get install glusterfs-server
+
+</code></pre><p>In both node, install the same software, and then add following lines into your /etc/hosts:</p><pre><code>10.17.17.195    Gluster2
+10.17.17.194    Gluster1
+
+</code></pre><p>In Gluster1, probe Gluster2:</p><pre><code>root@Gluster1:~# gluster peer probe Gluster2
+peer probe: success
+
+</code></pre><p>Then view the gluster peer status:</p><pre><code>root@Gluster1:~# gluster peer status
+Number of Peers: 1
+
+Hostname: Gluster2
+Port: 24007
+Uuid: 881dedb8-6cd4-4127-8c96-223daef081f5
+State: Peer in Cluster (Connected)
+
+</code></pre><p>Create the volumn via:</p><pre><code>root@Gluster1:~# gluster volume create vol_replica transport tcp Gluster2:/home/glustervms Gluster1:/home/glustervms force
+volume create: vol_replica: success: please start the volume to access data
+
+</code></pre><p>Start the created vol:</p><pre><code>root@Gluster1:~# gluster volume start vol_replica
+volume start: vol_replica: success
+
+</code></pre><p>View volumn info:</p><pre><code>root@Gluster1:~# gluster volume info 
+ 
+Volume Name: vol_replica
+Type: Distribute
+Volume ID: 953456f3-0c46-4d07-ac41-591d1e398be6
+Status: Started
+Number of Bricks: 2
+Transport-type: tcp
+Bricks:
+Brick1: Gluster2:/home/glustervms
+Brick2: Gluster1:/home/glustervms
+
+</code></pre><p>Now create the folder and mount the glusterfs via:</p><pre><code>root@Gluster1:/home# mkdir glustervmsmnt
+root@Gluster1:/home# mount -t glusterfs Gluster1:/vol_replica /home/glustervmsmnt/
+
+</code></pre><p>View the disk filesystem info:</p><pre><code>Gluster1:/vol_replica   39G  4.7G   32G  13% /home/glustervmsmnt
+
+</code></pre><h3 id=glusterfs-volumn-deletion>Glusterfs Volumn deletion</h3><p>The replica is not the one we want, for combine two partitions, I need the Distributed stripped mode, which is the one described in:<br><a href=http://www.gluster.org/community/documentation/index.php/Gluster_3.2:_Creating_Distributed_Striped_Volumes>http://www.gluster.org/community/documentation/index.php/Gluster_3.2:_Creating_Distributed_Striped_Volumes</a><br>So first I have to delete the one I&rsquo;ve created in the above part.<br>First umount the one I&rsquo;ve created:</p><pre><code>root@Gluster1:/home/glustervms# umount /home/glustervmsmnt 
+
+</code></pre><p>checked via <code>mount</code> or <code>df -h</code> we could see the one we have mounted has been umounted.</p><p>Second, stop the volumes we&rsquo;ve created:</p><pre><code>root@Gluster1:/home/glustervms# gluster volume stop vol_replica
+Stopping volume will make its data inaccessible. Do you want to continue? (y/n) y
+volume stop: vol_replica: success
+
+</code></pre><p>Third, delete volumn:</p><pre><code>root@Gluster1:/home/glustervms# gluster volume delete vol_replica
+Deleting volume will erase all information about the volume. Do you want to continue? (y/n) y
+volume delete: vol_replica: success
+
+</code></pre><p>Check the volume status:</p><pre><code>root@Gluster1:/home/glustervms# gluster volume info
+No volumes present
+
+</code></pre><h3 id=create-the-distributed-stripped-volume>Create the distributed stripped volume</h3><p>Create the bigvolume:</p><pre><code>root@Gluster1:/home/glustervms# gluster volume create bigvolume transport tcp Gluster2:/home/glustervms Gluster1:/home/glustervms force
+
+</code></pre><p>Start the volume:</p><pre><code>root@Gluster1:/home/glustervms# gluster volume start bigvolume
+volume start: bigvolume: success
+
+</code></pre><p>View the status of the volume:</p><pre><code>root@Gluster1:/home/glustervmsmnt# gluster volume info 
+ 
+Volume Name: bigvolume
+Type: Distribute
+Volume ID: 3e09f074-4675-46d3-873f-f00ef13fb509
+Status: Started
+Number of Bricks: 2
+Transport-type: tcp
+Bricks:
+Brick1: Gluster2:/home/glustervms
+Brick2: Gluster1:/home/glustervms
+
+</code></pre><p>Mount it via following command:</p><pre><code># mount -t glusterfs Gluster1:/bigvolume /home/glustervmsmnt/
+
+</code></pre><h3 id=trouble-shooting>Trouble-Shooting</h3><pre><code>root@Gluster1:/home/glustervms# gluster volume create bigvolume transport tcp Gluster2:/home/glustervms Gluster1:/home/glustervms force
+volume create: bigvolume: failed: /home/glustervms or a prefix of it is already part of a volume
+
+</code></pre><p>Resolve it via:</p><pre><code>#  apt-get install attr
+#  setfattr -x trusted.glusterfs.volume-id /home/glustervms
+#  setfattr -x trusted.gfid /home/glustervms
+#  rm -rf /home/glustervms/.glusterfs/
+
+</code></pre><p>Re-run the gluster volome create command it will create the volume which combines two folders.</p><h3 id=digital-ocean-scenario>Digital Ocean Scenario</h3><p>My DO droplet runs Ubuntu and CentOS, their version is Trusty(14.04) and CentOS7, so do following:</p><pre><code>CentOS # wget -P /etc/yum.repos.d http://download.gluster.org/pub/gluster/glusterfs/LATEST/CentOS/glusterfs-epel.repo
+CentOS # yum -y install glusterfs glusterfs-fuse glusterfs-server
+CentOS # systemctl start glusterd
+CentOS # systemctl enable glusterd
+Trusty # apt-get install glusterfs-server
+
+</code></pre><p>Add each other&rsquo;s name and ip address into /etc/hosts, make sure they could ping each other and get responsible:</p><pre><code>1xx.xx.xxx.xxx	CentOS
+1xx.xx.xxx.xx	Trusty
+
+</code></pre><p>Use Trusty as the server, so on the Trusty machine, detect the CentOS&rsquo;s glusterd configuration as:</p><pre><code>Trusty # gluster peer probe CentOS
+peer probe: success
+
+</code></pre><p>Check the status:</p><pre><code>Trusty # gluster peer status
+Number of Peers: 1
+
+Hostname: CentOS
+Port: 24007
+Uuid: xxxxxxxx
+State: Peer in Cluster (Connected)
+
+</code></pre><p>Create the bigvolume, and mount it into your own directory via:</p><pre><code>Trusty # gluster volume create bigvolume transport tcp CentOS:/home/glustervms Trusty:/home/glustervms force
+volume create: bigvolume: success: please start the volume to access data
+Trusty # gluster volume start bigvolume
+volume start: bigvolume: success
+Trusty # gluster volume info
+ 
+Volume Name: bigvolume
+Type: Distribute
+Volume ID: xxxxxxxxxxxxxxxxxxxxx
+Status: Started
+Number of Bricks: 2
+Transport-type: tcp
+Bricks:
+Brick1: CentOS:/home/glustervms
+Brick2: Trusty:/home/glustervms
+Trusty # mkdir /home/glustervmsmnt/
+Trusty # mount -t glusterfs Trusty:/bigvolume /home/glustervmsmnt/
+Trusty # df -h
+Filesystem              Size  Used Avail Use% Mounted on
+/dev/vda1                20G  9.4G  9.2G  51% /
+none                    4.0K     0  4.0K   0% /sys/fs/cgroup
+udev                    235M  8.0K  235M   1% /dev
+tmpfs                    50M  396K   49M   1% /run
+none                    5.0M     0  5.0M   0% /run/lock
+none                    246M  1.1M  244M   1% /run/shm
+none                    100M     0  100M   0% /run/user
+Trusty:/bigvolume       40G   14G   24G  37% /home/glustervmsmnt
+
+</code></pre><p>Now you could operate under the /home/glustervmsmnt and you have 24G size partion of the disk. Enjoy them!!!</p><h3 id=trouble-shooting-1>Trouble-Shooting 1</h3><p>If you met <code>File change as we read it</code> in tar something, do following things:</p><pre><code>Trusty # gluster volume set bigvolume performance.stat-prefetch off
+volume set: success
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/16/build-fuel-icehouse-iso/>Build fuel icehouse iso</a></h1><span class=post-date>Apr 16, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Fuel6.0 didn&rsquo;t support icdhouse by default, so we have to build it manually, the steps are listed as following:</p><pre><code>apt-get install git
+mkdir ~/fuel
+cd ~/fuel
+git clone https://github.com/stackforge/fuel-main.git
+cd fuel-main
+ ./prepare-build-env.sh
+export MIRROR_BASE=http://mirror.fuel-infra.org/fwm/6.0-icehouse
+make iso
+
+</code></pre><p>After making the iso which have icehouse will be available.</p><h3 id=troubleshooting>TroubleShooting</h3><p>Some modifications should be made before we make them:</p><pre><code>Trusty@ubuntu1204:~/code/fuel6.0/fuel-main$ git checkout stable/6.0
+Branch stable/6.0 set up to track remote branch stable/6.0 from origin.
+Switched to a new branch 'stable/6.0'
+Trusty@ubuntu1204:~/code/fuel6.0/fuel-main$ git branch
+  master
+* stable/6.0
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/16/quickly-play-puppet/>Quickly play puppet</a></h1><span class=post-date>Apr 16, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=server-and-client>Server and Client</h3><p>In server, install following packages:</p><pre><code>$ sudo apt-get install puppet puppetmaster
+
+</code></pre><p>In client, only install puppet is enough.<br>After installation, added the each other&rsquo;s name into <code>/etc/hosts</code>, let them ping each other via name rather than via ip address.</p><h3 id=sign>Sign</h3><p>In client, do following:</p><pre><code>$ clouder@pc121:/etc/puppet$ puppet agent --test --server=pc119
+Exiting; no certificate found and waitforcert is disabled
+
+</code></pre><p>Then in server, listed all of the certification request:</p><pre><code>root@pc119:~/Code/herokublog# sudo puppet cert list
+  &quot;pc121&quot; (SHA256) 28:23:36:3C:E4:8B:3A:15:D2:B0:8C:A2:BC:E9:A1:E5:6A:6F:76:0E:40:73:29:1F:8F:8C:D4:83:1F:92:4F:C7
+
+</code></pre><p>sign the cert:</p><pre><code>root@pc119:~/Code/herokublog# sudo puppet cert sign pc121
+Notice: Signed certificate request for pc121
+Notice: Removing file Puppet::SSL::CertificateRequest pc121 at '/var/lib/puppet/ssl/ca/requests/pc121.pem'
+
+</code></pre><p>Verify it in the client:</p><pre><code>clouder@pc121:/etc/puppet$ puppet agent --test
+Warning: Unable to fetch my node definition, but the agent run will continue:
+Warning: getaddrinfo: Name or service not known
+Info: Retrieving plugin
+Error: /File[/home/clouder/.puppet/var/lib]: Failed to generate additional resources using 'eval_generate': getaddrinfo: Name or service not known
+
+</code></pre><h3 id=configuration>Configuration</h3><p>TBD</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/15/fuel-build-issues/>Fuel Build Issues</a></h1><span class=post-date>Apr 15, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>I started to deploy OpenContrail use fuel, so following are some tips for building the plugins.</p><h3 id=fule-plugin-builder>Fule-Plugin-Builder</h3><p>I encounter following errors when building the plugins of the contrail:</p><pre><code># fuel-plugin-builder --build ./
+Unexpected error
+Wrong package version &quot;2.0.0&quot;
+
+</code></pre><p>This is because the FPB on PyPI is too old for building the 2.0.0 version of the fuel-plugins.<br>Work-around is we manually create the fpb via following steps:</p><pre><code># git clone https://github.com/stackforge/fuel-plugins
+# cd fuel-plugins/fuel_plugin_builder
+# python setup.py sdist
+# pip install dist/fuel-plugin-builder-2.0.0.dev.tar.gz
+
+</code></pre><p>Now your fpb could build 2.0.0 version of the packages.</p><h3 id=build-fuel-contrail-plugin>Build Fuel Contrail plugin</h3><p>First we install following packages on Ubuntu.</p><pre><code># sudo apt-get install createrepo rpm dpkg-dev
+# easy_install pip
+# pip install fuel-plugin-builder
+
+</code></pre><p>But notice the fuel-plugin-builder is too old in pip repository, so use the git version instead.<br>Or in CentOS, you could install fuel-plugin-build via:</p><pre><code># yum install createrepo rpm dpkg-devel
+# pip install fuel-plugin-builder
+
+</code></pre><p>Retrive the source code and build it via:</p><pre><code># git clone https://github.com/stackforge/fuel-plugin-contrail
+# cd fuel-plugin-contrail/
+# fpb --build . --debug
+[root:/home/juju/Code/fuel-plugin-contrail]# ls
+contrail-1.0-1.0.0-0.noarch.rpm  LICENSE         repositories
+deployment_scripts               metadata.yaml   specs
+environment_config.yaml          pre_build_hook  tasks.yaml
+install.sh                       README.md
+
+</code></pre><p>Once the contrail-1.0xxxx.rpm is available it indicates the plugin is available for fuel to use.<br>Notice this plugin should be compatible for Mirantis Fuel 6.1 and Juniper Contrail 2.01.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/135/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/135/>135</a></li><li class="page-item active"><a class=page-link href=/page/136/>136</a></li><li class=page-item><a class=page-link href=/page/137/>137</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/137/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
