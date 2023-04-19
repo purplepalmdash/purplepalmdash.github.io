@@ -31,7 +31,8 @@ vfio_virqfd
 ......
 blacklist amdgpu
 # update-initramfs -u -k all &amp;&amp; reboot
-</code></pre><p>配置KDE的屏幕锁屏选项:</p><p><img src=/images/2023_04_18_11_34_32_930x490.jpg alt=/images/2023_04_18_11_34_32_930x490.jpg></p><p>关闭Energy Saving：</p><p><img src=/images/2023_04_18_11_35_14_832x441.jpg alt=/images/2023_04_18_11_35_14_832x441.jpg></p><p>Login Screen(SDDM)选择 Bahavior:</p><p><img src=/images/2023_04_18_11_36_33_951x832.jpg alt=/images/2023_04_18_11_36_33_951x832.jpg></p><p>之后选择子选项:</p><p><img src=/images/2023_04_18_11_37_28_1057x607.jpg alt=/images/2023_04_18_11_37_28_1057x607.jpg></p><p>KDE桌面下其实是存在大量的可优化空间的，后面可以深入探讨。</p><h3 id=osx-kvm落地>OSX-KVM落地</h3><p>主要参考了: <code>https://github.com/kholia/OSX-KVM</code>:</p><p>按仓库要求，安装相应包, 准备相关文件 :</p><pre><code>sudo apt-get install qemu uml-utilities virt-manager git \
+</code></pre><p>配置KDE的屏幕锁屏选项:</p><p><img src=/images/2023_04_18_11_34_32_930x490.jpg alt=/images/2023_04_18_11_34_32_930x490.jpg></p><p>关闭Energy Saving：</p><p><img src=/images/2023_04_18_11_35_14_832x441.jpg alt=/images/2023_04_18_11_35_14_832x441.jpg></p><p>Login Screen(SDDM)选择 Bahavior:</p><p><img src=/images/2023_04_18_11_36_33_951x832.jpg alt=/images/2023_04_18_11_36_33_951x832.jpg>
+使能登出后自动登入:</p><p><img src=/images/2023_04_19_14_41_02_962x411.jpg alt=/images/2023_04_19_14_41_02_962x411.jpg></p><p>之后选择子选项:</p><p><img src=/images/2023_04_18_11_37_28_1057x607.jpg alt=/images/2023_04_18_11_37_28_1057x607.jpg></p><p>KDE桌面下其实是存在大量的可优化空间的，后面可以深入探讨。</p><h3 id=osx-kvm落地>OSX-KVM落地</h3><p>主要参考了: <code>https://github.com/kholia/OSX-KVM</code>:</p><p>按仓库要求，安装相应包, 准备相关文件 :</p><pre><code>sudo apt-get install qemu uml-utilities virt-manager git \
     wget libguestfs-tools p7zip-full make dmg2img -y
 sudo reboot
 sudo usermod -aG kvm $(whoami)
@@ -56,14 +57,37 @@ $ dmg2img -i BaseSystem.dmg BaseSystem.img
 $ qemu-img create -f qcow2 mac_hdd_ng.img 64G
 $ ./OpenCore-Boot.sh 
 </code></pre><p>进入到安装界面:</p><p><img src=/images/2023_04_18_12_10_54_517x492.jpg alt=/images/2023_04_18_12_10_54_517x492.jpg></p><p>选择Disk Utitity:</p><p><img src=/images/2023_04_18_12_11_45_1088x442.jpg alt=/images/2023_04_18_12_11_45_1088x442.jpg></p><p>而后选择<code>Reinstall</code>开始安装, 注意选择格式化后的macOS 64GB的盘:</p><p><img src=/images/2023_04_18_12_13_57_583x567.jpg alt=/images/2023_04_18_12_13_57_583x567.jpg></p><p>安装配置阶段:</p><p><img src=/images/2023_04_18_13_10_06_801x599.jpg alt=/images/2023_04_18_13_10_06_801x599.jpg></p><p>选择not now:</p><p><img src=/images/2023_04_18_13_10_35_797x602.jpg alt=/images/2023_04_18_13_10_35_797x602.jpg>
-选择 Set Up Later:</p><p><img src=/images/2023_04_18_13_11_00_809x605.jpg alt=/images/2023_04_18_13_11_00_809x605.jpg></p><p>创建用户:</p><p><img src=/images/2023_04_18_13_11_35_711x403.jpg alt=/images/2023_04_18_13_11_35_711x403.jpg></p><p>装完后:</p><p><img src=/images/2023_04_18_13_15_45_290x510.jpg alt=/images/2023_04_18_13_15_45_290x510.jpg></p><p>开启ssh和vnc:</p><p><img src=/images/2023_04_18_14_09_08_710x390.jpg alt=/images/2023_04_18_14_09_08_710x390.jpg></p><h3 id=osx-kvm-with-rx550ventura>OSX-KVM with rx550(Ventura)</h3><p>直接使用脚本测试，得到的结果：</p><pre><code>cp boot-passthrough.sh testrx550.sh
+选择 Set Up Later:</p><p><img src=/images/2023_04_18_13_11_00_809x605.jpg alt=/images/2023_04_18_13_11_00_809x605.jpg></p><p>创建用户:</p><p><img src=/images/2023_04_18_13_11_35_711x403.jpg alt=/images/2023_04_18_13_11_35_711x403.jpg></p><p>装完后:</p><p><img src=/images/2023_04_18_13_15_45_290x510.jpg alt=/images/2023_04_18_13_15_45_290x510.jpg></p><p>开启ssh和vnc:</p><p><img src=/images/2023_04_18_14_09_08_710x390.jpg alt=/images/2023_04_18_14_09_08_710x390.jpg></p><p>在命令行下，拷贝OpenBoot的EFI分区到硬盘下:</p><pre><code>test@tests-iMac-Pro ~ % sudo diskutil list
+.......这里需要识别出哪个分区是ISO的，哪个是硬盘上的
+test@tests-iMac-Pro ~ % sudo diskutil mount disk0s1
+Volume EFI on disk0s1 mounted
+test@tests-iMac-Pro ~ % sudo diskutil mount disk1s1
+Volume EFI on disk1s1 mounted
+test@tests-iMac-Pro ~ % mount
+/dev/disk2s5s1 on / (apfs, sealed, local, read-only, journaled)
+devfs on /dev (devfs, local, nobrowse)
+/dev/disk2s4 on /System/Volumes/VM (apfs, local, noexec, journaled, noatime, nobrowse)
+/dev/disk2s2 on /System/Volumes/Preboot (apfs, local, journaled, nobrowse)
+/dev/disk2s6 on /System/Volumes/Update (apfs, local, journaled, nobrowse)
+/dev/disk2s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse)
+map auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)
+/dev/disk0s1 on /Volumes/EFI (msdos, asynchronous, local, noowners)
+/dev/disk1s1 on /Volumes/EFI 1 (msdos, asynchronous, local, noowners)
+test@tests-iMac-Pro ~ % cp -r /Volumes/EFI/EFI /Volumes/EFI\ 1 
+test@tests-iMac-Pro ~ % sudo sync     
+test@tests-iMac-Pro ~ % sudo shutdown -h now
+</code></pre><p>重新启动后，更改Boot的等待时延(挂在EFI分区后):</p><pre><code> % cat EFI/OC/config.plist| grep '&lt;key&gt;Timeout' -A2
+			&lt;key&gt;Timeout&lt;/key&gt;
+			&lt;integer&gt;5&lt;/integer&gt;
+		&lt;/dict&gt;
+</code></pre><h3 id=osx-kvm-with-rx550ventura>OSX-KVM with rx550(Ventura)</h3><p>直接使用脚本测试，得到的结果：</p><pre><code>cp boot-passthrough.sh testrx550.sh
 lspci | grep 550
 01:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Baffin [Radeon RX 550 640SP / RX 560/560X] (rev ff)
 01:00.1 Audio device: Advanced Micro Devices, Inc. [AMD/ATI] Baffin HDMI/DP Audio [Radeon RX 550 640SP / RX 560/560X]
 vim testrx550.sh
   -vnc 0.0.0.0:8 -k en-us
   -netdev user,hostfwd=tcp::2288-:22,hostfwd=tcp::15900-:5900,id=net0 -device vmxnet3,netdev=net0,id=net0,mac=52:54:00:c9:18:27
-</code></pre><p>效果： 最初引导的时候会出现画面，且可以一直操作(OpenCore),但是进入到苹果后黑屏。ssh可以登陆到成功启动后的macOS,但是vnc登陆则一直显示黑屏。</p><h3 id=osx-kvmmonterey>OSX-KVM(Monterey)</h3><p>重新安装一台Monterey虚机:</p><p><img src=/images/2023_04_18_15_14_39_508x574.jpg alt=/images/2023_04_18_15_14_39_508x574.jpg></p><p><img src=/images/2023_04_18_16_15_35_595x362.jpg alt=/images/2023_04_18_16_15_35_595x362.jpg></p><p>ssh/vnc启用:</p><p><img src=/images/2023_04_18_16_16_21_657x516.jpg alt=/images/2023_04_18_16_16_21_657x516.jpg></p><p>Monterey会卡在启动界面，黑屏，但是会滚屏.</p><h3 id=vendor-reset>vendor-reset</h3><p>AMD显卡需要引入这个模块以便在vfio的时候reset为可用状态:</p><pre><code>git clone https://github.com/gnif/vendor-reset.git
+</code></pre><p>效果： 最初引导的时候会出现画面，且可以一直操作(OpenCore),但是进入到苹果后黑屏。ssh可以登陆到成功启动后的macOS,但是vnc登陆则一直显示黑屏。</p><h3 id=osx-kvmmonterey>OSX-KVM(Monterey)</h3><p>重新安装一台Monterey虚机:</p><p><img src=/images/2023_04_18_15_14_39_508x574.jpg alt=/images/2023_04_18_15_14_39_508x574.jpg></p><p><img src=/images/2023_04_18_16_15_35_595x362.jpg alt=/images/2023_04_18_16_15_35_595x362.jpg></p><p>ssh/vnc启用:</p><p><img src=/images/2023_04_18_16_16_21_657x516.jpg alt=/images/2023_04_18_16_16_21_657x516.jpg></p><p>Monterey会正常启动</p><h3 id=vendor-reset>vendor-reset</h3><p>AMD显卡需要引入这个模块以便在vfio的时候reset为可用状态:</p><pre><code>git clone https://github.com/gnif/vendor-reset.git
 cd vendor-reset/
 sudo apt install -y dkms
 sudo dkms install .
@@ -73,7 +97,52 @@ sudo update-initramfs -u -k all
 sudo reboot
 </code></pre><p>重启成功后:</p><pre><code>$ lsmod | grep vendor
 vendor_reset          114688  0
-</code></pre><h3 id=vbflash>vbflash</h3><p>使用工具dump出显卡的vbflash:</p><p><img src=/images/2023_04_18_16_52_25_1024x467.jpg alt=/images/2023_04_18_16_52_25_1024x467.jpg></p><p>7600看起来似乎无法驱动。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/04/12/workingtipsonigpupassthroughosx/>WorkingTipsOnIGPUPassthroughOSX</a></h1><span class=post-date>Apr 12, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Use diskutil for Change the EFI partition:</p><p><img src=/images/2023_04_12_10_41_07_510x533.jpg alt=/images/2023_04_12_10_41_07_510x533.jpg></p><p>Copy from iso&rsquo;s EFI to disk&rsquo;s EFI:</p><pre><code>% cp -r /Volumes/EFI/EFI /Volumes/EFI\ 1/
+</code></pre><p>使用下面的<code>vfio_bind.sh</code>用来初始化显卡, 注意<code>vendor_reset</code>需要一个bug-fix（<code>device_specific</code>）:</p><pre><code>#!/bin/bash
+modprobe vfio-pci
+for dev in &quot;$@&quot;; do
+vendor=$(cat /sys/bus/pci/devices/$dev/vendor)
+device=$(cat /sys/bus/pci/devices/$dev/device)
+if [ -e /sys/bus/pci/devices/$dev/driver ]; then
+echo $dev &gt; /sys/bus/pci/devices/$dev/driver/unbind
+fi
+echo $vendor $device &gt; /sys/bus/pci/drivers/vfio-pci/new_id
+echo 'device_specific' &gt; /sys/bus/pci/devices/$dev/reset_method
+done
+
+</code></pre><h3 id=vbflash>vbflash</h3><p>使用工具dump出显卡的vbflash:</p><p><img src=/images/2023_04_18_16_52_25_1024x467.jpg alt=/images/2023_04_18_16_52_25_1024x467.jpg></p><p>7600看起来似乎无法驱动。临时换成了5700xt显卡用来测试。<br>5700xt需要添加:</p><pre><code>test@tests-iMac-Pro EFI % cat EFI/OC/config.plist| grep boot-args -A3
+				&lt;key&gt;boot-args&lt;/key&gt;
+				&lt;string&gt;-v keepsyms=1 tlbto_us=0 vti=9 agdpmod=pikera&lt;/string&gt;
+</code></pre><h3 id=网络配置桥接>网络配置（桥接)</h3><p>桥接是为了让虚拟机获得同网段地址:</p><pre><code># sudo apt install bridge-utils -y
+# sudo vim /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;intel_iommu=on intel_iommu=pt kvm.ignore_msrs=1 net.ifnames=0 biosdevname=0&quot;
+# sudo update-grub2
+# vim /etc/netplan/00-installer-config.yaml 
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    eth0:
+      dhcp4: false
+  bridges:
+    br0:
+      interfaces: [eth0]
+      dhcp4: true
+  version: 2
+# reboot
+</code></pre><h3 id=libvirtd集成>libvirtd集成</h3><p>准备镜像:</p><pre><code>test@server:~/OSX-KVM-Monterey$ sudo cp mac_hdd_ng.img /var/lib/libvirt/images/ &amp;&amp; sudo sync
+test@server:~/OSX-KVM-Monterey$ sudo cp OVMF_VARS-1024x768.fd /var/lib/libvirt/images/
+test@server:~/OSX-KVM-Monterey$ sudo cp OVMF_CODE.fd /var/lib/libvirt/images/
+root@server:/var/lib/libvirt/images# qemu-img create -f qcow2 -b mac_hdd_ng.img -F qcow2 amd5700xt.qcow2
+root@server:/var/lib/libvirt/images# qemu-img create -f qcow2 -b mac_hdd_ng.img -F qcow2 rx560.qcow2
+root@server:/var/lib/libvirt/images# cp OVMF_VARS-1024x768.fd rx560_OVMF_VARS-1024x768.fd amd5700_OVMF_VARS-1024x768.fd
+</code></pre><p>libvirtd配置文件(RX 5700 8GB及 RX 550 4GB):</p><pre><code>https://gist.githubusercontent.com/purplepalmdash/dfba3d32b72901f75d39a84288689692/raw/eb15ad7cd59f86566dd8fb5cfc6786639c0cb6a8/macOS5700.xml
+https://gist.githubusercontent.com/purplepalmdash/dfba3d32b72901f75d39a84288689692/raw/eb15ad7cd59f86566dd8fb5cfc6786639c0cb6a8/macOSrx550.xml
+</code></pre><h3 id=guest配置>guest配置</h3><p>阻止虚拟机进入到节能状态:</p><p><img src=/images/2023_04_19_14_15_42_642x477.jpg alt=/images/2023_04_19_14_15_42_642x477.jpg></p><p>禁止锁定屏幕:</p><p><img src=/images/2023_04_19_14_17_15_622x403.jpg alt=/images/2023_04_19_14_17_15_622x403.jpg></p><p>禁止自动更新:</p><p><img src=/images/2023_04_19_14_18_38_638x318.jpg alt=/images/2023_04_19_14_18_38_638x318.jpg></p><p>禁用屏幕保护:</p><p><img src=/images/2023_04_19_14_19_26_627x551.jpg alt=/images/2023_04_19_14_19_26_627x551.jpg></p><h3 id=win10核显透传>win10核显透传</h3><p>准备libvirtd钩子脚本:</p><pre><code> cd /etc/libvirt/hooks/
+ mv /home/test/hooks/* .
+ ln -s /etc/libvirt/hooks/vfio-startup.sh /bin/
+ ln -s /etc/libvirt/hooks/vfio-teardown.sh /bin/
+</code></pre><p>如果要透传核显，则grub的参数需要做相应的修改:</p><pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;intel_iommu=on intel_iommu=pt kvm.ignore_msrs=1 net.ifnames=0 biosdevname=0 video=efifb:off,vesafb:off&quot;
+</code></pre><p>因为以前已经做过相关的内容，这里就不再详细说明。</p><h3 id=已知偶现问题>已知/偶现问题</h3><p>一次失败的核显透传后，重启失败, 更改grub默认选项后修复:</p><p><img src=/images/2023_04_19_14_45_26_1018x372.jpg alt=/images/2023_04_19_14_45_26_1018x372.jpg>
+Android studio无法运行?</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/04/12/workingtipsonigpupassthroughosx/>WorkingTipsOnIGPUPassthroughOSX</a></h1><span class=post-date>Apr 12, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Use diskutil for Change the EFI partition:</p><p><img src=/images/2023_04_12_10_41_07_510x533.jpg alt=/images/2023_04_12_10_41_07_510x533.jpg></p><p>Copy from iso&rsquo;s EFI to disk&rsquo;s EFI:</p><pre><code>% cp -r /Volumes/EFI/EFI /Volumes/EFI\ 1/
 % sudo sync
 % sudo shutdown -h now
 </code></pre><p>Enable ssh:</p><p><img src=/images/2023_04_12_10_45_08_525x420.jpg alt=/images/2023_04_12_10_45_08_525x420.jpg></p><p>Then we could use ssh via:</p><pre><code># ssh test@192.168.1.129
