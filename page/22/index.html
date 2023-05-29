@@ -1,5 +1,249 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/05/02/%E5%AE%8C%E5%85%A8%E7%94%A8ram%E8%BF%90%E8%A1%8Cubuntu2/>完全用RAM运行Ubuntu(2)</a></h1><span class=post-date>May 2, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>完全用ram工作的场景下，关机时需要回写到磁盘上，以下是用来将Ram中的数据回写到磁盘的方法。</p><pre><code># vim /bin/writeback.sh
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/05/28/workingtipsonk3skubevirt/>WorkingTipsOnK3sKubevirt</a></h1><span class=post-date>May 28, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-目的>1. 目的</h3><p>k3s+kubevirt，运行虚拟机工作负载. 落地平台为AllInOne节点。主要针对边缘侧算力平台落地场景。</p><h3 id=2-环境>2. 环境</h3><p>嵌套虚拟化环境用于承载k3s算力管控平台。运行操作系统为Ubuntu20.04, 40Core, 274G内存。<br>更新： 嵌套虚拟化会产生诸多问题，导致qemu无法启动，因而后面我采用在物理机上直接启动k3s的方式。</p><p>物理机环境：</p><pre><code>Intel(R) Xeon(R) Gold 5118 CPU @ 2.30GHz
+376G memory
+2T nvme ssd
+CentOS 7.6.1810
+kernel: 4.19.12-1.el7.elrepo.x86_64
+</code></pre><h3 id=3-步骤>3. 步骤</h3><p>注：以下为虚拟化环境，未安装成功（因后续有嵌套虚拟化导致qemu无法启动的问题）<br>安装步骤:</p><pre><code># apt-get update -y &amp;&amp; apt-get upgrade -y
+# export http_proxy export https_proxy
+# curl -sfL https://get.k3s.io | sh -
+# vim /etc/resolv.conf
+nameserver 223.5.5.5
+# systemctl stop systemd-resolved
+# systemctl disable systemd-resolved
+</code></pre><p>以下为正常过程:</p><p>安装k3s:</p><pre><code># yum update -y &amp;&amp; yum install -y git
+# curl -sfL https://get.k3s.io | sh -
+</code></pre><p>安装KubeVirt:</p><pre><code># export VERSION=v0.41.0
+# kubectl create -f https://github.com/kubevirt/kubevirt/releases/download/${VERSION}/kubevirt-operator.yaml
+# kubectl create -f https://github.com/kubevirt/kubevirt/releases/download/${VERSION}/kubevirt-cr.yaml
+</code></pre><p>安装<code>virtctl</code>用于控制KubeVirt虚拟机，这里使用Kubernetes的插件管理器<code>Krew</code>来安装<code>virtctl</code>:</p><pre><code># (   set -x; cd &quot;$(mktemp -d)&quot; &amp;&amp;   curl -fsSLO &quot;https://github.com/kubernetes-sigs/krew/releases/latest/download/krew.tar.gz&quot; &amp;&amp;   tar zxvf krew.tar.gz &amp;&amp;   KREW=./krew-&quot;$(uname | tr '[:upper:]' '[:lower:]')_$(uname -m | sed -e 's/x86_64/amd64/' -e 's/arm.*$/arm/')&quot; &amp;&amp;   &quot;$KREW&quot; install krew; )
+
+# export PATH=&quot;${KREW_ROOT:-$HOME/.krew}/bin:$PATH&quot;
+# kubectl krew install virt
+</code></pre><p>安装<code>Containerized-Data-Importer(CDI)</code>用于管理虚拟机的磁盘，安装步骤如下:</p><pre><code># export VERSION=$(curl -s https://github.com/kubevirt/containerized-data-importer/releases/latest | grep -o &quot;v[0-9]\.[0-9]*\.[0-9]*&quot;)
+# kubectl create -f https://github.com/kubevirt/containerized-data-importer/releases/download/$VERSION/cdi-operator.yaml
+# kubectl create -f https://github.com/kubevirt/containerized-data-importer/releases/download/$VERSION/cdi-cr.yaml
+</code></pre><p>从<code>https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019</code> 下载Windows ISO 180天试用版, 而后上传该ISO:</p><pre><code># Get the CDI upload proxy service IP:
+ kubectl get svc -n cdi
+    
+ # Upload 
+ kubectl virt image-upload --image-path &lt;/path/to/iso&gt; \
+     --pvc-name iso-win2k19 --access-mode ReadWriteOnce \
+     --pvc-size 10G --uploadproxy-url &lt;upload-proxy service:443&gt; \
+     --insecure --wait-secs=240
+</code></pre><p>上传前需要确保<code>coredns</code>正常运行，否则会出现上传不成功的情况。</p><p>PVC被设置成<code>ReadWriteOnce</code>, 因为默认的local-path storageclass 不支持更多的模式。因为我们只使用一个节点，所以这点没所谓，但是在大型的K3s集群里，需要注意PVC的属性配置。</p><p><code>virtio-container-disk </code>容器镜像需要被实现拉回，因为在安装的时候我们需要使用其中包含的驱动程序。</p><pre><code># crictl pull kubevirt/virtio-container-disk
+</code></pre><p>现在我们创建一个yaml文件用于定义需要创建的KubeVirt虚拟机(<code>win.yaml</code>):</p><pre><code>---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: winhd
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 15Gi
+  storageClassName: manual
+---
+apiVersion: kubevirt.io/v1alpha3
+kind: VirtualMachine
+metadata:
+  name: win2k19-iso
+spec:
+  running: false
+  template:
+    metadata:
+      labels:
+        kubevirt.io/domain: win2k19-iso
+    spec:
+      domain:
+        cpu:
+          cores: 4
+        devices:
+          disks:
+          - bootOrder: 1
+            cdrom:
+              bus: sata
+            name: cdromiso
+          - disk:
+              bus: sata
+            name: harddrive
+          - cdrom:
+              bus: sata
+            name: virtiocontainerdisk
+        machine:
+          type: q35
+        resources:
+          requests:
+            memory: 8G
+      volumes:
+      - name: cdromiso
+        persistentVolumeClaim:
+          claimName: iso-win2k19
+      - name: harddrive
+        persistentVolumeClaim:
+          claimName: winhd
+      - containerDisk:
+          image: kubevirt/virtio-container-disk
+        name: virtiocontainerdisk
+</code></pre><p>我们再创建一个PV用于承载该虚拟机的磁盘(<code>pv.yaml</code>):</p><pre><code>apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: task-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: &quot;/media/sda/win&quot;
+</code></pre><p>创建虚拟机:</p><pre><code> kubectl apply -f pv.yaml
+ kubectl apply -f win.yaml
+ kubectl virt start win2k19-iso
+ # If you're running this on a remote machine, use X-forwarding and
+ # apt-get install virt-viewer
+ kubectl virt vnc win2k19-iso
+</code></pre><p>值得注意的是，<code>win.yaml</code>中我们只能选择<code>sata</code>作为主磁盘的格式，<code>kubectl virt vnc</code>在我的机器上无法使用，所以我用了<code>kubectl virt --proxy-only=true win2k19-iso</code>用于获取一个动态端口，而后<code>vncviewer</code>到该动态端口上去。</p><p>完成安装后，进入<code>设备管理器</code>安装完未安装好的驱动程序。</p><p>使用NodePort暴露安装好以后的虚拟机的RDP端口:</p><pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: windows-nodeport
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: nodeport
+    nodePort: 30000
+    port: 27017
+    protocol: TCP
+    targetPort: 3389
+  selector:
+    kubevirt.io/domain: win2k19-iso
+  type: NodePort
+</code></pre><p>创建完该服务后，则可通过<code>xxx.xxx.xxx.xxx:30000</code>用于访问该虚拟机的RDP远程桌面端口了。</p><p>创建完以后的虚拟机如图所示:</p><p><img src=/images/2021_05_31_21_30_56_746x693.jpg alt=/images/2021_05_31_21_30_56_746x693.jpg></p><p>如果是virtctl，则直接访问的方式是通过proxy:</p><pre><code>kubectl proxy --address=0.0.0.0 --accept-hosts='^*$' --port 8080
+</code></pre><p>testvm:</p><pre><code>apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: testvm
+spec:
+  running: false
+  template:
+    metadata:
+      labels:
+        kubevirt.io/size: small
+        kubevirt.io/domain: testvm
+    spec:
+      domain:
+        devices:
+          disks:
+            - name: containerdisk
+              disk:
+                bus: virtio
+            - name: cloudinitdisk
+              disk:
+                bus: virtio
+          interfaces:
+          - name: default
+            bridge: {}
+        resources:
+          requests:
+            memory: 64M
+      networks:
+      - name: default
+        pod: {}
+      volumes:
+        - name: containerdisk
+          containerDisk:
+            image: quay.io/kubevirt/cirros-container-disk-demo
+        - name: cloudinitdisk
+          cloudInitNoCloud:
+            userDataBase64: SGkuXG4=
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/05/09/workingtipsonlxdccse/>WorkingTipsOnLXDccse</a></h1><span class=post-date>May 9, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目标>目标</h3><p>在LXD上运行ccse</p><h3 id=准备>准备</h3><p>服务器上安装lxd, 初始化镜像centos7, ccse安装介质。</p><h3 id=步骤>步骤</h3><p>创建一个profile， 用于创建lxd用于部署验证:</p><pre><code>lxc profile show default&gt;ccse
+vim ccse 
+lxc profile create ccse
+lxc profile edit ccse&lt;ccse
+</code></pre><p>文件的内容如下：</p><pre><code>config:
+  linux.kernel_modules: ip_tables,ip6_tables,netlink_diag,nf_nat,overlay,br_netfilter,xt_conntrack
+  raw.lxc: &quot;lxc.apparmor.profile=unconfined\nlxc.cap.drop= \nlxc.cgroup.devices.allow=a\nlxc.mount.auto=p
+roc:rw sys:rw&quot;
+  security.nesting: &quot;true&quot;
+  security.privileged: &quot;true&quot;
+description: CCSE Running profile
+devices:
+  eth0:
+    name: eth0
+    network: lxdbr0
+    type: nic
+  hashsize:
+    path: /sys/module/nf_conntrack/parameters/hashsize
+    source: /dev/null
+    type: disk
+  kmsg:
+    path: /dev/kmsg
+    source: /dev/kmsg
+    type: unix-char
+  root:
+    path: /
+    pool: ssd
+    type: disk
+name: ccse
+</code></pre><p>验证此profile是否可正常工作:</p><pre><code># lxc launch centos7 kkk --profile ccse
+Creating kkk
+Starting kkk                              
+# lxc exec kkk bash
+[root@kkk ~]# cat /etc/redhat-release 
+CentOS Linux release 7.9.2009 (Core)
+</code></pre><p>注意：</p><ol><li>版本略高于推荐的centos 7.6.</li><li>使用上述的权限文件加载，可以解决teledb组碰到的获取磁盘权限问题。</li></ol><h3 id=部署介质准备>部署介质准备</h3><p>初始化容器:</p><pre><code>cd /etc/yum.repos.d/
+mkdir back
+mv * back
+vi ccse.repo
+yum makecache
+vi /etc/yum.conf 
+yum install -y which vim net-tools lsof sudo
+</code></pre><p>因为需要将lxd当成物理机来使用，安装openssh-server后重启：</p><pre><code> yum install -y openssh-server
+ systemctl enable sshd
+ systemctl start sshd
+ passwd
+ reboot
+</code></pre><p>再次进入容器后，下载安装文件:</p><pre><code>scp docker@xxx.xxx.xxx.xx:/home/docker/shrink280/ccse-installer-2.8.0-rc-linux-amd64-offline-20210409204619-shrink.tar.xz .
+tar xJf ccse-installer-2.8.0-rc-linux-amd64-offline-20210409204619-shrink.tar.xz
+</code></pre><h3 id=部署console节点>部署console节点</h3><p>记录ip 地址<code> 10.222.125.68</code>， 配置完正确的IP地址后，按原有步骤安装console节点，安装完毕后上传镜像。</p><h3 id=制作基础节点>制作基础节点</h3><p>需打包节点所需要的依赖：</p><pre><code># lxc launch centos7 base
+# lxc exec base bash
+     yum install -y which lsof vim net-tools sudo selinux-policy libseccomp libselinux-python selinux-policy-targeted openssh-server ebtables ethtool
+     systemctl enable sshd
+     passwd
+     shutdown -h now
+#  lxc publish base --alias ccsenode
+
+</code></pre><p>hashsize:</p><pre><code>sudo su
+echo &quot;262144&quot; &gt; /sys/module/nf_conntrack/parameters/hashsize
+cat /sys/module/nf_conntrack/parameters/hashsize
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/05/08/workingtipsondnscryption/>WorkingTipsOndnscryption</a></h1><span class=post-date>May 8, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=working-environment>Working Environment</h3><p>Centos 7.9, vm , 8core, 16G.</p><h3 id=installation>Installation</h3><p>Install dnsmasq:</p><pre><code># sudo yum install -y dnsmasq
+</code></pre><p>Install dnscrypt-proxy:</p><pre><code># sudo yum install -y dnscrypt-proxy
+</code></pre><p>Wget the chinadns configuration file:</p><pre><code># wget https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+# mv accelerated-domains.china.conf /etc/dnsmasq.d/accelerated-domains.china.conf
+</code></pre><p>you can replace the <code>114.114.114.114</code> via your own dns(china intranet dns).</p><h3 id=configuration>Configuration</h3><p>Configure dnsmasq:</p><pre><code># vim /etc/dnsmasq.conf
+listen-address=127.0.0.1
+no-resolv
+conf-dir=/usr/local/etc/dnsmasq.d
+server=127.0.0.1#5300
+interface=lo
+bind-interfaces
+</code></pre><p>Configure dnscrypt-proxy:</p><pre><code># vim /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+     # 监听5300端口
+     listen_addresses = ['127.0.0.1:5300', '[::1]:5300']
+     # 使用下面3个公开的DNS服务
+     server_names = ['google', 'cloudflare', 'cloudflare-ipv6']
+     # 如果找不到合适的公开DNS服务，则使用下面的DNS服务
+     fallback_resolvers = ['9.9.9.9:53', '8.8.8.8:53']
+     # 担心这些DNS请求被墙，设置使用代理发送DNS请求
+     force_tcp = true
+     proxy = 'socks5://127.0.0.1:1086'
+</code></pre><p>Configure <code>/etc/resolv.conf</code> for using <code>127.0.0.1</code>:</p><pre><code>nameserver 127.0.0.1
+</code></pre><h3 id=privoxy>privoxy</h3><p>In centos 7.9. don&rsquo;t install this package from epel, download the source code from internet and compile it:</p><pre><code>$ privoxy  --version
+Privoxy version 3.0.28 (https://www.privoxy.org/)
+</code></pre><p>make sure you have specify the gfwlist.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/05/02/%E5%AE%8C%E5%85%A8%E7%94%A8ram%E8%BF%90%E8%A1%8Cubuntu2/>完全用RAM运行Ubuntu(2)</a></h1><span class=post-date>May 2, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>完全用ram工作的场景下，关机时需要回写到磁盘上，以下是用来将Ram中的数据回写到磁盘的方法。</p><pre><code># vim /bin/writeback.sh
     #!/bin/sh
     kkk=`mount | grep &quot;none on / type tmpfs&quot;`
     if [ ! -z &quot;$kkk&quot; ]
@@ -111,158 +355,4 @@ PING 10.50.208.147 (10.50.208.147) 56(84) bytes of data.
 --- 10.50.208.147 ping statistics ---
 2 packets transmitted, 2 received, 0% packet loss, time 1000ms
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/29/bestpracticeofcentoslxd/>BestPracticeOfCentOSLXD</a></h1><span class=post-date>Apr 29, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-文档目的>1. 文档目的</h3><p>文档旨在针对在CentOS 7操作系统上安装、配置及运行LXD提供最佳实践。</p><h3 id=2-环境准备>2. 环境准备</h3><p>基于快速验证的目的，本文档基于虚拟机搭建，验证机配置如下:</p><ul><li>操作系统： <code>CentOS Linux release 7.6.1810 (Core) </code>, 最小化安装</li><li>硬件配置: 36核心，246GB内存， 500G磁盘分区</li><li>软件配置:</li><li>网络配置: 192.168.100.10/24, 网关192.168.100.1</li></ul><p>访问方式(这里提供如何从办公网络直达验证机)</p><h3 id=3-环境搭建>3. 环境搭建</h3><p>离线情况下，配置内网源后，执行以下命令安装:</p><pre><code># yum install -y snapd net-tools vim
-# systemctl enable --now snapd.socket
-</code></pre><p>解压离线安装文件:</p><pre><code># tar xzvf lxcimages.tar.gz ; tar xzvf snap.tar.gz
-</code></pre><p>进入到snap目录下安装snap:</p><pre><code># snap ack core_10958.assert ; snap ack core18_1997.assert; snap ack lxd_20211.assert
-# snap install core_10958.snap; snap install core18_1997.snap; snap install lxd_20211.snap
-</code></pre><p>更改内核参数后，重启机器:</p><pre><code>$ grubby --args=&quot;user_namespace.enable=1&quot; --update-kernel=&quot;$(grubby --default-kernel)&quot;
-$ grubby --args=&quot;namespace.unpriv_enable=1&quot; --update-kernel=&quot;$(grubby --default-kernel)&quot;
-$ sudo sh -c 'echo &quot;user.max_user_namespaces=3883&quot; &gt; /etc/sysctl.d/99-userns.conf'
-# reboot
-</code></pre><p>创建snap目录并添加运行权限:</p><pre><code># ln -s /var/lib/snapd/snap /snap
-# usermod -a -G lxd roo
-# newgrp lxd
-# id
-uid=0(root) gid=994(lxd) groups=994(lxd),0(root)
-</code></pre><p>此时需要退出终端后重新登录终端，方可使用<code>lxc</code>相关命令.</p><p>初始化<code>lxd</code>环境:</p><pre><code>[root@lxdpaas ~]# lxd init
-Would you like to use LXD clustering? (yes/no) [default=no]: 
-Do you want to configure a new storage pool? (yes/no) [default=yes]: 
-Name of the new storage pool [default=default]: 
-Name of the storage backend to use (btrfs, dir, lvm, ceph) [default=btrfs]: dir
-Would you like to connect to a MAAS server? (yes/no) [default=no]: 
-Would you like to create a new local network bridge? (yes/no) [default=yes]: 
-What should the new bridge be called? [default=lxdbr0]: 
-What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
-What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
-Would you like the LXD server to be available over the network? (yes/no) [default=no]: 
-Would you like stale cached images to be updated automatically? (yes/no) [default=yes] 
-Would you like a YAML &quot;lxd init&quot; preseed to be printed? (yes/no) [default=no]: 
-</code></pre><p>此时应无任何镜像，接下来手动导入镜像:</p><pre><code># cd lxcimages
-# lxc image  import meta-50030de846c046680faf34f7dc3e60284e31f5aab38dfd19c94a2fd1bf895d0c.tar.xz 50030de846c046680faf34f7dc3e60284e31f5aab38dfd19c94a2fd1bf895d0c.squashfs --alias centos7
-Image imported with fingerprint: 50030de846c046680faf34f7dc3e60284e31f5aab38dfd19c94a2fd1bf895d0c
-# lxc image list
-+---------+--------------+--------+----------------------------------+--------------+-----------+---------+------------------------------+
-|  ALIAS  | FINGERPRINT  | PUBLIC |           DESCRIPTION            | ARCHITECTURE |   TYPE    |  SIZE   |         UPLOAD DATE          |
-+---------+--------------+--------+----------------------------------+--------------+-----------+---------+------------------------------+
-| centos7 | 50030de846c0 | no     | Centos 7 x86_64 (20210428_07:08) | x86_64       | CONTAINER | 83.46MB | Apr 29, 2021 at 4:53am (UTC) |
-+---------+--------------+--------+----------------------------------+--------------+-----------+---------+------------------------------+
-
-</code></pre><h3 id=4-lxc操作实练>4. lxc操作实练</h3><p>启动一个lxc 实例:</p><pre><code># lxc launch centos7 db1
-Creating db1
-Starting db1              
-</code></pre><p>进入运行中的实例:</p><pre><code># lxc exec db1 bash
-[root@db1 ~]# cat /etc/redhat-release 
-CentOS Linux release 7.9.2009 (Core)
-</code></pre><p>启动第二个名为<code>db2</code>的实例：</p><pre><code>[root@lxdpaas lxcimages]# lxc launch centos7 db2
-Creating db2
-Starting db2                              
-[root@lxdpaas lxcimages]# lxc exec db2 bash
-[root@db2 ~]#
-</code></pre><p>查看运行中的容器实例:</p><pre><code># lxc ls
-+------+---------+-----------------------+----------------------------------------------+-----------+-----------+
-| NAME |  STATE  |         IPV4          |                     IPV6                     |   TYPE    | SNAPSHOTS |
-+------+---------+-----------------------+----------------------------------------------+-----------+-----------+
-| db1  | RUNNING | 10.159.107.72 (eth0)  | fd42:45a:636c:6e69:216:3eff:fe81:347e (eth0) | CONTAINER | 0         |
-+------+---------+-----------------------+----------------------------------------------+-----------+-----------+
-| db2  | RUNNING | 10.159.107.125 (eth0) | fd42:45a:636c:6e69:216:3eff:fe53:754 (eth0)  | CONTAINER | 0         |
-+------+---------+-----------------------+----------------------------------------------+-----------+-----------+
-</code></pre><p>停止/删除运行中的容器:</p><pre><code>[root@lxdpaas lxcimages]# lxc stop db1
-[root@lxdpaas lxcimages]# lxc stop db2
-[root@lxdpaas lxcimages]# lxc delete db1
-[root@lxdpaas lxcimages]# lxc delete db2
-[root@lxdpaas lxcimages]# lxc ls
-+------+-------+------+------+------+-----------+
-| NAME | STATE | IPV4 | IPV6 | TYPE | SNAPSHOTS |
-+------+-------+------+------+------+-----------+
-</code></pre><p>定制化:</p><pre><code># lxc launch c75dhclient k2
-# lxc exec k2 /bin/bash
-dhclient eth0
-vi /etc/yum.repos.d/kkk.repo
-yum makecache
-yum install -y vim net-tools
-exit
-# lxc ls | grep k2
-| k2   | RUNNING | 10.159.107.248 (eth0) | fd42:45a:636c:6e69:216:3eff:fea0:2c33 (eth0) | CONTAINER | 0         |
-</code></pre><p>导出当前镜像：</p><pre><code>[root@lxdpaas ~]# mkdir export
-[root@lxdpaas ~]# cd export/
-[root@lxdpaas export]# lxc stop k2
-[root@lxdpaas export]# lxc publish k2 --alias centos75withvim
-Instance published with fingerprint: 7301c7d85d4d56ebcae117aa79cf88868c4821dedb22e641fe66d05cab6599f2
-[root@lxdpaas export]# lxc image list
-+-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
-|      ALIAS      | FINGERPRINT  | PUBLIC |           DESCRIPTION            | ARCHITECTURE |   TYPE    |   SIZE   |         UPLOAD DATE          |
-+-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
-| c75dhclient     | 3a063c11b987 | no     |                                  | x86_64       | CONTAINER | 381.84MB | Apr 29, 2021 at 8:06am (UTC) |
-+-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
-| centos7         | 50030de846c0 | no     | Centos 7 x86_64 (20210428_07:08) | x86_64       | CONTAINER | 83.46MB  | Apr 29, 2021 at 4:53am (UTC) |
-+-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
-| centos75withvim | 7301c7d85d4d | no     |                                  | x86_64       | CONTAINER | 420.72MB | Apr 29, 2021 at 8:23am (UTC) |
-+-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
-[root@lxdpaas export]# lxc image export centos75withvim .
-Image exported successfully!           
-[root@lxdpaas export]# ls
-7301c7d85d4d56ebcae117aa79cf88868c4821dedb22e641fe66d05cab6599f2.tar.gz
-</code></pre><p>测试:</p><pre><code># lxc launch centos75withvim test1
-Creating test1
-Starting test1                             
-[root@lxdpaas export]# lxc exec test1 /bin/bash
-[root@base ~]# dhclient eth0
-[root@base ~]# which vim
-/usr/bin/vim
-[root@base ~]# which ifconfig
-/usr/sbin/ifconfig
-
-</code></pre><p>有关数据库的更改:</p><pre><code> yum install -y mariadb-server
- systemctl enable mariadb
-</code></pre><h3 id=5-资源隔离>5. 资源隔离</h3><p>制作benchmark容器:</p><pre><code>$ lxc launch centos7 bench -c security.privileged=true
-
-	# yum install -y epel-release; yum install -y stress
-	# yum install which
-	# which stress
-        # shutdown -h now
-$ lxc publish bench --alias bench
-$ lxc launch bench k1
-$ lxc exec k1 /bin/bash
-    stress --cpu 5
-</code></pre><p>此时可以看到，宿主机上的5个cpu跑满：</p><p><img src=/images/2021_04_29_17_55_21_884x154.jpg alt=/images/2021_04_29_17_55_21_884x154.jpg></p><p>设置CPU限制:</p><pre><code># lxc config set  bench limits.cpu 2
-</code></pre><p>即便容器中的进程未变，但是主机上可以看到，只有两个CPU跑满:</p><p><img src=/images/2021_04_29_17_56_10_898x161.jpg alt=/images/2021_04_29_17_56_10_898x161.jpg></p><p>对内存的使用规则是同样的。</p><h3 id=z-定制化>z. 定制化</h3><p>为了适配用户习惯，做了以下修改:</p><pre><code># yum install -y mate-desktop xrdp mate* gnome-terminal firefox wqy* evince
-# echo mate-session&gt;/root/.Xclients
-# chmod 777 /root/.Xclients
-# systemctl start xrdp
-# systemctl enable xrdp
-</code></pre><p>外部需要做iptables转发:</p><pre><code>$ sudo iptables -D FORWARD -o virbr0 -j REJECT --reject-with icmp-port-unreachable
-$ sudo iptables -D FORWARD -i virbr0 -j REJECT --reject-with icmp-port-unreachable
-$ sudo iptables -t nat -A PREROUTING -p tcp --dport 13389 -j DNAT --to-destination  192.168.100.10:3389
-$ sudo iptables -t nat -A POSTROUTING -p tcp -d 192.168.100.10 --dport 3389 -j SNAT --to-source 10.50.208.147
-</code></pre><p>外部的centos7机器上，因为升级了内核的关系，需要用如下命令开始运行:</p><pre><code>lxc launch images:centos/7 blah -c security.privileged=true
-</code></pre><p>当前制作的centos7.5容器似乎不能满足lxc的功能?</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/27/%E5%AE%8C%E5%85%A8%E7%94%A8ram%E8%BF%90%E8%A1%8Cubuntu/>完全用RAM运行Ubuntu</a></h1><span class=post-date>Apr 27, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-目的>1. 目的</h3><p>将Ubuntu18.04.1操作系统(arm64)完全运行在内存中。</p><h3 id=2-准备材料>2. 准备材料</h3><p>Ubuntu 18.04.1 arm64安装iso.<br>arm64服务器/libvirtd/virt-manager.(在没有实体服务器的情况下，可以用虚拟机来模拟测试).</p><h3 id=3-步骤>3. 步骤</h3><p>最小化安装Ubuntu 18.04.1 操作系统, 根分区最好包含所有分区(all in one)。<br>安装完毕操作系统后，定制自己需要的软件包及准备环境后，删除所有的临时文件，尽量瘦身系统。这是因为内存定制化后，所有的文件在启动时将被加载到内存！全新安装的ubuntu大约占据约1.5GB的磁盘空间。<br>以下为定制为RAM启动的流程：</p><p>步骤一：<br>更改<code>/etc/fstab</code>文件内容，首先备份该文件:</p><pre><code># cp /etc/fstab /etc/fstab.bak
-</code></pre><p>编辑<code>/etc/fstab</code>文件内容，找到标识根分区(/)的行，更改为以下内容(下为示例):</p><pre><code>#/dev/mapper/ubuntu--vg-root /               ext4    errors=remount-ro 0       1
-none / tmpfs defaults 0 0
-</code></pre><p>步骤二:<br>更改initramfs中的<code>local</code>脚本内容, initramfs 包含的工具和脚本，在正式的根文件系统的初始化脚本 init 启动之前，就被挂载并完成相应的初始化工作。我们需要提前将磁盘根分区中的内容拷贝入<code>tmpfs</code>中，以便在<code>/etc/fstab</code>开始执行的时候找寻到正确的分区.</p><p>首先备份<code>/usr/share/initramfs-tools/scripts/local</code>文件:</p><pre><code># cp /usr/share/initramfs-tools/scripts/local /usr/share/initramfs-tools/scripts/local.bak   
-</code></pre><p>编辑<code>local</code>文件，更改其<code>Mount root</code>部分的处理逻辑(约204行左右内容):</p><pre><code>	# FIXME This has no error checking
-	# Mount root
-	#mount ${roflag} ${FSTYPE:+-t ${FSTYPE} }${ROOTFLAGS} ${ROOT} ${rootmnt}
-	# Start of ramboottmp
-        mkdir /ramboottmp
-        mount ${roflag} -t ${FSTYPE} ${ROOTFLAGS} ${ROOT} /ramboottmp
-        mount -t tmpfs -o size=100% none ${rootmnt}
-        cd ${rootmnt}
-        cp -rfa /ramboottmp/* ${rootmnt}
-        umount /ramboottmp
-        ### End of ramboottmp
-</code></pre><p>保存该文件后，重新编译initramfs:</p><pre><code># mkinitramfs -o /boot/initrd.img-ramboot
-</code></pre><p>编译成功后，将<code>local</code>文件替换会原来的版本:</p><pre><code># cp -f /usr/share/initramfs-tools/scripts/local.bak /usr/share/initramfs-tools/scripts/local
-</code></pre><p>步骤三:<br>更改grub，以使用刚才编译出的<code>initrd.img-ramboot</code>来启动操作系统:</p><p>更改第一启动项中的<code>/initrd</code>行，替换为:</p><pre><code># chmod +w /boot/grub/grub.cfg
-# vim /boot/grub/grub.cfg
-.....
-.....
-        linux	/boot/vmlinuz-4.15.0-29-generic root=/dev/mapper/ubuntu--vg-root ro  
-	initrd	/boot/initrd.img-ramboot
-......
-......
-# chmod -w /boot/grub/grub.cfg
-</code></pre><p>步骤四：<br>重启，重启时选择第一启动项，此时根分区会整体被加载到<code>tmpfs</code>中。</p><h3 id=4-性能对比测试>4. 性能对比测试</h3><p>测试环境定义:</p><ul><li>aarch64 4核</li><li>64 GB 内存</li><li>100 GB 磁盘分区</li><li>Ubuntu 18.04.1 LTS</li><li>内核版本： 4.15.0-29-generic</li><li>fio版本: fio-3.1</li></ul><p>所有测试样例均在<code>ramdisk</code>主机及传统主机上运行并对比.</p><h4 id=41-fio-4k随机读写>4.1 fio 4k随机读写</h4><p>测试命令如下:</p><pre><code># fio --name TEST --eta-newline=5s --filename=fio-tempfile.dat --rw=randrw --size=500m --io_size=10g --blocksize=4k --ioengine=libaio --fsync=1 --iodepth=1 --numjobs=1 --runtime=60 --group_reporting
-</code></pre><table><thead><tr><th>指标</th><th>内存型主机</th><th>传统主机</th></tr></thead><tbody><tr><td>READ bw</td><td>bw=513MiB/s (538MB/s)</td><td>bw=85.0KiB/s (87.0kB/s)</td></tr><tr><td>READ io</td><td>io=5133MiB (5382MB)</td><td>io=5104KiB (5226kB)</td></tr><tr><td>READ iops</td><td>IOPS=131k</td><td>IOPS=21</td></tr><tr><td>WRITE bw</td><td>bw=510MiB/s (535MB/s)</td><td>bw=88.1KiB/s (90.2kB/s)</td></tr><tr><td>WRITE io</td><td>io=5107MiB (5355MB)</td><td>io=5288KiB (5415kB)</td></tr><tr><td>WRITE iops</td><td>IOPS=131k</td><td>IOPS=22</td></tr></tbody></table><p>测试显示：4K随机读写的带宽对比，内存型主机是传统主机的约6000倍，读IOPS/写IOPS，内存型主机是传统主机的约6000倍。</p><h4 id=42-fio-4k顺序读写>4.2 fio 4k顺序读写</h4><p>测试命令如下:</p><pre><code># fio --name TEST --eta-newline=5s --filename=fio-tempfile.dat --rw=rw --size=500m --io_size=10g --blocksize=4k --ioengine=libaio --fsync=1 --iodepth=1 --numjobs=1 --runtime=60 --group_reporting
-</code></pre><table><thead><tr><th>指标</th><th>内存型主机</th><th>传统主机</th></tr></thead><tbody><tr><td>READ bw</td><td>bw=640MiB/s (671MB/s)</td><td>bw=73.2KiB/s (75.0kB/s)</td></tr><tr><td>READ io</td><td>io=5133MiB (5382MB)</td><td>io=4396KiB (4502kB)</td></tr><tr><td>READ iops</td><td>IOPS=164k</td><td>IOPS=18</td></tr><tr><td>WRITE bw</td><td>bw=637MiB/s (668MB/s)</td><td>bw=76.8KiB/s (78.6kB/s)</td></tr><tr><td>WRITE io</td><td>io=5107MiB (5355MB)</td><td>io=4608KiB (4719kB)</td></tr><tr><td>WRITE iops</td><td>IOPS=163k</td><td>IOPS=19</td></tr></tbody></table><p>测试显示：4K顺序读写的带宽对比，内存型主机是传统主机的约9000倍，读IOPS/写IOPS，内存型主机是传统主机的约9000倍。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/24/workingtipsonx11lxdewine/>WorkingTipsOnx11lxdewine</a></h1><span class=post-date>Apr 24, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境准备>环境准备</h3><p>via:</p><pre><code>x11docker --desktop --home --pulseaudio x11docker/lxde-wine
-</code></pre><h3 id=环境截图>环境截图</h3><p>PlayOnLinux:</p><p><img src=/images/2021_04_24_07_22_11_520x457.jpg alt=/images/2021_04_24_07_22_11_520x457.jpg></p><p>软件列表：</p><p><img src=/images/2021_04_24_07_22_48_855x552.jpg alt=/images/2021_04_24_07_22_48_855x552.jpg></p><p>选择“微软绘图”：</p><p><img src=/images/2021_04_24_07_23_49_852x545.jpg alt=/images/2021_04_24_07_23_49_852x545.jpg></p><p>安装界面:</p><p><img src=/images/2021_04_24_07_24_19_519x400.jpg alt=/images/2021_04_24_07_24_19_519x400.jpg></p><p><img src=/images/2021_04_24_07_24_51_519x403.jpg alt=/images/2021_04_24_07_24_51_519x403.jpg></p><p><img src=/images/2021_04_24_07_25_12_497x377.jpg alt=/images/2021_04_24_07_25_12_497x377.jpg></p><p><img src=/images/2021_04_24_07_26_09_517x414.jpg alt=/images/2021_04_24_07_26_09_517x414.jpg></p><p>Age Of Empires:</p><p><img src=/images/2021_04_24_07_29_38_850x546.jpg alt=/images/2021_04_24_07_29_38_850x546.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/21/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/21/>21</a></li><li class="page-item active"><a class=page-link href=/page/22/>22</a></li><li class=page-item><a class=page-link href=/page/23/>23</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/23/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/21/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/21/>21</a></li><li class="page-item active"><a class=page-link href=/page/22/>22</a></li><li class=page-item><a class=page-link href=/page/23/>23</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/23/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

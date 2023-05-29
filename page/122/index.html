@@ -1,5 +1,289 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/08/13/build-nbd-kernel-module-on-centos7/>Build nbd Kernel Module On CentOS7</a></h1><span class=post-date>Aug 13, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=get-source-code>Get Source Code</h3><p>First check your kernel version via:</p><pre><code>$ uname -r
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/08/20/kickstarting-ubuntu-in-spacewalk/>Kickstarting Ubuntu In SpaceWalk</a></h1><span class=post-date>Aug 20, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>Preparation</h3><p>You have to use apt-mirror for getting the packages to local repository, so that you
+could directly install the system via http method. The configuration file for
+apt-mirror is listed as following:</p><pre><code>$ cat /etc/apt/mirror.list
+set base_path /mnt/myrepo
+set nthreads     20
+set _tilde 0
+#################Trusty Repository Starts ########################
+deb-amd64 http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse main/debian-installer restricted/debian-installer multiverse/debian-installer universe/debian-installer
+deb-amd64 http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse main/debian-installer restricted/debian-installer universe/debian-installer
+deb-amd64 http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse main/debian-installer restricted/debian-installer universe/debian-installer
+deb-amd64 http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb-amd64 http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+
+deb-i386 http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse main/debian-installer restricted/debian-installer multiverse/debian-installer universe/debian-installer
+deb-i386 http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse main/debian-installer restricted/debian-installer universe/debian-installer
+deb-i386 http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse main/debian-installer restricted/debian-installer universe/debian-installer
+deb-i386 http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb-i386 http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+#################Trusty Repository ends ########################
+
+#################Precise Repository starts ########################
+deb-amd64 http://mirrors.aliyun.com/ubuntu precise main main/debian-installer restricted restricted/debian-installer universe multiverse multiverse/debian-installer universe/debian-installer
+deb-amd64 http://mirrors.aliyun.com/ubuntu precise-security main restricted universe multiverse main/debian-installer restricted/debian-installer universe/debian-installer
+deb-amd64 http://mirrors.aliyun.com/ubuntu precise-updates main restricted universe multiverse main/debian-installer restricted/debian-installer universe/debian-installer
+deb-amd64 http://mirrors.aliyun.com/ubuntu precise-proposed main restricted universe multiverse
+deb-amd64 http://mirrors.aliyun.com/ubuntu precise-backports main restricted universe multiverse
+
+deb-i386 http://mirrors.aliyun.com/ubuntu precise main main/debian-installer restricted restricted/debian-installer universe multiverse multiverse/debian-installer universe/debian-installer
+deb-i386 http://mirrors.aliyun.com/ubuntu precise-security main restricted universe multiverse main/debian-installer restricted/debian-installer universe/debian-installer
+deb-i386 http://mirrors.aliyun.com/ubuntu precise-updates main restricted universe multiverse main/debian-installer restricted/debian-installer universe/debian-installer
+deb-i386 http://mirrors.aliyun.com/ubuntu precise-proposed main restricted universe multiverse
+deb-i386 http://mirrors.aliyun.com/ubuntu precise-backports main restricted universe multiverse
+
+deb-src http://mirrors.aliyun.com/ubuntu precise-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu precise-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu precise-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu precise-backports main restricted universe multiverse
+#################Precise Repository ends ########################
+</code></pre><p>Sync your local repository via <code>apt-mirror</code>, the sync procedure could takes many days,
+depends on your bandwidth.</p><h3 id=make-your-own-kickstart-file>Make Your Own KickStart File</h3><p>You have to install <code>system-config-kickstart</code> for generating the kickstart file. But
+the official program conflicts with hwdata, we manually downgrade it and install
+specified version, then sytem-config-kickstart could be installed.</p><pre><code># apt-get remove hwda
+# wget ftp://mirror.ovh.net/mirrors/ftp.debian.org/debian/pool/main/h/hwdata/hwdata_0.234-1_all.deb
+# dpkg -i hwdata_0.267-1_all.deb
+# sudo apt-get install system-config-kickstart
+</code></pre><p>Run it and its effects is like following:</p><p><img src=/images/2015_08_20_12_07_59_637x562.jpg alt=/images/2015_08_20_12_07_59_637x562.jpg></p><p>Select the installation method via:</p><p><img src=/images/2015_08_20_12_09_02_541x361.jpg alt=/images/2015_08_20_12_09_02_541x361.jpg></p><p>Save your kickstart file, and save it into some webserver&rsquo;s directory, since PXE always
+have the network connection, we could put it the reachable webserver.</p><h3 id=pxe-menu-configuration>PXE Menu Configuration</h3><p>Just give out an example of the PXE Menu on SpaceWalk:</p><pre><code># cat /var/lib/tftpboot/pxelinux.cfg/default 
+DEFAULT menu
+PROMPT 0
+MENU TITLE Cobbler | http://fedorahosted.org/cobbler
+TIMEOUT 200
+TOTALTIMEOUT 6000
+ONTIMEOUT local
+
+LABEL local
+        MENU LABEL (local)
+        MENU DEFAULT
+        LOCALBOOT 0
+
+LABEL precise-ia32:1:SpacewalkDefaultOrganization
+        kernel /images/precise-ia32:1:SpacewalkDefaultOrganization/vmlinuz
+        MENU LABEL precise-ia32:1:SpacewalkDefaultOrganization
+        append ks=http://192.168.0.79/ubuntu1204kickstart1.cfg initrd=/images/precise-ia32:1:SpacewalkDefaultOrganization/initrd.gz ksdevice=eth0 --
+        ipappend 2
+MENU end
+</code></pre><p>We use the kickstart file located in a webserver, using this we could install the
+system unattendly.</p><p>An example of the this kickstart file is listed:</p><pre><code># cat ubuntu1204kickstart1.cfg  | more
+#Generated by Kickstart Configurator
+#platform=x86
+
+#System language
+lang en_US
+#Language modules to install
+langsupport en_US
+#System keyboard
+keyboard us
+#System mouse
+mouse
+#System timezone
+timezone Asia/Shanghai
+#Root password
+rootpw --iscrypted xxxxxxxxxxxxxxxxxxxxxxxxxxx
+#Initial user
+user xxxx --fullname &quot;xxxx&quot; --iscrypted --password xxxxxxxxxxxxxxxxxxxxxx
+#Reboot after installation
+reboot
+#Use text mode install
+text
+#Install OS instead of upgrade
+install
+#Use Web installation
+url --url http://192.168.0.79/ubuntu/
+#System bootloader configuration
+bootloader --location=mbr 
+#Clear the Master Boot Record
+zerombr yes
+#Partition clearing information
+clearpart --all --initlabel 
+#Disk partitioning information
+part swap --size 1024 
+part / --fstype ext4 --size 1 --grow 
+#System authorization infomation
+auth  --useshadow  --enablemd5 
+#Network information
+network --bootproto=dhcp --device=eth0
+#Firewall configuration
+firewall --disabled 
+#Do not configure the X Window System
+skipx
+
+%packages
+ubuntu-minimal
+openssh-server
+screen
+curl
+wget
+
+%post
+
+# update fstab for the root partition
+perl -pi -e 's/(errors=remount-ro)/noatime,nodiratime,$1,barrier=0/' /etc/fstab
+
+# point sh to bash instead of dash
+rm /bin/sh
+ln -s /bin/bash /bin/sh
+
+# add normal apt source list
+(
+cat &lt;&lt;'EOP'
+deb http://192.168.0.79/ubuntu/ precise main restricted universe
+deb http://192.168.0.79/ubuntu/ precise-security main restricted universe
+deb http://192.168.0.79/ubuntu/ precise-updates main restricted universe
+EOP
+) &gt; /etc/apt/sources.list
+apt-get update
+apt-get upgrade -y
+
+# install some additional packages
+# apt-get install -y xenstore-utils
+
+# set up xenserver automation scripts
+# AUTOMATER_REPO=https://raw.github.com/krobertson/xenserver-automater
+# curl $AUTOMATER_REPO/master/usr/sbin/xe-set-hostname &gt; /usr/sbin/xe-set-hostname
+# curl $AUTOMATER_REPO/master/usr/sbin/xe-set-network &gt; /usr/sbin/xe-set-network
+# curl $AUTOMATER_REPO/master/usr/sbin/generate-sshd-keys &gt; /usr/sbin/generate-sshd-keys
+# curl $AUTOMATER_REPO/master/etc/init/xe-automator.conf &gt; /etc/init/xe-automator.conf
+# chmod a+x /usr/sbin/xe-set-hostname
+# chmod a+x /usr/sbin/xe-set-network
+# chmod a+x /usr/sbin/generate-sshd-keys
+
+# setup locales
+locale-gen en_US.UTF-8
+update-locale LANG=&quot;en_US.UTF-8&quot;
+echo 'LANG=en_US.UTF-8' &gt;&gt; /etc/environment
+echo 'LC_ALL=en_US.UTF-8' &gt;&gt; /etc/environment
+
+# install xe tools
+# cd /tmp
+# wget http://some/url/to/xe-guest-utilities_6.0.0-743_amd64.deb
+# dpkg -i xe-guest-utilities_6.0.0-743_amd64.deb
+
+# install paravirt kernel image
+apt-get install -f -y linux-virtual
+dpkg -l | grep generic | grep linux | awk '{print $2}' | xargs apt-get remove -y
+
+# clean up some stuff
+rm -f /etc/ssh/ssh_host_*
+rm -f /var/cache/apt/archives/*.deb
+rm -f /var/cache/apt/*cache.bin
+rm -f /var/lib/apt/lists/*_Packages
+</code></pre><h3 id=a-known-bug>A Known Bug</h3><p>The initrd.gz file and vmlinuz file should be picked from the installation iso. While
+the spacewalk uses a CentOS based initrd.gz file for starting the system. thus you will
+met &ldquo;cdrom&rdquo; error.</p><pre><code>$ ls -l /var/lib/tftpboot/images/precise-ia32:1:SpacewalkDefaultOrganization/
+total 31788
+-r--r--r-- 1 root root 18434355 Aug 20 11:36 initrd.gz
+-r--r--r-- 3 root root  8188836 Aug  7  2014 initrd.gz.back
+-r--r--r-- 3 root root  5919280 Jul 29  2014 vmlinuz
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/08/17/auto-configure-spacewalk-ubuntu-agent/>Auto Configure SpaceWalk Ubuntu Agent</a></h1><span class=post-date>Aug 17, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=create-the-auto-deployment-material>Create the Auto-Deployment Material</h3><p>Directory structure is listed as following:</p><pre><code>adminubuntu@bee3:~/Code$ ls -F
+deb/  deb_osad/  deb_remote/  first.sh*  second.sh*  sources.list  xmlrpclib.py
+adminubuntu@bee3:~/Code$ ls *
+autoChange.sh  autoChange.sh~  hostname  sources.list  xmlrpclib.py
+
+deb:
+apt-transport-spacewalk_1.0.6-4.1_all.deb  python-rhn_2.5.55-2_all.deb         rhnsd_5.0.4-3_i386.deb
+python-ethtool_0.11-2_i386.deb             rhn-client-tools_1.8.26-4_i386.deb
+
+deb_osad:
+osad_5.11.27-1ubuntu1~precise5_all.deb  pyjabber_0.5.0-1.4ubuntu3~precise1_all.deb
+
+deb_remote:
+rhncfg_5.10.14-1ubuntu1~precise2_all.deb
+</code></pre><p>The deb files in deb should be compiled manually:</p><pre><code>apt-get install debhelper build-essential gcc devscripts git intltool quilt automake python-all-dev libnl-route-3-dev asciidoc pkg-config libxml2-utils docbook-xml xsltproc sgml-data docbook-xsl
+apt-get -f install
+
+git clone git://anonscm.debian.org/collab-maint/spacewalk/rhnlib.git
+git clone git://anonscm.debian.org/collab-maint/spacewalk/rhn-client-tools.git rhn-client-tools
+git clone git://anonscm.debian.org/collab-maint/spacewalk/python-ethtool.git python-ethtool
+git clone git://anonscm.debian.org/collab-maint/spacewalk/rhnsd.git rhnsd
+git clone git://anonscm.debian.org/collab-maint/spacewalk/apt-spacewalk.git
+
+# now in every of these directories do:
+debuild -i -us -uc -b
+</code></pre><h3 id=automatically-registration>Automatically Registration</h3><p>The first.sh listed as following:</p><pre><code>#!/bin/sh
+### 1. TODO.
+# You must be root, so input the root priviledge check here. 
+
+### 2. Check Parameter to make sure you have inputs. 
+if [ $# != 1 ]
+then
+  echo &quot;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&quot;
+  echo &quot;!!         Parameters error       !!&quot;
+  echo &quot;!! Example: ./createvm.sh name    !!&quot;
+  echo &quot;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!&quot;
+  exit 1
+fi
+
+### 3. Change the hostname of the system
+#echo $1
+echo $1&gt;/etc/hostname
+
+### 4. Modify the hostname listed in /etc/hosts.
+# The default name is always &quot;packer-ubuntu-1204-server-i386&quot;, use sed for replacing it.
+sed -i &quot;s/packer-ubuntu-1204-server-i386/$1/g&quot; /etc/hosts
+echo &quot;10.11.11.3 spacewalk&quot;&gt;&gt;/etc/hosts
+reboot
+</code></pre><p>The second.sh listed as following:</p><pre><code>### 5. Change the Repository, and install the packages. 
+cp ./sources.list /etc/apt/
+apt-get update
+cd deb/
+dpkg -i *.deb
+apt-get -f install
+cd ../
+
+### 6. Apply the bug-fix for osad. 
+cp ./xmlrpclib.py /usr/lib/python2.7/xmlrpclib.py
+
+### 7. Registration of the system. 
+mkdir /var/lock/subsys
+apt-get install python-libxml2
+rhnreg_ks --activationkey=1-precise-ia32 --serverUrl=http://spacewalk/XMLRPC
+
+### 8. Update Repository for using SpaceWalk. 
+echo 'deb spacewalk://spacewalk/XMLRPC channels: precise-main precise-updates' &gt; /etc/apt/sources.list.d/spacewalk.list
+mv /etc/apt/sources.list /etc/apt/sources.list.back
+apt-get update &amp;&amp; apt-get update
+
+### 9. Enable &quot;push&quot; to registed client. 
+# wget https://launchpad.net/~mj-casalogic/+archive/ubuntu/spacewalk-ubuntu/+files/pyjabber_0.5.0-1.4ubuntu3~precise1_all.deb
+# wget https://launchpad.net/~mj-casalogic/+archive/ubuntu/spacewalk-ubuntu/+files/osad_5.11.27-1ubuntu1~precise5_all.deb
+cd deb_osad/
+dpkg -i *.deb
+cd /usr/share/rhn
+wget http://spacewalk/pub/RHN-ORG-TRUSTED-SSL-CERT
+service osad start
+update-rc.d osad defaults
+
+
+### 10. Enable Remote Command
+cd /home/adminubuntu/Code/deb_remote/
+dpkg -i *.deb
+# this is important and touches the file /etc/sysconfig/rhn/allowed-actions/script/run
+rhn-actions-control --enable-all
+# Now create the missing directory, the command script gets placed there temporarily
+mkdir /var/spool/rhn/
+
+
+### 99. Finally , reboot the system.
+</code></pre><p>Run the scripts then you could easily got system registed into the spacewalk server.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/08/13/preseed-partition-configuration/>Preseed Partition Configuration</a></h1><span class=post-date>Aug 13, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=regular-partition>Regular Partition</h3><p>Use regular configuration of the partion:</p><pre><code>d-i partman-auto/disk string /dev/vda
+d-i partman-auto/method string regular
+d-i partman-auto/choose_recipe \
+       select All files in one partition (recommended for new users)
+d-i partman/confirm_write_new_label boolean true
+#
+d-i partman/choose_partition \
+       select Finish partitioning and write changes to disk
+d-i partman/confirm boolean true
+d-i partman/confirm_nooverwrite boolean true
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/08/13/build-nbd-kernel-module-on-centos7/>Build nbd Kernel Module On CentOS7</a></h1><span class=post-date>Aug 13, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=get-source-code>Get Source Code</h3><p>First check your kernel version via:</p><pre><code>$ uname -r
 3.10.0-229.7.2.el7.x86_64
 </code></pre><p>Then find the corresponding kernel source rpm under vault.centos.org, download its rpm
 and install it.</p><pre><code>$ wget http://vault.centos.org/7.1.1503/updates/Source/SPackages/kernel-3.10.0-229.7.2.el7.src.rpm
@@ -99,114 +383,4 @@ virsh define $PWD/xml/$1.xml
 virsh start $1
 
 </code></pre><p>Steps for create the machine:</p><pre><code># ./createvm.sh zz_bee1
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/08/12/create-channel-slash-repository-in-spacewalk/>Create Channel/Repository In SpaceWalk</a></h1><span class=post-date>Aug 12, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=package-preparation>Package Preparation</h3><p>First you should enable the repository via:</p><pre><code># wget http://yum.spacewalkproject.org/2.3/RHEL/6/x86_64/spacewalk-repo-2.3-4.el6.noarch.rpm
-# rpm -ivh spacewalk-repo-2.3-4.el6.noarch.rpm
-# vim /etc/yum.repos.d/jpackage-repo.repo 
-[jpackage-generic]
-name=JPackage generic
-#baseurl=http://mirrors.dotsrc.org/pub/jpackage/5.0/generic/free/
-mirrorlist=http://www.jpackage.org/mirrorlist.php?dist=generic&amp;type=free&amp;release=5.0
-enabled=1
-gpgcheck=1
-gpgkey=http://www.jpackage.org/jpackage.asc
-</code></pre><p>Install the <code>spacewalk-remote-utils</code> package:</p><pre><code># yum install -y spacewalk-remote-utils
-</code></pre><h3 id=webui-create-repository>WebUI Create Repository</h3><p>Create an ia32-debian based channel, in WebUI:</p><p><img src=/images/2015_08_12_17_22_47_651x391.jpg alt=/images/2015_08_12_17_22_47_651x391.jpg></p><p>Continue to create some child channel:</p><p><img src=/images/2015_08_12_17_26_22_810x155.jpg alt=/images/2015_08_12_17_26_22_810x155.jpg></p><p>Now create the repository like following:</p><p><img src=/images/2015_08_12_17_28_41_796x426.jpg alt=/images/2015_08_12_17_28_41_796x426.jpg></p><p>Until you created all of the ia32 based repositories:</p><p><img src=/images/2015_08_12_17_30_39_609x115.jpg alt=/images/2015_08_12_17_30_39_609x115.jpg></p><p>Associate the repository with channels.</p><h3 id=sync-repositories>Sync Repositories</h3><p>Use following scripts for syncing the packages into the system:</p><pre><code># vim precise-update.sh 
-until spacewalk-debian-sync.pl --username xxxxx --password xxxx --channel 'precise-ia32-updates' --url 'http://192.168.0.79/ubuntu/dists/precise-updates/main/binary-i386/'
-do
-        echo &quot;retry again&quot;
-        sleep 30
-done
-# sh precise-update.sh
-INFO: Repo URL: http://192.168.0.79/ubuntu/dists/precise-updates/main/binary-i386/
-INFO: Ubuntu root is http://192.168.0.79/ubuntu/
-INFO: Fetching Packages.gz... done
-........
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/08/12/trouble-shooting-on-spacewalk-osad-on-ubuntu-clients/>Trouble Shooting On SpaceWalk OSAD On Ubuntu Clients</a></h1><span class=post-date>Aug 12, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=problem>Problem</h3><p>On Clients(Ubuntu nodes), you will see lots of the following message in
-<code>/var/log/osad</code>:</p><pre><code>$ tail /var/log/osad
-2015-08-11 19:31:14 jabber_lib.main: Unable to connect to jabber servers, sleeping 78 seconds
-2015-08-11 19:32:32 jabber_lib.main: Unable to connect to jabber servers, sleeping 117 seconds
-</code></pre><p>When restart the osda service you will see following error message:</p><pre><code># service osad restart
-OSAD SpaceWalk Deamon osad                                                     Traceback (most recent call last):
-  File &quot;/usr/share/rhn/osad/jabber_lib.py&quot;, line 252, in setup_connection
-    c = self._get_jabber_client(js)
-  File &quot;/usr/share/rhn/osad/jabber_lib.py&quot;, line 309, in _get_jabber_client
-    c.connect()
-  File &quot;/usr/share/rhn/osad/jabber_lib.py&quot;, line 583, in connect
-    self.disconnect()
-  File &quot;/usr/share/rhn/osad/jabber_lib.py&quot;, line 653, in disconnect
-    jabber.Client.disconnect(self)
-  File &quot;/usr/lib/python2.7/dist-packages/jabber/jabber.py&quot;, line 432, in disconnect
-    xmlstream.Client.disconnect(self)
-  File &quot;/usr/lib/python2.7/dist-packages/jabber/xmlstream.py&quot;, line 388, in disconnect
-    while self.process(): pass
-  File &quot;/usr/share/rhn/osad/jabber_lib.py&quot;, line 1059, in process
-    raise JabberError(&quot;Premature EOF&quot;)
-JabberError: Premature EOF
-</code></pre><p>Though seeing this error, your osad will start and running, but with errors.</p><h3 id=trouble-shooting>Trouble Shooting</h3><p>Make sure the port 5222 and 5269 of spacewalk server are telnet-able from client machine:</p><pre><code>adminubuntu@spacewalknode1:~$ telnet spacewalk 5222
-Trying 10.11.11.3...
-Connected to spacewalk.
-Escape character is '^]'.
-^]
-telnet&gt; quit
-Connection closed.
-adminubuntu@spacewalknode1:~$ telnet spacewalk 5269
-Trying 10.11.11.3...
-Connected to spacewalk.
-Escape character is '^]'.
-^]
-telnet&gt; 
-</code></pre><p>Make sure you register yourself on client using FQDN but not the IP Address:</p><pre><code># rhnreg_ks --activationkey=1-precise --serverUrl=http://spacewalk/XMLRPC --force
-# service osad restart
-</code></pre><p>If by this you won&rsquo;t pass the osad check, you should setup the local dns server, which
-enable name resolve of <code>spacewalk</code>, you could take following article for reference:<br><a href=http://purplepalmdash.github.io/blog/2015/08/05/enable-dhcp-slash-dns-server-for-spacewalker-server/>http://purplepalmdash.github.io/blog/2015/08/05/enable-dhcp-slash-dns-server-for-spacewalker-server/</a></p><p>For checking the dns resole, run following command on client:</p><pre><code>adminubuntu@spacewalknode1:~$ dig spacewalk
-
-; &lt;&lt;&gt;&gt; DiG 9.8.1-P1 &lt;&lt;&gt;&gt; spacewalk
-;; global options: +cmd
-;; Got answer:
-;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 16045
-;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 0
-
-;; QUESTION SECTION:
-;spacewalk.                     IN      A
-
-;; ANSWER SECTION:
-spacewalk.              604800  IN      A       10.11.11.3
-
-;; AUTHORITY SECTION:
-spacewalk.              604800  IN      NS      spacewalk.
-
-;; Query time: 2 msec
-;; SERVER: 10.11.11.3#53(10.11.11.3)
-;; WHEN: Wed Aug 12 03:34:18 2015
-;; MSG SIZE  rcvd: 57
-</code></pre><h3 id=result>Result</h3><p>After resolving this problem, your log should like this:</p><p>On Server:</p><pre><code>$ tail /var/log/message
-Aug 12 10:34:50 spacewalk jabberd/c2s[1379]: [9] [::ffff:10.11.11.100, port=45486] connect
-Aug 12 10:34:50 spacewalk named[993]: error (network unreachable) resolving 'ns4.p27.dynect.net/A/IN': 2001:500:94::100#53
-Aug 12 10:34:50 spacewalk jabberd/c2s[1379]: [9] created user: user=osad-c942811c1c; realm=
-Aug 12 10:34:50 spacewalk jabberd/c2s[1379]: [9] registration succeeded, requesting user creation: jid=osad-c942811c1c@spacewalk
-Aug 12 10:34:50 spacewalk jabberd/sm[1371]: created user: jid=osad-c942811c1c@spacewalk
-Aug 12 10:34:50 spacewalk jabberd/c2s[1379]: [9] legacy authentication succeeded: host=, username=osad-c942811c1c, resource=osad, TLS negotiated
-Aug 12 10:34:50 spacewalk jabberd/c2s[1379]: [9] requesting session: jid=osad-c942811c1c@spacewalk/osad
-Aug 12 10:34:50 spacewalk jabberd/sm[1371]: session started: jid=osad-c942811c1c@spacewalk/osad
-</code></pre><p>In SpaceWalk backend you will see:</p><p><img src=/images/2015_08_12_11_37_48_538x222.jpg alt=/images/2015_08_12_11_37_48_538x222.jpg><br>Now you could direct <code>push</code> your modification to clients in SpaceWalk backend.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/08/11/added-precise-repository-in-spacewalk/>Added Precise Repository In SpaceWalk</a></h1><span class=post-date>Aug 11, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=spacewalk-backend-configruation>SpaceWalk Backend Configruation</h3><p>First Create the Channel:<br><img src=/images/2015_08_11_16_27_35_420x157.jpg alt=/images/2015_08_11_16_27_35_420x157.jpg><br>Then Create the Repository like following:<br><img src=/images/2015_08_11_16_28_21_562x226.jpg alt=/images/2015_08_11_16_28_21_562x226.jpg><br>Associate the channel together with repository:<br><img src=/images/2015_08_11_16_29_33_659x385.jpg alt=/images/2015_08_11_16_29_33_659x385.jpg></p><h3 id=install-packages>Install packages</h3><p>Do following for the prerequisition for syncing the repository.</p><pre><code># yum update python-debian
-# vim  /usr/lib/python2.6/site-packages/debian/debfile.py 
-PART_EXTS = ['gz', 'xz', 'lzma']
-# wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-# rpm -ivh epel-release-6-8.noarch.rpm
-# cat epel-testing.repo  | more
-[epel-testing]
-name=Extra Packages for Enterprise Linux 6 - Testing - $basearch
-#baseurl=http://download.fedoraproject.org/pub/epel/testing/6/$basearch
-#mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=testing-epel6&amp;arch=$basearch
-baseurl=http://mirrors.aliyun.com/epel/testing/6/x86_64/
-failovermethod=priority
-</code></pre><h3 id=sync-with-local-repository>Sync With Local Repository</h3><p>An example of precise-backports is listed like following, take this example for
-example, create other 3 shell scripts:</p><pre><code># cat precise-backports.sh
-until spacewalk-debian-sync.pl --username xxxxx --password xxxxxx --channel 'precise-backports' --url 'http://192.168.0.79/ubuntu/dists/precise-backports/main/binary-amd64/'
-do
-        echo &quot;retry again&quot;
-        sleep 30
-done
-# ls *.sh
-precise-backports.sh  precise-security.sh  precise.sh  precise-update.sh
-</code></pre><p>Sync repository via <code>sh precise-backports.sh</code> or other scripts.</p><p>After a long while, you repository will be updated.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/121/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/121/>121</a></li><li class="page-item active"><a class=page-link href=/page/122/>122</a></li><li class=page-item><a class=page-link href=/page/123/>123</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/123/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/121/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/121/>121</a></li><li class="page-item active"><a class=page-link href=/page/122/>122</a></li><li class=page-item><a class=page-link href=/page/123/>123</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/123/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

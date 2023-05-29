@@ -1,5 +1,83 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/06/05/workingtipsongpupassthrough/>WorkingTipsOnGpuPassthrough</a></h1><span class=post-date>Jun 5, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>近来要调研一些虚拟化的东西，主要包括轻量级虚拟化、边缘池算力等，记下一些关键的点以便后续整理。</p><p>手头的两台GPU服务器，每台上面有7块GPU卡，需要将它们透传到虚拟机中以便调研相关系统的性能。</p><h3 id=环境>环境</h3><p>环境信息列举如下:</p><pre><code>CPU: model name      : Intel(R) Xeon(R) Gold 5118 CPU @ 2.30GHz
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/06/15/ipadiphonemirroringdisplay/>iPadiPhoneMirroringDisplay</a></h1><span class=post-date>Jun 15, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-硬件配置>1. 硬件/配置</h3><p>用来作为AirPlay Mirror Server的设备是一个brix投影电脑，配置为：</p><pre><code>Intel(R) Core(TM) i3-4010U CPU @ 1.70GHz
+16 GB Ram
+120 GB msata ssd
+1000 M ethernet
+</code></pre><p>安装操作系统为<code>ArchLinux</code>.</p><h3 id=2-软件安装配置步骤>2. 软件/安装配置步骤</h3><p>通过<code>yay</code>安装<code>uxplay</code>:</p><pre><code>yay uxplay
+</code></pre><p>使能服务:</p><pre><code>systemctl start avahi-daemon
+systemctl enable avahi-daemon
+</code></pre><p>此时最好重启，因uxplay安装过程中有涉及到其他模块。重启后可以通过以下命令开启<code>uxplay</code>, 此时IOS的屏幕镜像中找到<code>uxplay</code>的条目。</p><pre><code>$ sudo uxplay &amp;
+</code></pre><h3 id=3-自动serving>3. 自动Serving</h3><p>上述的场景针对个人使用一般情况下是够了，但是如果使用者是家人，则上述的步骤需要改进。</p><p>首先我们要让ArchLinux自动登录，自动登录后进入到图形界面。<br>然后我们要用uxplay随桌面启动而启动。<br>启动后我们需要禁用电源管理，以使得在长时间无键盘鼠标输入后屏幕依然可以保持常亮。<br>针对IOS普遍存在的设备上可用空间较少的缘故，我们需要开启brix盒子上的samba服务，让IOS可以使用外置存储用来播放视频。<br>IOS本身需要安装支持SAMBA的播放软件。</p><p>分而击之，一一解决这些问题。</p><h4 id=31-自动登录>3.1 自动登录</h4><p>以用户<code>dash</code>为例，说明如何实现<code>lightdm+awesome</code>的自动登录过程：</p><pre><code>$ sudo pacman -S lightdm lxde
+# pacman -S xorg lightdm-gtk-greeter xterm xorg-xinit awesome
+# systemctl enable lxdm.service
+# vim /etc/lxdm/lxdm.conf
+####autologin=dgod
+autologin=dash
+# vim /home/dash/.dmrc
+[Desktop]
+Session=awesome
+# groupadd -r autologin
+# gpasswd -a dash autologin
+# vim /etc/lightdm.conf
+[LightDM]
+在此条目中做如下修改：
+user-session = awesome
+autologin-user = dash
+autologin-session = awesome
+[Seat:*]
+在此条目中做如下修改：   
+pam-service=lightdm
+pam-autologin-service=lightdm-autologin
+greeter-session=lightdm-gtk-greeter
+user-session=awesome
+session-wrapper=/etc/lightdm/Xsession
+autologin-user=dash
+autologin-user-timeout=0
+</code></pre><h4 id=32-uxplay自启动>3.2 uxplay自启动</h4><p>将<code>sudo uxplay &</code> 添加到~/.config/awesome/rc.lua条目中即可，具体步骤参见<code>awesome</code>的一般配置文档。需要注意的是<code>dash</code>用户需要免密码使用<code>sudo</code> .</p><h4 id=33-禁用屏幕电源管理>3.3 禁用屏幕电源管理</h4><p>将<code>sudo xset -dpms &</code> 添加到~/.config/awesome/rc.lua条目中即可.</p><h4 id=34--samba服务>3.4 samba服务</h4><p>参考ArchLinux Wiki条目</p><h4 id=35-ios-samba-player>3.5 IOS samba player</h4><p>软件市场安装vlc, vlc中内建对samba Server的流媒体播放支持。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/06/07/workingtipsongpupassthrough/>WorkingTipsOnGPUPassthrough</a></h1><span class=post-date>Jun 7, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=hardware-info>Hardware Info</h3><p>gpu info:</p><pre><code>root@usbserver:~# lspci | grep -i nvidia
+01:00.0 VGA compatible controller: NVIDIA Corporation GP106M [GeForce GTX 1060 Mobile] (rev a1)
+01:00.1 Audio device: NVIDIA Corporation GP106 High Definition Audio Controller (rev a1)
+root@usbserver:~# uname -a
+Linux usbserver 5.4.0-74-generic #83-Ubuntu SMP Sat May 8 02:35:39 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+root@usbserver:~# cat /etc/issue
+Ubuntu 20.04.2 LTS \n \l
+</code></pre><p>Newly installed system, install qemu/libvirtd/virt-manager via:</p><pre><code># apt-get update -y &amp;&amp; apt-get install -y virt-manager
+</code></pre><h3 id=configuration>Configuration</h3><p>Remove current NVIDIA or opensource Nouveau driver:</p><pre><code>root@usbserver:~# apt-get remove --purge nvidia*
+</code></pre><p>Add driver blacklist:</p><pre><code># vim /etc/modprobe.d/blacklist.conf
+....
+blacklist amd76x_edac #this might not be required for x86 32 bit users.
+blacklist vga16fb
+blacklist nouveau
+blacklist rivafb
+blacklist nvidiafb
+blacklist rivatv
+blacklist lbm-nouveau
+options nouveau modeset=0
+alias nouveau off
+alias lbm-nouveau off
+</code></pre><p>Disable modset and add <code>intel_iommu</code> for default grub setting and update grub:</p><pre><code># vim /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;maybe-ubiquity nouveau.modeset=0 intel_iommu=on&quot;
+# update-grub2
+</code></pre><p>Disable nouveau kernel:</p><pre><code># echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
+# update-initramfs -u
+</code></pre><p>On the above output for <code>lspci -nn | grep -i nvidia</code>, record the GPU id <code>10de:1c20</code> and <code>10de:10f1</code>, create <code>/etc/modprobe.d/vfio.conf</code>, add corresponding GPU PCI Ids:</p><pre><code># vim /etc/modprobe.d/vfio.conf
+options vfio-pci ids=10de:10f1,10de:1c20
+</code></pre><p>Edit <code>/etc/default/grub</code> for adding <code>vfio-ids</code>:</p><pre><code># vim /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;maybe-ubiquity nouveau.modeset=0 intel_iommu=on vfio-pci.ids=10de:1c20,10de:10f1&quot;
+# update-grub2
+</code></pre><p>Add vfio modules into initrd:</p><pre><code># vim /etc/initramfs-tools/modules
+
+vfio
+vfio_iommu_type1
+vfio_pci
+vfio_virqfd
+# update-initramfs -u
+</code></pre><p>Now restart host machine, after boot check configurations for vfio:</p><pre><code># dmesg | grep -i iommu
+# dmesg | grep -i dmar
+# lspci -vv
+See if the  drive in use is vfio-pci
+</code></pre><h3 id=vm>VM</h3></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/06/07/crossrouter/>CrossRouter</a></h1><span class=post-date>Jun 7, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>In openwrt, configure following:</p><p><img src=/images/2021_06_07_07_36_24_553x374.jpg alt=/images/2021_06_07_07_36_24_553x374.jpg></p><p>Then in nuc(<code>192.168.1.222</code>) add following items:</p><pre><code># sudo route add -net 192.168.0.17 netmask 255.255.255.255 gw 192.168.1.2 enp3s0
+# sudo route add -net 192.168.0.0 netmask 255.255.255.0 gw 192.168.1.2 enp3s0
+</code></pre><p>While <code>192.168.1.2</code> is the openWRT&rsquo;s wan address, while the 192.168.0.0/24 is its lan address range.</p><p>From now we could directly get to the <code>192.168.0.1/24</code> range.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/06/05/workingtipsongpupassthrough/>WorkingTipsOnGpuPassthrough</a></h1><span class=post-date>Jun 5, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>近来要调研一些虚拟化的东西，主要包括轻量级虚拟化、边缘池算力等，记下一些关键的点以便后续整理。</p><p>手头的两台GPU服务器，每台上面有7块GPU卡，需要将它们透传到虚拟机中以便调研相关系统的性能。</p><h3 id=环境>环境</h3><p>环境信息列举如下:</p><pre><code>CPU: model name      : Intel(R) Xeon(R) Gold 5118 CPU @ 2.30GHz
 Memory: 
 free -m
               total        used        free      shared  buff/cache   available
@@ -127,248 +205,4 @@ test RUNNING 0         -      10.225.0.1, 10.33.34.1, 172.17.0.1, 172.23.8.165, 
 root@test:~# ip addr
 这里可以看到主机上所有的接口地址
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/05/28/workingtipsonk3skubevirt/>WorkingTipsOnK3sKubevirt</a></h1><span class=post-date>May 28, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-目的>1. 目的</h3><p>k3s+kubevirt，运行虚拟机工作负载. 落地平台为AllInOne节点。主要针对边缘侧算力平台落地场景。</p><h3 id=2-环境>2. 环境</h3><p>嵌套虚拟化环境用于承载k3s算力管控平台。运行操作系统为Ubuntu20.04, 40Core, 274G内存。<br>更新： 嵌套虚拟化会产生诸多问题，导致qemu无法启动，因而后面我采用在物理机上直接启动k3s的方式。</p><p>物理机环境：</p><pre><code>Intel(R) Xeon(R) Gold 5118 CPU @ 2.30GHz
-376G memory
-2T nvme ssd
-CentOS 7.6.1810
-kernel: 4.19.12-1.el7.elrepo.x86_64
-</code></pre><h3 id=3-步骤>3. 步骤</h3><p>注：以下为虚拟化环境，未安装成功（因后续有嵌套虚拟化导致qemu无法启动的问题）<br>安装步骤:</p><pre><code># apt-get update -y &amp;&amp; apt-get upgrade -y
-# export http_proxy export https_proxy
-# curl -sfL https://get.k3s.io | sh -
-# vim /etc/resolv.conf
-nameserver 223.5.5.5
-# systemctl stop systemd-resolved
-# systemctl disable systemd-resolved
-</code></pre><p>以下为正常过程:</p><p>安装k3s:</p><pre><code># yum update -y &amp;&amp; yum install -y git
-# curl -sfL https://get.k3s.io | sh -
-</code></pre><p>安装KubeVirt:</p><pre><code># export VERSION=v0.41.0
-# kubectl create -f https://github.com/kubevirt/kubevirt/releases/download/${VERSION}/kubevirt-operator.yaml
-# kubectl create -f https://github.com/kubevirt/kubevirt/releases/download/${VERSION}/kubevirt-cr.yaml
-</code></pre><p>安装<code>virtctl</code>用于控制KubeVirt虚拟机，这里使用Kubernetes的插件管理器<code>Krew</code>来安装<code>virtctl</code>:</p><pre><code># (   set -x; cd &quot;$(mktemp -d)&quot; &amp;&amp;   curl -fsSLO &quot;https://github.com/kubernetes-sigs/krew/releases/latest/download/krew.tar.gz&quot; &amp;&amp;   tar zxvf krew.tar.gz &amp;&amp;   KREW=./krew-&quot;$(uname | tr '[:upper:]' '[:lower:]')_$(uname -m | sed -e 's/x86_64/amd64/' -e 's/arm.*$/arm/')&quot; &amp;&amp;   &quot;$KREW&quot; install krew; )
-
-# export PATH=&quot;${KREW_ROOT:-$HOME/.krew}/bin:$PATH&quot;
-# kubectl krew install virt
-</code></pre><p>安装<code>Containerized-Data-Importer(CDI)</code>用于管理虚拟机的磁盘，安装步骤如下:</p><pre><code># export VERSION=$(curl -s https://github.com/kubevirt/containerized-data-importer/releases/latest | grep -o &quot;v[0-9]\.[0-9]*\.[0-9]*&quot;)
-# kubectl create -f https://github.com/kubevirt/containerized-data-importer/releases/download/$VERSION/cdi-operator.yaml
-# kubectl create -f https://github.com/kubevirt/containerized-data-importer/releases/download/$VERSION/cdi-cr.yaml
-</code></pre><p>从<code>https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019</code> 下载Windows ISO 180天试用版, 而后上传该ISO:</p><pre><code># Get the CDI upload proxy service IP:
- kubectl get svc -n cdi
-    
- # Upload 
- kubectl virt image-upload --image-path &lt;/path/to/iso&gt; \
-     --pvc-name iso-win2k19 --access-mode ReadWriteOnce \
-     --pvc-size 10G --uploadproxy-url &lt;upload-proxy service:443&gt; \
-     --insecure --wait-secs=240
-</code></pre><p>上传前需要确保<code>coredns</code>正常运行，否则会出现上传不成功的情况。</p><p>PVC被设置成<code>ReadWriteOnce</code>, 因为默认的local-path storageclass 不支持更多的模式。因为我们只使用一个节点，所以这点没所谓，但是在大型的K3s集群里，需要注意PVC的属性配置。</p><p><code>virtio-container-disk </code>容器镜像需要被实现拉回，因为在安装的时候我们需要使用其中包含的驱动程序。</p><pre><code># crictl pull kubevirt/virtio-container-disk
-</code></pre><p>现在我们创建一个yaml文件用于定义需要创建的KubeVirt虚拟机(<code>win.yaml</code>):</p><pre><code>---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: winhd
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 15Gi
-  storageClassName: manual
----
-apiVersion: kubevirt.io/v1alpha3
-kind: VirtualMachine
-metadata:
-  name: win2k19-iso
-spec:
-  running: false
-  template:
-    metadata:
-      labels:
-        kubevirt.io/domain: win2k19-iso
-    spec:
-      domain:
-        cpu:
-          cores: 4
-        devices:
-          disks:
-          - bootOrder: 1
-            cdrom:
-              bus: sata
-            name: cdromiso
-          - disk:
-              bus: sata
-            name: harddrive
-          - cdrom:
-              bus: sata
-            name: virtiocontainerdisk
-        machine:
-          type: q35
-        resources:
-          requests:
-            memory: 8G
-      volumes:
-      - name: cdromiso
-        persistentVolumeClaim:
-          claimName: iso-win2k19
-      - name: harddrive
-        persistentVolumeClaim:
-          claimName: winhd
-      - containerDisk:
-          image: kubevirt/virtio-container-disk
-        name: virtiocontainerdisk
-</code></pre><p>我们再创建一个PV用于承载该虚拟机的磁盘(<code>pv.yaml</code>):</p><pre><code>apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: task-pv-volume
-  labels:
-    type: local
-spec:
-  storageClassName: manual
-  capacity:
-    storage: 20Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: &quot;/media/sda/win&quot;
-</code></pre><p>创建虚拟机:</p><pre><code> kubectl apply -f pv.yaml
- kubectl apply -f win.yaml
- kubectl virt start win2k19-iso
- # If you're running this on a remote machine, use X-forwarding and
- # apt-get install virt-viewer
- kubectl virt vnc win2k19-iso
-</code></pre><p>值得注意的是，<code>win.yaml</code>中我们只能选择<code>sata</code>作为主磁盘的格式，<code>kubectl virt vnc</code>在我的机器上无法使用，所以我用了<code>kubectl virt --proxy-only=true win2k19-iso</code>用于获取一个动态端口，而后<code>vncviewer</code>到该动态端口上去。</p><p>完成安装后，进入<code>设备管理器</code>安装完未安装好的驱动程序。</p><p>使用NodePort暴露安装好以后的虚拟机的RDP端口:</p><pre><code>apiVersion: v1
-kind: Service
-metadata:
-  name: windows-nodeport
-spec:
-  externalTrafficPolicy: Cluster
-  ports:
-  - name: nodeport
-    nodePort: 30000
-    port: 27017
-    protocol: TCP
-    targetPort: 3389
-  selector:
-    kubevirt.io/domain: win2k19-iso
-  type: NodePort
-</code></pre><p>创建完该服务后，则可通过<code>xxx.xxx.xxx.xxx:30000</code>用于访问该虚拟机的RDP远程桌面端口了。</p><p>创建完以后的虚拟机如图所示:</p><p><img src=/images/2021_05_31_21_30_56_746x693.jpg alt=/images/2021_05_31_21_30_56_746x693.jpg></p><p>如果是virtctl，则直接访问的方式是通过proxy:</p><pre><code>kubectl proxy --address=0.0.0.0 --accept-hosts='^*$' --port 8080
-</code></pre><p>testvm:</p><pre><code>apiVersion: kubevirt.io/v1
-kind: VirtualMachine
-metadata:
-  name: testvm
-spec:
-  running: false
-  template:
-    metadata:
-      labels:
-        kubevirt.io/size: small
-        kubevirt.io/domain: testvm
-    spec:
-      domain:
-        devices:
-          disks:
-            - name: containerdisk
-              disk:
-                bus: virtio
-            - name: cloudinitdisk
-              disk:
-                bus: virtio
-          interfaces:
-          - name: default
-            bridge: {}
-        resources:
-          requests:
-            memory: 64M
-      networks:
-      - name: default
-        pod: {}
-      volumes:
-        - name: containerdisk
-          containerDisk:
-            image: quay.io/kubevirt/cirros-container-disk-demo
-        - name: cloudinitdisk
-          cloudInitNoCloud:
-            userDataBase64: SGkuXG4=
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/05/09/workingtipsonlxdccse/>WorkingTipsOnLXDccse</a></h1><span class=post-date>May 9, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目标>目标</h3><p>在LXD上运行ccse</p><h3 id=准备>准备</h3><p>服务器上安装lxd, 初始化镜像centos7, ccse安装介质。</p><h3 id=步骤>步骤</h3><p>创建一个profile， 用于创建lxd用于部署验证:</p><pre><code>lxc profile show default&gt;ccse
-vim ccse 
-lxc profile create ccse
-lxc profile edit ccse&lt;ccse
-</code></pre><p>文件的内容如下：</p><pre><code>config:
-  linux.kernel_modules: ip_tables,ip6_tables,netlink_diag,nf_nat,overlay,br_netfilter,xt_conntrack
-  raw.lxc: &quot;lxc.apparmor.profile=unconfined\nlxc.cap.drop= \nlxc.cgroup.devices.allow=a\nlxc.mount.auto=p
-roc:rw sys:rw&quot;
-  security.nesting: &quot;true&quot;
-  security.privileged: &quot;true&quot;
-description: CCSE Running profile
-devices:
-  eth0:
-    name: eth0
-    network: lxdbr0
-    type: nic
-  hashsize:
-    path: /sys/module/nf_conntrack/parameters/hashsize
-    source: /dev/null
-    type: disk
-  kmsg:
-    path: /dev/kmsg
-    source: /dev/kmsg
-    type: unix-char
-  root:
-    path: /
-    pool: ssd
-    type: disk
-name: ccse
-</code></pre><p>验证此profile是否可正常工作:</p><pre><code># lxc launch centos7 kkk --profile ccse
-Creating kkk
-Starting kkk                              
-# lxc exec kkk bash
-[root@kkk ~]# cat /etc/redhat-release 
-CentOS Linux release 7.9.2009 (Core)
-</code></pre><p>注意：</p><ol><li>版本略高于推荐的centos 7.6.</li><li>使用上述的权限文件加载，可以解决teledb组碰到的获取磁盘权限问题。</li></ol><h3 id=部署介质准备>部署介质准备</h3><p>初始化容器:</p><pre><code>cd /etc/yum.repos.d/
-mkdir back
-mv * back
-vi ccse.repo
-yum makecache
-vi /etc/yum.conf 
-yum install -y which vim net-tools lsof sudo
-</code></pre><p>因为需要将lxd当成物理机来使用，安装openssh-server后重启：</p><pre><code> yum install -y openssh-server
- systemctl enable sshd
- systemctl start sshd
- passwd
- reboot
-</code></pre><p>再次进入容器后，下载安装文件:</p><pre><code>scp docker@xxx.xxx.xxx.xx:/home/docker/shrink280/ccse-installer-2.8.0-rc-linux-amd64-offline-20210409204619-shrink.tar.xz .
-tar xJf ccse-installer-2.8.0-rc-linux-amd64-offline-20210409204619-shrink.tar.xz
-</code></pre><h3 id=部署console节点>部署console节点</h3><p>记录ip 地址<code> 10.222.125.68</code>， 配置完正确的IP地址后，按原有步骤安装console节点，安装完毕后上传镜像。</p><h3 id=制作基础节点>制作基础节点</h3><p>需打包节点所需要的依赖：</p><pre><code># lxc launch centos7 base
-# lxc exec base bash
-     yum install -y which lsof vim net-tools sudo selinux-policy libseccomp libselinux-python selinux-policy-targeted openssh-server ebtables ethtool
-     systemctl enable sshd
-     passwd
-     shutdown -h now
-#  lxc publish base --alias ccsenode
-
-</code></pre><p>hashsize:</p><pre><code>sudo su
-echo &quot;262144&quot; &gt; /sys/module/nf_conntrack/parameters/hashsize
-cat /sys/module/nf_conntrack/parameters/hashsize
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/05/08/workingtipsondnscryption/>WorkingTipsOndnscryption</a></h1><span class=post-date>May 8, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=working-environment>Working Environment</h3><p>Centos 7.9, vm , 8core, 16G.</p><h3 id=installation>Installation</h3><p>Install dnsmasq:</p><pre><code># sudo yum install -y dnsmasq
-</code></pre><p>Install dnscrypt-proxy:</p><pre><code># sudo yum install -y dnscrypt-proxy
-</code></pre><p>Wget the chinadns configuration file:</p><pre><code># wget https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-# mv accelerated-domains.china.conf /etc/dnsmasq.d/accelerated-domains.china.conf
-</code></pre><p>you can replace the <code>114.114.114.114</code> via your own dns(china intranet dns).</p><h3 id=configuration>Configuration</h3><p>Configure dnsmasq:</p><pre><code># vim /etc/dnsmasq.conf
-listen-address=127.0.0.1
-no-resolv
-conf-dir=/usr/local/etc/dnsmasq.d
-server=127.0.0.1#5300
-interface=lo
-bind-interfaces
-</code></pre><p>Configure dnscrypt-proxy:</p><pre><code># vim /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-     # 监听5300端口
-     listen_addresses = ['127.0.0.1:5300', '[::1]:5300']
-     # 使用下面3个公开的DNS服务
-     server_names = ['google', 'cloudflare', 'cloudflare-ipv6']
-     # 如果找不到合适的公开DNS服务，则使用下面的DNS服务
-     fallback_resolvers = ['9.9.9.9:53', '8.8.8.8:53']
-     # 担心这些DNS请求被墙，设置使用代理发送DNS请求
-     force_tcp = true
-     proxy = 'socks5://127.0.0.1:1086'
-</code></pre><p>Configure <code>/etc/resolv.conf</code> for using <code>127.0.0.1</code>:</p><pre><code>nameserver 127.0.0.1
-</code></pre><h3 id=privoxy>privoxy</h3><p>In centos 7.9. don&rsquo;t install this package from epel, download the source code from internet and compile it:</p><pre><code>$ privoxy  --version
-Privoxy version 3.0.28 (https://www.privoxy.org/)
-</code></pre><p>make sure you have specify the gfwlist.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/20/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/20/>20</a></li><li class="page-item active"><a class=page-link href=/page/21/>21</a></li><li class=page-item><a class=page-link href=/page/22/>22</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/22/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/20/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/20/>20</a></li><li class="page-item active"><a class=page-link href=/page/21/>21</a></li><li class=page-item><a class=page-link href=/page/22/>22</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/22/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

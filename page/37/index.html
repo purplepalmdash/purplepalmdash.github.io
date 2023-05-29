@@ -1,5 +1,227 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/13/harborarm64issue/>HarborArm64Issue</a></h1><span class=post-date>Jan 13, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=issue>Issue</h3><p>harbor-log instance launched first, but it complains:</p><pre><code>You are required to change your password immediately (password expired)
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/02/10/upgradekernelforrhel74/>UpgradeKernelForRHEL74</a></h1><span class=post-date>Feb 10, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=online-steps>Online Steps</h3><p>rhel74, default kernel is:</p><pre><code># uname -a
+Linux node 3.10.0-693.el7.x86_64 #1 SMP Thu Jul 6 19:56:57 EDT 2017 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre><p>Configure repo and install newer kernel:</p><pre><code># rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+# wget https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm
+# rpm -ivh elrepo-release-7.0-4.el7.elrepo.noarch.rpm
+# yum update -y
+# yum --disablerepo=&quot;*&quot; --enablerepo=&quot;elrepo-kernel&quot; list available
+Loaded plugins: product-id, search-disabled-repos, subscription-manager
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+elrepo-kernel                                                                                                                          | 2.9 kB  00:00:00     
+elrepo-kernel/primary_db                                                                                                               | 1.9 MB  00:00:58     
+Available Packages
+kernel-lt.x86_64                                                               4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-devel.x86_64                                                         4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-doc.noarch                                                           4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-headers.x86_64                                                       4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-tools.x86_64                                                         4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-tools-libs.x86_64                                                    4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-tools-libs-devel.x86_64                                              4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-ml-devel.x86_64                                                         5.5.2-1.el7.elrepo                                                elrepo-kernel
+kernel-ml-doc.noarch                                                           5.5.2-1.el7.elrepo                                                elrepo-kernel
+kernel-ml-headers.x86_64                                                       5.5.2-1.el7.elrepo                                                elrepo-kernel
+kernel-ml-tools.x86_64                                                         5.5.2-1.el7.elrepo                                                elrepo-kernel
+kernel-ml-tools-libs.x86_64                                                    5.5.2-1.el7.elrepo                                                elrepo-kernel
+kernel-ml-tools-libs-devel.x86_64                                              5.5.2-1.el7.elrepo                                                elrepo-kernel
+perf.x86_64                                                                    5.5.2-1.el7.elrepo                                                elrepo-kernel
+python-perf.x86_64                                                             5.5.2-1.el7.elrepo                                                elrepo-kernel
+# yum --enablerepo=elrepo-kernel install kernel-ml
+# sudo sed -i 's/^GRUB_DEFAULT.*/GRUB_DEFAULT=0/' /etc/default/grub
+# sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+# sudo reboot
+</code></pre><p>Check the kernel version is <code>5.5.2-1</code>:</p><pre><code># uname -a
+Linux node 5.5.2-1.el7.elrepo.x86_64 #1 SMP Tue Feb 4 16:29:48 EST 2020 x86_64 x86_64 x86_64 GNU/Linux
+# cat /etc/redhat-release 
+Red Hat Enterprise Linux Server release 7.4 (Maipo)
+</code></pre><h3 id=offline-steps>Offline Steps</h3><p>Scp the rpm into the server and install it via:</p><pre><code># scp ./kernel-ml-5.5.2-1.el7.elrepo.x86_64.rpm vagrant@xxx.xxx.xxx.xxx:/home/vagrant
+# ssh into xxx.xxx.xxx.xxx
+...................
+$ sudo sed -i 's/^GRUB_DEFAULT.*/GRUB_DEFAULT=0/' /etc/default/grub
+$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.5.2-1.el7.elrepo.x86_64
+Found initrd image: /boot/initramfs-5.5.2-1.el7.elrepo.x86_64.img
+Found linux image: /boot/vmlinuz-3.10.0-693.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-693.el7.x86_64.img
+Found linux image: /boot/vmlinuz-0-rescue-61b21bac36de423f82052de06e3a892b
+Found initrd image:
+/boot/initramfs-0-rescue-61b21bac36de423f82052de06e3a892b.img
+done
+$ sudo reboot
+</code></pre><p>Check:</p><pre><code>$ uname -a
+Linux node 5.5.2-1.el7.elrepo.x86_64 #1 SMP Tue Feb 4 16:29:48 EST 2020 x86_64 x86_64 x86_64 GNU/Linux
+$ cat /etc/redhat-release 
+Red Hat Enterprise Linux Server release 7.4 (Maipo)
+</code></pre><h3 id=related-packages>Related packages</h3><p>Manually download them from
+<code>http://elrepo.reloumirrors.net/kernel/el7/x86_64/RPMS/</code>, related rpms is
+listed as:</p><pre><code># pwd
+/media/sda/rhel74NewKernel
+# ls
+kernel-ml-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-tools-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-devel-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-tools-libs-devel-5.5.2-1.el7.elrepo.x86_64.rpm
+</code></pre><h3 id=中文更新步骤>中文更新步骤</h3><p>主线内核可从
+<code>http://elrepo.reloumirrors.net/kernel/el7/x86_64/RPMS/</code>下载，文件列表如下：</p><pre><code># pwd
+/media/sda/rhel74NewKernel
+# ls
+kernel-ml-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-headers-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-tools-libs-devel-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-devel-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-tools-5.5.2-1.el7.elrepo.x86_64.rpm
+</code></pre><p>注： 如果只需要升级内核，则只需要 <code>kernel-ml-5.5.2-1.el7.elrepo.x86_64.rpm</code>
+一个包就足够，如果编译时需要内核头文件依赖，则有可能需要其他几个包。可以根据需要自行安装。</p><p>离线更新，上传包到rhel74服务器上，:</p><pre><code># scp ./*.rpm vagrant@xxx.xxx.xxx.xxx:/home/vagrant
+# ssh into xxx.xxx.xxx.xxx
+...................
+$ sudo yum install -y ./kernel-ml-5.5.2-1.el7.elrepo.x86_64.rpm
+$ sudo sed -i 's/^GRUB_DEFAULT.*/GRUB_DEFAULT=0/' /etc/default/grub
+$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+$ sudo reboot
+</code></pre><p>检查更新后结果:</p><pre><code>$ uname -a
+Linux node 5.5.2-1.el7.elrepo.x86_64 #1 SMP Tue Feb 4 16:29:48 EST 2020 x86_64 x86_64 x86_64 GNU/Linux
+$ cat /etc/redhat-release 
+Red Hat Enterprise Linux Server release 7.4 (Maipo)
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/21/promoxzfstips/>Promoxzfstips</a></h1><span class=post-date>Jan 21, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>之前:</p><p><img src=/images/2020_01_21_16_18_33_1171x255.jpg alt=/images/2020_01_21_16_18_33_1171x255.jpg></p><p>ssh登录:</p><p><code>./MegaCli64 -LDInfo -LALL -aAll</code>查看VD信息， 其中VD0（600G）不需要动.</p><p><img src=/images/2020_01_21_16_20_59_871x328.jpg alt=/images/2020_01_21_16_20_59_871x328.jpg></p><p><code>./MegaCli64 -PDList -aAll | grep -i adapter</code>得到adapter数值:</p><p><img src=/images/2020_01_21_16_22_31_783x47.jpg alt=/images/2020_01_21_16_22_31_783x47.jpg></p><p>删除VD1-VD3:</p><pre><code># ./MegaCli64 -cfglddel -L1 -a0
+# ./MegaCli64 -cfglddel -L2 -a0
+# ./MegaCli64 -cfglddel -L3 -a0
+</code></pre><p>当前VD：</p><p><img src=/images/2020_01_21_16_23_26_850x391.jpg alt=/images/2020_01_21_16_23_26_850x391.jpg></p><p>查看PD对应磁盘:</p><pre><code># ./MegaCli64 -PDList -aAll | more
+两个600G的是0和1, 其他的随便动
+</code></pre><p>查看多少块盘:</p><pre><code># ./MegaCli64 -PDList -aAll |  grep 'Slot Number'
+</code></pre><p><img src=/images/2020_01_21_16_25_57_813x589.jpg alt=/images/2020_01_21_16_25_57_813x589.jpg></p><p>这里注意,<code>2,3</code> 是没有，从<code>4~27</code>为slot number.</p><p>得到Enclosure ID:</p><pre><code># ./MegaCli64 -PDList -aAll | grep 'Enclosure'
+为9
+</code></pre><p>开始做24个raid0:</p><pre><code># ./MegaCli64 -CfgLdAdd -r0 [9:4] -a0
+# ./MegaCli64 -CfgLdAdd -r0 [9:5] -a0
+......
+# ./MegaCli64 -CfgLdAdd -r0 [9:26] -a0
+# ./MegaCli64 -CfgLdAdd -r0 [9:27] -a0
+</code></pre><p>脚本:</p><p><img src=/images/2020_01_21_16_30_40_450x557.jpg alt=/images/2020_01_21_16_30_40_450x557.jpg></p><p><code>lsblk</code>查看磁盘信息:</p><p><img src=/images/2020_01_21_16_31_31_562x891.jpg alt=/images/2020_01_21_16_31_31_562x891.jpg></p><p>删除多余分区, sdb/sdn/sdr:</p><p><img src=/images/2020_01_21_16_32_53_643x819.jpg alt=/images/2020_01_21_16_32_53_643x819.jpg></p><h3 id=add-zfs-pool>add zfs pool</h3><p>命令行下添加:</p><pre><code># zpool create -f -o ashift=12 vmpool raidz2 /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg /dev/sdh /dev/sdi
+# zpool add -f -o ashift=12 vmpool raidz2 /dev/sdj /dev/sdk /dev/sdl /dev/sdm /dev/sdn /dev/sdo /dev/sdp /dev/sdq
+# zpool add -f -o ashift=12 vmpool raidz2 /dev/sdr /dev/sds /dev/sdt /dev/sdu /dev/sdv /dev/sdw /dev/sdx /dev/sdy
+# zpool list
+NAME     SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+vmpool   130T  1.97M   130T         -     0%     0%  1.00x  ONLINE  -
+# zfs list
+NAME     USED  AVAIL  REFER  MOUNTPOINT
+vmpool   819K  89.9T   205K  /vmpool
+</code></pre><p>Add in proxmox:</p><p><img src=/images/2020_01_21_16_34_13_609x424.jpg alt=/images/2020_01_21_16_34_13_609x424.jpg></p><p>设置参数:</p><p><img src=/images/2020_01_21_16_34_50_619x228.jpg alt=/images/2020_01_21_16_34_50_619x228.jpg></p><p>可用：</p><p><img src=/images/2020_01_21_16_35_18_891x159.jpg alt=/images/2020_01_21_16_35_18_891x159.jpg></p><p>使用方法:</p><p><img src=/images/2020_01_21_16_37_23_712x533.jpg alt=/images/2020_01_21_16_37_23_712x533.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/16/tipsonnextcloud/>tipsOnnextcloud</a></h1><span class=post-date>Jan 16, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Dockerfile:</p><pre><code>version: '3' 
+
+services:
+
+  proxy:
+    image: jwilder/nginx-proxy:alpine
+    labels:
+      - &quot;com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true&quot;
+    container_name: nextcloud-proxy
+    networks:
+      - nextcloud_network
+    ports:
+      - 0.0.0.0:80:80
+      - 0.0.0.0:443:443
+    volumes:
+      - ./proxy/conf.d:/etc/nginx/conf.d:rw
+      - ./proxy/vhost.d:/etc/nginx/vhost.d:rw
+      - ./proxy/html:/usr/share/nginx/html:rw
+      - ./proxy/certs:/etc/nginx/certs:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: unless-stopped
+  
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: nextcloud-letsencrypt
+    depends_on:
+      - proxy
+    networks:
+      - nextcloud_network
+    volumes:
+      - ./proxy/certs:/etc/nginx/certs:rw
+      - ./proxy/vhost.d:/etc/nginx/vhost.d:rw
+      - ./proxy/html:/usr/share/nginx/html:rw
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: unless-stopped
+  db:
+    image: mariadb
+    container_name: nextcloud-mariadb
+    networks:
+      - nextcloud_network
+    volumes:
+      - db:/var/lib/mysql
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+    # Create a root password for the maraiadb instance.
+      - MYSQL_ROOT_PASSWORD=engine123
+    # Create a password for the nextcloud users.  If you have to manually connect your database you would use the nextcloud user and this password.
+      - MYSQL_PASSWORD=engine123
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    restart: unless-stopped
+  
+  app:
+    image: nextcloud:latest
+    container_name: nextcloud-app
+    networks:
+      - nextcloud_network
+    depends_on:
+      - letsencrypt
+      - proxy
+      - db
+    volumes:
+      - nextcloud:/var/www/html
+      - ./app/config:/var/www/html/config
+      - ./app/custom_apps:/var/www/html/custom_apps
+      - ./app/data:/var/www/html/data
+      - ./app/themes:/var/www/html/themes
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+    # The VIRTUAL_HOST and LETSENCRYPT_HOST should use the same publically reachable domain for your nextlcloud instance.
+      - VIRTUAL_HOST=mynextcloud.mooo.com
+      - LETSENCRYPT_HOST=mynextcloud.mooo.com
+    # This needs to be a real email as it will be used by let's encrypt for your cert and is used to warn you about renewals.
+      - LETSENCRYPT_EMAIL=feipyang@gmail.com
+    restart: unless-stopped
+  collab:
+    image: collabora/code
+    container_name: nextcloud-collab
+    networks:
+      - nextcloud_network
+    depends_on:
+      - proxy
+      - letsencrypt
+    cap_add:
+     - MKNOD
+    ports:
+      - 0.0.0.0:9980:9980
+    environment:
+    # This nees to be the same as what you set your app domain too (ex: cloud.domain.tld).
+    #- domain=cloud\\.DOMAIN\\.TDL
+      - domain=mynextcloud\.mooo\.com
+      - username=admin
+    # Create a passoword for the collabora office admin page.
+    #- password=CREATE-A-SECURE-PASSWORD-HERE
+      - password=engine123
+      - VIRTUAL_PORT=9980
+      - extra_params=--o:ssl.enable=false --o:ssl.termination=true
+#      - VIRTUAL_PROTO=https
+#      - VIRTUAL_PORT=443
+    # The VIRTUAL_HOST and LETSENCRYPT_HOST should use the same publically reachable domain for your collabora instance (ex: office.domain.tld).
+      - VIRTUAL_HOST=myoffice.mooo.com
+      - LETSENCRYPT_HOST=myoffice.mooo.com
+    # This needs to be a real email as it will be used by let's encrypt for your cert and is used to warn you about renewals.
+      - LETSENCRYPT_EMAIL=feipyang@gmail.com
+    restart: unless-stopped 
+volumes:
+  nextcloud:
+  db: 
+  
+networks:
+  nextcloud_network:
+
+</code></pre><p>For installing apps:</p><pre><code>sudo docker cp Client.php fc18391f0a0a:/var/www/html/lib/private/Http/Client/Client.php
+Timeout from 30 to 300, then you could install apps. 
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/13/harborarm64issue/>HarborArm64Issue</a></h1><span class=post-date>Jan 13, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=issue>Issue</h3><p>harbor-log instance launched first, but it complains:</p><pre><code>You are required to change your password immediately (password expired)
 </code></pre><p>This is because we build the container images only have 90 days limitation.</p><h3 id=solution>Solution</h3><p>Rebuild all of the harbor images:</p><pre><code>root@node:~/harbor# cat harbor-core/Dockerfile 
 FROM f9e2034f3a6d
 COPY login.defs /etc/login.defs
@@ -39,129 +261,4 @@ syslog:!:18074::::::
 </code></pre><p>如果没有有效token的话，可以手动创建一个:</p><pre><code># kubectl token create
 </code></pre><p>token应该看起来像<code>6dihyb.d09sbgae8ph2atjw</code>.</p><p>ssh到每一个工作节点上，重新连接到master节点上:</p><pre><code># kubeadm join --token=&lt;上一布获取的token&gt;  &lt;master节点IP&gt;:&lt;默认为6443端口&gt; --node-name &lt;master节点node名称&gt;
 </code></pre><p>重新连接后，可以在master节点上验证是否连接成功：</p><pre><code># kubectl get nodes
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/06/kubeadmssladjust/>KubeadmSSLAdjust</a></h1><span class=post-date>Jan 6, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=检查>检查</h3><p>一年过期的集群（即将过期):</p><pre><code>root@node:/home/test# cd /etc/kubernetes/ssl
-root@node:/etc/kubernetes/ssl# for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
-notAfter=Jun 13 02:57:27 2020 GMT
-notAfter=Jun 13 02:57:28 2020 GMT
-notAfter=Jun 11 02:57:27 2029 GMT
-notAfter=Jun 11 02:57:28 2029 GMT
-notAfter=Jun 13 02:57:29 2020 GMT
-</code></pre><p>获得该集群信息:</p><pre><code># kubectl get nodes -o wide
-NAME           STATUS   ROLES    AGE    VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
-k8s-master-1   Ready    master   206d   v1.12.4   192.192.185.63   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
-k8s-master-2   Ready    node     89d    v1.12.4   192.192.185.64   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
-k8s-node-1     Ready    node     111d   v1.12.4   192.192.185.65   &lt;none&gt;        Ubuntu 16.04.6 LTS   4.15.0-45-generic   docker://18.6.1
-k8s-node-2     Ready    node     206d   v1.12.4   192.192.185.66   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
-k8s-node-3     Ready    node     201d   v1.12.4   192.192.189.61   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
-</code></pre><p>renew apiserver certs:</p><pre><code># kubeadm alpha phase certs renew apiserver --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml
-#  for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
-notAfter=Jun 13 02:57:27 2020 GMT
-notAfter=Jan  5 09:30:17 2021 GMT
-notAfter=Jun 11 02:57:27 2029 GMT
-notAfter=Jun 11 02:57:28 2029 GMT
-notAfter=Jun 13 02:57:29 2020 GMT
-
-</code></pre><pre><code># cd /etc/kubernetes/
-
-# ln -s ssl pki
-
-# kubeadm alpha phase certs renew apiserver --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml --cert-dir=/etc/kubernetes/ssl
-
-# kubeadm alpha phase certs renew apiserver-kubelet-client  --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml --cert-dir=/etc/kubernetes/ssl
-
-# kubeadm alpha phase certs renew front-proxy-client --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml --cert-dir=/etc/kubernetes/ssl
-</code></pre><pre><code>root@node:/etc/kubernetes/ssl# !2036
-for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
-notAfter=Jan  5 09:36:10 2021 GMT
-notAfter=Jan  5 09:30:46 2021 GMT
-notAfter=Jun 11 02:57:27 2029 GMT
-notAfter=Jun 11 02:57:28 2029 GMT
-notAfter=Jan  5 09:37:14 2021 GMT
-
-</code></pre><pre><code>kubeadm alpha phase kubeconfig all --apiserver-advertise-address=192.192.185.63
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/06/workingtipsonkubeadmissue/>WorkingTipsOnKubeadmIssue</a></h1><span class=post-date>Jan 6, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境>环境</h3><p>IP地址: 10.0.2.15<br>主机名: node1<br>集群部署于2020年1月6日，kubeadm ssl签名有效期为1年。<br>手动调整虚拟机时间为2021年3月3日后，ssl签名失效， kubelet无法启动。</p><h3 id=问题>问题</h3><p>kubeadm ssl签名过期后kubelet进程无法启动：</p><pre><code>root@node1:/etc/kubernetes/ssl# systemctl status kubelet
-● kubelet.service - Kubernetes Kubelet Server
-   Loaded: loaded (/etc/systemd/system/kubelet.service; enabled; vendor preset: enabled)
-   Active: activating (auto-restart) (Result: exit-code) since Tue 2021-03-02 16:04:46 UTC; 5s ago
-     Docs: https://github.com/GoogleCloudPlatform/kubernetes
-  Process: 2001 ExecStart=/usr/local/bin/kubelet $KUBE_LOGTOSTDERR $KUBE_LOG_LEVEL $KUBELET_API_SERVER $KUBELET_ADDRESS $KUBELET_PORT $KUBELET_HOSTNAME $KUBE_
-  Process: 1995 ExecStartPre=/bin/mkdir -p /var/lib/kubelet/volume-plugins (code=exited, status=0/SUCCESS)
- Main PID: 2001 (code=exited, status=255)
-
-Mar 02 16:04:46 node1 kubelet[2001]: I0302 16:04:46.446479    2001 feature_gate.go:206] feature gates: &amp;{map[]}
-Mar 02 16:04:46 node1 kubelet[2001]: I0302 16:04:46.466612    2001 mount_linux.go:179] Detected OS with systemd
-Mar 02 16:04:46 node1 kubelet[2001]: I0302 16:04:46.466684    2001 server.go:408] Version: v1.12.3
-Mar 02 16:04:46 node1 kubelet[2001]: I0302 16:04:46.466827    2001 feature_gate.go:206] feature gates: &amp;{map[]}
-Mar 02 16:04:46 node1 kubelet[2001]: I0302 16:04:46.466945    2001 feature_gate.go:206] feature gates: &amp;{map[]}
-Mar 02 16:04:46 node1 kubelet[2001]: I0302 16:04:46.467156    2001 plugins.go:99] No cloud provider specified.
-Mar 02 16:04:46 node1 kubelet[2001]: I0302 16:04:46.467192    2001 server.go:524] No cloud provider specified: &quot;&quot; from the config file: &quot;&quot;
-Mar 02 16:04:46 node1 kubelet[2001]: E0302 16:04:46.474463    2001 bootstrap.go:205] Part of the existing bootstrap client certificate is expired: 2021-01-05 
-Mar 02 16:04:46 node1 kubelet[2001]: I0302 16:04:46.474487    2001 bootstrap.go:61] Using bootstrap kubeconfig to generate TLS client cert, key and kubeconfig
-Mar 02 16:04:46 node1 kubelet[2001]: F0302 16:04:46.474525    2001 server.go:262] failed to run Kubelet: unable to load bootstrap kubeconfig: stat /etc/kubern
-</code></pre><h3 id=解决步骤>解决步骤</h3><p>创建<code>pki</code>目录软链接:</p><pre><code># cd /etc/kubernetes
-# ln -s ssl pki
-</code></pre><p>备份原有签名(已过期):</p><pre><code>#  sudo mv /etc/kubernetes/pki/apiserver.key /etc/kubernetes/pki/apiserver.key.old
-#  sudo mv /etc/kubernetes/pki/apiserver.crt /etc/kubernetes/pki/apiserver.crt.old
-#  sudo mv /etc/kubernetes/pki/apiserver-kubelet-client.crt /etc/kubernetes/pki/apiserver-kubelet-client.crt.old
-#  sudo mv /etc/kubernetes/pki/apiserver-kubelet-client.key /etc/kubernetes/pki/apiserver-kubelet-client.key.old
-#  sudo mv /etc/kubernetes/pki/front-proxy-client.crt /etc/kubernetes/pki/front-proxy-client.crt.old
-#  sudo mv /etc/kubernetes/pki/front-proxy-client.key /etc/kubernetes/pki/front-proxy-client.key.old
-</code></pre><p>创建新的apiserver, apiserver-kubelet-client, front-proxy-client 签名及key值(<code>10.0.2.15</code>为K8S主机IP地址):</p><pre><code># sudo kubeadm alpha phase certs apiserver --apiserver-advertise-address 10.0.2.15
-# sudo kubeadm alpha phase certs apiserver-kubelet-client
-# sudo kubeadm alpha phase certs front-proxy-client
-</code></pre><p>备份原有配置文件（已过期）：</p><pre><code># sudo mv /etc/kubernetes/admin.conf /etc/kubernetes/admin.conf.old
-# sudo mv /etc/kubernetes/kubelet.conf /etc/kubernetes/kubelet.conf.old
-# sudo mv /etc/kubernetes/controller-manager.conf /etc/kubernetes/controller-manager.conf.old
-# sudo mv /etc/kubernetes/scheduler.conf /etc/kubernetes/scheduler.conf.old
-</code></pre><p>创建新配置文件(注意IP地址和主机名）:</p><pre><code># kubeadm alpha phase kubeconfig all --apiserver-advertise-address 10.0.2.15 --node-name node1
-</code></pre><p>更新配置文件，确保kubectl能使用更新后的配置文件:</p><pre><code># su root
-#  mv ~/.kube/config  ~/.kube/config.old
-#  cp -i /etc/kubernetes/admin.conf ~/.kube/config
-#  chmod 777 ~/.kube/config
-#  chown root:root /root/.kube/config
-</code></pre><p>现在重启整个机器，从而使得新的配置生效。</p><h3 id=验证>验证</h3><p>检查ssl是否被更新(模拟环境中，本地时间为2021年3月2日，而签名档已更新为2022年3月2日前有效):</p><pre><code>root@node1:/etc/kubernetes/ssl# for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
-notAfter=Mar  2 16:11:50 2022 GMT
-notAfter=Mar  2 16:12:11 2022 GMT
-notAfter=Jan  3 14:12:03 2030 GMT
-notAfter=Jan  3 14:12:04 2030 GMT
-notAfter=Mar  2 16:12:20 2022 GMT
-root@node1:/etc/kubernetes/ssl# 
-root@node1:/etc/kubernetes/ssl# date
-Tue Mar  2 16:23:08 UTC 2021
-</code></pre><p>检查<code>kubelet</code>服务及集群情况（伪造数据，已运行400多天）:</p><pre><code># systemctl status kubelet
-● kubelet.service - Kubernetes Kubelet Server
-   Loaded: loaded (/etc/systemd/system/kubelet.service; enabled; vendor preset: enabled)
-   Active: active (running) since Tue 2021-03-02 16:21:21 UTC; 42s ago
-     Docs: https://github.com/GoogleCloudPlatform/kubernetes
-  Process: 1409 ExecStartPre=/bin/mkdir -p /var/lib/kubelet/volume-plugins (code=exited, status=0/SUCCESS)
- Main PID: 1415 (kubelet)
-    Tasks: 0
-   Memory: 113.4M
-      CPU: 1.869s
-   CGroup: /system.slice/kubelet.service
-           ‣ 1415 /usr/local/bin/kubelet --logtostderr=true --v=2 --address=0.0.0.0 --node-ip=10.0.2.15 --hostname-override=node1 --allow-privileged=true --bo
-
-Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.661 [INFO][2900] ipam.go 1002: Releasing all IPs with handle 'cni0.3f1cc2ef7ca9265d9803d6338d02d08dcc
-Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.663 [INFO][2900] ipam.go 1021: Querying block so we can release IPs by handle cidr=10.233.102.128/26 
-Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.668 [INFO][2900] ipam.go 1041: Block has 1 IPs with the given handle cidr=10.233.102.128/26 handle=&quot;c
-Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.668 [INFO][2900] ipam.go 1063: Updating block to release IPs cidr=10.233.102.128/26 handle=&quot;cni0.3f1c
-Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.671 [INFO][2900] ipam.go 1076: Successfully released IPs from block cidr=10.233.102.128/26 handle=&quot;cn
-Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.719 [INFO][2900] calico-ipam.go 267: Released address using handleID ContainerID=&quot;3f1cc2ef7ca9265d980
-Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.719 [INFO][2900] calico-ipam.go 276: Releasing address using workloadID ContainerID=&quot;3f1cc2ef7ca9265d
-Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.720 [INFO][2900] ipam.go 1002: Releasing all IPs with handle 'kube-system.kubernetes-dashboard-5db4d9
-Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.807 [INFO][2763] k8s.go 358: Cleaning up netns ContainerID=&quot;3f1cc2ef7ca9265d9803d6338d02d08dcc2e0e6ac
-Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.807 [INFO][2763] k8s.go 370: Teardown processing complete. ContainerID=&quot;3f1cc2ef7ca9265d9803d6338d02d
-root@node1:/home/vagrant# kubectl get nodes
-NAME    STATUS   ROLES         AGE    VERSION
-node1   Ready    master,node   421d   v1.12.5
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/03/enableipmionnetdata/>EnableIPMIOnNetdata</a></h1><span class=post-date>Jan 3, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=prerequites>Prerequites</h3><p>Build netdata from source, generate deb/rpm.<br>Install following packages:</p><pre><code>lm-sensors libsensors4 libsensors4-dev freeipmi-tools freeipmi libfreeipmi16
-</code></pre><h3 id=configuration>Configuration</h3><p>Enable the freeipmi plugins:</p><pre><code># vim /etc/netdata/netdata.conf
-[plugins]
-#cgroups = no
-freeipmi = yes
-
-[plugin:freeipmi]
-    update every = 5
-    command options = 
-</code></pre><p>Change the permission of the plugin files so that freeipmi plugin could be run via netdata user:</p><pre><code># chmod u+s /usr/libexec/netdata/plugins.d/freeipmi.plugin
-</code></pre><p>Now restart the netdata service and you could see the ipmi modules exists on dashboard.</p><p><img src=/images/2020_01_03_10_51_11_165x227.jpg alt=/images/2020_01_03_10_51_11_165x227.jpg></p><p>Detailed charts:</p><p><img src=/images/2020_01_03_10_51_42_703x634.jpg alt=/images/2020_01_03_10_51_42_703x634.jpg></p><p>and</p><p><img src=/images/2020_01_03_10_52_00_526x713.jpg alt=/images/2020_01_03_10_52_00_526x713.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/36/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/36/>36</a></li><li class="page-item active"><a class=page-link href=/page/37/>37</a></li><li class=page-item><a class=page-link href=/page/38/>38</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/38/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/36/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/36/>36</a></li><li class="page-item active"><a class=page-link href=/page/37/>37</a></li><li class=page-item><a class=page-link href=/page/38/>38</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/38/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

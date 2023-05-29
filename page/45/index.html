@@ -1,5 +1,372 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/29/tipsonbuyvm/>TipsOnBuyVM</a></h1><span class=post-date>May 29, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=快速搭梯>快速搭梯</h3><p>步骤:</p><pre><code># hostnamectl set-hostname xxxvps
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/03/workingtipsonofflinekubeflow/>WorkingTipsOnOfflineKubeFlow</a></h1><span class=post-date>Jun 3, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=0-目的>0. 目的</h3><p>设置离线环境下的kubeflow环境，用于给AI组提供开发环境，优化并整合其开发流程。</p><h3 id=1-环境>1. 环境</h3><p>基础环境配置如下:</p><pre><code># kubectl get nodes
+NAME          STATUS   ROLES    AGE   VERSION
+localnode-1   Ready    master   19d   v1.14.1
+localnode-2   Ready    &lt;none&gt;   19d   v1.14.1
+localnode-3   Ready    &lt;none&gt;   19d   v1.14.1
+# cat /etc/issue
+Ubuntu 18.04.2 LTS \n \l
+
+</code></pre><h3 id=2-部署kubeflow>2. 部署KubeFlow</h3><h4 id=21-什么是kubeflow>2.1 什么是Kubeflow？</h4><p>Kubeflow项目致力于使用Kubernetes轻松设置机器学习，便携且可扩展。 Kubeflow的目标不是重新创建其他服务，而是提供一种直接的方式来启动最佳的OSS解决方案。 Kubernetes是一个开源平台，用于自动化容器化应用程序的部署，扩展和管理。</p><p>由于Kubeflow依赖于Kubernetes，因此它可以在Kubernetes运行的任何地方运行，例如裸机服务器或云提供商（如Google）。 有关该项目的详细信息，请访问https://github.com/kubeflow/kubeflow</p><h4 id=22-kubeflow组件>2.2 Kubeflow组件</h4><p>Kubeflow有三个核心组件。</p><p>TF Job Operator和Controller：Kubernetes扩展，用于简化分布式TensorFlow工作负载的部署。 通过使用Operator，Kubeflow能够自动配置master, worker和以及参数化服务器配置。 可以使用TFJob部署工作负载(Workloads)。</p><p>TF Hub：运行JupyterHub实例，使您可以使用Jupyter笔记本。</p><p>Model Server(模型服务器)：部署经过训练的TensorFlow模型，供客户端访问以及用于将来的预测。</p><p>这三个模型将用于在接下来的步骤中部署不同的工作负载。</p><h4 id=23-部署kubeflow>2.3 部署Kubeflow</h4><p>由于Kubeflow是Kubernetes的扩展，因此需要将所有组件部署到平台。</p><p>离线环境下，我们拷贝以下文件到内网离线环境:</p><pre><code># docker load&lt;kubeflow.tar.xz
+# docker push katacoda/tensorflow_serving:localimage
+# docker push gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0
+# docker push katacoda/tensorflow_serving:latest
+# docker push quay.io/external_storage/nfs-client-provisioner:v3.1.0-k8s1.11
+# docker push gcr.io/kubeflow-images-public/centraldashboard:v0.2.1
+# docker push gcr.io/kubeflow-images-public/tensorflow-1.8.0-notebook-cpu:v0.2.1
+# docker push gcr.io/kubeflow-images-public/tf_operator:v0.2.0
+# docker push gcr.io/kubeflow/jupyterhub-k8s:v20180531-3bb991b1
+# docker push jgaguirr/pytorch-operator:latest
+# docker push quay.io/datawire/statsd:0.30.1
+# docker push quay.io/datawire/ambassador:0.30.1
+# docker push gcr.io/tf-on-k8s-dogfood/tf_sample:dc944ff
+# docker push gcr.io/google_containers/spartakus-amd64:v1.0.0
+</code></pre><p>其他文件:</p><pre><code># pwd
+# ls
+deploy.sh  kubeflow_repo kube-manifests swagger.json nfs-client-provisioner
+</code></pre><p>Kubeflow团队提供了一个安装脚本，该脚本使用Ksonnet将Kubeflow部署到现有的Kubernetes集群。 Ksonnet需要有效的Github令牌。 运行该命令以设置所需的环境变量。<br>运行以下命令开始部署kubeflow环境:</p><pre><code>root@localnode-1:~#  export GITHUB_TOKEN=99510f2ccf40e496d1e97dbec9f31cb16770b884
+root@localnode-1:~# ./deploy.sh 
+</code></pre><p>运行以下命令检查pod的运行状态:</p><pre><code># kubectl get pods
+NAME                                        READY   STATUS    RESTARTS   AGE
+ambassador-7df7dbd89b-fgl2t                 2/2     Running   0          2m40s
+ambassador-7df7dbd89b-sl7mg                 2/2     Running   0          2m39s
+ambassador-7df7dbd89b-wwvkq                 2/2     Running   0          2m40s
+centraldashboard-5d7d79659c-tk6s4           1/1     Running   0          2m40s
+spartakus-volunteer-777b5f748c-f592n        1/1     Running   0          2m40s
+tf-hub-0                                    1/1     Running   0          2m39s
+tf-job-dashboard-554868c978-9n6tg           1/1     Running   0          2m40s
+tf-job-operator-v1alpha2-7f7cf4dc98-x5v6g   1/1     Running   0          2m40s
+</code></pre><p>创建持久化存储，并通过服务类型改变服务:</p><pre><code># mkdir -p /opt/nfs
+# chmod 777 -R /opt/nfs
+# vim /etc/exports
+/opt/nfs  *(rw,async,no_root_squash,no_subtree_check)
+# systemctl restart nfs-server
+</code></pre><p>在集群的所有节点上:</p><pre><code># apt-get install -y nfs-common
+</code></pre><p>安装nfs-client-provisioner, 此provisioner将作为kubeflow的默认共享存储:</p><pre><code># cd nfs-client-provisioner
+# helm install . --set nfs.server=10.142.18.191 --set nfs.path=/opt/nfs
+# kubectl get pods | grep nfs
+hasty-koala-nfs-client-provisioner-67bc97f6fb-75hbh   1/1     Running   0          7s
+# kubectl get sc
+NAME                   PROVISIONER                                        AGE
+nfs-client (default)   cluster.local/hasty-koala-nfs-client-provisioner   33s
+</code></pre><p>导出svc:</p><pre><code>#  kubectl create -f env.yaml 
+service/tf-hub-lb-katacoda created
+service/centraldashboard-katacoda created
+service/ambassador-katacoda created
+# kubectl get svc
+NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)           AGE
+ambassador                  ClusterIP   10.233.35.161   &lt;none&gt;        80/TCP            28m
+ambassador-admin            ClusterIP   10.233.8.245    &lt;none&gt;        8877/TCP          28m
+ambassador-katacoda         NodePort    10.233.38.151   &lt;none&gt;        30080:30396/TCP   3s
+centraldashboard            ClusterIP   10.233.29.157   &lt;none&gt;        80/TCP            28m
+centraldashboard-katacoda   NodePort    10.233.9.5      &lt;none&gt;        8082:31421/TCP    3s
+k8s-dashboard               ClusterIP   10.233.3.208    &lt;none&gt;        443/TCP           28m
+kubernetes                  ClusterIP   10.233.0.1      &lt;none&gt;        443/TCP           19d
+tf-hub-0                    ClusterIP   None            &lt;none&gt;        8000/TCP          28m
+tf-hub-lb                   ClusterIP   10.233.32.120   &lt;none&gt;        80/TCP            28m
+tf-hub-lb-katacoda          NodePort    10.233.13.173   &lt;none&gt;        80:31039/TCP      3s
+tf-job-dashboard            ClusterIP   10.233.22.155   &lt;none&gt;        80/TCP            28m
+</code></pre><p>使用浏览器访问相应端口:<br>centraldashboard-katacoda: 31421, ambassador-katacoda: 30396:</p><p><img src=/images/2019_06_03_11_23_19_365x201.jpg alt=/images/2019_06_03_11_23_19_365x201.jpg></p><p>tf-hub-lb-katacoda:</p><p><img src=/images/2019_06_03_11_24_02_640x480.jpg alt=/images/2019_06_03_11_24_02_640x480.jpg></p><h4 id=24--jypyterhub>2.4 JypyterHub</h4><p>Kubeflow的关键组件之一是能够通过JupyterHub运行Jupyter笔记本电脑。 Jupyter Notebook是经典的数据科学工具，用于在浏览器中记录流程时运行内联脚本和代码片段。<br>可以使用kubectl get svc找到Load Balancer的IP地址,
+Jypyter的登录默认使用用户名admin和空白密码:</p><p><img src=/images/2019_06_03_11_34_33_374x377.jpg alt=/images/2019_06_03_11_34_33_374x377.jpg></p><p>在弹出的Spawner Options中，我们填入下列字段。</p><p>Kubeflow在内部使用gcr.io/kubeflow-images-public/tensorflow-1.8.0-notebook-cpu:v0.2.1
+Docker Image作为默认值。访问JupyterHub后，可以单击 Start My server按钮:</p><p><img src=/images/2019_06_03_11_36_38_480x303.jpg alt=/images/2019_06_03_11_36_38_480x303.jpg></p><pre><code>root@localnode-1:~# kubectl get pods -o wide | grep jupyter-admin
+jupyter-admin                                         1/1     Running   0          39s   10.233.125.9   localnode-1   &lt;none&gt;           &lt;none&gt;
+</code></pre><p>Spawn完毕后界面如下:</p><p><img src=/images/2019_06_03_11_39_04_782x214.jpg alt=/images/2019_06_03_11_39_04_782x214.jpg></p><p>现在可以通过pod访问JupyterHub。您现在可以无缝地使用环境。例如，要创建新笔记本，请选择New下拉列表，然后选择Python 3内核，如下所示。</p><p><img src=/images/2019_06_03_11_39_56_231x244.jpg alt=/images/2019_06_03_11_39_56_231x244.jpg></p><p>现在可以创建代码片段。要开始使用TensorFlow，请将下面的代码粘贴到第一个单元格并运行它。</p><pre><code>from __future__ import print_function
+
+import tensorflow as tf
+
+hello = tf.constant('Hello TensorFlow!')
+s = tf.Session()
+print(s.run(hello))
+</code></pre><p>运行结果如下：</p><p><img src=/images/2019_06_03_11_41_53_785x321.jpg alt=/images/2019_06_03_11_41_53_785x321.jpg></p><h4 id=25-部署tensorflow-jobtfjob>2.5 部署TensorFlow Job(TFJob)</h4><p>TfJob提供了一个Kubeflow自定义资源，可以在Kubernetes上轻松运行分布式或非分布式TensorFlow作业。 TFJob控制器为master，parameter servers和worker采用YAML规范来帮助运行分布式计算。</p><p>自定义资源定义（CRD）提供了以与内置Kubernetes资源相同的方式创建和管理TF作业的功能。 部署后，CRD可以配置TensorFlow job，允许用户专注于机器学习而不是基础设施。</p><h5 id=创建tfjob部署定义>创建TFJob部署定义</h5><p>要部署上一步中描述的TensorFlow工作负载，Kubeflow需要TFJob定义。 在这种情况下，可以通过运行cat example.yaml来查看它:</p><pre><code>apiVersion: &quot;kubeflow.org/v1alpha2&quot;
+kind: &quot;TFJob&quot;
+metadata:
+  name: &quot;example-job&quot;
+spec:
+  tfReplicaSpecs:
+    Master:
+      replicas: 1
+      restartPolicy: Never
+      template:
+        spec:
+          containers:
+            - name: tensorflow
+              image: gcr.io/tf-on-k8s-dogfood/tf_sample:dc944ff
+    Worker:
+      replicas: 1
+      restartPolicy: Never
+      template:
+        spec:
+          containers:
+            - name: tensorflow
+              image: gcr.io/tf-on-k8s-dogfood/tf_sample:dc944ff
+    PS:
+      replicas: 2
+      restartPolicy: Never
+      template:
+        spec:
+          containers:
+            - name: tensorflow
+              image: gcr.io/tf-on-k8s-dogfood/tf_sample:dc944ff
+</code></pre><p>以上yaml定义了三个组件:</p><p>Master: 每个job必须有一个master. Master将协调workers之间的训练操作的执行.<br>Worker: 每个job可以有0到N个workers.
+每个worker进程运行相同的模型，为参数服务器(Parameter Server)提供处理参数。<br>PS: 每个job可以有0到N个参数服务器(Parameter Server)，
+参数服务器使得用户可以将模型扩展到多台机器上。</p><h5 id=部署tfjob>部署TFJob</h5><p>TFJob可以用以下命令来创建:</p><pre><code># kubectl apply -f example.yaml
+</code></pre><p>通过部署job，Kubernetes将调度工作负载以跨可用节点执行。 作为部署的一部分，Kubeflow将使用所需的设置配置TensorFlow，以允许不同的组件进行通信。</p><h5 id=检查job进度及处理结果>检查Job进度及处理结果</h5><p>可以通过kubectl get tfjob查看TensorFlow作业的状态。 完成TensorFlow作业后，Master将标记为成功。 继续运行kubectl get tfjob命令以查看它何时完成。</p><p>Master负责协调作业的执行，并汇总结果。可以使用<code>kubectl get pods| grep completed</code>列出已完成的工作负载。</p><pre><code># kubectl get pods | grep Completed
+example-job-master-0                                  0/1     Completed   0          7m36s
+</code></pre><p>在此示例中，结果输出到STDOUT，可使用kubectl日志查看。</p><p>以下命令将输出结果：</p><pre><code># kubectl logs $(kubectl get pods | grep Completed | tr -s ' ' | cut -d ' ' -f 1)
+INFO:root:Tensorflow version: 1.3.0-rc2
+INFO:root:Tensorflow git version: v1.3.0-rc1-27-g2784b1c
+INFO:root:tf_config: {u'cluster': {u'worker': [u'example-job-worker-0.default.svc.cluster.local:2222'], u'ps': [u'example-job-ps-0.default.svc.cluster.local:2222', u'example-job-ps-1.default.svc.cluster.local:2222'], u'master': [u'example-job-master-0.default.svc.cluster.local:2222']}, u'task': {u'index': 0, u'type': u'master'}}
+</code></pre><p>可以在master, worker以及parameter servers上看到工作负载的执行结果。</p><h4 id=26-访问model-server>2.6 访问Model Server</h4><p>一旦训练完成，该模型可用于在新数据发布时对其进行预测。
+通过使用Kubeflow，可以通过将作业部署到Kubernetes基础结构，从而使得Model
+Server变得可用.</p><h5 id=部署trained-model-server>部署Trained Model Server</h5><p>Kubeflow tf-serving提供了服务TensorFlow模型的模板。 这可以通过使用Ksonnet定制和部署，并根据您的模型定义参数。</p><p>使用环境变量，我们定义了训练模型所在的名称和路径。</p><pre><code>MODEL_COMPONENT=model-server
+MODEL_NAME=inception
+MODEL_PATH=/serving/inception-export
+</code></pre><p>使用Ksonnet，可以扩展Kubeflow服务组件以匹配模型的要求。</p><pre><code>cd ~/kubeflow_ks_app
+ks generate tf-serving ${MODEL_COMPONENT} --name=${MODEL_NAME}
+ks param set ${MODEL_COMPONENT} modelPath $MODEL_PATH
+
+ks param set ${MODEL_COMPONENT} modelServerImage katacoda/tensorflow_serving
+</code></pre><p>可以使用<code>ks param list</code>来查看定义好的参数。</p><p>这提供了一个脚本，可以部署到环境中并使我们的模型可供客户端使用。</p><p>您可以将模板部署到定义的Kubernetes集群。</p><pre><code>ks apply default -c ${MODEL_COMPONENT}
+</code></pre><p>客户端可以链接并访问到trained data(训练好的数据), 可以查看pod信息:</p><pre><code>kubectl get pods
+
+......
+
+inception-v1-d66f8848-gq8hh                           1/1     Running     0          7m2s
+
+......
+
+</code></pre><p>上面的inception就是我们训练好的模型.</p><h5 id=图像分类>图像分类</h5><p>在这个例子中，我们使用预先训练的Inception V3模型。 这是在ImageNet数据集上训练的架构。 ML任务是图像分类，而模型服务器及其客户端由Kubernetes处理。</p><p>要使用已发布的模型，您需要设置客户端。 这可以通过与其他工作相同的方式实现。 用于部署客户端的YAML文件可以通过<code>cat ~/model-client-job.yaml</code>来查看。 要部署它，请使用以下命令：</p><pre><code>kubectl apply -f ~/model-client-job.yaml
+</code></pre><p>文件内容:</p><pre><code># cat model-client-job.yaml 
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: model-client-job-katacoda
+spec:
+  template:
+    metadata:
+      name: model-client-job-katacoda
+    spec:
+      containers:
+      - name: model-client-job-katacoda
+        image: katacoda/tensorflow_serving:localimage
+        imagePullPolicy: Never
+        command:
+        - /bin/bash
+        - -c
+        args:
+        - /serving/bazel-bin/tensorflow_serving/example/inception_client
+          --server=inception:9000 --image=/data/katacoda.jpg
+      restartPolicy: Never
+</code></pre><p>如需查看<code>model-client-job</code>运行的状态，则运行:</p><pre><code>kubectl get pods
+</code></pre><p><img src=/images/2019_06_03_12_17_53_896x451.jpg alt=/images/2019_06_03_12_17_53_896x451.jpg></p><p>以下命令将输出图像分类的结果:</p><pre><code>kubectl logs $(kubectl get pods | grep Completed | tail -n1 |  tr -s ' ' | cut -d ' ' -f 1)
+</code></pre><p><img src=/images/2019_06_03_12_18_15_552x736.jpg alt=/images/2019_06_03_12_18_15_552x736.jpg></p><h3 id=3-部署pytorch>3. 部署pytorch</h3><h4 id=31-部署pytorch扩展>3.1 部署PyTorch扩展</h4><p>Kubeflow使用自定义资源定义（CRD）和运算符扩展了Kubernetes。 每个自定义资源都旨在支持机器学习工作负载的部署。 定义好资源后，Operator将处理部署请求。</p><p>可以通过运行以下命令来查看可用资源：</p><pre><code># kubectl get crd
+NAME                  CREATED AT
+tfjobs.kubeflow.org   2019-06-03T02:46:43Z
+</code></pre><p>PyTorch不会默认被部署，以下命令将创建出自定义资源及operator:</p><pre><code># cd kubeflow_ks_app/
+# ks generate pytorch-operator pytorch-operator 
+# ks apply default -c pytorch-operator
+</code></pre><p>使用<code>kubectl get crd</code>命令可以查看到自定义的PyTorch自定义资源已被创建:</p><pre><code># kubectl get crd
+NAME                       CREATED AT
+pytorchjobs.kubeflow.org   2019-06-03T04:19:22Z
+tfjobs.kubeflow.org        2019-06-03T02:46:43Z
+</code></pre><h4 id=32-部署pytorch工作负载>3.2 部署PyTorch工作负载</h4><p>使用打包好的容器镜像启动PyTorch，该镜像中已打包了分布式MNIST模型。模型的python代码可以在以下链接查看:</p><p><a href=https://github.com/kubeflow/pytorch-operator/blob/9605eb6783e3549654082ea4b18a9cb0391e8548/examples/dist-mnist/dist_mnist.py>https://github.com/kubeflow/pytorch-operator/blob/9605eb6783e3549654082ea4b18a9cb0391e8548/examples/dist-mnist/dist_mnist.py</a></p><p>要部署该训练模型，我们需要创建一个PyTorch Job， PyTorch
+Job中定义了需使用的容器镜像以及训练所需要启动的副本数,
+我们用于启动训练模型的yaml定义文件如下所示:</p><pre><code># cat pytorch_example.yaml 
+apiVersion: &quot;kubeflow.org/v1alpha1&quot;
+kind: &quot;PyTorchJob&quot;
+metadata:
+  name: &quot;distributed-mnist&quot;
+spec:
+  backend: &quot;tcp&quot;
+  masterPort: &quot;23456&quot;
+  replicaSpecs:
+    - replicas: 1
+      replicaType: MASTER
+      template:
+        spec:
+          containers:
+          - image: gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0
+            imagePullPolicy: IfNotPresent
+            name: pytorch
+          restartPolicy: OnFailure
+    - replicas: 3
+      replicaType: WORKER
+      template:
+        spec:
+          containers:
+          - image: gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0
+            imagePullPolicy: IfNotPresent
+            name: pytorch
+          restartPolicy: OnFailure
+</code></pre><p>通过以下命令来创建训练任务:</p><pre><code># kubectl create -f pytorch_example.yaml
+</code></pre><p>Kubeflow PyTorch Operator和Kubernetes将安排工作负载并启动所需数量的副本。
+您可以使用kubectl get pods -l pytorch_job_name = distributed-mnist查看状态,
+使用此命令将看到一个master和3个worker被创建。</p><h4 id=33-上传模型所用数据>3.3 上传模型所用数据</h4><p>创建一个假的Server用于存放训练集:</p><pre><code># docker run --name docker-nginx1 -p 80:80 -d -v /usr/local/static:/usr/share/nginx/html jrelva/nginx-autoindex --restart=always
+# cd /usr/local/static/
+# scp -r root@192.1x.xx.xx:/media/sdd/off/MNIST_data .
+# scp -r  root@192.xx.xx.xx8:/media/sdd/off/exdb .
+#  docker restart docker-nginx1
+</code></pre><p>Configure bind9:</p><pre><code>root@localnode-1:~# cat /etc/bind/named.conf.default-zones 
+zone &quot;lecun.com&quot; {
+        type master;
+        file &quot;/etc/bind/db.lecun.com&quot;; 
+};
+# vim /etc/bind/db.lecun.com 
+$TTL    604800
+@       IN      SOA     lecun.com. root.localhost. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      localhost.
+@       IN      A      10.142.18.191
+lecun.com IN      NS      10.142.18.191
+
+yann     IN      A       10.142.18.191
+# systemctl restart bind9
+# ping yann.lecun.com
+PING yann.lecun.com (10.142.18.191) 56(84) bytes of data.
+64 bytes from localnode-1 (10.142.18.191): icmp_seq=1 ttl=64 time=0.082 ms
+^C
+</code></pre><h4 id=34-查看进度>3.4 查看进度</h4><p>训练应该运行大约10个epochs(时期)，并且在CPU群集上需要5-10分钟。可以使用以下命令检查日志以查看训练进度:</p><pre><code>PODNAME=$(kubectl get pods -l pytorch_job_name=distributed-mnist,task_index=0 -o name)
+kubectl logs ${PODNAME}
+</code></pre><p>输出类似于以下内容：</p><pre><code>Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Processing...
+Done!
+Rank  0 , epoch  0 :  1.2745472780232237
+Rank  0 , epoch  1 :  0.5743547164872765
+</code></pre><p>您可以通过在节点上使用htop来了解训练如何利用所有的CPU内核。如果我们将其他节点添加到Kubernetes集群，则三个副本将分布在节点上并加快训练时间。</p><p>随着训练的进行，可以使用Kubectl查看状态以及训练何时完成。通过以yaml输出作业，可以查看执行的内部细节。这包括状态。</p><pre><code>kubectl get -o yaml pytorchjobs distributed-mnist
+kubectl get -o json pytorchjobs distributed-mnist  | jq .status
+kubectl get -o json pytorchjobs distributed-mnist  | jq .status.state
+</code></pre><p>训练结束后，结果如下所示：</p><pre><code>Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Processing...
+Done!
+Rank  0 , epoch  0 :  1.2745472780232237
+Rank  0 , epoch  1 :  0.5743547164872765
+Rank  0 , epoch  2 :  0.4351522875810737
+Rank  0 , epoch  3 :  0.36984553888662536
+Rank  0 , epoch  4 :  0.3216655456038045
+Rank  0 , epoch  5 :  0.2951831894356813
+Rank  0 , epoch  6 :  0.2750083558114448
+Rank  0 , epoch  7 :  0.2595048323273659
+Rank  0 , epoch  8 :  0.24862684973521526
+Rank  0 , epoch  9 :  0.22692083941101393
+</code></pre><p>可以看到，随着训练的进行，损失逐渐减小。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/30/troubleshootingonpromoxissue/>TroubleShootingOnPromoxIssue</a></h1><span class=post-date>May 30, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=problem>Problem</h3><p>2 months ago I set a proxmox environment for a team which used as a dev
+environment, for quickly snapshot and migration I choose zfs for the
+filesystem, the structure is listed as following:</p><p><img src=/images/2019_05_30_16_54_05_656x311.jpg alt=/images/2019_05_30_16_54_05_656x311.jpg></p><p>But this environment got very slow i/o speed, I find the reason is because zfs
+shouldn&rsquo;t rely on raid card.</p><p>Which worse is: today after reboot, the grub runs into grub rescue:</p><p><img src=/images/2019_05_30_16_55_53_385x62.jpg alt=/images/2019_05_30_16_55_53_385x62.jpg></p><p>but you could not reached the /boot folder:</p><p><img src=/images/2019_05_30_16_56_21_319x73.jpg alt=/images/2019_05_30_16_56_21_319x73.jpg></p><h3 id=solution>Solution</h3><p>Raid Card configuration, change 01:22 and 01:23 from hotspare to raid1:</p><p><img src=/images/2019_05_30_16_59_58_484x180.jpg alt=/images/2019_05_30_16_59_58_484x180.jpg></p><p>to:</p><p><img src=/images/2019_05_30_17_00_11_495x152.jpg alt=/images/2019_05_30_17_00_11_495x152.jpg></p><p>Create new VD:</p><p><img src=/images/2019_05_30_17_00_41_561x278.jpg alt=/images/2019_05_30_17_00_41_561x278.jpg></p><p>Select these 2 disks:</p><p><img src=/images/2019_05_30_17_00_55_686x337.jpg alt=/images/2019_05_30_17_00_55_686x337.jpg></p><p>Select boot device(notice Boot device):</p><p><img src=/images/2019_05_30_17_01_45_703x397.jpg alt=/images/2019_05_30_17_01_45_703x397.jpg></p><p>Now Reinstall proxmox to VD 5.</p><h3 id=system-configuration>System Configuration</h3><p>Remove the <code>data</code> lv:</p><pre><code># lvremove /dev/mapper/data
+</code></pre><p>Create a new lv via:</p><pre><code># lvcreate -n lv_root -L 150G pve
+# mkfs.ext4 /dev/mapper/pve-lv_root
+</code></pre><p>Now mount the zfs pools via:</p><pre><code># zpool import -a
+# zpool status
+# zfs create -o canmount=noauto =o mountpoint=/mnt rpool/pve....
+# zfs mount rpool/pve.....
+</code></pre><p>Create new mount point and copy the old system into new:</p><pre><code># mkdir /mnt1
+# mount /dev/mapper/pve-lv_root /mnt1
+# cp -arp /mnt/* /mnt1/
+</code></pre><p>Now you have to change the grub.cfg:</p><pre><code># vim /boot/grub/grub.cfg
+if [ &quot;${next_entry}&quot; ] ; then
+   set default=&quot;${next_entry}&quot;
+   set next_entry=
+   save_env next_entry
+   set boot_once=true
+else
+   set default=&quot;2&quot;
+fi
+
+
+
+menuentry &quot;Our Proxmox Boot Recovery&quot; {
+	load_video
+	insmod gzio
+	if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+	insmod part_gpt
+	insmod lvm
+	insmod ext2
+	set root='lvmid/ySIDEN-2G0X-DU6A-p0q8-cXsW-o6ja-IyhXuc/0M8yUI-yNQJ-Ntx8-8cfE-3g9k-0sOb-SDWfQe'
+	if [ x$feature_platform_search_hint = xy ]; then
+	  search --no-floppy --fs-uuid --set=root --hint='lvmid/ySIDEN-2G0X-DU6A-p0q8-cXsW-o6ja-IyhXuc/0M8yUI-yNQJ-Ntx8-8cfE-3g9k-0sOb-SDWfQe'  4fb86e38-eeae-
+489a-b45e-3e5cc8055654
+	else
+	  search --no-floppy --fs-uuid --set=root 4fb86e38-eeae-489a-b45e-3e5cc8055654
+	fi
+	echo	'Loading Linux 4.15.17-1-pve ...'
+	linux	/boot/vmlinuz-4.15.17-1-pve root=/dev/mapper/pve-lv_root ro  quiet
+	echo	'Loading initial ramdisk ...'
+	initrd	/boot/initrd.img-4.15.17-1-pve
+}
+menuentry &quot;Memory test (memtest86+)&quot; {
+	insmod part_gpt
+</code></pre><p>Edit the fstab:</p><pre><code>$ vim /mnt1/etc/fstab 
+# &lt;file system&gt; &lt;mount point&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;pass&gt;
+/dev/pve/lv_root / ext4 errors=remount-ro 0 1
+/dev/pve/swap none swap sw 0 0
+proc /proc proc defaults 0 0
+</code></pre><p>Now reboot the system you will get into the newly-created lvm based system,
+and run an ext4 based OS which acts the same as the old ones.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/29/linuxusbethernetbonding/>LinuxUSBEthernetBonding</a></h1><span class=post-date>May 29, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=reason>Reason</h3><p>Previously, 100M->1000M,<br>After upgrading: 100M+100M -> 1000M
+<img src=/images/2019_05_29_14_40_06_638x528.jpg alt=/images/2019_05_29_14_40_06_638x528.jpg></p><h3 id=hardware>Hardware</h3><p>TL-SG108E Version 1.0:</p><p><img src=/images/2019_05_29_14_31_23_600x357.jpg alt=/images/2019_05_29_14_31_23_600x357.jpg></p><p>Install Unmanaged pro, and use it for accesing TL-SG108E, we need to configure
+LAG on switch(LAG1, 1/2, LAG2, 5,6):</p><p><img src=/images/2019_05_29_14_49_01_863x529.jpg alt=/images/2019_05_29_14_49_01_863x529.jpg></p><p>Laptop1 network linking:</p><p><img src=/images/2019_05_29_14_52_55_860x636.jpg alt=/images/2019_05_29_14_52_55_860x636.jpg></p><p>Powersync(100M/s) + D-Link(100M/s), all attaches to an usb hub, then
+connecting to the laptop.</p><h3 id=usb-ethernet-rename>USB Ethernet Rename</h3><p>Following configuration should be written:</p><pre><code># pwd
+/etc/systemd/network
+
+# cat 10-ethusb1.link 
+[Match]
+MACAddress=xxxxxxxxxxxxxx
+
+[Link]
+Description=USB to Ethernet Adapter
+Name=ethusb1
+# cat 10-ethusb1.network 
+[Match]
+Name=ethusb1
+
+[Network]
+Address=192.168.0.33
+# cat 30-ethusb2.link 
+[Match]
+MACAddress=8xxxxxxxxxxxxxx
+
+[Link]
+Description=USB to Ethernet Adapter 2
+Name=ethusb2
+# cat 30-ethusb2.network 
+[Match]
+Name=ethusb2
+
+[Network]
+Address=xxxxxxxxx
+</code></pre><p>Reboot to view the configuration and examine its result via <code>ifconfig ethusb1</code>
+and <code>ifconfig ethusb2</code>.</p><h3 id=bonding>Bonding</h3><p>Configure bond0:</p><pre><code># pwd
+/etc/systemd/network
+# cat bond1.network 
+[Match]
+Name=bond1
+
+[Network]
+BindCarrier=ethusb1 ethusb2
+# cat bond1.netdev 
+[NetDev]
+Name=bond1
+Kind=bond
+
+[Bond]
+Mode=balance-rr
+# cat Management.network 
+[Match]
+Name=bond1
+
+[Network]
+Address=192.168.0.33/24
+</code></pre><p>Now you could see bond has been configured, and the transfer speed could up to
+20M/s</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/29/tipsonbuyvm/>TipsOnBuyVM</a></h1><span class=post-date>May 29, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=快速搭梯>快速搭梯</h3><p>步骤:</p><pre><code># hostnamectl set-hostname xxxvps
 # apt-get update -y
 # apt-get install -y curl byobu vim
 # bash &lt;(curl -s -L https://git.io/v2ray.sh)
@@ -15,222 +382,4 @@ bind-interfaces
 </code></pre><p>Thus we would remove the dnsmasq funcitonality from the exisiting
 playwithdocker nodes(previously we run dnsmasq on 192.192.189.114 rather than
 in 192.192.189.127.</p><h3 id=result>Result</h3><p>Now using browser for viewing <code>192.192.189.115</code>, then you could see a new
-running playwithdocker blog.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/24/tipsonaimachine/>TipsOnAIMachine</a></h1><span class=post-date>May 24, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=硬件环境>硬件环境</h3><p>新购的神舟， Z7-KP7GH， CPU， i7-8750H， 内存24G， 显卡Nvidia GTX1060 6G.<br>8G 优盘用于系统安装.</p><h3 id=软件安装及适配>软件安装及适配</h3><p>ubuntu-18.04.2-desktop-amd64.iso, 写入优盘:</p><pre><code># sudo dd if=./ubuntu-18.04.2-desktop-amd64.iso of=/dev/sdc bs=1M &amp;&amp; sudo sync
-</code></pre><p>笔记本开机按DEL进入BIOS配置，选择U盘启动，遇到安装卡住的问题，解决方案如下：</p><pre><code>GRUB choose the Ubuntu, or Install Ubuntu (it depends, you will see it hopefully), go to it with the arrows and press the 'e' key.
-Here go to the line which contains quiet splash at the end and add  acpi=off after these words.
-Then press F10 to boot with these settings.
-</code></pre><p>安装中需要重新分区, 参考：</p><p><img src=/images/2019_05_24_10_41_45_771x380.jpg alt=/images/2019_05_24_10_41_45_771x380.jpg>
-这里新建了efi分区，并使用新建的分区用于安装操作系统，同时保留了原有的Windows操作系统，特别要注意的是关于bootloader的安装位置。</p><p>安装完毕后，由于是nvidia卡的原因，首次进入系统会卡住，这里我们需要再次修改GRUB进入系统:</p><pre><code>When you are in the GRUB menu, press E to enter the GRUB editor. Add nouveau.modeset=0 to the end of the line that starts with linux. After you've added it, press F10 to boot. Your system should start. After that, go to System Settings &gt; Software &amp; Updates &gt; Additional Drivers and then select the NVIDIA driver. Right now I'm using NVIDIA binary driver- version 367.57 from nvidia-367 (proprietary, tested).
-</code></pre><p>当前(2019-05-24)时，nvidia的驱动是nvida-driver-390.</p><p>现在重新启动机器，就可以正常进入系统并执行操作了。<br>显卡的测试可以参考<a href=https://linuxconfig.org/benchmark-your-graphics-card-on-linux>https://linuxconfig.org/benchmark-your-graphics-card-on-linux</a>
-时间的关系这里我就不做了。</p><h3 id=系统适配>系统适配</h3><p>安装必要的包:</p><pre><code># apt-get install -y openssh-server vim net-tools virt-manager vagrant
-vagrant-libvirt meld lm_sensors
-</code></pre><p>Install cuda:</p><pre><code># systemctl stop gdm
-# ./cuda_10.0.130_410.48_linux.run
-# vim ~/.bashrc
-export PATH=/usr/local/cuda-10.0/bin:$PATH
-# source ~/.bashrc
-# nvidia-smi 
-Mon May 27 08:40:56 2019       
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 410.48                 Driver Version: 410.48                    |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|===============================+======================+======================|
-|   0  GeForce GTX 1060    Off  | 00000000:01:00.0 Off |                  N/A |
-| N/A   55C    P0    25W /  N/A |      0MiB /  6078MiB |      0%      Default |
-+-------------------------------+----------------------+----------------------+
-                                                                               
-+-----------------------------------------------------------------------------+
-| Processes:                                                       GPU Memory |
-|  GPU       PID   Type   Process name                             Usage      |
-|=============================================================================|
-|  No running processes found                                                 |
-+-----------------------------------------------------------------------------+
-# nvcc --version
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2018 NVIDIA Corporation
-Built on Sat_Aug_25_21:08:01_CDT_2018
-Cuda compilation tools, release 10.0, V10.0.130
-# wget xxxxxxxxhttps://developer.nvidia.com/rdp/cudnn-archive
-# Get the following packages: cudnn-10.0-linux-x64-v7.5.0.56.tgz
-#  tar -zxvf cudnn-10.0-linux-x64-v7.4.2.24.tgz
-# 拷贝
-$ cd cudnn-10.0-linux-x64-v7.4.2.24
-$ sudo cp cuda/include/cudnn.h /usr/local/cuda-10.0/include
-$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda-10.0/lib64
-# 修改权限
-$ sudo chmod a+r /usr/local/cuda-10.0/include/cudnn.h /usr/local/cuda-10.0/lib64/libcudnn*
-$ vim ~/.bashrc
-export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH
-export CUDNN_PATH=&quot;/usr/local/cuda-10.0/lib64/libcudnn.so&quot;
-$ source ~/.bashrc
-$ echo -e '#include&quot;cudnn.h&quot;\n void main(){}' | nvcc -x c - -o /dev/null -lcudnn
-$ echo $?
-0
-</code></pre><p>Now upgrading your nvidia driver:</p><pre><code>$ sudo add-apt-repository ppa:graphics-drivers/ppa
-$ sudo apt update
-$ ubuntu-drivers devices
-$ sudo ubuntu-drivers autoinstall 
-$ sudo reboot
-After reboot....
-$ nvidia-smi 
-Mon May 27 09:07:16 2019       
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 430.14       Driver Version: 430.14       CUDA Version: 10.2     |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|===============================+======================+======================|
-|   0  GeForce GTX 1060    Off  | 00000000:01:00.0 Off |                  N/A |
-| N/A   49C    P0    26W /  N/A |    166MiB /  6078MiB |      0%      Default |
-+-------------------------------+----------------------+----------------------+
-                                                                               
-+-----------------------------------------------------------------------------+
-| Processes:                                                       GPU Memory |
-|  GPU       PID   Type   Process name                             Usage      |
-|=============================================================================|
-|    0      1970      G   /usr/lib/xorg/Xorg                            94MiB |
-|    0      2148      G   /usr/bin/gnome-shell                          69MiB |
-+-----------------------------------------------------------------------------+
-</code></pre><p>Now your cuda and cudnn is installed OK. Cause nvidia&rsquo;s cuda will be older
-than the ppa&rsquo;s and will cause problems, we need to install driver after cuda
-installation.</p><h3 id=tensorflow>tensorflow</h3><p>Install pip and use pip for installing tensorflow:</p><pre><code>$ sudo apt-get install -y python-pip
-$ pip install tensorflow-gpu
-$ vim test.py
-import tensorflow as tf
-hello = tf.constant('Hello, TensorFlow!')
-sess = tf.Session()
-print(sess.run(hello))
-$ python test.py
-2019-05-27 09:35:27.847206: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2019-05-27 09:35:27.952455: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:998] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
-2019-05-27 09:35:27.953302: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5643333f0dc0 executing computations on platform CUDA. Devices:
-2019-05-27 09:35:27.953344: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX 1060, Compute Capability 6.1
-2019-05-27 09:35:27.974107: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2208000000 Hz
-2019-05-27 09:35:27.975517: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x564333ab33b0 executing computations on platform Host. Devices:
-2019-05-27 09:35:27.975563: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): &lt;undefined&gt;, &lt;undefined&gt;
-2019-05-27 09:35:27.977344: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
-name: GeForce GTX 1060 major: 6 minor: 1 memoryClockRate(GHz): 1.6705
-pciBusID: 0000:01:00.0
-totalMemory: 5.94GiB freeMemory: 5.68GiB
-2019-05-27 09:35:27.977382: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
-2019-05-27 09:35:27.979140: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
-2019-05-27 09:35:27.979179: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
-2019-05-27 09:35:27.979193: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
-2019-05-27 09:35:27.979313: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5517 MB memory) -&gt; physical GPU (device: 0, name: GeForce GTX 1060, pci bus id: 0000:01:00.0, compute capability: 6.1)
-Hello, TensorFlow!
-</code></pre><h3 id=remote-machine>remote machine</h3><p>Settings-> Sharing-> Screen Sharing:</p><p><img src=/images/2019_05_27_10_23_29_364x494.jpg alt=/images/2019_05_27_10_23_29_364x494.jpg></p><p>then setting:</p><pre><code>$ gsettings set org.gnome.Vino require-encryption false
-</code></pre><p>Now use vncviewer for viewing the 5900 port, you will get the remote screen.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/22/zfs/>ZFS</a></h1><span class=post-date>May 22, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=purpose>Purpose</h3><p>ZFS On proxmox, performance issue.</p><h3 id=steps>Steps</h3><h4 id=1-megaclisas-status>1. megaclisas-status</h4><p>The proxmox is in offline environment, so need to get the megaclisas-status
-packages installed ready.</p><pre><code># sudo docker run -it debian:9.4 /bin/bash
-root@f427df462cbd:/# cat /etc/debian_version 
-9.4
-root@f427df462cbd:/# apt-get install -y vim
-root@f427df462cbd:/# vim apt.conf.d/docker-clean 
-Comment all
-root@f427df462cbd:/# apt-get install -y wget gnupg2
-# wget -O - https://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key | apt-key add -
-# cat /etc/apt/sources.list
-deb http://deb.debian.org/debian stretch main
-deb http://security.debian.org/debian-security stretch/updates main
-deb http://deb.debian.org/debian stretch-updates main
-deb http://hwraid.le-vert.net/debian stretch main
-# apt-get update -y
-# apt-get install megaclisas-status
-# cd /var/cache/
-# find . | grep deb$ | xargs -I % cp % /root/deb/
-</code></pre><p>Transfer the debs into the promox machine, install it via:</p><pre><code># cd /root/deb/
-# dpkg -i daemon_0.6.4-1+b2_amd64.deb megacli*
-root@ks:~/deb# megaclisas-status 
--- Controller information --
--- ID | H/W Model | RAM    | Temp | BBU    | Firmware     
-c0    | SAS3108 | 1024MB | 64C  | Absent | FW: 24.7.0-0057 
-
--- Array information --
--- ID | Type   |    Size |  Strpsz |   Flags | DskCache |   Status |  OS Path | CacheCade |InProgress   
-c0u0  | RAID-1 |    558G |  256 KB |   RA,WT |  Default |  Optimal | /dev/sda | None      |None         
-c0u1  | RAID-5 |   7271G |  256 KB | ADRA,WT |  Default |  Optimal | /dev/sdb | None      |None         
-c0u2  | RAID-5 |   7271G |  256 KB | ADRA,WT |  Default |  Optimal | /dev/sdc | None      |None         
-c0u3  | RAID-5 |   7271G |  256 KB | ADRA,WT |  Default |  Optimal | /dev/sdd | None      |None         
-c0u4  | RAID-5 |   7271G |  256 KB | ADRA,WT |  Default |  Optimal | /dev/sde | None      |No
-</code></pre><p>Change the properties:</p><pre><code>root@ks:~/deb# megacli -LDGetProp -Cache -LALL -a0
-                                     
-Adapter 0-VD 0(target id: 0): Cache Policy:WriteThrough, ReadAhead, Direct, No Write Cache if bad BBU
-Adapter 0-VD 1(target id: 1): Cache Policy:WriteThrough, ReadAdaptive, Direct, No Write Cache if bad BBU
-Adapter 0-VD 2(target id: 2): Cache Policy:WriteThrough, ReadAdaptive, Direct, No Write Cache if bad BBU
-Adapter 0-VD 3(target id: 3): Cache Policy:WriteThrough, ReadAdaptive, Direct, No Write Cache if bad BBU
-Adapter 0-VD 4(target id: 4): Cache Policy:WriteThrough, ReadAdaptive, Direct, No Write Cache if bad BBU
-
-Exit Code: 0x00
-root@ks:~/deb# megacli -LDSetProp NORA -LALL -a0
-                                     
-Set Read Policy to NoReadAhead on Adapter 0, VD 0 (target id: 0) success
-Set Read Policy to NoReadAhead on Adapter 0, VD 1 (target id: 1) success
-Set Read Policy to NoReadAhead on Adapter 0, VD 2 (target id: 2) success
-Set Read Policy to NoReadAhead on Adapter 0, VD 3 (target id: 3) success
-Set Read Policy to NoReadAhead on Adapter 0, VD 4 (target id: 4) success
-
-Exit Code: 0x00
-root@ks:~/deb# megacli -LDGetProp -Cache -LALL -a0
-                                     
-Adapter 0-VD 0(target id: 0): Cache Policy:WriteThrough, ReadAheadNone, Direct, No Write Cache if bad BBU
-Adapter 0-VD 1(target id: 1): Cache Policy:WriteThrough, ReadAheadNone, Direct, No Write Cache if bad BBU
-Adapter 0-VD 2(target id: 2): Cache Policy:WriteThrough, ReadAheadNone, Direct, No Write Cache if bad BBU
-Adapter 0-VD 3(target id: 3): Cache Policy:WriteThrough, ReadAheadNone, Direct, No Write Cache if bad BBU
-Adapter 0-VD 4(target id: 4): Cache Policy:WriteThrough, ReadAheadNone, Direct, No Write Cache if bad BBU
-
-Exit Code: 0x00
-</code></pre><p>Hope this will greately improve performance.</p><p>Notice(For disk cache):</p><pre><code>Optional toppings for most LD configurations:
-WT :      WriteThrough   safer.  Only returns once data is written to disk.
-WB:       WriteBack       faster.  Returns as soon as data is is written to cache
-NORA :  No Read Ahead   vs
-RA:        ReadAhead   vs
-ADRA :   Adaptive ReadAhead where if the previous two requests were sequential, it pre-loads the next in sequence.
-Cached:  Cache reads.
-Direct:    Only the previous read is cached.
--strpszM      : Stripe size      so -strpsz64 means 64kb stripe size.
-Hsp[E0:S0] : Choose this drive to be a hot-spare
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/21/workingtipsonffdl/>WorkingTipsOnFfDL</a></h1><span class=post-date>May 21, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=startpoint>StartPoint</h3><p>Working directory:</p><pre><code># /home/xxxx/Code/vagrant/ai_k8s/RONG/package/files/Rong
-# vagrant status
-Current machine states:
-
-outnode-1                 running (libvirt)
-</code></pre><p>A running k8s cluster:</p><pre><code>[root@outnode-1 ~]# cat /etc/redhat-release 
-Red Hat Enterprise Linux Server release 7.4 (Maipo)
-[root@outnode-1 ~]# kubectl get nodes
-NAME        STATUS   ROLES    AGE   VERSION
-outnode-1   Ready    master   32m   v1.14.1
-</code></pre><p>Configure repository:</p><pre><code># mount /dev/sr0 /mnt
-# cd /etc/yum.repos.d
-# mv *.repo /root/
-# vim cdrom.repo
-[local]
-name=local
-baseurl=file:///mnt
-enabled=1
-gpgcheck=0
-# yum makecache
-# yum install -y vim git nfs-utils rpcbind
-</code></pre><p>Configure nfs server:</p><pre><code># mkdir -p /opt/nfs
-# vim /etc/exports
-/opt/nfs  *(rw,async,no_root_squash,no_subtree_check)
-# service rpcbind start
-# service nfs start
-# systemctl enable nfs-server
-# systemctl start nfs-server
-# systemctl enable nfs.service
-# systemctl enable rpcbind
-</code></pre><p>Configure helm via:</p><pre><code># helm repo add stable https://kubernetes-charts.storage.googleapis.com
-# helm install stable/nfs-client-provisioner --set nfs.server=10.142.108.191 --set nfs.path=/opt/nfs
-# kubectl get sc
-nfs-client   cluster.local/righteous-condor-nfs-client-provisioner   7m8s
-# kubectl edit sc nfs-client
-kind: StorageClass
-metadata:
-  annotations:
-    storageclass.kubernetes.io/is-default-class: &quot;true&quot;
-</code></pre><h3 id=install>Install</h3><p>Clone the source code from github:</p><pre><code># git clone https://github.com/IBM/FfDL.git
-# 
-
-</code></pre><p>TOO many errors here. To be continue.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/44/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/44/>44</a></li><li class="page-item active"><a class=page-link href=/page/45/>45</a></li><li class=page-item><a class=page-link href=/page/46/>46</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/46/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+running playwithdocker blog.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/44/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/44/>44</a></li><li class="page-item active"><a class=page-link href=/page/45/>45</a></li><li class=page-item><a class=page-link href=/page/46/>46</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/46/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

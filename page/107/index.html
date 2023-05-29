@@ -1,5 +1,168 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2016/03/01/e-buddyxiao-xi-ti-xing-fu-wu-she-ji-si-lu-1/>e-buddy消息提醒服务设计思路(1)</a></h1><span class=post-date>Mar 1, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=设计目的>设计目的</h3><p>设计为一个系统通用的? 还是特定应用的?</p><h3 id=监控-vs-告警>监控 vs 告警</h3><p>监控某项指标? 然后告警?</p><h3 id=总线>总线?</h3><p>DBUS 总线?<br>D-Bus For Python.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2016/03/01/ba-wan-e-buddy/>把玩e-Buddy</a></h1><span class=post-date>Mar 1, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=状态>状态</h3><p>逆向工程得出的控制指令:</p><pre><code>################
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2016/03/05/ba-wan-ebuddy-3/>把玩ebuddy(3)</a></h1><span class=post-date>Mar 5, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>早上起来刷微信, 觉得网页版微信的提示信息大可用ebuddy来响应. 说干就干,以下是解
+决方案.</p><h3 id=gnotifier>gnotifier</h3><p>写作时,我的firefox版本是44.0.2, 需要安装gnotifier这个插件,从而把firefox的提示
+消息转为系统提示信息, 下载地址在:</p><p><a href=https://addons.mozilla.org/en-US/firefox/addon/gnotifier/>https://addons.mozilla.org/en-US/firefox/addon/gnotifier/</a></p><p>点击<code>Add to Firefox</code>即完成安装:</p><p><img src=/images/2016_03_05_21_50_12_766x490.jpg alt=/images/2016_03_05_21_50_12_766x490.jpg></p><h3 id=查看dbus消息>查看dbus消息</h3><p>gnotifier将网页版微信的提示消息转为了系统提示消息, 那么只需要获取到系统消息总
+线里的提示信息, 筛选出我们要的类型后, 给ebuddy发送相应的指令即可.</p><p><code>dbus-monitor</code>工具可用于侦听dbus总线里的消息, 我们来运行一下,如下:</p><pre><code>$  dbus-monitor --session
+interface='org.freedesktop.Notifications',member='Notify'
+
+signal time=1457186062.137082 sender=org.freedesktop.DBus -&gt;
+destination=:1.163 serial=2 path=/org/freedesktop/DBus;
+interface=org.freedesktop.DBus; member=NameAcquired
+   string &quot;:1.163&quot;
+signal time=1457186062.137154 sender=org.freedesktop.DBus -&gt;
+destination=:1.163 serial=4 path=/org/freedesktop/DBus;
+interface=org.freedesktop.DBus; member=NameLost
+   string &quot;:1.163&quot;
+method call time=1457186083.405690 sender=:1.39 -&gt; destination=:1.14
+serial=220 path=/org/freedesktop/Notifications;
+interface=org.freedesktop.Notifications; member=Notify
+   string &quot;Firefox&quot;
+   uint32 0
+   string &quot;/tmp/gnotifier-3Fh5Sa&quot;
+   string &quot;yfp&quot;
+   string &quot;[Sticker][Sticker][Sticker]&quot;
+   array [
+   ]
+   array [
+   ]
+   int32 -1
+method call time=1457186086.866000 sender=:1.39 -&gt; destination=:1.14
+serial=221 path=/org/freedesktop/Notifications;
+interface=org.freedesktop.Notifications; member=Notify
+   string &quot;Firefox&quot;
+   uint32 0
+   string &quot;/tmp/gnotifier-9kaLsI&quot;
+   string &quot;yfp&quot;
+   string &quot;test&quot;
+   array [
+   ]
+   array [
+   ]
+   int32 -1
+</code></pre><p>以上是两条从微信号为<code>yfp</code>的用户发送给网页端微信的dbus总线消息, 我们要注意的是,
+需要从dbus session总线取得此信息(system bus和session bus的差别可以自行Google).</p><h3 id=python2-dbus>python2-dbus</h3><p>ArchLinux下有<code>python-dbus</code>和<code>python2-dbus</code>两个关于dbus的python绑定库, 个人比较
+习惯python2的缘故,安装<code>python2-dbus</code></p><pre><code>$ sudo pacman -Ss python2-dbus
+extra/python2-dbus 1.2.0-5 [installed]
+    Python 2.7 bindings for DBUS
+</code></pre><p>用于过滤/提取dbus总线消息的python代码如下, 另存为<code>DbusEbuddy.py</code>:</p><pre><code>import glib
+import dbus
+import subprocess
+from dbus.mainloop.glib import DBusGMainLoop
+
+def notifications(bus, message):
+    if (len(message.get_args_list()) &gt; 0):
+        if ('Firefox' == message.get_args_list()[0]):
+                if ('yfp' == message.get_args_list()[3]):
+                    bashCommand = 'echo 01 &gt; /dev/udp/127.0.0.1/8888'
+                    output = subprocess.check_output(['bash','-c',bashCommand])
+
+DBusGMainLoop(set_as_default=True)
+
+bus = dbus.SessionBus()
+bus.add_match_string_non_blocking(&quot;eavesdrop=true,\
+    interface='org.freedesktop.Notifications', member='Notify'&quot;)
+bus.add_message_filter(notifications)
+
+mainloop = glib.MainLoop()
+mainloop.run()
+</code></pre><p>简单解释一下, 这几行代码首先attach到dbus的sessionbus总线,
+<code>org.freedesktop.Notification</code>端口上所有<code>Notify</code>的成员, 如果匹配到这种消息, 则
+通过<code>add_message_filter()</code>调用回调函数.</p><p><code>notifications</code>是我们定义的回调函数,这个回调函数同样很简单, 如果消息长度大于
+0(消息非空), 则检查消息的来源(<code>message.get_args_list()[0]</code>), 选取来自Firefox的
+, 由yfp(<code>messages.get_args_list()[3]</code>)用户发来的消息, 作出对应的动作
+(<code>echo 01 > /dev/udp/127.0.0.1/8888</code>).</p><h3 id=使用>使用</h3><p>首先开启pybuddyDX库(注意要先安装python2版本的pyusb, 上一篇文章有讲):</p><pre><code>$ git clone git@github.com:purplepalmdash/pybuddy-dx.git
+$ sudo python2 ~/Code/python/pybuddy-dx/pybuddyDX.py
+</code></pre><p>此时系统在8888端口监听ebuddy动作, 直接运行<code>DbusEbuddy.py</code></p><pre><code>$ sudo python2 ~/Code/python/DbusEbuddy.py
+</code></pre><p>以后每条由用户yfp发来的消息,都将引发ebuddy人偶执行01指令对应的动作.</p><h3 id=延伸>延伸</h3><p>可以匹配不同的人名, 执行不同的动作. 例如:</p><pre><code>李四	执行02指令
+王五	执行12指令
+某某群	执行08指令
+</code></pre><p>当然,根据需要,也可以制定一些规则,譬如某VIP用户, 就是微信里你特别看重的那个人
+,TA发消息来以后, 人偶心跳不止(指令19即是). 但这样一来,就引入了清零问题, 即重置
+人偶状态, 很简单,我们用<code>notify-send</code>这条命令, 发送出指令17给人偶让它重置状态
+即可.</p><p>代码的修改:</p><pre><code>def notifications(bus, message):
+    if (len(message.get_args_list()) &gt; 0):
+        if ('Firefox' == message.get_args_list()[0]):
+                if ('yfp' == message.get_args_list()[3]):
+                    bashCommand = 'echo 19 &gt; /dev/udp/127.0.0.1/8888'
+                    output = subprocess.check_output(['bash','-c', bashCommand])
+        if ('notify-send' == message.get_args_list()[0]):
+                if ('Clear' == message.get_args_list()[3]):
+                    bashCommand = 'echo 17 &gt; /dev/udp/127.0.0.1/8888'
+                    output = subprocess.check_output(['bash','-c', bashCommand])
+</code></pre><p>而对应的清空命令则可以写成alias形式(我用的是zsh, bash类似):</p><pre><code>$ vim ~/.zshrc
+alias clearnotify=&quot;notify-send 'Clear' 'This is a clear ebuddy notification.' --icon=dialog-information&quot;
+$ source ~/.zshrc
+$ clearnotify
+</code></pre><h3 id=测试>测试</h3><p>现在开始测试, 首先让yfp发微信给浏览器里登录的微信用户, 可以看到, 当浏览器收到
+消息后, 系统桌面出现提示, 人偶心脏处的红灯开始狂闪, 不会停止.</p><p><img src=/images/1039489558.jpg alt=/images/1039489558.jpg></p><p>输入<code>clearnotify</code>命令后, 人偶恢复正常.</p><h3 id=下一步需要做的>下一步需要做的</h3><ol><li>Windows响应?</li><li>如何通过微信的API获取到好友列表,从而动态指定需要监听的人和事件?</li><li>图形界面的配置?</li></ol></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2016/03/03/ba-wan-ebuddy-2/>把玩ebuddy(2)</a></h1><span class=post-date>Mar 3, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=archlinux配置过程>ArchLinux配置过程</h3><p>因为ArchLinux默认python版本为python3, 使用python2激活e-buddy人偶:</p><pre><code>$ sudo pacman -S python2-pip
+$ sudo pip2 install pyusb
+$ git clone git@github.com:purplepalmdash/pybuddy-dx.git
+$ sudo python2 ~/Code/ebuddy/pybuddy-dx/pybuddyDX.py
+$ sudo netstat -anp | grep 8888
+udp        0      0 127.0.0.1:8888          0.0.0.0:*                           14635/python2 
+</code></pre><p>接下来就是往<code>127.0.0.1:8888</code>发送指令控制人偶的干活了。具体的指令可以见上一篇文章。</p><h3 id=定期检查邮件控制人偶>定期检查邮件控制人偶</h3><p>先安装用于检查imap服务端状态的python模块:</p><pre><code>$ sudo pip2 install imapclient
+</code></pre><p>检查邮件的脚本如下, 该脚本检查163邮箱的IMAP服务器，如果有新邮件，人偶的头就会出现颜色渐
+变，否则，则显示绿灯闪烁:</p><pre><code>#!/usr/bin/env python
+import imaplib 
+from imapclient import IMAPClient
+import time
+import subprocess
+import thread
+
+DEBUG = True
+ 
+HOSTNAME = 'imap.163.com'
+USERNAME = 'XXXXXXXX'
+PASSWORD = 'XXXXXXXX'
+MAILBOX = 'Inbox'
+newmails = 0
+ 
+NEWMAIL_OFFSET = 0   # my unread messages never goes to zero, yours might
+MAIL_CHECK_FREQ = 60 # check mail every 60 seconds
+
+# Define a function for checking email
+def check_mail( threadName):
+    while True:
+        # Login into the imap server and check the numbers for the new mail.
+        server = IMAPClient(HOSTNAME, use_uid=True, ssl=True)
+        server.login(USERNAME, PASSWORD)
+        if DEBUG:
+            print('Logging in as ' + USERNAME)
+            select_info = server.select_folder(MAILBOX)
+            print('%d messages in INBOX' % select_info['EXISTS'])
+
+        folder_status = server.folder_status(MAILBOX, 'UNSEEN')
+        global newmails
+        newmails = int(folder_status['UNSEEN'])
+
+        if DEBUG:
+            print &quot;You have&quot;, newmails, &quot;new emails!&quot;
+        time.sleep(MAIL_CHECK_FREQ)
+
+def loop():
+ 
+    if newmails &gt; NEWMAIL_OFFSET:
+        bashCommand = 'echo 12 &gt; /dev/udp/127.0.0.1/8888'
+        output = subprocess.check_output(['bash','-c', bashCommand])
+        time.sleep(8)
+    else:
+        bashCommand = 'echo 08 &gt; /dev/udp/127.0.0.1/8888'
+        output = subprocess.check_output(['bash','-c', bashCommand])
+        time.sleep(5)
+ 
+if __name__ == '__main__':
+    try:
+        print 'Press Ctrl-C to quit.'
+        thread.start_new_thread( check_mail, (&quot;Thread-1&quot;, ) )
+        while True:
+            loop()
+    finally:
+        print &quot;finally comes here!&quot;
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2016/03/02/conntrack-tools-usage/>conntrack-tools usage</a></h1><span class=post-date>Mar 2, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=参考>参考</h3><p><a href=https://blogs.it.ox.ac.uk/networks/2014/09/30/linux-and-eduroam-nat-logging-perl-and-regular-expressions/>https://blogs.it.ox.ac.uk/networks/2014/09/30/linux-and-eduroam-nat-logging-perl-and-regular-expressions/</a></p><h3 id=安装>安装</h3><p>ArchLinux下:</p><pre><code>$ sudo pacman -S conntrack-tools
+</code></pre><h3 id=使用>使用</h3><p>记录新建/销毁连接数至文件:</p><pre><code>$ sudo touch /var/log/conntrack-data.log
+$ sudo chmod 777 /var/log/conntrack-data.log
+$ sudo conntrack -E -eNEW,DESTROY --src-nat -otimestamp,extended --buffer-size=104857600 &gt; /var/log/conntrack-data.log
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2016/03/01/e-buddyxiao-xi-ti-xing-fu-wu-she-ji-si-lu-1/>e-buddy消息提醒服务设计思路(1)</a></h1><span class=post-date>Mar 1, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=设计目的>设计目的</h3><p>设计为一个系统通用的? 还是特定应用的?</p><h3 id=监控-vs-告警>监控 vs 告警</h3><p>监控某项指标? 然后告警?</p><h3 id=总线>总线?</h3><p>DBUS 总线?<br>D-Bus For Python.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2016/03/01/ba-wan-e-buddy/>把玩e-Buddy</a></h1><span class=post-date>Mar 1, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=状态>状态</h3><p>逆向工程得出的控制指令:</p><pre><code>################
 #Commands
 ################
 # GLADNESS =        00
@@ -56,69 +219,4 @@ do
 echo 07 &gt; /dev/udp/127.0.0.1/8888
 sleep 3
 done
-</code></pre><p>以上的脚本就可以直接将e-buddy的头像置为红色，且一直闪烁。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2016/02/29/tips-on-v-usb-and-arduino-3-others/>Tips on V-USB and Arduino(3)--Others</a></h1><span class=post-date>Feb 29, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=连线电路>连线/电路</h3><p>不需要对电路做任何修改，仅替换arduino里的程序即可。</p><h3 id=代码>代码</h3><p>代码如下:</p><pre><code>hid_custom_rq/
-hid_data/
-hid_mouse/
-</code></pre><p>编译方法和上面一样。</p><p>值得注意的是, 这三个设备都是实现了HID设备，可以做到即插即用。</p><p><code>hid_data</code>的用法：</p><p>读取/写入例子:</p><pre><code>➜  commandline ./hidtool read
-0x01 0x02 0x03 0x04 0x05 0x06 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-➜  commandline ./hidtool write 0x34 0x54 0x20 0x1f
-➜  commandline ./hidtool read
-0x34 0x54 0x20 0x1f 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
-</code></pre><h3 id=custom_class延伸>custom_class延伸</h3><p>连线LED 11，修改代码后即可控制11 GPIO口的LED亮灭</p><p>custom_class_demo.pde:</p><pre><code>const int ledPin = 11;
-</code></pre><p>custom_class.h:</p><pre><code>class custom_classDevice {
- public:
-  custom_classDevice() {
-    usbInit();
-    ledPin = 11;        // pin 11 as default ledPin
-  }
-</code></pre><p>而后连接一个220欧电阻+LED到ARDUINO的PIN 11上，即可通过USB控制LED亮灭。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2016/02/26/tips-on-v-usb-and-arduino-2/>Tips On V-USB And Arduino(2)--用v-usb控制LED</a></h1><span class=post-date>Feb 26, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=参考>参考</h3><p>参考链接如下(需翻墙):</p><p><a href=http://coopermaa2nd.blogspot.tw/2011/10/v-usb-examples-for-arduino.html>V-USB examples for Arduino</a></p><h3 id=连线图>连线图</h3><p>链接里的连线图如下:</p><p><img src=/images/image_thumb1354.png alt=/images/image_thumb1354.png></p><p>这个图我想了很久，对比上一节里键盘的连线图对比，发现D+/D-的连线刚好是反过来的。此外就是
-D-上加了一个上拉电阻， 电阻值为1.5K， 这个其实没关系，在我们的例子中，用到2.2K，是因为
-我们用的参考电压是5V的。</p><p>对上一章我们的连线图进行修改，得出的连线图如下:</p><p><img src=/images/2016_02_29_10_52_38_769x625.jpg alt=/images/2016_02_29_10_52_38_769x625.jpg></p><p>电路图如下:</p><p><img src=/images/2016_02_29_10_53_49_720x702.jpg alt=/images/2016_02_29_10_53_49_720x702.jpg></p><p>上一章用到的开关可以不用拆除。</p><p>值得注意的是，2.2K的上拉电阻接到了5V输入。</p><h3 id=代码>代码</h3><p>下载Windows版0022 Arduino，编译原帖中pde文件并上传，修改
-hardware/arduino/cores/arduino/wiring.c里的:</p><pre><code>SIGNAL(TIMER0_OVF_vect) 
-{
-++++++   sei()
-......
-}
-</code></pre><p>客户端程序编译:</p><pre><code>➜  pwd
-......../custom_class/examples/custom_class_demo/commandline
-➜  make clean
-rm -f *.o set-led
-➜  make
-
-</code></pre><p>使用<code>./set-led</code>即可，编译前需要修改头文件:</p><pre><code>$ vim set-led.c
-//#include &quot;../firmware/requests.h&quot;   /* custom request numbers */
-//#include &quot;../firmware/usbconfig.h&quot;  /* device's VID/PID and names */
-#include &quot;../../../requests.h&quot;   /* custom request numbers */
-#include &quot;../../../usbconfig.h&quot;  /* device's VID/PID and names */
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2016/02/26/tips-on-v-usb-and-arduino-1/>Tips On V-USB And Arduino(1)- USB Keyboard</a></h1><span class=post-date>Feb 26, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=参考>参考</h3><p>主要参考了:</p><p><a href=http://www.geek-workshop.com/thread-1137-1-1.html>Arduino学习笔记A11 - Arduino模拟电脑键盘（基于AVR-USB的USB-HID设备）</a></p><h3 id=电路图>电路图</h3><p>安装Fritzing后，可以绘制出面包板连线图和电路图:</p><p><img src=/images/2016_02_26_16_57_48_761x613.jpg alt=/images/2016_02_26_16_57_48_761x613.jpg></p><p>电路图:</p><p><img src=/images/2016_02_26_17_00_04_668x679.jpg alt=/images/2016_02_26_17_00_04_668x679.jpg></p><p>注意事项:</p><p>电阻换成100欧也可以，原帖中是68欧电阻。<br>注意齐纳二极管的极性，带有色条的一端是负极。</p><h3 id=代码>代码</h3><p>值得注意的配置如下:</p><pre><code>#define USB_CFG_IOPORTNAME D
-	
-USB输入输出引脚使用AVR单片机的PORTD，如果改成B就是使用PORTB
-#define USB_CFG_DMINUS_BIT 4
-	
-USB的D-接PORTD的第四位PD4，对应Arduino D4
-#define USB_CFG_DPLUS_BIT  2
-	
-USB的D+接PORTD的第二位PD2，对应Arduino D2
-#define USB_CFG_PULLUP_IOPORTNAME D
-	
-USB上拉引脚使用AVR单片机的PORTD，如果改成B就是使用PORTB
-#define USB_CFG_PULLUP_BIT  5
-	
-USB的上拉电阻接PORTD的第五位PD5，对应Arduino  D5
-</code></pre><p>在Arduino1.0.5上编译/配置都没有问题，最好在0022～1.05的版本范围内进行实验。</p><p>首先通过USBasp线写入编译后的程序，而后换上我们添加的USB线缆后，点击按键，每次即可输出
-<code>hello world</code>字符串。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/106/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/106/>106</a></li><li class="page-item active"><a class=page-link href=/page/107/>107</a></li><li class=page-item><a class=page-link href=/page/108/>108</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/224/>224</a></li><li class=page-item><a href=/page/108/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/224/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>以上的脚本就可以直接将e-buddy的头像置为红色，且一直闪烁。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/106/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/106/>106</a></li><li class="page-item active"><a class=page-link href=/page/107/>107</a></li><li class=page-item><a class=page-link href=/page/108/>108</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/108/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
