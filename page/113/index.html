@@ -1,5 +1,120 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/12/16/yong-graphitecheng-xian-yan-zhou-kong-qi-zhi-liang-2/>用Graphite呈现广州空气质量(2)</a></h1><span class=post-date>Dec 16, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=更改后的脚本>更改后的脚本</h3><p>以下脚本可以用于取回网页上的数据，并将其写入到Graphite远程服务器。</p><pre><code>#!/usr/bin/env python
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/12/16/yong-graphitecheng-xian-yan-zhou-kong-qi-zhi-liang-4/>用Graphite呈现广州空气质量(4)</a></h1><span class=post-date>Dec 16, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=tessera>Tessera</h3><p>直接导入Graphite中定义好的dashboard即可，值得注意的是，如何创建模板，或者说，如何创建一
+个template用于渲染我们导入的各个数据？</p><p>导入的时候出现了如下的问题:</p><p><img src=/images/2015_12_16_18_34_44_701x483.jpg alt=/images/2015_12_16_18_34_44_701x483.jpg></p><p>可见tessera中对数据的定制化是必须的。</p><h3 id=grafana>Grafana</h3><p>安装及配置为自动启动:</p><pre><code>$ wget https://grafanarel.s3.amazonaws.com/builds/grafana_2.6.0_amd64.deb
+$ sudo dpkg -i grafana_2.6.0_amd64.deb
+$ sudo service grafana-server start
+$ sudo update-rc.d grafana-server defaults 95 10
+</code></pre><p>默认用户名/密码为 admin/admin.</p><p>现在添加graphite数据源，例如：</p><p><img src=/images/2015_12_16_19_20_33_703x484.jpg alt=/images/2015_12_16_19_20_33_703x484.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/12/16/yong-graphitecheng-xian-yan-zhou-kong-qi-zhi-liang-3/>用Graphite呈现广州空气质量(3)</a></h1><span class=post-date>Dec 16, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=当前节点无数据>当前节点无数据</h3><p>我们的脚本加入crontab运行后，最开始是可以得到数据的，后面两小时它挂了，查原因，有以下的
+报错信息:</p><pre><code># /home/adminubuntu/GuangzhouPM25.py 
+Traceback (most recent call last):
+  File &quot;/home/adminubuntu/GuangzhouPM25.py&quot;, line 112, in &lt;module&gt;
+    airdata = get_air_data(positionsets)
+  File &quot;/home/adminubuntu/GuangzhouPM25.py&quot;, line 80, in get_air_data
+    PM25 = int(pattern.match(soup.find('td',{'id': 'pmtow'}).contents[0]).group())
+ValueError: invalid literal for int() with base 10: ''
+</code></pre><p>此时selenium控制的浏览器停在以下图例:</p><p><img src=/images/2015_12_16_14_21_03_497x301.jpg alt=/images/2015_12_16_14_21_03_497x301.jpg></p><p>可以看到，如果当前节点的数据为<code>--</code>， 则我们的python脚本运行会出现问题。因而我们在代码中
+要加入少量修改。</p><h3 id=错误处理>错误处理</h3><p>以下的代码更改添加了错误处理，如果该监测点的数值为空，则不提交任何数据:</p><pre><code>@@ -66,9 +66,9 @@ def get_air_data(positionsets):
+   hourdata = {}
+   # Calling selenium, need linux X
+   browser = Firefox()
+-  # Added 10 seconds for waiting page for loading.
+-  time.delay(10)
+   browser.get(URL)
++  # Added 10 seconds for waiting page for loading.
++  time.sleep(10)
+   # Click button one-by-one
+   for position in positionsets:
+     # After clicking, should re-get the page_source.
+@@ -78,33 +78,37 @@ def get_air_data(positionsets):
+     soup = BeautifulSoup(page_source, 'html.parser')
+     # pm2.5 value would be something like xx 微克/立方米, so we need an regex for
+     # matching, example: print int(pattern.match(input).group())
+-    PM25 = int(pattern.match(soup.find('td',{'id': 'pmtow'}).contents[0]).group())
+-    PM25_iaqi = int(pattern.match(soup.find('td',{'id': 'pmtow_iaqi'}).contents[0]).group())
+-    PM10 = int(pattern.match(soup.find('td',{'id': 'pmten'}).contents[0]).group())
+-    PM10_iaqi = int(pattern.match(soup.find('td',{'id': 'pmten_iaqi'}).contents[0]).group())
+-    SO2 = int(pattern.match(soup.find('td',{'id': 'sotwo'}).contents[0]).group())
+-    SO2_iaqi = int(pattern.match(soup.find('td',{'id': 'sotwo_iaqi'}).contents[0]).group())
+-    NO2 = int(pattern.match(soup.find('td',{'id': 'notwo'}).contents[0]).group())
+-    NO2_iaqi = int(pattern.match(soup.find('td',{'id': 'notwo_iaqi'}).contents[0]).group())
+-    # Special notice the CO would be float value
+-    CO = float(floatpattern.match(soup.find('td',{'id': 'co'}).contents[0]).group())
+-    CO_iaqi = int(pattern.match(soup.find('td',{'id': 'co_iaqi'}).contents[0]).group())
+-    O3 = int(pattern.match(soup.find('td',{'id': 'othree'}).contents[0]).group())
+-    O3_iaqi = int(pattern.match(soup.find('td',{'id': 'othree_iaqi'}).contents[0]).group())
+-    hourdata_key = pinyin.get(position)
+-    hourdata[hourdata_key] = []
+-    hourdata[hourdata_key].append(PM25)
+-    hourdata[hourdata_key].append(PM25_iaqi)
+-    hourdata[hourdata_key].append(PM10)
+-    hourdata[hourdata_key].append(PM10_iaqi)
+-    hourdata[hourdata_key].append(SO2)
+-    hourdata[hourdata_key].append(SO2_iaqi)
+-    hourdata[hourdata_key].append(NO2)
+-    hourdata[hourdata_key].append(NO2_iaqi)
+-    hourdata[hourdata_key].append(CO)
+-    hourdata[hourdata_key].append(CO_iaqi)
+-    hourdata[hourdata_key].append(O3)
+-    hourdata[hourdata_key].append(O3_iaqi)
++    try:
++      PM25 = int(pattern.match(soup.find('td',{'id': 'pmtow'}).contents[0]).group())
++      PM25_iaqi = int(pattern.match(soup.find('td',{'id': 'pmtow_iaqi'}).contents[0]).group())
++      PM10 = int(pattern.match(soup.find('td',{'id': 'pmten'}).contents[0]).group())
++      PM10_iaqi = int(pattern.match(soup.find('td',{'id': 'pmten_iaqi'}).contents[0]).group())
++      SO2 = int(pattern.match(soup.find('td',{'id': 'sotwo'}).contents[0]).group())
++      SO2_iaqi = int(pattern.match(soup.find('td',{'id': 'sotwo_iaqi'}).contents[0]).group())
++      NO2 = int(pattern.match(soup.find('td',{'id': 'notwo'}).contents[0]).group())
++      NO2_iaqi = int(pattern.match(soup.find('td',{'id': 'notwo_iaqi'}).contents[0]).group())
++      # Special notice the CO would be float value
++      CO = float(floatpattern.match(soup.find('td',{'id': 'co'}).contents[0]).group())
++      CO_iaqi = int(pattern.match(soup.find('td',{'id': 'co_iaqi'}).contents[0]).group())
++      O3 = int(pattern.match(soup.find('td',{'id': 'othree'}).contents[0]).group())
++      O3_iaqi = int(pattern.match(soup.find('td',{'id': 'othree_iaqi'}).contents[0]).group())
++      hourdata_key = pinyin.get(position)
++      hourdata[hourdata_key] = []
++      hourdata[hourdata_key].append(PM25)
++      hourdata[hourdata_key].append(PM25_iaqi)
++      hourdata[hourdata_key].append(PM10)
++      hourdata[hourdata_key].append(PM10_iaqi)
++      hourdata[hourdata_key].append(SO2)
++      hourdata[hourdata_key].append(SO2_iaqi)
++      hourdata[hourdata_key].append(NO2)
++      hourdata[hourdata_key].append(NO2_iaqi)
++      hourdata[hourdata_key].append(CO)
++      hourdata[hourdata_key].append(CO_iaqi)
++      hourdata[hourdata_key].append(O3)
++      hourdata[hourdata_key].append(O3_iaqi)
++    except ValueError, Argument:
++      # won't add the data, simply ignore this position
++      print &quot;The argument does not contain numbers\n&quot;, Argument
+   # After clicking all of the button, quit the firefox and return the dictionary
+   browser.close()
+   return hourdata
+</code></pre><p>到现在为止，数据可以顺利的写入到Graphite中。</p><h3 id=graphite-dashboard>Graphite Dashboard</h3><p>组建Graphite Dashboard可以通过图形界面来进行，举例如下:</p><p><img src=/images/2015_12_16_15_22_04_579x386.jpg alt=/images/2015_12_16_15_22_04_579x386.jpg></p><p>具体的添加过程就不说了，值得注意的是，设置几个属性，时间范围为过去24小时，
+双击某图片后，<code>Render Options</code>里的<code>Line Mode</code>选择<code>Connected Line</code>，
+这样可以构建出连接线，比较适合我们所需要展示的数据类型。Y-Axis，即Y轴的起点(Minimal)设置为0.</p><p>点击DashBoard-> Edit Dashboard, 可以看到以下定义:</p><p><img src=/images/2015_12_16_15_25_54_789x499.jpg alt=/images/2015_12_16_15_25_54_789x499.jpg></p><p>这个定义文件可以修改，我们将使用这个定义文件来批量制作其他十多个监测点的Dashboard.</p><h3 id=创建更多的dashboard>创建更多的Dashboard</h3><p>参考:<br><a href=http://graphite.readthedocs.org/en/latest/dashboard.html#editing-importing-and-exporting-via-json>http://graphite.readthedocs.org/en/latest/dashboard.html#editing-importing-and-exporting-via-json</a></p><p>将上述的dashboard定义文件存储在某个文本文件中，
+用下列命令批量生成新的dashboard定义文件:</p><pre><code>$ cat dashboard.txt | sed 's/haizhuhu/aotizhongxin/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/aotizhongxin/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/baiyunshan/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/dafushan/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/gongyuanqian/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/haizhubaogang/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/haizhuchisha/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/haizhuhu/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/haizhushayuan/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/huangpudashadi/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/huangpuwenchong/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/huangshalubianzhan/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/liwanfangcun/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/liwanxicun/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/luhu/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/luogangxiqu/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/tianhelongdong/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/tiyuxi/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/yayuncheng/g'|myclip
+$ cat dashboard.txt | sed 's/haizhuhu/yangjilubianzhan/g'|myclip
+</code></pre><p><code>myclip</code>是一个自定义的命令，可以将管道输出直接到系统剪贴板，
+而后将内容新添加到dashboard定义文件中，点击update后，另存为新的dashboard即可.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/12/16/yong-graphitecheng-xian-yan-zhou-kong-qi-zhi-liang-2/>用Graphite呈现广州空气质量(2)</a></h1><span class=post-date>Dec 16, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=更改后的脚本>更改后的脚本</h3><p>以下脚本可以用于取回网页上的数据，并将其写入到Graphite远程服务器。</p><pre><code>#!/usr/bin/env python
 #-*-coding:utf-8 -*-
 
 ##################################################################################
@@ -283,108 +398,4 @@ iface eth0.22 inet static
     netmask 255.255.255.0
     vlan-raw-device eth0
 </code></pre><p>这样,重启以后, eth0.22会启动, 就可以通过VLAN 22 ping <code>10.47.58.2</code>了.</p><h3 id=换口>换口</h3><p>把joggler从7口换到6口, 可以看到eth0还是可以通的,但是eth0.22则无法通信. 这是因
-为我们只在7口和8口上添加了VLAN 22标记的缘故.换回7口,一切正常.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/12/10/openvswitch-on-ubuntu14-dot-04/>OpenVswitch On Ubuntu14.04</a></h1><span class=post-date>Dec 10, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>Install openvswitch via:</p><pre><code># apt-get update
-# apt-get install -y openvswitch-common openvswitch-switch
-</code></pre><p>List the installed module via:</p><pre><code># lsmod | grep open
-openvswitch            66901  0 
-gre                    13808  1 openvswitch
-vxlan                  37619  1 openvswitch
-libcrc32c              12644  1 openvswitch
-# ovs-vsctl --version
-ovs-vsctl (Open vSwitch) 2.0.2
-Compiled May 13 2015 18:49:53
-</code></pre><h3 id=configuration>Configuration</h3><p>Edit the configuration of the networking:</p><pre><code>$ sudo vim /etc/network/interfaces
-###########################################
-## By using openVswitch, we enabled the following
-###########################################
-auto ovsbr0
-iface ovsbr0 inet static
-address 192.168.1.xx
-netmask 255.255.0.0
-gateway 192.168.1.xx
-dns-nameservers 223.5.5.5 180.76.76.76
-</code></pre><p>Now configure the ovs-switched bridge:</p><pre><code># ovs-vsctl add-br ovsbr0
-# ovs-vsctl list-br
-ovsbr0
-# ovs-vsctl add-port ovsbr0 eth0 &amp;&amp; reboot
-</code></pre><p>Now restart the computer you will get the ovs-bridged network running.</p><h3 id=bridged-with-vlan>Bridged With VLAN</h3><p>Add/Remove port of the ovs-bridged:</p><pre><code># ovs-vsctl add-port ovsbr0 tap0 tag=22
-# ovs-vsctl show
-901c2b29-0764-4370-8d06-168b18339236
-    Bridge &quot;ovsbr0&quot;
-        Port &quot;eth0&quot;
-            Interface &quot;eth0&quot;
-        Port &quot;tap0&quot;
-            tag: 22
-            Interface &quot;tap0&quot;
-        Port &quot;ovsbr0&quot;
-            Interface &quot;ovsbr0&quot;
-                type: internal
-    ovs_version: &quot;2.0.2&quot;
-# ovs-vsctl del-port ovsbr0 tap0
-</code></pre><p>If you want to remove the tag, then:</p><pre><code>ovs-vsctl set port vnet0 tag=100
-ovs-vsctl remove port vnet0 tag 100
-</code></pre><h3 id=vlan--openvswitch-virt-manager>VLAN / OpenVswitch/ virt-manager</h3><p>Dumpxml will displayed as following:</p><pre><code>    &lt;interface type='bridge'&gt;
-      &lt;mac address='52:54:00:0e:6b:d1'/&gt;
-      &lt;source bridge='ovsbr0'/&gt;
-      &lt;vlan trunk='yes'&gt;
-        &lt;tag id='22' nativeMode='untagged'/&gt;
-      &lt;/vlan&gt;
-      &lt;virtualport type='openvswitch'&gt;
-        &lt;parameters interfaceid='d5b7b981-8998-44c0-9344-0ade6b69ec1f'/&gt;
-      &lt;/virtualport&gt;
-      &lt;target dev='vnet0'/&gt;
-      &lt;model type='virtio'/&gt;
-      &lt;alias name='net0'/&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/&gt;
-    &lt;/interface&gt;
-    &lt;interface type='bridge'&gt;
-      &lt;mac address='52:54:00:3c:c9:24'/&gt;
-      &lt;source bridge='ovsbr0'/&gt;
-      &lt;vlan trunk='yes'&gt;
-        &lt;tag id='100' nativeMode='untagged'/&gt;
-      &lt;/vlan&gt;
-      &lt;virtualport type='openvswitch'&gt;
-        &lt;parameters interfaceid='06898d54-c0da-48c6-8b01-3307e70b995a'/&gt;
-      &lt;/virtualport&gt;
-      &lt;target dev='vnet1'/&gt;
-      &lt;model type='virtio'/&gt;
-      &lt;alias name='net1'/&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/&gt;
-    &lt;/interface&gt;
-    &lt;interface type='bridge'&gt;
-      &lt;mac address='52:54:00:7b:e7:b0'/&gt;
-      &lt;source bridge='ovsbr0'/&gt;
-      &lt;virtualport type='openvswitch'&gt;
-        &lt;parameters interfaceid='303c1f65-23ff-4017-93ba-f196ca1d05fb'/&gt;
-      &lt;/virtualport&gt;
-      &lt;target dev='vnet2'/&gt;
-      &lt;model type='virtio'/&gt;
-      &lt;alias name='net2'/&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/&gt;
-    &lt;/interface&gt;
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/12/08/tessera-how-to/>tessera how-to</a></h1><span class=post-date>Dec 8, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>Installation steps are listed as following:</p><pre><code># apt-get install -y python-virtualenv
-# git clone git@github.com:urbanairship/tessera.git
-# cd tessera
-# virtualenv .
-# . bin/activate
-# cd tessera-server/
-# pip install -r requirements.txt
-# pip install -r dev-requirements.txt
-# cd ../tessera-frontend
-# apt-get install -y npm
-# npm install -g grunt-cli
-# npm install
-# ln -s /usr/bin/nodejs /usr/bin/node
-# grunt
-# which inv
-/root/Code/second/tessera/bin/inv
-</code></pre><h3 id=start>Start</h3><p>Start the service via:</p><pre><code># cd /root/Code/second/tessera/tessera-server/
-# inv db.init
-# inv run &amp;
-# inv json.import 'demo/*'
-</code></pre><p>Open the browser and visit <code>http://localhost:5000</code>, you could see the tessera&rsquo;s web
-front.</p><p><img src=/images/2015_12_08_11_42_52_998x527.jpg alt=/images/2015_12_08_11_42_52_998x527.jpg></p><h3 id=import-graphite-data>Import Graphite Data</h3><pre><code>(tessera)root@monitorserver:~/Code/second/tessera/tessera-server# vim tessera/config.py 
-root@monitorserver:~/Code/second/tessera# cat tessera-server/tessera/config.py
-GRAPHITE_URL               = 'http://192.168.10.192'
-# inv graphite.import
-</code></pre><p>Now you could see the imported graphite data.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/112/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/112/>112</a></li><li class="page-item active"><a class=page-link href=/page/113/>113</a></li><li class=page-item><a class=page-link href=/page/114/>114</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/114/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+为我们只在7口和8口上添加了VLAN 22标记的缘故.换回7口,一切正常.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/112/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/112/>112</a></li><li class="page-item active"><a class=page-link href=/page/113/>113</a></li><li class=page-item><a class=page-link href=/page/114/>114</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/114/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

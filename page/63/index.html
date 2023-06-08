@@ -1,5 +1,152 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/01/ratelimitingoninstio/>RateLimitingOnInstio</a></h1><span class=post-date>May 1, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=service-example>Service Example</h3><p>The yaml file is directly taken from the official example of <code>helloworld</code>, but
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/16/workingtipsonistiodemo/>WorkingTipsOnIstioDemo</a></h1><span class=post-date>May 16, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=istio-08-download>istio 0.8 download</h3><p>Download from its daily build:</p><p><a href=https://gcsweb.istio.io/gcs/istio-prerelease/daily-build/>https://gcsweb.istio.io/gcs/istio-prerelease/daily-build/</a></p><pre><code># wget https://storage.googleapis.com/istio-prerelease/daily-build/release-0.8-20180515-17-26/istio-release-0.8-20180515-17-26-linux.tar.gz
+# mkdir -p /root/istio/bin/
+# cp /root/Code/istio-release-0.8-20180515-17-26/bin/istioctl /root/istio/bin/
+</code></pre><h3 id=build>Build</h3><p>Install following packages:</p><pre><code># yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel java-1.8.0-openjdk-debug
+# export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.el7_4.x86_64
+# export PATH=$PATH:$JAVA_HOME/bin
+</code></pre><p>Build the cars-api service via:</p><pre><code># ./mvnw -Distio.home=/root/Code/istio-release-0.8-20180515-17-26 clean package fabric8:build
+# docker images | grep cars-api
+kameshsampath/cars-api                                                      0.0.1               28647076e814        8 minutes ago       439 MB
+</code></pre><h3 id=verification>Verification</h3><p>Install cars-api:</p><pre><code># kubectl  apply -f istio-cars-api-0.0.1-all.yml 
+deployment.extensions &quot;cars-api&quot; created
+# kubectl  get pods
+NAME                                      READY     STATUS    RESTARTS   AGE
+cars-api-777b9574bf-jvxvk                 2/2       Running   0          3m
+</code></pre><p><code>car-api-ingress.yaml</code> definition:</p><pre><code>apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    expose: &quot;true&quot;
+    app: cars-api
+    version: 0.0.1
+  name: cars-api
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: istio
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: cars-api
+          servicePort: 8080
+</code></pre><p>Create a ingress:</p><pre><code># kubectl create -f car-api-ingress.yaml
+</code></pre><p>Test the car api via:</p><pre><code># curl -vvv http://192.192.189.41:32204/cars/list
+</code></pre><h3 id=auth>auth</h3><p>Definition file <code>auth.yaml</code>:</p><pre><code>apiVersion: &quot;authentication.istio.io/v1alpha1&quot;
+kind: &quot;Policy&quot;
+metadata:
+  name: &quot;cars-api&quot;
+spec:
+  targets:
+  - name: cars-api
+  peers:
+  - mtls:
+  origins:
+  - jwt:
+      issuer: http://keycloak.default:8080/auth/realms/istio
+      jwksUri: http://keycloak.default:8080/auth/realms/istio/protocol/openid-connect/certs
+      audiences: 
+      - cars-web  
+  principalBinding: USE_ORIGIN
+</code></pre><p>Create the Policy via:</p><pre><code># /root/istio/bin/istioctl create  -f auth.yaml
+</code></pre><p>Now re-visit the ingress item you will see 401 issue:</p><pre><code># curl -vvv http://192.192.189.41:32204/cars/list
+
+*   Trying 192.192.189.41...
+* TCP_NODELAY set
+* Connected to 192.192.189.41 (192.192.189.41) port 32204 (#0)
+&gt; GET /cars/list HTTP/1.1
+&gt; Host: 192.192.189.41:32204
+&gt; User-Agent: curl/7.59.0
+&gt; Accept: */*
+&gt; 
+&lt; HTTP/1.1 401 Unauthorized
+&lt; content-length: 29
+&lt; content-type: text/plain
+&lt; date: Wed, 16 May 2018 03:16:47 GMT
+&lt; server: envoy
+&lt; x-envoy-upstream-service-time: 8
+&lt; 
+* Connection #0 to host 192.192.189.41 left intact
+Origin authentication failed.%              
+</code></pre><p>Get the token, then :</p><pre><code># curl -vvv -H &quot;Authorization: Bearer $token&quot; http://192.192.189.41:32204/cars/list
+</code></pre><p>you will get the right result.</p><h3 id=different-namespace>Different Namespace</h3><p>Create the auth.yaml for different namespace is OK:</p><pre><code># /root/istio/bin/istioctl create -f auth-myproject.yaml  -n myproject
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/14/nfsstoragefork8s/>NFSStorageForK8s</a></h1><span class=post-date>May 14, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=code>Code</h3><p>Code is git from following url:</p><pre><code># git clone https://github.com/kubernetes-incubator/external-storage.git
+</code></pre><h3 id=steps>Steps</h3><p>You have to manually get the docker image for
+<code>quay.io/external_storage/nfs-client-provisioner</code>, then create the storage
+class via following command:</p><p>deployment.yaml:</p><pre><code>kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: nfs-client-provisioner
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nfs-client-provisioner
+    spec:
+      serviceAccountName: nfs-client-provisioner
+      containers:
+        - name: nfs-client-provisioner
+          image: quay.io/external_storage/nfs-client-provisioner:latest
+          volumeMounts:
+            - name: nfs-client-root
+              mountPath: /persistentvolumes
+          env:
+            - name: PROVISIONER_NAME
+              value: fuseim.pri/ifs
+            - name: NFS_SERVER
+              value: 192.192.189.31
+            - name: NFS_PATH
+              value: /opt/nfs
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: 192.192.189.31
+            path: /opt/nfs
+</code></pre><p>Install via <code>kubectl create -f deployment.yaml</code>.</p><p>StorageClass yaml is listed as:</p><p>sc.yaml:</p><pre><code>apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-storage
+  annotations:
+    storageclass.kubernetes.io/is-default-class: &quot;true&quot;
+provisioner: fuseim.pri/ifs
+</code></pre><p>Create it via <code>kubectl create -f sc.yaml</code>.</p><p>test-claim.yaml:</p><pre><code>kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: test-claim
+  annotations:
+    volume.beta.kubernetes.io/storage-class: &quot;nfs-storage&quot;
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Mi
+</code></pre><p>And test-pod.yaml:</p><pre><code>kind: Pod
+apiVersion: v1
+metadata:
+  name: test-pod
+spec:
+  containers:
+  - name: test-pod
+    image: gcr.io/google_containers/busybox:1.24
+    command:
+      - &quot;/bin/sh&quot;
+    args:
+      - &quot;-c&quot;
+      - &quot;touch /mnt/SUCCESS &amp;&amp; exit 0 || exit 1&quot;
+    volumeMounts:
+      - name: nfs-pvc
+        mountPath: &quot;/mnt&quot;
+  restartPolicy: &quot;Never&quot;
+  volumes:
+    - name: nfs-pvc
+      persistentVolumeClaim:
+        claimName: test-claim
+</code></pre><p>Verify them via install and delete them.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/01/ratelimitingoninstio/>RateLimitingOnInstio</a></h1><span class=post-date>May 1, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=service-example>Service Example</h3><p>The yaml file is directly taken from the official example of <code>helloworld</code>, but
 I remove the v2 deployment, thus the yaml file is listed as following:</p><pre><code>apiVersion: v1
 kind: Service
 metadata:
@@ -203,59 +350,4 @@ error running playbook: error running ansible: exit status 1
 </code></pre><p>Seems because the python is python3 rather than python2.</p><p>Edit the python definition:</p><pre><code># vim ansible/bin/ansible-playbook
     #!/usr/bin/python2
 </code></pre><p>Then your validation will be OK.</p><h3 id=install-apply>install apply</h3><p>Via following command:</p><pre><code># ./kismatic install apply
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/12/workingtipsonplaywithk8s/>WorkingTipsOnPlayWithK8s</a></h1><span class=post-date>Apr 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>Aim</h3><p>To Write an tutorial for colleagues for learning, they only have to open the
-browser, by clicking then they could get an automated dev environment.</p><h3 id=environment>Environment</h3><p>play-with-kubernetes blog:</p><pre><code># git clone https://github.com/play-with-docker/play-with-kubernetes.github.io.git
-# cd play-with-kubernetes.github.io/
-# vim _config.yml
-pwkurl: http://192.168.189.114
-# docker-compose up
-</code></pre><p>Then open your browser <code>http://192.168.189.114:4000</code>, and you will see the play-with-k8s webpages.</p><p>For using the local infrastructure, to configure the <code>play-with-docker</code> with
-following steps:</p><pre><code># cd /root/go/src/github.com/play-with-docker/play-with-docker
-# vim config/config.go
-	//flag.StringVar(&amp;DefaultDinDImage, &quot;default-dind-image&quot;, &quot;franela/dind&quot;, &quot;Default DinD image to use if not specified otherwise&quot;)
-	flag.StringVar(&amp;DefaultDinDImage, &quot;default-dind-image&quot;, &quot;franela/k8s&quot;, &quot;Default DinD image to use if not specified otherwise&quot;)
-</code></pre><p>While the image we specified here could be the one you added your changes, but
-default we will use <code>franela/k8s</code>.</p><p>The webpage is showed as:</p><p><img src=/images/2018_04_12_09_25_38_1242x708.jpg alt=/images/2018_04_12_09_25_38_1242x708.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/08/workingtipsonplaywithdocker2/>WorkingTipsOnPlayWithDocker2</a></h1><span class=post-date>Apr 8, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=migration>migration</h3><p>Really migrate this image into the inner intranet, without any internet
-connection.</p><h3 id=registry-changing>Registry Changing</h3><p>You have to comment the proxy definition, or your registry instance will
-restart frequently, thus your dind won&rsquo;t get working using registry.</p><pre><code># vim /root/data/config.yml
-	#proxy:
-		# remoteurl: https://registry-1.docker.io
-# docker restart docker-registry-proxy-2
-</code></pre><h3 id=systemd-definition>systemd definition</h3><p>Define following two systemd units:</p><pre><code># vim /etc/systemd/system/playwithdocker.service 
-[Unit]
-Description=playwithdocker
-After=docker.service
-Requires=docker.service
-
-[Service]
-Environment=GOPATH=/root/go/
-ExecStart=/usr/bin/docker-compose -f /root/go/src/github.com/play-with-docker/play-with-docker/docker-compose.yml up -d
-
-[Install]
-WantedBy=multi-user.target
-</code></pre><p>This unit will start blog service automatically.</p><pre><code># vim /etc/systemd/system/playwithdockerblog.service 
-[Unit]
-Description=playwithdockerblog
-After=docker.service
-Requires=docker.service
-
-[Service]
-ExecStart=/usr/bin/docker-compose -f /root/Code/play-with-docker.github.io/docker-compose.yml up -d
-
-[Install]
-WantedBy=multi-user.target
-# systemctl enable playwithdocker.service
-# systemctl enable playwithdockerblog.service
-</code></pre><p>Next time the service will automatically start.</p><h3 id=offline-cssjs>Offline CSS/js</h3><p>bootstrap fonts:</p><pre><code># wget https://github.com/twbs/bootstrap/archive/v3.3.7.zip
-# unzip bootstrap-3.3.7.zip
-# cd fonts
-# mkdir ~/Code/play-with-docker.github.io/_site/fonts/
-# cp * ~/Code/play-with-docker.github.io/_site/fonts/
-</code></pre><p>Then your image will display correctly.</p><p><img src=/images/2018_04_08_16_15_38_518x362.jpg alt=/images/2018_04_08_16_15_38_518x362.jpg></p><h3 id=google-fonts>Google Fonts</h3><p>Download the Fonts description from the website, then put all of the related
-fonts under your local folder.</p><h3 id=dnsmasq>dnsmasq</h3><p>Download the rpm package via:</p><pre><code># yum install yum-plugin-downloadonly
-# yum reinstall --downloadonly --downloaddir=/root/rpms dnsmasq
-</code></pre><p>Transfer the package to intranet and install it. Then edit the configuration
-file of dnsmasq:</p><pre><code># vim /etc/dnsmasq.conf
-address=/192.192.189.114/192.192.189.114
-# systemclt enable dnsmasq &amp;&amp; systemctl start dnsmasq
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/62/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/62/>62</a></li><li class="page-item active"><a class=page-link href=/page/63/>63</a></li><li class=page-item><a class=page-link href=/page/64/>64</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/64/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

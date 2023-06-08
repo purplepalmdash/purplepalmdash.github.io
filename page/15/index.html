@@ -1,5 +1,45 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/15/changesinaosp12unfinished/>ChangesInAOSP12Unfinished</a></h1><span class=post-date>Nov 15, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aosp修改要点>aosp修改要点</h3><p>TBD, 因为这里还没有完全理出来。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/15/changeitemsinaosp11/>ChangeItemsInAOSP11</a></h1><span class=post-date>Nov 15, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>这里记录开启转码支持所需要更改的文件列表</p><p><code>build/target/board/generic_x86_64/BoardConfig.mk</code>, 在文件的尾部添加关于ABI架构支持的列表:</p><pre><code> # Native Bridge ABI List
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/30/enablepulseaudioinsystemmode/>EnablePulseAudioInSystemMode</a></h1><span class=post-date>Nov 30, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>在Ubuntu <code>18.04.6</code>上配置pulseaudio的 <code>system-wide</code> daemon模式，以使得<code>pulseaudio</code>为所有用户可用。</p><h3 id=步骤>步骤</h3><p>确保<code>pulseaudio</code>被安装（默认应该是被安装的), 撰写一个<code>systemd</code>服务条目，重新定义其启动方式(做完以下步骤后需要重新启动机器), 需注意需要手动执行<code>usermod</code>一行为所有用户添加到组里:</p><pre><code># vi /etc/systemd/system/pulseaudio.service
+[Unit]
+Description=PulseAudio Daemon
+ 
+[Install]
+WantedBy=multi-user.target
+ 
+[Service]
+Type=simple
+PrivateTmp=true
+ExecStart=/usr/bin/pulseaudio --system --realtime --disallow-exit --no-cpu-limit 
+# vi /usr/share/dbus-1/system.d/pulseaudio.conf 
+&lt;?xml version=&quot;1.0&quot;?&gt; &lt;!--*-nxml-*--&gt;
+&lt;!DOCTYPE busconfig PUBLIC &quot;-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN&quot;
+ &quot;http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd&quot;&gt;
+&lt;busconfig&gt;
+    &lt;policy group=&quot;pulse&quot;&gt;
+        &lt;allow own=&quot;org.pulseaudio.Server&quot;/&gt;
+    &lt;/policy&gt;
+
+    &lt;policy context=&quot;default&quot;&gt;
+        &lt;allow send_destination=&quot;org.pulseaudio.Server&quot;/&gt;
+        &lt;allow receive_sender=&quot;org.pulseaudio.Server&quot;/&gt;
+    &lt;/policy&gt;
+&lt;/busconfig&gt;
+# groupadd --system pulse
+# groupadd --system pulse-access
+# useradd --system -g pulse -G audio -d /var/run/pulse -m pulse
+# usermod -G video,pulse-access root
+# usermod -G video,pulse-access test
+# usermod -G video,pulse-access seat1
+# usermod -G video,pulse-access seat2
+# echo &quot;default-server = /var/run/pulse/native&quot; &gt;&gt; /etc/pulse/client.conf
+# echo &quot;autospawn = no&quot; &gt;&gt; /etc/pulse/client.conf
+# systemctl daemon-reload
+# systemctl enable pulseaudio
+# reboot
+</code></pre><p>重启后，以ssh登陆到各用户下，在命令行下播放音频，如用<code>mplayer 1.mp3</code>等操作，应该可以看到音频被正确解码，但是此时无声音，应该使用以下命令unmute音道.</p><p>开启所有音道:</p><pre><code># pactl set-sink-mute @DEFAULT_SINK@ false
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/24/workingtipsonsg1/>WorkingTipsOnSG1</a></h1><span class=post-date>Nov 24, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Before installing device drivers:</p><pre><code>[root@localhost test]# ls /dev/dri
+ls: cannot access /dev/dri: No such file or directory
+</code></pre><p>Changes to ubuntu(I think centos will fail)</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/15/changesinaosp12unfinished/>ChangesInAOSP12Unfinished</a></h1><span class=post-date>Nov 15, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aosp修改要点>aosp修改要点</h3><p>TBD, 因为这里还没有完全理出来。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/15/changeitemsinaosp11/>ChangeItemsInAOSP11</a></h1><span class=post-date>Nov 15, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>这里记录开启转码支持所需要更改的文件列表</p><p><code>build/target/board/generic_x86_64/BoardConfig.mk</code>, 在文件的尾部添加关于ABI架构支持的列表:</p><pre><code> # Native Bridge ABI List
  NB_ABI_LIST_32_BIT := armeabi-v7a armeabi
  NB_ABI_LIST_64_BIT := arm64-v8a
  
@@ -356,67 +396,4 @@ Session=xfce,xfce
 User=seat1,seat2
 ....
 此时重启后可以看到，双屏方案在登陆前自动进入到图形界面并已经实现分屏.   
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/08/workingtipsonmultiseatubuntu180406/>WorkingTipsOnMultiSeatUbuntu180406</a></h1><span class=post-date>Nov 8, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=前提>前提</h3><p>基准操作系统为<code>ubuntu-18.04.6-live-server-amd64.iso</code>, 不可以安装为<code>desktop</code>版本的iso。</p><h3 id=系统及包更新>系统及包更新</h3><p>确保系统更新到最新:</p><pre><code>$ sudo apt-get update -y &amp;&amp; sudo apt-get upgrade -y
-</code></pre><p>安装必要的包:</p><pre><code>$ sudo apt-get install -y sddm xfce4 unzip autoconf automake libtool pkg-config build-essential x11proto-dev xserver-xorg-dev libxcb-util-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-shm0-dev libxcb-randr0-dev vim cmake cmake-extras extra-cmake-modules libpam-dev libxcb-xkb-dev qt5-default libqt5qml5 qt5-qmltooling-plugins qtdeclarative5-dev qttools5-dev xutils-dev
-</code></pre><h3 id=multi-seat编译配置>Multi-seat编译/配置</h3><p>将<code>multi-seat.tar.gz</code>上传到机器上，解压:</p><pre><code>$ tar xzvf multi-seat.tar.gz
-$ cd multi-seat/
-$ ls
-sddm-nested-multiseat  xf86-video-nested sddm_config
-</code></pre><p>编译<code>xf86-video-nested</code>包:</p><pre><code>$ cd xf86-video-nested
-$ ./autogen.sh &amp;&amp; ./configure --prefix=/usr &amp;&amp; make -j2 &amp;&amp; sudo make install
-</code></pre><p>编译<code>sddm-nested-multiseat</code>包, 生成并更新配置文件:</p><pre><code>$ cd sddm-nested-multiseat
-$ mkdir build &amp;&amp;  cd build
-$ cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release  -Wno-dev .. &amp;&amp; make -j2 &amp;&amp; sudo make install
-$ sudo install -v -dm755 -o sddm -g sddm /var/lib/sddm
-$ sddm --example-config &gt; sddm.example.conf
-$ sudo cp -v  sddm.example.conf /etc/sddm.conf
-</code></pre><p>更新<code>sddm</code>登陆免密配置文件:</p><pre><code>$ cd sddm_config
-$ sudo cp * /etc/pam.d
-</code></pre><h3 id=配置桌面登陆>配置桌面登陆</h3><p>更新<code>xorg</code>定义文件：</p><pre><code>$ cd xorg_config
-$ sudo mkdir -p /etc/X11/xorg.conf.d
-$ sudo cp xorg.conf.d/20-intel.conf /etc/X11/xorg.conf.d
-$ sudo cp seat* /etc/X11
-$ sudo cp /bin/sed /usr/bin/sed
-</code></pre><p>配置USB口与seat的映射关系（从已有的例子进行修改）：</p><pre><code>$ cd udev_config
-$ vim 70-seat.rules
-修改完毕后：   
-$ sudo cp 70-seat.rules /etc/udev/rules.d/70-seat.rules
-</code></pre><p>开启multi-seat:</p><pre><code>$ sudo vim /etc/default/grub
-.....
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash startseat=true&quot;
-GRUB_CMDLINE_LINUX=&quot;startseat=true&quot;
-....
-$ sudo update-grub2
-</code></pre><p>建立两个用于登陆的用户:</p><pre><code>$ sudo useradd -m seat1
-$ sudo useradd -m seat2
-$ sudo passwd seat1
-$ sudo passwd seat2
-</code></pre><p>配置<code>sddm</code>为两个用户的自动登陆(<code>[AutoLogin]</code>内只保留如下所示部分):</p><pre><code># cat /etc/sddm.conf | more
-[Autologin]
-# Whether sddm should automatically log back into sessions when they exit
-# Whether sddm should automatically log back into sessions when they exit
-Relogin=false,false
-SeatName=seat1,seat2
-#Session=awesome,awesome
-Session=xfce,xfce
-User=seat1,seat2
-....
-此时重启后可以看到，双屏方案在登陆前自动进入到图形界面并已经实现分屏.   
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/01/tipsforseandroid/>TipsForSeAndroid</a></h1><span class=post-date>Nov 1, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=基本概念>基本概念</h3><p>SEAndroid是在Android系统中基于SELinux推出的强制访问控制模型，来完善自主访问模型中只要取得root权限就可以为所欲为的情况。<br>SELinux是一种基于域-类型（domain-type）模型的强制访问控制（MAC）安全系统，其原则是任何进程想在SELinux系统中干任何事，都必须先在安全策略的配置文件中赋予权限。凡是没有在安全策略中配置的权限，进程就没有该项操作的权限。在SELinux出现之前，Linux的安全模型是DAC（DiscretionaryAccess Control），译为自主访问控制。其核心思想是进程理论上所拥有的权限与运行它的用户权限相同。比如，以root用户启动shell，那么shell就有root用户的权限，在Linux系统上能干任何事。这种管理显然比较松散。在SELinux中，如果需要访问资源，系统会先进行DAC检查，不通过则访问失败，然后再进行MAC权限检查。</p><h4 id=seandroid-app分类>SEAndroid app分类</h4><p>app分类：</p><pre><code>SELinux(或SEAndroid)将app划分为主要三种类型(根据user不同，也有其他的domain类型)：
-
-1.untrusted_app  第三方app，没有Android平台签名，没有system权限
-2.platform_app    有android平台签名，没有system权限
-3.system_app      有android平台签名和system权限
-4.untrusted_app_25 第三方app，没有Android平台签名，没有system权限，其定义如下This file defines the rules for untrusted apps running with targetSdkVersion &lt;= 25.
-
-从上面划分，权限等级，理论上：untrusted_app &lt; platform_app &lt; system_app按照这个进行排序
-</code></pre><h3 id=app_neverallowste>app_neverallows.te</h3><p><code>/home/ctctest/AndroidSources/aosp11_r48/system/sepolicy/prebuilts/api/30.0/private</code></p><p>Line 182, 183
-Line 198, comment the <code>proc_version</code></p><h3 id=privatedomainte>private/domain.te</h3><p>Changes to <code>/home/ctctest/AndroidSources/aosp11_r48/system/sepolicy/prebuilts/api/30.0/private/coredomain.te</code>
-Line187, Line 113,</p><h3 id=genfs_contexts>genfs_contexts</h3><p>The same as in android9.0
-Line43</p><h3 id=system_serverte>system_server.te</h3><p>The same as in Pie
-Line 987</p><h3 id=untrusted_appte>untrusted_app.te</h3><p>The same as in Pie
-Appended in last</p><h3 id=untrusted_app_25te>untrusted_app_25.te</h3><p>Line 28, line 38</p><h4 id=untrusted_app_27te>untrusted_app_27.te</h4><p>Line 28, 45</p><h4 id=untrusted_app_allte>untrusted_app_all.te</h4><p>Line 161</p><h4 id=webview_zygotete>webview_zygote.te</h4><p>Line 66</p><h4 id=zygotete>zygote.te</h4><p>Line 235</p><h4 id=publicappte>public/app.te</h4><p>Line 472, Line 438</p><h4 id=publicdomainte>public/domain.te</h4><p>Line 468
-Line 490
-Line 531
-Line 970~LIne973, Line 980
-Line 1348</p><h4 id=publicfilete>public/file.te</h4><p>Line 150</p><h4 id=publicfsckte>public/fsck.te</h4><p>Line 21</p><h4 id=publicinitte>public/init.te</h4><p>Line 175, 181</p><h4 id=publicnetdte>public/netd.te</h4><p>Line 55</p><h4 id=publicplatform_appte>public/platform_app.te</h4><p>Append last</p><h4 id=publicshellte>public/shell.te</h4><p>Line 258, 259</p><h4 id=publicsystem_serverte>public/system_server.te</h4><p>Append last</p><h4 id=publicvendor_initte>public/vendor_init.te</h4><p>Line 47~50</p><h4 id=publicvoldte>public/vold.te</h4><p>Line 22, 23</p><h4 id=publicwebview_zygotete>public/webview_zygote.te</h4><p>Append last</p><h3 id=make>Make</h3></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/14/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/14/>14</a></li><li class="page-item active"><a class=page-link href=/page/15/>15</a></li><li class=page-item><a class=page-link href=/page/16/>16</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/16/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/14/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/14/>14</a></li><li class="page-item active"><a class=page-link href=/page/15/>15</a></li><li class=page-item><a class=page-link href=/page/16/>16</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/16/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

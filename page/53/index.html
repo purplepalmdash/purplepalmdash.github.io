@@ -1,5 +1,61 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/10/tipsonkubesprayupgrading/>TipsOnKubesprayUpgrading</a></h1><span class=post-date>Dec 10, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>Rong部署框架随kubespray社区升级策略。</p><h3 id=前提>前提</h3><p>下载kubespray升级包，如v2.8.0:</p><p><img src=/images/2018_12_10_12_09_29_628x576.jpg alt=/images/2018_12_10_12_09_29_628x576.jpg></p><p>将此包解压到某目录，这里解压到:</p><pre><code># cd /var1/myimages/RongUpgrade/280
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/12/tipsonsj/>TipsOnSJ</a></h1><span class=post-date>Dec 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Rook:</p><pre><code># docker save rook/ceph:master&gt;ceph.tar; xz ceph.tar
+# docker load&lt;ceph.tar
+# docker tag rook/ceph:master docker.registry/library/rook/ceph:master
+# kubectl -n rook-ceph-system get pod -o wide
+NAME                                 READY   STATUS    RESTARTS   AGE   IP                NODE       NOMINATED NODE
+rook-ceph-agent-lf7zm                1/1     Running   0          11s   192.192.189.124   allinone   &lt;none&gt;
+rook-ceph-operator-d88b68dd9-rfqws   1/1     Running   0          19m   10.233.81.146     allinone   &lt;none&gt;
+rook-discover-rtghr                  1/1     Running   0          11s   10.233.81.149     allinone   &lt;none&gt;
+
+</code></pre><p>label:</p><pre><code># kubectl label nodes allinone ceph-mon=enabled
+# kubectl label nodes allinone ceph-osd=enabled
+# kubectl label nodes allinone ceph-mgr=enabled
+</code></pre><p>Add one disk:</p><p><img src=/images/2018_12_12_15_17_08_639x545.jpg alt=/images/2018_12_12_15_17_08_639x545.jpg></p><p>Examine via:</p><pre><code># fdisk -l /dev/vdb
+
+Disk /dev/vdb: 85.9 GB, 85899345920 bytes, 167772160 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+</code></pre><p>Modify the cluster.yml file:</p><pre><code>    config:
+      # The default and recommended storeType is dynamically set to bluestore for devices and filestore for directories.
+      # Set the storeType explicitly only if it is required not to use the default.
+      # storeType: bluestore
+      databaseSizeMB: &quot;1024&quot; # this value can be removed for environments with normal sized disks (100 GB or larger)
+      journalSizeMB: &quot;1024&quot;  # this value can be removed for environments with normal sized disks (20 GB or larger)
+    nodes:
+    - name: &quot;allinone&quot;
+      devices: # specific devices to use for storage can be specified for each node
+      - name: &quot;vdb&quot;
+# kubectl apply -f cluster.yaml 
+</code></pre><p>MOdify to newest version, becase the master is older than our pulled images.</p><p>depend on ceph:</p><pre><code>#  sudo docker pull ceph/ceph:v13
+# kubectl -n rook-ceph get pod -o wide  -w
+# # kubectl -n rook-ceph get pod -o wide
+NAME                                   READY   STATUS      RESTARTS   AGE   IP              NODE       NOMINATED NODE
+rook-ceph-mgr-a-588c74548f-wb4db       1/1     Running     0          74s   10.233.81.156   allinone   &lt;none&gt;
+rook-ceph-mon-a-6cf75949cd-vqbfb       1/1     Running     0          89s   10.233.81.155   allinone   &lt;none&gt;
+rook-ceph-osd-0-88d6dd79d-r9cxc        1/1     Running     0          49s   10.233.81.158   allinone   &lt;none&gt;
+rook-ceph-osd-prepare-allinone-zgcjz   0/2     Completed   0          59s   10.233.81.157   allinone   &lt;none&gt;
+# lsblk
+# lsblk |grep vdb
+vdb         252:16   0   80G  0 disk 
+
+</code></pre><p>Get the password:</p><pre><code># kubectl edit svc rook-ceph-mgr-dashboard -n rook-ceph
+type: NodePort
+service/rook-ceph-mgr-dashboard edited
+# MGR_POD=`kubectl get pod -n rook-ceph | grep mgr | awk '{print $1}'`
+# kubectl -n rook-ceph logs $MGR_POD | grep password
+2018-12-12 08:10:16.478 7f7062038700  0 log_channel(audit) log [DBG] : from='client.4114 10.233.81.152:0/963276398' entity='client.admin' cmd=[{&quot;username&quot;: &quot;admin&quot;, &quot;prefix&quot;: &quot;dashboard set-login-credentials&quot;, &quot;password&quot;: &quot;8XOWZALcFO&quot;, &quot;target&quot;: [&quot;mgr&quot;, &quot;&quot;], &quot;format&quot;: &quot;json&quot;}]: dispatch
+</code></pre><p>View dashboard via:</p><p><img src=/images/2018_12_12_16_15_24_775x651.jpg alt=/images/2018_12_12_16_15_24_775x651.jpg></p><p>Create pool and storagepool:</p><pre><code># kubectl apply -f pool.yaml 
+cephblockpool.ceph.rook.io/replicapool created
+# kubectl  apply -f storageclass.yaml 
+cephblockpool.ceph.rook.io/replicapool configured
+storageclass.storage.k8s.io/rook-ceph-block created
+# kubectl get sc
+NAME              PROVISIONER          AGE
+rook-ceph-block   ceph.rook.io/block   3s
+</code></pre><p>其他部分的更改就省略掉。</p><h3 id=todo>ToDo</h3><ol><li>busybox需要上传到中心服务器。</li><li>各个节点服务器需要load busybox的镜像。</li><li>需要整合ansible，以便安装。</li></ol></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/11/tipsonkubespray28upgrading/>TipsOnKubespray28Upgrading</a></h1><span class=post-date>Dec 11, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=初始化配置>初始化配置</h3><p>按照AI组的设想，基于Ubuntu16.04来做，后续其实也可以基于Ubuntu16.05来做，应该是一样的。<br>创建一个虚拟机，192.168.122.177/24, 安装好redsocks.</p><p>visudo(nopasswd), <code>apt-get install -y nethogs build-essential libevent-dev</code>.</p><p>做成基础镜像后，关机，undefine此虚拟机。</p><pre><code># 
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/10/tipsonkubesprayupgrading/>TipsOnKubesprayUpgrading</a></h1><span class=post-date>Dec 10, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>Rong部署框架随kubespray社区升级策略。</p><h3 id=前提>前提</h3><p>下载kubespray升级包，如v2.8.0:</p><p><img src=/images/2018_12_10_12_09_29_628x576.jpg alt=/images/2018_12_10_12_09_29_628x576.jpg></p><p>将此包解压到某目录，这里解压到:</p><pre><code># cd /var1/myimages/RongUpgrade/280
 # ls
 kubespray-2.8.0
 </code></pre><h4 id=快速同步镜像基准制作>快速同步镜像基准制作</h4><p>设置一个Rong CentOS7.5 ISO安装后的基础环境, (Base/Rong_Base.qcow2).
@@ -139,21 +195,4 @@ Session=awesome
 $ gpasswd -a root autologin
 $ pacman -S xfce4-goodies
 $ pacman -S awesome
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/11/23/tipsonharbor/>TipsOnHarbor</a></h1><span class=post-date>Nov 23, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=harbor-configuration>Harbor Configuration</h3><p>Create user via:</p><p><img src=/images/2018_11_23_11_06_47_554x475.jpg alt=/images/2018_11_23_11_06_47_554x475.jpg></p><p>Create project:</p><p><img src=/images/2018_11_23_11_07_08_813x347.jpg alt=/images/2018_11_23_11_07_08_813x347.jpg></p><p>Add member:</p><p>Before:</p><p><img src=/images/2018_11_23_11_07_21_660x305.jpg alt=/images/2018_11_23_11_07_21_660x305.jpg></p><p>Added:<br><img src=/images/2018_11_23_11_07_36_618x403.jpg alt=/images/2018_11_23_11_07_36_618x403.jpg></p><p>After:</p><p><img src=/images/2018_11_23_11_07_55_660x319.jpg alt=/images/2018_11_23_11_07_55_660x319.jpg></p><p>Now docker-compose down the environment, backup the folder:</p><h3 id=installation-system>Installation System</h3><p>Configure the ip address:</p><p><img src=/images/2018_11_23_15_30_44_643x347.jpg alt=/images/2018_11_23_15_30_44_643x347.jpg></p><p>All nodes should be pointing to the dns address:</p><p><img src=/images/2018_11_23_15_33_04_681x477.jpg alt=/images/2018_11_23_15_33_04_681x477.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/11/17/tipsonrongiso/>TipsOnRongISO</a></h1><span class=post-date>Nov 17, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>For building the kubespray offline all-in-one deploying iso.</p><h3 id=steps>Steps</h3><ol><li>Download 7.5.1804 ISO.</li><li>Create a new virtual machine, kvm based, minimal installation, for getting the
-minimal vm files.</li><li>Install redsocks, compile it, then shutdown the minimal vm.</li><li>Create a qcow2 file based on minimal vm, start the vm, then change the
-IP/Netmask/DNS.</li><li>Start redsocks. Test the unlimited networking.</li><li>Clone the kubespray repository, deploy the kubespray in all in one node.</li><li>Fetch the rpms from the kubespray all-in-one node.</li><li>Create a isolated networking and setup the offline environment.</li><li>Modify the kubespray source code for offline deployment.</li><li>Portus offline registry repo building.</li><li>Static website for holding static files(rpms/hypekube).</li><li>docker use intranet registry/ rpm use static website.</li></ol><h3 id=tobedone>TobeDone</h3><p>Steps for building deployment system.</p><pre><code>1. 
-docker-compose
-portus (docker-compose) composition files. 
-portus images. 
-
-2. 
-inventory file(top layer)
-kubespray files will be uploaded to deployment node. 
-
-3. 
-dns server setup
-manually add dns server in all of the nodes. 
-
-4. 
-If initial environment is ok, then deploy environment will also be ok.  
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/52/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/52/>52</a></li><li class="page-item active"><a class=page-link href=/page/53/>53</a></li><li class=page-item><a class=page-link href=/page/54/>54</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/54/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

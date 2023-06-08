@@ -1,5 +1,60 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/07/workingtipsonplaywithdocker/>WorkingTipsOnPlayWithDocker</a></h1><span class=post-date>Apr 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><h4 id=qemu-image>Qemu Image</h4><p>Qemu image preparation:</p><pre><code># mkdir offline-play-with-docker
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/12/workingtipsonplaywithk8s/>WorkingTipsOnPlayWithK8s</a></h1><span class=post-date>Apr 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>Aim</h3><p>To Write an tutorial for colleagues for learning, they only have to open the
+browser, by clicking then they could get an automated dev environment.</p><h3 id=environment>Environment</h3><p>play-with-kubernetes blog:</p><pre><code># git clone https://github.com/play-with-docker/play-with-kubernetes.github.io.git
+# cd play-with-kubernetes.github.io/
+# vim _config.yml
+pwkurl: http://192.168.189.114
+# docker-compose up
+</code></pre><p>Then open your browser <code>http://192.168.189.114:4000</code>, and you will see the play-with-k8s webpages.</p><p>For using the local infrastructure, to configure the <code>play-with-docker</code> with
+following steps:</p><pre><code># cd /root/go/src/github.com/play-with-docker/play-with-docker
+# vim config/config.go
+	//flag.StringVar(&amp;DefaultDinDImage, &quot;default-dind-image&quot;, &quot;franela/dind&quot;, &quot;Default DinD image to use if not specified otherwise&quot;)
+	flag.StringVar(&amp;DefaultDinDImage, &quot;default-dind-image&quot;, &quot;franela/k8s&quot;, &quot;Default DinD image to use if not specified otherwise&quot;)
+</code></pre><p>While the image we specified here could be the one you added your changes, but
+default we will use <code>franela/k8s</code>.</p><p>The webpage is showed as:</p><p><img src=/images/2018_04_12_09_25_38_1242x708.jpg alt=/images/2018_04_12_09_25_38_1242x708.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/08/workingtipsonplaywithdocker2/>WorkingTipsOnPlayWithDocker2</a></h1><span class=post-date>Apr 8, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=migration>migration</h3><p>Really migrate this image into the inner intranet, without any internet
+connection.</p><h3 id=registry-changing>Registry Changing</h3><p>You have to comment the proxy definition, or your registry instance will
+restart frequently, thus your dind won&rsquo;t get working using registry.</p><pre><code># vim /root/data/config.yml
+	#proxy:
+		# remoteurl: https://registry-1.docker.io
+# docker restart docker-registry-proxy-2
+</code></pre><h3 id=systemd-definition>systemd definition</h3><p>Define following two systemd units:</p><pre><code># vim /etc/systemd/system/playwithdocker.service 
+[Unit]
+Description=playwithdocker
+After=docker.service
+Requires=docker.service
+
+[Service]
+Environment=GOPATH=/root/go/
+ExecStart=/usr/bin/docker-compose -f /root/go/src/github.com/play-with-docker/play-with-docker/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>This unit will start blog service automatically.</p><pre><code># vim /etc/systemd/system/playwithdockerblog.service 
+[Unit]
+Description=playwithdockerblog
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker-compose -f /root/Code/play-with-docker.github.io/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+# systemctl enable playwithdocker.service
+# systemctl enable playwithdockerblog.service
+</code></pre><p>Next time the service will automatically start.</p><h3 id=offline-cssjs>Offline CSS/js</h3><p>bootstrap fonts:</p><pre><code># wget https://github.com/twbs/bootstrap/archive/v3.3.7.zip
+# unzip bootstrap-3.3.7.zip
+# cd fonts
+# mkdir ~/Code/play-with-docker.github.io/_site/fonts/
+# cp * ~/Code/play-with-docker.github.io/_site/fonts/
+</code></pre><p>Then your image will display correctly.</p><p><img src=/images/2018_04_08_16_15_38_518x362.jpg alt=/images/2018_04_08_16_15_38_518x362.jpg></p><h3 id=google-fonts>Google Fonts</h3><p>Download the Fonts description from the website, then put all of the related
+fonts under your local folder.</p><h3 id=dnsmasq>dnsmasq</h3><p>Download the rpm package via:</p><pre><code># yum install yum-plugin-downloadonly
+# yum reinstall --downloadonly --downloaddir=/root/rpms dnsmasq
+</code></pre><p>Transfer the package to intranet and install it. Then edit the configuration
+file of dnsmasq:</p><pre><code># vim /etc/dnsmasq.conf
+address=/192.192.189.114/192.192.189.114
+# systemclt enable dnsmasq &amp;&amp; systemctl start dnsmasq
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/07/workingtipsonplaywithdocker/>WorkingTipsOnPlayWithDocker</a></h1><span class=post-date>Apr 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><h4 id=qemu-image>Qemu Image</h4><p>Qemu image preparation:</p><pre><code># mkdir offline-play-with-docker
 # cd offline-play-with-docker 
 # qemu-img create -f qcow2 offline-play-with-docker.qcow2 200G
 Formatting 'offline-play-with-docker.qcow2', fmt=qcow2 size=214748364800 cluster_size=65536 lazy_refcounts=off refcount_bits=16
@@ -370,126 +425,4 @@ System Call Overhead                          15000.0    2204195.4   1469.5
                                                                    ========
 System Benchmarks Index Score                                         646.8
 
-</code></pre><h3 id=结果说明>结果说明</h3><p>测试的结果是一个指数值（index value，如520），这个值是测试系统的测试结果与一个基线系统测试结果比较得到的指数值，这样比原始值更容易得到参考价值，测试集合里面所有的测试得到的指数值结合起来得到整个系统的指数值。</p><p>UnixBench也支持多CPU系统的测试，默认的行为是测试两次，第一次是一个进程的测试，第二次是N份测试，N等于CPU个数。这样的设计是为了以下目标：</p><ul><li>测试系统的单任务性能</li><li>测试系统的多任务性能</li><li>测试系统并行处理的能力</li></ul></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/27/gitlabciandgitbook/>gitlabciandgitbook</a></h1><span class=post-date>Mar 27, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境>环境</h3><p>gitlab搭建完毕，gitlabci配置完毕。<br>目的: 整合从代码到发布一条龙服务。</p><p>代码提交->生成中间制品pdf.<br>代码提交-> 更新静态网站.</p><h3 id=步骤>步骤</h3><p>创建一个新项目:</p><p><img src=/images/2018_03_27_16_19_37_576x192.jpg alt=/images/2018_03_27_16_19_37_576x192.jpg></p><p>命名该项目:</p><p><img src=/images/2018_03_27_16_20_02_605x466.jpg alt=/images/2018_03_27_16_20_02_605x466.jpg></p><p>将已有的代码(书)提交到代码仓库:</p><pre><code># git init
-# git remote add origin http://192.168.109.2/root/mygitbook.git
-# git add .
-# git commit -m &quot;Initial commit&quot;
-# git push -u origin master
-</code></pre><p>与此同时，注册runner, 并保证runner所依赖的容器镜像就绪:</p><p>注： 下面需要填入的token来自于: settings->CI/CD-> General pipelines settings,
-runner token，需要拷贝其值:</p><p><img src=/images/2018_06_08_17_08_56_785x475.jpg alt=/images/2018_06_08_17_08_56_785x475.jpg></p><pre><code>[root@csnode1 ~]# gitlab-ci-multi-runner register
-Running in system-mode.                            
-                                                   
-Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com/):
-http://192.168.109.2/
-Please enter the gitlab-ci token for this runner:
-4dEFxKVNcmnoStBBDssd
-Please enter the gitlab-ci description for this runner:
-[csnode1]: myrunner
-Please enter the gitlab-ci tags for this runner (comma separated):
-myrunner tag
-Whether to run untagged builds [true/false]:
-[false]: 
-Whether to lock Runner to current project [true/false]:
-[false]: 
-Registering runner... succeeded                     runner=4dEFxKVN
-Please enter the executor: ssh, kubernetes, docker, docker-ssh, parallels, docker-ssh+machine, shell, virtualbox, docker+machine:
-docker
-Please enter the default Docker image (e.g. ruby:2.1):
-mygitbook:latest
-Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
-</code></pre><p>runner失败:</p><p><img src=/images/2018_03_28_14_01_12_468x180.jpg alt=/images/2018_03_28_14_01_12_468x180.jpg></p><p>配置镜像的拉取规则:</p><pre><code># vim /etc/gitlab-runner/config.toml 
-[[runners]]
-  name = &quot;myrunner&quot;
-  url = &quot;http://192.168.109.2/&quot;
-  token = &quot;8996297cd5d5d80bd23c0acade3b95&quot;
-  executor = &quot;docker&quot;
-  [runners.docker]
-    tls_verify = false
-    image = &quot;mygitbook:latest&quot;
-    privileged = false
-    disable_cache = false
-    volumes = [&quot;/cache&quot;]
-    pull_policy = &quot;if-not-present&quot;
-    shm_size = 0
-  [runners.cache]
-# gitlab-runner restart
-</code></pre><p>对应的gitlab定义文件如下:</p><pre><code>image: &quot;my_gitbook:latest&quot;
-stages:
-  - gitbook_build_deploy
-
-gitbook_build_deploy:
-  stage: gitbook_build_deploy
-  script:
-    - gitbook build
-    - gitbook pdf
-    - ssh-keyscan -H 192.168.109.2 &gt;&gt; ~/.ssh/known_hosts
-    - pwd &amp;&amp; ls -l -h ./_book  &amp;&amp; sshpass -p vagrant scp -P 22 -r _book/* vagrant@192.168.109.2:/home/vagrant/tmp
-  artifacts:
-    paths:
-      - ./book.pdf
-  tags:
-    - myrunnertag
-</code></pre><p>每次build将自动生成pdf供下载。</p><h3 id=gitlabci运行buildiso>gitlabci运行buildiso</h3><p>注册CI/CD pipeline时的选项:</p><pre><code># gitlab-ci-multi-runner register
-Running in system-mode.                            
-                                                   
-Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com/):
-http://192.168.122.222/
-Please enter the gitlab-ci token for this runner:
-xy8MBdigELUSRnmnteMF
-Please enter the gitlab-ci description for this runner:
-[buildnode]: myrunner
-Please enter the gitlab-ci tags for this runner (comma separated):
-myrunner mytag
-Whether to run untagged builds [true/false]:
-[false]: true
-Whether to lock Runner to current project [true/false]:
-[false]: 
-Registering runner... succeeded                     runner=xy8MBdig
-Please enter the executor: docker-ssh+machine, docker, docker-ssh, shell, ssh, parallels, virtualbox, docker+machine, kubernetes:
-shell
-Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded! 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/20/workingtipsondockercomposeofflineinstall/>WorkingTipsOnDockerComposeOfflineInstall</a></h1><span class=post-date>Mar 20, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=步骤>步骤</h3><p>获取所需安装包的步骤如下：</p><pre><code>$ sudo docker run -it ubuntu:16.04 /bin/bash
-# 进入容器后的操作
-# rm -f /etc/apt/apt.conf.d/docker-clean
-# apt-get update
-# apt-get install docker-compose dpkg-dev
-</code></pre><p>获取所有的deb包并拷贝到某一目录下:</p><pre><code># cd /var/cache
-# find . | grep deb$ | xargs -I % cp % /root/pkgs
-# cd /root/pkgs
-# dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
-</code></pre><p>将整个目录拷贝到主机目录:</p><pre><code># sudo docker cp d1023d1b0a1f:/root/pkgs /xxxxxx/xxxxx
-# tar czvf /xxxx/xxxx.tar.gz /xxxxxx/xxxx
-</code></pre><h3 id=使用步骤>使用步骤</h3><p>下载地址:</p><pre><code>http://192.192.189.127/big.tar.gz
-</code></pre><p>下载所需要的大包，解压以后，得到以下四个文件:</p><pre><code># tar xzvf big.tar.gz
-# ls big
-images/ pkgs.tar.gz  docker-regsitry.tar.gz devdockerCA.crt
-</code></pre><p>取得pkgs.tar.gz, 将其放置在自己的网页服务器目录，如:<br><img src=/images/2018_03_20_09_22_07_724x495.jpg alt=/images/2018_03_20_09_22_07_724x495.jpg></p><p>配置节点的apt:</p><pre><code># vim /etc/apt/sources.list
-deb http://192.192.189.127/pkgs/	/
-# apt-update
-# apt-get install docker-compose
-</code></pre><p>这将安装docker-compose, docker, 安装完毕以后，docker-compose可以正常使用。</p><h3 id=载入镜像>载入镜像</h3><p>载入registry所需的registry:2镜像和nginx镜像:</p><pre><code># docker load&lt;images/1.tar
-# docker load&lt;images/2.tar
-</code></pre><h3 id=解压docker-compose目录添加服务>解压docker-compose目录，添加服务</h3><p>解压到指定目录(可为任意目录，这里以/docker-registry为例):</p><pre><code># tar xzvf docker-registry.tar.gz -C /
-# ls /docker-regsitry
-data	docker-compose.yml nginx
-</code></pre><p>创建systemd所需服务:</p><pre><code># vim /etc/systemd/system/docker-compose.service
-[Unit]
-Description=DockerCompose
-After=docker.service
-Requires=docker.service
-
-[Service]
-ExecStart=/usr/bin/docker-compose -f /docker-registry/docker-compose.yml up -d
-
-[Install]
-WantedBy=multi-user.target
-</code></pre><p>启动、使能docker-compose服务:</p><pre><code># sudo systemctl enable docker-compose.service
-# sudo systemctl start docker-compose.service
-# docker ps
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                          NAMES
-50d2ec00e967        nginx:1.9           &quot;nginx -g 'daemon ...&quot;   26 hours ago        Up 3 seconds        80/tcp, 0.0.0.0:443-&gt;443/tcp   dockerregistry_nginx_1
-e4e2cee1bf21        registry:2          &quot;/entrypoint.sh /e...&quot;   26 hours ago        Up 5 seconds        127.0.0.1:5000-&gt;5000/tcp       dockerregistry_registry_1
-</code></pre><p>如此即设置好了整个regitry服务。可以通过https://YourIP来访问，签名文件也可以在目录中找到(devdockerCA)。</p><h3 id=使用镜像仓库>使用镜像仓库</h3><p>Redhat rh74:</p><pre><code># mkdir -p /etc/docker/certs.d/mirror.xxxx.com
-# wget xxxxxx.xxxx.xxx.com/ca.crt
-# docker login -u xxxx -p xxxx mirror.xxxx.com
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/63/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/63/>63</a></li><li class="page-item active"><a class=page-link href=/page/64/>64</a></li><li class=page-item><a class=page-link href=/page/65/>65</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/65/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><h3 id=结果说明>结果说明</h3><p>测试的结果是一个指数值（index value，如520），这个值是测试系统的测试结果与一个基线系统测试结果比较得到的指数值，这样比原始值更容易得到参考价值，测试集合里面所有的测试得到的指数值结合起来得到整个系统的指数值。</p><p>UnixBench也支持多CPU系统的测试，默认的行为是测试两次，第一次是一个进程的测试，第二次是N份测试，N等于CPU个数。这样的设计是为了以下目标：</p><ul><li>测试系统的单任务性能</li><li>测试系统的多任务性能</li><li>测试系统并行处理的能力</li></ul></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/63/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/63/>63</a></li><li class="page-item active"><a class=page-link href=/page/64/>64</a></li><li class=page-item><a class=page-link href=/page/65/>65</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/65/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
