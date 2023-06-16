@@ -1,5 +1,64 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/04/01/workingtipsonubutunipv6/>WorkingTipsOnUbutunIPV6</a></h1><span class=post-date>Apr 1, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=conoha-ipv6>Conoha ipv6</h3><p>Find the ipv6 addresses(should have 17 ipv6 addresses together):</p><p><img src=/images/2019_04_01_09_01_58_1054x360.jpg alt=/images/2019_04_01_09_01_58_1054x360.jpg></p><h3 id=network-configuration>Network Configuration</h3><p>Edit the networking via:</p><pre><code>#  vim /etc/network/interfaces
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/04/11/quicklyofflinehelmcharts/>QuicklyOfflineHelmCharts</a></h1><span class=post-date>Apr 11, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Following is the tips:</p><p>Create the minikube environment, and enable the helm/charts:</p><pre><code>#  minikube start --cpus 4 --memory 8192 --disk-size 60g
+# helm init
+</code></pre><p>Download the prometheus-operator from the official github repository, use
+<code>dependency update</code> for updating the dependency locally:</p><pre><code># cd prometheus-operator
+# helm dependency update
+</code></pre><p>Record the docker images before deployment:</p><pre><code># eval $(minikube docker-env)
+# docker images&gt;before.txt
+</code></pre><p>Now deploy the helm/charts using:</p><pre><code>#  helm install --name newprom .
+</code></pre><p>When all of the items were deployed, record the images via:</p><pre><code># docker images&gt;after.txt
+</code></pre><p>With the helm/charts folder and the <code>before.txt</code> and <code>after.txt</code> you could
+making this helm/charts working offline.</p><pre><code># docker save -o prometheus-operator.tar grafana/grafana:6.0.2 kiwigrid/k8s-sidecar:0.0.13 quay.io/coreos/prometheus-config-reloader:v0.29.0 quay.io/coreos/prometheus-operator:v0.29.0 quay.io/prometheus/alertmanager:v0.16.1 quay.io/prometheus/prometheus:v2.7.1 k8s.gcr.io/kube-state-metrics:v1.5.0 quay.io/prometheus/node-exporter:v0.17.0 quay.io/coreos/configmap-reload:v0.0.1
+# xz prometheus-operator.tar
+# tag and push
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/04/10/workingtipsonubuntu160406kubesprayoffline/>WorkingtipsOnUbuntu160406Kubesprayoffline</a></h1><span class=post-date>Apr 10, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=vagrantbox>VagrantBox</h3><p>ToBeAdded</p><h3 id=offline>Offline</h3><p>Steps:</p><pre><code># wget ....../kubespray-2.8.4.tar.gz .
+# tar xzvf kubespray-2.8.4.tar.gz 
+# cd kubespray-2.8.4
+# vim inventory/sample/group_vars/k8s-cluster/addons.yml 
+helm_enabled: true
+metrics_server_enabled: true
+# vim inventory/sample/hosts.ini
+[all]
+node ansible_host=10.0.2.15  # ip=10.0.2.15 etcd_member_name=etcd1
+
+[kube-master]
+node
+
+[etcd]
+node
+
+[kube-node]
+node
+
+[k8s-cluster:children]
+kube-master
+kube-node
+# cat /etc/apt/sources.list
+deb http://mirrors.163.com/ubuntu/ xenial main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ xenial-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ xenial-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ xenial-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ xenial-backports main restricted universe multiverse
+# apt-add-repository ppa:ansible/ansible
+# apt-get update
+# apt-get install -y ansible python-pip python ntp dbus python-apt
+# ansible --version
+ansible 2.7.10
+  config file = /root/kubespray-2.8.4/ansible.cfg
+  configured module search path = [u'/root/kubespray-2.8.4/library']
+  ansible python module location = /usr/lib/python2.7/dist-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.12 (default, Nov 12 2018, 14:36:49) [GCC 5.4.0 20160609
+# vim /etc/ssh/sshd_config
+PermitRootLogin yes
+# systemctl restart sshd
+# ssh-keygen
+# ssh-copy-id root@10.0.2.15
+# apt-get install -y bind9 bind9utils ntp nfs-common nfs-kernel-server python-netaddr nethogs iotop
+#### find all of the debs and upload it to deployment directory for replacing 1604debs.tar.xz
+# ansible-playbook  -i inventory/sample/hosts.ini cluster.yml
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/04/01/workingtipsonubutunipv6/>WorkingTipsOnUbutunIPV6</a></h1><span class=post-date>Apr 1, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=conoha-ipv6>Conoha ipv6</h3><p>Find the ipv6 addresses(should have 17 ipv6 addresses together):</p><p><img src=/images/2019_04_01_09_01_58_1054x360.jpg alt=/images/2019_04_01_09_01_58_1054x360.jpg></p><h3 id=network-configuration>Network Configuration</h3><p>Edit the networking via:</p><pre><code>#  vim /etc/network/interfaces
 # The primary network interface
 auto ens3
 iface ens3 inet dhcp
@@ -99,28 +158,4 @@ kickstart default
 kickstart default ipxe
 kickstart default pxelinux
 kickstart default use data
-</code></pre><p>Associate with template:</p><p><img src=/images/2019_03_16_00_04_55_609x330.jpg alt=/images/2019_03_16_00_04_55_609x330.jpg></p><p>Next we will configure the subnet and the foreman-proxy items.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/03/14/usbnetworkcard/>UsbNetworkCard</a></h1><span class=post-date>Mar 14, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Using systemd-networkd for configurating the usb network card,</p><pre><code># vim /etc/systemd/nework/10-ethusb1.link
-[Match]
-MACAddress=00:xx:xx:.....
-
-[Link]
-Description=USB to Ethernet Adapter
-Name=ethusb1
-</code></pre><p>Then configurating the ethusb1 ip address:</p><pre><code># vim /etc/systemd/network/10-ethusb1.network 
-[Match]
-Name=ethusb1
-
-[Network]
-Address=192.168.0.33
-</code></pre><p>Reboot the computer then you could see the ethusb1 available.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/03/11/megacliforpartition/>MegaCliForPartition</a></h1><span class=post-date>Mar 11, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>分区，以便虚拟化场合.</p><p>硬件:24块硬盘，前两块做成系统盘，其他的则是单独配置:</p><p><img src=/images/2019_03_11_09_13_41_447x495.jpg alt=/images/2019_03_11_09_13_41_447x495.jpg></p><h3 id=查看现有分区>查看现有分区</h3><p>使用以下命令查看当前分区的情况:</p><pre><code># ./MegaCli64 -PDList -aAll | more
-</code></pre><p>注意记录下有关磁盘情形，如:</p><p><img src=/images/2019_03_11_09_20_11_473x516.jpg alt=/images/2019_03_11_09_20_11_473x516.jpg></p><p>Slot
-Number应该是升序的，0-23是SATA盘，38/39是SAS盘，记录下这一组数值，因为后面我们会针对这些值来分区。Slot Number是0</p><p>查看raid信息:</p><pre><code># ./MegaCli64 -LDInfo -Lall -aAll
-</code></pre><p><img src=/images/2019_03_11_09_47_56_721x783.jpg alt=/images/2019_03_11_09_47_56_721x783.jpg></p><p>除了virtual driver 0, 其他的都需要被删除。</p><p>貌似是有问题的，先装proxmox再操作。</p><h3 id=raid卡配置>Raid卡配置</h3><p>F2, 弹出配置:</p><p><img src=/images/2019_03_11_10_01_08_684x418.jpg alt=/images/2019_03_11_10_01_08_684x418.jpg></p><p>Delete Drive Group:</p><p><img src=/images/2019_03_11_10_01_32_466x309.jpg alt=/images/2019_03_11_10_01_32_466x309.jpg></p><p>最后情况:</p><p><img src=/images/2019_03_11_10_03_06_597x376.jpg alt=/images/2019_03_11_10_03_06_597x376.jpg></p><h3 id=分区>分区</h3><p>脚本如下， 4组，而后为热备4个：</p><pre><code>./MegaCli64 -CfgLdAdd -r5 [0:0,0:1,0:2,0:3,0:4] WB Direct -a0
-./MegaCli64 -CfgLdAdd -r5 [0:5,0:6,0:7,0:8,0:9] WB Direct -a0
-./MegaCli64 -CfgLdAdd -r5 [0:10,0:11,0:12,0:13,0:14] WB Direct -a0
-./MegaCli64 -CfgLdAdd -r5 [0:15,0:16,0:17,0:18,0:19] WB Direct -a0
-./MegaCli64 -PDHSP -Set [-EnclAffinity] [-nonRevertible] -PhysDrv[0:20] -a0
-./MegaCli64 -PDHSP -Set [-EnclAffinity] [-nonRevertible] -PhysDrv[0:21] -a0
-./MegaCli64 -PDHSP -Set [-EnclAffinity] [-nonRevertible] -PhysDrv[0:22] -a0
-./MegaCli64 -PDHSP -Set [-EnclAffinity] [-nonRevertible] -PhysDrv[0:23] -a0
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/48/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/48/>48</a></li><li class="page-item active"><a class=page-link href=/page/49/>49</a></li><li class=page-item><a class=page-link href=/page/50/>50</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class=page-item><a href=/page/50/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Associate with template:</p><p><img src=/images/2019_03_16_00_04_55_609x330.jpg alt=/images/2019_03_16_00_04_55_609x330.jpg></p><p>Next we will configure the subnet and the foreman-proxy items.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/48/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/48/>48</a></li><li class="page-item active"><a class=page-link href=/page/49/>49</a></li><li class=page-item><a class=page-link href=/page/50/>50</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/226/>226</a></li><li class=page-item><a href=/page/50/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/226/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

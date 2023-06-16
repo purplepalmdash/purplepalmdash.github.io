@@ -1,0 +1,43 @@
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>RockyLinux91SRIOV &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="RockyLinux91SRIOV"><meta name=keywords content="Technology"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>RockyLinux91SRIOV</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Jun 12, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#kernel>Kernel</a></li><li><a href=#qemulibvirtvirt-manager>Qemu/libvirt/virt-manager</a></li></ul></li></ul></nav></div><h3 id=kernel>Kernel</h3><p>Install:</p><pre><code>tar xzvf linux-intel-lts.tar.gz
+yum install -y gcc openssl-devel bc rpm-build pciutils flex bison elfutils-libelf-devel
+cd linux-intel-lts
+make distclean
+cp ./kernel-config/x86_64_defconfig .config
+echo &quot;&quot; | make ARCH=x86_64 olddefconfig
+update-crypto-policies --set LEGACY
+reboot
+make rpm-pkg -j8
+</code></pre><p>Replace the repository:</p><pre><code>sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+    -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g' \
+    -i.bak \
+    /etc/yum.repos.d/rocky-extras.repo \
+    /etc/yum.repos.d/rocky.repo
+yum makecache
+</code></pre><p>Install kernel:</p><pre><code>cp i915/* /lib/firmware/i915/
+rpm -ivh kernel-5.15.85-1.x86_64.rpm kernel-headers-5.15.85-1.x86_64.rpm
+vi /etc/default/grub
+Add &quot;i915.enable_guc=0x7 udmabuf.list_limit=8192 intel_iommu=on i915.force_probe=*&quot; to 
+grub2-mkconfig -o /boot/efi/EFI/rocky/grub.cfg
+reboot
+</code></pre><p>Examine via:</p><pre><code>[root@localhost ~]# uname -r
+5.15.85
+[root@localhost ~]# dmesg | grep GuC
+[    5.176714] i915 0000:00:02.0: [drm] GuC error state capture buffer maybe too small: 2097152 &lt; 2163708 (min = 721236)
+[    5.179124] i915 0000:00:02.0: [drm] GuC firmware i915/tgl_guc_70.bin version 70.5.1
+[    5.182137] i915 0000:00:02.0: [drm] GuC submission enabled
+[    5.182138] i915 0000:00:02.0: [drm] GuC SLPC enabled
+[    5.182455] i915 0000:00:02.0: [drm] GuC RC: enabled
+[root@localhost ~]# dmesg | grep HuC
+[    5.179129] i915 0000:00:02.0: [drm] HuC firmware i915/tgl_huc.bin version 7.9.3
+[    5.181869] i915 0000:00:02.0: [drm] HuC authenticated
+[root@localhost ~]# dmesg | grep SR-IOV
+[    5.060282] i915 0000:00:02.0: Running in SR-IOV PF mode
+</code></pre><h3 id=qemulibvirtvirt-manager>Qemu/libvirt/virt-manager</h3><p>Install following packages for using qemu:</p><pre><code># yum install -y virt-manager qemu-kvm
+# systemctl enable libvirtd
+# systemctl start libvirtd
+# /usr/libexec/qemu-kvm --version
+QEMU emulator version 7.2.0 (qemu-kvm-7.2.0-14.el9_2)
+Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
+# yum groupinstall -y &quot;Server with GUI&quot;
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
