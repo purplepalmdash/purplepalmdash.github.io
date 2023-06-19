@@ -1,5 +1,50 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/08/17/workingtipsonopenwrtcrossgfw/>WorkingTipsOnOpenWRTCrossGFW</a></h1><span class=post-date>Aug 17, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=硬件配置>硬件配置</h3><p>2核2G, 虚拟机,
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/08/26/workingtipsoncloudmobilephone/>WorkingTipsOnCloudMobilePhone</a></h1><span class=post-date>Aug 26, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=步骤>步骤</h3><p>Install CentOS 7.4 :</p><p><img src=/images/2021_08_26_11_32_24_795x590.jpg alt=/images/2021_08_26_11_32_24_795x590.jpg></p><p>With route:</p><pre><code>[root@intelandroid ctctest]# ip route
+default via 192.168.91.254 dev enp61s0f0 proto static metric 100 
+192.168.89.0/24 dev enp61s0f0 proto kernel scope link src 192.168.89.108 metric 100 
+192.168.91.254 dev enp61s0f0 proto static scope link metric 100 
+[root@intelandroid ctctest]# ip addr
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp61s0f0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq portid 3cd2e55e05da state UP qlen 1000
+    link/ether 3c:d2:e5:5e:05:da brd ff:ff:ff:ff:ff:ff
+    inet 192.168.89.108/24 brd 192.168.89.255 scope global enp61s0f0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::1e1f:7e4d:5f9f:a2ab/64 scope link 
+       valid_lft forever preferred_lft forever
+</code></pre><p>Update grub:</p><pre><code># vim /etc/default/grub
+...
+GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=centos/root rhgb quiet modprobe.blacklist=ast&quot;
+...
+# grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
+# reboot
+</code></pre><p>After reboot, check ast module is not loaded:</p><pre><code># lsmod | grep ast
+Should be nothing here. 
+</code></pre><h3 id=heading></h3></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/08/23/workingtipsonintelsg1/>WorkingTipsOnIntelSG1</a></h1><span class=post-date>Aug 23, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=hardware--os>Hardware & OS</h3><p>Refers to:</p><p><code>https://www.h3c.com/en/Support/Resource_Center/EN/Severs/Catalog/Optional_Parts/GPU/Technical_Documents/Install/User_Guide/H3C_XG310_GPU_UG-5W100/</code></p><pre><code># cat /etc/issue
+Ubuntu 20.04.1 LTS \n \l
+
+# uname -a
+Linux xxxxxxxxxxxxxxxxxx 5.4.48+ #1 SMP Wed Feb 3 10:57:04 CST 2021 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre><p>CPU and memory:</p><pre><code># cat /proc/cpuinfo
+...
+processor       : 95
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 85
+ model name      : Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz
+...
+# free -g
+              total        used        free      shared  buff/cache   available
+Mem:            503           3         496           0           3         497
+Swap:             1           0           1
+</code></pre><h3 id=steps>Steps</h3><p>Steps:</p><pre><code># mkdir IntelAndroid
+# tar xzvf xxxxxxxxxxxx.tar.gz
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/08/17/workingtipsonopenwrtcrossgfw/>WorkingTipsOnOpenWRTCrossGFW</a></h1><span class=post-date>Aug 17, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=硬件配置>硬件配置</h3><p>2核2G, 虚拟机,
 其磁盘文件为<code>openwrt-21.02.0-rc3-x86-64-generic-ext4-combined.img</code>.</p><h3 id=网络配置>网络配置</h3><p>隔离网络:</p><p><img src=/images/2021_08_17_13_57_12_682x128.jpg alt=/images/2021_08_17_13_57_12_682x128.jpg></p><p>NAT网络:</p><p><img src=/images/2021_08_17_13_57_12_682x128.jpg alt=/images/2021_08_17_13_57_12_682x128.jpg></p><p>启动完毕后，安装以下opkg包:</p><pre><code># opkg install redsocks
 </code></pre><p>OpenWRT中配置：</p><p>Wan:</p><p><img src=./images/2021_08_17_13_59_55_881x449.jpg alt=./images/2021_08_17_13_59_55_881x449.jpg></p><p><img src=/images/2021_08_17_14_03_07_467x160.jpg alt=/images/2021_08_17_14_03_07_467x160.jpg></p><p>LAN:</p><p><img src=/images/2021_08_17_14_00_17_604x551.jpg alt=/images/2021_08_17_14_00_17_604x551.jpg></p><p><img src=/images/2021_08_17_14_02_14_508x152.jpg alt=/images/2021_08_17_14_02_14_508x152.jpg></p><p>Enable dhcp server:</p><p><img src=/images/2021_08_17_14_02_34_580x398.jpg alt=/images/2021_08_17_14_02_34_580x398.jpg></p><p>Devices:</p><p><img src=/images/2021_08_17_14_03_45_953x307.jpg alt=/images/2021_08_17_14_03_45_953x307.jpg></p><p><img src=/images/2021_08_17_14_04_05_478x424.jpg alt=/images/2021_08_17_14_04_05_478x424.jpg></p><p><img src=/images/2021_08_17_14_04_21_610x382.jpg alt=/images/2021_08_17_14_04_21_610x382.jpg></p><p>DNS:</p><p><img src=/images/2021_08_17_14_04_47_552x604.jpg alt=/images/2021_08_17_14_04_47_552x604.jpg></p><h3 id=redsocks-items>redsocks items</h3><p><code>/etc/redsocks.conf</code>:</p><pre><code>base {
         // debug: connection progress &amp; client list on SIGUSR1
@@ -193,308 +238,4 @@ bcm2711-rpi-4-b.dtb  boot  ramdisk.img  system.img  vc4-kms-v3d-pi4.dtbo  vendor
 ➜  rpi4 sudo cp vc4-kms-v3d-pi4.dtbo /mnt/overlays 
 ➜  rpi4 sudo sync
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/08/10/workingtipsonrpi4android/>WorkingTipsOnRPI4Android</a></h1><span class=post-date>Aug 10, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=workingsteps>WorkingSteps</h3><p>Operation steps:</p><pre><code># adb connect 192.168.1.113
-already connected to 192.168.1.113:5555
-# adb shell
-rpi4:/ 
-</code></pre><p>Or:</p><pre><code># adb root
-restarting adbd as root
-# adb shell
-rpi4:/ # ls
-acct boot       charger data          dev  init.environ.rc      init.usb.rc      mnt proc             res    sepolicy system     vendor_service_contexts 
-apex bugreports config  debug_ramdisk etc  init.rc              init.zygote32.rc odm product          sbin   storage  ueventd.rc 
-bin  cache      d       default.prop  init init.usb.configfs.rc lost+found       oem product_services sdcard sys      vendor     
-rpi4:/ # exit
-</code></pre><p>OR:</p><pre><code>adb remount
-remount succeeded
-➜  Downloads adb shell  
-rpi4:/ # cd /system/bin/                                                                                                                                                                     
-rpi4:/system/bin # touch fff
-rpi4:/system/bin # rm fff                                                                                                                                                                    
-rpi4:/system/bin #                                                                           
-
-
-</code></pre><p>Shutdown the phone:</p><pre><code>sudo adb shell reboot -p
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/08/05/sddmandnestedlogin/>sddmAndNestedLogin</a></h1><span class=post-date>Aug 5, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目标>目标</h3><p>系统化说明如何在vdi设备和idv设备上开启sddm的nested模式下Multiseat登录支持。</p><h3 id=环境准备>环境准备</h3><p>vdi设备信息如下：</p><pre><code>Intel(R) Celeron(R) CPU  J1900  @ 1.99GHz
-# free -m
-              总计         已用        空闲      共享    缓冲/缓存    可用
-内存：        3826         487        1676         317        1662        2758
-交换：           0           0           0
-# df -h
-文件系统        容量  已用  可用 已用% 挂载点
-udev            1.9G     0  1.9G    0% /dev
-tmpfs           383M  872K  382M    1% /run
-/dev/sda5        27G  5.1G   21G   20% /
-# cat /etc/issue
-Ubuntu 18.04.5 LTS \n \l
-#  uname -a
-Linux xxxx 5.3.0-24-generic #26~18.04.2-Ubuntu SMP Tue Nov 26 12:34:22 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
-</code></pre><p>安装必要的包:</p><pre><code># sudo apt-get update -y
-# sudo apt-get upgrade -y
-# sudo apt-get install -y sddm xfce4 unzip autoconf automake libtool pkg-config build-essential
-# sudo apt-get install -y x11proto-dev xserver-xorg-dev libxcb-util-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-shm0-dev libxcb-randr0-dev vim cmake cmake-extras extra-cmake-modules libpam-dev libxcb-xkb-dev qt5-default libqt5qml5 qt5-qmltooling-plugins qtdeclarative5-dev qttools5-dev xutils-dev
-</code></pre><h3 id=编译相关包>编译相关包</h3><p>编译<code>xf86-video-nested</code>:</p><pre><code>$ git clone https://github.com/smemc/xf86-video-nested.git
-$ cd xf86-video-nested
-$ ./autogen.sh
-$ ./configure --prefix=/usr
-$ make -j2
-$ sudo make install
-</code></pre><p>编译<code>sddm-nested</code>:</p><pre><code>$ git clone https://github.com/purplepalmdash/sddm-nested-multiseat.git
-$ cd sddm-nested
-$ mkdir build &amp;&amp; cd build
-$ cmake -DCMAKE_INSTALL_PREFIX=/usr       -DCMAKE_BUILD_TYPE=Release        -Wno-dev ..
-$ make -j2
-$ sudo make install
-$ sudo install -v -dm755 -o sddm -g sddm /var/lib/sddm
-$ sddm --example-config &gt; sddm.example.conf
-$ sudo cp -v  sddm.example.conf /etc/sddm.conf
-</code></pre><p>生成配置文件:</p><pre><code>cat &gt; /etc/pam.d/sddm &lt;&lt; &quot;EOF&quot; &amp;&amp;
-# Begin /etc/pam.d/sddm
-
-auth     requisite      pam_nologin.so
-auth     required       pam_env.so
-
-auth     required       pam_succeed_if.so uid &gt;= 1000 quiet
-auth     include        common-auth
-
-account  include        common-account
-password include        common-password
-
-session  required       pam_limits.so
-session  include        common-session
-
-# End /etc/pam.d/sddm
-EOF
-
-cat &gt; /etc/pam.d/sddm-autologin &lt;&lt; &quot;EOF&quot; &amp;&amp;
-# Begin /etc/pam.d/sddm-autologin
-
-auth     requisite      pam_nologin.so
-auth     required       pam_env.so
-
-auth     required       pam_succeed_if.so uid &gt;= 1000 quiet
-auth     required       pam_permit.so
-
-account  include        common-account
-
-password required       pam_deny.so
-
-session  required       pam_limits.so
-session  include        common-session
-
-# End /etc/pam.d/sddm-autologin
-EOF
-
-cat &gt; /etc/pam.d/sddm-greeter &lt;&lt; &quot;EOF&quot;
-# Begin /etc/pam.d/sddm-greeter
-
-auth     required       pam_env.so
-auth     required       pam_permit.so
-
-account  required       pam_permit.so
-password required       pam_deny.so
-session  required       pam_unix.so
--session optional       pam_systemd.so
-
-# End /etc/pam.d/sddm-greeter
-EOF
-</code></pre><h3 id=配置分屏>配置分屏</h3><p>定义出Intel显卡的输出口：</p><pre><code># vim  /etc/X11/xorg.conf.d/20-intel.conf 
-Section &quot;Device&quot;
-   Identifier  &quot;Intel Graphics&quot;
-   Driver      &quot;intel&quot;
-   Option      &quot;AccelMethod&quot;  &quot;sna&quot;
-   Option      &quot;TearFree&quot;    &quot;true&quot;
-   Option      &quot;DRI&quot;    &quot;3&quot;
-   Option      &quot;Monitor-VGA&quot; &quot;VGA&quot;
-   Option      &quot;Monitor-HDMI2&quot; &quot;HDMI2&quot;
-EndSection
-</code></pre><p>定义出显示器配置:</p><pre><code>Section &quot;Monitor&quot;
-	Identifier	&quot;VGA&quot;
-EndSection
-
-Section &quot;Monitor&quot;
-	Identifier	&quot;HDMI2&quot;
-	Option		&quot;Position&quot;	&quot;1920 0&quot;
-	Option		&quot;PreferredMode&quot;	&quot;1920x1080&quot;
-EndSection
-
-Section &quot;Screen&quot;
-	Identifier	&quot;VGA&quot;
-	Monitor		&quot;VGA&quot;
-	SubSection &quot;Display&quot;
-		Depth	24
-		Modes	&quot;1920x1080&quot;
-	EndSubSection
-EndSection
-
-Section &quot;Screen&quot;
-	Identifier	&quot;HDMI2&quot;
-	Monitor		&quot;HDMI2&quot;
-	SubSection &quot;Display&quot;
-		Depth	24
-		Modes	&quot;1920x1080&quot;
-	EndSubSection
-EndSection
-
-Section &quot;ServerLayout&quot;
-	Identifier	&quot;L1&quot;
-	Screen		&quot;VGA&quot;	0 0
-	Screen		&quot;HDMI2&quot;		1920 0
-	Option		&quot;BlankTime&quot;	&quot;0&quot;
-	Option		&quot;StandbyTime&quot;	&quot;0&quot;
-	Option		&quot;SuspendTime&quot;	&quot;0&quot;
-	Option		&quot;OffTime&quot;	&quot;0&quot;
-EndSection
-
-
-Section &quot;ServerFlags&quot;
-    Option        &quot;BlankTime&quot;    &quot;0&quot;
-    Option        &quot;StandbyTime&quot;    &quot;0&quot;
-    Option        &quot;SuspendTime&quot;    &quot;0&quot;
-    Option        &quot;OffTime&quot;    &quot;0&quot;
-EndSection
-
-Section &quot;Extensions&quot;
-    Option        &quot;DPMS&quot;    &quot;Disable&quot;
-EndSection
-</code></pre><p>定义出<code>seat1</code>和<code>seat2</code>的配置:</p><pre><code># vim /etc/X11/seat1.conf 
-Section &quot;Module&quot;
-    Load        &quot;shadow&quot;
-    Load        &quot;fb&quot;
-EndSection
-
-Section &quot;Device&quot;
-    Identifier    &quot;seat1&quot;
-    Driver        &quot;nested&quot;
-EndSection
-
-Section &quot;Screen&quot;
-    Identifier    &quot;Screen1&quot;
-    Device        &quot;seat1&quot;
-    DefaultDepth    24
-    SubSection &quot;Display&quot;
-        Depth 24
-        #Modes &quot;3840x2160&quot;
-        Modes &quot;1920x1080&quot;
-    EndSubSection
-    Option        &quot;Origin&quot;    &quot;1920 0&quot;
-EndSection
-
-Section &quot;ServerLayout&quot;
-    Identifier    &quot;Nested&quot;
-    Screen        &quot;Screen1&quot;
-    Option        &quot;AllowEmptyInput&quot;    &quot;true&quot;
-    Option        &quot;BlankTime&quot;    &quot;0&quot;
-    Option        &quot;StandbyTime&quot;    &quot;0&quot;
-    Option        &quot;SuspendTime&quot;    &quot;0&quot;
-    Option        &quot;OffTime&quot;    &quot;0&quot;
-EndSection
-
-Section &quot;ServerFlags&quot;
-        Option &quot;BlankTime&quot; &quot;0&quot;
-        Option &quot;StandbyTime&quot; &quot;0&quot;
-        Option &quot;SuspendTime&quot; &quot;0&quot;
-        Option &quot;OffTime&quot; &quot;0&quot;
-EndSection
-# vim /etc/X11/seat2.conf 
-Section &quot;Module&quot;
-    Load        &quot;shadow&quot;
-    Load        &quot;fb&quot;
-EndSection
-
-Section &quot;Device&quot;
-    Identifier    &quot;seat2&quot;
-    Driver        &quot;nested&quot;
-EndSection
-
-Section &quot;Screen&quot;
-    Identifier    &quot;Screen1&quot;
-    Device        &quot;seat2&quot;
-    DefaultDepth    24
-    SubSection &quot;Display&quot;
-        Depth 24
-        Modes &quot;1920x1080&quot;
-    EndSubSection
-    Option        &quot;Origin&quot;    &quot;0 0&quot;
-EndSection
-
-Section &quot;ServerLayout&quot;
-    Identifier    &quot;Nested&quot;
-    Screen        &quot;Screen1&quot;
-    Option        &quot;AllowEmptyInput&quot;    &quot;true&quot;
-    Option        &quot;BlankTime&quot;    &quot;0&quot;
-    Option        &quot;StandbyTime&quot;    &quot;0&quot;
-    Option        &quot;SuspendTime&quot;    &quot;0&quot;
-    Option        &quot;OffTime&quot;    &quot;0&quot;
-EndSection
-
-Section &quot;ServerFlags&quot;
-        Option &quot;BlankTime&quot; &quot;0&quot;
-        Option &quot;StandbyTime&quot; &quot;0&quot;
-        Option &quot;SuspendTime&quot; &quot;0&quot;
-        Option &quot;OffTime&quot; &quot;0&quot;
-EndSection
-</code></pre><p>定义出USB口与seat的映射关系(注意前置的口USB编号与机箱后部的USB编号的对应关系):</p><pre><code># vim /etc/udev/rules.d/70-seat.rules 
-SUBSYSTEM==&quot;input&quot;, DEVPATH==&quot;/devices/pci0000:00/0000:00:14.0/usb1/1-1/*&quot;, TAG+=&quot;seat&quot;,  ENV{ID_SEAT}=&quot;seat2&quot;, TAG+=&quot;master-of-seat&quot;, PROGRAM=&quot;/usr/bin/sed -n 's/.*startseat=\([^ ]*\).*/\1/p' /proc/cmdline&quot;, RESULT==&quot;true&quot;
-SUBSYSTEM==&quot;input&quot;, DEVPATH==&quot;/devices/pci0000:00/0000:00:14.0/usb1/1-4/*&quot;, TAG+=&quot;seat&quot;,  ENV{ID_SEAT}=&quot;seat2&quot;, TAG+=&quot;master-of-seat&quot;, PROGRAM=&quot;/usr/bin/sed -n 's/.*startseat=\([^ ]*\).*/\1/p' /proc/cmdline&quot;, RESULT==&quot;true&quot;
-SUBSYSTEM==&quot;input&quot;, ATTRS{name}==&quot;Power Button&quot;, TAG+=&quot;seat&quot;,  ENV{ID_SEAT}=&quot;seat2&quot;, TAG+=&quot;master-of-seat&quot;, PROGRAM=&quot;/usr/bin/sed -n 's/.*startseat=\([^ ]*\).*/\1/p' /proc/cmdline&quot;, RESULT==&quot;true&quot;
-#SUBSYSTEM==&quot;input&quot;, DEVPATH==&quot;/devices/pci0000:00/0000:00:14.0/usb1/1-9/*&quot;, TAG+=&quot;seat&quot;,  ENV{ID_SEAT}=&quot;seat1&quot;, TAG+=&quot;master-of-seat&quot;, PROGRAM=&quot;/usr/bin/sed -n 's/.*startseat=\([^ ]*\).*/\1/p' /proc/cmdline&quot;, RESULT==&quot;true&quot;
-
-SUBSYSTEM==&quot;input&quot;, DEVPATH==&quot;/devices/pci0000:00/0000:00:14.0/usb1/1-2/*&quot;, TAG+=&quot;seat&quot;,  ENV{ID_SEAT}=&quot;seat1&quot;, TAG+=&quot;master-of-seat&quot;, PROGRAM=&quot;/usr/bin/sed -n 's/.*startseat=\([^ ]*\).*/\1/p' /proc/cmdline&quot;, RESULT==&quot;true&quot;
-#SUBSYSTEM==&quot;input&quot;, DEVPATH==&quot;/devices/pci0000:00/0000:00:14.0/usb1/1-6/*&quot;, TAG+=&quot;seat&quot;,  ENV{ID_SEAT}=&quot;seat1&quot;, TAG+=&quot;master-of-seat&quot;, PROGRAM=&quot;/usr/bin/sed -n 's/.*startseat=\([^ ]*\).*/\1/p' /proc/cmdline&quot;, RESULT==&quot;true&quot;
-SUBSYSTEM==&quot;input&quot;, ATTRS{name}==&quot;Sleep Button&quot;, TAG+=&quot;seat&quot;,  ENV{ID_SEAT}=&quot;seat1&quot;, TAG+=&quot;master-of-seat&quot;, PROGRAM=&quot;/usr/bin/sed -n 's/.*startseat=\([^ ]*\).*/\1/p' /proc/cmdline&quot;, RESULT==&quot;true&quot;
-</code></pre><p>开启multi-seat:</p><pre><code># vim /etc/default/grub
-.....
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash startseat=true&quot;
-GRUB_CMDLINE_LINUX=&quot;startseat=true&quot;
-....
-# update-grub2
-</code></pre><p>重启后验证:</p><pre><code># cat /proc/cmdline 
-BOOT_IMAGE=/boot/vmlinuz-5.3.0-24-generic root=UUID=50368a13-e1d7-4699-8b3b-b5ffc1d148e6 ro startseat=true quiet splash startseat=true vt.handoff=1
-</code></pre><h3 id=配置多用户登录>配置多用户登录</h3><p>创建两个用户<code>seat1</code>和<code>seat2</code>:</p><pre><code># useradd -m seat1
-# useradd -m seat2
-# passwd seat1
-# passwd seat2
-</code></pre><p>配置其自动登录(<code>[AutoLogin]</code>内只保留如下所示部分):</p><pre><code># cat /etc/sddm.conf | more
-[Autologin]
-# Whether sddm should automatically log back into sessions when they exit
-# Whether sddm should automatically log back into sessions when they exit
-Relogin=false,false
-SeatName=seat1,seat2
-#Session=awesome,awesome
-Session=xfce,xfce
-User=seat1,seat2
-....
-</code></pre><h3 id=awesome自启动项>Awesome自启动项</h3><p>在<code>awesome</code>的情景下，我们配置其登录方式为:</p><pre><code># su seat1
-$ /bin/bash
-$ mkdir -p ~/.config/awesome
-$ cp /etc/xdg/awesome/rc.lua ~//.config/awesome
-$ vim ~/.config/awesome/autorun.sh
-
-$ vim ~/.config/awesome/autorun.sh 
-    #!/usr/bin/env bash
-    
-    function run {
-      if ! pgrep -f $1 ;
-      then
-        $@&amp;
-      fi
-    }
-    run sleep3 &amp;&amp; /opt/ctg/CtyunClouddeskUniversal/CtyunClouddeskUniversal
-$ vim ~/.config/awesome/rc.lua 
-最后一行添加:
-awful.spawn.with_shell(&quot;~/.config/awesome/autorun.sh&quot;)
-$ chmod 777 ~/.config/awesome/autorun.sh 
-$ rm -rf /tmp/awesome/
-$ cp -r ~/.config/awesome /tmp
-$ exit
-exit
-$ exit
-# su seat2
-$ /bin/bash
-$ cp -r /tmp/awesome/ ~/.config/
-$ chmod 777 ~/.config/awesome/autorun.sh 
-$ exit
-exit
-$ exit
-</code></pre><p>现在重启后即可看到结果，其结果表现为，两路显示独立输出且进入到idv登录前界面。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/18/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/18/>18</a></li><li class="page-item active"><a class=page-link href=/page/19/>19</a></li><li class=page-item><a class=page-link href=/page/20/>20</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/226/>226</a></li><li class=page-item><a href=/page/20/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/226/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/18/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/18/>18</a></li><li class="page-item active"><a class=page-link href=/page/19/>19</a></li><li class=page-item><a class=page-link href=/page/20/>20</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/226/>226</a></li><li class=page-item><a href=/page/20/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/226/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

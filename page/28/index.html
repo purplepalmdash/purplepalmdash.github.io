@@ -1,5 +1,203 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/30/troubleshootingonk8snginxproxy/>TroubleShootingOnK8snginxproxy</a></h1><span class=post-date>Nov 30, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=现象>现象</h3><p>Not Ready:</p><pre><code># kubectl get nodes
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/12/11/workingtipsonvncremote/>WorkingTipsOnVNCRemote</a></h1><span class=post-date>Dec 11, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=hardware--os>Hardware & OS</h3><p>Hardware configuration:</p><pre><code># lscpu
+Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
+32Core
+# free -g
+              total        used        free      shared  buff/cache   available
+Mem:             62          19          10           0          33          42
+Swap:             0           0           0
+# df -h
+/dev/mapper/vg-root  1.7T  1.1T  538G  66% /
+</code></pre><p>OS Configuration:</p><pre><code># cat /etc/issue
+Ubuntu 16.04.4 LTS \n \l
+</code></pre><h3 id=aim>AIM</h3><p>To use this server as the vagrant environment.</p><h3 id=vagrant-libvirt>vagrant-libvirt</h3><p>use docker for running vagrant:</p><pre><code># docker pull vagrantlibvirt/vagrant-libvirt:latest
+</code></pre><p>Install libvirtd related:</p><pre><code># apt-get install -y virt-manager
+# systemctl status libvirt-bin qemu
+</code></pre><h3 id=desktop>Desktop</h3><p>Use awesome as the default desktop:</p><pre><code># apt-get install -y i3
+# /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2020.02.03_all.deb keyring.deb SHA256:c5dd35231930e3c8d6a9d9539c846023fe1a08e4b073ef0d2833acd815d80d48
+# dpkg -i ./keyring.deb
+# echo &quot;deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe&quot; &gt;&gt; /etc/apt/sources.list.d/sur5r-i3.list
+# apt-get update -y
+# apt install i3
+# apt-get install -y tigervncserver
+# vncpasswd
+# vncserver -localhost -nolisten tcp
+# vim ~/.vnc/xstartup
+#!/bin/bash
+i3 &amp;
+</code></pre><p>Change to lxde4:</p><pre><code>cat ~/.vnc/xstartup
+	#/etc/X11/Xsession
+	exec startlxde
+
+</code></pre><h3 id=client>client</h3><p>Enable the ssh transfering:</p><pre><code>$ ssh -p 62022 -L 127.0.0.1:5901:localhost:5901 root@xxx.xxx.xxx.xxx
+</code></pre><p>then viewer <code>localhost:5901</code> you could see the desktop</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/12/03/workingtipsonkubeadmssl100yissue/>WorkingTipsOnKubeadmSSL100YIssue</a></h1><span class=post-date>Dec 3, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=kubernetes-v1153>Kubernetes v1.15.3</h3><p>默认已开启100年签名，但节点未开启签名的自动更新，通过以下方法开启:</p><pre><code># cat rr.yml
+---
+- hosts: k8s-cluster
+  gather_facts: false
+  tasks:
+    - name: &quot;Change kubelet configuration for adding certificates rotate&quot;
+      raw: sed -i.$(date &quot;+%m%d%y&quot;) '/^clusterDNS:/i rotateCertificates:\ true' /etc/kubernetes/kubelet-config.yaml
+
+- hosts: k8s-cluster
+  gather_facts: false
+  tasks:
+    - name: &quot;Restart kubelet&quot;
+      raw: systemctl restart kubelet
+# ansible-playbook -i inventory/rong/hosts.ini rr.yml
+</code></pre><p>如果已经过期, 则通过rejoin的方式重新加工作节点即可。</p><h3 id=kubernetes-v1176>Kubernetes v1.17.6</h3><p>Download source file from github:</p><pre><code># wget https://github.com/kubernetes/kubernetes/archive/v1.17.6.zip
+# unzip v1.17.6.zip
+# cd kubernetes-1.17.6
+# vim cmd/kubeadm/app/constants/constants.go
+CertificateValidity = time.Hour * 24 * 365 * 100
+#  vim vendor/k8s.io/client-go/util/cert/cert.go
+func NewSelfSignedCACert
+NotAfter: 	now.Add(duration365d * 100).UTC(),
+func GenerateSelfSignedCertKeyWithFixtures
+maxAge := 100 * time.Hour * 24 * 365
+</code></pre><p>Edit building:</p><pre><code># vim hack/make-rules/cross.sh
+    make all WHAT=&quot;${KUBE_SERVER_TARGETS[*]}&quot; KUBE_BUILD_PLATFORMS=&quot;${KUBE_SERVER_PLATFORMS[*]}&quot;
+    
+    #make all WHAT=&quot;${KUBE_NODE_TARGETS[*]}&quot; KUBE_BUILD_PLATFORMS=&quot;${KUBE_NODE_PLATFORMS[*]}&quot;
+    #
+    #make all WHAT=&quot;${KUBE_CLIENT_TARGETS[*]}&quot; KUBE_BUILD_PLATFORMS=&quot;${KUBE_CLIENT_PLATFORMS[*]}&quot;
+    #
+    #make all WHAT=&quot;${KUBE_TEST_TARGETS[*]}&quot; KUBE_BUILD_PLATFORMS=&quot;${KUBE_TEST_PLATFORMS[*]}&quot;
+    #
+    #make all WHAT=&quot;${KUBE_TEST_SERVER_TARGETS[*]}&quot; KUBE_BUILD_PLATFORMS=&quot;${KUBE_TEST_SERVER_PLATFORMS[*]}&quot;
+#  vim hack/lib/golang.sh
+    readonly KUBE_SUPPORTED_SERVER_PLATFORMS=(
+    #  linux/amd64
+    #  linux/arm
+      linux/arm64
+    #  linux/s390x
+    #  linux/ppc64le
+    )
+    
+    //.............
+    
+    kube::golang::server_targets() {
+      local targets=(                       
+      #  cmd/kube-proxy                                                        
+      #  cmd/kube-apiserver                 
+      #  cmd/kube-controller-manager                                 
+      #  cmd/kubelet 
+        cmd/kubeadm
+      #  cmd/kube-scheduler
+      #  vendor/k8s.io/apiextensions-apiserver
+      #  cluster/gce/gci/mounter
+      )
+</code></pre><p>Build:</p><pre><code># make cross
+</code></pre><p>Get the build result:</p><pre><code># ls ./_output/local/go/bin/linux_arm64/kubeadm
+# file ./_output/local/go/bin/linux_arm64/kubeadm
+./_output/local/go/bin/linux_arm64/kubeadm: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), statically linked, stripped
+</code></pre><h3 id=kubernetes-v1188arm64>Kubernetes v1.18.8(arm64)</h3><p>The same as in v1.17.6</p><h3 id=updatev1176>Update(V1.17.6)</h3><p>默认情况下集群状态(365天过期):</p><pre><code>root@wuhanarm64-1:/home/test# kubeadm alpha certs check-expiration
+[check-expiration] Reading configuration from the cluster...
+[check-expiration] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -oyaml'
+W1203 11:44:01.023274   43160 defaults.go:186] The recommended value for &quot;clusterDNS&quot; in &quot;KubeletConfiguration&quot; is: [110.192.0.10]; the provided value is: [110.192.0.3]
+
+CERTIFICATE                EXPIRES                  RESIDUAL TIME   CERTIFICATE AUTHORITY   EXTERNALLY MANAGED
+admin.conf                 Sep 11, 2021 06:45 UTC   282d                                    no      
+apiserver                  Sep 11, 2021 06:43 UTC   282d            ca                      no      
+apiserver-kubelet-client   Sep 11, 2021 06:43 UTC   282d            ca                      no      
+controller-manager.conf    Sep 11, 2021 06:45 UTC   282d                                    no      
+front-proxy-client         Sep 11, 2021 06:43 UTC   282d            front-proxy-ca          no      
+scheduler.conf             Sep 11, 2021 06:45 UTC   282d                                    no      
+
+CERTIFICATE AUTHORITY   EXPIRES                  RESIDUAL TIME   EXTERNALLY MANAGED
+ca                      Sep 09, 2030 06:43 UTC   9y              no      
+front-proxy-ca          Sep 09, 2030 06:43 UTC   9y              no      
+root@wuhanarm64-1:/home/test# kubectl get nodes
+NAME           STATUS   ROLES    AGE   VERSION
+wuhanarm64-1   Ready    master   82d   v1.17.6
+wuhanarm64-2   Ready    &lt;none&gt;   82d   v1.17.6
+wuhanarm64-3   Ready    &lt;none&gt;   82d   v1.17.6
+</code></pre><p>更新kubeadm:</p><pre><code># mv /usr/local/bin/kubeadm /usr/local/bin/kubeadm.back
+# scp gowuegowoguweog:gowugouwoeogo/kubeadm_1.17.6_arm64 /usr/local/bin/kubeadm
+# kubeadm version
+kubeadm version: &amp;version.Info{Major:&quot;1&quot;, Minor:&quot;17&quot;, GitVersion:&quot;v1.17.6&quot;, GitCommit:&quot;d32e40e20d167e103faf894261614c5b45c44198&quot;, GitTreeState:&quot;archive&quot;, BuildDate:&quot;2020-12-03T02:53:08Z&quot;, GoVersion:&quot;go1.14.2&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/arm64&quot;}
+
+</code></pre><p>用新生成的kubeadm重新<code>renew</code>签名:</p><pre><code> # kubeadm alpha certs renew all --config=/etc/kubernetes/kubeadm-config.yaml
+
+W1203 11:48:50.884660   45705 defaults.go:186] The recommended value for &quot;clusterDNS&quot; in &quot;KubeletConfiguration&quot; is: [110.192.0.10]; the provided value is: [110.192.0.3]
+W1203 11:48:50.885133   45705 validation.go:28] Cannot validate kube-proxy config - no validator is available
+W1203 11:48:50.885156   45705 validation.go:28] Cannot validate kubelet config - no validator is available
+certificate embedded in the kubeconfig file for the admin to use and for kubeadm itself renewed
+certificate for serving the Kubernetes API renewed
+certificate for the API server to connect to kubelet renewed
+certificate embedded in the kubeconfig file for the controller manager to use renewed
+certificate for the front proxy client renewed
+certificate embedded in the kubeconfig file for the scheduler manager to use renewed
+
+# kubeadm alpha certs check-expiration
+[check-expiration] Reading configuration from the cluster...
+[check-expiration] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -oyaml'
+W1203 11:49:55.769736   46233 defaults.go:186] The recommended value for &quot;clusterDNS&quot; in &quot;KubeletConfiguration&quot; is: [110.192.0.10]; the provided value is: [110.192.0.3]
+
+CERTIFICATE                EXPIRES                  RESIDUAL TIME   CERTIFICATE AUTHORITY   EXTERNALLY MANAGED
+admin.conf                 Nov 09, 2120 03:48 UTC   99y                                     no      
+apiserver                  Nov 09, 2120 03:48 UTC   99y             ca                      no      
+apiserver-kubelet-client   Nov 09, 2120 03:48 UTC   99y             ca                      no      
+controller-manager.conf    Nov 09, 2120 03:48 UTC   99y                                     no      
+front-proxy-client         Nov 09, 2120 03:48 UTC   99y             front-proxy-ca          no      
+scheduler.conf             Nov 09, 2120 03:48 UTC   99y                                     no      
+
+CERTIFICATE AUTHORITY   EXPIRES                  RESIDUAL TIME   EXTERNALLY MANAGED
+ca                      Sep 09, 2030 06:43 UTC   9y              no      
+front-proxy-ca          Sep 09, 2030 06:43 UTC   9y              no      
+
+</code></pre><p>更新kubeconfig:</p><pre><code># kubeadm init phase kubeconfig all --config kubeadm-config.yaml 
+W1203 11:55:20.868908   49000 defaults.go:186] The recommended value for &quot;clusterDNS&quot; in &quot;KubeletConfiguration&quot; is: [110.192.0.10]; the provided value is: [110.192.0.3]
+W1203 11:55:20.869702   49000 validation.go:28] Cannot validate kube-proxy config - no validator is available
+W1203 11:55:20.869730   49000 validation.go:28] Cannot validate kubelet config - no validator is available
+[kubeconfig] Using kubeconfig folder &quot;/etc/kubernetes&quot;
+[kubeconfig] Using existing kubeconfig file: &quot;/etc/kubernetes/admin.conf&quot;
+[kubeconfig] Using existing kubeconfig file: &quot;/etc/kubernetes/kubelet.conf&quot;
+[kubeconfig] Using existing kubeconfig file: &quot;/etc/kubernetes/controller-manager.conf&quot;
+[kubeconfig] Using existing kubeconfig file: &quot;/etc/kubernetes/scheduler.conf&quot;
+# mv $HOME/.kube/config $HOME/.kube/config.old
+# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+# chown $(id -u):$(id -g) $HOME/.kube/config
+</code></pre><p>重启 kube-apiserver、kube-controller、kube-scheduler、etcd 这4个容器, 举<code>kube-apiserver</code>为例:</p><pre><code># docker ps | grep kube-api
+d086ef6a4b9b        6388c24eab51                        &quot;kube-apiserver --ad…&quot;   2 hours ago         Up 2 hours                              k8s_kube-apiserver_kube-apiserver-wuhanarm64-1_kube-system_40f4f19c75fe95ea92ebe00b7bc1576e_625
+486a3c2d3e9e        k8s.gcr.io/pause:3.1                &quot;/pause&quot;                 2 hours ago         Up 2 hours                              k8s_POD_kube-apiserver-wuhanarm64-1_kube-system_40f4f19c75fe95ea92ebe00b7bc1576e_3
+# docker rm -f d086ef6a4b9b
+d086ef6a4b9b
+</code></pre><p>检查apiserver证书:</p><pre><code># echo | openssl s_client -showcerts -connect 127.0.0.1:6443 -servername api 2&gt;/dev/null | openssl x509 -noout -enddate
+notAfter=Nov  9 03:48:52 2120 GMT
+</code></pre><p>1.17.6中，因kubelet默认开启了<code>rotateCertificates</code>模式，各节点证书在一年后应该会自动更新。</p><h3 id=1176已过期>1.17.6(已过期)</h3><p>如果已经过期的话，如何处理?</p><p>首先将更改了100年签名的<code>kubeadm</code>拷贝到kube-master[0]节点上，替换掉默认的<code>kubeadm</code>:</p><pre><code># mv /usr/local/bin/kubeadm /usr/local/bin/kubeadm.back
+# scp gowuegowoguweog:gowugouwoeogo/kubeadm_1.17.6_arm64 /usr/local/bin/kubeadm
+</code></pre><p>使用以下命令查看签名的时间:</p><pre><code># cd /etc/kubernetes/ssl
+# for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfte
+notAfter=Oct 31 06:11:04 2020 GMT
+notAfter=Oct 31 06:11:03 2020 GMT
+notAfter=Oct 31 06:11:03 2020 GMT
+notAfter=Oct 31 06:11:04 2020 GMT
+notAfter=Oct 31 06:11:05 2020 GMT
+</code></pre><p>在kube-master[0]节点上，手动设置时间为过期前的时间，如2020年9月1日:</p><pre><code># date -s 20200901
+# hwclock -w
+</code></pre><p>在kube-master[0]节点上的<code>Rong</code>安装目录里，通过ssh同步所有节点(举例为<code>10.137.149.231~233</code>)时间:</p><pre><code># ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.231 date -s @`( date -u +&quot;%s&quot; )`
+# ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.232 date -s @`( date -u +&quot;%s&quot; )`
+# ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.233 date -s @`( date -u +&quot;%s&quot; )`
+# ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.231 hwclock -w 
+# ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.232 hwclock -w 
+# ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.233 hwclock -w 
+</code></pre><p>更改完时间后，<code>kubectl get node</code>等命令可用, 此时使用以下命令更新签名:</p><pre><code># kubeadm alpha certs renew all=kubeadm --config=kubeadm-config.yaml
+</code></pre><p>因签名已变化，替换掉当前使用的<code>.kube/config</code>文件:</p><pre><code># mv $HOME/.kube/config $HOME/.kube/config.old
+# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+</code></pre><p>使用以下命令查看更新后的签名(100年以后过期):</p><pre><code># kubeadm alpha certs check-expiration
+</code></pre><p>检查各节点是否为<code>Ready</code>状态，如果未ready，可登录至该节点， 通过<code>systemctl restart kubelet</code>命令重启控制平面同步签名后即可变成ready状态:</p><pre><code># kubectl get node
+</code></pre><p>调整回正确的时间（当前时间）:</p><pre><code># date -s 20201203
+# date -s 14:20:20
+# hwclock -w
+# ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.231 date -s @`( date -u +&quot;%s&quot; )`
+# ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.232 date -s @`( date -u +&quot;%s&quot; )`
+# ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.233 date -s @`( date -u +&quot;%s&quot; )`
+# ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.231 hwclock -w 
+# ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.232 hwclock -w 
+# ssh -o &quot;StrictHostKeyChecking=no&quot; -i .rong/deploy.key root@10.137.149.233 hwclock -w 
+</code></pre><p>调整完时间后，再次检查签名是否正常, 各工作节点是否ready:</p><pre><code># kubeadm alpha certs check-expiration
+# kubectl get node
+</code></pre><h3 id=v1188未过期>v1.18.8(未过期)</h3><p>将kubeadm(100年修改版)上传到master机器上，renew签名即可。具体步骤与v1.17.6相同。</p><h3 id=v1188已过期>v1.18.8(已过期)</h3><p>具体步骤与v1.17.6(已过期)相同。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/30/troubleshootingonk8snginxproxy/>TroubleShootingOnK8snginxproxy</a></h1><span class=post-date>Nov 30, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=现象>现象</h3><p>Not Ready:</p><pre><code># kubectl get nodes
 
 ai05 NotReady, SchedulingDisabled node	436d 	v1.13.5
 </code></pre><h3 id=对策>对策</h3><p>去掉<code>SchedulingDisabled</code>:</p><pre><code># kubectl uncordon ai05
@@ -52,26 +250,4 @@ The push refers to repository [k8s.gcr.io/nvidia-gpu-device-plugin]
 179f02762b1a: Pushed 
 cd7100a72410: Pushed 
 rong: digest: sha256:0842734032018be107fa2490c98156992911e3e1f2a21e059ff0105b07dd8e9e size: 739
-</code></pre><h3 id=tips>Tips</h3><p>因为该插件比较老，因而不再需要使用，正确的方式参考：</p><p><a href=https://github.com/NVIDIA/k8s-device-plugin>https://github.com/NVIDIA/k8s-device-plugin</a></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/19/workingtipsoncs414/>WorkingTipsOnCS414</a></h1><span class=post-date>Nov 19, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=system-preparation>System Preparation</h3><p>Install CentOS7.7, minimal mode, then enable root login, login with root.</p><p>Disable <code>UseDNS</code> in <code>sshd</code> configuration.</p><pre><code>[root@cs ~]# cat /etc/yum.conf 
-[main]
-cachedir=/var/cache/yum/$basearch/$releasever
-keepcache=1
-# yum upate -y
-# yum install vim bridge-utils net-tools -y
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/12/workingtipsonnpgv2/>WorkingTipsOnNpgV2</a></h1><span class=post-date>Nov 12, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=安装echarts依赖>安装echarts依赖</h3><p>Via following commands:</p><pre><code>cnpm install echarts -S     
-cnpm install ngx-echarts -S
- cnpm install resize-observer-polyfill -S
-</code></pre><p>如果后面出现 <code>NullInjectorError: No provider for ElementRef!</code>的问题，则重复执行:</p><pre><code>npm install echarts -S
-npm install ngx-echarts -S
-npm install resize-observer-polyfill -D
-</code></pre><h3 id=创建echarts模块>创建echarts模块</h3><p>创建一个名为<code>echarts</code>的子app:</p><pre><code>$ ng g c echarts                         
-Your global Angular CLI version (10.2.0) is greater than your local
-version (8.3.28). The local Angular CLI version is used.
-
-To disable this warning use &quot;ng config -g cli.warnings.versionMismatch false&quot;.
-CREATE src/app/echarts/echarts.component.css (0 bytes)
-CREATE src/app/echarts/echarts.component.html (22 bytes)
-CREATE src/app/echarts/echarts.component.spec.ts (635 bytes)
-CREATE src/app/echarts/echarts.component.ts (273 bytes)
-UPDATE src/app/app.module.ts (6586 bytes)
-</code></pre><h3 id=添加导航>添加导航</h3><p>添加echarts到导航栏中.</p><p><img src=/images/2020_11_13_10_31_34_879x655.jpg alt=/images/2020_11_13_10_31_34_879x655.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/27/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/27/>27</a></li><li class="page-item active"><a class=page-link href=/page/28/>28</a></li><li class=page-item><a class=page-link href=/page/29/>29</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/226/>226</a></li><li class=page-item><a href=/page/29/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/226/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><h3 id=tips>Tips</h3><p>因为该插件比较老，因而不再需要使用，正确的方式参考：</p><p><a href=https://github.com/NVIDIA/k8s-device-plugin>https://github.com/NVIDIA/k8s-device-plugin</a></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/27/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/27/>27</a></li><li class="page-item active"><a class=page-link href=/page/28/>28</a></li><li class=page-item><a class=page-link href=/page/29/>29</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/226/>226</a></li><li class=page-item><a href=/page/29/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/226/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

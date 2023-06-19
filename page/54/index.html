@@ -1,5 +1,106 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/05/ubuntu1604isocustomize/>Ubuntu1604ISOCustomize</a></h1><span class=post-date>Dec 5, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>ArchLinux Preparation:</p><pre><code>$ yaourt mkpasswd
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/11/tipsonkubespray28upgrading/>TipsOnKubespray28Upgrading</a></h1><span class=post-date>Dec 11, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=初始化配置>初始化配置</h3><p>按照AI组的设想，基于Ubuntu16.04来做，后续其实也可以基于Ubuntu16.05来做，应该是一样的。<br>创建一个虚拟机，192.168.122.177/24, 安装好redsocks.</p><p>visudo(nopasswd), <code>apt-get install -y nethogs build-essential libevent-dev</code>.</p><p>做成基础镜像后，关机，undefine此虚拟机。</p><pre><code># 
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/10/tipsonkubesprayupgrading/>TipsOnKubesprayUpgrading</a></h1><span class=post-date>Dec 10, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>Rong部署框架随kubespray社区升级策略。</p><h3 id=前提>前提</h3><p>下载kubespray升级包，如v2.8.0:</p><p><img src=/images/2018_12_10_12_09_29_628x576.jpg alt=/images/2018_12_10_12_09_29_628x576.jpg></p><p>将此包解压到某目录，这里解压到:</p><pre><code># cd /var1/myimages/RongUpgrade/280
+# ls
+kubespray-2.8.0
+</code></pre><h4 id=快速同步镜像基准制作>快速同步镜像基准制作</h4><p>设置一个Rong CentOS7.5 ISO安装后的基础环境, (Base/Rong_Base.qcow2).
+制作方法如下（如果已经制作完毕，则可忽略下面步骤):</p><p>激活用于存储cache的rpm包:</p><pre><code># vim /etc/yum.conf
+keepcache=1
+</code></pre><p>改回原有的仓库配置:</p><pre><code>cd /etc/yum.repos.d
+mv back/* .
+mv kubespray_centos7.repo  back/
+</code></pre><p>安装必要的包用于GFW：</p><pre><code>yum install -y gcc  libevent-devel
+redsocks配置，这里就不说了
+</code></pre><p>保存为/var1/myimages/RongUpgrade/Base/Rong_Base.qcow2 ,
+以后的每次升级都使用该源包，现在创建一个用于升级2.8.0的镜像:</p><pre><code>$ qemu-img create -f qcow2 -b Base/Rong_Base.qcow2 v280.qcow2
+</code></pre><p>6核7G的虚拟机配置，选择default网络, 注意更改MAC地址为与上面定义时一致:</p><p><img src=/images/2018_12_10_12_27_06_497x283.jpg alt=/images/2018_12_10_12_27_06_497x283.jpg></p><h4 id=获得包镜像>获得包/镜像</h4><p>配置一个用于部署的环境:</p><pre><code># cp deploy.key .
+# cp -r inventory/sample inventory/rong
+# vim inventory/rong/hosts.ini
+[all]
+allinone ansible_host=192.168.122.166 ansible_ssh_user=root ansible_ssh_private_key_file=./deploy.key
+
+[kube-deploy]
+allinone
+
+[kube-master]
+allinone
+
+[etcd]
+allinone
+
+[kube-node]
+allinone
+
+[k8s-cluster:children]
+kube-master
+kube-node
+</code></pre><p>部署一次:</p><pre><code># ansible-playbook -i inventory/rong/hosts.ini cluster.yml
+</code></pre><p>在全FQ的环境下，部署应该可以成功，此时备份容器镜像:</p><pre><code># docker images
+.....
+# docker images | sed -n '1!p' | awk {'print $1&quot;:&quot;$2'}
+# docker save -o docker.tar gcr.io/google-containers/kube-proxy:v1.12.3 gcr.io/google-containers/kube-apiserver:v1.12.3 gcr.io/google-containers/kube-controller-manager:v1.12.3 gcr.io/google-containers/kube-scheduler:v1.12.3 coredns/coredns:1.2.6 gcr.io/google_containers/cluster-proportional-autoscaler-amd64:1.3.0 gcr.io/google-containers/coredns:1.2.2 gcr.io/google_containers/kubernetes-dashboard-amd64:v1.10.0 quay.io/coreos/etcd:v3.2.24 quay.io/calico/node:v3.1.3 quay.io/calico/ctl:v3.1.3 quay.io/calico/kube-controllers:v3.1.3 quay.io/calico/cni:v3.1.3 nginx:1.13 gcr.io/google-containers/pause:3.1 gcr.io/google_containers/pause-amd64:3.1
+# cp docker.tar.gz /mnt
+</code></pre><p>拷贝出的<code>docker.tar</code>即含有所有的容器镜像.</p><p>备份安装包,rpm包:</p><pre><code># yum install -y nethogs
+# cd /var/cache/
+# mkdir -p /root/rpms
+# find . | grep rpm$ | xargs -I % cp % /root/rpms/
+# cd /root/rpms/
+# createrepo .
+# cp rpms.tar.gz /mnt
+</code></pre><h4 id=kubespray源码更改>kubespray源码更改</h4><p>更改配置脚本:</p><pre><code># cp ~/roles/kube-deploy ./roles/kube-deploy
+# 替换rpms文件和docker.tar文件
+# cd kubespray-2.8.0/roles/kube-deploy/files
+# rm -rf kubespray_centos7_rpms
+# cp /mnt/rpms ./kubespray_centos7_rpms
+# rm -f kubespray_images.tar.xz
+# cp /mnt/docker.tar ./kubespray_images.tar
+# xz kubespray_images.tar.xz
+# vim tag_and_push.sh
+更改这里，为我们的docker images名称-&gt;私有仓库名称
+</code></pre><p>更改download角色:</p><pre><code># vim ./roles/download/defaults/main.yml
+    # Download URLs
+    #kubeadm_download_url: &quot;https://storage.googleapis.com/kubernetes-release/release/{{ kubeadm_version }}/bin/linux/{{ image_arch }}/kubeadm&quot;
+    #hyperkube_download_url: &quot;https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/amd64/hyperkube&quot;
+    #etcd_download_url: &quot;https://github.com/coreos/etcd/releases/download/{{ etcd_version }}/etcd-{{ etcd_version }}-linux-amd64.tar.gz&quot;
+    #cni_download_url: &quot;https://github.com/containernetworking/plugins/releases/download/{{ cni_version }}/cni-plugins-{{ image_arch }}-{{ cni_version }}.tgz&quot;
+    kubeadm_download_url: &quot;http://portus.gggg.com:8888/kubeadm&quot;
+    hyperkube_download_url: &quot;http://portus.gggg.com:8888/hyperkube&quot;
+    etcd_download_url: &quot;https://github.com/coreos/etcd/releases/download/{{ etcd_version }}/etcd-{{ etcd_version }}-linux-amd64.tar.gz&quot;
+    cni_download_url: &quot;http://portus.gggg.com:8888/cni-plugins-{{ image_arch }}-{{ cni_version }}.tgz&quot;
+</code></pre><p>更改私有镜像:</p><pre><code># vim inventory/rong/group_vars/k8s-cluster/k8s-cluster.yml
+得到镜像名称:    
+
+# cat ./roles/download/defaults/main.yml | grep _image_repo:|grep -v kube_image_repo
+如: 
+etcd_image_repo: &quot;quay.io/coreos/etcd&quot;
+flannel_image_repo: &quot;quay.io/coreos/flannel&quot;
+flannel_cni_image_repo: &quot;quay.io/coreos/flannel-cni&quot;
+calicoctl_image_repo: &quot;quay.io/calico/ctl&quot;
+calico_node_image_repo: &quot;quay.io/calico/node&quot;
+加前缀:
+etcd_image_repo: &quot;xxxxx/quay.io/coreos/etcd&quot;
+....
+</code></pre><p>更改cluster.yml,省略docker-ce的安装:</p><pre><code>- hosts: k8s-cluster:etcd:calico-rr:!kube-deploy
+  any_errors_fatal: &quot;{{ any_errors_fatal | default(true) }}&quot;
+  gather_facts: false
+
+
+    - { role: kubernetes/preinstall, tags: preinstall }
+    #- { role: &quot;container-engine&quot;, tags: &quot;container-engine&quot;, when: deploy_container_engine|default(true) }
+    - { role: download, tags: download, when: &quot;not skip_downloads&quot; }
+  environment: &quot;{{proxy_env}}&quot;
+
+
+</code></pre><p>更改deploy-centos的配置:</p><pre><code># roles/bootstrap-os/tasks/bootstrap-centos.yml
+- name: Configure intranet repository
+  shell: mkdir -p /etc/yum.repos.d/back &amp;&amp; mv /etc/yum.repos.d/*.repo /etc/yum.repos.d/back; curl http://portus.teligen.com:8888/kubespray_centos7.repo&gt;/etc/y
+um.repos.d/kubespray_centos7.repo &amp;&amp; yum makecache &amp;&amp; systemctl stop firewalld ; systemctl disable firewalld
+
+
+- name: Install packages requirements for bootstrap
+  yum:
+.....
+</code></pre><p>验证：</p><p><img src=/images/2018_12_10_16_37_24_599x283.jpg alt=/images/2018_12_10_16_37_24_599x283.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/05/ubuntu1604isocustomize/>Ubuntu1604ISOCustomize</a></h1><span class=post-date>Dec 5, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>ArchLinux Preparation:</p><pre><code>$ yaourt mkpasswd
 </code></pre><pre><code># mkdir aiiso
 # cd aiiso
 # mv ../ubuntu-16.04.5-server-amd64.iso .
@@ -39,90 +140,4 @@ Session=awesome
 $ gpasswd -a root autologin
 $ pacman -S xfce4-goodies
 $ pacman -S awesome
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/11/23/tipsonharbor/>TipsOnHarbor</a></h1><span class=post-date>Nov 23, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=harbor-configuration>Harbor Configuration</h3><p>Create user via:</p><p><img src=/images/2018_11_23_11_06_47_554x475.jpg alt=/images/2018_11_23_11_06_47_554x475.jpg></p><p>Create project:</p><p><img src=/images/2018_11_23_11_07_08_813x347.jpg alt=/images/2018_11_23_11_07_08_813x347.jpg></p><p>Add member:</p><p>Before:</p><p><img src=/images/2018_11_23_11_07_21_660x305.jpg alt=/images/2018_11_23_11_07_21_660x305.jpg></p><p>Added:<br><img src=/images/2018_11_23_11_07_36_618x403.jpg alt=/images/2018_11_23_11_07_36_618x403.jpg></p><p>After:</p><p><img src=/images/2018_11_23_11_07_55_660x319.jpg alt=/images/2018_11_23_11_07_55_660x319.jpg></p><p>Now docker-compose down the environment, backup the folder:</p><h3 id=installation-system>Installation System</h3><p>Configure the ip address:</p><p><img src=/images/2018_11_23_15_30_44_643x347.jpg alt=/images/2018_11_23_15_30_44_643x347.jpg></p><p>All nodes should be pointing to the dns address:</p><p><img src=/images/2018_11_23_15_33_04_681x477.jpg alt=/images/2018_11_23_15_33_04_681x477.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/11/17/tipsonrongiso/>TipsOnRongISO</a></h1><span class=post-date>Nov 17, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>For building the kubespray offline all-in-one deploying iso.</p><h3 id=steps>Steps</h3><ol><li>Download 7.5.1804 ISO.</li><li>Create a new virtual machine, kvm based, minimal installation, for getting the
-minimal vm files.</li><li>Install redsocks, compile it, then shutdown the minimal vm.</li><li>Create a qcow2 file based on minimal vm, start the vm, then change the
-IP/Netmask/DNS.</li><li>Start redsocks. Test the unlimited networking.</li><li>Clone the kubespray repository, deploy the kubespray in all in one node.</li><li>Fetch the rpms from the kubespray all-in-one node.</li><li>Create a isolated networking and setup the offline environment.</li><li>Modify the kubespray source code for offline deployment.</li><li>Portus offline registry repo building.</li><li>Static website for holding static files(rpms/hypekube).</li><li>docker use intranet registry/ rpm use static website.</li></ol><h3 id=tobedone>TobeDone</h3><p>Steps for building deployment system.</p><pre><code>1. 
-docker-compose
-portus (docker-compose) composition files. 
-portus images. 
-
-2. 
-inventory file(top layer)
-kubespray files will be uploaded to deployment node. 
-
-3. 
-dns server setup
-manually add dns server in all of the nodes. 
-
-4. 
-If initial environment is ok, then deploy environment will also be ok.  
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/11/15/makingofflinekubespraydeploymentiso/>MakingOfflineKubeSprayDeploymentISO</a></h1><span class=post-date>Nov 15, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-portus纯净版制作>1. Portus纯净版制作</h3><p>vagrant启动ubuntu14.04， 安装docker/docker-compose, 注意事项:</p><pre><code>$ sudo apt-get purge lxc-docker-1.9.0
-$ sudo apt-get install \
-    linux-image-extra-$(uname -r) \
-    linux-image-extra-virtual
-$ sudo apt-get update
-$ sudo apt-get install -y \
-    apt-transport-https \
-        ca-certificates \
-            curl \
-                software-properties-common
-
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-$ sudo apt-key fingerprint 0EBFCD88
-$ sudo add-apt-repository \
-   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-      $(lsb_release -cs) \
-         stable&quot;
-$ sudo apt-get update
-$ sudo apt-get install -y docker-ce
-$ sudo apt-get install -y libyaml-dev libpython-dev
-$ sudo pip uninstall docker-py
-$ sudo pip uninstall docker-compose
-$ sudo pip install --upgrade --force-reinstall  docker-compose
-</code></pre><p>而后用我们预先定义好的compose目录(compose.tar.gz解压到/usr/local/compose目录下), 更改IP地址与域名的映射，<code>extra_hosts:</code>条目,
-全翻墙条件下，一条命令启动:</p><pre><code># cd /usr/local/compose
-# docker-compose up
-</code></pre><p>因为我们预先已经定义好了域名与IP的配置，我们这里定义的内网IP为<code>192.168.33.18</code>,
-于是在有浏览器的<code>192.168.33.1</code>机器上，配置<code>/etc/hosts</code>下的DNS条目：</p><pre><code># vim /etc/hosts
-portus.xxxx.com	192.168.33.18
-</code></pre><p>打开浏览器访问<code>https://portus.xxxx.com</code>，第一次登录需要配置admin的邮箱及密码:</p><p><img src=/images/2018_11_15_11_34_49_515x420.jpg alt=/images/2018_11_15_11_34_49_515x420.jpg></p><p>配置远端registry仓库:</p><p><img src=/images/2018_11_15_11_37_44_379x197.jpg alt=/images/2018_11_15_11_37_44_379x197.jpg></p><p>创建一个<code>kubespray</code>团队:</p><p><img src=/images/2018_11_15_11_39_26_913x404.jpg alt=/images/2018_11_15_11_39_26_913x404.jpg></p><p>User条目中，创建一个kubespray的用户:</p><p><img src=/images/2018_11_15_11_41_24_477x321.jpg alt=/images/2018_11_15_11_41_24_477x321.jpg></p><p>kubespray团队下添加kubespray用户:</p><p><img src=/images/2018_11_15_11_42_38_492x306.jpg alt=/images/2018_11_15_11_42_38_492x306.jpg></p><p>创建一个命名空间用于存放kubespray部署镜像:</p><p><img src=/images/2018_11_15_11_43_40_907x344.jpg alt=/images/2018_11_15_11_43_40_907x344.jpg></p><p>此刻Dashboard上可以看到我们刚才进行的操作。而在外部则可以通过docker
-login来登录到此仓库。</p><p>现在关闭docker-compose启动的容器，备份好关键目录：</p><pre><code># cd /usr/local/compose/
-# docker-compose down
-Stopping compose_nginx_1_3541e93c08a9      ... done
-Stopping compose_background_1_42f1644b8fea ... done
-Stopping compose_registry_1_e6eb6ee23d0a   ... done
-Stopping compose_portus_1_90c30953f8b0     ... done
-Stopping compose_db_1_45dc41479cee         ... done
-Removing compose_nginx_1_3541e93c08a9      ... done
-Removing compose_background_1_42f1644b8fea ... done
-Removing compose_registry_1_e6eb6ee23d0a   ... done
-Removing compose_portus_1_90c30953f8b0     ... done
-Removing compose_db_1_45dc41479cee         ... done
-Removing network compose_default
-# cd /var/lib
-# tar cJvf portus.tar.xz portus/
-# ls -l -h portus.tar.xz 
--rw-r--r-- 1 root root 687K Nov 15 03:49 portus.tar.xz
-</code></pre><p>由上面可见，portus下现在没有任何上传的镜像及数据文件，整个目录压缩后仅1M不到的空间。</p><p>我们也需要portus运行所需要的所有镜像，使用下列命令打包成一个压缩后的镜像,
-以便我们在编译ISO时使用:</p><pre><code># docker save $(docker images -q) -o portus_combine.tar
-# ls -l -h portus_combine.tar 
--rw------- 1 root root 584M Nov 15 03:58 portus_combine.tar
-</code></pre><p>由章节1我们得到用于制作Portus纯净仓库的文件，
-<code>portus_combine.tar</code>和<code>portus.tar.xz</code>，用于后续的部署ISO编译使用。</p><h4 id=11-vagrant-box引出>1.1 vagrant box引出</h4><p>将上述的文件放到<code>/home/vagrant</code>目录， 并更改root的密码为<code>txxxxxxr</code>，
-打包该虚拟机，以后我们将直接由vagrant box来批量执行.</p><pre><code># pwd
-/home/vagrant
-# ls
-compose.tar.gz  portus_combine.tar  portus.tar.xz
-</code></pre><p>打包该vagrant实例为box:</p><pre><code># vagrant status
-Current machine states:
-
-default                   poweroff (virtualbox)
-
-The VM is powered off. To restart the VM, simply run `vagrant up`
-# vagrant package --output portusBase.box
-# ls -l -h portusBase.box
--rw-r--r-- 1 dash root 1.7G Nov 15 12:27 portusBase.box
-</code></pre><h3 id=2-kubespray容器镜像>2. kubespray容器镜像</h3><p>VPS改写kubespray脚本，取回需要的容器镜像.</p><p>以下是本地镜像:<br>取回后的所有容器镜像，打包到<code>/vagrant</code>目录下:</p><pre><code># docker save $(docker images -q) -o kubespray_images.tar
-# ls -l -h kubespray_images.tar 
--rw------- 1 root root 4.9G Nov 14 20:37 kubespray_images.tar
-</code></pre><h3 id=3-portus部署仓库制作>3. Portus部署仓库制作</h3><p>由纯净版的box启动虚拟机，加载上一章制作出来容器镜像。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/53/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/53/>53</a></li><li class="page-item active"><a class=page-link href=/page/54/>54</a></li><li class=page-item><a class=page-link href=/page/55/>55</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/226/>226</a></li><li class=page-item><a href=/page/55/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/226/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/11/23/tipsonharbor/>TipsOnHarbor</a></h1><span class=post-date>Nov 23, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=harbor-configuration>Harbor Configuration</h3><p>Create user via:</p><p><img src=/images/2018_11_23_11_06_47_554x475.jpg alt=/images/2018_11_23_11_06_47_554x475.jpg></p><p>Create project:</p><p><img src=/images/2018_11_23_11_07_08_813x347.jpg alt=/images/2018_11_23_11_07_08_813x347.jpg></p><p>Add member:</p><p>Before:</p><p><img src=/images/2018_11_23_11_07_21_660x305.jpg alt=/images/2018_11_23_11_07_21_660x305.jpg></p><p>Added:<br><img src=/images/2018_11_23_11_07_36_618x403.jpg alt=/images/2018_11_23_11_07_36_618x403.jpg></p><p>After:</p><p><img src=/images/2018_11_23_11_07_55_660x319.jpg alt=/images/2018_11_23_11_07_55_660x319.jpg></p><p>Now docker-compose down the environment, backup the folder:</p><h3 id=installation-system>Installation System</h3><p>Configure the ip address:</p><p><img src=/images/2018_11_23_15_30_44_643x347.jpg alt=/images/2018_11_23_15_30_44_643x347.jpg></p><p>All nodes should be pointing to the dns address:</p><p><img src=/images/2018_11_23_15_33_04_681x477.jpg alt=/images/2018_11_23_15_33_04_681x477.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/53/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/53/>53</a></li><li class="page-item active"><a class=page-link href=/page/54/>54</a></li><li class=page-item><a class=page-link href=/page/55/>55</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/226/>226</a></li><li class=page-item><a href=/page/55/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/226/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,5 +1,195 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/05/24/san-jie-dian-da-jian-openstack-juno-2/>三节点搭建OpenStack Juno(2)</a></h1><span class=post-date>May 24, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=mysql数据库>MySQL数据库</h3><p>绝大多数的OpenStack服务使用SQL数据库来存储信息，一般情况下数据库运行在控制节点上，这里我们使用MariaDB或者MySQL来作为SQL数据库。</p><p>安装, 注意安装过程中需要输入密码:</p><pre><code># apt-get install mariadb-server python-mysqldb
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/05/25/san-jie-dian-da-jian-openstack-juno-3/>三节点搭建OpenStack Juno(3)</a></h1><span class=post-date>May 25, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=nova>Nova</h3><h4 id=nova数据库>Nova数据库</h4><p>创建nova数据库:</p><pre><code># mysql -u root -p
+	CREATE DATABASE nova;
+	GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'localhost' \
+	IDENTIFIED BY 'NOVA_DBPASS';
+	GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'%' \
+	IDENTIFIED BY 'NOVA_DBPASS';
+	quit;
+</code></pre><p>创建nova用户:</p><pre><code># source /home/dash/admin-openrc.sh
+root@Controller:~# keystone user-create --name nova --pass xxxxxx
++----------+----------------------------------+
+| Property |              Value               |
++----------+----------------------------------+
+|  email   |                                  |
+| enabled  |               True               |
+|    id    | 4a3768e3f4754cd0b9d47c6fadb22c7e |
+|   name   |               nova               |
+| username |               nova               |
++----------+----------------------------------+
+</code></pre><p>为admin角色添加nova用户:</p><pre><code># keystone user-role-add --user nova --tenant service --role admin
+</code></pre><p>添加nova服务条目:</p><pre><code># keystone service-create --name nova --type compute --description &quot;OpenStack Compute&quot;
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+| description |        OpenStack Compute         |
+|   enabled   |               True               |
+|      id     | 1587a46ee1e94402821398444175981f |
+|     name    |               nova               |
+|     type    |             compute              |
+
+</code></pre><p>创建Compute服务的API endpoints:</p><pre><code># keystone endpoint-create --service-id $(keystone service-list | awk '/ compute / {print $2}') --publicurl http://Controller:8774/v2/%\(tenant_id\)s --internalurl http://Controller:8774/v2/%\(tenant_id\)s --adminurl http://Controller:8774/v2/%\(tenant_id\)s --region regionOne
++-------------+-----------------------------------------+
+|   Property  |                  Value                  |
++-------------+-----------------------------------------+
+|   adminurl  | http://Controller:8774/v2/%(tenant_id)s |
+|      id     |     bd439dc236c04956a11b353a7b74331c    |
+| internalurl | http://Controller:8774/v2/%(tenant_id)s |
+|  publicurl  | http://Controller:8774/v2/%(tenant_id)s |
+|    region   |                regionOne                |
+|  service_id |     1587a46ee1e94402821398444175981f    |
++-------------+-----------------------------------------+
+</code></pre><h4 id=nova安装及配置>Nova安装及配置</h4><p>安装以下包:</p><pre><code># apt-get install nova-api nova-cert nova-conductor nova-consoleauth nova-novncproxy nova-scheduler python-novaclient
+</code></pre><p>更改数据库链接:</p><pre><code>$ sudo vim /etc/nova/nova.conf
+[database]
+...
+connection = mysql://nova:NOVA_DBPASS@controller/nova
+</code></pre><p>配置RabbitMQ访问:</p><pre><code>[DEFAULT]
+...
+rpc_backend = rabbit
+rabbit_host = controller
+rabbit_password = RABBIT_PASS
+</code></pre><p>配置鉴权服务:</p><pre><code>[DEFAULT]
+...
+auth_strategy = keystone
+[keystone_authtoken]
+...
+auth_uri = http://controller:5000/v2.0
+identity_uri = http://controller:35357
+admin_tenant_name = service
+admin_user = nova
+admin_password = NOVA_PASS
+</code></pre><p>更改<code>my_ip</code>:</p><pre><code>[DEFAULT]
+...
+my_ip = 10.55.55.2
+</code></pre><p>更改VNC侦听：</p><pre><code>[DEFAULT]
+...
+vncserver_listen = 10.55.55.2
+vncserver_proxyclient_address = 10.55.55.2
+</code></pre><p>配置glance服务所在:</p><pre><code>[glance]
+...
+host = controller
+</code></pre><p>现在开始配置数据库:</p><pre><code># su -s /bin/sh -c &quot;nova-manage db sync&quot; nova
+</code></pre><p>重启服务以完成安装:</p><pre><code># service nova-api restart
+# service nova-cert restart
+# service nova-consoleauth restart
+# service nova-scheduler restart 
+# service nova-conductor start
+# service nova-conductor restart
+# service nova-novncproxy
+# service nova-novncproxy restart
+</code></pre><p>扫尾，删除不用的sqlite数据库:</p><pre><code># rm -f /var/lib/nova/nova.sqlite
+</code></pre><h3 id=安装和配置计算节点>安装和配置计算节点</h3><p>在计算节点上，安装以下包:</p><pre><code># apt-get install nova-compute sysfsutils
+</code></pre><p>配置具体过程如下:<br>配置RabbitMQ:</p><pre><code>$ sudo vim /etc/nova/nova.conf
+[DEFAULT]
+...
+rpc_backend = rabbit
+rabbit_host = controller
+rabbit_password = RABBIT_PASS
+</code></pre><p>配置鉴权服务:</p><pre><code>[DEFAULT]
+...
+auth_strategy = keystone
+[keystone_authtoken]
+...
+auth_uri = http://Controller:5000/v2.0
+identity_uri = http://Controller:35357
+admin_tenant_name = service
+admin_user = nova
+admin_password = NOVA_PASS
+</code></pre><p>配置<code>my_ip</code>:</p><pre><code>[DEFAULT]
+...
+my_ip = 10.55.55.4
+</code></pre><p>配置允许远程终端访问:</p><pre><code>[DEFAULT]
+...
+vnc_enabled = True
+vncserver_listen = 0.0.0.0
+vncserver_proxyclient_address = 10.55.55.4
+novncproxy_base_url = http://Controller:6080/vnc_auto.html
+
+</code></pre><p>配置glance服务:</p><pre><code>[glance]
+...
+host = Controller
+</code></pre><p>完成安装， 首先判断你的CPU是否支持硬件加速:</p><pre><code>$ egrep -c '(vmx|svm)' /proc/cpuinfo
+</code></pre><p>如果返回的值小于1, 则更改<code>/etc/nova/nova-compute.conf</code>配置中的[libvirt]选项，选用qemu而不是kvm:</p><pre><code>$ sudo vim /etc/nova/nova-compute.conf
+[libvirt]
+...
+virt_type = qemu
+</code></pre><p>重启nova-compute服务:</p><pre><code># service nova-compute restart
+</code></pre><p>扫尾，删除不用的nova.sqlite文件:</p><pre><code># rm -f /var/lib/nova/nova.sqlite
+</code></pre><h3 id=验证>验证</h3><p>具体步骤如下:</p><pre><code>root@Controller:~# source ~/admin-openrc.sh
+root@Controller:~# nova service-list
++----+------------------+------------+----------+---------+-------+----------------------------+-----------------+
+| Id | Binary           | Host       | Zone     | Status  | State | Updated_at                 | Disabled Reason |
++----+------------------+------------+----------+---------+-------+----------------------------+-----------------+
+| 1  | nova-cert        | Controller | internal | enabled | up    | 2015-05-25T12:00:20.000000 | -               |
+| 2  | nova-consoleauth | Controller | internal | enabled | up    | 2015-05-25T12:00:28.000000 | -               |
+| 3  | nova-scheduler   | Controller | internal | enabled | up    | 2015-05-25T12:00:23.000000 | -               |
+| 4  | nova-conductor   | Controller | internal | enabled | up    | 2015-05-25T12:00:25.000000 | -               |
+| 5  | nova-compute     | Compute    | nova     | enabled | up    | 2015-05-25T12:00:20.000000 | -               |
++----+------------------+------------+----------+---------+-------+----------------------------+-----------------+
+root@Controller:~# nova image-list
++--------------------------------------+---------------------+--------+--------+
+| ID                                   | Name                | Status | Server |
++--------------------------------------+---------------------+--------+--------+
+| 3d45ea58-731c-4eb5-bf30-db1b4bfe4f57 | cirros-0.3.3-x86_64 | ACTIVE |        |
++--------------------------------------+---------------------+--------+--------+
+
+</code></pre><p>注意我们看到了compute节点已经被加入进来。这样我们完成了添加计算服务，接下来我们将开始添加网络组件，这可能是最难的一部分。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/05/25/lxcize-the-kvm-machine/>LXCize the KVM machine</a></h1><span class=post-date>May 25, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>In order to make exsiting kvm based machine to be lxc container, following is the steps.<br>Refers to:<br><a href=https://www.stgraber.org/2012/03/04/booting-an-ubuntu-12-04-virtual-machine-in-an-lxc-container/>https://www.stgraber.org/2012/03/04/booting-an-ubuntu-12-04-virtual-machine-in-an-lxc-container/</a></p><h3 id=convert-disk-formats>Convert Disk Formats</h3><p>First we want to convert the qcow2 format image to raw format, by following command:</p><pre><code>$ qemu-img convert u12-debug-ui.qcow2 Contrail.raw
+</code></pre><p>This will take a very long time, because qcow2 file will expand to a whole images, like mine, the Contrail.raw in fact expands to 100G size.</p><h3 id=lxc-the-kvm>LXC the KVM</h3><p>Since we have the raw image file, we could create a new configuration file for starting the machine:</p><pre><code> myvm.conf
+lxc.network.type = veth
+lxc.network.flags = up
+lxc.network.link = br0
+lxc.network.name = eth0
+lxc.network.ipv4 = xxx.xxx.10.230/24
+lxc.network.ipv4.gateway = xxx.xxx.0.176
+#lxc.network.link = lxcbr0
+lxc.utsname = myvminlxc
+
+lxc.tty = 4
+lxc.pts = 1024
+lxc.rootfs = /dev/mapper/loop0p1
+lxc.arch = amd64
+lxc.cap.drop = sys_module mac_admin
+
+lxc.cgroup.devices.deny = a
+# Allow any mknod (but not using the node)
+lxc.cgroup.devices.allow = c *:* m
+lxc.cgroup.devices.allow = b *:* m
+# /dev/null and zero
+lxc.cgroup.devices.allow = c 1:3 rwm
+lxc.cgroup.devices.allow = c 1:5 rwm
+# consoles
+lxc.cgroup.devices.allow = c 5:1 rwm
+lxc.cgroup.devices.allow = c 5:0 rwm
+#lxc.cgroup.devices.allow = c 4:0 rwm
+#lxc.cgroup.devices.allow = c 4:1 rwm
+# /dev/{,u}random
+lxc.cgroup.devices.allow = c 1:9 rwm
+lxc.cgroup.devices.allow = c 1:8 rwm
+lxc.cgroup.devices.allow = c 136:* rwm
+lxc.cgroup.devices.allow = c 5:2 rwm
+# rtc
+lxc.cgroup.devices.allow = c 254:0 rwm
+#fuse
+lxc.cgroup.devices.allow = c 10:229 rwm
+#tun
+lxc.cgroup.devices.allow = c 10:200 rwm
+#full
+lxc.cgroup.devices.allow = c 1:7 rwm
+#hpet
+lxc.cgroup.devices.allow = c 10:228 rwm
+#kvm
+lxc.cgroup.devices.allow = c 10:232 rwm
+</code></pre><p>Now setup the image file via, this will use the <code>/dev/mapper/loop0p1</code> as the root partition:</p><pre><code>$ sudo kpartx -a Contrail.img
+</code></pre><p>Now start the machine via:</p><pre><code>$ sudo lxc-start -n myvminlxc -f ./myvm.conf
+</code></pre><p>Your machine will boot into the lxc, and its behavior is the same as the kvm based machine.</p><h3 id=troubleshooting>TroubleShooting</h3><p>The root could not login into the lxc, because of the selinux enabled in the Ubuntu Host, simply disable it in <code>/etc/selinux/config</code> by:</p><pre><code>$ sudo vim /etc/selinux/config
+#SELINUX=permissive
+SELINUX=disabled
+
+</code></pre><p>Added it into the startup file in <code>/etc/rc.local</code>, it&rsquo;s ugly, and it will cause the first tty died. But, first use it:</p><pre><code>kpartx -a /home/xxxxx/iso/Contrail.raw
+lxc-start -n myvminlxc -f /home/xxxxx/iso/myvm.conf
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/05/24/san-jie-dian-da-jian-openstack-juno-2/>三节点搭建OpenStack Juno(2)</a></h1><span class=post-date>May 24, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=mysql数据库>MySQL数据库</h3><p>绝大多数的OpenStack服务使用SQL数据库来存储信息，一般情况下数据库运行在控制节点上，这里我们使用MariaDB或者MySQL来作为SQL数据库。</p><p>安装, 注意安装过程中需要输入密码:</p><pre><code># apt-get install mariadb-server python-mysqldb
 </code></pre><p>配置, 主要是更改了bind的地址，添加了一些有用选项，并支持UTF-8编码:</p><pre><code>$ sudo vim /etc/mysql/my.cnf
 [mysqld]
 ...
@@ -445,151 +635,4 @@ $ sudo bash
 www-data   825     1  0 20:34 ?        00:00:00 /usr/bin/perl /usr/sbin/apt-cacher -R 3 -d -p /var/run/apt-cacher.pid
 $ sudo netstat -anp | grep 3142
 tcp6       0      0 :::3142                 :::*                    LISTEN      825/perl
-</code></pre><p>Now when you setup the machines, point the http-proxy into this machine, it will automatically cache the packages.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/05/22/change-cobbler-profile-for-using-local-repository/>Change Cobbler Profile For Using Local Repository</a></h1><span class=post-date>May 22, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=cobbler-profiles>Cobbler Profiles</h3><p>For getting the profiles and get the detailed information of the profile.</p><pre><code># cobbler profile list
-   ubuntu1404-x86_64
-# cobbler profile help
-usage
-=====
-cobbler profile add
-cobbler profile copy
-cobbler profile dumpvars
-cobbler profile edit
-cobbler profile find
-cobbler profile getks
-cobbler profile list
-cobbler profile remove
-cobbler profile rename
-cobbler profile report
-# cobbler profile report ubuntu1404-x86_64
-......
-Kickstart                      : /var/lib/cobbler/kickstarts/sample.seed
-......
-
-</code></pre><h3 id=use-local-repository>Use Local Repository</h3><p>For adding the repository via following command, you could use your local repository:</p><pre><code>$ sudo cobbler repo add --name=local-trusty --breed=apt --arch=x86_64 --mirror=http://xxxxxxxxxxxxxx/ubuntu --apt-components=main,restricted,universe,multiverse --apt-dists=trusty,trusty-updates,trusty-security
-$ sudo cobbler repo sync
-</code></pre><p>After syncing, the folder will contains all of the packages:</p><pre><code># pwd
-/var/www/cobbler/ks_mirror/ubuntu1404-x86_64
-# ls
-boot  dists  doc  EFI  install  isolinux  md5sum.txt  pics  pool  preseed  README.diskdefines  ubuntu
-</code></pre><p>Edit the sample seed via:</p><pre><code># cp /var/lib/cobbler/kickstarts/sample.seed /var/lib/cobbler/kickstarts/local.seed
-# vim /var/lib/cobbler/kickstarts/local.seed
-
-    d-i mirror/http/hostname string $http_server
-    # d-i mirror/http/directory string $install_source_directory
-    d-i mirror/http/directory string /cobbler/ks_mirror/ubuntu1404-x86_64/ubuntu/
-    d-i mirror/http/proxy string 
-    d-i apt-setup/security_host string $http_server
-    d-i apt-setup/security_path string /cobbler/ks_mirror/Ubuntu-14.04-x86_64/ubuntu
-    d-i apt-setup/services-select multiselect none
-
-</code></pre><p>Then Modify the profile&rsquo;s kickstart via:</p><pre><code>#  cobbler profile edit --name=ubuntu1404-x86_64 --kickstart=/var/lib/cobbler/kickstarts/local.seed
-</code></pre><p>After modification, next time if you re-install the compute, it will directly get the packages from the local repository.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/05/20/setup-centos6-slash-7-local-repository/>Setup CentOS6/7 Local Repository</a></h1><span class=post-date>May 20, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>For speeding up the deployment, I have to setup the local repository for CentOS6/7, following is the steps for setting up such two repositories.<br>The steps are followed by following URL:<br><a href="https://support.opennodecloud.com/wiki/doku.php?id=usrdoc:os:repomirror">https://support.opennodecloud.com/wiki/doku.php?id=usrdoc:os:repomirror</a></p><pre><code># cd /etc/yum.repos.d/
-# curl -O https://copr.fedoraproject.org/coprs/baurzhanm/mrepo/repo/epel-6/baurzhanm-mrepo-epel-6.repo
-# vim baurzhanm-mrepo-epel-6.repo
-# yum update
-# yum -y install screen lftp httpd mrepo
-# vim mrepo.conf
-    ### Configuration file for mrepo
-    
-    ### The [main] section allows to override mrepo's default settings
-    ### The mrepo-example.conf gives an overview of all the possible settings
-    [main]
-    srcdir = /var/mrepo
-    wwwdir = /var/www/mrepo
-    confdir = /etc/mrepo.conf.d
-    arch = x86_64
-    
-    mailto = root@localhost
-    smtp-server = localhost
-    
-    #rhnlogin = username:password
-    
-    ### Any other section is considered a definition for a distribution
-    ### You can put distribution sections in /etc/mrepo.conf.d/
-    ### Examples can be found in the documentation at:
-    ###     /usr/share/doc/mrepo-0.8.9/dists/.
-</code></pre><p>Add the configuration files for CentOS 6:</p><pre><code># vim  /etc/mrepo.conf.d/centos6.conf
-[centos6]
-name = CentOS $release ($arch)
-release = 6
-arch = x86_64
-metadata = yum repomd
-
-#iso = http://mirrors.aliyun.com/centos/$release/isos/$arch/CentOS-6.6-x86_64-bin-DVD?.iso
-#os = http://mirrors.aliyun.com/centos/$release/os/$arch/Packages/ 
-#updates = http://mirrors.aliyun.com/centos/$release/updates/$arch/Packages/
-extras = http://mirrors.aliyun.com/centos/$release/extras/$arch/Packages/
-epel = http://mirrors.aliyun.com/epel/$release/$arch/
-</code></pre><p>Add configuraiton files for CentOS 7:</p><pre><code># vim  /etc/mrepo.conf.d/centos7.conf
-[centos7]
-name = CentOS $release ($arch)
-release = 7
-arch = x86_64
-metadata = yum repomd
-
-#iso = http://mirrors.aliyun.com/centos/$release/isos/$arch/CentOS-7.0-1406-x86_64-DVD.iso
-#os = http://mirrors.aliyun.com/centos/$release/os/$arch/Packages/ 
-#updates = http://mirrors.aliyun.com/centos/$release/updates/$arch/Packages/
-#epel = http://mirrors.aliyun.com/epel/$release/$arch/
-extra=http://mirrors.aliyun.com/centos/$release/extras/$arch/Packages/
-</code></pre><p>Use following comands for initial sync, it will take a very~long~long~long time.</p><pre><code># mrepo -g -u -vvv [centos6|centos7]
-</code></pre><p>After syncing, add definition into the apache&rsquo;s configuration:</p><pre><code># vi /etc/httpd/conf.d/mrepo.conf
---- ADD ---
-AddDescription &quot;CentOS 6 for x86&quot; centos6-i386
-AddDescription &quot;CentOS 6 for x86_64&quot; centos6-x86_64
-AddDescription &quot;CentOS 7 for x86&quot; centos7-i386
-AddDescription &quot;CentOS 7 for x86_64&quot; centos7-x86_64
---- ADD ---
-# Add repofile for CentOS 6 mirror
-cat &lt;&lt; 'EOF' &gt; /var/www/mrepo/centos6-x86_64/CentOS-local-http.repo 
-#
-# CentOS-local-http.repo
-#
- 
-[0-base]
-name=CentOS-local-base
-baseurl=http://mirror.local.int/mrepo/centos6-x86_64/RPMS.os/
-gpgcheck=0
- 
-[0-updates]
-name=CentOS-local-updates
-baseurl=http://mirror.local.int/mrepo/centos6-x86_64/RPMS.updates/
-gpgcheck=0
-EOF
- 
-# Add repofile for CentOS 7 mirror
-cat &lt;&lt; 'EOF' &gt; /var/www/mrepo/centos7-x86_64/CentOS-local-http.repo 
-#
-# CentOS-local-http.repo
-#
- 
-[0-base]
-name=CentOS-local-base
-baseurl=http://mirror.local.int/mrepo/centos7-x86_64/RPMS.os/
-gpgcheck=0
- 
-[0-updates]
-name=CentOS-local-updates
-baseurl=http://mirror.local.int/mrepo/centos7-x86_64/RPMS.updates/
-gpgcheck=0
-EOF
- 
-# chkconfig httpd on
-# service httpd restart
-
-</code></pre><h3 id=mrepo-for-centos65>mrepo for CentOS6.5</h3><pre><code>[root:/home/juju/mrepo]# cat /etc/mrepo.conf.d/centos6.5.conf  
-### URL: http://www.centos.org/
- 
-[centos6.5]
-name = CentOS $release ($arch)
-release = 6.5
-arch = x86_64
-metadata = yum repomd
-
-os=http://vault.centos.org/$release/os/$arch/Packages/
-updates=http://vault.centos.org/$release/updates/$arch/Packages/
-extras=http://vault.centos.org/$release/extras/$arch/Packages/
-centosplus=http://vault.centos.org/$release/centosplus/$arch/Packages/
-fasttrack=http://vault.centos.org/$release/fasttrack/$arch/Packages/
-</code></pre><p>sync the repository via:</p><pre><code># mrepo -g -u -vvv centos6.5
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/132/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/132/>132</a></li><li class="page-item active"><a class=page-link href=/page/133/>133</a></li><li class=page-item><a class=page-link href=/page/134/>134</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/226/>226</a></li><li class=page-item><a href=/page/134/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/226/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Now when you setup the machines, point the http-proxy into this machine, it will automatically cache the packages.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/132/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/132/>132</a></li><li class="page-item active"><a class=page-link href=/page/133/>133</a></li><li class=page-item><a class=page-link href=/page/134/>134</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/226/>226</a></li><li class=page-item><a href=/page/134/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/226/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
