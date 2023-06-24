@@ -1,5 +1,74 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/07/workingtipsongen12centos/>WorkingTipsOnGen12CentOS</a></h1><span class=post-date>Jun 7, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>CentOS7.6.1810,minimum installation.</p><pre><code># yum makecache
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/08/sriovpreproductdev/>sriovpreproductdev</a></h1><span class=post-date>Jun 8, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=kernel>Kernel</h3><p>CentOS 7.6.1810, minimal installtion.</p><p>Enable keep cache:</p><pre><code># vi /etc/yum.conf
+...
+keepcache=1
+...
+</code></pre><p>Replace i915 firmware:</p><pre><code>mv /lib/firmware/i915/ /lib/firmware/i915.back
+tar xzvf materials/i915.tar.gz -C /lib/firmware/
+</code></pre><p>Install Kernel:</p><pre><code># rpm -ivh materials/kernel-5.15.85+-1.x86_64.rpm
+# vi /boot/grub2/grubenv
+saved_entry=CentOS Linux (5.15.85+) 7 (Core)
+# vi /etc/default/grub
+Add &quot;i915.enable_guc=0x7 udmabuf.list_limit=8192 intel_iommu=on i915.force_probe=*&quot; to 
+GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet i915.enable_guc=0x7 udmabuf.list_limit=8192 intel_iommu=on i915.force_probe=*&quot;
+# grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
+# reboot
+</code></pre><p>Check the status:</p><pre><code>[root@i3 ~]# dmesg | grep SR-IOV
+[    1.025680] i915 0000:00:02.0: Running in SR-IOV PF mode
+[root@i3 ~]# dmesg | grep GuC
+[    1.157064] i915 0000:00:02.0: [drm] GuC error state capture buffer maybe too small: 2097152 &lt; 2163708 (min = 721236)
+[    1.161653] i915 0000:00:02.0: [drm] GuC firmware i915/tgl_guc_70.bin version 70.5.1
+[    1.166302] i915 0000:00:02.0: [drm] GuC submission enabled
+[    1.166304] i915 0000:00:02.0: [drm] GuC SLPC enabled
+[    1.166591] i915 0000:00:02.0: [drm] GuC RC: enabled
+[root@i3 ~]# dmesg | grep HuC
+[    1.161660] i915 0000:00:02.0: [drm] HuC firmware i915/tgl_huc.bin version 7.9.3
+[    1.166031] i915 0000:00:02.0: [drm] HuC authenticated
+</code></pre><h3 id=qemu>Qemu</h3><p>Install following packages:</p><pre><code># yum install -y libvirt libvirt-python libguestfs-tools virt-install pciutils gcc gcc-c++ python3 git glib2-devel pixman-devel zlib-devel libusb-devel libusb libusbx-devel pulseaudio-libs-devel libcap-ng-devel libattr-devel spice-server-devel usbredir-devel centos-release-scl  unzip OVMF
+# yum install -y devtoolset-8-gcc-c++
+# cp materials/ninja /usr/bin
+# chmod 777 /usr/bin/ninja 
+</code></pre><p>Build Qemu:</p><pre><code># tar xJvf qemu-6.2.0.tar.xz
+# scl enable devtoolset-8 bash
+# mkdir /opt/local
+# cd qemu-6.2.0
+# scl enable devtoolset-8 bash
+# ./configure --target-list=x86_64-softmmu --enable-debug --disable-docs --disable-virglrenderer --prefix=/opt/local --enable-virtfs --enable-libusb --disable-debug-tcg --audio-drv-list=pa  --enable-spice --enable-usb-redir
+# make -j8
+# make install
+# /opt/local/bin/qemu-system-x86_64 --version
+QEMU emulator version 6.2.0
+Copyright (c) 2003-2021 Fabrice Bellard and the QEMU Project developers
+</code></pre><p>start and enable libvirtd :</p><pre><code># systemctl enable libvirtd
+# systemctl start libvirrtd
+</code></pre><p>Add following lines to <code>/etc/rc.local</code>:</p><pre><code>## start of create vf
+sudo modprobe i2c-algo-bit
+sudo modprobe video
+echo '0' | sudo tee -a /sys/bus/pci/devices/0000\:00\:02.0/sriov_drivers_autoprobe &gt; /dev/null
+echo 7 | sudo tee -a /sys/class/drm/card0/device/sriov_numvfs &gt; /dev/null
+echo '1' | sudo tee -a /sys/bus/pci/devices/0000\:00\:02.0/sriov_drivers_autoprobe &gt; /dev/null
+sudo modprobe vfio-pci
+vendor=$(cat /sys/bus/pci/devices/0000:00:02.0/iommu_group/devices/0000:00:02.0/vendor)
+device=$(cat /sys/bus/pci/devices/0000:00:02.0/iommu_group/devices/0000:00:02.0/device)
+echo $vendor $device  | sudo tee -a /sys/bus/pci/drivers/vfio-pci/new_id
+## endof create vf
+</code></pre><h3 id=create-virtual-machine>Create virtual machine</h3><p>Define win10 machine:</p><pre><code>virsh define materials/wwin10.xml
+</code></pre><p>Transfer the image to machine:</p><pre><code># scp /var/lib/libvirt/images/winpure.qcow2 root@192.168.1.120:/var/lib/libvirt/images/
+</code></pre><p>Failed, no display output.</p><h3 id=r8168>r8168</h3><p>Get the driver source code from: <code>https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software</code>,</p><pre><code>rpm -ivh kernel-devel-5.15.85+-1.x86_64.rpm
+yum remove kernel-headers
+rpm -ivh kernel-headers-5.15.85+-1.x86_64.rpm
+yum install -y centos-release-scl
+yum install devtoolset-7
+scl enable devtoolset-7 bash
+cd r8168-8.051.02/src/
+make
+modprobe r8168
+</code></pre><p>Add <code>modprobe r8168</code> to `/etc/rc.local</p><h3 id=build-qemu71>build qemu7.1</h3><p>On centos76, build/install via:</p><pre><code>scl enable devtoolset-11 bash
+yum install -y git glib2-devel pixman-devel zlib-devel libusb-devel libusb libusbx-devel pulseaudio-libs-devel libcap-ng-devel libattr-devel spice-server-devel usbredir-devel python3 bzip2 
+ ./configure --enable-modules --target-list=x86_64-softmmu --enable-debug --disable-docs --disable-virglrenderer --prefix=/opt/local --enable-virtfs --enable-libusb --disable-debug-tcg --audio-drv-list=pa
+make -j8
+make install
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/07/workingtipsongen12centos/>WorkingTipsOnGen12CentOS</a></h1><span class=post-date>Jun 7, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>CentOS7.6.1810,minimum installation.</p><pre><code># yum makecache
 # yum install -y vim git gcc libevent-devel unzip flex bison
 # vim /etc/selinux/config
 SELINUX=disabled
@@ -100,22 +169,4 @@ Build the ovmf(follow the guideline)
 </code></pre><p>(另一种方法)也可以手动创建<code>/etc/sudoers.d/ctyun</code>文件后键入以下内容:</p><pre><code>Cmnd_Alias USER_SERVICES = /usr/bin/systemctl start snmpd.service, /usr/bin/systemctl stop snmpd.service, /usr/bin/systemctl restart snmpd.service, /usr/bin/systemctl start p910nd.service, /usr/bin/systemctl stop p910nd.service, /usr/bin/systemctl restart p910nd.service
 ctyun ALL=(ALL) NOPASSWD: USER_SERVICES
 </code></pre><p>重启机器，或重新登陆桌面(注销后登陆), 验证:</p><pre><code>sudo systemctl restart snmpd.service
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/04/21/idvdgpureleasenote/>IDVdGPUReleaseNote</a></h1><span class=post-date>Apr 21, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=create-cubic-environment>Create Cubic environment</h3><p>Get the latest ubuntu desktop installation image:</p><pre><code>wget https://mirrors.ustc.edu.cn/ubuntu-releases/22.04.2/ubuntu-22.04.2-desktop-amd64.iso
-mkdir ~/idv_dGPU_release
-</code></pre><p>Choose the newly created directory:</p><p><img src=/images/2023_04_21_09_36_41_582x193.jpg alt=/images/2023_04_21_09_36_41_582x193.jpg></p><p>Fill in descriptions:</p><p><img src=/images/2023_04_21_09_37_35_932x603.jpg alt=/images/2023_04_21_09_37_35_932x603.jpg></p><p>Now we get the virtual environment terminal:</p><p><img src=/images/2023_04_21_09_38_26_934x196.jpg alt=/images/2023_04_21_09_38_26_934x196.jpg></p><h3 id=customization>Customization</h3><p>Change repository and update to latest:</p><pre><code>root@cubic:~# cat /etc/apt/sources.list
-deb http://mirrors.ustc.edu.cn/ubuntu jammy main restricted
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-updates main restricted
-deb http://mirrors.ustc.edu.cn/ubuntu jammy universe
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-updates universe
-deb http://mirrors.ustc.edu.cn/ubuntu jammy multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-updates multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-backports main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-security main restricted
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-security universe
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-security multiverse
-root@cubic:~# apt install -y kubuntu-desktop virt-manager build-essential
-</code></pre><p>Change default to sddm:</p><p><img src=/images/2023_04_21_09_49_57_942x475.jpg alt=/images/2023_04_21_09_49_57_942x475.jpg></p><h3 id=verification>Verification</h3><p><img src=/images/2023_04_21_10_18_31_635x215.jpg alt=/images/2023_04_21_10_18_31_635x215.jpg></p><p>Display:</p><p><img src=/images/2023_04_21_10_19_15_1286x433.jpg alt=/images/2023_04_21_10_19_15_1286x433.jpg></p><p>VT-d && VT-x:</p><p><img src=/images/2023_04_21_10_20_17_1345x495.jpg alt=/images/2023_04_21_10_20_17_1345x495.jpg></p><p>Intel SGX:</p><p><img src=/images/2023_04_21_10_20_42_1196x297.jpg alt=/images/2023_04_21_10_20_42_1196x297.jpg></p><p>Install(Install Ubuntu):</p><p><img src=/images/2023_04_21_10_46_06_890x763.jpg alt=/images/2023_04_21_10_46_06_890x763.jpg></p><p>Normal install:</p><p><img src=/images/2023_04_21_10_46_33_1364x744.jpg alt=/images/2023_04_21_10_46_33_1364x744.jpg></p><p>Use nvme ssd:</p><p><img src=/images/2023_04_21_10_47_52_1140x596.jpg alt=/images/2023_04_21_10_47_52_1140x596.jpg></p><p>Try模式进入后，停用:</p><p><img src=/images/2023_04_21_11_00_21_1126x700.jpg alt=/images/2023_04_21_11_00_21_1126x700.jpg></p><p>删除:</p><p><img src=/images/2023_04_21_11_00_39_1112x752.jpg alt=/images/2023_04_21_11_00_39_1112x752.jpg></p><p>应用:</p><p><img src=/images/2023_04_21_11_00_54_927x598.jpg alt=/images/2023_04_21_11_00_54_927x598.jpg></p><p>安装:</p><p><img src=/images/2023_04_21_11_01_12_439x289.jpg alt=/images/2023_04_21_11_01_12_439x289.jpg></p><p>现在可以选择并继续:</p><p><img src=/images/2023_04_21_11_01_53_915x414.jpg alt=/images/2023_04_21_11_01_53_915x414.jpg></p><p>设置用户名/密码/自动登陆:</p><p><img src=/images/2023_04_21_11_02_51_895x587.jpg alt=/images/2023_04_21_11_02_51_895x587.jpg></p><p>等待安装完成后，拔掉U盘后重新启动。</p><h3 id=启动虚拟机>启动虚拟机</h3><p>导文件:</p><pre><code># scp ./mac_hdd_ng.img rx560.qcow2 rx550_OVMF_VARS-1024x768.fd OVMF_CODE.fd test@192.168.1.123:~
-# virsh dumpxml macOSrx550&gt;aaaa.xml
-# scp ./aaaa.xml test@192.168.1.123:~
-
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class="page-item active"><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/226/>226</a></li><li class=page-item><a href=/page/3/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/226/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
