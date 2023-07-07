@@ -1,5 +1,316 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/10/workingtipsonmultiseatubuntu200403/>WorkingTipsOnMultiSeatUbuntu200403</a></h1><span class=post-date>Nov 10, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=前提>前提</h3><p>基准操作系统为<code>ubuntu-20.04.3-live-server-amd64.iso</code>, 不可以安装为<code>desktop</code>版本的iso。</p><h3 id=系统及包更新>系统及包更新</h3><p>确保系统更新到最新:</p><pre><code>$ sudo apt-get update -y &amp;&amp; sudo apt-get upgrade -y
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/15/changeitemsinaosp11/>ChangeItemsInAOSP11</a></h1><span class=post-date>Nov 15, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>这里记录开启转码支持所需要更改的文件列表</p><p><code>build/target/board/generic_x86_64/BoardConfig.mk</code>, 在文件的尾部添加关于ABI架构支持的列表:</p><pre><code> # Native Bridge ABI List
+ NB_ABI_LIST_32_BIT := armeabi-v7a armeabi
+ NB_ABI_LIST_64_BIT := arm64-v8a
+ 
+ TARGET_CPU_ABI_LIST_64_BIT ?= $(TARGET_CPU_ABI) $(TARGET_CPU_ABI2)
+ TARGET_CPU_ABI_LIST_32_BIT ?= $(TARGET_2ND_CPU_ABI) $(TARGET_2ND_CPU_ABI2)
+ TARGET_CPU_ABI_LIST := \
+     $(TARGET_CPU_ABI_LIST_64_BIT) \
+     $(TARGET_CPU_ABI_LIST_32_BIT) \
+     $(NB_ABI_LIST_64_BIT) \
+     $(NB_ABI_LIST_32_BIT)
+ TARGET_CPU_ABI_LIST_32_BIT += $(NB_ABI_LIST_32_BIT)
+ TARGET_CPU_ABI_LIST_64_BIT += $(NB_ABI_LIST_64_BIT)
+</code></pre><p><code>build/target/board/generic_x86_64/device.mk</code>, 文件结尾处添加关于<code>nativebridge</code>的编译(这里关于属性的配置似乎无法生效，所以后面会在libart.mk中配置属性):</p><pre><code># Added houdini
+$(call inherit-product-if-exists, vendor/google/chromeos-x86/target/houdini.mk)
+$(call inherit-product-if-exists, vendor/google/chromeos-x86/target/native_bridge_arm_on_x86.mk)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.nativebridge=1
+
+# Get native bridge settings
+$(call inherit-product-if-exists,device/generic/common/nativebridge/nativebridge.mk)
+
+
+# NativeBridge
+PRODUCT_PACKAGES += libhoudini houdini
+PRODUCT_PROPERTY_OVERRIDES += ro.dalvik.vm.isa.arm=x86 ro.enable.native.bridge.exec=1
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.dalvik.vm.isa.arm=x86 ro.enable.native.bridge.exec=1
+
+PRODUCT_PACKAGES += houdini64
+PRODUCT_PROPERTY_OVERRIDES += ro.dalvik.vm.isa.arm64=x86_64 ro.enable.native.bridge.exec64=1
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.dalvik.vm.isa.arm64=x86_64 ro.enable.native.bridge.exec64=1
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.dalvik.vm.native.bridge=libhoudini.so
+</code></pre><p><code>build/target/product/AndroidProducts.mk</code>中加入关于编译时<code>lunch</code>的选项:</p><pre><code>COMMON_LUNCH_CHOICES := \
+.......
+     sdk_phone_x86_64-userdebug \
+</code></pre><p><code>build/target/product/runtime_libart.mk</code>中注释掉<code>ro.dalvik.vm.native.bridge=0</code>的默认设置，加入关于<code>ro.dalvik.vm.isa.arm</code>及其他几个参数配置</p><pre><code>#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#    ro.dalvik.vm.native.bridge=0
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+     ro.dalvik.vm.isa.arm=x86 \
+     ro.enable.native.bridge.exec=1 \
+     ro.dalvik.vm.isa.arm64=x86_64 \
+     ro.enable.native.bridge.exec64=1 \
+</code></pre><p><code>build/target/product/sdk_phone_x86.mk</code>及<code>build/target/product/sdk_phone_x86_64.mk</code>中添加所需要拷贝的静态库的定义:</p><pre><code>#PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST
+# PRODUCT_ARTIFACT_PATH_REQUIREMENT_WHITELIST := \
+#
+
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST := \
+     system/bin/houdini \
+     system/bin/houdini64 \
+     system/etc/binfmt_misc/arm64_dyn \
+.......
+</code></pre><p><code>device/generic/x86_64/BoardConfig.mk </code>中添加以下规则:</p><pre><code>PRC_COMPATIBILITY_PACKAGE := true
+BUILD_ARM_FOR_X86 := true
+-include vendor/google/chromeos-x86/board/native_bridge_arm_on_x86.mk
+</code></pre><p><code>device/generic/x86_64/mini_x86_64.mk</code>中添加关于<code>nativebridge</code>的编译:</p><pre><code>$(call inherit-product-if-exists,device/generic/common/nativebridge/nativebridge.mk)
+</code></pre><p><code>frameworks/base/core/java/com/android/internal/content/NativeLibraryHelper.java</code>区别：</p><pre><code>7,88d86
+&lt;         final String pkgName;
+&lt;         final String apkDir;
+99,110d96
+&lt;         public static String getApkDirFromCodePath(String codePath) {
+&lt;             if (codePath == null ||
+&lt;                 codePath.startsWith(&quot;/system/&quot;) ||
+&lt;                 codePath.startsWith(&quot;/system_ext/&quot;) ||
+&lt;                 codePath.startsWith(&quot;/product/&quot;) ||
+&lt;                 codePath.startsWith(&quot;/vendor/&quot;) ||
+&lt;                 codePath.startsWith(&quot;/oem/&quot;)) {
+&lt;                 return null;
+&lt;             }
+&lt;             return codePath;
+&lt;         }
+&lt; 
+113c99
+&lt;                     lite.debuggable, lite.packageName, getApkDirFromCodePath(lite.codePath));
+---
+&gt;                     lite.debuggable);
+117c103
+&lt;                 boolean extractNativeLibs, boolean debuggable, String pkgName, String apkdir) throws IOException {
+---
+&gt;                 boolean extractNativeLibs, boolean debuggable) throws IOException {
+134c120
+&lt;             return new Handle(apkPaths, apkHandles, multiArch, extractNativeLibs, debuggable, pkgName, apkdir);
+---
+&gt;             return new Handle(apkPaths, apkHandles, multiArch, extractNativeLibs, debuggable);
+146c132
+&lt;                     lite.extractNativeLibs, lite.debuggable, lite.packageName, getApkDirFromCodePath(lite.codePath));
+---
+&gt;                     lite.extractNativeLibs, lite.debuggable);
+150c136
+&lt;                 boolean extractNativeLibs, boolean debuggable, String pkgName, String apkdir) {
+---
+&gt;                 boolean extractNativeLibs, boolean debuggable) {
+156,157d141
+&lt;             this.pkgName = pkgName;
+&lt;             this.apkDir = apkdir;
+232,234c216
+&lt;             final int res = nativeFindSupportedAbiReplace(apkHandle, supportedAbis,
+&lt;                     handle.debuggable, handle.pkgName, handle.apkDir);
+&lt; 
+---
+&gt;             final int res = nativeFindSupportedAbi(apkHandle, supportedAbis, handle.debuggable);
+256,257c238,239
+&lt;     private native static int nativeFindSupportedAbiReplace(long handle, String[] supportedAbis,
+&lt;             boolean debuggable, String pkgName, String apkdir);
+---
+&gt;     private native static int nativeFindSupportedAbi(long handle, String[] supportedAbis,
+&gt;             boolean debuggable);
+</code></pre><p><code>frameworks/base/core/jni/Android.bp</code>中添加编译规则:</p><pre><code>15d14
+&lt;         &quot;-D_PRC_COMPATIBILITY_PACKAGE_&quot;,
+71d69
+&lt;                 &quot;abipicker/ABIPicker.cpp&quot;,
+</code></pre><p><code>frameworks/base/core/jni/com_android_internal_content_NativeLibraryHelper.cpp</code>中添加:</p><pre><code>42,45d41
+&lt; #ifdef _PRC_COMPATIBILITY_PACKAGE_
+&lt; #include &quot;abipicker/ABIPicker.h&quot;
+&lt; #endif
+&lt; 
+60,64d55
+&lt; #ifdef _PRC_COMPATIBILITY_PACKAGE_
+&lt; #define X86ABI     &quot;x86&quot;
+&lt; #define X8664ABI   &quot;x86_64&quot;
+&lt; #endif
+&lt; 
+517,524c508,509
+&lt; com_android_internal_content_NativeLibraryHelper_findSupportedAbi_replace(
+&lt;         JNIEnv *env,
+&lt;         jclass clazz,
+&lt;         jlong apkHandle,
+&lt;         jobjectArray javaCpuAbisToSearch,
+&lt;         jboolean debuggable,
+&lt;         jstring apkPkgName,
+&lt;         jstring apkDir)
+---
+&gt; com_android_internal_content_NativeLibraryHelper_findSupportedAbi(JNIEnv *env, jclass clazz,
+&gt;         jlong apkHandle, jobjectArray javaCpuAbisToSearch, jboolean debuggable)
+526,612c511
+&lt; #ifdef _PRC_COMPATIBILITY_PACKAGE_
+&lt; 
+&lt;     int abiType = findSupportedAbi(env, apkHandle, javaCpuAbisToSearch, debuggable);
+&lt;     if (apkDir == NULL) {
+&lt;         return (jint)abiType;
+&lt;     }
+&lt; 
+&lt;     char abiFlag[256] = {'\0'};
+&lt;     ScopedUtfChars apkdir(env, apkDir);
+&lt;     size_t apkdir_size = apkdir.size();
+&lt;     const int numAbis = env-&gt;GetArrayLength(javaCpuAbisToSearch);
+&lt;     Vector&lt;ScopedUtfChars*&gt; supportedAbis;
+&lt; 
+&lt;     assert(apkdir_size &lt; 256 - 15);
+&lt;     if (strlcpy(abiFlag, apkdir.c_str(), 256) != apkdir.size()) {
+&lt;         return (jint)abiType;
+&lt;     }
+&lt; 
+&lt;     int abiIndex = 0;
+&lt;     abiFlag[apkdir_size] = '/';
+&lt;     abiFlag[apkdir_size + 1] = '.';
+&lt;     for (abiIndex = 0; abiIndex &lt; numAbis; abiIndex++) {
+&lt;         ScopedUtfChars* abiName = new ScopedUtfChars(env,
+&lt;                  (jstring)env-&gt;GetObjectArrayElement(javaCpuAbisToSearch, abiIndex));
+&lt;         supportedAbis.push_back(abiName);
+&lt;         if (abiName == NULL || abiName-&gt;c_str() == NULL || abiName-&gt;size() &lt;= 0) {
+&lt;             break;
+&lt;         }
+&lt;         if ((strlcpy(abiFlag + apkdir_size + 2, abiName-&gt;c_str(), 256 - apkdir_size - 2)
+&lt;                     == abiName-&gt;size()) &amp;&amp; (access(abiFlag, F_OK) == 0)) {
+&lt;             abiType = abiIndex;
+&lt;             break;
+&lt;         }
+&lt;     }
+&lt; 
+&lt;     if (abiIndex &lt; numAbis) {
+&lt;         for (int j = 0; j &lt; abiIndex; ++j) {
+&lt;             if (supportedAbis[j] != NULL) {
+&lt;                 delete supportedAbis[j];
+&lt;             }
+&lt;         }
+&lt;         return (jint)abiType;
+&lt;     }
+&lt; 
+&lt;     do {
+&lt;         if (abiType &lt; 0 || abiType &gt;= numAbis) {
+&lt;             break;
+&lt;         }
+&lt; 
+&lt;         if (0 != strcmp(supportedAbis[abiType]-&gt;c_str(), X86ABI) &amp;&amp;
+&lt;                 0 != strcmp(supportedAbis[abiType]-&gt;c_str(), X8664ABI)) {
+&lt;             break;
+&lt;         }
+&lt; 
+&lt;         ScopedUtfChars name(env, apkPkgName);
+&lt;         if (NULL == name.c_str()) {
+&lt;             break;
+&lt;         }
+&lt; 
+&lt;         if (isInOEMWhiteList(name.c_str())) {
+&lt;             break;
+&lt;         }
+&lt; 
+&lt;         ABIPicker picker(name.c_str(),supportedAbis);
+&lt;         if (!picker.buildNativeLibList((void*)apkHandle)) {
+&lt;             break;
+&lt;         }
+&lt; 
+&lt;         abiType = picker.pickupRightABI(abiType);
+&lt;         if (abiType &gt;= 0 &amp;&amp; abiType &lt; numAbis &amp;&amp;
+&lt;                 (strlcpy(abiFlag + apkdir_size + 2, supportedAbis[abiType]-&gt;c_str(),
+&lt;                          256 - apkdir_size - 2) == supportedAbis[abiType]-&gt;size())) {
+&lt;             int flagFp = creat(abiFlag, 0644);
+&lt;             if (flagFp != -1) {
+&lt;                 close(flagFp);
+&lt;             }
+&lt;         }
+&lt; 
+&lt;     } while(0);
+&lt; 
+&lt;     for (int i = 0; i &lt; numAbis; ++i) {
+&lt;         delete supportedAbis[i];
+&lt;     }
+&lt;     return (jint)abiType;
+&lt; #else
+&lt;     return (jint)findSupportedAbi(env, apkHandle, javaCpuAbisToSearch, debuggable);
+&lt; #endif
+---
+&gt;     return (jint) findSupportedAbi(env, apkHandle, javaCpuAbisToSearch, debuggable);
+703,705c602,604
+&lt;     {&quot;nativeFindSupportedAbiReplace&quot;,
+&lt;             &quot;(J[Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;)I&quot;,
+&lt;             (void *)com_android_internal_content_NativeLibraryHelper_findSupportedAbi_replace},
+---
+&gt;     {&quot;nativeFindSupportedAbi&quot;,
+&gt;             &quot;(J[Ljava/lang/String;Z)I&quot;,
+&gt;             (void *)com_android_internal_content_NativeLibraryHelper_findSupportedAbi},
+
+</code></pre><p><code>frameworks/base/services/core/java/com/android/server/pm/parsing/pkg/AndroidPackageUtils.java</code>添加:</p><pre><code>139,141c139
+&lt;                 pkg.isDebuggable(),
+&lt;                 pkg.getPackageName(),
+&lt;                 NativeLibraryHelper.Handle.getApkDirFromCodePath(pkg.getCodePath())
+---
+&gt;                 pkg.isDebuggable()
+</code></pre><p><code>system/linkerconfig/contents/namespace/systemdefault.cc</code>添加关于空间权限：</p><pre><code>build/system/linkerconfig/contents/namespace/systemdefault.cc origin/system/linkerconfig/contents/namespace/systemdefault.cc
+67,70d66
+&lt;         &quot;/system/lib/arm&quot;,
+&lt;         &quot;/system/lib/arm/nb&quot;,
+&lt;         &quot;/system/lib64/arm64&quot;,
+&lt;         &quot;/system/lib64/arm64/nb&quot;,
+</code></pre><p>20220225 added:</p><p>需加入abipicker的支持：</p><pre><code>scp -r ./frameworks/base/core/jni/abipicker/ remote_folder
+</code></pre><p>上传<code>/vendor</code>目录下的相关内容:</p><pre><code>scp -r vendor/google/ root@192.168.xx.xxx:/root/Code/redroid_11/vendor/
+</code></pre><p>如果是<code>redroid</code>的编译，而对应需要修改redroid文件的定义:</p><pre><code># vim device/redroid/redroid_x86_64/device.mk
+PRODUCT_PACKAGES += \
+    vulkan.intel \
+
+# Added houdini
+$(call inherit-product-if-exists, vendor/google/chromeos-x86/target/houdini.mk)
+$(call inherit-product-if-exists, vendor/google/chromeos-x86/target/native_bridge_arm_on_x86.mk)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.nativebridge=1
+
+# Get native bridge settings
+$(call inherit-product-if-exists,device/generic/common/nativebridge/nativebridge.mk)
+
+
+# NativeBridge
+PRODUCT_PACKAGES += libhoudini houdini
+PRODUCT_PROPERTY_OVERRIDES += ro.dalvik.vm.isa.arm=x86 ro.enable.native.bridge.exec=1
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.dalvik.vm.isa.arm=x86 ro.enable.native.bridge.exec=1
+
+PRODUCT_PACKAGES += houdini64
+PRODUCT_PROPERTY_OVERRIDES += ro.dalvik.vm.isa.arm64=x86_64 ro.enable.native.bridge.exec64=1
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.dalvik.vm.isa.arm64=x86_64 ro.enable.native.bridge.exec64=1
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.dalvik.vm.native.bridge=libhoudini.so
+
+
+# vim device/TARGET_CPU_ABI := x86_64
+TARGET_ARCH := x86_64
+TARGET_ARCH_VARIANT := x86_64
+
+TARGET_2ND_CPU_ABI := x86
+TARGET_2ND_ARCH := x86
+TARGET_2ND_ARCH_VARIANT := x86_64
+
+include build/make/target/board/BoardConfigGsiCommon.mk
+
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 16777216
+BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 16777216
+
+BOARD_MESA3D_USES_MESON_BUILD := true
+BOARD_MESA3D_GALLIUM_DRIVERS := virgl radeonsi i915 iris crocus
+BOARD_MESA3D_VULKAN_DRIVERS := virtio-experimental amd intel
+
+DEVICE_MANIFEST_FILE += device/redroid/manifest.xml
+PRC_COMPATIBILITY_PACKAGE := true
+BUILD_ARM_FOR_X86 := true
+-include vendor/google/chromeos-x86/board/native_bridge_arm_on_x86.mk
+
+# Native Bridge ABI List
+NB_ABI_LIST_32_BIT := armeabi-v7a armeabi
+NB_ABI_LIST_64_BIT := arm64-v8a
+
+TARGET_CPU_ABI_LIST_64_BIT ?= $(TARGET_CPU_ABI) $(TARGET_CPU_ABI2)
+TARGET_CPU_ABI_LIST_32_BIT ?= $(TARGET_2ND_CPU_ABI) $(TARGET_2ND_CPU_ABI2)
+TARGET_CPU_ABI_LIST := \
+    $(TARGET_CPU_ABI_LIST_64_BIT) \
+    $(TARGET_CPU_ABI_LIST_32_BIT) \
+    $(NB_ABI_LIST_64_BIT) \
+    $(NB_ABI_LIST_32_BIT)
+TARGET_CPU_ABI_LIST_32_BIT += $(NB_ABI_LIST_32_BIT)
+TARGET_CPU_ABI_LIST_64_BIT += $(NB_ABI_LIST_64_BIT)
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/10/workingtipsonmultiseatubuntu200403/>WorkingTipsOnMultiSeatUbuntu200403</a></h1><span class=post-date>Nov 10, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=前提>前提</h3><p>基准操作系统为<code>ubuntu-20.04.3-live-server-amd64.iso</code>, 不可以安装为<code>desktop</code>版本的iso。</p><h3 id=系统及包更新>系统及包更新</h3><p>确保系统更新到最新:</p><pre><code>$ sudo apt-get update -y &amp;&amp; sudo apt-get upgrade -y
 </code></pre><p>安装必要的包(这里需要严格按照顺序来安装，否则会出现多安装包的情况导致<code>gdm</code>被安装后<code>sddm</code>无法正常工作):</p><pre><code>$ sudo apt-get install -y sddm unzip autoconf automake libtool pkg-config build-essential x11proto-dev xserver-xorg-dev libxcb-util-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-shm0-dev libxcb-randr0-dev vim cmake cmake-extras extra-cmake-modules libpam-dev libxcb-xkb-dev qt5-default libqt5qml5 qt5-qmltooling-plugins qtdeclarative5-dev xutils-dev
 $ sudo apt-get install openbox --no-install-recommends --no-install-suggests
 $ sudo apt-get install -y xinit
@@ -124,12 +435,4 @@ m -j80
 </code></pre><h3 id=实验步骤>实验步骤</h3><p>初始化的r44镜像：</p><p><img src=/images/2021_10_23_11_12_25_499x281.jpg alt=/images/2021_10_23_11_12_25_499x281.jpg></p><p>按照houdini的容器方案替代:</p><h3 id=换方法>换方法</h3><p>使用另外一种android发行版:</p><pre><code>lineage-16.0
 lineage-17.1
 lineage-18.1
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/10/18/workingtipsonvirtualnetworkcrossgfw/>WorkingTipsOnVirtualNetworkCrossGFW</a></h1><span class=post-date>Oct 18, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment-description>Environment Description</h3><p>In virt-manager, create a new isolated virtual network via:</p><p><img src=/images/2021_10_18_10_39_01_522x540.jpg alt=/images/2021_10_18_10_39_01_522x540.jpg></p><h3 id=create-vm>Create VM</h3><p>Get the openwrt x86 images from:</p><pre><code>wget https://downloads.openwrt.org/releases/21.02.0-rc4/targets/x86/64/openwrt-21.02.0-rc4-x86-64-generic-ext4-combined.img.gz
-gunzip openwrt-21.02.0-rc4-x86-64-generic-ext4-combined.img.gz 
-mv /root/openwrt-21.02.0-rc4-x86-64-generic-ext4-combined.img /var/lib/libvirt/images
-</code></pre><p>Create a new virtual machine using this image:</p><p><img src=/images/2021_10_18_11_32_10_487x492.jpg alt=/images/2021_10_18_11_32_10_487x492.jpg></p><p>2-Core , 1024 MB:</p><p><img src=/images/2021_10_18_11_32_30_291x173.jpg alt=/images/2021_10_18_11_32_30_291x173.jpg></p><p>Named it <code>zzzz_OpenWRT</code>:</p><p><img src=./images/2021_10_18_11_32_44_354x265.jpg alt=./images/2021_10_18_11_32_44_354x265.jpg></p><p>Customize the vm, first define an ethernet card which use <code>default</code> network:</p><p><img src=/images/2021_10_18_11_33_46_449x255.jpg alt=/images/2021_10_18_11_33_46_449x255.jpg></p><p>Add a second nic which uses <code>isolated</code> network:</p><p><img src=/images/2021_10_18_11_34_20_611x214.jpg alt=/images/2021_10_18_11_34_20_611x214.jpg></p><p>Bootup the machine until you see:</p><p><img src=/images/2021_10_18_11_35_07_584x285.jpg alt=/images/2021_10_18_11_35_07_584x285.jpg></p><p>You should use <code>passwd</code> for generating a new password for security.</p><h3 id=configure>Configure</h3><p>Swith the eth0/eth1, cause eth0 will be the lan, while eth1 will be the wan.</p><p><img src=/images/2021_10_18_11_49_52_617x258.jpg alt=/images/2021_10_18_11_49_52_617x258.jpg></p><p>Manually set the br-lan address via:</p><pre><code># vim /etc/config/network
-- option ipaddr '192.168.1.1'
-+ option ipaddr '10.17.18.254'
-</code></pre><p>Login luci via:</p><p><img src=/images/2021_10_18_11_52_08_714x545.jpg alt=/images/2021_10_18_11_52_08_714x545.jpg></p><p>Install redsocks via:</p><pre><code># opkg update
-# opkg install redsocks
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/16/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/16/>16</a></li><li class="page-item active"><a class=page-link href=/page/17/>17</a></li><li class=page-item><a class=page-link href=/page/18/>18</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/227/>227</a></li><li class=page-item><a href=/page/18/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/227/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

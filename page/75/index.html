@@ -1,5 +1,417 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/10/24/archlinuxusbwirelessdongleisssue/>ArchLinuxUSBWirelessDongleIsssue</a></h1><span class=post-date>Oct 24, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=hardware--software>Hardware & Software</h3><p>Tenda u1, rtl8192eu chipset.<br>Could be found as wireless adaptor, but could not get networking.</p><pre><code># sudo wifi-menu wlp37s0u1
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/10/30/linuxtips8/>LinuxTips8</a></h1><span class=post-date>Oct 30, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/linuxtips>LinuxTips</a></span><h3 id=1-pigz-for-multi-core-compression>1. pigz for multi-core compression</h3><p>In case you need multi-core compression for speeding up compression procedure,
+please do following steps:</p><pre><code># pacman -S pigz
+# tar -c transfer/ | pigz -c | split -a 5 -d -b 1650m - mysplit
+# ls -l
+total 8296652
+-rw-r--r-- 1 root root 1730150400 Oct 30 09:20 mysplit00000
+-rw-r--r-- 1 root root 1730150400 Oct 30 09:20 mysplit00001
+-rw-r--r-- 1 root root 1730150400 Oct 30 09:22 mysplit00002
+-rw-r--r-- 1 root root 1730150400 Oct 30 09:23 mysplit00003
+-rw-r--r-- 1 root root 1575143431 Oct 30 09:23 mysplit00004
+drwxr-xr-x 3 root root       4096 Oct 30 08:59 transfer
+</code></pre><p>Decompression these files:</p><pre><code># cat mysplit*&gt;mysplit
+# tar xzvf mysplit
+</code></pre><p>After decompression you got the same directory shows the same as the origin
+one.</p><h3 id=2-skip-checksum-check-in-yaourt>2. Skip Checksum check in yaourt</h3><p>Via <code>yaourt --m-arg --skipchecksums --m-arg --skippgpcheck -Sb</code>, you could
+skip checksum check in yaourt package.</p><h3 id=3-yaourt-hivex-and-libguestfs>3. yaourt hivex and libguestfs</h3><p>In hivex:</p><pre><code>Since some users may have set INSTALL_BASE in PERL_MM_OPT, you should consider adding 'unset PERL_MM_OPT' before configuring.
+
+Compiles with line 23 in PKGBUILD changed from
+
+./configure\ 
+to...
+./configure --disable-ocaml\
+</code></pre><p>In libguestfs, simply ignore the checksum checking for source code.</p><h3 id=4-virt-resize-bug>4. virt-resize bug</h3><p>In CentOS 7, you have to upgrading the lvm2, then you get libguestfs working
+properly.</p><p>To enable the debug, do following: <code>export LIBGUESTFS_DEBUG=1</code></p><p>List all of the ip address via:</p><pre><code># virsh net-dhcp-leases $network
+</code></pre><h3 id=5-add-user-to-sudo>5. Add user to sudo</h3><p>First you create user via <code>adduser YourName</code>, then you add user to sudo group
+via: <code>adduser YourName sudo</code>.</p><h3 id=6-linuxkit>6. linuxkit</h3><p><a href=http://collabnix.com/getting-started-with-multi-node-kubernetes-cluster-using-linuxkit/>http://collabnix.com/getting-started-with-multi-node-kubernetes-cluster-using-linuxkit/</a></p><h3 id=7-teamviewer-on-rpi>7. teamviewer on rpi</h3><p>Search rpi&rsquo;s teamviewer solution.</p><h3 id=8-bash-debugging>8. bash debugging</h3><p>If you have a bash script, simply use <code>bash -x xxx.sh</code> for debugging this
+script, it will display all of the excution steps.</p><h3 id=9-raspberrypi-keyboard-layout>9. RaspberryPi Keyboard layout</h3><p>Configure them via:</p><pre><code># dpkg-reconfigure keyboard-configuration
+</code></pre><h3 id=10-sonoff>10. sonoff</h3><p>use sonoff for controlling the electricity at home.</p><h3 id=11-debian-qtcreator>11. Debian QTcreator</h3><p>Just for writing the software for managing the sd card writer.</p><h3 id=12-hugo-issue>12. hugo issue</h3><p>via some mis-typing I commited some files into master branch(<code>.travis.yml</code>),
+thus every time&rsquo;s commitment will trigger 2 building in travisCI!!!</p><p>Solution:</p><pre><code># git checkout master
+# git rm .travis.yml
+# git commit -m &quot;remove travis yml&quot;
+# git push origin master
+# git checkout source
+</code></pre><p>Continue to edit and publish in source tree, now your commitment will be OK.</p><h3 id=13-gitk>13. gitk</h3><p>For viewing all of the changing of your git branch, use <code>gitk</code> for viewing the
+code changes and branches.</p><h3 id=14-pyinstaller-to-exe>14. pyinstaller to exe</h3><p>Windows terminal, press following:</p><pre><code># pyinstaller.exe ThinClientSDWriter.py
+</code></pre><p>After pyinstall.exe, it will build the output in dist directory.</p><p>Debugging, for</p><pre><code>import sip
+sip.setapi(u'QString',2)
+sip.setapi(u'QVariable',2)
+</code></pre><p>If you encounter the api version 1 has been set, simply add 3 lines in:</p><p><code>support/rthooks/pyi_rth_qt4plugins.py</code> in PyInstaller</p><p><a href=https://github.com/pyinstaller/pyinstaller/wiki/Recipe-PyQt4-API-Version>https://github.com/pyinstaller/pyinstaller/wiki/Recipe-PyQt4-API-Version</a></p><h3 id=15-sip-setapi>15. sip setapi</h3><p>Detailed explanation:</p><pre><code>sip.setapi(&quot;QString&quot; ,2)
+  
+的意义就是取消掉 PyQt 里面 QString 的使用，原来凡是接受 QString 参数的地方，都变成了接受 Python 的 unicode 类型。原来返回 QString 的函数也变成返回 unicode 类型。
+  
+这个行为在 PyQt5 里面是默认行为。而且使用上也方便非常多，推荐新代码里面尽量使用这个行为。
+  
+同样的还有  
+  
+sip.setapi(&quot;QDateTime&quot;, 2)
+sip.setapi(&quot;QDate&quot;, 2)
+sip.setapi(&quot;QVariant&quot;, 2)
+#QTextStream的第一个版本会导致Python的hex(),bin()被PyQt覆盖
+sip.setapi(&quot;QTextStream&quot;, 2)
+sip.setapi(&quot;QUrl&quot;, 2)
+  
+在使用这个 setapi() 调用的时候，建议包在 try/except 块里面，因为不能调用两次。并且不能在导入 PyQt 之后使用，所以应该放在程序的最开始处。  
+  
+try:
+     sip.setapi(&quot;QString&quot;, 2)
+     sip.setapi(...)
+except ValueError:
+     pass
+from PyQt4.QtCore import * 
+</code></pre><h3 id=16-rdesktop-enable-remote>16. rdesktop enable remote</h3><p>Via following command:</p><pre><code># rdesktop -r disk:share=/xxxx/yyy/ccc
+</code></pre><h3 id=17-debian-vbox-guest-additional-installation>17. debian VBox Guest Additional installation</h3><pre><code># apt-get install build-essential linux-headers-amd64 linux-source
+$ ./autorun.sh
+</code></pre><h3 id=18-tune-linpack>18. tune linpack</h3><p><a href=http://www.advancedclustering.com/act_kb/tune-hpl-dat-file/>http://www.advancedclustering.com/act_kb/tune-hpl-dat-file/</a></p><h3 id=19-docker-restart-policy>19. docker restart policy</h3><p>Change restart policy from always to no:</p><pre><code>#  docker update --restart=no my-container
+</code></pre><h3 id=20-apt-mirror-configuration-for-arm64>20. apt-mirror configuration for arm64</h3><p>The configuration file is listed as following:</p><pre><code># vim /etc/apt/mirror.list 
+#
+set base_path    /var/spool/apt-mirror
+#
+# set mirror_path  $base_path/mirror
+# set skel_path    $base_path/skel
+# set var_path     $base_path/var
+# set cleanscript $var_path/clean.sh
+set defaultarch  arm64
+# set postmirror_script $var_path/postmirror.sh
+# set run_postmirror 0
+set nthreads     20
+set _tilde 0
+
+deb http://ports.ubuntu.com xenial main restricted universe multiverse
+deb http://ports.ubuntu.com xenial-security main restricted universe multiverse
+deb http://ports.ubuntu.com xenial-updates main restricted universe multiverse
+deb http://ports.ubuntu.com xenial-proposed main restricted universe multiverse
+deb http://ports.ubuntu.com xenial-backports main restricted universe multiverse
+clean http://ports.ubuntu.com
+
+</code></pre><h3 id=21-boot-into-consoleubuntu>21. Boot into console(Ubuntu)</h3><p>Simply via following command:</p><pre><code>$ sudo systemctl set-default multi-user.target
+</code></pre><h3 id=22-disable-dhcpd>22. Disable dhcpd</h3><p>Via following command:</p><pre><code># sudo systemctl disable isc-dhcpd-server.service
+</code></pre><h3 id=23-centos73-upgrading-to-centos74>23. CentOS73 upgrading to CentOS74</h3><p>Install via (usbmuxd prevents its upgrading):</p><pre><code># yum remove usbmuxd
+# yum update
+</code></pre><h3 id=24-ipmi-tool-view-lan-address>24. ipmi tool view lan address</h3><p>Via following command:</p><pre><code>$ sudo ipmitool lan print
+</code></pre><p><img src=/images/2017_12_26_08_46_44_653x379.jpg alt=/images/2017_12_26_08_46_44_653x379.jpg></p><h3 id=25-quickly-setup-stretch>25. Quickly setup stretch</h3><p>Beware, the debian docker image will automatically remove the installed
+pkgs!!!!</p><pre><code># echo deb http://mirrors.aliyun.com/debian/ stretch main non-free contrib &gt;sources.list
+# echo deb http://mirrors.aliyun.com/debian/ stretch-proposed-updates main non-free contrib &gt;&gt;sources.list
+# apt-get update
+# apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
+# curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo &quot;$ID&quot;)/gpg |  apt-key add -
+#  add-apt-repository \
+   &quot;deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo &quot;$ID&quot;) \
+   $(lsb_release -cs) \
+   stable&quot;
+# apt-get update
+# apt-get install -y docker-ce
+</code></pre><h3 id=26-xrdp-on-stretch>26. xrdp on stretch</h3><p>Install via:</p><pre><code># apt install -y xrdp tigervnc-standalone-server
+# vim /etc/xrdp/xrdp.ini
+###### diff file listed as following:    
+--- a/xrdp.ini     2017-06-19 14:05:53.290490260 +0900
++++ b/xrdp.ini  2017-06-19 14:11:17.788557402 +0900
+@@ -147,15 +147,6 @@ tcutils=true
+ ; Session types
+ ;
+
+-[Xorg]
+-name=Xorg
+-lib=libxup.so
+-username=ask
+-password=ask
+-ip=127.0.0.1
+-port=-1
+-code=20
+-
+ [Xvnc]
+ name=Xvnc
+ lib=libvnc.so
+@@ -166,6 +157,15 @@ port=-1
+ #xserverbpp=24
+ #delay_ms=2000
+
++[Xorg]
++name=Xorg
++lib=libxup.so
++username=ask
++password=ask
++ip=127.0.0.1
++port=-1
++code=20
++
+ [console]
+ name=console
+ lib=libvnc.so
+</code></pre><p>Restart xrdp via <code>sudo systemctl restart xrdp</code>.</p><h3 id=27-rpi-wifi-reference>27. rpi wifi reference</h3><p><a href=http://blog.itist.tw/2016/03/using-raspberry-pi-3-as-wifi-ap-with-raspbian-jessie.html>http://blog.itist.tw/2016/03/using-raspberry-pi-3-as-wifi-ap-with-raspbian-jessie.html</a></p><h3 id=28-tectonic>28. tectonic</h3><p>Working tips on tectonic sandbox:</p><pre><code>$  unzip tectonic-sandbox-1.7.5-tectonic.1.zip
+$  cd tectonic-sandbox-1.7.5-tectonic.1
+$  vagrant plugin repair
+$  vagrant plugin expunge --reinstall
+$  vagrant up --provider=virtualbox
+</code></pre><h3 id=29-nfs-server-and-vagrant>29. nfs-server and Vagrant</h3><p>Issue: my coreos cluster&rsquo;s vagrant configuration won&rsquo;t get in touch with my
+archlinux&rsquo;s nfs server, the debugging steps are listed as following:</p><pre><code>mount -o vers=3,udp,nolock,vers=4,udp,noatime 172.17.8.1:/media/sda5/DevOps/kubernetes-vagrant-coreos-cluster /vagrant
+
+Stdout from the command:
+
+
+
+Stderr from the command:
+
+mount.nfs: requested NFS version or transport protocol is not supported
+
+</code></pre><p>Archlinux nfs server configuration:</p><pre><code># vim /etc/nfs.conf
+
+....
+[nfsd]
+# debug=0
+# threads=8
+# host=
+# port=0
+# grace-time=90
+# lease-time=90
+udp=y
+tcp=y
+vers2=n
+vers3=y
+vers4=y
+vers4.0=y
+vers4.1=y
+vers4.2=y
+# rdma=n
+....
+
+</code></pre><p>Enable the udp and tcp, also all of the nfs versions.</p><p>Vagrant configuration:</p><pre><code># vim Vagrantfile
+          if File.exist?(File.expand_path(&quot;#{mount['source']}&quot;))
+            if mount['destination']
+              kHost.vm.synced_folder &quot;#{mount['source']}&quot;, &quot;#{mount['destination']}&quot;,
+                id: &quot;#{mount['name']}&quot;,
+                disabled: disabled,
+                mount_options: [&quot;#{mount_options}&quot;],
+                nfs: nfs,
+	        nfs_version: 4,
+		nfs_udp: false
+            end
+
+</code></pre><p>Try to specify the nfs version and udp version.</p><p>By doint this you could reach the servers, but before the mount version,
+simply run <code>showmount -e ServerIP</code>.</p><h3 id=30-ruby-libvirt>30. ruby-libvirt</h3><p>Solved via reinstall vagrant-libvirt, then you could ignore this issue:</p><pre><code>Ignoring ruby-libvirt-0.7.0 because its extensions are not built.  Try: gem pristine ruby-libvirt --version 0.7.0
+
+libruby.so.2.2: cannot open shared object file: No such file or directory - /opt/vagrant/embedded/gems/gems/ruby-libvirt-0.7.0/lib/_libvirt.so
+
+</code></pre><h3 id=31-docker-certification-for-archlinux>31. docker certification for archlinux</h3><p>Get the self-signed certification , and then you could do following:</p><pre><code>root@archiso ~ # cp devdockerCA.crt /etc/ca-certificates/trust-source/anchors 
+root@archiso ~ # update-ca-trust 
+root@archiso ~ # trust extract-compat
+</code></pre><p>thus you docker login xxx.xxx.xxx.com, with your username and password, then
+you could push to the right position.</p><h3 id=32-docker-save-to-xz>32. Docker Save to xz</h3><p>via following commands:</p><pre><code># docker pull quay.io/pires/docker-elasticsearch-kubernetes:5.5.0 &amp;&amp; docker save quay.io/pires/docker-elasticsearch-kubernetes:5.5.0|xz&gt;elastic.tar.xz
+</code></pre><h3 id=33-for-loop-for-docker-save>33. For loop for docker save</h3><p>Use a for loop for saving the docker images.</p><pre><code>dockerimages=(bde2020/spark-master:2.2.1-hadoop2.7 docker1 docker2 docker3 docker4)
+j=1
+for i in ${dockerimages[@]}
+do
+	echo $i
+	echo $j
+
+	#docker pull $i &amp;&amp; docker save $i | xz $j.tar.xz
+	#docker rmi $i
+	let j+=1
+done
+</code></pre><h3 id=34-libvirt-network-filter>34. libvirt network filter</h3><p>How to do libvirt forwarding all of the traffics to redsocks?</p><pre><code>https://libvirt.org/firewall.html
+</code></pre><p>Also setup your own custom nat based network:</p><pre><code>https://jamielinux.com/docs/libvirt-networking-handbook/custom-nat-based-network.html
+</code></pre><h3 id=35-libvirt-net-definition>35. libvirt net definition</h3><p>net definition from isolated networking to nat based networking:</p><pre><code>virsh # net-dumpxml default
+&lt;network&gt;
+  &lt;name&gt;default&lt;/name&gt;
+  &lt;uuid&gt;bb24f0ba-754c-4f00-b16b-5e7dbb35807e&lt;/uuid&gt;
+  &lt;forward mode='nat'&gt;
+    &lt;nat&gt;
+      &lt;port start='1024' end='65535'/&gt;
+    &lt;/nat&gt;
+  &lt;/forward&gt;
+  &lt;bridge name='virbr0' stp='on' delay='0'/&gt;
+  &lt;mac address='52:54:00:df:ee:b7'/&gt;
+  &lt;ip address='192.168.122.1' netmask='255.255.255.0'&gt;
+    &lt;dhcp&gt;
+      &lt;range start='192.168.122.2' end='192.168.122.254'/&gt;
+    &lt;/dhcp&gt;
+  &lt;/ip&gt;
+&lt;/network&gt;
+
+virsh # net-dumpxml kismatic
+&lt;network connections='1'&gt;
+  &lt;name&gt;kismatic&lt;/name&gt;
+  &lt;uuid&gt;19756f27-9d8f-4120-be34-bb238215e28a&lt;/uuid&gt;
+  &lt;bridge name='virbr11' stp='on' delay='0'/&gt;
+  &lt;mac address='52:54:00:5e:8a:18'/&gt;
+  &lt;domain name='kismatic'/&gt;
+  &lt;ip address='10.15.205.1' netmask='255.255.255.0'&gt;
+    &lt;dhcp&gt;
+      &lt;range start='10.15.205.128' end='10.15.205.254'/&gt;
+    &lt;/dhcp&gt;
+  &lt;/ip&gt;
+&lt;/network&gt;
+</code></pre><p>See the differences? Then you should edit this network, destroy it, start it
+again, thus you get the working nat-based networking.</p><pre><code>virsh # net-edit kismatic
+Network kismatic XML configuration edited.
+
+virsh # net-destroy kismatic
+Network kismatic destroyed
+
+virsh # net-start kismatic
+Network kismatic started
+</code></pre><h3 id=36-minikube-boot>36. minikube boot</h3><p>with larger disk minikube could run like following:</p><pre><code># minikube start --disk-size 30g
+</code></pre><h3 id=37-helm-issue>37. helm issue</h3><p>Encounter issue:</p><pre><code># helm install --name &quot;tkt&quot; .
+Error: release tkt failed: pods &quot;tkt-oracledb&quot; already exists
+</code></pre><p>use lint for viewing the issue:</p><pre><code># helm lint .
+==&gt; Linting .
+[INFO] Chart.yaml: icon is recommended
+[ERROR] templates/_helpers.tpl~: file extension '.tpl~' not valid. Valid extensions are .yaml, .tpl, or .txt
+[ERROR] templates/oracledb-pod.yaml~: file extension '.yaml~' not valid. Valid extensions are .yaml, .tpl, or .txt
+Error: 1 chart(s) linted, 1 chart(s) failed
+</code></pre><p>Problem-solving: just remove all of the <code>~</code> files under all of the directories
+and sub-directories.</p><h3 id=38-kubectl-proxy-issue>38. kubectl proxy issue</h3><p>Not serving in <code>127.0.0.1</code>, but on its public address:</p><pre><code># kubectl proxy --disable-filter=true --address=0.0.0.0
+</code></pre><p>But I faced another issue, that I can&rsquo;t login with the same certifications. for localhost, it&rsquo;s ok, but for public address, failed.</p><h3 id=39-awk-combine>39. awk combine</h3><p>combine the field1 and field2 via:</p><pre><code># cat ttt.txt | awk '{print $1&quot;:&quot;$2}'
+</code></pre><h3 id=40-kube-ops-view>40. kube-ops-view</h3><p>A good kube-ops view:</p><p><img src=/images/2018_01_24_11_07_13_708x319.jpg alt=/images/2018_01_24_11_07_13_708x319.jpg></p><h3 id=41-lvm-resize>41. lvm resize</h3><p>Via qemu-img resize, then use gparted, for resize the partition:</p><p><img src=/images/2018_01_25_16_57_28_775x428.jpg alt=/images/2018_01_25_16_57_28_775x428.jpg></p><p><img src=/images/2018_01_25_16_58_09_775x269.jpg alt=/images/2018_01_25_16_58_09_775x269.jpg></p><p>Now you could extend via:</p><pre><code>lvextend -l +100%FREE /dev/vagrant-vg/root
+resize2fs /dev/vagrant-vg/root
+</code></pre><h3 id=42-harbor-related>42. harbor related</h3><p><a href=https://fsdev.io/how-to-install-secure-private-docker-registry-harbor-and-use-it/>https://fsdev.io/how-to-install-secure-private-docker-registry-harbor-and-use-it/</a></p><p>RBAC based, so you won&rsquo;t directly push to harbor, should create project
+at first.</p><h3 id=43-redhat-suberscription>43. redhat suberscription</h3><p>via following command:</p><pre><code># subscription-manager register
+# subscription-manager refresh
+# subscription-manager list --available --matches '*OpenShift*'
+# subscription-manager attach --pool=&lt;pool_id&gt;
+
+</code></pre><h3 id=44-delete-last-line-using-sed>44. delete last line using sed</h3><p>Via following command:</p><pre><code>$ sed -i '$ d' foo.txt
+</code></pre><h3 id=45-view-dnsmasq-leased-ip>45. View dnsmasq leased ip</h3><p>View the dnsmasq leased ip:</p><pre><code>/var/lib/misc/dnsmasq.leases
+</code></pre><h3 id=46-tiller-offline>46. tiller offline</h3><p>Via following command, you could install helm/tiller offline:</p><pre><code># helm init --service-account=tiller -i=&quot;gcr.io/kubernetes-helm/tiller:v2.6.1&quot; --upgrade --skip-refresh
+</code></pre><h3 id=47-arch-efi-issue>47. arch efi issue</h3><p>The configuration for arch efi:</p><pre><code>➜  entries cat arch_back.conf 
+title	ArchLinux
+linux	/vmlinuz-linux
+initrd	/initramfs-linux.img
+options	root=/dev/sdb2 rw
+➜  entries cat arch.conf 
+title	ArchLinux
+linux	/vmlinuz-linux-lts
+initrd	/initramfs-linux-lts.img
+options	root=/dev/sdb2 rw
+➜  entries pwd
+/boot/EFI/loader/entries
+</code></pre><h3 id=48-whatpulse-priviledge>48. whatpulse priviledge</h3><p>Add user to the input group via:</p><pre><code># sudo usermod -a -G input dash
+</code></pre><h3 id=49-disable-subscription-notice>49. Disable subscription notice</h3><p>Disable the yum plugin for detecting subsciption:</p><pre><code># vim /etc/yum/pluginconf.d/subscription-manager.conf
+[main]
+enabled=0
+</code></pre><h3 id=50-battery-indicator>50. battery indicator</h3><p>In awesome, using cbatticon for displaying the acpi items.</p><h3 id=51-file-belongs-to-which-rpm>51. file belongs to which rpm</h3><p>Via following command:</p><pre><code># rpm -qf /usr/bin/kill
+util-linux-xxxxx
+</code></pre><h3 id=52-fio-tips>52. fio tips</h3><p><a href="http://www.ywnds.com/?p=8419">http://www.ywnds.com/?p=8419</a></p><h3 id=54-disable-balloon-on-windows>54. Disable balloon on windows</h3><p>Run <code>gpedit.msc</code>, choose user configuration, templates, startup menu, close
+all of the balloon, enable, then you won&rsquo;t be annoyed by these fucking
+balloons!</p><p><img src=/images/2018_03_09_10_09_19_590x191.jpg alt=/images/2018_03_09_10_09_19_590x191.jpg></p><h3 id=55-awesome-startup-menu>55. awesome startup menu</h3><p>Refers to:</p><p><a href=https://github.com/lcpz/awesome-freedesktop>https://github.com/lcpz/awesome-freedesktop</a></p><pre><code>$ git clone https://github.com/lcpz/awesome-freedesktop.git ~/.config/awesome/freedesktop
+</code></pre><p>rc.lua configuration:</p><pre><code>local freedesktop = require(&quot;freedesktop&quot;)
+
+
+-- replace the origin items with the following items. 
+
+myawesomemenu = {
+    { &quot;hotkeys&quot;, function() return false, hotkeys_popup.show_help end },
+    { &quot;manual&quot;, terminal .. &quot; -e man awesome&quot; },
+    { &quot;edit config&quot;, string.format(&quot;%s -e %s %s&quot;, terminal, editor, awesome.conffile) },
+    { &quot;restart&quot;, awesome.restart },
+    { &quot;quit&quot;, function() awesome.quit() end }
+}
+mymainmenu = freedesktop.menu.build({
+    before = {
+        { &quot;Awesome&quot;, myawesomemenu, beautiful.awesome_icon },
+        -- other triads can be put here
+    },
+    after = {
+        { &quot;Open terminal&quot;, terminal },
+        -- other triads can be put here
+    }
+})
+</code></pre><h3 id=56-system-tray-issue>56. system tray issue</h3><p>For whatpulse, if the desktop startups too fast, it will complain:</p><pre><code>Couldn't detect any system tray on this system. 
+</code></pre><p>So you have to add some time-delay for its startup:</p><pre><code>run_once(&quot;sleep 3 &amp;&amp; env LD_LIBRARY_PATH=/usr/lib/openssl-1.0 whatpulse &amp;&quot;)
+</code></pre><h3 id=57-crontab-issue>57. crontab issue</h3><p>My crontab won&rsquo;t execute after re-installing system, correct via following
+command(need X):</p><pre><code>59 9-18 * * * bash -c &quot;export DISPLAY=:0.0;/bin/notify.sh&quot;
+</code></pre><h3 id=58-kubernetes-influxdb-pvc>58. kubernetes influxdb pvc</h3><p><img src=/images/2018_03_16_14_20_00_617x301.jpg alt=/images/2018_03_16_14_20_00_617x301.jpg></p><p>Then you have to edit the corresponding deployment:</p><pre><code>$ kubectl edit deployment heapster-influxdb -n kube-syste
+</code></pre><p><img src=/images/2018_03_16_14_38_45_432x182.jpg alt=/images/2018_03_16_14_38_45_432x182.jpg></p><h3 id=59-sleep-millisecond>59. sleep millisecond</h3><p>Via following command:</p><pre><code># sleep 0.01
+</code></pre><h3 id=60-curl-issue>60. curl issue</h3><p>in linkerd chapters:</p><pre><code># wget http://curl.haxx.se/ca/cacert.pem
+# curl -k --cacert cacert.pem.1 -H &quot;Host: world.v2&quot; https://hello.world
+
+</code></pre><h3 id=61-enable-swap>61. enable swap</h3><p>Install <code>arch-install-scripts</code>, then genfstab to get the swap partition. Add
+this line into <code>/etc/fstab</code> then you got the swap enabled in every
+system-startup.</p><h3 id=62-sync-folder-in-windows>62. sync folder in windows</h3><p>Via software: DSynchronize.Zip</p><p><img src=/images/2018_03_28_09_21_26_793x540.jpg alt=/images/2018_03_28_09_21_26_793x540.jpg></p><p>But the rdesktop related folders could not be synced.</p><h3 id=63-list-all-of-the-services>63. list all of the services</h3><p>Via following command you could see all of the enabled services.</p><pre><code># systemctl list-unit-files | grep enabled
+</code></pre><h3 id=64-install-mate-on-centos>64. Install mate on centos</h3><p>via following commands:</p><pre><code>Install MATE Desktop Environment on here.
+
+# yum --enablerepo=epel -y groups install &quot;MATE Desktop&quot;
+Input a command like below after finishing installation:
+
+# echo &quot;exec /usr/bin/mate-session&quot; &gt;&gt; ~/.xinitrc 
+# startx
+MATE Desktop Environment starts.
+</code></pre><h3 id=65-play-on-docker-issue>65. play-on-docker issue</h3><pre><code>install dep and `dep ensure` for getting the dependencies. 
+</code></pre><h3 id=66-add-modprobed>66. add modprobe.d</h3><p>For enable overlay and</p><pre><code># echo &quot;overlay&quot; &gt; /etc/modules-load.d/overlay.conf
+# echo &quot;xt_ipvs&quot;&gt;/etc/modules-load.d/xt_ipvs.conf
+</code></pre><h3 id=67-docker-full-output>67. docker full output</h3><p>Via following command:</p><pre><code># docker ps -a --no-trunc
+</code></pre><h3 id=68-view-docker-address>68. View docker address</h3><p>Via <code>docker inspect dockerid</code> you could see the ip address of the running
+docker instance.</p><h3 id=69-translation-under-term>69. translation under term</h3><p>Install trans program via following commands:</p><pre><code>$ git clone https://github.com/soimort/translate-shell
+$  cd translate-shell
+$  make
+$  sudo make install
+</code></pre><p>Translate the markdown via:</p><pre><code>$ cat 2016-10-25-beginner-linux.markdown| trans -t zh-CN  -show-original=n -b
+</code></pre><p>Todo:</p><p>Write a python script for automatically recognize markdown syntax and by-pass
+some parts of the article.</p><h3 id=70-delete-all-of-the-soft-linked-files>70. delete all of the soft-linked files</h3><p>via <code>find -type l -deletefind -type l -delete</code></p><h3 id=71-specify-image-pull-policy>71. specify image-pull-policy</h3><p>If the image is present on the machine, then:</p><pre><code># kubectl run nginx --image=nginx --image-pull-policy=IfNotPresent
+</code></pre><h3 id=72-redsocks-on-rhel74>72. redsocks on rhel74</h3><p>manually download the following packages, and install them, then make for the
+redsocks:</p><pre><code># ls *.rpm
+libevent-2.0.21-4.el7.x86_64.rpm  libevent-devel-2.0.21-4.el7.x86_64.rpm
+# rpm -ivh libevent-2.0.21-4.el7.x86_64.rpm 
+# rpm -ivh libevent-devel-2.0.21-4.el7.x86_64.rpm 
+</code></pre><h3 id=73-kubernetes-dashboard-access>73. kubernetes dashboard access</h3><p>By creating a new cluster rool, then you could view the dashboard:</p><pre><code>#  kubectl create clusterrolebinding cluster-admin-fordashboard --clusterrole=cluster-admin --user=system:serviceaccount:kube-system:kubernetes-dashboard
+clusterrolebinding &quot;cluster-admin-fordashboard&quot; created
+</code></pre><h3 id=74-service-graph-for-istio>74. service graph for istio</h3><p>Example:</p><pre><code>http://192.192.189.104:31635/force/forcegraph.html
+http://192.192.189.104:31635/dotviz
+</code></pre><h3 id=75-libvirt-priveledge>75. libvirt priveledge</h3><p>By editing following configuration files:</p><pre><code># vim /etc/libvirt/qemu.conf 
+user=&quot;root&quot;
+group=&quot;root&quot;
+# systemctl restart libvirt
+</code></pre><h3 id=76-disable-subscription-service>76. Disable Subscription service</h3><p>You could do this via following steps:</p><pre><code># service rhsmcertd stop
+# chkconfig rhsmcertd off
+
+</code></pre><p>Or disable Subscription Manager plugins by :-</p><pre><code># sed -i 's/enabled=1/enabled=0/g' /etc/yum/pluginconf.d/subscription-manager.conf
+# sed -i 's/enabled=1/enabled=0/g' /etc/yum/pluginconf.d/product-id.conf
+# rm -rf /etc/yum.repods.d/redhat.repo
+</code></pre><h3 id=77-hostport-example>77. hostPort example</h3><p><code>influxdb-hostport.yml</code> definition:</p><pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: influxdb
+spec:
+  containers:
+    - name: influxdb
+      image: influxdb
+      ports:
+        - containerPort: 8086
+          hostPort: 8086
+</code></pre><p>Then <code>curl -v http://kubenode01.example.com:8086/ping</code></p><h3 id=78-kismatic-110-and-istio-sidecar>78. kismatic 110 and istio-sidecar</h3><p>Edit: <code>./install/kubernetes/webhook-create-signed-cert.sh</code>:</p><pre><code># create the secret with CA cert and server cert/key
+echo &quot;apiVersion: v1&quot; &gt; ${tmpdir}/create-secret.yaml
+echo &quot;kind: Secret&quot; &gt;&gt; ${tmpdir}/create-secret.yaml
+kubectl create secret generic ${secret} \
+        --from-file=key.pem=${tmpdir}/server-key.pem \
+        --from-file=cert.pem=${tmpdir}/server-cert.pem \
+        --dry-run -o yaml &gt;&gt; ${tmpdir}/create-secret.yaml
+kubectl -n ${namespace} apply -f ${tmpdir}/create-secret.yaml
+</code></pre><h3 id=79-rhel7-nfs-issue>79. rhel7 nfs issue</h3><p>The nfs and rpcbind won&rsquo;t act normarly, so we have to correct them via:</p><pre><code>edit /etc/default/grub
+
+add ipv6.disable=1 to GRUB_CMDLINE_LINUX
+
+sudo /usr/sbin/grub2-mkconfig -o /boot/grub2/grub.cfg
+
+reboot
+</code></pre><p>Remove the <code>::1</code> items in <code>/etc/hosts</code>.</p><h3 id=80-nfs-server-on-rhel7>80. nfs server on rhel7</h3><p>Install and configure via:</p><pre><code># yum install nfs-utils rpcbind
+# mkdir -p /opt/nfs
+# vim /etc/exports
+/opt/nfs *(no_root_squash,rw,sync)
+# service rpcbind start; service nfs start
+# systemctl enable nfs-server
+</code></pre><p>so next time you will get your nfs server running defaultly.</p><h3 id=81-debian-version>81. debian version</h3><p>Via <code>cat /etc/os-release</code> or <code>cat /etc/debian_version</code>.</p><h3 id=82-download-packages>82. Download packages</h3><p>Via following commands:</p><pre><code># sudo apt-get install --download-only
+# aptitude clean
+# aptitude --download-only install &lt;your_package_here&gt;
+# cp /var/cache/apt/archives/*.deb &lt;your_directory_here&gt;
+
+</code></pre><h3 id=83-grub-issue>83. grub issue</h3><p>Store grub configuration after next configuration:</p><pre><code>After struggling for 2 hours, I have found a much easier way to achieve this. I just RTFM. ;)
+
+Add two lines to /etc/default/grub
+
+GRUB_SAVEDEFAULT=true
+GRUB_DEFAULT=saved
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/10/24/archlinuxusbwirelessdongleisssue/>ArchLinuxUSBWirelessDongleIsssue</a></h1><span class=post-date>Oct 24, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=hardware--software>Hardware & Software</h3><p>Tenda u1, rtl8192eu chipset.<br>Could be found as wireless adaptor, but could not get networking.</p><pre><code># sudo wifi-menu wlp37s0u1
 # dmesg
 ....
 [42647.461034] wlp37s0u1: send auth to **:xx:xx:xx:xx:xx (try 1/3)
@@ -131,10 +543,4 @@ following are the trouble-shooting of template.</p><ol><li>Change the data sourc
 </code></pre><p>This means you have to define a datasource named <code>DS_BC-GRAPHITE</code>, like
 following:</p><p><img src=/images/2017_10_17_17_09_04_681x396.jpg alt=/images/2017_10_17_17_09_04_681x396.jpg></p><ol start=2><li>Change collectd&rsquo;s write_graphite structure.</li></ol><p><img src=/images/2017_10_17_17_09_29_304x241.jpg alt=/images/2017_10_17_17_09_29_304x241.jpg></p><p>The item could not be displayed properly, because the definition for data
 listed as:</p><p><img src=/images/2017_10_17_17_10_20_490x287.jpg alt=/images/2017_10_17_17_10_20_490x287.jpg></p><p>so you should have following definition in <code>/etc/collectd.conf</code>:</p><p><img src=/images/2017_10_17_17_10_58_469x424.jpg alt=/images/2017_10_17_17_10_58_469x424.jpg></p><p>Notice <code>collectd.</code>, this means you could use <code>collectd.*</code> for getting the
-data.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/10/17/ipmitips/>ipmitips</a></h1><span class=post-date>Oct 17, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>For managing the servers via ipmitools.</p><h3 id=installation>Installation</h3><p>Install ipmitools via <code>yum install -y ipmitool</code>, then you could use ipmitool
-for managing the servers.</p><h3 id=huawei-examples>HuaWei Examples</h3><p>Official Website:<br><a href="http://support.huawei.com/enterprise/docinforeader!loadDocument1.action?contentId=DOC1000055104&partNo=10082">http://support.huawei.com/enterprise/docinforeader!loadDocument1.action?contentId=DOC1000055104&partNo=10082</a></p><p>Username/passwd:</p><p><img src=/images/2017_10_17_09_54_31_1211x354.jpg alt=/images/2017_10_17_09_54_31_1211x354.jpg></p><p>Using ipmitool for displaying the lan info:</p><p><img src=/images/2017_10_17_09_54_58_918x451.jpg alt=/images/2017_10_17_09_54_58_918x451.jpg></p><h3 id=setting-ip>Setting IP</h3><p>Setting IP Address/Netmask/gateway via following way:</p><p><img src=/images/2017_10_17_09_58_36_995x604.jpg alt=/images/2017_10_17_09_58_36_995x604.jpg></p><h3 id=ibmc>iBMC</h3><p>Huwei using iBMC, so now you could visit its ip address for managing this
-server:</p><p><img src=/images/2017_10_17_10_01_30_836x422.jpg alt=/images/2017_10_17_10_01_30_836x422.jpg></p><p><img src=/images/2017_10_17_10_02_26_487x319.jpg alt=/images/2017_10_17_10_02_26_487x319.jpg></p><p>Now you could using its management URL:</p><p><img src=/images/2017_10_17_10_14_18_782x458.jpg alt=/images/2017_10_17_10_14_18_782x458.jpg></p><h3 id=configure-jdk>Configure JDK</h3><p>Add new Env Var:</p><p><img src=/images/2017_10_17_10_28_08_565x513.jpg alt=/images/2017_10_17_10_28_08_565x513.jpg></p><p>New <code>JAVA_HOME</code>:</p><p><img src=/images/2017_10_17_10_29_15_381x322.jpg alt=/images/2017_10_17_10_29_15_381x322.jpg></p><p>Path:</p><p><img src=/images/2017_10_17_10_31_11_388x196.jpg alt=/images/2017_10_17_10_31_11_388x196.jpg></p><p>Verification:</p><p><img src=/images/2017_10_17_10_32_08_520x150.jpg alt=/images/2017_10_17_10_32_08_520x150.jpg></p><h3 id=ie-configuration>IE Configuration</h3><p>Use IE-64-bit:</p><p><img src=/images/2017_10_17_11_29_39_605x487.jpg alt=/images/2017_10_17_11_29_39_605x487.jpg></p><p>Add Exception:</p><p><img src=/images/2017_10_17_11_30_49_803x589.jpg alt=/images/2017_10_17_11_30_49_803x589.jpg></p><p>Refresh again and accept exception:</p><p><img src=/images/2017_10_17_11_36_00_550x329.jpg alt=/images/2017_10_17_11_36_00_550x329.jpg></p><p>You got this shit window finally:</p><p><img src=/images/2017_10_17_11_36_49_703x508.jpg alt=/images/2017_10_17_11_36_49_703x508.jpg></p><h3 id=auto-load-modules>Auto-load modules</h3><p>For automatically load modules, do following:</p><pre><code># vim /etc/modules-load.d/ipmi.conf
-ipmi_msghandler
-ipmi_devintf
-ipmi_si
-</code></pre><p><img src=/images/2017_10_17_12_20_22_655x199.jpg alt=/images/2017_10_17_12_20_22_655x199.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/74/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/74/>74</a></li><li class="page-item active"><a class=page-link href=/page/75/>75</a></li><li class=page-item><a class=page-link href=/page/76/>76</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/227/>227</a></li><li class=page-item><a href=/page/76/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/227/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+data.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/74/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/74/>74</a></li><li class="page-item active"><a class=page-link href=/page/75/>75</a></li><li class=page-item><a class=page-link href=/page/76/>76</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/227/>227</a></li><li class=page-item><a href=/page/76/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/227/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
