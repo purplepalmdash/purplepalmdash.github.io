@@ -1,5 +1,284 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/07/programming-in-c-of-fc-tutorial-2/>Programming in C of FC tutorial 2</a></h1><span class=post-date>Apr 7, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Full Circle C 3
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/08/programming-in-c-of-fc-tutorial-3/>Programming in C of FC tutorial 3</a></h1><span class=post-date>Apr 8, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Full Circle C 5
+####Callback
+Use Call Back function for implementing a calculator:</p><pre><code>#include &lt;stdio.h&gt;
+
+int minus(int a, int b)
+{
+	return a-b;
+}
+
+int add(int a, int b)
+{
+	return a+b;
+}
+
+int multiply(int a, int b)
+{
+	return a*b;
+}
+
+int divide(int a, int b)
+{
+	return a/b;
+}
+
+typedef int (*mathFun)(int, int);
+
+struct operator
+{
+	char c;
+	mathFun f;
+};
+
+int main()
+{
+	struct operator functs[4];
+	functs[0].c = '-'; functs[0].f=&amp;minus;
+	functs[1].c = '+'; functs[1].f=&amp;add;
+	functs[2].c = '*'; functs[2].f=&amp;multiply;
+	functs[3].c = '/'; functs[3].f=&amp;divide;
+	while(1)
+	{
+		int a,b,i;
+		char c;
+		printf(&quot;Enter a:\n&quot;);
+		scanf(&quot;%d&quot;, &amp;a);
+		printf(&quot;Enter b:\n&quot;);
+		scanf(&quot;%d&quot;, &amp;b);
+		printf(&quot;Enter the operator:\n&quot;);
+		scanf(&quot;%c&quot;, &amp;c);
+		scanf(&quot;%c&quot;, &amp;c);
+		i = 0;
+		while(i&lt;4)
+		{
+			if(functs[i].c==c)
+			{
+				printf(&quot;Result:%d\n&quot;, functs[i].f(a,b));
+				break;
+			}
+			i++;
+		}
+		if(i == 4)
+		{
+			printf(&quot;Unkown operator:%c\n&quot;, c);
+		}
+	}
+	return 0;
+}
+
+</code></pre><p>####Exercise 1
+Modify the application to operate on floating point numbers instead of integers.</p><pre><code>#include &lt;stdio.h&gt;
+
+float  minus(float a, float b)
+{
+	return a-b;
+}
+
+float add(float a, float b)
+{
+	return a+b;
+}
+
+float multiply(float a, float b)
+{
+	return a*b;
+}
+
+float divide(float a, float b)
+{
+	return a/b;
+}
+
+typedef float (*mathFun)(float, float);
+
+struct operator
+{
+	char c;
+	mathFun f;
+};
+
+int main()
+{
+	struct operator functs[4];
+	functs[0].c = '-'; functs[0].f=&amp;minus;
+	functs[1].c = '+'; functs[1].f=&amp;add;
+	functs[2].c = '*'; functs[2].f=&amp;multiply;
+	functs[3].c = '/'; functs[3].f=&amp;divide;
+	while(1)
+	{
+		int i;
+		float a,b; 
+		char c;
+		printf(&quot;Enter a:\n&quot;);
+		scanf(&quot;%f&quot;, &amp;a);
+		printf(&quot;Enter b:\n&quot;);
+		scanf(&quot;%f&quot;, &amp;b);
+		printf(&quot;Enter the operator:\n&quot;);
+		scanf(&quot;%c&quot;, &amp;c);
+		scanf(&quot;%c&quot;, &amp;c);
+		i = 0;
+		while(i&lt;4)
+		{
+			if(functs[i].c==c)
+			{
+				printf(&quot;Result:%f\n&quot;, functs[i].f(a,b));
+				break;
+			}
+			i++;
+		}
+		if(i == 4)
+		{
+			printf(&quot;Unkown operator:%c\n&quot;, c);
+		}
+	}
+	return 0;
+}
+
+</code></pre><p>####Exercise 2
+Extend the calculator with the possibility for the user to enter &lsquo;q&rsquo; for quit</p><pre><code>#include &lt;stdio.h&gt;
+
+int minus(int a, int b)
+{
+	return a-b;
+}
+
+int add(int a, int b)
+{
+	return a+b;
+}
+
+int multiply(int a, int b)
+{
+	return a*b;
+}
+
+int divide(int a, int b)
+{
+	return a/b;
+}
+
+typedef int (*mathFun)(int, int);
+
+struct operator
+{
+	char c;
+	mathFun f;
+};
+
+int main()
+{
+	struct operator functs[4];
+	functs[0].c = '-'; functs[0].f=&amp;minus;
+	functs[1].c = '+'; functs[1].f=&amp;add;
+	functs[2].c = '*'; functs[2].f=&amp;multiply;
+	functs[3].c = '/'; functs[3].f=&amp;divide;
+	char q;
+	do
+	{
+		int a,b,i;
+		char c;
+		printf(&quot;Enter a:\n&quot;);
+		scanf(&quot;%d&quot;, &amp;a);
+		printf(&quot;Enter b:\n&quot;);
+		scanf(&quot;%d&quot;, &amp;b);
+		printf(&quot;Enter the operator:\n&quot;);
+		scanf(&quot;%c&quot;, &amp;c);
+		scanf(&quot;%c&quot;, &amp;c);
+		i = 0;
+		while(i&lt;4)
+		{
+			if(functs[i].c==c)
+			{
+				printf(&quot;Result:%d\n&quot;, functs[i].f(a,b));
+				break;
+			}
+			i++;
+		}
+		if(i == 4)
+		{
+			printf(&quot;Unkown operator:%c\n&quot;, c);
+		}
+		printf(&quot;Enter q for quit! Others for continue\n&quot;);
+		scanf(&quot;%c&quot;,&amp;q);
+		scanf(&quot;%c&quot;,&amp;q);
+	}
+	while(q != 'q');
+	return 0;
+}
+
+</code></pre><p>####Exercise 4
+Modify the application that, instead of entering characters, the user is able to enter “5 plus 6” or “6 minus 5”. In order to do this, you will need to adapt the structure to hold a string as the operator, and, instead of reading a character, you will need to read a string. Extra credit if you manage to do this without buffer overrun issues (see man getline) and memory leaks.</p><pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int minus(int a, int b)
+{
+	return a-b;
+}
+
+int add(int a, int b)
+{
+	return a+b;
+}
+
+int multiply(int a, int b)
+{
+	return a*b;
+}
+
+int divide(int a, int b)
+{
+	return a/b;
+}
+
+typedef int (*mathFun)(int, int);
+
+struct operator
+{	char c[20];
+	mathFun f;
+};
+
+int main()
+{
+	struct operator functs[4];
+	strcpy(functs[0].c, &quot;minus&quot;);
+	functs[0].f=&amp;minus;
+	strcpy(functs[1].c, &quot;add&quot;);
+	functs[1].f=&amp;add;
+	strcpy(functs[2].c, &quot;mul&quot;);
+	functs[2].f=&amp;multiply;
+	strcpy(functs[3].c, &quot;div&quot;);
+	functs[3].f=&amp;divide;
+	while(1)
+	{
+		int a,b,i;
+		char c[20];
+		printf(&quot;Enter a:\n&quot;);
+		scanf(&quot;%d&quot;, &amp;a);
+		printf(&quot;Enter b:\n&quot;);
+		scanf(&quot;%d&quot;, &amp;b);
+		printf(&quot;Enter the operator:\n&quot;);
+		scanf(&quot;%s&quot;, c);
+		i = 0;
+		while(i&lt;4)
+		{
+			int result = strcmp(functs[i].c, c);
+			if(result == 0)
+			{
+			printf(&quot;Result is :%d\n&quot;, functs[i].f(a,b));
+			break;
+			}
+			i++;
+		}
+		if(i == 4)
+		{
+			printf(&quot;Unkown operator:%s\n&quot;, c);
+		}
+	}
+	return 0;
+}
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/07/programming-in-c-of-fc-tutorial-2/>Programming in C of FC tutorial 2</a></h1><span class=post-date>Apr 7, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Full Circle C 3
 ####Exercise 1
 Collect all the code snippets on this page and turn them into the working program<br>Pointer:</p><pre><code>#include &lt;stdio.h&gt;
 
@@ -326,5 +605,4 @@ int main(int argc, char **argv)
 	return 0;
 }
 
-</code></pre><p>Because we use recursion here, when the n is too big, the calculation maybe very slow.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/07/reading-digest-of-fc3/>Reading Digest of FC3</a></h1><span class=post-date>Apr 7, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Full Circle 3</p><ol><li>Page 6 of cn version: DSL(Damn Small Linux), <a href=http://www.damnsmalllinux.org>http://www.damnsmalllinux.org</a>, which could be run on 16MB memory&rsquo;s 486 computer, try it.</li><li>Page</li></ol></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/07/fc3-new-words/>FC3 New Words</a></h1><span class=post-date>Apr 7, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Full Circle 3
-stunning: 令人惊奇的事物<br>reveal: 揭露<br>footrest: 搁脚物<br>fusion: 融化<br>compiz+beryl = Compiz Fusion<br>trawl: 用拖网捕鱼</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/187/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/187/>187</a></li><li class="page-item active"><a class=page-link href=/page/188/>188</a></li><li class=page-item><a class=page-link href=/page/189/>189</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/228/>228</a></li><li class=page-item><a href=/page/189/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/228/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Because we use recursion here, when the n is too big, the calculation maybe very slow.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/04/07/reading-digest-of-fc3/>Reading Digest of FC3</a></h1><span class=post-date>Apr 7, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Full Circle 3</p><ol><li>Page 6 of cn version: DSL(Damn Small Linux), <a href=http://www.damnsmalllinux.org>http://www.damnsmalllinux.org</a>, which could be run on 16MB memory&rsquo;s 486 computer, try it.</li><li>Page</li></ol></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/187/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/187/>187</a></li><li class="page-item active"><a class=page-link href=/page/188/>188</a></li><li class=page-item><a class=page-link href=/page/189/>189</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/228/>228</a></li><li class=page-item><a href=/page/189/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/228/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
