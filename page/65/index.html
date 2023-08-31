@@ -1,5 +1,78 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/30/synckismaticimages/>SyncKismaticImages</a></h1><span class=post-date>May 30, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>搭建完Portus镜像后，如何重新初始化，并获得更新的kismatic镜像？这里记录了步骤。</p><h3 id=清空已有镜像>清空已有镜像</h3><p>运行以下命令，可以得到一个全新的portus镜像仓库:</p><pre><code># systemctl stop docker-infra.service
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/06/04/oncustomizecentoslivecd/>OnCustomizeCentOSLiveCD</a></h1><span class=post-date>Jun 4, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>Preparation</h3><p>A. Create local repository for centos installation:</p><p>Install <code>createrepo_c</code>on archlinux:</p><pre><code># yaout createrepo_c
+</code></pre><p>Create the repo for local installation:</p><pre><code># sudo mount -t iso9660 -o loop CentOS-7-x86_64-Everything-1804.iso /mnt2
+# cd /mnt2
+# find . | grep rpm$ | xargs -I % cp % /var/download/centos1804rpms
+# cd /var/download/centos1804rpms
+# createrepo_c .
+</code></pre><p>Use this repo:</p><pre><code># mkdir /etc/yum.repos.d/back &amp;&amp; mv /etc/yum.repos.d/*.repo /etc/yum.repos.d/back/
+# vim /etc/yum.repos.d/base.repo 
+[base]
+name=base
+baseurl=http://192.168.122.1/centos1804rpms
+enabled=1
+gpgcheck=0
+</code></pre><p>B. Prepare kickstart repository</p><pre><code># git clone https://github.com/CentOS/sig-core-livemedia.git
+# cd sig-core-livemedia
+# cd kickstarts
+# wget https://gist.githubusercontent.com/lunatilia/8a195ccb0b415cbbd94f/raw/e8ede17f331dc8fe43012e7e4f8123a02e6bedc8/centos-7-livedvd-jp.cfg
+</code></pre><p>C. Edit the cfg file, the modified file is listed in following position:</p><h3 id=make-system>Make system</h3><p>In chroot terminal, do following:</p><pre><code>#  yum remove -y libreoffice-gtk3-5.3.6.1-10.el7.x86_64 libreoffice-draw-5.3.6.1-10.el7.x86_64 libreoffice-ure-5.3.6.1-10.el7.x86_64 libreoffice-pyuno-5.3.6.1-10.el7.x86_64 libreoffice-xsltfilter-5.3.6.1-10.el7.x86_64 libreoffice-gtk2-5.3.6.1-10.el7.x86_64 libreoffice-graphicfilter-5.3.6.1-10.el7.x86_64 libreoffice-math-5.3.6.1-10.el7.x86_64 libreoffice-filters-5.3.6.1-10.el7.x86_64 libreoffice-data-5.3.6.1-10.el7.noarch libreoffice-core-5.3.6.1-10.el7.x86_64 libreoffice-pdfimport-5.3.6.1-10.el7.x86_64 libreoffice-calc-5.3.6.1-10.el7.x86_64 libreofficekit-5.3.6.1-10.el7.x86_64 libreoffice-ure-common-5.3.6.1-10.el7.noarch libreoffice-langpack-en-5.3.6.1-10.el7.x86_64 libreoffice-impress-5.3.6.1-10.el7.x86_64 libreoffice-opensymbol-fonts-5.3.6.1-10.el7.noarch libreoffice-x11-5.3.6.1-10.el7.x86_64 libreoffice-writer-5.3.6.1-10.el7.x86_64
+# yum remove -y cheese
+# cd /usr/local/
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/compose.tar.gz .
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/kismaticpkgs.tar.gz .
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/images.tar.gz . 
+# cd /var/lib
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/portus.tar.gz .
+# tar xzvf portus.tar.gz 
+# rm -f portus.tar.gz 
+# cd /usr/local/
+# tar xzvf compose.tar.gz 
+# tar xzvf images.tar.gz 
+# tar xzvf kismaticpkgs.tar.gz 
+# rm -f *.tar.gz
+# cd /root/
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/pipcache.tar.gz .
+# tar xzvf pipcache.tar.gz 
+# pip install --no-index --find-links /root/pipcache docker-compose
+# rm -f pipcache.tar.gz 
+# rm -rf pipcache/
+# cd /bin/
+# scp root@192.192.189.128:/media/sdb/docker/loaddocker.sh .
+# chmod 777 loaddocker.sh 
+# cat loaddocker.sh 
+    if [[ $(sudo docker images | grep registry) ]]; then
+        echo &quot;there are files&quot;
+    else
+        docker load&lt;/usr/local/images/nginx.tar.bz2
+        docker load&lt;/usr/local/images/1.tar
+        docker load&lt;/usr/local/images/2.tar
+        docker load&lt;/usr/local/images/3.tar
+        docker load&lt;/usr/local/images/4.tar
+        docker run --name docker-nginx -p 8888:80 -d -v /usr/local/kismaticpkgs:/usr/share/nginx/html jrelva/nginx-autoindex
+        sed -i s/10.168.100.145/`hostname -I|awk '{print $1}'`/g /usr/local/compose/docker-compose.yml
+    fi
+
+# cd /etc/systemd/system/
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/mynginx.service .
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/docker-infra.service .
+# systemctl enable sshd.service
+# cd /root
+# scp root@192.192.189.128:/media/sdd/kvm_storage/ansible_kismatic/ansible_kismatic1110/kismatic.tar.gz .
+# yum install -y ntp
+# vim /etc/ntp.conf
+# systemctl enable ntpd
+# systemctl disable chronyd
+# systemctl disable firewalld
+# vi /etc/selinux/config
+     disable the selinux configuration
+</code></pre><p>Exit the chroot, the program will continue to build the iso.</p><h3 id=boot-up-the-system>boot-up the system</h3><p>After bootup the system, install the os via clicking the live install icon on the desktop.</p><p>In newly installed system, do following things:</p><pre><code># systemctl enable docker
+# systemctl start docker
+# /bin/loaddocker.sh
+# systemctl enable mynginx.service
+# systemctl enable docker-infra.service
+# reboot
+</code></pre><p>Now you could check your installation.</p><p>Sometimes the boot will fail, I don&rsquo;t know why, maybe because of the dracut issue?</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/30/synckismaticimages/>SyncKismaticImages</a></h1><span class=post-date>May 30, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>搭建完Portus镜像后，如何重新初始化，并获得更新的kismatic镜像？这里记录了步骤。</p><h3 id=清空已有镜像>清空已有镜像</h3><p>运行以下命令，可以得到一个全新的portus镜像仓库:</p><pre><code># systemctl stop docker-infra.service
 # cd /usr/local/compose
 # docker-compose down
 Stopping compose_nginx_1      ... done
@@ -596,213 +669,4 @@ rm registry.dat
 </code></pre><h3 id=73-forwarding-in-win>73. forwarding in Win</h3><p>Use following command for setting up tunnel under windows:</p><pre><code>netsh interface portproxy add v4tov4 listenport=4422 listenaddress=192.168.1.111 connectport=80 connectaddress=192.168.0.33
 To remove forwarding:
 netsh interface portproxy delete v4tov4 listenport=4422 listenaddress=192.168.1.111
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/19/workingtipsonportus/>WorkingTipsOnPortus</a></h1><span class=post-date>May 19, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>Runtime environment:</p><pre><code>OS: Ubuntu 14.04.3 LTS
-docker version: 18.03.1-ce
-docker-compose version: docker-compose version 1.21.2, build a133471
-IP: 192.192.189.53
-domain name: portus.xxxx.com
-</code></pre><p>For installing docker:</p><pre><code>$ sudo apt-get purge lxc-docker-1.9.0
-$ sudo apt-get install \
-    linux-image-extra-$(uname -r) \
-    linux-image-extra-virtual
-$ sudo apt-get update
-$ sudo apt-get install -y \
-    apt-transport-https \
-        ca-certificates \
-            curl \
-                software-properties-common
-
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-$ sudo apt-key fingerprint 0EBFCD88
-$ sudo add-apt-repository \
-   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-      $(lsb_release -cs) \
-         stable&quot;
-$ sudo apt-get update
-$ sudo apt-get install -y docker-ce
-$ sudo apt-get install -y libyaml-dev libpython-dev
-$ sudo pip uninstall docker-py
-$ sudo pip uninstall docker-compose
-$ sudo pip install --upgrade --force-reinstall  docker-compose
-</code></pre><h3 id=steps>Steps</h3><p>Clone the source code from github:</p><pre><code># git clone https://github.com/SUSE/Portus.git
-</code></pre><p>Make certification in secrets folder:</p><pre><code># cd /home/vagrant/Portus/examples/compose/secrets
-# openssl req -newkey rsa:4096 -nodes -sha256 -keyout portus.key -x509 -days 3650 -out portus.crt
-</code></pre><p>In the above steps, input following items:</p><pre><code>Country Name (2 letter code) [AU]:CN
-State or Province Name (full name) [Some-State]:Guangdong
-Locality Name (eg, city) []:Guangzhou
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:kkkk
-Organizational Unit Name (eg, section) []:cloud
-Common Name (e.g. server FQDN or YOUR name) []:portus.kkkk.com
-Email Address []:xxxx@xxxx.com
-</code></pre><h3 id=docker-compose-file>Docker Compose File</h3><p>The docker compose file is the critical for portus deployment, following is
-my configuration file:</p><pre><code>version: &quot;2&quot;
-
-services:
-  portus:
-    image: opensuse/portus:head
-    environment:
-      - PORTUS_MACHINE_FQDN_VALUE=${MACHINE_FQDN}
-
-      # DB. The password for the database should definitely not be here. You are
-      # probably better off with Docker Swarm secrets.
-      - PORTUS_DB_HOST=db
-      - PORTUS_DB_DATABASE=portus_production
-      - PORTUS_DB_PASSWORD=${DATABASE_PASSWORD}
-      - PORTUS_DB_POOL=5
-
-      # Secrets. It can possibly be handled better with Swarm's secrets.
-      - PORTUS_SECRET_KEY_BASE=${SECRET_KEY_BASE}
-      - PORTUS_KEY_PATH=/certificates/portus.key
-      - PORTUS_PASSWORD=${PORTUS_PASSWORD}
-
-      # SSL
-      - PORTUS_PUMA_TLS_KEY=/certificates/portus.key
-      - PORTUS_PUMA_TLS_CERT=/certificates/portus.crt
-
-      # NGinx is serving the assets instead of Puma. If you want to change this,
-      # uncomment this line.
-      #- RAILS_SERVE_STATIC_FILES='true'
-    ports:
-      - 3000:3000
-    links:
-      - db
-    volumes:
-      - ./secrets:/certificates:ro
-      - static:/srv/Portus/public
-    extra_hosts:
-      - &quot;portus.xxxx.com:192.192.189.53&quot;
-
-  background:
-    image: opensuse/portus:head
-    depends_on:
-      - portus
-      - db
-    environment:
-      # Theoretically not needed, but cconfig's been buggy on this...
-      - CCONFIG_PREFIX=PORTUS
-      - PORTUS_MACHINE_FQDN_VALUE=${MACHINE_FQDN}
-
-      # DB. The password for the database should definitely not be here. You are
-      # probably better off with Docker Swarm secrets.
-      - PORTUS_DB_HOST=db
-      - PORTUS_DB_DATABASE=portus_production
-      - PORTUS_DB_PASSWORD=${DATABASE_PASSWORD}
-      - PORTUS_DB_POOL=5
-
-      # Secrets. It can possibly be handled better with Swarm's secrets.
-      - PORTUS_SECRET_KEY_BASE=${SECRET_KEY_BASE}
-      - PORTUS_KEY_PATH=/certificates/portus.key
-      - PORTUS_PASSWORD=${PORTUS_PASSWORD}
-
-      - PORTUS_BACKGROUND=true
-    links:
-      - db
-    volumes:
-      - ./secrets:/certificates:ro
-    extra_hosts:
-      - &quot;portus.xxxx.com:192.192.189.53&quot;
-
-  db:
-    image: library/mariadb:10.0.23
-    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci --init-connect='SET NAMES UTF8;' --innodb-flush-log-at-trx-commit=0
-    environment:
-      - MYSQL_DATABASE=portus_production
-
-      # Again, the password shouldn't be handled like this.
-      - MYSQL_ROOT_PASSWORD=${DATABASE_PASSWORD}
-    volumes:
-      - /var/lib/portus/mariadb:/var/lib/mysql
-    extra_hosts:
-      - &quot;portus.xxxx.com:192.192.189.53&quot;
-
-  registry:
-    image: library/registry:2.6
-    command: [&quot;/bin/sh&quot;, &quot;/etc/docker/registry/init&quot;]
-    environment:
-      # Authentication
-      REGISTRY_AUTH_TOKEN_REALM: https://${MACHINE_FQDN}:3000/v2/token
-      REGISTRY_AUTH_TOKEN_SERVICE: ${MACHINE_FQDN}:5000
-      REGISTRY_AUTH_TOKEN_ISSUER: ${MACHINE_FQDN}
-      #REGISTRY_AUTH_TOKEN_ISSUER: portus.test.lan
-      REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE: /secrets/portus.crt
-
-      # SSL
-      REGISTRY_HTTP_TLS_CERTIFICATE: /secrets/portus.crt
-      REGISTRY_HTTP_TLS_KEY: /secrets/portus.key
-
-      # Portus endpoint
-      REGISTRY_NOTIFICATIONS_ENDPOINTS: &gt;
-        - name: portus
-          url: https://${MACHINE_FQDN}:3000/v2/webhooks/events
-          #url: https://192.192.189.53:3000/v2/webhooks/events
-          timeout: 2000ms
-          threshold: 5
-          backoff: 1s
-    volumes:
-      - /var/lib/portus/registry:/var/lib/registry
-      - ./secrets:/secrets:ro
-      - ./registry/config.yml:/etc/docker/registry/config.yml:ro
-      - ./registry/init:/etc/docker/registry/init:ro
-    ports:
-      - 5000:5000
-      - 5001:5001 # required to access debug service
-    links:
-      - portus:portus
-    extra_hosts:
-      - &quot;portus.xxxx.com:192.192.189.53&quot;
-
-  nginx:
-    image: library/nginx:alpine
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./secrets:/secrets:ro
-      - static:/srv/Portus/public:ro
-    ports:
-      - 80:80
-      - 443:443
-    links:
-      - registry:registry
-      - portus:portus
-    extra_hosts:
-      - &quot;portus.xxxx.com:192.192.189.53&quot;
-
-volumes:
-  static:
-    driver: local
-</code></pre><p>When everything is configured, startup the service via:</p><pre><code># docker-compose -f docker-compose.yml up
-</code></pre><h3 id=configuration>Configuration</h3><p>Before open your browser for accessing the portus service, do following :</p><pre><code>$ sudo echo &quot;192.192.189.53	portus.xxxx.com&quot;&gt;&gt;/etc/hosts
-</code></pre><p>Now open your browser for <code>https://portus.xxxx.com</code>:</p><p><img src=/images/2018_05_19_17_36_55_626x496.jpg alt=/images/2018_05_19_17_36_55_626x496.jpg></p><p>Configure the registry via:</p><p><img src=/images/2018_05_19_17_37_51_488x262.jpg alt=/images/2018_05_19_17_37_51_488x262.jpg></p><p>Team->Create new team, create team for kismatic deployment:</p><p><img src=/images/2018_05_19_17_40_16_397x279.jpg alt=/images/2018_05_19_17_40_16_397x279.jpg></p><p>Admin->User->Create new user:</p><p><img src=/images/2018_05_19_17_41_59_434x313.jpg alt=/images/2018_05_19_17_41_59_434x313.jpg></p><p>The created user is listed as:</p><p><img src=/images/2018_05_19_17_42_41_1023x262.jpg alt=/images/2018_05_19_17_42_41_1023x262.jpg></p><p>Team->members->Add members:</p><p><img src=/images/2018_05_19_17_43_32_640x169.jpg alt=/images/2018_05_19_17_43_32_640x169.jpg></p><p>Create a new namespace for kismatic 1.10 deployment images:</p><p><img src=/images/2018_05_19_17_44_28_440x297.jpg alt=/images/2018_05_19_17_44_28_440x297.jpg></p><p>You can easily view portus logs at dashboard:</p><p><img src=/images/2018_05_19_17_45_14_584x314.jpg alt=/images/2018_05_19_17_45_14_584x314.jpg></p><h3 id=push-images>Push images</h3><p>upload the portus.crt to remote machine(kismatic deployment node):</p><pre><code># scp ./portus.crt  kkkkk@192.192.189.1:/home/kkkkk/
-root@registry3:~/Portus/examples/compose/secrets# pwd
-/home/vagrant/Portus/examples/compose/secrets
-</code></pre><p>Add the crt file into your system folder and trust this file, take ArchLinux
-for example:</p><pre><code>$ sudo cp portus.crt /etc/ca-certificates/trust-source/anchors/portus.xxxx.com.crt
-$ sudo update-ca-trust
-$ sudo trust extract-compat
-$ sudo systemctl restart docker
-$ sudo docker login portus.xxxx.com:5000
-$ sudo docker login portus.xxxx.com
-Username: kismatic
-Password: 
-WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
-Configure a credential helper to remove this warning. See
-https://docs.docker.com/engine/reference/commandline/login/#credentials-store
-
-Are you sure you want to proceed? [y/N] y
-Login Succeeded
-</code></pre><p>kismatic configuration items:</p><pre><code># vim kismatic-cluster.yaml
-docker_registry:
-
-  # IP or hostname and port for your registry.
-  server: &quot;portus.xxxx.com:5000/kismatic110&quot;
-
-  # Absolute path to the certificate authority that should be trusted when
-  # connecting to your registry.
-  CA: &quot;/home/xxxxx/portus.xxxx.com.crt&quot;
-
-  # Leave blank for unauthenticated access.
-  username: &quot;kismatic&quot;
-
-  # Leave blank for unauthenticated access.
-  password: &quot;xxxxxxxx&quot;
-# ./kismatic seed-registry --verbose
-</code></pre><p>Now you will see the output for uploading:</p><p><img src=/images/2018_05_19_18_07_42_537x460.jpg alt=/images/2018_05_19_18_07_42_537x460.jpg></p><p>namespace for kismatic110:</p><p><img src=/images/2018_05_19_18_08_08_881x445.jpg alt=/images/2018_05_19_18_08_08_881x445.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/64/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/64/>64</a></li><li class="page-item active"><a class=page-link href=/page/65/>65</a></li><li class=page-item><a class=page-link href=/page/66/>66</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/228/>228</a></li><li class=page-item><a href=/page/66/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/228/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/64/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/64/>64</a></li><li class="page-item active"><a class=page-link href=/page/65/>65</a></li><li class=page-item><a class=page-link href=/page/66/>66</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/229/>229</a></li><li class=page-item><a href=/page/66/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/229/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
