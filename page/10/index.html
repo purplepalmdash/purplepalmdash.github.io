@@ -366,6 +366,43 @@ its mainboard:   https://www.supermicro.com/manuals/motherboard/H13/MNL-2627.pdf
 dnf install docker-ce docker-ce-cli containerd.io
 </code></pre><h3 id=83-nomachine-issue>83. nomachine issue</h3><p>solved on nvidia machine via:</p><pre><code> $HOME/.nx/config/player.cfg and set the configuration key “Enable hardware accelerated decoding” to “disabled”. 
 </code></pre><h3 id=84-route-add--net>84. route add -net</h3><p>via:</p><pre><code>route add -net 172.23.0.0/16 gw 192.168.1.33
+</code></pre><h3 id=85-bridge-example>85. bridge example</h3><p>via:</p><pre><code>idv@idv-VTE510:~$ cd /etc/netplan/
+idv@idv-VTE510:/etc/netplan$ ls
+01-network-manager-all.yaml  01-network-manager-all.yaml.orig
+idv@idv-VTE510:/etc/netplan$ cat 01-network-manager-all.yaml
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: networkd
+
+  ethernets:
+    enp1s0:
+      dhcp4: false 
+      dhcp6: false 
+
+  bridges:
+    br0:
+      interfaces: [enp1s0]
+      addresses: [192.168.1.239/24]
+      # gateway4 is deprecated, use routes instead
+      routes:
+      - to: default
+        via: 192.168.1.1
+        metric: 100
+        on-link: true
+      mtu: 1500
+      nameservers:
+        addresses: [8.8.8.8]
+      parameters:
+        stp: true
+        forward-delay: 4
+      dhcp4: no
+      dhcp6: no
+</code></pre><p>Thus you will have your br0 setup.</p><h3 id=86-qemu-tap-setup>86. qemu tap setup</h3><p>create a tap0 via:</p><pre><code>$ sudo tunctl -t tap0 -u `whoami`
+Add tap0 to bridge
+$ sudo brctl addif br0 tap0
+$ sudo ifconfig tap0 up
+</code></pre><p>Start the qemu instance via adding following guest network setting:</p><pre><code>-netdev tap,id=mynet0,ifname=tap0,script=no,downscript=no -device e1000,netdev=mynet0,mac=52:55:00:d1:55:01
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/08/raspberrypi_pkvm_workingtips/>RaspberryPI_PKVM_WorkingTips</a></h1><span class=post-date>Sep 8, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=flash-aosp-13-images>Flash aosp 13 images</h3><p>Image download URL:<br><code>https://konstakang.com/devices/rpi4/AOSP13/</code></p><p>Flash it into rpi 4b.</p><h3 id=pkvm-kernelimages>pkvm kernel/images</h3><p>Download alpine kernel/images from(<code>https://www.worldofgh0st.com/blog/</code>):</p><p><code>https://www.worldofgh0st.com/wp-content/uploads/2022/09/KVM-Linux.zip</code></p><p>adb push them to <code>/data/local/tmp</code>.</p><h3 id=start-crosvm-machine>Start crosvm machine</h3><p>adb root and login with adb shell:</p><pre><code>➜  Downloads adb -s 192.168.1.114:5555 root 
 restarting adbd as root
 ➜  Downloads adb -s 192.168.1.114:5555 shell
