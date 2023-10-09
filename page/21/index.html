@@ -1,5 +1,85 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/09/02/lxcbasedandroid/>LXCBasedAndroid</a></h1><span class=post-date>Sep 2, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=references>References</h3><p>Refers to :<br><a href=https://github.com/elliott-wen/anbox-direct-gpu-access>https://github.com/elliott-wen/anbox-direct-gpu-access</a></p><p>This project could run android in lxc, with a modified UI for accessing the android UI.</p><h3 id=environment>Environment</h3><p>Hardware and OS information is listed as:</p><pre><code># cat /proc/cpuinfo | grep 'model name'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/09/09/workingtipsonsg1passthrough/>WorkingTipsOnsg1Passthrough</a></h1><span class=post-date>Sep 9, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>透传sg1卡给虚拟机，同时支撑多个环境。</p><h3 id=环境>环境</h3><p>物理机: <code>192.168.89.108</code>, 待开辟虚拟机<code>192.168.89.23~27</code>.</p><pre><code>[root@intel ~]# cat /etc/redhat-release 
+CentOS Linux release 7.9.2009 (Core)
+[root@intel ~]# uname -a
+Linux intel 4.14.105-6477750+ #1 SMP Mon May 17 10:31:49 CST 2021 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre><p>需透传的卡信息(<code>8086:4907</code>):</p><pre><code>[root@intel ~]# lspci -nn | grep -i vga
+0000:05:00.0 VGA compatible controller [0300]: ASPEED Technology, Inc. ASPEED Graphics Family [1a03:2000] (rev 41)
+0000:b3:00.0 VGA compatible controller [0300]: Intel Corporation Device [8086:4907] (rev 01)
+0000:b8:00.0 VGA compatible controller [0300]: Intel Corporation Device [8086:4907] (rev 01)
+0000:bd:00.0 VGA compatible controller [0300]: Intel Corporation Device [8086:4907] (rev 01)
+0000:c2:00.0 VGA compatible controller [0300]: Intel Corporation Device [8086:4907] (rev 01)
+</code></pre><h3 id=开启vfio>开启vfio</h3><p>修改内核参数并重启:</p><pre><code># vim /etc/default/grub
+...
+GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rhgb quiet i915.force_probe=* modprobe.blacklist=ast,snd_hda_intel i915.enable_guc=2 intel_iommu=on vfio-pci.ids=8086:4907&quot;
+...
+修改modprobe.d规则:     
+
+</code></pre><h1 id=vim-etcmodprobedvfioconf>vim /etc/modprobe.d/vfio.conf</h1><p>options vfio-pci ids=8086:4907</p><pre><code>更新grub:    
+
+</code></pre><h1 id=grub2-mkconfig--o-bootefieficentosgrubcfg>grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg</h1><pre><code>
+### 配置网桥
+安装:   
+
+</code></pre><h1 id=yum-install--y-bridge-utils>yum install -y bridge-utils</h1><pre><code>
+
+### Ubuntu20.04 changes
+Switch back to Ubuntu20.04 then do following:    
+
+</code></pre><p>$ sudo vim /etc/modprobe.d/vfio.conf
+$ sudo systemctl set-default multi-user
+Created symlink /etc/systemd/system/default.target → /lib/systemd/system/multi-user.target.
+$ sudo reboot</p><p>Change the</p><pre><code>$ sudo vim /etc/initramfs-tools/scripts/init-top/vfio.sh
+#!/bin/sh
+
+PREREQ=&quot;&quot;
+
+prereqs()
+{
+   echo &quot;$PREREQ&quot;
+}
+
+case $1 in
+prereqs)
+   prereqs
+   exit 0
+   ;;
+esac
+
+for dev in 0000:b3:00.0 0000:b8:00.0 0000:bd:00.0 0000:c2:00.0
+do 
+ echo &quot;vfio-pci&quot; &gt; /sys/bus/pci/devices/$dev/driver_override 
+ echo &quot;$dev&quot; &gt; /sys/bus/pci/drivers/vfio-pci/bind 
+done
+
+exit 0
+
+
+$ sudo chmod +x /etc/initramfs-tools/scripts/init-top/vfio.sh
+$ sudo vim /etc/initramfs-tools/modules
+  And add the following lines:
+  options kvm ignore_msrs=1
+  vfio
+  vfio_iommu_type1
+  vfio_pci
+  vfio_virqfd
+</code></pre><p>Update the initramfs:</p><pre><code># update-initramfs -c -k all
+</code></pre><p>Examine the vfio driver usage(before vfio):</p><pre><code>lspci -v -s 0000:b8:00.0
+0000:b8:00.0 VGA compatible controller: Intel Corporation Device 4907 (rev 01) (prog-if 00 [VGA controller])
+	Subsystem: Hangzhou H3C Technologies Co., Ltd. Device 4000
+	Flags: bus master, fast devsel, latency 0, IRQ 892, NUMA node 1
+	Memory at e7000000 (64-bit, non-prefetchable) [size=16M]
+	Memory at 386c00000000 (64-bit, prefetchable) [size=8G]
+	Expansion ROM at e8000000 [disabled] [size=2M]
+	Capabilities: [40] Vendor Specific Information: Len=0c &lt;?&gt;
+	Capabilities: [70] Express Endpoint, MSI 00
+	Capabilities: [ac] MSI: Enable+ Count=1/1 Maskable+ 64bit+
+	Capabilities: [d0] Power Management version 3
+	Capabilities: [100] Latency Tolerance Reporting
+	Kernel driver in use: i915
+	Kernel modules: i915
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/09/02/lxcbasedandroid/>LXCBasedAndroid</a></h1><span class=post-date>Sep 2, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=references>References</h3><p>Refers to :<br><a href=https://github.com/elliott-wen/anbox-direct-gpu-access>https://github.com/elliott-wen/anbox-direct-gpu-access</a></p><p>This project could run android in lxc, with a modified UI for accessing the android UI.</p><h3 id=environment>Environment</h3><p>Hardware and OS information is listed as:</p><pre><code># cat /proc/cpuinfo | grep 'model name'
 model name	: Intel(R) Core(TM) i5-8265UC CPU @ 1.60GHz
 $ free -m
               total        used        free      shared  buff/cache   available
@@ -210,168 +290,4 @@ Swap:             1           0           1
 </code></pre><h3 id=steps>Steps</h3><p>Steps:</p><pre><code># mkdir IntelAndroid
 # tar xzvf xxxxxxxxxxxx.tar.gz
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/08/17/workingtipsonopenwrtcrossgfw/>WorkingTipsOnOpenWRTCrossGFW</a></h1><span class=post-date>Aug 17, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=硬件配置>硬件配置</h3><p>2核2G, 虚拟机,
-其磁盘文件为<code>openwrt-21.02.0-rc3-x86-64-generic-ext4-combined.img</code>.</p><h3 id=网络配置>网络配置</h3><p>隔离网络:</p><p><img src=/images/2021_08_17_13_57_12_682x128.jpg alt=/images/2021_08_17_13_57_12_682x128.jpg></p><p>NAT网络:</p><p><img src=/images/2021_08_17_13_57_12_682x128.jpg alt=/images/2021_08_17_13_57_12_682x128.jpg></p><p>启动完毕后，安装以下opkg包:</p><pre><code># opkg install redsocks
-</code></pre><p>OpenWRT中配置：</p><p>Wan:</p><p><img src=./images/2021_08_17_13_59_55_881x449.jpg alt=./images/2021_08_17_13_59_55_881x449.jpg></p><p><img src=/images/2021_08_17_14_03_07_467x160.jpg alt=/images/2021_08_17_14_03_07_467x160.jpg></p><p>LAN:</p><p><img src=/images/2021_08_17_14_00_17_604x551.jpg alt=/images/2021_08_17_14_00_17_604x551.jpg></p><p><img src=/images/2021_08_17_14_02_14_508x152.jpg alt=/images/2021_08_17_14_02_14_508x152.jpg></p><p>Enable dhcp server:</p><p><img src=/images/2021_08_17_14_02_34_580x398.jpg alt=/images/2021_08_17_14_02_34_580x398.jpg></p><p>Devices:</p><p><img src=/images/2021_08_17_14_03_45_953x307.jpg alt=/images/2021_08_17_14_03_45_953x307.jpg></p><p><img src=/images/2021_08_17_14_04_05_478x424.jpg alt=/images/2021_08_17_14_04_05_478x424.jpg></p><p><img src=/images/2021_08_17_14_04_21_610x382.jpg alt=/images/2021_08_17_14_04_21_610x382.jpg></p><p>DNS:</p><p><img src=/images/2021_08_17_14_04_47_552x604.jpg alt=/images/2021_08_17_14_04_47_552x604.jpg></p><h3 id=redsocks-items>redsocks items</h3><p><code>/etc/redsocks.conf</code>:</p><pre><code>base {
-        // debug: connection progress &amp; client list on SIGUSR1
-        log_debug = off;
-
-        // info: start and end of client session
-        log_info = on;
-
-        /* possible `log' values are:
-         *   stderr
-         *   &quot;file:/path/to/file&quot;
-         *   syslog:FACILITY  facility is any of &quot;daemon&quot;, &quot;local0&quot;...&quot;local7&quot;
-         */
-        // log = stderr;
-        // log = &quot;file:/path/to/file&quot;;
-        log = &quot;syslog:local7&quot;;
-
-        // detach from console
-        daemon = on;
-
-        /* Change uid, gid and root directory, these options require root
-         * privilegies on startup.
-         * Note, your chroot may requre /etc/localtime if you write log to syslog.
-         * Log is opened before chroot &amp; uid changing.
-         */
-        // user = nobody;
-        // group = nobody;
-        // chroot = &quot;/var/chroot&quot;;
-
-        /* possible `redirector' values are:
-         *   iptables   - for Linux
-         *   ipf        - for FreeBSD
-         *   pf         - for OpenBSD
-         *   generic    - some generic redirector that MAY work
-         */
-        redirector = iptables;
-}
-
-redsocks {
-        /* `local_ip' defaults to 127.0.0.1 for security reasons,
-         * use 0.0.0.0 if you want to listen on every interface.
-         * `local_*' are used as port to redirect to.
-         */
-        local_ip = 192.168.89.254;
-        local_port = 12345;
-
-        // listen() queue length. Default value is SOMAXCONN and it should be
-        // good enough for most of us.
-        // listenq = 128; // SOMAXCONN equals 128 on my Linux box.
-
-        // `max_accept_backoff` is a delay to retry `accept()` after accept
-        // failure (e.g. due to lack of file descriptors). It's measured in
-        // milliseconds and maximal value is 65535. `min_accept_backoff` is
-        // used as initial backoff value and as a damper for `accept() after
-        // close()` logic.
-        // min_accept_backoff = 100;
-        // max_accept_backoff = 60000;
-
-        // `ip' and `port' are IP and tcp-port of proxy-server
-        // You can also use hostname instead of IP, only one (random)
-        // address of multihomed host will be used.
-        ip = 10.50.208.147;
-        port = 8118;
-
-
-        // known types: socks4, socks5, http-connect, http-relay
-        type = socks5;
-
-        // login = &quot;foobar&quot;;
-        // password = &quot;baz&quot;;
-}
-
-redudp {
-        // `local_ip' should not be 0.0.0.0 as it's also used for outgoing
-        // packets that are sent as replies - and it should be fixed
-        // if we want NAT to work properly.
-        local_ip = 127.0.0.1;
-        local_port = 10053;
-        // `ip' and `port' of socks5 proxy server.
-        ip = 10.0.0.1;
-       port = 1080;
-        login = username;
-        password = pazzw0rd;
-
-        // redsocks knows about two options while redirecting UDP packets at
-        // linux: TPROXY and REDIRECT.  TPROXY requires more complex routing
-        // configuration and fresh kernel (&gt;= 2.6.37 according to squid
-        // developers[1]) but has hack-free way to get original destination
-        // address, REDIRECT is easier to configure, but requires `dest_ip` and
-        // `dest_port` to be set, limiting packet redirection to single
-        // destination.
-        // [1] http://wiki.squid-cache.org/Features/Tproxy4
-        dest_ip = 8.8.8.8;
-        dest_port = 53;
-
-        udp_timeout = 30;
-        udp_timeout_stream = 180;
-}
-
-dnstc {
-        // fake and really dumb DNS server that returns &quot;truncated answer&quot; to
-        // every query via UDP, RFC-compliant resolver should repeat same query
-        // via TCP in this case.
-        local_ip = 127.0.0.1;
-        local_port = 5300;
-}
-
-// you can add more `redsocks' and `redudp' sections if you need.
-</code></pre><p><code>/etc/init.d/redsocks</code> content:</p><pre><code>##### /etc/init.d/redsocks######
-#!/bin/sh /etc/rc.common
-# Copyright (C) 2007 OpenWrt.org
-
-START=90
-
-# check if configuration exists
-[ -e &quot;/etc/redsocks.conf&quot; ] || exit 0
-
-start() {
-        if [ -e &quot;/var/run/redsocks.pid&quot; ]; then
-                echo &quot;redsocks is already running&quot;
-                exit 0
-        fi
-
-        /bin/echo -n &quot;running redsocks ...&quot;
-
-        # startup the safety-wrapper for the daemon
-        /usr/sbin/redsocks -p /var/run/redsocks.pid
-
-        /bin/echo &quot; done&quot;
-}
-
-stop() {
-        if [ ! -e &quot;/var/run/redsocks.pid&quot; ]; then
-                echo &quot;redsocks is not running&quot;
-                exit 0
-        fi
-
-        /bin/echo -n &quot;stopping redsocks ...&quot;
-
-        # kill the process
-        /bin/kill $(cat /var/run/redsocks.pid)
-        rm /var/run/redsocks.pid
-
-        echo &quot; done&quot;
-}
-
-</code></pre><p>Iptables rules:</p><pre><code>iptables -t nat -N REDSOCKS
-# Ignore LANs IP address
-iptables -t nat -A REDSOCKS -d 0.0.0.0/8 -j RETURN
-iptables -t nat -A REDSOCKS -d 10.0.0.0/8 -j RETURN
-iptables -t nat -A REDSOCKS -d 127.0.0.0/8 -j RETURN
-iptables -t nat -A REDSOCKS -d 169.254.0.0/16 -j RETURN
-iptables -t nat -A REDSOCKS -d 172.16.0.0/12 -j RETURN
-iptables -t nat -A REDSOCKS -d 192.168.0.0/16 -j RETURN
-iptables -t nat -A REDSOCKS -d 224.0.0.0/4 -j RETURN
-iptables -t nat -A REDSOCKS -d 240.0.0.0/4 -j RETURN
-# Anything else should be redirected to redsocks's local port
-iptables -t nat -A REDSOCKS -p tcp -j REDIRECT --to-ports 12345
-iptables -t nat -I zone_lan_prerouting -j REDSOCKS
-</code></pre><p>Then with a reverse proxy you could cross gfw.<br>Reverse connect:</p><p>Internet machine(with 53 as its dns server):</p><pre><code>ssh -o GatewayPorts=true -f -N -T -R *:18888:localhost:18888 docker@10.xxxxx
-ssh -o GatewayPorts=true -f -N -T -R *:8118:10.10.3.19:1080 docker@10.xxxxxx
-sudo socat tcp-listen:18888,reuseaddr,fork udp:127.0.0.1:53
-</code></pre><p>Intranet machine:</p><pre><code>socat -T15 udp4-recvfrom:53,bind=10.xxx.xxx.xx,fork tcp:localhost:18888
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/20/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/20/>20</a></li><li class="page-item active"><a class=page-link href=/page/21/>21</a></li><li class=page-item><a class=page-link href=/page/22/>22</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/229/>229</a></li><li class=page-item><a href=/page/22/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/229/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
