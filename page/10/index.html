@@ -422,6 +422,8 @@ Add tap0 to bridge
 $ sudo brctl addif br0 tap0
 $ sudo ifconfig tap0 up
 </code></pre><p>Start the qemu instance via adding following guest network setting:</p><pre><code>-netdev tap,id=mynet0,ifname=tap0,script=no,downscript=no -device e1000,netdev=mynet0,mac=52:55:00:d1:55:01
+</code></pre><h3 id=87-du-with-hidden-directorys>87. du with hidden directorys</h3><p>via:</p><pre><code>du -hs .[^.]*
+</code></pre><h3 id=88-meson-build-prefix>88. meson build prefix</h3><p>via:</p><pre><code>meson -Dprefix=/usr ......
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/08/raspberrypi_pkvm_workingtips/>RaspberryPI_PKVM_WorkingTips</a></h1><span class=post-date>Sep 8, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=flash-aosp-13-images>Flash aosp 13 images</h3><p>Image download URL:<br><code>https://konstakang.com/devices/rpi4/AOSP13/</code></p><p>Flash it into rpi 4b.</p><h3 id=pkvm-kernelimages>pkvm kernel/images</h3><p>Download alpine kernel/images from(<code>https://www.worldofgh0st.com/blog/</code>):</p><p><code>https://www.worldofgh0st.com/wp-content/uploads/2022/09/KVM-Linux.zip</code></p><p>adb push them to <code>/data/local/tmp</code>.</p><h3 id=start-crosvm-machine>Start crosvm machine</h3><p>adb root and login with adb shell:</p><pre><code>➜  Downloads adb -s 192.168.1.114:5555 root 
 restarting adbd as root
 ➜  Downloads adb -s 192.168.1.114:5555 shell
