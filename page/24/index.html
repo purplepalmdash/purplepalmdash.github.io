@@ -1,5 +1,121 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/07/04/workingtipsonlxdjuju/>WorkingTipsOnLXDJuju</a></h1><span class=post-date>Jul 4, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=commands>Commands</h3><p>Bootstrap via:</p><pre><code>test@edge5:~$ juju bootstrap localhost overlord
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/07/06/workingtipsonmultiseat/>WorkingTipsOnMultiSeat</a></h1><span class=post-date>Jul 6, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>default seat:</p><pre><code># loginctl seat-status seat0&gt;seat0.txt
+# cat seat0.txt
+seat0
+	Sessions: *1
+	 Devices:
+		  ├─/sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input1
+		  │ input:input1 &quot;Power Button&quot;
+		  ├─/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/LNXVIDEO:00/input/input14
+		  │ input:input14 &quot;Video Bus&quot;
+		  ├─/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input0
+		  │ input:input0 &quot;Power Button&quot;
+		  ├─/sys/devices/pci0000:00/0000:00:02.0/drm/card0
+		  │ [MASTER] drm:card0
+		  │ ├─/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-DP-1
+		  │ │ [MASTER] drm:card0-DP-1
+		  │ ├─/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-HDMI-A-1
+		  │ │ [MASTER] drm:card0-HDMI-A-1
+		  │ ├─/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-HDMI-A-2
+		  │ │ [MASTER] drm:card0-HDMI-A-2
+		  │ └─/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1
+		  │   [MASTER] drm:card0-eDP-1
+		  │   └─/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1/intel_backlight
+		  │     backlight:intel_backlight
+		  ├─/sys/devices/pci0000:00/0000:00:02.0/graphics/fb0
+		  │ graphics:fb0 &quot;i915drmfb&quot;
+		  ├─/sys/devices/pci0000:00/0000:00:03.0/sound/card1
+		  │ sound:card1 &quot;HDMI&quot;
+		  │ ├─/sys/devices/pci0000:00/0000:00:03.0/sound/card1/input16
+		  │ │ input:input16 &quot;HDA Intel HDMI HDMI/DP,pcm=3&quot;
+		  │ ├─/sys/devices/pci0000:00/0000:00:03.0/sound/card1/input17
+		  │ │ input:input17 &quot;HDA Intel HDMI HDMI/DP,pcm=7&quot;
+		  │ ├─/sys/devices/pci0000:00/0000:00:03.0/sound/card1/input18
+		  │ │ input:input18 &quot;HDA Intel HDMI HDMI/DP,pcm=8&quot;
+		  │ ├─/sys/devices/pci0000:00/0000:00:03.0/sound/card1/input19
+		  │ │ input:input19 &quot;HDA Intel HDMI HDMI/DP,pcm=9&quot;
+		  │ └─/sys/devices/pci0000:00/0000:00:03.0/sound/card1/input20
+		  │   input:input20 &quot;HDA Intel HDMI HDMI/DP,pcm=10&quot;
+		  ├─/sys/devices/pci0000:00/0000:00:14.0/usb2
+		  │ usb:usb2
+		  │ └─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-3
+		  │   usb:2-3
+		  │   └─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.2/0003:046D:C52B.0003/0003:046D:404D.0004/input/input15
+		  │     input:input15 &quot;Logitech K400 Plus&quot;
+		  │     ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.2/0003:046D:C52B.0003/0003:046D:404D.0004/input/input15/input15::capslock
+		  │     │ leds:input15::capslock
+		  │     ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.2/0003:046D:C52B.0003/0003:046D:404D.0004/input/input15/input15::compose
+		  │     │ leds:input15::compose
+		  │     ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.2/0003:046D:C52B.0003/0003:046D:404D.0004/input/input15/input15::kana
+		  │     │ leds:input15::kana
+		  │     ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.2/0003:046D:C52B.0003/0003:046D:404D.0004/input/input15/input15::numlock
+		  │     │ leds:input15::numlock
+		  │     └─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-3/2-3:1.2/0003:046D:C52B.0003/0003:046D:404D.0004/input/input15/input15::scrolllock
+		  │       leds:input15::scrolllock
+		  ├─/sys/devices/pci0000:00/0000:00:14.0/usb3
+		  │ usb:usb3
+		  ├─/sys/devices/pci0000:00/0000:00:1b.0/sound/card0
+		  │ sound:card0 &quot;PCH&quot;
+		  │ └─/sys/devices/pci0000:00/0000:00:1b.0/sound/card0/input8
+		  │   input:input8 &quot;HDA Intel PCH Headphone&quot;
+		  ├─/sys/devices/pci0000:00/0000:00:1d.0/usb1
+		  │ usb:usb1
+		  │ └─/sys/devices/pci0000:00/0000:00:1d.0/usb1/1-1
+		  │   usb:1-1
+		  └─/sys/devices/platform/pcspkr/input/input7
+		    input:input7 &quot;PC Speaker&quot;
+</code></pre><p>找寻对应的口：</p><pre><code>/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1
+/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3
+
+/sys/devices/pci0000:00/0000:00:14.0/usb2/2-3
+
+/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-HDMI-A-1
+
+</code></pre><p>Attach:</p><pre><code># loginctl attach seat1  /sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1
+# loginctl attach seat1  /sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3
+➜  ~ loginctl seat-status seat1
+seat1
+	 Devices:
+		  ├─/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1
+		  │ [MASTER] drm:card0-eDP-1
+		  │ └─/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1/intel_backlight
+		  │   backlight:intel_backlight
+		  └─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3
+		    usb:2-2.3
+		    ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.0/0003:1A81:2019.0005/input/input10
+		    │ input:input10 &quot;G-Tech Fuhlen SM680 Mechanical Keyboard&quot;
+		    │ ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.0/0003:1A81:2019.0005/input/input10/input10::capslock
+		    │ │ leds:input10::capslock
+		    │ ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.0/0003:1A81:2019.0005/input/input10/input10::compose
+		    │ │ leds:input10::compose
+		    │ ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.0/0003:1A81:2019.0005/input/input10/input10::kana
+		    │ │ leds:input10::kana
+		    │ ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.0/0003:1A81:2019.0005/input/input10/input10::numlock
+		    │ │ leds:input10::numlock
+		    │ └─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.0/0003:1A81:2019.0005/input/input10/input10::scrolllock
+		    │   leds:input10::scrolllock
+		    ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.1/0003:1A81:2019.0006/input/input11
+		    │ input:input11 &quot;G-Tech Fuhlen SM680 Mechanical Keyboard Mouse&quot;
+		    ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.1/0003:1A81:2019.0006/input/input12
+		    │ input:input12 &quot;G-Tech Fuhlen SM680 Mechanical Keyboard&quot;
+		    ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.1/0003:1A81:2019.0006/input/input13
+		    │ input:input13 &quot;G-Tech Fuhlen SM680 Mechanical Keyboard Consumer Control&quot;
+		    ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.1/0003:1A81:2019.0006/input/input14
+		    │ input:input14 &quot;G-Tech Fuhlen SM680 Mechanical Keyboard System Control&quot;
+		    ├─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.2/0003:1A81:2019.0007/input/input16
+		    │ input:input16 &quot;G-Tech Fuhlen SM680 Mechanical Keyboard&quot;
+		    └─/sys/devices/pci0000:00/0000:00:14.0/usb2/2-2/2-2.3/2-2.3:1.3/0003:1A81:2019.0008/input/input17
+		      input:input17 &quot;G-Tech Fuhlen SM680 Mechanical Keyboard&quot;
+</code></pre><p>Verify:</p><pre><code>➜  ~ ls -l  /etc/udev/rules.d/
+total 12
+-rw-r--r-- 1 root root  76 Jul  6 06:22 72-seat-drm-pci-0000_00_02_0.rules
+-rw-r--r-- 1 root root  86 Jul  6 06:23 72-seat-usb-pci-0000_00_14_0-usb-0_2_3.rules
+-rw-r--r-- 1 root root 432 Aug 10  2020 99-kvmd.rules.pacsave
+
+</code></pre><p>Disable lxdm and testing:</p><pre><code># systemctl disable lxdm
+Removed /etc/systemd/system/display-manager.service.
+# reboot
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/07/04/workingtipsonlxdjuju/>WorkingTipsOnLXDJuju</a></h1><span class=post-date>Jul 4, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=commands>Commands</h3><p>Bootstrap via:</p><pre><code>test@edge5:~$ juju bootstrap localhost overlord
 Creating Juju controller &quot;overlord&quot; on localhost/localhost
 Looking for packaged Juju agent version 2.9.5 for amd64
 Located Juju agent version 2.9.5-ubuntu-amd64 at https://streams.canonical.com/juju/tools/agent/2.9.5/juju-2.9.5-ubuntu-amd64.tgz
@@ -518,43 +634,4 @@ test@router:/etc$ sudo chattr +i /etc/resolv.conf
 </code></pre><p>这里值得注意的是，redsocks需要配置为socks5代理才可以让本机访问到外面。</p><h3 id=udp转发>udp转发</h3><p>外部机器建立ssh隧道用于转发:</p><pre><code># ssh -o GatewayPorts=true -f -N -T -R \*:18888:localhost:18888 docker@10.xx.xx.xxx
 </code></pre><p>外部机器做udp到tcp的<code>socat</code>转发:</p><pre><code># sudo socat tcp-listen:18888,reuseaddr,fork udp:127.0.0.1:53
 </code></pre><p>内部机器做tcp到udp的<code>socat</code>转发:</p><pre><code># socat -T15 udp4-recvfrom:53,bind=10.xx.xxx.xxx,fork tcp:localhost:18888
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/06/25/makeipvsadmofflinerpms/>MakeipvsadmOfflineRPMs</a></h1><span class=post-date>Jun 25, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>现场测试时，测试人员报告在安装ipvsadm时，有包缺失现象。报错现象如下:</p><p><img src=/images/2021_06_26_06_58_40_903x356.jpg alt=/images/2021_06_26_06_58_40_903x356.jpg></p><p>原因是因为在安装ipvsadm时的libnl3依赖更新开始，客户安装的操作系统是centos7.2,而我们做包的系统是>centos7.5以后的，因而导致了libnl3-cli因libnl3的更新抱怨更新后确实依赖而不能进行安装。</p><p>解决方案：</p><p><img src=/images/2021_06_26_06_57_10_1704x154.jpg alt=/images/2021_06_26_06_57_10_1704x154.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/06/17/workingtipsonmacvlan/>WorkingtipsOnMacVlan</a></h1><span class=post-date>Jun 17, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=解决问题>解决问题</h3><p>LXD 的macvlan组网方式，共享与主机相同的地址段.</p><h3 id=环境>环境</h3><p>环境如下:</p><pre><code>lxd1 eth0 192.168.100.61
-lxd2 eth0 192.168.100.62
-lxd3 eth0 192.168.100.63
-</code></pre><p>创建出的<code>macvlan</code>的profile如下:</p><pre><code># lxc profile show macvlan
-config: {}
-description: Default LXD profile modified for using macvlan
-devices:
-  eth0:
-    nictype: macvlan
-    parent: eth0
-    type: nic
-name: macvlan
-</code></pre><p>在lxd2主机上创建实例并检查:</p><pre><code># lxc launch 48f7ccdc7b02 test1 --profile default --profile macvlan
-# lxc ls
-| test1 | RUNNING | 192.168.100.253 (eth0) |      | CONTAINER | 0         |
-# lxc exec test1 bash
-ping 192.168.100.61/63都可以
-无法ping 192.168.100.62
-</code></pre><p>同样在lxd1和lxd3上的容器实例亦无法ping通本机。</p><h3 id=workaround>workaround</h3><p>虽然macvlan无法Ping通物理机，因为这是由它的设计原理决定的。但是macvlan可以ping通其他的macvlan， 因而我们可以在主机上分别加上一个额外的macvlan专用来与本机上启动的Lxc容器通信：</p><p>以lxd2主机为例，新增一个<code>mynet</code>的macvlan网络设备，指定其地址为<code>192.168.100.72</code>, 而后添加路由，所有到达其产生的LXC容器实例的流量均经过该mynet设备转发:</p><pre><code>ip link add mynet link eth0 type macvlan mode bridge
-ip addr add 192.168.100.72 dev mynet
-ip link set mynet up
-ip route add 192.168.100.253 dev mynet
-</code></pre><p>创建完成后，ping本机上的test1容器(192.168.100.253):</p><pre><code>PING 192.168.100.253 (192.168.100.253) 56(84) bytes of data.
-64 bytes from 192.168.100.253: icmp_seq=1 ttl=64 time=0.088 ms
-</code></pre><p>进入容器后亦可ping通主机.</p><p>检查主机上新创建的设备及路由:</p><pre><code># ip addr show mynet
-5: mynet@eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/ether ba:2b:e7:86:33:9a brd ff:ff:ff:ff:ff:ff
-    inet 192.168.100.72/32 scope global mynet
-       valid_lft forever preferred_lft forever
-    inet6 fe80::b82b:e7ff:fe86:339a/64 scope link 
-       valid_lft forever preferred_lft forever
-# ip route 
-default via 192.168.100.1 dev eth0 proto static metric 100 
-10.230.202.0/24 dev lxdbr0 proto kernel scope link src 10.230.202.1 
-192.168.100.0/24 dev eth0 proto kernel scope link src 192.168.100.62 metric 100 
-192.168.100.253 dev mynet scope link 
-</code></pre><h3 id=todo>ToDO</h3><p>如果要用于生产环境的话，需要考虑：</p><pre><code>1. 自动化创建mynet设备并绑定一个额外的同网段IP地址。
-2. LXC实例创建后，自动在主机层面创建经由mynet设备的路由。
-3. LXC销毁后，自动删除该LXC IP对应的路由。
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/23/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/23/>23</a></li><li class="page-item active"><a class=page-link href=/page/24/>24</a></li><li class=page-item><a class=page-link href=/page/25/>25</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/229/>229</a></li><li class=page-item><a href=/page/25/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/229/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/06/25/makeipvsadmofflinerpms/>MakeipvsadmOfflineRPMs</a></h1><span class=post-date>Jun 25, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>现场测试时，测试人员报告在安装ipvsadm时，有包缺失现象。报错现象如下:</p><p><img src=/images/2021_06_26_06_58_40_903x356.jpg alt=/images/2021_06_26_06_58_40_903x356.jpg></p><p>原因是因为在安装ipvsadm时的libnl3依赖更新开始，客户安装的操作系统是centos7.2,而我们做包的系统是>centos7.5以后的，因而导致了libnl3-cli因libnl3的更新抱怨更新后确实依赖而不能进行安装。</p><p>解决方案：</p><p><img src=/images/2021_06_26_06_57_10_1704x154.jpg alt=/images/2021_06_26_06_57_10_1704x154.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/23/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/23/>23</a></li><li class="page-item active"><a class=page-link href=/page/24/>24</a></li><li class=page-item><a class=page-link href=/page/25/>25</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/229/>229</a></li><li class=page-item><a href=/page/25/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/229/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
