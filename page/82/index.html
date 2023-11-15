@@ -1,5 +1,324 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/07/31/readingtipsonlinuxsystemarchitecture/>ReadingTipsOnLinuxSystemArchitecture</a></h1><span class=post-date>Jul 31, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=on-this-book>On This Book</h3><p>Borrowed from lab, written via a janpanese author.<br><img src=/images/2017_07_31_09_20_33_1054x739.jpg alt=/images/2017_07_31_09_20_33_1054x739.jpg>
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/08/01/tipsonha/>TipsOnHA</a></h1><span class=post-date>Aug 1, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=network-preparation>Network Preparation</h3><p>libvirt network preparation:</p><pre><code>$ cat internal.xml
+&lt;network&gt;
+	&lt;name&gt;internal&lt;/name&gt;
+	&lt;bridge name='virbr8'/&gt;
+&lt;/network&gt;
+$ cat external.xml
+&lt;network&gt;
+	&lt;name&gt;external&lt;/name&gt;
+	&lt;bridge name='virbr9'/&gt;
+&lt;/network&gt;
+$ cat management.xml
+&lt;network&gt;
+	&lt;name&gt;management&lt;/name&gt;
+	&lt;bridge name='virbr7'/&gt;
+	&lt;ip address='192.168.3.1' netmask='255.255.255.0'&gt;
+	&lt;/ip&gt;
+&lt;/network&gt;
+$ cat heartbeat.xml
+&lt;network&gt;
+	&lt;name&gt;heartbeat&lt;/name&gt;
+	&lt;bridge name='virbr6'/&gt;
+&lt;/network&gt;
+</code></pre><p>Define all of the networking, take heartbeat networking for example:</p><pre><code>$ sudo virsh net-define heartbeat.xml
+$ sudo virsh net-autostart heartbeat
+$ sudo virsh net-start heartbeat
+</code></pre><h3 id=iscsi-node>iscsi node</h3><p>Create a new machine(192.168.122.200), CentOS6.9, use local iso for
+installation:</p><p>First you have to add one network card(192.168.3.200), and disable selinux,
+then you do following steps:</p><pre><code># yum install -y scsi-target-utils
+# mkdir -p /var/lib/tgtd/cluster01
+# cd /var/lib/tgtd/cluster01/
+# dd if=/dev/zero of=volume01.img bs=1M count=100
+# dd if=/dev/zero of=volume02.img bs=1M count=1000
+</code></pre><p>Edit the tgtd configuration:</p><pre><code># vim /etc/tgt/targets.conf
+&lt;target iqn.2011-10.com.example.kvmhost01:tgt01&gt;
+    backing-store /var/lib/tgtd/cluster01/volume01.img
+    backing-store /var/lib/tgtd/cluster01/volume02.img
+&lt;/target&gt;
+# chkconfig tgtd on
+# service tgtd start
+# tgt-admin -s
+# chkconfig iptables off
+# service iptables stop
+</code></pre><h3 id=node01node02>node01/node02</h3><p>Take node01 for example:</p><pre><code>[root@node01 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth1 
+DEVICE=eth1
+TYPE=Ethernet
+ONBOOT=yes
+NM_CONTROLLED=no
+BOOTPROTO=static
+IPADDR=192.168.3.201
+NETMASK=255.255.255.0
+
+[root@node01 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth2
+DEVICE=eth2
+TYPE=Ethernet
+ONBOOT=yes
+NM_CONTROLLED=no
+BOOTPROTO=static
+IPADDR=192.168.4.201
+NETMASK=255.255.255.0
+</code></pre><p>node02 for example:</p><pre><code>[root@node02 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth1 
+DEVICE=eth1
+TYPE=Ethernet
+ONBOOT=yes
+NM_CONTROLLED=no
+BOOTPROTO=static
+IPADDR=192.168.3.202
+NETMASK=255.255.255.0
+
+[root@node02 ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth2
+DEVICE=eth2
+TYPE=Ethernet
+ONBOOT=yes
+NM_CONTROLLED=no
+BOOTPROTO=static
+IPADDR=192.168.4.202
+NETMASK=255.255.255.0
+</code></pre><p>Define its <code>/etc/hosts</code>:</p><pre><code>127.0.0.1   localhost
+192.168.122.201	node01
+192.168.122.202	node02
+192.168.3.201	node01m
+192.168.3.202	node02m
+192.168.4.201	node01h
+192.168.4.202	node02h
+</code></pre><p>Also disable iptables.</p><p>ssh-keygen for ssh key-pairs and let them login without password:</p><pre><code># ssh-keygen -N &quot;&quot;
+# ssh-copy-id node01
+# ssh-copy-id node02
+</code></pre><h3 id=find-iscsi>Find iscsi</h3><p>In node01/node02, do following:</p><pre><code># yum install -y iscsi-initiator-utils
+# chkconfig iscsi on
+# iscsiadm -m discovery --type sendtargets --portal 192.168.3.200
+# service iscsi start
+</code></pre><p>The newly added disk are named as <code>/dev/sda</code>, <code>/dev/sdb</code>.</p><h3 id=ha-add-on>HA Add-On</h3><p>In node01/node02, install the package group via:</p><pre><code># yum groupinstall -y &quot;High Availability&quot;
+</code></pre><p>Start ricci service, and set the service status for cman and rgmanager:</p><pre><code># chkconfig ricci on; service ricci start
+# passwd ricci
+# chkconfig cman off; chkconfig rgmanager off
+</code></pre><p>Install httpd in both node:</p><pre><code># yum install -y httpd
+</code></pre><h3 id=node01>Node01</h3><p>Quorum Disk:</p><pre><code>[root@node01 ~]# mkqdisk -c /dev/sda -l qdisk01
+mkqdisk v3.0.12.1
+
+Writing new quorum disk label 'qdisk01' to /dev/sda.
+WARNING: About to destroy all data on /dev/sda; proceed [N/y] ? y
+Initializing status block for node 1...
+Initializing status block for node 2...
+Initializing status block for node 3...
+Initializing status block for node 4...
+Initializing status block for node 5...
+Initializing status block for node 6...
+Initializing status block for node 7...
+Initializing status block for node 8...
+Initializing status block for node 9...
+Initializing status block for node 10...
+Initializing status block for node 11...
+Initializing status block for node 12...
+Initializing status block for node 13...
+Initializing status block for node 14...
+Initializing status block for node 15...
+Initializing status block for node 16...
+</code></pre><p>Then format the <code>/dev/sdb</code>, and use this filesystem for saving the apache
+content:</p><pre><code># mkfs.ext4 /dev/sdb
+# mount /dev/sdb /mnt
+# cp -ar /var/www/* /mnt/
+# umount /mnt
+</code></pre><h3 id=cluster-configuration>Cluster Configuration</h3><p><code>/etc/cluster/cluster.conf</code>:</p><pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;cluster config_version=&quot;1&quot; name=&quot;cluster01&quot;&gt;
+  &lt;cman expected_votes=&quot;3&quot;/&gt;
+
+  &lt;clusternodes&gt;
+    &lt;clusternode name=&quot;node01h&quot; nodeid=&quot;1&quot; votes=&quot;1&quot;&gt;
+      &lt;fence&gt;   
+        &lt;method name=&quot;virsh_reboot&quot;&gt;
+          &lt;device name=&quot;kvmhost01&quot; port=&quot;node1&quot;/&gt;
+        &lt;/method&gt;     
+      &lt;/fence&gt;
+    &lt;/clusternode&gt;
+
+    &lt;clusternode name=&quot;node02h&quot; nodeid=&quot;2&quot; votes=&quot;1&quot;&gt;
+      &lt;fence&gt;   
+        &lt;method name=&quot;virsh_reboot&quot;&gt;
+          &lt;device name=&quot;kvmhost01&quot; port=&quot;node2&quot;/&gt;
+        &lt;/method&gt;     
+      &lt;/fence&gt;
+    &lt;/clusternode&gt;
+  &lt;/clusternodes&gt;
+
+  &lt;totem token=&quot;20000&quot;/&gt;
+  &lt;quorumd interval=&quot;1&quot; label=&quot;qdisk01&quot; master_wins=&quot;1&quot; tko=&quot;10&quot; votes=&quot;1&quot;/&gt;
+
+  &lt;fencedevices&gt;
+    &lt;fencedevice name=&quot;kvmhost01&quot; agent=&quot;fence_virsh&quot; ipaddr=&quot;192.168.3.1&quot; login=&quot;root&quot; passwd=&quot;gwoguwoguoeg&quot; option=&quot;reboot&quot;/&gt;
+  &lt;/fencedevices&gt;
+
+  &lt;rm&gt;
+    &lt;failoverdomains&gt;
+      &lt;failoverdomain name=&quot;dom01&quot;&gt;
+        &lt;failoverdomainnode name=&quot;node01h&quot;/&gt;
+        &lt;failoverdomainnode name=&quot;node02h&quot;/&gt;
+      &lt;/failoverdomain&gt;
+    &lt;/failoverdomains&gt;
+
+    &lt;service autostart=&quot;0&quot; domain=&quot;dom01&quot; name=&quot;service01&quot;&gt;
+      &lt;ip address=&quot;192.168.122.209&quot; monitor_link=&quot;on&quot;&gt;
+        &lt;fs name=&quot;webdata01&quot; device=&quot;/dev/sdb&quot; fstype=&quot;ext4&quot; mountpoint=&quot;/var/www&quot; self_fence=&quot;1&quot;&gt;
+          &lt;apache name=&quot;webserver01&quot;/&gt;
+        &lt;/fs&gt;     
+      &lt;/ip&gt; 
+    &lt;/service&gt;
+  &lt;/rm&gt;
+&lt;/cluster&gt;
+
+</code></pre><p>Save the configuration and scp it to node02:</p><pre><code># ccs_config_validate
+# scp ./cluster.conf  node02:/etc/cluster/
+</code></pre><p>Start service/Stop Service scripts:</p><pre><code>[root@node01 ~]# cd /usr/local/bin/
+[root@node01 bin]# ls
+clstart  clstart_all  clstop  clstop_all
+[root@node01 bin]# pwd
+/usr/local/bin
+[root@node01 bin]# cat clstart
+#!/bin/sh
+service cman start
+service rgmanager start
+[root@node01 bin]# cat clstart_all 
+#!/bin/sh
+ssh node01 /usr/local/bin/clstart &amp;
+ssh node02 /usr/local/bin/clstart &amp;
+wait
+[root@node01 bin]# cat clstop
+#!/bin/sh
+service rgmanager stop
+service cman stop
+[root@node01 bin]# cat clstop_all
+#!/bin/sh
+ssh node01 /usr/local/bin/clstop &amp;
+ssh node02 /usr/local/bin/clstop &amp;
+wait
+</code></pre><p>Now start the service:</p><pre><code># clstart_all
+# clusvcadm -e service01 -m node01h
+</code></pre><p>View the service status:</p><pre><code>[root@node01 bin]# clustat
+Cluster Status for cluster01 @ Tue Aug  1 15:57:18 2017
+Member Status: Quorate
+
+ Member Name                                                     ID   Status
+ ------ ----                                                     ---- ------
+ node01h                                                             1 Online, Local, rgmanager
+ node02h                                                             2 Online, rgmanager
+ /dev/block/8:0                                                      0 Online, Quorum Disk
+
+ Service Name                                                     Owner (Last)                                                     State         
+ ------- ----                                                     ----- ------                                                     -----         
+ service:service01                                                node01h                                                          started  
+</code></pre><p>View <code>ip addr</code> on node01, you could see the 2 address attached to eth0.</p><h3 id=error>Error</h3><p>Emulate an error via:</p><pre><code># pkill -9 corosync
+</code></pre><p>Now the node2 will try to detect the heartbeat, if not, it will finally reboot the
+node01.</p><pre><code>$ tail -f /var/log/message
+Aug  1 15:58:21 node02 corosync[4089]:   [CMAN  ] quorum device re-registered
+Aug  1 15:58:21 node02 corosync[4089]:   [QUORUM] Members[2]: 1 2
+Aug  1 15:58:21 node02 qdiskd[4148]: Assuming master role
+Aug  1 15:58:21 node02 qdiskd[4148]: Writing eviction notice for node 1
+Aug  1 15:58:22 node02 qdiskd[4148]: Node 1 evicted
+Aug  1 15:58:24 node02 corosync[4089]:   [TOTEM ] A processor failed, forming new configuration.
+Aug  1 15:58:26 node02 corosync[4089]:   [QUORUM] Members[1]: 2
+Aug  1 15:58:26 node02 corosync[4089]:   [TOTEM ] A processor joined or left the membership and a new membership was formed.
+Aug  1 15:58:26 node02 kernel: dlm: closing connection to node 1
+Aug  1 15:58:26 node02 corosync[4089]:   [CPG   ] chosen downlist: sender r(0) ip(192.168.4.202) ; members(old:2 left:1)
+Aug  1 15:58:26 node02 corosync[4089]:   [MAIN  ] Completed service synchronization, ready to provide service.
+Aug  1 15:58:26 node02 rgmanager[4511]: State change: node01h DOWN
+Aug  1 15:58:26 node02 fenced[4332]: fencing node node01h
+Aug  1 15:58:29 node02 fenced[4332]: fence node01h success
+Aug  1 15:58:29 node02 rgmanager[4511]: Taking over service service:service01 from down member node01h
+Aug  1 15:58:29 node02 rgmanager[5640]: [ip] Adding IPv4 address 192.168.122.209/24 to eth0
+Aug  1 15:58:33 node02 rgmanager[5755]: [fs] mounting /dev/sdb on /var/www
+Aug  1 15:58:33 node02 kernel: EXT4-fs (sdb): recovery complete
+Aug  1 15:58:33 node02 kernel: EXT4-fs (sdb): mounted filesystem with ordered data mode. Opts: 
+Aug  1 15:58:33 node02 rgmanager[5923]: [apache] Checking Existence Of File /var/run/cluster/apache/apache:webserver01.pid [apache:webserver01] &gt; Failed
+Aug  1 15:58:33 node02 rgmanager[5945]: [apache] Monitoring Service apache:webserver01 &gt; Service Is Not Running
+Aug  1 15:58:33 node02 rgmanager[5967]: [apache] Starting Service apache:webserver01
+Aug  1 15:58:34 node02 rgmanager[4511]: Service service:service01 started
+</code></pre><p>After reboot, in node01 run <code>clstart</code> to start the cluster.</p><p>Recover the service to node01:</p><pre><code>[root@node01 ~]# clustat 
+Cluster Status for cluster01 @ Tue Aug  1 16:02:23 2017
+Member Status: Quorate
+
+ Member Name                                                     ID   Status
+ ------ ----                                                     ---- ------
+ node01h                                                             1 Online, Local, rgmanager
+ node02h                                                             2 Online, rgmanager
+ /dev/block/8:0                                                      0 Online, Quorum Disk
+
+ Service Name                                                     Owner (Last)                                                     State         
+ ------- ----                                                     ----- ------                                                     -----         
+ service:service01                                                node02h                                                          started       
+[root@node01 ~]# clusvcadm -r service01 -m node01h
+Trying to relocate service:service01 to node01h...Success
+service:service01 is now running on node01h
+[root@node01 ~]# clustat 
+Cluster Status for cluster01 @ Tue Aug  1 16:03:38 2017
+Member Status: Quorate
+
+ Member Name                                                     ID   Status
+ ------ ----                                                     ---- ------
+ node01h                                                             1 Online, Local, rgmanager
+ node02h                                                             2 Online, rgmanager
+ /dev/block/8:0                                                      0 Online, Quorum Disk
+
+ Service Name                                                     Owner (Last)                                                     State         
+ ------- ----                                                     ----- ------                                                     -----         
+ service:service01                                                node01h                                                          started 
+</code></pre><h3 id=configuration-modify>Configuration Modify</h3><p>Use <code>cman_tool version -r</code> command. but not all of the services could be applied
+in this way.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/07/31/usinglocalrdesktopforacrossingsomething/>UsingLocalRdesktopForAcrossingSomething</a></h1><span class=post-date>Jul 31, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=mac-address-spoofing>MAC Address Spoofing</h3><p>First you have to cheat your remote machine via changing your own MAC address
+from the origin one to the remote box address.</p><p>There are many methods in:<br><a href=https://wiki.archlinux.org/index.php/MAC_address_spoofing>https://wiki.archlinux.org/index.php/MAC_address_spoofing</a></p><p>My method is via changing the systemd-networkd:</p><pre><code>$ pwd
+/etc/systemd/network
+$ cat 00-default.link 
+[Match]
+MACAddress=xx:xx:xx:xx:xx
+
+[Link]
+MACAddress=xx:xx:xx:xx:xx
+NamePolicy=kernel database onboard slot path
+</code></pre><p>After your changing, reboot your system.</p><h3 id=iptables-changing>Iptables Changing</h3><p>Add following lines into my own iptables rules:</p><pre><code>sudo iptables -A OUTPUT -o br0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A OUTPUT -o br0 -p tcp --dport 3389 -j ACCEPT
+sudo iptables -A OUTPUT -o br0 -j DROP
+sudo iptables -A OUTPUT -o enp0s25 -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A OUTPUT -o enp0s25 -p tcp --dport 3389 -j ACCEPT
+sudo iptables -A OUTPUT -o enp0s25 -j DROP
+sudo iptables -A INPUT -i br0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A INPUT -i br0 -p tcp --dport 3389 -j ACCEPT
+sudo iptables -A INPUT -i br0 -j DROP
+sudo iptables -A INPUT -i enp0s25 -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A INPUT -i enp0s25 -p tcp --dport 3389 -j ACCEPT
+sudo iptables -A INPUT -i enp0s25 -j DROP
+</code></pre><p>Now use the <code>rdesktop</code> for viewing the remote desktop, I could get in touch
+with the remote machine desktop, now I won&rsquo;t changing the screen for viewing
+the remote machine, saving many times.</p><h3 id=iptables-save-permenant>Iptables Save Permenant</h3><p>Edit the service definition files:</p><pre><code># vim /etc/iptables/iptables.rules
+*filter
+:INPUT DROP [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [251:34691]
+-A OUTPUT -o br0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A OUTPUT -o br0 -p tcp --dport 3389 -j ACCEPT
+-A OUTPUT -o br0 -j DROP
+-A OUTPUT -o enp0s25 -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A OUTPUT -o enp0s25 -p tcp --dport 3389 -j ACCEPT
+-A OUTPUT -o enp0s25 -j DROP
+-A INPUT -i br0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -i br0 -p tcp --dport 3389 -j ACCEPT
+-A INPUT -i br0 -j DROP
+-A INPUT -i enp0s25 -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -i enp0s25 -p tcp --dport 3389 -j ACCEPT
+-A INPUT -i enp0s25 -j DROP
+COMMIT
+</code></pre><p>Enable the service :</p><pre><code># sudo systemctl enable iptables.service
+</code></pre><p>This method won&rsquo;t work properly, because libvirtd also add some rules.</p><p>Finally I have to add the scripts in my awesome startup scripts.</p><h3 id=iptables-recovery>Iptables Recovery</h3><p>Recover the default iptables rules via:</p><pre><code>sudo iptables -D OUTPUT -o br0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -D OUTPUT -o br0 -p tcp --dport 3389 -j ACCEPT
+sudo iptables -D OUTPUT -o br0 -j DROP
+sudo iptables -D OUTPUT -o enp0s25 -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -D OUTPUT -o enp0s25 -p tcp --dport 3389 -j ACCEPT
+sudo iptables -D OUTPUT -o enp0s25 -j DROP
+sudo iptables -D INPUT -i br0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -D INPUT -i br0 -p tcp --dport 3389 -j ACCEPT
+sudo iptables -D INPUT -i br0 -j DROP
+sudo iptables -D INPUT -i enp0s25 -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -D INPUT -i enp0s25 -p tcp --dport 3389 -j ACCEPT
+sudo iptables -D INPUT -i enp0s25 -j DROP
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/07/31/readingtipsonlinuxsystemarchitecture/>ReadingTipsOnLinuxSystemArchitecture</a></h1><span class=post-date>Jul 31, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=on-this-book>On This Book</h3><p>Borrowed from lab, written via a janpanese author.<br><img src=/images/2017_07_31_09_20_33_1054x739.jpg alt=/images/2017_07_31_09_20_33_1054x739.jpg>
 This article will record the reading tips on Chapter 2(libvirtd related).</p><h3 id=network-configuration>Network Configuration</h3><p>Edit the netoworking definition xml:</p><pre><code>$ cat internal.xml
 &lt;network&gt;
 	&lt;name&gt;internal&lt;/name&gt;
@@ -96,88 +415,4 @@ part / --asprimary --fstype=&quot;ext4&quot; --grow --size=1
 
 %end
 </code></pre><p>其中<code>rootpw</code>以后的字段可以通过以下命令得到:</p><pre><code>$ openssl passwd -1 &quot;Your_Password_Here&quot;
-</code></pre><h3 id=kscfg的另一种构建方法>ks.cfg的另一种构建方法</h3><p>在安装完的每一台机器上，都可以看到/root/ana&mldr;ks文件，编辑此文件即可得到我们定制化的kickstart配置。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/07/21/workingtipsonoracledatabasedeployment/>WorkingTipsOnOracleDatabaseDeployment</a></h1><span class=post-date>Jul 21, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=items>Items</h3><p>Working items on one-click deployment of oracle database.</p><h3 id=ansible-playbooks>Ansible-Playbooks</h3><p>Based on:</p><p><a href=https://github.com/nkadbi/oracle-db-12c-vagrant-ansible>https://github.com/nkadbi/oracle-db-12c-vagrant-ansible</a></p><p>Refers to:</p><p><a href=https://blog.dbi-services.com/vagrant-up-get-your-oracle-infrastructure-up-and-running/>https://blog.dbi-services.com/vagrant-up-get-your-oracle-infrastructure-up-and-running/</a><br><a href=https://blog.dbi-services.com/part2-vagrant-up-get-your-oracle-infrastructure-up-an-running/>https://blog.dbi-services.com/part2-vagrant-up-get-your-oracle-infrastructure-up-an-running/</a></p><p>Username/Password:<br>System: oracle/welcome1<br>Database: sys/oracle</p><h3 id=linux-client>Linux Client</h3><p>Yaourt has the linux client for accessing oracle Db:</p><p><a href=https://aur.archlinux.org/packages/oracle-sqldeveloper/>https://aur.archlinux.org/packages/oracle-sqldeveloper/</a></p><p>Installing method:<br>Download the file from oracle.com</p><h3 id=create-database>Create Database</h3><p>Create database using following command:</p><pre><code>[vagrant@dbserver1 ~]$ su - oracle
-Password: 
--bash-4.2$ sqlplus &quot;/as sysdba&quot;
-</code></pre><p>Now you got the shell like <code>SQL></code>, you could input the sql in this shell:</p><pre><code>Run `1_create_user_and_tablespace_dash.sql`
-</code></pre><h3 id=create-tablesmetadatas>Create tables/metadatas</h3><p>The first step will create the database user, then you could login into the
-database using this user, using SQL Devloper for login and execute the
-command:</p><p><img src=/images/2017_07_23_13_47_44_745x382.jpg alt=/images/2017_07_23_13_47_44_745x382.jpg></p><p>Execute the following script:</p><pre><code>msp_XXX.sql(Including 2 scripts)   
-</code></pre><p><img src=/images/2017_07_23_13_50_23_506x466.jpg alt=/images/2017_07_23_13_50_23_506x466.jpg></p><p>Tips for getting the db config:</p><pre><code> SQL&gt; show parameter service_names;
-.....
-service_names			     string	 db1.private
-</code></pre><p>Then your configuration should use the same <code>service_names</code> as described.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/07/13/dockernetworkperformancetest/>DockerNetworkPerformanceTest</a></h1><span class=post-date>Jul 13, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=测试环境>测试环境</h3><p>Docker常用的两种网络模式包括Bridge和Host模式，为测试这两种网络模式的性能，我们将创建以下的测试环境:</p><ul><li>192.192.192.89 - 运行Docker容器的服务器， CentOS 7.3.</li><li>192.192.192.88 - 运行客户端的服务器, CentOS 7.3.</li></ul><p>两台服务器之间的物理网络为万兆以太网络。</p><p>我们采用Iperf<a href=http://software.es.net/iperf/>http://software.es.net/iperf/</a>来测量网络带宽，iperf非常简单，也拥有足够多的特性用于测试基本的性能指标。
-在服务器端，我们需要一个运行iperf3的Docker容器。 Docker的版本为17.05-ce.</p><p>测试将基于以下几个场景:</p><ul><li>原始网络吞吐量</li><li>跨主机物理机到Docker(host模式)</li><li>跨主机物理机到Docker(Bridge模式)</li><li>同主机物理机到Docker(Bridge模式)</li><li>同主机Docker到Docker(Bridge模式-external)</li><li>同主机Docker到Docker(Bridge模式-internal)</li></ul><h3 id=原始网络吞吐量>原始网络吞吐量</h3><p>首先，我们需要得到在没有任何Docker容器运行时的原始网络吞吐，在Server端运行:</p><pre><code>[root@192.192.192.89 ~]# iperf3 -s -p 5202
-</code></pre><p>Client端运行:</p><pre><code>[root@192.192.192.88 ~]# iperf3 -c 192.192.192.89 -p 5202
-</code></pre><p>运行测试后，服务器端和客户端都会返回诊断信息。我们暂时只关心其吞吐量:</p><pre><code>-----------------------------------------------------------
-Server listening on 5202
------------------------------------------------------------
-Accepted connection from 192.192.192.88, port 39682
-[  5] local 192.192.192.89 port 5202 connected to 192.192.192.88 port 39684
-[ ID] Interval           Transfer     Bandwidth
-[  5]   0.00-1.00   sec  1.05 GBytes  9.05 Gbits/sec                  
-[  5]   1.00-2.00   sec  1.10 GBytes  9.41 Gbits/sec                  
-[  5]   2.00-3.00   sec  1.10 GBytes  9.41 Gbits/sec                  
-[  5]   3.00-4.00   sec  1.10 GBytes  9.41 Gbits/sec                  
-[  5]   4.00-5.00   sec  1.10 GBytes  9.41 Gbits/sec                  
-[  5]   5.00-6.00   sec  1.10 GBytes  9.41 Gbits/sec                  
-[  5]   6.00-7.00   sec  1.10 GBytes  9.41 Gbits/sec                  
-[  5]   7.00-8.00   sec  1.10 GBytes  9.41 Gbits/sec                  
-[  5]   8.00-9.00   sec  1.10 GBytes  9.41 Gbits/sec                  
-[  5]   9.00-10.00  sec  1.10 GBytes  9.41 Gbits/sec                  
-[  5]  10.00-10.04  sec  42.0 MBytes  9.39 Gbits/sec                  
-- - - - - - - - - - - - - - - - - - - - - - - - -
-[ ID] Interval           Transfer     Bandwidth
-[  5]   0.00-10.04  sec  0.00 Bytes  0.00 bits/sec                  sender
-[  5]   0.00-10.04  sec  11.0 GBytes  9.38 Gbits/sec                  receiver
------------------------------------------------------------
-Server listening on 5202
------------------------------------------------------------
-</code></pre><p>可以看到，在万兆交换机的网络场景下，物理机到物理机之间的网络带宽跑满了万兆交换机的极限.</p><h3 id=跨主机物理机到dockerhost模式>跨主机物理机到Docker(host模式)</h3><p>在Docker中运行<code>iperf3</code>相当简单，在<code>hub.docker.com</code>可以找到大量的打包有iperf3的镜像，我们采用:</p><pre><code># sudo docker pull networkstatic/iperf3
-</code></pre><p>在服务器端启动侦听<code>5203</code>端口的docker实例:</p><pre><code>[root@192.192.192.89 ~]# docker run --net=host  -it --rm --name=iperf3-server networkstatic/iperf3 -s -p 5203
-</code></pre><p>在Client端执行对应的修改，得到的结果为:</p><pre><code>[root@192.192.192.88 ~]# iperf3 -c 192.192.192.89 -p 5203
-Connecting to host 192.192.192.89, port 5203
-[  4] local 192.192.192.88 port 40326 connected to 192.192.192.89 port 5203
-[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
-[  4]   0.00-1.00   sec  1.10 GBytes  9.43 Gbits/sec   20    625 KBytes       
-[  4]   1.00-2.00   sec  1.10 GBytes  9.42 Gbits/sec    0    625 KBytes       
-//.....
-</code></pre><p>结果差不多相同: 9.40 Gbits/sec</p><h3 id=跨主机物理机到dockerbridge模式>跨主机物理机到Docker(Bridge模式)</h3><p>更改为5204端口，这次使用的网络模式为<code>Bridge</code>模式:</p><pre><code>[root@192.192.192.89 ~]# docker run  -it --rm -p 5204:5204 --name=iperf3-server networkstatic/iperf3 -s -p 5204
-</code></pre><p>在客户端不作任何修改，只更换远端端口为5204:</p><pre><code>[root@192.192.192.88 ~]# iperf3 -c 192.192.192.89 -p 5204
-Connecting to host 192.192.192.89, port 5204
-[  4] local 192.192.192.88 port 53936 connected to 192.192.192.89 port 5204
-[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
-[  4]   0.00-1.00   sec  1.10 GBytes  9.44 Gbits/sec   15    669 KBytes       
-[  4]   1.00-2.00   sec  1.10 GBytes  9.42 Gbits/sec    0    682 KBytes       
-[  4]   2.00-3.00   sec  1.10 GBytes  9.42 Gbits/sec    0    691 KBytes 
-</code></pre><p>可以看到，在Bridge模式下，吞吐量也跑满了万兆网络的极限.</p><h3 id=同主机物理机到dockerbridge模式>同主机物理机到Docker(Bridge模式)</h3><p>在同一台主机上(192.192.192.89)上运行iperf，测试到Docker的吞吐量，沿用之前侦听5204的容器不变:</p><pre><code>[root@192.192.192.89 ~]# iperf3 -c 192.192.192.89 -p 5204
-Connecting to host 192.192.192.89, port 5204
-[  4] local 192.192.192.89 port 46720 connected to 192.192.192.89 port 5204
-[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
-[  4]   0.00-1.00   sec  2.77 GBytes  23.8 Gbits/sec    0    274 KBytes       
-[  4]   1.00-2.00   sec  2.75 GBytes  23.6 Gbits/sec    0    274 KBytes       
-[  4]   2.00-3.00   sec  2.75 GBytes  23.6 Gbits/sec    0    277 KBytes       
-</code></pre><p>在这种模式下，网络的吞吐量几乎三倍于万兆网络，这是因为从主机到Docker实例的网络通路会走本地的回环接口(lo-loopback)接口。</p><h3 id=同主机docker到dockerbridge模式-external>同主机Docker到Docker(Bridge模式-external)</h3><p>沿用侦听5204端口的容器不变，新启动一个容器，在其中运行iperf:</p><pre><code># iperf3 -c 192.192.192.89 -p 5204
-Connecting to host 192.192.192.89, port 5204
-[  4] local 172.17.0.5 port 59574 connected to 192.192.192.89 port 5204
-[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
-[  4]   0.00-1.00   sec  1.03 GBytes  8.84 Gbits/sec   91    228 KBytes       
-[  4]   1.00-2.00   sec   955 MBytes  8.01 Gbits/sec    0    229 KBytes       
-[  4]   2.00-3.00   sec  1.02 GBytes  8.80 Gbits/sec    0    230 KBytes       
-[  4]   3.00-4.00   sec   767 MBytes  6.43 Gbits/sec    0    230 KBytes       
-[  4]   4.00-5.00   sec   851 MBytes  7.14 Gbits/sec    0    230 KBytes       
-</code></pre><p>可以看到，如果直接使用物理机的IP地址和端口，则吞吐需要同时使用Bridge模式下物理网卡的吞吐，
-此时网卡的物理性能下降明显。</p><h3 id=同主机docker到dockerbridge模式-internal>同主机Docker到Docker(Bridge模式-internal)</h3><p>为了避免使用物理机的IP地址带来的性能下降，直接使用容器内部的IP地址做iperf测试:</p><pre><code># iperf3 -c 172.17.0.4 -p 5204
-Accepted connection from 172.17.0.5, port 39516
-[  5] local 172.17.0.4 port 5204 connected to 172.17.0.5 port 39518
-[ ID] Interval           Transfer     Bandwidth
-[  5]   0.00-1.00   sec  2.39 GBytes  20.5 Gbits/sec                  
-[  5]   1.00-2.00   sec  2.50 GBytes  21.5 Gbits/sec                  
-[  5]   2.00-3.00   sec  2.50 GBytes  21.5 Gbits/sec 
-</code></pre><p>可以看到，在这种模式下，容器之间的通信还是基于lo(loopback)接口来做的，几乎三倍于万兆交换机的峰值速度。</p><h3 id=结论>结论</h3><p>各次测试的对比数据整理如下:</p><pre><code>| 物理机-物理机                           | 9.40 Gbit/sec    | 100%  |
-| 跨物理机到Docker(host模式网络)          | 9.40 Gbit/sec    | 100%  |
-| 跨物理机到Docker(Bridge模式网络)        | 9.40 Gbit/sec    | 100%  |
-| 同主机内到Docker(Bridge模式网络)        | 23.8 Gbit/sec    | 250%  |
-| 同主机Docker到Docker(Bridge模式-ex)     | 8.00 Gbit/sec    |  85%  |
-| 同主机Docker到Docker(Bridge模式-int)    | 21.00 Gbit/sec   | 220%  |
-</code></pre><p>结论： 在Docker运行环境中，网络的吞吐量近似于本地网络IO，基本上不会有性能损耗。需要特别注意的是，一定要避免同主机中的Docker实例彼此使用物理机IP/端口进行通信，那样会带来性能的明显下降。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/81/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/81/>81</a></li><li class="page-item active"><a class=page-link href=/page/82/>82</a></li><li class=page-item><a class=page-link href=/page/83/>83</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/230/>230</a></li><li class=page-item><a href=/page/83/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/230/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><h3 id=kscfg的另一种构建方法>ks.cfg的另一种构建方法</h3><p>在安装完的每一台机器上，都可以看到/root/ana&mldr;ks文件，编辑此文件即可得到我们定制化的kickstart配置。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/81/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/81/>81</a></li><li class="page-item active"><a class=page-link href=/page/82/>82</a></li><li class=page-item><a class=page-link href=/page/83/>83</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/230/>230</a></li><li class=page-item><a href=/page/83/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/230/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

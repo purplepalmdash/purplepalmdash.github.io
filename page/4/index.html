@@ -1,5 +1,60 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/07/03/3vmsbenchmark/>3VMsBenchmark</a></h1><span class=post-date>Jul 3, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Create 3 disk files:</p><pre><code> qemu-img create -f qcow2 -b win.qcow2 -F qcow2 vm1.qcow2
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/07/24/usingclonezillaforinstallcentos7on5950x/>UsingCloneZillaForInstallCentOS7On5950x</a></h1><span class=post-date>Jul 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Boot the vm with clonezilla iso:</p><p><img src=/images/2023_07_24_14_03_07_486x413.jpg alt=/images/2023_07_24_14_03_07_486x413.jpg></p><p>Select sshfs for destination:</p><p><img src=/images/2023_07_24_14_05_00_701x167.jpg alt=/images/2023_07_24_14_05_00_701x167.jpg></p><p>Select which disk:</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/07/19/dockerizeuos/>DockerizeUOS</a></h1><span class=post-date>Jul 19, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install the server via :</p><p><img src=/images/2023_07_19_08_15_49_457x277.jpg alt=/images/2023_07_19_08_15_49_457x277.jpg></p><p>关机后，在host机器上，:</p><pre><code>apt install -y docker.io guestfish
+qemu-img convert -f qcow2 -O raw  uos10G.qcow2 uos10G.img
+guestfish -a uos10G.img --ro
+
+Welcome to guestfish, the guest filesystem shell for
+editing virtual machine filesystems and disk images.
+
+Type: ‘help’ for help on commands
+      ‘man’ to read the manual
+      ‘quit’ to quit the shell
+
+&gt;&lt;fs&gt; run
+&gt;&lt;fs&gt; list-filesystems
+/dev/sda1: ext4
+/dev/sda2: ext4
+&gt;&lt;fs&gt; mount /dev/sda2 /
+&gt;&lt;fs&gt; mount /dev/sda1 /boot
+&gt;&lt;fs&gt; tar-out / - | xz --best &gt;&gt; myuos.xz
+&gt;&lt;fs&gt; exit
+ cat myuos.xz | docker import - uoskkk
+root@delli9:~# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+uoskkk     latest    2fb3905a142f   18 seconds ago   1.68GB
+</code></pre><p>run into docker instance via:</p><pre><code>root@delli9:~# docker run -it uosctyun:latest /bin/bash
+[root@8d94931f1eb0 /]# cat /etc/issue
+\S
+Kernel \r on an \m
+[root@8d94931f1eb0 /]# cat /etc/uos-release 
+UOS Server Enterprise-C 20
+[root@8d94931f1eb0 /]# yum makecache
+</code></pre><p>使用方法, 绿色版安装docker:</p><pre><code>[root@uos ~]# tar xzvf docker-24.0.2.tgz 
+docker/
+docker/docker-proxy
+docker/containerd-shim-runc-v2
+docker/ctr
+docker/docker
+docker/docker-init
+docker/runc
+docker/dockerd
+docker/containerd
+[root@uos ~]# mv docker/* /usr/bin
+[root@uos ~]# dockerd&amp;
+
+</code></pre><p>在另一个终端上启动容器实例:</p><pre><code>[root@uos ~]# cat myuos.xz | docker import - uosxj
+sha256:e09cca9384977ce87a05d50a50134a8fa44607b19f4586222b835916dddb24a0
+[root@uos ~]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+uosxj        latest    e09cca938497   40 seconds ago   1.68GB
+[root@uos ~]# docker run --privileged -it uosxj /bin/bash
+[root@0bb3783f7e1e /]# yum makecache
+[root@0bb3783f7e1e /]# yum install -y qemu-kvm-ev
+[root@0bb3783f7e1e /]# /usr/libexec/qemu-kvm  --version
+QEMU emulator version 2.12.0 (qemu-kvm-ev-2.12.0-45.uelc20_2.01)
+Copyright (c) 2003-2017 Fabrice Bellard and the QEMU Project developers
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/07/03/3vmsbenchmark/>3VMsBenchmark</a></h1><span class=post-date>Jul 3, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Create 3 disk files:</p><pre><code> qemu-img create -f qcow2 -b win.qcow2 -F qcow2 vm1.qcow2
  qemu-img create -f qcow2 -b win.qcow2 -F qcow2 vm2.qcow2
  qemu-img create -f qcow2 -b win.qcow2 -F qcow2 vm3.qcow2
 </code></pre><p>Create vm1/vm2/vm3.</p><p>Start and detect the spice:</p><pre><code>netstat -anp | grep 590
@@ -69,60 +124,4 @@ Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
 # yum install -y meson python36-docutils python-docutils glib2-devel gnutls-devel libxml2-devel libtirpc-devel gnutls-devel netcf-devel libpciaccess-devel systemd-devel yajl-devel
 Build to /usr
 and install
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/19/preproductioncentos76libvirtd/>PreProductionCentOS76Libvirtd</a></h1><span class=post-date>Jun 19, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=system-information>System Information</h3><p>Basic info:</p><pre><code>[root@tl ~]# cat /etc/redhat-release 
-CentOS Linux release 7.6.1810 (Core) 
-[root@tl ~]# uname -r
-3.10.0-957.el7.x86_64
-[root@tl ~]# lscpu |grep &quot;Model name&quot;
-Model name:            12th Gen Intel(R) Core(TM) i3-12100
-[root@tl ~]# free -m
-              total        used        free      shared  buff/cache   available
-Mem:          64005         482       63299           9         223       63023
-Swap:          2043           0        2043
-</code></pre><h3 id=kernel>Kernel</h3><p>Install kernel and configure its default startup:</p><pre><code>[root@tl materials]# cp -ar i915/* /lib/firmware/i915/
-cp: overwrite ‘/lib/firmware/i915/bxt_dmc_ver1_07.bin’? y
-cp: overwrite ‘/lib/firmware/i915/bxt_dmc_ver1.bin’? y
-cp: overwrite ‘/lib/firmware/i915/bxt_guc_ver8_7.bin’? y
-......
-# rpm -ivh kernel-*.rpm
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/19/workingtipsonlibvirtbuild/>WorkingTipsOnLibvirtBuild</a></h1><span class=post-date>Jun 19, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p><code>libvirt-7.5.0</code>:</p><pre><code>yum makecache
-yum install -y epel-release
-yum install -y meson gcc qemu-kvm wget virt-install python36-docutils python-docutils glib2-devel gnutls-devel libxml2-devel libtirpc-devel
-meson --version
-0.55.1
-wget https://libvirt.org/sources/libvirt-7.5.0.tar.xz --no-check-certificate
-tar xJvf libvirt-7.5.0.tar.xz
-cd libvirt-7.5.0
-meson build --prefix=/usr
-ninja -C build
-#ninja -C build install
-</code></pre><p><code>libvirt-8.5.0</code>:</p><pre><code>yum install -y centos-release-scl
-yum install devtoolset-11 -y
-scl enable devtoolset-11 bash
-gcc --version
-gcc (GCC) 11.2.1 20220127 (Red Hat 11.2.1-9)
-meson build --prefix=/usr
-ninja -C build
-</code></pre><p>From <code>8.6.0</code>:</p><pre><code>meson.build:986:0: ERROR: Invalid version of dependency, need 'gnutls' ['&gt;=3.6.0'] found '3.3.29'.
-</code></pre><p>From <code>9.1.0</code>, Later will have meson version check:</p><pre><code>meson.build:1:0: ERROR: Meson version is 0.55.1 but project requires &gt;= 0.56.0
-</code></pre><h3 id=product-env>product env</h3><p>build and install via:</p><pre><code>yum install -y gnutls-devel
-yum install -y python36-docutils python-docutils glib2-devel gnutls-devel libxml2-devel libtirpc-devel
-meson build --prefix=/opt/local/
-ninja -C build
-ninja -C build install
-</code></pre><p>Change configuration files:</p><pre><code>vim /usr/lib/systemd/system/libvirtd.servic
-/usr/bin/libvirtd --&gt; /opt/local/bin/libvirtd
-reboot
-/opt/local/bin/virsh  list --all
-</code></pre><h3 id=rebuild>Rebuild</h3><p>Rebuild with full support:</p><pre><code>yum install -y netcf-devel libpciaccess-devel systemd-devel
-meson build -Dsystem=true -Ddriver_qemu=enabled -Ddriver_interface=enabled -Ddriver_libvirtd=enabled -Ddriver_remote=enabled -Ddriver_network=enabled --prefix=/usr
-ninja -C build install
-</code></pre><p>Edit the qemu configuration:</p><pre><code># vim /etc/libvirt/qemu.conf
-cgroup_device_acl = [
-    &quot;/dev/null&quot;, &quot;/dev/full&quot;, &quot;/dev/zero&quot;,
-    &quot;/dev/random&quot;, &quot;/dev/urandom&quot;,
-    &quot;/dev/ptmx&quot;, &quot;/dev/kvm&quot;, &quot;/dev/udmabuf&quot;
-]
-user = &quot;root&quot;
-group = &quot;root&quot;
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/3/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item active"><a class=page-link href=/page/4/>4</a></li><li class=page-item><a class=page-link href=/page/5/>5</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/230/>230</a></li><li class=page-item><a href=/page/5/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/230/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
