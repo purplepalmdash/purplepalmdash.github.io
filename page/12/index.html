@@ -456,6 +456,7 @@ net.ipv6.conf.default.disable_ipv6=1
 GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash ipv6.disable=1&quot;
 # update-grub2
 </code></pre><h3 id=96-nethogs-listening-udp>96. nethogs listening UDP</h3><p>for:</p><pre><code>nethogs -C
+</code></pre><h3 id=97-pypi>97. pypi</h3><p>pip using tsinghua</p><pre><code>pip install -r requirements_versions.txt  -i https://pypi.tuna.tsinghua.edu.cn/simple
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/08/raspberrypi_pkvm_workingtips/>RaspberryPI_PKVM_WorkingTips</a></h1><span class=post-date>Sep 8, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=flash-aosp-13-images>Flash aosp 13 images</h3><p>Image download URL:<br><code>https://konstakang.com/devices/rpi4/AOSP13/</code></p><p>Flash it into rpi 4b.</p><h3 id=pkvm-kernelimages>pkvm kernel/images</h3><p>Download alpine kernel/images from(<code>https://www.worldofgh0st.com/blog/</code>):</p><p><code>https://www.worldofgh0st.com/wp-content/uploads/2022/09/KVM-Linux.zip</code></p><p>adb push them to <code>/data/local/tmp</code>.</p><h3 id=start-crosvm-machine>Start crosvm machine</h3><p>adb root and login with adb shell:</p><pre><code>➜  Downloads adb -s 192.168.1.114:5555 root 
 restarting adbd as root
 ➜  Downloads adb -s 192.168.1.114:5555 shell
