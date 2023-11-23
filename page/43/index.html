@@ -1,5 +1,121 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/13/harborarm64issue/>HarborArm64Issue</a></h1><span class=post-date>Jan 13, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=issue>Issue</h3><p>harbor-log instance launched first, but it complains:</p><pre><code>You are required to change your password immediately (password expired)
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/16/tipsonnextcloud/>tipsOnnextcloud</a></h1><span class=post-date>Jan 16, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Dockerfile:</p><pre><code>version: '3' 
+
+services:
+
+  proxy:
+    image: jwilder/nginx-proxy:alpine
+    labels:
+      - &quot;com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true&quot;
+    container_name: nextcloud-proxy
+    networks:
+      - nextcloud_network
+    ports:
+      - 0.0.0.0:80:80
+      - 0.0.0.0:443:443
+    volumes:
+      - ./proxy/conf.d:/etc/nginx/conf.d:rw
+      - ./proxy/vhost.d:/etc/nginx/vhost.d:rw
+      - ./proxy/html:/usr/share/nginx/html:rw
+      - ./proxy/certs:/etc/nginx/certs:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: unless-stopped
+  
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: nextcloud-letsencrypt
+    depends_on:
+      - proxy
+    networks:
+      - nextcloud_network
+    volumes:
+      - ./proxy/certs:/etc/nginx/certs:rw
+      - ./proxy/vhost.d:/etc/nginx/vhost.d:rw
+      - ./proxy/html:/usr/share/nginx/html:rw
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: unless-stopped
+  db:
+    image: mariadb
+    container_name: nextcloud-mariadb
+    networks:
+      - nextcloud_network
+    volumes:
+      - db:/var/lib/mysql
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+    # Create a root password for the maraiadb instance.
+      - MYSQL_ROOT_PASSWORD=engine123
+    # Create a password for the nextcloud users.  If you have to manually connect your database you would use the nextcloud user and this password.
+      - MYSQL_PASSWORD=engine123
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    restart: unless-stopped
+  
+  app:
+    image: nextcloud:latest
+    container_name: nextcloud-app
+    networks:
+      - nextcloud_network
+    depends_on:
+      - letsencrypt
+      - proxy
+      - db
+    volumes:
+      - nextcloud:/var/www/html
+      - ./app/config:/var/www/html/config
+      - ./app/custom_apps:/var/www/html/custom_apps
+      - ./app/data:/var/www/html/data
+      - ./app/themes:/var/www/html/themes
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+    # The VIRTUAL_HOST and LETSENCRYPT_HOST should use the same publically reachable domain for your nextlcloud instance.
+      - VIRTUAL_HOST=mynextcloud.mooo.com
+      - LETSENCRYPT_HOST=mynextcloud.mooo.com
+    # This needs to be a real email as it will be used by let's encrypt for your cert and is used to warn you about renewals.
+      - LETSENCRYPT_EMAIL=feipyang@gmail.com
+    restart: unless-stopped
+  collab:
+    image: collabora/code
+    container_name: nextcloud-collab
+    networks:
+      - nextcloud_network
+    depends_on:
+      - proxy
+      - letsencrypt
+    cap_add:
+     - MKNOD
+    ports:
+      - 0.0.0.0:9980:9980
+    environment:
+    # This nees to be the same as what you set your app domain too (ex: cloud.domain.tld).
+    #- domain=cloud\\.DOMAIN\\.TDL
+      - domain=mynextcloud\.mooo\.com
+      - username=admin
+    # Create a passoword for the collabora office admin page.
+    #- password=CREATE-A-SECURE-PASSWORD-HERE
+      - password=engine123
+      - VIRTUAL_PORT=9980
+      - extra_params=--o:ssl.enable=false --o:ssl.termination=true
+#      - VIRTUAL_PROTO=https
+#      - VIRTUAL_PORT=443
+    # The VIRTUAL_HOST and LETSENCRYPT_HOST should use the same publically reachable domain for your collabora instance (ex: office.domain.tld).
+      - VIRTUAL_HOST=myoffice.mooo.com
+      - LETSENCRYPT_HOST=myoffice.mooo.com
+    # This needs to be a real email as it will be used by let's encrypt for your cert and is used to warn you about renewals.
+      - LETSENCRYPT_EMAIL=feipyang@gmail.com
+    restart: unless-stopped 
+volumes:
+  nextcloud:
+  db: 
+  
+networks:
+  nextcloud_network:
+
+</code></pre><p>For installing apps:</p><pre><code>sudo docker cp Client.php fc18391f0a0a:/var/www/html/lib/private/Http/Client/Client.php
+Timeout from 30 to 300, then you could install apps. 
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/13/harborarm64issue/>HarborArm64Issue</a></h1><span class=post-date>Jan 13, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=issue>Issue</h3><p>harbor-log instance launched first, but it complains:</p><pre><code>You are required to change your password immediately (password expired)
 </code></pre><p>This is because we build the container images only have 90 days limitation.</p><h3 id=solution>Solution</h3><p>Rebuild all of the harbor images:</p><pre><code>root@node:~/harbor# cat harbor-core/Dockerfile 
 FROM f9e2034f3a6d
 COPY login.defs /etc/login.defs
@@ -154,14 +270,4 @@ Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.807 [INFO][2763] k8s.go
 root@node1:/home/vagrant# kubectl get nodes
 NAME    STATUS   ROLES         AGE    VERSION
 node1   Ready    master,node   421d   v1.12.5
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/03/enableipmionnetdata/>EnableIPMIOnNetdata</a></h1><span class=post-date>Jan 3, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=prerequites>Prerequites</h3><p>Build netdata from source, generate deb/rpm.<br>Install following packages:</p><pre><code>lm-sensors libsensors4 libsensors4-dev freeipmi-tools freeipmi libfreeipmi16
-</code></pre><h3 id=configuration>Configuration</h3><p>Enable the freeipmi plugins:</p><pre><code># vim /etc/netdata/netdata.conf
-[plugins]
-#cgroups = no
-freeipmi = yes
-
-[plugin:freeipmi]
-    update every = 5
-    command options = 
-</code></pre><p>Change the permission of the plugin files so that freeipmi plugin could be run via netdata user:</p><pre><code># chmod u+s /usr/libexec/netdata/plugins.d/freeipmi.plugin
-</code></pre><p>Now restart the netdata service and you could see the ipmi modules exists on dashboard.</p><p><img src=/images/2020_01_03_10_51_11_165x227.jpg alt=/images/2020_01_03_10_51_11_165x227.jpg></p><p>Detailed charts:</p><p><img src=/images/2020_01_03_10_51_42_703x634.jpg alt=/images/2020_01_03_10_51_42_703x634.jpg></p><p>and</p><p><img src=/images/2020_01_03_10_52_00_526x713.jpg alt=/images/2020_01_03_10_52_00_526x713.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/42/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/42/>42</a></li><li class="page-item active"><a class=page-link href=/page/43/>43</a></li><li class=page-item><a class=page-link href=/page/44/>44</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/230/>230</a></li><li class=page-item><a href=/page/44/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/230/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/42/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/42/>42</a></li><li class="page-item active"><a class=page-link href=/page/43/>43</a></li><li class=page-item><a class=page-link href=/page/44/>44</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/231/>231</a></li><li class=page-item><a href=/page/44/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/231/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

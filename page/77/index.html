@@ -1,5 +1,429 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/12/18/workingtipsoninternetsharing/>WorkingTipsOnInternetSharing</a></h1><span class=post-date>Dec 18, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>To set up an free wireless solution working for WebDuino.</p><p>Because I located in china mainland, while our internet were forbidden by
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/12/24/workingtipsonrpiandredsocks/>WorkingTipsOnRPIAndRedSocks</a></h1><span class=post-date>Dec 24, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>To setup an wireless ap which could enable all of the equipment free to
+internet.</p><h3 id=startup>Startup</h3><p>Download the rpi image from:<br><a href=http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-12-01/2017-11-29-raspbian-stretch.zip>http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-12-01/2017-11-29-raspbian-stretch.zip</a><br>Then unzip this image file and write to sd card.</p><p>Plugin your sd card into your rpi board, startup. At the very beginning, you
+have to enable the ssh via:</p><pre><code>$ sudo systemctl enable ssh &amp;&amp; sudo systemctl start ssh
+</code></pre><p>Then you could login remotely using ssh, default username/password is
+<code>pi/raspberry</code>.</p><p>Edit the sources.list and install some necessary packages:</p><pre><code>$ sudo vim /etc/apt/sources.list
+deb http://mirrors.aliyun.com/raspbian/raspbian/ stretch main non-free contrib
+$ sudo apt-get update &amp;&amp; sudo apt-get install -y vim 
+</code></pre><p>Enable the <code>ip_forward</code> via:</p><pre><code>$ sudo vim /etc/sysctl.conf
+net.ipv4.ip_forward=1
+$ sudo systcl -p 
+</code></pre><h3 id=network-configuration>Network Configuration</h3><p>Configure the network via:</p><pre><code>$  cat /etc/network/interfaces
+# interfaces(5) file used by ifup(8) and ifdown(8)
+
+# Please note that this file is written to be used with dhcpcd
+# For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'
+
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+
+##### To use hostapd you need do following.
+auto wlan0
+iface wlan0 inet static  
+    address 10.0.70.1
+        netmask 255.255.255.0
+auto eth0
+iface eth0 inet static  
+    address 192.168.0.15
+        netmask 255.255.255.0
+        gateway 192.168.0.1
+</code></pre><p>Restart your network you will get the wlan0 as <code>10.0.70.1</code>, while your wired
+network acts as the <code>192.168.0.15</code> in ethernet.</p><h3 id=dnsmasq-and-pdnsd>dnsmasq and pdnsd</h3><p>Configure the dnsmasq as the dhcpd server via:</p><pre><code># apt-get install dnsmasq
+# vim /etc/dnsmasq.conf
+port=9053
+#配置监听地址
+listen-address=127.0.0.1,10.0.70.1
+#配置DHCP分配段
+dhcp-range=10.0.70.50,10.0.70.150,12h
+dhcp-option=6,192.168.0.15
+</code></pre><p>While your dns was polluted via the fucking gfw, you have to use pdnsd for
+getting the correct dns.</p><pre><code># apt-get install pdnsd
+# vim /etc/pdnsd.conf
+</code></pre><p>My pdnsd configuration file is listed as following:</p><pre><code>// Read the pdnsd.conf(5) manpage for an explanation of the options.
+
+/* Note: this file is overriden by automatic config files when
+  /etc/default/pdnsd AUTO_MODE is set and that
+  /usr/share/pdnsd/pdnsd-$AUTO_MODE.conf exists
+*/
+
+global {
+    perm_cache=4096;
+    cache_dir=&quot;/var/cache/pdnsd&quot;;
+    run_as=&quot;pdnsd&quot;;
+    server_ip = 192.168.0.15;
+    server_port=53;
+    status_ctl = on;
+    query_method=tcp_only;
+    neg_domain_pol = off;  
+    paranoid = on;  
+    par_queries = 1;  
+    min_ttl = 6h;  
+    max_ttl = 12h;  
+    timeout = 10;  
+}
+
+/* with status_ctl=on and resolvconf installed, this will work out from the box
+  this is the recommended setup for mobile machines */
+server {  
+   label = &quot;routine&quot;;
+   ip = 223.5.5.5;
+   timeout = 5;  
+   reject = 74.125.127.102,
+       74.125.155.102,  
+       74.125.39.102,  
+       74.125.39.113,  
+       209.85.229.138,  
+       128.121.126.139,  
+       159.106.121.75,  
+       169.132.13.103,  
+       192.67.198.6,  
+       202.106.1.2,  
+       202.181.7.85,  
+       203.161.230.171,  
+       203.98.7.65,  
+       207.12.88.98,  
+       208.56.31.43,  
+       209.145.54.50,  
+       209.220.30.174,  
+       209.36.73.33,  
+       211.94.66.147,  
+       213.169.251.35,  
+       216.221.188.182,  
+       216.234.179.13,  
+       243.185.187.39,  
+       37.61.54.158,  
+       4.36.66.178,  
+       46.82.174.68,  
+       59.24.3.173,  
+       64.33.88.161,  
+       64.33.99.47,  
+       64.66.163.251,  
+       65.104.202.252,  
+       65.160.219.113,  
+       66.45.252.237,  
+       69.55.52.253,  
+       72.14.205.104,  
+       72.14.205.99,  
+       78.16.49.15,  
+       8.7.198.45,  
+       93.46.8.89,  
+       37.61.54.158,  
+       243.185.187.39,  
+       190.93.247.4,  
+       190.93.246.4,  
+       190.93.245.4,  
+       190.93.244.4,  
+       65.49.2.178,  
+       189.163.17.5,  
+       23.89.5.60,  
+       49.2.123.56,  
+       54.76.135.1,  
+       77.4.7.92,  
+       118.5.49.6,  
+       159.24.3.173,  
+       188.5.4.96,  
+       197.4.4.12,  
+       220.250.64.24,  
+       243.185.187.30,  
+       249.129.46.48,  
+       253.157.14.165;  
+   reject_policy = fail;  
+   exclude = &quot;.google.com&quot;,  
+       &quot;.cn&quot;,
+       &quot;.baidu.com&quot;,
+       &quot;.qq.com&quot;,
+       &quot;.gstatic.com&quot;,  
+       &quot;.googleusercontent.com&quot;,  
+       &quot;.googlepages.com&quot;,  
+       &quot;.googlevideo.com&quot;,  
+       &quot;.googlecode.com&quot;,  
+       &quot;.googleapis.com&quot;,  
+       &quot;.googlesource.com&quot;,  
+       &quot;.googledrive.com&quot;,  
+       &quot;.ggpht.com&quot;,  
+       &quot;.youtube.com&quot;,  
+       &quot;.youtu.be&quot;,  
+       &quot;.ytimg.com&quot;,  
+       &quot;.twitter.com&quot;,  
+       &quot;.facebook.com&quot;,  
+       &quot;.fastly.net&quot;,  
+       &quot;.akamai.net&quot;,  
+       &quot;.akamaiedge.net&quot;,  
+       &quot;.akamaihd.net&quot;,  
+       &quot;.edgesuite.net&quot;,  
+       &quot;.edgekey.net&quot;;  
+}
+
+server {  
+   # Better setup dns server(DON'T USE PORT 53) on your own vps for faster proxying  
+   label = &quot;special&quot;;
+   ip = 208.67.222.222,208.67.220.220;
+   port = 5353;
+   proxy_only = on;  
+   timeout = 5;  
+}  
+# Generated by resolvconf
+server {
+	label=resolvconf;
+	ip=192.168.0.15;
+}
+# End of resolvconf
+</code></pre><p>Enable the auto-start of pdnsd:</p><pre><code>$ sudo vim /etc/default/pdnsd
+START_DAEMON=yes
+$ sudo systemctl enable pdnsd
+$ sudo systemctl starrt pdnsd
+</code></pre><p>Examine via:</p><pre><code>$ sudo dig @192.168.0.15 www.youtube.com
+</code></pre><h3 id=shadowsocks-and-redsock2>ShadowSocks and RedSock2</h3><p>Install shadowsocks via:</p><pre><code>$ sudo pip install shadowsocks
+$ sudo vim /etc/shadowsocks.conf
+$ sudo vim /etc/rc.local
+sslocal -c /etc/shadowsocks.conf -d start
+</code></pre><p>Trouble-Shooting On sslocal:</p><pre><code>$ vim /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
+Comment all of the :    
+
+libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)
+Changes to : libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
+# rm -f  /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.pyc
+</code></pre><p>Redsocks:</p><pre><code>$ git clone https://github.com/semigodking/redsocks
+$ cd redsocks
+$ sudo apt-get install libevent-dev libssl-dev libpolarssl-dev
+$ make USE_CRYPTO_POLARSSL=true
+</code></pre><p>Configure the redsocks via:</p><pre><code>$ vim redsocks.conf
+base {
+	// debug: connection progress &amp; client list on SIGUSR1
+	log_debug = off;
+
+	// info: start and end of client session
+	log_info = on;
+
+	/* possible `log' values are:
+	 *   stderr
+	 *   &quot;file:/path/to/file&quot;
+	 *   syslog:FACILITY  facility is any of &quot;daemon&quot;, &quot;local0&quot;...&quot;local7&quot;
+	 */
+	log = stderr;
+	// log = &quot;file:/path/to/file&quot;;
+	// log = &quot;syslog:local7&quot;;
+
+	// detach from console
+	daemon = on;
+
+	/* Change uid, gid and root directory, these options require root
+	 * privilegies on startup.
+	 * Note, your chroot may requre /etc/localtime if you write log to syslog.
+	 * Log is opened before chroot &amp; uid changing.
+	 * Debian, Ubuntu and some other distributions use `nogroup` instead of
+	 * `nobody`, so change it according to your system if you want redsocks
+	 * to drop root privileges.
+	 */
+	// user = nobody;
+	// group = nobody;
+	// chroot = &quot;/var/chroot&quot;;
+
+	/* possible `redirector' values are:
+	 *   iptables   - for Linux
+	 *   ipf        - for FreeBSD
+	 *   pf         - for OpenBSD
+	 *   generic    - some generic redirector that MAY work
+	 */
+	redirector = iptables;
+
+	/* Override per-socket values for TCP_KEEPIDLE, TCP_KEEPCNT,
+	 * and TCP_KEEPINTVL. see man 7 tcp for details.
+	 * `redsocks' relies on SO_KEEPALIVE option heavily. */
+	//tcp_keepalive_time = 0;
+	//tcp_keepalive_probes = 0;
+	//tcp_keepalive_intvl = 0;
+}
+
+redsocks {
+	/* `local_ip' defaults to 127.0.0.1 for security reasons,
+	 * use 0.0.0.0 if you want to listen on every interface.
+	 * `local_*' are used as port to redirect to.
+	 */
+	local_ip = 0.0.0.0;
+	local_port = 12345;
+
+	// listen() queue length. Default value is SOMAXCONN and it should be
+	// good enough for most of us.
+	listenq = 128; // SOMAXCONN equals 128 on my Linux box.
+
+	// `max_accept_backoff` is a delay to retry `accept()` after accept
+	// failure (e.g. due to lack of file descriptors). It's measured in
+	// milliseconds and maximal value is 65535. `min_accept_backoff` is
+	// used as initial backoff value and as a damper for `accept() after
+	// close()` logic.
+	// min_accept_backoff = 100;
+	// max_accept_backoff = 60000;
+
+	// `ip' and `port' are IP and tcp-port of proxy-server
+	// You can also use hostname instead of IP, only one (random)
+	// address of multihomed host will be used.
+	// The two fields are meaningless when proxy type is 'direct'.
+	ip = 127.0.0.1;
+	port = 1080;
+
+	// known types: socks4, socks5, http-connect, http-relay
+	// New types: direct, shadowsocks, https-connect
+	type = socks5;
+
+	// Specify interface for outgoing connections.
+	// This is useful when you have multiple connections to
+	// internet or when you have VPN connections.
+	// interface = tun0;
+
+	// Change this parameter to 1 if you want auto proxy feature. 
+	// When autoproxy is set to non-zero, the connection to target
+	// will be made directly first. If direct connection to target
+	// fails for timeout/connection refuse, redsocks will try to
+	// connect to target via the proxy.
+	autoproxy = 0;
+	// timeout is meaningful when 'autoproxy' is non-zero.
+	// It specified timeout value when trying to connect to destination
+	// directly. Default is 10 seconds. When it is set to 0, default
+	// timeout value will be used.
+	timeout = 10;
+
+	// login = &quot;foobar&quot;;// field 'login' is reused as encryption
+					   // method of shadowsocks
+	// password = &quot;baz&quot;;
+}
+
+//*redudp {
+//*	// `local_ip' should not be 0.0.0.0 as it's also used for outgoing
+//*	// packets that are sent as replies - and it should be fixed
+//*	// if we want NAT to work properly.
+//*	local_ip = 127.0.0.1;
+//*	local_port = 10053;
+//*
+//*	// `ip' and `port' of socks5 proxy server.
+//*	ip = 10.0.0.1;
+//*	port = 1080;
+//*	login = username;// field 'login' is reused as encryption
+//*					   // method of shadowsocks
+//*	password = pazzw0rd;
+//*
+//*	// know types: socks5, shadowsocks
+//*	type = socks5;
+//*
+//*	// redsocks knows about two options while redirecting UDP packets at
+//*	// linux: TPROXY and REDIRECT.  TPROXY requires more complex routing
+//*	// configuration and fresh kernel (&gt;= 2.6.37 according to squid
+//*	// developers[1]) but has hack-free way to get original destination
+//*	// address, REDIRECT is easier to configure, but requires `dest_ip` and
+//*	// `dest_port` to be set, limiting packet redirection to single
+//*	// destination.
+//*	// [1] http://wiki.squid-cache.org/Features/Tproxy4
+//*	dest_ip = 8.8.8.8;
+//*	dest_port = 53;
+//*
+//*	// Do not set it large if this section is for DNS requests. Otherwise,
+//*	// you may encounter out of file descriptor problem. For DNS requests,
+//*	// 10s is adequate.
+//*	udp_timeout = 30;
+//*	udp_timeout_stream = 180;
+//*}
+//*
+//*tcpdns {
+//*	// Transform UDP DNS requests into TCP DNS requests.
+//*	// You can also redirect connections to external TCP DNS server to
+//*	// REDSOCKS transparent proxy via iptables.
+//*	//local_ip = 192.168.1.1; // Local server to act as DNS server
+//*	//local_port = 1053;      // UDP port to receive UDP DNS requests
+//*	//tcpdns1 = 8.8.4.4;      // DNS server that supports TCP DNS requests
+//*	//tcpdns1_port = 53;      // DNS server port, default 53
+//*	//tcpdns2 = 8.8.8.8;      // DNS server that supports TCP DNS requests
+//*	//tcpdns2_port = 53;      // DNS server port, default 53
+//*	//timeout = 4;            // Timeout value for TCP DNS requests
+//*	local_ip=127.0.0.1;
+//*	local_port=5300;
+//*}
+
+autoproxy {
+    // Specify interface for outgoing connections.
+    // This is useful when you have multiple connections to
+    // internet or when you have VPN connections.
+    // interface = wlan0;
+
+    no_quick_check_seconds = 60; // Directly relay traffic to proxy if an IP
+                                 // is found blocked in cache and it has been
+                                 // added into cache no earlier than this
+                                 // specified number of seconds.
+                                 // Set it to 0 if you do not want to perform
+                                 // quick check when an IP is found in blocked
+                                 // IP cache, thus the connection will be
+                                 // redirected to proxy immediately.
+    quick_connect_timeout = 3;   // Timeout value when performing quick
+                                 // connection check if an IP is found blocked
+                                 // in cache.
+}
+
+ipcache {
+    // Configure IP cache
+    cache_size = 4;   // Maximum number of IP's in 1K. 
+    stale_time = 900; // Seconds to stale an IP in cache since it is added
+                      // into cahce.
+                      // Set it to 0 to disable cache stale.
+    port_check = 1;   // Whether to distinguish port number in address
+    cache_file = &quot;/tmp/ipcache.txt&quot;; // File used to store blocked IP's in cache.
+    autosave_interval = 3600; // Interval for saving ip cache into file.
+                              // Set it to 0 to disable autosave.
+    // When autosave_interval and stale_time are both 0, IP cache behaves like
+    // a static blacklist. 
+}
+
+// you can add more `redsocks' and `redudp' sections if you need.
+</code></pre><p>Now you could add following lines into your <code>/etc/rc.local</code> file to enable redsocks
+startup at the system boot:</p><pre><code>$ sudo vim /etc/rc.local
+$ /home/pi/redsocks/redsocks2 -c /home/pi/redsocks/redsocks.conf
+</code></pre><h3 id=hostapd>hostapd</h3><p>Setting hostapd for letting the wlan0 as an AP:</p><pre><code>$ sudo apt-get install -y hostapd
+$ vim /etc/hostapd/hostapd.conf
+interface=wlan0
+hw_mode=g
+channel=10
+ieee80211d=1
+country_code=CN
+ieee80211n=1
+wmm_enabled=1
+
+ssid=sssremote
+auth_algs=1
+wpa=2
+wpa_key_mgmt=WPA-PSK
+rsn_pairwise=CCMP
+wpa_passphrase=xxxxxxxxxxx
+$ sudo systemctl enable hostapd
+$ sudo systemctl start hostapd
+</code></pre><p>Or if you couldnot enable and start the hostpad via systemd, simply use the
+following configuration:</p><pre><code>$ sudo vim /etc/default/hostapd
+Change:
+#DAEMON_CONF=&quot;&quot;
+to
+DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
+
+Check the DAEMON_OPTS=&quot;&quot; is preceded by a #, so is #DAEMON_OPTS=&quot;&quot;
+And save.
+</code></pre><p>Then your hostapd will start at the systemboot.</p><h3 id=iptables-rules>iptables rules</h3><p>Use iptables-persistent for saving the rules:</p><pre><code>$ sudo apt-get install -y iptables-persistent
+$ sudo service netfilter-persistent save
+$ sudo service netfilter-persistent rerload
+</code></pre><p>Add following rules:</p><pre><code>$ sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+$ sudo iptables -t nat -N SHADOWSOCKS
+$ sudo iptables -t nat -A SHADOWSOCKS -d $server_IP -j RETURN
+$ sudo iptables -t nat -A SHADOWSOCKS -d 0.0.0.0/8 -j RETURN  
+$ sudo iptables -t nat -A SHADOWSOCKS -d 10.0.0.0/8 -j RETURN  
+$ sudo iptables -t nat -A SHADOWSOCKS -d 127.0.0.0/8 -j RETURN  
+$ sudo iptables -t nat -A SHADOWSOCKS -d 169.254.0.0/16 -j RETURN  
+$ sudo iptables -t nat -A SHADOWSOCKS -d 172.16.0.0/12 -j RETURN  
+$ sudo iptables -t nat -A SHADOWSOCKS -d 192.168.0.0/16 -j RETURN  
+$ sudo iptables -t nat -A SHADOWSOCKS -d 224.0.0.0/4 -j RETURN  
+$ sudo iptables -t nat -A SHADOWSOCKS -d 240.0.0.0/4 -j RETURN  
+$ sudo iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports 12345
+$ sudo iptables -t nat -A OUTPUT -p tcp -j SHADOWSOCKS  
+$ sudo iptables -t nat -A PREROUTING -p tcp -j SHADOWSOCKS  
+</code></pre><p>Save the rules via:</p><pre><code>$ sudo service netfilter-persistent save
+</code></pre><p>Add system-reboot rules:</p><pre><code>$ sudo vim /etc/rc.local
+iptables-restore &lt; /etc/iptables/rules.v4  
+</code></pre><p>Now reboot your raspberryPi, you will get a free wifi ap.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/12/18/workingtipsoninternetsharing/>WorkingTipsOnInternetSharing</a></h1><span class=post-date>Dec 18, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>To set up an free wireless solution working for WebDuino.</p><p>Because I located in china mainland, while our internet were forbidden by
 government(Fuck GFW!), so I have to find another way for accross the firewall
 and let WebDuino fetch back its updates.</p><h3 id=hardware-environment>Hardware Environment</h3><p>Laptop.<br>Wireless dongle(Fast)</p><pre><code>Bus 001 Device 002: ID 0bda:8179 Realtek Semiconductor Corp. RTL8188EUS 802.11n Wireless Network Adapter
 </code></pre><h3 id=virtualmachine>VirtualMachine</h3><p>I set a virtual machine which runs in virtualbox. First I thought
@@ -419,16 +843,4 @@ netmask 255.255.255.0
 up route add default gw 192.168.42.129 dev usb0
 down route del default gw 192.168.42.129 dev usb0
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/12/14/vmwarebasedesxiworkingtips/>VmwareBasedESXiWorkingTips</a></h1><span class=post-date>Dec 14, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Create ESXI vm machine:</p><p><img src=/images/2017_12_14_15_16_18_643x277.jpg alt=/images/2017_12_14_15_16_18_643x277.jpg></p><p>Typical setting:</p><p><img src=/images/2017_12_14_15_17_41_446x206.jpg alt=/images/2017_12_14_15_17_41_446x206.jpg></p><p>I will install the operating system later:</p><p><img src=/images/2017_12_14_15_18_09_465x278.jpg alt=/images/2017_12_14_15_18_09_465x278.jpg></p><p>Select guest operating system(Select ESXi 6.0):</p><p><img src=/images/2017_12_14_15_19_11_468x242.jpg alt=/images/2017_12_14_15_19_11_468x242.jpg></p><p>Location:</p><p><img src=/images/2017_12_14_15_20_28_470x137.jpg alt=/images/2017_12_14_15_20_28_470x137.jpg></p><p>Select 8 core:</p><p><img src=/images/2017_12_14_15_21_03_371x154.jpg alt=/images/2017_12_14_15_21_03_371x154.jpg></p><p>32GB Memory:</p><p><img src=/images/2017_12_14_15_21_22_472x235.jpg alt=/images/2017_12_14_15_21_22_472x235.jpg></p><p>Use NAT:</p><p><img src=/images/2017_12_14_15_21_46_451x274.jpg alt=/images/2017_12_14_15_21_46_451x274.jpg></p><p>LSI logic:</p><p><img src=/images/2017_12_14_15_22_10_451x178.jpg alt=/images/2017_12_14_15_22_10_451x178.jpg></p><p>scsi:</p><p><img src=/images/2017_12_14_15_22_28_257x162.jpg alt=/images/2017_12_14_15_22_28_257x162.jpg></p><p>Create new, 20GB, single file. name it:</p><p><img src=/images/2017_12_14_15_23_30_472x132.jpg alt=/images/2017_12_14_15_23_30_472x132.jpg></p><p>Customize, add an 280 GB Disk, also select the iso file.Click for
-installation.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/12/13/hplrelated/>HPLRelated</a></h1><span class=post-date>Dec 13, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=parameter>Parameter</h3><p>See Images:</p><p><img src=/images/2017_12_13_17_04_16_869x582.jpg alt=/images/2017_12_13_17_04_16_869x582.jpg></p><p><img src=/images/2017_12_13_17_04_32_907x518.jpg alt=/images/2017_12_13_17_04_32_907x518.jpg></p><p><img src=/images/2017_12_13_17_04_40_896x519.jpg alt=/images/2017_12_13_17_04_40_896x519.jpg></p><h3 id=reference-website>Reference Website</h3><p>HOW DO I TUNE MY HPL.DAT FILE?:</p><p><a href=http://www.advancedclustering.com/act_kb/tune-hpl-dat-file/>http://www.advancedclustering.com/act_kb/tune-hpl-dat-file/</a></p><p>The testing is pretty long time-consuming&mldr;..</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/12/09/createexeusingwinrar/>CreateEXEUsingWinRAR</a></h1><span class=post-date>Dec 9, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=procedure>Procedure</h3><p>Notice: select the 2 items:</p><p><img src=/images/2017_12_09_15_49_23_681x565.jpg alt=/images/2017_12_09_15_49_23_681x565.jpg></p><p>Advance, select the red item:</p><p><img src=/images/2017_12_09_15_50_57_448x388.jpg alt=/images/2017_12_09_15_50_57_448x388.jpg></p><p>unzipeed location:</p><p><img src=/images/2017_12_09_15_52_01_368x448.jpg alt=/images/2017_12_09_15_52_01_368x448.jpg></p><p>Setup:</p><p><img src=/images/2017_12_09_15_52_44_366x451.jpg alt=/images/2017_12_09_15_52_44_366x451.jpg></p><p>Add shortcuts:</p><p><img src=/images/2017_12_09_15_53_10_363x450.jpg alt=/images/2017_12_09_15_53_10_363x450.jpg></p><p>In Desktop:</p><p><img src=/images/2017_12_09_15_54_20_351x415.jpg alt=/images/2017_12_09_15_54_20_351x415.jpg></p><p>Some text:</p><p><img src=/images/2017_12_09_15_55_37_361x445.jpg alt=/images/2017_12_09_15_55_37_361x445.jpg></p><p><img src=/images/2017_12_09_16_01_35_358x444.jpg alt=/images/2017_12_09_16_01_35_358x444.jpg></p><p>Update:</p><p><img src=/images/2017_12_09_16_02_13_365x447.jpg alt=/images/2017_12_09_16_02_13_365x447.jpg></p><p>Text and icon:</p><p><img src=/images/2017_12_09_20_30_11_360x453.jpg alt=/images/2017_12_09_20_30_11_360x453.jpg></p><p>Certification:</p><p><img src=/images/2017_12_09_20_30_39_365x446.jpg alt=/images/2017_12_09_20_30_39_365x446.jpg></p><p>Modules:</p><p><img src=/images/2017_12_09_20_30_52_366x446.jpg alt=/images/2017_12_09_20_30_52_366x446.jpg></p><p>Now you could see the rared files, click it for installation.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/11/28/wtwareonraspberrypi/>WTwareOnRaspberryPI</a></h1><span class=post-date>Nov 28, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=效果>效果</h3><p><img src=/images/2017_11_28_15_06_56_485x642.jpg alt=/images/2017_11_28_15_06_56_485x642.jpg></p><p><img src=/images/2017_11_28_15_07_19_371x496.jpg alt=/images/2017_11_28_15_07_19_371x496.jpg></p><p><img src=/images/2017_11_28_15_07_39_378x348.jpg alt=/images/2017_11_28_15_07_39_378x348.jpg></p><h3 id=背景>背景</h3><p>RaspberryPI上的一种瘦客户端解决方案。</p><h3 id=步骤>步骤</h3><p>下载地址：</p><p><a href=https://winterminal.com/index.html#download>https://winterminal.com/index.html#download</a></p><p>下载链接有两个，一个是exe下载，一个是zip下载，我们选择exe下载。</p><p><img src=/images/2017_11_28_14_56_35_346x230.jpg alt=/images/2017_11_28_14_56_35_346x230.jpg>
-下载包大小大概200M不到，安装在Windows系统上，附带的例如TFTP/dhcpD之类的功能根据个人需求自行选择。我这里因为是静态地址的，不需要这些组件，就没有安装。</p><p>安装完毕后的配置过程如下，可以看到我们</p><p><img src=/images/2017_11_28_09_10_28_1053x783.jpg alt></p><p><img src=/images/2017_11_28_09_11_33_846x757.jpg alt></p><p><img src=/images/2017_11_28_09_12_57_847x761.jpg alt></p><p><img src=/images/2017_11_28_09_15_18_860x761.jpg alt></p><p><img src=/images/2017_11_28_09_15_38_851x768.jpg alt></p><p>这类说明一下，我们先配置RaspberryPI本身的IP地址/子网掩码/网关等信息。远端的服务器则在开机启动的时候再配置。最后填入的密码是进入设置页面的密码。在开机加电时按DEL键进入修改的条目。</p><h3 id=开机启动>开机启动</h3><p>这里的配置过程以后再补上，因为当时没有截图。</p><p>所有的更改项对应在SD卡的Config目录下。</p><pre><code>$  cat initrd.wtc 
-clientIP = 192.xxx.xxx.xxx
-netmask = 255.255.255.0
-routerIP = 192.xxx.xxx.xxx
-nameserverIP = 192.xxx.xxx.xxx
-config = local
-setupPassword = xxx.xxxxxxxxxxxxxxx
-$ cat config.wtc 
-server = rdp:192.xxx.xxx.xxx
-User=username:password
-</code></pre><p>配置好以后，插入SD卡就可以进入到我们预配置好的远程桌面了，这里我们启用的是RDP协议的Windows远程桌面。</p><p>为了保证服务质量，WTware默认禁掉了很多桌面效果，可以通过在<code>config.wtc</code>文件中加入下列条目，来开启所有特效:</p><pre><code>graphic = abcdefg
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/76/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/76/>76</a></li><li class="page-item active"><a class=page-link href=/page/77/>77</a></li><li class=page-item><a class=page-link href=/page/78/>78</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/230/>230</a></li><li class=page-item><a href=/page/78/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/230/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+installation.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/12/13/hplrelated/>HPLRelated</a></h1><span class=post-date>Dec 13, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=parameter>Parameter</h3><p>See Images:</p><p><img src=/images/2017_12_13_17_04_16_869x582.jpg alt=/images/2017_12_13_17_04_16_869x582.jpg></p><p><img src=/images/2017_12_13_17_04_32_907x518.jpg alt=/images/2017_12_13_17_04_32_907x518.jpg></p><p><img src=/images/2017_12_13_17_04_40_896x519.jpg alt=/images/2017_12_13_17_04_40_896x519.jpg></p><h3 id=reference-website>Reference Website</h3><p>HOW DO I TUNE MY HPL.DAT FILE?:</p><p><a href=http://www.advancedclustering.com/act_kb/tune-hpl-dat-file/>http://www.advancedclustering.com/act_kb/tune-hpl-dat-file/</a></p><p>The testing is pretty long time-consuming&mldr;..</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/12/09/createexeusingwinrar/>CreateEXEUsingWinRAR</a></h1><span class=post-date>Dec 9, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=procedure>Procedure</h3><p>Notice: select the 2 items:</p><p><img src=/images/2017_12_09_15_49_23_681x565.jpg alt=/images/2017_12_09_15_49_23_681x565.jpg></p><p>Advance, select the red item:</p><p><img src=/images/2017_12_09_15_50_57_448x388.jpg alt=/images/2017_12_09_15_50_57_448x388.jpg></p><p>unzipeed location:</p><p><img src=/images/2017_12_09_15_52_01_368x448.jpg alt=/images/2017_12_09_15_52_01_368x448.jpg></p><p>Setup:</p><p><img src=/images/2017_12_09_15_52_44_366x451.jpg alt=/images/2017_12_09_15_52_44_366x451.jpg></p><p>Add shortcuts:</p><p><img src=/images/2017_12_09_15_53_10_363x450.jpg alt=/images/2017_12_09_15_53_10_363x450.jpg></p><p>In Desktop:</p><p><img src=/images/2017_12_09_15_54_20_351x415.jpg alt=/images/2017_12_09_15_54_20_351x415.jpg></p><p>Some text:</p><p><img src=/images/2017_12_09_15_55_37_361x445.jpg alt=/images/2017_12_09_15_55_37_361x445.jpg></p><p><img src=/images/2017_12_09_16_01_35_358x444.jpg alt=/images/2017_12_09_16_01_35_358x444.jpg></p><p>Update:</p><p><img src=/images/2017_12_09_16_02_13_365x447.jpg alt=/images/2017_12_09_16_02_13_365x447.jpg></p><p>Text and icon:</p><p><img src=/images/2017_12_09_20_30_11_360x453.jpg alt=/images/2017_12_09_20_30_11_360x453.jpg></p><p>Certification:</p><p><img src=/images/2017_12_09_20_30_39_365x446.jpg alt=/images/2017_12_09_20_30_39_365x446.jpg></p><p>Modules:</p><p><img src=/images/2017_12_09_20_30_52_366x446.jpg alt=/images/2017_12_09_20_30_52_366x446.jpg></p><p>Now you could see the rared files, click it for installation.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/76/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/76/>76</a></li><li class="page-item active"><a class=page-link href=/page/77/>77</a></li><li class=page-item><a class=page-link href=/page/78/>78</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/231/>231</a></li><li class=page-item><a href=/page/78/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/231/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
