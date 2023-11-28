@@ -23,6 +23,32 @@ root@lxcnvidia:~#
 </code></pre><h3 id=4-lxc-with-nvidiacorrect-way>4. lxc with nvidia(correct way)</h3><p>Steps:</p><pre><code>lxc launch ubuntu:18.04 cuda -c nvidia.runtime=true
 lxc config device add cuda gpu gpu
 lxc exec cuda -- nvidia-smi
+</code></pre><h3 id=5-lxc-add-second-nicmacvlan>5. lxc add second nic(macvlan)</h3><p>Create a new profile:</p><pre><code>$ cat macvlan
+config: {}
+description: Default LXD profile modified for using macvlan
+devices:
+  eth1:
+    nictype: macvlan
+    parent: enp3s0 
+    type: nic
+name: macvlan
+</code></pre><p>Create this new profile:</p><pre><code># lxc profile edit macvlan&lt;macvlan
+# lxc config edit cuda
+    profiles:
+    - default
++++    - macvlan
+# lxc restart cuda
+# lxc exec cuda bash
+dhclient eth1
+</code></pre><p>Then you got the address.</p><p>Start the ui:</p><pre><code>dash@cuda:~/webui$ ./webui.sh 
+
+################################################################
+Install script for stable-diffusion + Web UI
+Tested on Debian 11 (Bullseye)
+################################################################
+
+</code></pre><p>Should change its listening address to <code>0.0.0.0</code></p><h3 id=6-lxc-on-ubuntu2204>6. lxc on ubuntu22.04</h3><p>not started, solved via:</p><pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash systemd.unified_cgroup_hierarchy=false&quot;
+
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
 cd Fooocus-MRE
 python3 -m venv fooocus_env
