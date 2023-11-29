@@ -1,5 +1,451 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/08/raspberrypi_pkvm_workingtips/>RaspberryPI_PKVM_WorkingTips</a></h1><span class=post-date>Sep 8, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=flash-aosp-13-images>Flash aosp 13 images</h3><p>Image download URL:<br><code>https://konstakang.com/devices/rpi4/AOSP13/</code></p><p>Flash it into rpi 4b.</p><h3 id=pkvm-kernelimages>pkvm kernel/images</h3><p>Download alpine kernel/images from(<code>https://www.worldofgh0st.com/blog/</code>):</p><p><code>https://www.worldofgh0st.com/wp-content/uploads/2022/09/KVM-Linux.zip</code></p><p>adb push them to <code>/data/local/tmp</code>.</p><h3 id=start-crosvm-machine>Start crosvm machine</h3><p>adb root and login with adb shell:</p><pre><code>➜  Downloads adb -s 192.168.1.114:5555 root 
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/23/linuxtips15/>LinuxTips15</a></h1><span class=post-date>Sep 23, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-x11docker>1. x11docker</h3><p>Start and specify vt:</p><pre><code># x11docker --gpu --vt=2 --xorg x11docker/mate
+</code></pre><p>With internet and more features:</p><pre><code># x11docker --gpu --vt=2 --network --desktop --init=systemd x11docker/deepin
+</code></pre><h3 id=2-git-without-ssl-check>2. git without ssl check</h3><p>via:</p><pre><code>export GIT_SSL_NO_VERIFY=1
+git clone https://xxxx.xx
+</code></pre><h3 id=3-home-sharing-environment>3. Home Sharing environment</h3><p>Install dnsmasq and configure:</p><pre><code># vim /etc/dnsmasq.conf
+bind-interfaces
+dhcp-range=10.1.10.128,10.1.10.200,12h
+dhcp-option=3,10.1.10.1
+dhcp-authoritative
+interface=enp0s25
+# systemctl restart dnsmasq
+</code></pre><p>Start the sharing via(enp0s25->wlo1):</p><pre><code>$ sudo iptables -t nat -A POSTROUTING -s '10.1.10.0/24' -o wlo1 -j MASQUERADE
+</code></pre><p>Then with a ethernet cable connected, the other client could get reach into
+the internet via sharing.</p><h3 id=4-system_reset-in-qemu>4. system_reset in qemu</h3><p>via:</p><pre><code>telnet localhost 1111
+&gt; system_reset
+this could reset the machine and let it reboot.
+</code></pre><h3 id=5-uhd510-win7-driver>5. uhd510 win7 driver</h3><p>download url:</p><p><code>https://downloadmirror.intel.com/30195/a08/win64_15.45.5174.exe</code></p><h3 id=6-intel-graphics>6. intel graphics</h3><p>version:</p><pre><code>21.20.16.5174 intel
+</code></pre><h3 id=7-fix-zsh-issue>7. Fix zsh issue</h3><p>When type <code>tab</code> key in zsh shell, it will complains following arguments, and
+won&rsquo;t automatically auto-complete the command:</p><pre><code>(eval):setopt:3: no such option: NO_typesettounset
+</code></pre><p>Fixed via:</p><pre><code># chsh -s $(which zsh)
+# vim /etc/shells
+/usr/bin/zsh
+</code></pre><p>Reboot the machine and this issue fixed.</p><h3 id=8-enter-to-m>8. Enter to M</h3><p><code>^M</code> will be replaced ,when hitting Enter:</p><pre><code>stty icrnl
+</code></pre><h3 id=9-wine-with-input-method>9. wine with input method</h3><p>Could not use fcitx in wine&rsquo;s tim:</p><p>Add:</p><pre><code>export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+</code></pre><p>into <code>/opt/apps/com.qq.tim.spark/files/run.sh</code></p><h3 id=10-os-probe-in-archlinux>10. os-probe in archlinux</h3><p>Add following lines into <code>/etc/default/grub</code>, then update grub configuration:</p><pre><code>GRUB_DISABLE_OS_PROBER=false
+</code></pre><h3 id=11-ubuntu-upgrade-issue>11. ubuntu upgrade issue</h3><p>solved via:</p><pre><code>cd /var/lib/dpkg/info
+sudo rm usrmerge.*
+sudo apt-get -f install
+</code></pre><h3 id=12-ssh-to-dropbear>12. ssh to dropbear</h3><p>issue:</p><pre><code>Unable to negotiate with 192.168.1.1 port 22: no matching host key type found. Their offer: ssh-rsa
+</code></pre><p>solved via:</p><pre><code>ssh  -oHostKeyAlgorithms=+ssh-rsa root@xxx.xxx.xxx.xxx
+</code></pre><h3 id=13-autologin-xfce4>13. autologin xfce4</h3><p>Edit lightdm configuration files:</p><pre><code>vi /etc/lightdm/lightdm.conf
+
+[SeatDefaults]
+autologin-user=username    #需要登录的用户名
+autologin-user-timeout=delay
+
+</code></pre><h3 id=14-detect-pci-parameters>14. detect pci parameters</h3><p>via:</p><pre><code>sudo lspci  -v -s 00:02.0
+00:02.0 VGA compatible controller: Intel Corporation Device 9a49 (rev 01) (prog-if 00 [VGA controller])
+	DeviceName: Onboard - Video
+	Subsystem: Intel Corporation Device 3004
+	Flags: bus master, fast devsel, latency 0, IRQ 190
+	Memory at 603c000000 (64-bit, non-prefetchable) [size=16M]
+	Memory at 4000000000 (64-bit, prefetchable) [size=256M]
+	I/O ports at 3000 [size=64]
+	Expansion ROM at 000c0000 [virtual] [disabled] [size=128K]
+	Capabilities: [40] Vendor Specific Information: Len=0c &lt;?&gt;
+	Capabilities: [70] Express Root Complex Integrated Endpoint, MSI 00
+	Capabilities: [ac] MSI: Enable+ Count=1/1 Maskable+ 64bit-
+	Capabilities: [d0] Power Management version 2
+	Capabilities: [100] Process Address Space ID (PASID)
+	Capabilities: [200] Address Translation Service (ATS)
+	Capabilities: [300] Page Request Interface (PRI)
+	Capabilities: [320] Single Root I/O Virtualization (SR-IOV)
+	Kernel driver in use: i915
+	Kernel modules: i915
+</code></pre><h3 id=15-dnf-speed-up>15. dnf speed up</h3><p>add following :</p><pre><code># vim /etc/dnf/dnf.conf
+fastestmirror=true
+
+
+</code></pre><h3 id=16-makepkg-ignore-check>16. makepkg ignore check</h3><p>via:</p><pre><code>makepkg --skipinteg
+</code></pre><h3 id=17-building-on-cdesktop>17. building on cdesktop</h3><p>on building gstreamer:</p><pre><code>Force specify a macro. 
+</code></pre><p>on building net-snmp:</p><pre><code>sudo apt install automake -y
+aclocal
+automake --add-missing --copy --force-missing
+</code></pre><p>Detect pre-defined macros:</p><pre><code>uos@uos-PC:~$ echo | gcc -E -dM - | grep sw
+#define __sw_64_bwx__ 1
+#define __sw_64 1
+#define __sw_64_fix__ 1
+#define __sw_64_sw6b__ 1
+#define __sw_64__ 1
+#define __sw_64_cix__ 1
+
+</code></pre><h3 id=18-markdown-in-confluence>18. markdown in confluence</h3><p>via:</p><p><code>https://www.cnblogs.com/cuianbing/p/15891950.html</code></p><h3 id=19-wine-app-fcitx>19. wine app fcitx</h3><p>Added following in <code>run.sh</code>:</p><pre><code>env locale=zh_CN
+
+export XIM=&quot;fcitx&quot;
+export GTK_IM_MODULE=&quot;fcitx&quot;
+export QT_IM_MODULE=&quot;fcitx&quot;
+export XMODIFIERS=&quot;@im=fcitx&quot;
+</code></pre><h3 id=20-wine-app-fonts>20. wine app fonts</h3><p>Verify you have the correct fonts under :</p><pre><code>➜  Fonts pwd
+/home/dash/.deepinwine/Spark-TIM/drive_c/windows/Fonts
+➜  Fonts ls
+simsunb.ttf  simsun.ttc
+
+</code></pre><p>Then add following into the <code>run.sh</code>:</p><pre><code>env locale=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+LC_ALL=zh_CN.UTF-8
+WINE_CMD=&quot;LC_ALL=zh_CN.UTF-8 deepin-wine5&quot;
+
+</code></pre><h3 id=21-virtualbox-time-issue>21. virtualbox time issue</h3><p>Windows side:</p><pre><code>c:\Progra~1\Oracle\VirtualBox\VBoxManage setextradata %NOME% &quot;VBoxInternal/Devices/VMMDev/0/Config/GetHostTimeDisabled&quot; 1
+c:\Progra~1\Oracle\VirtualBox\VBoxManage modifyvm %NOME% --biossystemtimeoffset -7628000000
+</code></pre><h3 id=22-python-simple-http-server>22. python simple http server</h3><p>via:</p><pre><code>python -m http.server 9000
+
+</code></pre><h3 id=23-build-kernel>23. build kernel</h3><p><code>BTF: .tmp_vmlinux.btf: pahole (pahole) is not available</code></p><pre><code>sudo apt install dwarves
+</code></pre><h3 id=24-kernel-install-module>24. kernel install module</h3><p>via:</p><pre><code>make INSTALL_MOD_STRIP=1 modules_install -j4
+</code></pre><p>then the initrd size will be small.
+Or you will encounter initrd is too big issue.</p><h3 id=25-auto-restart-sshd>25. Auto restart sshd</h3><p>via:</p><pre><code>pacman -S cron
+systemctl enable cronie
+crontab -e
+@reboot sleep 120 &amp;&amp; systemctl restart sshd
+</code></pre><p>Then each time you reboot the machine it will automatically restart sshd.</p><h3 id=26-install-graphical-in-pve>26. Install graphical in pve</h3><p>Install kde via following command:</p><pre><code>apt install -y task-kde-desktop
+</code></pre><h3 id=27-remotedesktop-gpu>27. RemoteDesktop GPU</h3><p>via:</p><pre><code>显卡加速
+win+r打开运行 输入gpedit.msc
+依次找到计算机配置-&gt;管理模板-&gt;Windows组件-&gt;远程桌面服务-&gt;远程桌面会话主机-&gt;远程会话环境
+在右边选择将硬件图形适配器应用于所有远程桌面服务会话
+右键编辑，选择已启用确定保存。
+重启远程主机。
+现在可以在远程桌面里运行需要GPU支持的应用了
+
+提升传输帧率
+RDP默认的帧率是30，可以设置为60帧传输
+实际效果取决于客户端设置、网络环境等等因素
+打开远程主机上的注册表编辑器 win+r输入regedit
+找到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations
+在空白处右键-&gt;新建-&gt;DWORD（32位）值，命名为DWMFRAMEINTERVAL
+双击刚添加的这一项，基数选择为十进制，数值数据填写15
+确定保存，重启生效
+</code></pre><h3 id=28-fsck-ext4-disk>28. fsck ext4 disk</h3><p>error message:</p><pre><code>[ 5903.331828] sd 4:0:0:0: [sdb] Attached SCSI removable disk
+[ 5911.746891] EXT4-fs (sdb1): ext4_check_descriptors: Checksum for group 1 failed (43829!=56479)
+[ 5911.746897] EXT4-fs (sdb1): group descriptors corrupted!
+</code></pre><p>fixed via:</p><pre><code>fsck.ext4 -fvy  /dev/sdb1
+</code></pre><h3 id=29-width-height>29. width height</h3><p>55 &lt;40</p><h3 id=30-check-ssdhdd-in-linux>30. check ssd/hdd in linux</h3><p>via:</p><pre><code>lsblk -d -o name,rota
+NAME ROTA
+sda     0
+sdb     0
+sdc     1
+</code></pre><h3 id=30-list-all-xsessions>30. list all xsessions</h3><p>Available session types can be found in /usr/share/xsessions/ for X and in /usr/share/wayland-sessions/ for Wayland.</p><h3 id=31-gdm-6000-issue>31. gdm 6000 issue</h3><p>Solved via:</p><pre><code>[dash@localhost ~]$ which X
+/usr/bin/X
+[dash@localhost ~]$ sudo vim /usr/bin/X
+[dash@localhost ~]$ ls -l -h /usr/bin/X
+lrwxrwxrwx. 1 root root 4 Sep 26  2022 /usr/bin/X -&gt; Xorg
+[dash@localhost ~]$ sudo rm -f /usr/bin/X
+[dash@localhost ~]$ sudo vim /usr/bin/X
+[dash@localhost ~]$ sudo netstat -anp | grep 6000
+tcp        0      0 0.0.0.0:6000            0.0.0.0:*               LISTEN      4215/X              
+tcp6       0      0 :::6000                 :::*                    LISTEN      4215/X              
+[dash@localhost ~]$ sudo systemctl restart gdm
+[dash@localhost ~]$ sudo netstat -anp | grep 6000
+[dash@localhost ~]$ cat /usr/bin/X
+#!/bin/bash
+exec /usr/bin/Xorg &quot;$@&quot; -nolisten tcp
+exit 0
+</code></pre><h3 id=32-centos-issue>32. centos issue</h3><p>disk full, restart machine with a cdrom, press F11 for boot menu.</p><p><img src=/images/2023_03_29_09_59_13_674x419.jpg alt=/images/2023_03_29_09_59_13_674x419.jpg></p><h3 id=33-zhaoxin-gpu>33. zhaoxin gpu</h3><p><img src=/images/2023_03_30_09_22_18_864x289.jpg alt=/images/2023_03_30_09_22_18_864x289.jpg></p><p><a href="https://www.zhaoxin.com/qdxz.aspx?nid=31&typeid=554">https://www.zhaoxin.com/qdxz.aspx?nid=31&typeid=554</a></p><p><img src=/images/2023_03_30_09_26_10_864x617.jpg alt=/images/2023_03_30_09_26_10_864x617.jpg></p><p>ubuntu guest, with qxl disabled.
+windows, no spice server, no qxl graphical card.</p><h3 id=34-sddm-autologin>34. sddm autologin</h3><p>via:</p><pre><code>vim /etc/sddm.conf.d/autologin.conf
+[Autologin]
+User=john
+Session=plasma
+</code></pre><h3 id=35-reboot-for-normal-userubuntu1804>35. reboot for normal user(ubuntu18.04)</h3><p>via:</p><pre><code>echo '[Remote SSH]
+Identity=unix-user:userrer
+Action=org.freedesktop.login1.*
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes' | sudo tee /etc/polkit-1/localauthority/50-local.d/power.pkla
+</code></pre><h3 id=36-pivpn>36. pivpn</h3><p>create via:</p><pre><code>pivpn add
+</code></pre><p>Then copy the configuration files to wireguards.</p><h3 id=37-setdefault>37. setdefault</h3><p>via:</p><pre><code> systemctl get-default
+ systemctl set-default graphical.target
+ systemctl get-default
+ systemctl start graphical.target
+ ps -ef | grep X
+</code></pre><h3 id=38-hackitosh>38. hackitosh</h3><p>via:</p><pre><code>https://www.itmanbu.com/ryzen-hackintosh-using-kvm-proxmox.html
+https://blog.lv5.moe/p/pve-virtualized-hackintosh-gpu-passthrough-and-remote-access-tutorial
+https://www.sqlsec.com/2022/04/pve.html#%E5%88%9D%E5%A7%8B%E5%8C%96%E8%99%9A%E6%8B%9F%E6%9C%BA
+</code></pre><h3 id=39-noip-on-rpi>39. noip on rpi</h3><p>add into the crontab via:</p><pre><code>@reboot sleep 30 &amp;&amp;  /usr/local/bin/noip2 &amp;
+
+</code></pre><h3 id=40-npci>40. npci</h3><p>via:</p><pre><code>X99、X299 平台以及部分 AMD 平台需要添加 npci=0x2000 或 npci=0x3000，当跑代码卡在 PCI Start Configuration 时使用；
+
+只有 AMD 平台的 BIOS 没有 Above 4G Decoding 选项时添加此参数，二者不可同时使用。 
+</code></pre><h3 id=41-du-and-sort>41. du and sort</h3><p>via:</p><pre><code>du -hs -- * .[^.]* | sort -h
+
+</code></pre><h3 id=42-get-the-virsh-parameters>42. Get the virsh parameters</h3><p>Query the os type via <code>osinfo-query</code>, then install the os via:</p><pre><code>virt-install --name win1010 --memory 10240 --vcpus=2 --os-type=Windows --os-variant=win10 --cdrom=/var/lib/libvirt/images/Win10_20H2_v2_Chinese_x64.iso --network network=default --graphics=vnc -v
+osinfo-query os
+</code></pre><h3 id=43-qemu-build>43. qemu build</h3><p><code>-no-pie</code> error resolution:</p><pre><code>Q: ld: Error: unable to disambiguate: -no-pie (did you mean --no-pie ?)
+A: 这是因为新版本的ld不支持该参数导致，因此需要降低ld版本，由于ld属于Binutils中，所以要降低Binutils版本，参考如下方式：
+
+# 下载binutils
+wget https://ftp.gnu.org/gnu/binutils/binutils-2.30.tar.gz
+tar zxvf  binutils-2.30.tar.gz
+# 进入源码目录编译安装
+cd binutils-2.30
+./configure
+make
+make install
+# 替换原来的ld
+cd /usr/bin
+mv ld ld.copy #备份旧版本ld
+cd /usr/local/bin
+ln -s ld /usr/bin/ld
+# 验证ld版本是否降下来了
+ld --version
+</code></pre><h3 id=44-install-mainline-kernel-on-ubuntu>44. Install mainline kernel on ubuntu</h3><p>Via:</p><pre><code>sudo add-apt-repository ppa:cappelikan/ppa
+sudo apt update &amp;&amp; sudo apt install mainline
+sudo mainline --install-latest
+</code></pre><p>Not working for ubuntu18.04.</p><h3 id=45-custom-uefi-logo>45. custom uefi logo</h3><p>via:</p><p><code>https://www.reddit.com/r/VFIO/comments/ayuffy/custom_ovmf_boot_logo/</code></p><h3 id=46-virsh-start-with>46. virsh start with</h3><p>With console output:</p><pre><code> virsh start realwin10 --console 2&gt;&amp;1 | tee outputlog.txt
+</code></pre><h3 id=47-build-ovmf-with-debug>47. build ovmf with debug</h3><p>via:</p><pre><code>OvmfPkg/build.sh -a X64 -D DEBUG_ON_SERIAL_PORT
+
+</code></pre><h3 id=48-copy-vbtbin>48. copy Vbt.bin</h3><p>via:</p><pre><code>sudo cp /sys/kernel/debug/dri/0/i915_vbt Vbt.bin
+</code></pre><h3 id=49-disable-suspendhibernate-service>49. Disable suspend/hibernate service</h3><p>via:</p><pre><code>sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+</code></pre><h3 id=50-pnputil-uninstall>50. pnputil uninstall</h3><p>via:</p><pre><code>pnputil /delete-driver oem0.inf
+pnputil /d oem0.inf
+</code></pre><h3 id=51-enable-netplan-ubuntu>51. enable netplan Ubuntu</h3><p>via:</p><pre><code>sudo systemctl stop NetworkManager
+sudo systemctl disable NetworkManager
+sudo systemctl mask NetworkManager
+Next, start and enable the systemd-networkd service:
+
+sudo systemctl unmask systemd-networkd.service
+sudo systemctl enable systemd-networkd.service
+sudo systemctl start systemd-networkd.service
+Add the interface configuration to the netplan config file (in the /etc/netplan directory):
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:
+      dhcp4: yes
+Apply the changes by running the following command:
+sudo netplan apply
+</code></pre><h3 id=52-amt>52. amt</h3><p>3 articles:</p><pre><code>https://mp.weixin.qq.com/s?__biz=MzAwODExNjI3NA==&amp;mid=2649779334&amp;idx=1&amp;sn=1ca539bb708e8628a8beeaa8d4406985&amp;chksm=83770ddbb40084cd9806537e1f31b9ac39bccccff0ee1ba7f7fe2e5c55296299b83ebf335014&amp;cur_album_id=1374168008981184514&amp;scene=189#wechat_redirect
+https://mp.weixin.qq.com/s?__biz=MzAwODExNjI3NA==&amp;mid=2649779281&amp;idx=1&amp;sn=3d5d84c753cb424bd7e1cefdf7ab30e8&amp;chksm=83770d0cb400841a912ce894a94e555603a8c2b0314ec81c3e4701948da2d3b97ee8e085b204&amp;token=187057378&amp;lang=zh_CN&amp;scene=21#wechat_redirect
+https://mp.weixin.qq.com/s?__biz=MzAwODExNjI3NA==&amp;mid=2649779314&amp;idx=1&amp;sn=f40ca8f4f4ba4ad2645cc0dc8fe658ee&amp;chksm=83770d2fb400843949326a557f9849d1360f72ee79615d5be2a7793851e247c40caea13a08d8&amp;token=187057378&amp;lang=zh_CN&amp;scene=21#wechat_redirect
+</code></pre><h3 id=53-redfish>53. redfish</h3><p><code>https://mp.weixin.qq.com/s?__biz=MzAwODExNjI3NA==&mid=2649775148&idx=1&sn=9638581928f7fa98714c1ad24fafccdb&chksm=83773d71b400b467a9b72cbe8ae433393ab4e9f0b306c309d757ea08ba7bb4e27ddc24943951&token=1820633067&lang=zh_CN&scene=21#wechat_redirect</code></p><h3 id=54-virt-xml>54. virt-xml</h3><p>remove:</p><pre><code>virt-xml instance-00000001 --remove-device --network 2
+</code></pre><p>Add:</p><pre><code>virt-xml instance-00000001 --add-device --network type=direct,mac=52:54:00:2d:2a:bb,source=enp1s0,source_mode=bridge,model=virtio
+</code></pre><h3 id=55-guestfish>55. guestfish</h3><p>Using guestfish for copy-in content:</p><pre><code>主机上安装`libguestfs-tools`: `sudo apt-get install -y libguestfs-tools`:    
+
+关机进入到 guest镜像编辑, 拷贝文件/文件夹到Administrator桌面:    
+
+guestmount -a /var/lib/nova/instances/75f9c5f1-edc1-4184-969a-db326d973570/75f9c5f1-edc1-4184-969a-db326d973570.snap1 -m /dev/sda3 --rw /mnt
+cp -r /root/2023_06_06_08_40_09_1912x1055.jpg /root/Videos/ /mnt/Users/Administrator/Desktop/
+guestunmount /mnt
+
+</code></pre><h3 id=56-novnc-desktop>56. novnc desktop</h3><p><code>https://hub.docker.com/r/fredblgr/ubuntu-novnc</code></p><h3 id=57-build-libvirtdubuntu2204>57. build libvirtd(ubuntu22.04)</h3><p>Build latest libvirtd(<code>9.5.0</code>)</p><pre><code>sudo apt install -y build-essential git meson byobu 
+git clone https://gitlab.com/libvirt/libvirt.git
+cd libvirt/
+sudo apt install -y libxml2-utils xsltproc pkg-config libglib2.0-dev gnutls-bin libgnutls28-dev libxml2-dev libyajl-dev python3-docutils
+meson build -Dsystem=true -Ddriver_qemu=enabled
+ninja -C build
+./build/src/libvirtd --version
+systemctl stop libvirtd
+./build/src/libvirtd 
+</code></pre><h3 id=58-install-new-kernel-headers>58. install new kernel-headers</h3><p>via:</p><pre><code>rpm -e --nodeps kernel-headers
+rpm -ivh kernel-headers-5.15.85_lts2021_iotg-3.x86_64.rpm 
+</code></pre><h3 id=59-build-libvirtcentos>59. build libvirt(centos)</h3><p>tobe finished. on centos 7, bad &mldr;.</p><pre><code>pip3 install --user meson
+export PATH=/root/.local/bin:$PATH
+yum install -y git libxslt gnutls-devel 
+meson build -Dsystem=true -Ddriver_qemu=enabled
+
+? 
+meson build -Dsystem=true -Ddriver_qemu=enabled -Ddriver_libvirtd=enabled -Ddriver_remote=enabled -Ddocs=disabled
+</code></pre><h3 id=60-dd-speednvme>60. dd speed(nvme)</h3><p>via:</p><pre><code>dd if=/dev/sda of=/root/240GSSD_FLH.img bs=30M status=progress &amp;&amp; sync
+255873515520 bytes (256 GB, 238 GiB) copied, 1648 s, 155 MB/s
+8139+1 records in
+8139+1 records out
+256060514304 bytes (256 GB, 238 GiB) copied, 1648.91 s, 155 MB/s
+
+</code></pre><h3 id=61-vg-activate>61. vg activate</h3><p>Show the volume uuid of the vg:</p><pre><code>[root@ttt ~]# vgs -o vg_name,vg_uuid,pv_uuid
+  VG     VG UUID                                PV UUID                               
+  centos 2e15nC-l5TX-2hfy-gETN-cDj1-feIR-inF45Q Tfqq5p-otmc-PJ1u-8ySN-vX4v-0xmh-JzOnZg
+  centos eShAUV-BMx6-ENXN-9L94-UNVC-PXJT-4bElEb uC9tgf-Jps0-TS9J-tesU-92MJ-J1o3-fa1eE1
+</code></pre><p>Activate via uuid:</p><pre><code>[root@ttt ~]#  lvchange -a y --select vg_uuid=eShAUV-BMx6-ENXN-9L94-UNVC-PXJT-4bElEb
+[root@ttt ~]#  lvchange -a y --select vg_uuid=2e15nC-l5TX-2hfy-gETN-cDj1-feIR-inF45Q
+</code></pre><p>now mount via:</p><pre><code>[root@ttt ~]# mount /dev/mapper/centos-root1  /mnt
+</code></pre><h3 id=62-tips-on-vacation>62. tips on vacation</h3><pre><code>https://www.reddit.com/r/VFIO/comments/uh172m/libvirt_82_qemudeviceoverride/
+https://github.com/crc-org/crc/issues/2839
+https://blog.51cto.com/u_15127621/2763672
+https://www.jianshu.com/p/55cf54659e62
+https://www.frytea.com/archives/546/#%e7%96%91%e9%9a%be%e8%a7%a3%e5%86%b3
+https://www.mail-archive.com/libvir-list@redhat.com/msg226678.html
+https://github.com/libvirt/libvirt/tags?after=v8.2.0
+</code></pre><h3 id=63-launch-shell-script-on-desktop>63. launch shell script on desktop</h3><p>via desktop shortcuts:</p><pre><code>test@test-VTE510:~$ cat Desktop/start_vm1.desktop 
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Exec=sudo -E /home/test/win10/start_vm1.sh -m 8G -c 2 --audio device=intel-hda,name=hda-audio,timer-period=5000,sink=alsa_output.pci-0000_00_1f.3.hdmi-stereo
+#Exec=sh /usr/bin/startvm1
+Name=Start vm1
+GenericName=Start vm1
+Comment=Start vm1 sr-iov gtk
+Encoding=UTF-8
+Terminal=false
+Type=Application
+Categories=Application;Network;
+test@test-VTE510:~$ cat Desktop/start_vm2.desktop 
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Exec=sudo -E /home/test/win10/start_vm2.sh -m 8G -c 2 --spice display=egl-headless,disable-ticketing=on,port=5002
+#Exec=sh /usr/bin/startvm1
+Name=Start vm2
+GenericName=Start vm2
+Comment=Start vm2 sr-iov gtk
+Encoding=UTF-8
+Terminal=false
+Type=Application
+Categories=Application;Network;
+</code></pre><h3 id=64-nvidia-vgpu>64. nvidia vgpu</h3><p>Create :</p><pre><code>[root@text mdev_supported_types]# cd /sys/class/mdev_bus/0000\:01\:00.0/mdev_supported_types/
+[root@text mdev_supported_types]# echo &quot;638916c5-46ad-4a2f-9248-27b0164efc02&quot;&gt;nvidia-232/create
+# virsh start win10-rtx2080
+</code></pre><h3 id=65-installation-of-22h2>65. Installation of 22h2</h3><p>ignore the login for installing 22h2.</p><pre><code>在 Windows 11 的最新版本 22H2 中，微软干掉了“我没有 Internet 连接”按钮，没登陆不让你装系统。有些电脑网卡没有驱动就直接卡在这里了。
+
+此时你可以按下 Shift+F10 打开命令提示符，输入 oobe\BypassNRO.cmd 即可重启进入带有跳过按钮的 OOBE。
+</code></pre><h3 id=66-always-restart-docker-instance>66. always restart docker instance</h3><p>update its property:</p><pre><code>docker update --restart=always grafana
+</code></pre><h3 id=67-keepcache-in-rockylinux>67. keepcache in rockylinux</h3><p>via:</p><pre><code>vim /etc/dnf/dnf.conf
+add:
+keepcache=1
+</code></pre><h3 id=68-meshcommander>68. meshcommander</h3><p>via:</p><pre><code>https://github.com/Ylianst/MeshCommander
+</code></pre><h3 id=69-find-display>69. find DISPLAY</h3><p>via:</p><pre><code>ls /tmp/.X11-Unix
+</code></pre><p>find the XNumber, where DISPLAY is the number</p><h3 id=70-user-network>70. user network</h3><p>via:</p><pre><code> qemu-system-x86_64 -net nic -net user,hostfwd=tcp::2222-:22 -M q35 -cpu host -smp 4,sockets=1,cores=4,threads=1  -enable-kvm -m 16384 -drive file=/var/lib/libvirt/images/ubuntubuildidv.qcow2
+</code></pre><h3 id=71-openmdtk>71. openmdtk</h3><p>download url <code>https://meshcentral.com/info/extra/mdtk/ManageabilityDeveloperToolKit.msi</code></p><h3 id=72-ubuntu2204-static-ip>72. ubuntu2204 static ip</h3><p>via:</p><pre><code>/etc/netplan/00-installer-config.yaml 
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    enp89s0:
+      addresses:
+        - 192.168.1.11/24
+      nameservers:
+        addresses: [223.5.5.5,180.76.76.76]
+      routes:
+        - to: default
+          via: 192.168.1.33
+  version: 2
+
+</code></pre><h3 id=73-dnf-builddep>73. dnf builddep</h3><p>via:</p><pre><code>    yum install -y dnf-plugins-core
+    dnf builddep kernel.spec 
+</code></pre><h3 id=74-depmod-failed>74. depmod failed</h3><p>in fedroa building kernel, just refers to <code>https://www.spinics.net/linux/fedora/fedora-kernel/msg13605.html</code></p><h3 id=75-set-default-kernelgrubby>75. set default kernel(grubby)</h3><p>via:</p><pre><code> grubby --info=ALL
+ grubby --default-index
+ grubby --set-default 1
+</code></pre><h3 id=76-on-build-rpms>76. on build rpms</h3><p>Tips:</p><pre><code>1. using dockerimage for building
+2. change the kernel.spec and related files in SOURCES FOLDER
+3. manually enable btf items. 
+</code></pre><h3 id=77-4-core-vcpu>77. 4 core vcpu</h3><p>via:</p><pre><code>  &lt;cpu mode='host-passthrough' check='none' migratable='on'&gt;
+    &lt;topology sockets='1' dies='1' cores='4' threads='1'/&gt;
+  &lt;/cpu&gt;
+
+</code></pre><h3 id=78-awesome-customization>78. awesome customization</h3><p>via editing the default theme:</p><pre><code># vim /usr/share/awesome/theme/default/theme.lua
+theme.font          = &quot;Consolas 14&quot;
+
+theme.bg_normal     = &quot;#222222&quot;
+-- theme.bg_focus      = &quot;#535d6c&quot;
+theme.bg_focus      = &quot;#14EEEE&quot;
+</code></pre><h3 id=79-sr-iov-items>79. sr-iov items</h3><p>Information:</p><pre><code>https://www.supermicro.com/zh_cn/products/motherboard/H13SAE-MF
+its mainboard:   https://www.supermicro.com/manuals/motherboard/H13/MNL-2627.pdf
+
+</code></pre><h3 id=80-git-proxysocks5>80. git proxy(socks5)</h3><p>via:</p><pre><code>git config --global http.proxy 'socks5://192.168.1.22:10800'
+</code></pre><h3 id=81-ustc-centos-repository>81. ustc centos repository</h3><p>via:</p><pre><code>sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+         -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.ustc.edu.cn/centos|g' \
+         -i.bak \
+         /etc/yum.repos.d/CentOS-Base.repo
+</code></pre><h3 id=82-install-docker-on-rockylinux>82. install docker on rockylinux</h3><p>via:</p><pre><code>dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+dnf install docker-ce docker-ce-cli containerd.io
+</code></pre><h3 id=83-nomachine-issue>83. nomachine issue</h3><p>solved on nvidia machine via:</p><pre><code> $HOME/.nx/config/player.cfg and set the configuration key “Enable hardware accelerated decoding” to “disabled”. 
+</code></pre><h3 id=84-route-add--net>84. route add -net</h3><p>via:</p><pre><code>route add -net 172.23.0.0/16 gw 192.168.1.33
+</code></pre><h3 id=85-bridge-example>85. bridge example</h3><p>via:</p><pre><code>idv@idv-VTE510:~$ cd /etc/netplan/
+idv@idv-VTE510:/etc/netplan$ ls
+01-network-manager-all.yaml  01-network-manager-all.yaml.orig
+idv@idv-VTE510:/etc/netplan$ cat 01-network-manager-all.yaml
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: networkd
+
+  ethernets:
+    enp1s0:
+      dhcp4: false 
+      dhcp6: false 
+
+  bridges:
+    br0:
+      interfaces: [enp1s0]
+      addresses: [192.168.1.239/24]
+      # gateway4 is deprecated, use routes instead
+      routes:
+      - to: default
+        via: 192.168.1.1
+        metric: 100
+        on-link: true
+      mtu: 1500
+      nameservers:
+        addresses: [8.8.8.8]
+      parameters:
+        stp: true
+        forward-delay: 4
+      dhcp4: no
+      dhcp6: no
+</code></pre><p>Thus you will have your br0 setup.</p><h3 id=86-qemu-tap-setup>86. qemu tap setup</h3><p>create a tap0 via:</p><pre><code>$ sudo tunctl -t tap0 -u `whoami`
+Add tap0 to bridge
+$ sudo brctl addif br0 tap0
+$ sudo ifconfig tap0 up
+</code></pre><p>Start the qemu instance via adding following guest network setting:</p><pre><code>-netdev tap,id=mynet0,ifname=tap0,script=no,downscript=no -device e1000,netdev=mynet0,mac=52:55:00:d1:55:01
+</code></pre><h3 id=87-du-with-hidden-directorys>87. du with hidden directorys</h3><p>via:</p><pre><code>du -hs .[^.]*
+</code></pre><h3 id=88-meson-build-prefix>88. meson build prefix</h3><p>via:</p><pre><code>meson -Dprefix=/usr ......
+</code></pre><h3 id=89-lxd-issuesnapd>89. lxd issue(snapd)</h3><p>solved via:</p><pre><code>apt install libsquashfuse0 squashfuse fuse
+apt install snapd
+</code></pre><h3 id=90-pve-lxc-desktop>90. pve lxc desktop</h3><p>via:</p><pre><code>https://github.com/mrrudy/proxmoxHelper
+</code></pre><h3 id=91-cuda-on-ubuntu2204>91. cuda on ubuntu22.04</h3><p>Install Steps:</p><pre><code>sudo apt-get install linux-headers-$(uname -r)
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb 
+sudo apt-get update
+sudo apt-get install cuda-toolkit
+sudo apt-get install nvidia-gds
+sudo reboot
+</code></pre><p>Configure steps:</p><pre><code># cat ~/.bashrc
+......
+export PATH=/usr/local/cuda-12.3/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+# nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Fri_Sep__8_19:17:24_PDT_2023
+Cuda compilation tools, release 12.3, V12.3.52
+Build cuda_12.3.r12.3/compiler.33281558_0
+</code></pre><p>Test steps:</p><pre><code>git clone https://github.com/NVIDIA/cuda-samples.git
+cd ./cuda-samples/Samples/1_Utilities/deviceQuery
+make
+./deviceQuery
+</code></pre><h3 id=92-bluetooth-headset-autodisconnect-issue>92. bluetooth headset autodisconnect issue</h3><p>solved via:</p><pre><code># cat /etc/default/grub
+GRUB_CMDLINE_LINUX=&quot;btusb.enable_autosuspend=n&quot;
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+# cat /etc/modprobe.d/disable_autosuspend.conf
+    # Disable autosuspend for btusb to make the bluetooth keyboard work again
+    options btusb enable_autosuspend=n
+</code></pre><p>Reboot then bluetooth headset runs well.</p><p>Examine via:</p><pre><code>sudo systool -v -m btusb
+
+</code></pre><h3 id=93-gradio-issue>93. gradio issue</h3><p>listen on <code>0.0.0.0</code> modification:</p><pre><code>Find networking.py in \python_embeded\Lib\site-packages\gradio
+adjust :
+LOCALHOST_NAME = os.getenv(&quot;GRADIO_SERVER_NAME&quot;, &quot;0.0.0.0&quot;)
+AND
+server_name = server_name or LOCALHOST_NAME
+url_host_name = &quot;localhost&quot; if server_name == &quot;0.0.0.0&quot; else server_name
+By
+server_name = &quot;192.168.1.10&quot;
+url_host_name = &quot;localhost&quot; if server_name == &quot;0.0.0.0&quot; else server_name
+192.168.1.10 is your server IP.
+it works with Gradio
+</code></pre><h3 id=94-virsh-undefine>94. virsh undefine</h3><p>undefine the vms which contains nvram:</p><pre><code>virsh undefine --nvram 
+</code></pre><h3 id=95-disable-ipv6-at-home>95. disable ipv6 at home</h3><p>rpi :</p><pre><code># vim /etc/sysctl.conf
+net.ipv6.conf.all.disable_ipv6=1
+net.ipv6.conf.default.disable_ipv6=1
+</code></pre><p>Ubuntu22.04:</p><pre><code># vim /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash ipv6.disable=1&quot;
+# update-grub2
+</code></pre><h3 id=96-nethogs-listening-udp>96. nethogs listening UDP</h3><p>for:</p><pre><code>nethogs -C
+</code></pre><h3 id=97-pypi>97. pypi</h3><p>pip using tsinghua</p><pre><code>pip install -r requirements_versions.txt  -i https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre><h3 id=98-yay-using-proxy>98. yay using proxy</h3><p>Example:</p><pre><code>$ export https_proxy=http://192.168.1.194:10809
+$ export http_proxy=http://192.168.1.194:10809
+$ yay  --sudoflags=&quot;http_proxy=http://192.168.1.194:10809 https_proxy=http://192.168.1.194:10809&quot; nomachine
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/08/raspberrypi_pkvm_workingtips/>RaspberryPI_PKVM_WorkingTips</a></h1><span class=post-date>Sep 8, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=flash-aosp-13-images>Flash aosp 13 images</h3><p>Image download URL:<br><code>https://konstakang.com/devices/rpi4/AOSP13/</code></p><p>Flash it into rpi 4b.</p><h3 id=pkvm-kernelimages>pkvm kernel/images</h3><p>Download alpine kernel/images from(<code>https://www.worldofgh0st.com/blog/</code>):</p><p><code>https://www.worldofgh0st.com/wp-content/uploads/2022/09/KVM-Linux.zip</code></p><p>adb push them to <code>/data/local/tmp</code>.</p><h3 id=start-crosvm-machine>Start crosvm machine</h3><p>adb root and login with adb shell:</p><pre><code>➜  Downloads adb -s 192.168.1.114:5555 root 
 restarting adbd as root
 ➜  Downloads adb -s 192.168.1.114:5555 shell
 rpi4:/ # 
@@ -269,48 +715,4 @@ Mem:             60           7          52           0           0          52
 Swap:             1           0           1
 root@sg1desktopubuntu2004:~# cat /proc/cmdline 
 BOOT_IMAGE=/boot/vmlinuz-5.19.3-051903-generic root=UUID=c255524f-5692-457c-a0b6-d465e0b32707 ro quiet splash i915.force_probe=* modprobe.blacklist=ast,snd_hda_intel i915.enable_guc=2 drm_kms_helper.edid_firmware=edid/1920x1080.bin video=HDMI-A-1:e video=HDMI-A-5:e video=HDMI-A-9:e video=HDMI-A-13:e mem=65535M
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/08/24/rebuildppakernelimages/>RebuildPPAKernelImages</a></h1><span class=post-date>Aug 24, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=ppa-kernel>ppa kernel</h3><p>Install ppa kernel on ubuntu20.04 via:</p><pre><code>add-apt-repository ppa:tuxinvader/lts-mainline -y
-apt update -y
-apt-get install -y linux-generic-5.19
-</code></pre><p>After reboot, check the kernel via:</p><pre><code># uname -r
-5.19.3-051903-generic
-</code></pre><h3 id=customization-of-kernel>Customization of Kernel</h3><p>uncomment the <code>deb-src</code>for ppa:</p><pre><code># cat /etc/apt/sources.list.d/tuxinvader-ubuntu-lts-mainline-focal.list 
-deb http://ppa.launchpad.net/tuxinvader/lts-mainline/ubuntu focal main
-deb-src http://ppa.launchpad.net/tuxinvader/lts-mainline/ubuntu focal main
-# apt update
-</code></pre><p>Get the source code:</p><pre><code># apt install linux-source-5.19.3
-# ls /usr/src/linux-source-5.19.3/
-debian  debian.master  linux-source-5.19.3.tar.bz2
-</code></pre><p>Get the build-dep for kernel:</p><pre><code># apt build-dep linux-generic-5.19
-# apt build-dep linux-doc
-</code></pre><p>Prepare the build tree:</p><pre><code># cd /usr/src/linux-source
-# bunzip2 linux-source-5.19.3.tar.bz2
-# tar xf linux-source-5.19.3.tar
-# mv linux-source-5.19.3/* .
-# mkdir debian/stamps
-</code></pre><p>Build via:</p><pre><code># fakeroot debian/rules clean
-# fakeroot debian/rules editconfigs
-# fakeroot debian/rules binary-headers binary-generic binary-perarch
-</code></pre><p>build will take sometimes, so drink a cup of H~~~ot tea and wait.</p><p>Check the built result:</p><pre><code># ls /usr/src/*.deb
-/usr/src/linux-buildinfo-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
-/usr/src/linux-headers-5.19.3-051903_5.19.3-051903.202208220846_all.deb
-/usr/src/linux-headers-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
-/usr/src/linux-image-unsigned-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
-/usr/src/linux-modules-5.19.3-051903-generic_5.19.3-051903.202208220846_amd64.deb
-</code></pre><h3 id=benchmark>Benchmark</h3><p>glmark2 result:</p><pre><code># uname -r
-5.19.3-051903-generic
-# export DISPLAY=:179
-# glmark2
-=======================================================
-    glmark2 2021.02
-=======================================================
-    OpenGL Information
-    GL_VENDOR:     Intel
-    GL_RENDERER:   Mesa Intel(R) Graphics (SG1)
-    GL_VERSION:    4.6 (Compatibility Profile) Mesa 22.2.0-devel (git-e8fc5cc 2022-06-22 focal-oibaf-ppa)
-=======================================================
-.........
-=======================================================
-                                  glmark2 Score: 2886 
-=======================================================
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/12/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/12/>12</a></li><li class="page-item active"><a class=page-link href=/page/13/>13</a></li><li class=page-item><a class=page-link href=/page/14/>14</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/231/>231</a></li><li class=page-item><a href=/page/14/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/231/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
