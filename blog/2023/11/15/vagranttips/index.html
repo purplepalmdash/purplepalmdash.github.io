@@ -15,4 +15,6 @@ vagrant-libvirt (0.7.0, system)
 vagrant-vbguest (0.31.0, global)
 </code></pre><p>Install via <code>vagrant plugin install xxxxxxxxxx</code><br>Resize in vm:</p><pre><code>cfdisk /dev/sda
 xfs_growfs /dev/sda5
+</code></pre><p>On Ubuntu lvm, if you resize the disk, do following:</p><pre><code>lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv 
+resize2fs /dev/ubuntu-vg/ubuntu-lv 
 </code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

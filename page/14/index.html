@@ -1,5 +1,93 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/08/26/benchmarkonsg1/>BenchmarkOnSG1</a></h1><span class=post-date>Aug 26, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Start the redroid via:</p><pre><code># docker run -itd --name redroid4cores --memory-swappiness=0 --privileged   -p 5556:5555 --cpuset-cpus 0-3 -v /root/cpus/present:/sys/devices/system/cpu/present -v /root/cpus/online:/sys/devices/system/cpu/online -v /root/cpus/possible:/sys/devices/system/cpu/possible redroid12:latest redroid.fps=120 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD128 androidboot.use_memfd=1
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/08/29/workingtipsonupgradingsg1drivercentos1810.qcow2/>WorkingTipsOnUpgradingSG1DriverCentOS1810.qcow2</a></h1><span class=post-date>Aug 29, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=vm>VM</h3><p>Import new image:</p><p><img src=/images/2022_08_29_10_25_29_498x422.jpg alt=/images/2022_08_29_10_25_29_498x422.jpg></p><p>Name it:</p><p><img src=/images/2022_08_29_10_26_09_467x332.jpg alt=/images/2022_08_29_10_26_09_467x332.jpg></p><p>Upgrade kernel to 4.19.12:</p><pre><code>$ ls
+kernel-4.19.12-1.x86_64.rpm  kernel-devel-4.19.12-1.x86_64.rpm  kernel-headers-4.19.12-1.x86_64.rpm  kmod-ukmd-4.19.12-20212.el7.x86_64.rpm
+$ rpm -ivh *.rpm
+$ vi /etc/default/grub
+Changed to 4.19.12 kernel
+$ grub2-mkconfig -o /boot/grub2/grub.cfg 
+$ sudo reboot
+</code></pre><p>Change the repository using iso:</p><pre><code># mount /dev/sr0 /mnt
+# cat /etc/yum.repos.d/local.repo
+[local]
+name=local
+baseurl=file:///mnt
+enabled=1
+gpgcheck=0
+# yum makecache
+</code></pre><p>Using official <code>install-sg1.sh</code> for installing to 4.19.112 kernel for fetching the dependencies.</p><h3 id=merge-steps>Merge steps</h3><p>安装官方驱动的过程中会编译出相应的文件，需要按照以下步骤进行更改:</p><pre><code># mkdir /root/merge
+# cp /root/rpmbuild/SRPMS/kmod-ukmd-4.19.112-20413.el7.centos.src.rpm /root/merge
+# cd /root/merge
+# mkdir kmod-ukmd-4.19.12.cpio
+# cd kmod-ukmd-4.19.12.cpio
+# rpm2cpio ../kmod-ukmd-4.19.112-20413.el7.centos.src.rpm | cpio -idmv
+# ls
+dg1_dmc_ver2_02.bin  dg1_guc_49.0.1.bin  dg1_huc_7.9.5.bin  kmod.spec  kmod-ukmd-4.19.112.tar.gz
+# tar xzvf kmod-ukmd-4.19.112.tar.gz
+# mv kmod-ukmd-4.19.112 kmod-ukmd-4.19.12
+# vim kmod.spec 
+Change 4.19.112-&gt;4.19.12
+# vim kmod-ukmd-4.19.12/kmod.spec
+Change 4.19.112-&gt;4.19.12
+# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_edid.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
+# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_probe_helper.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
+# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_vblank.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
+# mv kmod-ukmd-4.19.112.tar.gz /tmp
+# tar czvf kmod-ukmd-4.19.12.tar.gz kmod-ukmd-4.19.12
+# rm -rf kmod-ukmd-4.19.12
+# ls
+dg1_dmc_ver2_02.bin  dg1_guc_49.0.1.bin  dg1_huc_7.9.5.bin  kmod.spec  kmod-ukmd-4.19.12.tar.gz
+# cd ..
+# tar czvf kmod-ukmd-4.19.12.cpio.tar.gz kmod-ukmd-4.19.12.cpio
+# ls
+kmod-ukmd-4.19.112-20413.el7.centos.src.rpm  kmod-ukmd-4.19.12.cpio  kmod-ukmd-4.19.12.cpio.tar.gz
+# mv /root/rpmbuild/SOURCES/ /root/rpmbuild/SOURCES.back &amp;&amp; mkdir -p /root/rpmbuild/SOURCES/
+# cp -ar /root/merge/kmod-ukmd-4.19.12.cpio/* /root/rpmbuild/SOURCES
+# cd /root/rpmbuild/SOURCES
+# vim /usr/src/kernels/4.19.12/include/linux/math64.h
+在文件末尾倒数第二行添加
+.....
+    #endif /* mul_u64_u32_div */
+    +++++ #define DIV64_U64_ROUND_UP(ll, d)	\
+    +++++	({ u64 _tmp = (d); div64_u64((ll) + _tmp - 1, _tmp); })
+    
+    #endif /* _LINUX_MATH64_H */
+
+# rpmbuild -bb kmod.spec
+# ls /root/rpmbuild/RPMS/x86_64
+kmod-ukmd-4.19.12-20413.el7.centos.x86_64.rpm
+</code></pre><h3 id=verification>Verification</h3><p>Install any 4.19.12 kernel, test the package <code>kmod-ukmd-4.19.12-20413.el7.centos.x86_64.rpm</code>.</p><pre><code>$ ls /dev/dri/
+card0  renderD128
+$ lsmod | grep i915
+i915_spi               20480  0 
+mtd                    57344  5 i915_spi
+i915                 1933312  0 
+drm_ukmd_kms_helper   188416  1 i915
+drm_ukmd              495616  3 drm_ukmd_kms_helper,i915
+drm_ukmd_compat        98304  3 drm_ukmd_kms_helper,i915,drm_ukmd
+video                  40960  1 i915
+i2c_algo_bit           16384  1 i915
+cec                    45056  1 i915
+mfd_core               16384  2 lpc_ich,i915
+</code></pre><p>Examine the kernel demsg:</p><pre><code>$ sudo dmesg | grep drm
+[sudo] password for ctctest: 
+[    7.776406] drm: loading out-of-tree module taints kernel.
+[    7.800836] Initialized drm/i915 compat module 20160105
+[    7.892916] [drm] i915 backporting
+[    7.893701] [drm] Intel graphics LMEM: [mem 0x00000000-0x1fb7fffff]
+[    7.893702] [drm] Intel graphics LMEM IO start: a00000000
+[    7.893702] [drm] Intel graphics LMEM size: 1fb800000
+[    7.893714] [drm] Intel graphics stolen LMEM: [mem 0x1fc000000-0x1ffffffff]
+[    7.893714] [drm] Intel graphics stolen LMEM IO start: bfc000000
+[    7.895015] i915 0000:07:00.0: [drm] Couldn't get system memory bandwidth
+[    7.895053] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+[    7.895054] [drm] Driver supports precise vblank timestamp query.
+[    7.971850] i915 0000:07:00.0: [drm] Finished loading DMC firmware i915/dg1_dmc_ver2_02.bin (v2.2)
+[    7.994442] [drm] GuC communication enabled
+[    7.999403] i915 0000:07:00.0: [drm] GuC firmware i915/dg1_guc_49.0.1.bin version 49.0 submission:disabled
+[    7.999405] i915 0000:07:00.0: [drm] HuC firmware i915/dg1_huc_7.9.5.bin version 7.9 authenticated:yes
+[    8.001958] [drm] Initialized i915 1.6.0 20220718-8a58be7 for 0000:07:00.0 on minor 0
+[    8.003950] i915 0000:07:00.0: [drm] Cannot find any crtc or sizes
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/08/26/benchmarkonsg1/>BenchmarkOnSG1</a></h1><span class=post-date>Aug 26, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Start the redroid via:</p><pre><code># docker run -itd --name redroid4cores --memory-swappiness=0 --privileged   -p 5556:5555 --cpuset-cpus 0-3 -v /root/cpus/present:/sys/devices/system/cpu/present -v /root/cpus/online:/sys/devices/system/cpu/online -v /root/cpus/possible:/sys/devices/system/cpu/possible redroid12:latest redroid.fps=120 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD128 androidboot.use_memfd=1
 fe847de1c10fd9f28a358257b1c90c22884535a6d14c8867136bceea77cf140c
 root@ctctest-UniServer-R4900-G3:~# docker exec -it redroid4cores sh
 fe847de1c10f:/ # setprop sys.use_memfd 1 
@@ -256,187 +344,4 @@ ii  mesa-vulkan-drivers:amd64                  22.2~git2206220600.e8fc5c~oibaf~f
 </code></pre><h3 id=avd-benchmark>avd benchmark</h3><p>Result(with x11vnc on):</p><p><img src=/images/2022_08_23_11_17_35_422x832.jpg alt=/images/2022_08_23_11_17_35_422x832.jpg></p><p>Without x11vnc:</p><p><img src=/images/2022_08_23_11_22_04_390x804.jpg alt=/images/2022_08_23_11_22_04_390x804.jpg></p><h3 id=kernel-upgrading>Kernel upgrading</h3><p>vfio in linux-zen, performance is bad.</p><pre><code># git clone git://mirrors.ustc.edu.cn/linux.git
 # cd linux/
 # git checkout tags/v5.19.3 -b 5.19.3
-</code></pre><p>To be continued</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/08/15/sg1onarchlinux/>SG1OnArchLinux</a></h1><span class=post-date>Aug 15, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install sddm:</p><pre><code># pacman -S sddm xorg
-</code></pre><p>After reboot, examine the kernel and the sg1 pci infos:</p><pre><code>[root@archvfio ~]# lspci | grep -i vga
-00:01.0 VGA compatible controller: Red Hat, Inc. Virtio GPU (rev 01)
-07:00.0 VGA compatible controller: Intel Corporation SG1 [Server GPU SG-18M] (rev 01)
-[root@archvfio ~]# uname -a
-Linux archvfio 5.19.1-arch2-1 #1 SMP PREEMPT_DYNAMIC Thu, 11 Aug 2022 16:06:13 +0000 x86_64 GNU/Linux
-</code></pre><p>Add virtio gpu into blacklist:</p><pre><code># vim /etc/modprobe.d/blacklist.conf
-   # blacklist virtio_gpu
-</code></pre><p>Didn&rsquo;t take effects, change the graphical to qxl and added blacklist qxl:</p><p><img src=/images/2022_08_15_14_23_35_535x518.jpg alt=/images/2022_08_15_14_23_35_535x518.jpg></p><p>Take effects:</p><pre><code>[root@archvfio ~]# lsmod | grep qxl
-[root@archvfio ~]# ls /dev/dri/
-by-path  card0	renderD128
-</code></pre><p>Examine the sg1 connected info:</p><pre><code>for p in /sys/class/drm/*/status; do con=${p%/status}; echo -n &quot;${con#*/card?-}: &quot;; cat $p; done
-DP-1: disconnected
-DP-2: disconnected
-DP-3: disconnected
-HDMI-A-1: disconnected
-HDMI-A-2: disconnected
-HDMI-A-3: disconnected
-HDMI-A-4: disconnected
-</code></pre><p>Edit the Xorg configuration files and start the benchmark:</p><pre><code># cat /etc/X11/xorgintel.conf 
-Section &quot;Device&quot;
-    Identifier     &quot;Device[0]&quot;
-    BusID          &quot;PCI:7:0:0&quot;
-    VendorName     &quot;Intel&quot;
-    BoardName      &quot;DG1&quot;
-    Option &quot;AllowEmptyInitialConfiguration&quot;
-EndSection
-Section &quot;ServerFlags&quot;
-    Option &quot;Debug&quot; &quot;dmabuf_capable&quot;
-EndSection
-Section &quot;Monitor&quot;
-    Identifier   &quot;Monitor0&quot;
-    VendorName   &quot;Monitor Vendor&quot;
-    ModelName    &quot;Monitor Model&quot;
-    Option   &quot;IgnoreEDID&quot;
-EndSection
-# Xorg :179 -config /etc/X11/xorgintel.conf
-# ps -ef | grep -i xorg
-root         841     526  0 14:27 tty2     00:00:00 /usr/lib/Xorg :179 -config /etc/X11/xorgintel.conf
-root         877     873  0 14:28 pts/1    00:00:00 grep -i xorg
-
-</code></pre><h3 id=testing>testing</h3><p>Install x11vnc and glmark2 for benchmarking:</p><pre><code># vim /etc/pacman.conf
-[archlinuxcn]
-#The Chinese Arch Linux communities packages.
-SigLevel = Never
-Server   = http://repo.archlinuxcn.org/$arch
-# pacman -Sy
-# pacman -S x11vnc glmark2
-[root@archvfio ~]# export DISPLAY=:179
-[root@archvfio ~]# glmark2
-=======================================================
-    glmark2 2021.12
-=======================================================
-    OpenGL Information
-    GL_VENDOR:     Intel
-    GL_RENDERER:   Mesa Intel(R) Graphics (SG1)
-    GL_VERSION:    4.6 (Compatibility Profile) Mesa 22.1.6
-=======================================================
-
-</code></pre><p>glmark2 result:</p><pre><code>=======================================================
-    glmark2 2021.12
-=======================================================
-    OpenGL Information
-    GL_VENDOR:     Intel
-    GL_RENDERER:   Mesa Intel(R) Graphics (SG1)
-    GL_VERSION:    4.6 (Compatibility Profile) Mesa 22.1.6
-=======================================================
-[build] use-vbo=false: FPS: 2386 FrameTime: 0.419 ms
-[build] use-vbo=true: FPS: 3112 FrameTime: 0.321 ms
-[texture] texture-filter=nearest: FPS: 3262 FrameTime: 0.307 ms
-[texture] texture-filter=linear: FPS: 3452 FrameTime: 0.290 ms
-[texture] texture-filter=mipmap: FPS: 3493 FrameTime: 0.286 ms
-[shading] shading=gouraud: FPS: 3056 FrameTime: 0.327 ms
-[shading] shading=blinn-phong-inf: FPS: 3070 FrameTime: 0.326 ms
-[shading] shading=phong: FPS: 2990 FrameTime: 0.334 ms
-[shading] shading=cel: FPS: 3129 FrameTime: 0.320 ms
-[bump] bump-render=high-poly: FPS: 2409 FrameTime: 0.415 ms
-[bump] bump-render=normals: FPS: 3495 FrameTime: 0.286 ms
-[bump] bump-render=height: FPS: 3393 FrameTime: 0.295 ms
-[effect2d] kernel=0,1,0;1,-4,1;0,1,0;: FPS: 2885 FrameTime: 0.347 ms
-[effect2d] kernel=1,1,1,1,1;1,1,1,1,1;1,1,1,1,1;: FPS: 2300 FrameTime: 0.435 ms
-[pulsar] light=false:quads=5:texture=false: FPS: 3424 FrameTime: 0.292 ms
-[desktop] blur-radius=5:effect=blur:passes=1:separable=true:windows=4: FPS: 1861 FrameTime: 0.537 ms
-[desktop] effect=shadow:windows=4: FPS: 2431 FrameTime: 0.411 ms
-[buffer] columns=200:interleave=false:update-dispersion=0.9:update-fraction=0.5:update-method=map: FPS: 769 FrameTime: 1.300 ms
-[buffer] columns=200:interleave=false:update-dispersion=0.9:update-fraction=0.5:update-method=subdata: FPS: 1275 FrameTime: 0.784 ms
-[buffer] columns=200:interleave=true:update-dispersion=0.9:update-fraction=0.5:update-method=map: FPS: 824 FrameTime: 1.214 ms
-[ideas] speed=duration: FPS: 3128 FrameTime: 0.320 ms
-[jellyfish] &lt;default&gt;: FPS: 2708 FrameTime: 0.369 ms
-[terrain] &lt;default&gt;: FPS: 509 FrameTime: 1.965 ms
-[shadow] &lt;default&gt;: FPS: 2664 FrameTime: 0.375 ms
-[refract] &lt;default&gt;: FPS: 1041 FrameTime: 0.961 ms
-[conditionals] fragment-steps=0:vertex-steps=0: FPS: 3226 FrameTime: 0.310 ms
-[conditionals] fragment-steps=5:vertex-steps=0: FPS: 3035 FrameTime: 0.329 ms
-[conditionals] fragment-steps=0:vertex-steps=5: FPS: 2974 FrameTime: 0.336 ms
-[function] fragment-complexity=low:fragment-steps=5: FPS: 3014 FrameTime: 0.332 ms
-[function] fragment-complexity=medium:fragment-steps=5: FPS: 3047 FrameTime: 0.328 ms
-[loop] fragment-loop=false:fragment-steps=5:vertex-steps=5: FPS: 3250 FrameTime: 0.308 ms
-[loop] fragment-steps=5:fragment-uniform=false:vertex-steps=5: FPS: 3050 FrameTime: 0.328 ms
-[loop] fragment-steps=5:fragment-uniform=true:vertex-steps=5: FPS: 3293 FrameTime: 0.304 ms
-=======================================================
-                                  glmark2 Score: 2665 
-=======================================================
-</code></pre><p>Unigen valley benchmark:</p><pre><code># export DISPLAY=:179
-[root@archvfio ~]# x11vnc
-###############################################################
-#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#
-#@                                                           @#
-#@  **  WARNING  **  WARNING  **  WARNING  **  WARNING  **   @#
-#@                                                           @#
-#@        YOU ARE RUNNING X11VNC WITHOUT A PASSWORD!!        @#
-#@                                                           @#
-#@  This means anyone with network access to this computer   @#
-
-
-On another terminal:  
-[root@archvfio ~]# export DISPLAY=:179
-[root@archvfio ~]# cd Unigine_Valley-1.0/
-[root@archvfio Unigine_Valley-1.0]# ls
-bin  data  documentation  valley
-[root@archvfio Unigine_Valley-1.0]# ./valley 
-</code></pre><p><img src=/images/2022_08_15_14_42_10_965x786.jpg alt=/images/2022_08_15_14_42_10_965x786.jpg></p><p>valley cannot start in default resolution, changes edid and set the default resolution to 1920x1080:</p><pre><code># vim /etc/default/grub
-........
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;loglevel=3 quiet drm_kms_helper.edid_firmware=edid/1920x1080.bin video=HDMI-A-1:e&quot;
-........
-# grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre><p>Valley result:</p><p><img src=/images/2022_08_15_14_57_02_518x465.jpg alt=/images/2022_08_15_14_57_02_518x465.jpg></p><pre><code>Benchmark results:
-Time:	189.067
-Frames:	8108
-FPS:	42.8842
-Min FPS:	25.3772
-Max FPS:	71.5901
-Score:	1794.28
-
-</code></pre><h3 id=ubuntu-sg1>Ubuntu sg1</h3><p>Update and upgrade system(based on desktop iso):</p><pre><code># apt update &amp;&amp; apt upgrade &amp;&amp; apt install openssh-server vim glmark2 x11vnc &amp;&amp; ufw disable &amp;&amp; systemctl disable gdm &amp;&amp; reboot
-# vim /etc/modprobe.d/blacklist.conf
-.......
-blacklist qxl
-</code></pre><p>Using <code>linux-zen</code> kernel:</p><pre><code>Install the linux-zen via:    
-# sudo add-apt-repository ppa:damentz/liquorix &amp;&amp; sudo apt-get update
-# sudo apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
-
-root@dash-Standard-PC-Q35-ICH9-2009:/home/dash# ls /dev/dri/
-by-path  card0  renderD128
-root@dash-Standard-PC-Q35-ICH9-2009:/home/dash# uname -a
-Linux dash-Standard-PC-Q35-ICH9-2009 5.19.0-1.1-liquorix-amd64
-</code></pre><p>Create Xorg via:</p><pre><code>tobe added
-</code></pre><p>Issue: not started:</p><pre><code>error: Kernel is too old for Iris. Consider upgrading to kernel v4.16.
-</code></pre><h3 id=ubuntu2004-sg1>Ubuntu20.04 sg1</h3><p>Install the kernel provided by intel, then:</p><pre><code># ln -s /usr/lib/x86_64-linux-gnu/dri/swrast_dri.so /usr/lib64/dri/swrast_dri.so
-# ln -s /usr/lib/x86_64-linux-gnu/dri/kms_swrast_dri.so /usr/lib64/dri/kms_swrast_dri.so
-# ln -s /usr/local/lib/x86_64-linux-gnu/dri/iris_dri.so /usr/lib64/dri/iris_dri.so
-# export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:/usr/local/lib64/dri:/usr/lib64/:/usr/lib64/dri:$LD_LIBRARY_PATH
-# export MESA_LOADER_DRIVER_OVERRIDE=iris
-# Xorg :179 -config /etc/X11/xorgintel.conf 
-    X.Org X Server 1.20.13
-    X Protocol Version 11, Revision 0
-    Build Operating System: linux Ubuntu
-    Current Operating System: Linux virtio-vga-node 5.4.48-3c77c0f552c7+ #1 SMP Fri Jan 15 13:26:42 UTC 2021 x86_64
-    Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.4.48-3c77c0f552c7+ root=UUID=a10af00c-1048-4629-bfd7-e7aa7f2b4866 ro quiet splash vt.handoff=7
-    Build Date: 14 December 2021  02:14:13PM
-    xorg-server 2:1.20.13-1ubuntu1~20.04.2 (For technical support please see http://www.ubuntu.com/support) 
-    Current version of pixman: 0.38.4
-    	Before reporting problems, check http://wiki.x.org
-    	to make sure that you have the latest version.
-    Markers: (--) probed, (**) from config file, (==) default setting,
-    	(++) from command line, (!!) notice, (II) informational,
-    	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
-    (==) Log file: &quot;/var/log/Xorg.179.log&quot;, Time: Tue Aug 16 09:38:50 2022
-    (++) Using config file: &quot;/etc/X11/xorgintel.conf&quot;
-    (==) Using system config directory &quot;/usr/share/X11/xorg.conf.d&quot;
-    (II) modeset(0): Initializing kms color map for depth 24, 8 bpc.
-    MESA: warning: Driver does not support the 0x4907 PCI ID.
-    (II) modeset(0): Initializing kms color map for depth 24, 8 bpc.
-    MESA: warning: Driver does not support the 0x4907 PCI ID.
-</code></pre><p>In another terminal , run glmark2:</p><pre><code># export DISPLAY=:179
-# glmark2
-</code></pre><p>UniValley result:</p><pre><code>Time:   189.107
-Frames: 7131
-FPS:    37.7089
-Min FPS:        19.6125
-Max FPS:        68.0576
-Score:  1577.74
-
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/13/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/13/>13</a></li><li class="page-item active"><a class=page-link href=/page/14/>14</a></li><li class=page-item><a class=page-link href=/page/15/>15</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/232/>232</a></li><li class=page-item><a href=/page/15/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/232/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>To be continued</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/13/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/13/>13</a></li><li class="page-item active"><a class=page-link href=/page/14/>14</a></li><li class=page-item><a class=page-link href=/page/15/>15</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/232/>232</a></li><li class=page-item><a href=/page/15/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/232/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
