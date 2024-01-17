@@ -1,5 +1,102 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/07/workingtipsonplaywithdocker/>WorkingTipsOnPlayWithDocker</a></h1><span class=post-date>Apr 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><h4 id=qemu-image>Qemu Image</h4><p>Qemu image preparation:</p><pre><code># mkdir offline-play-with-docker
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/18/kismatic110tips/>kismatic110tips</a></h1><span class=post-date>Apr 18, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>preparation</h3><p>Deployment machine, Download the packages:</p><pre><code># mkdir deploy
+# cd deploy
+# wget https://github.com/apprenda/kismatic/releases/download/v1.10.0/kismatic-v1.10.0-linux-amd64.tar.gz
+# git clone https://github.com/apprenda/kismatic.git
+# tar xzvf *.tar.gz;
+# ls 
+ansible  helm  kismatic  kismatic-master  kismatic-master.zip  kismatic-v1.10.0-linux-amd64.tar.gz  kubectl  provision
+</code></pre><p>Target node(all-in-one), install python-pip, shadowsocks, redsocks, gcc, etc, for acrossing the fucking GFW!</p><h3 id=plan>plan</h3><p>plan the cluster</p><pre><code>./kismatic install plan
+Plan your Kubernetes cluster:
+=&gt; Number of etcd nodes [3]: 1
+=&gt; Number of master nodes [2]: 1
+=&gt; Number of worker nodes [3]: 1
+=&gt; Number of ingress nodes (optional, set to 0 if not required) [2]: 0
+=&gt; Number of storage nodes (optional, set to 0 if not required) [0]: 0
+=&gt; Number of existing files or directories to be copied [0]: 0
+
+Generating installation plan file template with: 
+- 1 etcd nodes
+- 1 master nodes
+- 1 worker nodes
+- 0 ingress nodes
+- 0 storage nodes
+- 0 files
+
+Wrote plan file template to &quot;kismatic-cluster.yaml&quot;
+Edit the plan file to further describe your cluster. Once ready, execute the &quot;install validate&quot; command to proceed.
+</code></pre><p>An empty <code>kismatic-cluster.yaml</code> will be generated, later we will edit it.</p><h3 id=validate>validate</h3><p>validate with detailed information:</p><pre><code>./kismatic install validate -o raw
+</code></pre><p>Error:</p><pre><code>ansible/bin/ansible-playbook -i ansible/inventory.ini -s ansible/playbooks/preflight.yaml --extra-vars @ansible/clustercatalog.yaml -vvvv
+Traceback (most recent call last):
+  File &quot;ansible/bin/ansible-playbook&quot;, line 36, in &lt;module&gt;
+    import shutil
+  File &quot;/usr/lib/python3.6/shutil.py&quot;, line 10, in &lt;module&gt;
+    import fnmatch
+  File &quot;/usr/lib/python3.6/fnmatch.py&quot;, line 14, in &lt;module&gt;
+    import re
+  File &quot;/usr/lib/python3.6/re.py&quot;, line 142, in &lt;module&gt;
+    class RegexFlag(enum.IntFlag):
+AttributeError: module 'enum' has no attribute 'IntFlag'
+error running playbook: error running ansible: exit status 1
+</code></pre><p>Seems because the python is python3 rather than python2.</p><p>Edit the python definition:</p><pre><code># vim ansible/bin/ansible-playbook
+    #!/usr/bin/python2
+</code></pre><p>Then your validation will be OK.</p><h3 id=install-apply>install apply</h3><p>Via following command:</p><pre><code># ./kismatic install apply
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/12/workingtipsonplaywithk8s/>WorkingTipsOnPlayWithK8s</a></h1><span class=post-date>Apr 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>Aim</h3><p>To Write an tutorial for colleagues for learning, they only have to open the
+browser, by clicking then they could get an automated dev environment.</p><h3 id=environment>Environment</h3><p>play-with-kubernetes blog:</p><pre><code># git clone https://github.com/play-with-docker/play-with-kubernetes.github.io.git
+# cd play-with-kubernetes.github.io/
+# vim _config.yml
+pwkurl: http://192.168.189.114
+# docker-compose up
+</code></pre><p>Then open your browser <code>http://192.168.189.114:4000</code>, and you will see the play-with-k8s webpages.</p><p>For using the local infrastructure, to configure the <code>play-with-docker</code> with
+following steps:</p><pre><code># cd /root/go/src/github.com/play-with-docker/play-with-docker
+# vim config/config.go
+	//flag.StringVar(&amp;DefaultDinDImage, &quot;default-dind-image&quot;, &quot;franela/dind&quot;, &quot;Default DinD image to use if not specified otherwise&quot;)
+	flag.StringVar(&amp;DefaultDinDImage, &quot;default-dind-image&quot;, &quot;franela/k8s&quot;, &quot;Default DinD image to use if not specified otherwise&quot;)
+</code></pre><p>While the image we specified here could be the one you added your changes, but
+default we will use <code>franela/k8s</code>.</p><p>The webpage is showed as:</p><p><img src=/images/2018_04_12_09_25_38_1242x708.jpg alt=/images/2018_04_12_09_25_38_1242x708.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/08/workingtipsonplaywithdocker2/>WorkingTipsOnPlayWithDocker2</a></h1><span class=post-date>Apr 8, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=migration>migration</h3><p>Really migrate this image into the inner intranet, without any internet
+connection.</p><h3 id=registry-changing>Registry Changing</h3><p>You have to comment the proxy definition, or your registry instance will
+restart frequently, thus your dind won&rsquo;t get working using registry.</p><pre><code># vim /root/data/config.yml
+	#proxy:
+		# remoteurl: https://registry-1.docker.io
+# docker restart docker-registry-proxy-2
+</code></pre><h3 id=systemd-definition>systemd definition</h3><p>Define following two systemd units:</p><pre><code># vim /etc/systemd/system/playwithdocker.service 
+[Unit]
+Description=playwithdocker
+After=docker.service
+Requires=docker.service
+
+[Service]
+Environment=GOPATH=/root/go/
+ExecStart=/usr/bin/docker-compose -f /root/go/src/github.com/play-with-docker/play-with-docker/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>This unit will start blog service automatically.</p><pre><code># vim /etc/systemd/system/playwithdockerblog.service 
+[Unit]
+Description=playwithdockerblog
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker-compose -f /root/Code/play-with-docker.github.io/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+# systemctl enable playwithdocker.service
+# systemctl enable playwithdockerblog.service
+</code></pre><p>Next time the service will automatically start.</p><h3 id=offline-cssjs>Offline CSS/js</h3><p>bootstrap fonts:</p><pre><code># wget https://github.com/twbs/bootstrap/archive/v3.3.7.zip
+# unzip bootstrap-3.3.7.zip
+# cd fonts
+# mkdir ~/Code/play-with-docker.github.io/_site/fonts/
+# cp * ~/Code/play-with-docker.github.io/_site/fonts/
+</code></pre><p>Then your image will display correctly.</p><p><img src=/images/2018_04_08_16_15_38_518x362.jpg alt=/images/2018_04_08_16_15_38_518x362.jpg></p><h3 id=google-fonts>Google Fonts</h3><p>Download the Fonts description from the website, then put all of the related
+fonts under your local folder.</p><h3 id=dnsmasq>dnsmasq</h3><p>Download the rpm package via:</p><pre><code># yum install yum-plugin-downloadonly
+# yum reinstall --downloadonly --downloaddir=/root/rpms dnsmasq
+</code></pre><p>Transfer the package to intranet and install it. Then edit the configuration
+file of dnsmasq:</p><pre><code># vim /etc/dnsmasq.conf
+address=/192.192.189.114/192.192.189.114
+# systemclt enable dnsmasq &amp;&amp; systemctl start dnsmasq
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/07/workingtipsonplaywithdocker/>WorkingTipsOnPlayWithDocker</a></h1><span class=post-date>Apr 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><h4 id=qemu-image>Qemu Image</h4><p>Qemu image preparation:</p><pre><code># mkdir offline-play-with-docker
 # cd offline-play-with-docker 
 # qemu-img create -f qcow2 offline-play-with-docker.qcow2 200G
 Formatting 'offline-play-with-docker.qcow2', fmt=qcow2 size=214748364800 cluster_size=65536 lazy_refcounts=off refcount_bits=16
@@ -158,338 +255,4 @@ OK: 110 distinct packages available
 Executing busybox-1.27.2-r8.trigger
 OK: 228 MiB in 82 packages
 </code></pre><h3 id=tbd>TBD</h3><p>You could add trusted signature to repository, but this will let you get the
-signature firstly.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/01/rpibenchmark/>rpibenchmark</a></h1><span class=post-date>Apr 1, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install via:</p><pre><code> $ git clone https://github.com/kdlucas/byte-unixbench.git
-Cloning into 'byte-unixbench'...
-remote: Counting objects: 204, done.
-remote: Total 204 (delta 0), reused 0 (delta 0), pack-reused 204
-Receiving objects: 100% (204/204), 198.85 KiB | 207.00 KiB/s, done.
-Resolving deltas: 100% (105/105), done.
-pi@raspberrypi:~ $ cd byte-unixbench/UnixBench/
-
-</code></pre><p>Run steps:</p><pre><code>pi@raspberrypi:~/byte-unixbench/UnixBench $ ./Run 
-gcc -o pgms/arithoh -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Darithoh src/arith.c 
-gcc -o pgms/register -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum='register int' src/arith.c 
-gcc -o pgms/short -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum=short src/arith.c 
-gcc -o pgms/int -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum=int src/arith.c 
-gcc -o pgms/long -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum=long src/arith.c 
-gcc -o pgms/float -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum=float src/arith.c 
-gcc -o pgms/double -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum=double src/arith.c 
-gcc -o pgms/hanoi -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/hanoi.c 
-gcc -o pgms/syscall -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/syscall.c 
-gcc -o pgms/context1 -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/context1.c 
-gcc -o pgms/pipe -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/pipe.c 
-gcc -o pgms/spawn -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/spawn.c 
-gcc -o pgms/execl -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/execl.c 
-gcc -o pgms/dhry2 -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -DHZ= ./src/dhry_1.c ./src/dhry_2.c
-gcc -o pgms/dhry2reg -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -DHZ= -DREG=register ./src/dhry_1.c ./src/dhry_2.c
-gcc -o pgms/looper -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/looper.c 
-gcc -o pgms/fstime -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/fstime.c 
-gcc -o pgms/whetstone-double -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -DDP -DGTODay -DUNIXBENCH src/whets.c -lm
-make all
-make[1]: Entering directory '/home/pi/byte-unixbench/UnixBench'
-make distr
-make[2]: Entering directory '/home/pi/byte-unixbench/UnixBench'
-Checking distribution of files
-./pgms  exists
-./src  exists
-./testdir  exists
-./tmp  exists
-./results  exists
-make[2]: Leaving directory '/home/pi/byte-unixbench/UnixBench'
-make programs
-make[2]: Entering directory '/home/pi/byte-unixbench/UnixBench'
-make[2]: Nothing to be done for 'programs'.
-make[2]: Leaving directory '/home/pi/byte-unixbench/UnixBench'
-make[1]: Leaving directory '/home/pi/byte-unixbench/UnixBench'
-sh: 1: 3dinfo: not found
-
-   #    #  #    #  #  #    #          #####   ######  #    #   ####   #    #
-   #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #
-   #    #  # #  #  #    ##            #####   #####   # #  #  #       ######
-   #    #  #  # #  #    ##            #    #  #       #  # #  #       #    #
-   #    #  #   ##  #   #  #           #    #  #       #   ##  #    #  #    #
-    ####   #    #  #  #    #          #####   ######  #    #   ####   #    #
-
-   Version 5.1.3                      Based on the Byte Magazine Unix Benchmark
-
-   Multi-CPU version                  Version 5 revisions by Ian Smith,
-                                      Sunnyvale, CA, USA
-   January 13, 2011                   johantheghost at yahoo period com
-
-------------------------------------------------------------------------------
-   Use directories for:
-      * File I/O tests (named fs***) = /home/pi/byte-unixbench/UnixBench/tmp
-      * Results                      = /home/pi/byte-unixbench/UnixBench/results
-------------------------------------------------------------------------------
-
-Use of uninitialized value in printf at ./Run line 1469.
-Use of uninitialized value in printf at ./Run line 1470.
-Use of uninitialized value in printf at ./Run line 1469.
-Use of uninitialized value in printf at ./Run line 1470.
-Use of uninitialized value in printf at ./Run line 1469.
-Use of uninitialized value in printf at ./Run line 1470.
-Use of uninitialized value in printf at ./Run line 1469.
-Use of uninitialized value in printf at ./Run line 1470.
-Use of uninitialized value in printf at ./Run line 1721.
-Use of uninitialized value in printf at ./Run line 1722.
-Use of uninitialized value in printf at ./Run line 1721.
-Use of uninitialized value in printf at ./Run line 1722.
-Use of uninitialized value in printf at ./Run line 1721.
-Use of uninitialized value in printf at ./Run line 1722.
-Use of uninitialized value in printf at ./Run line 1721.
-Use of uninitialized value in printf at ./Run line 1722.
-
-1 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10
-
-1 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10
-
-1 x Execl Throughput  1 2 3
-
-1 x File Copy 1024 bufsize 2000 maxblocks  1 2 3
-
-1 x File Copy 256 bufsize 500 maxblocks  1 2 3
-
-1 x File Copy 4096 bufsize 8000 maxblocks  1 2 3
-
-1 x Pipe Throughput  1 2 3 4 5 6^[[C 7 8 9 10
-
-1 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10
-
-1 x Process Creation  1 2 3
-
-1 x System Call Overhead  1 2 3 4 5 6 7 8 9 10
-
-1 x Shell Scripts (1 concurrent)  1 2 3
-
-1 x Shell Scripts (8 concurrent)  1 2 3
-
-4 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10
-
-4 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10
-
-4 x Execl Throughput  1 2 3
-
-4 x File Copy 1024 bufsize 2000 maxblocks  1 2 3
-
-4 x File Copy 256 bufsize 500 maxblocks  1 2 3
-
-4 x File Copy 4096 bufsize 8000 maxblocks  1 2 3
-
-4 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10
-
-4 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10
-
-4 x Process Creation  1 2 3
-
-4 x System Call Overhead  1 2 3 4 5 6 7 8 9 10
-
-4 x Shell Scripts (1 concurrent)  1 2 3
-
-4 x Shell Scripts (8 concurrent)  1 2 3
-
-========================================================================
-   BYTE UNIX Benchmarks (Version 5.1.3)
-
-   System: raspberrypi: GNU/Linux
-   OS: GNU/Linux -- 4.9.59-v7+ -- #1047 SMP Sun Oct 29 12:19:23 GMT 2017
-   Machine: armv7l (unknown)
-   Language: en_US.utf8 (charmap=&quot;UTF-8&quot;, collate=&quot;UTF-8&quot;)
-   CPU 0: ARMv7 Processor rev 4 (v7l) (0.0 bogomips)
-          
-   CPU 1: ARMv7 Processor rev 4 (v7l) (0.0 bogomips)
-          
-   CPU 2: ARMv7 Processor rev 4 (v7l) (0.0 bogomips)
-          
-   CPU 3: ARMv7 Processor rev 4 (v7l) (0.0 bogomips)
-          
-   12:29:03 up 6 min,  4 users,  load average: 0.16, 0.08, 0.02; runlevel 2018-03-07
-
-------------------------------------------------------------------------
-Benchmark Run: Sun Apr 01 2018 12:29:03 - 12:57:08
-4 CPUs in system; running 1 parallel copy of tests
-
-Dhrystone 2 using register variables        4333035.5 lps   (10.0 s, 7 samples)
-Double-Precision Whetstone                     1060.4 MWIPS (9.9 s, 7 samples)
-Execl Throughput                                505.3 lps   (29.9 s, 2 samples)
-File Copy 1024 bufsize 2000 maxblocks        142961.6 KBps  (30.0 s, 2 samples)
-File Copy 256 bufsize 500 maxblocks           41135.5 KBps  (30.0 s, 2 samples)
-File Copy 4096 bufsize 8000 maxblocks        365027.4 KBps  (30.0 s, 2 samples)
-Pipe Throughput                              282493.9 lps   (10.0 s, 7 samples)
-Pipe-based Context Switching                  58563.1 lps   (10.0 s, 7 samples)
-Process Creation                               2040.7 lps   (30.0 s, 2 samples)
-Shell Scripts (1 concurrent)                   1910.4 lpm   (60.0 s, 2 samples)
-Shell Scripts (8 concurrent)                    545.6 lpm   (60.1 s, 2 samples)
-System Call Overhead                         572609.5 lps   (10.0 s, 7 samples)
-
-System Benchmarks Index Values               BASELINE       RESULT    INDEX
-Dhrystone 2 using register variables         116700.0    4333035.5    371.3
-Double-Precision Whetstone                       55.0       1060.4    192.8
-Execl Throughput                                 43.0        505.3    117.5
-File Copy 1024 bufsize 2000 maxblocks          3960.0     142961.6    361.0
-File Copy 256 bufsize 500 maxblocks            1655.0      41135.5    248.6
-File Copy 4096 bufsize 8000 maxblocks          5800.0     365027.4    629.4
-Pipe Throughput                               12440.0     282493.9    227.1
-Pipe-based Context Switching                   4000.0      58563.1    146.4
-Process Creation                                126.0       2040.7    162.0
-Shell Scripts (1 concurrent)                     42.4       1910.4    450.6
-Shell Scripts (8 concurrent)                      6.0        545.6    909.3
-System Call Overhead                          15000.0     572609.5    381.7
-                                                                   ========
-System Benchmarks Index Score                                         293.0
-
-------------------------------------------------------------------------
-Benchmark Run: Sun Apr 01 2018 12:57:08 - 13:25:34
-4 CPUs in system; running 4 parallel copies of tests
-
-Dhrystone 2 using register variables       13303366.2 lps   (10.0 s, 7 samples)
-Double-Precision Whetstone                     3615.2 MWIPS (11.6 s, 7 samples)
-Execl Throughput                               1843.0 lps   (30.0 s, 2 samples)
-File Copy 1024 bufsize 2000 maxblocks        177911.7 KBps  (30.0 s, 2 samples)
-File Copy 256 bufsize 500 maxblocks           49727.3 KBps  (30.0 s, 2 samples)
-File Copy 4096 bufsize 8000 maxblocks        479258.8 KBps  (30.0 s, 2 samples)
-Pipe Throughput                              931248.6 lps   (10.0 s, 7 samples)
-Pipe-based Context Switching                 163404.7 lps   (10.0 s, 7 samples)
-Process Creation                               4630.4 lps   (30.0 s, 2 samples)
-Shell Scripts (1 concurrent)                   4356.6 lpm   (60.0 s, 2 samples)
-Shell Scripts (8 concurrent)                    529.4 lpm   (60.3 s, 2 samples)
-System Call Overhead                        2204195.4 lps   (10.0 s, 7 samples)
-
-System Benchmarks Index Values               BASELINE       RESULT    INDEX
-Dhrystone 2 using register variables         116700.0   13303366.2   1140.0
-Double-Precision Whetstone                       55.0       3615.2    657.3
-Execl Throughput                                 43.0       1843.0    428.6
-File Copy 1024 bufsize 2000 maxblocks          3960.0     177911.7    449.3
-File Copy 256 bufsize 500 maxblocks            1655.0      49727.3    300.5
-File Copy 4096 bufsize 8000 maxblocks          5800.0     479258.8    826.3
-Pipe Throughput                               12440.0     931248.6    748.6
-Pipe-based Context Switching                   4000.0     163404.7    408.5
-Process Creation                                126.0       4630.4    367.5
-Shell Scripts (1 concurrent)                     42.4       4356.6   1027.5
-Shell Scripts (8 concurrent)                      6.0        529.4    882.4
-System Call Overhead                          15000.0    2204195.4   1469.5
-                                                                   ========
-System Benchmarks Index Score                                         646.8
-
-</code></pre><h3 id=结果说明>结果说明</h3><p>测试的结果是一个指数值（index value，如520），这个值是测试系统的测试结果与一个基线系统测试结果比较得到的指数值，这样比原始值更容易得到参考价值，测试集合里面所有的测试得到的指数值结合起来得到整个系统的指数值。</p><p>UnixBench也支持多CPU系统的测试，默认的行为是测试两次，第一次是一个进程的测试，第二次是N份测试，N等于CPU个数。这样的设计是为了以下目标：</p><ul><li>测试系统的单任务性能</li><li>测试系统的多任务性能</li><li>测试系统并行处理的能力</li></ul></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/27/gitlabciandgitbook/>gitlabciandgitbook</a></h1><span class=post-date>Mar 27, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境>环境</h3><p>gitlab搭建完毕，gitlabci配置完毕。<br>目的: 整合从代码到发布一条龙服务。</p><p>代码提交->生成中间制品pdf.<br>代码提交-> 更新静态网站.</p><h3 id=步骤>步骤</h3><p>创建一个新项目:</p><p><img src=/images/2018_03_27_16_19_37_576x192.jpg alt=/images/2018_03_27_16_19_37_576x192.jpg></p><p>命名该项目:</p><p><img src=/images/2018_03_27_16_20_02_605x466.jpg alt=/images/2018_03_27_16_20_02_605x466.jpg></p><p>将已有的代码(书)提交到代码仓库:</p><pre><code># git init
-# git remote add origin http://192.168.109.2/root/mygitbook.git
-# git add .
-# git commit -m &quot;Initial commit&quot;
-# git push -u origin master
-</code></pre><p>与此同时，注册runner, 并保证runner所依赖的容器镜像就绪:</p><p>注： 下面需要填入的token来自于: settings->CI/CD-> General pipelines settings,
-runner token，需要拷贝其值:</p><p><img src=/images/2018_06_08_17_08_56_785x475.jpg alt=/images/2018_06_08_17_08_56_785x475.jpg></p><pre><code>[root@csnode1 ~]# gitlab-ci-multi-runner register
-Running in system-mode.                            
-                                                   
-Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com/):
-http://192.168.109.2/
-Please enter the gitlab-ci token for this runner:
-4dEFxKVNcmnoStBBDssd
-Please enter the gitlab-ci description for this runner:
-[csnode1]: myrunner
-Please enter the gitlab-ci tags for this runner (comma separated):
-myrunner tag
-Whether to run untagged builds [true/false]:
-[false]: 
-Whether to lock Runner to current project [true/false]:
-[false]: 
-Registering runner... succeeded                     runner=4dEFxKVN
-Please enter the executor: ssh, kubernetes, docker, docker-ssh, parallels, docker-ssh+machine, shell, virtualbox, docker+machine:
-docker
-Please enter the default Docker image (e.g. ruby:2.1):
-mygitbook:latest
-Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
-</code></pre><p>runner失败:</p><p><img src=/images/2018_03_28_14_01_12_468x180.jpg alt=/images/2018_03_28_14_01_12_468x180.jpg></p><p>配置镜像的拉取规则:</p><pre><code># vim /etc/gitlab-runner/config.toml 
-[[runners]]
-  name = &quot;myrunner&quot;
-  url = &quot;http://192.168.109.2/&quot;
-  token = &quot;8996297cd5d5d80bd23c0acade3b95&quot;
-  executor = &quot;docker&quot;
-  [runners.docker]
-    tls_verify = false
-    image = &quot;mygitbook:latest&quot;
-    privileged = false
-    disable_cache = false
-    volumes = [&quot;/cache&quot;]
-    pull_policy = &quot;if-not-present&quot;
-    shm_size = 0
-  [runners.cache]
-# gitlab-runner restart
-</code></pre><p>对应的gitlab定义文件如下:</p><pre><code>image: &quot;my_gitbook:latest&quot;
-stages:
-  - gitbook_build_deploy
-
-gitbook_build_deploy:
-  stage: gitbook_build_deploy
-  script:
-    - gitbook build
-    - gitbook pdf
-    - ssh-keyscan -H 192.168.109.2 &gt;&gt; ~/.ssh/known_hosts
-    - pwd &amp;&amp; ls -l -h ./_book  &amp;&amp; sshpass -p vagrant scp -P 22 -r _book/* vagrant@192.168.109.2:/home/vagrant/tmp
-  artifacts:
-    paths:
-      - ./book.pdf
-  tags:
-    - myrunnertag
-</code></pre><p>每次build将自动生成pdf供下载。</p><h3 id=gitlabci运行buildiso>gitlabci运行buildiso</h3><p>注册CI/CD pipeline时的选项:</p><pre><code># gitlab-ci-multi-runner register
-Running in system-mode.                            
-                                                   
-Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com/):
-http://192.168.122.222/
-Please enter the gitlab-ci token for this runner:
-xy8MBdigELUSRnmnteMF
-Please enter the gitlab-ci description for this runner:
-[buildnode]: myrunner
-Please enter the gitlab-ci tags for this runner (comma separated):
-myrunner mytag
-Whether to run untagged builds [true/false]:
-[false]: true
-Whether to lock Runner to current project [true/false]:
-[false]: 
-Registering runner... succeeded                     runner=xy8MBdig
-Please enter the executor: docker-ssh+machine, docker, docker-ssh, shell, ssh, parallels, virtualbox, docker+machine, kubernetes:
-shell
-Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded! 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/20/workingtipsondockercomposeofflineinstall/>WorkingTipsOnDockerComposeOfflineInstall</a></h1><span class=post-date>Mar 20, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=步骤>步骤</h3><p>获取所需安装包的步骤如下：</p><pre><code>$ sudo docker run -it ubuntu:16.04 /bin/bash
-# 进入容器后的操作
-# rm -f /etc/apt/apt.conf.d/docker-clean
-# apt-get update
-# apt-get install docker-compose dpkg-dev
-</code></pre><p>获取所有的deb包并拷贝到某一目录下:</p><pre><code># cd /var/cache
-# find . | grep deb$ | xargs -I % cp % /root/pkgs
-# cd /root/pkgs
-# dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
-</code></pre><p>将整个目录拷贝到主机目录:</p><pre><code># sudo docker cp d1023d1b0a1f:/root/pkgs /xxxxxx/xxxxx
-# tar czvf /xxxx/xxxx.tar.gz /xxxxxx/xxxx
-</code></pre><h3 id=使用步骤>使用步骤</h3><p>下载地址:</p><pre><code>http://192.192.189.127/big.tar.gz
-</code></pre><p>下载所需要的大包，解压以后，得到以下四个文件:</p><pre><code># tar xzvf big.tar.gz
-# ls big
-images/ pkgs.tar.gz  docker-regsitry.tar.gz devdockerCA.crt
-</code></pre><p>取得pkgs.tar.gz, 将其放置在自己的网页服务器目录，如:<br><img src=/images/2018_03_20_09_22_07_724x495.jpg alt=/images/2018_03_20_09_22_07_724x495.jpg></p><p>配置节点的apt:</p><pre><code># vim /etc/apt/sources.list
-deb http://192.192.189.127/pkgs/	/
-# apt-update
-# apt-get install docker-compose
-</code></pre><p>这将安装docker-compose, docker, 安装完毕以后，docker-compose可以正常使用。</p><h3 id=载入镜像>载入镜像</h3><p>载入registry所需的registry:2镜像和nginx镜像:</p><pre><code># docker load&lt;images/1.tar
-# docker load&lt;images/2.tar
-</code></pre><h3 id=解压docker-compose目录添加服务>解压docker-compose目录，添加服务</h3><p>解压到指定目录(可为任意目录，这里以/docker-registry为例):</p><pre><code># tar xzvf docker-registry.tar.gz -C /
-# ls /docker-regsitry
-data	docker-compose.yml nginx
-</code></pre><p>创建systemd所需服务:</p><pre><code># vim /etc/systemd/system/docker-compose.service
-[Unit]
-Description=DockerCompose
-After=docker.service
-Requires=docker.service
-
-[Service]
-ExecStart=/usr/bin/docker-compose -f /docker-registry/docker-compose.yml up -d
-
-[Install]
-WantedBy=multi-user.target
-</code></pre><p>启动、使能docker-compose服务:</p><pre><code># sudo systemctl enable docker-compose.service
-# sudo systemctl start docker-compose.service
-# docker ps
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                          NAMES
-50d2ec00e967        nginx:1.9           &quot;nginx -g 'daemon ...&quot;   26 hours ago        Up 3 seconds        80/tcp, 0.0.0.0:443-&gt;443/tcp   dockerregistry_nginx_1
-e4e2cee1bf21        registry:2          &quot;/entrypoint.sh /e...&quot;   26 hours ago        Up 5 seconds        127.0.0.1:5000-&gt;5000/tcp       dockerregistry_registry_1
-</code></pre><p>如此即设置好了整个regitry服务。可以通过https://YourIP来访问，签名文件也可以在目录中找到(devdockerCA)。</p><h3 id=使用镜像仓库>使用镜像仓库</h3><p>Redhat rh74:</p><pre><code># mkdir -p /etc/docker/certs.d/mirror.xxxx.com
-# wget xxxxxx.xxxx.xxx.com/ca.crt
-# docker login -u xxxx -p xxxx mirror.xxxx.com
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/70/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/70/>70</a></li><li class="page-item active"><a class=page-link href=/page/71/>71</a></li><li class=page-item><a class=page-link href=/page/72/>72</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/232/>232</a></li><li class=page-item><a href=/page/72/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/232/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+signature firstly.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/70/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/70/>70</a></li><li class="page-item active"><a class=page-link href=/page/71/>71</a></li><li class=page-item><a class=page-link href=/page/72/>72</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/233/>233</a></li><li class=page-item><a href=/page/72/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/233/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

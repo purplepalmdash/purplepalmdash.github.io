@@ -1,5 +1,161 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/06/kubeadmssladjust/>KubeadmSSLAdjust</a></h1><span class=post-date>Jan 6, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=检查>检查</h3><p>一年过期的集群（即将过期):</p><pre><code>root@node:/home/test# cd /etc/kubernetes/ssl
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/16/tipsonnextcloud/>tipsOnnextcloud</a></h1><span class=post-date>Jan 16, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Dockerfile:</p><pre><code>version: '3' 
+
+services:
+
+  proxy:
+    image: jwilder/nginx-proxy:alpine
+    labels:
+      - &quot;com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true&quot;
+    container_name: nextcloud-proxy
+    networks:
+      - nextcloud_network
+    ports:
+      - 0.0.0.0:80:80
+      - 0.0.0.0:443:443
+    volumes:
+      - ./proxy/conf.d:/etc/nginx/conf.d:rw
+      - ./proxy/vhost.d:/etc/nginx/vhost.d:rw
+      - ./proxy/html:/usr/share/nginx/html:rw
+      - ./proxy/certs:/etc/nginx/certs:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: unless-stopped
+  
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: nextcloud-letsencrypt
+    depends_on:
+      - proxy
+    networks:
+      - nextcloud_network
+    volumes:
+      - ./proxy/certs:/etc/nginx/certs:rw
+      - ./proxy/vhost.d:/etc/nginx/vhost.d:rw
+      - ./proxy/html:/usr/share/nginx/html:rw
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: unless-stopped
+  db:
+    image: mariadb
+    container_name: nextcloud-mariadb
+    networks:
+      - nextcloud_network
+    volumes:
+      - db:/var/lib/mysql
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+    # Create a root password for the maraiadb instance.
+      - MYSQL_ROOT_PASSWORD=engine123
+    # Create a password for the nextcloud users.  If you have to manually connect your database you would use the nextcloud user and this password.
+      - MYSQL_PASSWORD=engine123
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    restart: unless-stopped
+  
+  app:
+    image: nextcloud:latest
+    container_name: nextcloud-app
+    networks:
+      - nextcloud_network
+    depends_on:
+      - letsencrypt
+      - proxy
+      - db
+    volumes:
+      - nextcloud:/var/www/html
+      - ./app/config:/var/www/html/config
+      - ./app/custom_apps:/var/www/html/custom_apps
+      - ./app/data:/var/www/html/data
+      - ./app/themes:/var/www/html/themes
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+    # The VIRTUAL_HOST and LETSENCRYPT_HOST should use the same publically reachable domain for your nextlcloud instance.
+      - VIRTUAL_HOST=mynextcloud.mooo.com
+      - LETSENCRYPT_HOST=mynextcloud.mooo.com
+    # This needs to be a real email as it will be used by let's encrypt for your cert and is used to warn you about renewals.
+      - LETSENCRYPT_EMAIL=feipyang@gmail.com
+    restart: unless-stopped
+  collab:
+    image: collabora/code
+    container_name: nextcloud-collab
+    networks:
+      - nextcloud_network
+    depends_on:
+      - proxy
+      - letsencrypt
+    cap_add:
+     - MKNOD
+    ports:
+      - 0.0.0.0:9980:9980
+    environment:
+    # This nees to be the same as what you set your app domain too (ex: cloud.domain.tld).
+    #- domain=cloud\\.DOMAIN\\.TDL
+      - domain=mynextcloud\.mooo\.com
+      - username=admin
+    # Create a passoword for the collabora office admin page.
+    #- password=CREATE-A-SECURE-PASSWORD-HERE
+      - password=engine123
+      - VIRTUAL_PORT=9980
+      - extra_params=--o:ssl.enable=false --o:ssl.termination=true
+#      - VIRTUAL_PROTO=https
+#      - VIRTUAL_PORT=443
+    # The VIRTUAL_HOST and LETSENCRYPT_HOST should use the same publically reachable domain for your collabora instance (ex: office.domain.tld).
+      - VIRTUAL_HOST=myoffice.mooo.com
+      - LETSENCRYPT_HOST=myoffice.mooo.com
+    # This needs to be a real email as it will be used by let's encrypt for your cert and is used to warn you about renewals.
+      - LETSENCRYPT_EMAIL=feipyang@gmail.com
+    restart: unless-stopped 
+volumes:
+  nextcloud:
+  db: 
+  
+networks:
+  nextcloud_network:
+
+</code></pre><p>For installing apps:</p><pre><code>sudo docker cp Client.php fc18391f0a0a:/var/www/html/lib/private/Http/Client/Client.php
+Timeout from 30 to 300, then you could install apps. 
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/13/harborarm64issue/>HarborArm64Issue</a></h1><span class=post-date>Jan 13, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=issue>Issue</h3><p>harbor-log instance launched first, but it complains:</p><pre><code>You are required to change your password immediately (password expired)
+</code></pre><p>This is because we build the container images only have 90 days limitation.</p><h3 id=solution>Solution</h3><p>Rebuild all of the harbor images:</p><pre><code>root@node:~/harbor# cat harbor-core/Dockerfile 
+FROM f9e2034f3a6d
+COPY login.defs /etc/login.defs
+COPY shadow /etc/shadow
+root@node:~/harbor# cat harbor-core/shadow 
+root:x:18074:0:99999:7:::
+bin:x:18074:0:99999:7:::
+daemon:x:18074:0:99999:7:::
+messagebus:x:18074:0:99999:7:::
+systemd-bus-proxy:x:18074:0:99999:7:::
+systemd-journal-gateway:x:18074:0:99999:7:::
+systemd-journal-remote:x:18074:0:99999:7:::
+systemd-journal-upload:x:18074:0:99999:7:::
+systemd-network:x:18074:0:99999:7:::
+systemd-resolve:x:18074:0:99999:7:::
+systemd-timesync:x:18074:0:99999:7:::
+nobody:x:18074:0:99999:7:::
+syslog:!:18074::::::
+
+</code></pre><p>Then we build the image via following command:</p><pre><code># docker build -t goharbor/harbor-db:1.7.0-arm64 harbor-db/
+</code></pre><p>We have to build all of the images:</p><pre><code>  docker build -t goharbor/chartmuseum-photon:v0.7.1-1.7.0-arm64 chartmuseum-photon/
+  docker build -t goharbor/redis-photon:1.7.0-arm64 redis-photon/
+  docker build -t goharbor/clair-photon:v2.0.7-1.7.0-arm64 clair-photon/
+  docker build -t  goharbor/notary-server-photon:v0.6.1-1.7.0-arm64 notary-server-photon/
+  docker build -t goharbor/notary-signer-photon:v0.6.1-1.7.0-arm64 notary-signer-photon
+  docker build -t goharbor/harbor-registryctl:1.7.0-arm64 registry-photon
+  docker build -t goharbor/registry-photon:v2.6.2-1.7.0-arm64 registry-photon/
+  docker build -t goharbor/harbor-registryctl:1.7.0-arm64 harbor-registryctl/
+  docker build -t goharbor/nginx-photon:1.7.0-arm64 nginx-photon/
+  docker build -t goharbor/harbor-jobservice:1.7.0-arm64 harbor-jobservice/
+  docker build -t goharbor/harbor-core:1.7.0-arm64 harbor-core/
+  docker build -t goharbor/harbor-portal:1.7.0-arm64 harbor-portal/
+  docker build -t goharbor/harbor-adminserver:1.7.0-arm64 harbor-adminserver/
+  docker build -t goharbor/harbor-db:1.7.0-arm64 harbor-db/
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/09/workingtipsonkubeadmssltwo/>WorkingTipsOnkubeadmsslTwo</a></h1><span class=post-date>Jan 9, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=补充>补充</h3><p>重启后，在更新过签名的节点上，验证是否可以获取所有的节点, 并列举出当前可用的更新过后的token:</p><pre><code># kubectl get nodes
+# kubectl token list
+</code></pre><p>如果没有有效token的话，可以手动创建一个:</p><pre><code># kubectl token create
+</code></pre><p>token应该看起来像<code>6dihyb.d09sbgae8ph2atjw</code>.</p><p>ssh到每一个工作节点上，重新连接到master节点上:</p><pre><code># kubeadm join --token=&lt;上一布获取的token&gt;  &lt;master节点IP&gt;:&lt;默认为6443端口&gt; --node-name &lt;master节点node名称&gt;
+</code></pre><p>重新连接后，可以在master节点上验证是否连接成功：</p><pre><code># kubectl get nodes
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/06/kubeadmssladjust/>KubeadmSSLAdjust</a></h1><span class=post-date>Jan 6, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=检查>检查</h3><p>一年过期的集群（即将过期):</p><pre><code>root@node:/home/test# cd /etc/kubernetes/ssl
 root@node:/etc/kubernetes/ssl# for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
 notAfter=Jun 13 02:57:27 2020 GMT
 notAfter=Jun 13 02:57:28 2020 GMT
@@ -114,136 +270,4 @@ Mar 02 16:22:02 node1 kubelet[1415]: 2021-03-02 16:22:02.807 [INFO][2763] k8s.go
 root@node1:/home/vagrant# kubectl get nodes
 NAME    STATUS   ROLES         AGE    VERSION
 node1   Ready    master,node   421d   v1.12.5
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/03/enableipmionnetdata/>EnableIPMIOnNetdata</a></h1><span class=post-date>Jan 3, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=prerequites>Prerequites</h3><p>Build netdata from source, generate deb/rpm.<br>Install following packages:</p><pre><code>lm-sensors libsensors4 libsensors4-dev freeipmi-tools freeipmi libfreeipmi16
-</code></pre><h3 id=configuration>Configuration</h3><p>Enable the freeipmi plugins:</p><pre><code># vim /etc/netdata/netdata.conf
-[plugins]
-#cgroups = no
-freeipmi = yes
-
-[plugin:freeipmi]
-    update every = 5
-    command options = 
-</code></pre><p>Change the permission of the plugin files so that freeipmi plugin could be run via netdata user:</p><pre><code># chmod u+s /usr/libexec/netdata/plugins.d/freeipmi.plugin
-</code></pre><p>Now restart the netdata service and you could see the ipmi modules exists on dashboard.</p><p><img src=/images/2020_01_03_10_51_11_165x227.jpg alt=/images/2020_01_03_10_51_11_165x227.jpg></p><p>Detailed charts:</p><p><img src=/images/2020_01_03_10_51_42_703x634.jpg alt=/images/2020_01_03_10_51_42_703x634.jpg></p><p>and</p><p><img src=/images/2020_01_03_10_52_00_526x713.jpg alt=/images/2020_01_03_10_52_00_526x713.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/02/setupcicdwithgitlabandterraform/>SetupCICDWithGitlabAndTerraform</a></h1><span class=post-date>Jan 2, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=gitlab>Gitlab</h3><p>Setup gitlab using docker-compose from:</p><p><a href=https://github.com/sameersbn/docker-gitlab>https://github.com/sameersbn/docker-gitlab</a></p><p>Changes to the <code>docker-compose.yml</code>:</p><pre><code>    volumes:
-    - ./redis-data:/var/lib/redis:Z
-    volumes:
-    - ./postgresql-data:/var/lib/postgresql:Z
-    ports:
-    - &quot;10080:80&quot;
-    - &quot;10022:22&quot;
-    volumes:
-    - ./gitlab-data:/home/git/data:Z
-</code></pre><p>Write a systemd file for controlling the docker-composed gitlab:</p><pre><code># vim  /etc/systemd/system/gitlab.service 
-[Unit]
-Description=gitlab
-Requires=docker.service
-After=docker.service
-
-[Service]
-WorkingDirectory=/media/sdb/gitlab
-Type=idle
-Restart=always
-# Remove old container items
-ExecStartPre=/usr/bin/docker-compose -f /media/sdb/gitlab/docker-compose.yml down
-# Compose up
-ExecStart=/usr/bin/docker-compose -f /media/sdb/gitlab/docker-compose.yml up
-# Compose stop
-ExecStop=/usr/bin/docker-compose -f /media/sdb/gitlab/docker-compose.yml stop
-
-[Install]
-WantedBy=multi-user.target
-# systemctl enable gitlab &amp;&amp; systemctl start gitlab
-</code></pre><h3 id=gitlab-runner>gitlab-runner</h3><p>Install gitlab-runner via binary:</p><pre><code># wget https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
-# mv gitlab-runner-linux-amd64 /usr/bin/gitlab-runner-linux
-# chmod 777 /usr/bin/gitlab-runner-linux
-# sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
-# mkdir -p /media/sdb/gitlab-runner
-# chmod 777 -R /media/sdb/gitlab-runner
-# sudo gitlab-runner install --user=root --working-directory=/media/sdb/gitlab-runner
-# sudo gitlab-runner start
-</code></pre><p>gitlab-runner register with the gitlab configuration.</p><h3 id=call-terraform>Call terraform</h3><p>With following files and configurations:</p><pre><code># ls main.tf cloud_init.cfg
-cloud_init.cfg  main.tf
-# cat .gitlab-ci.yml
-stages:
-  - build
-  - deploy
-
-build-full-packages:
-  stage: build
-  # the tag 'shell' advices only GitLab runners using this tag to pick up that job
-  tags:
-    - xxxxxxcitag
-  script:
-    - date&gt;time.txt
-    - whoami
-    - wget -q -O staticfiles.zip http://xxxxxx:10388/s/8MXHiafPeWABsB7/download
-    - ./extract.sh
-    - rm -f staticfiles.zip
-    - rm -rf Rong_Kubesphere_Static/
-    - which terraform
-    - terraform init
-    - terraform plan
-    - terraform apply -auto-approve
-    - ansible-playbook -i  /etc/ansible/terraform.py 0_preinstall/init.yml -b --flush-cache
-    - ansible-playbook -i  /etc/ansible/terraform.py 1_k8s/cluster.yml --extra-vars @kiking-vars.yml --flush-cache
-    - ansible-playbook -i  /etc/ansible/terraform.py 2_addons/addons.yml --extra-vars @kiking-vars.yml --extra-vars &quot;kubesphere_role=kubesphere/kubesphere&quot; --extra-vars &quot;external_nfsd_server=xx.xx.xxx.166&quot; --extra-vars &quot;external_nfsd_path=/media/md0/nfs/tftmp&quot;  --flush-cache
-    - date&gt;&gt;time.txt
-</code></pre><p>Thus you could run the terraform enabled environment for gitlab ci/cd</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/12/31/workingtipsonnextcloud/>WorkingTipsOnNextCloud</a></h1><span class=post-date>Dec 31, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=docker-compose-file>docker-compose file</h3><p>File content:</p><pre><code>version: '2'
-services: 
-  nextcloud_db:
-    image: mariadb
-    container_name: nextcloud_db
-    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
-    volumes:
-      - ./db:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=mysql12345678
-      - MYSQL_PASSWORD=mysql12345678
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-    restart: always
-
-  nextcloud:
-    image: nextcloud
-    container_name: nextcloud_web
-    ports:
-      - &quot;10388:80&quot;
-    environment:
-      - UID=1000
-      - GID=1000
-      - UPLOAD_MAX_SIZE=5G
-      - APC_SHM_SIZE=128M
-      - OPCACHE_MEM_SIZE=128
-      - CRON_PERIOD=15m
-      - TZ=Aisa/Shanghai
-      - NEXTCLOUD_ADMIN_USER=admin
-      - NEXTCLOUD_ADMIN_PASSWORD=xxxxxxxxxxxxxxxx
-      - NEXTCLOUD_TRUSTED_DOMAINS=&quot;*&quot;
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_PASSWORD=mysql12345678
-      - MYSQL_HOST=nextcloud_db
-    volumes:
-      - ./nextcloud:/var/www/html
-    restart: always
-</code></pre><h3 id=systemd-file>systemd file</h3><p><code>/etc/systemd/system/nextcloud.service</code></p><pre><code>[Unit]
-Description=nextcloud
-Requires=docker.service
-After=docker.service
-
-[Service]
-WorkingDirectory=/media/sdb/nextcloud
-Type=idle
-Restart=always
-# Remove old container items
-ExecStartPre=/usr/bin/docker-compose -f /media/sdb/nextcloud/docker-compose.yml down
-# Compose up
-ExecStart=/usr/bin/docker-compose -f /media/sdb/nextcloud/docker-compose.yml up
-# Compose stop
-ExecStop=/usr/bin/docker-compose -f /media/sdb/nextcloud/docker-compose.yml stop
-
-[Install]
-WantedBy=multi-user.target
-</code></pre><p>Enable and start the service thus you got the nextcloud server at <code>http://YourIP:10388/</code>, login with admin/xxxxxxxx</p><h3 id=upload-and-update>Upload and update</h3><p>upload the files into correspondding location and update the cache:</p><pre><code># chmod 777 -R /media/sdb/nextcloud/nextcloud/data/xxxxx/files/xxxxx_Static/
-# docker exec -u www-data nextcloud_web php occ files:scan --all
-</code></pre><p>by now your nextcloud will update properly.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/44/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/44/>44</a></li><li class="page-item active"><a class=page-link href=/page/45/>45</a></li><li class=page-item><a class=page-link href=/page/46/>46</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/232/>232</a></li><li class=page-item><a href=/page/46/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/232/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/44/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/44/>44</a></li><li class="page-item active"><a class=page-link href=/page/45/>45</a></li><li class=page-item><a class=page-link href=/page/46/>46</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/233/>233</a></li><li class=page-item><a href=/page/46/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/233/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
