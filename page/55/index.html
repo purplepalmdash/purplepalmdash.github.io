@@ -1,5 +1,287 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/05/kubesprayquickoffline/>KubesprayQuickOffline</a></h1><span class=post-date>May 5, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=os-prepare>OS prepare</h3><p>Download the <code>tar.gz</code> file from github, untar, then modify the Vagrantfile
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/07/customizerhel74iso/>CustomizeRHEL74ISO</a></h1><span class=post-date>May 7, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=参考材料>参考材料</h3><p><a href=https://www.golinuxhub.com/2017/05/how-to-create-customized-bootable-boot.html>https://www.golinuxhub.com/2017/05/how-to-create-customized-bootable-boot.html</a></p><h3 id=目的>目的</h3><p>定制化rhel7.4安装ISO.</p><p>添加以下功能:</p><pre><code>1. 
+</code></pre><h3 id=准备>准备</h3><p>rhel7.4虚拟机一台，DVD安装光盘<code>rhel-server-7.4-x86_64-dvd.iso</code>已加载到/mnt目录:</p><pre><code>root@server128:/media/sdd/raw/Rong_win/upgrade/Rong1905-redhat$ vagrant ssh
+Last login: Tue May  7 09:23:02 2019 from 192.168.121.1
+[vagrant@k8s2100upgrade-1 ~]$ cat /etc/redhat-release 
+Red Hat Enterprise Linux Server release 7.4 (Maipo)
+[vagrant@k8s2100upgrade-1 ~]$ sudo mount /dev/sr0 /mnt
+mount: /dev/sr0 is write-protected, mounting read-only
+</code></pre><h3 id=步骤>步骤</h3><h4 id=1-准备编译服务器>1. 准备编译服务器</h4><p>准备工作目录，用于复制DVD中对应的目录结构以便于定制化:</p><pre><code># mkdir /root/geniso
+# mount /dev/sr0 /mnt
+# cp -rvf /mnt/* /root/geniso
+</code></pre><h4 id=2-定制化kickstart文件>2. 定制化kickstart文件</h4><p>先用一个样例文件用于安装, 后面再根据需要修改:</p><pre><code># Kickstart configuration for RHEL7.4
+
+#platform=x86, AMD64, or Intel EM64T
+# System authorization information
+auth  --enableshadow  --passalgo=sha512
+
+# Clear the Master Boot Record
+zerombr
+
+# Partition clearing information
+clearpart --drives=sda --all
+
+# Use text mode install
+#text
+graphical
+
+# Firewall configuration
+firewall --disabled
+
+# Run the Setup Agent on first boot
+firstboot --reconfig --enable
+
+# System keyboard
+keyboard us
+
+# System language
+lang en_US.UTF-8
+
+# Skipping input of key
+#key --skip
+
+# Installation logging level
+logging --level=info
+
+# Use NFS installation media
+cdrom
+
+# Network Information
+network --bootproto=static --hostname=my-linux --device=eth0 --gateway=1.2.3.1 --ip=1.2.3.4 --netmask=255.255.255.0 --noipv6 --nodns --onboot=on --activate
+
+# System bootloader configuration
+bootloader --location=mbr --driveorder=sda
+
+# The following is the partition information you requested
+ignoredisk --only-use=sda
+
+# Disk Partioning
+clearpart --all --initlabel
+autopart
+
+#Root password
+rootpw --iscrypted $6$KjCAXxUM2u5OcTtD$PcDbFkQCck97S6synqPIsxjHuOwQ1w5OENVE08l0gCG4fx3aW5DEl7Lw.1IjFflDT7iaESYUWKxO9877r7LAy0
+
+# SELinux configuration
+selinux --disabled
+# Do not configure the X Window System
+# Do not configure the X Window System
+skipx
+
+#Disabling kdump services, owing to few problems with current kexec package
+services --disabled kdump
+
+# System timezone
+timezone --utc Asia/Shanghai
+
+# Install OS instead of upgrade
+install
+
+# Reboot after installation
+reboot
+
+# list of packages to be installed
+%packages
+@ Core
+@ Base --nodefaults
+# packages deleted according to OS minimization
+%end
+</code></pre><p>其中密码可以通过以下命令来生成:</p><pre><code># python -c 'import crypt,getpass; print crypt.crypt(getpass.getpass())'
+Password: 
+</code></pre><p>将上面的文件命名为<code>ks.cfg</code>并拷贝到<code>/root/geniso</code>目录。</p><h4 id=3-更改grub菜单>3. 更改GRUB菜单</h4><p>更换目录至isolinux目录并添加写权限给GRUB定义文件:</p><pre><code># pwd
+/root/geniso/isolinux
+# chmod a+w isolinux.cfg
+</code></pre><p>在<code>isolinux.cfg</code>文件中查找到以下位置(约61行):</p><pre><code>label linux
+  menu label ^Install Red Hat Enterprise Linux 7.4
+  kernel vmlinuz
+  append initrd=initrd.img inst.stage2=hd:LABEL=RHEL-7.4\x20Server.x86_64 quiet
+</code></pre><p>更改为:</p><pre><code>label linux
+  menu label ^Install Red Hat Enterprise Linux 7.4
+  kernel vmlinuz
+  append initrd=initrd.img inst.stage2=hd:LABEL=RHEL-7.4\x20Server.x86_64 quiet
+
+label autolinux
+  menu label ^Auto Install Red Hat Enterprise Linux 7.4
+  kernel vmlinuz
+  append initrd=initrd.img inst.repo=cdrom ks=cdrom:/ks.cfg net.ifnames=0 biosdevname=0
+</code></pre><h4 id=4-生成iso>4. 生成ISO</h4><p>安装<code>genisoimage</code>包，用于编译ISO:</p><pre><code>[root@k8s2100upgrade-1 geniso]# cd Packages/
+[root@k8s2100upgrade-1 Packages]# rpm -Uvh libusal-1.1.11-23.el7.x86_64.rpm genisoimage-1.1.11-23.el7.x86_64.rpm 
+warning: libusal-1.1.11-23.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID fd431d51: NOKEY
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:libusal-1.1.11-23.el7            ################################# [ 50%]
+</code></pre><p>执行以下命令，将在<code>/root</code>下生成<code>new.iso</code>:</p><pre><code># cd /root/geniso
+# mkisofs -o /root/new.iso  -b isolinux/isolinux.bin -c isolinux/boot.cat --no-emul-boot --boot-load-size 4 --boot-info-table -J -R -V &quot;RHEL-7.4\x20Server.x86_64&quot; .
+</code></pre><h3 id=细调kickstart>细调kickstart</h3><h4 id=1-主机名>1. 主机名</h4><p>更改网络信息:</p><pre><code>network --bootproto=static --hostname=node ...............
+</code></pre><h4 id=2-添加用户密码>2. 添加用户/密码</h4><p>在ks.cfg最后添加以下，以便创建test和vagrant用户, test使用sudo时将免密码登录:</p><pre><code>%post
+groupadd vagrant -g 1001
+useradd test -g vagrant -G wheel -u 1001
+useradd vagrant -g vagrant -G wheel -u 1001
+echo &quot;test&quot; | passwd --stdin xxxxx
+echo &quot;vagrant&quot; | passwd --stdin vagrant
+echo &quot;test        ALL=(ALL)       NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers.d/test
+echo &quot;vagrant        ALL=(ALL)       NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers.d/test
+sed -i &quot;s/^.*requiretty/#Defaults requiretty/&quot; /etc/sudoers
+mkdir /home/vagrant/.ssh
+echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key&quot; &gt; /home/vagrant/.ssh/authorized_keys
+%end
+</code></pre><h4 id=3-预注入key>3. 预注入key</h4><p>接着注入key:</p><pre><code># Add user
+user --name=test --groups=wheel --plaintext --password=xxxxx
+
+# ssh key
+sshpw --username=root --sshkey 'ssh-rsa AAAAB3x......'
+</code></pre><h4 id=4-自动侦探第一块磁盘>4. 自动侦探第一块磁盘</h4><p>需要更改%pre中的选项</p><h4 id=5-添加testvagrant用户等>5. 添加test/vagrant用户等</h4><p>%post中需要有对应的更改</p><h3 id=kscfg完整版>ks.cfg完整版</h3><p>最终版本的ks.cfg如下：</p><pre><code># Kickstart configuration for RHEL7.4
+
+#platform=x86, AMD64, or Intel EM64T
+# System authorization information
+auth  --enableshadow  --passalgo=sha512
+
+# Use text mode install
+text
+#graphical
+
+# Firewall configuration
+firewall --disabled
+
+# Run the Setup Agent on first boot
+#firstboot --reconfig --enable
+firstboot --disable
+
+# System keyboard
+keyboard us
+
+# System language
+lang en_US.UTF-8
+
+# Skipping input of key
+#key --skip
+
+# Installation logging level
+logging --level=info
+
+# Use NFS installation media
+cdrom
+
+# Network Information
+network --bootproto=static --hostname=node --device=eth0 --gateway=1.2.3.1 --ip=1.2.3.4 --netmask=255.255.255.0 --noipv6 --nodns --onboot=on --activate
+
+# Include generated partition layout
+%include /tmp/part-include
+
+#Root password
+rootpw --iscrypted $6$KjCAXxUM2u5OcTtD$PcDbFkQCck97S6synqPIsxjHuOwQ1w5OENVE08l0gCG4fx3aW5DEl7Lw.1IjFflDT7iaESYUWKxO9877r7LAy0
+
+# SELinux configuration
+selinux --disabled
+# Do not configure the X Window System
+# Do not configure the X Window System
+skipx
+
+#Disabling kdump services, owing to few problems with current kexec package
+services --disabled kdump
+
+# System timezone
+timezone --utc Asia/Shanghai
+
+# Install OS instead of upgrade
+install
+
+# Reboot after installation
+reboot
+
+# list of packages to be installed
+%packages
+@ Core
+@ Base --nodefaults
+# packages deleted according to OS minimization
+%end
+
+################################################################################
+# Pre section
+################################################################################
+%pre
+#!/bin/bash
+# Set networking defaults.
+
+# Parse the Kernel boot options for overrides. (Key=Value)
+cmdline=($(cat /proc/cmdline))
+for cmd in ${cmdline[@]}; do 
+  if [[ &quot;$cmd&quot; =~ '=' ]]; then
+    eval &quot;$cmd&quot;
+  fi
+done
+
+# Enumerate all disks.
+disks=($(list-harddrives | awk '{ print $1 }'))
+sizes=($(list-harddrives | awk '{ print $2 }'))
+count=${#disks[@]}
+
+if grep -q -w &quot;noformat&quot; /proc/cmdline; then
+  # TODO: Do not format any attached disks.
+  true
+else
+  # Format all attached disks.
+  if grep -q -w &quot;nolvm&quot; /proc/cmdline; then
+    # TODO: Do not use LVM.
+    true
+  else
+    # Use LVM
+    i=0
+    pvs=
+    parts=
+    for disk in ${disks[@]}; do
+      # Only part the first disk
+      if (( $i == 1 )); then
+        break
+      fi
+      # End of Only part the first disk
+      parts=&quot;${parts}part pv.$i --grow --size=1 --ondisk=/dev/${disk}&quot;
+      pvs=&quot;$pvs pv.$i&quot;
+      let i=$i+1
+    done
+    pvs=(${pvs})
+    cat &gt; /tmp/part-include &lt;&lt; EOF
+# password
+bootloader --location=mbr --driveorder=${disks[0]} 
+zerombr
+clearpart --all
+part /boot --label=boot --fsoptions=nodev,nosuid,noexec --size=512 --asprimary --ondisk=/dev/${disks[0]}
+part pv.3 --size=100 --grow --ondisk=/dev/${disks[0]}
+volgroup vg0 pv.3
+#$parts
+#volgroup vg0 ${pvs[@]}
+# See CIS Benchmark / NSA SNAC guides for partitioning and fsoption explanations;
+# https://www.nsa.gov/ia/_files/os/redhat/rhel5-guide-i731.pdf
+# https://benchmarks.cisecurity.org/downloads/form/index.cfm?download=centos6.100
+# Requires ~16GB HDD
+logvol / --name=root --vgname=vg0 --size=15000 --grow
+EOF
+  fi
+fi
+%end
+################################################################################
+# Post section
+################################################################################
+
+%post
+groupadd vagrant -g 1001
+groupadd test -g 1002
+useradd test -g test -G wheel -u 1002
+useradd vagrant -g vagrant -G wheel -u 1001
+echo &quot;xxxxxxx&quot; | passwd --stdin test
+echo &quot;vagrant&quot; | passwd --stdin vagrant
+echo &quot;test        ALL=(ALL)       NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers.d/test
+echo &quot;vagrant        ALL=(ALL)       NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers.d/vagrant
+sed -i &quot;s/^.*requiretty/#Defaults requiretty/&quot; /etc/sudoers
+mkdir /home/vagrant/.ssh
+echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key&quot; &gt; /home/vagrant/.ssh/authorized_keys
+mkdir /root/.ssh
+echo &quot;ssh-rsa xagwoguwogu gwewg&quot;&gt;/root/.ssh/authorized_keys
+chmod 700 /root/.ssh
+chmod 400 /root/.ssh/authorized_keys
+%end
+
+</code></pre><h3 id=测试安装>测试安装</h3><p>因为我们指定了sda，因而我们这里先用virt-manager中的SATA驱动：</p><p><img src=/images/2019_05_07_09_55_31_537x372.jpg alt=/images/2019_05_07_09_55_31_537x372.jpg></p><p>启动光盘，来到安装界面:</p><p><img src=/images/2019_05_07_09_56_17_499x185.jpg alt=/images/2019_05_07_09_56_17_499x185.jpg></p><p>无需确认，一路安装直到安装完毕</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/05/kubesprayquickoffline/>KubesprayQuickOffline</a></h1><span class=post-date>May 5, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=os-prepare>OS prepare</h3><p>Download the <code>tar.gz</code> file from github, untar, then modify the Vagrantfile
 with:</p><pre><code># vim cluster1.yml
 ---
 - hosts: all
@@ -518,17 +800,4 @@ $ sudo brctl setfd libvirt0 0
 @vishh如果有两个容器超出他们的要求：哪一个将被杀死？ 
 超过请求'更多'或随机的一个？
 </code></pre><p>至此，即可以看到，作者文章中的提法应该是理解错误了，使用7天/30天等历史数据预估资源使用只是为了完成<code>Vertical pod auto-sizer</code>这个特性的开发，而提出的一种备选方案。</p><p>作者可能当时仅仅是看了Kubernetes社区开发中的一个开发特性的建议文档，就认为Kubernetes拥有了"预测资源需求量"的功能，事实上K8s的调度引擎从来不会去预估资源需求量。</p><p>&ldquo;vertical pod auto-sizer"这一特性一直到18年底才进入到alpha阶段，vpa特性的实现也不再是依靠16年时定义而实现。 在作者写文章的2016年，vpa试图根据当时用于收集容器指标的influxdb来实现预估代码，结果失败了；而influxdb+heapster应该是18年就被metric
-server所替代。当前处于alpha阶段的vpa特性也就依赖于metric server而实现。我们可以看到以下列出的代码变更：</p><p>含有文章中提法的代码目录于v1.1版中被引入，至v1.11版被删除。</p><p><img src=/images/2019_04_13_00_55_36_602x320.jpg alt=/images/2019_04_13_00_55_36_602x320.jpg></p><p>v1.10版后被从主线删除：</p><p><img src=/images/2019_04_13_00_56_54_564x542.jpg alt=/images/2019_04_13_00_56_54_564x542.jpg></p><h3 id=总结>总结</h3><p>从对issue的跟踪来看，应该是作者理解错了。预先估计资源用量从来不是Kubernetes定义资源需求的正确方法。<br>对于Kubernetes调度讲得比较好的一篇文章如下：</p><p><a href=http://dockone.io/article/2885>http://dockone.io/article/2885</a></p><p>官方对资源限制的参考页面如下：</p><p><a href=https://kubernetes.io/zh/docs/tasks/administer-cluster/cpu-memory-limit/>https://kubernetes.io/zh/docs/tasks/administer-cluster/cpu-memory-limit/</a><br>如果需要在生产环境中优化资源的使用，可以参考：</p><p><a href=https://www.yangcs.net/posts/optimizing-kubernetes-resource-allocation-production/>https://www.yangcs.net/posts/optimizing-kubernetes-resource-allocation-production/</a></p><h3 id=参考>参考</h3><p>Vertical pod auto-sizer, issue #10782:</p><p><a href=https://github.com/kubernetes/kubernetes/issues/10782>https://github.com/kubernetes/kubernetes/issues/10782</a></p><p>Setting Initial Resources, issue #12149:</p><p><a href=https://github.com/kubernetes/kubernetes/issues/12149>https://github.com/kubernetes/kubernetes/issues/12149</a></p><p>initial-resources.md:</p><p><a href=https://github.com/fabric8io/kansible/blob/master/vendor/k8s.io/kubernetes/docs/proposals/initial-resources.md>https://github.com/fabric8io/kansible/blob/master/vendor/k8s.io/kubernetes/docs/proposals/initial-resources.md</a></p><p>vpa 官方仓库：</p><p><a href=https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler>https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler</a></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/04/11/quicklyofflinehelmcharts/>QuicklyOfflineHelmCharts</a></h1><span class=post-date>Apr 11, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Following is the tips:</p><p>Create the minikube environment, and enable the helm/charts:</p><pre><code>#  minikube start --cpus 4 --memory 8192 --disk-size 60g
-# helm init
-</code></pre><p>Download the prometheus-operator from the official github repository, use
-<code>dependency update</code> for updating the dependency locally:</p><pre><code># cd prometheus-operator
-# helm dependency update
-</code></pre><p>Record the docker images before deployment:</p><pre><code># eval $(minikube docker-env)
-# docker images&gt;before.txt
-</code></pre><p>Now deploy the helm/charts using:</p><pre><code>#  helm install --name newprom .
-</code></pre><p>When all of the items were deployed, record the images via:</p><pre><code># docker images&gt;after.txt
-</code></pre><p>With the helm/charts folder and the <code>before.txt</code> and <code>after.txt</code> you could
-making this helm/charts working offline.</p><pre><code># docker save -o prometheus-operator.tar grafana/grafana:6.0.2 kiwigrid/k8s-sidecar:0.0.13 quay.io/coreos/prometheus-config-reloader:v0.29.0 quay.io/coreos/prometheus-operator:v0.29.0 quay.io/prometheus/alertmanager:v0.16.1 quay.io/prometheus/prometheus:v2.7.1 k8s.gcr.io/kube-state-metrics:v1.5.0 quay.io/prometheus/node-exporter:v0.17.0 quay.io/coreos/configmap-reload:v0.0.1
-# xz prometheus-operator.tar
-# tag and push
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/54/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/54/>54</a></li><li class="page-item active"><a class=page-link href=/page/55/>55</a></li><li class=page-item><a class=page-link href=/page/56/>56</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/233/>233</a></li><li class=page-item><a href=/page/56/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/233/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+server所替代。当前处于alpha阶段的vpa特性也就依赖于metric server而实现。我们可以看到以下列出的代码变更：</p><p>含有文章中提法的代码目录于v1.1版中被引入，至v1.11版被删除。</p><p><img src=/images/2019_04_13_00_55_36_602x320.jpg alt=/images/2019_04_13_00_55_36_602x320.jpg></p><p>v1.10版后被从主线删除：</p><p><img src=/images/2019_04_13_00_56_54_564x542.jpg alt=/images/2019_04_13_00_56_54_564x542.jpg></p><h3 id=总结>总结</h3><p>从对issue的跟踪来看，应该是作者理解错了。预先估计资源用量从来不是Kubernetes定义资源需求的正确方法。<br>对于Kubernetes调度讲得比较好的一篇文章如下：</p><p><a href=http://dockone.io/article/2885>http://dockone.io/article/2885</a></p><p>官方对资源限制的参考页面如下：</p><p><a href=https://kubernetes.io/zh/docs/tasks/administer-cluster/cpu-memory-limit/>https://kubernetes.io/zh/docs/tasks/administer-cluster/cpu-memory-limit/</a><br>如果需要在生产环境中优化资源的使用，可以参考：</p><p><a href=https://www.yangcs.net/posts/optimizing-kubernetes-resource-allocation-production/>https://www.yangcs.net/posts/optimizing-kubernetes-resource-allocation-production/</a></p><h3 id=参考>参考</h3><p>Vertical pod auto-sizer, issue #10782:</p><p><a href=https://github.com/kubernetes/kubernetes/issues/10782>https://github.com/kubernetes/kubernetes/issues/10782</a></p><p>Setting Initial Resources, issue #12149:</p><p><a href=https://github.com/kubernetes/kubernetes/issues/12149>https://github.com/kubernetes/kubernetes/issues/12149</a></p><p>initial-resources.md:</p><p><a href=https://github.com/fabric8io/kansible/blob/master/vendor/k8s.io/kubernetes/docs/proposals/initial-resources.md>https://github.com/fabric8io/kansible/blob/master/vendor/k8s.io/kubernetes/docs/proposals/initial-resources.md</a></p><p>vpa 官方仓库：</p><p><a href=https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler>https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler</a></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/54/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/54/>54</a></li><li class="page-item active"><a class=page-link href=/page/55/>55</a></li><li class=page-item><a class=page-link href=/page/56/>56</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/233/>233</a></li><li class=page-item><a href=/page/56/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/233/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
