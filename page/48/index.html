@@ -1,5 +1,416 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/12/06/buildingterraform-provider-libvirt/>Buildingterraform-provider-libvirt</a></h1><span class=post-date>Dec 6, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Build terraform-provider-libvirt for debian9.0.</p><p>Steps:</p><p>Get system info:</p><pre><code>root@debian:~# cat /etc/issue
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/12/09/quickstartofvagrantandansible/>QuickStartOfVagrantAndAnsible</a></h1><span class=post-date>Dec 9, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=setup-environment>Setup Environment</h3><p>Using <code>vagrant box list</code> for getting all of the boxes, then initiate the environment via(take <code>rhel74</code> box for example):</p><pre><code>$ vagrant init rhel74
+</code></pre><p>Add the cpus/memory customization values:</p><pre><code>  config.vm.provider &quot;libvirt&quot; do |vb|
+     vb.memory = &quot;4096&quot;
+     vb.cpus = &quot;4&quot;
+  end
+</code></pre><p>Disable the rsync folder:</p><pre><code>  config.vm.synced_folder &quot;.&quot;, &quot;/vagrant&quot;, disabled: true, type: &quot;rsync&quot;, rsync__args: ['--verbose', '--archive', '--delete', '-z'] , rsync__exclude: ['.git','venv']
+</code></pre><p>Add ansible deployment:</p><pre><code>  config.vm.provision &quot;ansible&quot; do |ansible|
+    ansible.playbook = &quot;playbook.yml&quot;
+    ansible.become = true
+  end
+</code></pre><p>your playbook.yml should like following:</p><pre><code>---
+- hosts: all
+  gather_facts: false
+  become: True
+  tasks:
+    - name: &quot;Run shell for provision&quot;
+      shell: mkdir -p /root/tttt
+</code></pre><h3 id=manually-run-ansible-playbook>Manually Run ansible playbook</h3><p>vagrant will create the inventory files under the <code>.vagrant</code> folder:</p><pre><code>cat .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory 
+# Generated by Vagrant
+
+default ansible_host=192.168.121.215 ansible_port=22 ansible_user='vagrant' ansible_ssh_private_key_file='/media/sda/Code/vagrant/dockerOnrhel74/.vagrant/machines/default/libvirt/private_key'
+
+</code></pre><p>Then you could run the provision task like:</p><pre><code>$ ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory playbook.yml
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/12/06/%E7%94%A8terraform%E7%AE%A1%E7%90%86%E9%9B%86%E7%BE%A4%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83-2/>用Terraform管理集群编译环境-2</a></h1><span class=post-date>Dec 6, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>前面已经用terraform可以批量创建出基础环境，但真正要做到集群部署这个环节还是需要有一定的活需要做的。所以后续我将terraform和自己改编的rong揉在了一起。通过预编译好的qcow2镜像，可以快速启动任意个kubernetes节点的集群。</p><h3 id=前置条件>前置条件</h3><p>qcow2预编译镜像中需安装<code>cloud-init</code>, <code>qemu-guest-agent</code>两个包。安装完毕后需手动使能<code>cloud-init</code>，后续我们在terraform创建虚拟机实例的时候可以通过cloud-init注入一些信息。</p><pre><code># systemctl enable cloud-init
+</code></pre><p>debian 9.0上需要安装mkisofs, 因为mkisofs已被genisoimage代替，因而需执行以下操作:</p><pre><code># apt-get install -y genisoimage
+# ln -s /usr/bin/genisoimage /usr/bin/mkisofs
+</code></pre><p>terraform需要具备以下插件, 其中terraform-provider-libvirt在debian 9.0上需手动编译:</p><pre><code># ls ~/.terraform.d/plugins/
+terraform-provider-ansible  terraform-provider-libvirt  terraform-provider-template_v2.1.2_x4
+</code></pre><h3 id=cloud-init文件>cloud-init文件</h3><p><code>cloud-init.cfg</code>文件内容如下:</p><pre><code>#cloud-config
+# https://cloudinit.readthedocs.io/en/latest/topics/modules.html
+hostname: ${HOSTNAME}
+users:
+  - name: xxxxx
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: /home/xxxxx
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - ssh-rsa xxxxxxxxxxxxxxxxxxxx
+ssh_pwauth: True
+disable_root: false
+chpasswd:
+  list: |
+     xxxxx:linux
+  expire: False
+</code></pre><p>真正用到的只有<code>hostname: ${HOSTNAME}</code>这个变量，其他的步骤是用于创建一个名为<code>xxxxx</code>的用户并更改其密码。后续需要对操作系统进行深度定制的时候可以使用该操作。</p><h3 id=maintf定义>main.tf定义</h3><p><code>main.tf</code>是整个底层架构编排的核心文件，内容如下:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>bash <span style=color:#f92672>{</span>linenos<span style=color:#f92672>=</span>table,linenostart<span style=color:#f92672>=</span>1<span style=color:#f92672>}</span>
+<span style=color:#75715e>################################################################################</span>
+<span style=color:#75715e>#  vars definition</span>
+<span style=color:#75715e>################################################################################</span>
+variable <span style=color:#e6db74>&#34;VM_COUNT&#34;</span> <span style=color:#f92672>{</span>
+  default <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+  type <span style=color:#f92672>=</span> number
+<span style=color:#f92672>}</span>
+
+variable <span style=color:#e6db74>&#34;VM_USER&#34;</span> <span style=color:#f92672>{</span>
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;developer&#34;</span>
+  type <span style=color:#f92672>=</span> string
+<span style=color:#f92672>}</span>
+
+variable <span style=color:#e6db74>&#34;VM_HOSTNAME&#34;</span> <span style=color:#f92672>{</span>
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;newnode&#34;</span>
+  type <span style=color:#f92672>=</span> string
+<span style=color:#f92672>}</span>
+
+variable <span style=color:#e6db74>&#34;VM_IMG_URL&#34;</span> <span style=color:#f92672>{</span>
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;http://1xx.xxx.xxx.xxx/xxxx180403cloudinit.img&#34;</span>
+  type <span style=color:#f92672>=</span> string
+<span style=color:#f92672>}</span>
+
+variable <span style=color:#e6db74>&#34;VM_IMG_FORMAT&#34;</span> <span style=color:#f92672>{</span>
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;qcow2&#34;</span>
+  type <span style=color:#f92672>=</span> string
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># https://www.ipaddressguide.com/cidr</span>
+variable <span style=color:#e6db74>&#34;VM_CIDR_RANGE&#34;</span> <span style=color:#f92672>{</span>
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;10.10.10.0/24&#34;</span>
+  type <span style=color:#f92672>=</span> string
+<span style=color:#f92672>}</span>
+
+variable <span style=color:#e6db74>&#34;LIBVIRT_POOL_DIR&#34;</span> <span style=color:#f92672>{</span>
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;./.local/.docker-libvirt&#34;</span>
+  type <span style=color:#f92672>=</span> string
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e>#variable libvirt_host {</span>
+<span style=color:#75715e>#  type = string</span>
+<span style=color:#75715e>#  description = &#34;IP address of host running libvirt&#34;</span>
+<span style=color:#75715e>#}</span>
+#
+<span style=color:#75715e>#variable instance_name {</span>
+<span style=color:#75715e>#  type = string</span>
+<span style=color:#75715e>#  description = &#34;name of VM instance&#34;</span>
+<span style=color:#75715e>#}</span>
+
+variable pool_name <span style=color:#f92672>{</span>
+  type <span style=color:#f92672>=</span> string
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;default&#34;</span>
+  description <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;name of pool to store disk and iso image&#34;</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e>#variable source_path {</span>
+<span style=color:#75715e>#  type = string</span>
+<span style=color:#75715e>#  description = &#34;path to qcow2 base image, can be remote url or local disk path&#34;</span>
+<span style=color:#75715e>#}</span>
+
+variable disk_format <span style=color:#f92672>{</span>
+  type <span style=color:#f92672>=</span> string
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;qcow2&#34;</span>
+<span style=color:#f92672>}</span>
+
+variable default_password <span style=color:#f92672>{</span>
+  type <span style=color:#f92672>=</span> string
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;passw0rd&#34;</span>
+  description <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;default password to login to VM when running, it&#39;s recommended to disable this manually&#34;</span>
+<span style=color:#f92672>}</span>
+
+variable memory_size <span style=color:#f92672>{</span>
+  type <span style=color:#f92672>=</span> string
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;5120&#34;</span>
+  description <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;memory size of VM&#34;</span>
+<span style=color:#f92672>}</span>
+
+variable num_cpu <span style=color:#f92672>{</span>
+  default <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+  description <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;number of vCPU which VM has&#34;</span>
+<span style=color:#f92672>}</span>
+
+variable num_network_interface <span style=color:#f92672>{</span>
+  default <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+  description <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;number of network interfaces which VM has&#34;</span>
+<span style=color:#f92672>}</span>
+
+variable private_network_bridge <span style=color:#f92672>{</span>
+  type <span style=color:#f92672>=</span> string
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;virbr0&#34;</span>
+  description <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;existing network bridge on host that VM needs to connect to private network&#34;</span>
+<span style=color:#f92672>}</span>
+
+variable public_network_bridge <span style=color:#f92672>{</span>
+  type <span style=color:#f92672>=</span> string
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;virbr1&#34;</span>
+  description <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;existing network bridge on host that VM needs to connect to public network&#34;</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e>#variable user_data {</span>
+<span style=color:#75715e>#  type = string</span>
+<span style=color:#75715e>#}</span>
+
+variable autostart <span style=color:#f92672>{</span>
+  default <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;true&#34;</span>
+  type <span style=color:#f92672>=</span> string
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e>################################################################################</span>
+<span style=color:#75715e># PROVIDERS</span>
+<span style=color:#75715e>################################################################################</span>
+
+<span style=color:#75715e># instance the provider</span>
+provider <span style=color:#e6db74>&#34;libvirt&#34;</span> <span style=color:#f92672>{</span>
+  uri <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;qemu:///system&#34;</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># If you want to call remote libvirt provider.</span> 
+<span style=color:#75715e>#provider &#34;libvirt&#34; {</span>
+<span style=color:#75715e>#  uri = &#34;qemu+tcp://${var.libvirt_host}/system&#34;</span>
+<span style=color:#75715e>#}</span>
+
+<span style=color:#75715e>################################################################################</span>
+<span style=color:#75715e># DATA TEMPLATES</span>
+<span style=color:#75715e>################################################################################</span>
+
+<span style=color:#75715e># https://www.terraform.io/docs/providers/template/d/file.html</span>
+
+<span style=color:#75715e># https://www.terraform.io/docs/providers/template/d/cloudinit_config.html</span>
+data <span style=color:#e6db74>&#34;template_file&#34;</span> <span style=color:#e6db74>&#34;user_data&#34;</span> <span style=color:#f92672>{</span>
+  count <span style=color:#f92672>=</span> var.VM_COUNT
+  template <span style=color:#f92672>=</span> file<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>path.module<span style=color:#e6db74>}</span><span style=color:#e6db74>/cloud_init.cfg</span><span style=color:#e6db74>&#34;</span><span style=color:#f92672>)</span>
+  vars <span style=color:#f92672>=</span> <span style=color:#f92672>{</span>
+    HOSTNAME <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.VM_HOSTNAME<span style=color:#e6db74>}</span><span style=color:#e6db74>-</span><span style=color:#e6db74>${</span>count.index + 1<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+  <span style=color:#f92672>}</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e>#data &#34;template_file&#34; &#34;network_config&#34; {</span>
+<span style=color:#75715e>#  template = file(&#34;${path.module}/network_config.cfg&#34;)</span>
+<span style=color:#75715e>#}</span>
+
+
+<span style=color:#75715e>################################################################################</span>
+<span style=color:#75715e># ANSIBLE ITEMS</span>
+<span style=color:#75715e>################################################################################</span>
+resource <span style=color:#e6db74>&#34;ansible_group&#34;</span> <span style=color:#e6db74>&#34;kube-deploy&#34;</span> <span style=color:#f92672>{</span>
+  inventory_group_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;kube-deploy&#34;</span>
+<span style=color:#f92672>}</span>
+
+resource <span style=color:#e6db74>&#34;ansible_group&#34;</span> <span style=color:#e6db74>&#34;kube-master&#34;</span> <span style=color:#f92672>{</span>
+  inventory_group_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;kube-master&#34;</span>
+<span style=color:#f92672>}</span>
+
+resource <span style=color:#e6db74>&#34;ansible_group&#34;</span> <span style=color:#e6db74>&#34;kube-node&#34;</span> <span style=color:#f92672>{</span>
+  inventory_group_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;kube-node&#34;</span>
+<span style=color:#f92672>}</span>
+
+resource <span style=color:#e6db74>&#34;ansible_group&#34;</span> <span style=color:#e6db74>&#34;etcd&#34;</span> <span style=color:#f92672>{</span>
+  inventory_group_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;etcd&#34;</span>
+<span style=color:#f92672>}</span>
+
+resource <span style=color:#e6db74>&#34;ansible_group&#34;</span> <span style=color:#e6db74>&#34;k8s-cluster&#34;</span> <span style=color:#f92672>{</span>
+  inventory_group_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;k8s-cluster&#34;</span>
+  children <span style=color:#f92672>=</span> <span style=color:#f92672>[</span><span style=color:#e6db74>&#34;kube-master&#34;</span>, <span style=color:#e6db74>&#34;kube-node&#34;</span><span style=color:#f92672>]</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># if count &gt; 3, then we have 3 ectds, 3 kube-master, count kube-nodes</span>
+
+<span style=color:#75715e># The first node should be kube-deploy/kube-master/kube-node/etcd.</span> 
+resource <span style=color:#e6db74>&#34;ansible_host&#34;</span> <span style=color:#e6db74>&#34;deploynode&#34;</span> <span style=color:#f92672>{</span>
+    groups <span style=color:#f92672>=</span> <span style=color:#f92672>[</span><span style=color:#e6db74>&#34;kube-master&#34;</span>, <span style=color:#e6db74>&#34;etcd&#34;</span>, <span style=color:#e6db74>&#34;kube-node&#34;</span>, <span style=color:#e6db74>&#34;kube-deploy&#34;</span><span style=color:#f92672>]</span>
+    inventory_hostname <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.VM_HOSTNAME<span style=color:#e6db74>}</span><span style=color:#e6db74>-1</span><span style=color:#e6db74>&#34;</span>
+    vars <span style=color:#f92672>=</span> <span style=color:#f92672>{</span>
+        ansible_user <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;root&#34;</span>
+        ansible_ssh_private_key_file <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;./deploy.key&#34;</span>
+        ansible_host <span style=color:#f92672>=</span> element<span style=color:#f92672>(</span>libvirt_domain.vm.*.network_interface.0.addresses.0, 0<span style=color:#f92672>)</span>
+        ip <span style=color:#f92672>=</span> element<span style=color:#f92672>(</span>libvirt_domain.vm.*.network_interface.0.addresses.0, 0<span style=color:#f92672>)</span>
+    <span style=color:#f92672>}</span>
+    <span style=color:#75715e>#provisioner &#34;local-exec&#34; {</span>
+    <span style=color:#75715e>#  command = &#34;sleep 40 &amp;&amp; ansible-playbook -i  /etc/ansible/terraform.py cluster.yml --extra-vars @rong-vars.yml&#34;</span>
+    <span style=color:#75715e>#}</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># Create 2(kube-master, etcd, kube-node) nodes, node2, node3</span>
+resource <span style=color:#e6db74>&#34;ansible_host&#34;</span> <span style=color:#e6db74>&#34;master&#34;</span> <span style=color:#f92672>{</span>
+    count <span style=color:#f92672>=</span> var.VM_COUNT &gt;<span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span> ? <span style=color:#ae81ff>2</span> : var.VM_COUNT -1
+    groups <span style=color:#f92672>=</span> var.VM_COUNT &gt;<span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span> ? <span style=color:#f92672>[</span><span style=color:#e6db74>&#34;kube-master&#34;</span>, <span style=color:#e6db74>&#34;etcd&#34;</span>, <span style=color:#e6db74>&#34;kube-node&#34;</span><span style=color:#f92672>]</span> : <span style=color:#f92672>[</span><span style=color:#e6db74>&#34;kube-master&#34;</span>, <span style=color:#e6db74>&#34;kube-node&#34;</span><span style=color:#f92672>]</span>
+    <span style=color:#75715e>#inventory_hostname = format(&#34;%s-%d&#34;, &#34;node&#34;, count.index + 2)</span>
+    inventory_hostname <span style=color:#f92672>=</span> format<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;%s-%d&#34;</span>, var.VM_HOSTNAME, count.index + 2<span style=color:#f92672>)</span>
+    vars <span style=color:#f92672>=</span> <span style=color:#f92672>{</span>
+        ansible_user <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;root&#34;</span>
+        ansible_ssh_private_key_file <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;./deploy.key&#34;</span>
+        ansible_host <span style=color:#f92672>=</span> element<span style=color:#f92672>(</span>libvirt_domain.vm.*.network_interface.0.addresses.0, count.index+1<span style=color:#f92672>)</span>
+        ip <span style=color:#f92672>=</span> element<span style=color:#f92672>(</span>libvirt_domain.vm.*.network_interface.0.addresses.0, count.index+1<span style=color:#f92672>)</span>
+    <span style=color:#f92672>}</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># others should be kube-nodes</span>
+resource <span style=color:#e6db74>&#34;ansible_host&#34;</span> <span style=color:#e6db74>&#34;worker&#34;</span> <span style=color:#f92672>{</span>
+    count <span style=color:#f92672>=</span> var.VM_COUNT &gt; <span style=color:#ae81ff>3</span> ? var.VM_COUNT - <span style=color:#ae81ff>3</span> : <span style=color:#ae81ff>0</span>
+    groups <span style=color:#f92672>=</span> <span style=color:#f92672>[</span><span style=color:#e6db74>&#34;kube-node&#34;</span><span style=color:#f92672>]</span>
+    <span style=color:#75715e>#inventory_hostname = &#34;node${count.index + 4}&#34;</span>
+    <span style=color:#75715e>#inventory_hostname = format(&#34;%s-%d&#34;, &#34;node&#34;, count.index + 4)</span>
+    inventory_hostname <span style=color:#f92672>=</span> format<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;%s-%d&#34;</span>, var.VM_HOSTNAME, count.index + 4<span style=color:#f92672>)</span>
+    vars <span style=color:#f92672>=</span> <span style=color:#f92672>{</span>
+        ansible_user <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;root&#34;</span>
+        ansible_ssh_private_key_file <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;./deploy.key&#34;</span>
+        ansible_host <span style=color:#f92672>=</span> element<span style=color:#f92672>(</span>libvirt_domain.vm.*.network_interface.0.addresses.0, count.index+3<span style=color:#f92672>)</span>
+        ip <span style=color:#f92672>=</span> element<span style=color:#f92672>(</span>libvirt_domain.vm.*.network_interface.0.addresses.0, count.index+3<span style=color:#f92672>)</span>
+    <span style=color:#f92672>}</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e>################################################################################</span>
+<span style=color:#75715e># RESOURCES</span>
+<span style=color:#75715e>################################################################################</span>
+resource <span style=color:#e6db74>&#34;libvirt_pool&#34;</span> <span style=color:#e6db74>&#34;vm&#34;</span> <span style=color:#f92672>{</span>
+  name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.VM_HOSTNAME<span style=color:#e6db74>}</span><span style=color:#e6db74>_pool</span><span style=color:#e6db74>&#34;</span>
+  type <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;dir&#34;</span>
+  path <span style=color:#f92672>=</span> abspath<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.LIBVIRT_POOL_DIR<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span><span style=color:#f92672>)</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e># We fetch the disk image for the operating system from the given url. For the base image.</span> 
+resource <span style=color:#e6db74>&#34;libvirt_volume&#34;</span> <span style=color:#e6db74>&#34;vm_disk_image&#34;</span> <span style=color:#f92672>{</span>
+  name   <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.VM_HOSTNAME<span style=color:#e6db74>}</span><span style=color:#e6db74>_disk_image.</span><span style=color:#e6db74>${</span>var.VM_IMG_FORMAT<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+  <span style=color:#75715e># Or you could specify like `pool = &#34;transfer&#34;`</span>
+  pool   <span style=color:#f92672>=</span> libvirt_pool.vm.name
+  source <span style=color:#f92672>=</span> var.VM_IMG_URL
+  format <span style=color:#f92672>=</span> var.VM_IMG_FORMAT
+<span style=color:#f92672>}</span>
+
+// It will use the disk image fetched at <span style=color:#e6db74>`</span>libirt_volume.vm_disk_image<span style=color:#e6db74>`</span> as the
+//  base one to build the worker VM.
+resource <span style=color:#e6db74>&#34;libvirt_volume&#34;</span> <span style=color:#e6db74>&#34;vm_worker&#34;</span> <span style=color:#f92672>{</span>
+  count  <span style=color:#f92672>=</span> var.VM_COUNT
+  name   <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>worker_</span><span style=color:#e6db74>${</span>var.VM_HOSTNAME<span style=color:#e6db74>}</span><span style=color:#e6db74>-</span><span style=color:#e6db74>${</span>count.index + 1<span style=color:#e6db74>}</span><span style=color:#e6db74>.</span><span style=color:#e6db74>${</span>var.VM_IMG_FORMAT<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+  base_volume_id <span style=color:#f92672>=</span> libvirt_volume.vm_disk_image.id
+  pool   <span style=color:#f92672>=</span> libvirt_volume.vm_disk_image.pool
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e>#*# Create a public network for the VMs</span>
+<span style=color:#75715e>#*# https://www.ipaddressguide.com/cidrv</span>
+<span style=color:#75715e>#*resource &#34;libvirt_network&#34; &#34;vm_public_network&#34; {</span>
+<span style=color:#75715e>#*   name = &#34;${var.VM_HOSTNAME}_network&#34;</span>
+<span style=color:#75715e>#*   autostart = true</span>
+<span style=color:#75715e>#*   mode = &#34;nat&#34;</span>
+<span style=color:#75715e>#*   domain = &#34;${var.VM_HOSTNAME}.local&#34;</span>
+<span style=color:#75715e>#*</span>
+<span style=color:#75715e>#*   # TODO: FIX CIDR ADDRESSES RANGE?</span>
+<span style=color:#75715e>#*   # With `wait_for_lease` enabled, we get an error in the end of the VMs</span>
+<span style=color:#75715e>#*   #  creation:</span>
+<span style=color:#75715e>#*   #   - &#39;Requested operation is not valid: the address family of a host entry IP must match the address family of the dhcp element&#39;s parent&#39;</span>
+<span style=color:#75715e>#*   # But the VMs will be running and accessible via ssh.</span>
+<span style=color:#75715e>#*   addresses = [&#34;${var.VM_CIDR_RANGE}&#34;]</span>
+<span style=color:#75715e>#*</span>
+<span style=color:#75715e>#*   dhcp {</span>
+<span style=color:#75715e>#*    enabled = true</span>
+<span style=color:#75715e>#*   }</span>
+<span style=color:#75715e>#*   dns {</span>
+<span style=color:#75715e>#*    enabled = true</span>
+<span style=color:#75715e>#*   }</span>
+<span style=color:#75715e>#*}</span>
+
+<span style=color:#75715e># for more info about paramater check this out</span> 
+<span style=color:#75715e># https://github.com/dmacvicar/terraform-provider-libvirt/blob/master/website/docs/r/cloudinit.html.markdown</span>
+<span style=color:#75715e># Use CloudInit to add our ssh-key to the instance</span>
+<span style=color:#75715e># you can add also meta_data field</span>
+resource <span style=color:#e6db74>&#34;libvirt_cloudinit_disk&#34;</span> <span style=color:#e6db74>&#34;cloudinit&#34;</span> <span style=color:#f92672>{</span>
+  count <span style=color:#f92672>=</span> var.VM_COUNT
+  name           <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.VM_HOSTNAME<span style=color:#e6db74>}</span><span style=color:#e6db74>-</span><span style=color:#e6db74>${</span>count.index + 1<span style=color:#e6db74>}</span><span style=color:#e6db74>_cloudinit.iso</span><span style=color:#e6db74>&#34;</span>
+  <span style=color:#75715e>#user_data      = data.template_file.user_data.rendered</span> 
+  user_data      <span style=color:#f92672>=</span> data.template_file.user_data<span style=color:#f92672>[</span>count.index<span style=color:#f92672>]</span>.rendered
+  pool           <span style=color:#f92672>=</span> libvirt_pool.vm.name
+<span style=color:#f92672>}</span>
+
+
+
+resource <span style=color:#e6db74>&#34;libvirt_domain&#34;</span> <span style=color:#e6db74>&#34;vm&#34;</span> <span style=color:#f92672>{</span>
+  count  <span style=color:#f92672>=</span> var.VM_COUNT
+  name   <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.VM_HOSTNAME<span style=color:#e6db74>}</span><span style=color:#e6db74>-</span><span style=color:#e6db74>${</span>count.index + 1<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+  <span style=color:#75715e>#memory      = &#34;${var.memory_size}&#34;</span>
+  memory      <span style=color:#f92672>=</span> var.memory_size
+  <span style=color:#75715e>#vcpu        = &#34;${var.num_cpu}&#34;</span>
+  vcpu        <span style=color:#f92672>=</span> var.num_cpu
+  <span style=color:#75715e>#autostart   = &#34;${var.autostart}&#34;</span>
+  autostart   <span style=color:#f92672>=</span> var.autostart
+
+  <span style=color:#75715e># TODO: FIX qemu-ga?</span>
+  <span style=color:#75715e># qemu-ga needs to be installed and working inside the VM, and currently is</span>
+  <span style=color:#75715e>#  not working. Maybe it needs some configuration.</span>
+  qemu_agent <span style=color:#f92672>=</span> true
+  <span style=color:#75715e>#cloudinit = &#34;${libvirt_cloudinit_disk.cloudinit.id}&#34;</span>
+  cloudinit <span style=color:#f92672>=</span> element<span style=color:#f92672>(</span>libvirt_cloudinit_disk.cloudinit.*.id, count.index<span style=color:#f92672>)</span>
+
+
+  <span style=color:#75715e># attach network interface to default network(192.168.122.0/24)</span>
+  <span style=color:#75715e># Or we could specify a new networking created in resource and attached to it.</span> 
+  network_interface <span style=color:#f92672>{</span>
+    network_name   <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;default&#34;</span>
+    hostname   <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.VM_HOSTNAME<span style=color:#e6db74>}</span><span style=color:#e6db74>-</span><span style=color:#e6db74>${</span>count.index + 1<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+    wait_for_lease <span style=color:#f92672>=</span> true
+  <span style=color:#f92672>}</span>
+
+  <span style=color:#75715e>#* Attached to our created network.</span>
+  <span style=color:#75715e>#*network_interface {</span>
+  <span style=color:#75715e>#*  #hostname = &#34;${var.VM_HOSTNAME}-${count.index + 1}&#34;</span>
+  <span style=color:#75715e>#*  network_id = &#34;${libvirt_network.vm_public_network.id}&#34;</span>
+  <span style=color:#75715e>#*  #network_name = &#34;${libvirt_network.vm_public_network.name}&#34;</span>
+
+  <span style=color:#75715e>#*  #addresses = [&#34;${cidrhost(libvirt_network.vm_public_network.addresses, count.index + 1)}&#34;]</span>
+  <span style=color:#75715e>#*  addresses = [&#34;${cidrhost(var.VM_CIDR_RANGE, count.index + 1)}&#34;]</span>
+
+  <span style=color:#75715e>#*  # TODO: Fix wait for lease?</span>
+  <span style=color:#75715e>#*  # qemu-ga must be running inside the VM. See notes above in `qemu_agent`.</span>
+  <span style=color:#75715e>#*  wait_for_lease = true</span>
+  <span style=color:#75715e>#*}</span>
+
+  graphics <span style=color:#f92672>{</span>
+    type <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;vnc&#34;</span>
+    listen_type <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;address&#34;</span>
+    autoport <span style=color:#f92672>=</span> true
+  <span style=color:#f92672>}</span>
+
+  <span style=color:#75715e># IMPORTANT</span>
+  <span style=color:#75715e># Ubuntu can hang is a isa-serial is not present at boot time.</span>
+  <span style=color:#75715e># If you find your CPU 100% and never is available this is why.</span>
+  #
+  <span style=color:#75715e># This is a known bug on cloud images, since they expect a console</span>
+  <span style=color:#75715e># we need to pass it:</span>
+  <span style=color:#75715e># https://bugs.launchpad.net/cloud-images/+bug/1573095</span>
+  console <span style=color:#f92672>{</span>
+    type        <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;pty&#34;</span>
+    target_port <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;0&#34;</span>
+    target_type <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;serial&#34;</span>
+  <span style=color:#f92672>}</span>
+
+  console <span style=color:#f92672>{</span>
+    type        <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;pty&#34;</span>
+    target_type <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;virtio&#34;</span>
+    target_port <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;1&#34;</span>
+  <span style=color:#f92672>}</span>
+
+  disk <span style=color:#f92672>{</span>
+    volume_id <span style=color:#f92672>=</span> element<span style=color:#f92672>(</span>libvirt_volume.vm_worker.*.id, count.index<span style=color:#f92672>)</span>
+  <span style=color:#f92672>}</span>
+
+<span style=color:#f92672>}</span>
+<span style=color:#75715e>################################################################################</span>
+<span style=color:#75715e># TERRAFORM CONFIG</span>
+<span style=color:#75715e>################################################################################</span>
+
+terraform <span style=color:#f92672>{</span>
+  required_version <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&gt;= 0.12&#34;</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#75715e>################################################################################</span>
+<span style=color:#75715e># TERRAFORM OUTPUT</span>
+<span style=color:#75715e>################################################################################</span>
+#
+output <span style=color:#e6db74>&#34;ip&#34;</span> <span style=color:#f92672>{</span>
+  value <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>libvirt_domain.vm.*.network_interface.0.addresses.0<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+<span style=color:#f92672>}</span>
+</code></pre></div><p>local exec command , added to:</p><pre><code>    provisioner &quot;local-exec&quot; {
+      command = &quot;sleep 40 &amp;&amp; ansible-playbook -i  /etc/ansible/terraform.py cluster.yml --extra-vars @rong-vars.yml&quot;
+    }
+
+</code></pre><p>逐行解释如下:</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/12/06/buildingterraform-provider-libvirt/>Buildingterraform-provider-libvirt</a></h1><span class=post-date>Dec 6, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Build terraform-provider-libvirt for debian9.0.</p><p>Steps:</p><p>Get system info:</p><pre><code>root@debian:~# cat /etc/issue
 Debian GNU/Linux 9 \n \l
 
 root@debian:~# cat /etc/debian_version 
@@ -229,236 +640,4 @@ end
 </code></pre><h3 id=testing>Testing</h3><p>Add vagrant box via:</p><pre><code># vagrant box add custom_box.box --name &quot;chuobi&quot;
 # vagrant init chuobi
 # vagrant up --provider=libvirt
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/11/18/thinkingondev/>ThinkingOnDev</a></h1><span class=post-date>Nov 18, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><ol><li>节点数据上报，监控客户端方案。</li><li>数据归总方案，用什么样的数据库什么样的架构用于存放数据。</li><li>数据展示方案，用什么样的前端和操控界面来展示和使用数据。</li></ol></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/11/13/workingtipsongravitee/>WorkingTipsOnGravitee</a></h1><span class=post-date>Nov 13, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>Deploy gravitee on Kubernetes cluster, and use it as cluster&rsquo;s API gateway.</p><h3 id=ingress-controller>Ingress-Controller</h3><p>Deploy nginx-ingress-controller in kubespray&rsquo;s configuration is listed as following:</p><pre><code>ingress_nginx_enabled: true
-ingress_nginx_host_network: true
-ingress_nginx_nodeselector:
-  kubernetes.io/hostname: &quot;tsts-2&quot;
-</code></pre><p>Specify the ingress&rsquo;s entry machine is <code>tsts-2</code>, cause in some node we have the <code>80</code> and <code>443</code> port occupied.</p><p>Run the task:</p><pre><code># ansible-playbook -i inventory/kkkk/hosts.ini cluster.yml --extra-vars @kkkk-vars.yml --tags ingress-controller
-</code></pre><p>Verify the ingress deployed:</p><pre><code># kubectl get pods -n ingress-nginx
-NAME                             READY   STATUS    RESTARTS   AGE
-ingress-nginx-controller-b959g   1/1     Running   0          4d16h
-</code></pre><h3 id=helmcharts-installation>Helm/Charts installation</h3><p>Use helm/charts for deploying the gravitee apim.</p><pre><code># git clone https://github.com/gravitee-io/helm-charts.git
-# cd apim
-# helm repo update .
-# helm dependency update .
-</code></pre><p>After dependency updated we will see the folder structure is listed as:</p><pre><code>➜  apim tree 
-.
-├── charts
-│   ├── elasticsearch-1.32.0.tgz
-│   └── mongodb-replicaset-3.10.1.tgz
-├── Chart.yaml
-├── NOTES.txt
-├── README.md
-├── requirements.lock
-├── requirements.yaml
-├── templates
-│   ├── api-autoscaler.yaml
-│   ├── api-configmap.yaml
-│   ├── api-deployment.yaml
-│   ├── api-ingress.yaml
-│   ├── api-service.yaml
-│   ├── gateway-autoscaler.yaml
-│   ├── gateway-configmap.yaml
-│   ├── gateway-deployment.yaml
-│   ├── gateway-ingress.yaml
-│   ├── gateway-service.yaml
-│   ├── _helpers.tpl
-│   ├── ui-autoscaler.yaml
-│   ├── ui-configmap.yaml
-│   ├── ui-deployment.yaml
-│   ├── ui-ingress.yaml
-│   └── ui-service.yaml
-└── values.yaml
-</code></pre><p>Configure the helm/charts values:</p><pre><code># vim values.yml
-//.................
-mongo:
-  rs: rs0
-  rsEnabled: true
-  dbhost: gravitee45-mongodb-replicaset
-//.................
-mongodb-replicaset:
-  enabled: true
-  replicas: 1
-//.................
-  persistentVolume:
-    enabled: false
-//.................
-
-es:
-//.................
-  endpoints:
-    - http://gravitee45-elasticsearch-client.default.svc.cluster.local:9200
-
-//.................
-elasticsearch:
-  enabled: true
-  cluster:
-    name: &quot;elasticsearch&quot;
-
-//.................
-  master: 
-//.................
-    persistence:
-      enabled: false
-//.................
-  data:
-//.................
-    persistence:
-      enabled: false
-
-//.................
-
-api:
-  enabled: true
-  name: api
-  logging:
-    debug: false
-  restartPolicy: OnFailure
-  updateStrategy:
-    rollingUpdate:
-      maxUnavailable: 1
-    type: RollingUpdate
-  replicaCount: 1
-  image:
-    repository: graviteeio/management-api
-    tag: 1.29.5
-    pullPolicy: IfNotPresent
-  service:
-    type: ClusterIP
-    externalPort: 83
-    internalPort: 8083
-  autoscaling:
-    enabled: true
-    minReplicas: 1
-    maxReplicas: 1
-
-//.....................
-
-gateway:
-  enabled: true
-  type: Deployment
-  name: gateway
-  logging:
-    debug: false
-  replicaCount: 2
-  # sharding_tags: 
-  # tenant:
-  websocket: false
-  image:
-    repository: graviteeio/gateway
-    tag: 1.29.5
-    pullPolicy: IfNotPresent
-  service:
-    type: ClusterIP
-    externalPort: 82
-    internalPort: 8082
-  autoscaling:
-    enabled: true
-    minReplicas: 1
-    maxReplicas: 1
-
-//.......................
-ui:
-  enabled: true
-  name: ui
-  title: API Portal
-  managementTitle: API Management
-  documentationLink: http://docs.gravitee.io/
-  scheduler:
-    tasks: 10
-  theme:
-    name: &quot;default&quot;
-    logo: &quot;themes/assets/GRAVITEE_LOGO1-01.png&quot;
-    loader: &quot;assets/gravitee_logo_anim.gif&quot;
-  portal:
-    apikeyHeader: &quot;X-Gravitee-Api-Key&quot;
-    devMode:
-      enabled: false
-    userCreation:
-      enabled: false
-    support:
-      enabled: true
-    rating:
-      enabled: false
-    analytics:
-      enabled: false
-      trackingId: &quot;&quot;
-  replicaCount: 1
-  image:
-    repository: graviteeio/management-ui
-    tag: 1.29.5
-    pullPolicy: IfNotPresent
-  autoscaling:
-    enabled: true
-    minReplicas: 1
-    maxReplicas: 1
-//............
-</code></pre><p>Also replace all of the <code>apim.example.com</code> into <code>apim.company.com</code>.</p><p>Then install the charts via:</p><pre><code># helm  install --name gravitee45 .
-</code></pre><p>Examine the ingress via:</p><pre><code># root@tsts-1:~/apim# kubectl get ingress
-NAME                       HOSTS              ADDRESS          PORTS     AGE
-gravitee45-apim-api        apim.company.com   10.147.191.192   80, 443   19h
-gravitee45-apim-firstapi   apim.company.com   10.147.191.192   80, 443   17h
-gravitee45-apim-gateway    apim.company.com   10.147.191.192   80, 443   19h
-gravitee45-apim-ui         apim.company.com   10.147.191.192   80, 443   19h
-</code></pre><p>Check the pods via:</p><pre><code>root@tsts-1:~/apim# kubectl get pods
-NAME                                               READY   STATUS    RESTARTS   AGE
-gravitee45-apim-api-7bfd555fbb-95cqz               1/1     Running   0          19h
-gravitee45-apim-gateway-5757b5d6bf-gzstz           1/1     Running   0          19h
-gravitee45-apim-ui-66ddddfd7f-ssl9z                1/1     Running   0          19h
-gravitee45-elasticsearch-client-77cb95bc9f-8bdt8   1/1     Running   0          19h
-gravitee45-elasticsearch-client-77cb95bc9f-xjxvs   1/1     Running   0          19h
-gravitee45-elasticsearch-data-0                    1/1     Running   0          19h
-gravitee45-elasticsearch-data-1                    1/1     Running   0          19h
-gravitee45-elasticsearch-master-0                  1/1     Running   0          19h
-gravitee45-elasticsearch-master-1                  1/1     Running   0          19h
-gravitee45-elasticsearch-master-2                  1/1     Running   0          19h
-gravitee45-mongodb-replicaset-0                    1/1     Running   0          19h
-</code></pre><h3 id=test-api>Test api</h3><p>Run a local test api like echo api in gravitee website:</p><pre><code># docker run -d --name echo -p 18080:8080 graviteeio/gravitee-echo-api:latest
-</code></pre><p>Test via:</p><pre><code># curl http://xxx.xxx.xxx.xxx:18080/
-{
-  &quot;headers&quot; : {
-    &quot;Host&quot; : &quot;xxx.xxx.xxx.xxx:18080&quot;,
-    &quot;User-Agent&quot; : &quot;curl/7.52.1&quot;,
-    &quot;Accept&quot; : &quot;*/*&quot;
-  }
-</code></pre><h3 id=api-management>API management</h3><p>Open your browser and visit <code>https://apim.company.com</code>:</p><p><img src=/images/2019_11_13_10_45_50_1020x399.jpg alt=/images/2019_11_13_10_45_50_1020x399.jpg></p><p>Click login and login with <code>admin/admin</code>:</p><p><img src=/images/2019_11_13_10_46_13_434x376.jpg alt=/images/2019_11_13_10_46_13_434x376.jpg></p><p>Click <code>Administration</code>:</p><p><img src=/images/2019_11_13_10_46_42_205x303.jpg alt=/images/2019_11_13_10_46_42_205x303.jpg></p><p>Click <code>+</code>:</p><p><img src=/images/2019_11_13_10_47_35_353x306.jpg alt=/images/2019_11_13_10_47_35_353x306.jpg></p><p>Click &lsquo;->` and create a new API:</p><p><img src=/images/2019_11_13_10_48_21_462x302.jpg alt=/images/2019_11_13_10_48_21_462x302.jpg></p><p>Name is <code>firstapi</code>, version is <code>1.0</code>, write some description, context-path is <code>/firstapi</code>, then click <code>NEXT</code>:</p><p><img src=/images/2019_11_13_10_49_31_583x441.jpg alt=/images/2019_11_13_10_49_31_583x441.jpg></p><p>Specify the gateway to our test api, then click <code>NEXT</code>:</p><p><img src=/images/2019_11_13_10_50_28_557x278.jpg alt=/images/2019_11_13_10_50_28_557x278.jpg></p><p>Write some description for plan, notice the security type should be <code>API Key</code>, you could also specify the <code>Rate limit</code> and <code>Quota</code> here, after configuration click <code>NEXT</code> for next step:</p><p><img src=/images/2019_11_13_10_52_05_564x435.jpg alt=/images/2019_11_13_10_52_05_564x435.jpg></p><p>You could add the API documentation here, here we skip the documentation for next step, click <code>SKIP</code>:</p><p><img src=/images/2019_11_13_10_53_25_556x256.jpg alt=/images/2019_11_13_10_53_25_556x256.jpg></p><p>Here you could adjust the parameters, if everything is ok, we could click <code>CREATE AND START THE API</code>:</p><p><img src=/images/2019_11_13_10_54_25_862x648.jpg alt=/images/2019_11_13_10_54_25_862x648.jpg></p><p>Confirm for <code>CREATE</code>:</p><p><img src=/images/2019_11_13_10_55_38_424x156.jpg alt=/images/2019_11_13_10_55_38_424x156.jpg></p><p>The api will be created and show like:</p><p><img src=/images/2019_11_13_10_56_08_644x727.jpg alt=/images/2019_11_13_10_56_08_644x727.jpg></p><p>Click <code>PUBLISH THE API</code> and <code>MAKE PUBLIC</code> for plublishing this API:</p><p><img src=/images/2019_11_13_10_56_54_646x255.jpg alt=/images/2019_11_13_10_56_54_646x255.jpg></p><p>Next step we will create an API for using this API, click <code>Applications</code>:</p><p><img src=/images/2019_11_13_10_58_33_211x270.jpg alt=/images/2019_11_13_10_58_33_211x270.jpg></p><p>Click <code>+</code> for adding a new application:</p><p><img src=/images/2019_11_13_10_59_37_655x233.jpg alt=/images/2019_11_13_10_59_37_655x233.jpg></p><p>Write some description for this new app, and click <code>NEXT</code> for next step:</p><p><img src=/images/2019_11_13_11_00_12_421x320.jpg alt=/images/2019_11_13_11_00_12_421x320.jpg></p><p>Specify <code>web</code>for api type, then click <code>NEXT</code>:</p><p><img src=/images/2019_11_13_11_00_44_519x360.jpg alt=/images/2019_11_13_11_00_44_519x360.jpg></p><p>Now we subscribe to our created API in this screen:</p><p><img src=/images/2019_11_13_11_01_24_674x343.jpg alt=/images/2019_11_13_11_01_24_674x343.jpg></p><p>Click <code>first api 1.0</code>:</p><p><img src=/images/2019_11_13_11_01_43_597x312.jpg alt=/images/2019_11_13_11_01_43_597x312.jpg></p><p>Click <code>REQUEST FOR SUBSCRIPTION</code> for subscribing to this API:</p><p><img src=/images/2019_11_13_11_02_22_392x532.jpg alt=/images/2019_11_13_11_02_22_392x532.jpg></p><p>Check the <code>SUBSCRIBED</code> button and click <code>NEXT</code>:</p><p><img src=/images/2019_11_13_11_03_38_626x259.jpg alt=/images/2019_11_13_11_03_38_626x259.jpg></p><p>Click <code>CREATE THE APPLICATION</code> for the end of create app:</p><p><img src=/images/2019_11_13_11_04_36_452x385.jpg alt=/images/2019_11_13_11_04_36_452x385.jpg></p><p>Click <code>CREATE</code>:</p><p><img src=/images/2019_11_13_11_04_49_361x174.jpg alt=/images/2019_11_13_11_04_49_361x174.jpg></p><p>You should approve the subscription:</p><p><img src=/images/2019_11_13_11_05_18_223x289.jpg alt=/images/2019_11_13_11_05_18_223x289.jpg></p><p>View the task:</p><p><img src=/images/2019_11_13_11_08_16_756x256.jpg alt=/images/2019_11_13_11_08_16_756x256.jpg></p><p>Click <code>ACCEPT</code> for approve the subscription:</p><p><img src=/images/2019_11_13_11_09_16_884x403.jpg alt=/images/2019_11_13_11_09_16_884x403.jpg></p><p>If you don&rsquo;t specify the time, click <code>CREATE</code>:</p><p><img src=/images/2019_11_13_11_09_32_399x346.jpg alt=/images/2019_11_13_11_09_32_399x346.jpg></p><p>A new API key will be generated:</p><p><img src=/images/2019_11_13_11_10_16_643x669.jpg alt=/images/2019_11_13_11_10_16_643x669.jpg></p><p>Now the API has been created and you could use the app for consuming it, record this
-API key: <code>db811f84-8717-4766-b2f5-a2b09574bc80</code>, later we will use it.</p><h3 id=add-ingress-item>Add ingress item</h3><p>Since we use a ingress controller for controlling the service exposing, we have to add
-a ingress item for accesing the <code>/firstapi</code>:</p><pre><code># kubectl get ingress gravitee45-apim-gateway -oyaml&gt;firstapi.yaml
-</code></pre><p><img src=/images/2019_11_13_11_17_04_629x424.jpg alt=/images/2019_11_13_11_17_04_629x424.jpg></p><p>Modify the ingress path and name:</p><pre><code>line 18, changes to gravitee45-apim-firstapi
-line 22, delete uid
-line 31, change to /firstapi
-</code></pre><p>Create the ingress:</p><pre><code># kubectl apply -f firstapi.yaml
-ingress.extensions/gravitee45-apim-firstapi created
-</code></pre><h3 id=consuming-api>Consuming API</h3><p>In a node outside of the k8s cluster, do following steps:</p><pre><code># curl -ki -H &quot;X-Gravitee-Api-Key: db811f84-8717-4766-b2f5-a2b09574bc80&quot; https://apim.company.com/firstapi
-HTTP/2 200
-server: openresty/1.15.8.1
-date: Wed, 13 Nov 2019 03:14:12 GMT
-content-type: application/json
-content-length: 536
-vary: Accept-Encoding
-x-gravitee-transaction-id: fc46603c-f4d8-4c60-8660-3cf4d8cc608d
-strict-transport-security: max-age=15724800; includeSubDomains
-
-{
-  &quot;headers&quot; : {
-    &quot;Host&quot; : &quot;xxx.xxx.xxx.xxx:18080&quot;,
-    &quot;X-Request-ID&quot; : &quot;156ec51c42f84b52ae5d9e36b3efeeef&quot;,
-    &quot;X-Real-IP&quot; : &quot;10.147.191.1&quot;,
-    &quot;X-Forwarded-For&quot; : &quot;10.147.191.1&quot;,
-    &quot;X-Forwarded-Host&quot; : &quot;apim.company.com&quot;,
-    &quot;X-Forwarded-Port&quot; : &quot;443&quot;,
-    &quot;X-Forwarded-Proto&quot; : &quot;https&quot;,
-    &quot;X-Original-URI&quot; : &quot;/firstapi&quot;,
-    &quot;X-Scheme&quot; : &quot;https&quot;,
-    &quot;user-agent&quot; : &quot;curl/7.52.1&quot;,
-    &quot;accept&quot; : &quot;*/*&quot;,
-    &quot;X-Gravitee-Transaction-Id&quot; : &quot;fc46603c-f4d8-4c60-8660-3cf4d8cc608d&quot;,
-    &quot;accept-encoding&quot; : &quot;deflate, gzip&quot;
-  }
-</code></pre><p>Write a script:</p><pre><code>while true
-do
-curl -ki -H &quot;X-Gravitee-Api-Key: db811f84-8717-4766-b2f5-a2b09574bc80&quot; https://apim.company.com/firstapi
-sleep 0.1
-done
-</code></pre><h3 id=dashboard>dashboard</h3><p>View the dashboard:</p><p><img src=/images/2019_11_13_11_26_45_990x566.jpg alt=/images/2019_11_13_11_26_45_990x566.jpg></p><p>View the detailed statistics in dashboard:</p><p><img src=/images/2019_11_13_11_28_13_811x439.jpg alt=/images/2019_11_13_11_28_13_811x439.jpg></p><p>We could easily judge which application comsumes how many apis in statistics page, also we will see the
-status of the service in this page.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/47/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/47/>47</a></li><li class="page-item active"><a class=page-link href=/page/48/>48</a></li><li class=page-item><a class=page-link href=/page/49/>49</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/233/>233</a></li><li class=page-item><a href=/page/49/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/233/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/47/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/47/>47</a></li><li class="page-item active"><a class=page-link href=/page/48/>48</a></li><li class=page-item><a class=page-link href=/page/49/>49</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/233/>233</a></li><li class=page-item><a href=/page/49/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/233/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,5 +1,219 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/27/%E5%AE%8C%E5%85%A8%E7%94%A8ram%E8%BF%90%E8%A1%8Cubuntu/>完全用RAM运行Ubuntu</a></h1><span class=post-date>Apr 27, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-目的>1. 目的</h3><p>将Ubuntu18.04.1操作系统(arm64)完全运行在内存中。</p><h3 id=2-准备材料>2. 准备材料</h3><p>Ubuntu 18.04.1 arm64安装iso.<br>arm64服务器/libvirtd/virt-manager.(在没有实体服务器的情况下，可以用虚拟机来模拟测试).</p><h3 id=3-步骤>3. 步骤</h3><p>最小化安装Ubuntu 18.04.1 操作系统, 根分区最好包含所有分区(all in one)。<br>安装完毕操作系统后，定制自己需要的软件包及准备环境后，删除所有的临时文件，尽量瘦身系统。这是因为内存定制化后，所有的文件在启动时将被加载到内存！全新安装的ubuntu大约占据约1.5GB的磁盘空间。<br>以下为定制为RAM启动的流程：</p><p>步骤一：<br>更改<code>/etc/fstab</code>文件内容，首先备份该文件:</p><pre><code># cp /etc/fstab /etc/fstab.bak
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/30/workingtipsonlxd20210430/>WorkingTipsOnLXD20210430</a></h1><span class=post-date>Apr 30, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境说明>环境说明</h3><p>新建3台虚拟机:</p><pre><code>192.168.100.13/14/15, 4核8G， 虚拟机环境
+</code></pre><p>该虚拟机所在的网段为<code>192.168.100.0/24</code>, 其中dhcp范围为<code>192.168.100.128~192.168.100.254</code>, 网关为<code>192.168.100.1</code></p><h3 id=os环境初始化配置>OS环境初始化配置</h3><p>我们期待lxc实例能通过网桥获取到与宿主机(192.168.100.13/14/15)同样的IP地址范围，所以先配置各节点上的网桥br0:</p><p>删除手动连接后，NetworkManager会自动拉起另一个：</p><p><img src=./images/2021_04_30_23_15_54_819x240.jpg alt=./images/2021_04_30_23_15_54_819x240.jpg></p><p>再次删除此自动建立的连接，直到只看到lxdbr0即可：</p><p><img src=./images/2021_04_30_23_17_44_820x162.jpg alt=./images/2021_04_30_23_17_44_820x162.jpg></p><p>建立br0, 并指定eth0为br0的slave设备：</p><p><img src=/images/2021_04_30_23_21_27_1093x243.jpg alt=/images/2021_04_30_23_21_27_1093x243.jpg></p><p>依次类推完成另外两台机器的配置。</p><p>相关的配置脚本(这里以<code>192.168.100.14</code>为例说明)如下，实际环境中需根据具体的配置信息进行更改：</p><pre><code>nmcli con show | grep eth0 | awk {'print $2'} | xargs -I % nmcli con delete uuid %
+nmcli con show | grep eth0 | awk {'print $4'} | xargs -I % nmcli con delete uuid %
+nmcli con show
+nmcli conn add type bridge ifname br0 ipv4.method manual ipv4.address &quot;192.168.100.14&quot; ipv4.gateway &quot;192.168.100.1&quot; ipv4.dns &quot;223.5.5.5&quot;
+nmcli conn add type bridge-slave ifname eth0 master br0
+</code></pre><h3 id=lxc使用br0网络>lxc使用br0网络</h3><p>lxc可以通过使用不同的profile定义出实例所在的网络，我们通过以下操作新建出一个可以通过网桥<code>br0</code>获取到<code>192.168.100.0/24</code>段地址的profile:</p><pre><code>[root@node13 ~]# lxc profile list
++---------+---------------------+---------+
+|  NAME   |     DESCRIPTION     | USED BY |
++---------+---------------------+---------+
+| default | Default LXD profile | 0       |
++---------+---------------------+---------+
+[root@node13 ~]# lxc profile show default&gt;br0
+[root@node13 ~]# vim br0
+config: {}
+description: Default LXD profile modified for using br0
+devices:
+  eth0:
+    name: eth0
+    nictype: bridged
+    parent: br0
+    type: nic
+  root:
+    path: /
+    pool: default
+    type: disk
+name: br0
+used_by: []
+[root@node13 ~]# lxc profile create br0
+Profile br0 created
+[root@node13 ~]# lxc profile edit br0&lt;br0
+[root@node13 ~]# lxc profile list
++---------+--------------------------------------------+---------+
+|  NAME   |                DESCRIPTION                 | USED BY |
++---------+--------------------------------------------+---------+
+| br0     | Default LXD profile modified for using br0 | 0       |
++---------+--------------------------------------------+---------+
+| default | Default LXD profile                        | 0       |
++---------+--------------------------------------------+---------+
+
+</code></pre><p>现在可使用创建出的<code>br0</code>实例化一个容器，</p><pre><code># lxc launch centos7 node1 --profile br0
+# lxc ls
++-------+---------+------------------------+----------------------------------------------+-----------+-----------+
+| NAME  |  STATE  |          IPV4          |                     IPV6                     |   TYPE    | SNAPSHOTS |
++-------+---------+------------------------+----------------------------------------------+-----------+-----------+
+| node1 | RUNNING | 192.168.100.130 (eth0) |                                              | CONTAINER | 0         |
++-------+---------+------------------------+----------------------------------------------+-----------+-----------+
+
+</code></pre><p>固定IP的方法：</p><pre><code>[root@node13 ~]# lxc exec node1 bash
+[root@node1 ~]# vim /etc/sysconfig/network-scripts/ifcfg-eth0 
+DEVICE=eth0
+BOOTPROTO=static
+IPADDR=192.168.100.20
+NETMASK=255.255.255.0
+GATEWAY=192.168.100.1
+ONBOOT=yes
+HOSTNAME=node1
+NM_CONTROLLED=no
+TYPE=Ethernet
+MTU=
+DHCP_HOSTNAME=node1
+[root@node1 ~]#  reboot
+</code></pre><p>重启之后可以看到lxc确实使用了我们设置的<code>192.168.100.20</code>IP地址。</p><pre><code>[root@node13 ~]# lxc ls
++-------+---------+------------------------+----------------------------------------------+-----------+-----------+
+| NAME  |  STATE  |          IPV4          |                     IPV6                     |   TYPE    | SNAPSHOTS |
++-------+---------+------------------------+----------------------------------------------+-----------+-----------+
+| node1 | RUNNING | 192.168.100.20 (eth0)  |                                              | CONTAINER | 0         |
+
+</code></pre><p>最后验证与外部网络的互通性:</p><pre><code>[root@node13 ~]# lxc exec node1 bash
+[root@node1 ~]# ping 192.168.100.10
+PING 192.168.100.10 (192.168.100.10) 56(84) bytes of data.
+64 bytes from 192.168.100.10: icmp_seq=1 ttl=64 time=0.742 ms
+64 bytes from 192.168.100.10: icmp_seq=2 ttl=64 time=0.287 ms
+[root@node1 ~]# ping 10.50.208.145
+PING 10.50.208.145 (10.50.208.145) 56(84) bytes of data.
+64 bytes from 10.50.208.145: icmp_seq=1 ttl=63 time=0.410 ms
+64 bytes from 10.50.208.145: icmp_seq=2 ttl=63 time=0.214 ms
+^C
+--- 10.50.208.145 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 0.214/0.312/0.410/0.098 ms
+[root@node1 ~]# ping 10.50.208.147
+PING 10.50.208.147 (10.50.208.147) 56(84) bytes of data.
+64 bytes from 10.50.208.147: icmp_seq=1 ttl=64 time=0.146 ms
+64 bytes from 10.50.208.147: icmp_seq=2 ttl=64 time=0.153 ms
+^C
+--- 10.50.208.147 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/29/bestpracticeofcentoslxd/>BestPracticeOfCentOSLXD</a></h1><span class=post-date>Apr 29, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-文档目的>1. 文档目的</h3><p>文档旨在针对在CentOS 7操作系统上安装、配置及运行LXD提供最佳实践。</p><h3 id=2-环境准备>2. 环境准备</h3><p>基于快速验证的目的，本文档基于虚拟机搭建，验证机配置如下:</p><ul><li>操作系统： <code>CentOS Linux release 7.6.1810 (Core) </code>, 最小化安装</li><li>硬件配置: 36核心，246GB内存， 500G磁盘分区</li><li>软件配置:</li><li>网络配置: 192.168.100.10/24, 网关192.168.100.1</li></ul><p>访问方式(这里提供如何从办公网络直达验证机)</p><h3 id=3-环境搭建>3. 环境搭建</h3><p>离线情况下，配置内网源后，执行以下命令安装:</p><pre><code># yum install -y snapd net-tools vim
+# systemctl enable --now snapd.socket
+</code></pre><p>解压离线安装文件:</p><pre><code># tar xzvf lxcimages.tar.gz ; tar xzvf snap.tar.gz
+</code></pre><p>进入到snap目录下安装snap:</p><pre><code># snap ack core_10958.assert ; snap ack core18_1997.assert; snap ack lxd_20211.assert
+# snap install core_10958.snap; snap install core18_1997.snap; snap install lxd_20211.snap
+</code></pre><p>更改内核参数后，重启机器:</p><pre><code>$ grubby --args=&quot;user_namespace.enable=1&quot; --update-kernel=&quot;$(grubby --default-kernel)&quot;
+$ grubby --args=&quot;namespace.unpriv_enable=1&quot; --update-kernel=&quot;$(grubby --default-kernel)&quot;
+$ sudo sh -c 'echo &quot;user.max_user_namespaces=3883&quot; &gt; /etc/sysctl.d/99-userns.conf'
+# reboot
+</code></pre><p>创建snap目录并添加运行权限:</p><pre><code># ln -s /var/lib/snapd/snap /snap
+# usermod -a -G lxd roo
+# newgrp lxd
+# id
+uid=0(root) gid=994(lxd) groups=994(lxd),0(root)
+</code></pre><p>此时需要退出终端后重新登录终端，方可使用<code>lxc</code>相关命令.</p><p>初始化<code>lxd</code>环境:</p><pre><code>[root@lxdpaas ~]# lxd init
+Would you like to use LXD clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (btrfs, dir, lvm, ceph) [default=btrfs]: dir
+Would you like to connect to a MAAS server? (yes/no) [default=no]: 
+Would you like to create a new local network bridge? (yes/no) [default=yes]: 
+What should the new bridge be called? [default=lxdbr0]: 
+What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+Would you like the LXD server to be available over the network? (yes/no) [default=no]: 
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes] 
+Would you like a YAML &quot;lxd init&quot; preseed to be printed? (yes/no) [default=no]: 
+</code></pre><p>此时应无任何镜像，接下来手动导入镜像:</p><pre><code># cd lxcimages
+# lxc image  import meta-50030de846c046680faf34f7dc3e60284e31f5aab38dfd19c94a2fd1bf895d0c.tar.xz 50030de846c046680faf34f7dc3e60284e31f5aab38dfd19c94a2fd1bf895d0c.squashfs --alias centos7
+Image imported with fingerprint: 50030de846c046680faf34f7dc3e60284e31f5aab38dfd19c94a2fd1bf895d0c
+# lxc image list
++---------+--------------+--------+----------------------------------+--------------+-----------+---------+------------------------------+
+|  ALIAS  | FINGERPRINT  | PUBLIC |           DESCRIPTION            | ARCHITECTURE |   TYPE    |  SIZE   |         UPLOAD DATE          |
++---------+--------------+--------+----------------------------------+--------------+-----------+---------+------------------------------+
+| centos7 | 50030de846c0 | no     | Centos 7 x86_64 (20210428_07:08) | x86_64       | CONTAINER | 83.46MB | Apr 29, 2021 at 4:53am (UTC) |
++---------+--------------+--------+----------------------------------+--------------+-----------+---------+------------------------------+
+
+</code></pre><h3 id=4-lxc操作实练>4. lxc操作实练</h3><p>启动一个lxc 实例:</p><pre><code># lxc launch centos7 db1
+Creating db1
+Starting db1              
+</code></pre><p>进入运行中的实例:</p><pre><code># lxc exec db1 bash
+[root@db1 ~]# cat /etc/redhat-release 
+CentOS Linux release 7.9.2009 (Core)
+</code></pre><p>启动第二个名为<code>db2</code>的实例：</p><pre><code>[root@lxdpaas lxcimages]# lxc launch centos7 db2
+Creating db2
+Starting db2                              
+[root@lxdpaas lxcimages]# lxc exec db2 bash
+[root@db2 ~]#
+</code></pre><p>查看运行中的容器实例:</p><pre><code># lxc ls
++------+---------+-----------------------+----------------------------------------------+-----------+-----------+
+| NAME |  STATE  |         IPV4          |                     IPV6                     |   TYPE    | SNAPSHOTS |
++------+---------+-----------------------+----------------------------------------------+-----------+-----------+
+| db1  | RUNNING | 10.159.107.72 (eth0)  | fd42:45a:636c:6e69:216:3eff:fe81:347e (eth0) | CONTAINER | 0         |
++------+---------+-----------------------+----------------------------------------------+-----------+-----------+
+| db2  | RUNNING | 10.159.107.125 (eth0) | fd42:45a:636c:6e69:216:3eff:fe53:754 (eth0)  | CONTAINER | 0         |
++------+---------+-----------------------+----------------------------------------------+-----------+-----------+
+</code></pre><p>停止/删除运行中的容器:</p><pre><code>[root@lxdpaas lxcimages]# lxc stop db1
+[root@lxdpaas lxcimages]# lxc stop db2
+[root@lxdpaas lxcimages]# lxc delete db1
+[root@lxdpaas lxcimages]# lxc delete db2
+[root@lxdpaas lxcimages]# lxc ls
++------+-------+------+------+------+-----------+
+| NAME | STATE | IPV4 | IPV6 | TYPE | SNAPSHOTS |
++------+-------+------+------+------+-----------+
+</code></pre><p>定制化:</p><pre><code># lxc launch c75dhclient k2
+# lxc exec k2 /bin/bash
+dhclient eth0
+vi /etc/yum.repos.d/kkk.repo
+yum makecache
+yum install -y vim net-tools
+exit
+# lxc ls | grep k2
+| k2   | RUNNING | 10.159.107.248 (eth0) | fd42:45a:636c:6e69:216:3eff:fea0:2c33 (eth0) | CONTAINER | 0         |
+</code></pre><p>导出当前镜像：</p><pre><code>[root@lxdpaas ~]# mkdir export
+[root@lxdpaas ~]# cd export/
+[root@lxdpaas export]# lxc stop k2
+[root@lxdpaas export]# lxc publish k2 --alias centos75withvim
+Instance published with fingerprint: 7301c7d85d4d56ebcae117aa79cf88868c4821dedb22e641fe66d05cab6599f2
+[root@lxdpaas export]# lxc image list
++-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
+|      ALIAS      | FINGERPRINT  | PUBLIC |           DESCRIPTION            | ARCHITECTURE |   TYPE    |   SIZE   |         UPLOAD DATE          |
++-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
+| c75dhclient     | 3a063c11b987 | no     |                                  | x86_64       | CONTAINER | 381.84MB | Apr 29, 2021 at 8:06am (UTC) |
++-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
+| centos7         | 50030de846c0 | no     | Centos 7 x86_64 (20210428_07:08) | x86_64       | CONTAINER | 83.46MB  | Apr 29, 2021 at 4:53am (UTC) |
++-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
+| centos75withvim | 7301c7d85d4d | no     |                                  | x86_64       | CONTAINER | 420.72MB | Apr 29, 2021 at 8:23am (UTC) |
++-----------------+--------------+--------+----------------------------------+--------------+-----------+----------+------------------------------+
+[root@lxdpaas export]# lxc image export centos75withvim .
+Image exported successfully!           
+[root@lxdpaas export]# ls
+7301c7d85d4d56ebcae117aa79cf88868c4821dedb22e641fe66d05cab6599f2.tar.gz
+</code></pre><p>测试:</p><pre><code># lxc launch centos75withvim test1
+Creating test1
+Starting test1                             
+[root@lxdpaas export]# lxc exec test1 /bin/bash
+[root@base ~]# dhclient eth0
+[root@base ~]# which vim
+/usr/bin/vim
+[root@base ~]# which ifconfig
+/usr/sbin/ifconfig
+
+</code></pre><p>有关数据库的更改:</p><pre><code> yum install -y mariadb-server
+ systemctl enable mariadb
+</code></pre><h3 id=5-资源隔离>5. 资源隔离</h3><p>制作benchmark容器:</p><pre><code>$ lxc launch centos7 bench -c security.privileged=true
+
+	# yum install -y epel-release; yum install -y stress
+	# yum install which
+	# which stress
+        # shutdown -h now
+$ lxc publish bench --alias bench
+$ lxc launch bench k1
+$ lxc exec k1 /bin/bash
+    stress --cpu 5
+</code></pre><p>此时可以看到，宿主机上的5个cpu跑满：</p><p><img src=/images/2021_04_29_17_55_21_884x154.jpg alt=/images/2021_04_29_17_55_21_884x154.jpg></p><p>设置CPU限制:</p><pre><code># lxc config set  bench limits.cpu 2
+</code></pre><p>即便容器中的进程未变，但是主机上可以看到，只有两个CPU跑满:</p><p><img src=/images/2021_04_29_17_56_10_898x161.jpg alt=/images/2021_04_29_17_56_10_898x161.jpg></p><p>对内存的使用规则是同样的。</p><h3 id=z-定制化>z. 定制化</h3><p>为了适配用户习惯，做了以下修改:</p><pre><code># yum install -y mate-desktop xrdp mate* gnome-terminal firefox wqy* evince
+# echo mate-session&gt;/root/.Xclients
+# chmod 777 /root/.Xclients
+# systemctl start xrdp
+# systemctl enable xrdp
+</code></pre><p>外部需要做iptables转发:</p><pre><code>$ sudo iptables -D FORWARD -o virbr0 -j REJECT --reject-with icmp-port-unreachable
+$ sudo iptables -D FORWARD -i virbr0 -j REJECT --reject-with icmp-port-unreachable
+$ sudo iptables -t nat -A PREROUTING -p tcp --dport 13389 -j DNAT --to-destination  192.168.100.10:3389
+$ sudo iptables -t nat -A POSTROUTING -p tcp -d 192.168.100.10 --dport 3389 -j SNAT --to-source 10.50.208.147
+</code></pre><p>外部的centos7机器上，因为升级了内核的关系，需要用如下命令开始运行:</p><pre><code>lxc launch images:centos/7 blah -c security.privileged=true
+</code></pre><p>当前制作的centos7.5容器似乎不能满足lxc的功能?</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/27/%E5%AE%8C%E5%85%A8%E7%94%A8ram%E8%BF%90%E8%A1%8Cubuntu/>完全用RAM运行Ubuntu</a></h1><span class=post-date>Apr 27, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-目的>1. 目的</h3><p>将Ubuntu18.04.1操作系统(arm64)完全运行在内存中。</p><h3 id=2-准备材料>2. 准备材料</h3><p>Ubuntu 18.04.1 arm64安装iso.<br>arm64服务器/libvirtd/virt-manager.(在没有实体服务器的情况下，可以用虚拟机来模拟测试).</p><h3 id=3-步骤>3. 步骤</h3><p>最小化安装Ubuntu 18.04.1 操作系统, 根分区最好包含所有分区(all in one)。<br>安装完毕操作系统后，定制自己需要的软件包及准备环境后，删除所有的临时文件，尽量瘦身系统。这是因为内存定制化后，所有的文件在启动时将被加载到内存！全新安装的ubuntu大约占据约1.5GB的磁盘空间。<br>以下为定制为RAM启动的流程：</p><p>步骤一：<br>更改<code>/etc/fstab</code>文件内容，首先备份该文件:</p><pre><code># cp /etc/fstab /etc/fstab.bak
 </code></pre><p>编辑<code>/etc/fstab</code>文件内容，找到标识根分区(/)的行，更改为以下内容(下为示例):</p><pre><code>#/dev/mapper/ubuntu--vg-root /               ext4    errors=remount-ro 0       1
 none / tmpfs defaults 0 0
 </code></pre><p>步骤二:<br>更改initramfs中的<code>local</code>脚本内容, initramfs 包含的工具和脚本，在正式的根文件系统的初始化脚本 init 启动之前，就被挂载并完成相应的初始化工作。我们需要提前将磁盘根分区中的内容拷贝入<code>tmpfs</code>中，以便在<code>/etc/fstab</code>开始执行的时候找寻到正确的分区.</p><p>首先备份<code>/usr/share/initramfs-tools/scripts/local</code>文件:</p><pre><code># cp /usr/share/initramfs-tools/scripts/local /usr/share/initramfs-tools/scripts/local.bak   
@@ -63,337 +277,4 @@ FROM windows/win10qemu:20210420
 COPY entrypoint.sh /
 # docker build -t win/win10new:latest .
 </code></pre><p>运行容器:</p><pre><code># docker run -it --rm --privileged -p 4444:4444 -p 5915:5900  win/win10new:latest
-</code></pre><p>打开vnc软件开始访问5915端口可以看到Windows桌面:</p><p><img src=/images/2021_04_20_16_56_36_779x615.jpg alt=/images/2021_04_20_16_56_36_779x615.jpg></p><h3 id=k8s中运行>K8s中运行</h3><p>由容器镜像创建出pod负载，service暴露即可。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/19/workingtipsongpuoncentos7/>WorkingTipsOnGPUOnCentOS7</a></h1><span class=post-date>Apr 19, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-先决条件>1. 先决条件</h3><p>各工作节点上需要保证内核为指定版本，并安装对应的<code>kernel-ml-devel/kernel-ml-headers/gcc</code>依赖包.</p><pre><code># uname -a
-Linux worker2 4.19.12-1.el7.elrepo.x86_64 #1 SMP Fri Dec 21 11:06:36 EST 2018 x86_64 x86_64 x86_64 GNU/Linux
-# rpm -e --nodeps kernel-headers
-# yum install -y kernel-ml-devel kernel-ml-headers gcc
-</code></pre><p>手动安装Nvidia驱动:</p><pre><code># ./NVIDIA-Linux-x86_64-460.32.03.run 
-Verifying archive integrity... OK
-Uncompressing NVIDIA Accelerated Graphics Driver for Linux-x86_64 460.32.03...........
-..........................................................
-..........................................................
-</code></pre><p>忽略该报错:</p><p><img src=/images/2021_04_19_16_53_12_622x250.jpg alt=/images/2021_04_19_16_53_12_622x250.jpg></p><p>选择<code>NO</code>, 忽略安装32位兼容包:</p><p><img src=/images/2021_04_19_16_53_55_639x172.jpg alt=/images/2021_04_19_16_53_55_639x172.jpg></p><p>按<code>OK</code>结束安装:</p><p><img src=/images/2021_04_19_16_54_23_623x183.jpg alt=/images/2021_04_19_16_54_23_623x183.jpg></p><p>检查驱动是否安装成功:</p><pre><code># nvidia-smi 
-Mon Apr 19 04:55:13 2021       
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                               |                      |               MIG M. |
-|===============================+======================+======================|
-|   0  Tesla V100-PCIE...  Off  | 00000000:00:08.0 Off |                  Off |
-| N/A   31C    P0    36W / 250W |      0MiB / 32510MiB |      0%      Default |
-|                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
-|   1  Tesla V100-PCIE...  Off  | 00000000:00:0A.0 Off |                  Off |
-| N/A   31C    P0    35W / 250W |      0MiB / 32510MiB |      0%      Default |
-|                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
-                                                                               
-+-----------------------------------------------------------------------------+
-| Processes:                                                                  |
-|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-|        ID   ID                                                   Usage      |
-|=============================================================================|
-|  No running processes found                                                 |
-+-----------------------------------------------------------------------------+
-</code></pre><h3 id=2-ccse改动>2. ccse改动</h3><h4 id=21-创建新的离线库>2.1 创建新的离线库:</h4><p>引入<code>nvidia-docker2</code>相关的离线包并更新<code>k8s-offline-pkgs</code>仓库:</p><pre><code># cd k8s-offline-pkgs/
-# tar xzvf /root/nvidiadocker.tar.gz -C .
-libnvidia-container-tools-1.3.3-1.x86_64.rpm
-nvidia-docker2-2.5.0-1.noarch.rpm
-libnvidia-container1-1.3.3-1.x86_64.rpm
-nvidia-container-toolkit-1.4.2-2.x86_64.rpm
-nvidia-container-runtime-3.4.2-1.x86_64.rpm
-# createrepo .
-</code></pre><p>Ccse console节点上替换离线包:</p><pre><code>[root@first x86_64]# pwd
-/dcos/app/console/backend/webapps/repo/x86_64
-[root@first x86_64]# mv k8s-offline-pkgs/ k8s-offline-pkgs.back
-[root@first x86_64]# scp -r docker@10.168.100.1:/home/docker/k8s-offline-pkgs .
-</code></pre><p>Ccse代码改动, 仅添加<code>nvidia-docker2</code>的安装：</p><pre><code># vi /dcos/app/console/kubeadm-playbook/roles/util/docker/tasks/install.yml
-
-  - name: &lt;安装docker&gt;&lt;install-docker&gt; 安装 docker （ccse源）
-    shell: yum install -y docker-ce nvidia-docker2 --disablerepo=\* --enablerepo=ccse-k8s,ccse-centos7-base
-    when: &quot;yum_repo == 'ccse'&quot;
-# vi /dcos/app/console/kubeadm-playbook/roles/util/docker/templates/daemon.json.j2
-    { 
-    {% if custom_image_repository != '' %}{{ docker_insecure_registry_mirrors | indent(2,true) }}{% endif %}
-      &quot;storage-driver&quot;: &quot;{{ docker_storage_driver }}&quot;,
-      &quot;graph&quot;: &quot;{{ hosts_datadir_map[inventory_hostname] }}/docker&quot;,
-      &quot;log-driver&quot;: &quot;json-file&quot;,
-      &quot;log-opts&quot;: {
-                &quot;max-size&quot;: &quot;1g&quot;
-            },
-      &quot;default-runtime&quot;: &quot;nvidia&quot;,
-      &quot;runtimes&quot;: {
-          &quot;nvidia&quot;: {
-              &quot;path&quot;: &quot;/usr/bin/nvidia-container-runtime&quot;,
-              &quot;runtimeArgs&quot;: []
-          }
-      }
-    }
-
-</code></pre><h3 id=3-验证>3. 验证</h3><p>相关包位于<code>10.50.208.145</code>的<code>/home/docker</code>目录下的<code>nvidiadockerclassic.tar</code>:</p><pre><code># ls /home/docker/nvidiadockerclassic.tar  -l -h
--rw-r--r-- 1 root root 187M Apr 19 17:49 /home/docker/nvidiadockerclassic.tar
-</code></pre><h4 id=31-镜像准备>3.1 镜像准备</h4><p>部署完毕后, ccse console节点上上传准备镜像:</p><pre><code># tar xvf nvidiadockerclassic.tar 
-nvidiadockerclassic/
-nvidiadockerclassic/nvidia-device-plugin.yml
-nvidiadockerclassic/k8sdeviceplugin.tar
-# cd nvidiadockerclassic
-# docker load&lt;k8sdeviceplugin.tar
-# docker tag nvcr.io/nvidia/k8s-device-plugin:v0.9.0 10.168.100.144:8021/nvcr.io/nvidia/k8s-device-plugin:v0.9.0
-# docker push 10.168.100.144:8021/nvcr.io/nvidia/k8s-device-plugin:v0.9.0
-</code></pre><h4 id=32-插件安装及验证>3.2 插件安装及验证</h4><p>master节点上create <code>nvidia-device-plugin.yml</code>文件:</p><pre><code># kubectl create -f nvidia-device-plugin.yml 
-</code></pre><p>验证device-plugin安装成功:</p><pre><code># kubectl  get po -A | grep device
-kube-system   nvidia-device-plugin-daemonset-9mhq7           1/1     Running   0          19s
-kube-system   nvidia-device-plugin-daemonset-m7txq           1/1     Running   0          19s
-# kubectl logs nvidia-device-plugin-daemonset-9mhq7 -n kube-system
-2021/04/19 09:53:23 Loading NVML
-2021/04/19 09:53:23 Starting FS watcher.
-2021/04/19 09:53:23 Starting OS watcher.
-2021/04/19 09:53:23 Retreiving plugins.
-2021/04/19 09:53:23 Starting GRPC server for 'nvidia.com/gpu'
-2021/04/19 09:53:23 Starting to serve 'nvidia.com/gpu' on /var/lib/kubelet/device-plugins/nvidia-gpu.sock
-2021/04/19 09:53:23 Registered device plugin for 'nvidia.com/gpu' with Kubelet
-</code></pre><p>测试:</p><pre><code># kubectl create -f test.yml
-# kubectl  get po -o wide
-NAME             READY   STATUS    RESTARTS   AGE   IP               NODE             NOMINATED NODE   READINESS GATES
-dcgmproftester   1/1     Running   0          19s   172.26.189.204   10.168.100.184   &lt;none&gt;           &lt;none&gt;
-# nvidia-smi 
-Mon Apr 19 05:54:55 2021       
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                               |                      |               MIG M. |
-|===============================+======================+======================|
-|   0  Tesla V100-PCIE...  Off  | 00000000:00:09.0 Off |                  Off |
-| N/A   56C    P0   218W / 250W |    493MiB / 32510MiB |     88%      Default |
-|                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
-                                                                               
-+-----------------------------------------------------------------------------+
-| Processes:                                                                  |
-|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-|        ID   ID                                                   Usage      |
-|=============================================================================|
-|    0   N/A  N/A     14182      C   /usr/bin/dcgmproftester11         489MiB |
-+-----------------------------------------------------------------------------+
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/13/workingtipsongpu/>WorkingTipsOnGpu</a></h1><span class=post-date>Apr 13, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-环境配置信息>1. 环境配置信息</h3><p>整个验证环境的配置信息如下:</p><pre><code>gpumaster: 10.168.100.2	4核16G
-gpunode1: 10.168.100.3	4核16G PCI直通B5:00 Tesla V100
-gpunode2: 10.168.100.4	4核16G PCI直通B2:00 Tesla V100
-</code></pre><p>节点的操作系统配置如下, CentOS 7.6最小化安装方式:</p><pre><code># uname -a
-Linux gpumaster 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
-# cat /etc/redhat-release 
-CentOS Linux release 7.6.1810 (Core)
-</code></pre><p>其中master节点上外挂了一块500G 的数据盘，需要手动挂载至<code>/dcos</code>目录:</p><pre><code>[root@gpumaster ~]# df -h | grep dcos
-/dev/vdb1                493G   73M  467G   1% /dcos
-[root@gpumaster ~]# cat /etc/fstab | grep dcos
-/dev/vdb1        /dcos                       ext4       defaults        0 0
-</code></pre><p>3个节点依次关闭selinux/firewalld:</p><pre><code># vi /etc/selinux/config
-...
-SELINUX=disabled
-...
-# systemctl disable firewalld
-# reboot
-</code></pre><h3 id=2-部署ccse集群>2. 部署CCSE集群</h3><p>依次添加节点:</p><p><img src=/images/2021_04_19_09_01_57_825x247.jpg alt=/images/2021_04_19_09_01_57_825x247.jpg></p><p>新增一个名为<code>gpucluster</code>的集群:</p><p><img src=/images/2021_04_19_09_06_40_828x248.jpg alt=/images/2021_04_19_09_06_40_828x248.jpg></p><p>集群创建完毕后，新增两个GPU节点：</p><p><img src=/images/2021_04_19_09_16_24_1099x449.jpg alt=/images/2021_04_19_09_16_24_1099x449.jpg></p><p>添加完成后，检查集群状态:</p><pre><code>[root@gpumaster ~]# kubectl get node
-NAME           STATUS   ROLES    AGE     VERSION
-10.168.100.2   Ready    master   6m19s   v1.17.3
-10.168.100.3   Ready    node     78s     v1.17.3
-10.168.100.4   Ready    node     78s     v1.17.3
-</code></pre><h3 id=3-升级内核>3. 升级内核</h3><p>在三个节点上，依次执行以下操作以升级内核。</p><p>配置离线软件库:</p><pre><code># cd /etc/yum.repos.d
-# mkdir back
-# mv CentOS-* back
-# vi nvidia.repo
-[nvidia]
-name=nvidia
-baseurl=http://10.168.100.144:8200/repo/x86_64/nvidiarpms
-gpgcheck=0
-enabled=1
-proxy=_none_
-# yum install -y kernel-ml
-</code></pre><p>配置grub启动:</p><pre><code># vi /etc/default/grub
-...
-GRUB_DEFAULT=0
-...
-GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet rd.driver.blacklist=nouveau nouveau.modeset=0&quot;
-...
-# grub2-mkconfig -o /boot/grub2/grub.cfg
-</code></pre><p>完全禁用系统自带的<code>nouveau</code>驱动:</p><pre><code># echo 'install nouveau /bin/false' &gt;&gt; /etc/modprobe.d/nouveau.conf
-</code></pre><p>执行完上述操作后需重启机器并验证内核是否更改成功:</p><pre><code># uname -a
-Linux gpunode2 4.19.12-1.el7.elrepo.x86_64 #1 SMP Fri Dec 21 11:06:36 EST 2018 x86_64 x86_64 x86_64 GNU/Linux
-</code></pre><h3 id=4-gpu-operator文件准备>4. gpu-operator文件准备</h3><p>Harbor中预上传的镜像文件列表如下(nvcr.io及nvidia):</p><p><img src=/images/2021_04_19_11_22_13_829x264.jpg alt=/images/2021_04_19_11_22_13_829x264.jpg></p><p>从<code>10.168.100.1</code>上scp以下目录到所有节点:</p><pre><code>$ scp -r docker@10.168.100.1:/home/docker/nvidia_items .
-</code></pre><p>预Load nfd镜像:</p><pre><code># docker load&lt;quay.tar
-...
-Loaded image: quay.io/kubernetes_incubator/node-feature-discovery:v0.6.0
-</code></pre><h3 id=5-安装nvidiagpu-operator>5. 安装NVIDIA/gpu-operator</h3><p>登录到<code>gpumaster</code>节点，从文件创建一个部署charts时需用到的configmap:</p><pre><code># cat ccse.repo
-[ccse-k8s]
-name=Centos local yum repo for k8s
-baseurl=http://10.168.100.144:8200/repo/x86_64/k8s-offline-pkgs
-gpgcheck=0
-enabled=1
-proxy=_none_
-
-[ccse-centos7-base]
-name=Centos local yum repo for k8s
-baseurl=http://10.168.100.144:8200/repo/x86_64/centos7-base
-gpgcheck=0
-enabled=1
-proxy=_none_
-
-[fuck]
-name=Centos local yum repo for k8s 111
-baseurl=http://10.168.100.144:8200/repo/x86_64/nvidiarpms
-gpgcheck=0
-enabled=1
-proxy=_none_
-# kubectl create namespace gpu-operator-resources
-namespace/gpu-operator-resources created
-# kubectl create configmap repo-config -n gpu-operator-resources --from-file=ccse.repo
-configmap/repo-config created
-</code></pre><p>现在创建gpu-operator实例:</p><pre><code># cd gpu-operator/
-#  helm install --generate-name . -f values.yaml
-</code></pre><p>检查实例运行情况:</p><pre><code># kubectl get po
-NAME                                                              READY   STATUS    RESTARTS   AGE
-chart-1618803326-node-feature-discovery-master-655c6997cd-fp465   1/1     Running   0          65s
-chart-1618803326-node-feature-discovery-worker-7flft              1/1     Running   0          65s
-chart-1618803326-node-feature-discovery-worker-mkqm7              1/1     Running   0          65s
-chart-1618803326-node-feature-discovery-worker-w2d44              1/1     Running   0          65s
-gpu-operator-945878fff-l22vc                                      1/1     Running   0          65s
-</code></pre><p>给GPU节点手动添加标签，<code>gpu-operator-resources</code>命名空间下的实例运行情况:</p><p>使能GPU驱动安装:</p><pre><code># kubectl label nodes 10.168.100.3 nvidia.com/gpu.deploy.driver=true       
-node/10.168.100.3 labeled
-# kubectl label nodes 10.168.100.4 nvidia.com/gpu.deploy.driver=true       
-node/10.168.100.4 labeled
-</code></pre><p>检查GPU驱动编译情况:</p><pre><code># kubectl  get po -n gpu-operator-resources
-NAME                            READY   STATUS    RESTARTS   AGE
-nvidia-driver-daemonset-w6d2q   1/1     Running   0          86s
-nvidia-driver-daemonset-zmf9l   1/1     Running   0          86s
-# kubectl logs po nvidia-driver-daemonset-zmf9l -n gpu-operator-resources
-Installation of the kernel module for the NVIDIA Accelerated Graphics Driver for Linux-x86_64 (version 460.32.03) is now complete.
-
-Loading IPMI kernel module...
-Loading NVIDIA driver kernel modules...
-Starting NVIDIA persistence daemon...
-Mounting NVIDIA driver rootfs...
-Done, now waiting for signal
-
-</code></pre><p>使能<code>device-plugin</code>, <code>dcgm-exporter</code>等：</p><pre><code># kubectl label nodes 10.168.100.4 nvidia.com/gpu.deploy.container-toolkit=true
-# kubectl label nodes 10.168.100.4 nvidia.com/gpu.deploy.device-plugin=true
-# kubectl label nodes 10.168.100.4 nvidia.com/gpu.deploy.dcgm-exporter=true
-# kubectl label nodes 10.168.100.4 nvidia.com/gpu.deploy.gpu-feature-discovery=true
-
-# kubectl label nodes 10.168.100.3 nvidia.com/gpu.deploy.container-toolkit=true
-# kubectl label nodes 10.168.100.3 nvidia.com/gpu.deploy.device-plugin=true
-# kubectl label nodes 10.168.100.3  nvidia.com/gpu.deploy.dcgm-exporter=true
-# kubectl label nodes 10.168.100.3 nvidia.com/gpu.deploy.gpu-feature-discovery=true
-</code></pre><p>检查<code>toolkit-daemonset</code>运行情况，会发现<code>Init:ImagePullBackOff</code>报错信息:</p><pre><code># kubectl get po -n gpu-operator-resources
-NAME                                       READY   STATUS                  RESTARTS   AGE
-nvidia-container-toolkit-daemonset-6kqq5   0/1     Init:ImagePullBackOff   0          2m16s
-nvidia-container-toolkit-daemonset-cbww2   0/1     Init:ImagePullBackOff   0          4m1s
-# kubectl logs nvidia-container-toolkit-daemonset-cbww2 -n gpu-operator-resources
-  Normal   BackOff         3m31s (x7 over 4m46s)  kubelet, 10.168.100.4  Back-off pulling image &quot;10.168.100.144:8021/nvcr.io/nvidia/k8s/cuda@sha256:ed723a1339cddd75eb9f2be2f3476edf497a1b189c10c9bf9eb8da4a16a51a59&quot;
-  Warning  Failed          3m31s (x7 over 4m46s)  kubelet, 10.168.100.4  Error: ImagePullBackOff
-  Normal   Pulling         3m20s (x4 over 4m48s)  kubelet, 10.168.100.4  Pulling image &quot;10.168.100.144:8021/nvcr.io/nvidia/k8s/cuda@sha256:ed723a1339cddd75eb9f2be2f3476edf497a1b189c10c9bf9eb8da4a16a51a59&quot;
-</code></pre><p>这是因为pod拉取的镜像tag不对所导致，需要手动修改image的tag:</p><pre><code># kubectl get ds -n gpu-operator-resources
-NAME                                 DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR                                  AGE
-nvidia-container-toolkit-daemonset   2         2         0       2            0           nvidia.com/gpu.deploy.container-toolkit=true   133m
-nvidia-driver-daemonset              2         2         2       2            2           nvidia.com/gpu.deploy.driver=true              135m
-# kubectl edit ds nvidia-container-toolkit-daemonset -n gpu-operator-resources
-        #image: 10.168.100.144:8021/nvcr.io/nvidia/k8s/cuda@sha256:ed723a1339cddd75eb9f2be2f3476edf497a1b189c10c9bf9eb8da4a16a51a59
-        image: 10.168.100.144:8021/nvcr.io/nvidia/cuda:11.2.1-base-ubi8
-
-</code></pre><p>刷新pod运行情况，可以看到<code>nvidia-container-toolkit-daemonset</code>及<code>nvidia-device-plugin-daemonset</code>运行正常，而<code>nvidia-device-plugin-validation</code>则<code>Init:CreashLoopBackOff</code>失败:</p><pre><code># kubectl get po -n gpu-operator-resources
-NAME                                       READY   STATUS                  RESTARTS   AGE
-nvidia-container-toolkit-daemonset-27qj8   1/1     Running                 0          52s
-nvidia-container-toolkit-daemonset-g5ndb   1/1     Running                 0          51s
-nvidia-device-plugin-daemonset-sqfdc       1/1     Running                 0          26s
-nvidia-device-plugin-daemonset-wldkd       1/1     Running                 0          26s
-nvidia-device-plugin-validation            0/1     Init:CrashLoopBackOff   1          9s
-nvidia-driver-daemonset-m4xjv              1/1     Running                 0          137m
-nvidia-driver-daemonset-vkrz5              1/1     Running                 5          137m
-</code></pre><p>定位该validation所在的节点名(此例中为<code>10.168.100.3</code>):</p><pre><code># kubectl get po nvidia-device-plugin-validation -n  gpu-operator-resources -o wide
-NAME                              READY   STATUS                  RESTARTS   AGE     IP              NODE           NOMINATED NODE   READINESS GATES
-nvidia-device-plugin-validation   0/1     Init:CrashLoopBackOff   4          2m55s   172.26.222.10   10.168.100.3   &lt;none&gt;           &lt;none&gt;
-</code></pre><p>获取启动失败原因:</p><pre><code># kubectl describe po nvidia-device-plugin-validation -n gpu-operator-resources
-......
-  Warning  Failed            56s (x5 over 2m21s)   kubelet, 10.168.100.3  Error: failed to start container &quot;device-plugin-validation-init&quot;: Error response from daemon: linux runtime spec devices: error gathering device information while adding custom device &quot;/dev/nvidiactl&quot;: no such file or directory
-</code></pre><p>登录<code>10.168.100.3</code>节点，获取<code>/dev</code>下驱动程序设备名:</p><pre><code># docker ps | grep nvidia-device-plugin-daemonset | grep -v pause
-abbea480fdf2        10.168.100.144:8021/nvcr.io/nvidia/k8s-device-plugin       &quot;nvidia-device-plugin&quot;   6 minutes ago       Up 6 minutes                            k8s_nvidia-device-plugin-ctr_nvidia-device-plugin-daemonset-sqfdc_gpu-operator-resources_b9988b02-82a6-4637-a7f0-fdee5a448d60_0
-# docker exec -it k8s_nvidia-device-plugin-ctr_nvidia-device-plugin-daemonset-sqfdc_gpu-operator-resources_b9988b02-82a6-4637-a7f0-fdee5a448d60_0 /bin/bash
-[root@nvidia-device-plugin-daemonset-sqfdc /]# ls /dev/nvidia* -l -h
-crw-rw-rw- 1 root root 195, 254 Apr 19 03:52 /dev/nvidia-modeset
-crw-rw-rw- 1 root root 237,   0 Apr 19 06:08 /dev/nvidia-uvm
-crw-rw-rw- 1 root root 237,   1 Apr 19 06:08 /dev/nvidia-uvm-tools
-crw-rw-rw- 1 root root 195,   0 Apr 19 03:52 /dev/nvidia0
-crw-rw-rw- 1 root root 195, 255 Apr 19 03:52 /dev/nvidiactl
-[root@nvidia-device-plugin-daemonset-sqfdc /]# exit
-</code></pre><p>在主机级别(<code>10.168.100.3</code>)上手动创建<code>/dev/nvidiactl</code>文件, 依据同样步骤在<code>10.168.100.4</code>上查找到相应的设备驱动号也添加<code>/dev/nvidiactl</code>文件:</p><pre><code>[root@gpunode1 ~]# mknod -m 666 /dev/nvidiactl c 195 255
-[root@gpunode1 ~]# ls /dev/nvidiactl -l
-crw-rw-rw- 1 root root 195, 255 Apr 19 02:19 /dev/nvidiactl
-</code></pre><p>delete掉<code>nvidia-device-plugin-validation</code>这个pod后，kubelet将重新拉起一个，此时报错信息有变化，提示缺少<code>/dev/nvidia-uvm</code>设备驱动文件:</p><pre><code>  Warning  Failed     10s (x2 over 11s)  kubelet, 10.168.100.4  Error: failed to start container &quot;device-plugin-validation-init&quot;: Error response from daemon: linux runtime spec devices: error gathering device information while adding custom device &quot;/dev/nvidia-uvm&quot;: no such file or directory
-</code></pre><p>按照上面创建<code>/dev/nvidiactl</code>的方法创建<code>/dev/nvidia-uvm</code>驱动文件，注意设备号与容器中保持一致:</p><pre><code># mknod -m 666 /dev/nvidia-uvm c 237 0
-</code></pre><p>删除pod后重新拉起，报错信息为缺少<code>/dev/nvidia-uvm-tools</code>:</p><pre><code>  Warning  Failed     9s (x2 over 10s)  kubelet, 10.168.100.4  Error: failed to start container &quot;device-plugin-validation-init&quot;: Error response from daemon: linux runtime spec devices: error gathering device information while adding custom device &quot;/dev/nvidia-uvm-tools&quot;: no such file or directory
-</code></pre><p>手动创建<code>nvidia-uvm-tools</code>设备文件后删除pod等待kubelet重新拉起pod:</p><pre><code># mknod -m 666 /dev/nvidia-uvm-tools c 237 1
-  Warning  Failed     12s (x2 over 12s)  kubelet, 10.168.100.3  Error: failed to start container &quot;device-plugin-validation-init&quot;: Error response from daemon: linux runtime spec devices: error gathering device information while adding custom device &quot;/dev/nvidia-modeset&quot;: no such file or directory
-</code></pre><p>手动创建<code>nvidia-modeset</code>设备文件后删除pod等待kubelet重新拉起pod:</p><pre><code># mknod -m 666 /dev/nvidia-modeset c 195 254
-  Warning  Failed     13s (x2 over 14s)  kubelet, 10.168.100.4  Error: failed to start container &quot;device-plugin-validation-init&quot;: Error response from daemon: linux runtime spec devices: error gathering device information while adding custom device &quot;/dev/nvidia0&quot;: no such file or directory
-</code></pre><p>手动创建<code>nvidia0</code>设备文件后删除pod等待kubelet重新拉起pod:</p><pre><code># mknod -m 666 /dev/nvidia0 c 195 0
-# kubectl  get po -A | grep device-plugin-validation
-gpu-operator-resources   nvidia-device-plugin-validation                                   0/1     Completed   0          2m26s
-</code></pre><p>此时kubelet将继续拉起剩余的nvidia资源，最终状态应该是:</p><pre><code># kubectl  get po -A
-NAMESPACE                NAME                                                              READY   STATUS      RESTARTS   AGE
-default                  chart-1618804240-node-feature-discovery-master-5f446799f4-sk7vg   1/1     Running     0          163m
-default                  chart-1618804240-node-feature-discovery-worker-5sllh              1/1     Running     1          163m
-default                  chart-1618804240-node-feature-discovery-worker-86w4w              1/1     Running     0          163m
-default                  chart-1618804240-node-feature-discovery-worker-fl52v              1/1     Running     0          163m
-default                  gpu-operator-945878fff-88thn                                      1/1     Running     0          163m
-gpu-operator-resources   gpu-feature-discovery-p6zqs                                       1/1     Running     0          53s
-gpu-operator-resources   gpu-feature-discovery-x88v4                                       1/1     Running     0          53s
-gpu-operator-resources   nvidia-container-toolkit-daemonset-27qj8                          1/1     Running     0          26m
-gpu-operator-resources   nvidia-container-toolkit-daemonset-g5ndb                          1/1     Running     0          26m
-gpu-operator-resources   nvidia-dcgm-exporter-c9vht                                        1/1     Running     0          74s
-gpu-operator-resources   nvidia-dcgm-exporter-mz7rh                                        1/1     Running     0          74s
-gpu-operator-resources   nvidia-device-plugin-daemonset-sqfdc                              1/1     Running     0          25m
-gpu-operator-resources   nvidia-device-plugin-daemonset-wldkd                              1/1     Running     0          25m
-gpu-operator-resources   nvidia-device-plugin-validation                                   0/1     Completed   0          2m47s
-gpu-operator-resources   nvidia-driver-daemonset-m4xjv                                     1/1     Running     0          163m
-gpu-operator-resources   nvidia-driver-daemonset-vkrz5                                     1/1     Running     5          163m
-....
-</code></pre><h3 id=6-测试gpu>6. 测试GPU</h3><p><code>gpu-operator</code>目录下预置了一个<code>test.yaml</code>文件，直接创建:</p><pre><code>[root@gpumaster gpu-operator]# kubectl create -f test.yaml
-pod/dcgmproftester created
-[root@gpumaster gpu-operator]# kubectl  get po -o wide | grep dcgmproftester
-dcgmproftester                                                    1/1     Running   0          103s   172.26.243.149   10.168.100.4   &lt;none&gt;           &lt;none&gt;
-
-</code></pre><p>找寻到<code>10.168.100.4</code>上的<code>nvidia-device-plugin-daemonset</code>的pod， 观察该节点上gpu的功耗及显存占用情况，可以看到该工作负载确实使用了gpu中的运算单元:</p><pre><code># kubectl exec nvidia-device-plugin-daemonset-wldkd -n gpu-operator-resources nvidia-smi
-nvidia 33988608 269 nvidia_modeset,nvidia_uvm, Live 0xffffffffa05dd000 (PO)
-Mon Apr 19 06:39:26 2021       
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                               |                      |               MIG M. |
-|===============================+======================+======================|
-|   0  Tesla V100-PCIE...  On   | 00000000:00:08.0 Off |                  Off |
-| N/A   61C    P0   208W / 250W |    493MiB / 32510MiB |     84%      Default |
-|                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
-                                                                               
-+-----------------------------------------------------------------------------+
-| Processes:                                                                  |
-|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-|        ID   ID                                                   Usage      |
-|=============================================================================|
-+-----------------------------------------------------------------------------+
-</code></pre><p>测试完毕后该pod将处于<code>completed</code>状态，观察其输出:</p><pre><code># kubectl  get po -o wide | grep dcgm
-dcgmproftester                                                    0/1     Completed   0          4m12s   172.26.243.149   10.168.100.4   &lt;none&gt;           &lt;none&gt;
-# kubectl  logs dcgmproftester
-.....
-TensorEngineActive: generated ???, dcgm 0.000 (74380.8 gflops)
-TensorEngineActive: generated ???, dcgm 0.000 (75398.9 gflops)
-TensorEngineActive: generated ???, dcgm 0.000 (75787.6 gflops)
-TensorEngineActive: generated ???, dcgm 0.000 (77173.9 gflops)
-TensorEngineActive: generated ???, dcgm 0.000 (75669.5 gflops)
-Skipping UnwatchFields() since DCGM validation is disabled
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/30/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/30/>30</a></li><li class="page-item active"><a class=page-link href=/page/31/>31</a></li><li class=page-item><a class=page-link href=/page/32/>32</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/233/>233</a></li><li class=page-item><a href=/page/32/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/233/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>打开vnc软件开始访问5915端口可以看到Windows桌面:</p><p><img src=/images/2021_04_20_16_56_36_779x615.jpg alt=/images/2021_04_20_16_56_36_779x615.jpg></p><h3 id=k8s中运行>K8s中运行</h3><p>由容器镜像创建出pod负载，service暴露即可。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/30/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/30/>30</a></li><li class="page-item active"><a class=page-link href=/page/31/>31</a></li><li class=page-item><a class=page-link href=/page/32/>32</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/233/>233</a></li><li class=page-item><a href=/page/32/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/233/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

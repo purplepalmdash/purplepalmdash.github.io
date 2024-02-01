@@ -65,8 +65,7 @@ systemctl daemon-reload
 systemctl restart docker
 </code></pre><h3 id=12-nginx-docker-way>12. nginx docker way</h3><p>Run via:</p><pre><code>$ sudo docker run --name docker-nginx -p 80:80 -d -v ~/serve:/usr/share/nginx/html
 nginx
-</code></pre><p>With auto-index:</p><pre><code>$ sudo docker run --name docker-nginx -p 80:80 -d -v ~/serve:/usr/share/nginx/html
-jrelva/nginx-autoindex
+</code></pre><p>With auto-index:</p><pre><code>$ sudo docker run --name docker-nginx -p 80:80 -d -v ~/serve:/usr/share/nginx/html jrelva/nginx-autoindex
 </code></pre><h3 id=13-combine-pictures>13. Combine Pictures</h3><p>fotowall could genrate photo wall:</p><pre><code>$ yaourt -S fotowall
 </code></pre><p>Hugin could generate full-view pictures.</p><pre><code>$ sudo pacman -S hugin
 </code></pre><h3 id=14-docker-swarm-how-to>14. Docker Swarm How-to</h3><p><a href=http://www.lxy520.net/2016/07/02/shi-yong-docker-1-12-da-jian-duo-zhu-ji-docker-swarmji-qun/>http://www.lxy520.net/2016/07/02/shi-yong-docker-1-12-da-jian-duo-zhu-ji-docker-swarmji-qun/</a></p><p><a href=https://www.linux.com/learn/how-use-docker-machine-create-swarm-cluster>https://www.linux.com/learn/how-use-docker-machine-create-swarm-cluster</a></p><h3 id=15-linux-性能监控专题>15. Linux 性能监控专题</h3><p><a href=https://linux.cn/topic-linux-system-performance-monitoring.html>https://linux.cn/topic-linux-system-performance-monitoring.html</a></p><h3 id=16-docker-compose-in-swarm>16. docker-compose in swarm</h3><p>Install experimental version via:</p><pre><code>## 测试版
