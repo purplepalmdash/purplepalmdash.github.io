@@ -1,5 +1,230 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/11/tipsonkubespray28upgrading/>TipsOnKubespray28Upgrading</a></h1><span class=post-date>Dec 11, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=初始化配置>初始化配置</h3><p>按照AI组的设想，基于Ubuntu16.04来做，后续其实也可以基于Ubuntu16.05来做，应该是一样的。<br>创建一个虚拟机，192.168.122.177/24, 安装好redsocks.</p><p>visudo(nopasswd), <code>apt-get install -y nethogs build-essential libevent-dev</code>.</p><p>做成基础镜像后，关机，undefine此虚拟机。</p><pre><code># 
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/01/04/kubeadmssllifetime/>kubeadmssllifetime</a></h1><span class=post-date>Jan 4, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=reason>Reason</h3><p>The ssl lifetime is only 1 year, we need to changes it to 100 years.</p><h3 id=steps>Steps</h3><p>Check out the specific version:</p><pre><code># git clone  https://github.com/kubernetes/kubernetes
+# git checkout tags/v1.12.3 -b 1.12.3_local
+</code></pre><p>Now edit the cert.go file:</p><pre><code># vim vendor/k8s.io/client-go/util/cert/cert.go
+
+		NotAfter:              now.Add(duration365d * 100).UTC(),    // line 66
+		NotAfter:     time.Now().Add(duration365d * 100).UTC(),  // line 111
+	maxAge := time.Hour * 24 * 365 * 100         // one year self-signed certs  // line 96
+		maxAge = 100 * time.Hour * 24 * 365 // 100 years fixtures  // line 110
+		NotAfter:    validFrom.Add(100 * maxAge), // line 152, 124
+</code></pre><p>Then build using following command:</p><pre><code># make all WHAT=cmd/kubeadm GOFLAGS=-v
+# ls  _output/bin/kubeadm
+</code></pre><p>Now using the newly generated kubeadm for replacing kubespray&rsquo;s kubeadm.</p><p>Also you have to change the sha256sum of the kubeadm which exists in
+<code>roles/download/defaults/main.yml</code>:</p><pre><code>kubeadm_checksums:
+  v1.12.4: bc7988ee60b91ffc5921942338ce1d103cd2f006c7297dd53919f4f6d16079fa
+  #v1.12.4: 674ad5892ff2403f492c9042c3cea3fa0bfa3acf95bc7d1777c3645f0ddf64d7
+</code></pre><p>deploy a cluster again, this time you will get a 100-year signature:</p><pre><code>root@k8s-1:/etc/kubernetes/ssl# pwd
+/etc/kubernetes/ssl
+root@k8s-1:/etc/kubernetes/ssl# for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
+notAfter=Dec 11 05:34:10 2118 GMT
+notAfter=Dec 11 05:34:11 2118 GMT
+notAfter=Dec 11 05:34:10 2118 GMT
+notAfter=Dec 11 05:34:11 2118 GMT
+notAfter=Dec 11 05:34:12 2118 GMT
+</code></pre><h3 id=v1125>v1.12.5</h3><p>Update the v1.12.5</p><pre><code>#  git remote -v
+#  git fetch origin
+#  git checkout tags/v1.12.5 -b 1.12.5_local
+# git branch
+  1.12.3_local
+  1.12.4_local
+* 1.12.5_local
+  master
+......make some changes.....
+# make all WHAT=cmd/kubeadm GOFLAGS=-v
+# ls  _output/bin/kubeadm
+
+</code></pre><h3 id=4-kubeadm-git-tree-state>4. kubeadm git tree state</h3><p>Modify the file <code>hack/lib/version.sh</code>:</p><pre><code>  if [[ -n ${KUBE_GIT_COMMIT-} ]] || KUBE_GIT_COMMIT=$(&quot;${git[@]}&quot; rev-parse &quot;HEAD^{commit}&quot; 2&gt;/dev/null); then
+    if [[ -z ${KUBE_GIT_TREE_STATE-} ]]; then
+      # Check if the tree is dirty.  default to dirty
+      if git_status=$(&quot;${git[@]}&quot; status --porcelain 2&gt;/dev/null) &amp;&amp; [[ -z ${git_status} ]]; then
+        KUBE_GIT_TREE_STATE=&quot;clean&quot;
+      else
+        KUBE_GIT_TREE_STATE=&quot;clean&quot;
+      fi
+    fi
+</code></pre><h3 id=golang-issue>golang issue</h3><p>build kubeadm 1.14.1 requires golang newer than golang 1.12.</p><pre><code># wget https://dl.google.com/go/go1.12.2.linux-amd64.tar.gz
+# tar -xvf go1.12.2.linux-amd64.tar.gz
+# sudo mv go /usr/local
+# vim ~/.bashrc
+export GOROOT=/usr/local/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GOPATH=/root/go/
+# source ~/.bashrc
+# go version
+go version go1.12.2 linux/amd64
+</code></pre><p>Now you could use the newer golang builder for building the v1.14.1 kubeadm.</p><h3 id=1141-kubeadm-timestamp>1.14.1 kubeadm timestamp</h3><p>Before:</p><pre><code># pwd
+/etc/kubernetes/ssl
+# for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
+notAfter=May  4 07:20:04 2020 GMT
+notAfter=May  4 07:20:03 2020 GMT
+notAfter=May  2 07:20:03 2029 GMT
+notAfter=May  2 07:20:04 2029 GMT
+notAfter=May  4 07:20:05 2020 GMT
+</code></pre><p>After replacement:</p><pre><code>notAfter=May  4 08:13:02 2020 GMT
+notAfter=May  4 08:13:02 2020 GMT
+notAfter=Apr 11 08:13:01 2119 GMT
+notAfter=Apr 11 08:13:02 2119 GMT
+notAfter=May  4 08:13:03 2020 GMT
+</code></pre><p>Seems failed, so I have to change again.</p><p>Add modification:</p><pre><code>./cmd/kubeadm/app/util/pkiutil/pki_helpers.go
+                NotAfter:     time.Now().Add(duration365d * 100 ).UTC(),  // line 578
+
+</code></pre><h3 id=arm64kubernetes-1143-version>arm64(kubernetes 1.14.3 version)</h3><p>golang 1.12.2 arm64 version download:</p><pre><code># wget https://dl.google.com/go/go1.12.2.linux-arm64.tar.gz
+# tar xzvf go1.12.2.linux-arm64.tar.gz
+# sudo mv go /usr/local
+# vim ~/.bashrc
+export GOROOT=/usr/local/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GOPATH=/root/go/
+# source ~/.bashrc
+# go version
+go version go1.12.2 linux/arm64
+</code></pre><p>Download the k8s 1.14.3 source code and unzip it:</p><pre><code># unzip kubernetes-1.14.3.zip
+# cd kubernetes-1.14.3
+</code></pre><p>modify the <code>hack/lib/version.sh</code> <code>KUBE_GIT_TREE_STATE</code> all to <code>clean</code>.</p><p>Also change following two files:</p><pre><code>root@arm02:~/Code/kubernetes-1.14.3# vim cmd/kubeadm/app/util/pkiutil/pki_helpers.go
+root@arm02:~/Code/kubernetes-1.14.3# vim vendor/k8s.io/client-go/util/cert/cert.go
+root@arm02:~/Code/kubernetes-1.14.3#  make all WHAT=cmd/kubeadm GOFLAGS=-v
+</code></pre><p><img src=/images/2019_07_03_15_25_16_903x178.jpg alt=/images/2019_07_03_15_25_16_903x178.jpg></p><h3 id=v1153>v1.15.3</h3><p>Via following steps:</p><pre><code># cd YOURKUBERNETES_FOLDER
+# git fetch origin
+# git checkout tags/v1.15.3 -b 1.15.3_local
+# vim hack/lib/version.sh
+      if git_status=$(&quot;${git[@]}&quot; status --porcelain 2&gt;/dev/null) &amp;&amp; [[ -z ${git_status} ]]; then
+        KUBE_GIT_TREE_STATE=&quot;clean&quot;
+      else
+        KUBE_GIT_TREE_STATE=&quot;clean&quot;
+# vim cmd/kubeadm/app/constants/constants.go
+        CertificateValidity = time.Hour * 24 * 365 *100
+# vim vendor/k8s.io/client-go/util/cert/cert.go
+edit the same as in v1.12.5
+		NotAfter:              now.Add(duration365d * 100).UTC(),    // line 66
+		NotAfter:     time.Now().Add(duration365d * 100).UTC(),  // line 111
+	maxAge := time.Hour * 24 * 365 * 100         // one year self-signed certs  // line 96
+		maxAge = 100 * time.Hour * 24 * 365 // 100 years fixtures  // line 110
+		NotAfter:    validFrom.Add(100 * maxAge), // line 152, 124
+# make all WHAT=cmd/kubeadm GOFLAGS=-v
+# ls  _output/bin/kubeadm
+</code></pre><p>注意: v1.15.3中, CertificateValidity变量定义为100年后，不需修改<code>pki_helper.go</code>文件内容。</p><h3 id=v1163>v1.16.3</h3><p>Compile it on local:</p><pre><code># wget https://codeload.github.com/kubernetes/kubernetes/zip/v1.16.3
+# unzip kubernetes-1.16.3.zip
+# cd kubernetes-1.16.3
+########################
+### Make source code changes
+# Notice the gittree status changes from archived to clean
+########################
+#####  Install golang
+# sudo add-apt-repository ppa:longsleep/golang-backports
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys  F6BC817356A3D45E
+# sudo apt-get update
+# sudo apt-get install golang-1.12
+# sudo apt-get purge golang-go
+# vim ~/.profile
+Add:
+PATH=&quot;$PATH:/usr/lib/go-1.12/bin&quot;
+# source ~/.profile
+# make all WHAT=cmd/kubeadm GOFLAGS=-v
+</code></pre><p>Cause kubeadm currently(2019.12) should be compiled with golang-1.12.</p><p>output result:</p><pre><code>➜  kubernetes-1.16.3 cd _output/bin 
+➜  bin ls
+conversion-gen  deepcopy-gen  defaulter-gen  go2make  go-bindata  kubeadm  openapi-gen
+➜  bin ./kubeadm version
+kubeadm version: &amp;version.Info{Major:&quot;1&quot;, Minor:&quot;16&quot;, GitVersion:&quot;v1.16.3&quot;, GitCommit:&quot;b3cbbae08ec52a7fc73d334838e18d17e8512749&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2019-12-24T07:07:11Z&quot;, GoVersion:&quot;go1.12.8&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/31/workingtipsonkubespray281/>WorkingTipsOnKubespray281</a></h1><span class=post-date>Dec 31, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=changes>Changes</h3><h4 id=1-download-items>1. download items</h4><p>In <code>kubespray-2.8.1/roles/download/defaults/main.yml</code>, get download info from
+following definition:</p><pre><code>kubeadm_download_url: &quot;https://storage.googleapis.com/kubernetes-release/release/{{ kubead
+m_version }}/bin/linux/{{ image_arch }}/kubeadm&quot;
+hyperkube_download_url: &quot;https://storage.googleapis.com/kubernetes-release/release/{{ kube
+_version }}/bin/linux/amd64/hyperkube&quot;
+cni_download_url: &quot;https://github.com/containernetworking/plugins/releases/download/{{ cni
+_version }}/cni-plugins-{{ image_arch }}-{{ cni_version }}.tgz&quot;
+</code></pre><p>The <code>cni_version</code> is defined in following file:</p><pre><code>./roles/download/defaults/main.yml:cni_version: &quot;v0.6.0&quot;
+</code></pre><p>Download from following position:</p><pre><code>https://storage.googleapis.com/kubernetes-release/release/v1.12.4/bin/linux/amd64/kubeadm
+https://storage.googleapis.com/kubernetes-release/release/v1.12.4/bin/linux/amd64/hyperkube
+https://github.com/containernetworking/plugins/releases/download/v0.6.0/cni-plugins-amd64-v0.6.0.tgz
+</code></pre><p>Changes to:</p><pre><code>#kubeadm_download_url: &quot;https://storage.googleapis.com/kubernetes-release/release/{{ kubeadm_version }}/bin/linux/{{ image_arch }}/kubeadm&quot;
+#hyperkube_download_url: &quot;https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/amd64/hyperkube&quot;
+etcd_download_url: &quot;https://github.com/coreos/etcd/releases/download/{{ etcd_version }}/etcd-{{ etcd_version }}-linux-amd64.tar.gz&quot;
+#cni_download_url: &quot;https://github.com/containernetworking/plugins/releases/download/{{ cni_version }}/cni-plugins-{{ image_arch }}-{{ cni_version }}.tgz&quot;
+kubeadm_download_url: &quot;http://portus.xxxx.com:8888/kubeadm&quot;
+hyperkube_download_url: &quot;http://portus.xxxx.com:8888/hyperkube&quot;
+cni_download_url: &quot;http://portus.xxxx.com:8888/cni-plugins-{{ image_arch }}-{{ cni_version }}.tgz&quot;
+</code></pre><h4 id=2-dashboard>2. dashboard</h4><p><code>kubespray-2.8.1/roles/kubernetes-apps/ansible/templates/dashboard.yml.j2</code>, add NodePort definition:</p><pre><code>spec:
++  type: NodePort
+  ports:
+    - port: 443
+      targetPort: 8443
+</code></pre><h4 id=3-bootstrap-os>3. bootstrap-os</h4><p>Added in files:</p><pre><code>portus.crt
+server.crt
+ntp.conf
+</code></pre><p><code>kubespray-2.8.1/roles/bootstrap-os/tasks/bootstrap-ubuntu.yml</code>, modify according to previous version.</p><h4 id=4-kube-deploy>4. kube-deploy</h4><p>TBD, changes later</p><h4 id=5-reset>5. reset</h4><p><code>kubespray-2.8.1/roles/reset/tasks/main.yml</code></p><pre><code>    - /etc/cni
+    - &quot;{{ nginx_config_dir }}&quot;
+#    - /etc/dnsmasq.d
+#    - /etc/dnsmasq.conf
+#    - /etc/dnsmasq.d-available
+</code></pre><h4 id=6-inventory-definition>6. inventory definition</h4><p><code>/kubespray-2.8.1/inventory/sample/group_vars/k8s-cluster/addons.yml</code></p><pre><code>enable helm and metric-server
+</code></pre><p>Edit <code>kubespray-2.8.1/inventory/sample/group_vars/k8s-cluster/k8s-cluster.yml</code> file:</p><pre><code>helm_stable_repo_url: &quot;https://portus.xxxx.com:5000/chartrepo/kubesprayns&quot;
+
+also notice the version of kubeadm, for example v1.12.4
+</code></pre><p>remove the hosts.ini file.</p><h4 id=7-kubeadm-images>7. kubeadm images</h4><p>Use an official vagrant definition for downloading kubeadm images.</p><h3 id=vagrant-temp>Vagrant temp</h3><p>Vagrant create temp machines.</p><p>Stop the service:</p><pre><code>sudo systemctl stop secureregistryserver.service
+</code></pre><p>Remove the old registry data, and start a new instance</p><pre><code>sudo rm -rf /usr/local/secureregistryserver/data/*
+sudo systemcel start secureregistryserver.service
+</code></pre><p>Load:</p><pre><code>scp ./all.tar.bz2 vagrant@172.17.129.101:/home/vagrant
+sudo docker load&lt;all.tar.bz2
+</code></pre><p>Then docker push all of the loaded images, compress the folder:</p><pre><code>sudo systemcel stop secureregistryserver.service
+tar cvf /usr/local/secureregistryserver/
+xz /usr/local/secureregistryserver.tar
+</code></pre><p>With the tar.xz, contains all of the offline images.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/12/tipsonsj/>TipsOnSJ</a></h1><span class=post-date>Dec 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Rook:</p><pre><code># docker save rook/ceph:master&gt;ceph.tar; xz ceph.tar
+# docker load&lt;ceph.tar
+# docker tag rook/ceph:master docker.registry/library/rook/ceph:master
+# kubectl -n rook-ceph-system get pod -o wide
+NAME                                 READY   STATUS    RESTARTS   AGE   IP                NODE       NOMINATED NODE
+rook-ceph-agent-lf7zm                1/1     Running   0          11s   192.192.189.124   allinone   &lt;none&gt;
+rook-ceph-operator-d88b68dd9-rfqws   1/1     Running   0          19m   10.233.81.146     allinone   &lt;none&gt;
+rook-discover-rtghr                  1/1     Running   0          11s   10.233.81.149     allinone   &lt;none&gt;
+
+</code></pre><p>label:</p><pre><code># kubectl label nodes allinone ceph-mon=enabled
+# kubectl label nodes allinone ceph-osd=enabled
+# kubectl label nodes allinone ceph-mgr=enabled
+</code></pre><p>Add one disk:</p><p><img src=/images/2018_12_12_15_17_08_639x545.jpg alt=/images/2018_12_12_15_17_08_639x545.jpg></p><p>Examine via:</p><pre><code># fdisk -l /dev/vdb
+
+Disk /dev/vdb: 85.9 GB, 85899345920 bytes, 167772160 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+</code></pre><p>Modify the cluster.yml file:</p><pre><code>    config:
+      # The default and recommended storeType is dynamically set to bluestore for devices and filestore for directories.
+      # Set the storeType explicitly only if it is required not to use the default.
+      # storeType: bluestore
+      databaseSizeMB: &quot;1024&quot; # this value can be removed for environments with normal sized disks (100 GB or larger)
+      journalSizeMB: &quot;1024&quot;  # this value can be removed for environments with normal sized disks (20 GB or larger)
+    nodes:
+    - name: &quot;allinone&quot;
+      devices: # specific devices to use for storage can be specified for each node
+      - name: &quot;vdb&quot;
+# kubectl apply -f cluster.yaml 
+</code></pre><p>MOdify to newest version, becase the master is older than our pulled images.</p><p>depend on ceph:</p><pre><code>#  sudo docker pull ceph/ceph:v13
+# kubectl -n rook-ceph get pod -o wide  -w
+# # kubectl -n rook-ceph get pod -o wide
+NAME                                   READY   STATUS      RESTARTS   AGE   IP              NODE       NOMINATED NODE
+rook-ceph-mgr-a-588c74548f-wb4db       1/1     Running     0          74s   10.233.81.156   allinone   &lt;none&gt;
+rook-ceph-mon-a-6cf75949cd-vqbfb       1/1     Running     0          89s   10.233.81.155   allinone   &lt;none&gt;
+rook-ceph-osd-0-88d6dd79d-r9cxc        1/1     Running     0          49s   10.233.81.158   allinone   &lt;none&gt;
+rook-ceph-osd-prepare-allinone-zgcjz   0/2     Completed   0          59s   10.233.81.157   allinone   &lt;none&gt;
+# lsblk
+# lsblk |grep vdb
+vdb         252:16   0   80G  0 disk 
+
+</code></pre><p>Get the password:</p><pre><code># kubectl edit svc rook-ceph-mgr-dashboard -n rook-ceph
+type: NodePort
+service/rook-ceph-mgr-dashboard edited
+# MGR_POD=`kubectl get pod -n rook-ceph | grep mgr | awk '{print $1}'`
+# kubectl -n rook-ceph logs $MGR_POD | grep password
+2018-12-12 08:10:16.478 7f7062038700  0 log_channel(audit) log [DBG] : from='client.4114 10.233.81.152:0/963276398' entity='client.admin' cmd=[{&quot;username&quot;: &quot;admin&quot;, &quot;prefix&quot;: &quot;dashboard set-login-credentials&quot;, &quot;password&quot;: &quot;8XOWZALcFO&quot;, &quot;target&quot;: [&quot;mgr&quot;, &quot;&quot;], &quot;format&quot;: &quot;json&quot;}]: dispatch
+</code></pre><p>View dashboard via:</p><p><img src=/images/2018_12_12_16_15_24_775x651.jpg alt=/images/2018_12_12_16_15_24_775x651.jpg></p><p>Create pool and storagepool:</p><pre><code># kubectl apply -f pool.yaml 
+cephblockpool.ceph.rook.io/replicapool created
+# kubectl  apply -f storageclass.yaml 
+cephblockpool.ceph.rook.io/replicapool configured
+storageclass.storage.k8s.io/rook-ceph-block created
+# kubectl get sc
+NAME              PROVISIONER          AGE
+rook-ceph-block   ceph.rook.io/block   3s
+</code></pre><p>其他部分的更改就省略掉。</p><h3 id=todo>ToDo</h3><ol><li>busybox需要上传到中心服务器。</li><li>各个节点服务器需要load busybox的镜像。</li><li>需要整合ansible，以便安装。</li></ol></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/11/tipsonkubespray28upgrading/>TipsOnKubespray28Upgrading</a></h1><span class=post-date>Dec 11, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=初始化配置>初始化配置</h3><p>按照AI组的设想，基于Ubuntu16.04来做，后续其实也可以基于Ubuntu16.05来做，应该是一样的。<br>创建一个虚拟机，192.168.122.177/24, 安装好redsocks.</p><p>visudo(nopasswd), <code>apt-get install -y nethogs build-essential libevent-dev</code>.</p><p>做成基础镜像后，关机，undefine此虚拟机。</p><pre><code># 
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/10/tipsonkubesprayupgrading/>TipsOnKubesprayUpgrading</a></h1><span class=post-date>Dec 10, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>Rong部署框架随kubespray社区升级策略。</p><h3 id=前提>前提</h3><p>下载kubespray升级包，如v2.8.0:</p><p><img src=/images/2018_12_10_12_09_29_628x576.jpg alt=/images/2018_12_10_12_09_29_628x576.jpg></p><p>将此包解压到某目录，这里解压到:</p><pre><code># cd /var1/myimages/RongUpgrade/280
 # ls
 kubespray-2.8.0
@@ -100,44 +325,4 @@ um.repos.d/kubespray_centos7.repo &amp;&amp; yum makecache &amp;&amp; systemctl 
 - name: Install packages requirements for bootstrap
   yum:
 .....
-</code></pre><p>验证：</p><p><img src=/images/2018_12_10_16_37_24_599x283.jpg alt=/images/2018_12_10_16_37_24_599x283.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/05/ubuntu1604isocustomize/>Ubuntu1604ISOCustomize</a></h1><span class=post-date>Dec 5, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>ArchLinux Preparation:</p><pre><code>$ yaourt mkpasswd
-</code></pre><pre><code># mkdir aiiso
-# cd aiiso
-# mv ../ubuntu-16.04.5-server-amd64.iso .
-# mkdir newISO
-# mkdir iso
-# mount -o loop ./ubuntu-16.04.5-server-amd64.iso ./iso
-# cp -r ./iso/* ./newISO
-# cp -r ./iso/.disk ./newISO
-# umount ./iso
-# cp xxx.seed ./newISO/preseed
-###### Make some customization
-#  md5sum ./newISO/preseed/xxx.seed
-ed9a5e91f66451080d27d3d85032801d  xxx.seed
-# vim preseed/xxx.seed
-# vim isolinux/txt.cfg
-# mkisofs -D -r -V &quot;NETSON_UBUNTU&quot; -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ../ai_ubuntu.iso .  &gt; /dev/null 2&gt;&amp;1
-# isohybrid ../ai_ubuntu.iso
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/11/24/tipsonlightdm/>TipsOnLightdm</a></h1><span class=post-date>Nov 24, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install lightdm via:</p><pre><code>$ sudo pacman -S lightdm
-</code></pre><p>but this will cause gui startup failed.</p><p><img src=/images/2018_11_24_21_09_12_541x252.jpg alt=/images/2018_11_24_21_09_12_541x252.jpg></p><p>Changes to lxdm solves the problem:</p><pre><code># pacman -S lxde
-# systemctl enable lxdm.service
-# vim /etc/lxdm/lxdm.conf
-####autologin=dgod
-# vim /root/.dmrc
-[Desktop]
-Session=xfce
-
-</code></pre><p>Install:</p><pre><code># pacman -S xorg lightdm-gtk-greeter xterm xorg-xinit awesome
-# vim /etc/lightdm.conf
-greeter-session=lightdm-gtk-greeter
-
-Add configuration for lightdm-gtk-greeter
-</code></pre><p>Desktop Manager session:</p><pre><code> cat ~/.dmrc 
-[Desktop]
-Session=awesome
-</code></pre><p>Install:</p><pre><code>$ groupadd -r autologin
-$ gpasswd -a root autologin
-$ pacman -S xfce4-goodies
-$ pacman -S awesome
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/11/23/tipsonharbor/>TipsOnHarbor</a></h1><span class=post-date>Nov 23, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=harbor-configuration>Harbor Configuration</h3><p>Create user via:</p><p><img src=/images/2018_11_23_11_06_47_554x475.jpg alt=/images/2018_11_23_11_06_47_554x475.jpg></p><p>Create project:</p><p><img src=/images/2018_11_23_11_07_08_813x347.jpg alt=/images/2018_11_23_11_07_08_813x347.jpg></p><p>Add member:</p><p>Before:</p><p><img src=/images/2018_11_23_11_07_21_660x305.jpg alt=/images/2018_11_23_11_07_21_660x305.jpg></p><p>Added:<br><img src=/images/2018_11_23_11_07_36_618x403.jpg alt=/images/2018_11_23_11_07_36_618x403.jpg></p><p>After:</p><p><img src=/images/2018_11_23_11_07_55_660x319.jpg alt=/images/2018_11_23_11_07_55_660x319.jpg></p><p>Now docker-compose down the environment, backup the folder:</p><h3 id=installation-system>Installation System</h3><p>Configure the ip address:</p><p><img src=/images/2018_11_23_15_30_44_643x347.jpg alt=/images/2018_11_23_15_30_44_643x347.jpg></p><p>All nodes should be pointing to the dns address:</p><p><img src=/images/2018_11_23_15_33_04_681x477.jpg alt=/images/2018_11_23_15_33_04_681x477.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/60/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/60/>60</a></li><li class="page-item active"><a class=page-link href=/page/61/>61</a></li><li class=page-item><a class=page-link href=/page/62/>62</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/233/>233</a></li><li class=page-item><a href=/page/62/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/233/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>验证：</p><p><img src=/images/2018_12_10_16_37_24_599x283.jpg alt=/images/2018_12_10_16_37_24_599x283.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/60/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/60/>60</a></li><li class="page-item active"><a class=page-link href=/page/61/>61</a></li><li class=page-item><a class=page-link href=/page/62/>62</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/234/>234</a></li><li class=page-item><a href=/page/62/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/234/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

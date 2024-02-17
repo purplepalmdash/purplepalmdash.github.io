@@ -67,6 +67,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 $ nmcli connection add type bridge-slave ifname enp30s0 master br0
 </code></pre><p>Case static ip address:</p><pre><code>nmcli conn add type bridge ifname br0 ipv4.method manual ipv4.address &quot;10.137.149.5/24&quot; ipv4.gateway &quot;10.137.149.1&quot; ipv4.dns 223.5.5.5 
 nmcli connection add type bridge-slave ifname eth0 master br0
+</code></pre><p>Case dhcp(notice the bridge name):</p><pre><code>nmcli connection modify bridge-br0 ipv4.method auto
 </code></pre><p>Change mtu to 9000:</p><pre><code># nmcli connection modify bridge-slave-eth0 802-3-ethernet.mtu 9000
 # nmcli connection show bridge-slave-eth0 | grep mtu
 802-3-ethernet.mtu:                     9000

@@ -1,5 +1,169 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/09/03/archlinux-ntp-update-time/>ArchLinux Ntp update time</a></h1><span class=post-date>Sep 3, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>1. 安装ntpd</p><pre><code>$ pacman -S ntpd
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/09/04/arm1136-kernel-for-raspberry-pi/>Arm1136 Kernel For Raspberry PI</a></h1><span class=post-date>Sep 4, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>qemu-system-arm可以直接使用内核用于加载系统。通常情况下我们可以用预编译好的第三方提供的内核来启动系统，然而如果我们需要用到定制的内核，就需要对内核进行编译了。下面的步骤将讲述如何编译出基于arm1136架构的raspberry PI内核。</p><p>1. 安装交叉编译链。</p><p>ArchLinux中，可以直接从Yaourt仓库里通过“yaourt gnueabihf”查找对应的包，编译的过程不再详述。安装完后，在终端输入arm-(Tab)应该可以看到arm-linux-gnueabihf-开头的编译器。</p><p>2. 准备内核源码。</p><pre><code># 从github下载源码
+$ git clone https://github.com/raspberrypi/linux.git
+# Apply Patch
+$ wget http://xecdesign.com/downloads/linux-qemu/linux-arm.patch
+$ patch -p1 -d linux/ &lt; linux-arm.patch
+</code></pre><p>3. 配置、编译内核。</p><pre><code># 加载默认配置
+$ cd linux
+$ make ARCH=arm versatile_defconfig
+
+# 自定义内核
+$ make ARCH=arm menuconfig
+
+# 设置编译器
+General Setup ---&gt;
+Cross-compiler tool prefix
+(arm-linux-gnueabihf-)
+
+# 选择正确的CPU
+System Type ---&gt;
+[*] Support ARM V6 processor
+[*] ARM errata: Invalidation of the Instruction Cache operation can fail
+[*] ARM errata: Possible cache data corruption with hit-under-miss enabled
+
+# 激活浮点运算
+Floating point emulation  ---&gt;
+[*] VFP-format floating point maths
+
+# 激活ARM EABI
+Enable ARM EABI:
+Kernel Features ---&gt;
+[*] Use ARM EABI to compile the kernel
+[*] Allow old ABI binaries to run with this kernel
+
+# 激活QEMU磁盘支持
+Bus Support ---&gt;
+[*] PCI Support
+Device Drivers ---&gt;
+SCSI Device Support ---&gt;
+[*] SCSI Device Support
+[*] SCSI Disk Support
+[*] SCSI CDROM support
+[*] SCSI low-lever drivers ---&gt;
+[*] SYM53C8XX  Version 2 SCSI support
+
+# 激活devtmpfs
+Device Drivers ---&gt;
+Generic Driver Options---&gt;
+[*] Maintain a devtmpfs filesystem to mount at /dev
+[*] Automount devtmpfs at /dev, after the kernel mounted the root
+
+# 激活重要的文件系统
+Enable the important file systems:
+&lt;*&gt; Ext3 journalling file system support
+ &lt;*&gt; The Extended 4 (ext4) filesystem
+
+# 激活tmpfs
+File systems ---&gt;
+Pseudo filesystems---&gt;
+[*] Virtual memory file system support (former shm fs)
+
+# 激活event接口
+Device Drivers ---&gt;
+Input device support---&gt;
+[*] Event interface
+
+# 激活/proc/config.gz
+General Setup ---&gt;
+[*] Kernel .config support
+[*] Enable access to .config through /proc/config.gz
+
+# 启动时字体配置和LOGO配置
+Device Drivers ---&gt;
+Graphics Support ---&gt;
+Console display driver support ---&gt;
+[ ] Select compiled-in fonts
+[*] Bootup logo (optional)
+
+现在退出并保存.config
+
+#开始编译内核
+$ cd linux
+$ make ARCH=arm
+$ make ARCH=arm INSTALL_MOD_PATH=../modules modules_install
+
+</code></pre><p>4. 使用新编译出的内核启动系统</p><pre><code>$ cp arch/arm/boot/zImage /Your_Qemu_Directory
+$ qemu-system-arm -kernel zImage //Your Options.
+</code></pre><p>使用自定义内核的好处是可以方便的激活某些高阶功能，例如NFS, Netfilter等等，一般情况下，默认提供的内核就已经可以满足我们的需要了。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/09/04/qemu-for-raspberrypi/>Qemu For RaspberryPI</a></h1><span class=post-date>Sep 4, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>我用Qemu来仿真RaspberryPI以便快速测试内核模块的开发。下面是仿真的步骤：</p><p>1. 下载镜像文件2013-07-26-wheezy-raspbian.img，并更改其配置使得可以被qemu-system-arm加载：</p><pre><code>$ fdisk -l 2013-07-26-wheezy-raspbian.img 
+Disk 2013-05-25-wheezy-raspbian.img: 1939 MB, 1939865600 bytes, 3788800 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000c7b31
+
+                         Device Boot      Start         End      Blocks   Id  System
+2013-05-25-wheezy-raspbian.img1            8192      122879       57344    c  W95 FAT32 (LBA)
+2013-05-25-wheezy-raspbian.img2          122880     3788799     1832960   83  Linux
+
+#从上面可以看到，根文件分区的地址偏移为512*122880=62914560
+
+#更改根分区文件里preload信息:
+$ sudo mount ./2013-07-26-wheezy-raspbian.img -o offset=62914560 /mnt3
+$ sudo vim /mnt3/etc/ld.so.preload 
+#注释掉这一行，否则在qemu启动完系统后将自动提示配置rpi而造成系统无法登陆
+#/usr/lib/arm-linux-gnueabihf/libcofi_rpi.so
+$ sudo umount /mnt3
+</code></pre><p>2. 拷贝一个此时的img文件以便将来备用</p><pre><code>$ cp 2013-07-26-wheezy-raspbian.img 2.img
+</code></pre><p>3. 配置qemu为bridge网络</p><p>qemu启动时需要调用的脚本：</p><pre><code>$ cat /etc/qemu-ifup 
+#!/bin/sh
+  
+echo &quot;Executing /etc/qemu-ifup&quot;
+echo &quot;Bringing up $1 for bridged mode...&quot;
+sudo /usr/bin/ip link set $1 up promisc on
+echo &quot;Adding $1 to br0...&quot;
+sudo /usr/bin/brctl addif br0 $1
+sleep 2
+</code></pre><p>qemu关闭时自动调用的脚本：</p><pre><code>$ cat /etc/qemu-ifdown
+#!/bin/sh
+ 
+echo &quot;Executing /etc/qemu-ifdown&quot;
+sudo /usr/bin/ip link set $1 down
+sudo /usr/bin/brctl delif br0 $1
+sudo /usr/bin/ip link delete dev $1
+</code></pre><p>在镜像的当前目录下，创建run-qemu文件：</p><pre><code>#!/bin/bash
+USERID=$(whoami)
+
+# Get name of newly created TAP device; see https://bbs.archlinux.org/viewtopic.php?pid=1285079#p1285079
+precreationg=$(/usr/bin/ip tuntap list | /usr/bin/cut -d: -f1 | /usr/bin/sort)
+sudo /usr/bin/ip tuntap add user $USERID mode tap
+postcreation=$(/usr/bin/ip tuntap list | /usr/bin/cut -d: -f1 | /usr/bin/sort)
+IFACE=$(comm -13 &lt;(echo &quot;$precreationg&quot;) &lt;(echo &quot;$postcreation&quot;))
+
+# This line creates a random mac address. The downside is the dhcp server will assign a different ip each time
+printf -v macaddr &quot;52:54:%02x:%02x:%02x:%02x&quot; $(( $RANDOM &amp; 0xff)) $(( $RANDOM &amp; 0xff )) $(( $RANDOM &amp; 0xff)) $(( $RANDOM &amp; 0xff ))
+# Instead, uncomment and edit this line to set an static mac address. The benefit is that the dhcp server will assign the same ip.
+# macaddr='52:54:be:36:42:a9'
+ 
+qemu-system-arm -net nic,macaddr=$macaddr -net tap,ifname=&quot;$IFACE&quot; $*
+  
+sudo ip link set dev $IFACE down &amp;&gt; /dev/null
+sudo ip tuntap del $IFACE mode tap &amp;&gt; /dev/null 
+</code></pre><p>因为tap需要用到tun模块，所以增加tun到自动加载的模块中</p><pre><code>$ cat /etc/modules-load.d/tun.conf 
+# Load tun at boot
+tun
+</code></pre><p>添加visudo条目：</p><pre><code>Cmnd_Alias      QEMU=/usr/bin/ip,/usr/bin/modprobe,/usr/bin/brctl
+%kvm     ALL=NOPASSWD: QEMU
+</code></pre><p>添加用户到kvm组：</p><pre><code>$ usermod -a -G kvm username
+</code></pre><p>4. 启动qemu，使用两个镜像，以调整磁盘大小。</p><pre><code># 增加2G大小给镜像
+$ qemu-img resize ./2013-07-26-wheezy-raspbian.img +2G
+$ ./run-qemu -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append &quot;root=/dev/sda2 panic=1&quot; -hda ./2.img -hdb ./2013-07-26-wheezy-raspbian.img 
+进入Qemu后，
+$ sudo apt-get install gparted
+$ sudo gparted /dev/sdb
+调整到自己想要的大小即可。
+</code></pre><p>5. 重新启动后用下列命令启动Qemu:</p><pre><code>$ ./run-qemu -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append &quot;root=/dev/sda2 panic=1&quot; -hda ./2013-07-26-wheezy-raspbian.img 
+</code></pre><p>使用上列步骤所启动起来的RaspberryPI镜像，具备完整的网络支持和足够的存储空间，而运行速度也令人满意。对比于真实的RaspberryPI板，编译、验证、烧写过程都较为简单，大部分研发工作可以基于这个平台来做。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/09/03/add-netfilter-nat-for-pogoplug/>Add Netfilter NAT for pogoplug</a></h1><span class=post-date>Sep 3, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Pogoplug上了debian wheezy后，想配置成VPN服务器，在最后一步配置iptables时发现无法激活NAT表。</p><p>显示结果为：</p><pre><code>$ iptables -t nat -A POSTROUTING -s 10.10.10.0/24 -o eth0 -j MASQUERADE
+can't initialize iptables table 'NAT': Table does not exist (do you need to insmod?)
+</code></pre><p>解决方法:重新编译NetFilter模块。</p><p>下载Linux3.1.10内核并解压到/usr/src</p><p>$ make menuconfig</p><p>{% img img /images/2013_09_03_12_53_06_868x411.jpg %}</p><p>而后：</p><p>{% img img /images/2013_09_03_12_54_08_749x362.jpg %}</p><p>确保以下选项被激活：</p><pre><code>	CONFIG_NF_CONNTRACK
+	CONFIG_NF_CONNTRACK_IPV4
+	CONFIG_NF_NAT
+	CONFIG_IP_NF_IPTABLES
+</code></pre><p>而后编译，由于在嵌入式系统上编译速度较慢，所以只是编译目录下对应的模块，其他的则不编：</p><pre><code>$ make M=net/netfilter modules  # Make all modules in specified dir
+$ make M=net/netfilter          # Same as 'make M=dir modules'
+$ make M=net/netfilter  modules_install # Install modules
+</code></pre><p>这样就应该可以了，具体的验证等回家再看。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/09/03/archlinux-ntp-update-time/>ArchLinux Ntp update time</a></h1><span class=post-date>Sep 3, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>1. 安装ntpd</p><pre><code>$ pacman -S ntpd
 </code></pre><p>2. 配置ntp服务器</p><pre><code>$ vim /etc/ntp.conf
 server 0.pool.ntp.org iburst
 server 1.pool.ntp.org iburst
@@ -20,163 +184,4 @@ server = 127.0.0.1
 server_type = 5
 server_port = 1394
 </code></pre><p>4. 使用tsocks运行出一个完全自由的终端：</p><pre><code>$ tsocks gnome-terminal
-</code></pre><p>在新弹出的终端内，无需设置任何代理即可自由访问各处资源，衍生于该终端的应用程序也可以直接享用家庭网络的自由权限。enjoy it!</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/08/28/pure-c-in-arduino/>Pure C In Arduino</a></h1><span class=post-date>Aug 28, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>1. 输入.c文件，用于点亮arduino板上的LED，默认为pin 5口</p><pre><code>#include &lt;avr/io.h&gt;
-#include &lt;util/delay.h&gt;
- 
-enum {
- BLINK_DELAY_MS = 1000,
-};
- 
-int main (void)
-{
- /* set pin 5 of PORTB for output*/
- DDRB |= _BV(DDB5);
- 
- while(1) {
-  /* set pin 5 high to turn led on */
-  PORTB |= _BV(PORTB5);
-  _delay_ms(BLINK_DELAY_MS);
- 
-  /* set pin 5 low to turn led off */
-  PORTB &amp;= ~_BV(PORTB5);
-  _delay_ms(BLINK_DELAY_MS);
- }
- 
- return 0;
-}
-</code></pre><p>2. 编译并生成映像文件：</p><pre><code>$ avr-gcc -Os -DF_CPU=16000000UL -mmcu=atmega328p -c -o led.o led.c
-$ avr-gcc -mmcu=atmega328p led.o -o led
-$ avr-objcopy -O ihex -R .eeprom led led.hex
-</code></pre><p>3. 使用avrdude上传之</p><pre><code>/media/y/arduino/1.0.5/hardware/tools/avrdude -C/media/y/arduino/1.0.5/hardware/tools/avrdude.conf -v -v -v -v -patmega328p -carduino -P/dev/ttyUSB0 -b57600 -D -Uflash:w:led.hex:i
-</code></pre><p>上传完毕后板子会自动运行新上传的文件。
-感觉用purec来开发的灵活性会比较强。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/07/25/olimex-refer/>Olimex refer</a></h1><span class=post-date>Jul 25, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>It seems this board is good:</p><p>OpenWRT trunk for imx233-OLinuXino now have 3220 packages <a href=http://olimex.wordpress.com/2013/07/24/openwrt-for-imx233-olinuxino-trunk-now-with-3220-packages/>http://olimex.wordpress.com/2013/07/24/openwrt-for-imx233-olinuxino-trunk-now-with-3220-packages/</a> …</p><p>Taobao Address:
-<a href="http://item.taobao.com/item.htm?spm=a230r.1.14.7.WT8tYl&id=21117476143">http://item.taobao.com/item.htm?spm=a230r.1.14.7.WT8tYl&id=21117476143</a></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/07/15/ardiunobi-ji-1/>arduino笔记(1)</a></h1><span class=post-date>Jul 15, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>1. 稳压IC的作用：</p><p>稳压器IC就是使输出电压稳定的设备中的电子元器件。所有的稳压器，都利用了相同的技术实现输出电压的稳定输出电压通过连接到误差放大器（Error Amplifier）反相输入端（Inverting Input）的分压电阻（Resistive Divider）采样（Sampled），误差放大器的同相输入端（Non-inverting Input）连接到一个参考电压Vref。 参考电压由IC内部的带隙参考源(Bandgap Reference)产生。误差放大器总是试图迫使其两端输入相等。为此，它提供负载电流以保证输出电压稳定。</p><p>2. ICSP(In-circuit serial programming)</p><p>3. FT232: USB->UART</p><p>The FT232BM is the 2nd generation of FTDI&rsquo;s popular USB UART device and the FT232BL is a lead free version of it. The FT232BQ provides the same functionality as the FT232BM and FT232BL in a QFN-32 lead free package.</p><p>4. ATmega328P Parameters:</p><pre><code>Parameter 		Value
-Flash (Kbytes):		32 Kbytes
-Pin Count:		32
-Max. Operating Frequency: 20 MHz
-CPU:			8-bit AVR
-# of Touch Channels:	16
-Hardware QTouch Acquisition: No
-Max I/O Pins:		23
-Ext Interrupts:		24
-USB Speed:		No
-USB Interface:		No
-SPI:			2
-TWI (I2C):		1
-UART:			1
-Graphic LCD:		No
-Video Decoder:		No
-Camera Interface:	No
-ADC channels:		8
-ADC Resolution (bits):	10
-ADC Speed (ksps):	15
-Analog Comparators:	1
-Resistive Touch Screen:	No
-DAC Resolution (bits):	0
-Temp. Sensor:		Yes
-Crypto Engine:		No
-SRAM (Kbytes):		2
-EEPROM (Bytes):		1024
-Self Program Memory:	YES
-External Bus Interface:	0
-DRAM Memory:		No
-NAND Interface:		No
-picoPower:		Yes
-Temp. Range (deg C):	-40 to 85
-I/O Supply Class:	1.8 to 5.5
-Operating Voltage (Vcc):1.8 to 5.5
-FPU:			No
-MPU / MMU:		no / no
-Timers:			3
-Output Compare channels: 	6
-Input Capture Channels:		1
-PWM Channels:		6
-32kHz RTC:		Yes
-Calibrated RC Oscillator:	Yes
-Watchdog:		Yes
-</code></pre><p>5. ATmega328P主要特性如下：</p><pre><code>高性能、低功耗的 8 位AVR 微处理器
-先进的RISC 结构
-131 条指令 – 大多数指令执行时间为单个时钟周期
-32 个8 位通用工作寄存器
-全静态工作
-工作于20 MHz 时性能高达20 MIPS
-只需两个时钟周期的硬件乘法器
-非易失性程序和数据存储器
-32K字节的系统内可编程Flash
-擦写寿命: 10,000 次
-具有独立锁定位的可选Boot 代码区
-通过片上Boot 程序实现系统内编程
-真正的同时读写操作
-1024字节的EEPROM
-擦写寿命: 100,000 次
-2K字节的片内SRAM
-可以对锁定位进行编程以实现用户程序的加密
-外设特点
-两个具有独立预分频器和比较器功能的8位定时器/计数器
-一个具有预分频器、比较功能和捕捉功能的16位定时器/计数器
-具有独立振荡器的实时计数器RTC
-六通道PWM
-8路10 位ADC
-可编程的串行USART
-可工作于主机/ 从机模式的SPI 串行接口
-基于字节的2-wire串行接口
-具有独立片内振荡器的可编程看门狗定时器
-片内模拟比较器
-引脚电平变化可引发中断及唤醒MCU
-特殊的微控制器特点
-上电复位(POR) 以及可编程的掉电检测(BOD)
-经过校准的片内RC 振荡器
-片内、片外中断源
-6种休眠模式：空闲模式、ADC 噪声抑制模式、省电模式、掉电模式、待机模式和延长待机模式
-I/O 和封装
-23个可编程的I/O 口
-28引脚PDIP，32引脚TQFP，28引脚QFN/MLF，与32引脚QFN/MLF封装
-工作电压
-1.8 - 5.5V
-工作温度范围:
--40℃至85℃
-工作速度等级
-0 - 20 MHz @ 1.8 - 5.5V
-超低功耗
-正常模式：
-1 MHz, 1.8V, 25°C: 0.2 mA
-掉电模式:
-1.8V, 0.1 μA
-省电模式:
-1.8V, 0.75 μA
-</code></pre><p>6. LED闪烁测试程序</p><pre><code>/*
- * Let the LED shinning per 1 seconds 
- */
- 
- void setup()
- {
-   // Arduino's port 13 has a LED
-   pinMode(13, OUTPUT);
- }
- 
- void loop()
- {
-   digitalWrite(13, HIGH);  // LED is on
-   delay(1000);             // Last for 1 second
-   digitalWrite(13, LOW);   // LED is off
-   delay(1000);             // Last for 1 second
- }
-</code></pre><p>在Arduino中程序运行时将首先调用 setup() 函数。用于初始化变量、设置针脚的输出\输入类型、配置串口、引入类库文件等等。每次 Arduino 上电或重启后，setup 函数只运行一次。</p><p>pinMode(): 将指定的引脚配置成输出或输入。详情请见digital pins。</p><p>在 setup() 函数中初始化和定义了变量，然后执行 loop() 函数。顾名思义,该函数在程序运行过程中不断的循环，根据一些反馈,相应改变执行情况。通过该函数动态控制 Arduino 主控板。</p><p>digitalWrite() 给一个数字引脚写入HIGH或者LOW。</p><p>如果一个引脚已经使用pinMode()配置为OUTPUT模式，其电压将被设置为相应的值，HIGH为5V（3.3V控制板上为3.3V），LOW为0V。</p><p>如果引脚配置为INPUT模式，使用digitalWrite()写入HIGH值，将使内部20K上拉电阻（详见数字引脚教程）。写入LOW将会禁用上拉。上拉电阻可以点亮一个LED让其微微亮，如果LED工作，但是亮度很低，可能是因为这个原因引起的。补救的办法是 使用pinMode()函数设置为输出引脚。</p><p>注意：数字13号引脚难以作为数字输入使用，因为大部分的控制板上使用了一颗LED与一个电阻连接到他。如果启动了内部的20K上拉电阻，他的电压将在1.7V左右，而不是正常的5V，因为板载LED串联的电阻把他使他降了下来，这意味着他返回的值总是LOW。如果必须使用数字13号引脚的输入模式，需要使用外部上拉下拉电阻。</p><p>delay(): 使程序暂定设定的时间（单位毫秒）。（一秒等于1000毫秒）</p><p>编译并烧入到开发板后，可以看到系统的LED灯开始闪烁。</p><p>7. 更多的LED</p><pre><code>void setup()
-{
-  for (int i=2; i&lt;=7; i++)    //通过循环的方式设置2-7号引脚为输出状态
-  {
-    pinMode(i,OUTPUT);
-  }
-}
-void loop()
-{
-  for (int x=2; x&lt;=7; x++)
-//通过循环的方式依次让每个引脚的led在1秒内完成明灭
-  {
-    digitalWrite(x,HIGH);
-    delay(500);
-    digitalWrite(x,LOW);
-    delay(500);
-  }
-}
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/228/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/228/>228</a></li><li class="page-item active"><a class=page-link href=/page/229/>229</a></li><li class=page-item><a class=page-link href=/page/230/>230</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/233/>233</a></li><li class=page-item><a href=/page/230/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/233/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>在新弹出的终端内，无需设置任何代理即可自由访问各处资源，衍生于该终端的应用程序也可以直接享用家庭网络的自由权限。enjoy it!</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/228/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/228/>228</a></li><li class="page-item active"><a class=page-link href=/page/229/>229</a></li><li class=page-item><a class=page-link href=/page/230/>230</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/234/>234</a></li><li class=page-item><a href=/page/230/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/234/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
