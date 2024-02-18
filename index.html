@@ -54,7 +54,33 @@ linux-oem-6.1-headers-6.1.0-1033_6.1.0-1033.33_all.deb
 linux-oem-6.1-tools-6.1.0-1033_6.1.0-1033.33_amd64.deb
 linux-oem-6.1-tools-host_6.1.0-1033.33_all.deb
 linux-tools-6.1.0-1033-oem_6.1.0-1033.33_amd64.deb
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/02/05/sriovbackportkernelforubuntu2204/>SRIOVBACKPORTKERNELFORUBUNTU2204</a></h1><span class=post-date>Feb 5, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Hardware/OS information:</p><pre><code>dash@alder:~$ uname -a
+</code></pre><h3 id=using-docker-for-building>Using docker for building</h3><p>Initialize a docker instance for building:</p><pre><code>sudo docker run -it -v /media/sdc/Code/buildkernel:/buildkernel ubuntu:22.04 /bin/bash
+</code></pre><p>enter the docker and run:</p><pre><code>apt update -y
+apt install -y vim
+vim /etc/apt/sources.list
+apt update -y
+apt install libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf llvm debhelper rsync python3-docutils bc libcap-dev git build-essential  asciidoc cpio libjvmti-oprofile0 linux-tools-common default-jdk binutils-dev libbtf1 libdwarf-dev dwarf* pahole libdwarf1 libdwarf++0
+# get the dependencies via &quot;dpkg-buildpackage -b&quot;
+apt install -y makedumpfile libnewt-dev libdw-dev pkg-config libunwind8-dev liblzma-dev libaudit-dev uuid-dev libnuma-dev zstd fig2dev sharutils python3-dev python3-sphinx python3-sphinx-rtd-theme imagemagick graphviz dvipng fonts-noto-cjk latexmk librsvg2-bin
+mkdir -p  /buildkernel/oem &amp;&amp; cd /buildkernel/oem
+apt source linux-image-unsigned-6.1.0-1029-oem
+cd linux-oem-6.1
+cd linux-oem-6.1-6.1.0/
+time sh -c 'fakeroot debian/rules clean &amp;&amp; fakeroot debian/rules binary'
+</code></pre><p>build time:</p><pre><code>real	32m18.795s
+user	309m36.938s
+sys	43m52.711s
+</code></pre><h3 id=customize-kernel-config-file>Customize kernel config file</h3><p>Fetch the config file:</p><pre><code>scp remote_config_files /root/config.common.ubuntu
+cp /root/config.common.ubuntu linux-oem-6.1-6.1.0/
+</code></pre><p>Edit the files:</p><pre><code># vim debian/rules.d/2-binary-arch.mk
+......
+	if [ -e $(commonconfdir)/config.common.ubuntu ]; then \
+		//cat $(commonconfdir)/config.common.ubuntu $(archconfdir)/config.common.$(arch) $(archconfdir)/config.flavour.$(target_flavour) &gt; $(builddir)/build-$*/.config; \
+		cat /root/config.common.ubuntu &gt; $(builddir)/build-$*/.config; \
+	else \
+......
+</code></pre><p>patch :</p><pre><code>$ patch -p1 &lt; xxxx.patch
+</code></pre><p>Then building.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/02/05/sriovbackportkernelforubuntu2204/>SRIOVBACKPORTKERNELFORUBUNTU2204</a></h1><span class=post-date>Feb 5, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Hardware/OS information:</p><pre><code>dash@alder:~$ uname -a
 Linux alder 5.15.0-92-generic #102-Ubuntu SMP Wed Jan 10 09:33:48 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
 dash@alder:~$ lscpu | grep -i model
 Model name:                         12th Gen Intel(R) Core(TM) i3-12100
