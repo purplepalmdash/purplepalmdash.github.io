@@ -71,13 +71,24 @@ time sh -c 'fakeroot debian/rules clean &amp;&amp; fakeroot debian/rules binary'
 user	309m36.938s
 sys	43m52.711s
 </code></pre><h3 id=customize-kernel-config-file>Customize kernel config file</h3><p>Fetch the config file:</p><pre><code>scp remote_config_files /root/config.common.ubuntu
-cp /root/config.common.ubuntu linux-oem-6.1-6.1.0/
+cp /root/config.common.ubuntu linux-oem-6.1-6.1.0/debian.oem/config/
 </code></pre><p>Edit the files:</p><pre><code># vim debian/rules.d/2-binary-arch.mk
 ......
 	if [ -e $(commonconfdir)/config.common.ubuntu ]; then \
 		//cat $(commonconfdir)/config.common.ubuntu $(archconfdir)/config.common.$(arch) $(archconfdir)/config.flavour.$(target_flavour) &gt; $(builddir)/build-$*/.config; \
 		cat /root/config.common.ubuntu &gt; $(builddir)/build-$*/.config; \
 	else \
+......
+# vim debian/rules.d/4-checks.mk
+......
+config-prepare-check-%: $(stampdir)/stamp-prepare-tree-%
+	@echo Debug: $@
+	if [ -e $(commonconfdir)/config.common.ubuntu ]; then \
+		echo &quot;done!&quot;; \
+		#perl -f $(DROOT)/scripts/checks/config-check \
+		#	$(builddir)/build-$*/.config &quot;$(arch)&quot; &quot;$*&quot; &quot;$(commonconfdir)&quot; \
+		#	&quot;$(skipconfig)&quot; &quot;$(do_enforce_all)&quot;; \
+
 ......
 </code></pre><p>patch :</p><pre><code>$ patch -p1 &lt; xxxx.patch
 </code></pre><p>Then building.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/02/05/sriovbackportkernelforubuntu2204/>SRIOVBACKPORTKERNELFORUBUNTU2204</a></h1><span class=post-date>Feb 5, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Hardware/OS information:</p><pre><code>dash@alder:~$ uname -a
