@@ -63,6 +63,15 @@ cp /root/config.common.ubuntu linux-oem-6.1-6.1.0/debian.oem/config/
 ......
 # vim debian/rules.d/4-checks.mk
 ......
+# Check the module list against the last release (always)
+module-check-%: $(stampdir)/stamp-install-%
+	@echo Debug: $@
+	echo &quot;done!&quot;; 
+	#$(DROOT)/scripts/checks/module-check &quot;$*&quot; \
+	#	&quot;$(prev_abidir)&quot; &quot;$(abidir)&quot; $(do_skip_checks)
+
+
+.......
 config-prepare-check-%: $(stampdir)/stamp-prepare-tree-%
 	@echo Debug: $@
 	if [ -e $(commonconfdir)/config.common.ubuntu ]; then \
