@@ -1,5 +1,64 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/19/makechartsrepositorylocal/>MakeChartsRepositoryLocal</a></h1><span class=post-date>Jan 19, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>在离线环境下，如何将在线的charts仓库的内容本地化？</p><p>举google的charts里的gitlab为例说明, 原网址在:</p><p><a href=https://github.com/kubernetes/charts>https://github.com/kubernetes/charts</a></p><p>gitlab-ce的项在:</p><p><a href=https://github.com/kubernetes/charts/tree/master/stable/gitlab-ce>https://github.com/kubernetes/charts/tree/master/stable/gitlab-ce</a></p><p>下载仓库的定义文件:</p><pre><code># wget https://kubernetes-charts.storage.googleapis.com/index.yaml
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/19/workingtipsonoracledbdockerized/>WorkingTipsOnOracleDBDockerized</a></h1><span class=post-date>Jan 19, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Startup the container and enter it:</p><pre><code># sudo docker create --name oraclexe11g01 -p 49160:22 -p 49161:1521 wnameless/oracle-xe-11g
+# sudo docker start oraclexe11g01
+# su - oracle
+</code></pre><p>In Container, do following:</p><pre><code>oracle@c7edb0017fa8:~$ scp xxxxx@172.17.0.1:/media/sda5/fresh_install.tar.gz .
+xxxxx@172.17.0.1's password: 
+fresh_install.tar.gz                                                                                                        100%  135KB 135.2KB/s   00:00    
+oracle@c7edb0017fa8:~$ tar xzvf fresh_install.tar.gz 
+oracle@c7edb0017fa8:~$ cd fresh_install
+oracle@c7edb0017fa8:~/fresh_install$ ls
+1_create_user_and_tablespace.sql  2_xxxxxxxx_ddl.sql  3_xxxxxxxx_data.sql  4_xxxxxx.sql
+</code></pre><p>Now create user and tablespaces:</p><pre><code>oracle@c7edb0017fa8:~/fresh_install$ export NLS_LANG=&quot;SIMPLIFIED CHINESE_CHINA.AL32UTF8&quot;
+oracle@c7edb0017fa8:~/fresh_install$ cd $ORACLE_HOME/bin
+oracle@c7edb0017fa8:~/product/11.2.0/xe/bin$ ./sqlplus / as sysdba
+
+SQL*Plus: Release 11.2.0.2.0 Production on 星期五 1月 19 07:53:32 2018
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+连接到: 
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+SQL&gt; @/u01/app/oracle/fresh_install/1_create_user_and_tablespace.sql
+SP2-0734: 未知的命令开头 &quot;﻿--查询表...&quot; - 忽略了剩余的行。
+
+表空间已创建。
+
+
+用户已创建。
+授权成功。
+
+SQL&gt; exit
+从 Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production 断开
+</code></pre><p>Now create your items via:</p><pre><code>oracle@c7edb0017fa8:~/product/11.2.0/xe/bin$ ./sqlplus xxxxxxxx/xxxxxxxx
+
+SQL*Plus: Release 11.2.0.2.0 Production on 星期五 1月 19 08:02:13 2018
+
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
+
+
+连接到: 
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL&gt; @/u01/app/oracle/fresh_install/2_xxxxxxxx_ddl.sql
+
+提交完成。
+SQL&gt; @/u01/app/oracle/fresh_install/3_xxxxxxxx_data.sql
+
+SQL&gt; @/u01/app/oracle/fresh_install/4_goegouwoguwog.sql
+
+
+SQL&gt; exit
+从 Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production 断开
+oracle@c7edb0017fa8:~/product/11.2.0/xe/bin$ exit
+logout
+root@c7edb0017fa8:~/fresh_install# exit
+logout
+Connection to localhost closed.
+</code></pre><p>Save the docker image via:</p><pre><code>$ sudo docker commit c7edb0017fa8 mxxxxxxx
+$ sudo docker save mxxxxxxx&gt;mxxxxx.tar
+</code></pre><p>OK, you got a initialized oracledb images.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/19/makechartsrepositorylocal/>MakeChartsRepositoryLocal</a></h1><span class=post-date>Jan 19, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>在离线环境下，如何将在线的charts仓库的内容本地化？</p><p>举google的charts里的gitlab为例说明, 原网址在:</p><p><a href=https://github.com/kubernetes/charts>https://github.com/kubernetes/charts</a></p><p>gitlab-ce的项在:</p><p><a href=https://github.com/kubernetes/charts/tree/master/stable/gitlab-ce>https://github.com/kubernetes/charts/tree/master/stable/gitlab-ce</a></p><p>下载仓库的定义文件:</p><pre><code># wget https://kubernetes-charts.storage.googleapis.com/index.yaml
 </code></pre><p><code>index.yaml</code>文件大小为900多K，里面包含了google提供的k8s-charts仓库里的所有条目，既然我们需要的是gitlab-ce条目，那我们删除掉其他条目:</p><pre><code>apiVersion: v1
 entries:
   gitlab-ce:
@@ -142,20 +201,4 @@ local-ssd   Bound     pvc-409fc19d-fbf3-11e7-b46e-525400e39849   1Mi        RWX 
 # kubectl get pv
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS    CLAIM               STORAGECLASS   REASON    AGE
 pvc-409fc19d-fbf3-11e7-b46e-525400e39849   1Mi        RWX            Delete           Bound     default/local-ssd   local-ssd                3m
-</code></pre><p>重启之后查看pv/pvc/sc，均保留在磁盘上。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/16/workingtipsonk8slvm/>WorkingTipsOnk8sLVM</a></h1><span class=post-date>Jan 16, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>Preparation</h3><p>Define ip address/gateway:</p><p><img src=/images/2018_01_16_10_31_58_494x339.jpg alt=/images/2018_01_16_10_31_58_494x339.jpg></p><p>Set hostname:</p><p><img src=/images/2018_01_16_10_32_18_439x180.jpg alt=/images/2018_01_16_10_32_18_439x180.jpg></p><p>Disk Preparation:</p><p><img src=/images/2018_01_16_10_36_09_758x404.jpg alt=/images/2018_01_16_10_36_09_758x404.jpg></p><h3 id=configuration>Configuration</h3><p>In kismatic, configure like following:</p><p><img src=/images/2018_01_16_10_39_10_819x493.jpg alt=/images/2018_01_16_10_39_10_819x493.jpg></p><p>Then install kismatic as usual.</p><h3 id=helm>helm</h3><p>When in offline-mode, <code>helm repo update</code> will failed.</p><p>Aim: install monocular in cluster.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/15/tipsonkismatictransfer/>TipsOnKismaticTransfer</a></h1><span class=post-date>Jan 15, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>主要记录生产环境的迁移，后期可以作为实际部署和安装时的文档参考。</p><h3 id=网络准备>网络准备</h3><p>创建一个<code>10.15.205.0/24</code>网络:</p><p><img src=/images/2018_01_15_11_46_51_334x401.jpg alt=/images/2018_01_15_11_46_51_334x401.jpg>
-由于在内网，故指定NAT与否都无所谓,
-在有Internet的环境中，可以指定为隔离环境，以模拟实际的现网环境:</p><p><img src=/images/2018_01_15_11_47_47_436x322.jpg alt=/images/2018_01_15_11_47_47_436x322.jpg></p><h3 id=镜像准备>镜像准备</h3><p>直接将镜像拷贝到内网，建立aptly虚拟机、registry
-mirror虚拟机即可。未来将对aptly虚拟机和registry虚拟机做合并操作。</p><p>基础镜像准备, 使用Ubuntu1604_base.qcow2镜像文件，做以下操作:</p><pre><code>0. qemu-system-x86_64 -net nic -net user,hostfwd=tcp::2288-:22 -hda xxxx.qcow2
-   -m 1024 --enable-kvm
-1. root密码修改
-2. root远程登录(/etc/ssh/sshd_config)
-3. /etc/hosts中添加`10.15.205.2	mirror.xxxx.com`条目，以使用registry mirror.
-4. 将免密码登录的公钥插入到操作系统中 
-5. 配置aptly的镜像服务器
-vim /etc/apt/sources.list
-deb http://10.15.205.3 xenial main
-deb http://10.15.205.3 kubernetes-xenial main
-deb [arch=amd64] http://10.15.205.3 xenial stable
-6. 导入aptly所需的签名
-cat mykey.asc | apt-key add -
-</code></pre><p>做完此操作后，保存基础镜像，创建出来相应的虚拟机。</p><p><img src=/images/2018_01_15_14_55_37_1058x179.jpg alt=/images/2018_01_15_14_55_37_1058x179.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/76/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/76/>76</a></li><li class="page-item active"><a class=page-link href=/page/77/>77</a></li><li class=page-item><a class=page-link href=/page/78/>78</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/234/>234</a></li><li class=page-item><a href=/page/78/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/234/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>重启之后查看pv/pvc/sc，均保留在磁盘上。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/16/workingtipsonk8slvm/>WorkingTipsOnk8sLVM</a></h1><span class=post-date>Jan 16, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>Preparation</h3><p>Define ip address/gateway:</p><p><img src=/images/2018_01_16_10_31_58_494x339.jpg alt=/images/2018_01_16_10_31_58_494x339.jpg></p><p>Set hostname:</p><p><img src=/images/2018_01_16_10_32_18_439x180.jpg alt=/images/2018_01_16_10_32_18_439x180.jpg></p><p>Disk Preparation:</p><p><img src=/images/2018_01_16_10_36_09_758x404.jpg alt=/images/2018_01_16_10_36_09_758x404.jpg></p><h3 id=configuration>Configuration</h3><p>In kismatic, configure like following:</p><p><img src=/images/2018_01_16_10_39_10_819x493.jpg alt=/images/2018_01_16_10_39_10_819x493.jpg></p><p>Then install kismatic as usual.</p><h3 id=helm>helm</h3><p>When in offline-mode, <code>helm repo update</code> will failed.</p><p>Aim: install monocular in cluster.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/76/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/76/>76</a></li><li class="page-item active"><a class=page-link href=/page/77/>77</a></li><li class=page-item><a class=page-link href=/page/78/>78</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/234/>234</a></li><li class=page-item><a href=/page/78/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/234/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
