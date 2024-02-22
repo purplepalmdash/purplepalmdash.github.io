@@ -1,5 +1,80 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/02/19/notesonplaywithk8s/>NotesOnPlayWithK8s</a></h1><span class=post-date>Feb 19, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>早先在2018年做了一个离线版本的playwithk8s, 主要参考了:</p><p><a href=https://labs.play-with-k8s.com/>https://labs.play-with-k8s.com/</a></p><p>以及</p><p><a href=https://training.play-with-kubernetes.com/kubernetes-workshop/>https://training.play-with-kubernetes.com/kubernetes-workshop/</a></p><p>当时还写了一系列教程并形成了一个离线部署的ISO。那个ISO前几天有同事用，反映跑不起来。看了下问题，总结如下.</p><h3 id=dns问题>dns问题</h3><p>安装完的系统中，dnsmasq不能使用，需要通过以下步骤来修正:</p><pre><code># vim /etc/systemd/resolved.conf
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/02/20/buildingpwkcd/>BuildingPWKCD</a></h1><span class=post-date>Feb 20, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=makeiso-server>MakeISO Server</h3><p>Configure via:</p><pre><code># apt-get update -y 
+# apt-get install -y vim openssh-server
+</code></pre><p>Install cubic via:</p><pre><code># apt-add-repository ppa:cubic-wizard/release
+# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
+# apt-get update -y &amp;&amp; apt-get install -y cubic
+</code></pre><h3 id=cubic-make-iso>cubic make iso</h3><p>Start cubic via:</p><p><img src=/images/2019_02_20_16_20_41_429x333.jpg alt=/images/2019_02_20_16_20_41_429x333.jpg></p><p>Create the iso project folder:</p><pre><code># mkdir ~/isoproject
+</code></pre><p>Slect the original disk image to customize:</p><p><img src=/images/2019_02_20_16_28_24_516x413.jpg alt=/images/2019_02_20_16_28_24_516x413.jpg></p><p>Cubic will copy the content from the origin folder to remote folder, this will
+takes for some time:</p><p><img src=/images/2019_02_20_16_29_11_495x357.jpg alt=/images/2019_02_20_16_29_11_495x357.jpg></p><p>In chroot terminal you could custom the cd:</p><p><img src=/images/2019_02_20_16_32_14_516x207.jpg alt=/images/2019_02_20_16_32_14_516x207.jpg></p><h3 id=cd-customize>CD customize</h3><p>Install docker/docker-compose</p><pre><code># vim /etc/apt/sources.list(Changes to 163.com)
+# apt-get install -y python-pip &amp;&amp; pip install docker-compose
+# ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+# apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# apt-key fingerprint 0EBFCD88
+# add-apt-repository \
+   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable&quot;
+# apt-get install docker-ce docker-ce-cli containerd.io
+# docker version
+</code></pre><p>The current Version is :</p><p><img src=/images/2019_02_20_16_52_47_505x133.jpg alt=/images/2019_02_20_16_52_47_505x133.jpg></p><p>Cause we are under chroot, we don&rsquo;t have server running.</p><p>We fetch the pwk ready machine&rsquo;s <code>/var/lib/docker</code>, transfer them into our
+chroot env:</p><p><img src=/images/2019_02_20_17_06_27_549x122.jpg alt=/images/2019_02_20_17_06_27_549x122.jpg></p><p>We also need golang for running the pwk environment:</p><pre><code># apt-get install -y golang
+# vim /root/.bashrc
+
+</code></pre><p>Transfer the golang environment from the pwk ready machine:</p><pre><code># ls /root
+ go/ Code/
+</code></pre><p>systemd file:</p><pre><code>root@test-Standard-PC-Q35-ICH9-2009:/etc/systemd/system# cat mynginx.service 
+[Unit]
+Description=mynginx
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a docker-nginx
+ExecStop=/usr/bin/docker stop -t 2 docker-nginx
+
+[Install]
+WantedBy=multi-user.target
+
+root@test-Standard-PC-Q35-ICH9-2009:/etc/systemd/system# cat playwithdockerblog.service 
+[Unit]
+Description=playwithdockerblog
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker-compose -f /root/Code/play-with-kubernetes.github.io/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+root@test-Standard-PC-Q35-ICH9-2009:/etc/systemd/system# cat playwithdocker.service 
+[Unit]
+Description=playwithdocker
+After=docker.service
+Requires=docker.service
+
+[Service]
+Environment=GOPATH=/root/go/
+WorkingDirectory=/root/go/src/github.com/play-with-docker/play-with-docker
+Type=idle
+# Remove old container items
+ExecStartPre=/usr/bin/docker-compose -f /root/go/src/github.com/play-with-docker/play-with-docker/docker-compose.yml down
+# Compose up
+ExecStart=/usr/bin/docker-compose -f /root/go/src/github.com/play-with-docker/play-with-docker/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>ToBeContinue, later I will change the static website content, and k8s image
+offline, then do the iso-build.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/02/19/notesonplaywithk8s/>NotesOnPlayWithK8s</a></h1><span class=post-date>Feb 19, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>早先在2018年做了一个离线版本的playwithk8s, 主要参考了:</p><p><a href=https://labs.play-with-k8s.com/>https://labs.play-with-k8s.com/</a></p><p>以及</p><p><a href=https://training.play-with-kubernetes.com/kubernetes-workshop/>https://training.play-with-kubernetes.com/kubernetes-workshop/</a></p><p>当时还写了一系列教程并形成了一个离线部署的ISO。那个ISO前几天有同事用，反映跑不起来。看了下问题，总结如下.</p><h3 id=dns问题>dns问题</h3><p>安装完的系统中，dnsmasq不能使用，需要通过以下步骤来修正:</p><pre><code># vim /etc/systemd/resolved.conf
 DNSStubListener=no
 # systemctl disable systemd-resolved.service
 # systemctl stop systemd-resolved.service
@@ -578,16 +653,4 @@ you got reply from <code>192.168.122.154</code>.</p><p>Then add the crt into you
 # docker login -u dddd -p gggg gcr.io
 # docker login -u dddd -p gggg k8s.gcr.io
 </code></pre><p>Now you can freely push/pull images from offline registry server, as if you
-are on Internet.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/01/28/tipsonhelmchartsprometheus/>TipsOnHelmChartsPrometheus</a></h1><span class=post-date>Jan 28, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=upgrade-helm>Upgrade helm</h3><p>Download the helm from github, and extracted to your system PATH, then:</p><pre><code># helm init --upgrade
-</code></pre><p>Notice in your k8s cluster your tiller will be upgraded:</p><pre><code>kube-system   tiller-deploy-68b77f4c57-dwd47                                  0/1       ContainerCreating   0          13s
-</code></pre><p>Examine the upgraded version:</p><pre><code># helm version
-Client: &amp;version.Version{SemVer:&quot;v2.12.2&quot;, GitCommit:&quot;7d2b0c73d734f6586ed222a567c5d103fed435be&quot;, GitTreeState:&quot;clean&quot;}
-Server: &amp;version.Version{SemVer:&quot;v2.12.2&quot;, GitCommit:&quot;7d2b0c73d734f6586ed222a567c5d103fed435be&quot;, GitTreeState:&quot;clean&quot;}
-</code></pre><h3 id=working-issue>Working Issue</h3><p>Using stable/prometheus-operator.</p><p>Fetch the helm/charts package via:</p><pre><code># helm fetch stable/prometheus-operator
-# ls
-prometheus-operator-1.9.0.tgz
-</code></pre><p>Deploy it on the minikube and you will get all of the images, then save it
-via:</p><pre><code>eval $(minikube docker-env)
-docker save -o prometheus-operator.tar grafana/grafana:5.4.3 quay.io/prometheus/node-exporter:v0.17.0 quay.io/coreos/prometheus-config-reloader:v0.26.0 quay.io/coreos/prometheus-operator:v0.26.0 quay.io/prometheus/alertmanager:v0.15.3 quay.io/prometheus/prometheus:v2.5.0 kiwigrid/k8s-sidecar:0.0.6 quay.io/coreos/kube-state-metrics:v1.4.0 quay.io/coreos/configmap-reload:v0.0.1
-xz prometheus-operator.tar
-</code></pre><p>Then we could write the offline scripts for deploying this helm/charts.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/58/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/58/>58</a></li><li class="page-item active"><a class=page-link href=/page/59/>59</a></li><li class=page-item><a class=page-link href=/page/60/>60</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/234/>234</a></li><li class=page-item><a href=/page/60/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/234/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+are on Internet.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/58/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/58/>58</a></li><li class="page-item active"><a class=page-link href=/page/59/>59</a></li><li class=page-item><a class=page-link href=/page/60/>60</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/234/>234</a></li><li class=page-item><a href=/page/60/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/234/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
