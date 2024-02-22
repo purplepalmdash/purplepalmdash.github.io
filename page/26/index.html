@@ -1,5 +1,20 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/09/20/workingtipsonwaydroid/>WorkingTipsonWayDroid</a></h1><span class=post-date>Sep 20, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>Enable <code>libndk_translation</code> in waydroid.</p><h3 id=steps>Steps</h3><p>Disable the <code>waydroid-container</code> and reboot the machine:</p><pre><code>systemctl disable waydroid-container
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/09/22/workingtipsonblissbuilding/>WorkingTipsOnBlissBuilding</a></h1><span class=post-date>Sep 22, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install ubuntu21.04 live server(90 Core, 16G Memory, 1T SSD)</p><pre><code># sudo apt-get update -y
+# sudo apt-get upgrade -y
+# sudo apt-get install -y nethogs iotop
+# sudo add-apt-repository ppa:openjdk/ppa
+# sudo apt-get update &amp;&amp; upgrade
+# sudo apt-get install openjdk-8-jdk
+# sudo apt-get install -y repo pypy-enum34
+# sudo apt-get install git gnupg flex bison maven gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses-dev x11proto-core-dev libx11-dev lib32z1-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip squashfs-tools libssl-dev ninja-build lunzip syslinux syslinux-utils gettext genisoimage gettext bc xorriso libncurses5 xmlstarlet build-essential git imagemagick lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libxml2 lzop pngcrush rsync schedtool  python3-mako libelf-dev
+# sudo apt-get install -y shadowsocks-libev libevent-dev
+Install sslocal configuration and redsocks for syncing source code
+# git config --global user.email &quot;xxx@gmail.com&quot;
+#  git config --global user.name &quot;xxx&quot;
+</code></pre><p>Repo sync(This will take so long~long~long time, depending on your network speed):</p><pre><code>$ mkdir ~/BuildBlissV14.x &amp;&amp; cd ~/BuildBlissV14.x
+$ repo init -u https://github.com/BlissRoms-x86/manifest.git -b r11-r36
+$ repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/09/20/workingtipsonwaydroid/>WorkingTipsonWayDroid</a></h1><span class=post-date>Sep 20, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>Enable <code>libndk_translation</code> in waydroid.</p><h3 id=steps>Steps</h3><p>Disable the <code>waydroid-container</code> and reboot the machine:</p><pre><code>systemctl disable waydroid-container
 reboot
 </code></pre><p>Now you could make a backup for your origin <code>system.img</code> and <code>vendor.img</code>
 file:</p><pre><code> cp /var/lib/waydroid/images/system.img /root 
@@ -252,78 +267,4 @@ lxc.init.cmd=/init
 # adb push ~/F-Droid.apk
 # adb push ..... ....
 </code></pre><p>Stop the intance:</p><pre><code># lxc -stop -n android -k
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/08/31/turnrpiintoap/>TurnRPIIntoAP</a></h1><span class=post-date>Aug 31, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>将闲置的RPI变为一个AP,有线转无线，用于快速连接网络开发。</p><h3 id=准备材料>准备材料</h3><p>下载<code>2021-05-07-raspios-buster-armhf-lite.zip</code>， 解压并写入SD卡，之后用SD卡启动RPI3, 默认用户名及密码是<code>pi/raspberry</code>, 写入后使用<code>rpi-config</code>扩充文件系统：</p><pre><code>pi@raspberrypi:~ $ uname -a
-Linux raspberrypi 5.10.52-v7+ #1441 SMP Tue Aug 3 18:10:09 BST 2021 armv7l GNU/Linux
-pi@raspberrypi:~ $ cat /etc/issue
-Raspbian GNU/Linux 10 \n \l
-</code></pre><h3 id=步骤>步骤</h3><p>更改为tsinghua的源以加速:</p><pre><code># 编辑 `/etc/apt/sources.list` 文件，删除原文件所有内容，用以下内容取代：
-deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi
-deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi
-
-# 编辑 `/etc/apt/sources.list.d/raspi.list` 文件，删除原文件所有内容，用以下内容取代：
-deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ buster main ui
-</code></pre><p>下载hostapd及dhcp服务器:</p><pre><code># sudo apt-get update -y
-# sudo apt-get upgrade -y
-# sudo apt-get install hostapd isc-dhcp-server iptables-persistent
-</code></pre><p>配置DHCP服务器:</p><pre><code>$ sudo vim /etc/dhcp/dhcpd.conf
-</code></pre><p>找到以下行(这里需要注释掉默认的选项):</p><pre><code>option domain-name &quot;example.org&quot;;
-option domain-name-servers ns1.example.org, ns2.example.org;
-</code></pre><p>替换为:</p><pre><code>#option domain-name &quot;example.org&quot;;
-#option domain-name-servers ns1.example.org, ns2.example.org;
-</code></pre><p>找到以下行(这里是激活authoritative选项):</p><pre><code># If this DHCP server is the official DHCP server for the local
-# network, the authoritative directive should be uncommented.
-#authoritative;
-</code></pre><p>替换为:</p><pre><code># If this DHCP server is the official DHCP server for the local
-# network, the authoritative directive should be uncommented.
-authoritative;
-</code></pre><p>在文件的末尾添加以下定义:</p><pre><code>subnet 172.16.42.0 netmask 255.255.255.0 {
-	range 172.16.42.10 172.16.42.50;
-	option broadcast-address 172.16.42.255;
-	option routers 172.16.42.1;
-	default-lease-time 600;
-	max-lease-time 7200;
-	option domain-name &quot;local&quot;;
-	option domain-name-servers 8.8.8.8, 8.8.4.4;
-}
-</code></pre><p>现在保存后退出。<br>现在编辑<code>isc-dhcp-server</code>的默认定义文件，配置其监听的端口:</p><pre><code># sudo vim /etc/default/isc-dhcp-server
-.....
-INTERFACESv4=&quot;wlan0&quot;
-INTERFACESv6=&quot;wlan0&quot;
-</code></pre><p>编辑wlan0的静态地址(这里我们顺便设置了eth0的静态地址):</p><pre><code># sudo vim /etc/network/interfaces
-auto wlan0
-iface wlan0 inet static
-  address 172.16.42.1
-  netmask 255.255.255.0
-auto eth0
-iface eth0 inet static
-  address 192.168.1.117
-  netmask 255.255.255.0
-  gateway 192.168.1.33
-</code></pre><p>配置hostapd:</p><pre><code># sudo vim /etc/hostapd/hostapd.conf
-country_code=US
-interface=wlan0
-driver=nl80211
-ssid=Pi_AP
-country_code=US
-hw_mode=g
-channel=6
-macaddr_acl=0
-auth_algs=1
-ignore_broadcast_ssid=0
-wpa=2
-wpa_passphrase=xxxxxxxxxxxx
-wpa_key_mgmt=WPA-PSK
-wpa_pairwise=CCMP
-wpa_group_rekey=86400
-ieee80211n=1
-wme_enabled=1
-</code></pre><p>配置hostapd的默认配置文件:</p><pre><code># sudo vim /etc/default/hostapd
-Find the line #DAEMON_CONF=&quot;&quot; and edit it so it says DAEMON_CONF=&quot;/etc/hostapd/hostapd.conf&quot;
-</code></pre><p>配置NAT（网络地址转换) :</p><pre><code># sudo vim /etc/sysctl.conf
-
-pi@raspberrypi:~ $ cat /etc/sysctl.conf  | grep ip_forward
-net.ipv4.ip_forward=1
-</code></pre><p>最后保存iptables:</p><pre><code>sudo iptables -t nat -S
-sudo iptables -S
-sudo sh -c &quot;iptables-save &gt; /etc/iptables/rules.v4&quot;
-</code></pre><p>iptables-persistent会在启动的时候自动载入保存的规则。</p><p>如此则可以将RPi3作为一个无线接入点来使用。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/25/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/25/>25</a></li><li class="page-item active"><a class=page-link href=/page/26/>26</a></li><li class=page-item><a class=page-link href=/page/27/>27</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/234/>234</a></li><li class=page-item><a href=/page/27/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/234/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/25/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/25/>25</a></li><li class="page-item active"><a class=page-link href=/page/26/>26</a></li><li class=page-item><a class=page-link href=/page/27/>27</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/234/>234</a></li><li class=page-item><a href=/page/27/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/234/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

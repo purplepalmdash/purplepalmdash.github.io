@@ -1,5 +1,38 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/02/14/ovirt-hyperconverged-inair-gapped-environment/>Ovirt HyperConverged InAir-Gapped Environment</a></h1><span class=post-date>Feb 14, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=0-aim>0. AIM</h3><p>For deploying Ovirt HyperConverged in air-gapped environment.<br>For some companies, their inner environment is air-gapped, e.g OA network. In
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/02/20/re-organize-my-blog-structure/>Re Organize My Blog Structure</a></h1><span class=post-date>Feb 20, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Recently I find it&rsquo;s necessary to re-orgnize my blog structure, for past 8
+years I&rsquo;ve written nearly 1000 articles in this blog, they covered so many
+technologies, from embedded system to cloud-computing, also with my life&rsquo;s
+blog. So I simply use <code>Technology</code> and <code>Life</code> for classifying them. Also I
+have to adjust my websiste&rsquo;s compatibility to newest hugo(v0.64.0), previously
+I use an old version(v0.31.0) for building the whole website. Following
+are the steps for doing such a complicated task.</p><h3 id=1-structure-re-orgnization>1. Structure Re-Orgnization</h3><p>Replace all of the <code>md</code> files and <code>markdown</code> files&rsquo;s <code>categories</code>:</p><pre><code>$ cd /home/xxxxx/Code/purplepalmxxxx.github.io/src/content/post
+$ find . | xargs -I % sed -i 's/categories\ =.*/categories\ =\ [&quot;Technology&quot;]/g' %
+$ find . | xargs -I % sed -i 's/categories:.*/categories:\ [&quot;Technology&quot;]/g' %
+</code></pre><p>Some of the old markdown files didn&rsquo;t have categories, manually add them:</p><pre><code>$ sed -i '2s/$/categories:\ [&quot;Technology&quot;]/'  2013-07-*
+$ sed -i '2s/$/categories:\ [&quot;Technology&quot;]/'  2013-08-*
+$ sed -i '2s/$/categories:\ [&quot;Technology&quot;]/'  2013-09-*
+$ sed -i '2s/$/categories:\ [&quot;Technology&quot;]/'  2013-10-*
+$ sed -i '2s/$/categories:\ [&quot;Technology&quot;]/'  2013-11-0*
+$ sed -i '2s/$/categories:\ [&quot;Technology&quot;]/'  2013-11-11*
+$ sed -i '2s/$/categories:\ [&quot;Technology&quot;]/'  2013-11-12*
+</code></pre><p>By-now all of the posts are <code>Technology</code> related, manually change some posts
+to <code>LinuxTips</code> and <code>Life</code>.</p><h3 id=2-upgrade-hugo>2. Upgrade hugo</h3><p>Download the newest hugo version from official site and put it in binary
+directory:</p><pre><code>$ cd binaries 
+$ ls
+hugo  hugo_v031
+$ ./hugo version
+Hugo Static Site Generator v0.64.1/extended linux/amd64 BuildDate: unknown
+</code></pre><p>Adjust some for generate properly(hyde-a theme adjustment):</p><pre><code>$ rm -f
+/home/xxxx/Code/purplepalmxxxx.github.io/src/themes/hyde-a/layouts/post/post.html
+$ vim
+/home/xxxx/Code/purplepalmxxxx.github.io/src/themes/hyde-a/layouts/index.html 
+{{ partial &quot;head.html&quot; . }}
+&lt;div class=&quot;content container&quot;&gt;
+  &lt;div class=&quot;posts&quot;&gt;
++++    {{ $paginator := .Paginate (where .Site.RegularPages &quot;Type&quot; &quot;in&quot; site.Params.mainSections) }}
+    {{ range $paginator.Pages }}
+</code></pre><p>Now commit all of the changes, the ci/cd for blogging will automatically use
+the newest version of hugo for building-out the static website.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/02/14/ovirt-hyperconverged-inair-gapped-environment/>Ovirt HyperConverged InAir-Gapped Environment</a></h1><span class=post-date>Feb 14, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=0-aim>0. AIM</h3><p>For deploying Ovirt HyperConverged in air-gapped environment.<br>For some companies, their inner environment is air-gapped, e.g OA network. In
 such air-gapped environment we could only use ISO and take some packages in
 cd-roms for taking into their intra-network. How to deploy a ovirt drivened
 private cloud in air-gapped room, I will take some experiment and try the
@@ -304,39 +337,4 @@ networks:
 
 </code></pre><p>For installing apps:</p><pre><code>sudo docker cp Client.php fc18391f0a0a:/var/www/html/lib/private/Http/Client/Client.php
 Timeout from 30 to 300, then you could install apps. 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/13/harborarm64issue/>HarborArm64Issue</a></h1><span class=post-date>Jan 13, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=issue>Issue</h3><p>harbor-log instance launched first, but it complains:</p><pre><code>You are required to change your password immediately (password expired)
-</code></pre><p>This is because we build the container images only have 90 days limitation.</p><h3 id=solution>Solution</h3><p>Rebuild all of the harbor images:</p><pre><code>root@node:~/harbor# cat harbor-core/Dockerfile 
-FROM f9e2034f3a6d
-COPY login.defs /etc/login.defs
-COPY shadow /etc/shadow
-root@node:~/harbor# cat harbor-core/shadow 
-root:x:18074:0:99999:7:::
-bin:x:18074:0:99999:7:::
-daemon:x:18074:0:99999:7:::
-messagebus:x:18074:0:99999:7:::
-systemd-bus-proxy:x:18074:0:99999:7:::
-systemd-journal-gateway:x:18074:0:99999:7:::
-systemd-journal-remote:x:18074:0:99999:7:::
-systemd-journal-upload:x:18074:0:99999:7:::
-systemd-network:x:18074:0:99999:7:::
-systemd-resolve:x:18074:0:99999:7:::
-systemd-timesync:x:18074:0:99999:7:::
-nobody:x:18074:0:99999:7:::
-syslog:!:18074::::::
-
-</code></pre><p>Then we build the image via following command:</p><pre><code># docker build -t goharbor/harbor-db:1.7.0-arm64 harbor-db/
-</code></pre><p>We have to build all of the images:</p><pre><code>  docker build -t goharbor/chartmuseum-photon:v0.7.1-1.7.0-arm64 chartmuseum-photon/
-  docker build -t goharbor/redis-photon:1.7.0-arm64 redis-photon/
-  docker build -t goharbor/clair-photon:v2.0.7-1.7.0-arm64 clair-photon/
-  docker build -t  goharbor/notary-server-photon:v0.6.1-1.7.0-arm64 notary-server-photon/
-  docker build -t goharbor/notary-signer-photon:v0.6.1-1.7.0-arm64 notary-signer-photon
-  docker build -t goharbor/harbor-registryctl:1.7.0-arm64 registry-photon
-  docker build -t goharbor/registry-photon:v2.6.2-1.7.0-arm64 registry-photon/
-  docker build -t goharbor/harbor-registryctl:1.7.0-arm64 harbor-registryctl/
-  docker build -t goharbor/nginx-photon:1.7.0-arm64 nginx-photon/
-  docker build -t goharbor/harbor-jobservice:1.7.0-arm64 harbor-jobservice/
-  docker build -t goharbor/harbor-core:1.7.0-arm64 harbor-core/
-  docker build -t goharbor/harbor-portal:1.7.0-arm64 harbor-portal/
-  docker build -t goharbor/harbor-adminserver:1.7.0-arm64 harbor-adminserver/
-  docker build -t goharbor/harbor-db:1.7.0-arm64 harbor-db/
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/45/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/45/>45</a></li><li class="page-item active"><a class=page-link href=/page/46/>46</a></li><li class=page-item><a class=page-link href=/page/47/>47</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/234/>234</a></li><li class=page-item><a href=/page/47/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/234/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

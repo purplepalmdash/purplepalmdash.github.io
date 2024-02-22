@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dash</title><link>http://purplepalmdash.github.io/</link><description>Recent content on Dash</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 22 Feb 2024 19:12:36 +0800</lastBuildDate><atom:link href="http://purplepalmdash.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>WorkingTipsForXenVmExport</title><link>http://purplepalmdash.github.io/blog/2024/02/22/workingtipsforxenvmexport/</link><pubDate>Thu, 22 Feb 2024 19:12:36 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/02/22/workingtipsforxenvmexport/</guid><description>在XenServer虚机实例中，删除1中所示意的两个软件， 将C:\windows\system32\drivers\xen.sys删除或者转移目录:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dash</title><link>http://purplepalmdash.github.io/</link><description>Recent content on Dash</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 22 Feb 2024 19:46:22 +0800</lastBuildDate><atom:link href="http://purplepalmdash.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>TestVirtio</title><link>http://purplepalmdash.github.io/blog/2024/02/22/testvirtio/</link><pubDate>Thu, 22 Feb 2024 19:46:22 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/02/22/testvirtio/</guid><description>创建:
+qemu-img create -f qcow2 testvirtio.qcow2 80G 挂载:
+进入SATA启动的win10系统后， 磁盘管理中可看(磁盘1, 对应F盘):
+关机，将SATA盘切换为virtio.
+切换前:
+添加:
+添加后:
+更换启动顺序:
+启动蓝屏:
+设备管理器中确实有virtio的驱动，但是启动时切换会蓝屏:</description></item><item><title>WorkingTipsForXenVmExport</title><link>http://purplepalmdash.github.io/blog/2024/02/22/workingtipsforxenvmexport/</link><pubDate>Thu, 22 Feb 2024 19:12:36 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/02/22/workingtipsforxenvmexport/</guid><description>在XenServer虚机实例中，删除1中所示意的两个软件， 将C:\windows\system32\drivers\xen.sys删除或者转移目录:
 从Xencenter导出镜像文件, 可通过XenCenter或者命令行导出，导出格式为xva格式.
 编译xva-img：
 $ git clone https://github.com/eriklax/xva-img.git $ cd xva-img/ $ sudo apt install -y cmake libxxhash-dev $ cmake . $ sudo make install $ which xva-img /usr/local/bin/xva-img 解压xva文件并进行转换:
