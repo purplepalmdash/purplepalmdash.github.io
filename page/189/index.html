@@ -1,5 +1,157 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/05/10/write-python-weather-app-on-heroku-6/>Write Python Weather APP on Heroku(6)</a></h1><span class=post-date>May 10, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=risk>Risk</h3><p>On Google App Engine it&rsquo;s very convinient to setup a crontab task, while in heroku setting up a crontab task will occupy the material, thus will use another dyno, each dyno will cost $30/month. For avoiding this, we will re-design our Weather App.<br>Following is the detailed explanation on heroku&rsquo;s dyno:<br>Heroku allows you to run one free dyno (or actually they give you 720 free dyno hours per month, which corresponds to one dyno constantly running). This means that if you choose to run one web dyno and one worker dyno (celery in this case), you&rsquo;ll be charged for 720 dyno hours. However, if you have a very small project, or your&rsquo;re working on a project that hasn&rsquo;t been released yet, you can avoid this cost.<br>A heroku dyno is like a process, and in this process you can actually spawn new processes, as long as you stay within the limit of 512 mb ram (the process also only has one CPU core). Heroku suggests that you use foreman when you run your application on your local machine, but you can actually use foreman on heroku, in order to run multiple processes in a single dyno.<br>On Heroku, we don’t have physical machines; in fact there isn’t the concept of “machine” at all. Instead, Heroku has Dynos, which are described as “lightweight containers” for UNIX processes. From their documentation:</p><p>[A Dyno] can run any command available in its default environment combined with your app’s slug</p><h3 id=solution>Solution</h3><p>Celery<a href=www.celeryproject.org>www.celeryproject.org</a><br>or<br>Honcho<a href=https://github.com/nickstenning/honcho>https://github.com/nickstenning/honcho</a><br>We will try Honcho first, because it&rsquo;s based on python, so won&rsquo;t affect our code format.</p><h4 id=celery-way>Celery Way</h4><p>Install redis and celery:</p><pre><code>pip install redis celery
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/05/10/write-python-weather-app-on-heroku-5/>Write Python Weather APP on Heroku(5)</a></h1><span class=post-date>May 10, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>In fact this is a migration from sqlite3 to postgresql.</p><h3 id=view-the-historical-sqlite3>View the historical sqlite3</h3><p>We will refer to our own design of database. First fetch the data file, this is a sqlite3 file, so we use sqlite3 to view its structure.</p><pre><code>$ sqlite3  
+SQLite version 3.8.4.3 2014-04-03 16:53:12
+Enter &quot;.help&quot; for usage hints.
+Connected to a transient in-memory database.
+Use &quot;.open FILENAME&quot; to reopen on a persistent database.
+sqlite&gt; .open ./weather.db
+sqlite&gt; .tables
+foo
+sqlite&gt; .schema foo
+CREATE TABLE foo (d_temper integer, d_humi integer, d_pm10 integer, d_pm25 real, d_time timestamp);
+
+</code></pre><p>Although sqlite3 is supported on heroku, we&rsquo;d better use heroku&rsquo;s suggestion, to use postgre for storing out database.</p><h3 id=create-database-in-postgres>Create Database In Postgres</h3><p>####Datatime selection:<br>Postgres provides a very fantanstic way for handling the datatime, it supports the timezone, comparing to GAE&rsquo;s database, this feature will let us get the current time based on timezone. So we did the following tests:</p><pre><code># CREATE TABLE my_tbl (
+mylocaldb(# my_timestamp TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+mylocaldb(# CHECK(EXTRACT(TIMEZONE FROM my_timestamp) = '0')
+mylocaldb(# );
+CREATE TABLE
+mylocaldb=# \dt my_tbl
+        List of relations
+ Schema |  Name  | Type  | Owner 
+--------+--------+-------+-------
+ public | my_tbl | table | Trusty
+(1 row)
+
+</code></pre><p>When we want to insert the datatime into table &lsquo;my_tbl&rsquo;, simply do following:</p><pre><code>mylocaldb=# SET timezone = 'UTC';
+SET
+mylocaldb=# INSERT INTO my_tbl (my_timestamp) VALUES (NOW());
+INSERT 0 1
+
+</code></pre><p>And for querying out the inserted records, we do following:</p><pre><code>mylocaldb=# select * from public.my_tbl
+;
+         my_timestamp          
+-------------------------------
+ 2014-05-10 01:39:52.87532+00
+ 2014-05-10 01:42:44.130269+00
+(2 rows)
+
+mylocaldb=# SET timezone='Asia/Shanghai';
+SET
+mylocaldb=# select * from public.my_tbl
+mylocaldb-# ;
+         my_timestamp          
+-------------------------------
+ 2014-05-10 09:39:52.87532+08
+ 2014-05-10 09:42:44.130269+08
+(2 rows)
+
+mylocaldb=# SET timezone='America/Los_Angeles';
+SET
+mylocaldb=# select * from public.my_tbl;
+         my_timestamp          
+-------------------------------
+ 2014-05-09 18:39:52.87532-07
+ 2014-05-09 18:42:44.130269-07
+(2 rows)
+
+</code></pre><p>We can see the output formats depends on our &ldquo;timezone&rdquo; value.</p><h4 id=select-other-data-formats>Select Other Data Formats</h4><p>We listed following table for describing the Data we inserted:<br>Timestamp integer integer integer integer<br>Insert_Time Temperature Humidity PMTen PMTwoFive</p><p>Thus the sql sentense is as following:</p><pre><code>mylocaldb=# CREATE TABLE weather (
+mylocaldb(# my_timestamp TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+mylocaldb(# Temperature ^C
+mylocaldb=# CREATE TABLE weather (
+mylocaldb(# Insert_Time TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+mylocaldb(# Temperature integer,
+mylocaldb(# Humidity integer,
+mylocaldb(# PMTen integer,
+mylocaldb(# PMTwoFive integer,
+mylocaldb(#  CHECK(EXTRACT(TIMEZONE FROM Insert_Time) = '0'));
+
+</code></pre><p>Check the tables:</p><pre><code>mylocaldb=# \dt
+        List of relations
+ Schema |  Name   | Type  | Owner 
+--------+---------+-------+-------
+ public | my_tbl  | table | Trusty
+ public | user    | table | Trusty
+ public | weather | table | Trusty
+(3 rows)
+
+</code></pre><p>Insert one record:</p><pre><code>mylocaldb=# INSERT INTO weather (Insert_Time, Temperature, Humidity, PMTen, PMTwoFive) VALUES(NOW(), 25, 80, 150, 75);
+INSERT 0 1
+
+</code></pre><p>Displaying the inserted record:</p><pre><code>mylocaldb=# SET timezone='Asia/Shanghai';
+SET
+mylocaldb=# select * from public.weather;
+          insert_time          | temperature | humidity | pmten | pmtwofive 
+-------------------------------+-------------+----------+-------+-----------
+ 2014-05-10 10:38:27.276043+08 |          25 |       80 |   150 |        75
+(1 row)
+
+</code></pre><h4 id=database-operation>Database Operation</h4><p>We need to create just once database, So this function should be Check_Or_Create().<br>We need to insert records, so Insert_Record() should be written.<br>Other Operation, modification or delete shouldn&rsquo;t care at the very beginning.<br>We will use a new file for recording all of the function.</p><p>The code for Create and Insert record into weather table is listed as following:</p><pre><code>from sqlalchemy import create_engine
+from sqlalchemy import MetaData, Column, Table, ForeignKey
+from sqlalchemy import Integer, String, DateTime
+import datetime
+
+# Create the engine for connecting the local database
+# How to connect the remote engine, heroku postgres? 
+# Yes, it's possible. The DATABASE_URL environment variable provided by heroku fits perfectly as argument for create_engine. Behind the scene, it's a postgresql database, which is perfectly handled by sqlalchemy.
+# 
+# The way to do it may vary depending on the framework you use, but there shouldn't be any difficulty.
+
+engine = create_engine('postgresql+psycopg2://Trusty:@localhost:5432/mylocaldb',echo=True)
+metadata=MetaData(bind=engine)
+
+# Definition of the weather table
+weather_table=Table('weather',metadata,
+	Column('Insert_Time', DateTime(timezone=True),primary_key=True),
+	Column('Temperature', Integer),
+	Column('Humidity', Integer),
+	Column('PmTen', Integer),
+	Column('PmTwoFive', Integer),
+)
+
+# Create the table in mylocaldb
+metadata.create_all(checkfirst=True)
+
+# The actual SQL Language
+#CREATE TABLE weather (
+#	&quot;Insert_Time&quot; TIMESTAMP WITH TIME ZONE NOT NULL, 
+#	&quot;Temperature&quot; INTEGER, 
+#	&quot;Humidity&quot; INTEGER, 
+#	&quot;PmTen&quot; INTEGER, 
+#	&quot;PmTwoFive&quot; INTEGER, 
+#	PRIMARY KEY (&quot;Insert_Time&quot;)
+#)
+
+# mylocaldb=# select * from public.weather;
+#  Insert_Time | Temperature | Humidity | PmTen | PmTwoFive 
+# -------------+-------------+----------+-------+-----------
+# (0 rows)
+
+# Record Insertion
+# First generate an insertion sentense:
+ins = weather_table.insert()
+#&gt;&gt;&gt; str(ins)
+#'INSERT INTO weather (&quot;Insert_Time&quot;, &quot;Temperature&quot;, &quot;Humidity&quot;, &quot;PmTen&quot;, &quot;PmTwoFive&quot;) VALUES (%(Insert_Time)s, %(Temperature)s, %(Humidity)s, %(PmTen)s, %(PmTwoFive)s)'
+
+ins = weather_table.insert().values(Insert_Time=datetime.datetime.utcnow(), Temperature=25, Humidity=75, PmTen=100, PmTwoFive=55)
+
+#&gt;&gt;&gt; str(ins)
+#'INSERT INTO weather (&quot;Insert_Time&quot;, &quot;Temperature&quot;, &quot;Humidity&quot;, &quot;PmTen&quot;, &quot;PmTwoFive&quot;) VALUES (%(Insert_Time)s, %(Temperature)s, %(Humidity)s, %(PmTen)s, %(PmTwoFive)s)'
+#
+#&gt;&gt;&gt; ins.compile().params
+#{'PmTen': 100, 'PmTwoFive': 55, 'Temperature': 25, 'Insert_Time': datetime.datetime(2014, 5, 10, 5, 58, 21, 677234), 'Humidity': 75}
+
+# Connect to engine and execute. 
+conn = engine.connect()
+# &gt;&gt;&gt; conn
+# &lt;sqlalchemy.engine.base.Connection object at 0x2715890&gt;
+result = conn.execute(ins)
+# View result in psql
+# mylocaldb=# select * from public.weather;
+#           Insert_Time          | Temperature | Humidity | PmTen | PmTwoFive 
+# -------------------------------+-------------+----------+-------+-----------
+#  2014-05-10 05:58:21.677234+08 |          25 |       75 |   100 |        55
+
+</code></pre><p>The critical functions has been pointed out in the above python file. Now we will consider how to run these functions at background. This will lead to next topic, &ldquo;Run multiple process in a single Heroku dyno&rdquo;.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/05/10/write-python-weather-app-on-heroku-6/>Write Python Weather APP on Heroku(6)</a></h1><span class=post-date>May 10, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=risk>Risk</h3><p>On Google App Engine it&rsquo;s very convinient to setup a crontab task, while in heroku setting up a crontab task will occupy the material, thus will use another dyno, each dyno will cost $30/month. For avoiding this, we will re-design our Weather App.<br>Following is the detailed explanation on heroku&rsquo;s dyno:<br>Heroku allows you to run one free dyno (or actually they give you 720 free dyno hours per month, which corresponds to one dyno constantly running). This means that if you choose to run one web dyno and one worker dyno (celery in this case), you&rsquo;ll be charged for 720 dyno hours. However, if you have a very small project, or your&rsquo;re working on a project that hasn&rsquo;t been released yet, you can avoid this cost.<br>A heroku dyno is like a process, and in this process you can actually spawn new processes, as long as you stay within the limit of 512 mb ram (the process also only has one CPU core). Heroku suggests that you use foreman when you run your application on your local machine, but you can actually use foreman on heroku, in order to run multiple processes in a single dyno.<br>On Heroku, we don’t have physical machines; in fact there isn’t the concept of “machine” at all. Instead, Heroku has Dynos, which are described as “lightweight containers” for UNIX processes. From their documentation:</p><p>[A Dyno] can run any command available in its default environment combined with your app’s slug</p><h3 id=solution>Solution</h3><p>Celery<a href=www.celeryproject.org>www.celeryproject.org</a><br>or<br>Honcho<a href=https://github.com/nickstenning/honcho>https://github.com/nickstenning/honcho</a><br>We will try Honcho first, because it&rsquo;s based on python, so won&rsquo;t affect our code format.</p><h4 id=celery-way>Celery Way</h4><p>Install redis and celery:</p><pre><code>pip install redis celery
 
 </code></pre><p>Remember to use <code>pip freeze</code> to update the requirement.txt file.<br>We should also enable the RedisToGo plugin, install it via CLI:</p><pre><code>$ heroku addons:add rediscloud
 
@@ -326,45 +478,4 @@ d47ena4men35jn=&gt; SELECT * FROM public.user;
   1 | John Doe | john.doe@example.com
 (1 row)
 
-</code></pre><p>We can use python&rsquo;s interface for add/delete records, drop tables, etc.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/05/09/write-python-weather-app-on-heroku-4/>Write Python Weather APP on Heroku(4)</a></h1><span class=post-date>May 9, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=local-database-sync>Local Database Sync</h3><p>First fetch the remote database to localdb via following command:</p><pre><code>$ heroku pg:pull DATABASE_URL mylocaldb --app  python-weather-app
-
-</code></pre><p>This command will pull down your database down and create a copy version locally. You can easily view all of the database via psql mylocaldb.</p><p>As root, edit following files:</p><pre><code># pwd
-/var/lib/postgres/data
-# vim postgresql.conf
-listen_addresses = 'localhost'		# what IP address(es) to listen on;
-					# comma-separated list of addresses;
-					# defaults to 'localhost'; use '*' for all
-					# (change requires restart)
-port = 5432				# (change requires restart)
-# vim pb_hba.conf
-# IPv4 local connections:
-host    all             all             127.0.0.1/32            trust
-host    all             all             127.0.0.1/32            md5
-
-</code></pre><p>After editing, save the file and restart the postgresql service.</p><h3 id=connecting-to-localdatabase>Connecting to LocalDatabase</h3><p>Following shows how to add/query the records. Now your environment could be totally debugged locally.</p><pre><code>&gt;&gt;&gt; import psycopg2
-&gt;&gt;&gt; psycopg2.connect(database=&quot;mylocaldb&quot;,user=&quot;Trusty&quot;,password=&quot;&quot;,host=&quot;127.0.0.1&quot;,port=&quot;5432&quot;)
-&lt;connection object at 0x30f0cd0; dsn: 'dbname=mylocaldb user=Trusty password=xx host=127.0.0.1 port=5432', closed: 0&gt;
-&gt;&gt;&gt; db_conn = 'postgresql+psycopg2://Trusty:@localhost/mylocaldb'
-&gt;&gt;&gt; app = Flask(__name__) 
-&gt;&gt;&gt; app.config['SQLALCHEMY_DATABASE_URI'] = db_conn
-&gt;&gt;&gt; db = SQLAlchemy(app)
-&gt;&gt;&gt; db.create_all()
-&gt;&gt;&gt; class User(db.Model):
-...     id = db.Column(db.Integer, primary_key=True)
-...     name = db.Column(db.String(80))
-...     email = db.Column(db.String(120), unique=True)
-...     def __init__(self, name, email):
-...         self.name = name
-...         self.email = email
-...     def __repr__(self):
-...         return '&lt;Name %r&gt;' % self.name
-... 
-&gt;&gt;&gt; user = User('John Doe', 'john.doe@example.com')
-&gt;&gt;&gt; all_users=User.query.all()
-&gt;&gt;&gt; print all_users
-[&lt;Name u'John Doe'&gt;]
-&gt;&gt;&gt; user1 = User('Jim Green', 'jim.green@english.com')
-&gt;&gt;&gt; db.session.add(user1)
-&gt;&gt;&gt; db.session.commit()
-
-</code></pre><p>In genhtml.py we need to do corresponding changes in order to enable the local database.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/188/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/188/>188</a></li><li class="page-item active"><a class=page-link href=/page/189/>189</a></li><li class=page-item><a class=page-link href=/page/190/>190</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/234/>234</a></li><li class=page-item><a href=/page/190/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/234/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>We can use python&rsquo;s interface for add/delete records, drop tables, etc.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/188/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/188/>188</a></li><li class="page-item active"><a class=page-link href=/page/189/>189</a></li><li class=page-item><a class=page-link href=/page/190/>190</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/190/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
