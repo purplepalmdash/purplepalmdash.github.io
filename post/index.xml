@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Dash</title><link>http://purplepalmdash.github.io/post/</link><description>Recent content in Posts on Dash</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 26 Feb 2024 11:11:14 +0800</lastBuildDate><atom:link href="http://purplepalmdash.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>WorkingTipsOnNvidiaPassthrough3050</title><link>http://purplepalmdash.github.io/blog/2024/02/26/workingtipsonnvidiapassthrough3050/</link><pubDate>Mon, 26 Feb 2024 11:11:14 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/02/26/workingtipsonnvidiapassthrough3050/</guid><description>Edit the grub items:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Dash</title><link>http://purplepalmdash.github.io/post/</link><description>Recent content in Posts on Dash</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 27 Feb 2024 08:50:42 +0800</lastBuildDate><atom:link href="http://purplepalmdash.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>QuicklyDumpAMI</title><link>http://purplepalmdash.github.io/blog/2024/02/27/quicklydumpami/</link><pubDate>Tue, 27 Feb 2024 08:50:42 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/02/27/quicklydumpami/</guid><description>win10 Quickstart Quickly partition:
+Like following layout:
+Insert Cloudfirmware flash disk , copy the files:
+Download the AMI FIRMWARE UPDATE(AFU) FROM:
+https://www.ami.com/bios-uefi-utilities/
+Click save to save the current rom:
+View the result:
+extract files Using UBU_v1.79.17:
+put afuwin.rom into this folder:
+Wait util scanning finished:
+Enter next step and Press 2:
+Press S for share this:
+Get the IntelGopDriver.efi:
+Extract using edk2-BaseTools:
+EfiRom.exe -f 0x8086 -i 0x46d1 -e IntelGopDriver.efi pve configuration cd /etc/apt cp sources.</description></item><item><title>WorkingTipsOnNvidiaPassthrough3050</title><link>http://purplepalmdash.github.io/blog/2024/02/26/workingtipsonnvidiapassthrough3050/</link><pubDate>Mon, 26 Feb 2024 11:11:14 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/02/26/workingtipsonnvidiapassthrough3050/</guid><description>Edit the grub items:
 # vim /etc/default/grub ...... GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot;amd_iommu=on iommu=pt kvm.ignore_msrs=1 video=efifb:off&amp;quot; ...... # update-grub2 &amp;amp;&amp;amp; reboot update the initramfs:
 # vim /etc/initramfs-tools/modules vfio vfio_iommu_type1 vfio_pci vfio_virqfd # update-initramfs -u -k all Download the nvflash, and them dump the vbios:
 $ sudo ./nvflash --save vbios.rom patch the vbios.rom:
