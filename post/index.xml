@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Dash</title><link>http://purplepalmdash.github.io/post/</link><description>Recent content in Posts on Dash</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 27 Feb 2024 08:50:42 +0800</lastBuildDate><atom:link href="http://purplepalmdash.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>QuicklyDumpAMI</title><link>http://purplepalmdash.github.io/blog/2024/02/27/quicklydumpami/</link><pubDate>Tue, 27 Feb 2024 08:50:42 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/02/27/quicklydumpami/</guid><description>win10 Quickstart Quickly partition:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Dash</title><link>http://purplepalmdash.github.io/post/</link><description>Recent content in Posts on Dash</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 27 Feb 2024 20:19:41 +0800</lastBuildDate><atom:link href="http://purplepalmdash.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>WorkingTipsOnN100</title><link>http://purplepalmdash.github.io/blog/2024/02/27/workingtipsonn100/</link><pubDate>Tue, 27 Feb 2024 20:19:41 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/02/27/workingtipsonn100/</guid><description>1. Extract ROM Using AFU(AMI FIRMWARE UPDATE) for extract the uefi rom file:
+Click save to save the current rom:
+View the result:
+Using UBU_v1.79.17 for extracting IntelGopDriver.efi:
+put afuwin.rom(extracted via AFU) into the same folder:
+Wait util scanning finished:
+Enter next step and Press 2:
+Press S for share this:
+Now you get the IntelGopDriver.efi file for building OVMF:
+2. Building OVMF Building the OVMF via following commands:
+git clone git@github.</description></item><item><title>QuicklyDumpAMI</title><link>http://purplepalmdash.github.io/blog/2024/02/27/quicklydumpami/</link><pubDate>Tue, 27 Feb 2024 08:50:42 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/02/27/quicklydumpami/</guid><description>win10 Quickstart Quickly partition:
 Like following layout:
 Insert Cloudfirmware flash disk , copy the files:
 Download the AMI FIRMWARE UPDATE(AFU) FROM:

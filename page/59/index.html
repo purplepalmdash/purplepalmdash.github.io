@@ -1,5 +1,65 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/03/14/usbnetworkcard/>UsbNetworkCard</a></h1><span class=post-date>Mar 14, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Using systemd-networkd for configurating the usb network card,</p><pre><code># vim /etc/systemd/nework/10-ethusb1.link
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/03/14/foremantips/>ForemanTips</a></h1><span class=post-date>Mar 14, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=system>System</h3><p>Install Ubuntu 18.04, 4 Core/ 4G memory, 50 G disk.</p><p>Install with basic sshd support.</p><p><img src=/images/2019_03_14_15_20_12_676x259.jpg alt=/images/2019_03_14_15_20_12_676x259.jpg></p><p>Network planning:<br>10.192.189.0/24, no dhcp.</p><h3 id=network>Network</h3><p>Configure the networking via following commands:</p><pre><code># vim /etc/netplan/01-netcfg.yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp1s0:
+      dhcp4: no
+      addresses: [10.192.189.2/24]
+      gateway4: 10.192.189.1
+      nameservers:
+        addresses: [223.5.5.5,180.76.76.76]
+
+# netplan --debug apply
+# systemctl disable systemd-resolved.service
+# systemctl stop systemd-resolved.service
+# rm -f /etc/resolv.conf 
+# echo nameserver 223.5.5.5&gt;/etc/resolv.conf
+</code></pre><p>Configure the hostname:</p><pre><code># sudo hostnamectl set-hostname foreman.fuck.com
+# echo &quot;10.192.189.2 foreman.fuck.com&quot; | sudo tee -a /etc/hosts
+</code></pre><h3 id=install-foreman>Install foreman</h3><p>Install foreman via following commands:</p><pre><code># hostnamectl set-hostname foreman.fuck.com
+# echo &quot;10.192.189.2 foreman.fuck.com&quot;| sudo tee -a /etc/hosts
+# apt-get update
+# apt-get update
+# sudo apt-get install ca-certificates
+# wget https://apt.puppetlabs.com/puppet5-release-bionic.deb
+# sudo dpkg -i puppet5-release-bionic.deb
+# rm puppet5-release-bionic.deb
+# echo &quot;deb http://deb.theforeman.org/ bionic 1.19&quot; | sudo tee /etc/apt/sources.list.d/foreman.list
+# echo &quot;deb http://deb.theforeman.org/ plugins 1.19&quot; | sudo tee -a /etc/apt/sources.list.d/foreman.list
+# apt-get -y install ca-certificates
+# wget -q https://deb.theforeman.org/pubkey.gpg -O- | sudo apt-key add -
+# apt-get update
+# sudo apt-get install foreman-installer
+# foreman-installer
+# foreman-installer  --enable-foreman-proxy  --foreman-proxy-tftp=true  --foreman-proxy-tftp-servername=10.192.189.2  --foreman-proxy-dhcp=true  --foreman-proxy-dhcp-interface=eth0  --foreman-proxy-dhcp-gateway=10.192.189.1  --foreman-proxy-dhcp-nameservers=&quot;10.192.189.2&quot;  --foreman-proxy-dhcp-range=&quot;10.192.189.100 10.192.189.200&quot;  --foreman-proxy-dns=true  --foreman-proxy-dns-interface=eth0  --foreman-proxy-dns-zone=fuck.com  --foreman-proxy-dns-reverse=189.192.10.in-addr.arpa  --foreman-proxy-dns-forwarders=8.8.8.8  --foreman-proxy-foreman-base-url=https://foreman.fuck.com  --foreman-proxy-oauth-consumer-key=ceqCFsvS8qrVRv8W3pb5yWNs6Prt9iZS  --foreman-proxy-oauth-consumer-secret=aYCHnyCzRXFuuy4nNXWthBKhPiNdfzJt
+</code></pre><p>Refers to:</p><p><img src=https://computingforgeeks.com/how-to-install-foreman-on-ubuntu-18-04-lts-bionic-beaver/ alt=https://computingforgeeks.com/how-to-install-foreman-on-ubuntu-18-04-lts-bionic-beaver/></p><p>Status:</p><p><img src=/images/2019_03_15_23_15_44_854x736.jpg alt=/images/2019_03_15_23_15_44_854x736.jpg></p><p>After a while, you will see the server has been detected and displayed in the
+webpage:</p><p><img src=/images/2019_03_15_23_37_32_875x410.jpg alt=/images/2019_03_15_23_37_32_875x410.jpg></p><h3 id=configuration-for-centos7>Configuration for CentOS7</h3><p>Download iso from mirror:</p><pre><code># wget http://mirrors.163.com/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso
+# mount -t iso9660 ./CentOS-7-x86_64-Minimal-1810.iso /mnt
+# cp -arv /mnt/* ./website
+</code></pre><p>Create docker based website:</p><pre><code># apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# apt-key fingerprint 0EBFCD88
+# add-apt-repository \
+   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable&quot;
+# apt-get update &amp;&amp; apt-get install -y docker-ce
+# docker pull jrelva/nginx-autoindex:latest
+# mkdir -p /opt/web
+# docker run --name docker-nginx -p 7888:80 -d --restart=always -v /opt/web:/usr/share/nginx/html jrelva/nginx-autoindex
+</code></pre><p>Host-> Installation Media, add new iso:</p><p><img src=/images/2019_03_15_23_56_29_649x328.jpg alt=/images/2019_03_15_23_56_29_649x328.jpg></p><p>Host-> Operating System, Create new os:</p><p><img src=/images/2019_03_15_23_57_21_872x270.jpg alt=/images/2019_03_15_23_57_21_872x270.jpg></p><p>Filled the description of the new os:</p><p><img src=/images/2019_03_15_23_58_12_551x583.jpg alt=/images/2019_03_15_23_58_12_551x583.jpg></p><p>Choose x86_64:</p><p><img src=/images/2019_03_15_23_58_45_477x425.jpg alt=/images/2019_03_15_23_58_45_477x425.jpg></p><p>Partition Tables we choose Kickstart default:</p><p><img src=/images/2019_03_15_23_59_12_569x363.jpg alt=/images/2019_03_15_23_59_12_569x363.jpg></p><p>Associate the installation media with our centos 7.6:</p><p><img src=/images/2019_03_16_00_00_29_545x369.jpg alt=/images/2019_03_16_00_00_29_545x369.jpg></p><p>Click submit, later we will choose template for provision.</p><p>Host-> Provision Templates, choose following templates and associate with
+CentOS7_x86_64:</p><p><img src=/images/2019_03_16_00_02_13_772x517.jpg alt=/images/2019_03_16_00_02_13_772x517.jpg></p><pre><code>kickstart default finish
+kickstart default
+kickstart default ipxe
+kickstart default pxelinux
+kickstart default use data
+</code></pre><p>Associate with template:</p><p><img src=/images/2019_03_16_00_04_55_609x330.jpg alt=/images/2019_03_16_00_04_55_609x330.jpg></p><p>Next we will configure the subnet and the foreman-proxy items.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/03/14/usbnetworkcard/>UsbNetworkCard</a></h1><span class=post-date>Mar 14, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Using systemd-networkd for configurating the usb network card,</p><pre><code># vim /etc/systemd/nework/10-ethusb1.link
 [Match]
 MACAddress=00:xx:xx:.....
 
@@ -99,42 +159,4 @@ ExecStart=/usr/bin/docker-compose -f /root/go/src/github.com/play-with-docker/pl
 [Install]
 WantedBy=multi-user.target
 </code></pre><p>ToBeContinue, later I will change the static website content, and k8s image
-offline, then do the iso-build.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/02/19/notesonplaywithk8s/>NotesOnPlayWithK8s</a></h1><span class=post-date>Feb 19, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>早先在2018年做了一个离线版本的playwithk8s, 主要参考了:</p><p><a href=https://labs.play-with-k8s.com/>https://labs.play-with-k8s.com/</a></p><p>以及</p><p><a href=https://training.play-with-kubernetes.com/kubernetes-workshop/>https://training.play-with-kubernetes.com/kubernetes-workshop/</a></p><p>当时还写了一系列教程并形成了一个离线部署的ISO。那个ISO前几天有同事用，反映跑不起来。看了下问题，总结如下.</p><h3 id=dns问题>dns问题</h3><p>安装完的系统中，dnsmasq不能使用，需要通过以下步骤来修正:</p><pre><code># vim /etc/systemd/resolved.conf
-DNSStubListener=no
-# systemctl disable systemd-resolved.service
-# systemctl stop systemd-resolved.service
-# echo nameserver 192.168.0.15&gt;/etc/resolv.conf
-# apt-get install -y dnsmasq
-# systemctl enable dnsmasq
-# vim /etc/dnsmasq.conf
-address=/192.168.122.151/192.168.122.151
-address=/localhost/127.0.0.1
-# chattr +i /etc/resolv.conf
-# chattr -e /etc/resolv.conf
-# ufw disable
-# docker swarm leave
-# docker swarm init
-</code></pre><p>这样下来可以访问到界面，</p><p><img src=/images/2019_02_19_15_05_45_1065x630.jpg alt=/images/2019_02_19_15_05_45_1065x630.jpg></p><h3 id=kubeadm卡顿>kubeadm卡顿</h3><p>卡在init的时候，现象见上图。</p><p>问题分析，在docker版本为17.12.1-ce的系统上可正常运行。</p><p>ISO安装出来的docker版本为18.06.0-ce.</p><p>是否是docker版本与kubeadm不兼容?</p><p>kubeadm生成的文件(/etc/kubernetes):</p><p><img src=/images/2019_02_19_15_08_49_565x229.jpg alt=/images/2019_02_19_15_08_49_565x229.jpg></p><p>对比kube-apiserver.yaml, 发现imagePullPolicy的不同:</p><p><img src=/images/2019_02_19_15_10_09_1106x395.jpg alt=/images/2019_02_19_15_10_09_1106x395.jpg></p><p>这点也是很让人奇怪的，为什么同样的容器镜像版本,
-franela/k8s:latest会有如此的不同呢？
-一样的容器镜像派生出来的实例，应该说其内置的kubeadm生成的yaml编排文件是一样的，但是在我们的系统上，更新版本的docker下生成的yaml文件未带IfNotPresent的选项，导致kubeadm认为镜像不存在，报了超时错误。</p><h3 id=解决途径>解决途径</h3><p>最近没有时间来做这个事情，所以只能先写下自己的思路。</p><ol><li><p>用一个registry缓存所有的包(去掉docker
-load的环节），直接从cache里取回gcr.io的包。docker在启动的时候从cache里取东西回来。但是我不是很确定gcr.io是否可以像registry-1.docker.io一样被缓存下来。</p></li><li></li></ol><p>伪造gcr.io的签名，指向内部的registry仓库。这个可以仿照我的kubespray框架中的做法，骗过dind。</p><p>离线情况下玩docker，真是没事找事，一波三折啊！！！</p><h3 id=更新>更新</h3><p>最近没心思做别的事情，还是把这个PWK的离线给做了，记录一下步骤：</p><p>更新到新的play-with-kubernetes:</p><pre><code># git clone https://github.com/play-with-docker/play-with-kubernetes.github.io
-</code></pre><p>当然在这里我们要做适配，以允许其离线化 。</p><p>采用的franela/k8s版本大约是2018年年底的版本，</p><pre><code># franela/k8s              latest              c7038cbdbc5d        2 months ago        733MB
-</code></pre><p>因为这个容器镜像中的kubeadm版本已经升级到比较新的版本，需要重新下载镜像:</p><pre><code>k8s.gcr.io/kube-proxy-amd64                v1.11.7             e9a1134ab5aa        4 weeks ago         98.1MB
-k8s.gcr.io/kube-apiserver-amd64            v1.11.7             d82b2643a56a        4 weeks ago         187MB
-k8s.gcr.io/kube-controller-manager-amd64   v1.11.7             93fb4304c50c        4 weeks ago         155MB
-k8s.gcr.io/kube-scheduler-amd64            v1.11.7             52ea1e0a3e60        4 weeks ago         56.9MB
-weaveworks/weave-npc                       2.5.1               789b7f496034        4 weeks ago         49.6MB
-weaveworks/weave-kube                      2.5.1               1f394ae9e226        4 weeks ago         148MB
-k8s.gcr.io/coredns                         1.1.3               b3b94275d97c        9 months ago        45.6MB
-k8s.gcr.io/etcd-amd64                      3.2.18              b8df3b177be2        10 months ago       219MB
-k8s.gcr.io/pause                           3.1                 da86e6ba6ca1        14 months ago       742kB
-nginx                                      latest              05a60462f8ba        2 years ago         181MB
-</code></pre><p>同时需要更改kubeadm init的参数为:</p><pre><code># kubeadm init --apiserver-advertise-address $(hostname -i) --kubernetes-version=v1.11.7
-</code></pre><p>在多节点章节中，kubeaadm
-1.11.7与原先的calico3.1冲突，因而我们更新到了更新的3.5版本,
-因为docker-in-docker配备了两个网络，我们在calico.yaml中也需要指定IP范围，以确保BGP隧道建立在正确的网络接口上:</p><pre><code>            - name: CALICO_IPV4POOL_CIDR
-              value: &quot;192.168.0.0/16&quot;
-            - name: IP_AUTODETECTION_METHOD
-              value: &quot;interface=eth0.*&quot;
-
-</code></pre><p>到此，则新版本的playwithk8s更新完毕，总共花了5天时间。虽然有点磨人，但想起来这5天还是值得的。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/58/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/58/>58</a></li><li class="page-item active"><a class=page-link href=/page/59/>59</a></li><li class=page-item><a class=page-link href=/page/60/>60</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/60/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+offline, then do the iso-build.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/58/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/58/>58</a></li><li class="page-item active"><a class=page-link href=/page/59/>59</a></li><li class=page-item><a class=page-link href=/page/60/>60</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/60/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

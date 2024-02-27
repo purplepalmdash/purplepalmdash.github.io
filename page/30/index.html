@@ -1,5 +1,173 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/07/03/workingtipsonlxdandjuju/>WorkingTipsOnLXDAndJuju</a></h1><span class=post-date>Jul 3, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=before>Before</h3><p>A LXD cluster and juju status:</p><p>lxd cluster status and lxc instance before deploy work load:</p><pre><code>test@freeedge1:~$ lxc cluster list
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/07/04/workingtipsonlxdjuju/>WorkingTipsOnLXDJuju</a></h1><span class=post-date>Jul 4, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=commands>Commands</h3><p>Bootstrap via:</p><pre><code>test@edge5:~$ juju bootstrap localhost overlord
+Creating Juju controller &quot;overlord&quot; on localhost/localhost
+Looking for packaged Juju agent version 2.9.5 for amd64
+Located Juju agent version 2.9.5-ubuntu-amd64 at https://streams.canonical.com/juju/tools/agent/2.9.5/juju-2.9.5-ubuntu-amd64.tgz
+To configure your system to better support LXD containers, please see: https://github.com/lxc/lxd/blob/master/doc/production-setup.md
+Launching controller instance(s) on localhost/localhost...
+ - juju-55e209-0 (arch=amd64)                 
+Installing Juju agent on bootstrap instance
+Fetching Juju Dashboard 0.7.1
+Waiting for address
+Attempting to connect to 10.53.118.136:22
+Connected to 10.53.118.136
+Running machine configuration script...
+Bootstrap agent now started
+Contacting Juju controller at 10.53.118.136 to verify accessibility...
+
+Bootstrap complete, controller &quot;overlord&quot; is now available
+Controller machines are in the &quot;controller&quot; model
+Initial model &quot;default&quot; added
+</code></pre><p>Verify bootstrap status:</p><pre><code>test@edge5:~$ lxc ls
++---------------+---------+----------------------+------+-----------+-----------+
+|     NAME      |  STATE  |         IPV4         | IPV6 |   TYPE    | SNAPSHOTS |
++---------------+---------+----------------------+------+-----------+-----------+
+| juju-55e209-0 | RUNNING | 10.53.118.136 (eth0) |      | CONTAINER | 0         |
++---------------+---------+----------------------+------+-----------+-----------+
+test@edge5:~$ juju status
+Model    Controller  Cloud/Region         Version  SLA          Timestamp
+default  overlord    localhost/localhost  2.9.5    unsupported  15:32:12+08:00
+
+Model &quot;admin/default&quot; is empty.
+</code></pre><h3 id=microk8s>microk8s</h3><p>Deploy microk8s via:</p><pre><code>$ juju deploy -n3 cs:~pjdc/microk8s
+Located charm &quot;microk8s&quot; in charm-store, revision 24
+Deploying &quot;microk8s&quot; from charm-store charm &quot;microk8s&quot;, revision 24 in channel stable
+</code></pre><p>View juju status:</p><pre><code>test@edge5:~$ juju status
+Model    Controller  Cloud/Region         Version  SLA          Timestamp
+default  overlord    localhost/localhost  2.9.5    unsupported  15:35:54+08:00
+
+App       Version  Status   Scale  Charm     Store       Channel  Rev  OS      Message
+microk8s           waiting    0/3  microk8s  charmstore  stable    24  ubuntu  waiting for machine
+
+Unit        Workload  Agent       Machine  Public address  Ports  Message
+microk8s/0  waiting   allocating  0        10.53.118.110          waiting for machine
+microk8s/1  waiting   allocating  1        10.53.118.99           waiting for machine
+microk8s/2  waiting   allocating  2        10.53.118.115          waiting for machine
+
+Machine  State    DNS            Inst id        Series  AZ  Message
+0        pending  10.53.118.110  juju-585d2d-0  focal       Running
+1        pending  10.53.118.99   juju-585d2d-1  focal       Running
+2        pending  10.53.118.115  juju-585d2d-2  focal       Running
+</code></pre><p>Until succeed:</p><pre><code>test@edge5:~$ juju status
+Model    Controller  Cloud/Region         Version  SLA          Timestamp
+default  overlord    localhost/localhost  2.9.5    unsupported  15:49:48+08:00
+
+App       Version  Status  Scale  Charm     Store       Channel  Rev  OS      Message
+microk8s           active      3  microk8s  charmstore  stable    24  ubuntu  
+
+Unit         Workload  Agent  Machine  Public address  Ports                     Message
+microk8s/0*  active    idle   0        10.53.118.110   80/tcp,443/tcp,16443/tcp  
+microk8s/1   active    idle   1        10.53.118.99    80/tcp,443/tcp,16443/tcp  
+microk8s/2   active    idle   2        10.53.118.115   80/tcp,443/tcp,16443/tcp  
+
+Machine  State    DNS            Inst id        Series  AZ  Message
+0        started  10.53.118.110  juju-585d2d-0  focal       Running
+1        started  10.53.118.99   juju-585d2d-1  focal       Running
+2        started  10.53.118.115  juju-585d2d-2  focal       Running
+</code></pre><h3 id=own-cloud>own cloud</h3><p>Ip and hostname listed as:</p><pre><code>192.168.89.6	edge5
+192.168.89.7	edge6
+192.168.89.8	edge7
+192.168.89.9	edge8
+192.168.89.10	edge9
+</code></pre><p>Added :</p><pre><code>test@edge5:~$ ssh-copy-id test@192.168.89.7
+test@edge5:~$ juju add-cloud                                                                                                                                  
+This operation can be applied to both a copy on this client and to the one on a controller.
+No current controller was detected and there are no registered controllers on this client: either bootstrap one or register one.
+Cloud Types
+  lxd
+  maas
+  manual
+  openstack
+  vsphere
+
+Select cloud type: manual
+
+Enter a name for your manual cloud: manual-cloud
+
+Enter the ssh connection string for controller, username@&lt;hostname or IP&gt; or &lt;hostname or IP&gt;: test@192.168.89.7
+
+Cloud &quot;manual-cloud&quot; successfully added to your local client.
+</code></pre><p>verify clouds available:</p><pre><code>test@edge5:~$ juju clouds
+Only clouds with registered credentials are shown.
+There are more clouds, use --all to see them.
+You can bootstrap a new controller using one of these clouds...
+
+Clouds available on the client:
+Cloud         Regions  Default    Type    Credentials  Source    Description
+localhost     1        localhost  lxd     0            built-in  LXD Container Hypervisor
+manual-cloud  1        default    manual  0            local 
+</code></pre><p>Now bootstrap the <code>manual-cloud</code>:</p><pre><code>$ juju bootstrap manual-cloud
+</code></pre><p>Add machines:</p><pre><code>test@edge5:~$ juju add-machine ssh:test@192.168.89.8
+created machine 0
+test@edge5:~$ juju add-machine ssh:test@192.168.89.9 &amp;&amp; juju add-machine ssh:test@192.168.89.10
+created machine 1
+created machine 2
+test@edge5:~$ juju machines
+Machine  State    DNS            Inst id               Series  AZ  Message
+0        started  192.168.89.8   manual:192.168.89.8   focal       Manually provisioned machine
+1        started  192.168.89.9   manual:192.168.89.9   focal       Manually provisioned machine
+2        started  192.168.89.10  manual:192.168.89.10  focal       Manually provisioned machine
+</code></pre><p>Deploy microk8s via:</p><pre><code>$  juju deploy -n3 cs:~pjdc/microk8s
+</code></pre><p>After deployment, the juju status show:</p><pre><code>test@edge5:~$ juju status
+Model    Controller            Cloud/Region          Version  SLA          Timestamp
+default  manual-cloud-default  manual-cloud/default  2.9.5    unsupported  17:27:04+08:00
+
+App       Version  Status  Scale  Charm     Store       Channel  Rev  OS      Message
+microk8s           active      3  microk8s  charmstore  stable    24  ubuntu  
+
+Unit         Workload  Agent  Machine  Public address  Ports                     Message
+microk8s/0*  active    idle   0        192.168.89.8    80/tcp,443/tcp,16443/tcp  
+microk8s/1   active    idle   1        192.168.89.9    80/tcp,443/tcp,16443/tcp  
+microk8s/2   active    idle   2        192.168.89.10   80/tcp,443/tcp,16443/tcp  
+
+Machine  State    DNS            Inst id               Series  AZ  Message
+0        started  192.168.89.8   manual:192.168.89.8   focal       Manually provisioned machine
+1        started  192.168.89.9   manual:192.168.89.9   focal       Manually provisioned machine
+2        started  192.168.89.10  manual:192.168.89.10  focal       Manually provisioned machine
+
+</code></pre><p>Verify Ha:</p><pre><code>test@edge5:~$ juju exec --application microk8s -- 'microk8s status | grep -A2 high-availability:'
+- return-code: 0
+  stdout: |
+    high-availability: yes
+      datastore master nodes: 192.168.89.8:19001 192.168.89.9:19001 192.168.89.10:19001
+      datastore standby nodes: none
+  unit: microk8s/0
+- return-code: 0
+  stdout: |
+    high-availability: yes
+      datastore master nodes: 192.168.89.8:19001 192.168.89.9:19001 192.168.89.10:19001
+      datastore standby nodes: none
+  unit: microk8s/1
+- return-code: 0
+  stdout: |
+    high-availability: yes
+      datastore master nodes: 192.168.89.8:19001 192.168.89.9:19001 192.168.89.10:19001
+      datastore standby nodes: none
+  unit: microk8s/2
+
+</code></pre><p>Verify the k8s status:</p><pre><code>test@edge5:~$ juju exec --application microk8s -- microk8s kubectl get node
+- return-code: 0
+  stdout: |
+    NAME    STATUS   ROLES    AGE   VERSION
+    edge8   Ready    &lt;none&gt;   13m   v1.21.1-3+ba118484dd39df
+    edge7   Ready    &lt;none&gt;   18m   v1.21.1-3+ba118484dd39df
+    edge9   Ready    &lt;none&gt;   13m   v1.21.1-3+ba118484dd39df
+  unit: microk8s/0
+- return-code: 0
+  stdout: |
+    NAME    STATUS   ROLES    AGE   VERSION
+    edge8   Ready    &lt;none&gt;   13m   v1.21.1-3+ba118484dd39df
+    edge7   Ready    &lt;none&gt;   18m   v1.21.1-3+ba118484dd39df
+    edge9   Ready    &lt;none&gt;   13m   v1.21.1-3+ba118484dd39df
+  unit: microk8s/1
+- return-code: 0
+  stdout: |
+    NAME    STATUS   ROLES    AGE   VERSION
+    edge8   Ready    &lt;none&gt;   13m   v1.21.1-3+ba118484dd39df
+    edge7   Ready    &lt;none&gt;   18m   v1.21.1-3+ba118484dd39df
+    edge9   Ready    &lt;none&gt;   13m   v1.21.1-3+ba118484dd39df
+  unit: microk8s/2
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/07/03/workingtipsonlxdandjuju/>WorkingTipsOnLXDAndJuju</a></h1><span class=post-date>Jul 3, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=before>Before</h3><p>A LXD cluster and juju status:</p><p>lxd cluster status and lxc instance before deploy work load:</p><pre><code>test@freeedge1:~$ lxc cluster list
 +-----------+---------------------------+----------+--------------+----------------+-------------+--------+-------------------+
 |   NAME    |            URL            | DATABASE | ARCHITECTURE | FAILURE DOMAIN | DESCRIPTION | STATE  |      MESSAGE      |
 +-----------+---------------------------+----------+--------------+----------------+-------------+--------+-------------------+
@@ -389,38 +557,4 @@ default via 192.168.100.1 dev eth0 proto static metric 100
 </code></pre><h3 id=todo>ToDO</h3><p>如果要用于生产环境的话，需要考虑：</p><pre><code>1. 自动化创建mynet设备并绑定一个额外的同网段IP地址。
 2. LXC实例创建后，自动在主机层面创建经由mynet设备的路由。
 3. LXC销毁后，自动删除该LXC IP对应的路由。
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/06/15/ipadiphonemirroringdisplay/>iPadiPhoneMirroringDisplay</a></h1><span class=post-date>Jun 15, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-硬件配置>1. 硬件/配置</h3><p>用来作为AirPlay Mirror Server的设备是一个brix投影电脑，配置为：</p><pre><code>Intel(R) Core(TM) i3-4010U CPU @ 1.70GHz
-16 GB Ram
-120 GB msata ssd
-1000 M ethernet
-</code></pre><p>安装操作系统为<code>ArchLinux</code>.</p><h3 id=2-软件安装配置步骤>2. 软件/安装配置步骤</h3><p>通过<code>yay</code>安装<code>uxplay</code>:</p><pre><code>yay uxplay
-</code></pre><p>使能服务:</p><pre><code>systemctl start avahi-daemon
-systemctl enable avahi-daemon
-</code></pre><p>此时最好重启，因uxplay安装过程中有涉及到其他模块。重启后可以通过以下命令开启<code>uxplay</code>, 此时IOS的屏幕镜像中找到<code>uxplay</code>的条目。</p><pre><code>$ sudo uxplay &amp;
-</code></pre><h3 id=3-自动serving>3. 自动Serving</h3><p>上述的场景针对个人使用一般情况下是够了，但是如果使用者是家人，则上述的步骤需要改进。</p><p>首先我们要让ArchLinux自动登录，自动登录后进入到图形界面。<br>然后我们要用uxplay随桌面启动而启动。<br>启动后我们需要禁用电源管理，以使得在长时间无键盘鼠标输入后屏幕依然可以保持常亮。<br>针对IOS普遍存在的设备上可用空间较少的缘故，我们需要开启brix盒子上的samba服务，让IOS可以使用外置存储用来播放视频。<br>IOS本身需要安装支持SAMBA的播放软件。</p><p>分而击之，一一解决这些问题。</p><h4 id=31-自动登录>3.1 自动登录</h4><p>以用户<code>dash</code>为例，说明如何实现<code>lightdm+awesome</code>的自动登录过程：</p><pre><code>$ sudo pacman -S lightdm lxde
-# pacman -S xorg lightdm-gtk-greeter xterm xorg-xinit awesome
-# systemctl enable lxdm.service
-# vim /etc/lxdm/lxdm.conf
-####autologin=dgod
-autologin=dash
-# vim /home/dash/.dmrc
-[Desktop]
-Session=awesome
-# groupadd -r autologin
-# gpasswd -a dash autologin
-# vim /etc/lightdm.conf
-[LightDM]
-在此条目中做如下修改：
-user-session = awesome
-autologin-user = dash
-autologin-session = awesome
-[Seat:*]
-在此条目中做如下修改：   
-pam-service=lightdm
-pam-autologin-service=lightdm-autologin
-greeter-session=lightdm-gtk-greeter
-user-session=awesome
-session-wrapper=/etc/lightdm/Xsession
-autologin-user=dash
-autologin-user-timeout=0
-</code></pre><h4 id=32-uxplay自启动>3.2 uxplay自启动</h4><p>将<code>sudo uxplay &</code> 添加到~/.config/awesome/rc.lua条目中即可，具体步骤参见<code>awesome</code>的一般配置文档。需要注意的是<code>dash</code>用户需要免密码使用<code>sudo</code> .</p><h4 id=33-禁用屏幕电源管理>3.3 禁用屏幕电源管理</h4><p>将<code>sudo xset -dpms &</code> 添加到~/.config/awesome/rc.lua条目中即可.</p><h4 id=34--samba服务>3.4 samba服务</h4><p>参考ArchLinux Wiki条目</p><h4 id=35-ios-samba-player>3.5 IOS samba player</h4><p>软件市场安装vlc, vlc中内建对samba Server的流媒体播放支持。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/29/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/29/>29</a></li><li class="page-item active"><a class=page-link href=/page/30/>30</a></li><li class=page-item><a class=page-link href=/page/31/>31</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/31/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/29/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/29/>29</a></li><li class="page-item active"><a class=page-link href=/page/30/>30</a></li><li class=page-item><a class=page-link href=/page/31/>31</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/31/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
