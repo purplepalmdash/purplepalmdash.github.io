@@ -1,5 +1,474 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/12/29/workingtipsonandroiddocker2/>WorkingTipsOnAndroidDocker2</a></h1><span class=post-date>Dec 29, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>记录aosp avd 11上启动容器的操作事项.</p><h3 id=步骤>步骤</h3><p>因为内核经过修改，故启动的时候需要点击<code>ok</code>后进入系统:</p><p><img src=/images/2021_12_29_11_56_51_356x415.jpg alt=/images/2021_12_29_11_56_51_356x415.jpg></p><p>确保wifi连接:</p><p><img src=/images/2021_12_29_11_58_07_347x482.jpg alt=/images/2021_12_29_11_58_07_347x482.jpg></p><p>进入到adb shell:</p><pre><code>$ adb root
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/01/10/linuxtips14/>LinuxTips14</a></h1><span class=post-date>Jan 10, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-ubuntu2004-use-python2>1. ubuntu20.04 use python2</h3><p>Via:</p><pre><code>$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+</code></pre><p>this solves some aosp building issues when the aosp building tree requires python2.7 to be the default python version.</p><h3 id=2-ubports-issue>2. ubports issue</h3><p>via:</p><pre><code>B ) Manual installation
+
+#Open Ubuntu Touch terminal (or a shell session on your host computer) and run:
+
+sudo -s
+sudo mount -o remount,rw /
+apt update
+apt install waydroid -y
+waydroid init 
+ubports-qa install xenial_-_fixwindowreopen
+alternatively, to install Google Apps, replace the line
+
+waydroid init
+with:
+
+waydroid init -s GAPPS
+#For Vollaphone, add:
+
+waydroid prop set persist.waydroid.height_padding 70
+</code></pre><h3 id=3-lockunlock-bootloader>3. lock/unlock bootloader</h3><p>via:</p><pre><code>fastboot flashing lock
+fastboot flashing unlock
+</code></pre><h3 id=4-reflashing-pixel-3a>4. reflashing pixel 3a</h3><p>visit <code>https://flash.android.com/release/10.0.0</code>.</p><h3 id=5-flashing-kernel-module>5. flashing kernel module</h3><p>via:</p><pre><code># disable-verity on the phone
+adb root
+adb disable-verity
+adb shell sync
+adb reboot
+
+# push module
+adb root
+adb remount
+adb push out/android-msm-pixel-4.9/dist/*.ko /vendor/lib/modules/
+# 重启设备以后可以设备正常使用 查看内核版本 的确已经是自编译的内核
+adb reboot
+</code></pre><h3 id=6-disable-oh-my-zsh-upgrade>6. Disable oh-my-zsh upgrade</h3><p>By adding following lines in ~/.zshrc :</p><pre><code>+ DISABLE_UPDATE_PROMPT=true
++ DISABLE_AUTO_UPDATE=true
+source $ZSH/oh-my-zsh.sh
+</code></pre><h3 id=7-install-chromium-on-mips64el>7. Install chromium on mips64el</h3><p>Via:</p><pre><code>wget http://okapps.oukan.online/lroapps/deb-loongson/chromium-browser-beta_82.0.4051.0-1_mips64el.deb
+wget http://ftp.us.debian.org/debian/pool/main/libi/libindicator/libindicator3-7_0.5.0-4_mips64el.deb
+wget http://ftp.us.debian.org/debian/pool/main/liba/libappindicator/libappindicator3-1_0.4.92-7_mips64el.deb
+apt-get install -y ./libappindicator3-1_0.4.92-7_mips64el.deb ./libindicator3-7_0.5.0-4_mips64el.deb
+apt-get install -y ./chromium-browser-beta_82.0.4051.0-1_mips64el.deb
+</code></pre><h3 id=8-grub-configurationubuntu>8. grub configuration(Ubuntu)</h3><p>Changed back to origin kernel version:</p><pre><code># vim /etc/default/grub
+GRUB_DEFAULT=&quot;Advanced options for Ubuntu&gt;Ubuntu, with Linux 5.4.0-99-generic&quot;
+# update-grub2
+# update-grub
+# reboot
+</code></pre><h3 id=9-install-docker-ce-on-arm64>9. Install docker-ce on arm64</h3><p>First remove conflict packages and import gpg:</p><pre><code>sudo apt-get remove docker docker-engine docker.io
+sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+</code></pre><p>Then import repository and install <code>docker-ce</code>:</p><pre><code># vim /etc/apt/sources.list
+....
+deb [arch=arm64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu focal stable
+
+# apt-get update &amp;&amp; apt-get install -y docker-ce
+</code></pre><h3 id=10-run-redroid-with-amd>10. run redroid with amd</h3><p>Command:</p><pre><code>$ sudo docker run -itd --name redroid9 --memory-swappiness=0 --privileged   -p 5556:5555 redroid/redroid:9.0.0-latest redroid.fps=60 ro.sf.lcd_density=150 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD128
+$ sudo docker run -itd --name redroid12 --memory-swappiness=0 --privileged   -p 5555:5555 redroid/redroid:12.0.0-latest redroid.fps=120 ro.sf.lcd_density=240 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD128
+</code></pre><p>Or with virtio:</p><pre><code>sudo docker run -itd --name redroid9 --memory-swappiness=0 --privileged   -p 5555:5555 redroid/redroid:9.0.0-latest redroid.fps=120 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920
+</code></pre><h3 id=11-opengl-issue>11. opengl issue</h3><p>via virgl issue:</p><pre><code>https://archived.forum.manjaro.org/t/qemu-kvm-vm-in-virt-manager-is-running-with-a-black-screen-when-opengl-acceleration-is-turned-on/138632/8
+</code></pre><h3 id=12-content-of-rpm>12. content of rpm</h3><p>via:</p><pre><code># rpm -ql {packageName}
+# rpm -ql htop
+# rpm -qlp /path/to/nginx.rpm
+</code></pre><h3 id=13-apt-fast>13. apt-fast</h3><p>install via:</p><pre><code>sudo add-apt-repository ppa:apt-fast/stable
+sudo apt-get update
+sudo apt-get -y install apt-fast
+</code></pre><h3 id=14-ubuntu-device-driver>14. ubuntu device driver</h3><p>Install via:</p><pre><code>$ ubuntu-drivers devices
+</code></pre><h3 id=15-yum-groupremove>15. yum groupremove</h3><p>via:</p><pre><code>yum groupremove &quot;X Window System&quot;
+</code></pre><h3 id=16-linux-zen>16. linux-zen</h3><p>In archlinux via:</p><pre><code># sudo pacman -S linux-zen linux-zen-headers
+</code></pre><p>Then update the entry:</p><pre><code># vim /etc/default/grub
+#GRUB_DEFAULT=0
+GRUB_DEFAULT=&quot;Advanced options for Arch Linux&gt;Arch Linux, with Linux linux-zen&quot;
+GRUB_TIMEOUT=3
+# grub-mkconfig -o /boot/grub/grub.cfg
+# reboot
+# uname -a
+Linux archsg1 5.16.14-zen1-1-zen #1 ZEN SMP PREEMPT Fri, 11 Mar 2022 17:40:33 +0000 x86_64 GNU/Linux
+
+</code></pre><h3 id=17-build-linux-zen>17. Build linux-zen</h3><p>Steps:</p><pre><code>$ sudo pacman -S base-devel asp
+$ asp checkout linux-zen
+Copy to some place, and modify the config
+$ makepkg --clean --syncdeps --rmdeps
+</code></pre><p>gpg checksum failed, solved via:</p><pre><code>==&gt; Verifying source file signatures with gpg...
+    archlinux-linux git repo ... FAILED (unknown public key 3B94A80E50A477C7)
+==&gt; ERROR: One or more PGP signatures could not be verified!
+
+# vim /etc/pacman.d/gnupg/gpg.conf
+no-greeting
+no-permission-warning
+lock-never
+keyserver-options timeout=10
+keyserver-options import-clean
+keyserver-options no-self-sigs-only
++ keyserver hkps://keys.openpgp.org
+
+# curl -s https://keybase.io/heftig/pgp_keys.asc/\?fingerprint\=a2ff3a36aaa56654109064ab19802f8b0d70fc30 | gpg --import
+# gpg --lsign 3B94A80E50A477C7
+</code></pre><p>Rebuild the kernel and install</p><h3 id=18-change-password-in-single>18. Change password in single</h3><p><img src=/images/2022_03_18_16_40_49_526x166.jpg alt=/images/2022_03_18_16_40_49_526x166.jpg></p><h3 id=19-find-which-file-belong-to-rpm>19. find which file belong to rpm</h3><p>via:</p><pre><code>$ rpm -qf file_name
+</code></pre><h3 id=20-linux-zen>20. linux-zen</h3><p>Install on ubuntu via:</p><pre><code>sudo add-apt-repository ppa:damentz/liquorix &amp;&amp; sudo apt-get update
+sudo apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
+</code></pre><h3 id=20-arp-ignore>20. arp-ignore</h3><p>arp-ignore should be studied</p><h3 id=21-install-vmplayer>21. Install vmplayer</h3><p>On Ubuntu or other linux distribution:</p><pre><code>$ sudo apt install build-essential linux-headers-generic
+$ wget --user-agent=&quot;Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0&quot; https://www.vmware.com/go/getplayer-linux
+$ chmod +x getplayer-linux
+$ sudo ./getplayer-linux --required --eulas-agreed
+
+</code></pre><h3 id=22-install-mateubuntu>22. Install mate(Ubuntu)</h3><p>via:</p><pre><code># apt  install tasksel
+# tasksel install ubuntu-mate-desktop
+</code></pre><h3 id=16-rpm2cpio>16. rpm2cpio</h3><p>Generating the working tar.gz files Steps:</p><pre><code># cd workingdirectory/
+# cp ../kmod-ukmd-4.19.112-20212.el7.centos.src.rpm .
+# rpm2cpio kmod-ukmd-4.19.112-20212.el7.centos.src.rpm| cpio -idmv
+#  vim kmod.spec
+Change 4.19.112-&gt;4.19.12
+# rm -f kmod-ukmd-4.19.112.tar.gz 
+# cp /root/rpmbuild/SOURCES/kmod-ukmd-4.19.12.tar.gz .
+# mv workingdirectory/ kmod-ukmd-4.19.12.cpio
+# tar czvf kmod-ukmd-4.19.12.cpio.tar.gz kmod-ukmd-4.19.12.cpio
+</code></pre><h3 id=17-limit-bandwidth>17. limit bandwidth</h3><p>via:</p><pre><code>https://unix.stackexchange.com/questions/34116/how-can-i-limit-the-bandwidth-used-by-a-process
+</code></pre><h3 id=18-amdgpu-centos-howto5700>18. amdgpu centos howto(5700)</h3><p>Download the rpms from:</p><pre><code>https://www.amd.com/en/support/graphics/amd-radeon-5700-series/amd-radeon-rx-5700-series/amd-radeon-rx-5700
+</code></pre><p>Installation Steps:</p><pre><code>yum localinstall ./amdgpu-install-21.50.2.50002-1.el7.noarch.rpm 
+# change the repo definition to something like: baseurl=https://repo.radeon.com/amdgpu/21.50.2/rhel/7.9/main/x86_64
+yumdownloader dkm
+rpm -i --nodeps ./dkms-3.0.3-1.el7.noarch.rpm 
+yum install gcc elfutils-libelf-devel
+amdgpu-install -y --usecase=graphics
+# Then install graphical desktop environment, then
+systemctl set-default graphical.target
+</code></pre><h3 id=19-virgl-on-centos>19. virgl On CentOS</h3><p>Steps:</p><pre><code># yum -y groupinstall Development --skip-broken
+# rpm -ivh /mnt/Packages/systemtap-3.3-3.el7.x86_64.rpm /mnt/Packages/systemtap-client-3.3-3.el7.x86_64.rpm /mnt/Packages/systemtap-devel-3.3-3.el7.x86_64.rpm --nodeps
+# yum-builddep mesa
+# wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+# yum makecache 
+# yum install -y meson
+
+</code></pre><p>Then:</p><pre><code>yum-builddep libvirt
+</code></pre><h3 id=20-amd-driver-in-ubuntu>20. amd driver in ubuntu</h3><p>Get the deb and Install via:</p><pre><code>sudo apt-get install ./amdgpu-install_21.50.2.50002-1_all.deb
+dpkg --add-architecture i386
+amdgpu-install -y --usecase=graphics
+</code></pre><h3 id=21-zen-kernel-in-ubuntu>21. zen kernel in ubuntu</h3><p>Install via:</p><pre><code>sudo add-apt-repository ppa:damentz/liquorix &amp;&amp; sudo apt-get update
+64-bit:
+sudo apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
+</code></pre><h3 id=22-convert--vdi-to-img>22. convert vdi to img</h3><p>via:</p><pre><code>root@lucky:/home/dash# cd /home/dash/manjavoLinux/
+root@lucky:/home/dash/manjavoLinux# VBoxManage clonehd --format RAW manjavoLinux.vdi manjaro.img
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Clone medium created in format 'RAW'. UUID: 8187b47d-86bb-4156-9996-48e921a53e7
+</code></pre><h3 id=23-ssh-push-to-github>23. ssh push to github</h3><p>via adding following to <code>~/.ssh/config</code>:</p><pre><code>Host github.com
+        Hostname ssh.github.com
+        Port 443
+
+</code></pre><h3 id=24-disable-gdm-sleeping>24. Disable gdm sleeping</h3><p>via:</p><pre><code>sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+
+</code></pre><h3 id=25-last-crash-log>25. last crash log</h3><p>via:</p><pre><code>journalctl --since=today
+
+</code></pre><h3 id=26-check-virt-host>26. check virt host</h3><p>via:</p><pre><code># virt-host-validate qemu
+  QEMU: Checking if device /dev/kvm exists                                   : PASS
+  QEMU: Checking if device /dev/kvm is accessible                            : PASS
+  QEMU: Checking if device /dev/vhost-net exists                             : PASS
+  QEMU: Checking if device /dev/net/tun exists                               : PASS
+  QEMU: Checking for cgroup 'cpu' controller support                         : PASS
+  QEMU: Checking for cgroup 'cpuacct' controller support                     : PASS
+  QEMU: Checking for cgroup 'cpuset' controller support                      : PASS
+  QEMU: Checking for cgroup 'memory' controller support                      : PASS
+  QEMU: Checking for cgroup 'devices' controller support                     : PASS
+  QEMU: Checking for cgroup 'blkio' controller support                       : PASS
+WARN (Unknown if this platform has IOMMU support)
+  QEMU: Checking for secure guest support                                    : WARN (Unknown if this platform has Secure Guest support)
+
+</code></pre><h3 id=27-file-belongs-to-apk>27. file belongs to apk</h3><p>via:</p><pre><code>$ apt-file search filename
+</code></pre><h3 id=28-screenshot>28. screenshot</h3><p>via:</p><pre><code>xwd -root -out screenshot.xwd
+</code></pre><h3 id=29-build-ampere-kernel>29. build ampere kernel</h3><p>Steps:</p><pre><code>unzip ampere-lts-kernel-linux-5.4.y.zip 
+cd ampere-lts-kernel-linux-5.4.y/
+cp arch/arm64/configs/altra_5.4_defconfig .config
+make olddefconfig
+make menuconfig
+make -j128 deb-pkg LOCALVERSION=-amp54-lts
+
+</code></pre><p>But the kernel boot failed and let the system hang.</p><h3 id=30-virtio-gpu-on-arm>30. virtio-gpu On Arm</h3><p>Via following command:</p><pre><code>DISPLAY=:61 qemu-system-aarch64  -M virt-4.2 -machine gic-version=max -m 15192M -enable-kvm -cpu host -smp 8,sockets=1,cores=8,threads=1   \
+	-netdev user,id=vnet,hostfwd=:127.0.0.1:2278-:22,hostfwd=tcp::5555-:5555,hostfwd=tcp::5556-:5556,hostfwd=tcp::5557-:5557,hostfwd=tcp::5800-:5800,hostfwd=tcp::3389-:3389,hostfwd=tcp::14000-:4000 -device virtio-net-pci,netdev=vnet \
+	-drive file=ubuntu-image.img,if=none,id=drive0,cache=writeback -device virtio-blk,drive=drive0,bootindex=0 -display gtk,gl=on  \
+	-drive file=ubuntu-20.04.3-live-server-arm64.iso,if=none,id=drive1,cache=writeback -device virtio-blk,drive=drive1,bootindex=1 \
+	-drive file=flash0.img,format=raw,if=pflash -drive file=flash1.img,format=raw,if=pflash  -vga none -device virtio-gpu-pci,virgl=on -usb  -device usb-ehci,id=ehci -device usb-mouse -device usb-kbd
+</code></pre><h3 id=31-manually-add-pool>31. Manually add pool</h3><p>Via:</p><pre><code> virsh pool-create-as --name sda --type dir --target /media/sda/images
+</code></pre><h3 id=32-no-machine-issue>32. no-machine issue</h3><p>Change the configuration then restart the service, needn&rsquo;t confirm on logged session:</p><pre><code>grep DesktopAuthorization /usr/NX/etc/server.cfg
+sudo /etc/NX/nxserver --restart
+
+
+</code></pre><h3 id=33-centos-8-docker-installation>33. centos 8 docker installation</h3><p>via:</p><pre><code># dnf remove -y podman
+# REPO=https://mirrors.aliyun.com/docker-ce
+# dnf config-manager --add-repo $REPO/linux/centos/docker-ce.repo
+# sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+# sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+# yum update
+# dnf install --allowerasing -y containerd.io docker-ce docker-ce-cli
+# docker -v
+</code></pre><h3 id=34-before-build-aosp>34. before build aosp</h3><p>via:</p><pre><code>apt install openssh-server screen  git openjdk-8-jdk android-tools-adb bc bison build-essential curl flex g++-multilib gcc-multilib gnupg gperf imagemagick lib32ncurses-dev lib32readline-dev lib32z1-dev  liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc yasm zip zlib1g-dev libtinfo5 libncurses5
+
+</code></pre><h3 id=35-install-golang-for-ubuntu2004>35. Install golang for ubuntu20.04</h3><p>via:</p><pre><code>sudo add-apt-repository ppa:longsleep/golang-backports 
+sudo apt update
+sudo apt install golang-go
+</code></pre><h3 id=36-ubuntu-driver-install>36. Ubuntu driver install</h3><p>via:</p><pre><code>$ ubuntu-drivers devices
+== /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==
+modalias : pci:v000010DEd00001287sv00001642sd00003F86bc03sc00i00
+vendor   : NVIDIA Corporation
+model    : GK208B [GeForce GT 730]
+driver   : nvidia-driver-390 - distro non-free
+driver   : nvidia-driver-470-server - distro non-free
+driver   : nvidia-driver-450-server - distro non-free
+driver   : nvidia-driver-418-server - distro non-free
+driver   : nvidia-driver-470 - distro non-free recommended
+driver   : xserver-xorg-video-nouveau - distro free builtin
+$ sudo ubuntu-drivers autoinstall
+</code></pre><h3 id=37-cuttlefish-render-mode>37. cuttlefish render mode</h3><p>via:</p><pre><code># launch_cvd --gpu-mode=drm_virgl
+# launch_cvd --gpu-mode=gfxstream
+</code></pre><h3 id=38-forward-to-vm>38. forward to vm</h3><p>via iptables:</p><pre><code># iptables -I FORWARD -o virbr1 -d 10.17.18.2 -j ACCEPT
+# iptables -t nat -I PREROUTING -p tcp --dport 2422 -j DNAT --to 10.17.18.2:22
+</code></pre><h3 id=39-recompile-ubuntu-linux>39. Recompile Ubuntu Linux</h3><p>via:</p><pre><code>Clone the repo:
+
+ git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/focal
+Checkout the branch:
+
+ cd focal
+ git checkout origin/hwe-5.8
+If you want to disable the nvidia driver, add this patch:
+
+diff --git a/debian/rules b/debian/rules
+index 8c3c71a..8742713 100755
+--- a/debian/rules
++++ b/debian/rules
+@@ -100,6 +100,8 @@ ifeq ($(do_mainline_build),true)
+        skipretpoline=true
+ endif
+ 
++do_dkms_nvidia=false
++
+ # Disable tools build and packaging if do_tools != true
+ ifneq ($(do_tools),true)
+        do_linux_tools=
+Install the build dependencies:
+
+ sudo apt-get build-dep linux
+Build the kernel:
+
+ fakeroot debian/rules clean
+ fakeroot debian/rules binary-headers binary-generic
+</code></pre><h3 id=40-iptables-forbid-only-one-ip>40. iptables forbid only one ip</h3><p>only one ip to specific port running ss server via:</p><pre><code>sudo iptables -I INPUT \! --src 121.8.254.210 -m tcp -p tcp --dport 1080 -j DROP
+</code></pre><h3 id=41-yarn-issue>41. yarn issue</h3><p>via:</p><pre><code>sudo apt remove cmdtest
+sudo apt remove yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo &quot;deb https://dl.yarnpkg.com/debian/ stable main&quot; | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update
+sudo apt-get install yarn -y
+then
+
+yarn install
+</code></pre><h3 id=42-efi-grub-issue>42. efi grub issue</h3><p>via:</p><pre><code>#GRUB_DEFAULT=0
+GRUB_DEFAULT=&quot;Advanced options for Ubuntu&gt;Ubuntu, with Linux 5.11.0-46-generic&quot;
+#GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT_STYLE=menu
+GRUB_TIMEOUT=10
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;&quot;
+GRUB_CMDLINE_LINUX=&quot;&quot;
+</code></pre><h3 id=43-disable-auto-update-ubuntu>43. disable auto-update ubuntu</h3><p>via:</p><pre><code># vim /etc/apt/apt.conf.d/20auto-upgrades
+Change content:
+FROM:
+
+APT::Periodic::Update-Package-Lists &quot;1&quot;;
+APT::Periodic::Unattended-Upgrade &quot;1&quot;;
+TO:
+
+APT::Periodic::Update-Package-Lists &quot;0&quot;;
+APT::Periodic::Download-Upgradeable-Packages &quot;0&quot;;
+APT::Periodic::AutocleanInterval &quot;0&quot;;
+APT::Periodic::Unattended-Upgrade &quot;1&quot;
+</code></pre><p>Then:</p><pre><code>systemctl stop apt-daily.timer;systemctl disable apt-daily.timer ; systemctl stop apt-daily-upgrade.timer ; systemctl disable apt-daily-upgrade.timer; systemctl stop apt-daily.service;  systemctl mask apt-daily.service; systemctl daemon-reload
+systemctl stop unattended-upgrades.service &amp;&amp; systemctl disable unattended-upgrades.service
+</code></pre><h3 id=44-start-redroid>44. start redroid</h3><p>command:</p><pre><code>sudo docker run -itd --name redroid9 --memory-swappiness=0 --privileged   -p 5556:5555 redroid:9officialhoudini redroid.fps=120 ro.sf.lcd_density=240 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD128 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920
+
+</code></pre><h3 id=45-upgrade-kernel>45. Upgrade Kernel</h3><p>In centos via:</p><pre><code># 查看可用内核版本及启动顺序
+$ sudo awk -F\' '$1==&quot;menuentry &quot; {print i++ &quot; : &quot; $2}' /boot/grub2/grub.cfg
+
+# 查看启动顺序
+$ yum install -y grub2-pc
+$ grub2-editenv list
+
+# 设置开机启动
+$ grub2-set-default 0
+或者
+$ grub2-mkconfig -o /boot/grub2/grub.cfg
+
+# 重启生效
+$ reboot
+
+# 重启后查看内核版本
+$ uname -sr
+</code></pre><h3 id=46-print-photos>46. print photos</h3><p>via:</p><p><code>https://www.phoyosystem.com/photo-booth-software/#the-id-photos-printing-tool-only</code></p><h3 id=47-untar-deb>47. untar deb</h3><p>command:</p><pre><code>mkdir tmp
+dpkg-deb -R abcde.deb  tmp
+</code></pre><h3 id=48-linux-zen-for-archlinux>48. linux-zen for ArchLinux</h3><p>Build via:</p><pre><code># vim trunk/config
+Added something.
+# makepkg --skipinteg --syncdeps
+</code></pre><p>Install via:</p><pre><code># sudo pacman -U linux-zen-5.19.zen1-1-x86_64.pkg.tar.zst linux-zen-headers-5.19.zen1-1-x86_64.pkg.tar.zst linux-zen-docs-5.19.zen1-1-x86_64.pkg.tar.zst
+# sudo grub-mkconfig -o /boot/grub/grub.cfg
+# sudo reboot
+</code></pre><p>Verify its kernel version:</p><pre><code># uname -r
+</code></pre><h3 id=49-disable-gdm-sleep>49. disable gdm sleep</h3><p>via:</p><pre><code>sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+</code></pre><h3 id=50-redroid-12-issue>50. redroid 12 issue</h3><p>on linux-zen kernel, 5.19, should enter the adb shell and run:</p><pre><code>setprop sys.use_memfd 1
+</code></pre><h3 id=51-archlinux-configuration-ip>51. ArchLinux Configuration IP</h3><p>via:</p><pre><code>ip addr add 10.17.18.3/24 dev enp1s0
+ip link set enp1s0 up
+ip route add default via 10.17.18.1 dev enp1s0
+Then set resolv.conf
+</code></pre><h3 id=52-ubuntu-install-zen-kernel>52. ubuntu install zen kernel</h3><p>via:</p><pre><code>sudo add-apt-repository ppa:damentz/liquorix &amp;&amp; sudo apt-get update
+sudo apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
+</code></pre><h3 id=53-ipmi-reset-lan>53. ipmi reset lan</h3><p>via:</p><pre><code>ipmitool raw 0x32 0x76 0x08
+</code></pre><h3 id=53-efi-grub-recover>53. efi grub recover</h3><p>Type <code>normal</code> after you insert following commands:</p><p><img src=/images/2022_08_18_09_26_33_688x238.jpg alt=/images/2022_08_18_09_26_33_688x238.jpg></p><p>normal boot will get you into the normal boot:</p><p><img src=/images/2022_08_18_09_27_08_815x579.jpg alt=/images/2022_08_18_09_27_08_815x579.jpg></p><h3 id=54-ubuntu-vfio-sg1>54. Ubuntu vfio sg1</h3><p>commands:</p><pre><code>docker run -itd --name redroidkkk --memory-swappiness=0 --privileged   -p 5555:5555 redroid12:latest redroid.fps=120 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD128 androidboot.use_memfd=1
+
+</code></pre><p>Upgrade ubuntu mesa drivers:</p><pre><code>sudo add-apt-repository ppa:oibaf/graphics-drivers
+sudo apt update
+sudo apt upgrade
+</code></pre><h3 id=55-build-linux-zen>55. Build linux-zen</h3><p>via:</p><pre><code>sudo INSTALL_MOD_STRIP=1 CONCURRENCY_LEVEL=X fakeroot make-kpkg --initrd kernel_image kernel_headers -j 16
+</code></pre><h3 id=56-find-pkg-in-archlinux>56. find pkg in archlinux</h3><p>via:</p><pre><code># pacman -Fy
+# pacman -F genfstab(get the pkg which provides genfstab)
+</code></pre><h3 id=57-qemu-nbd>57. qemu-nbd</h3><p>via:</p><pre><code>modprobe nbd max_part=8
+
+Step 2 - Connect the QCOW2 as a network block device
+
+qemu-nbd --connect=/dev/nbd0 /var/lib/vz/images/100/vm-100-disk-1.qcow2
+Step 3 - List partitions inside the QCOW2
+
+fdisk /dev/nbd0 -l
+Step 4 - Mount the partition from the VM
+
+mount /dev/nbd0p1 /mnt/somepoint/
+You can also mount the filesystem with normal user permissions, ie. non-root:
+
+mount /dev/nbd0p1 /mnt/somepoint -o uid=$UID,gid=$(id -g)
+Step 5 - After you're done, unmount and disconnect
+
+umount /mnt/somepoint/
+qemu-nbd --disconnect /dev/nbd0
+rmmod nbd
+</code></pre><h3 id=58-arm64-mesa-upgrade>58. arm64 mesa upgrade</h3><p>checked via:</p><pre><code># dpkg -l | grep -i mesa
+ii  libegl-mesa0:arm64                            21.2.6-0ubuntu0.1~20.04.2             arm64        free implementation of the EGL API -- Mesa vendor library
+ii  libgl1-mesa-dri:arm64                         21.2.6-0ubuntu0.1~20.04.2             arm64        free implementation of the OpenGL API -- DRI modules
+ii  libglapi-mesa:arm64                           21.2.6-0ubuntu0.1~20.04.2             arm64        free implementation of the GL API -- shared library
+ii  libglu1-mesa:arm64                            9.0.1-1build1                         arm64        Mesa OpenGL utility library (GLU)
+ii  libglx-mesa0:arm64                            21.2.6-0ubuntu0.1~20.04.2             arm64        free implementation of the OpenGL API -- GLX vendor library
+ii  mesa-utils                                    8.4.0-1build1                         arm64        Miscellaneous Mesa GL utilities
+ii  mesa-va-drivers:arm64                         21.2.6-0ubuntu0.1~20.04.2             arm64        Mesa VA-API video acceleration drivers
+ii  mesa-vdpau-drivers:arm64                      21.2.6-0ubuntu0.1~20.04.2             arm64        Mesa VDPAU video acceleration drivers
+ii  mesa-vulkan-drivers:arm64                     21.2.6-0ubuntu0.1~20.04.2             arm64        Mesa Vulkan graphics drivers
+
+</code></pre><p>Upgrade to <code>oibaf</code>:</p><h3 id=59-print-message-of-last-boot>59. print message of last boot</h3><p>via:</p><pre><code> journalctl --boot=-1
+</code></pre><h3 id=60-new-xorg-configure>60. new xorg configure</h3><p>via:</p><pre><code>Xorg -configure
+cat /root/xorg.conf.new | grep -i busid
+</code></pre><h3 id=61-build-glmark2-on-centos7>61. build glmark2 on centos7</h3><p>Steps:</p><pre><code>$ git clone https://github.com/glmark2/glmark2.git
+
+$  INSTALL_APP =&quot;epel-release centos-release-scl hwdata libX11 libX11-common libXau libXdamage libudev-devel \
+libXext libXfixes libXxf86vm libdrm libjpeg-turbo libpciaccess libpng12 libxcb libxshmfence mesa-libEGL \
+mesa-libGL mesa-libGLES mesa-libgbm mesa-libglapi libXmu-devel libXi-devel libGL-devel libjpeg-turbo-devel \
+libpng12-devel mesa-libEGL-devel mesa-libGLES mesa-libgbm-devel mesa-libGLES-devel mesa-dri-drivers \
+devtoolset-4-toolchain&quot;
+
+$  flag=1; for pkg in $INSTALL_APP; do echo &quot;INFO: installing $flag package $pkg ...&quot;; yum install -y &quot;$pkg&quot; &amp;&gt; /dev/null || echo -e &quot;\tERROR: cannot install $pkg ....&quot;; flag=$((flag+1)); done
+$ PATH=&quot;/opt/rh/devtoolset-4/root/bin:$PATH&quot;
+$  ./waf configure --with-flavors=&quot;drm-gl,drm-glesv2,x11-gl,x11-glesv2&quot;
+$ ./waf  -v
+$ ./waf install
+
+$ glmark2
+=======================================================
+    glmark2 2017.07
+=======================================================
+    OpenGL Information
+    GL_VENDOR:     Intel Open Source Technology Center
+    GL_RENDERER:   Mesa DRI Intel(R) Haswell Mobile 
+    GL_VERSION:    3.0 Mesa 17.0.1
+=======================================================
+[build] use-vbo=false: FPS: 2567 FrameTime: 0.390 ms
+=======================================================
+                                  glmark2 Score: 2567 
+=======================================================
+</code></pre><p>change the <code>devtoolset-4</code> to <code>devtoolsset-8</code>.</p><h3 id=62-nvidia-smi-slow-on-ampere-1804>62. nvidia-smi slow on ampere 1804</h3><p>solved via:</p><pre><code>sudo nvidia-persistenced --persistence-mode
+
+</code></pre><h3 id=63-minimum-xorg>63. minimum xorg</h3><p>installed via:</p><pre><code>apt install -y xserver-xorg-core
+</code></pre><h3 id=64-repo-init-aosp_master>64. repo init aosp_master</h3><p>via:</p><pre><code>repo init -u git://mirrors.ustc.edu.cn/aosp/platform/manifest -b master
+repo sync -j4
+</code></pre><h3 id=65-git-search>65. git search</h3><p>search the commit via somebody:</p><pre><code>git log --author='intel.com' --all --grep='SRIOV'
+
+</code></pre><h3 id=66-lspci-tree-view>66. lspci tree view</h3><p>via:</p><pre><code>$ lspci -tvv
+</code></pre><h3 id=67-disable-lock-in-gnome>67. disable lock in gnome</h3><p>via:</p><pre><code>Found couple of ways finally.
+First method : is to run in terminal the command
+
+gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+That should remove the lock option from the tray. And it can be re-ebabled using reset instead of set in the same command and removing true attribute
+
+gsettings reset org.gnome.desktop.lockdown disable-lock-screen
+</code></pre><h3 id=68-android-sdk-on-aarch64>68. android sdk on aarch64</h3><p>Steps:</p><pre><code>docker run -d -p 5901:5901 -p 2222:22 android-sdk:latest
+c38e2d3b3a730b34dc40dc632aa5fa7c6cd32f0631c18d3a965671f1d8115aa1
+root@feiteng:/home/ctctest# docker ps
+CONTAINER ID   IMAGE                COMMAND                  CREATED         STATUS        PORTS                                                                                        NAMES
+c38e2d3b3a73   android-sdk:latest   &quot;/usr/bin/supervisord&quot;   2 seconds ago   Up 1 second   5037/tcp, 0.0.0.0:5901-&gt;5901/tcp, :::5901-&gt;5901/tcp, 0.0.0.0:2222-&gt;22/tcp, :::2222-&gt;22/tcp   mystifying_sammet
+root@feiteng:/home/ctctest# docker exec -it c38e2d3b3a73 bash
+root@c38e2d3b3a73:/# JAVA_HOME=/usr/lib/jvm/java-1
+java-1.11.0-openjdk-arm64/ java-11-openjdk-arm64/     
+root@c38e2d3b3a73:/# JAVA_HOME=/usr/lib/jvm/java-11-openjdk-arm64/
+root@c38e2d3b3a73:/# sdkmanager
+[=======================================] 100% Computing updates...             
+root@c38e2d3b3a73:/# cd /opt/
+android-sdk/         gradle/              kotlinc/             license_accepter.sh  
+root@c38e2d3b3a73:/# cd /opt/android-sdk/
+root@c38e2d3b3a73:/opt/android-sdk# ls
+cmdline-tools  licenses
+root@c38e2d3b3a73:/opt/android-sdk# sdkmanager  &quot;platform-tools&quot;
+[=======================================] 100% Unzipping... platform-tools/lib64
+root@c38e2d3b3a73:/opt/android-sdk# sdkmanager &quot;platforms;android-31&quot;
+[=======================================] 100% Unzipping... android-12/framework
+
+Copy from host to docker:  
+
+root@feiteng:/home/ctctest/20220915# docker cp arm64-v8a c38e2d3b3a73:/opt/android-sdk/system-images/android-31/default &amp;&amp; docker cp emulator c38e2d3b3a73:/opt/android-sdk/
+</code></pre><p>More readable:</p><pre><code>root@feiteng:/home/ctctest# docker run --name emukvm -d -p 5901:5901 -p 2222:22  --privileged android-sdk:latest
+16369be79d70267f1546d0937dd23c1693339f88cc4562624fe5d38b63ead65b
+root@feiteng:/home/ctctest# docker exec -it emukvm bash
+root@16369be79d70:/# JAVA_HOME=/usr/lib/jvm/java-11-openjdk-arm64/
+root@16369be79d70:/# sdkmanager  &quot;platform-tools&quot;; sdkmanager &quot;platforms;android-31&quot;
+[=======================================] 100% Unzipping... platform-tools/lib64
+[=======================================] 100% Unzipping... android-12/framework
+root@16369be79d70:/# mkdir -p /opt/android-sdk/system-images/android-31/default
+
+宿主机拷贝相关文件到sdk目录下
+docker cp arm64-v8a emukvm:/opt/android-sdk/system-images/android-31/default &amp;&amp; docker cp emulator emukvm:/opt/android-sdk
+
+
+root@16369be79d70:/#  emulator @test -no-audio -no-boot-anim -no-window -gpu swiftshader_indirect -qemu -cpu max -machine gic-version=max
+
+root@16369be79d70:/#  adb shell
+
+emulator64_arm64:/ $ getprop | grep boot | grep com                                                      
+[dev.bootcomplete]: [1]
+[sys.boot_completed]: [1]
+[sys.bootstat.first_boot_completed]: [1]
+
+</code></pre><p>For demo:</p><pre><code>$ sudo docker load&lt;android-sdk-vnc-preinstalled.tar
+af52716c484c: Loading layer [==================================================&gt;]   68.1MB/68.1MB
+6deb56f0ac41: Loading layer [==================================================&gt;]  6.656kB/6.656kB
+2a1d4f03ee1e: Loading layer [==================================================&gt;]  837.8MB/837.8MB
+1e7efcf3f6fb: Loading layer [==================================================&gt;]  128.8MB/128.8MB
+8a505bac510d: Loading layer [==================================================&gt;]   77.7MB/77.7MB
+b9e87b8a4eac: Loading layer [==================================================&gt;]  119.8MB/119.8MB
+d51220053622: Loading layer [==================================================&gt;]  4.096kB/4.096kB
+59258b7d9f06: Loading layer [==================================================&gt;]  5.632kB/5.632kB
+4004735b3e24: Loading layer [==================================================&gt;]  3.072kB/3.072kB
+44761079232a: Loading layer [==================================================&gt;]  4.096kB/4.096kB
+e70a6e71fc4d: Loading layer [==================================================&gt;]  10.75kB/10.75kB
+57a11ab28048: Loading layer [==================================================&gt;]  3.584kB/3.584kB
+102d57c5928f: Loading layer [==================================================&gt;]   2.56kB/2.56kB
+ea5ffb5cc89c: Loading layer [==================================================&gt;]  40.02MB/40.02MB
+d6f2e48784b2: Loading layer [==================================================&gt;]  3.584kB/3.584kB
+6751e3b147f7: Loading layer [==================================================&gt;]   2.56kB/2.56kB
+28c073eff8d4: Loading layer [==================================================&gt;]  3.584kB/3.584kB
+6b084044ff11: Loading layer [==================================================&gt;]  3.584kB/3.584kB
+b35e2fb65592: Loading layer [==================================================&gt;]  137.5MB/137.5MB
+9fef29544a2a: Loading layer [==================================================&gt;]  9.602GB/9.602GB
+Loaded image: android-sdk-vnc-preinstalled:latest
+$ sudo docker run --name emukvm -d -p 5901:5901 -p 2222:22  --privileged android-sdk-vnc-preinstalled:latest
+5699cd1823fbf54457b844513f2a2a77e7f252afbd1e15bea2fda4cb50ca3d2a
+$ sudo docker ps
+
+</code></pre><h3 id=69-remount-in-single-user>69. remount in single user</h3><p>via:</p><pre><code>mount -o ro,remount /
+Then you could do passwd or other staffs. 
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/12/29/workingtipsonandroiddocker2/>WorkingTipsOnAndroidDocker2</a></h1><span class=post-date>Dec 29, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>记录aosp avd 11上启动容器的操作事项.</p><h3 id=步骤>步骤</h3><p>因为内核经过修改，故启动的时候需要点击<code>ok</code>后进入系统:</p><p><img src=/images/2021_12_29_11_56_51_356x415.jpg alt=/images/2021_12_29_11_56_51_356x415.jpg></p><p>确保wifi连接:</p><p><img src=/images/2021_12_29_11_58_07_347x482.jpg alt=/images/2021_12_29_11_58_07_347x482.jpg></p><p>进入到adb shell:</p><pre><code>$ adb root
 restarting adbd as root
 $ adb shell
 generic_x86_64:/ # ip addr
@@ -193,42 +662,4 @@ Graphics:  Device-1: Red Hat QXL paravirtual graphic card driver: qxl v: kernel
            Message: Advanced graphics data unavailable in console for root. 
 test@sg1:~$ cat /etc/issue
 Ubuntu 21.10 \n \l
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/11/30/enablepulseaudioinsystemmode/>EnablePulseAudioInSystemMode</a></h1><span class=post-date>Nov 30, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>在Ubuntu <code>18.04.6</code>上配置pulseaudio的 <code>system-wide</code> daemon模式，以使得<code>pulseaudio</code>为所有用户可用。</p><h3 id=步骤>步骤</h3><p>确保<code>pulseaudio</code>被安装（默认应该是被安装的), 撰写一个<code>systemd</code>服务条目，重新定义其启动方式(做完以下步骤后需要重新启动机器), 需注意需要手动执行<code>usermod</code>一行为所有用户添加到组里:</p><pre><code># vi /etc/systemd/system/pulseaudio.service
-[Unit]
-Description=PulseAudio Daemon
- 
-[Install]
-WantedBy=multi-user.target
- 
-[Service]
-Type=simple
-PrivateTmp=true
-ExecStart=/usr/bin/pulseaudio --system --realtime --disallow-exit --no-cpu-limit 
-# vi /usr/share/dbus-1/system.d/pulseaudio.conf 
-&lt;?xml version=&quot;1.0&quot;?&gt; &lt;!--*-nxml-*--&gt;
-&lt;!DOCTYPE busconfig PUBLIC &quot;-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN&quot;
- &quot;http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd&quot;&gt;
-&lt;busconfig&gt;
-    &lt;policy group=&quot;pulse&quot;&gt;
-        &lt;allow own=&quot;org.pulseaudio.Server&quot;/&gt;
-    &lt;/policy&gt;
-
-    &lt;policy context=&quot;default&quot;&gt;
-        &lt;allow send_destination=&quot;org.pulseaudio.Server&quot;/&gt;
-        &lt;allow receive_sender=&quot;org.pulseaudio.Server&quot;/&gt;
-    &lt;/policy&gt;
-&lt;/busconfig&gt;
-# groupadd --system pulse
-# groupadd --system pulse-access
-# useradd --system -g pulse -G audio -d /var/run/pulse -m pulse
-# usermod -G video,pulse-access root
-# usermod -G video,pulse-access test
-# usermod -G video,pulse-access seat1
-# usermod -G video,pulse-access seat2
-# echo &quot;default-server = /var/run/pulse/native&quot; &gt;&gt; /etc/pulse/client.conf
-# echo &quot;autospawn = no&quot; &gt;&gt; /etc/pulse/client.conf
-# systemctl daemon-reload
-# systemctl enable pulseaudio
-# reboot
-</code></pre><p>重启后，以ssh登陆到各用户下，在命令行下播放音频，如用<code>mplayer 1.mp3</code>等操作，应该可以看到音频被正确解码，但是此时无声音，应该使用以下命令unmute音道.</p><p>开启所有音道:</p><pre><code># pactl set-sink-mute @DEFAULT_SINK@ false
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/23/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/23/>23</a></li><li class="page-item active"><a class=page-link href=/page/24/>24</a></li><li class=page-item><a class=page-link href=/page/25/>25</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/25/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

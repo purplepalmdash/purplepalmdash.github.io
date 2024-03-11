@@ -1,5 +1,47 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/10/17/kubesprayisodeployment/>KubeSprayISODeployment</a></h1><span class=post-date>Oct 17, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=文档目的>文档目的</h3><p>详细说明使用ISO离线构建Kubernetes集群的步骤。</p><h3 id=准备>准备</h3><p>硬件：至少两台机器（物理机/虚拟机均可），其中一台用作部署服务器，推荐为2核CPU/3G内存以上配置，另一台用作Kubernetes节点，推荐为4核/8G内存以上配置。如果有更多的机器，则可以考虑都作为Kubernetes工作节点接入集群。<br>软件: 1604_deploy.iso(部署用ISO)， 1604_node.iso(工作节点用ISO)</p><h3 id=系统初始化安装>系统初始化安装</h3><h4 id=部署节点>部署节点</h4><p>插入1604_deploy.iso, 光盘启动系统, 选择English，进入到下一步:<br><img src=/images/2018_10_17_09_28_14_630x472.jpg alt=/images/2018_10_17_09_28_14_630x472.jpg></p><p>选择<code>Install Ubuntu Server</code>:<br><img src=/images/2018_10_17_09_28_35_369x288.jpg alt=/images/2018_10_17_09_28_35_369x288.jpg></p><p>一路回车，选择默认配置，进入到系统安装, 安装完系统将自动重启。</p><p>系统重启完毕后，按Alt+F2，进入到命令行终端(用户名/密码为root/thinker@1):</p><p><img src=/images/2018_10_17_09_37_11_460x168.jpg alt=/images/2018_10_17_09_37_11_460x168.jpg></p><p>配置IP地址:</p><pre><code># vim /etc/network/interfaces
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/10/19/tipsonarm64k8s/>TipsOnArm64K8s</a></h1><span class=post-date>Oct 19, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=系统安装>系统安装</h3><p>镜像为<code>ubuntu16.04.3-server-arm64.iso</code>, 安装盘用于安装系统,
+预先需要配置为光盘启动:</p><p><img src=/images/2018_10_19_10_32_17_425x261.jpg alt=/images/2018_10_19_10_32_17_425x261.jpg></p><p>安装引导界面， 选择HWE Kernel：</p><p><img src=/images/2018_10_19_10_34_10_603x406.jpg alt=/images/2018_10_19_10_34_10_603x406.jpg></p><p>选择"Install Ubuntu Server&rdquo;:</p><p><img src=/images/2018_10_19_10_34_55_524x254.jpg alt=/images/2018_10_19_10_34_55_524x254.jpg></p><p>语言:</p><p><img src=/images/2018_10_19_10_35_41_454x433.jpg alt=/images/2018_10_19_10_35_41_454x433.jpg></p><p>国家:</p><p><img src=/images/2018_10_19_10_35_51_301x314.jpg alt=/images/2018_10_19_10_35_51_301x314.jpg></p><p>keyboard:</p><p><img src=/images/2018_10_19_10_36_05_401x393.jpg alt=/images/2018_10_19_10_36_05_401x393.jpg></p><p>配置下主机名:</p><p><img src=/images/2018_10_19_10_40_17_719x239.jpg alt=/images/2018_10_19_10_40_17_719x239.jpg></p><p>用户名/密码配置test/xxxker</p><p>之后就是一直安装，直到结束。</p><p>进入系统后，配置IP地址，需要手工检测网络是否联通:</p><p><img src=/images/2018_10_19_11_06_46_423x302.jpg alt=/images/2018_10_19_11_06_46_423x302.jpg></p><p>Enable
+root用户，且设置opensshd的root用户登录权限，而后重新启动系统供下步配置使用。</p><h3 id=配置系统>配置系统</h3><p>关闭swap分区，</p><pre><code># swapoff -a
+# vim /etc/fatab
+注释掉swap分区。
+# lvremove /dev/mapper/armk8s--vg-swap_1
+# lvextend -l +100%FREE /dev/mapper/armk8s--vg-root
+# resize2fs /dev/mapper/armk8s--vg-root
+</code></pre><p>从互联网上下载整个 arm repo的mirror包，大约60G，
+而后修改<code>/etc/apt/sources.list</code>如下:</p><pre><code>deb http://192.192.189.128:8000/ xenial main restricted universe multiverse
+deb http://192.192.189.128:8000/ xenial-security main restricted universe multiverse
+deb http://192.192.189.128:8000/ xenial-updates main restricted universe multiverse
+deb http://192.192.189.128:8000/ xenial-proposed main restricted universe multiverse
+deb http://192.192.189.128:8000/ xenial-backports main restricted universe multiverse
+</code></pre><p>现在运行<code>apt-get update</code>可以安装包, 例如<code>apt-get install nethogs</code>.</p><p>安装docker:</p><pre><code># apt-get install docker.io
+# docker version
+</code></pre><p><img src=/images/2018_10_19_11_34_09_488x421.jpg alt=/images/2018_10_19_11_34_09_488x421.jpg></p><p>离线下载deb包，传送到服务器，而后运行:</p><p><img src=/images/2018_10_19_12_25_37_995x185.jpg alt=/images/2018_10_19_12_25_37_995x185.jpg></p><h3 id=镜像准备>镜像准备</h3><p>下载所需镜像并传送到机器:</p><pre><code>docker pull k8s.gcr.io/kube-apiserver-arm64:v1.11.2
+docker pull k8s.gcr.io/kube-controller-manager-arm64:v1.11.2
+docker pull k8s.gcr.io/kube-scheduler-arm64:v1.11.2
+docker pull k8s.gcr.io/kube-proxy-arm64:v1.11.2
+docker pull k8s.gcr.io/etcd-arm64:3.2.18
+docker pull k8s.gcr.io/pause:3.1
+docker pull k8s.gcr.io/coredns:1.1.3
+docker pull weaveworks/weave-npc:2.4.1
+docker pull weaveworks/weave-kube:2.4.1
+docker pull k8s.gcr.io/kubernetes-dashboard-arm:v1.10.0
+</code></pre><p>构建过程:</p><pre><code># kubeadm init --apiserver-advertise-address 192.192.190.95 --kubernetes-version=v1.11.2
+# mkdir -p ~/.kube
+# cp -i /etc/kubernetes/admin.conf ~/.kube/config
+# chown $(id -u):$(id -g) /root/.kube/config
+# export kubever=$(kubectl version | base64 | tr -d '\n')
+# kubectl apply -f &quot;https://cloud.weave.works/k8s/net?k8s-version=$kubever&quot;
+# wget https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard-arm.yaml
+# kubectl apply -f kubernetes-dashboard-arm.yaml
+# kubectl create clusterrolebinding cluster-admin-fordashboard --clusterrole=cluster-admin --user=system:serviceaccount:kube-system:kubernetes-dashboard
+</code></pre><p>Monitoring:</p><pre><code># git clone https://github.com/kubernetes/heapster.git
+# cd heapster/deploy/kube-config/influxdb
+# cp heapster.yaml heapster_arm.yaml
+# cp influxdb.yaml influxdb_arm.yaml
+# cp grafana.yaml grafana_arm.yaml
+Change from amd64 to arm64
+# kubectl create -f *_arm.yaml
+</code></pre><p>This monitoring will not working OK. why?</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/10/17/kubesprayisodeployment/>KubeSprayISODeployment</a></h1><span class=post-date>Oct 17, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=文档目的>文档目的</h3><p>详细说明使用ISO离线构建Kubernetes集群的步骤。</p><h3 id=准备>准备</h3><p>硬件：至少两台机器（物理机/虚拟机均可），其中一台用作部署服务器，推荐为2核CPU/3G内存以上配置，另一台用作Kubernetes节点，推荐为4核/8G内存以上配置。如果有更多的机器，则可以考虑都作为Kubernetes工作节点接入集群。<br>软件: 1604_deploy.iso(部署用ISO)， 1604_node.iso(工作节点用ISO)</p><h3 id=系统初始化安装>系统初始化安装</h3><h4 id=部署节点>部署节点</h4><p>插入1604_deploy.iso, 光盘启动系统, 选择English，进入到下一步:<br><img src=/images/2018_10_17_09_28_14_630x472.jpg alt=/images/2018_10_17_09_28_14_630x472.jpg></p><p>选择<code>Install Ubuntu Server</code>:<br><img src=/images/2018_10_17_09_28_35_369x288.jpg alt=/images/2018_10_17_09_28_35_369x288.jpg></p><p>一路回车，选择默认配置，进入到系统安装, 安装完系统将自动重启。</p><p>系统重启完毕后，按Alt+F2，进入到命令行终端(用户名/密码为root/thinker@1):</p><p><img src=/images/2018_10_17_09_37_11_460x168.jpg alt=/images/2018_10_17_09_37_11_460x168.jpg></p><p>配置IP地址:</p><pre><code># vim /etc/network/interfaces
 auto ens
 - iface ens3 inet dhcp
 + iface ens3 inet static
@@ -388,50 +430,4 @@ metadata:
 -  name: presentation-gitlab-k8s-__CI_ENVIRONMENT_SLUG__
 +  name: __CI_ENVIRONMENT_SLUG__-presentation-gitlab-k8s
 </code></pre><p>这是因为:</p><p><img src=/images/2018_09_18_15_40_19_1249x301.jpg alt=/images/2018_09_18_15_40_19_1249x301.jpg></p><p>注意到Kubernetes cluster details的Project namespace环节要设置为空:</p><p><img src=/images/2018_09_18_15_41_20_425x570.jpg alt=/images/2018_09_18_15_41_20_425x570.jpg>
-现在点击Options->Environments, 查看其监控指标:</p><p><img src=/images/2018_09_18_15_42_14_780x621.jpg alt=/images/2018_09_18_15_42_14_780x621.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/09/12/gitlabcifork8s/>GitLabCIForK8s</a></h1><span class=post-date>Sep 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>中心节点: <code>zzz_gitlabci_center</code>,
-虚拟机，4核3G内存，200G硬盘，接入到<code>192.168.122.0/24</code>的kvm default网络，
-上面部署portus, kubespray, nfs等k8s部署组件，而后部署gitlab环境。</p><p>k8s工作节点 <code>zzz_gitlabci_allinone_k8s</code>,<br>虚拟机， 4核6G内存，200G硬盘。</p><h3 id=gitlab-bug>gitlab bug</h3><p>GitLab reconfigure:</p><pre><code># vim /etc/gitlab/gitlab.rb
-external_url 'http://192.168.122.171'
-# vim /opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/kubernetes/helm/base_command.rb
--            apk add -U ca-certificates openssl &gt;/dev/null
-+            apk add -U wget ca-certificates openssl &gt;/dev/null
-# cat &gt; /etc/default/locale &lt;&lt;EOF
-LC_ALL=en_US.UTF-8
-LANG=en_US.UTF-8
-LANGUAGE=en_US.UTF-8
-EOF
-# localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || true
-# gitlab-ctl reconfigure &amp;&amp; gitlab-ctl restart
-</code></pre><h3 id=portus-bug>portus bug</h3><p>原有的portus管理端口占用了80端口，因而需要手动改动其为81端口，以响应web页面的管理。</p><h3 id=配置>配置</h3><p>参考:<br><a href=https://edenmal.moe/post/2018/GitLab-Kubernetes-Using-GitLab-CIs-Kubernetes-Cluster-feature/>https://edenmal.moe/post/2018/GitLab-Kubernetes-Using-GitLab-CIs-Kubernetes-Cluster-feature/</a></p><p>初始化的gitlab界面:</p><p><img src=/images/2018_09_12_11_09_11_749x466.jpg alt=/images/2018_09_12_11_09_11_749x466.jpg></p><p>创建的项目:</p><p><img src=/images/2018_09_12_11_09_37_617x548.jpg alt=/images/2018_09_12_11_09_37_617x548.jpg></p><p>从示例项目创建新项目：</p><pre><code># mkdir Code
-# cd Code
-# git clone https://github.com/galexrt/presentation-gitlab-k8s.git
-# cd presentation-gitlab-k8s/
-# git remote remove origin
-# git remote add origin git@192.168.122.171:root/gitlabci.git
-# git push origin master
-</code></pre><p>此时应该可以看到CI/CD按钮处于pending状态:</p><p><img src=/images/2018_09_12_11_20_04_316x175.jpg alt=/images/2018_09_12_11_20_04_316x175.jpg></p><h3 id=获取token>获取TOKEN</h3><p>登录到<code>192.168.122.172</code> 机器，执行以下操作获取token:</p><pre><code># kubectl get secret
-NAME                  TYPE                                  DATA      AGE
-default-token-spz8w   kubernetes.io/service-account-token   3         58m
-# kubectl get secret default-token-spz8w -o yaml | grep token:
-xxxxxxxxxxxx
-# cat xxxxxxx | base64 -d
-</code></pre><p>拷贝得到的decode 后的token字段，后面我们需要在gitlab页面中填入。</p><h3 id=获取ca>获取CA</h3><p>在<code>192.168.122.172</code>机器上，查看当前的kubectl配置:</p><pre><code># kubectl config view
-apiVersion: v1
-clusters:
-- cluster:
-    certificate-authority-data: REDACTED
-    server: https://192.168.122.172:6443
-  name: cluster.local
-# cat ~/.kube/config
-apiVersion: v1
-kind: Config
-current-context: admin-cluster.local
-preferences: {}
-clusters:
-- cluster:
-    certificate-authority-data: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    server: https://192.168.122.172:6443
-  name: cluster.local
-# cat xxxxxxxxxxxxxxxxxxxxxxxxxx | base64 -d
-</code></pre><p>将输出的内容保存，后面我们将在gitlab配置页面中输入该内容.</p><h3 id=gitlabci--k8s-cluster>gitlabci & k8s cluster</h3><p>点击下述图标进入到k8s cluster的配置:</p><p><img src=/images/2018_09_12_11_36_37_400x302.jpg alt=/images/2018_09_12_11_36_37_400x302.jpg></p><p>添加一个已有的k8s 集群:</p><p><img src=/images/2018_09_12_11_40_18_615x263.jpg alt=/images/2018_09_12_11_40_18_615x263.jpg></p><p>填入以下内容:</p><p><img src=/images/2018_09_12_11_43_55_600x620.jpg alt=/images/2018_09_12_11_43_55_600x620.jpg></p><p>Applications这里暂时没有安装，需要全程翻墙, 感谢你娘的土共啊:</p><p><img src=/images/2018_09_12_11_44_55_875x617.jpg alt=/images/2018_09_12_11_44_55_875x617.jpg></p><p>翻墙后你会遇到这个问题:</p><p><img src=/images/2018_09_12_11_50_48_861x205.jpg alt=/images/2018_09_12_11_50_48_861x205.jpg></p><pre><code># kubectl create clusterrolebinding permissive-binding --clusterrole=cluster-admin --user=admin --user=kubelet --group=system:serviceaccounts
-</code></pre><p>报api-token无效的时候，返回去干掉namespace, 之后即可继续安装.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/64/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/64/>64</a></li><li class="page-item active"><a class=page-link href=/page/65/>65</a></li><li class=page-item><a class=page-link href=/page/66/>66</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/66/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+现在点击Options->Environments, 查看其监控指标:</p><p><img src=/images/2018_09_18_15_42_14_780x621.jpg alt=/images/2018_09_18_15_42_14_780x621.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/64/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/64/>64</a></li><li class="page-item active"><a class=page-link href=/page/65/>65</a></li><li class=page-item><a class=page-link href=/page/66/>66</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/66/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

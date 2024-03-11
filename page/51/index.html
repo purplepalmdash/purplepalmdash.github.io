@@ -1,5 +1,65 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/11/18/thinkingondev/>ThinkingOnDev</a></h1><span class=post-date>Nov 18, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><ol><li>节点数据上报，监控客户端方案。</li><li>数据归总方案，用什么样的数据库什么样的架构用于存放数据。</li><li>数据展示方案，用什么样的前端和操控界面来展示和使用数据。</li></ol></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/11/13/workingtipsongravitee/>WorkingTipsOnGravitee</a></h1><span class=post-date>Nov 13, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>Deploy gravitee on Kubernetes cluster, and use it as cluster&rsquo;s API gateway.</p><h3 id=ingress-controller>Ingress-Controller</h3><p>Deploy nginx-ingress-controller in kubespray&rsquo;s configuration is listed as following:</p><pre><code>ingress_nginx_enabled: true
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/11/28/createvagrantboxfromqcow2/>CreateVagrantBoxFromQCOW2</a></h1><span class=post-date>Nov 28, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=machine-preparation>Machine Preparation</h3><p>Create a libvirt machine, install system.</p><p>Add user vagrant:</p><pre><code># adduser vagrant
+# visudo -f /etc/sudoers.d/vagrant
+vagrant ALL=(ALL) NOPASSWD:ALL
+# visudo
+vagrant ALL=(ALL) NOPASSWD:ALL
+Defaults:vagrant	!requiretty
+# mkdir -p /home/vagrant/.ssh
+# chmod 0700 /home/vagrant/.ssh
+# wget --no-check-certificate \
+https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub \
+-O /home/vagrant/.ssh/authorized_keys
+# chmod 0600 /home/vagrant/.ssh/authorized_keys
+# chown -R vagrant /home/vagrant/.ssh
+# vim /home/vagrant/.profile
+add
+[ -z &quot;$BASH_VERSION&quot; ] &amp;&amp; exec /bin/bash -l
+# chsh -s /bin/bash vagrant
+</code></pre><p>Change the ethernet card from <code>ens*</code> to eth0:</p><pre><code># vim /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quite&quot;
+GRUB_CMDLINE_LINUX=&quot;net.ifnames=0 biosdevname=0&quot;
+# grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre><p>Change the netplan rules:</p><pre><code># vim /etc/netplan/01-netcfg.yaml 
+# This file describes the network interfaces available on your system
+# For more information, see netplan(5).
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: yes
+      dhcp-identifier: mac
+</code></pre><p>Finally change the sshd configuration:</p><pre><code># vim /etc/ssh/sshd_config 
+AuthorizedKeysFile .ssh/authorized_keys
+</code></pre><p>For 20.04, you have to manually install ifupdown:</p><pre><code># apt-get install -y ifupdown
+</code></pre><p>Now shutdown the machine, continue for packaging.</p><h3 id=packaging>Packaging</h3><p>Shrinking the qcow2 file:</p><pre><code># qemu-img convert -c -O qcow2 test180403.qcow2 test180403shrunk.qcow2
+# mv test180403shrunk.qcow2 box.img
+# vim metadata.json
+{
+&quot;provider&quot;     : &quot;libvirt&quot;,
+&quot;format&quot;       : &quot;qcow2&quot;,
+&quot;virtual_size&quot; : 40
+}
+# vim Vagrantfile
+Vagrant.configure(&quot;2&quot;) do |config|
+       config.vm.provider :libvirt do |libvirt|
+       libvirt.driver = &quot;kvm&quot;
+       libvirt.host = 'localhost'
+       libvirt.uri = 'qemu:///system'
+       end
+config.vm.define &quot;new&quot; do |custombox|
+       custombox.vm.box = &quot;custombox&quot;
+       custombox.vm.provider :libvirt do |test|
+       test.memory = 1024
+       test.cpus = 1
+       end
+       end
+end
+# tar cvzf custom_box.box ./metadata.json ./Vagrantfile ./box.img
+</code></pre><h3 id=testing>Testing</h3><p>Add vagrant box via:</p><pre><code># vagrant box add custom_box.box --name &quot;chuobi&quot;
+# vagrant init chuobi
+# vagrant up --provider=libvirt
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/11/18/thinkingondev/>ThinkingOnDev</a></h1><span class=post-date>Nov 18, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><ol><li>节点数据上报，监控客户端方案。</li><li>数据归总方案，用什么样的数据库什么样的架构用于存放数据。</li><li>数据展示方案，用什么样的前端和操控界面来展示和使用数据。</li></ol></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/11/13/workingtipsongravitee/>WorkingTipsOnGravitee</a></h1><span class=post-date>Nov 13, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>Deploy gravitee on Kubernetes cluster, and use it as cluster&rsquo;s API gateway.</p><h3 id=ingress-controller>Ingress-Controller</h3><p>Deploy nginx-ingress-controller in kubespray&rsquo;s configuration is listed as following:</p><pre><code>ingress_nginx_enabled: true
 ingress_nginx_host_network: true
 ingress_nginx_nodeselector:
   kubernetes.io/hostname: &quot;tsts-2&quot;
@@ -326,28 +386,4 @@ listen &quot;127.0.0.1:8082&quot;, :tcp_nopush =&gt; true
    stable&quot;
 #  apt-get update
 #  apt-get install docker-ce docker-ce-cli containerd.io
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/09/05/workingtipsonkubespraydind/>WorkingTipsOnKubesprayDIND</a></h1><span class=post-date>Sep 5, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=vagrant-machine>vagrant machine</h3><p>Create a vagrant machine with 8-core/10G memory:</p><pre><code>vagrant init generic/ubuntu1604
-vagrant up
-vagrant ssh
-</code></pre><h3 id=steps>steps</h3><p>Prepare the environment:</p><pre><code>sudo apt-get update -y
-sudo apt-get install -y python-pip git python3-pip
-git clone xxxxxxx/kubespray
-cd kubespray
-export LC_ALL=&quot;en_US.UTF-8&quot;
-pip install -r requirements.txt 
-pip3 install ruamel.yaml
-sudo apt-get install     apt-transport-https     ca-certificates     curl     gnupg-agent     software-properties-common
-sudo apt-key fingerprint 0EBFCD88
-sudo add-apt-repository    &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable&quot;
-sudo apt-get update -y &amp;&amp;  sudo apt-get install docker-ce docker-ce-cli containerd.io -y
-cd contrib/dind
-pip install -r requirements.txt
-</code></pre><p>Deploy the dind cluster:</p><pre><code>sudo /home/vagrant/.local/bin//ansible-playbook -i hosts dind-cluster.yaml
-rm -f inventory/local-dind/hosts.yml 
-sudo CONFIG_FILE=${INVENTORY_DIR}/hosts.yml /tmp/kubespray.dind.inventory_builder.sh
-sudo chown -R vagrant /home/vagrant/.ansible/
-sudo docker exec kube-node1 apt-get install -y iputils-ping
-/home/vagrant/.local/bin//ansible-playbook --become -e ansible_ssh_user=ubuntu -i ${INVENTORY_DIR}/hosts.yml cluster.yml --extra-vars @contrib/dind/kubespray-dind.yaml
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/50/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/50/>50</a></li><li class="page-item active"><a class=page-link href=/page/51/>51</a></li><li class=page-item><a class=page-link href=/page/52/>52</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/52/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
