@@ -1,846 +1,260 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/10/09/leetcodetips1/>LeetCodeTips1</a></h1><span class=post-date>Oct 9, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>又到了一年一度的跳Cao准备期间了，来刷刷LeetCode，提升一下编程技巧，准备可能的鄙视或者是
-被鄙视。</p><h3 id=1-two-sum>1. Two Sum</h3><p>问题:<br>给定一个整型数组，编写一函数，返回值为两个数组的下标，两个下标所在的数组元素相加的和为
-给定的数值。例如:</p><pre><code>给定 nums = [2,7,11,15], targe = 9,     
-因为nums[0] + nums[1] = 2 + 7 = 9,
-返回的数组应为[0, 1].
-</code></pre><h4 id=c语言版>C语言版</h4><p>用C语言我的解决方案如下:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#75715e>/* Given nums = [2, 7, 11, 15], target = 9,
-</span><span style=color:#75715e> *
-</span><span style=color:#75715e> * Because nums[0] + nums[1] = 2 + 7 = 9,
-</span><span style=color:#75715e> * return [0, 1].
-</span><span style=color:#75715e> */</span>
-
-<span style=color:#75715e>#</span><span style=color:#75715e>include</span> <span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#75715e>#</span><span style=color:#75715e>include</span> <span style=color:#75715e>&lt;stdlib.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span>
-<span style=color:#75715e>/**
-</span><span style=color:#75715e> * Note: The returned array must be malloced, assume caller calls free().
-</span><span style=color:#75715e> */</span>
-
-<span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> <span style=color:#a6e22e>twoSum</span>(<span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> nums, <span style=color:#66d9ef>int</span> numsSize, <span style=color:#66d9ef>int</span> target) {
-	<span style=color:#66d9ef>int</span> i, j;
-
-	<span style=color:#66d9ef>for</span> (i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> numsSize; i<span style=color:#f92672>+</span><span style=color:#f92672>+</span>)
-	{
-		<span style=color:#66d9ef>for</span>(j <span style=color:#f92672>=</span> i<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>; j <span style=color:#f92672>&lt;</span> numsSize; j<span style=color:#f92672>+</span><span style=color:#f92672>+</span>)
-		{
-			<span style=color:#66d9ef>if</span>(nums[i] <span style=color:#f92672>+</span> nums[j] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> target)
-			{
-				<span style=color:#75715e>// Call malloc() for return value.
-</span><span style=color:#75715e></span>				<span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> returnArray <span style=color:#f92672>=</span> malloc(<span style=color:#ae81ff>2</span><span style=color:#f92672>*</span><span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>int</span>));
-				returnArray[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> i;
-				returnArray[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> j;
-				<span style=color:#66d9ef>return</span> returnArray;
-			}
-		}
-	}
-	<span style=color:#75715e>// Not found, comes here.
-</span><span style=color:#75715e></span>	<span style=color:#66d9ef>return</span> NULL;
-}
-
-<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(<span style=color:#66d9ef>void</span>)
-{
-	<span style=color:#66d9ef>int</span> nums[<span style=color:#ae81ff>4</span>] <span style=color:#f92672>=</span> {<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>7</span>, <span style=color:#ae81ff>11</span>, <span style=color:#ae81ff>15</span>};
-
-	<span style=color:#66d9ef>int</span> <span style=color:#f92672>*</span>result <span style=color:#f92672>=</span> twoSum(nums, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>9</span>);
-	<span style=color:#66d9ef>if</span>(result <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL)
-	{
-	        printf(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>result is %d, %d </span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, result[<span style=color:#ae81ff>0</span>], result[<span style=color:#ae81ff>1</span>]);
-	}
-
-	<span style=color:#75715e>// Call malloc in function twoSum(), so now will call free()
-</span><span style=color:#75715e></span>	<span style=color:#66d9ef>if</span>(result <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL)
-	{
-	        free(result);
-	}
-        <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
-}
-
-</code></pre></div><p>心得1: malloc()/free()的调用需要在不同函数体中进行，因而可能存在内存泄漏的风险，使用
-valgrind来检测可以看到，有两次请求两次释放动作，并没有内存泄漏:</p><pre><code>$ valgrind -v --leak-check=full ./TwoSum
-......
-==3283== HEAP SUMMARY:
-==3283==     in use at exit: 0 bytes in 0 blocks
-==3283==   total heap usage: 2 allocs, 2 frees, 1,032 bytes allocated
-==3283== 
-==3283== All heap blocks were freed -- no leaks are possible
-==3283== 
-==3283== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-==3283== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-</code></pre><p>心得2: 算法复杂度为O(n^2)， 因为有嵌套的for()循环. 官方给出的有通过哈希来做的，在C语言
-中内建数据类型并不包括map，因而在后面用python来实现。</p><p>心得3: 对函数的返回值需要检测，如free()掉一个NULL的地址。StackOverFlow上关于free(NULL)
-的讨论如下：<br><a href=http://stackoverflow.com/questions/1938735/does-freeptr-where-ptr-is-null-corrupt-memory>http://stackoverflow.com/questions/1938735/does-freeptr-where-ptr-is-null-corrupt-memory</a></p><p>看起来也不会有什么严重的后果。</p><h4 id=python版>Python版</h4><p>自己写的Python版本实现如下:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>(object):
-    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>twoSum</span>(self, nums, target):
-        <span style=color:#e6db74></span><span style=color:#e6db74>&#34;&#34;&#34;</span><span style=color:#e6db74>
-</span><span style=color:#e6db74></span><span style=color:#e6db74>        :type nums: List[int]</span><span style=color:#e6db74>
-</span><span style=color:#e6db74></span><span style=color:#e6db74>        :type target: int</span><span style=color:#e6db74>
-</span><span style=color:#e6db74></span><span style=color:#e6db74>        :rtype: List[int]</span><span style=color:#e6db74>
-</span><span style=color:#e6db74></span><span style=color:#e6db74>        </span><span style=color:#e6db74>&#34;&#34;&#34;</span>
-        returnvalue <span style=color:#f92672>=</span> []
-        <span style=color:#66d9ef>for</span> num <span style=color:#f92672>in</span> nums:
-            <span style=color:#66d9ef>for</span> left <span style=color:#f92672>in</span> nums[nums<span style=color:#f92672>.</span>index(num)<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>:]:
-                <span style=color:#66d9ef>if</span> (num <span style=color:#f92672>+</span> left <span style=color:#f92672>==</span> target):
-                    returnvalue<span style=color:#f92672>.</span>append(nums<span style=color:#f92672>.</span>index(num))
-                    returnvalue<span style=color:#f92672>.</span>append(nums<span style=color:#f92672>.</span>index(left))
-        <span style=color:#66d9ef>return</span> returnvalue
-
-<span style=color:#66d9ef>print</span> (Solution()<span style=color:#f92672>.</span>twoSum([<span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>11</span>, <span style=color:#ae81ff>17</span>], <span style=color:#ae81ff>9</span>))
-</code></pre></div><p>心得1: 类(class)的用法.<br>心得2: 数组的一点点小小的使用。</p><p>基本逻辑和C语言实现的差不多，算法复杂度也一样。</p><h4 id=引入的bug>引入的bug</h4><p>设置的test case中，我们的代码在遇到[0,4,3,0]这样的输入时，会报错。原因在于nums.index(0)
-总是返回第一个0所在的下标(0)，而不是第二个0所在的下标(3)，修改后的代码如下:</p><pre><code>class Solution(object):
-    def twoSum(self, nums, target):
-        &quot;&quot;&quot;
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        &quot;&quot;&quot;
-        returnvalue = []
-        index = 0
-        for num in nums:
-            index += 1
-            for left in nums[index:]:
-                if (num + left == target):
-                    returnvalue.append(nums.index(num))
-                    returnvalue.append(nums[index:].index(left)+index)
-        return returnvalue
-
-print (Solution().twoSum([0,4,3,0], 0))
-</code></pre><p>运行后的结果，不是那么理想，只击败了34%左右的提交结果:</p><p><img src=/images/2016_10_10_16_34_33_1195x858.jpg alt=/images/2016_10_10_16_34_33_1195x858.jpg></p><h4 id=python-hash>Python Hash</h4><p>经过几番修改以后的代码如下，只循环一次，因而算法复杂度为O(n):</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Solution</span>(object):
-    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>twoSum</span>(self, nums, target):
-        <span style=color:#e6db74></span><span style=color:#e6db74>&#34;&#34;&#34;</span><span style=color:#e6db74>
-</span><span style=color:#e6db74></span><span style=color:#e6db74>        :type nums: List[int]</span><span style=color:#e6db74>
-</span><span style=color:#e6db74></span><span style=color:#e6db74>        :type target: int</span><span style=color:#e6db74>
-</span><span style=color:#e6db74></span><span style=color:#e6db74>        :rtype: List[int]</span><span style=color:#e6db74>
-</span><span style=color:#e6db74></span><span style=color:#e6db74>        </span><span style=color:#e6db74>&#34;&#34;&#34;</span>
-        <span style=color:#75715e># Use a dictionary for holding nums</span>
-        num_dic <span style=color:#f92672>=</span> {}
-        <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(nums)):
-            <span style=color:#66d9ef>if</span> target <span style=color:#f92672>-</span> nums[i] <span style=color:#f92672>in</span> num_dic<span style=color:#f92672>.</span>keys():
-                <span style=color:#66d9ef>return</span> [num_dic[target <span style=color:#f92672>-</span> nums[i]],i]
-            <span style=color:#66d9ef>else</span>:
-                <span style=color:#75715e># directly put it into the num_dic</span>
-                num_dic[nums[i]] <span style=color:#f92672>=</span> i
-        <span style=color:#66d9ef>return</span> []
-
-<span style=color:#66d9ef>print</span> (Solution()<span style=color:#f92672>.</span>twoSum([<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>4</span>,<span style=color:#ae81ff>3</span>,<span style=color:#ae81ff>0</span>], <span style=color:#ae81ff>0</span>))
-<span style=color:#66d9ef>print</span> (Solution()<span style=color:#f92672>.</span>twoSum([<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>2</span>], <span style=color:#ae81ff>6</span>))
-</code></pre></div><p>速度稍微提升了一些:</p><p><img src=/images/2016_10_10_20_05_31_508x380.jpg alt=/images/2016_10_10_20_05_31_508x380.jpg></p><p>更好的方案，优化:</p><pre><code>class Solution(object):
-    def twoSum(self, nums, target):
-        &quot;&quot;&quot;
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        &quot;&quot;&quot;
-        # Use a dictionary for holding nums
-        num_dic = {}
-        for i,v in enumerate(nums):
-            if v in num_dic.keys():
-                return [num_dic[v],i]
-            num_dic[target-v] = i
-
-print (Solution().twoSum([0,4,3,0], 0))
-print (Solution().twoSum([3, 4, 2], 6))
-</code></pre><p>这个代码大概能跑到击败80%左右的提交答案。</p><p>思考1： enumerate()函数调用减少了时间。<br>思考2： 原代码中有两次减法，而修改后的代码中，只是在写入hash的时候，有一次target-v的减法操作。<br>思考3： 去掉了一次不必要的return操作。</p><p>总结：<br>Python里对于这个问题的优化大概就到这里了。可以看到，简单的问题也是需要认真思考了，认认真真的来
-做leetcode吧。</p><h3 id=2-add-two-numbers>2. Add Two Numbers</h3><p>题目说明:</p><pre><code>给定两个用链表表示的非负数。数字存储是reverse order， 每个节点存有一个数字。将节点上的数字
-相加，以得到一个新的链表
-Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
-Output: 7 -&gt; 0 -&gt; 8
-</code></pre><p>Oct10晚上的测试框架写成这样：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#75715e>/**
-</span><span style=color:#75715e> * Definition for singly-linked list.
-</span><span style=color:#75715e> * struct ListNode {
-</span><span style=color:#75715e> *     int val;
-</span><span style=color:#75715e> *     struct ListNode *next;
-</span><span style=color:#75715e> * };
-</span><span style=color:#75715e> */</span>
-
-<span style=color:#75715e>#</span><span style=color:#75715e>include</span> <span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#75715e>#</span><span style=color:#75715e>include</span> <span style=color:#75715e>&lt;stdlib.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span>
-
-<span style=color:#75715e>// Definition of the ListNode
-</span><span style=color:#75715e></span><span style=color:#66d9ef>struct</span> ListNode {
-    <span style=color:#66d9ef>int</span> val;
-    <span style=color:#66d9ef>struct</span> ListNode <span style=color:#f92672>*</span>next;
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/11/06/climbingmaofengmountain/>ClimbingMaoFengMountain</a></h1><span class=post-date>Nov 6, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>近期广州雾霾实在是有点醇厚，所以周末的第一选择当然是进山避霾啦！</p><p>今天定它个小目标，快速穿越帽峰山脉。</p><p>帽峰山是广州周边我非常喜欢的一座山，距市区有点距离(40公里？)，配套设施好、
+人流量适中、植被茂密、空气清新。这一年多来去了好几次，每次都有新发现。今天
+走的是一条穿越的线路，20公里，白山村->山顶->古庙出口。</p><p>早上游泳的缘故，出发得晚，11点多才开始走白山村道，果然没有雾霾，蓝天白云：</p><p><img src=/images/2016_11_06_20_39_56_1122x837.jpg alt=/images/2016_11_06_20_39_56_1122x837.jpg></p><p>水厂后面的山峰郁郁葱葱，深山有好水:</p><p><img src=/images/2016_11_06_20_42_05_1124x841.jpg alt=/images/2016_11_06_20_42_05_1124x841.jpg></p><p>沿途有村民营业的大量取水点，自备矿泉水桶过来装，2元/桶。拉回城应该随便就能卖到20
+块一桶吧? 发家致富的路子，窝也只能指点到这了:</p><p><img src=/images/2016_11_06_20_43_50_801x596.jpg alt=/images/2016_11_06_20_43_50_801x596.jpg></p><p>锄禾日当午, 要珍惜盘中餐啊，看下图，向我学习:</p><p><img src=/images/2016_11_06_20_46_38_1122x837.jpg alt=/images/2016_11_06_20_46_38_1122x837.jpg></p><p>惭愧，走了一个小时就饿了，果断吃饭，考虑一会要在山里跑，吃素淡点就不点鱼了。喜欢
+吃鱼的朋友到了帽峰山可以点鱼吃，铜锣湾水库水质不错，出品的鱼很美味:</p><p><img src=/images/2016_11_06_20_57_40_660x355.jpg alt=/images/2016_11_06_20_57_40_660x355.jpg></p><p>这位一直围着桌子喵喵叫的小兄弟, 窝那么富有爱心当然不会忘了你:</p><p><img src=/images/2016_11_06_21_20_34_434x659.jpg alt=/images/2016_11_06_21_20_34_434x659.jpg></p><p>山间风景:</p><p><img src=/images/2016_11_06_21_23_48_427x408.jpg alt=/images/2016_11_06_21_23_48_427x408.jpg></p><p>15分钟到顶，开始沿着山脊往帽峰山顶广场穿行:</p><p><img src=/images/2016_11_06_21_26_07_973x721.jpg alt=/images/2016_11_06_21_26_07_973x721.jpg></p><p>速度有点快，1小时不到抵达帽峰山顶广场:</p><p><img src=/images/2016_11_06_21_27_16_974x716.jpg alt=/images/2016_11_06_21_27_16_974x716.jpg></p><p>山顶俯瞰林海, 空气没得说，怎样都是负氧离子饱和:</p><p><img src=/images/2016_11_06_21_27_57_975x726.jpg alt=/images/2016_11_06_21_27_57_975x726.jpg></p><p>北国早已寒冷如咧，可这帽峰山里风景, 依然青翠如夏:</p><p><img src=/images/2016_11_06_21_31_29_522x516.jpg alt=/images/2016_11_06_21_31_29_522x516.jpg></p><p>下午3点40,自古庙出口下到山底，结束愉快的帽峰山一日之旅。<br>如此算来，从白山村到杨伙寮，经箫神顶到帽峰山顶景区后经古庙下山,可以在三个小时内完成。</p><p>压轴奉上帽峰山脉一景. Life is short, play more.</p><p><img src=/images/2016_11_06_21_35_42_1125x836.jpg alt=/images/2016_11_06_21_35_42_1125x836.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/11/05/%E4%B8%BAblog%E6%B7%BB%E5%8A%A0%E4%BF%9D%E5%AD%98%E4%B8%BA%E5%9B%BE%E7%89%87%E5%8A%9F%E8%83%BD/>为Blog添加保存为图片功能</a></h1><span class=post-date>Nov 5, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=背景>背景</h3><p>众所周知疼讯其实一直是一个很封闭傻逼的企业，早年QZONE的代码就层层加密，
+惟恐互联网爬虫爬到它上面取内容。进入到移动互联网时代，就更加变本加厉，盆友
+圈里的诸多内容，恐怕诸位都是没办法弄出来的。</p><p>早年曾在Blog上添加过<code>分享到朋友圈</code>或<code>分享到微信好友</code>按钮，由于<code>github.io</code>未
+被疼讯认可，共享出来的链接通常只有自己能看到，这又是一个拿用户当SB的典型
+案例。</p><p>还好，对于用户上传图片，疼讯是没法限制的。所以有了以下的开发。</p><h3 id=功能参考>功能参考</h3><p>在博文里添加按钮<code>一键保存为图片</code>,即可将该篇文章生成为长图片。</p><p><img src=/images/2016_11_05_18_38_31_637x390.jpg alt=/images/2016_11_05_18_38_31_637x390.jpg></p><p>参考设计： 锤子便签。顺便吐槽一下锤子便签，添加了关键词过滤，关键词嘛，这也是
+党国拿来折腾屁民的一个傻逼玩意，例如有一首歌是这么唱的:</p><pre><code>我爱北京关键词，
+关键词上太阳升。。
+伟大得领袖关键词，
+带领我们向前进…
+</code></pre><p>╮〔╯ε╰〕╭ &mdash;太多的关键词，容易让写博文的人心情不好。</p><h3 id=可选方案>可选方案</h3><p>A. wkhtmltoimage.<br>这个转换起来是全屏转换，所以最初想到的是对网页做再加工，抠取出其中含有内容的一部分。
+好处是，真的是所见即所得。</p><pre><code>$ wkhtmltoimage http://www.google.com google.jpg
+</code></pre><p>B. html2canvas.<br>这种方案直接在html页面上做文章，添加按钮后直接用画布来生成对象。缺点是有些格式显示出来
+有少量阴影。</p><p>暂时基于方案B实现。</p><h3 id=code>Code</h3><p>参考资料:<br><a href="https://www.youtube.com/watch?v=-d2FeFiBvEo">https://www.youtube.com/watch?v=-d2FeFiBvEo</a><br><a href=https://html2canvas.hertzen.com/>https://html2canvas.hertzen.com/</a></p><p>因为本博客基于hugo构建，直接修改hugo使用的主题即可添加html2canvas。</p><p>目录结构:</p><pre><code>$ ls  
+config.toml  content  id_rsa.enc  scripts  static  themes
+$ themes/hyde-a
+$ ls
+archetypes  images  layouts  LICENSE  README.md  static  theme.toml
+</code></pre><p>下载<code>html2canvas.js</code>到主题的<code>static/js</code>目录:</p><pre><code>$ cd static/js
+$ wget
+https://github.com/niklasvh/html2canvas/releases/download/0.4.1/html2canvas.js
+</code></pre><p>在主题的<code>./layouts/partials/head.html</code>文件中添加所需要的js文件及javascript代码
+, (+代表新添加代码):</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>  <span style=color:#f92672>&lt;</span><span style=color:#a6e22e>link</span> <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stylesheet&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css&#34;</span><span style=color:#f92672>&gt;</span>
+<span style=color:#f92672>+</span>  <span style=color:#f92672>&lt;</span><span style=color:#a6e22e>script</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text/javascript&#34;</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&#34;</span><span style=color:#f92672>&gt;</span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>s</span><span style=color:#960050;background-color:#1e0010>c</span><span style=color:#960050;background-color:#1e0010>r</span><span style=color:#960050;background-color:#1e0010>i</span><span style=color:#960050;background-color:#1e0010>p</span><span style=color:#960050;background-color:#1e0010>t</span><span style=color:#960050;background-color:#1e0010>&gt;</span>
+<span style=color:#f92672>+</span>  <span style=color:#f92672>&lt;</span><span style=color:#a6e22e>script</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text/javascript&#34;</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/js/html2canvas.js&#34;</span><span style=color:#f92672>&gt;</span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>s</span><span style=color:#960050;background-color:#1e0010>c</span><span style=color:#960050;background-color:#1e0010>r</span><span style=color:#960050;background-color:#1e0010>i</span><span style=color:#960050;background-color:#1e0010>p</span><span style=color:#960050;background-color:#1e0010>t</span><span style=color:#960050;background-color:#1e0010>&gt;</span>
+<span style=color:#f92672>+</span>  <span style=color:#f92672>&lt;</span><span style=color:#a6e22e>script</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;text/javascript&#39;</span><span style=color:#f92672>&gt;</span><span style=color:#75715e>//&lt;![CDATA[
+</span><span style=color:#75715e></span><span style=color:#f92672>+</span>  <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>genPostShot</span>() { 
+<span style=color:#f92672>+</span>          <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>rightNow</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Date();
+<span style=color:#f92672>+</span>          <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>imageName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>rightNow</span>.<span style=color:#a6e22e>toISOString</span>().<span style=color:#a6e22e>slice</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>16</span>).<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/(-)|(:)|(T)/g</span>,<span style=color:#e6db74>&#34;&#34;</span>);
+<span style=color:#f92672>+</span>          <span style=color:#a6e22e>imageName</span> <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#39;.jpg&#39;</span>
+<span style=color:#f92672>+</span>          <span style=color:#a6e22e>html2canvas</span>(document.<span style=color:#a6e22e>getElementsByClassName</span>(<span style=color:#e6db74>&#39;post&#39;</span>), {
+<span style=color:#f92672>+</span>              <span style=color:#a6e22e>onrendered</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>canvas</span>) {
+<span style=color:#f92672>+</span>  		<span style=color:#75715e>// Click them for download
+</span><span style=color:#75715e></span><span style=color:#f92672>+</span>          	<span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#39;#test&#39;</span>).<span style=color:#a6e22e>attr</span>(<span style=color:#e6db74>&#39;href&#39;</span>, <span style=color:#a6e22e>canvas</span>.<span style=color:#a6e22e>toDataURL</span>(<span style=color:#e6db74>&#34;image/jpeg&#34;</span>));
+<span style=color:#f92672>+</span>          	<span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#39;#test&#39;</span>).<span style=color:#a6e22e>attr</span>(<span style=color:#e6db74>&#39;download&#39;</span>,<span style=color:#a6e22e>imageName</span>);
+<span style=color:#f92672>+</span>          	<span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#39;#test&#39;</span>)[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>click</span>();
+<span style=color:#f92672>+</span>              }
+<span style=color:#f92672>+</span>          });
+<span style=color:#f92672>+</span>  }; 
+<span style=color:#f92672>+</span>  <span style=color:#75715e>//]]&gt;
+</span><span style=color:#75715e></span><span style=color:#f92672>+</span>  <span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>s</span><span style=color:#960050;background-color:#1e0010>c</span><span style=color:#960050;background-color:#1e0010>r</span><span style=color:#960050;background-color:#1e0010>i</span><span style=color:#960050;background-color:#1e0010>p</span><span style=color:#960050;background-color:#1e0010>t</span><span style=color:#960050;background-color:#1e0010>&gt;</span>
+  <span style=color:#f92672>&lt;</span><span style=color:#a6e22e>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js&#34;</span><span style=color:#f92672>&gt;</span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/</span><span style=color:#960050;background-color:#1e0010>s</span><span style=color:#960050;background-color:#1e0010>c</span><span style=color:#960050;background-color:#1e0010>r</span><span style=color:#960050;background-color:#1e0010>i</span><span style=color:#960050;background-color:#1e0010>p</span><span style=color:#960050;background-color:#1e0010>t</span><span style=color:#960050;background-color:#1e0010>&gt;</span>
+</code></pre></div><p>简单解释一下这几行代码：</p><ol><li>取当时UTC时间作为下载jpg文件名。</li><li>在当前页面中根据div的class名称找到<code>post</code>字段，构建一个画布。</li><li>将画布内容输出为jpeg文件，触发浏览器的一个下载动作。</li></ol><p><strong>注意</strong>: <code>#test</code>为在html文件中添加的一个不可见链接.</p><p>接下来修改每个博文用到的模板文件(layourts/post/single.html):</p><pre><code>{{ partial &quot;head.html&quot; . }}
+&lt;div class=&quot;content container&quot;&gt;
+  &lt;div class=&quot;post&quot;&gt;
+    &lt;h1&gt;{{ .Title }}&lt;/h1&gt;
++    &lt;p align=&quot;right&quot;&gt;
++    &lt;a href=&quot;javascript:genPostShot()&quot;&gt;
++	    TurnToJPG --&gt; &lt;i class=&quot;fa fa-camera-retro fa-2x&quot;&gt;&lt;/i&gt;
++    &lt;/a&gt;
++    &lt;a id=&quot;test&quot;&gt;&lt;/a&gt;
++    &lt;/p&gt;
++    &lt;hr&gt;
+    &lt;span class=&quot;post-date&quot;&gt;{{ .Date.Format &quot;Jan 2, 2006&quot; }} {{ if .Site.DisqusShortname }} &amp;middot; &lt;a href=&quot;{{ .Permalink }}#disqus_thread&quot;&gt;Comments&lt;/a&gt;{{ end }}
+</code></pre><p>简单解释一下上述添加的代码:</p><p>添加一个超链接，指向上文定义的javascript函数<code>genPostShot()</code>.</p><p>保存修改，提交到上游仓库，重新生成整个静态网站，现在每个博文里都含有保存图片按钮。</p><h3 id=效果>效果</h3><p>譬如，点击<a href=http://purplepalmdash.github.io/2013/11/17/run-in-winter/>http://purplepalmdash.github.io/2013/11/17/run-in-winter/</a></p><p>效果如下:</p><p><img src=/images/2016_11_05_18_56_04_638x402.jpg alt=/images/2016_11_05_18_56_04_638x402.jpg></p><p>点击按钮，下载为文件201611051057.jpg(当前UTC时间戳），效果如下:</p><p><img src=/images/2016_11_05_18_58_11_250x375.jpg alt=/images/2016_11_05_18_58_11_250x375.jpg></p><p>打完，收工，以后在盆友圈想怎么咆哮就可以怎么咆哮了。</p><h3 id=trouble-shooting>Trouble-Shooting</h3><p>之所以加这么个条目是因为，在未定义背景的网页里，有时候截出来的图是黑色背景的，修正：</p><p>修改<code>./static/js/html2canvas.js</code>文件:</p><pre><code>sTransparent = function(backgroundColor) {
+  return (backgroundColor === &quot;transparent&quot; || backgroundColor === &quot;rgba(0, 0,
+0, 0)&quot;);
 };
-
-<span style=color:#75715e>// create_list()
-</span><span style=color:#75715e></span><span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>create_list</span>(<span style=color:#66d9ef>int</span> val)
-{
-	printf(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74> Creating list with headnode as [%d]</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, val);
-	<span style=color:#66d9ef>struct</span> ListNode <span style=color:#f92672>*</span>ptr <span style=color:#f92672>=</span> (<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span>)malloc(<span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> ListNode));
-	<span style=color:#66d9ef>if</span>(NULL <span style=color:#f92672>=</span><span style=color:#f92672>=</span> ptr)
-	{
-		printf(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74> Node creation failed </span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
-		<span style=color:#66d9ef>return</span> NULL;
-	}
-	ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>=</span> val;
-	ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> NULL;
-
-	<span style=color:#66d9ef>return</span> ptr;
-}
-
-<span style=color:#75715e>// print the list
-</span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>print_list</span>(<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> head)
-{
-	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span>  current <span style=color:#f92672>=</span> head;
-
-	<span style=color:#66d9ef>while</span>(current <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL)
-	{
-		printf(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>%d -&gt;</span><span style=color:#e6db74>&#34;</span>, current<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val);
-		current <span style=color:#f92672>=</span> current<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next;
-	}
-	printf(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>NULL</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
-}
-
-<span style=color:#66d9ef>int</span> shiftnumber <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-
-<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>addTwoNumbers</span>(<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> l1, <span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> l2) {
-	printf(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>Just Called this function!</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
-	
-	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> currentl1 <span style=color:#f92672>=</span> l1;
-	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> currentl2 <span style=color:#f92672>=</span> l2;
-	<span style=color:#75715e>// Holding the return value
-</span><span style=color:#75715e></span>	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> ptr <span style=color:#f92672>=</span> (<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span>)malloc(<span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> ListNode));
-	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> head <span style=color:#f92672>=</span> ptr;
-	ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> NULL;
-	shiftnumber <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-
-
-	<span style=color:#75715e>// First calculate the longest Linked List
-</span><span style=color:#75715e></span>	<span style=color:#66d9ef>int</span> lenl1 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-	<span style=color:#66d9ef>int</span> lenl2 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-
-	<span style=color:#66d9ef>while</span>(currentl1 <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL)
-	{
-		lenl1<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
-		currentl1 <span style=color:#f92672>=</span> currentl1<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next;
-	}
-	<span style=color:#66d9ef>while</span>(currentl2 <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL)
-	{
-		lenl2<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
-		currentl2 <span style=color:#f92672>=</span> currentl2<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next;
-	}
-	printf(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>len1 is %d, len2 is %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, lenl1, lenl2);
-
-	currentl1 <span style=color:#f92672>=</span> l1;
-	currentl2 <span style=color:#f92672>=</span> l2;
-
-	<span style=color:#75715e>// Get the largest length, thus we could do some tricks. 
-</span><span style=color:#75715e></span>	<span style=color:#75715e>//
-</span><span style=color:#75715e></span>	<span style=color:#75715e>//
-</span><span style=color:#75715e></span>	<span style=color:#75715e>//
-</span><span style=color:#75715e></span>	<span style=color:#75715e>//
-</span><span style=color:#75715e></span>	<span style=color:#75715e>//
-</span><span style=color:#75715e></span>	<span style=color:#66d9ef>while</span>((currentl1 <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL) <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> (currentl2 <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL))
-	{
-		ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>=</span> (currentl1<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>+</span> currentl2<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val)<span style=color:#f92672>%</span><span style=color:#ae81ff>10</span><span style=color:#f92672>+</span>shiftnumber;
-		shiftnumber <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-		<span style=color:#66d9ef>if</span>((currentl1<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>+</span> currentl2<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val)<span style=color:#f92672>&gt;</span><span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>)
-		{
-		    shiftnumber <span style=color:#f92672>=</span> (currentl1<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>+</span> currentl2<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val)<span style=color:#f92672>/</span><span style=color:#ae81ff>10</span>;
-		}
-		<span style=color:#75715e>//ptr-&gt;val = (currentl1-&gt;val + currentl2-&gt;val)%10;
-</span><span style=color:#75715e></span>		<span style=color:#66d9ef>if</span>(currentl1<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL)
-		{
-		    ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> (<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span>)malloc(<span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> ListNode));
-		    ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> NULL;
-		    ptr <span style=color:#f92672>=</span> ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next;
-		}
-		<span style=color:#75715e>// shiftnumber exists, so you should assign shiftnumber to the
-</span><span style=color:#75715e></span>		<span style=color:#75715e>// newnode
-</span><span style=color:#75715e></span>		<span style=color:#66d9ef>else</span>
-		{
-			<span style=color:#75715e>// Only check shiftnumber
-</span><span style=color:#75715e></span>			<span style=color:#66d9ef>if</span>(shiftnumber <span style=color:#f92672>!</span><span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>)
-			{
-		          ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> (<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span>)malloc(<span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> ListNode));
-		          ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> NULL;
-			  ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>=</span> shiftnumber;
-			}
-
-		}
-		currentl1 <span style=color:#f92672>=</span> currentl1<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next;
-		currentl2 <span style=color:#f92672>=</span> currentl2<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next;
-	}
-	<span style=color:#66d9ef>return</span> head;
-}
-
-
-
-<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(<span style=color:#66d9ef>void</span>)
-{
-	<span style=color:#66d9ef>struct</span> ListNode test1, test1_2, test1_3;
-	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> p <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>test1;
-	p<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>;
-	p<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>test1_2;
-	p<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span>;
-	p<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>test1_3;
-	p<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span>;
-	p<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> NULL;
-	printf(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>### List l1!</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
-	print_list(p);
-	
-	<span style=color:#66d9ef>struct</span> ListNode test2, test2_2, test2_3;
-	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> q <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>test2;
-	q<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>;
-	q<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>test2_2;
-	q<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>;
-	q<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>test2_3;
-	q<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>=</span> <span style=color:#ae81ff>7</span>;
-	q<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> NULL;
-	printf(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>### List l2!</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
-	print_list(q);
-
-	printf(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74> *** Start testing addTwoNumbers! *** </span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
-	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> r <span style=color:#f92672>=</span> addTwoNumbers(p, q);
-	print_list(r);
-	<span style=color:#75715e>// Remember to free memory here
-</span><span style=color:#75715e></span>	<span style=color:#75715e>//while(r-&gt;next != NULL);
-</span><span style=color:#75715e></span>	<span style=color:#75715e>//{
-</span><span style=color:#75715e></span>	<span style=color:#75715e>//	printf(&#34;See if you could get the money?\n&#34;);
-</span><span style=color:#75715e></span>	<span style=color:#75715e>//	r = r-&gt;next;
-</span><span style=color:#75715e></span>	<span style=color:#75715e>//}
-</span><span style=color:#75715e></span>
-	printf(<span style=color:#e6db74></span><span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74> *** Finished testing addTwoNumbers! *** </span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
-
-	<span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
-}
-</code></pre></div><p>一塌糊涂啊！！！明天继续写。</p><p>最后独立写出的答案如下，非常难看。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#66d9ef>int</span> shiftnumber <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-
-<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>addTwoNumbers</span>(<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> l1, <span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> l2) {
-	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> currentl1 <span style=color:#f92672>=</span> l1;
-	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> currentl2 <span style=color:#f92672>=</span> l2;
-	<span style=color:#75715e>// Holding the return value
-</span><span style=color:#75715e></span>	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> ptr <span style=color:#f92672>=</span> (<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span>)malloc(<span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> ListNode));
-	<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span> head <span style=color:#f92672>=</span> ptr;
-	ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> NULL;
-	shiftnumber <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-
-
-	<span style=color:#75715e>// First calculate the longest Linked List
-</span><span style=color:#75715e></span>	<span style=color:#66d9ef>int</span> lenl1 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-	<span style=color:#66d9ef>int</span> lenl2 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-
-	<span style=color:#66d9ef>while</span>(currentl1 <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL)
-	{
-		lenl1<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
-		currentl1 <span style=color:#f92672>=</span> currentl1<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next;
-	}
-	<span style=color:#66d9ef>while</span>(currentl2 <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL)
-	{
-		lenl2<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
-		currentl2 <span style=color:#f92672>=</span> currentl2<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next;
-	}
-
-	currentl1 <span style=color:#f92672>=</span> l1;
-	currentl2 <span style=color:#f92672>=</span> l2;
-
-	<span style=color:#75715e>// Get the largest length, thus we could use this number for controlling the
-</span><span style=color:#75715e></span>	<span style=color:#75715e>// return value. 
-</span><span style=color:#75715e></span>	<span style=color:#66d9ef>int</span> LinkedListLen <span style=color:#f92672>=</span> lenl1<span style=color:#f92672>&gt;</span>lenl2<span style=color:#f92672>?</span>lenl1:lenl2;
-	<span style=color:#66d9ef>while</span>(LinkedListLen <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>)
-	{
-		LinkedListLen<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
-		<span style=color:#66d9ef>int</span> ValOfL1, ValOfL2 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-		ValOfL1 <span style=color:#f92672>=</span> (currentl1 <span style=color:#f92672>=</span><span style=color:#f92672>=</span> NULL)<span style=color:#f92672>?</span><span style=color:#ae81ff>0</span><span style=color:#f92672>:</span>currentl1<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val;
-		ValOfL2 <span style=color:#f92672>=</span> (currentl2 <span style=color:#f92672>=</span><span style=color:#f92672>=</span> NULL)<span style=color:#f92672>?</span><span style=color:#ae81ff>0</span><span style=color:#f92672>:</span>currentl2<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val;
-		ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>=</span> ((ValOfL1 <span style=color:#f92672>+</span> ValOfL2)<span style=color:#f92672>%</span><span style=color:#ae81ff>10</span> <span style=color:#f92672>+</span> shiftnumber)<span style=color:#f92672>%</span><span style=color:#ae81ff>10</span>;
-		<span style=color:#66d9ef>if</span>(((ValOfL1 <span style=color:#f92672>+</span> ValOfL2)<span style=color:#f92672>%</span><span style=color:#ae81ff>10</span> <span style=color:#f92672>+</span> shiftnumber) <span style=color:#f92672>=</span><span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>)
-		{
-		    shiftnumber <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
-		}
-		<span style=color:#66d9ef>else</span>{
-		shiftnumber <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-		    <span style=color:#66d9ef>if</span>((ValOfL1 <span style=color:#f92672>+</span> ValOfL2)<span style=color:#f92672>&gt;</span><span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>)
-		    {
-		        shiftnumber <span style=color:#f92672>=</span> (ValOfL1 <span style=color:#f92672>+</span> ValOfL2)<span style=color:#f92672>/</span><span style=color:#ae81ff>10</span>;
-		    }
-		}
-		<span style=color:#75715e>// Allocate memory for new node. Only allocate (LinkedListLen - 1) times
-</span><span style=color:#75715e></span>		<span style=color:#66d9ef>if</span>(LinkedListLen <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>)
-		{
-		    ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> (<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span>)malloc(<span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> ListNode));
-		    ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> NULL;
-		    ptr <span style=color:#f92672>=</span> ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next;
-		}
-		<span style=color:#75715e>// Switch to next node.
-</span><span style=color:#75715e></span>		<span style=color:#66d9ef>if</span>(currentl1 <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL)
-		{
-		    currentl1 <span style=color:#f92672>=</span> currentl1<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next;
-		}
-		<span style=color:#66d9ef>if</span>(currentl2 <span style=color:#f92672>!</span><span style=color:#f92672>=</span> NULL)
-		{
-		    currentl2 <span style=color:#f92672>=</span> currentl2<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next;
-		}
-	}
-	<span style=color:#75715e>// If shiftnumber &gt; 0, allocate a new node for holding it
-</span><span style=color:#75715e></span>	<span style=color:#66d9ef>if</span>(shiftnumber <span style=color:#f92672>!</span><span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>)
-	{
-		ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> (<span style=color:#66d9ef>struct</span> ListNode<span style=color:#f92672>*</span>)malloc(<span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> ListNode));
-		ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next <span style=color:#f92672>=</span> NULL;
-		ptr<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>next<span style=color:#f92672>-</span><span style=color:#f92672>&gt;</span>val <span style=color:#f92672>=</span> shiftnumber;
-	}
-	
-	<span style=color:#66d9ef>return</span> head;
-}
-</code></pre></div><p>我的思路:</p><p>1，考虑到两个输入的链表长度可能不一样，因而先得到最长的链表长度，用这个最长的长度来做递归。<br>2, 是否有进位通过一个全局表两shiftnumber来hold. 如果相加到最后依然有进位，则在循环外开辟一块空间来存放这个进位。<br>3, 两个链表中的任何一个一旦走到了NULL指针，则其值用0来代替。<br>4, 三目运算符的使用。<br>5, <code>ptr->val = ((ValOfL1 + ValOfL2)%10 + shiftnumber)%10;</code>，这个是考虑到test case:</p><pre><code>[9]
-[1, 9]
-</code></pre><p>如果不做的话，则得出结果会是[0,10], 进位和该位数字的和为10的时候需要单独考虑。</p><p>反思:<br>1, 对指针的使用要非常小心。<br>2, 就是凭直觉写出来的，算法很差, 代码可读性也很差。</p><h3 id=longest-substr>Longest substr</h3><p>The sample code is listed, while to be optimized:</p><pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;string.h&gt;
-
-#define MAXN 50000
-
-// q should be longer than p
-int comlen(char* p, char* q)
-{
-    int i = 0;
-    while (*q &amp;&amp; (*p++ == *q++))
-    {
-        i++;
-    }
-    return i;
-}
-
-int cstring_cmp(const void *a, const void *b)
-{
-    const char **ia = (const char **)a;
-    const char **ib = (const char **)b;
-    return strcmp(*ia, *ib);
-}
-
-
-int lengthOfLongestSubstring(char* s) {
-      char c[MAXN];
-      char* a[MAXN];
-     
-
-      // Create a new array which hold char *s
-      // Remove all of the duplicated items in array
-      // no_duplicated[]
- 
-      char ch;
-      int n = 0;
-      for(n = 0; n &lt; strlen(s); n++)
-      {
-          printf(&quot;%c &quot;,s[n]);
-          a[n] = &amp;c[n];
-          c[n] = s[n];
-      }
-      a[n] = 0;
-
-      qsort(a, n, sizeof(char*), cstring_cmp);
-
-      int maxlen = 0;
-      int len = 0;
-      int maxi = 0;
-      for (int i = 0; i &lt; n - 1; i++)
-      {
-          len = comlen(a[i], a[i + 1]);
-	  printf(&quot;len is %d\n&quot;, len);
-          if (len &gt; maxlen)
-          {
-              maxlen = len;
-              maxi = i;
-          }
-      }
-
-      printf(&quot;maxlen:%d\tmax string:\t&quot;, maxlen);
-      char ch_tmp;
-      for (int i = 0; i &lt; maxlen; i++)
-      {
-          ch_tmp = *(a[maxi] + i);
-          printf(&quot;%c&quot;, ch_tmp);
-      }
-      printf(&quot;\n&quot;);
-
-      return maxlen;
-}
-
-int main(void)
-{
-	char s[100] = &quot;abcabcccc&quot;;
-	char t[100] = &quot;bbbbbbbbbbbb&quot;;
-	char k[100] = &quot;pwwkew&quot;;
-	lengthOfLongestSubstring(s);
-	lengthOfLongestSubstring(t);
-	lengthOfLongestSubstring(k);
-	return 0;
-}
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/10/09/myhugo/>MyHugo</a></h1><span class=post-date>Oct 9, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=myhugo>MyHugo</h3><p>Since I switched from octopress to hugo, hugo is wonderful, but I get used to use
-Octopress&rsquo;s naming method. For example, if I create a new post in Octopress I&rsquo;d rather
-using following command:</p><pre><code>$ rake new_post[&quot;PostName&quot;]
-</code></pre><p>Then the generated post name would be something like following:</p><pre><code> $ ls -lt | more
-total 3632
--rw-rw-r--  1 dash dash  5292 Apr  1  2016 2015-11-05-good-material.markdown
--rw-rw-r--  1 dash dash   540 Apr  1  2016 2016-01-04-purge-cloudstack-env.markdown
--rw-rw-r--  1 dash dash 22256 Apr  1  2016 2016-01-15-linux-tips-4.markdown
-</code></pre><p>While hugo use the origin name, like:</p><pre><code>$ hugo new post/ABC.md
-$ ls -lt content/post | more
--rw-rw-r--  1 dash dash  5292 Apr  1  2016 ABC.md
-</code></pre><p>So I wrote a small script for using the same naming principle of Octopress:</p><pre><code>$ cat /usr/bin/myhugo 
-    #!/bin/sh
-    # Create post using hugo.
-    hugo new post/$1.md
-    # Add current date timestamp.
-    mv content/post/$1.md content/post/`date --rfc-3339=date`-$1.md
-    # Hint for editing.
-    echo &quot;Please Edit&quot; $PWD/content/post/`date --rfc-3339=date`-$1.md
-</code></pre><p>Now using myhugo for creating the post will be looked like:</p><pre><code> $ ~/myhugo WriteLeetCode
-/home/dash/Code/purplepalmdash.github.io/content/post/WriteLeetCode.md created
-Please Edit
-/home/dash/Code/purplepalmdash.github.io/content/post/2016-10-09-WriteLeetCode.md
-</code></pre><p>Enjoy the <code>rake new_post</code>style post name!</p><h3 id=myhugoserve>MyHugoServe</h3><p>Just add an alias in <code>~/.zshrc</code>:</p><pre><code>alias hugoserve='hugo serve -w --theme=hyde-a'
-</code></pre><p>Then type <code>hugoserve</code> will start local preview and you visit <code>http://localhost:1313</code>
-for previewing your website.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/09/27/readdigestonpythonalgorithm2/>ReadDigestOnPythonAlgorithm2</a></h1><span class=post-date>Sep 27, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>第三章笔记。</p><h3 id=目的>目的</h3><pre><code>* 理解抽象数据结构，stack,queue,dequeue,list.    
-* 使用python lists实现抽象数据结构queue, deque.    
-* 理解实现基本线性数据结构的性能.    
-* 理解prefix,infix,postfix.    
-* 使用stack陪你国家postfix表达式.    
-* 使用stack来将表达式从infix到postfix.    
-* 使用队列模拟基本计时模拟器
-* 何种情况下该使用何种数据结构.
-* 使用node/参考模式实现抽象数据结构(链表).    
-* 对比我们实现的链表和Python的链表实现的性能.   
-</code></pre><h3 id=线性数据结构>线性数据结构</h3><p>线性数据结构包括: 栈，队列，双端队列，列表。<br>线性是因为存在两端，左/右，或者前/后，或者顶/底。<br>线性数据结构的差别在于数据添加/删除的方式。线性数据结构可以组合来解决很多难题。</p><h3 id=stack>Stack</h3><p>LIFO， Last In, First Out. 先进后出，后进先出。<br>Stack定义的抽象数据结构，见原文。</p><pre><code>class Stack:
-     def __init__(self):
-         self.items = []
-
-     def isEmpty(self):
-         return self.items == []
-
-     def push(self, item):
-         self.items.append(item)
-
-     def pop(self):
-         return self.items.pop()
-
-     def peek(self):
-         return self.items[len(self.items)-1]
-
-     def size(self):
-         return len(self.items)
-
-s=Stack()
-
-print(s.isEmpty())
-s.push(4)
-s.push('dog')
-print(s.peek())
-s.push(True)
-print(s.size())
-print(s.isEmpty())
-s.push(8.4)
-print(s.pop())
-print(s.pop())
-print(s.size())
-</code></pre><p>运行结果:</p><pre><code>$ python2 stack.py 
-True
-dog
-3
-False
-8.4
-True
-2
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/09/26/readdigestonpythonalgorithm/>ReadDigestOnPythonAlgorithm</a></h1><span class=post-date>Sep 26, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目标>目标</h3><p>本节目标是:</p><pre><code>* 理解算法分析的重要性
-* 能使用&quot;Big-O&quot;描述算法的执行时间
-* 理解常用的Python数组和字典的&quot;Big-O&quot;执行时间
-* 理解Python数据的实现是如何影响到算法分析的
-* 理解如何对简单的Python程序进行性能基准测试
-</code></pre><h3 id=算法分析>算法分析</h3><p>典型问题是: 当两个程序解决了同一个问题，然而看起来有差别的时候，如何得知一种方案确实优
-于另一种？<br>理解：算法是用于解决针对某种输入的黑盒实现。某种算法可能针对多种不同程序，这取决于程序
-的编写者及编程时使用的编程语言。</p><h4 id=程序对比>程序对比</h4><p>两种累加器的实现：</p><p>清晰、明了的实现:</p><pre><code>def sumOfN(n):
-   theSum = 0
-   for i in range(1,n+1):
-       theSum = theSum + i
-
-   return theSum
-
-print(sumOfN(10))
-</code></pre><p>糟糕的实现:</p><pre><code>def foo(tom):
-    fred = 0
-    for bill in range(1,tom+1):
-       barney = bill
-       fred = fred + barney
-
-    return fred
-
-print(foo(10))
-</code></pre><p>为什么糟糕？ 考虑到程序的可读性。</p><h4 id=算法分析关注点>算法分析关注点</h4><p>关注点在于基于对计算资源的量化，以评价算法的好坏。比较两种不同算法，评价出其优劣。譬如
-，如果一种算法在解决同一问题时使用了比另一种算法少得多的计算资源时，我们可以说该种算法
-较为优秀。</p><p>量化指标: A. 基于该算法在解决问题时所需要用到的内存大小来量化。B. 基于该算法所需的执行
-时间来量化。（算法的执行时间/运行时间）.</p><p>用于量化函数<code>sunOfN</code>的算法优劣，我们可以使用benchmark。该benchmark使用python的time模块
-。用于计算该程序的执行时间.</p><h4 id=benchmark>BenchMark</h4><p>BenchMark求和程序:</p><pre><code>import time
-
-def sumOfN2(n):
-   start = time.time()
-
-   theSum = 0
-   for i in range(1,n+1):
-      theSum = theSum + i
-
-   end = time.time()
-
-   return theSum,end-start
-
-for i in range(5):
-   print(&quot;Sum is %d required %10.7f seconds&quot;%sumOfN2(10000))
-</code></pre><p>运行结果:</p><pre><code>$ python2 bench.py
-Sum is 50005000 required  0.0014350 seconds
-Sum is 50005000 required  0.0013280 seconds
-Sum is 50005000 required  0.0012429 seconds
-Sum is 50005000 required  0.0012109 seconds
-Sum is 50005000 required  0.0012770 seconds
-</code></pre><p>更改累加数的大小(10,10000,1000000?)，可以看出程序执行时间的变化。</p><p>优化过后的算法，可以使用公式: <code>sum = (n)*(n+1)/2</code>来快速求累加值，代码如下:</p><pre><code>import time
-
-def sumOfN3(n):
-   start = time.time()
-
-   theSum = 0
-   theSum = (n*(n+1))/2
-
-   end = time.time()
-
-   return theSum,end-start
-
-print(&quot;Sum is %d required %10.7f seconds&quot;%sumOfN3(10))
-print(&quot;Sum is %d required %10.7f seconds&quot;%sumOfN3(10000))
-print(&quot;Sum is %d required %10.7f seconds&quot;%sumOfN3(100000))
-print(&quot;Sum is %d required %10.7f seconds&quot;%sumOfN3(1000000))
-print(&quot;Sum is %d required %10.7f seconds&quot;%sumOfN3(10000000))
-print(&quot;Sum is %d required %10.7f seconds&quot;%sumOfN3(100000000))
-</code></pre><p>运行结果为:</p><pre><code>$ python2 bench2.py
-Sum is 55 required  0.0000019 seconds
-Sum is 50005000 required  0.0000000 seconds
-Sum is 5000050000 required  0.0000010 seconds
-Sum is 500000500000 required  0.0000012 seconds
-Sum is 50000005000000 required  0.0000010 seconds
-Sum is 5000000050000000 required  0.0000000 seconds
-</code></pre><p>BenchMark告诉我们的：直观的来看，使用迭代干的活更多，因而花费的时间更长。
-随着N增大，迭代所需要花费的时间也随之增长。然而，这可能会导致问题，<code>sumOfN3</code>
-在老旧架构的电脑上运行时，可能会花费更长的时间。</p><p>BenchMark提供给我们观察运行时间的方法，然而它取决于实际机器的运行情况、编程
-语言、编译器等等诸多要素。而对于算法本身优劣而言，我们需要一种脱离于以上这些
-制约要素的衡量方法。这种衡量方法应该仅仅针对于算法本身，在不同算法的实现之间
-找寻出其优劣性。</p><h3 id=big-o表示法>Big-O表示法</h3><p>如果需要独立于程序或者计算机等制约要素来衡量算法的效率，则需要量化出该种算法
-所需要执行的步骤或操作。如果这些步骤被视为计算的基本单元，那么一种算法的执行时间
-则可以被表述为解决此问题所需的步骤个数。决定出一种恰当的计算基本单元是衡量算法时
-的难点之一，且取决于该算法是如何被实现的。</p><p><code>sumOfN</code>的实现为:</p><pre><code>theSum = 0
-theSum = theSum + i
-</code></pre><p>可被描述为T(n) = 1+n, 可被解读为"T(n)是用来解决问题的时间，大小为n，1+n步&rdquo;</p><p>按照上述描述，不难理解累加到100,000的执行时间要大于累加到1,000的时间。</p><p>计算机科学家对分析方法会更进一步，当问题变大时，T(n)的某些部分会主导其他部分。
-这种占主导部分的行为将用于算法优劣的比较。量级函数描述了T(n)中随着n增加而
-增长最快的部分。量级函数通常被称之为Big-O表示法。O(f(n)).</p><p>T(n)=1+n中，当n增大时，1可以被忽略，因而执行时间就是O(n). 1也是很重要的，然而随着
-n的增大，没有1计算结果也会近似于n.</p><p>再比如T(n) = 5n^2 + 27n + 1005, 在n大小为1或2时，1005常量主导，然而随着n的增大
-很显然n^2会占主导地位，以至于系数5都可以被忽略，所以T(n)的Big-O表示为O(n^2).</p><p>算法执行时，会有最坏情况和平均情况。算法的表现和特定的数据集有关系。一般情况下
-会处于两种极端之间，即处于平均情况。</p><p>截图，常用的Big-O函数列表</p><p><img src=/images/2016_09_26_20_43_34_574x350.jpg alt=/images/2016_09_26_20_43_34_574x350.jpg></p><p>各种函数列表的图示:</p><p><img src=/images/2016_09_26_20_44_32_780x553.jpg alt=/images/2016_09_26_20_44_32_780x553.jpg></p><p>n不大时，各种算法优劣相差不大，然而n增大时，很容易看到各自之间的差别。</p><p>实际分析, T(n)=3+3n^2+2n+1=3n^2+2n+4.</p><p>查看指数，我们容易得到n^2处于主导地位，因而算法的复杂度应该用O(n^2)来表示。注意其他部分
-包括系数都可以随着n的增大而被忽略。</p><p>图示：</p><p><img src=/images/2016_09_26_20_52_24_781x565.jpg alt=/images/2016_09_26_20_52_24_781x565.jpg></p><h3 id=字谜检测例子>字谜检测例子</h3><p>看两个字符串中蕴含的单个字符是否相同，例如<code>heart</code>和<code>earth</code>是相同的。具体的代码实现如下:</p><pre><code>def anagramSolution1(s1,s2):
-    alist = list(s2)
-
-    pos1 = 0
-    stillOK = True
-
-    while pos1 &lt; len(s1) and stillOK:
-        pos2 = 0
-        found = False
-        while pos2 &lt; len(alist) and not found:
-            if s1[pos1] == alist[pos2]:
-                found = True
-            else:
-                pos2 = pos2 + 1
-
-        if found:
-            alist[pos2] = None
-        else:
-            stillOK = False
-
-        pos1 = pos1 + 1
-
-    return stillOK
-
-print(anagramSolution1('abced','dcbae'))
-</code></pre><p>在s1中的n个字符，将触发对s2中的n个字符的迭代。也就是说，s2中的n个字符将被访问一次，
-以匹配s1中的任一字符。O(n^2)为其复杂度。</p><p>改进后的方案，先排序，后比较。</p><pre><code>def anagramSolution2(s1,s2):
-    alist1 = list(s1)
-    alist2 = list(s2)
-
-    alist1.sort()
-    alist2.sort()
-
-    pos = 0
-    matches = True
-
-    while pos &lt; len(s1) and matches:
-        if alist1[pos]==alist2[pos]:
-            pos = pos + 1
-        else:
-            matches = False
-
-    return matches
-
-print(anagramSolution2('abcde','edcba'))
-</code></pre><p>看上去n次比较就够了，似乎应该是O(n)，然而排序需要算法复杂度。排序通常有O(n^2)或是
-O(nlogn)。因而这个例子由排序的复杂度来决定。</p><p>第三种方法是穷举，Brute Force（蛮力)。我们用s1的字符，生成所有可能的字符串，然后看
-s2是否在这些字符串中。则第一个位置有n种可能，紧接着n-1,n-2等等，结果是n的阶乘。</p><p>n!远大于2^n，譬如如果s1有20个字符，那么有20！种可能结果，用普通家用计算机，不太现实。
-因而穷举在这里不符合。</p><p>第四种方法，对字符计数，而后对计数后的结果比较。因为仅仅有26个字符，因而用一个26长度
-的数组来计算就好了。</p><p>代码:</p><pre><code>def anagramSolution4(s1,s2):
-    c1 = [0]*26
-    c2 = [0]*26
-
-    for i in range(len(s1)):
-        pos = ord(s1[i])-ord('a')
-        c1[pos] = c1[pos] + 1
-
-    for i in range(len(s2)):
-        pos = ord(s2[i])-ord('a')
-        c2[pos] = c2[pos] + 1
-
-    j = 0
-    stillOK = True
-    while j&lt;26 and stillOK:
-        if c1[j]==c2[j]:
-            j = j + 1
-        else:
-            stillOK = False
-
-    return stillOK
-
-print(anagramSolution4('apple','pleap'))
-</code></pre><p>没有嵌套的循环，首先用两个迭代数出字符数。第3个循环则是比较两个数字的列表，看是否
-相等。因而最终的次数是2n+26次，则可以判断出是否是字谜。算法的复杂度是O(n)</p><p>对空间的要求，最后的解决方案是线性时间的，但是需要使用到额外的空间来存储两个列表。
-牺牲了空间，换来了时间。</p><p>很多时候需要考虑空间和时间，例如，如果比较UTF字符，则需要考虑到是否可以用这种方法。</p><h3 id=列表>列表</h3><p>python中列表的算法复杂度:</p><pre><code>import timeit
-from timeit import Timer
-def test1():
-    l = []
-    for i in range(1000):
-        l = l + [i]
-
-def test2():
-    l = []
-    for i in range(1000):
-        l.append(i)
-
-def test3():
-    l = [i for i in range(1000)]
-
-def test4():
-    l = list(range(1000))
-
-t1 = Timer(&quot;test1()&quot;, &quot;from __main__ import test1&quot;)
-print(&quot;concat &quot;,t1.timeit(number=1000), &quot;milliseconds&quot;)
-t2 = Timer(&quot;test2()&quot;, &quot;from __main__ import test2&quot;)
-print(&quot;append &quot;,t2.timeit(number=1000), &quot;milliseconds&quot;)
-t3 = Timer(&quot;test3()&quot;, &quot;from __main__ import test3&quot;)
-print(&quot;comprehension &quot;,t3.timeit(number=1000), &quot;milliseconds&quot;)
-t4 = Timer(&quot;test4()&quot;, &quot;from __main__ import test4&quot;)
-print(&quot;list range &quot;,t4.timeit(number=1000), &quot;milliseconds&quot;)
-</code></pre><p>运行结果:</p><pre><code>('concat ', 1.8388030529022217, 'milliseconds')
-('append ', 0.09388995170593262, 'milliseconds')
-('comprehension ', 0.042823076248168945, 'milliseconds')
-('list range ', 0.01230001449584961, 'milliseconds')
-</code></pre><p>concate的结果为O(k)，k为数组的大小。</p><p>算法复杂度:</p><pre><code>Operation 	Big-O Efficiency
-index [] 	O(1)
-index assignment 	O(1)
-append 	O(1)
-pop() 	O(1)
-pop(i) 	O(n)
-insert(i,item) 	O(n)
-del operator 	O(n)
-iteration 	O(n)
-contains (in) 	O(n)
-get slice [x:y] 	O(k)
-del slice 	O(n)
-set slice 	O(n+k)
-reverse 	O(n)
-concatenate 	O(k)
-sort 	O(n log n)
-multiply 	O(nk)
-</code></pre><p>pop()与pop(n)的例子:</p><pre><code>from timeit import Timer
-import timeit
-popzero = Timer(&quot;x.pop(0)&quot;,
-                &quot;from __main__ import x&quot;)
-popend = Timer(&quot;x.pop()&quot;,
-               &quot;from __main__ import x&quot;)
-print(&quot;pop(0)   pop()&quot;)
-for i in range(1000000,100000001,1000000):
-    x = list(range(i))
-    pt = popend.timeit(number=1000)
-    x = list(range(i))
-    pz = popzero.timeit(number=1000)
-    print(&quot;%15.5f, %15.5f&quot; %(pz,pt))
-</code></pre><p>运行结果:</p><pre><code>$ python2 timer.py 
-pop(0)   pop()
-        1.39908,         0.00019
-        2.87106,         0.00018
-        4.65139,         0.00018
-        6.42484,         0.00018
-        7.80698,         0.00018
-        9.34029,         0.00016
-       10.97498,         0.00017
-       12.16070,         0.00018
-</code></pre><h3 id=字典>字典</h3><p>算法复杂度如下:</p><pre><code>operation 	Big-O Efficiency
-copy 	O(n)
-get item 	O(1)
-set item 	O(1)
-delete item 	O(1)
-contains (in) 	O(1)
-iteration 	O(n)
-</code></pre><p>测试代码:</p><pre><code>import timeit
-import random
-
-for i in range(10000,1000001,20000):
-    t = timeit.Timer(&quot;random.randrange(%d) in x&quot;%i,
-                     &quot;from __main__ import random,x&quot;)
-    x = list(range(i))
-    lst_time = t.timeit(number=1000)
-    x = {j:None for j in range(i)}
-    d_time = t.timeit(number=1000)
-    print(&quot;%d,%10.3f,%10.3f&quot; % (i, lst_time, d_time))
-</code></pre><p>运行结果为:</p><pre><code>$ python2 dic.py 
-10000,     0.160,     0.001
-30000,     0.339,     0.001
-50000,     0.570,     0.001
-70000,     0.801,     0.001
-90000,     1.037,     0.001
-110000,     1.273,     0.001
-130000,     1.470,     0.001
-150000,     1.685,     0.001
-170000,     1.961,     0.001
-190000,     2.214,     0.001
-210000,     2.574,     0.001
-230000,     2.781,     0.001
-250000,     3.094,     0.001
-</code></pre><p>更多算法复杂度，可以参考python官方文章:</p><p><a href=https://wiki.python.org/moin/TimeComplexity>https://wiki.python.org/moin/TimeComplexity</a></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/09/08/onyoutube-dl/>OnYoutube dl</a></h1><span class=post-date>Sep 8, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=background>Background</h3><p>If you download a playlist on youtube, your download files would be renamed as
-following:</p><pre><code>$ ls -l -h /mnt/golang
-total 4.8G
--rwxr--r-- 1 dash root  62M Sep  7 18:43 'Aerospike Install Linux-bw0eipI7-4s.mp4'
--rwxr--r-- 1 dash root 9.8M Sep  7 22:48 'App Enginge Domains-rNI_PyNuS2o.mp4'
--rwxr--r-- 1 dash root  28M Sep  7 21:52 'General Overview of Networking &amp; The
-Internet-hZ7cX4fpMk4.mp4'
--rwxr--r-- 1 dash root  51M Sep  7 22:25 'Golang Aerospike-symvVMJlC3g.mp4'
--rwxr--r-- 1 dash root 134M Sep  7 20:19 'Golang AJAX-UkEuYXi36o8.mp4'
-</code></pre><h3 id=solution>Solution</h3><p>Manually download the playlist.txt from the webpage, something like:</p><pre><code>$ cat /mnt/golang/playlist.txt
-Who uses golang
-Installing Golang
-Golang Webstorm &amp; Golang Atom
-Golang Hello World - Part 1 of 2
-Golang Hello World - Part 2 of 2
-Golang variables and scope
-Golang Go Get
-</code></pre><p>Use following shell script for rename all of the downloaded files:</p><pre><code>$ cat rr.sh
-#!/bin/bash
-i=0
-while IFS='' read -r line || [[ -n &quot;$line&quot; ]]; do
-    let i++
-    prefix=`printf &quot;%04d-&quot; $i`
-    content=`ls | grep &quot;$line-&quot;`
-    cp &quot;$content&quot; ../golang1/&quot;$prefix$line&quot;.mp4
-done &lt; ./playlist.txt
-</code></pre><p>Your renamed files will be in the ../golang1 directory, now the name is listed as:</p><pre><code>$ ls -l ../golang1   
-total 4984936
--rwxr--r-- 1 dash root  28352757 Sep  8 11:52 '0001-Who uses golang.mp4'
--rwxr--r-- 1 dash root  51195540 Sep  8 11:52 '0002-Installing Golang.mp4'
--rwxr--r-- 1 dash root  27507302 Sep  8 11:52 '0003-Golang Webstorm &amp; Golang Atom.mp4'
--rwxr--r-- 1 dash root  22430385 Sep  8 11:52 '0004-Golang Hello World - Part 1 of 2.mp4'
--rwxr--r-- 1 dash root  37552977 Sep  8 11:52 '0005-Golang Hello World - Part 2 of 2.mp4'
--rwxr--r-- 1 dash root  27800500 Sep  8 11:52 '0006-Golang variables and scope.mp4'
--rwxr--r-- 1 dash root  19457050 Sep  8 11:52 '0007-Golang Go Get.mp4'
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/104/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/104/>104</a></li><li class="page-item active"><a class=page-link href=/page/105/>105</a></li><li class=page-item><a class=page-link href=/page/106/>106</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/106/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>改为:</p><pre><code>_html2canvas.Util.isTransparent = function(backgroundColor) {
+  return (backgroundColor === &quot;transparent&quot; || backgroundColor === &quot;rgba(0, 0,
+0, 0)&quot; || backgroundColor === undefined);
+};
+</code></pre><p>之后我们在<code>./layouts/partials/head.html</code>中，添加这一行:</p><pre><code>          html2canvas(document.getElementsByClassName('post'), {
++              background :'#FFFFFF',
+              onrendered: function(canvas) {
+</code></pre><p>现在生成的图片背景就是白色的了。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/11/04/setuparegistryproxycachefordocker/>SetupARegistryProxyCacheForDocker</a></h1><span class=post-date>Nov 4, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=准备>准备</h3><p>首先需要准备以下Docker image:</p><pre><code>$ sudo docker pull registry:latest
+$ sudo docker pull registry:2
+</code></pre><p>在<code>/etc/hosts</code>里加一条记录，接下来我们将用这条记录生成签名(注意修改IP地址和域名）:</p><pre><code># echo '192.168.0.121    xxx.xxx.xxx.com'&gt;&gt;/etc/hosts
+</code></pre><p>准备所需要的自签名文件(用于tls连接)</p><pre><code>mkdir -p certs &amp;&amp; openssl req   -newkey rsa:4096 -nodes -sha256 -keyout
+certs/domain.key   -x509 -days 365 -out certs/domain.crt
+Generating a 4096 bit RSA private key
+....................................................................................................++
+......++
+writing new private key to 'certs/domain.key'
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:CN
+State or Province Name (full name) [Some-State]:Guangdong
+Locality Name (eg, city) []:Guangzhou
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:DashCom
+Organizational Unit Name (eg, section) []:IT
+Common Name (e.g. server FQDN or YOUR name) []:xxx.xxx.xxx.com
+Email Address []:xxxxxx@gmail.com
+</code></pre><h3 id=启动容器>启动容器</h3><p>首先拷贝出默认的registry容器的配置文件:</p><pre><code>$ sudo mkdir -p /data
+$ sudo chmod 777 -R /data
+$ sudo docker run -it --rm --entrypoint cat registry:2 \
+/etc/docker/registry/config.yml &gt; /data/config.yml
+</code></pre><p>修改默认文件，添加<code>proxy</code>字段等，我的配置如下:</p><pre><code>version: 0.1
+log:
+  fields:
+    service: registry
+storage:
+  cache:
+    blobdescriptor: inmemory
+  filesystem:
+    rootdirectory: /var/lib/registry
+http:
+  addr: :5000
+  tls:
+    certificate: /var/lib/registry/domain.crt
+    key: /var/lib/registry/domain.key
+  headers:
+    X-Content-Type-Options: [nosniff]
+proxy:
+  remoteurl: https://registry-1.docker.io
+health:
+  storagedriver:
+    enabled: true
+    interval: 10s
+    threshold: 3
+</code></pre><p>将上一步生成的<code>domain.crt</code>和<code>domain.key</code>文件也拷贝到/data文件夹下.</p><p>现在运行容器:</p><pre><code>$ sudo docker run -d --restart=always -p 5000:5000 --name v2-mirror  -v
+/data:/var/lib/registry registry:2 /var/lib/registry/config.yml
+</code></pre><p>运行完这条命令后，可以用<code>sudo netstat -anp| grep 5000</code>来检查registry服务是否被启动。</p><h3 id=使用registry服务>使用Registry服务</h3><p>在客户机上，需要做以下设置, 这里我写成脚本的方式，具体的调整需要根据实际情况:</p><pre><code>echo '192.168.0.121    xxx.xxx.xxx.com'&gt;&gt;/etc/hosts
+apt-get install -y wget
+mkdir -p /etc/docker/certs.d/xxx.xxx.xx.com:5000/
+wget -O /etc/docker/certs.d/xxx.xxx.xxx.com:5000/ca.crt http://192.168.0.121/domain.crt
+sed -i 's#fd://#fd:// --registry-mirror https://xxx.xxx.xxx.com:5000#' /lib/systemd/system/docker.service
+systemctl daemon-reload
+systemctl restart docker
+</code></pre><p>这里的<code>http://192.168.0.121/domain.crt</code>是我把domain.crt文件放在一个web服务器上了，可以
+直接拷贝现成的，改名即可。</p><p>现在测试：</p><pre><code># curl -I https://xxx.xxx.xxx.com:5000/v2 --cacert \ 
+/etc/docker/certs.d/xxx.xxx.xxx.com\:5000/ca.crt 
+
+HTTP/1.1 301 Moved Permanently
+Docker-Distribution-Api-Version: registry/2.0
+Location: /v2/
+Date: Fri, 04 Nov 2016 09:42:41 GMT
+Content-Type: text/plain; charset=utf-8
+</code></pre><p>检查镜像:</p><pre><code># curl  https://xxx.xxx.xxx.com:5000/v2/_catalog --cacert \
+/etc/docker/certs.d/xxx.xxx.xxx.com\:5000/ca.crt 
+{&quot;&quot;:[&quot;&quot;]}
+</code></pre><p>docker pull一个镜像:</p><pre><code># docker pull busybox:latest
+</code></pre><p>现在检查:</p><pre><code># curl  https://xxx.xxx.xxx.com:5000/v2/_catalog --cacert \
+/etc/docker/certs.d/xxx.xxx.xxx.com\:5000/ca.crt 
+{&quot;repositories&quot;:[&quot;library/busybox&quot;,&quot;library/ubuntu&quot;]}
+</code></pre><p>可以看到，library/busybox这个镜像已经被缓存在了本地registry仓库中。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/11/03/dockerspeedup/>DockerSpeedUp</a></h1><span class=post-date>Nov 3, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=docker-registry>Docker Registry</h3><p>因为众所周知的原因，在国内下载Docker镜像会很慢，所以我们更改docker的配置，让它使用
+daocloud的加速服务:</p><p>ArchLinux下，编辑以下文件，或者你可以通过<code>sudo systemctl edit docker.service</code>来配置以下
+文件:</p><pre><code># vim /etc/systemd/system/docker.service.d/override.conf 
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd --registry-mirror=http://1a653205.m.daocloud.io -H fd://
+</code></pre><p>现在重新加载服务并重新启动<code>docker.service</code>：</p><pre><code># systemctl daemon-reload
+# systemctl restart docker.service
+</code></pre><p>从此以后，每一次docker pull都会使用到daocloud提供的加速服务。</p><h3 id=本地私有registry>本地私有registry</h3><p>首先pull下来如下镜像(这两个其实是一个镜像):</p><pre><code># docker pull registry:latest
+# docker pull registry:2
+</code></pre><p>运行registry实例(注意更改volumn映射):</p><pre><code># docker run -d -p 5000:5000 --restart=always --name registry -v
+/root/DockerRegistry:/var/lib/registry registry:2
+</code></pre><p>检查实例运行情况:</p><pre><code>➜  ~ sudo docker ps
+CONTAINER ID        IMAGE                            COMMAND                  CREATED
+STATUS              PORTS                    NAMES
+b16b27933709        registry:2                       &quot;/entrypoint.sh /etc/&quot;   7 hours
+ago         Up 2 hours          0.0.0.0:5000-&gt;5000/tcp   registry
+</code></pre><p>为了让这个服务每次都启动，我们来编写一个systemd服务:</p><pre><code># vim /usr/lib/systemd/system/DockerRegistry.service 
+[Unit]
+Description=DockerRegistry container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a registry
+ExecStop=/usr/bin/docker stop -t 2 registry
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>现在使能该服务:</p><pre><code># systemctl enable DockerRegistry.service
+Created symlink /etc/systemd/system/multi-user.target.wants/DockerRegistry.service →
+/usr/lib/systemd/system/DockerRegistry.service.
+</code></pre><h3 id=本地私有registry使用方法>本地私有Registry使用方法</h3><p>将获取到的image tag到私有registry(tag):</p><pre><code># docker tag ubuntu:16.04 localhost:5000/ubuntu:16.04
+</code></pre><p>将获取到的image push到私有registry(push):</p><pre><code># docker push localhost:5000/ubuntu:16.04
+</code></pre><h3 id=在agent机器上启用本地registry仓库>在agent机器上启用本地registry仓库</h3><p>在systemd类型的机器上，例如Ubuntu16.04上，使用以下命令，添加<code>192.168.177.11:5000</code>这个私有仓库：</p><pre><code># sed -i 's#fd://#fd:// --registry-mirror http://192.168.177.11:5000
+--insecure-registry 192.168.177.11:5000#' /lib/systemd/system/docker.service
+# systemctl daemon-reload
+# systemctl restart docker
+</code></pre><p>添加完毕后，检查docker运行参数:</p><pre><code># ps -ef | grep docker
+root      4253     1  2 21:48 ?        00:00:00 /usr/bin/dockerd -H fd://
+--registry-mirror http://192.168.177.11:5000 --insecure-registry
+192.168.177.11:5000
+root      4260  4253  0 21:48 ?        00:00:00 docker-containerd -l
+unix:///var/run/docker/libcontainerd/docker-containerd.sock --shim
+docker-containerd-shim --metrics-interval=0 --start-timeout 2m --state-dir
+/var/run/docker/libcontainerd/containerd --runtime docker-runc
+</code></pre><p>pull一个已经被放入仓库里的镜像，速度非常快:</p><pre><code># docker pull 192.168.177.11:5000/fedora:latest
+latest: Pulling from fedora
+41b563eedcb0: Pull complete 
+Digest:
+sha256:cc4323bf2ee99b414600605e42d1888c4c1b0a08f5793a379c1238af4a44315d
+Status: Downloaded newer image for 192.168.177.11:5000/fedora:latest
+</code></pre><p>检查安装的镜像:</p><pre><code>$ sudo docker run -it 192.168.177.11:5000/fedora /bin/bash
+[root@810f44567c87 /]# cat /etc/redhat-release 
+Fedora release 24 (Twenty Four)
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/10/24/vrmonitoringviacollectd/>VRMonitoringViaCollectd</a></h1><span class=post-date>Oct 24, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>The VR&rsquo;s information is listed as following:</p><p><img src=/images/2016_10_24_16_35_58_501x547.jpg alt=/images/2016_10_24_16_35_58_501x547.jpg><br>Now login the VR in CloudStack Agent Node via:</p><pre><code># ssh -i /root/.ssh/id_rsa.cloud -p3922 169.254.0.129
+</code></pre><p>Modify its <code>/etc/apt/sources.list</code> like following:</p><pre><code># cat /etc/apt/sources.list
+# 
+
+# deb cdrom:[Debian GNU/Linux 7.8.0 _Wheezy_ - Official amd64 NETINST Binary-1
+20150110-14:41]/ wheezy main
+
+#deb cdrom:[Debian GNU/Linux 7.8.0 _Wheezy_ - Official amd64 NETINST Binary-1
+20150110-14:41]/ wheezy main
+
+
+deb http://mirrors.aliyun.com/debian wheezy main
+deb-src http://mirrors.aliyun.com/debian wheezy main
+
+deb http://mirrors.aliyun.com/ wheezy/updates main
+deb-src http://mirrors.aliyun.com/ wheezy/updates main
+
+# wheezy-updates, previously known as 'volatile'
+deb http://mirrors.aliyun.com/debian wheezy-updates main
+deb-src http://mirrors.aliyun.com/debian wheezy-updates main
+deb http://mirrors.aliyun.com/debian/ wheezy-backports main
+</code></pre><p>Then <code>apt-get update && apt-get install -y collectd</code>, for installing collectd.</p><h3 id=collectd>Collectd</h3><p>Configuration of collectd:</p><pre><code>$ touch /var/log/collectd.log
+$ vim /etc/collectd/collectd.conf
+Hostname &quot;WeiLan&quot;
+LoadPlugin logfile
+#LoadPlugin syslog
+
+&lt;Plugin logfile&gt;
+	LogLevel &quot;info&quot;
+	File &quot;/var/log/collectd.log&quot;
+	Timestamp true
+	PrintSeverity false
+&lt;/Plugin&gt;
+
+#&lt;Plugin syslog&gt;
+#	LogLevel info
+#&lt;/Plugin&gt;
+
+..... 
+
+LoadPlugin conntrack
+LoadPlugin uptime 
+#LoadPlugin df
+LoadPlugin write_graphite
+
+&lt;Plugin write_graphite&gt;
+	&lt;Carbon&gt;
+		Host &quot;192.168.1.79&quot;
+		Port &quot;2003&quot;
+		Prefix &quot;collectd&quot;
+		Postfix &quot;collectd&quot;
+		StoreRates false
+		AlwaysAppendDS false
+		EscapeCharacter &quot;_&quot;
+	&lt;/Carbon&gt;
+&lt;/Plugin&gt;
+
+</code></pre><p>Start the collectd service via:</p><pre><code># service collectd restart
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/104/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/104/>104</a></li><li class="page-item active"><a class=page-link href=/page/105/>105</a></li><li class=page-item><a class=page-link href=/page/106/>106</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/106/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

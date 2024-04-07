@@ -1,125 +1,275 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/16/workingtipsonbackportonubuntu/>WorkingTipsOnBackportOnUbuntu</a></h1><span class=post-date>Nov 16, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Steps:</p><pre><code>git clone https://github.com/intel-gpu/intel-gpu-i915-backports.git
-cd intel-gpu-i915-backports/
-git checkout backport/main
-</code></pre><p>Switch to hwe kernel:</p><pre><code>$ sudo apt install linux-generic-hwe-22.04
-$ uname -r
-6.2.0-36-generic
-</code></pre><p>Install packages:</p><pre><code>sudo apt install dkms make debhelper devscripts build-essential flex bison mawk
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/12/01/workingtipsforserver2022/>WorkingTipsForServer2022</a></h1><span class=post-date>Dec 1, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>默认情况下，无桌面体验:</p><p><img src=/images/2023_12_01_09_12_09_720x457.jpg alt=/images/2023_12_01_09_12_09_720x457.jpg></p><p>原因在于选错了安装体验，需要选择桌面体验版。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/29/tipsonidvvdifusion/>TipsOnIDVVDIFusion</a></h1><span class=post-date>Nov 29, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Modification steps:</p><h3 id=1-qemu-modification>1. Qemu modification</h3><p>Rebuild qemu:</p><pre><code>sudo apt install -y librbd-dev
+cd qemu-7.1.0/
+./configure --target-list=x86_64-softmmu --enable-debug --disable-docs --disable-virglrenderer --prefix=/usr --enable-virtfs --enable-libusb --disable-debug-tcg --audio-drv-list=pa,alsa --enable-spice --enable-rbd
+make -j8 &amp;&amp; make install
+</code></pre><h3 id=2-ceph-related>2. Ceph Related</h3><p>Install <code>ceph-common</code>:</p><pre><code>$ apt-cache policy ceph-common
+ceph-common:
+  Installed: (none)
+  Candidate: 17.2.6-0ubuntu0.22.04.2
+  Version table:
+     17.2.6-0ubuntu0.22.04.2 500
+        500 http://mirrors.ustc.edu.cn/ubuntu jammy-updates/main amd64 Packages
+     17.2.5-0ubuntu0.22.04.3 500
+        500 http://mirrors.ustc.edu.cn/ubuntu jammy-security/main amd64 Packages
+     17.1.0-0ubuntu3 500
+        500 http://mirrors.ustc.edu.cn/ubuntu jammy/main amd64 Packages
+$ sudo apt install -y ceph-common
+</code></pre><p>Define virsh&rsquo;s secret:</p><pre><code>$ cat secret.txt 
+&lt;secret ephemeral='no' private='no'&gt;
+  &lt;uuid&gt;xxxxxxxxxxxxxxxxxxxxxxxx&lt;/uuid&gt;
+  &lt;usage type='ceph'&gt;
+    &lt;name&gt;client.cinder secret&lt;/name&gt;
+  &lt;/usage&gt;
+&lt;/secret&gt;
+$ virsh secret-define secret.txt
+Secret xxxxxxxxxxxxxxxxxx created
+</code></pre><p>Set the secret:</p><pre><code># virsh 
+Welcome to virsh, the virtualization interactive terminal.
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/15/workingtipsonbackportkernel/>WorkingTipsOnBackPortKernel</a></h1><span class=post-date>Nov 15, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Configure repository and install packages:</p><pre><code>yum install -y make glibc-devel rpm-build bison flex gawk
-dnf config-manager --set-enabled crb
-dnf install epel-release
-yum install -y dkms
-</code></pre><p>Set the default boot kernel:</p><pre><code># grubby --set-default /boot/vmlinuz-5.14.0-284.30.1.el9_2.x86_64 
-# reboot
+Type:  'help' for help with commands
+       'quit' to quit
 
-verification
-# uname -r
-5.14.0-284.30.1.el9_2.x86_64
-</code></pre><p>Make dkms packages:</p><pre><code>cd /root/intel-gpu-i915-backports
-vim versions
-...
-RHEL_9.2_KERNEL_VERSION=&quot;5.14.284-1_rc1&quot;
-...
-make i915dkmsrpm-pkg OS_DISTRIBUTION=RHEL_9.2
-ls -l -h /root/rpmbuild/RPMS/x86_64/intel-i915-dkms-1.23.7.17.230608.25.5.14.284.1_rc1-1.x86_64.rpm
--rw-r--r--. 1 root root 2.7M Nov 15 03:02 /root/rpmbuild/RPMS/x86_64/intel-i915-dkms-1.23.7.17.230608.25.5.14.284.1_rc1-1.x86_64.rpm
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/15/vagranttips/>vagranttips</a></h1><span class=post-date>Nov 15, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Vagrantfile definition:</p><pre><code>Vagrant.configure(&quot;2&quot;) do |config|
-  config.vm.box = &quot;rockylinux/9&quot;
-config.disksize.size = '80GB'
+virsh # secret-set-value de12b241-6087-47e1-9d4f-c8baf5ff4968 aofuowguoewogowaugowogwe
+error: Passing secret value as command-line argument is insecure!
+Secret value set
 
-config.vm.provider &quot;virtualbox&quot; do |v|
-  v.memory = 81920
-  v.cpus = 6
-end
+virsh # secret-get-value de12b241-6087-47e1-9d4f-c8baf5ff4968
+aofuowguoewogowaugowogwe
+</code></pre><p>Get the rbd for the vdi instance:</p><pre><code>$ sudo virsh dumpxml privatedefaulttenant-default_ebc6fef5-3447-4788-8980-f780ad336399 | grep rbd
+      &lt;source protocol='rbd' name='ceph-vm-pool-1/volume-d1cb2b42-fe78-41ef-beb3-a6fc12d6e761'&gt;
+</code></pre><p>Get the info in local machine via <code>rbd</code> command:</p><pre><code># rbd --id cinder info ceph-vm-pool-1/volume-d1cb2b42-fe78-41ef-beb3-a6fc12d6e761
+2023-11-30T10:36:43.676+0800 7f0e170e64c0 -1 asok(0x55b5039f6090) AdminSocketConfigObs::init: failed: AdminSocket::bind_and_listen: failed to bind the UNIX domain socket to '/var/run/ceph/guests/ceph-client.cinder.3827.94235938232352.asok': (2) No such file or directory
+rbd image 'volume-d1cb2b42-fe78-41ef-beb3-a6fc12d6e761':
+	size 80 GiB in 20480 objects
+	order 22 (4 MiB objects)
+	snapshot_count: 0
+	id: 827dd9323d6248
+	block_name_prefix: rbd_data.827dd9323d6248
+	format: 2
+	features: layering, exclusive-lock, object-map, fast-diff, deep-flatten, operations
+	op_features: clone-child
+	flags: 
+	create_timestamp: Wed Nov  8 10:09:37 2023
+	access_timestamp: Thu Nov 30 10:35:31 2023
+	modify_timestamp: Thu Nov 30 10:36:33 2023
+	parent: ceph-vm-pool-1/volume-d8a795bd-48c4-425e-82ba-a22a244778ad@snap-ed0919b6-a4a7-4e6d-a447-dbe89f27bbb8
+	overlap: 80 GiB
+</code></pre><p>Mount the remote rbd to local:</p><pre><code># rbd --id cinder map ceph-vm-pool-1/volume-d1cb2b42-fe78-41ef-beb3-a6fc12d6e761 -p testpool
+2023-11-30T10:37:26.447+0800 7fcdaaef84c0 -1 asok(0x5576928dc090) AdminSocketConfigObs::init: failed: AdminSocket::bind_and_listen: failed to bind the UNIX domain socket to '/var/run/ceph/guests/ceph-client.cinder.3846.93967753279520.asok': (2) No such file or directory
+/dev/rbd0
+# lsblk | grep rbd0
+rbd0        252:0    0    80G  0 disk 
+├─rbd0p1    252:1    0   500M  0 part 
+└─rbd0p2    252:2    0  79.5G  0 part 
+</code></pre><h3 id=zc-driver>zc driver</h3><p>Version:</p><p><img src=/images/2023_11_30_10_00_30_392x183.jpg alt=/images/2023_11_30_10_00_30_392x183.jpg></p><p><img src=/images/2023_11_30_12_13_37_701x371.jpg alt=/images/2023_11_30_12_13_37_701x371.jpg></p><p>2019, error:</p><p><img src=/images/2023_11_30_15_16_03_1048x405.jpg alt=/images/2023_11_30_15_16_03_1048x405.jpg></p><p>uhd730 could be usable , but zC copy not ready.</p><h3 id=win2022-way>win2022 way</h3><p>Get the rbd(vdi node):</p><pre><code># sudo virsh dumpxml privatedefaulttenant-default_bbdd760f-6709-4a0b-ad96-4903c6ea1e2e | grep rbd
+      &lt;source protocol='rbd' name='ceph-vm-pool-1/volume-b492ad15-e646-4cf3-9fc1-103d30756151'&gt;
 
-end
-</code></pre><p>Should install following plugins:</p><pre><code>$ vagrant plugin list
-vagrant-disksize (0.1.3, global)
-vagrant-libvirt (0.7.0, system)
-vagrant-vbguest (0.31.0, global)
-</code></pre><p>Install via <code>vagrant plugin install xxxxxxxxxx</code><br>Resize in vm:</p><pre><code>cfdisk /dev/sda
-xfs_growfs /dev/sda5
-</code></pre><p>On Ubuntu lvm, if you resize the disk, do following:</p><pre><code>lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv 
-resize2fs /dev/ubuntu-vg/ubuntu-lv 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/13/workingtipsoncross/>WorkingTipsOnCross</a></h1><span class=post-date>Nov 13, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-dnscrypt-proxy>1. dnscrypt-proxy</h3><p>Uninstall <code>systemd-resolved</code> then install <code>dnscrypt-proxy</code>:</p><pre><code>sudo systemctl disable systemd-resolved
-sudo systemctl stop systemd-resolved
-sudo apt install -y dnscrypt-proxy
-sudo systemctl start dnscrypt-proxy
-</code></pre><p>Examine its running:</p><pre><code>$ sudo netstat -anp | grep &quot;:53&quot; | grep &quot;127.0.2.1&quot;
-tcp        0      0 127.0.2.1:53            0.0.0.0:*               LISTEN      1/init              
-udp        0      0 127.0.2.1:53            0.0.0.0:*                           1/init       
-</code></pre><p>Configure default <code>dnscrypt-proxy.toml</code> file:</p><pre><code>$ cat /etc/dnscrypt-proxy/dnscrypt-proxy.toml 
-# Empty listen_addresses to use systemd socket activation
-listen_addresses = ['0.0.0.0:5533']
-server_names = ['alidns-doh','tuna-doh-ipv4']
-cache_size = 4096
-cache_min_ttl = 2400
-cache_max_ttl = 86400
-cache_neg_min_ttl = 60
-cache_neg_max_ttl = 600
+</code></pre><p>mount rbd(idv node):</p><pre><code># rbd --id cinder map ceph-vm-pool-1/volume-b492ad15-e646-4cf3-9fc1-103d30756151 -p testpool2
+/dev/rbd2
+</code></pre><p>Start the machine</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/28/lxdbaseddesktoponidv/>LXDBasedDesktopOnIDV</a></h1><span class=post-date>Nov 28, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Upgrade snapd and install lxd:</p><pre><code>apt install snapd
+snap install lxd
+lxd init
+</code></pre><p>Create the first instance:</p><pre><code># lxc launch ubuntu:22.04
+Creating the instance
+Instance name is: proper-frog                 
+Starting proper-frog
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/27/linuxtips16/>LinuxTips16</a></h1><span class=post-date>Nov 27, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-archlinux-ctg-items>1. ArchLinux ctg items</h3><p>Install nomachine:</p><pre><code>$ export https_proxy=http://192.168.1.194:10809
+$ export http_proxy=http://192.168.1.194:10809
+$ yay  --sudoflags=&quot;http_proxy=http://192.168.1.194:10809 https_proxy=http://192.168.1.194:10809&quot; nomachine
+</code></pre><p>Configure auto-login refers to <code>2021-06-15-iPadiPhoneMirroringDisplay.md</code></p><p>connecting to :</p><p><img src=/images/2023_11_27_11_40_04_660x179.jpg alt=/images/2023_11_27_11_40_04_660x179.jpg></p><h3 id=2-conda-deactivate-base>2. conda deactivate base</h3><p>via:</p><pre><code>conda config --set auto_activate_base false
+</code></pre><p>Doing this could let python to be set to system default.</p><pre><code>$ which python3
+/usr/bin/python3
+</code></pre><h3 id=3-lxc-with-nvidia-support>3. lxc with nvidia support</h3><p>Start a lxc instance via:</p><pre><code>$ sudo lxc launch images:ubuntu/jammy lxcnvidia
+Creating lxcnvidia
+Starting lxcnvidia                        
+$ sudo lxc config set lxcnvidia nvidia.driver.capabilities=all
+$ sudo lxc config show lxcnvidia  | grep nvidia
+  nvidia.driver.capabilities: all
+</code></pre><p>Configure in lxc instance:</p><pre><code>$ sudo lxc exec lxcnvidia bash
+root@lxcnvidia:~# 
+</code></pre><h3 id=4-lxc-with-nvidiacorrect-way>4. lxc with nvidia(correct way)</h3><p>Steps:</p><pre><code>lxc launch ubuntu:18.04 cuda -c nvidia.runtime=true
+lxc config device add cuda gpu gpu
+lxc exec cuda -- nvidia-smi
+</code></pre><h3 id=5-lxc-add-second-nicmacvlan>5. lxc add second nic(macvlan)</h3><p>Create a new profile:</p><pre><code>$ cat macvlan
+config: {}
+description: Default LXD profile modified for using macvlan
+devices:
+  eth1:
+    nictype: macvlan
+    parent: enp3s0 
+    type: nic
+name: macvlan
+</code></pre><p>Create this new profile:</p><pre><code># lxc profile edit macvlan&lt;macvlan
+# lxc config edit cuda
+    profiles:
+    - default
++++    - macvlan
+# lxc restart cuda
+# lxc exec cuda bash
+dhclient eth1
+</code></pre><p>Then you got the address.</p><p>Start the ui:</p><pre><code>dash@cuda:~/webui$ ./webui.sh 
 
-[query_log]
-  file = '/var/log/dnscrypt-proxy/query.log'
+################################################################
+Install script for stable-diffusion + Web UI
+Tested on Debian 11 (Bullseye)
+################################################################
+
+</code></pre><p>Should change its listening address to <code>0.0.0.0</code></p><h3 id=6-lxc-on-ubuntu2204>6. lxc on ubuntu22.04</h3><p>not started, solved via:</p><pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash systemd.unified_cgroup_hierarchy=false&quot;
+
+</code></pre><h3 id=7-ipmi-set-address>7. ipmi set address</h3><p>set bmc port&rsquo;s ip address to <code>192.168.2.167</code>, gateway <code>192.168.2.1</code> via:</p><pre><code> ipmitool lan set 1 ipsrc static
+ ipmitool lan set 1 ipaddr 192.168.2.167
+ ipmitool lan set 1 defgw ipaddr 192.168.2.1
+ ipmitool lan print 1
+</code></pre><h3 id=8-apt-cache-policy-alternative>8. apt-cache policy alternative</h3><p>in yum, via:</p><pre><code>yum --showduplicates list 
+</code></pre><h3 id=9-cut-video-using-ffmpeg>9. cut video using ffmpeg</h3><p>cut unnecessary part and combine then again:</p><pre><code>$ ffmpeg -ss 00:00:06 -t 00:03:43 -i SLXC-2023-12-08_11.25.03.mp4 -vcodec copy -acodec copy split1.mp4
+$ ffmpeg -ss 00:05:55 -t 00:09:00 -i SLXC-2023-12-08_11.25.03.mp4 -vcodec copy -acodec copy split2.mp4
+$ ffmpeg -ss 00:15:46 -t 00:00:35 -i SLXC-2023-12-08_11.25.03.mp4 -vcodec copy -acodec copy split3.mp4
+$ vim list.txt
+file ./split1.mp4
+file ./split2.mp4
+file ./split3.mp4
+$ ffmpeg -f concat -safe 0 -i list.txt -c:v copy vdiidvRONG.mp4
+</code></pre><h3 id=10-nfs-serverubuntu2204>10. NFS server(ubuntu22.04)</h3><p>Steps:</p><pre><code>sudo apt update
+sudo apt install nfs-kernel-server
+sudo mkdir -p /mnt/nfs_share
+sudo chown -R nobody:nogroup /mnt/nfs_share/
+sudo chmod 777 /mnt/nfs_share/
+sudo nano /etc/exports
+/mnt/nfs_share 192.168.1.1/24(rw,sync,no_subtree_check)
+sudo exportfs -a
+sudo systemctl restart nfs-kernel-server
+sudo systemctl enable nfs-kernel-server
+</code></pre><p>mount via:</p><pre><code>sudo mount -t nfs 192.168.1.194:/mnt/nfs_share /mnt
+
+</code></pre><h3 id=11-install-casaos>11. install casaos</h3><p>via:</p><pre><code>curl -fsSL https://get.casaos.io | sudo bash
+</code></pre><h3 id=12-rst2html-issue>12. rst2html issue</h3><p>Solved via:</p><pre><code>apt-get install python3-docutils
+</code></pre><h3 id=13-redroid-and-webui>13. redroid and webui</h3><p>via:</p><pre><code>docker run -itd --privileged -v /root/scrcpy-web/data:/data --name scrcpy-web -p 48000:8000/tcp --link redroid12:myphone1 emptysuns/scrcpy-web:v0.1
+docker run -itd --name redroid12  --privileged -p 5555:5555 redroid12:latest androidboot.use_memfd=1
+</code></pre><p>Should re-write using docker-compose.</p><h3 id=14-ubuntu2204-docker-issue>14. ubuntu2204 docker issue</h3><p>solved via:</p><pre><code>vagrant@vagrant:~$ sudo update-alternatives --config iptables
+There are 2 choices for the alternative iptables (providing /usr/sbin/iptables).
+
+  Selection    Path                       Priority   Status
+------------------------------------------------------------
+* 0            /usr/sbin/iptables-nft      20        auto mode
+  1            /usr/sbin/iptables-legacy   10        manual mode
+  2            /usr/sbin/iptables-nft      20        manual mode
+
+Press &lt;enter&gt; to keep the current choice[*], or type selection number: 1
+update-alternatives: using /usr/sbin/iptables-legacy to provide /usr/sbin/iptables (iptables) in manual mode
+vagrant@vagrant:~$ sudo update-alternatives --config ip6tables
+There are 2 choices for the alternative ip6tables (providing /usr/sbin/ip6tables).
+
+  Selection    Path                        Priority   Status
+------------------------------------------------------------
+* 0            /usr/sbin/ip6tables-nft      20        auto mode
+  1            /usr/sbin/ip6tables-legacy   10        manual mode
+  2            /usr/sbin/ip6tables-nft      20        manual mode
+</code></pre><p>Then restart docker systemd service.</p><h3 id=15-build-kernel-time>15. build kernel time</h3><p>in i7-1165g7, build 6.1.x kernel time:</p><pre><code>$ time sh -c 'make -j8 &amp;&amp; make modules -j8 &amp;&amp; sudo make install &amp;&amp; sudo make modules_install '
 ......
-</code></pre><p>Copy the <code>dnscrypt-proxy.toml</code> file for foreign dns query:</p><pre><code>$ sudo cp /etc/dnscrypt-proxy/dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy-foreign.toml
-</code></pre><p>Change the content of this foreign content:</p><pre><code>$ cat /etc/dnscrypt-proxy/dnscrypt-proxy-foreign.toml 
-# Empty listen_addresses to use systemd socket activation
-listen_addresses = ['0.0.0.0:25533']
-server_names = ['cloudflare','google']
-cache_size = 4096
-cache_min_ttl = 2400
-cache_max_ttl = 86400
-cache_neg_min_ttl = 60
-cache_neg_max_ttl = 600
 
+real	28m34.866s
+user	138m28.034s
+sys	10m21.570s
+</code></pre><h3 id=16-apt-force-overwrite>16. apt force overwrite</h3><p>via:</p><pre><code>sudo apt-get -o Dpkg::Options::=&quot;--force-overwrite
+</code></pre><h3 id=17-vbox-issue>17. vbox issue</h3><p>via:</p><pre><code> sudo groupadd vboxusers
+Then add the current user to the above group:
 
-[query_log]
-  file = '/var/log/dnscrypt-proxy/query1.log'
+$ sudo usermod -a -G vboxusers sk
+Replace sk with your current username.
 
-[nx_log]
-  file = '/var/log/dnscrypt-proxy/nx1.log'
-......
-</code></pre><p>For using this newly created configuration file , create a new systemd item:</p><pre><code>$ sudo cp /lib/systemd/system/dnscrypt-proxy.service /lib/systemd/system/dnscrypt-proxy-foreign.service
-$ sudo vim /lib/systemd/system/dnscrypt-proxy-foreign.service 
+Check if the user is added to the group:
+
+$ grep vboxusers /etc/group
+vboxusers:x:1001:sk
+Yes, the user sk has been added to vboxusers' group.
+
+Finally, restart the virtualbox kernel module using command:
+
+$ sudo /sbin/vboxconfig
+</code></pre><h3 id=18-libvirtd-nvram-privilege-issue>18. libvirtd nvram privilege issue</h3><p><code>/var/lib/libvirt/qemu/nvram/win11_VARS.fd': Permission denied</code>, solved via:</p><pre><code>1. Add the following lines to the end of /etc/apparmor.d/abstractions/libvirt-qemu
+
+/var/lib/libvirt/qemu/nvram/* rwk,
+/sys/kernel/mm/transparent_hugepage/enabled r,
+/usr/share/OVMF/OVMF_CODE_4M.secboot.fd rk,
+/run/libvirt/qemu/swtpm/* rwk,
+
+2. Reload apparmor, restart libvirtd:
+
+sudo systemctl reload apparmor.service
+sudo systemctl restart libvirtd
+
+</code></pre><h3 id=19-nvflash-download>19. nvflash download</h3><p>nvflash is used for dumping out the nvidia video flash, download it from <code>https://www.techpowerup.com/download/nvidia-nvflash/</code></p><h3 id=20-totally-blacklist-i915>20. totally blacklist i915</h3><p>via:</p><pre><code>$ sudo vim /etc/modprobe.d/blacklist.conf
+blacklist.conf
+blacklist snd_hda_intel
+blacklist snd_hda_codec_hdmi
+blacklist i915
+$ sudo update-initramfs -u -k all
+</code></pre><h3 id=21-activate-the-pvs-and-mount>21. activate the pvs and mount</h3><p>solved via:</p><pre><code>vgchange -ay
+mkdir -p /mnt8
+mount /dev/mapper/pve-root /mnt8
+</code></pre><h3 id=22-build-celanda-docker>22. build celanda docker</h3><p><code>sudo docker run -it ubuntu:18.04 /bin/bash</code>, then in docker instance for doing following steps:</p><pre><code>apt update -y
+apt install -y build-essential git git-lfs
+apt install -y python-six
+apt install -y wget curl
+ln -sf /usr/bin/python3 /usr/bin/python
+apt install -y iotop htop nethogs python-pystache python3-pystache
+scp dash@192.168.1.45:~/.bin/repo .
+cp repo /bin/
+cp repo /usr/bin/repo
+</code></pre><p>Commit the docker instance:</p><pre><code>$ sudo docker commit a3e139322b90 buildceladon:latest
+</code></pre><h3 id=23-ipmi-reset-in-system>23. ipmi reset in system</h3><p>ipmi cold reset in system .</p><pre><code># ipmitool bmc reset cold
+Sent cold reset command to MC
+</code></pre><h3 id=24-nvidia-conflict-driver>24. nvidia conflict driver</h3><p>error messages:</p><pre><code>dpkg: error processing archive /var/cache/apt/archives/nvidia-kernel-common-535_535.161.07-0ubuntu1_amd64.deb (--unpack):
+ trying to overwrite '/lib/firmware/nvidia/535.161.07/gsp_ga10x.bin', which is also in package nvidia-firmware-535-535.161.07 535.161.07-0ubuntu0.22.04.1
+dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)
+Errors were encountered while processing:
+ /var/cache/apt/archives/nvidia-kernel-common-535_535.161.07-0ubuntu1_amd64.deb
+
+</code></pre><p>solved via:</p><pre><code>sudo dpkg -i --force-all /var/cache/apt/archives/nvidia-kernel-common-535_535.161.07-0ubuntu1_amd64.deb
+sudo apt --fix-broken install
+</code></pre><h3 id=25-cpupower>25. cpupower</h3><p>Install:</p><pre><code>sudo apt install -y linux-tools-common
+sudo apt install -y linux-tools-generic
+sudo apt install -y linux-tools-6.5.0-25-generic
+</code></pre><p>with <code>linux-tools-common</code> you will also have the turbostat for viewing the power consumption.</p><h3 id=26-s-tui>26. s-tui</h3><p>Install via <code>apt install -y s-tui</code>.</p><p><img src=/images/2024_03_15_22_36_02_938x971.jpg alt=/images/2024_03_15_22_36_02_938x971.jpg></p><h3 id=27-cpupower>27. cpupower</h3><p>Set default grub items:</p><pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash amd_pstate=guided&quot;
+</code></pre><p>then check the governer:</p><pre><code>$ cpupower frequency-info 
 ...
-ExecStart=/usr/sbin/dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy-foreign.toml
+  available cpufreq governors: conservative ondemand userspace powersave performance schedutil
 ...
-</code></pre><p>Configure this service:</p><pre><code>$ sudo systemctl daemon-reload
-$ sudo systemctl enable dnscrypt-proxy
-$ sudo systemctl enable dnscrypt-proxy-foreign.service 
-</code></pre><p>Test:</p><pre><code>$ sudo systemctl restart dnscrypt-proxy
-$ sudo systemctl start dnscrypt-proxy-foreign
-$ dig google.com @127.0.0.1 -p 5533 +short
-172.253.124.139
-172.253.124.101
-172.253.124.100
-172.253.124.102
-172.253.124.138
-172.253.124.113
-$ dig google.com @127.0.0.1 -p 25533 +short
-142.250.217.142
-</code></pre><h3 id=2-dnsmasq-flows>2. dnsmasq flows</h3><p>Clone the flow control repository:</p><pre><code>cd /opt
-git clone https://github.com/felixonmars/dnsmasq-china-list
-ln -sf /opt/dnsmasq-china-list/accelerated-domains.china.conf  /etc/dnsmasq.d/accelerated-domains.china.conf 
-ln -sf /opt/dnsmasq-china-list/google.china.conf /etc/dnsmasq.d/google.china.conf
-ln -sf /opt/dnsmasq-china-list/apple.china.conf /etc/dnsmasq.d/apple.china.conf
-ln -sf /opt/dnsmasq-china-list/bogus-nxdomain.china.conf /etc/dnsmasq.d/bogus-nxdomain.china.conf 
-sed -i 's|114.114.114.114|127.0.0.1#5533|g' accelerated-domains.china.conf
-</code></pre><p>Install dnsmasq:</p><pre><code>$ sudo apt install -y dnsmasq
-$ sudo vim /etc/resolv.conf
-nameserver 127.0.0.1
-$ sudo chattr +i /etc/resolv.conf
-$ cat /etc/dnsmasq.conf
-log-queries
-log-facility=/var/log/dnsmasq.log
-no-hosts
-bogus-nxdomain=119.29.29.29
-cache-size=1000
-port=53
-server=127.0.0.1#25533
-$ sudo systemctl restart dnsmasq
-</code></pre><p>Examine:</p><pre><code>$ dig www.google.com
-$ curl www.google.com
-</code></pre><h3 id=3-reference-url>3. reference url</h3><p><code>https://dnscrypt.info/public-servers/</code></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/10/30/workingtipsonguofeng/>WorkingTipsOnGuoFeng</a></h1><span class=post-date>Oct 30, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=tips>Tips</h3><p>Install ControlNet:</p><p><img src=/images/2023_10_30_14_32_20_498x480.jpg alt=/images/2023_10_30_14_32_20_498x480.jpg></p><p>After installed, it will reloading:</p><p><img src=/images/2023_10_30_14_41_47_871x489.jpg alt=/images/2023_10_30_14_41_47_871x489.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/5/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/5/>5</a></li><li class="page-item active"><a class=page-link href=/page/6/>6</a></li><li class=page-item><a class=page-link href=/page/7/>7</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/7/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>set to ondemand:</p><pre><code>sudo cpupower frequency-set -g ondemand
+</code></pre><h3 id=28-show-htop-on-ssh>28. show htop on ssh</h3><p>via:</p><pre><code>ssh user@test.home -t 'htop'
+</code></pre><h3 id=29-quickly-pip>29. quickly pip</h3><p>via:</p><pre><code>pip install xxxx -i https://pypi.mirrors.ustc.edu.cn/simple/
+</code></pre><h3 id=30--git-lfs>30 . git lfs</h3><p>If git won&rsquo;t call git-lfs for downloading big files, install:</p><pre><code>git lfs install
+</code></pre><p>resulting in:</p><pre><code>$ cat ~/.gitconfig 
+[filter &quot;lfs&quot;]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+</code></pre><h3 id=31-update-multiple-gcc-selection>31. update multiple gcc selection</h3><p>Steps:</p><pre><code>sudo update-alternatives --remove-all gcc 
+sudo update-alternatives --remove-all g++
+sudo apt install gcc-11 gcc-12 g++-11 g++-12
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 10
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 20
+
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 10
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 20
+
+sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30
+sudo update-alternatives --set cc /usr/bin/gcc
+
+sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30
+sudo update-alternatives --set c++ /usr/bin/g++
+</code></pre><p>Select default items:</p><pre><code>sudo update-alternatives --config gcc
+sudo update-alternatives --config g++
+</code></pre><h3 id=32-speedup-disk>32. speedup disk</h3><p>via disable fstrim on ubuntu:</p><pre><code>sudo systemctl disable fstrim.timer
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
+cd Fooocus-MRE
+python3 -m venv fooocus_env
+source fooocus_env/bin/activate
+pip install pygit2==1.12.2
+pip install --upgrade pip
+pip3 install packaging
+source fooocus_env/bin/activate
+python entry_with_update.py --listen
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/5/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/5/>5</a></li><li class="page-item active"><a class=page-link href=/page/6/>6</a></li><li class=page-item><a class=page-link href=/page/7/>7</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/7/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,172 +1,152 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/08/sriovpreproductdev/>sriovpreproductdev</a></h1><span class=post-date>Jun 8, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=kernel>Kernel</h3><p>CentOS 7.6.1810, minimal installtion.</p><p>Enable keep cache:</p><pre><code># vi /etc/yum.conf
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/07/01/recoveryforgrub/>RecoveryForGrub</a></h1><span class=post-date>Jul 1, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>GRUB（Grand Unified Bootloader）是一个用于引导和加载操作系统内核的工具，也是基于Linux内核的系统的默认引导加载程序。尽管它在机器打开时首先运行，但普通用户很少看到 GRUB 运行。它自动运行，不需要用户输入。<br>然而，当尝试在同一台机器上引导另一个操作系统与 Linux并存时，另一个系统的引导加载程序可能会覆盖 GRUB，从而导致 Linux 系统无法引导。<br>本文将介绍如何使用 GRUB Rescue 命令和引导修复工具修复 Linux 引导失败。</p><h3 id=先决条件>先决条件</h3><ol><li>具有 sudo 权限的帐户。</li><li>访问命令行。</li></ol><h3 id=grub启动问题>Grub启动问题</h3><p>GRUB 无法引导到操作系统的最常见原因是另一个操作系统的引导加载程序覆盖了 GRUB 引导配置。在尝试与现有 Linux 安装进行双重引导时会出现此问题。另一个原因是意外删除了 GRUB 配置文件。<br>当 GRUB 无法引导系统时，会出现 GRUB Rescue 提示符。</p><p><img src=/images/2023_07_01_08_54_21_274x68.jpg alt=/images/2023_07_01_08_54_21_274x68.jpg></p><p>上面的示例显示 GRUB 在显示 grub 救援提示之前显示“无此类分区”错误。另一个常见的 GRUB 错误是“未知文件系统”，后面跟着相同的提示。</p><p><img src=/images/2023_07_01_08_54_52_257x58.jpg alt=/images/2023_07_01_08_54_52_257x58.jpg></p><p>有时候将直接显示grub提示符:</p><p><img src=/images/2023_07_01_08_55_09_160x37.jpg alt=/images/2023_07_01_08_55_09_160x37.jpg></p><h3 id=grub恢复命令>Grub恢复命令</h3><p>以下是常用 GRUB Rescue 命令的列表。使用上一节中提到的提示中的命令。</p><pre><code>Command	Description	Example
+boot	Start booting (shortcuts: F10, CTRL + x).	The command is issued without arguments.
+cat	Write the contents of a file to standard output.	cat (hd0,1)/boot/grub/grub.cfg
+configfile	Load a configuration file.	configfile (hd0,1)/boot/grub/grub.cfg
+initrd	Load the initrd.img file.	initrd (hd0,1)/initrd.img
+insmod	Load a module.	insmod (hd0,1)/boot/grub/normal.mod
+loopback	Mount an image file as a device.	loopback loop0 (hd0,1)/iso/image.iso
+ls	Display the contents of a directory or partition.	ls (hd0,1)
+lsmod	Display a list of loaded modules.	The command is issued without arguments.
+normal	Activate the normal module.	The command is issued without arguments.
+search	Search for devices. Option --file searches for files, --label searches for labels, --fs-uuid searches for filesystem UUID.	search -file [filename]
+set	Set an environment variable. If issued with no arguments, the command prints the list of all environment variables and their values.	set [variable-name]=[value]
+</code></pre><h3 id=修复启动问题>修复启动问题</h3><p>本教程介绍了解决 GRUB 引导问题的两种方法：使用 GRUB Rescue 提示符和引导修复工具。</p><h4 id=使用grub-rescue提示符>使用GRUB Rescue提示符</h4><ol><li>使用不带参数的 set 命令查看环境变量：</li></ol><pre><code>set
+</code></pre><p>这个例子的输出显示，GRUB被设置为从（hd0,msdos3）分区启动：</p><p><img src=/images/2023_07_01_08_57_34_428x263.jpg alt=/images/2023_07_01_08_57_34_428x263.jpg></p><ol start=2><li>ls命令列出了磁盘上的可用分区。</li></ol><pre><code>ls
+</code></pre><p>输出展示了分区列表:</p><p><img src=/images/2023_07_01_08_58_17_510x76.jpg alt=/images/2023_07_01_08_58_17_510x76.jpg></p><p>使用ls命令找到包含启动目录的分区。</p><pre><code>ls [partition-name]
+</code></pre><p>这个例子显示了(hd0,msdos1)分区中的启动目录。</p><p><img src=/images/2023_07_01_08_58_50_744x95.jpg alt=/images/2023_07_01_08_58_50_744x95.jpg></p><ol start=3><li>将引导分区设置为根变量的值。该示例使用名为 (hd0,msdos1) 的分区。</li></ol><pre><code>set root=(hd0,msdos1)
+</code></pre><ol start=4><li>加载normal启动模式:</li></ol><pre><code>insmod normal
+</code></pre><ol start=5><li>启动normal启动模式:</li></ol><pre><code>normal
+</code></pre><p>normal启动模式下允许你能使用更复杂的命令修复启动</p><ol start=6><li>使用linux命令加载Linux内核:</li></ol><pre><code>linux /boot/vmlinuz-4.19.12-generic root=/dev/sda1 ro
+</code></pre><ol start=7><li>调用boot命令:</li></ol><pre><code>boot
+</code></pre><p>现在系统应该可以正常启动了。</p><p>这篇文章了讲述了在命令行下使用grub rescue修复系统启动的话题，下一部分将讲述如何在使用Livecd启动到图形界面后执行grub rescue的步骤。</p><h3 id=uefi-recovery>Uefi recovery</h3><p>获取当前:</p><pre><code>grub&gt; set
 ...
-keepcache=1
+prefix=(hd0,gpt1)/boot/grub
 ...
-</code></pre><p>Replace i915 firmware:</p><pre><code>mv /lib/firmware/i915/ /lib/firmware/i915.back
-tar xzvf materials/i915.tar.gz -C /lib/firmware/
-</code></pre><p>Install Kernel:</p><pre><code># rpm -ivh materials/kernel-5.15.85+-1.x86_64.rpm
+</code></pre><p>实际查看(hd0,gpt1)下的内容:</p><pre><code>grub&gt; ls(hd0,gpt1)/
+efi/
+</code></pre><p>这里就是问题所在:</p><p>更改为:</p><pre><code>prefix=(hd0,gpt1)/efi/ubuntu
+insmod normal
+normal
+</code></pre><p>因此获得了登陆的grub:</p><p><img src=/images/2024_04_02_15_30_07_899x246.jpg alt=/images/2024_04_02_15_30_07_899x246.jpg></p><p>重新格式化efi分区后，重新挂载:</p><pre><code>sudo umount /boot/efi
+sudo mkfs.vfat -F32 /dev/vda1
+sudo mount /dev/vda1 /boot/efi
+sudo update-grub
+sudo update-grub2
+sudo grub-install /dev/vda
+sudo grub2-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg
+vim /etc/fstab
+change efi 
+sudo reboot
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/22/luckytryoncentos76andlibvirt850/>LuckyTryOnCentOS76AndLibvirt850</a></h1><span class=post-date>Jun 22, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>steps:</p><pre><code>[root@ttt yum.repos.d]# cat local.repo 
+[local]
+name=local
+baseurl=file:///root/rpms
+enabled=1
+gpgcheck=0
+# yum makecache
+</code></pre><h3 id=using-vm>Using vm</h3><p>using vm(nested kvm) for trying.</p><p><img src=/images/2023_06_24_07_46_02_1050x717.jpg alt=/images/2023_06_24_07_46_02_1050x717.jpg></p><p>View the default installation version:</p><pre><code>[root@lucky ~]# /usr/libexec/qemu-kvm  --version
+QEMU emulator version 1.5.3 (qemu-kvm-1.5.3-160.el7), Copyright (c) 2003-2008 Fabrice Bellard
+[root@lucky ~]# libvirtd --version
+libvirtd (libvirt) 4.5.0
+</code></pre><p>Install kernel and changes to new kernel:</p><pre><code># rpm -ivh kernel-5.15.85_lts2021_kkkk-3.x86_64.rpm 
+Preparing...                          ################################# [100%]
+Updating / installing...
+ 1:kernel-5.15.85_lts2021_kkkk-3    ################################# [100%]
 # vi /boot/grub2/grubenv
-saved_entry=CentOS Linux (5.15.85+) 7 (Core)
-# vi /etc/default/grub
-Add &quot;i915.enable_guc=0x7 udmabuf.list_limit=8192 intel_iommu=on i915.force_probe=*&quot; to 
-GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet i915.enable_guc=0x7 udmabuf.list_limit=8192 intel_iommu=on i915.force_probe=*&quot;
-# grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
-# reboot
-</code></pre><p>Check the status:</p><pre><code>[root@i3 ~]# dmesg | grep SR-IOV
-[    1.025680] i915 0000:00:02.0: Running in SR-IOV PF mode
-[root@i3 ~]# dmesg | grep GuC
-[    1.157064] i915 0000:00:02.0: [drm] GuC error state capture buffer maybe too small: 2097152 &lt; 2163708 (min = 721236)
-[    1.161653] i915 0000:00:02.0: [drm] GuC firmware i915/tgl_guc_70.bin version 70.5.1
-[    1.166302] i915 0000:00:02.0: [drm] GuC submission enabled
-[    1.166304] i915 0000:00:02.0: [drm] GuC SLPC enabled
-[    1.166591] i915 0000:00:02.0: [drm] GuC RC: enabled
-[root@i3 ~]# dmesg | grep HuC
-[    1.161660] i915 0000:00:02.0: [drm] HuC firmware i915/tgl_huc.bin version 7.9.3
-[    1.166031] i915 0000:00:02.0: [drm] HuC authenticated
-</code></pre><h3 id=qemu>Qemu</h3><p>Install following packages:</p><pre><code># yum install -y libvirt libvirt-python libguestfs-tools virt-install pciutils gcc gcc-c++ python3 git glib2-devel pixman-devel zlib-devel libusb-devel libusb libusbx-devel pulseaudio-libs-devel libcap-ng-devel libattr-devel spice-server-devel usbredir-devel centos-release-scl  unzip OVMF
-# yum install -y devtoolset-8-gcc-c++
-# cp materials/ninja /usr/bin
-# chmod 777 /usr/bin/ninja 
-</code></pre><p>Build Qemu:</p><pre><code># tar xJvf qemu-6.2.0.tar.xz
-# scl enable devtoolset-8 bash
-# mkdir /opt/local
-# cd qemu-6.2.0
-# scl enable devtoolset-8 bash
-# ./configure --target-list=x86_64-softmmu --enable-debug --disable-docs --disable-virglrenderer --prefix=/opt/local --enable-virtfs --enable-libusb --disable-debug-tcg --audio-drv-list=pa  --enable-spice --enable-usb-redir
+saved_entry=CentOS Linux (5.15.85-lts2021-kkkk) 7 (Core)
+</code></pre><p>Change the selinux and firewalld:</p><pre><code>[root@lucky ~]# systemctl disable firewalld
+Removed symlink /etc/systemd/system/multi-user.target.wants/firewalld.service.
+Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
+[root@lucky ~]# vim /etc/selinux/config 
+</code></pre><p>Install <code>gcc-11</code> for building libvirtd and qemu:</p><pre><code>yum install -y centos-release-scl
+yum install -y devtoolset-11 bc
+</code></pre><p>Build Qemu:</p><pre><code># mkdir Code
+# mv libvirt-8.5.0.tar.xz qemu_spice_modified.tar.gz Code
+# cd Code
+# tar xJvf libvirt-8.5.0.tar.xz 
+# tar xzvf qemu_spice_modified.tar.gz 
+# which ninja
+# yum install -y git glib2-devel pixman-devel zlib-devel libusb-devel libusb libusbx-devel pulseaudio-libs-devel libcap-ng-devel libattr-devel spice-server-devel usbredir-devel python3 bzip2
+# cd qemu-7.1.0
+# scl enable devtoolset-11 bash
+#  ./configure --enable-modules --target-list=x86_64-softmmu --enable-debug --disable-docs --disable-virglrenderer --prefix=/opt/local --enable-virtfs --enable-libusb --disable-debug-tcg --audio-drv-list=pa
 # make -j8
 # make install
 # /opt/local/bin/qemu-system-x86_64 --version
-QEMU emulator version 6.2.0
-Copyright (c) 2003-2021 Fabrice Bellard and the QEMU Project developers
-</code></pre><p>start and enable libvirtd :</p><pre><code># systemctl enable libvirtd
-# systemctl start libvirrtd
-</code></pre><p>Add following lines to <code>/etc/rc.local</code>:</p><pre><code>## start of create vf
-sudo modprobe i2c-algo-bit
-sudo modprobe video
-echo '0' | sudo tee -a /sys/bus/pci/devices/0000\:00\:02.0/sriov_drivers_autoprobe &gt; /dev/null
-echo 7 | sudo tee -a /sys/class/drm/card0/device/sriov_numvfs &gt; /dev/null
-echo '1' | sudo tee -a /sys/bus/pci/devices/0000\:00\:02.0/sriov_drivers_autoprobe &gt; /dev/null
-sudo modprobe vfio-pci
-vendor=$(cat /sys/bus/pci/devices/0000:00:02.0/iommu_group/devices/0000:00:02.0/vendor)
-device=$(cat /sys/bus/pci/devices/0000:00:02.0/iommu_group/devices/0000:00:02.0/device)
-echo $vendor $device  | sudo tee -a /sys/bus/pci/drivers/vfio-pci/new_id
-## endof create vf
-</code></pre><h3 id=create-virtual-machine>Create virtual machine</h3><p>Define win10 machine:</p><pre><code>virsh define materials/wwin10.xml
-</code></pre><p>Transfer the image to machine:</p><pre><code># scp /var/lib/libvirt/images/winpure.qcow2 root@192.168.1.120:/var/lib/libvirt/images/
-</code></pre><p>Failed, no display output.</p><h3 id=r8168>r8168</h3><p>Get the driver source code from: <code>https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software</code>,</p><pre><code>rpm -ivh kernel-devel-5.15.85+-1.x86_64.rpm
-yum remove kernel-headers
-rpm -ivh kernel-headers-5.15.85+-1.x86_64.rpm
-yum install -y centos-release-scl
-yum install devtoolset-7
-scl enable devtoolset-7 bash
-cd r8168-8.051.02/src/
-make
-modprobe r8168
-</code></pre><p>Add <code>modprobe r8168</code> to `/etc/rc.local</p><h3 id=build-qemu71>build qemu7.1</h3><p>On centos76, build/install via:</p><pre><code>scl enable devtoolset-11 bash
-yum install -y git glib2-devel pixman-devel zlib-devel libusb-devel libusb libusbx-devel pulseaudio-libs-devel libcap-ng-devel libattr-devel spice-server-devel usbredir-devel python3 bzip2 
- ./configure --enable-modules --target-list=x86_64-softmmu --enable-debug --disable-docs --disable-virglrenderer --prefix=/opt/local --enable-virtfs --enable-libusb --disable-debug-tcg --audio-drv-list=pa
-make -j8
-make install
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/07/workingtipsongen12centos/>WorkingTipsOnGen12CentOS</a></h1><span class=post-date>Jun 7, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>CentOS7.6.1810,minimum installation.</p><pre><code># yum makecache
-# yum install -y vim git gcc libevent-devel unzip flex bison
-# vim /etc/selinux/config
-SELINUX=disabled
-# systemctl disable firewalld
-</code></pre><p>Install gcc-7:</p><pre><code>yum install centos-release-scl
-yum install devtoolset-7-gcc-c++
-scl enable devtoolset-7 bash
-</code></pre><p>Install kernel related dependencies:</p><pre><code>yum install -y devtoolset-7-elfutils-libelf-devel.x86_64  openssl-devel bc rpm-build pciutils
-
-</code></pre><p>Clone the kernel code:</p><pre><code># mkdir Code
-# cd Code
-# git clone https://github.com/intel/linux-intel-lts.git
-# cd linux-intel-lts
-# git checkout gawougoweugowugo
-# cp ~/kernel-config.zip .
-# unzip kernel-config.zip
-# cp ./kernel-config/x86_64_defconfig .config
-# echo &quot;&quot; | make ARCH=x86_64 olddefconfig
-# make ARCH=x86_64 -j16 LOCALVERSION=-lts2021-iotg -j8
-</code></pre><h3 id=verification>Verification</h3><p>Make sure you have the latest firmware(copy from the ubuntu):</p><pre><code># mkdir /lib/firmware/i915/backup
-# mv /lib/firmware/i915/* /lib/firmware/i915/backup
-# cp -ar /mnt/lib/firmware/i915/* /lib/firmware/i915/
-</code></pre><p>Install the minimal system, install the built kernel rpms, then edit the grub:</p><pre><code># vim /etc/default/grub
+QEMU emulator version 7.1.0
+Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
+</code></pre><p>Build libvirtd:</p><pre><code># yum install -y epel-release
+# yum install -y meson python36-docutils python-docutils glib2-devel gnutls-devel libxml2-devel libtirpc-devel gnutls-devel netcf-devel libpciaccess-devel systemd-devel yajl-devel
+Build to /usr
+and install
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/19/preproductioncentos76libvirtd/>PreProductionCentOS76Libvirtd</a></h1><span class=post-date>Jun 19, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=system-information>System Information</h3><p>Basic info:</p><pre><code>[root@tl ~]# cat /etc/redhat-release 
+CentOS Linux release 7.6.1810 (Core) 
+[root@tl ~]# uname -r
+3.10.0-957.el7.x86_64
+[root@tl ~]# lscpu |grep &quot;Model name&quot;
+Model name:            12th Gen Intel(R) Core(TM) i3-12100
+[root@tl ~]# free -m
+              total        used        free      shared  buff/cache   available
+Mem:          64005         482       63299           9         223       63023
+Swap:          2043           0        2043
+</code></pre><h3 id=kernel>Kernel</h3><p>Install kernel and configure its default startup:</p><pre><code>[root@tl materials]# cp -ar i915/* /lib/firmware/i915/
+cp: overwrite ‘/lib/firmware/i915/bxt_dmc_ver1_07.bin’? y
+cp: overwrite ‘/lib/firmware/i915/bxt_dmc_ver1.bin’? y
+cp: overwrite ‘/lib/firmware/i915/bxt_guc_ver8_7.bin’? y
 ......
-GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rhgb quiet i915.enable_guc=0x7 udmabuf.list_limit=8192 intel_iommu=on i915.force_probe=*&quot;
-......
-# grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
-# cat /boot/grub2/grubenv 
-    # GRUB Environment Block
-    #saved_entry=CentOS Linux (3.10.0-957.el7.x86_64) 7 (Core)
-    saved_entry=CentOS Linux (5.15.85+) 7 (Core)
-# reboot
-</code></pre><p>Check the status of <code>SR-IOV</code>:</p><pre><code># dmesg | grep SR-IOV
-[    1.643471] i915 0000:00:02.0: Running in SR-IOV PF mode
-# dmesg | grep GuC
-[    1.844856] i915 0000:00:02.0: [drm] GuC error state capture buffer maybe too small: 2097152 &lt; 2557128 (min = 852376)
-[    1.846949] i915 0000:00:02.0: [drm] GuC firmware i915/tgl_guc_70.bin version 70.5.1
-[    1.850099] i915 0000:00:02.0: [drm] GuC submission enabled
-[    1.850099] i915 0000:00:02.0: [drm] GuC SLPC enabled
-[    1.850430] i915 0000:00:02.0: [drm] GuC RC: enabled
-# dmesg | grep HuC
-[    1.846952] i915 0000:00:02.0: [drm] HuC firmware i915/tgl_huc.bin version 7.9.3
-[    1.849623] i915 0000:00:02.0: [drm] HuC authenticated
-</code></pre><p>Install necessary packages:</p><pre><code># yum install -y virt-manager
-# yum groupinstall &quot;GNOME Desktop&quot;
-</code></pre><p>Upgrade qemu:</p><pre><code># yum install centos-release-qemu-ev
-# yum makecache
-# yum install -y qemu-kvm-ev qemu-img-ev
-# /usr/libexec/qemu-kvm --version
-QEMU emulator version 2.12.0 (qemu-kvm-ev-2.12.0-44.1.el7_8.1)
-Copyright (c) 2003-2017 Fabrice Bellard and the QEMU Project developers
-</code></pre><p>Create vf:</p><pre><code>[root@cs76 ~]# lspci | grep -i vga
-0000:00:02.0 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
-[root@cs76 ~]# chmod 777 createvf.sh 
-.[root@cs76 ~]# ./createvf.sh 
-0x8086 0x4680
-[root@cs76 ~]# lspci | grep -i vga
-0000:00:02.0 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
-0000:00:02.1 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
-0000:00:02.2 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
-0000:00:02.3 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
-0000:00:02.4 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
-0000:00:02.5 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
-0000:00:02.6 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
-0000:00:02.7 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
-</code></pre><p>Install some management tools:</p><pre><code>yum install libvirt libvirt-python libguestfs-tools virt-install -y
-</code></pre><h3 id=switch-to-qemu-62>switch to qemu 6.2</h3><p>build ninja:</p><pre><code>yum install -y gcc gcc-c++ python3 git
-git clone https://github.com/ninja-build/ninja.git
-cd ninja
-git checkout release
-./configure.py --bootstrap
-cp ninja /usr/bin
-</code></pre><p>Install qemu build dependencies:</p><pre><code>yum install -y glib2-devel pixman-devel zlib-devel libusb-devel libusb libusbx-devel pulseaudio-libs-devel libcap-ng-devel libattr-devel spice-server-devel usbredir-devel
-</code></pre><p>Since qemu 6.2 requires gcc>7.6? Install gcc 8 for building:</p><pre><code>yum install devtoolset-8-gcc-c++
-scl enable devtoolset-8 bash
-./configure --target-list=x86_64-softmmu --enable-debug --disable-docs --disable-virglrenderer --prefix=/opt/local --enable-virtfs --enable-libusb --disable-debug-tcg --audio-drv-list=pa  --enable-spice --enable-usb-redir
+# rpm -ivh kernel-*.rpm
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/19/workingtipsonlibvirtbuild/>WorkingTipsOnLibvirtBuild</a></h1><span class=post-date>Jun 19, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p><code>libvirt-7.5.0</code>:</p><pre><code>yum makecache
+yum install -y epel-release
+yum install -y meson gcc qemu-kvm wget virt-install python36-docutils python-docutils glib2-devel gnutls-devel libxml2-devel libtirpc-devel
+meson --version
+0.55.1
+wget https://libvirt.org/sources/libvirt-7.5.0.tar.xz --no-check-certificate
+tar xJvf libvirt-7.5.0.tar.xz
+cd libvirt-7.5.0
+meson build --prefix=/usr
+ninja -C build
+#ninja -C build install
+</code></pre><p><code>libvirt-8.5.0</code>:</p><pre><code>yum install -y centos-release-scl
+yum install devtoolset-11 -y
+scl enable devtoolset-11 bash
+gcc --version
+gcc (GCC) 11.2.1 20220127 (Red Hat 11.2.1-9)
+meson build --prefix=/usr
+ninja -C build
+</code></pre><p>From <code>8.6.0</code>:</p><pre><code>meson.build:986:0: ERROR: Invalid version of dependency, need 'gnutls' ['&gt;=3.6.0'] found '3.3.29'.
+</code></pre><p>From <code>9.1.0</code>, Later will have meson version check:</p><pre><code>meson.build:1:0: ERROR: Meson version is 0.55.1 but project requires &gt;= 0.56.0
+</code></pre><h3 id=product-env>product env</h3><p>build and install via:</p><pre><code>yum install -y gnutls-devel
+yum install -y python36-docutils python-docutils glib2-devel gnutls-devel libxml2-devel libtirpc-devel
+meson build --prefix=/opt/local/
+ninja -C build
+ninja -C build install
+</code></pre><p>Change configuration files:</p><pre><code>vim /usr/lib/systemd/system/libvirtd.servic
+/usr/bin/libvirtd --&gt; /opt/local/bin/libvirtd
+reboot
+/opt/local/bin/virsh  list --all
+</code></pre><h3 id=rebuild>Rebuild</h3><p>Rebuild with full support:</p><pre><code>yum install -y netcf-devel libpciaccess-devel systemd-devel
+meson build -Dsystem=true -Ddriver_qemu=enabled -Ddriver_interface=enabled -Ddriver_libvirtd=enabled -Ddriver_remote=enabled -Ddriver_network=enabled --prefix=/usr
+ninja -C build install
+</code></pre><p>Edit the qemu configuration:</p><pre><code># vim /etc/libvirt/qemu.conf
+cgroup_device_acl = [
+    &quot;/dev/null&quot;, &quot;/dev/full&quot;, &quot;/dev/zero&quot;,
+    &quot;/dev/random&quot;, &quot;/dev/urandom&quot;,
+    &quot;/dev/ptmx&quot;, &quot;/dev/kvm&quot;, &quot;/dev/udmabuf&quot;
+]
+user = &quot;root&quot;
+group = &quot;root&quot;
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/16/onbuildlibvirt/>OnBuildLibvirt</a></h1><span class=post-date>Jun 16, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>System libs:</p><pre><code>libunistring-devel
+</code></pre><p>gnutls <code>>=3.6.0</code> is required for building libvirtd, thus:</p><pre><code>[root@buildgen10 gnutls-3.6.0]# ./configure --prefix=/usr
+  *** Libnettle 3.1 was not found.
+</code></pre><p>Nettle:</p><pre><code> wget https://ftp.gnu.org/gnu/nettle/nettle-3.1.1.tar.gz
+ tar xzvf nettle-3.1.1.tar.gz 
+ cd nettle-3.1.1
+ ./configure --prefix=/usr
+ make
+ make install
+</code></pre><p>Rebuild gnutls:</p><pre><code>./configure --prefix=/usr
 make -j8
-make install
-</code></pre><p>Change from default qemu to <code>/opt/local/bin/qemu-system-x86_64</code>, then start the machine.<br>You may also need virsh or other tools:</p><pre><code>yum install -y libvirt libvirt-python libguestfs-tools virt-install -y
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/05/08/gen12gpupassthrough/>Gen12GPUPassthrough</a></h1><span class=post-date>May 8, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p><code>Ubuntu 22.04.2</code> desktop cdrom installation on Gen12 machine.</p><pre><code>sudo apt update -y &amp;&amp; sudo apt upgrade -y
-sudo apt install -y openssh-server virt-manager qemu vim
-</code></pre><p>Edit the grub and initramfs-tools, and vfio:</p><pre><code>$ cat /etc/default/grub | grep CMDLINE_LINUX_DEFAULT
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet  intel_iommu=on intel_iommu=pt kvm.ignore_msrs=1 video=efifb:off,vesafb:off&quot;
-$ cat /etc/initramfs-tools/modules
-vfio
-vfio_iommu_type1
-vfio_pci
-vfio_virqfd
-$  echo &quot;options vfio-pci disable_vga=1&quot; &gt; /etc/modprobe.d/vfio.conf
-$ sudo update-grub2 &amp;&amp; sudo update-initramfs -u -k all
-$ sudo reboot
-</code></pre><p>Build ovmf:</p><pre><code>$ cp /home/idv/xxxxxxxxx/VBT/Vbt.bin OvmfPkg/Vbt/Vbt.bin 
-$ cp /home/idv/xxxxxxxxx/./IntelGopDriver/RELEASE_VS2015x86/X64/IntelGopDriver.efi OvmfPkg/IntelGop/IntelGopDriver.efi
-$ pwd
-/home/idv/Code/Intel_edk2/edk2_gen12
-Build the ovmf(follow the guideline)
-</code></pre><p>Install an ubuntu22.04 vm in host machine, with qxl/spice.</p><p>glmark2: score 1711</p><p>Install win11(shift+f10), use regedit for editing:</p><p><img src=/images/2023_05_08_11_23_09_794x480.jpg alt=/images/2023_05_08_11_23_09_794x480.jpg></p><p>Fallback and continue install:</p><p><img src=/images/2023_05_08_11_24_16_769x553.jpg alt=/images/2023_05_08_11_24_16_769x553.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/05/06/workingtipsongen12gvtd/>WorkingTipsONGen12GVTD</a></h1><span class=post-date>May 6, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p><img src=/images/2023_05_06_12_09_11_751x278.jpg alt=/images/2023_05_06_12_09_11_751x278.jpg></p><p>UEFI/i440fx:</p><p><img src=/images/2023_05_06_12_09_53_770x388.jpg alt=/images/2023_05_06_12_09_53_770x388.jpg></p><p>Virtio Block:</p><p><img src=/images/2023_05_06_12_10_16_723x433.jpg alt=/images/2023_05_06_12_10_16_723x433.jpg></p><p>4Core:</p><p><img src=/images/2023_05_06_12_10_36_757x512.jpg alt=/images/2023_05_06_12_10_36_757x512.jpg></p><p>Configuration:</p><p><img src=/images/2023_05_06_12_11_23_887x403.jpg alt=/images/2023_05_06_12_11_23_887x403.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/05/05/runsystemctlwithoutrootpassword/>RunSystemctlWithoutRootPassword</a></h1><span class=post-date>May 5, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>创建一个sudoer规则文件:</p><pre><code>$ echo -e &quot;Cmnd_Alias USER_SERVICES = /usr/bin/systemctl start snmpd.service, /usr/bin/systemctl stop snmpd.service, /usr/bin/systemctl restart snmpd.service, /usr/bin/systemctl start p910nd.service, /usr/bin/systemctl stop p910nd.service, /usr/bin/systemctl restart p910nd.service\nctyun ALL=(ALL) NOPASSWD: USER_SERVICES&quot; | sudo tee /etc/sudoers.d/ctyun
-</code></pre><p>(另一种方法)也可以手动创建<code>/etc/sudoers.d/ctyun</code>文件后键入以下内容:</p><pre><code>Cmnd_Alias USER_SERVICES = /usr/bin/systemctl start snmpd.service, /usr/bin/systemctl stop snmpd.service, /usr/bin/systemctl restart snmpd.service, /usr/bin/systemctl start p910nd.service, /usr/bin/systemctl stop p910nd.service, /usr/bin/systemctl restart p910nd.service
-ctyun ALL=(ALL) NOPASSWD: USER_SERVICES
-</code></pre><p>重启机器，或重新登陆桌面(注销后登陆), 验证:</p><pre><code>sudo systemctl restart snmpd.service
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/10/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/10/>10</a></li><li class="page-item active"><a class=page-link href=/page/11/>11</a></li><li class=page-item><a class=page-link href=/page/12/>12</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/12/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+pkcs11_privkey.c:335:32: error: storage size of 'rsa_pss_params' isn't known
+  struct ck_rsa_pkcs_pss_params rsa_pss_params;
+</code></pre><p><a href=https://www.frytea.com/archives/546/>https://www.frytea.com/archives/546/</a></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/10/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/10/>10</a></li><li class="page-item active"><a class=page-link href=/page/11/>11</a></li><li class=page-item><a class=page-link href=/page/12/>12</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/12/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

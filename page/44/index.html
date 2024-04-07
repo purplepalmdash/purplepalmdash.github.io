@@ -1,373 +1,246 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/05/06/workingtipsonkubespray-2.13.0/>WorkingtipsOnkubespray-2.13.0</a></h1><span class=post-date>May 6, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=vagrant-machine>Vagrant machine</h3><p>vagrant machine is created as <code>192.168.121.251</code>, 6-core, 8192 MB Memory, with base images ubuntu18.04.4</p><h3 id=steps>Steps</h3><p>Configure the <code>/etc/apt/sources.lists</code> for using cn repository, then install pip for python, then install the ansible environment:</p><pre><code># sudo apt-get install -y python-pip
-# sudo su
-# mkdir -p ~/.pip
-# vim ~/.pip/pip.conf
-[global]
-trusted-host =  mirrors.aliyun.com
-index-url = http://mirrors.aliyun.com/pypi/simple
-# tar xzvf kubespray-2.13.0.tar.gz
-# cd kubespray-2.13.0
-# pip install -r requirements.txt
-</code></pre><p>Configure the password-less login:</p><pre><code># vim /etc/ssh/sshd_config
-PermitRootLogin yes
-# systemctl restart sshd
-# ssh-keygen
-# ssh-copy-id root@192.168.121.251
-</code></pre><p>Make sure all of your networking environment could reach out of The fucking GreatFileWall.</p><p>Configure the inventory.ini for deploying:</p><pre><code># vim inventory/sample/inventory.ini
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/07/03/workingtipsonneok/>WorkingTipsOnNeoK</a></h1><span class=post-date>Jul 3, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>某国产操作系统，安装手记，不要问为啥写这么没技术含量的东西，因为ZHENGCE需要上，某些公司要赚经费罢了，安可是门生意，仅此而已。</p><h3 id=安装>安装</h3><p>无他，virt-manager里，ISO安装，最小化，安装完毕重新启动。</p><p>装完一看，果然:</p><pre><code># cat /etc/redhat-release
+Red Hat Enterprise Linux Server release 7.6 (Maipo)
+</code></pre><h3 id=配置>配置</h3><p>ISO挂载:</p><pre><code># mount /dev/sr0 /mnt
+# vim /etc/yum.repos.d/local.repo
+[local]
+name=local
+baseurl=file:///mnt
+enabled=1
+gpgcheck=0
+# mv /etc/yum.repos.d/ns7-adv.repo /root
+# yum update
+</code></pre><p>安装必要的包(跟rhel 7.6完全一样嘛):</p><pre><code># yum groupinstall &quot;Server with GUI&quot;
+# yum install -y tigervnc-sever git gcc gcc-c++ java-11-openjdk java-11-openjdk-devel iotop 
+# vncserver
+# systemctl stop firewalld &amp;&amp; systemctl disable firewalld
+</code></pre><p>此时进去以后是vncviewer的桌面，和RHEL一模一样。</p><p>外网搞一个xrdp的包进来:</p><pre><code># apt-get install -y docker.io
+# docker pull centos:7
+# docker run -it centos:7 /bin/bash
+# vim /etc/yum.conf
+keepcache=1
+# yum install -y epel-releases
+# yum update 
+# yum install -y xrdp
+</code></pre><p>安装/启动xrdp</p><pre><code># yum install -y xrdp
+# systemctl enable xrdp
+</code></pre><p>去掉授权:</p><pre><code># mv /etc/xdg/autostart/licmanager /root
+</code></pre><p>Now you could use it.<br>Tranform it into lxc and run lxc</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/06/23/k8sinlxd/>K8sInLXD</a></h1><span class=post-date>Jun 23, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=制作镜像>制作镜像</h3><p>Convert image:</p><pre><code># qemu-img convert a.qcow2 a.img
+# kpartx a.img
+# vgscan
+# lvscan
+# mount /dev/vg-root/xougowueg /mnt
+# sudo tar -cvzf rootfs.tar.gz -C /mnt .
+</code></pre><p>Create the metadata.tar.gz and import image</p><pre><code># vim metadata.yaml
+architecture: &quot;aarch64&quot;
+creation_date: 1592803465
+properties:             
+architecture: &quot;aarch64&quot;
+description: &quot;Rong-node&quot;
+os: &quot;ubuntu&quot;
+release: &quot;focal&quot;  
+# tar czvf metadata.tar.gz metadata.yaml
+# lxc image import metadata.tar.gz rootfs.tar.gz --alias &quot;gowuogu&quot;
+</code></pre><h3 id=k8s-in-lxc>k8s in lxc</h3><p>检查主机上profile是否创建:</p><pre><code>+---------+---------+
+|  NAME   | USED BY |
++---------+---------+
+| default | 0       |
++---------+---------+
+| ourk8s  | 4       |
++---------+---------+
+</code></pre><p>如果不存在,创建:</p><pre><code># lxc profile create ourk8s
+# cat &gt; kubernetes.profile &lt;&lt;EOF
+config:
+  linux.kernel_modules: ip_tables,ip6_tables,netlink_diag,nf_nat,overlay,br_netfilter
+  raw.lxc: &quot;lxc.apparmor.profile=unconfined\nlxc.cap.drop= \nlxc.cgroup.devices.allow=a\nlxc.mount.auto=proc:rw sys:rw&quot;
+  security.nesting: &quot;true&quot;
+  security.privileged: &quot;true&quot;
+description: Kubernetes LXD profile
+devices:
+  eth0:
+    name: eth0
+    nictype: bridged
+    parent: lxdbr0
+    type: nic
+  root:
+    path: /
+    pool: default
+    type: disk
+name: kubernetes
+EOF
+
+# lxc  profile edit ourk8s &lt; kubernetes.profile
+
+</code></pre><p>检查<code>rong-2004</code>是否存在在镜像仓库上:</p><pre><code># lxc image list
++-----------+--------------+--------+-------------+---------+----------+------------------------------+
+|   ALIAS   | FINGERPRINT  | PUBLIC | DESCRIPTION |  ARCH   |   SIZE   |         UPLOAD DATE          |
++-----------+--------------+--------+-------------+---------+----------+------------------------------+
+| rong-2004 | f511553a81a9 | no     |             | aarch64 | 674.77MB | Jun 22, 2020 at 6:11am (UTC) |
++-----------+--------------+--------+-------------+---------+----------+------------------------------+
+
+</code></pre><p>创建3个lxc容器:</p><pre><code># lxc launch rong-2004 k8s1 --profile ourk8s &amp;&amp; lxc launch rong-2004 k8s2 --profile ourk8s &amp;&amp; lxc launch rong-2004 k8s3 --profile ourk8s
+Creating k8s1
+Starting k8s1
+Creating k8s2
+Starting k8s2
+Creating k8s3
+Starting k8s3
+</code></pre><p>等待大约2分钟等待容器启动完毕:</p><pre><code># lxc ls
++---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
+|  NAME   |  STATE  |            IPV4            |                     IPV6                      |    TYPE    | SNAPSHOTS |
++---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
+| k8s1    | RUNNING | 10.230.146.83 (eth0)       | fd42:6fd0:9ed5:600b:216:3eff:fede:3897 (eth0) | PERSISTENT | 0         |
++---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
+| k8s2    | RUNNING | 10.230.146.201 (eth0)      | fd42:6fd0:9ed5:600b:216:3eff:fed1:ab8a (eth0) | PERSISTENT | 0         |
++---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
+| k8s3    | RUNNING | 10.230.146.33 (eth0)       | fd42:6fd0:9ed5:600b:216:3eff:fef8:f20c (eth0) | PERSISTENT | 0         |
++---------+---------+----------------------------+-----------------------------------------------+------------+-----------+
+
+</code></pre><p>ssh到 <code>k8s1</code> 上执行安装:</p><pre><code># scp -r root@192.192.189.128:/media/sdd/20200617/Rong-v2006-arm .
+</code></pre><p>注意: 以20200617/Rong-v2006-arm下的部署文件才可以部署在lxc里.<br>注意: 相关更改已同步在外网.</p><p>更改IP配置并执行<code>install.sh basic</code>安装:</p><pre><code>root@node:/home/test/Rong-v2006-arm# cat hosts.ini 
 [all]
-kubespray ansible_host=192.168.121.251 ip=192.168.121.251
+focal-1 ansible_host=10.230.146.83 ip=10.230.146.83
+focal-2 ansible_host=10.230.146.201 ip=10.230.146.201
+focal-3 ansible_host=10.230.146.33 ip=10.230.146.33
+
+[kube-deploy]
+focal-1
 
 [kube-master]
-kubespray
+focal-1
+focal-2
 
 [etcd]
-kubespray
+focal-1
+focal-2
+focal-3
 
 [kube-node]
-kubespray
-
-[calico-rr]
+focal-1
+focal-2
+focal-3
 
 [k8s-cluster:children]
 kube-master
 kube-node
-calico-rr
-# ansible-playbook -i inventory/sample/hosts.ini cluster.yml
-</code></pre><p>By now we got all of the offline docker images and allmost all of the debs files, but we have install additional pkgs for our own offline purpose usage:</p><pre><code># apt-get install -y iputils-ping nethogs python-netaddr build-essential bind9 bind9utils nfs-common nfs-kernel-server ntpdate ntp tcpdump iotop unzip wget apt-transport-https socat rpcbind arping fping python-apt ipset ipvsadm pigz nginx docker-registry
-# apt-get install -y ./netdata_1.18.1_amd64_bionic.deb
-</code></pre><p>Transfer all of the offline debs files and rename it in Rong/ Directory and xz it as <code>1804debs.tar.xz</code>.</p><p>Replace(1804debs.tar.xz and <code>kube*</code>, and calicoctl/cni-plugin, docker.tar.gz):</p><pre><code># ls
-calicoctl                           gpg                    kubectl-v1.17.5-amd64
-cni-plugins-linux-amd64-v0.8.5.tgz  kubeadm-v1.17.5-amd64  kubelet-v1.17.5-amd64
-# cd ../for_master0/
-# ls
-1804debs.tar.xz  ansible-playbook_exe  docker-compose     docker.tar.gz
-ansible_exe      autoindex.tar.xz      dockerDebs.tar.gz  portable-ansible-v0.4.1-py2.tar.bz2
-</code></pre><p>Generate docker registry offline files(On existing cluster master0):</p><pre><code># systemctl stop docker-registry.servica
-# cd /var/lib/docker-registry
-# mv docker docker.back
-# systemctl start docker-registry.servica
-# docker push nginx:1.17
-# docker push kubernetesui/dashboard-amd64:v2.0.0
-# docker push k8s.gcr.io/kube-proxy:v1.17.5
-# docker push k8s.gcr.io/kube-apiserver:v1.17.5
-# docker push k8s.gcr.io/kube-controller-manager:v1.17.5
-# docker push k8s.gcr.io/kube-scheduler:v1.17.5
-# docker push k8s.gcr.io/k8s-dns-node-cache:1.15.12
-# docker push calico/cni:v3.13.2
-# docker push calico/kube-controllers:v3.13.2
-# docker push calico/node:v3.13.2
-# docker push kubernetesui/metrics-scraper:v1.0.4
-# docker push lachlanevenson/k8s-helm:v3.1.2
-# docker push k8s.gcr.io/addon-resizer:1.8.8
-# docker push coredns/coredns:1.6.5
-# docker push k8s.gcr.io/metrics-server-amd64:v0.3.6
-# docker push k8s.gcr.io/cluster-proportional-autoscaler-amd64:1.7.1
-# docker push quay.io/coreos/etcd:v3.3.12
-# docker push k8s.gcr.io/pause:3.1
-# systemctl stop docker-registry.servica
-# du -hs docker/
-484M	docker
-# tar czvf docker.tar.gz docker/
-</code></pre><p>Kubeadm signature:</p><pre><code># cd /root &amp;&amp; wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
-# tar xzvf go1.14.2.linux-amd64.tar.gz
-# vim /root/.profile
-PATH=&quot;$PATH:/root/go/bin/&quot;
-# source ~/.profile
-# go version
-go version go1.14.2 linux/amd64
-# wget https://github.com/kubernetes/kubernetes/archive/v1.17.5.zip
-# unzip v1.17.5.zip
-# cd kubernetes-1.17.5/
-</code></pre><p>Make code changes for timestamp:</p><pre><code># diff kubernetes-1.17.5/hack/lib/version.sh ../kubernetes-1.17.5/hack/lib/version.sh 
-47c47
-&lt;     KUBE_GIT_TREE_STATE=&quot;archive&quot;
+
+[all:vars]
+ansible_ssh_user=root
+ansible_ssh_private_key_file=./.rong/deploy.key
+root@node:/home/test/Rong-v2006-arm# ./install.sh basic
+</code></pre><p>安装完毕后,检查是否运行正常:</p><pre><code>root@node:/home/test/Rong-v2006-arm# kubectl get nodes
+NAME      STATUS   ROLES    AGE     VERSION
+focal-1   Ready    master   9m28s   v1.17.6
+focal-2   Ready    master   8m1s    v1.17.6
+focal-3   Ready    &lt;none&gt;   5m57s   v1.17.6
+root@node:/home/test/Rong-v2006-arm# kubectl get pods 
+No resources found in default namespace.
+root@node:/home/test/Rong-v2006-arm# kubectl get pods  --all-namespaces
+NAMESPACE     NAME                                          READY   STATUS             RESTARTS   AGE
+kube-system   calico-kube-controllers-6df95cc8f5-n5b75      1/1     Running            0          4m38s
+kube-system   calico-node-88xxf                             1/1     Running            1          5m31s
+kube-system   calico-node-mnjpr                             1/1     Running            1          5m31s
+kube-system   calico-node-sz4v8                             1/1     Running            1          5m31s
+kube-system   coredns-76798d84dd-knq4j                      1/1     Running            0          3m54s
+kube-system   coredns-76798d84dd-llrlt                      1/1     Running            0          4m11s
+kube-system   dns-autoscaler-7b6dc7cdb9-2vgfs               1/1     Running            0          4m4s
+kube-system   kube-apiserver-focal-1                        1/1     Running            0          9m12s
+kube-system   kube-apiserver-focal-2                        1/1     Running            0          7m47s
+kube-system   kube-controller-manager-focal-1               1/1     Running            0          9m12s
+kube-system   kube-controller-manager-focal-2               1/1     Running            0          7m46s
+kube-system   kube-proxy-2nms7                              1/1     Running            0          6m2s
+kube-system   kube-proxy-9cwpm                              1/1     Running            0          6m
+kube-system   kube-proxy-nkd5r                              1/1     Running            0          6m4s
+kube-system   kube-scheduler-focal-1                        1/1     Running            0          9m12s
+kube-system   kube-scheduler-focal-2                        1/1     Running            0          7m46s
+kube-system   kubernetes-dashboard-5d5cb8976f-2hdtq         1/1     Running            0          4m1s
+kube-system   kubernetes-metrics-scraper-747b4fd5cd-vhfr5   1/1     Running            0          3m59s
+kube-system   metrics-server-849f86c88f-h6prj               1/2     CrashLoopBackOff   4          3m15s
+kube-system   nginx-proxy-focal-3                           1/1     Running            0          6m8s
+kube-system   tiller-deploy-56bc5dccc6-cfjkh                1/1     Running            0          3m34s
+</code></pre><h3 id=删除>删除</h3><p>验证完毕后,可以删除不用的镜像:</p><pre><code># lxc stop XXXXX 
+# lxc rm XXXXX
+</code></pre><p>删除中如果出现问题, 则手动更改容器中某文件权限后可以删除:</p><pre><code>root@arm01:~/app# lxc rm kkkkk
+Error: error removing /var/lib/lxd/storage-pools/default/containers/kkkkk: rm: cannot remove '/var/lib/lxd/storage-pools/default/containers/kkkkk/rootfs/etc/resolv.conf': Operation not permitted
+
+root@arm01:~/app# chattr  -i /var/lib/lxd/storage-pools/default/containers/kkkkk/rootfs/etc/resolv.conf
+root@arm01:~/app# lxc rm kkkkk
+
+</code></pre><h3 id=kpartx-issue>kpartx issue</h3><p>List device mapping that would be created:</p><pre><code># kpartx -l sgoeuog.img
+</code></pre><p>Create mappings/create dev for image:</p><pre><code># kpartx -av gowgowu.img
+/dev/loop0
+
+/dev/mapper/loop0p1
+...
+/dev/mapper/loop0pn
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/06/14/workingtipsharbor2.0/>WorkingTipsHarbor2.0</a></h1><span class=post-date>Jun 14, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=download-installation-files>Download Installation files</h3><p>From following url:</p><p><a href=https://github.com/goharbor/harbor/releases/download/v2.0.0/harbor-offline-installer-v2.0.0.tgz>https://github.com/goharbor/harbor/releases/download/v2.0.0/harbor-offline-installer-v2.0.0.tgz</a></p><h3 id=config-install>Config, Install</h3><p>make new cert files via:</p><pre><code>TBD
+</code></pre><p>Modify the <code>harbor.yml</code> file:</p><pre><code>5c5
+&lt; hostname: portus.fugouou.com
 ---
-&gt;     KUBE_GIT_TREE_STATE=&quot;clean&quot;
-64c64
-&lt;         KUBE_GIT_TREE_STATE=&quot;dirty&quot;
+&gt; hostname: reg.mydomain.com
+15c15
+&lt;   port: 5000
 ---
-&gt;         KUBE_GIT_TREE_STATE=&quot;clean&quot;
-# diff kubernetes-1.17.5/cmd/kubeadm/app/constants/constants.go ../kubernetes-1.17.5/cmd/kubeadm/app/constants/constants.go
-47c47
-&lt;       CertificateValidity = time.Hour * 24 * 365
+&gt;   port: 443
+17,18c17,18
+&lt;   certificate: /data/cert/portus.crt
+&lt;   private_key: /data/cert/portus.key
 ---
-&gt;       CertificateValidity = time.Hour * 24 * 365 * 100
-# diff kubernetes-1.17.5/vendor/k8s.io/client-go/util/cert/cert.go ../kubernetes-1.17.5/vendor/k8s.io/client-go/util/cert/cert.go
-66c66
-&lt;               NotAfter:              now.Add(duration365d * 10).UTC(),
+&gt;   certificate: /your/certificate/path
+&gt;   private_key: /your/private/key/path
+29c29
+&lt; external_url: https://portus.fugouou.com:5000
 ---
-&gt;               NotAfter:              now.Add(duration365d * 100).UTC(),
-96c96
-&lt;       maxAge := time.Hour * 24 * 365          // one year self-signed certs
+&gt; # external_url: https://reg.mydomain.com:8433
+78c78
+&lt;   skip_update: true
 ---
-&gt;       maxAge := time.Hour * 24 * 365 * 100         // one year self-signed certs
-110c110
-&lt;               maxAge = 100 * time.Hour * 24 * 365 // 100 years fixtures
----
-&gt;               maxAge = 100 * time.Hour * 24 * 365  // 100 years fixtures
-124c124
-&lt;               NotAfter:  validFrom.Add(maxAge),
----
-&gt;               NotAfter:  validFrom.Add(maxAge * 100),
-152c152
-&lt;               NotAfter:  validFrom.Add(maxAge),
----
-&gt;               NotAfter:  validFrom.Add(maxAge * 100),
-</code></pre><p>Make kubeadm binary files:</p><pre><code># make all WHAT=cmd/kubeadm
-# cd _output/bin
-# ls
-conversion-gen  deepcopy-gen  defaulter-gen  go2make  go-bindata  kubeadm  openapi-gen
-# ./kubeadm version
-kubeadm version: &amp;version.Info{Major:&quot;1&quot;, Minor:&quot;17&quot;, GitVersion:&quot;v1.17.5&quot;, GitCommit:&quot;e0fccafd69541e3750d460ba0f9743b90336f24f&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2020-05-06T03:23:16Z&quot;, GoVe
-rsion:&quot;go1.14.2&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
-</code></pre><p>Code changes mainly in <code>1_preinstall</code> and <code>3_k8s</code>:</p><pre><code>Show diffs., TBD
-</code></pre><p>After hanges almost everything will be acts as in old versions.</p><h3 id=kubespray-changes>kubespray changes</h3><p>In new version we have to comment the:</p><pre><code># roles/kubespray-defaults/tasks/main.yaml
-# do not run gather facts when bootstrap-os in roles
-#- name: set fallback_ips
-#  include_tasks: fallback_ips.yml
-#  when:
-#    - &quot;'bootstrap-os' not in ansible_play_role_names&quot;
-#    - fallback_ips is not defined
-#  tags:
-#    - always
-#
-#- name: set no_proxy
-#  include_tasks: no_proxy.yml
-#  when:
-#    - &quot;'bootstrap-os' not in ansible_play_role_names&quot;
-#    - http_proxy is defined or https_proxy is defined
-#    - no_proxy is not defined
-#  tags:
-#    - always
+&gt;   skip_update: false
+</code></pre><p>use the newly generated cert files:</p><pre><code># mkdir -p /data/cert
+# cp ***.crt ***.key /data/cert
+</code></pre><p>Trivy offline database import:</p><pre><code># ls /data/trivy-adapter/trivy/*
+/data/trivy-adapter/trivy/metadata.json  /data/trivy-adapter/trivy/trivy.db
 
-</code></pre><p>And also change the <code>container-engine</code>'s docker roles, thus we won&rsquo;t restart docker to keep the graphical installation on-going:</p><pre><code># cat container-engine/docker/handlers/main.yml 
----
-- name: restart docker
-  command: echo &quot;HelloWorld&quot;
-
-#  command: /bin/true
-#  notify:
-#    - Docker | reload systemd
-#    - Docker | reload docker.socket
-#    - Docker | reload docker
-#    - Docker | wait for docker
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/04/21/workingtipsonpython/>WorkingtipsOnpython</a></h1><span class=post-date>Apr 21, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Just recording:</p><pre><code>[root@3652a460ae13 apps]# python manage.py shell
-Python 3.6.1 (default, Jun 29 2018, 02:56:19)                          
-Type 'copyright', 'credits' or 'license' for more information
-IPython 6.5.0 -- An enhanced Interactive Python. Type '?' for help. 
-                                                      
-In [1]: import requests
-   ...: import time
-   ...: 
-   ...: from kubeops_api.apps_client import AppsClient
-   ...: from kubeops_api.models.host import Host
-   ...: from kubeops_api.cluster_data import LokiContainer
-   ...: 
-   ...: 
-
-In [2]: import kubernetes.client
-   ...: import redis
-   ...: import json
-   ...: import logging
-   ...: import kubeoperator.settings
-   ...: import log.es
-   ...: import datetime, time
-   ...: import builtins
-   ...: 
-   ...: from kubernetes.client.rest import ApiException
-   ...: from kubeops_api.cluster_data import ClusterData, Pod, NameSpace, Node, Container, Deployment, StorageClass, PVC, Event
-   ...: from kubeops_api.models.cluster import Cluster
-   ...: from kubeops_api.prometheus_client import PrometheusClient
-   ...: from kubeops_api.models.host import Host
-   ...: from django.db.models import Q
-   ...: from kubeops_api.cluster_health_data import ClusterHealthData
-   ...: from django.utils import timezone
-   ...: from ansible_api.models.inventory import Host as C_Host
-   ...: from common.ssh import SSHClient, SshConfig
-   ...: from message_center.message_client import MessageClient
-   ...: from kubeops_api.utils.date_encoder import DateEncoder
-   ...: 
-   ...: 
-
-In [3]: 
-
-In [3]: project_name = &quot;kingston&quot;
-
-In [4]: cluster = Cluster.objects.get(name=project_name)
-
-In [5]: host = &quot;loki.apps.kingston.mydomain.com&quot;
-
-In [6]: config = {
-   ...:   'host': host,
-   ...:   'cluster': cluster
-   ...: }
-
-In [7]: 
-
-In [7]: print(config)
-{'host': 'loki.apps.kingston.mydomain.com', 'cluster': &lt;Cluster: kingston&gt;}
-
-In [8]: prom_client = PrometheusClient(config)
-
-In [9]: label_url = &quot;http://loki.apps.kingston.mydomain.com/loki/api/v1/label/container_name/values&quot;
-
-In [10]: app_client = AppsClient(cluster=cluster)
-
-In [11]:  label_query_url = label_url.format(host=&quot;loki.apps.kingston.mydomain.com&quot;)
-
-In [12]: label_req = app_client.get('loki', label_query_url)
-
-In [13]: label_req.ok
-Out[13]: True
-
-In [14]: now = time.time()
-
-In [15]: end = int(round(now * 1000 * 1000000))
-
-In [16]: start = int(round(now * 1000 - 3600000) * 1000000)
-
-In [17]: label_req_json = label_req.json()
-
-In [18]: print(label_req_json)
-{'status': 'success', 'data': ['autoscaler', 'calico-kube-controllers', 'calico-node', 'chartmuseum', 'chartsvc', 'controller', 'coredns', 'dashboard', 'grafana', 'install-cni', 'kube-apiserver', 'kube-controller-manager', 'kube-proxy', 'kube-scheduler', 'kubeapps-plus-mongodb', 'kubernetes-dashboard', 'loki', 'metrics-server', 'metrics-server-nanny', 'nfs-client-provisioner', 'nginx', 'node-problem-detector', 'prometheus-alertmanager', 'prometheus-alertmanager-configmap-reload', 'prometheus-kube-state-metrics', 'prometheus-node-exporter', 'prometheus-server', 'prometheus-server-configmap-reload', 'promtail', 'proxy', 'registry', 'registry-ui', 'sync', 'tiller', 'traefik-ingress-lb']}
-
-In [19]: values = label_req_json.get('data', [])
-
-In [20]: print(values)
-['autoscaler', 'calico-kube-controllers', 'calico-node', 'chartmuseum', 'chartsvc', 'controller', 'coredns', 'dashboard', 'grafana', 'install-cni', 'kube-apiserver', 'kube-controller-manager', 'kube-proxy', 'kube-scheduler', 'kubeapps-plus-mongodb', 'kubernetes-dashboard', 'loki', 'metrics-server', 'metrics-server-nanny', 'nfs-client-provisioner', 'nginx', 'node-problem-detector', 'prometheus-alertmanager', 'prometheus-alertmanager-configmap-reload', 'prometheus-kube-state-metrics', 'prometheus-node-exporter', 'prometheus-server', 'prometheus-server-configmap-reload', 'promtail', 'proxy', 'registry', 'registry-ui', 'sync', 'tiller', 'traefik-ingress-lb']
-
-In [21]: for name in values:
-    ...:     error_count = 0
-    ...:     prom_url = 'http://{host}/api/prom/query?limit=1000&amp;query={{container_name=&quot;{name}&quot;}}&amp;start={start}&amp;end={end}'
-    ...:     prom_query_url = prom_url.format(host=&quot;loki.apps.kingston.mydomain.com&quot;, name=name, start=start, end=end)
-    ...:     prom_req = app_client.get('loki', prom_query_url)
-    ...:     if prom_req.ok:
-    ...:         prom_req_json = prom_req.json()
-    ...:         streams = prom_req_json.get('streams', [])
-    ...:         for stream in streams:
-    ...:             entries = stream.get('entries', [])
-    ...:             for entry in entries:
-    ...:                 line = entry.get('line', None)
-    ...:                 print(line)
-
-
-In [29]: for name in values:                                                                                                             
-    ...:     error_count = 0                                   
-    ...:     prom_url = 'http://{host}/api/prom/query?limit=1000&amp;query={{container_name=&quot;{name}&quot;}}&amp;start={start}&amp;end={end}'
-    ...:     prom_query_url = prom_url.format(host=&quot;loki.apps.kingston.mydomain.com&quot;, name=name, start=start, end=end)
-    ...:     prom_req = app_client.get('loki', prom_query_url)
-    ...:     if prom_req.ok:
-    ...:         prom_req_json = prom_req.json()
-    ...:         streams = prom_req_json.get('streams', [])
-    ...:         for stream in streams:
-    ...:             entries = stream.get('entries', [])
-    ...:             for entry in entries:
-    ...:                 line = entry.get('line', None)
-    ...:                 if line is not None and 'level=error' in line:
-    ...:                     error_count = error_count + 1
-
-</code></pre><p>Thus you could fetch the correct python logs for kubeoperator</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/04/01/quicktipsonterraformandlibvirtdonmultiple/>QuickTipsOnTerraformAndLibvirtdOnMultiple</a></h1><span class=post-date>Apr 1, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=terraform-configuration>terraform configuration</h3><p>On archlinux, it should be configured as following:</p><pre><code># sudo pacman -S terraform
-$ yaourt terraform-libvirt
-</code></pre><p>manually create the folder and copy some plugins into the folder:</p><pre><code>$ mkdir -p ~/.terraform.d/plugins
-$ cp xxxx ~/.terraform.d/plugins
-$ ls ~/.terraform.d/plugins
-terraform-provider-ansible
-</code></pre><h3 id=libvirtd-configurationubuntu>libvirtd configuration(Ubuntu)</h3><p>qemu configuration(Or terraform will complain priviledge):</p><pre><code># vim /etc/libvirt/qemu.conf
-security_driver = &quot;none&quot;
-</code></pre><p>libvirtd configuration:</p><pre><code>$ vim /etc/default/libvirtd
-libvirtd_opts=&quot;-l&quot;
-$ vim /etc/libvirt/libvirtd.conf
-listen_tls = 0
-listen_tcp = 1
-tcp_port = &quot;16509&quot;
-listen_addr = &quot;0.0.0.0&quot;
-auth_tcp = &quot;none&quot;
-</code></pre><p>If you want to use bridge networking, make sure the following configuration is in
-sysctl:</p><pre><code># cat &gt;&gt; /etc/sysctl.conf &lt;&lt;EOF
-net.bridge.bridge-nf-call-ip6tables = 0
-net.bridge.bridge-nf-call-iptables = 0
-net.bridge.bridge-nf-call-arptables = 0
-EOF
-# sysctl -p /etc/sysctl.conf
-</code></pre><h3 id=dnsmasq-dhcpd-configuration>dnsmasq dhcpd configuration</h3><p>In order to configure the dhcpd in bridged networking , we have to configure the
-dnsmasq server on gateway machine:</p><pre><code># vim /etc/dnsmasq.conf
-bind-interfaces
-dhcp-range=10.137.149.100,10.137.149.200,12h
-dhcp-option=3,10.137.149.1
-dhcp-authoritative
-interface=enp3s0
-# systemctl restart dnsmasq
-</code></pre><h3 id=terraform-networking>terraform networking</h3><p>Configure network parameter:</p><pre><code># vim main.tf
-  network_interface {
-		#network_name   = &quot;default&quot;
-		bridge = &quot;br0&quot;
-    hostname   = &quot;${var.VM_HOSTNAME}-${count.index + 1}&quot;
-    wait_for_lease = true
-  }
-# terraform apply
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/03/25/thinkingintechnology/>ThinkingInTechnology</a></h1><span class=post-date>Mar 25, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/life>Life</a></span><p>就在刚才领导问：&ldquo;XX厂商下午来交流虚拟化，想不想了解一下？&rdquo;</p><p>“不想”</p><p>他当然诧异，为毛我号称云计算组的不去交流交流。于是我说在某地上的项目时我们就很了解它的技术架构了，他听了也没说什么。</p><p>真实原因是：</p><ul><li>现场方案的落地权根本不在我职责范围内，各地想用什么方案恐怕连公司都没法做主。即便公司能做主，也会在事业部的层面决定选用谁家的方案。那么，这种推介直接推到我这个部门层面是否有必要？</li><li>放牛割草的故事。你是割草的，他是放牛的。他陪着你聊天，聊了一整天。到黄昏时候，他的牛吃饱了，你的草篓依然是空的。厂商肯上门来做技术推介的，多半是售前，售前的工作就是耗"可能的客户"的时间，某种程度上来说，售前和那些卖保险的没什么差别。他的牛吃饱了，你的草呢？站在这个角度想一想，去和人聊天不如静下心来做自己的东西。</li><li>国产厂商对于虚拟化/云等技术的理解及技术积累。都是靠堆人技术，把国外开源的拿过来改巴改巴。如果你有能力消化开源社区的东西，且提升成自己的方案，干嘛去听个二道贩子忽悠？</li><li>Life is short, enjoy/play/learn more. 肺炎在外面是如此的惨烈，何必浪费宝贵时间听别人吹嘘自家产品？</li><li>珍惜生命。毕竟肺炎还没有过去，谁都不知道会不会有二次爆发。在太多的不确定前，尽量缩减face-to-face的所谓交流。</li><li>相当鄙视领导的这种安排。他妈的你说去就去啊？一次成熟的技术交流应该是: 事先沟通，主动获取相应的材料，先学习一下看有没有当面交流的必要; 若有，当面交流时再深入探讨。就你这样的，人家说要来交流你就给他机会，他过来念他不知道念了几百次的浅显易懂的PPT给你洗脑，何必呢？至于我，说句不好听的，就是你拉过去撑场面、烘托气氛的吧。我自己也没那么贱，没必要陪你去浪费时间吧。</li></ul><p>这类技术交流我事先有听过不知道多少次，每次都让我觉得如吞苍蝇。很高兴老子今天直接说了no，life is short, enjoy/play/learn more.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/03/20/bapikl/>BapiKL</a></h1><span class=post-date>Mar 20, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=content>Content</h3><p>On how to modify the chinese kl system.</p><p>This system is based on ubuntu16.04, but the manufacturer changed into a chinese version, so they could sell it at a very high price. Following are the steps for cracking this system.</p><h3 id=preparation>Preparation</h3><p>Unbox the machine, tear down its hard disk(1T), insert into as the usb disk, then dd it into a gzipped file:</p><pre><code>sudo dd if=/dev/sdc | gzip -c &gt; /media/sda/to_be_fucked.img
-</code></pre><p>Now transfer the img into a powerful arm64 server(HW&rsquo;s arm64), and gunzip it into its origin size, 1T.</p><p>Install a clean ubuntu16.04.6 vm (arm64 version), like following:</p><p><img src=/images/2020_03_20_17_19_03_669x425.jpg alt=/images/2020_03_20_17_19_03_669x425.jpg></p><p>After installation, shutdown this vm, but don&rsquo;t destroy it. Later we will use it, this is the crated kl system located.</p><p>Now we will dump the kl system&rsquo;s partition into our ubuntu system. Use another vm(ubuntu or centos, choose as you wish), attach the <code>to_be_fucked.img</code> and <code>readonly.qcow2</code>(previous vm image) together, then startup:</p><p><img src=/images/2020_03_20_17_21_39_677x362.jpg alt=/images/2020_03_20_17_21_39_677x362.jpg></p><p>Login and check the partition,</p><p><img src=/images/2020_03_20_17_23_41_561x476.jpg alt=/images/2020_03_20_17_23_41_561x476.jpg></p><p>Check every partition of the <code>/dev/vdb</code>, we found the <code>/dev/vdb2</code> is the root filesystem. so we mount it , also we mount the <code>readonly.qcow2</code>'s root directory:</p><pre><code># sudo mkdir -p /media/crack /media/kl
-# sudo vgscan
-# sudo mount /dev/mapper/ubuntu-system-root /media/crack
-# sudo mount /dev/vdb2 /media/kl
-# sudo rsync -avz /media/kl /media/crack
-</code></pre><p>Wait for a while, after the rsync finished, you actually got the kl system into your ubuntu16.04.6 vm.</p><h3 id=crack>Crack</h3><p>Make sure you are in the <code>/media/crack</code> folder, do following steps:</p><p>Edit the <code>etc/fstab</code> file, in kl system its partition will be changed as we are in cracked system:</p><pre><code># vim /media/crack/etc/fstab
-/dev/mapper/ubuntu--vg-root /               ext4    rw,noatime 0       1
-</code></pre><p>Change the <code>/boot</code> content in cracked partition, enable the read/write for root partition, and enable the serial port output:</p><pre><code># mount /dev/vdc2 /mnt
-# vim /mnt/grub/grub.cfg
-...... find the corresponding location
-		else
-		  search --no-floppy --fs-uuid --set=root 39f71c29-80a2-43ad-b812-5d699ac4e94f
-		fi
-		echo	'Loading Linux 4.4.0-142-generic ...'
-+++	        linux	/vmlinuz-4.4.0-142-generic root=/dev/mapper/ubuntu--vg-root rw  console=ttyS0,115200
-		echo	'Loading initial ramdisk ...'
-		initrd	/initrd.img-4.4.0-142-generic
-	}
-........
-</code></pre><p>Now shutdown our 1804 vm, bootup the cracked 16.04.6 system, it will startup and hang at the very beginning.</p><p><img src=/images/2020_03_20_17_34_29_789x251.jpg alt=/images/2020_03_20_17_34_29_789x251.jpg></p><p>Boot the 1804 vm, mount the cracked partition, copy the origin <code>systemd</code> binary file from a <code>ubuntu16.04.6</code> system:</p><pre><code># mv /media/crack/lib/systemd/systemd /media/crack/lib/systemd/systemd.back
-# cp the_origin_ubuntu16.04.6_systemd /media/crack/lib/systemd/systemd
-</code></pre><p>Remove the activation check service:</p><pre><code>root@arm01:/media/kylin/etc/systemd/system/multi-user.target.wants# pwd
-/media/kylin/etc/systemd/system/multi-user.target.wants
-root@arm01:/media/kylin/etc/systemd/system/multi-user.target.wants# mv kylin-activation-check.service /media/kylin/
-
-</code></pre><h3 id=after-cracked>After Cracked</h3><p>Now reboot the system, this time the system will bootup and we use virsh for checking its ip address:</p><p><img src=/images/2020_03_23_09_45_35_563x321.jpg alt=/images/2020_03_23_09_45_35_563x321.jpg></p><p>Get the ip address:</p><pre><code>virsh net-dhcp-leases default |grep e4
- 2020-03-23 10:45:33  52:54:00:39:d6:e4  ipv4      192.168.122.150/24        fuckgfw-os    -
-</code></pre><p>Login with our physical machine&rsquo;s username and password:</p><pre><code>ssh fuckgfw@192.168.122.150
-[Unauthorized System] fuckgfw@fuckgfw-os:~$
-
-</code></pre><h3 id=tips-for-usage>Tips for usage</h3><p>to avoid the mtod, just change the <code>/etc/motd</code>, and use the zsh for replacing the bash.</p><p>Enable remote desktop(vncserver), using metacity for replacing the default gpu powered window manager.</p><pre><code># vim /etc/motd
- __________________________
-&lt; 麒麟： 我原本是Ubuntu . &gt;
- --------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-
- __    __   __          __    __  .______    __    __  .__   __. .___________. __    __  
-|  |  |  | |  |        |  |  |  | |   _  \  |  |  |  | |  \ |  | |           ||  |  |  | 
-|  |__|  | |  |        |  |  |  | |  |_)  | |  |  |  | |   \|  | `---|  |----`|  |  |  | 
-|   __   | |  |        |  |  |  | |   _  &lt;  |  |  |  | |  . `  |     |  |     |  |  |  | 
-|  |  |  | |  |  __    |  `--'  | |  |_)  | |  `--'  | |  |\   |     |  |     |  `--'  | 
-|__|  |__| |__| (_ )    \______/  |______/   \______/  |__| \__|     |__|      \______/  
-                 |/    
-</code></pre><p>Also change the contents under this folder:</p><p><img src=/images/2020_03_23_09_54_12_830x128.jpg alt=/images/2020_03_23_09_54_12_830x128.jpg></p><h4 id=vnc-server>vnc server</h4><p>Configure the mate session for vncserver for:</p><pre><code>#!/bin/sh
-
-# Uncomment the following two lines for normal desktop:
-# unset SESSION_MANAGER
-# exec /etc/X11/xinit/xinitrc
-
-[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup
-[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources
-xsetroot -solid grey
-vncconfig -iconic &amp;
-metacity &amp;
-exec mate-session &amp;
-</code></pre><p>Configure the configuration via <code>dconf-editor</code>, also configure the desktop manager via <code>mate-tweak</code>.</p><p>Configure the rdesktop server as:</p><pre><code># vim ~/.xsession
-metacity&amp;
-mate-session
-# apt-get install -y xrdp
-</code></pre><p>Thus you could visit the remote desktop via <code>rdesktop</code></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/43/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/43/>43</a></li><li class="page-item active"><a class=page-link href=/page/44/>44</a></li><li class=page-item><a class=page-link href=/page/45/>45</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/45/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+/data/trivy-adapter/trivy/db:
+metadata.json  trivy.db
+# chmod a+w -R /data/trivy-adapter/trivy/db
+</code></pre><p>Install via:</p><pre><code># ./install.sh --with-trivy --with-notary --with-chartmuseum
+# docker ps
+afe49ec2a626        goharbor/harbor-jobservice:v2.0.0      &quot;/harbor/entrypoint.…&quot;   14 minutes ago      Up 14 minutes (healthy)                                                                          harbor-jobservice
+7ecf87cdc70b        goharbor/nginx-photon:v2.0.0           &quot;nginx -g 'daemon of…&quot;   14 minutes ago      Up 14 minutes (healthy)   0.0.0.0:4443-&gt;4443/tcp, 0.0.0.0:80-&gt;8080/tcp, 0.0.0.0:5000-&gt;8443/tcp   nginx
+41fee7abd2a1        goharbor/notary-server-photon:v2.0.0   &quot;/bin/sh -c 'migrate…&quot;   14 minutes ago      Up 14 minutes                                                                                    notary-server
+0f635fccd2fe        goharbor/notary-signer-photon:v2.0.0   &quot;/bin/sh -c 'migrate…&quot;   14 minutes ago      Up 14 minutes                                                                                    notary-signer
+ebcd78417fdf        goharbor/harbor-core:v2.0.0            &quot;/harbor/entrypoint.…&quot;   14 minutes ago      Up 14 minutes (healthy)                                                                          harbor-core
+28cca5aa3325        goharbor/trivy-adapter-photon:v2.0.0   &quot;/home/scanner/entry…&quot;   14 minutes ago      Up 14 minutes (healthy)   8080/tcp                                                               trivy-adapter
+7823c38b71e9        goharbor/registry-photon:v2.0.0        &quot;/home/harbor/entryp…&quot;   14 minutes ago      Up 14 minutes (healthy)   5000/tcp                                                               registry
+38b6bc813268        goharbor/harbor-portal:v2.0.0          &quot;nginx -g 'daemon of…&quot;   14 minutes ago      Up 14 minutes (healthy)   8080/tcp                                                               harbor-portal
+ba6c5f9473b9        goharbor/redis-photon:v2.0.0           &quot;redis-server /etc/r…&quot;   14 minutes ago      Up 14 minutes (healthy)   6379/tcp                                                               redis
+8ce7deffd0c8        goharbor/harbor-registryctl:v2.0.0     &quot;/home/harbor/start.…&quot;   14 minutes ago      Up 14 minutes (healthy)                                                                          registryctl
+bd3085fb3b97        goharbor/chartmuseum-photon:v2.0.0     &quot;./docker-entrypoint…&quot;   14 minutes ago      Up 14 minutes (healthy)   9999/tcp                                                               chartmuseum
+d3e90aa5d4d8        goharbor/harbor-db:v2.0.0              &quot;/docker-entrypoint.…&quot;   14 minutes ago      Up 14 minutes (healthy)   5432/tcp                                                               harbor-db
+1b989340ff76        goharbor/harbor-log:v2.0.0             &quot;/bin/sh -c /usr/loc…&quot;   14 minutes ago      Up 14 minutes (healthy)   127.0.0.1:1514-&gt;10514/tcp                                              harbor-log
+</code></pre><h3 id=configure-and-use>Configure and use</h3><p>In every node running docker doing(Ubuntu):</p><pre><code># cp gwougou.crt  /usr/local/share/ca-certificates
+# update-ca-certificates
+# systemctl restart docker
+# docker login -uadmin -pHarbor12345 xagowu.gowugoe.com
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/06/09/convertqcow2todockerimage/>ConvertQcow2ToDockerImage</a></h1><span class=post-date>Jun 9, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=create-vm>Create vm</h3><p>Create vm disks:</p><pre><code># qemu-img create -f qcow2 2004.qcow2 6G
+</code></pre><p>Install system into this qcow2 files with your customized settings.</p><h3 id=convert>Convert</h3><p>Convert into img file:</p><pre><code>$ qemu-img convert -f vmdk -O raw 2004.qcow2 2004.img
+</code></pre><p>Using guestfish for converting into docker images:</p><pre><code>$ sudo guestfish -a 2004.img --ro
+$ &gt;&lt;fs&gt; run
+$ &gt;&lt;fs&gt; list-filesystems
+/dev/sda1: ext4
+/dev/sda2: unknown
+/dev/sda5: swap
+$ &gt;&lt;fs&gt; mount /dev/sda1 /
+$ &gt;&lt;fs&gt; tar-out / - | xz --best &gt;&gt; my2004.xz
+$ &gt;&lt;fs&gt; exit
+$ cat my2004.xz | docker import - YourImagesName
+</code></pre><p>Now push it into dockerhub, next time you could use it freely.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/05/28/workingtipsongreenmonitor/>WorkingTipsOnGreenMonitor</a></h1><span class=post-date>May 28, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=netdata>Netdata</h3><p>Netdata 二进制 download:</p><p><a href=https://github.com/netdata/netdata/releases>https://github.com/netdata/netdata/releases</a></p><p>选择 <code>netdata-v1.22.1.gz.run</code>, 安装:</p><pre><code># chmod netdata-v1.22.1.gz.run
+# ./netdata-v1.22.1.gz.run --accept
+# chkconfig netdata on
+</code></pre><h3 id=node_exporter>node_exporter</h3><p>二进制 download:</p><p><a href=https://github.com/prometheus/node_exporter/releases>https://github.com/prometheus/node_exporter/releases</a></p><p>选择 <code>node_exporter-1.0.0.linux-amd64.tar.gz</code> 安装:</p><pre><code>#  tar xzvf node_exporter-1.0.0.linux-amd64.tar.gz
+# cp node_exporter-1.0.0.linux-amd64/node_exporter  /usr/bin &amp;&amp; chmod 777 /usr/bin/node_exporter
+# vim /etc/rc.local
+/usr/bin/node_exporter &amp;
+# /usr/bin/node_exporter  &amp;
+</code></pre><h3 id=result>Result</h3><p>Netdata:</p><p><img src=/images/2020_05_28_11_34_37_717x396.jpg alt=/images/2020_05_28_11_34_37_717x396.jpg></p><p>node_exporter:</p><p><img src=/images/2020_05_28_11_35_07_715x499.jpg alt=/images/2020_05_28_11_35_07_715x499.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/43/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/43/>43</a></li><li class="page-item active"><a class=page-link href=/page/44/>44</a></li><li class=page-item><a class=page-link href=/page/45/>45</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/45/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

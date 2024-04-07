@@ -1,248 +1,184 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/10/19/dvchangelog/>dvChangelog</a></h1><span class=post-date>Oct 19, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Changed <code>DVServer/Driver.h</code>:</p><pre><code>Line 25: 
-//#define DVSERVER_HWDCURSOR
---&gt;
-#define DVSERVER_HWDCURSOR
-
-Line 45-&gt;Line 58, CursorData, all commented
-</code></pre><p>Compilation will give following errors <code>'device_iface_data':undeclared identifier</code>:</p><p><img src=/images/2023_10_19_15_30_50_775x519.jpg alt=/images/2023_10_19_15_30_50_775x519.jpg></p><p>Comment <code>DVServer/Driver.cpp</code> Line 543 -> Line 547, rebuild.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/10/16/lxcbaseddesktop/>LxcBasedDesktop</a></h1><span class=post-date>Oct 16, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=create-lxc-instance>Create lxc instance</h3><p><img src=/images/2023_10_16_15_11_38_711x258.jpg alt=/images/2023_10_16_15_11_38_711x258.jpg></p><p><img src=/images/2023_10_16_15_11_50_503x177.jpg alt=/images/2023_10_16_15_11_50_503x177.jpg></p><p><img src=/images/2023_10_16_15_12_00_430x157.jpg alt=/images/2023_10_16_15_12_00_430x157.jpg></p><p><img src=/images/2023_10_16_15_12_17_396x134.jpg alt=/images/2023_10_16_15_12_17_396x134.jpg></p><p><img src=/images/2023_10_16_15_12_24_417x157.jpg alt=/images/2023_10_16_15_12_24_417x157.jpg></p><p><img src=/images/2023_10_16_15_12_33_627x280.jpg alt=/images/2023_10_16_15_12_33_627x280.jpg></p><p><img src=/images/2023_10_16_15_12_46_717x496.jpg alt=/images/2023_10_16_15_12_46_717x496.jpg></p><p>Configuration file for pve 100:</p><pre><code># cat /etc/pve/lxc/100.conf 
-arch: amd64
-cores: 4
-features: nesting=1
-hostname: ubuntu2204
-memory: 8192
-net0: name=eth0,bridge=vmbr0,firewall=1,hwaddr=DA:8A:5D:E2:3D:1F,ip=dhcp,type=veth
-ostype: ubuntu
-rootfs: local-lvm:vm-100-disk-0,size=40G
-swap: 512
-unprivileged: 1
-lxc.cgroup2.devices.allow: c 226:0 rwm
-lxc.cgroup2.devices.allow: c 226:128 rwm
-lxc.cgroup2.devices.allow: c 29:0 rwm
-lxc.mount.entry: /dev/fb0 dev/fb0 none bind,optional,create=file
-lxc.mount.entry: /dev/dri dev/dri none bind,optional,create=dir
-lxc.mount.entry: /dev/dri/renderD128 dev/renderD128 none bind,optional,create=file
-lxc.cgroup2.devices.allow: c 4:7 rwm
-lxc.mount.entry: /dev/tty7 dev/tty7 none bind,optional,create=file
-lxc.cgroup2.devices.allow: c 13:* rwm
-lxc.mount.entry: /dev/input dev/input none bind,optional,create=dir
-lxc.cgroup2.devices.allow: c 116:* rwm
-lxc.mount.entry: /dev/snd dev/snd none bind,optional,create=dir
-lxc.idmap: u 0 100000 65536
-lxc.idmap: g 0 100000 5
-lxc.idmap: g 5 5 1
-lxc.idmap: g 6 100006 23
-lxc.idmap: g 29 29 1
-lxc.idmap: g 30 100030 14
-lxc.idmap: g 44 44 1
-lxc.idmap: g 45 100045 60
-lxc.idmap: g 105 101 1
-lxc.idmap: g 106 100106 2
-lxc.idmap: g 108 103 1
-lxc.idmap: g 109 100109 65427
-</code></pre><p>Start the machine and ssh into it.</p><h3 id=configuration-in-lxc>Configuration in lxc</h3><pre><code>apt update -y &amp;&amp; apt upgrade -y
-apt install -y curl sudo gnupg
-apt install -y va-driver-all ocl-icd-libopencl1
-apt-get install -y lightdm
-echo &quot;/usr/sbin/lightdm&quot; &gt; /etc/X11/default-display-manager
-apt-get install -y kodi
-apt install -y kodi-peripheral-joystick
-cat &lt;&lt;EOF &gt;/usr/share/xsessions/kodi-alsa.desktop
-[Desktop Entry]
-Name=Kodi-alsa
-Comment=This session will start Kodi media center with alsa support
-Exec=env AE_SINK=ALSA kodi-standalone
-TryExec=env AE_SINK=ALSA kodi-standalone
-Type=Application
-EOF
-useradd -d /home/kodi -m kodi &amp;&gt;/dev/null
-gpasswd -a kodi audio &amp;&gt;/dev/null
-gpasswd -a kodi video &amp;&gt;/dev/null
-gpasswd -a kodi render &amp;&gt;/dev/null
-groupadd -r autologin &amp;&gt;/dev/null
-gpasswd -a kodi autologin &amp;&gt;/dev/null
-gpasswd -a kodi input &amp;&gt;/dev/null
-
-cat &lt;&lt;EOF &gt;/usr/share/xsessions/kodi-alsa.desktop
-[Desktop Entry]
-Name=Kodi-alsa
-Comment=This session will start Kodi media center with alsa support
-Exec=env AE_SINK=ALSA kodi-standalone
-TryExec=env AE_SINK=ALSA kodi-standalone
-Type=Application
-EOF
-
-cat &lt;&lt;EOF &gt;/etc/lightdm/lightdm.conf.d/autologin-kodi.conf
-[Seat:*]
-autologin-user=kodi
-autologin-session=kodi-alsa
-EOF
-
-apt-get install -y xserver-xorg-input-evdev
-mkdir -p /etc/X11/xorg.conf.d
-
-cat &gt;/usr/local/bin/preX-populate-input.sh  &lt;&lt; __EOF__
-#!/usr/bin/env bash
-
-### Creates config file for X with all currently present input devices
-#   after connecting new device restart X (systemctl restart lightdm)
-######################################################################
-
-cat &gt;/etc/X11/xorg.conf.d/10-lxc-input.conf &lt;&lt; _EOF_
-Section &quot;ServerFlags&quot;
-     Option &quot;AutoAddDevices&quot; &quot;False&quot;
-EndSection
-_EOF_
-
-cd /dev/input
-for input in event*
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/23/openwrtworkingtips2023nov23/>OpenWRTWorkingTips2023Nov23</a></h1><span class=post-date>Nov 23, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-release-space>1. release space</h3><p>disk is almost full:</p><pre><code>root@OpenWrt:~# df -h
+Filesystem                Size      Used Available Use% Mounted on
+/dev/root                 2.5M      2.5M         0 100% /rom
+tmpfs                    60.8M     92.0K     60.8M   0% /tmp
+/dev/mtdblock3            3.9M      3.5M    396.0K  90% /overlay
+overlayfs:/overlay        3.9M      3.5M    396.0K  90% /
+</code></pre><p>Use following command for getting the size of installed app:</p><pre><code># cat /tmp/list.sh
+#!/bin/sh
+ 
+packagelist=$(ls /usr/lib/opkg/info/*.list)
+ 
+for packagelistpath in $packagelist
 do
-cat &gt;&gt; /etc/X11/xorg.conf.d/10-lxc-input.conf &lt;&lt;_EOF_
-Section &quot;InputDevice&quot;
-    Identifier &quot;\$input&quot;
-    Option &quot;Device&quot; &quot;/dev/input/\$input&quot;
-    Option &quot;AutoServerLayout&quot; &quot;true&quot;
-    Driver &quot;evdev&quot;
-EndSection
-_EOF_
-done
-__EOF__
+        packagefiles=$(cat $packagelistpath)
+        packagename=$(echo $packagelistpath | sed 's/\/usr\/lib\/opkg\/info\///g' | sed 's/\.list//g')
+        if [[ -z &quot;$packagefiles&quot; ]]
+        then
+                packagesizeb=$(opkg info $packagename | grep Size\: | sed 's/Size\:\ //g')
+                if [[ -z $packagesizeb ]]
+                then
+                        echo -e &quot;-.- KB \t\t$packagename&quot;
+                else
+                        packagesizekb=$(opkg info $packagename | grep Size\: | sed 's/Size\:\ //g' | awk 'END {printf &quot;%.02f\n&quot;, $1/1024}')
+                        printf '%-16s' &quot;$packagesizekb KB&quot;; printf '%s\n' &quot;$packagename&quot;
+                fi
+        else
+                packagesizekb=$(for file in $packagefiles; do if [[ -f $file ]]; then du -k $file | cut -f1; fi; done | awk '{s+=$1} END {printf &quot;%.02f\n&quot;, s}')
+                printf '%-16s' &quot;$packagesizekb KB&quot;; printf '%s\n' &quot;$packagename&quot;
+        fi
+done | sort -n
+# /tmp/list.sh
+.....
 
-chmod +x /usr/local/bin/preX-populate-input.sh
-mkdir -p /etc/systemd/system/lightdm.service.d
-cat &gt; /etc/systemd/system/lightdm.service.d/override.conf &lt;&lt; __EOF__
-[Service]
-ExecStartPre=/bin/sh -c '/usr/local/bin/preX-populate-input.sh'
-SupplementaryGroups=video render input audio tty
-__EOF__
+551.00 KB       kmod-fs-ext4
+# opkg remove kmod-fs-ext4
+Removing package kmod-fs-ext4 from root...
+# df -h
+Filesystem                Size      Used Available Use% Mounted on
+/dev/root                 2.5M      2.5M         0 100% /rom
+tmpfs                    60.8M     92.0K     60.8M   0% /tmp
+/dev/mtdblock3            3.9M      3.2M    684.0K  83% /overlay
+overlayfs:/overlay        3.9M      3.2M    684.0K  83% /
+tmpfs                   512.0K         0    512.0K   0% /dev
+.....
+</code></pre><h3 id=2-install-zerotierrouter>2. Install zerotier(Router)</h3><p>Install zerotier:</p><pre><code># opkg update
+# opkg install zerotier
+Installing zerotier (1.6.5-1) to root...
+Downloading http://downloads.openwrt.org/releases/19.07.7/packages/mips_24kc/packages/zerotier_1.6.5-1_mips_24kc.ipk
+......
+# uci commit zerotier
+</code></pre><p>Didn&rsquo;t configure the network transferring.</p><h3 id=3-install-zerotiervps>3. Install zerotier(vps)</h3><p>vps is debian, install via:</p><pre><code>curl -s https://install.zerotier.com | sudo bash
+zerotier-cli  join xxxxxxxxx
+</code></pre><h3 id=4-install-zerotiercompany-computer>4. Install zerotier(company computer)</h3><p>ArchLinux, install via:</p><pre><code>sudo pacman -S zerotier-one
+sudo systemctl start zerotier-one
+sudo systemctl enable zerotier-one
+sudo zerotier-cli join xxxxxx
 
-ln -fs /lib/systemd/system/lightdm.service /etc/systemd/system/display-manager.service
-systemctl daemon-reload
-systemctl start lightdm
-ln -fs /lib/systemd/system/lightdm.service /etc/systemd/system/display-manager.service
-</code></pre><p>Change to xfce4:</p><pre><code>apt install -y xfce4
-root@ubuntu2204:~# cat /etc/lightdm/lightdm.conf.d/autologin-kodi.conf 
-[Seat:*]
-autologin-user=kodi
-autologin-session=xfce4-alsa
-#autologin-session=kodi-alsa
-root@ubuntu2204:~# cat /usr/share/xsessions/xfce4-alsa.desktop 
-[Desktop Entry]
-Name=xfce4-alsa
-Comment=This session will start xfce4 with alsa support
-Exec=env AE_SINK=ALSA startxfce4
-TryExec=env AE_SINK=ALSA startxfce4
-Type=Application
-</code></pre><p>Change to dde:</p><pre><code>add-apt-repository ppa:ubuntudde-dev/stable
-apt install ubuntudde-dde
+</code></pre><h3 id=5-install-zerotiercompany-workstation>5. Install zerotier(company workstation)</h3><p>Ubuntu 22.04, install via:</p><pre><code>curl -s https://install.zerotier.com | sudo bash
+sudo zerotier-cli join xxxxxx
+</code></pre><p>Then change the config.json&rsquo;s ip address from ipv6 to zero-tier&rsquo;s ip address.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/16/workingtipsonbackportonubuntu/>WorkingTipsOnBackportOnUbuntu</a></h1><span class=post-date>Nov 16, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Steps:</p><pre><code>git clone https://github.com/intel-gpu/intel-gpu-i915-backports.git
+cd intel-gpu-i915-backports/
+git checkout backport/main
+</code></pre><p>Switch to hwe kernel:</p><pre><code>$ sudo apt install linux-generic-hwe-22.04
+$ uname -r
+6.2.0-36-generic
+</code></pre><p>Install packages:</p><pre><code>sudo apt install dkms make debhelper devscripts build-essential flex bison mawk
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/10/11/win11idv/>win11idv</a></h1><span class=post-date>Oct 11, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p><img src=/images/2023_10_11_09_11_13_640x473.jpg alt=/images/2023_10_11_09_11_13_640x473.jpg></p><p><img src=/images/2023_10_11_09_13_04_662x235.jpg alt=/images/2023_10_11_09_13_04_662x235.jpg></p><p><code>shift + F10</code>, call the command window:</p><p><img src=/images/2023_10_11_09_13_36_601x187.jpg alt=/images/2023_10_11_09_13_36_601x187.jpg></p><pre><code>reg add &quot;HKLM\SYSTEM\Setup\LabConfig&quot; /v &quot;BypassTPMCheck&quot; /t REG_DWORD /d &quot;1&quot; /f
-reg add &quot;HKLM\SYSTEM\Setup\LabConfig&quot; /v &quot;BypassSecureBootCheck&quot; /t REG_DWORD /d &quot;1&quot; /f
-reg add &quot;HKLM\SYSTEM\Setup\LabConfig&quot; /v &quot;BypassRAMCheck&quot; /t REG_DWORD /d &quot;1&quot; /f
-reg add &quot;HKLM\SYSTEM\Setup\LabConfig&quot; /v &quot;BypassStorageCheck&quot; /t REG_DWORD /d &quot;1&quot; /f
-reg add &quot;HKLM\SYSTEM\Setup\LabConfig&quot; /v &quot;BypassCPUCheck&quot; /t REG_DWORD /d &quot;1&quot; /f
-reg add &quot;HKLM\SYSTEM\Setup\MoSetup&quot; /v &quot;AllowUpgradesWithUnsupportedTPMOrCPU&quot; /t REG_DWORD /d &quot;1&quot; /f
-</code></pre><p><img src=/images/2023_10_11_09_24_57_904x376.jpg alt=/images/2023_10_11_09_24_57_904x376.jpg></p><p><img src=/images/2023_10_11_09_25_16_658x488.jpg alt=/images/2023_10_11_09_25_16_658x488.jpg></p><p><img src=/images/2023_10_11_09_25_29_647x487.jpg alt=/images/2023_10_11_09_25_29_647x487.jpg></p><p><img src=/images/2023_10_11_09_25_59_599x166.jpg alt=/images/2023_10_11_09_25_59_599x166.jpg></p><p>Then continue.</p><p>Connection issue:</p><pre><code>shift + f10
-input : oobe\bypassnro
-</code></pre><p><img src=/images/2023_10_11_09_31_10_546x632.jpg alt=/images/2023_10_11_09_31_10_546x632.jpg></p><p>Upload to s3:</p><pre><code>root@dell2 ~]# aws --endpoint http://192.168.1.162:9000 s3 cp win11.qcow2 s3://tyy
-upload: ./win11.qcow2 to s3://tyy/win11.qcow2                       
-[root@dell2 ~]# aws --endpoint http://192.168.1.162:9000  s3 ls s3://tyy/win11.qcow2
-2023-10-11 09:40:09 12190482432 win11.qcow2
-</code></pre><h3 id=verification>verification</h3><p>failed, because it&rsquo;s <code>bios</code> mode:</p><p><img src=/images/2023_10_11_10_24_30_335x198.jpg alt=/images/2023_10_11_10_24_30_335x198.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/10/09/workingtipsonmvisor/>WorkingTipsOnmvisor</a></h1><span class=post-date>Oct 9, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=hardwareossoftware>Hardware/OS/Software</h3><p>nuc11 running Ubuntu 22.04:</p><pre><code>dash@dash-NUC11PAHi5:~$ lscpu | grep 1135
-型号名称：                          11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
-dash@dash-NUC11PAHi5:~$ uname -a
-Linux dash-NUC11PAHi5 6.2.0-31-generic #31~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Aug 16 13:45:26 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
-dash@dash-NUC11PAHi5:~$ cat /etc/issue
-Ubuntu 22.04.3 LTS \n \l
-</code></pre><h3 id=build-steps>Build Steps</h3><p>Install prerequisite packages:</p><pre><code>sudo apt update -y
-sudo apt install -y build-essential git meson protobuf-c-compiler autoconf automake libtool curl make g++ unzip protobuf-compiler  cmake uuid-dev pkg-config libyaml-cpp-dev libspice-client-glib-2.0-dev libpixman-1-dev libzstd-dev libasound2-dev libsdl2-dev libepoxy-dev
-</code></pre><p>Clone/build/install virglrender:</p><pre><code>unzip virglrenderer-main.zip
-cd virglrenderer-main/
-meson -Dprefix=/usr build
-cd build/
-sudo ninja install
-</code></pre><p>Clone/build/install mvisor:</p><pre><code>unzip mvisor-master.zip 
-cd mvisor-master/
-vim meson_options.txt
-    option('vgpu',
-      type: 'boolean',
-      value: true,
-      description: 'Enable VGPU device'
-meson setup build
-meson compile -C build
-./build/mvisor --version
-     MVisor: 2.5.2
-sudo cp build/mvisor /usr/bin/
-</code></pre><h3 id=vm-operations>VM Operations</h3><p>Folder content:</p><pre><code>$ pwd
-/home/dash/mvisorwin
-$ ls
-virtio-win-0.1.240.iso  win10.qcow2  zh-cn_windows_10_consumer_editions_version_22h2_updated_sep_2023_x64_dvd_4cde879b.iso
-</code></pre><p>Create the yaml via:</p><pre><code>$ cat default.yaml 
-name: Default configuration
-base: i440fx.yaml
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/15/workingtipsonbackportkernel/>WorkingTipsOnBackPortKernel</a></h1><span class=post-date>Nov 15, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Configure repository and install packages:</p><pre><code>yum install -y make glibc-devel rpm-build bison flex gawk
+dnf config-manager --set-enabled crb
+dnf install epel-release
+yum install -y dkms
+</code></pre><p>Set the default boot kernel:</p><pre><code># grubby --set-default /boot/vmlinuz-5.14.0-284.30.1.el9_2.x86_64 
+# reboot
 
-machine:
-  memory: 8G
-  vcpu: 4
-  # Set vcpu thread priority value [-20, 19]
-  # A higher value means a lower priority
-  priority: 1
-  # Turn on BIOS output and performance measurement
-  debug: No
-  # Turn on hypervisor to lower CPU usage (Hyper-V is used for Windows)
-  hypervisor: Yes
+verification
+# uname -r
+5.14.0-284.30.1.el9_2.x86_64
+</code></pre><p>Make dkms packages:</p><pre><code>cd /root/intel-gpu-i915-backports
+vim versions
+...
+RHEL_9.2_KERNEL_VERSION=&quot;5.14.284-1_rc1&quot;
+...
+make i915dkmsrpm-pkg OS_DISTRIBUTION=RHEL_9.2
+ls -l -h /root/rpmbuild/RPMS/x86_64/intel-i915-dkms-1.23.7.17.230608.25.5.14.284.1_rc1-1.x86_64.rpm
+-rw-r--r--. 1 root root 2.7M Nov 15 03:02 /root/rpmbuild/RPMS/x86_64/intel-i915-dkms-1.23.7.17.230608.25.5.14.284.1_rc1-1.x86_64.rpm
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/15/vagranttips/>vagranttips</a></h1><span class=post-date>Nov 15, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Vagrantfile definition:</p><pre><code>Vagrant.configure(&quot;2&quot;) do |config|
+  config.vm.box = &quot;rockylinux/9&quot;
+config.disksize.size = '80GB'
 
-objects:
-  - name: cmos
-    # gmtime for linux, localtime for windows
-    rtc: localtime
+config.vm.provider &quot;virtualbox&quot; do |v|
+  v.memory = 81920
+  v.cpus = 6
+end
 
-  - class: qxl
-  - class: spice-agent
-  - class: qemu-guest-agent
-  - class: usb-tablet
+end
+</code></pre><p>Should install following plugins:</p><pre><code>$ vagrant plugin list
+vagrant-disksize (0.1.3, global)
+vagrant-libvirt (0.7.0, system)
+vagrant-vbguest (0.31.0, global)
+</code></pre><p>Install via <code>vagrant plugin install xxxxxxxxxx</code><br>Resize in vm:</p><pre><code>cfdisk /dev/sda
+xfs_growfs /dev/sda5
+</code></pre><p>On Ubuntu lvm, if you resize the disk, do following:</p><pre><code>lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv 
+resize2fs /dev/ubuntu-vg/ubuntu-lv 
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/13/workingtipsoncross/>WorkingTipsOnCross</a></h1><span class=post-date>Nov 13, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-dnscrypt-proxy>1. dnscrypt-proxy</h3><p>Uninstall <code>systemd-resolved</code> then install <code>dnscrypt-proxy</code>:</p><pre><code>sudo systemctl disable systemd-resolved
+sudo systemctl stop systemd-resolved
+sudo apt install -y dnscrypt-proxy
+sudo systemctl start dnscrypt-proxy
+</code></pre><p>Examine its running:</p><pre><code>$ sudo netstat -anp | grep &quot;:53&quot; | grep &quot;127.0.2.1&quot;
+tcp        0      0 127.0.2.1:53            0.0.0.0:*               LISTEN      1/init              
+udp        0      0 127.0.2.1:53            0.0.0.0:*                           1/init       
+</code></pre><p>Configure default <code>dnscrypt-proxy.toml</code> file:</p><pre><code>$ cat /etc/dnscrypt-proxy/dnscrypt-proxy.toml 
+# Empty listen_addresses to use systemd socket activation
+listen_addresses = ['0.0.0.0:5533']
+server_names = ['alidns-doh','tuna-doh-ipv4']
+cache_size = 4096
+cache_min_ttl = 2400
+cache_max_ttl = 86400
+cache_neg_min_ttl = 60
+cache_neg_max_ttl = 600
 
-  - class: virtio-network
-    backend: uip
-    mac: 00:50:00:11:22:33
-    map: tcp:0.0.0.0:8022-:22
+[query_log]
+  file = '/var/log/dnscrypt-proxy/query.log'
+......
+</code></pre><p>Copy the <code>dnscrypt-proxy.toml</code> file for foreign dns query:</p><pre><code>$ sudo cp /etc/dnscrypt-proxy/dnscrypt-proxy.toml /etc/dnscrypt-proxy/dnscrypt-proxy-foreign.toml
+</code></pre><p>Change the content of this foreign content:</p><pre><code>$ cat /etc/dnscrypt-proxy/dnscrypt-proxy-foreign.toml 
+# Empty listen_addresses to use systemd socket activation
+listen_addresses = ['0.0.0.0:25533']
+server_names = ['cloudflare','google']
+cache_size = 4096
+cache_min_ttl = 2400
+cache_max_ttl = 86400
+cache_neg_min_ttl = 60
+cache_neg_max_ttl = 600
 
-  - class: ata-cdrom 
-    image: /home/dash/mvisorwin/zh-cn_windows_10_consumer_editions_version_22h2_updated_sep_2023_x64_dvd_4cde879b.iso
-  
-  - class: ata-cdrom
-    image: /home/dash/mvisorwin/virtio-win-0.1.240.iso
 
-  - class: virtio-block
-    image: /home/dash/mvisorwin/win10.qcow2
-    snapshot: No
-  
-  # - class: floppy
-  #   image: /data/images/floppy.img
+[query_log]
+  file = '/var/log/dnscrypt-proxy/query1.log'
 
-  # - class: virtio-block
-  #   image: /data/empty.qcow2
-  #   snapshot: No
-
-  # - class: virtio-fs
-  #   path: /tmp/fuse
-  #   disk_name: mvisor-fs
-  #   disk_size: 2G
-  #   inode_count: 200
-
-  # - class: vfio-pci
-  #   sysfs: /sys/bus/mdev/devices/c2e088ba-954f-11ec-8584-525400666f2b
-  #   debug: Yes
-
-  - class: virtio-vgpu
-    memory: 1G
-    staging: Yes
-    blob: No
-    node: /dev/dri/renderD128
-</code></pre><p>Start the machine via:</p><pre><code>mvisor -c default.yaml
-</code></pre><p><img src=/images/2023_10_09_22_36_53_1788x941.jpg alt=/images/2023_10_09_22_36_53_1788x941.jpg></p><p>After installation:</p><p><img src=/images/2023_10_09_22_44_45_399x442.jpg alt=/images/2023_10_09_22_44_45_399x442.jpg></p><p>Install virtio drivers:</p><p><img src=/images/2023_10_09_22_45_10_744x685.jpg alt=/images/2023_10_09_22_45_10_744x685.jpg></p><p>Install qxl driver:</p><p><img src=/images/2023_10_09_22_46_10_896x735.jpg alt=/images/2023_10_09_22_46_10_896x735.jpg></p><p>Qxl ready:</p><p><img src=/images/2023_10_09_22_46_29_482x236.jpg alt=/images/2023_10_09_22_46_29_482x236.jpg></p><p>virtio-vgpu:</p><p><img src=/images/2023_10_09_22_49_15_762x737.jpg alt=/images/2023_10_09_22_49_15_762x737.jpg></p><p>Enable the test sign driver:</p><p><img src=/images/2023_10_09_22_52_41_631x156.jpg alt=/images/2023_10_09_22_52_41_631x156.jpg></p><p>Reboot to make the driver take effect, install driver:</p><p><img src=/images/2023_10_09_22_54_13_1092x559.jpg alt=/images/2023_10_09_22_54_13_1092x559.jpg></p><p>Result:</p><p><img src=/images/2023_10_09_22_54_30_1029x484.jpg alt=/images/2023_10_09_22_54_30_1029x484.jpg></p><p>The Mvisor VGPU:</p><p><img src=/images/2023_10_09_22_55_03_1017x689.jpg alt=/images/2023_10_09_22_55_03_1017x689.jpg></p><p>but the gpu won&rsquo;t work</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/08/31/hostapdonrtl8188ee/>HostapdOnRTL8188EE</a></h1><span class=post-date>Aug 31, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>lspci for getting the wireless card mode:</p><pre><code># lspci | grep -i wireless
-01:00.0 Network controller: Realtek Semiconductor Co., Ltd. RTL8188EE Wireless Network Adapter (rev 01)
-</code></pre><p>Install the script:</p><pre><code>yay -S linux-wifi-hotspot
-</code></pre><p>Create the wifi via:</p><pre><code>systemctl enable --now create_ap
-create_ap wlp1s0 enp4s0 xxx xxxxxxx --hidden
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/6/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/6/>6</a></li><li class="page-item active"><a class=page-link href=/page/7/>7</a></li><li class=page-item><a class=page-link href=/page/8/>8</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/8/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+[nx_log]
+  file = '/var/log/dnscrypt-proxy/nx1.log'
+......
+</code></pre><p>For using this newly created configuration file , create a new systemd item:</p><pre><code>$ sudo cp /lib/systemd/system/dnscrypt-proxy.service /lib/systemd/system/dnscrypt-proxy-foreign.service
+$ sudo vim /lib/systemd/system/dnscrypt-proxy-foreign.service 
+...
+ExecStart=/usr/sbin/dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy-foreign.toml
+...
+</code></pre><p>Configure this service:</p><pre><code>$ sudo systemctl daemon-reload
+$ sudo systemctl enable dnscrypt-proxy
+$ sudo systemctl enable dnscrypt-proxy-foreign.service 
+</code></pre><p>Test:</p><pre><code>$ sudo systemctl restart dnscrypt-proxy
+$ sudo systemctl start dnscrypt-proxy-foreign
+$ dig google.com @127.0.0.1 -p 5533 +short
+172.253.124.139
+172.253.124.101
+172.253.124.100
+172.253.124.102
+172.253.124.138
+172.253.124.113
+$ dig google.com @127.0.0.1 -p 25533 +short
+142.250.217.142
+</code></pre><h3 id=2-dnsmasq-flows>2. dnsmasq flows</h3><p>Clone the flow control repository:</p><pre><code>cd /opt
+git clone https://github.com/felixonmars/dnsmasq-china-list
+ln -sf /opt/dnsmasq-china-list/accelerated-domains.china.conf  /etc/dnsmasq.d/accelerated-domains.china.conf 
+ln -sf /opt/dnsmasq-china-list/google.china.conf /etc/dnsmasq.d/google.china.conf
+ln -sf /opt/dnsmasq-china-list/apple.china.conf /etc/dnsmasq.d/apple.china.conf
+ln -sf /opt/dnsmasq-china-list/bogus-nxdomain.china.conf /etc/dnsmasq.d/bogus-nxdomain.china.conf 
+sed -i 's|114.114.114.114|127.0.0.1#5533|g' accelerated-domains.china.conf
+</code></pre><p>Install dnsmasq:</p><pre><code>$ sudo apt install -y dnsmasq
+$ sudo vim /etc/resolv.conf
+nameserver 127.0.0.1
+$ sudo chattr +i /etc/resolv.conf
+$ cat /etc/dnsmasq.conf
+log-queries
+log-facility=/var/log/dnsmasq.log
+no-hosts
+bogus-nxdomain=119.29.29.29
+cache-size=1000
+port=53
+server=127.0.0.1#25533
+$ sudo systemctl restart dnsmasq
+</code></pre><p>Examine:</p><pre><code>$ dig www.google.com
+$ curl www.google.com
+</code></pre><h3 id=3-reference-url>3. reference url</h3><p><code>https://dnscrypt.info/public-servers/</code></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/6/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/6/>6</a></li><li class="page-item active"><a class=page-link href=/page/7/>7</a></li><li class=page-item><a class=page-link href=/page/8/>8</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/8/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

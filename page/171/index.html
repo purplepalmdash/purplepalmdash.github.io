@@ -1,166 +1,156 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/08/install-new-image-to-sd-card-for-bbb/>Install new image to sd card for BBB</a></h1><span class=post-date>Nov 8, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Mainly for installing the OpenWRT system on the BBB, following is the steps:</p><pre><code># zImage
-cp /media/y/embedded/BBB/svnco/trunk/bin/omap/openwrt-omap-zImage ./zImage
-# dtb file
-cp /media/y/embedded/BBB/svnco/trunk/bin/omap/dtbs/am335x-boneblack.dtb ./dtbs/
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/13/ebc-exercises-on-bbb-device-tree/>EBC Exercises on BBB - Device Tree</a></h1><span class=post-date>Nov 13, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=install-js-wrapped-bonescript>Install js wrapped bonescript</h3><p>For using the javascript wrapped library, first we have to install following packages:</p><pre><code>$ sudo apt-get install nodejs npm nodejs-legacy
+$ npm config set proxy http://1xx.xx.xx.xxx:2xxx
+$ npm config set https-proxy http://1xx.xx.xx.xx:2xxx
+$ npm install bonescript
+
+</code></pre><p>Because my network environment is under the firewall, so I need to set the proxy, if you directly connect to internet, you could ignore the <code>npm config set</code> commands.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/13/ebc-exercises-on-bbb-read-analog/>EBC Exercises on BBB - Read Analog</a></h1><span class=post-date>Nov 13, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=connection>Connection</h3><p>The wired connection is listed as following:<br>Pin 34(analog ground) &mdash;> Negative Pin<br>Pin 32(1.8 V) &mdash;> Positive Pin<br>Pin 36(AIN5) &mdash;> Wiper<br>Pin 32: VADC, Pin 34: AGND, Pin36, AIN5.</p><h3 id=operation>Operation</h3><pre><code>root@arm:/sys/kernel/debug/pinctrl/44e10800.pinmux# cat /sys/devices/bone_capemgr.*/slots
+ 0: 54:PF--- 
+ 1: 55:PF--- 
+ 2: 56:PF--- 
+ 3: 57:PF--- 
+ 4: ff:P-O-L Bone-LT-eMMC-2G,00A0,Texas Instrument,BB-BONE-EMMC-2G
+ 5: ff:P-O-L Bone-Black-HDMI,00A0,Texas Instrument,BB-BONELT-HDMI
+root@arm:/sys/kernel/debug/pinctrl/44e10800.pinmux# SLOTS=/sys/devices/bone_capemgr.*/slots
+root@arm:/sys/kernel/debug/pinctrl/44e10800.pinmux# PINS=/sys/kernel/debug/pinctrl/44e10800.pinmux/pins
+root@arm:/sys/kernel/debug/pinctrl/44e10800.pinmux# echo cape-bone-iio &gt; $SLOTS
+root@arm:/sys/kernel/debug/pinctrl/44e10800.pinmux# cat $SLOTS
+ 0: 54:PF--- 
+ 1: 55:PF--- 
+ 2: 56:PF--- 
+ 3: 57:PF--- 
+ 4: ff:P-O-L Bone-LT-eMMC-2G,00A0,Texas Instrument,BB-BONE-EMMC-2G
+ 5: ff:P-O-L Bone-Black-HDMI,00A0,Texas Instrument,BB-BONELT-HDMI
+ 7: ff:P-O-L Override Board Name,00A0,Override Manuf,cape-bone-iio
+root@arm:/sys/kernel/debug/pinctrl/44e10800.pinmux# find /sys -name &quot;*AIN*&quot;
+/sys/devices/ocp.3/helper.15/AIN0
+/sys/devices/ocp.3/helper.15/AIN1
+/sys/devices/ocp.3/helper.15/AIN2
+/sys/devices/ocp.3/helper.15/AIN3
+/sys/devices/ocp.3/helper.15/AIN4
+/sys/devices/ocp.3/helper.15/AIN5
+/sys/devices/ocp.3/helper.15/AIN6
+/sys/devices/ocp.3/helper.15/AIN7
+
+</code></pre><p>Now try to read the value out:</p><pre><code># cd /sys/devices/ocp.3/helper.15
+# ls
+AIN0  AIN1  AIN2  AIN3  AIN4  AIN5  AIN6  AIN7  driver  modalias  power  subsystem  uevent
+# cat AIN5
+537
+
+</code></pre><p>In the origin material it said should plus 1, to read AIN5 you have to look at AIN6, but it seems wrong, because the table and the interface all starts from 0.</p><p>AIN pins are sampled at 12bits and 100k samples per time. while the input voltage is between 0 and 1.8V.</p><p>It&rsquo;s very easy to use anlog read value for controlling some variables, like volumn, brightness, etc.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/12/server-performance/>Server Performance</a></h1><span class=post-date>Nov 12, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Get the UnixBench and run</p><pre><code>wget http://byte-unixbench.googlecode.com/files/UnixBench5.1.3.tgz
+tar xvf UnixBench5.1.3.tgz 
+cd UnixBench
+./Run
 
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/08/setting-nfs-server-on-ubuntu-container/>Setting NFS Server on Ubuntu Container</a></h1><span class=post-date>Nov 8, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Since there are some strange problems in my ArchLinux(Physical Machine), its nfs server will be ignored by the embedded board, while my joggler which runs ubuntu12.04 acts OK. So I try to find a sufficient way for dealing with this issue.</p><h3 id=container-configuration>Container Configuration</h3><p>I&rsquo;ve installed <code>Ubuntu_Container</code> which holds 12.04 in my physical machine. So the nfs server would be configured in this container.</p><pre><code>$ sudo apt-get update
-$ sudo apt-get install nfs-kernel-server portmap nfs-common
+</code></pre><p>Result:</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/10/enable-bluetooth-headset-on-archlinux/>Enable Bluetooth Headset On ArchLinux</a></h1><span class=post-date>Nov 10, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Since my operating system upgraded, I have to re-set my bluetooth headset. I use A2DP via Bluez5/Pulseaudio.</p><h3 id=installation>Installation</h3><p>First install following packages:</p><pre><code># pacman -S pulseaudio-alsa bluez bluez-libs bluez-utils
 
-</code></pre><p>Then edit the /srv/nfs4, and export its configuration in /etc/exports:</p><pre><code>/srv/nfs4 *(rw,sync,no_root_squash,no_subtree_check)
+</code></pre><p>Then start the service via systemd:</p><pre><code># systemctl start bluetooth
 
-</code></pre><p>Everytime you want to start the nfs service, just type:</p><pre><code>$ /etc/init.d/nfs-kernel-server restart
-$ /etc/init.d/portmap restart
+</code></pre><h3 id=configuration>Configuration</h3><p>I use an expect script for automatically connect to my MW600 and play:</p><pre><code>#!/usr/bin/expect
 
-</code></pre><h3 id=test>Test</h3><p>Client run:</p><pre><code>sudo mount -t nfs 1xx.xx.xx.xx:/srv/nfs4/ /mnt
+# This script is for automatically scan my bluetooth headset, which is Sony-Errison mw-600
 
-</code></pre><h3 id=trouble-shooting>Trouble-Shooting</h3><p>The correct parameter for mounting the nfs server is:</p><pre><code>setenv bootargs console=ttyO0,115200n8 root=/dev/nfs rw nfsroot=192.168.1.221:/srv/nfs4/BBBrootfs ip=192.168.1.1
+# Timeout should be very short in local
+# set timeout 3
 
-</code></pre><p>Then you won&rsquo;t have other problems, even the physical machine could also use the nfs filesystem.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/06/automatically-filter-spambot-on-digitalocean/>Automatically Filter SpamBot on DigitalOcean</a></h1><span class=post-date>Nov 6, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=setup-iptables>Setup iptables</h3><p>Install iptables-persistent, so that the iptables rules will be saved even reboot the machine:</p><pre><code># apt-get update
-# apt-get install iptables-persistent
+spawn ssh Trusty@localhost -Y
+expect {
+        &quot;yes/no&quot; {
+                    send &quot;yes\n&quot;
+                                exp_continue
+                                    }
+            &quot;assword&quot; {
+                        send &quot;xxxxxxx!\n&quot;
+                                }
+}
+expect $
 
-</code></pre><h3 id=script-for-manually-add-iptables>Script for manually add iptables</h3><p>Use following scritp for manually add iptables items:</p><pre><code>#!/bin/sh
-# This script runs once per hour, Directly remove the ips which post comments
-# more than 4 times per hour. And who comments less than 3 times we should sent
-# its ip to old ips file. The old ips files will be used for analyse once per day
-# The run frequency is controlled by  crontab.   
+# Now we are in the controlled session, run bluetooth related commands.
+send &quot;bluetoothctl\r&quot;
+expect #
+send &quot;power on\r&quot;
+expect &quot;yes&quot;
+send &quot;agent on\r&quot;
+expect #
+send &quot;default-agent\r&quot;
+expect #
+send &quot;connect 8C:64:22:5F:FF:BD\r&quot;
+expect &quot;connection successful&quot; 
+# Now exit the bluetoothctl
+send &quot;exit\r&quot;
+expect $
 
-######################################################
-# Before Start, empty the deathSentence
-######################################################
-&gt;/var/log/apache2/deathSentence
+# After execute the command in this ssh session, simply exit. 
+send &quot;exit\r&quot;
+expect $
 
-######################################################
-# First cat the file and try to found the bot ip list
-######################################################
-# Pipe 1: The one who called POST method should be monitored
-# Pipe 2: Get the ip address who called POST method.
-# Pipe 3: Sort the ip addresses. 
-# Pipe 4: Calculate the repeated times. First column, times; Second column, ip address.
-# Pipe 5: Sort via first column(times) numerically(Not textly!) .
-# Pipe 6: If the Call POST time bigger than 4 in one hour, catch it!
-# Pipe 7: Yes we caught this thief! Get its ipaddr.
-# Write these thieves into the death sentence
-cat /var/log/apache2/other_vhosts_access.log | grep &quot;POST&quot; | awk '{print $2}' | sort | uniq --count | sort -n | awk '$1&gt;4' | awk {'print $2'}&gt;/var/log/apache2/deathSentence
-# Those who comments but equal or more than 4 times will be append to wishList
-cat /var/log/apache2/other_vhosts_access.log | grep &quot;POST&quot; | awk '{print $2}' | sort | uniq --count | sort -n | awk '$1&lt;5' | awk {'print $2'}&gt;&gt;/var/log/apache2/wishList
+</code></pre><p>Everytime I want to use bluetooth headset, just run:</p><pre><code> $ /home/Trusty/auto/autobluetooth.sh &amp;&amp; pavucontrol &amp;
 
-######################################################
-# Second we add this bot ip list into the netfilter
-######################################################
-for i in `cat /var/log/apache2/deathSentence`
-do
-	#echo $i
-	iptables -A INPUT -s $i -j DROP
-done
+</code></pre><h3 id=flash-content>Flash Content</h3><p>Install following package for let alsa use pulseaudio:</p><pre><code>$ sudo pacman -S pulseaudio-alsa
 
-######################################################
-# Finally empty the other_vhosts_access.log
-######################################################
-&gt;/var/log/apache2/other_vhosts_access.log
+</code></pre><p>Restart opera(or other browser which calls flash), now your sound will be played via bluetooth.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/10/openwrt-on-bbb-3/>OpenWRT on BBB(3)</a></h1><span class=post-date>Nov 10, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=building-guideline>Building Guideline</h3><p>I found a openwrt-bbb repository on github, so just download it and build:<br><a href=https://github.com/nc543/openwrt-bbb/wiki>https://github.com/nc543/openwrt-bbb/wiki</a></p><pre><code>$ git clone https://github.com/nc543/openwrt-bbb.git
+$ cd openwrt-bbb
+$ make
 
-</code></pre><p>Oh, also add myself into the blacklist, so un-lock me:</p><pre><code>$ iptables -A INPUT -s 1xx.x.x.x -j ACCEPT
+</code></pre><p>When building you will meet the openssl download error, simply change the version from 1.0.1i to 1.0.1h or other version is OK.<br>I change this because in recent days the download page of openssl.org is not stable, so the download procedure will directly download the tar files from openwrt.org, while on openwrt.org it holds the 1.0.1h version rather than 1.0.1i version. If you could get 1.0.1i version from openssl.org, then you needn&rsquo;t do these changes.</p><h3 id=verification>Verification</h3><p>As the author said, directly use dd for copying the files into the SD card, but I failed.</p><h4 id=sd-card>SD Card</h4><p>Use following command for write the image to the SD card:</p><pre><code>$ sudo dd if=bin/omap/openwrt-omap-combined-vfat-ext4.img of=/dev/sdb
+$ sync
 
-</code></pre><p>Since those wishList should also be cared, wrote following scripts for judge, every 4 hours will be make a decision.</p><pre><code>#!/bin/sh
-# This script runs once 4 hours, used for processing the /var/log/apache2/wishList
-# ip address lists. Those bad guys who were in wishList, if their total appear times
-# bigger than 4 times, will be added to iptable's drop rules.
-&gt;/var/log/apache2/deathSentence_4hour
+</code></pre><p>Then we have to do following operation in order to change the bootup sequence and parameters:</p><pre><code>$ mount /dev/mmcblk0p1 /mnt
+$ cp openwrt-omap-zImage /mnt/
+$ cp dtbs/am335x-boneblack.dtb /mnt/dtbs/
+$ vim uEnv.txt
+kernel_file=zImage
+fdtfile=am335x-boneblack.dtb
 
-######################################################
-# Read the ip list and store those bad guys into deathSentence_4hour
-######################################################
-cat /var/log/apache2/wishList | sort | uniq --count | sort -n | awk '$1&gt;4' | awk {'$print $2'}&gt;/var/log/apache2/deathSentence_4hour
+loadzimage=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${kernel_file}
+loadfdt=load mmc ${mmcdev}:${mmcpart} ${fdtaddr} /dtbs/${fdtfile}
 
-######################################################
-# Now you got the bad guys, add them into iptables
-######################################################
-for i in `cat /var/log/apache2/deathSentence_4hour`
-do
-        #echo $i
-        iptables -A INPUT -s $i -j DROP
-done
+console=ttyO0,115200n8
+mmcroot=/dev/mmcblk0p2 ro
+mmcrootfstype=ext4 rootwait
 
-######################################################
-# Finally empty the wishList
-######################################################
-&gt;/var/log/apache2/wishList
+mmcargs=setenv bootargs console=${console} root=${mmcroot} rootfstype=${mmcrootfstype} ${optargs}
 
-</code></pre><h3 id=crontab-it>Crontab It!</h3><p>Run <code>auto_add_bot_ip.sh</code> at every minute 0 of 1 hour, then run <code>auto_judge_wishlist.sh</code> at every minute 10 of every 4 hours.</p><pre><code># m h  dom mon dow   command
-0 */1 * * * /root/code/auto_add_bot_ip.sh
-10 */4 * * * /root/code/auto_judge_wishlist.sh
+uenvcmd=run loadzimage; run loadfdt; run mmcargs; bootz ${loadaddr} - ${fdtaddr}
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/06/manually-delete-spam-comments-for-wp/>Manually delete spam comments for WP</a></h1><span class=post-date>Nov 6, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Login to mysql commandline via:</p><pre><code># mysql -uroot -p
-mysql&gt; use wordpress
-.........
-Database changed
+optargs=&quot;debug init=/etc/preinit&quot;
 
-</code></pre><p>Display the COLUMNS of wp_comments:</p><pre><code>mysql&gt; SHOW COLUMNS FROM wp_comments;
-+----------------------+---------------------+------+-----+---------------------+----------------+
-| Field                | Type                | Null | Key | Default             | Extra          |
-+----------------------+---------------------+------+-----+---------------------+----------------+
-| comment_ID           | bigint(20) unsigned | NO   | PRI | NULL                | auto_increment |
-| comment_post_ID      | bigint(20) unsigned | NO   | MUL | 0                   |                |
-| comment_author       | tinytext            | NO   |     | NULL                |                |
-| comment_author_email | varchar(100)        | NO   | MUL |                     |                |
-| comment_author_url   | varchar(200)        | NO   |     |                     |                |
-| comment_author_IP    | varchar(100)        | NO   |     |                     |                |
-| comment_date         | datetime            | NO   |     | 0000-00-00 00:00:00 |                |
-| comment_date_gmt     | datetime            | NO   | MUL | 0000-00-00 00:00:00 |                |
-| comment_content      | text                | NO   |     | NULL                |                |
-| comment_karma        | int(11)             | NO   |     | 0                   |                |
-| comment_approved     | varchar(20)         | NO   | MUL | 1                   |                |
-| comment_agent        | varchar(255)        | NO   |     |                     |                |
-| comment_type         | varchar(20)         | NO   |     |                     |                |
-| comment_parent       | bigint(20) unsigned | NO   | MUL | 0                   |                |
-| user_id              | bigint(20) unsigned | NO   |     | 0                   |                |
-| comment_mail_notify  | tinyint(4)          | NO   |     | 0                   |                |
-+----------------------+---------------------+------+-----+---------------------+----------------+
-16 rows in set (0.00 sec)
+</code></pre><p>With above modification you could directly use the SD card for booting the BBB and use OpenWRT!</p><h4 id=nfs>NFS</h4><p>Create NFS via following command:</p><pre><code>[root@TrustyArch omap]# pwd
+/media/y/embedded/BBB/OpenWRT/openwrt-bbb/bin/omap
+[root@TrustyArch omap]# cp openwrt-omap-zImage /srv/tftp/
+[root@TrustyArch omap]# cp dtbs/am335x-boneblack.dtb /srv/tftp/
+[root@TrustyArch omap]# mkimage -A arm -O linux -T kernel -C none -a 0x80008000 -e 0x80008000 -n &quot;Linux&quot; -d /srv/tftp/openwrt-omap-zImage /srv/tftp/uImage
+[root@TrustyArch omap]# rm -rf /srv/nfs4/BBBrootfs/
+[root@TrustyArch omap]# mkdir -p /srv/nfs4/BBBrootfs
+[root@TrustyArch omap]# tar xzvf openwrt-omap-Default-rootfs.tar.gz -C /srv/nfs4/BBBrootfs/
 
-</code></pre><p>If you want to display the last 30 minutes&rsquo; comments:</p><pre><code>mysql&gt; SELECT * FROM wp_comments WHERE comment_date  BETWEEN TIMESTAMPADD(MINUTE, -30, NOW()) AND NOW();
+</code></pre><p>Wow, start from NFS got failed for:</p><pre><code>[    1.262675] VFS: Cannot open root device &quot;nfs&quot; or unknown-block(0,255): error -6
+[    1.270603] Please append a correct &quot;root=&quot; boot option; here are the available partitions:
+[    1.279456] b300         1875968 mmcblk0  driver: mmcblk
+[    1.285084]   b301           72261 mmcblk0p1 00000000-01
+[    1.290680]   b302         1799280 mmcblk0p2 00000000-02
+[    1.296300] b310            1024 mmcblk0boot1  (driver?)
+[    1.301895] b308            1024 mmcblk0boot0  (driver?)
+[    1.307513] Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,255)
 
-</code></pre><p>Delete last 30 minutes&rsquo; comments:</p><pre><code>mysql&gt; DELETE FROM wp_comments WHERE comment_date  BETWEEN TIMESTAMPADD(MINUTE, -30, NOW()) AND NOW();
-Query OK, 536 rows affected (0.18 sec)
+</code></pre><p>Later I will investigate this problem.</p><h3 id=re-compile-kernel>Re-Compile Kernel</h3><p>First we enable the kernel .config support, so later we could directly output its .config for newer version:</p><pre><code>$ make menuconfig
+General setup
+[*] Kernel .config support
+[*] Enable access to .config through /proc/config.gz
 
-</code></pre><p>Select and Delete 10 day&rsquo;s comments:</p><pre><code>mysql&gt; select * from wp_comments where datediff(now(), comment_date)&lt;10;
-mysql&gt; delete from wp_comments where datediff(now(), comment_date)&lt;10;
-Query OK, 31029 rows affected (1.34 sec)
+</code></pre><p>Enable the nfs support:</p><pre><code>Device Driver
+[*] Block devices
+[*] Network block device support
+Networking options
+[*] IP: kernel level autoconfiguration
+[*]	IP: DHCP support
+[*]	IP: BOOTP support
+[*]
+File Systems
+[*] Netwrok File Systems
 
-</code></pre><p>Disable postfix on startup:</p><pre><code># update-rc.d postfix disable
+</code></pre><p>The detailed NFS client configuration is listed as following image:<br><img src=/images/nfsconfiguration.jpg alt=/images/nfsconfiguration.jpg></p><p>Save the configuration and re-compile the kernel:</p><pre><code>$ make V=99 -j4
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/05/build-chromiumos/>Build ChromiumOS</a></h1><span class=post-date>Nov 5, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=first-time-build>First Time Build</h3><p>This build failed for I could not get the repository sync.</p><p>I setup the environment on 159&rsquo;s /media/nfs:</p><pre><code>$ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-$ export PATH=&quot;$PATH&quot;:`pwd`/depot_tools
-$ echo $PATH
-/home/ubuntu/bin:/home/ubuntu/bin:/home/ubuntu/bin:/home/ubuntu/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/media/nfs/ChromiumOS/depot_tools
-$ cat script.sh 
-#!/bin/sh
-cat &gt;./sudo_editor&lt;&lt;EOF
-#!/bin/sh
-echo Defaults !tty_tickets &gt; $1
-echo Defaults timestamp_timeout=180 &gt;&gt; $1
-EOF
-chmod +x ./sudo_editor
-sudo EDITOR=./sudo_editor visudo -f /etc/sudoers.d/relax_requirements
-$ export BOARD=x86-generic
-$ repo init -u https://git.chromium.org/chromiumos/manifest.git
-$ repo sync
-
-</code></pre><h3 id=second-time-build>Second Time Build</h3><pre><code>Trusty@Linux59:~/Code/ChromiumOS&gt; pwd
-/home/Trusty/Code/ChromiumOS
-Trusty@Linux59:~/Code/ChromiumOS&gt;  git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-Trusty@Linux59:~/Code/ChromiumOS&gt; export PATH=`pwd`/depot_tools:&quot;$PATH&quot;
-Trusty@Linux59:~/Code/ChromiumOS&gt; mkdir chromiumos
-Trusty@Linux59:~/Code/ChromiumOS&gt; cd chromiumos/
-Trusty@Linux59:~/Code/ChromiumOS/chromiumos&gt; repo init -u https://chromium.googlesource.com/chromiumos/manifest.git --repo-url https://chromium.googlesource.com/external/repo.git 
-Trusty@Linux59:~/Code/ChromiumOS/chromiumos&gt; repo sync
-Trusty@Linux59:~/Code/ChromiumOS/chromiumos&gt; cros_sdk
-root's password:
-(cr) ((c405e7b...)) Trusty@Linux59 ~/trunk/src/scripts $ export BOARD=x86-generic
-(cr) ((c405e7b...)) Trusty@Linux59 ~/trunk/src/scripts $ ./setup_board --board=${BOARD}
-# ./set_shared_user_password.sh
-# ./build_packages --board=${BOARD}
-
-
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/170/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/170/>170</a></li><li class="page-item active"><a class=page-link href=/page/171/>171</a></li><li class=page-item><a class=page-link href=/page/172/>172</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/172/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/170/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/170/>170</a></li><li class="page-item active"><a class=page-link href=/page/171/>171</a></li><li class=page-item><a class=page-link href=/page/172/>172</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/172/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,349 +1,76 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/07/28/using-packer-for-building-vm-templates/>Using Packer For Building VM Templates</a></h1><span class=post-date>Jul 28, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=background>Background</h3><p>Recently I am playing the jenkins and VM Templates, so I want to setup the CI(Continous
-Integration) environment which could automatically finish the template building,
-following are the tips on how to setup these environment and let everything working
-together.</p><h3 id=using-makefile>Using Makefile</h3><p>boxcutter <a href=https://github.com/boxcutter>https://github.com/boxcutter</a> has lots of
-projects for packering the templates, directly clone them to local and run them, you
-could get the standard vagrant box, which could be used via virtualbox/vmware/paralles.</p><p>But what I wanna is the qemu images, or vhd files, which could be used under CloudStack/OpenStack, so I have to modify the Makefile and box system.</p><p>Only build virtualbox, because we don&rsquo;t have vmware/parallels hypervisor:</p><pre><code>#BUILDER_TYPES ?= vmware virtualbox parallels
-BUILDER_TYPES := virtualbox
-</code></pre><p>Add libvirt box definition:</p><pre><code>PARALLELS_BOX_FILES := $(foreach box_filename, $(PARALLELS_BOX_FILENAMES), $(PARALLELS_BOX_DIR)/$(box_filename))
-LIBVIRT_BOX_DIR ?= box/libvirt
-LIBVIRT_TEMPLATE_FILENAMES = $(TEMPLATE_FILENAMES)
-LIBVIRT_BOX_FILENAMES := $(LIBVIRT_TEMPLATE_FILENAMES:.json=$(BOX_SUFFIX))
-LIBVIRT_BOX_FILES := $(foreach box_filename, $(LIBVIRT_BOX_FILENAMES), $(LIBVIRT_BOX_DIR)/$(box_filename))
-BOX_FILES := $(LIBVIRT_BOX_FILES)
-</code></pre><p>Using qemu for building the templates:</p><pre><code>#box/virtualbox/%$(BOX_SUFFIX): %.json http/preseed.cfg
-box/libvirt/%$(BOX_SUFFIX): %.json http/preseed.cfg
-	bin/box build $&lt; qemu
-</code></pre><p>Build options:</p><pre><code>#all: build assure deliver
-all: build
-
-build: $(BOX_FILES)
-</code></pre><p>Now by <code>make</code> you could make out the vagrant libvirt box.</p><h3 id=json-preseeding-and-scripts>JSON, Preseeding and Scripts</h3><p>Just some tips under this chapter during building.</p><h4 id=using-custom-mirror>Using Custom Mirror</h4><p>Following use <code>mirrors.aliyun.com/ubuntu</code> for installation and use a apt-mirror proxy.</p><pre><code>#Use mirror
-d-i apt-setup/use_mirror boolean true
-d-i     mirror/country          string manual
-d-i mirror/protocol	string http
-d-i mirror/http/hostname	string mirrors.aliyun.com
-d-i mirror/http/directory	string /ubuntu
-choose-mirror-bin mirror/http/proxy string http://192.168.1.69:3142/
-</code></pre><h4 id=partitionone-partition>Partition(One Partition)</h4><p>Only one partition which includes all of the filesystem(no swap partition):</p><pre><code># Partition
-d-i partman-auto/disk string /dev/vda
-d-i partman-auto/method string regular
-d-i partman-basicfilesystems/no_swap boolean false
-d-i partman-auto/expert_recipe string root :: 1000 50 -1 ext4 \
-     $primary{ } $bootable{ } method{ format } \
-     format{ } use_filesystem{ } filesystem{ ext4 } \
-     mountpoint{ / } \
-    .
-d-i partman-auto/choose_recipe select root
-d-i partman/choose_partition select Finish partitioning and write changes to disk
-d-i partman/confirm boolean true
-d-i partman/confirm_write_new_label boolean true
-d-i partman/choose_partition select finish
-d-i partman/confirm boolean true
-d-i partman/confirm_nooverwrite boolean true
-</code></pre><h4 id=permit-root-login-in>Permit Root Login In</h4><p>Change the default configuration of <code>/etc/ssh/sshd_config</code> via:</p><pre><code>d-i preseed/late_command string \
-in-target sed -i 's/PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config
-</code></pre><h4 id=root-password>Root Password</h4><p>We can set the encrypted password or plain secret for root:</p><pre><code># Root password, either in clear text
-#d-i passwd/root-password password engine
-#d-i passwd/root-password-again password engine
-# or encrypted using an MD5 hash.
-d-i passwd/root-password-crypted password gowguowueogahwehoehjwouweouhow
-d-i user-setup/allow-password-weak boolean true
-d-i passwd/make-user boolean true  #Set true so we could make oridinary user. 
-</code></pre><p>While the encryted password could be generated via:</p><pre><code>using openssl passwd:
-$ openssl passwd -1 &quot;password here&quot;
-Using grub-crypt (you will be prompted to enter a password after running the command):
-$ grub-crypt --md5
-</code></pre><h3 id=packers-json-configuration>Packer&rsquo;s json configuration</h3><p>The json configuration for importing qemu:</p><pre><code>    {
-      &quot;boot_command&quot;: [
-        &quot;{{ user `boot_command_prefix` }}&quot;,
-        &quot;/install/vmlinuz noapic &quot;,
-        &quot;initrd=/install/initrd.gz &quot;,
-        &quot;file=/floppy/{{ user `preseed` }} &quot;,
-        &quot;debian-installer=en_US auto locale=en_US kbd-chooser/method=us &quot;,
-        &quot;hostname={{ user `hostname` }} &quot;,
-        &quot;grub-installer/bootdev=/dev/vda&lt;wait&gt; &quot;,
-        &quot;fb=false debconf/frontend=noninteractive &quot;,
-        &quot;keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA &quot;,
-        &quot;keyboard-configuration/variant=USA console-setup/ask_detect=false &quot;,
-        &quot;passwd/user-fullname={{ user `ssh_fullname` }} &quot;,
-        &quot;passwd/user-password={{ user `ssh_password` }} &quot;,
-        &quot;passwd/user-password-again={{ user `ssh_password` }} &quot;,
-        &quot;passwd/username={{ user `ssh_username` }} &quot;,
-        &quot;-- &lt;enter&gt;&quot;
-      ],
-      &quot;disk_size&quot;: &quot;{{ user `disk_size` }}&quot;,
-      &quot;floppy_files&quot;: [
-        &quot;http/{{ user `preseed` }}&quot;
-      ],
-      &quot;boot_wait&quot;: &quot;10s&quot;,
-      &quot;headless&quot;: &quot;{{ user `headless` }}&quot;,
-      &quot;iso_checksum&quot;: &quot;{{ user `iso_checksum` }}&quot;,
-      &quot;iso_checksum_type&quot;: &quot;{{ user `iso_checksum_type` }}&quot;,
-      &quot;iso_urls&quot;: [
-        &quot;{{ user `iso_path` }}/{{ user `iso_name` }}&quot;,
-        &quot;{{ user `iso_url` }}&quot;
-      ],
-      &quot;output_directory&quot;: &quot;output-{{ user `vm_name` }}-qemu-iso&quot;,
-      &quot;shutdown_command&quot;: &quot;echo '{{ user `ssh_password` }}'|sudo -S shutdown -P now&quot;,
-      &quot;ssh_password&quot;: &quot;{{ user `ssh_password` }}&quot;,
-      &quot;ssh_username&quot;: &quot;{{ user `ssh_username` }}&quot;,
-      &quot;ssh_wait_timeout&quot;: &quot;10000s&quot;,
-      &quot;type&quot;: &quot;qemu&quot;,
-      &quot;format&quot;: &quot;qcow2&quot;,
-      &quot;disk_interface&quot;: &quot;virtio&quot;,
-      &quot;accelerator&quot;: &quot;kvm&quot;,
-      &quot;vm_name&quot;: &quot;{{user `vm_name`}}&quot;
-    },
-</code></pre><p>Post-processors for generating vhd:</p><pre><code>  &quot;post-processors&quot;: [
-    {
-      &quot;output&quot;: &quot;box/vhd/{{user `vm_name`}}-{{user `cm`}}{{user `cm_version`}}-{{user `version`}}&quot;,
-      &quot;type&quot;: &quot;vhd&quot;
-    }
-</code></pre><p>Post-postcessors for generating box file:</p><pre><code>  &quot;post-processors&quot;: [
-    {
-      &quot;keep_input_artifact&quot;: false,
-      &quot;output&quot;: &quot;box/{{.Provider}}/{{user `vm_name`}}-{{user `cm`}}{{user `cm_version`}}-{{user `version`}}.box&quot;,
-      &quot;type&quot;: &quot;vagrant&quot;,
-      &quot;vagrantfile_template&quot;: &quot;{{ user `vagrantfile_template` }}&quot;
-    }
-  ],
-</code></pre><p>In some system which have lower memory, packer building will fail, because it will generating large
-file under <code>/tmp</code> directory, so we have to change the default PAKCER TMP via:</p><pre><code>$ mkdir ./tmp
-$ export PACKER_TMP=./tmp
-</code></pre><p>By setting up the TMP file we could do building without any error.</p><h3 id=scripts>scripts</h3><h4 id=network-manager-start-manually>Network Manager Start Manually</h4><p>By setting following commands:</p><pre><code>$ sudo echo &quot;manual&quot; | sudo tee /etc/init/network-manager.override
-$ sudo /bin/sed -i &quot;\$i sudo start network-manager&quot; /etc/rc.local
-</code></pre><h4 id=upgrade>Upgrade</h4><p>For avoiding signature error, do following:</p><pre><code># avoiding hashchecksum error. 
-rm -rf /var/lib/apt/lists/*
-
-# apt-get update does not actually perform updates, it just downloads and indexes the list of packages
-apt-get -y update
-apt-get -y upgrade
-</code></pre><h4 id=hvc0-terminal>hvc0 terminal</h4><p>XenServer use hvc0 for tty, so we have to manually configure its login:</p><pre><code># Fix bug, no hvc0, then you won't get tty1 working under vnc
-    echo 'start on stopped rc RUNLEVEL=[2345] and (' &gt; /etc/init/hvc0.conf
-    echo 'not-container or' &gt;&gt; /etc/init/hvc0.conf
-    echo 'container CONTAINER=lxc or' &gt;&gt; /etc/init/hvc0.conf
-    echo 'container CONTAINER=lxc-libvirt)' &gt;&gt; /etc/init/hvc0.conf
-    echo 'stop on runlevel [!2345]' &gt;&gt; /etc/init/hvc0.conf
-    echo 'respawn' &gt;&gt; /etc/init/hvc0.conf
-    echo 'exec /sbin/getty -L hvc0 9600 linux' &gt;&gt; /etc/init/hvc0.conf
-</code></pre><p>After these modifications, now we could generate vhd file or vagrant-libvirt box files using Makefile.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/07/21/%E7%BC%96%E8%AF%91packer%E5%8F%8A%E5%85%B6%E6%8F%92%E4%BB%B6/>编译Packer及其插件</a></h1><span class=post-date>Jul 21, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=install-go>Install Go</h3><p>In ArchLinux, do following for installing and configurating go:</p><pre><code>$ vim ~/.bash_profile
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-</code></pre><p>Exit the terminal and relogin again, now you could verify your GOPATH and golang System Path.</p><p>Install go in ArchLinux via:</p><pre><code>$ sudo pacman -S go
-</code></pre><h3 id=installing-dev-packer>Installing Dev Packer</h3></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/07/18/%E4%BD%BF%E7%94%A8jenkins/packerio%E8%87%AA%E5%8A%A8%E5%8C%96%E7%BC%96%E8%AF%91%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%95%9C%E5%83%8F/>使用Jenkins/PackerIO自动化编译虚拟机镜像</a></h1><span class=post-date>Jul 18, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=gitlab仓库>GitLab仓库</h3><p>在前面搭建的GitLab里创建一个新仓库，用于存储Packer.io脚本。</p><p><img src=/images/2016_07_18_14_57_26_995x911.jpg alt=/images/2016_07_18_14_57_26_995x911.jpg><br>在编译机器的仓库里，运行以下命令，添加自己到新创建的仓库里:</p><pre><code>$ cd existing_folder
-$ git init
-$ git remote add origin http://192.168.1.79:10080/root/BuildUbuntu.git
-$ git add .
-$ git commit
-$ git push -u origin master
-</code></pre><p>提交完毕之后，在GitLab服务器上就可以看到新添加的代码了。</p><h3 id=jenkins配置>Jenkins配置</h3><p>在Jenkins里创建一个新项目，选择<code>Freestyle Project</code>， 默认创建完毕。</p><p>在源代码管理的设置中，填入以下的条目:</p><p><img src=/images/2016_07_18_15_07_28_1366x467.jpg alt=/images/2016_07_18_15_07_28_1366x467.jpg></p><p><code>Build Trigger</code>中我们选择由GitLab触发：</p><p><img src=/images/2016_07_18_15_13_31_1154x436.jpg alt=/images/2016_07_18_15_13_31_1154x436.jpg></p><p>在GitLab中我们需要添加相应的钩子(WebHook):</p><p><img src=/images/2016_07_18_15_15_11_452x602.jpg alt=/images/2016_07_18_15_15_11_452x602.jpg><br>设置:</p><p><img src=/images/2016_07_18_15_16_30_1044x427.jpg alt=/images/2016_07_18_15_16_30_1044x427.jpg></p><p>添加Build脚本(选择execute shell):</p><p><img src=/images/2016_07_18_15_24_00_358x581.jpg alt=/images/2016_07_18_15_24_00_358x581.jpg></p><p>配置完毕后，就可以通过点击<code>Build Now</code>来编译Packer.io工程了。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/07/13/setupjenkinsci/>SetupJenkinsCI</a></h1><span class=post-date>Jul 13, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>Jenkins + Packer.io + GitLab + Gogs, for automatically building the virtual machine
-images.</p><h3 id=jenkins-installationconfiguration>Jenkins Installation/Configuration</h3><p>TBD</p><h3 id=gitlab>GitLab</h3><p>Refers to:<br><a href=https://github.com/sameersbn/docker-gitlab>https://github.com/sameersbn/docker-gitlab</a></p><h4 id=image-preparation>Image Preparation</h4><p>Using docker for installing gitlab. First pull the docker image back via:</p><pre><code>$ docker pull sameersbn/gitlab:8.9.6
-</code></pre><p>Also pull back the postgres and redis images, for we will link to these container&rsquo;s
-services:</p><pre><code>$ docker pull sameersbn/postgresql:9.4-22
-$ docker pull sameersbn/redis:latest
-</code></pre><h4 id=run-gitlab>Run GitLab</h4><p>Create the data directory for holding the data:</p><pre><code>$ mkdir -p /root/data/gitlab
-$ cd /root/data/gitlab
-$ mkdir redis postgresql gitlab
-$ chmod 777 -R /root/data/gitlab/
-</code></pre><p>Launch a postgresql container via:</p><pre><code># docker run --name gitlab-postgresql -d \
-     --env 'DB_NAME=gitlabhq_production' \
-     --env 'DB_USER=gitlab' --env 'DB_PASS=password' \
-     --env 'DB_EXTENSION=pg_trgm' \
-     --volume /root/data/gitlab/postgresql:/var/lib/postgresql \
-     sameersbn/postgresql:9.4-22
-</code></pre><p>Launch a redis container via:</p><pre><code># docker run --name gitlab-redis -d \
-     --volume /root/data/gitlab/redis:/var/lib/redis \
-     sameersbn/redis:latest
-</code></pre><p>Launch the gitlab container:</p><pre><code># docker run --name gitlab -d \
-     --link gitlab-postgresql:postgresql --link gitlab-redis:redisio \
-     --publish 10022:22 --publish 10080:80 \
-     --env 'GITLAB_PORT=10080' --env 'GITLAB_SSH_PORT=10022' \
-     --env 'GITLAB_SECRETS_DB_KEY_BASE=long-and-random-alpha-numeric-string' \
-     --volume /root/data/gitlab/gitlab:/home/git/data \ 
-     sameersbn/gitlab:8.9.6
-</code></pre><p>Now visit <code>http://127.0.0.1:10080</code>, for setting up the password:</p><p><img src=/images/2016_07_13_19_49_55_969x420.jpg alt=/images/2016_07_13_19_49_55_969x420.jpg></p><h4 id=systemd-services>Systemd Services</h4><p>For automatically startup the docker service in system boot, create the service items
-in systemd, listed in following:</p><p>Create the gitlab service:</p><pre><code>$ vim /usr/lib/systemd/system/gitlab.service
-[Unit]
-Description=gitlab
-Requires=docker.service
-After=docker.service
-
-[Service]
-Restart=always
-ExecStart=/usr/bin/docker start -a gitlab
-ExecStop=/usr/bin/docker stop -t 2 gitlab
-
-[Install]
-WantedBy=multi-user.target
-</code></pre><p>Also create another 2 service named <code>gitlab-redis.service</code> and
-<code>gitlab-postgres.service</code>, then enable the service via:</p><pre><code># systemctl enable gitlabpostgres.service
-# systemctl enable gitlabredis.service
-# systemctl enable gitlab.service
-</code></pre><p>Then next time when system reboot, these service will automatically restart.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/07/12/%E7%94%A8flask%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BAweb-app/>用Flask框架搭建Web App</a></h1><span class=post-date>Jul 12, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>拥有Web界面的好处是显而易见的，譬如说，我们可能需要下载Youtube上的某一段视频。传统的操
-作方式是这样的：登录位于国外的vps-> 下载youtube视频到VPS -> 退出vps登录 ->采用某种手段
-(ftp/scp?)传送到本地。这时候如果有一个运行于远端VPS上的Web App，本地输入Youtube视频链接
-，下载完毕后直接生成下载链接，这该有多好！这里我们来实现这个功能。</p><h3 id=flask>Flask</h3><h4 id=运行环境>运行环境</h4><p>远程VPS位于Digital Ocean上，运行Ubuntu14.04。 这里我们基于python virtualenv来构建Flask
-开发框架.</p><pre><code>$ sudo apt-get install -y python-virtualenv
-$ virtualenv myflask
-$ source ~/myflask/bin/activate
-$ mkdir ~/flask_youtube
-$ vim requirements.txt
-Flask==0.10.1
-$ pip install -r requirements.txt
-</code></pre><p>运行完上述命令后，flask运行环境就已经就绪了。</p><h4 id=flask-app>Flask App</h4><p>这里我们参考了以下链接（实际上是照搬):<br><a href=http://charlesleifer.com/blog/a-flask-front-end-and-chrome-extension-for-youtube-dl/>http://charlesleifer.com/blog/a-flask-front-end-and-chrome-extension-for-youtube-dl/</a></p><p>也参考了(关于virtualenv):<br><a href=https://realpython.com/blog/python/setting-up-a-simple-ocr-server/>https://realpython.com/blog/python/setting-up-a-simple-ocr-server/</a></p><pre><code>$ vim youtube.py
-import subprocess
-import sys
-
-from flask import Flask, flash, redirect, request, render_template, url_for
-
-DEBUG = False
-SECRET_KEY = 'this is needed for flash messages'
-
-BINARY = '/usr/bin/youtube-dl'
-DEST_DIR = '/home/dash/videos'
-OUTPUT_TEMPLATE = '%s/%%(title)s-%%(id)s.%%(ext)s' % DEST_DIR
-
-app = Flask(__name__)
-app.config.from_object(__name__)
-
-@app.route('/', methods=['GET', 'POST'])
-def download():
-    if request.method == 'POST':
-        url = request.form['url']
-        p = subprocess.Popen([BINARY, '-o', OUTPUT_TEMPLATE, '-q', url])
-        p.communicate()
-        flash('Successfully downloaded!', 'success')
-        return redirect(url_for('download'))
-    return render_template('download.html')
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8801)
-</code></pre><p>实例中用到了flask里的模版，为此我们需要创建template目录:</p><pre><code>$ mkdir templates
-$ vim templates/download.html
-&lt;!doctype html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;youtuber&lt;/title&gt;
-    &lt;link rel=stylesheet type=text/css href=&quot;{{ url_for('static', filename='css/youtuber.min.css') }}&quot; /&gt;
-    &lt;script src=&quot;{{ url_for('static', filename='js/jquery-1.11.0.min.js') }}&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;{{ url_for('static', filename='js/bootstrap.min.js') }}&quot;&gt;&lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div class=&quot;container&quot;&gt;
-      {% for category, message in get_flashed_messages(with_categories=true) %}
-        &lt;div class=&quot;alert alert-{{ category }} alert-dismissable&quot;&gt;
-          &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-hidden=&quot;true&quot;&gt;×&lt;/button&gt;
-          &lt;p&gt;{{ message }}&lt;/p&gt;
-        &lt;/div&gt;
-      {% endfor %}
-
-      &lt;h1&gt;Download&lt;/h1&gt;
-      &lt;form action=&quot;{{ url_for('download') }}&quot; method=&quot;post&quot;&gt;
-        &lt;div class=&quot;form-group&quot;&gt;
-          &lt;label for=&quot;url&quot;&gt;URL&lt;/label&gt;
-          &lt;input type=&quot;text&quot; name=&quot;url&quot; class=&quot;form-control&quot; id=&quot;url&quot; placeholder=&quot;url&quot; /&gt;
-        &lt;/div&gt;
-        &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Download&lt;/button&gt;
-      &lt;/form&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt; 
-</code></pre><p>因为我们这里有指定用<code>static/js</code>下的静态文件，所以需要手动创建目录并下载文件:</p><pre><code>$ mkdir -p static/js
-$ cd static/js
-$ wget https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
-$ wget https://code.jquery.com/jquery-1.11.0.js
-</code></pre><p><code>youtuber.min.css</code>是样式表文件，这里先不加入，除了效果差一点，没啥副作用。</p><h4 id=运行>运行</h4><p>键入<code>python youtube.py</code>即可运行该Web App. 访问<code>http://YourIPAddress:8801</code>即可访问到该WebApp的界面:</p><p><img src=/images/2016_07_12_15_59_39_272x160.jpg alt=/images/2016_07_12_15_59_39_272x160.jpg></p><p>输入下载链接后，点击submit按钮后，VPS将自动下载该youtube影片。</p><h3 id=下载结果页面>下载结果页面</h3><p>下载结果页面需要在static目录下新建一个用于存放视频的<code>videos/</code>目录夹. 同时需要添加一个模
-板文件.</p><pre><code>$ tree
-.
-└── down
-    ├── requirements.txt
-    ├── static
-    │   ├── js
-    │   │   ├── bootstrap-3.0.0.min.js
-    │   │   ├── bootstrap.min.js
-    │   │   ├── jquery-1.10.2.min.js
-    │   │   └── jquery-1.11.0.min.js
-    │   └── videos
-    │       ├── abc.mp4
-    │       └── ccc.mp4
-    ├── templates
-    │   ├── download.html
-    │   └── videos.html
-    └── youtube.py
-</code></pre><p>其中<code>templates/videos.html</code>文件是用于渲染下载视频文件的模版，内容如下:</p><pre><code>&lt;!doctype html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Video download info&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div class=&quot;container&quot;&gt;
-      &lt;h1&gt;All Downloadable Videos&lt;/h1&gt;
-      {% for video in video_url %}
-      &lt;a href=&quot;/static/videos/{{ video }}&quot;&gt;{{ video }}&lt;/a&gt;&lt;br /&gt;
-      {% endfor %}
-      &lt;h1&gt;Click Following Links For Downloading!&lt;/h1&gt;
-      &lt;a href=&quot;/&quot;&gt;Go Back To Download Page&lt;/a&gt;&lt;br /&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>在<code>youtube.py</code>文件中添加<code>/videos</code>路由，及相关处理函数:</p><pre><code>import subprocess
-import sys
-import os
-from flask import Flask, flash, redirect, request, render_template, url_for
-
-DEBUG = False
-SECRET_KEY = 'this is needed for flash messages'
-
-BINARY = '/usr/bin/youtube-dl'
-DEST_DIR = '/home/dash/down/static/videos/'
-OUTPUT_TEMPLATE = '%s/%%(title)s-%%(id)s.%%(ext)s' % DEST_DIR
-
-app = Flask(__name__)
-app.config.from_object(__name__)
-
-@app.route('/', methods=['GET', 'POST'])
-def download():
-    if request.method == 'POST':
-        url = request.form['url']
-        print url
-        p = subprocess.Popen([BINARY, '-o', OUTPUT_TEMPLATE, '-q', url])
-        p.communicate()
-        flash('Successfully downloaded!', 'success')
-        return redirect(url_for('videos'))
-    return render_template('download.html')
-
-# For holding all of the videos
-@app.route('/videos')
-def videos():
-    names = os.listdir(os.path.abspath(DEST_DIR))
-    return render_template('videos.html', video_url=names)
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8801)
-</code></pre><h3 id=下载流程>下载流程</h3><p>首先，访问<code>http://YourIpAddress:8801/</code>, 得到的结果如下:</p><p><img src=/images/2016_07_12_19_34_59_309x177.jpg alt=/images/2016_07_12_19_34_59_309x177.jpg></p><p>填入youtube上的视频地址以后，下载完毕后，可以看到videos页面变成了:</p><p><img src=/images/2016_07_12_19_38_03_582x271.jpg alt=/images/2016_07_12_19_38_03_582x271.jpg></p><h3 id=删除功能>删除功能</h3><p><code>youtube.py</code>添加一个函数和路由:</p><pre><code># For deleting specified file
-@app.route('/delete/&lt;filename&gt;')
-def remove_file(filename):
-    filename_full = os.path.join(DEST_DIR, filename)
-    print filename_full
-    os.remove(filename_full)
-    return redirect(url_for('videos'))
-</code></pre><p>模版文件更改:</p><pre><code>$ vim templates/videos.html 
-&lt;!doctype html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Video download info&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div class=&quot;container&quot;&gt;
-      &lt;h1&gt;All Downloadable Videos&lt;/h1&gt;
-      {% for video in video_url %}
-      &lt;a href=&quot;/static/videos/{{ video }}&quot;&gt;{{ video }}&lt;/a&gt;
-      &lt;a href=&quot;/delete/{{ video }}&quot;&gt;&lt;img src=&quot;/static/img/fuck.png&quot; alt=&quot;FuckYou&quot;&gt;&lt;/a&gt;
-      &lt;a href=&quot;/delete/{{ video }}&quot;&gt; Delete this video&lt;/a&gt;
-      &lt;br /&gt;
-      &lt;hr&gt;
-      {% endfor %}
-...........
-</code></pre><p><code>fuck.png</code>是从网上下载的图片，更改完毕后，页面如下:<br><img src=/images/2016_07_12_20_27_39_748x382.jpg alt=/images/2016_07_12_20_27_39_748x382.jpg></p><h3 id=todo>ToDo</h3><p>添加权限，只有认证过后的用户才能使用删除功能。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/106/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/106/>106</a></li><li class="page-item active"><a class=page-link href=/page/107/>107</a></li><li class=page-item><a class=page-link href=/page/108/>108</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/108/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/09/08/onyoutube-dl/>OnYoutube dl</a></h1><span class=post-date>Sep 8, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=background>Background</h3><p>If you download a playlist on youtube, your download files would be renamed as
+following:</p><pre><code>$ ls -l -h /mnt/golang
+total 4.8G
+-rwxr--r-- 1 dash root  62M Sep  7 18:43 'Aerospike Install Linux-bw0eipI7-4s.mp4'
+-rwxr--r-- 1 dash root 9.8M Sep  7 22:48 'App Enginge Domains-rNI_PyNuS2o.mp4'
+-rwxr--r-- 1 dash root  28M Sep  7 21:52 'General Overview of Networking &amp; The
+Internet-hZ7cX4fpMk4.mp4'
+-rwxr--r-- 1 dash root  51M Sep  7 22:25 'Golang Aerospike-symvVMJlC3g.mp4'
+-rwxr--r-- 1 dash root 134M Sep  7 20:19 'Golang AJAX-UkEuYXi36o8.mp4'
+</code></pre><h3 id=solution>Solution</h3><p>Manually download the playlist.txt from the webpage, something like:</p><pre><code>$ cat /mnt/golang/playlist.txt
+Who uses golang
+Installing Golang
+Golang Webstorm &amp; Golang Atom
+Golang Hello World - Part 1 of 2
+Golang Hello World - Part 2 of 2
+Golang variables and scope
+Golang Go Get
+</code></pre><p>Use following shell script for rename all of the downloaded files:</p><pre><code>$ cat rr.sh
+#!/bin/bash
+i=0
+while IFS='' read -r line || [[ -n &quot;$line&quot; ]]; do
+    let i++
+    prefix=`printf &quot;%04d-&quot; $i`
+    content=`ls | grep &quot;$line-&quot;`
+    cp &quot;$content&quot; ../golang1/&quot;$prefix$line&quot;.mp4
+done &lt; ./playlist.txt
+</code></pre><p>Your renamed files will be in the ../golang1 directory, now the name is listed as:</p><pre><code>$ ls -l ../golang1   
+total 4984936
+-rwxr--r-- 1 dash root  28352757 Sep  8 11:52 '0001-Who uses golang.mp4'
+-rwxr--r-- 1 dash root  51195540 Sep  8 11:52 '0002-Installing Golang.mp4'
+-rwxr--r-- 1 dash root  27507302 Sep  8 11:52 '0003-Golang Webstorm &amp; Golang Atom.mp4'
+-rwxr--r-- 1 dash root  22430385 Sep  8 11:52 '0004-Golang Hello World - Part 1 of 2.mp4'
+-rwxr--r-- 1 dash root  37552977 Sep  8 11:52 '0005-Golang Hello World - Part 2 of 2.mp4'
+-rwxr--r-- 1 dash root  27800500 Sep  8 11:52 '0006-Golang variables and scope.mp4'
+-rwxr--r-- 1 dash root  19457050 Sep  8 11:52 '0007-Golang Go Get.mp4'
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/09/05/rhel-working-tips/>RHEL Working Tips</a></h1><span class=post-date>Sep 5, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=subscrition-manager>Subscrition Manager</h3><p>After install RHEL7, we could register it first:</p><pre><code># subscription-manager register
+</code></pre><p>List and register with the available pools:</p><pre><code># subscription-manager list --available --all
+# subscription-manager subscribe --pool=XXXXXXXXX
+</code></pre><p>After registration, we could see all of the registered repos:</p><pre><code>$ subscription-manager repos --list
+</code></pre><h3 id=syncing-repos>Syncing Repos</h3><p>Because the openstack repo is the paid channel, skip for other options.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/08/31/worktipsonopenstackdeployment/>WorkTipsOnOpenStackDeployment</a></h1><span class=post-date>Aug 31, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=repository-sync>Repository Sync</h3><p>The current version of OpenStack could be found in:</p><p><a href=https://releases.openstack.org/>https://releases.openstack.org/</a></p><p>Mitaka is the recent version.</p><pre><code>Mitaka	Current stable release, security-supported	2016-04-07	2017-04-10
+</code></pre><p>Ubuntu repository could be found at:</p><p><a href=http://ubuntu-cloud.archive.canonical.com/ubuntu/dists/>http://ubuntu-cloud.archive.canonical.com/ubuntu/dists/</a></p><p>Use apt-mirror for syncing them. Current the ubuntu1404 is well supported.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/08/19/onxenserverbridgeworkingtips2/>OnXenServerBridgeWorkingTips2</a></h1><span class=post-date>Aug 19, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=virtualbox-setup>VirtualBox Setup</h3><p>Define a virtual machine:</p><p><img src=/images/2016_08_19_14_36_05_517x355.jpg alt=/images/2016_08_19_14_36_05_517x355.jpg></p><p>Use 7G of 8G memory for this VM:<br><img src=/images/2016_08_19_14_36_27_520x358.jpg alt=/images/2016_08_19_14_36_27_520x358.jpg></p><p>Create a new disk(200G), choose VDI, Dynamically allocated, And specify the location
+for storing it.</p><p>Now create the virtual machine, and configure its networking like following:</p><p><img src=/images/2016_08_19_14_45_56_691x410.jpg alt=/images/2016_08_19_14_45_56_691x410.jpg></p><p>CPUs, we allocated 4:</p><p><img src=/images/2016_08_19_14_48_55_532x197.jpg alt=/images/2016_08_19_14_48_55_532x197.jpg></p><p>And also the acceleration configuration:</p><p><img src=/images/2016_08_19_14_50_06_380x171.jpg alt=/images/2016_08_19_14_50_06_380x171.jpg></p><p>Storage Configuration:</p><p><img src=/images/2016_08_19_14_51_57_544x202.jpg alt=/images/2016_08_19_14_51_57_544x202.jpg></p><p>For saving the resources, disable USB/Audio.</p><p>Now insert the XenServer Installation CDROM, and install it.</p><h3 id=xenserver-configuration>XenServer Configuration</h3><p>IP Address, for bridged networking:</p><p><img src=/images/2016_08_19_14_56_46_486x268.jpg alt=/images/2016_08_19_14_56_46_486x268.jpg></p><p>DNS Configuration:</p><p><img src=/images/2016_08_19_14_58_02_434x249.jpg alt=/images/2016_08_19_14_58_02_434x249.jpg></p><p>NTP Server Configuration:</p><pre><code>server 0.cn.pool.ntp.org
+server 0.asia.pool.ntp.org
+server 2.asia.pool.ntp.org
+</code></pre><p>Now Install the XenServer.</p><p>After installation, apply xs patches.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2016/08/18/onxenserverbridgeworkingtips/>OnXenServerBridgeWorkingTips</a></h1><span class=post-date>Aug 18, 2016<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=background>Background</h3><p>I will use XenServer for testing, while I made a vagrant box of XenServer 6.5, it could
+work properly in seperated networking, so following I will try to setup a bridged
+&ldquo;XenServer&rdquo; which will acts like a real physical machine.</p><h3 id=vagrantfile>Vagrantfile</h3><p>The configuration part is listed as:</p><pre><code>  # csagentxen65 node.
+  # Add one networking, modify hostname, define memory, CPU cores.
+  config.vm.define :csagentxen65 do |csagentxen65|
+    csagentxen65.vm.box = &quot;Xen65Box&quot;
+    csagentxen65.vm.boot_timeout = '36000'
+    csagentxen65.vm.hostname = CLOUDSTACK_AGENT_HOSTNAME
+    csagentxen65.vm.network :public_network, 
+	    :dev =&gt; &quot;br0&quot;,
+	    :mode =&gt; &quot;bridge&quot;,
+	    :type =&gt; &quot;bridge&quot;,
+	    :ip =&gt; &quot;192.168.10.3&quot;
+    # Disable mounting of vagrant folder as it's not supported on xenserver
+    csagentxen65.vm.synced_folder &quot;.&quot;, &quot;/vagrant&quot;, disabled: true
+    csagentxen65.vm.provider :libvirt do |domain|
+      domain.memory = 8192
+      domain.cpus = 4
+      domain.storage_pool_name = 'XenStoragePool'
+      domain.nested = true
+      domain.cpu_mode = 'host-passthrough'
+      domain.nic_model_type = 'e1000'
+      domain.management_network_mac = &quot;08:00:27:1D:90:A8&quot;
+    end
+  end
+</code></pre><p>Here we used our newly created storage pool, I use virt-manager for creating a new
+storage pool, which is in a seprated disk, could gain much more IOPS.</p><h3 id=bug-fix>Bug-Fix</h3><p>vagrant-libvirt will create 2 ethernet port, while the default one is xenbr0, but we
+want the xenbr1 be the management port.</p><p>Gain a administration shell:</p><p><img src=/images/2016_08_18_19_34_41_498x510.jpg alt=/images/2016_08_18_19_34_41_498x510.jpg><br>Enter following command:</p><pre><code># ifconfig eth1 netmask 255.255.0.0
+# route add default gw 192.168.0.xxx eth1
+</code></pre><p>Now you can run ansible-playbook against the XenServer, but it will stuck.</p><p>Now manually configure eth1&rsquo;s netmask and its gateway. ansible-playbook could be run
+properly.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/106/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/106/>106</a></li><li class="page-item active"><a class=page-link href=/page/107/>107</a></li><li class=page-item><a class=page-link href=/page/108/>108</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/108/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,220 +1,209 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/04/21/idvdgpureleasenote/>IDVdGPUReleaseNote</a></h1><span class=post-date>Apr 21, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=create-cubic-environment>Create Cubic environment</h3><p>Get the latest ubuntu desktop installation image:</p><pre><code>wget https://mirrors.ustc.edu.cn/ubuntu-releases/22.04.2/ubuntu-22.04.2-desktop-amd64.iso
-mkdir ~/idv_dGPU_release
-</code></pre><p>Choose the newly created directory:</p><p><img src=/images/2023_04_21_09_36_41_582x193.jpg alt=/images/2023_04_21_09_36_41_582x193.jpg></p><p>Fill in descriptions:</p><p><img src=/images/2023_04_21_09_37_35_932x603.jpg alt=/images/2023_04_21_09_37_35_932x603.jpg></p><p>Now we get the virtual environment terminal:</p><p><img src=/images/2023_04_21_09_38_26_934x196.jpg alt=/images/2023_04_21_09_38_26_934x196.jpg></p><h3 id=customization>Customization</h3><p>Change repository and update to latest:</p><pre><code>root@cubic:~# cat /etc/apt/sources.list
-deb http://mirrors.ustc.edu.cn/ubuntu jammy main restricted
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-updates main restricted
-deb http://mirrors.ustc.edu.cn/ubuntu jammy universe
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-updates universe
-deb http://mirrors.ustc.edu.cn/ubuntu jammy multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-updates multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-backports main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-security main restricted
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-security universe
-deb http://mirrors.ustc.edu.cn/ubuntu jammy-security multiverse
-root@cubic:~# apt install -y kubuntu-desktop virt-manager build-essential
-</code></pre><p>Change default to sddm:</p><p><img src=/images/2023_04_21_09_49_57_942x475.jpg alt=/images/2023_04_21_09_49_57_942x475.jpg></p><h3 id=verification>Verification</h3><p><img src=/images/2023_04_21_10_18_31_635x215.jpg alt=/images/2023_04_21_10_18_31_635x215.jpg></p><p>Display:</p><p><img src=/images/2023_04_21_10_19_15_1286x433.jpg alt=/images/2023_04_21_10_19_15_1286x433.jpg></p><p>VT-d && VT-x:</p><p><img src=/images/2023_04_21_10_20_17_1345x495.jpg alt=/images/2023_04_21_10_20_17_1345x495.jpg></p><p>Intel SGX:</p><p><img src=/images/2023_04_21_10_20_42_1196x297.jpg alt=/images/2023_04_21_10_20_42_1196x297.jpg></p><p>Install(Install Ubuntu):</p><p><img src=/images/2023_04_21_10_46_06_890x763.jpg alt=/images/2023_04_21_10_46_06_890x763.jpg></p><p>Normal install:</p><p><img src=/images/2023_04_21_10_46_33_1364x744.jpg alt=/images/2023_04_21_10_46_33_1364x744.jpg></p><p>Use nvme ssd:</p><p><img src=/images/2023_04_21_10_47_52_1140x596.jpg alt=/images/2023_04_21_10_47_52_1140x596.jpg></p><p>Try模式进入后，停用:</p><p><img src=/images/2023_04_21_11_00_21_1126x700.jpg alt=/images/2023_04_21_11_00_21_1126x700.jpg></p><p>删除:</p><p><img src=/images/2023_04_21_11_00_39_1112x752.jpg alt=/images/2023_04_21_11_00_39_1112x752.jpg></p><p>应用:</p><p><img src=/images/2023_04_21_11_00_54_927x598.jpg alt=/images/2023_04_21_11_00_54_927x598.jpg></p><p>安装:</p><p><img src=/images/2023_04_21_11_01_12_439x289.jpg alt=/images/2023_04_21_11_01_12_439x289.jpg></p><p>现在可以选择并继续:</p><p><img src=/images/2023_04_21_11_01_53_915x414.jpg alt=/images/2023_04_21_11_01_53_915x414.jpg></p><p>设置用户名/密码/自动登陆:</p><p><img src=/images/2023_04_21_11_02_51_895x587.jpg alt=/images/2023_04_21_11_02_51_895x587.jpg></p><p>等待安装完成后，拔掉U盘后重新启动。</p><h3 id=启动虚拟机>启动虚拟机</h3><p>导文件:</p><pre><code># scp ./mac_hdd_ng.img rx560.qcow2 rx550_OVMF_VARS-1024x768.fd OVMF_CODE.fd test@192.168.1.123:~
-# virsh dumpxml macOSrx550&gt;aaaa.xml
-# scp ./aaaa.xml test@192.168.1.123:~
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/12/rockylinux91sriov/>RockyLinux91SRIOV</a></h1><span class=post-date>Jun 12, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=kernel>Kernel</h3><p>Install:</p><pre><code>tar xzvf linux-intel-lts.tar.gz
+yum install -y gcc openssl-devel bc rpm-build pciutils flex bison elfutils-libelf-devel
+cd linux-intel-lts
+make distclean
+cp ./kernel-config/x86_64_defconfig .config
+echo &quot;&quot; | make ARCH=x86_64 olddefconfig
+update-crypto-policies --set LEGACY
+reboot
+make rpm-pkg -j8
+</code></pre><p>Replace the repository:</p><pre><code>sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+    -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g' \
+    -i.bak \
+    /etc/yum.repos.d/rocky-extras.repo \
+    /etc/yum.repos.d/rocky.repo
+yum makecache
+</code></pre><p>Install kernel:</p><pre><code>cp i915/* /lib/firmware/i915/
+rpm -ivh kernel-5.15.85-1.x86_64.rpm kernel-headers-5.15.85-1.x86_64.rpm
+vi /etc/default/grub
+Add &quot;i915.enable_guc=0x7 udmabuf.list_limit=8192 intel_iommu=on i915.force_probe=*&quot; to 
+grub2-mkconfig -o /boot/efi/EFI/rocky/grub.cfg
+reboot
+</code></pre><p>Examine via:</p><pre><code>[root@localhost ~]# uname -r
+5.15.85
+[root@localhost ~]# dmesg | grep GuC
+[    5.176714] i915 0000:00:02.0: [drm] GuC error state capture buffer maybe too small: 2097152 &lt; 2163708 (min = 721236)
+[    5.179124] i915 0000:00:02.0: [drm] GuC firmware i915/tgl_guc_70.bin version 70.5.1
+[    5.182137] i915 0000:00:02.0: [drm] GuC submission enabled
+[    5.182138] i915 0000:00:02.0: [drm] GuC SLPC enabled
+[    5.182455] i915 0000:00:02.0: [drm] GuC RC: enabled
+[root@localhost ~]# dmesg | grep HuC
+[    5.179129] i915 0000:00:02.0: [drm] HuC firmware i915/tgl_huc.bin version 7.9.3
+[    5.181869] i915 0000:00:02.0: [drm] HuC authenticated
+[root@localhost ~]# dmesg | grep SR-IOV
+[    5.060282] i915 0000:00:02.0: Running in SR-IOV PF mode
+</code></pre><h3 id=qemulibvirtvirt-manager>Qemu/libvirt/virt-manager</h3><p>Install following packages for using qemu:</p><pre><code># yum install -y virt-manager qemu-kvm
+# systemctl enable libvirtd
+# systemctl start libvirtd
+# /usr/libexec/qemu-kvm --version
+QEMU emulator version 7.2.0 (qemu-kvm-7.2.0-14.el9_2)
+Copyright (c) 2003-2022 Fabrice Bellard and the QEMU Project developers
+# yum groupinstall -y &quot;Server with GUI&quot;
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/08/sriovpreproductdev/>sriovpreproductdev</a></h1><span class=post-date>Jun 8, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=kernel>Kernel</h3><p>CentOS 7.6.1810, minimal installtion.</p><p>Enable keep cache:</p><pre><code># vi /etc/yum.conf
+...
+keepcache=1
+...
+</code></pre><p>Replace i915 firmware:</p><pre><code>mv /lib/firmware/i915/ /lib/firmware/i915.back
+tar xzvf materials/i915.tar.gz -C /lib/firmware/
+</code></pre><p>Install Kernel:</p><pre><code># rpm -ivh materials/kernel-5.15.85+-1.x86_64.rpm
+# vi /boot/grub2/grubenv
+saved_entry=CentOS Linux (5.15.85+) 7 (Core)
+# vi /etc/default/grub
+Add &quot;i915.enable_guc=0x7 udmabuf.list_limit=8192 intel_iommu=on i915.force_probe=*&quot; to 
+GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet i915.enable_guc=0x7 udmabuf.list_limit=8192 intel_iommu=on i915.force_probe=*&quot;
+# grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
+# reboot
+</code></pre><p>Check the status:</p><pre><code>[root@i3 ~]# dmesg | grep SR-IOV
+[    1.025680] i915 0000:00:02.0: Running in SR-IOV PF mode
+[root@i3 ~]# dmesg | grep GuC
+[    1.157064] i915 0000:00:02.0: [drm] GuC error state capture buffer maybe too small: 2097152 &lt; 2163708 (min = 721236)
+[    1.161653] i915 0000:00:02.0: [drm] GuC firmware i915/tgl_guc_70.bin version 70.5.1
+[    1.166302] i915 0000:00:02.0: [drm] GuC submission enabled
+[    1.166304] i915 0000:00:02.0: [drm] GuC SLPC enabled
+[    1.166591] i915 0000:00:02.0: [drm] GuC RC: enabled
+[root@i3 ~]# dmesg | grep HuC
+[    1.161660] i915 0000:00:02.0: [drm] HuC firmware i915/tgl_huc.bin version 7.9.3
+[    1.166031] i915 0000:00:02.0: [drm] HuC authenticated
+</code></pre><h3 id=qemu>Qemu</h3><p>Install following packages:</p><pre><code># yum install -y libvirt libvirt-python libguestfs-tools virt-install pciutils gcc gcc-c++ python3 git glib2-devel pixman-devel zlib-devel libusb-devel libusb libusbx-devel pulseaudio-libs-devel libcap-ng-devel libattr-devel spice-server-devel usbredir-devel centos-release-scl  unzip OVMF
+# yum install -y devtoolset-8-gcc-c++
+# cp materials/ninja /usr/bin
+# chmod 777 /usr/bin/ninja 
+</code></pre><p>Build Qemu:</p><pre><code># tar xJvf qemu-6.2.0.tar.xz
+# scl enable devtoolset-8 bash
+# mkdir /opt/local
+# cd qemu-6.2.0
+# scl enable devtoolset-8 bash
+# ./configure --target-list=x86_64-softmmu --enable-debug --disable-docs --disable-virglrenderer --prefix=/opt/local --enable-virtfs --enable-libusb --disable-debug-tcg --audio-drv-list=pa  --enable-spice --enable-usb-redir
+# make -j8
+# make install
+# /opt/local/bin/qemu-system-x86_64 --version
+QEMU emulator version 6.2.0
+Copyright (c) 2003-2021 Fabrice Bellard and the QEMU Project developers
+</code></pre><p>start and enable libvirtd :</p><pre><code># systemctl enable libvirtd
+# systemctl start libvirrtd
+</code></pre><p>Add following lines to <code>/etc/rc.local</code>:</p><pre><code>## start of create vf
+sudo modprobe i2c-algo-bit
+sudo modprobe video
+echo '0' | sudo tee -a /sys/bus/pci/devices/0000\:00\:02.0/sriov_drivers_autoprobe &gt; /dev/null
+echo 7 | sudo tee -a /sys/class/drm/card0/device/sriov_numvfs &gt; /dev/null
+echo '1' | sudo tee -a /sys/bus/pci/devices/0000\:00\:02.0/sriov_drivers_autoprobe &gt; /dev/null
+sudo modprobe vfio-pci
+vendor=$(cat /sys/bus/pci/devices/0000:00:02.0/iommu_group/devices/0000:00:02.0/vendor)
+device=$(cat /sys/bus/pci/devices/0000:00:02.0/iommu_group/devices/0000:00:02.0/device)
+echo $vendor $device  | sudo tee -a /sys/bus/pci/drivers/vfio-pci/new_id
+## endof create vf
+</code></pre><h3 id=create-virtual-machine>Create virtual machine</h3><p>Define win10 machine:</p><pre><code>virsh define materials/wwin10.xml
+</code></pre><p>Transfer the image to machine:</p><pre><code># scp /var/lib/libvirt/images/winpure.qcow2 root@192.168.1.120:/var/lib/libvirt/images/
+</code></pre><p>Failed, no display output.</p><h3 id=r8168>r8168</h3><p>Get the driver source code from: <code>https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software</code>,</p><pre><code>rpm -ivh kernel-devel-5.15.85+-1.x86_64.rpm
+yum remove kernel-headers
+rpm -ivh kernel-headers-5.15.85+-1.x86_64.rpm
+yum install -y centos-release-scl
+yum install devtoolset-7
+scl enable devtoolset-7 bash
+cd r8168-8.051.02/src/
+make
+modprobe r8168
+</code></pre><p>Add <code>modprobe r8168</code> to `/etc/rc.local</p><h3 id=build-qemu71>build qemu7.1</h3><p>On centos76, build/install via:</p><pre><code>scl enable devtoolset-11 bash
+yum install -y git glib2-devel pixman-devel zlib-devel libusb-devel libusb libusbx-devel pulseaudio-libs-devel libcap-ng-devel libattr-devel spice-server-devel usbredir-devel python3 bzip2 
+ ./configure --enable-modules --target-list=x86_64-softmmu --enable-debug --disable-docs --disable-virglrenderer --prefix=/opt/local --enable-virtfs --enable-libusb --disable-debug-tcg --audio-drv-list=pa
+make -j8
+make install
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/07/workingtipsongen12centos/>WorkingTipsOnGen12CentOS</a></h1><span class=post-date>Jun 7, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>CentOS7.6.1810,minimum installation.</p><pre><code># yum makecache
+# yum install -y vim git gcc libevent-devel unzip flex bison
+# vim /etc/selinux/config
+SELINUX=disabled
+# systemctl disable firewalld
+</code></pre><p>Install gcc-7:</p><pre><code>yum install centos-release-scl
+yum install devtoolset-7-gcc-c++
+scl enable devtoolset-7 bash
+</code></pre><p>Install kernel related dependencies:</p><pre><code>yum install -y devtoolset-7-elfutils-libelf-devel.x86_64  openssl-devel bc rpm-build pciutils
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/04/18/nhoursforosxkvmandidv/>NHoursForOSXKVMAndIDV</a></h1><span class=post-date>Apr 18, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=系统硬件>系统硬件</h3><p>主要信息:</p><pre><code>华擎Z370M主板
-Intel i7-9700K
-32G 内存
-200G SSD存储
-</code></pre><p><img src=/images/2023_04_18_09_51_43_990x574.jpg alt=/images/2023_04_18_09_51_43_990x574.jpg></p><p>附加显卡信息:</p><pre><code>$ sudo lspci | grep -i vga
-00:02.0 VGA compatible controller: Intel Corporation CoffeeLake-S GT2 [UHD Graphics 630]
-01:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Baffin [Radeon RX 550 640SP / RX 560/560X] (rev ff)
-03:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Turks [Radeon HD 7600 Series]
-</code></pre><h3 id=bios配置及选项详解>BIOS配置及选项详解</h3><p>BIOS <code>高级->CPU配置</code>中，打开<code>Intel虚拟化技术</code>，关闭<code>Software Guard Extensions (SGX)</code>:</p><p><img src=/images/2023_04_18_09_54_10_1232x252.jpg alt=/images/2023_04_18_09_54_10_1232x252.jpg></p><p>BIOS <code>高级->芯片组配置</code>中，打开<code>VT-d</code>功能，关闭<code>Above 4G Decoding</code>， 主图形适配器选择为<code>板载</code>:</p><p><img src=/images/2023_04_18_09_55_18_1198x437.jpg alt=/images/2023_04_18_09_55_18_1198x437.jpg></p><p>BIOS <code>高级->芯片组配置</code>中，设置显卡的<code>共享内存</code>为1G, 打开IGPU多监视器选项，使得在外部有显卡的情况下集显保持开启:</p><p><img src=/images/2023_04_18_09_58_09_1130x153.jpg alt=/images/2023_04_18_09_58_09_1130x153.jpg></p><p>(可选)关闭可信赖计算:</p><p><img src=/images/2023_04_18_09_59_00_1115x241.jpg alt=/images/2023_04_18_09_59_00_1115x241.jpg></p><p>引导->CSM(兼容性支持模块)中，将<code>启动视频OpROM策略</code>设置为<code>仅传统</code>:</p><p><img src=/images/2023_04_18_10_03_57_1201x270.jpg alt=/images/2023_04_18_10_03_57_1201x270.jpg></p><p>调整启动顺序为从U盘启动，进入到系统的安装过程。</p><h3 id=host系统安装>Host系统安装</h3><p>将网上下载的Ubuntu22.04安装盘写入U盘:</p><pre><code>$ sudo dd if=ubuntu-22.04.2-live-server-amd64.iso of=/dev/sdb bs=1M &amp;&amp; sudo sync
-</code></pre><p>选择UEFI分区的USB设备进入到安装过程:</p><p><img src=/images/2023_04_18_10_24_27_844x331.jpg alt=/images/2023_04_18_10_24_27_844x331.jpg></p><p>Grub栏中，选择<code>Try or Install Ubuntu Server</code>:</p><p><img src=/images/2023_04_18_10_05_47_1120x296.jpg alt=/images/2023_04_18_10_05_47_1120x296.jpg></p><p>选择语言为<code>English</code>，自动配置网络， 忽略proxy address配置，mirror address保持默认（也可以改变为网速较好的源) :</p><p><img src=/images/2023_04_18_10_10_20_828x234.jpg alt=/images/2023_04_18_10_10_20_828x234.jpg></p><p>(非必选)分区这里选择基本(避免LVM可能给新学者带来的困扰)：</p><p><img src=/images/2023_04_18_10_11_08_1039x286.jpg alt=/images/2023_04_18_10_11_08_1039x286.jpg></p><p>检查下存储layout是否正常，无问题则下一步:</p><p><img src=/images/2023_04_18_10_11_22_1209x570.jpg alt=/images/2023_04_18_10_11_22_1209x570.jpg></p><p><img src=/images/2023_04_18_10_12_05_876x301.jpg alt=/images/2023_04_18_10_12_05_876x301.jpg>
-配置用户名/密码:</p><p><img src=/images/2023_04_18_10_25_59_1091x440.jpg alt=/images/2023_04_18_10_25_59_1091x440.jpg></p><p>忽略<code>Ubuntu Pro</code>选项后继续，选择<code>Install OpenSSH server</code>:</p><p><img src=/images/2023_04_18_10_26_44_919x365.jpg alt=/images/2023_04_18_10_26_44_919x365.jpg></p><p>在子功能选单中，什么都不选，进入到安装过程，直到所有安装都完成。Ubuntu live server在安装时最好保持联网状态，否则可能出现部分包安装不成功导致整个系统安装失败的情况。</p><p>看到这个界面则显示成功:</p><p><img src=/images/2023_04_18_10_31_49_1509x1014.jpg alt=/images/2023_04_18_10_31_49_1509x1014.jpg></p><p>安装后登陆界面:</p><p><img src=/images/2023_04_18_10_33_43_860x394.jpg alt=/images/2023_04_18_10_33_43_860x394.jpg></p><h3 id=host系统安装问题解决>Host系统安装问题解决</h3><p>在安装过pve的磁盘上,或者以前用LVM安装过系统的硬盘上，全新安装Ubuntu时，会出现以下的错误：</p><p><img src=/images/2023_04_18_10_21_19_1400x506.jpg alt=/images/2023_04_18_10_21_19_1400x506.jpg>
-解决方法为:</p><pre><code>vgremove xxxxxx(这里填你的vg的名字，通过vgs查看)
-pvremove /dev/xxxx(这里填你的pvs所在的实际物理设备，通过pvs查看)
-</code></pre><p>完全删除掉已有的逻辑卷分区后，重新进入到安装过程后方可成功。</p><h3 id=系统配置>系统配置</h3><p>确保系统更新到最新状态：</p><pre><code>sudo apt update
-sudo apt upgrade -y
-</code></pre><p>选择KDE作为默认的桌面工作环境, 并安装其他的一些包，选择KDE的原因在于它使用sddm+Xorg, 后续用libvirt钩子用于gvt-d透传集成显卡到虚机的时候，可以卸载得比较完整。默认的Ubuntu-desktop有时会出现在主机/虚机之间切换时失败的情况，推测与gdm3的工作方式有关：</p><pre><code>sudo apt install -y kubuntu-desktop virt-manager build-essential
-</code></pre><p>配置vfio相关选项:</p><pre><code># sudo vim /etc/default/grub
+</code></pre><p>Clone the kernel code:</p><pre><code># mkdir Code
+# cd Code
+# git clone https://github.com/intel/linux-intel-lts.git
+# cd linux-intel-lts
+# git checkout gawougoweugowugo
+# cp ~/kernel-config.zip .
+# unzip kernel-config.zip
+# cp ./kernel-config/x86_64_defconfig .config
+# echo &quot;&quot; | make ARCH=x86_64 olddefconfig
+# make ARCH=x86_64 -j16 LOCALVERSION=-lts2021-iotg -j8
+</code></pre><h3 id=verification>Verification</h3><p>Make sure you have the latest firmware(copy from the ubuntu):</p><pre><code># mkdir /lib/firmware/i915/backup
+# mv /lib/firmware/i915/* /lib/firmware/i915/backup
+# cp -ar /mnt/lib/firmware/i915/* /lib/firmware/i915/
+</code></pre><p>Install the minimal system, install the built kernel rpms, then edit the grub:</p><pre><code># vim /etc/default/grub
 ......
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;intel_iommu=on intel_iommu=pt kvm.ignore_msrs=1&quot;
+GRUB_CMDLINE_LINUX=&quot;crashkernel=auto rhgb quiet i915.enable_guc=0x7 udmabuf.list_limit=8192 intel_iommu=on i915.force_probe=*&quot;
 ......
-# sudo update-grub2
-# sudo vim /etc/initramfs-tools/modules
-......
+# grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
+# cat /boot/grub2/grubenv 
+    # GRUB Environment Block
+    #saved_entry=CentOS Linux (3.10.0-957.el7.x86_64) 7 (Core)
+    saved_entry=CentOS Linux (5.15.85+) 7 (Core)
+# reboot
+</code></pre><p>Check the status of <code>SR-IOV</code>:</p><pre><code># dmesg | grep SR-IOV
+[    1.643471] i915 0000:00:02.0: Running in SR-IOV PF mode
+# dmesg | grep GuC
+[    1.844856] i915 0000:00:02.0: [drm] GuC error state capture buffer maybe too small: 2097152 &lt; 2557128 (min = 852376)
+[    1.846949] i915 0000:00:02.0: [drm] GuC firmware i915/tgl_guc_70.bin version 70.5.1
+[    1.850099] i915 0000:00:02.0: [drm] GuC submission enabled
+[    1.850099] i915 0000:00:02.0: [drm] GuC SLPC enabled
+[    1.850430] i915 0000:00:02.0: [drm] GuC RC: enabled
+# dmesg | grep HuC
+[    1.846952] i915 0000:00:02.0: [drm] HuC firmware i915/tgl_huc.bin version 7.9.3
+[    1.849623] i915 0000:00:02.0: [drm] HuC authenticated
+</code></pre><p>Install necessary packages:</p><pre><code># yum install -y virt-manager
+# yum groupinstall &quot;GNOME Desktop&quot;
+</code></pre><p>Upgrade qemu:</p><pre><code># yum install centos-release-qemu-ev
+# yum makecache
+# yum install -y qemu-kvm-ev qemu-img-ev
+# /usr/libexec/qemu-kvm --version
+QEMU emulator version 2.12.0 (qemu-kvm-ev-2.12.0-44.1.el7_8.1)
+Copyright (c) 2003-2017 Fabrice Bellard and the QEMU Project developers
+</code></pre><p>Create vf:</p><pre><code>[root@cs76 ~]# lspci | grep -i vga
+0000:00:02.0 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
+[root@cs76 ~]# chmod 777 createvf.sh 
+.[root@cs76 ~]# ./createvf.sh 
+0x8086 0x4680
+[root@cs76 ~]# lspci | grep -i vga
+0000:00:02.0 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
+0000:00:02.1 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
+0000:00:02.2 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
+0000:00:02.3 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
+0000:00:02.4 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
+0000:00:02.5 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
+0000:00:02.6 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
+0000:00:02.7 VGA compatible controller: Intel Corporation Device 4680 (rev 0c)
+</code></pre><p>Install some management tools:</p><pre><code>yum install libvirt libvirt-python libguestfs-tools virt-install -y
+</code></pre><h3 id=switch-to-qemu-62>switch to qemu 6.2</h3><p>build ninja:</p><pre><code>yum install -y gcc gcc-c++ python3 git
+git clone https://github.com/ninja-build/ninja.git
+cd ninja
+git checkout release
+./configure.py --bootstrap
+cp ninja /usr/bin
+</code></pre><p>Install qemu build dependencies:</p><pre><code>yum install -y glib2-devel pixman-devel zlib-devel libusb-devel libusb libusbx-devel pulseaudio-libs-devel libcap-ng-devel libattr-devel spice-server-devel usbredir-devel
+</code></pre><p>Since qemu 6.2 requires gcc>7.6? Install gcc 8 for building:</p><pre><code>yum install devtoolset-8-gcc-c++
+scl enable devtoolset-8 bash
+./configure --target-list=x86_64-softmmu --enable-debug --disable-docs --disable-virglrenderer --prefix=/opt/local --enable-virtfs --enable-libusb --disable-debug-tcg --audio-drv-list=pa  --enable-spice --enable-usb-redir
+make -j8
+make install
+</code></pre><p>Change from default qemu to <code>/opt/local/bin/qemu-system-x86_64</code>, then start the machine.<br>You may also need virsh or other tools:</p><pre><code>yum install -y libvirt libvirt-python libguestfs-tools virt-install -y
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/05/08/gen12gpupassthrough/>Gen12GPUPassthrough</a></h1><span class=post-date>May 8, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p><code>Ubuntu 22.04.2</code> desktop cdrom installation on Gen12 machine.</p><pre><code>sudo apt update -y &amp;&amp; sudo apt upgrade -y
+sudo apt install -y openssh-server virt-manager qemu vim
+</code></pre><p>Edit the grub and initramfs-tools, and vfio:</p><pre><code>$ cat /etc/default/grub | grep CMDLINE_LINUX_DEFAULT
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet  intel_iommu=on intel_iommu=pt kvm.ignore_msrs=1 video=efifb:off,vesafb:off&quot;
+$ cat /etc/initramfs-tools/modules
 vfio
 vfio_iommu_type1
 vfio_pci
 vfio_virqfd
-</code></pre><p>使用<code>lspci</code>查看两块AMD独显的VGA及Audio配置信息，记录下相应字段:</p><p><img src=/images/2023_04_18_11_08_58_945x326.jpg alt=/images/2023_04_18_11_08_58_945x326.jpg></p><pre><code># echo &quot;options vfio-pci ids=1002:67ff,1002:675b,1002:aae0,1002:aa90&quot; &gt;&gt; /etc/modprobe.d/vfio.conf
-# sudo vim /etc/modprobe.d/blacklist.conf
-......
-blacklist amdgpu
-# update-initramfs -u -k all &amp;&amp; reboot
-</code></pre><p>配置KDE的屏幕锁屏选项:</p><p><img src=/images/2023_04_18_11_34_32_930x490.jpg alt=/images/2023_04_18_11_34_32_930x490.jpg></p><p>关闭Energy Saving：</p><p><img src=/images/2023_04_18_11_35_14_832x441.jpg alt=/images/2023_04_18_11_35_14_832x441.jpg></p><p>Login Screen(SDDM)选择 Bahavior:</p><p><img src=/images/2023_04_18_11_36_33_951x832.jpg alt=/images/2023_04_18_11_36_33_951x832.jpg>
-使能登出后自动登入:</p><p><img src=/images/2023_04_19_14_41_02_962x411.jpg alt=/images/2023_04_19_14_41_02_962x411.jpg></p><p>之后选择子选项:</p><p><img src=/images/2023_04_18_11_37_28_1057x607.jpg alt=/images/2023_04_18_11_37_28_1057x607.jpg></p><p>KDE桌面下其实是存在大量的可优化空间的，后面可以深入探讨。</p><h3 id=osx-kvm落地>OSX-KVM落地</h3><p>主要参考了: <code>https://github.com/kholia/OSX-KVM</code>:</p><p>按仓库要求，安装相应包, 准备相关文件 :</p><pre><code>sudo apt-get install qemu uml-utilities virt-manager git \
-    wget libguestfs-tools p7zip-full make dmg2img -y
-sudo reboot
-sudo usermod -aG kvm $(whoami)
-sudo usermod -aG libvirt $(whoami)
-sudo usermod -aG input $(whoami)
-git clone --depth 1 --recursive https://github.com/kholia/OSX-KVM.git
-</code></pre><p>下载Ventura (13):</p><pre><code>$ cd OSX-KVM
-$ ./fetch-macOS-v2.py 
-1. High Sierra (10.13)
-2. Mojave (10.14)
-3. Catalina (10.15)
-4. Big Sur (11.7) - RECOMMENDED
-5. Monterey (12.6)
-6. Ventura (13)
-
-Choose a product to download (1-6): 6
-Ventura (13)
-Downloading 032-66586...
-Saving http://oscdn.apple.com/content/downloads/54/39/032-66586/dtdkth7btmat4w68aohv87st5j33d2puna/RecoveryImage/BaseSystem.dmg to BaseSystem.dmg...
-Note: The total download size is 675.59 MB
-$ dmg2img -i BaseSystem.dmg BaseSystem.img
-$ qemu-img create -f qcow2 mac_hdd_ng.img 64G
-$ ./OpenCore-Boot.sh 
-</code></pre><p>进入到安装界面:</p><p><img src=/images/2023_04_18_12_10_54_517x492.jpg alt=/images/2023_04_18_12_10_54_517x492.jpg></p><p>选择Disk Utitity:</p><p><img src=/images/2023_04_18_12_11_45_1088x442.jpg alt=/images/2023_04_18_12_11_45_1088x442.jpg></p><p>而后选择<code>Reinstall</code>开始安装, 注意选择格式化后的macOS 64GB的盘:</p><p><img src=/images/2023_04_18_12_13_57_583x567.jpg alt=/images/2023_04_18_12_13_57_583x567.jpg></p><p>安装配置阶段:</p><p><img src=/images/2023_04_18_13_10_06_801x599.jpg alt=/images/2023_04_18_13_10_06_801x599.jpg></p><p>选择not now:</p><p><img src=/images/2023_04_18_13_10_35_797x602.jpg alt=/images/2023_04_18_13_10_35_797x602.jpg>
-选择 Set Up Later:</p><p><img src=/images/2023_04_18_13_11_00_809x605.jpg alt=/images/2023_04_18_13_11_00_809x605.jpg></p><p>创建用户:</p><p><img src=/images/2023_04_18_13_11_35_711x403.jpg alt=/images/2023_04_18_13_11_35_711x403.jpg></p><p>装完后:</p><p><img src=/images/2023_04_18_13_15_45_290x510.jpg alt=/images/2023_04_18_13_15_45_290x510.jpg></p><p>开启ssh和vnc:</p><p><img src=/images/2023_04_18_14_09_08_710x390.jpg alt=/images/2023_04_18_14_09_08_710x390.jpg></p><p>在命令行下，拷贝OpenBoot的EFI分区到硬盘下:</p><pre><code>test@tests-iMac-Pro ~ % sudo diskutil list
-.......这里需要识别出哪个分区是ISO的，哪个是硬盘上的
-test@tests-iMac-Pro ~ % sudo diskutil mount disk0s1
-Volume EFI on disk0s1 mounted
-test@tests-iMac-Pro ~ % sudo diskutil mount disk1s1
-Volume EFI on disk1s1 mounted
-test@tests-iMac-Pro ~ % mount
-/dev/disk2s5s1 on / (apfs, sealed, local, read-only, journaled)
-devfs on /dev (devfs, local, nobrowse)
-/dev/disk2s4 on /System/Volumes/VM (apfs, local, noexec, journaled, noatime, nobrowse)
-/dev/disk2s2 on /System/Volumes/Preboot (apfs, local, journaled, nobrowse)
-/dev/disk2s6 on /System/Volumes/Update (apfs, local, journaled, nobrowse)
-/dev/disk2s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse)
-map auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)
-/dev/disk0s1 on /Volumes/EFI (msdos, asynchronous, local, noowners)
-/dev/disk1s1 on /Volumes/EFI 1 (msdos, asynchronous, local, noowners)
-test@tests-iMac-Pro ~ % cp -r /Volumes/EFI/EFI /Volumes/EFI\ 1 
-test@tests-iMac-Pro ~ % sudo sync     
-test@tests-iMac-Pro ~ % sudo shutdown -h now
-</code></pre><p>重新启动后，更改Boot的等待时延(挂在EFI分区后):</p><pre><code> % cat EFI/OC/config.plist| grep '&lt;key&gt;Timeout' -A2
-			&lt;key&gt;Timeout&lt;/key&gt;
-			&lt;integer&gt;5&lt;/integer&gt;
-		&lt;/dict&gt;
-</code></pre><h3 id=osx-kvm-with-rx550ventura>OSX-KVM with rx550(Ventura)</h3><p>直接使用脚本测试，得到的结果：</p><pre><code>cp boot-passthrough.sh testrx550.sh
-lspci | grep 550
-01:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Baffin [Radeon RX 550 640SP / RX 560/560X] (rev ff)
-01:00.1 Audio device: Advanced Micro Devices, Inc. [AMD/ATI] Baffin HDMI/DP Audio [Radeon RX 550 640SP / RX 560/560X]
-vim testrx550.sh
-  -vnc 0.0.0.0:8 -k en-us
-  -netdev user,hostfwd=tcp::2288-:22,hostfwd=tcp::15900-:5900,id=net0 -device vmxnet3,netdev=net0,id=net0,mac=52:54:00:c9:18:27
-</code></pre><p>效果： 最初引导的时候会出现画面，且可以一直操作(OpenCore),但是进入到苹果后黑屏。ssh可以登陆到成功启动后的macOS,但是vnc登陆则一直显示黑屏。</p><h3 id=osx-kvmmonterey>OSX-KVM(Monterey)</h3><p>重新安装一台Monterey虚机:</p><p><img src=/images/2023_04_18_15_14_39_508x574.jpg alt=/images/2023_04_18_15_14_39_508x574.jpg></p><p><img src=/images/2023_04_18_16_15_35_595x362.jpg alt=/images/2023_04_18_16_15_35_595x362.jpg></p><p>ssh/vnc启用:</p><p><img src=/images/2023_04_18_16_16_21_657x516.jpg alt=/images/2023_04_18_16_16_21_657x516.jpg></p><p>Monterey会正常启动</p><h3 id=vendor-reset>vendor-reset</h3><p>AMD显卡需要引入这个模块以便在vfio的时候reset为可用状态:</p><pre><code>git clone https://github.com/gnif/vendor-reset.git
-cd vendor-reset/
-sudo apt install -y dkms
-sudo dkms install .
-sudo vim /etc/initramfs-tools/modules
-vendor-reset
-sudo update-initramfs -u -k all
-sudo reboot
-</code></pre><p>重启成功后:</p><pre><code>$ lsmod | grep vendor
-vendor_reset          114688  0
-</code></pre><p>使用下面的<code>vfio_bind.sh</code>用来初始化显卡, 注意<code>vendor_reset</code>需要一个bug-fix（<code>device_specific</code>）:</p><pre><code>#!/bin/bash
-modprobe vfio-pci
-for dev in &quot;$@&quot;; do
-vendor=$(cat /sys/bus/pci/devices/$dev/vendor)
-device=$(cat /sys/bus/pci/devices/$dev/device)
-if [ -e /sys/bus/pci/devices/$dev/driver ]; then
-echo $dev &gt; /sys/bus/pci/devices/$dev/driver/unbind
-fi
-echo $vendor $device &gt; /sys/bus/pci/drivers/vfio-pci/new_id
-echo 'device_specific' &gt; /sys/bus/pci/devices/$dev/reset_method
-done
-
-</code></pre><h3 id=vbflash>vbflash</h3><p>使用工具dump出显卡的vbflash:</p><p><img src=/images/2023_04_18_16_52_25_1024x467.jpg alt=/images/2023_04_18_16_52_25_1024x467.jpg></p><p>7600看起来似乎无法驱动。临时换成了5700xt显卡用来测试。<br>5700xt需要添加:</p><pre><code>test@tests-iMac-Pro EFI % cat EFI/OC/config.plist| grep boot-args -A3
-				&lt;key&gt;boot-args&lt;/key&gt;
-				&lt;string&gt;-v keepsyms=1 tlbto_us=0 vti=9 agdpmod=pikera&lt;/string&gt;
-</code></pre><h3 id=网络配置桥接>网络配置（桥接)</h3><p>桥接是为了让虚拟机获得同网段地址:</p><pre><code># sudo apt install bridge-utils -y
-# sudo vim /etc/default/grub
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;intel_iommu=on intel_iommu=pt kvm.ignore_msrs=1 net.ifnames=0 biosdevname=0&quot;
-# sudo update-grub2
-# vim /etc/netplan/00-installer-config.yaml 
-# This is the network config written by 'subiquity'
-network:
-  ethernets:
-    eth0:
-      dhcp4: false
-  bridges:
-    br0:
-      interfaces: [eth0]
-      dhcp4: true
-  version: 2
-# reboot
-</code></pre><h3 id=libvirtd集成>libvirtd集成</h3><p>准备镜像:</p><pre><code>test@server:~/OSX-KVM-Monterey$ sudo cp mac_hdd_ng.img /var/lib/libvirt/images/ &amp;&amp; sudo sync
-test@server:~/OSX-KVM-Monterey$ sudo cp OVMF_VARS-1024x768.fd /var/lib/libvirt/images/
-test@server:~/OSX-KVM-Monterey$ sudo cp OVMF_CODE.fd /var/lib/libvirt/images/
-root@server:/var/lib/libvirt/images# qemu-img create -f qcow2 -b mac_hdd_ng.img -F qcow2 amd5700xt.qcow2
-root@server:/var/lib/libvirt/images# qemu-img create -f qcow2 -b mac_hdd_ng.img -F qcow2 rx560.qcow2
-root@server:/var/lib/libvirt/images# cp OVMF_VARS-1024x768.fd rx560_OVMF_VARS-1024x768.fd amd5700_OVMF_VARS-1024x768.fd
-</code></pre><p>libvirtd配置文件(RX 5700 8GB及 RX 550 4GB):</p><pre><code>https://gist.githubusercontent.com/purplepalmdash/dfba3d32b72901f75d39a84288689692/raw/eb15ad7cd59f86566dd8fb5cfc6786639c0cb6a8/macOS5700.xml
-https://gist.githubusercontent.com/purplepalmdash/dfba3d32b72901f75d39a84288689692/raw/eb15ad7cd59f86566dd8fb5cfc6786639c0cb6a8/macOSrx550.xml
-</code></pre><h3 id=guest配置>guest配置</h3><p>阻止虚拟机进入到节能状态:</p><p><img src=/images/2023_04_19_14_15_42_642x477.jpg alt=/images/2023_04_19_14_15_42_642x477.jpg></p><p>禁止锁定屏幕:</p><p><img src=/images/2023_04_19_14_17_15_622x403.jpg alt=/images/2023_04_19_14_17_15_622x403.jpg></p><p>禁止自动更新:</p><p><img src=/images/2023_04_19_14_18_38_638x318.jpg alt=/images/2023_04_19_14_18_38_638x318.jpg></p><p>禁用屏幕保护:</p><p><img src=/images/2023_04_19_14_19_26_627x551.jpg alt=/images/2023_04_19_14_19_26_627x551.jpg></p><h3 id=win10核显透传>win10核显透传</h3><p>准备libvirtd钩子脚本:</p><pre><code> cd /etc/libvirt/hooks/
- mv /home/test/hooks/* .
- ln -s /etc/libvirt/hooks/vfio-startup.sh /bin/
- ln -s /etc/libvirt/hooks/vfio-teardown.sh /bin/
-</code></pre><p>如果要透传核显，则grub的参数需要做相应的修改:</p><pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;intel_iommu=on intel_iommu=pt kvm.ignore_msrs=1 net.ifnames=0 biosdevname=0 video=efifb:off,vesafb:off&quot;
-</code></pre><p>因为以前已经做过相关的内容，这里就不再详细说明。</p><h3 id=已知偶现问题>已知/偶现问题</h3><p>一次失败的核显透传后，重启失败, 更改grub默认选项后修复:</p><p><img src=/images/2023_04_19_14_45_26_1018x372.jpg alt=/images/2023_04_19_14_45_26_1018x372.jpg>
-Android studio无法运行?</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/04/12/workingtipsonigpupassthroughosx/>WorkingTipsOnIGPUPassthroughOSX</a></h1><span class=post-date>Apr 12, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Use diskutil for Change the EFI partition:</p><p><img src=/images/2023_04_12_10_41_07_510x533.jpg alt=/images/2023_04_12_10_41_07_510x533.jpg></p><p>Copy from iso&rsquo;s EFI to disk&rsquo;s EFI:</p><pre><code>% cp -r /Volumes/EFI/EFI /Volumes/EFI\ 1/
-% sudo sync
-% sudo shutdown -h now
-</code></pre><p>Enable ssh:</p><p><img src=/images/2023_04_12_10_45_08_525x420.jpg alt=/images/2023_04_12_10_45_08_525x420.jpg></p><p>Then we could use ssh via:</p><pre><code># ssh test@192.168.1.129
-X11 forwarding request failed on channel 0
-Last login: Wed Apr 12 10:45:16 2023 from 192.168.1.222
-test@tests-iMac-Pro ~ % uname -a
-Darwin tests-iMac-Pro.local 21.6.0 Darwin Kernel Version 21.6.0: Thu Mar  9 20:08:59 PST 2023; root:xnu-8020.240.18.700.8~1/RELEASE_X86_64 x86_64
-</code></pre><p>Copy and replace EFI using igpu optimized version.<br>above 4G decoding forbid the hackintosh igpu passthrough.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/04/12/configurationon4gdecoding/>ConfigurationOn4GDecoding</a></h1><span class=post-date>Apr 12, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Above 4G Decoding (Available if the system supports 64-bit PCI decoding) Select Enabled to decode a PCI device that supports 64-bit in the space above 4G Address. The options are Enabled and Disabled.</p><p>翻译:</p><p>G以上解码（如果系统支持64位PCI解码，则可用）选择 &ldquo;已启用 &ldquo;来解码一个支持64位的PCI设备，在4G地址以上的空间。选项是已启用和已禁用。</p><p>禁用的情况:</p><pre><code>root@mac:~# lspci -v | grep &quot;Memory.*64-bit&quot;
-	Memory at d0000000 (64-bit, prefetchable) [disabled] [size=256M]
-	Memory at e0000000 (64-bit, prefetchable) [disabled] [size=2M]
-	Memory at fcf60000 (64-bit, non-prefetchable) [size=16K]
-	Memory at fce04000 (64-bit, non-prefetchable) [size=4K]
-	Memory at fce00000 (64-bit, non-prefetchable) [size=16K]
-	Memory at b0000000 (64-bit, prefetchable) [size=256M]
-	Memory at c0000000 (64-bit, prefetchable) [size=2M]
-	Memory at fca00000 (64-bit, non-prefetchable) [size=1M]
-	Memory at fc900000 (64-bit, non-prefetchable) [size=1M]
-</code></pre><p>开启的情况:</p><pre><code>idv@idv-TC-9070:~$ sudo lspci -v | grep &quot;Memory.*64-bit&quot;
-	Memory at de000000 (64-bit, non-prefetchable) [size=16M]
-	Memory at c0000000 (64-bit, prefetchable) [size=256M]
-	Memory at df110000 (64-bit, non-prefetchable) [size=64K]
-	Memory at df12d000 (64-bit, non-prefetchable) [size=4K]
-	Memory at df120000 (64-bit, non-prefetchable) [size=16K]
-	Memory at df100000 (64-bit, non-prefetchable) [size=64K]
-	Memory at df12a000 (64-bit, non-prefetchable) [size=256]
-	Memory at df000000 (64-bit, non-prefetchable) [size=4K]
-	Memory at d0000000 (64-bit, prefetchable) [size=16K]
-
-</code></pre><h3 id=other-options-in-bios>Other options in bios</h3><p>peci:</p><pre><code>PECI是用于监测CPU及芯片组温度的一线总线(one-wire bus)，全称是Platform Environment Control Interface。
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/04/10/osxkvmgvtpassthrough/>OSXKVMGVTPASSTHROUGH</a></h1><span class=post-date>Apr 10, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install Prerequisite packages:</p><pre><code>$ sudo apt-get install qemu uml-utilities virt-manager git \
-    wget libguestfs-tools p7zip-full make dmg2img -y
-$ cat kvm.conf 
-options kvm_intel nested=1
-options kvm_intel emulate_invalid_guest_state=0
-options kvm ignore_msrs=1 report_ignored_msrs=0
-$ sudo cp kvm.conf /etc/modprobe.d/
-$ echo 1 | sudo tee /sys/module/kvm/parameters/ignore_msrs
-$ sudo usermod -aG kvm $(whoami)
-$ sudo usermod -aG libvirt $(whoami)
-$ sudo usermod -aG input $(whoami)
-</code></pre><p>Clone related repository:</p><pre><code>git clone https://github.com/vivekmiyani/OSX_GVT-D
-git clone --recursive https://github.com/kholia/OSX-KVM.git
-cd OSX-KVM
-git checkout 88154b5bac079473660afc2a89704874cc7edf03
-</code></pre><p>Choose <code>Monterey</code> for downloading:</p><pre><code>$ ./fetch-macOS-v2.py 
-1. High Sierra (10.13)
-2. Mojave (10.14)
-3. Catalina (10.15)
-4. Big Sur (11.6) - RECOMMENDED
-5. Monterey (latest)
-
-Choose a product to download (1-5): 5
-Monterey (latest)
-</code></pre><p>Format the disk and install macos in kvm:</p><pre><code>dmg2img -i BaseSystem.dmg BaseSystem.img
-qemu-img create -f qcow2 mac_hdd_ng.img 128G
-./OpenCore-Boot.sh
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/11/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/11/>11</a></li><li class="page-item active"><a class=page-link href=/page/12/>12</a></li><li class=page-item><a class=page-link href=/page/13/>13</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/13/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+$  echo &quot;options vfio-pci disable_vga=1&quot; &gt; /etc/modprobe.d/vfio.conf
+$ sudo update-grub2 &amp;&amp; sudo update-initramfs -u -k all
+$ sudo reboot
+</code></pre><p>Build ovmf:</p><pre><code>$ cp /home/idv/xxxxxxxxx/VBT/Vbt.bin OvmfPkg/Vbt/Vbt.bin 
+$ cp /home/idv/xxxxxxxxx/./IntelGopDriver/RELEASE_VS2015x86/X64/IntelGopDriver.efi OvmfPkg/IntelGop/IntelGopDriver.efi
+$ pwd
+/home/idv/Code/Intel_edk2/edk2_gen12
+Build the ovmf(follow the guideline)
+</code></pre><p>Install an ubuntu22.04 vm in host machine, with qxl/spice.</p><p>glmark2: score 1711</p><p>Install win11(shift+f10), use regedit for editing:</p><p><img src=/images/2023_05_08_11_23_09_794x480.jpg alt=/images/2023_05_08_11_23_09_794x480.jpg></p><p>Fallback and continue install:</p><p><img src=/images/2023_05_08_11_24_16_769x553.jpg alt=/images/2023_05_08_11_24_16_769x553.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/05/06/workingtipsongen12gvtd/>WorkingTipsONGen12GVTD</a></h1><span class=post-date>May 6, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p><img src=/images/2023_05_06_12_09_11_751x278.jpg alt=/images/2023_05_06_12_09_11_751x278.jpg></p><p>UEFI/i440fx:</p><p><img src=/images/2023_05_06_12_09_53_770x388.jpg alt=/images/2023_05_06_12_09_53_770x388.jpg></p><p>Virtio Block:</p><p><img src=/images/2023_05_06_12_10_16_723x433.jpg alt=/images/2023_05_06_12_10_16_723x433.jpg></p><p>4Core:</p><p><img src=/images/2023_05_06_12_10_36_757x512.jpg alt=/images/2023_05_06_12_10_36_757x512.jpg></p><p>Configuration:</p><p><img src=/images/2023_05_06_12_11_23_887x403.jpg alt=/images/2023_05_06_12_11_23_887x403.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/11/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/11/>11</a></li><li class="page-item active"><a class=page-link href=/page/12/>12</a></li><li class=page-item><a class=page-link href=/page/13/>13</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/13/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,181 +1,246 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/05/build-openwrt-for-x86/>Build OpenWRT For X86</a></h1><span class=post-date>Nov 5, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=prepare>Prepare</h3><p>Install following packages:</p><pre><code>$ sudo apt-get install build-essential subversion git-core libncurses5-dev zlib1g-dev gawk flex quilt libssl-dev xsltproc libxml-parser-perl
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/09/wei-bbbbian-yi-nei-he-he-linux/>为BBB编译内核和Linux</a></h1><span class=post-date>Nov 9, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>因为原文是英文的缘故，所以这里就直接用中文翻译，并把编译时的步骤和注意事项记载下来。<br>主要参考了:<br><a href=https://eewiki.net/display/linuxonarm/BeagleBone+Black>https://eewiki.net/display/linuxonarm/BeagleBone+Black</a><br>All of the files and folder are located under <code>$BBB/201411</code> folder.</p><h3 id=交叉编译链准备>交叉编译链准备</h3><p>下载、设置交叉编译链:</p><pre><code>wget -c https://releases.linaro.org/14.09/components/toolchain/binaries/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux.tar.xz
+tar xf gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux.tar.xz
+export CC=`pwd`/gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_linux/bin/arm-linux-gnueabihf-
 
-</code></pre><h3 id=code>Code</h3><p>Get the source code from OpenWRT.org:</p><pre><code>$ git clone git://git.openwrt.org/openwrt.git
+</code></pre><p>测试交叉编译链:</p><pre><code># ${CC}gcc --version
+arm-linux-gnueabihf-gcc (crosstool-NG linaro-1.13.1-4.9-2014.09 - Linaro GCC 4.9-2014.09) 4.9.2 20140904 (prerelease)
+Copyright (C) 2014 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-</code></pre><p>Then Prepare for menuconfig:</p><pre><code>$ cd openwrt
-$ ./scripts/feeds update -a
-$ ./scripts/feeds install -a
-$ make menuconfig
+</code></pre><h3 id=编译u-boot>编译U-Boot</h3><p>下载U-Boot:</p><pre><code>git clone git://git.denx.de/u-boot.git
+cd u-boot/
+git checkout v2014.10 -b tmp
 
-</code></pre><p>Select x86 for Target System.<br>[] ext4&ndash;> Target Images &ndash;> ext4<br>[] Build VMware image files (VMDK)</p><p>You could also select for VDI or other formats.</p><p>Luci- > collection - > select luci.</p><p>Then we could type <code>make</code> for making out the images.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/05/enable-nfs-server-of-53/>Enable nfs server of 53</a></h1><span class=post-date>Nov 5, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Only enabled the nfs server and use the max disk for building, the nfs server runs Redhat RHEL6.2, the same procedure could be applied to CentOS Based system.<br>Steps:<br>Query for installed packages in server:</p><pre><code>$ rpm -qa nfs-utils
-$ rpm -qa rpcbind
+</code></pre><p>下载、加载补丁:</p><pre><code>wget -c https://raw.githubusercontent.com/eewiki/u-boot-patches/master/v2014.10/0001-am335x_evm-uEnv.txt-bootz-n-fixes.patch
+patch -p1 &lt; 0001-am335x_evm-uEnv.txt-bootz-n-fixes.patch
 
-</code></pre><p>Edit the nfs based directory:</p><pre><code># cat /etc/exports
-/home/Trusty/share/       *(rw,sync,no_subtree_check,no_root_squash)
+</code></pre><p>编译U-Boot:</p><pre><code># make ARCH=arm CROSS_COMPILE=${CC} distclean &amp;&amp; make ARCH=arm CROSS_COMPILE=${CC} am335x_evm_defconfig &amp;&amp; make ARCH=arm CROSS_COMPILE=${CC}
 
-</code></pre><p>Start the service and test:</p><pre><code># service rpcbind start
-# service nfs start
+</code></pre><h3 id=编译内核>编译内核</h3><p>下面的步骤将编译出内核和内核模块，编译完成后全部被拷贝到deploy文件夹中。</p><h4 id=主线内核>主线内核</h4><p>编译前准备， 在Ubuntu 12.04，安装下列包:</p><pre><code>$ sudo apt-get install bc build-essential device-tree-compiler fakeroot lzma lzop man-db u-boot-tools libncurses5-dev ia32-libs wget
 
-</code></pre><p>In client machine, just type following command for mount the remote nfs directory:</p><pre><code>$ sudo mount -t nfs 1xx.xxx.xxx.xx:/home/Trusty/share /mnt/
+</code></pre><p>下载:</p><pre><code>$ git clone https://github.com/RobertCNelson/bb-kernel.git
+$ cd bb-kernel/
 
-</code></pre><p>Make nfs server automatically start when system boot:</p><pre><code># chkconfig nfs on
-# chkconfig rpcbind on
+</code></pre><p>切换到v3.8.x分支(支持全面):</p><pre><code>$ git checkout origin/am33x-v3.8 -b tmp
 
-</code></pre><p>Client Machine(59), do following for automatically mount nfs:</p><pre><code>$ vim /etc/fstab
-# Using NFS
-1xx.xxx.xxx.xx:/home/Trusty/share /media/nfs/     nfs     rsize=8192,wsize=8192,timeo=14,intr     0       0
-$ mount -a
+</code></pre><p>切换到v3.17.x分支(SGX， 更好的usb和Ethernet支持), SGX，硬件加速。</p><pre><code>$ git checkout origin/am33x-v3.17 -b tmp
 
-</code></pre><p>Then everytime this clent machine startup the remote nfs directory will be mounted to local directory.</p><p>If you are ubuntu client, then you should install nfs-client via;</p><pre><code>sudo apt-get install nfs-common
+</code></pre><p>编译：</p><pre><code>$ ./build_kernel.sh
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/05/mysql-creashes-on-digitalocean/>MySQL creashes on DigitalOcean</a></h1><span class=post-date>Nov 5, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=problem>Problem</h3><p>The mysql server always keep crash, with following log under /var/log/mysql/error.log:</p><pre><code>141104 23:06:46 InnoDB: Fatal error: cannot allocate memory for the buffer pool
+</code></pre><h4 id=ti内核>TI内核</h4><p>完整编译步骤如下：</p><pre><code>git clone https://github.com/RobertCNelson/ti-linux-kernel-dev/
+cd ti-linux-kernel-dev/
+git checkout origin/ti-linux-3.14.y -b tmp
+./build_kernel.sh
 
-</code></pre><p>So this is the memory problem, we should allocate more memory for our VPS.</p><h3 id=solution>Solution</h3><p>Add swap partition:<br>First check the swap partition:</p><pre><code>root@xxx:/var/log# free -m
-             total       used       free     shared    buffers     cached
-Mem:           490        464         25         28         61        172
--/+ buffers/cache:        230        259
-Swap:            0          0          0
-root@xxx:/var/log# swapon -s
-Filename                                Type            Size    Used    Priority
+</code></pre><h3 id=准备文件系统>准备文件系统</h3><h4 id=ubuntu>Ubuntu</h4><p>下载并解压Ubuntu文件系统:</p><pre><code>wget -c https://rcn-ee.net/deb/minfs/trusty/ubuntu-14.04-minimal-armhf-2014-07-07.tar.xz
+tar xf ubuntu-14.04-minimal-armhf-2014-07-07.tar.xz
 
-</code></pre><p>Now create a swapfile:</p><pre><code># dd if=/dev/zero of=/swapfile bs=1M count=1024
-1024+0 records in
-1024+0 records out
-1073741824 bytes (1.1 GB) copied, 2.16285 s, 496 MB/s
-# ls /swapfile -l -h
--rw-r--r-- 1 root root 1.0G Nov  5 00:58 /swapfile
+</code></pre><h3 id=写入存储卡>写入存储卡</h3><h4 id=分区准备>分区准备</h4><p>准备的TF卡容量为8G， 使用lsblk可以用于查看device id。</p><pre><code>$ lsblk
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+mmcblk0     179:0    0   7.4G  0 disk 
+├─mmcblk0p1 179:1    0    48M  0 part 
+└─mmcblk0p2 179:2    0   7.4G  0 part 
 
-</code></pre><p>Setting the swapfile:</p><pre><code>root@xxx:/var/log# chmod 600 /swapfile 
-root@xxx:/var/log# swapon /swapfile
-swapon: /swapfile: read swap header failed: Invalid argument
-root@xxx:/var/log# mkswap /swapfile
-Setting up swapspace version 1, size = 1048572 KiB
-no label, UUID=64b727dd-0d7e-45ff-9235-cd9ba84b062f
-root@xxx:/var/log# swapon /swapfile 
+</code></pre><p>备份好TF卡上文件内容后，对其重新进行分区，这里使用fdisk移除掉所有分区后重新分成一个区，而后格式化为ext4分区。</p><pre><code># export DISK=/dev/mmcblk0
+# sudo dd if=/dev/zero of=${DISK} bs=1M count=10
+# sudo dd if=./u-boot/MLO of=${DISK} count=1 seek=1 conv=notrunc bs=128k
+# sudo dd if=./u-boot/u-boot.img of=${DISK} count=2 seek=1 conv=notrunc bs=384k
+# sudo sfdisk --in-order --Linux --unit M ${DISK} &lt;&lt;-__EOF__
+1,,0x83,*
+__EOF__
+# sudo mkfs.ext4 /dev/mmcblk0p1 -L rootfs
 
-</code></pre><p>Now use free command you could check swap file enabled:</p><pre><code>root@xxx:/var/log# free -m
-             total       used       free     shared    buffers     cached
-Mem:           490        458         31         28         25        229
--/+ buffers/cache:        204        285
-Swap:         1023          0       1023
+</code></pre><p>现在查看lsblk的结果应该是这样:</p><pre><code>mmcblk0     179:0    0   7.4G  0 disk 
+└─mmcblk0p1 179:1    0   7.4G  0 part 
 
-</code></pre><p>Add it permanately into the /etc/fstab:</p><pre><code>/swapfile   none    swap    sw    0   0
+</code></pre><h4 id=写入>写入</h4><p>我们将使用eMMC自有的BootLoader, 所以在/media/rootfs中使用下列内容到uEnv.txtt：</p><pre><code>##This will work with: Angstrom's 2013.06.20 u-boot.
+ 
+loadaddr=0x82000000
+fdtaddr=0x88000000
+rdaddr=0x88080000
+ 
+initrd_high=0xffffffff
+fdt_high=0xffffffff
+ 
+loadximage=load mmc 0:1 ${loadaddr} /boot/vmlinuz-${uname_r}
+loadxfdt=load mmc 0:1 ${fdtaddr} /boot/dtbs/${uname_r}/${fdtfile}
+loadxrd=load mmc 0:1 ${rdaddr} /boot/initrd.img-${uname_r}; setenv rdsize ${filesize}
+loaduEnvtxt=load mmc 0:1 ${loadaddr} /boot/uEnv.txt ; env import -t ${loadaddr} ${filesize};
+loadall=run loaduEnvtxt; run loadximage; run loadxfdt;
+ 
+mmcargs=setenv bootargs console=tty0 console=${console} ${optargs} ${cape_disable} ${cape_enable} root=${mmcroot} rootfstype=${mmcrootfstype} ${cmdline}
+ 
+uenvcmd=run loadall; run mmcargs; bootz ${loadaddr} - ${fdtaddr};
 
-</code></pre><p>Configure the parameters:</p><pre><code>root@xxx:/var/log# cat /proc/sys/vm/swappiness
-60
-root@xxx:/var/log# sysctl vm.swappiness=10
-vm.swappiness = 10                                                                                      
-root@xxx:/var/log# cat /proc/sys/vm/swappiness                                                  
-10                                                
-root@xxx:/var/log# vim /etc/sysctl.conf
-vm.swappiness=10
-vm.vfs_cache_pressure = 50
-root@xxx:/var/log# cat /proc/sys/vm/vfs_cache_pressure                                          
-100                                         
-root@xxx:/var/log# cat /proc/sys/vm/vfs_cache_pressure                                          
-50                                                                                                     
+</code></pre><p>解压缩下载好的rootfs文件到SD卡分区：</p><pre><code>$ tar xvf armhf-rootfs-ubuntu-trusty.tar -C /media/rootfs/
+$ sync
 
-</code></pre><p>Now the mysql server should be good.</p><h3 id=disable-wp-admin-login-password>Disable wp-admin login password</h3><p>Disable the login password.</p><pre><code># vim /etc/apache2/apache2.conf
-#&lt;DirectoryMatch ^.*/wp-admin/&gt;
-#    AuthType Basic
-#    AuthName &quot;Please login to your droplet via SSH for login details.&quot;
-#    AuthUserFile /etc/apache2/.htpasswd
-#    Require valid-user
-#&lt;DirectoryMatch&gt;
-root@xxx:~# service apache2 restart
- * Restarting web server apache2      
+</code></pre><p>拷贝kernel到SD卡分区:</p><pre><code># cp /media/y/embedded/BBB/201411/deploy/3.14.23-ti-r32.zImage ./vmlinuz-3.14.23-ti-r32
 
-</code></pre><p>Change the password for login details</p><pre><code>$ htpasswd .htpasswd user2
+</code></pre><p>拷贝Kernel Device Tree二进制文件:</p><pre><code>tar xvf /media/y/embedded/BBB/201411/deploy/3.14.23-ti-r32-dtbs.tar.gz -C /media/rootfs/boot/dtbs/${kernel_version}/
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/04/openwrt-on-bbb-2/>OpenWRT on BBB(2)</a></h1><span class=post-date>Nov 4, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=cheetsheet-for-using-nfs>Cheetsheet For Using NFS</h3><p>Following configuration use the 192.168.1.221&rsquo;s tftp server and 192.168.1.11&rsquo;s nfs server, why I use different nfs server because 192.168.1.11 runs ubuntu and could reached by nfs client easily.</p><pre><code>setenv ipaddr 192.168.1.16
-setenv serverip 192.168.1.221
-tftpboot ${fdtaddr} am335x-boneblack.dtb
-tftpboot ${kloadaddr} uImage
-setenv bootargs console=ttyO0,115200n8 root=/dev/nfs rw nfsroot=192.168.1.11:/srv/nfs4/BBBrootfs ip=192.168.1.1 rootwait
-bootm ${kloadaddr} - ${fdtaddr}
+</code></pre><p>拷贝内核模块:</p><pre><code># tar xfv /media/y/embedded/BBB/201411/deploy/3.14.23-ti-r32-modules.tar.gz -C /media/rootfs/
 
-</code></pre><h3 id=how-to-start-more-services>How to start more services</h3><p>Current we only got following output:</p><pre><code>procd: - init -
-//.......
-procd: - init complete -
+</code></pre><p>配置fstab文件:</p><pre><code>sudo sh -c &quot;echo '/dev/mmcblk0p1  /  auto  errors=remount-ro  0  1' &gt;&gt; /media/rootfs/etc/fstab&quot;
 
-</code></pre><p>From the Kernel Source code we know the init startup sequence:</p><pre><code>$ cd /media/y/embedded/BBB/svnco/trunk/build_dir/target-arm_cortex-a9+vfpv3_uClibc-0.9.33.2_eabi/linux-omap/linux-3.14.4
-$ cd init
-$ vim main.c
-if (!try_to_run_init_process(&quot;/etc/preinit&quot;) ||
-	    !try_to_run_init_process(&quot;/sbin/init&quot;) ||
-	    !try_to_run_init_process(&quot;/etc/init&quot;) ||
-	    !try_to_run_init_process(&quot;/bin/init&quot;) ||
-	    !try_to_run_init_process(&quot;/bin/sh&quot;))
-		return 0;
+</code></pre><p>配置网络：</p><pre><code># vim /media/rootfs/etc/network/interfaces
+auto lo
+iface lo inet loopback
+ 
+auto eth0
+iface eth0 inet dhcp
 
-</code></pre><p>The preinit is called by <code>/etc/preinit</code>, while in this file, we found:</p><pre><code>for pi_source_file in /lib/preinit/*; do
-        . $pi_source_file
+</code></pre><p>配置串口登录：</p><pre><code>$ sudo vim /media/rootfs/etc/init/serial.conf
+start on stopped rc RUNLEVEL=[2345]
+stop on runlevel [!2345]
+ 
+respawn
+exec /sbin/getty 115200 ttyO0
+
+</code></pre><p>进入U-boot后更改一下配置：</p><pre><code>U-Boot# setenv mmcroot /dev/mmcblk0p1 ro
+U-Boot# boot
+
+</code></pre><p>默认用户名，密码分别是: root/temppwd<br>进入系统以后查看系统信息：</p><pre><code>ubuntu@arm:~$ uname -a 
+Linux arm 3.14.23-ti-r32 #1 SMP PREEMPT Sun Nov 9 04:19:25 UTC 2014 armv7l armv7l armv7l GNU/Linux
+ubuntu@arm:~$ cat /etc/issue
+Ubuntu 14.04 LTS \n \l
+
+default username:password is [ubuntu:temppwd]
+ubuntu@arm:~$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 90:59:af:65:d9:8c  
+          inet addr:10.0.0.122  Bcast:10.0.0.255  Mask:255.255.255.0
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/08/install-new-image-to-sd-card-for-bbb/>Install new image to sd card for BBB</a></h1><span class=post-date>Nov 8, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Mainly for installing the OpenWRT system on the BBB, following is the steps:</p><pre><code># zImage
+cp /media/y/embedded/BBB/svnco/trunk/bin/omap/openwrt-omap-zImage ./zImage
+# dtb file
+cp /media/y/embedded/BBB/svnco/trunk/bin/omap/dtbs/am335x-boneblack.dtb ./dtbs/
+
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/08/setting-nfs-server-on-ubuntu-container/>Setting NFS Server on Ubuntu Container</a></h1><span class=post-date>Nov 8, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Since there are some strange problems in my ArchLinux(Physical Machine), its nfs server will be ignored by the embedded board, while my joggler which runs ubuntu12.04 acts OK. So I try to find a sufficient way for dealing with this issue.</p><h3 id=container-configuration>Container Configuration</h3><p>I&rsquo;ve installed <code>Ubuntu_Container</code> which holds 12.04 in my physical machine. So the nfs server would be configured in this container.</p><pre><code>$ sudo apt-get update
+$ sudo apt-get install nfs-kernel-server portmap nfs-common
+
+</code></pre><p>Then edit the /srv/nfs4, and export its configuration in /etc/exports:</p><pre><code>/srv/nfs4 *(rw,sync,no_root_squash,no_subtree_check)
+
+</code></pre><p>Everytime you want to start the nfs service, just type:</p><pre><code>$ /etc/init.d/nfs-kernel-server restart
+$ /etc/init.d/portmap restart
+
+</code></pre><h3 id=test>Test</h3><p>Client run:</p><pre><code>sudo mount -t nfs 1xx.xx.xx.xx:/srv/nfs4/ /mnt
+
+</code></pre><h3 id=trouble-shooting>Trouble-Shooting</h3><p>The correct parameter for mounting the nfs server is:</p><pre><code>setenv bootargs console=ttyO0,115200n8 root=/dev/nfs rw nfsroot=192.168.1.221:/srv/nfs4/BBBrootfs ip=192.168.1.1
+
+</code></pre><p>Then you won&rsquo;t have other problems, even the physical machine could also use the nfs filesystem.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/06/automatically-filter-spambot-on-digitalocean/>Automatically Filter SpamBot on DigitalOcean</a></h1><span class=post-date>Nov 6, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=setup-iptables>Setup iptables</h3><p>Install iptables-persistent, so that the iptables rules will be saved even reboot the machine:</p><pre><code># apt-get update
+# apt-get install iptables-persistent
+
+</code></pre><h3 id=script-for-manually-add-iptables>Script for manually add iptables</h3><p>Use following scritp for manually add iptables items:</p><pre><code>#!/bin/sh
+# This script runs once per hour, Directly remove the ips which post comments
+# more than 4 times per hour. And who comments less than 3 times we should sent
+# its ip to old ips file. The old ips files will be used for analyse once per day
+# The run frequency is controlled by  crontab.   
+
+######################################################
+# Before Start, empty the deathSentence
+######################################################
+&gt;/var/log/apache2/deathSentence
+
+######################################################
+# First cat the file and try to found the bot ip list
+######################################################
+# Pipe 1: The one who called POST method should be monitored
+# Pipe 2: Get the ip address who called POST method.
+# Pipe 3: Sort the ip addresses. 
+# Pipe 4: Calculate the repeated times. First column, times; Second column, ip address.
+# Pipe 5: Sort via first column(times) numerically(Not textly!) .
+# Pipe 6: If the Call POST time bigger than 4 in one hour, catch it!
+# Pipe 7: Yes we caught this thief! Get its ipaddr.
+# Write these thieves into the death sentence
+cat /var/log/apache2/other_vhosts_access.log | grep &quot;POST&quot; | awk '{print $2}' | sort | uniq --count | sort -n | awk '$1&gt;4' | awk {'print $2'}&gt;/var/log/apache2/deathSentence
+# Those who comments but equal or more than 4 times will be append to wishList
+cat /var/log/apache2/other_vhosts_access.log | grep &quot;POST&quot; | awk '{print $2}' | sort | uniq --count | sort -n | awk '$1&lt;5' | awk {'print $2'}&gt;&gt;/var/log/apache2/wishList
+
+######################################################
+# Second we add this bot ip list into the netfilter
+######################################################
+for i in `cat /var/log/apache2/deathSentence`
+do
+	#echo $i
+	iptables -A INPUT -s $i -j DROP
 done
 
-</code></pre><p>This means all of the preinit script is listed under NFS Server&rsquo;s /lib/preinit/ folder.</p><p>Add our own preinit startup file:</p><pre><code>[root@TrustyArch preinit]# ls
-02_default_set_state  30_failsafe_wait             70_initramfs_test  90_init_console~
-10_indicate_failsafe  40_run_failsafe_hook         80_mount_root      99_10_failsafe_login
-10_indicate_preinit   50_indicate_regular_preinit  90_init_console    99_10_run_init
-[root@TrustyArch preinit]# vim 90_init_console
-#!/bin/sh
-# Copyright (C) 2006-2010 OpenWrt.org
-# Copyright (C) 2010 Vertical Communications
+######################################################
+# Finally empty the other_vhosts_access.log
+######################################################
+&gt;/var/log/apache2/other_vhosts_access.log
 
-init_console() {
-    preinit_echo &quot;Called 90_init_console here!&quot;
-    if [ &quot;$pi_suppress_stderr&quot; = &quot;y&quot; ]; then
-        exec &lt;$M0 &gt;$M1 2&gt;&amp;0
-    else 
-        exec &lt;$M0 &gt;$M1 2&gt;$M2
-    fi
-}
+</code></pre><p>Oh, also add myself into the blacklist, so un-lock me:</p><pre><code>$ iptables -A INPUT -s 1xx.x.x.x -j ACCEPT
 
-boot_hook_add preinit_essential init_console
-[root@TrustyArch preinit]# chmod 777 90_init_console
-[root@TrustyArch preinit]# rm -f 90_init_console~ 
+</code></pre><p>Since those wishList should also be cared, wrote following scripts for judge, every 4 hours will be make a decision.</p><pre><code>#!/bin/sh
+# This script runs once 4 hours, used for processing the /var/log/apache2/wishList
+# ip address lists. Those bad guys who were in wishList, if their total appear times
+# bigger than 4 times, will be added to iptable's drop rules.
+&gt;/var/log/apache2/deathSentence_4hour
 
-</code></pre><p>Now restart the BBB, to see if really take effects.<br>Also add a new file named 50_choose_console, with the setted M0 and M1, you could get your console.</p><pre><code>$ cat 50_choose_console
-#!/bin/sh
-# Copyright (C) 2006-2010 OpenWrt.org
-# Copyright (C) 2010 Vertical Communications
+######################################################
+# Read the ip list and store those bad guys into deathSentence_4hour
+######################################################
+cat /var/log/apache2/wishList | sort | uniq --count | sort -n | awk '$1&gt;4' | awk {'$print $2'}&gt;/var/log/apache2/deathSentence_4hour
 
-choose_console() {
-    # the shell really doesn't like having stdin/out closed
-    # that's why we use /dev/pty/m0 and m1 (or equivalent) as replacement
-    # for /dev/console if there's no serial console available
+######################################################
+# Now you got the bad guys, add them into iptables
+######################################################
+for i in `cat /var/log/apache2/deathSentence_4hour`
+do
+        #echo $i
+        iptables -A INPUT -s $i -j DROP
+done
 
-    if grep -q devfs /proc/filesystems; then
-        M0=/dev/pty/m0
-        M1=/dev/pty/m1
-        M2=/dev/pty/m1
-    elif [ -x /sbin/hotplug2 ]; then
-        M0=/dev/ptmx
-        M1=/dev/ptmx
-        M2=/dev/ptmx
-    elif [ -x /sbin/udevd ]; then
-        M0=/dev/pty/ptmx
-        M1=/dev/pty/ptmx
-        M2=/dev/pty/ptmx
-    fi
-    dd if=/dev/console of=/dev/null bs=1 count=0 &gt;/dev/null 2&gt;/dev/null &amp;&amp; {
-        M0=/dev/console
-        M1=/dev/console
-        M2=/dev/console    
-    }
-}
+######################################################
+# Finally empty the wishList
+######################################################
+&gt;/var/log/apache2/wishList
 
-boot_hook_add preinit_essential choose_console
+</code></pre><h3 id=crontab-it>Crontab It!</h3><p>Run <code>auto_add_bot_ip.sh</code> at every minute 0 of 1 hour, then run <code>auto_judge_wishlist.sh</code> at every minute 10 of every 4 hours.</p><pre><code># m h  dom mon dow   command
+0 */1 * * * /root/code/auto_add_bot_ip.sh
+10 */4 * * * /root/code/auto_judge_wishlist.sh
 
-</code></pre><p>But I still cannot get the terminal.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/02/git-under-proxy/>git under proxy</a></h1><span class=post-date>Nov 2, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>This changes use the socks proxy for git.<br>Install connect-proxy in aur:</p><pre><code>yaourt -S connect-proxy
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/06/manually-delete-spam-comments-for-wp/>Manually delete spam comments for WP</a></h1><span class=post-date>Nov 6, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Login to mysql commandline via:</p><pre><code># mysql -uroot -p
+mysql&gt; use wordpress
+.........
+Database changed
 
-</code></pre><p>Edit the proxy definition file:</p><pre><code>[Trusty@~]$ cat socks5.sh 
-#!/bin/sh
-connect -S 127.0.0.1:1394 &quot;$@&quot;
+</code></pre><p>Display the COLUMNS of wp_comments:</p><pre><code>mysql&gt; SHOW COLUMNS FROM wp_comments;
++----------------------+---------------------+------+-----+---------------------+----------------+
+| Field                | Type                | Null | Key | Default             | Extra          |
++----------------------+---------------------+------+-----+---------------------+----------------+
+| comment_ID           | bigint(20) unsigned | NO   | PRI | NULL                | auto_increment |
+| comment_post_ID      | bigint(20) unsigned | NO   | MUL | 0                   |                |
+| comment_author       | tinytext            | NO   |     | NULL                |                |
+| comment_author_email | varchar(100)        | NO   | MUL |                     |                |
+| comment_author_url   | varchar(200)        | NO   |     |                     |                |
+| comment_author_IP    | varchar(100)        | NO   |     |                     |                |
+| comment_date         | datetime            | NO   |     | 0000-00-00 00:00:00 |                |
+| comment_date_gmt     | datetime            | NO   | MUL | 0000-00-00 00:00:00 |                |
+| comment_content      | text                | NO   |     | NULL                |                |
+| comment_karma        | int(11)             | NO   |     | 0                   |                |
+| comment_approved     | varchar(20)         | NO   | MUL | 1                   |                |
+| comment_agent        | varchar(255)        | NO   |     |                     |                |
+| comment_type         | varchar(20)         | NO   |     |                     |                |
+| comment_parent       | bigint(20) unsigned | NO   | MUL | 0                   |                |
+| user_id              | bigint(20) unsigned | NO   |     | 0                   |                |
+| comment_mail_notify  | tinyint(4)          | NO   |     | 0                   |                |
++----------------------+---------------------+------+-----+---------------------+----------------+
+16 rows in set (0.00 sec)
 
-</code></pre><p>Now directly set the</p><pre><code>export GIT_PROXY_COMMAND=/home/Trusty/socks5.sh
+</code></pre><p>If you want to display the last 30 minutes&rsquo; comments:</p><pre><code>mysql&gt; SELECT * FROM wp_comments WHERE comment_date  BETWEEN TIMESTAMPADD(MINUTE, -30, NOW()) AND NOW();
 
-</code></pre><p>Or change the proxy definition via:</p><pre><code>[core]
-        gitproxy = /home/Trusty/socks5.sh
+</code></pre><p>Delete last 30 minutes&rsquo; comments:</p><pre><code>mysql&gt; DELETE FROM wp_comments WHERE comment_date  BETWEEN TIMESTAMPADD(MINUTE, -30, NOW()) AND NOW();
+Query OK, 536 rows affected (0.18 sec)
 
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/171/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/171/>171</a></li><li class="page-item active"><a class=page-link href=/page/172/>172</a></li><li class=page-item><a class=page-link href=/page/173/>173</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/173/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Select and Delete 10 day&rsquo;s comments:</p><pre><code>mysql&gt; select * from wp_comments where datediff(now(), comment_date)&lt;10;
+mysql&gt; delete from wp_comments where datediff(now(), comment_date)&lt;10;
+Query OK, 31029 rows affected (1.34 sec)
+
+</code></pre><p>Disable postfix on startup:</p><pre><code># update-rc.d postfix disable
+
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/171/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/171/>171</a></li><li class="page-item active"><a class=page-link href=/page/172/>172</a></li><li class=page-item><a class=page-link href=/page/173/>173</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/173/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

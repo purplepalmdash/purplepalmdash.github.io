@@ -1,384 +1,316 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/10/29/workingtipsongitdiffpatch/>WorkingTipsOnGitDiffPatch</a></h1><span class=post-date>Oct 29, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=rong代码架构现状>RONG代码架构现状</h3><p>制作patch前确保Kubespray代码中目录中的软链接确实存在，而不是因为cp被替换成了实体文件。</p><p>v2.14.0上制作patch</p><pre><code># git clone https://github.com/kubernetes-sigs/kubespray.git
-# git checkout tags/v2.14.0 -b 2140
-</code></pre><p>此时检出的是v2.14.0的未修改的代码。</p><p>该目录下替换成<code>3_k8s</code>下的代码，注意去掉部署时生成的中间文件。而后<code>commit</code>更改。</p><p><img src=/images/2020_10_29_11_03_04_638x297.jpg alt=/images/2020_10_29_11_03_04_638x297.jpg></p><p>制作patch文件:</p><pre><code>git diff a1f04e f0c9b1&gt;patch1
-</code></pre><h3 id=apply-patch>Apply patch</h3><p>切换回master分支，或者直接在新目录下checkout一个新的工作目录:</p><pre><code># git apply --check ../patch 
-error: 打补丁失败：roles/kubernetes-apps/helm/templates/tiller-clusterrolebinding.yml.j2:3
-error: roles/kubernetes-apps/helm/templates/tiller-clusterrolebinding.yml.j2：补丁未应用
-error: 打补丁失败：roles/remove-node/remove-etcd-node/tasks/main.yml:21
-error: roles/remove-node/remove-etcd-node/tasks/main.yml：补丁未应用
-</code></pre><p>这是因为新分支(master)对比于<code>v2.14.0</code>在上述提及的文件中有更改，此时我们需要在apply的时候忽略掉这些更改:</p><pre><code>git apply  /root/patch --exclude=roles/kubernetes-apps/helm/templates/tiller-clusterrolebinding.yml.j2 --exclude=roles/remove-node/remove-etcd-node/tasks/main.yml
-</code></pre><p>此时更改完毕后可以看到新版本的代码中已经添加了我们在旧分支上做的代码变更。</p><p>对于有冲突的文件，需要手动解决冲突。</p><h3 id=example>Example</h3><p>Git patch in different branch:</p><pre><code># git clone https://github.com/kubernetes-sigs/kubespray.git
-# git checkout tags/v2.14.0 -b 2140
- (2140) $ git apply ../../patch 
- (2140 !*%) $ vim roles/container-engine/docker/tasks/main.yml
- (2140 !*%) $ git checkout master
-error: 您对下列文件的本地修改将被检出操作覆盖：
-	roles/kubernetes-apps/helm/templates/tiller-clusterrolebinding.yml.j2
-	roles/kubernetes/preinstall/tasks/0020-verify-settings.yml
-	roles/remove-node/remove-etcd-node/tasks/main.yml
-请在切换分支前提交或贮藏您的修改。
-正在终止
-(2140 !*%) $ git add .                                                                                                                        1 ↵
-(2140 !+) $ git commit -m &quot;modified in 2.14.0&quot;
-[2140 2d87573d] modified in 2.14.0
- 19 files changed, 504 insertions(+), 427 deletions(-)
- delete mode 100644 contrib/packaging/rpm/kubespray.spec
- create mode 100644 inventory/sample/hosts.ini
- rewrite roles/bootstrap-os/tasks/main.yml (99%)
- create mode 100644 roles/bootstrap-os/tasks/main_kfz.yml
- copy roles/bootstrap-os/tasks/{main.yml =&gt; main_main.yml} (99%)
- rewrite roles/container-engine/docker/tasks/main.yml (99%)
- create mode 100644 roles/container-engine/docker/tasks/main_kfz.yml
- copy roles/container-engine/docker/tasks/{main.yml =&gt; main_main.yml} (92%)
-dash@archnvme:/media/sda/git/pure/kubespray (2140) $ git checkout master
-切换到分支 'master'
-您的分支与上游分支 'origin/master' 一致。
- (master) $ ls
-ansible.cfg          code-of-conduct.md  Dockerfile       index.html  logo         OWNERS_ALIASES             remove-node.yml   scale.yml          setup.py             Vagrantfile
-ansible_version.yml  _config.yml         docs             inventory   Makefile     README.md                  requirements.txt  scripts            test-infra
-cluster.yml          contrib             extra_playbooks  library     mitogen.yml  recover-control-plane.yml  reset.yml         SECURITY_CONTACTS  tests
-CNAME                CONTRIBUTING.md     facts.yml        LICENSE     OWNERS       RELEASE.md                 roles             setup.cfg          upgrade-cluster.yml
-(master) $ git apply ../../patch --exclude=roles/kubernetes-apps/helm/templates/tiller-clusterrolebinding.yml.j2 --exclude=roles/remove-node/remove-etcd-node/tasks/main.yml
-(master !*%) $ git checkout 2140
-error: 您对下列文件的本地修改将被检出操作覆盖：
-	cluster.yml
-	roles/bootstrap-os/tasks/main.yml
-	roles/container-engine/docker/meta/main.yml
-	roles/container-engine/docker/tasks/main.yml
-	roles/container-engine/docker/tasks/pre-upgrade.yml
-	roles/container-engine/docker/templates/docker-options.conf.j2
-	roles/container-engine/docker/templates/docker.service.j2
-	roles/kubernetes/node/tasks/kubelet.yml
-	roles/kubernetes/preinstall/tasks/0020-verify-settings.yml
-	roles/kubernetes/preinstall/tasks/0080-system-configurations.yml
-	roles/kubernetes/preinstall/tasks/main.yml
-请在切换分支前提交或贮藏您的修改。
-error: 工作区中下列未跟踪的文件将会因为检出操作而被覆盖：
-	inventory/sample/hosts.ini
-	roles/bootstrap-os/tasks/main_kfz.yml
-	roles/bootstrap-os/tasks/main_main.yml
-	roles/container-engine/docker/tasks/main_kfz.yml
-	roles/container-engine/docker/tasks/main_main.yml
-请在切换分支前移动或删除。
-正在终止
-(master !*%) $ git add .                                                                                                                      1 ↵
-(master !+) $ git commit -m &quot;apply in master&quot;
-[master a5941286] apply in master
- 17 files changed, 502 insertions(+), 426 deletions(-)
- delete mode 100644 contrib/packaging/rpm/kubespray.spec
- create mode 100644 inventory/sample/hosts.ini
- rewrite roles/bootstrap-os/tasks/main.yml (99%)
- create mode 100644 roles/bootstrap-os/tasks/main_kfz.yml
- copy roles/bootstrap-os/tasks/{main.yml =&gt; main_main.yml} (99%)
- rewrite roles/container-engine/docker/tasks/main.yml (99%)
- create mode 100644 roles/container-engine/docker/tasks/main_kfz.yml
- copy roles/container-engine/docker/tasks/{main.yml =&gt; main_main.yml} (92%)
- (master) $ git checkout 2140              
-切换到分支 '2140'
- (2140) $ git checkout master
-切换到分支 'master'
-您的分支领先 'origin/master' 共 1 个提交。
-  （使用 &quot;git push&quot; 来发布您的本地提交）
-(master) $ pwd
-/media/sda/git/pure/kubespray
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/10/28/workingtipsonrongrobot/>WorkingTipsOnRongRobot</a></h1><span class=post-date>Oct 28, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=azure-devops>Azure DevOps</h3><p>Create a new project:</p><p><img src=/images/2020_10_28_08_37_20_634x542.jpg alt=/images/2020_10_28_08_37_20_634x542.jpg></p><p>Add the ssh-key into project:</p><p><img src=/images/2020_10_28_08_31_38_457x200.jpg alt=/images/2020_10_28_08_31_38_457x200.jpg></p><p>Configure the time/locale:</p><p><img src=/images/2020_10_28_08_32_41_584x548.jpg alt=/images/2020_10_28_08_32_41_584x548.jpg></p><h3 id=repos>Repos</h3><p>Create a new repository and set the remote branch:</p><pre><code># mkdir RongRobot
-# cd RongRobot
-# vim README.md
-# git init
-# git add .
-# git commit -m &quot;First Commit&quot;
-# git remote add origin git@ssh.dev.azure.com:v3/purplepalm/RongRobot/RongRobot
-# git push -u origin --all
-</code></pre><p>View status on azure devops:</p><p><img src=/images/2020_10_28_08_41_24_1023x408.jpg alt=/images/2020_10_28_08_41_24_1023x408.jpg></p><p>Click <code>Set up build</code> for setup the pipeline:</p><p><img src=/images/2020_10_28_08_42_18_317x141.jpg alt=/images/2020_10_28_08_42_18_317x141.jpg></p><p>Starter pipeline:</p><p><img src=/images/2020_10_28_08_42_48_518x262.jpg alt=/images/2020_10_28_08_42_48_518x262.jpg></p><p>Edit something:</p><p><img src=/images/2020_10_28_08_43_34_791x555.jpg alt=/images/2020_10_28_08_43_34_791x555.jpg></p><h3 id=codes>Codes</h3><p>Write your own azure pipelines for doing these .</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/10/22/workingtipsinronggraphinlxd/>WorkingTipsInRonggraphInLXD</a></h1><span class=post-date>Oct 22, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=lxd-environment>lxd environment</h3><p>Install lxd(Offline):</p><pre><code>snap download core
-snap download core18
-snap download lxd
-snap ack core18_1885.assert; snap ack core_10185.assert; snap ack lxd_17936.assert
-snap install core18_1885.snap ; snap install core_10185.snap ; snap install lxd_17936.snap
-dpkg -i ./lxd_1%3a0.9_all.deb
-which lxc
-which lxd
-</code></pre><p>Show lxc images:</p><pre><code>root@rong320-1:~/lxd# lxc image list
-If this is your first time running LXD on this machine, you should also run: lxd init
-To start your first instance, try: lxc launch ubuntu:18.04
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/27/workingtipsonsvnclientindocker/>WorkingTipsOnSVNClientInDocker</a></h1><span class=post-date>Nov 27, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=prepare-docker-images>Prepare docker images</h3><p>pull ubuntu latest image:</p><pre><code># sudo docker run -it ubuntu:latest /bin/bash
+</code></pre><p>Install svn and related items in docker:</p><pre><code># sudo apt-get update -y
+# sudo apt-get install -y subversion language-pack-zh*
+# localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
+</code></pre><p>Commit the docker images:</p><pre><code># sudo docker commit 67ef51b2783e ubuntusvn:latest
+</code></pre><h3 id=run-docker-in-intranet>Run docker in Intranet</h3><p>Run svn commit in docker.</p><pre><code># docker run -it -v /media/xxxxxx:/mnt ubuntusvn:latest
+#  export LC_ALL=zh_CN.UTF_8
+# cd /mnt/cloud/
+# svn add xfsiso/ubuntu-18.04.5-server-amd64-auto-xfs.iso
+# svn ci -m &quot;Added ubuntu18.04.5 server iso&quot; --username=xxxxxx --password=xxxxxx123
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/25/workingtipsonaik8s/>WorkingTipsOnAiK8s</a></h1><span class=post-date>Nov 25, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=images>Images</h3><p>Pull:</p><pre><code># sudo docker pull gcr.io/google-containers/ubuntu-nvidia-driver-installer@sha256:7df76a0f0a17294e86f691c81de6bbb7c04a1b4b3d4ea4e7e2cccdc42e1f6d63
+# sudo docker pull k8s.gcr.io/nvidia-gpu-device-plugin@sha256:0842734032018be107fa2490c98156992911e3e1f2a21e059ff0105b07dd8e9e
+# sudo docker pull nvidia/dcgm-exporter:1.4.3
+</code></pre><p>docker tag and push to inner repository:</p><pre><code>root@focal-1:/home/test# docker tag a71c5a2117c0 gcr.io/google-containers/ubuntu-nvidia-driver-installer:rong
+root@focal-1:/home/test# docker tag 6527686cc4d1 k8s.gcr.io/nvidia-gpu-device-plugin:rong
+root@focal-1:/home/test# docker push gcr.io/google-containers/ubuntu-nvidia-driver-installer:rong
+The push refers to repository [gcr.io/google-containers/ubuntu-nvidia-driver-installer]
+d09b6f591248: Pushed 
+72f630252ba2: Pushed 
+68dda0c9a8cd: Pushed 
+f67191ae09b8: Pushed 
+b2fd8b4c3da7: Pushed 
+0de2edf7bff4: Pushed 
+rong: digest: sha256:7df76a0f0a17294e86f691c81de6bbb7c04a1b4b3d4ea4e7e2cccdc42e1f6d63 size: 1570
+root@focal-1:/home/test# docker push k8s.gcr.io/nvidia-gpu-device-plugin:rong
+The push refers to repository [k8s.gcr.io/nvidia-gpu-device-plugin]
+179f02762b1a: Pushed 
+cd7100a72410: Pushed 
+rong: digest: sha256:0842734032018be107fa2490c98156992911e3e1f2a21e059ff0105b07dd8e9e size: 739
+</code></pre><h3 id=tips>Tips</h3><p>因为该插件比较老，因而不再需要使用，正确的方式参考：</p><p><a href=https://github.com/NVIDIA/k8s-device-plugin>https://github.com/NVIDIA/k8s-device-plugin</a></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/19/workingtipsoncs414/>WorkingTipsOnCS414</a></h1><span class=post-date>Nov 19, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=system-preparation>System Preparation</h3><p>Install CentOS7.7, minimal mode, then enable root login, login with root.</p><p>Disable <code>UseDNS</code> in <code>sshd</code> configuration.</p><pre><code>[root@cs ~]# cat /etc/yum.conf 
+[main]
+cachedir=/var/cache/yum/$basearch/$releasever
+keepcache=1
+# yum upate -y
+# yum install vim bridge-utils net-tools -y
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/12/workingtipsonnpgv2/>WorkingTipsOnNpgV2</a></h1><span class=post-date>Nov 12, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=安装echarts依赖>安装echarts依赖</h3><p>Via following commands:</p><pre><code>cnpm install echarts -S     
+cnpm install ngx-echarts -S
+ cnpm install resize-observer-polyfill -S
+</code></pre><p>如果后面出现 <code>NullInjectorError: No provider for ElementRef!</code>的问题，则重复执行:</p><pre><code>npm install echarts -S
+npm install ngx-echarts -S
+npm install resize-observer-polyfill -D
+</code></pre><h3 id=创建echarts模块>创建echarts模块</h3><p>创建一个名为<code>echarts</code>的子app:</p><pre><code>$ ng g c echarts                         
+Your global Angular CLI version (10.2.0) is greater than your local
+version (8.3.28). The local Angular CLI version is used.
 
-+-------+-------------+--------+-------------+--------------+------+------+-------------+
-| ALIAS | FINGERPRINT | PUBLIC | DESCRIPTION | ARCHITECTURE | TYPE | SIZE | UPLOAD DATE |
-+-------+-------------+--------+-------------+--------------+------+------+-------------+
-</code></pre><p>Download lxd images:</p><pre><code>https://us.images.linuxcontainers.org/images/alpine/3.12/amd64/default/20201021_13:00/
-Download
-rootfs.squashfs lxd.tar.xz 
-root@rong320-1:~/lxdimages# ls
-lxd.tar.xz  rootfs.squashfs
-root@rong320-1:~/lxdimages# lxc image import lxd.tar.xz rootfs.squashfs --alias alpine312
-Image imported with fingerprint: 76560d125792d7710d70f41b060e81f0bd4d83f1cc4e8dbd43fc371e5dea27bf
-root@rong320-1:~/lxdimages# lxc image list
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+--------+------------------------------+
-|   ALIAS   | FINGERPRINT  | PUBLIC |               DESCRIPTION                | ARCHITECTURE |   TYPE    |  SIZE  |         UPLOAD DATE          |
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+--------+------------------------------+
-| alpine312 | 76560d125792 | no     | Alpinelinux 3.12 x86_64 (20201021_13:00) | x86_64       | CONTAINER | 2.40MB | Oct 22, 2020 at 3:48am (UTC) |
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+--------+------------------------------+
-</code></pre><dl><dt>Auto Config the lxd(<a href=https://discuss.linuxcontainers.org/t/usage-of-lxd-init-preseed/1069/3>https://discuss.linuxcontainers.org/t/usage-of-lxd-init-preseed/1069/3</a>)</dt><dt>(<a href=https://lxd.readthedocs.io/en/latest/preseed/>https://lxd.readthedocs.io/en/latest/preseed/</a>)</dt><dd></dd></dl><pre><code>cat &lt;&lt;EOF | lxd init --preseed
-config:
-  core.https_address: 10.137.149.161:9199
-  images.auto_update_interval: 15
-networks:
-- name: lxdbr0
-  type: bridge
-  config:
-    ipv4.address: auto
-    ipv6.address: none
-EOF
-root@rong320-1:~/lxdimages# cat storages.yml 
-storage_pools:
-- name: default
-  driver: dir
-  config:
-    source: &quot;&quot;
-root@rong320-1:~/lxdimages# lxd init --preseed&lt;./storages.yml
+To disable this warning use &quot;ng config -g cli.warnings.versionMismatch false&quot;.
+CREATE src/app/echarts/echarts.component.css (0 bytes)
+CREATE src/app/echarts/echarts.component.html (22 bytes)
+CREATE src/app/echarts/echarts.component.spec.ts (635 bytes)
+CREATE src/app/echarts/echarts.component.ts (273 bytes)
+UPDATE src/app/app.module.ts (6586 bytes)
+</code></pre><h3 id=添加导航>添加导航</h3><p>添加echarts到导航栏中.</p><p><img src=/images/2020_11_13_10_31_34_879x655.jpg alt=/images/2020_11_13_10_31_34_879x655.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/09/clarity%E4%B8%8Eangularcli/>Clarity与AngularCLI</a></h1><span class=post-date>Nov 9, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>今天来看看如何使用Angular CLI集成Clarity。</p><p>Clarity是什么？官方介绍如下:</p><blockquote><p>Project Clarity是一个开源的设计系统，它汇集了UX准则，HTML/CSS框架和Angular 2组件。 Clarity适用于设计人员和开发人员。</p></blockquote><h3 id=1-先决条件>1. 先决条件</h3><p>本指南需要Angular CLI全局安装， 使用以下命令安装最新版本的angular:</p><pre><code>$ npm install -g  @angular/cli@latest
+</code></pre><h3 id=2-创建新项目>2. 创建新项目</h3><p>现在<code>ng</code>命令应当是可用的, 我们使用<code>ng new</code>命令来创建一个新的Angular CLI项目:</p><pre><code>$ ng new myclarity
+</code></pre><p>在弹出的选项中默认回车接受预设选项，此命令运行完毕后我们将得到一个<code>myclarity</code>的目录， 进入到此目录下运行<code>ng serve</code>，我们将得到标准的angular项目预览页.</p><pre><code>$ cd myclarity
+$ ng serve
+</code></pre><p><img src=/images/2020_11_09_11_50_01_739x487.jpg alt=/images/2020_11_09_11_50_01_739x487.jpg></p><h3 id=3-安装clarity依赖>3. 安装Clarity依赖</h3><p>要使用<code>Clarity</code>，我们需要使用npm命令安装包及其依赖:</p><pre><code>$ npm install @clr/core @clr/icons @clr/angular @clr/ui @webcomponents/webcomponentsjs --save
+$ npm install --save-dev clarity-ui
+$ npm install --save-dev clarity-icons
+</code></pre><h3 id=4-添加脚本及样式>4. 添加脚本及样式</h3><p>添加以下条目到<code>angular.json</code>文件的<code>scripts</code>及<code>styles</code>部分:</p><pre><code>&quot;styles&quot;: [
+      &quot;node_modules/@clr/icons/clr-icons.min.css&quot;,
+      &quot;node_modules/@clr/ui/clr-ui.min.css&quot;,
+      ... any other styles
+],
+&quot;scripts&quot;: [
+  ... any existing scripts
+  &quot;node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js&quot;,
+  &quot;node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js&quot;,
+  &quot;node_modules/@clr/icons/clr-icons.min.js&quot;
+]
+</code></pre><p>更改完毕后的<code>angular.json</code>文件(共有4处需要修改)看起来应当是:</p><p><img src=/images/2020_11_09_11_58_11_947x310.jpg alt=/images/2020_11_09_11_58_11_947x310.jpg></p><h3 id=5-添加angular模块>5. 添加Angular模块</h3><p>到现在为止，包依赖都被安装并配置好了，我们可以开始进入到Angular AppModule来配置Clarity模块，配置完模块后我们就可以在应用中使用Clarity。</p><p>打开<code>src/app/app.module.ts</code>文件，在文件头部添加以下依赖:</p><pre><code>import { NgModule } from '@angular/core';
+import { BrowserModule } from &quot;@angular/platform-browser&quot;;
+import { BrowserAnimationsModule } from &quot;@angular/platform-browser/animations&quot;;
+import { ClarityModule } from &quot;@clr/angular&quot;;
+import { AppComponent } from './app.component';
+</code></pre><p>这将告诉TypeScript从<code>clarity-angular</code>包中加载模块。要使用包我们需要在<code>@NgModule</code>的<code>import</code>变量中添加以下行:</p><pre><code>  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    ClarityModule
+  ],
+</code></pre><p>到现在为止，基础配置已经完成。运行<code>ng serve</code>将看到app显示已经运行。</p><h3 id=6-使用clarity>6. 使用Clarity</h3><h4 id=61-生成ui模块及组件>6.1 生成UI模块及组件</h4><p>Clarity是一个相当高级的框架，可以快速创建出完整的用户界面。现在我们开始设定一些UI元素。</p><p>为了快速创建出UI目录结构，我们使用<code>ng generate</code>命令，或者简写的<code>ng g</code>命令:</p><pre><code># 创建ui模块
+$ ng g m ui
+CREATE src/app/ui/ui.module.ts (188 bytes)
 
-root@rong320-1:~/lxdimages# cat profiles.yml 
-profiles:
-- name: default
-  devices:
-    root:
-      path: /
-      pool: default
-      type: disk
-    eth0:
-      nictype: bridged
-      parent: lxdbr0
-      type: nic
-root@rong320-1:~/lxdimages# lxd init --preseed&lt;profiles.yml
+# 创建layout(布局)组件
+$  ng g c ui/layout -is -it  --skipTests=true
+CREATE src/app/ui/layout/layout.component.ts (265 bytes)
+UPDATE src/app/ui/ui.module.ts (264 bytes)
 
-</code></pre><p>Now we could check the default lxd bridges(lxdbr0).</p><h3 id=dockerdocker-compose-in-alpine>Docker/Docker-compose in alpine</h3><p>Create a new profile named <code>k8s</code>:</p><pre><code># lxc launch alpine312 firstalpine -p k8s
-</code></pre><p>Create the first alpine instance:</p><pre><code># lxc launch alpine312 firstalpine
-Creating firstalpine
-Starting firstalpine           
-# lxc ls
-+-------------+---------+---------------------+------+-----------+-----------+
-|    NAME     |  STATE  |        IPV4         | IPV6 |   TYPE    | SNAPSHOTS |
-+-------------+---------+---------------------+------+-----------+-----------+
-| firstalpine | RUNNING | 10.31.47.210 (eth0) |      | CONTAINER | 0         |
-+-------------+---------+---------------------+------+-----------+-----------+
-root@rong320-1:~/lxdimages# lxc exec firstalpine /bin/sh
-~ # cat /etc/issue
-Welcome to Alpine Linux 3.12
-Kernel \r on an \m (\l)
-</code></pre><p>Configure repository:</p><pre><code> # echo &quot;https://mirrors.aliyun.com/alpine/v3.12/main/&quot; &gt; /etc/apk/repositories
- # echo &quot;https://mirrors.aliyun.com/alpine/v3.12/community/&quot; &gt;&gt; /etc/apk/repositories
-# apk update
-# apk add docker-engine docker-compose docker-cli
-</code></pre><p>Create the <code>cgroups-patch</code> file under <code>/etc/init.d</code>:</p><pre><code>#!/sbin/openrc-run
+# 创建header, sidebar及main view 组件
+$ ng g c ui/layout/header -is -it --skipTests=true
+CREATE src/app/ui/layout/header/header.component.ts (265 bytes)
+UPDATE src/app/ui/ui.module.ts (349 bytes)
+$ ng g c ui/layout/sidebar -is -it --skipTests=true
+CREATE src/app/ui/layout/sidebar/sidebar.component.ts (268 bytes)
+UPDATE src/app/ui/ui.module.ts (438 bytes)
+$ ng g c ui/layout/main -is -it --skipTests=true
+CREATE src/app/ui/layout/main/main.component.ts (259 bytes)
+UPDATE src/app/ui/ui.module.ts (515 bytes)
+</code></pre><p>上述命令<code>ng g</code>使用的参数含义如下:</p><p><code>-is</code> 使用inline样式替代独立的CSS文件。<br><code>-it</code> 使用inline模板替代独立的html文件。<br><code>--skipTests=true</code> 不生成用于测试的spec文件。</p><p>当前创建出的目录架构如下:</p><pre><code>$ tree src/app/ui
+src/app/ui
+├── layout
+│   ├── header
+│   │   └── header.component.ts
+│   ├── layout.component.ts
+│   ├── main
+│   │   └── main.component.ts
+│   └── sidebar
+│       └── sidebar.component.ts
+└── ui.module.ts
 
-description=&quot;Mount the control groups for Docker&quot;
+4 directories, 5 files
+</code></pre><p>要在app中使用刚才这些创建的模块我们需要在<code>AppModule</code>中引入<code>UiModule</code>， 编辑<code>src/app/app.module.ts</code>，添加以下的import声明语句:</p><pre><code>import { UiModule } from './ui/ui.module';
+</code></pre><p>在<code>@NgModule</code>部分的<code>imports</code>数组中添加<code>UiModule</code>。</p><p>因为我们需要在<code>UiModule</code>中使用<code>Clarity</code>,我们同样需要在<code>ui</code>的相关文件下添加它们。打开<code>src/app/ui/ui.module.ts</code>文件，添加以下<code>import</code>声明:</p><pre><code>import { ClarityModule } from &quot;@clr/angular&quot;;
+import { BrowserAnimationsModule } from &quot;@angular/platform-browser/animations&quot;;
+</code></pre><p>在<code>@NgModule</code>部分的<code>imports</code>数组中添加<code>ClarityModule</code>。</p><p>最后需要在<code>UiModule</code>中添加一个<code>exports</code>数组，将<code>LayoutModule</code>导出，因为我们需要在<code>AppComponent</code>中使用它。</p><pre><code>  imports: [
+    CommonModule,
+    ClarityModule
+  ],
+    exports: [
+    LayoutComponent,
+  ]
+</code></pre><p><code>UiModule</code>现在看起来是这样的:</p><pre><code>import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LayoutComponent } from './layout/layout.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { MainComponent } from './layout/main/main.component';
 
-depend()
-{
-    keyword -docker
-    need sysfs cgroups
-}
+import { ClarityModule } from &quot;@clr/angular&quot;;
+import { BrowserAnimationsModule } from &quot;@angular/platform-browser/animations&quot;;
 
-start()
-{
-    if [ -d /sys/fs/cgroup ]; then
-        mkdir -p /sys/fs/cgroup/cpu,cpuacct
-        mkdir -p /sys/fs/cgroup/net_cls,net_prio
+@NgModule({
+  declarations: [LayoutComponent, HeaderComponent, SidebarComponent, MainComponent],
+  imports: [
+    CommonModule,
+    ClarityModule
+  ],
+    exports: [
+    LayoutComponent,
+  ]
+})
+export class UiModule { }
+</code></pre><h4 id=62-撰写并创建ui组件>6.2 撰写并创建UI组件</h4><h5 id=621-appcomponent>6.2.1 AppComponent</h5><p>我们一开始来更新<code>AppComponent</code>的模板文件，打开<code>src/app/app.component.html</code>文件，将内容替换为:</p><pre><code>&lt;app-layout&gt;
+  &lt;h1&gt;{{title}}&lt;/h1&gt;
+&lt;/app-layout&gt;
+</code></pre><p>这里我们通过选择<code>app-layout</code>引用了<code>LayoutComponent</code>.</p><h5 id=622-layoutcomponent>6.2.2 LayoutComponent</h5><p>打开<code>src/app/ui/layout/layout.component.ts</code>文件，替换<code>template</code>部分为以下内容:</p><pre><code>   &lt;div class=&quot;main-container&quot;&gt;
+    &lt;app-header&gt;&lt;/app-header&gt;
+    &lt;app-main&gt;
+      &lt;ng-content&gt;&lt;/ng-content&gt;  
+    &lt;/app-main&gt;
+  &lt;/div&gt; 
+</code></pre><p>我们在<code>div</code> <code>main-container</code>中包装了我们的内容，引用了<code>HeaderComponent</code>和<code>MainComponent</code>， 在<code>MainComponent</code>中，我们包含了app内容，使用的是<code>ng-content</code>组件。</p><h5 id=623-headercomponent>6.2.3 HeaderComponent</h5><p>打开<code>src/app/ui/layout/header/header.component.ts</code>文件，更新模板:</p><pre><code>   &lt;header class=&quot;header-1&quot;&gt;
+    &lt;div class=&quot;branding&quot;&gt;
+      &lt;a class=&quot;nav-link&quot;&gt;
+        &lt;clr-icon shape=&quot;shield&quot;&gt;&lt;/clr-icon&gt;
+        &lt;span class=&quot;title&quot;&gt;Angular CLI&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;header-nav&quot;&gt;
+      &lt;a class=&quot;active nav-link nav-icon&quot;&gt;
+        &lt;clr-icon shape=&quot;home&quot;&gt;&lt;/clr-icon&gt;
+      &lt;/a&gt;
+      &lt;a class=&quot; nav-link nav-icon&quot;&gt;
+        &lt;clr-icon shape=&quot;cog&quot;&gt;&lt;/clr-icon&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;form class=&quot;search&quot;&gt;
+      &lt;label for=&quot;search_input&quot;&gt;
+        &lt;input id=&quot;search_input&quot; type=&quot;text&quot; placeholder=&quot;Search for keywords...&quot;&gt;
+      &lt;/label&gt;
+    &lt;/form&gt;
+    &lt;div class=&quot;header-actions&quot;&gt;
+      &lt;clr-dropdown class=&quot;dropdown bottom-right&quot;&gt;
+        &lt;button class=&quot;nav-icon&quot; clrDropdownToggle&gt;
+          &lt;clr-icon shape=&quot;user&quot;&gt;&lt;/clr-icon&gt;
+          &lt;clr-icon shape=&quot;caret down&quot;&gt;&lt;/clr-icon&gt;
+        &lt;/button&gt;
+        &lt;div class=&quot;dropdown-menu&quot;&gt;
+          &lt;a clrDropdownItem&gt;About&lt;/a&gt;
+          &lt;a clrDropdownItem&gt;Preferences&lt;/a&gt;
+          &lt;a clrDropdownItem&gt;Log out&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/clr-dropdown&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  &lt;nav class=&quot;subnav&quot;&gt;
+    &lt;ul class=&quot;nav&quot;&gt;
+      &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;a class=&quot;nav-link active&quot; href=&quot;#&quot;&gt;Dashboard&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Projects&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Reports&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Users&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt; 
+</code></pre><p>代码有点长，我们解释如下:</p><ul><li>定义了一个<code>header-1</code>的头.</li><li>branding由icon和title构成。</li><li>两个header icon, Home/Settings。</li><li>search box，placeholder文字。</li><li>user icon， 含有3个item的下拉列表。</li><li>sub navigation，含有4个链接。</li></ul><h5 id=624-maincomponent>6.2.4 MainComponent</h5><p>差不多快完成了，我们打开<code>src/app/ui/layout/main/main.component.ts</code>更新以下模板内容:</p><pre><code>  &lt;div class=&quot;content-container&quot;&gt;
+    &lt;div class=&quot;content-area&quot;&gt;
+      &lt;ng-content&gt;&lt;/ng-content&gt;
+    &lt;/div&gt;
+    &lt;app-sidebar class=&quot;sidenav&quot;&gt;&lt;/app-sidebar&gt;
+  &lt;/div&gt;  
+</code></pre><p>在这个组件中我们将<code>sidebar</code>及内容模块封装在<code>div</code>中，该<code>div</code>名为<code>content-container</code>.</p><p>在接下来的<code>app-sidebar</code>选择器中我们创建了另一个<code>div</code>，名为<code>content-area</code>， 这是app的主要内容所展示的地方，我们使用内建的<code>ng-content</code>组件用于包装它。</p><h5 id=625-sidebarcomponent>6.2.5 SidebarComponent</h5><p>最后一步了! 我们打开<code>src/ap/ui/layout/sidebar/sidebar.component.ts</code>文件，更新以下模板:</p><pre><code>    &lt;nav&gt;
+    &lt;section class=&quot;sidenav-content&quot;&gt;
+      &lt;a class=&quot;nav-link active&quot;&gt;Overview&lt;/a&gt;
+      &lt;section class=&quot;nav-group collapsible&quot;&gt;
+        &lt;input id=&quot;tabexample1&quot; type=&quot;checkbox&quot;&gt;
+        &lt;label for=&quot;tabexample1&quot;&gt;Content&lt;/label&gt;
+        &lt;ul class=&quot;nav-list&quot;&gt;
+          &lt;li&gt;&lt;a class=&quot;nav-link&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a class=&quot;nav-link&quot;&gt;Reports&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/section&gt;
+      &lt;section class=&quot;nav-group collapsible&quot;&gt;
+        &lt;input id=&quot;tabexample2&quot; type=&quot;checkbox&quot;&gt;
+        &lt;label for=&quot;tabexample2&quot;&gt;System&lt;/label&gt;
+        &lt;ul class=&quot;nav-list&quot;&gt;
+          &lt;li&gt;&lt;a class=&quot;nav-link&quot;&gt;Users&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a class=&quot;nav-link&quot;&gt;Settings&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/section&gt;
+    &lt;/section&gt;
+  &lt;/nav&gt;
+</code></pre><p>到现在为止clarity驱动的UI应该已经就绪，效果如下图:</p><p><img src=/images/2020_11_09_14_12_03_551x393.jpg alt=/images/2020_11_09_14_12_03_551x393.jpg></p><h3 id=7-随便玩>7. 随便玩</h3><h4 id=71-添加导航页面>7.1 添加导航页面</h4><p>添加pages模块及导航分页:</p><pre><code>$ ng g m pages
+$ ng g c pages/dashboard -is -it --skipTests=true
+$ ng g c pages/posts -is -it --skipTests=true
+$ ng g c pages/settings -is -it --skipTests=true
+$ ng g c pages/todos -is -it --skipTests=true
+$ ng g c pages/users -is -it --skipTests=true
+</code></pre><p>查看当前目录结构:</p><pre><code>$ tree src/app
+src/app
+├── app.component.css
+├── app.component.html
+├── app.component.spec.ts
+├── app.component.ts
+├── app.module.ts
+├── pages
+│   ├── dashboard
+│   │   └── dashboard.component.ts
+│   ├── pages.module.ts
+│   ├── posts
+│   │   └── posts.component.ts
+│   ├── settings
+│   │   └── settings.component.ts
+│   ├── todos
+│   │   └── todos.component.ts
+│   └── users
+│       └── users.component.ts
+└── ui
+    ├── layout
+    │   ├── header
+    │   │   └── header.component.ts
+    │   ├── layout.component.ts
+    │   ├── main
+    │   │   └── main.component.ts
+    │   └── sidebar
+    │       └── sidebar.component.ts
+    └── ui.module.ts
+</code></pre><h4 id=72-路由>7.2 路由</h4><p>创建路由:</p><pre><code>$ ng generate module app-routing --flat --module=app
+</code></pre><p>修改生成的文件，添加导航:</p><pre><code>$ vim src/app/app-routing.module.ts
+const routes: Routes = [
+  {
+    path: '',
+    children: [
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'posts', component: PostsComponent },
+      { path: 'settings', component: SettingsComponent },
+      { path: 'todos', component: TodosComponent },
+      { path: 'users', component: UsersComponent },
+    ]
+  }
+];
 
-        mount -n -t cgroup cgroup /sys/fs/cgroup/cpu,cpuacct -o rw,nosuid,nodev,noexec,relatime,cpu,cpuacct
-        mount -n -t cgroup cgroup /sys/fs/cgroup/net_cls,net_prio -o rw,nosuid,nodev,noexec,relatime,net_cls,net_prio
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
+  exports: [
+    RouterModule,
+  ],
+})
+export class AppRoutingModule { }
 
-        if ! mountinfo -q /sys/fs/cgroup/openrc; then
-            local agent=&quot;${RC_LIBEXECDIR}/sh/cgroup-release-agent.sh&quot;
-            mkdir -p /sys/fs/cgroup/openrc
-            mount -n -t cgroup -o none,nodev,noexec,nosuid,name=systemd,release_agent=&quot;$agent&quot; openrc /sys/fs/cgroup/openrc
-        fi
-    fi
+</code></pre><h4 id=73-打通导航ui>7.3 打通导航(UI)</h4><p><code>src/app/ui/ui.module.ts</code>中引入<code>RouterModule</code>:</p><pre><code>import { RouterModule } from '@angular/router';
 
-    return 0
-}
-
-</code></pre><p>Added the auto-start and reboot:</p><pre><code># rc-update add cgroups-patch boot
-# vim /etc/init.d/docker
-.....
-start_pre() {
-        #checkpath -f -m 0644 -o root:docker &quot;$DOCKER_ERRFILE&quot; &quot;$DOCKER_OUTFILE&quot;
-        echo &quot;fucku&quot;
-}
-.....
-# rc-service docker start
-# rc-update add docker default
-# reboot
-After reboot, check docker version
-</code></pre><p>push files into lxc instance:</p><pre><code># lxc file push -r podmanitems/ firstalpine/root/
-load all images
-# docker images
-~ # docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-rong/ui             master              66ad16eb15c5        20 minutes ago      28.9MB
-rong/server         master              8150777ead18        23 hours ago        301MB
-rong/kobe           master              2d0a03d6cedb        2 days ago          231MB
-rong/nginx          1.19.2-amd64        7e4d58f0e5f3        5 weeks ago         133MB
-rong/webkubectl     v2.6.0-amd64        4aa634837fea        2 months ago        349MB
-rong/mysql-server   8.0.21-amd64        8a3a24ad33be        3 months ago        366MB
-# lxc file push ronggraph.tar firstalpine/root/
-# tar xzvf /root/ronggraph.tar
-</code></pre><p>Should write a start definition for ronggraph:</p><pre><code>#!/sbin/openrc-run
-#
-# author: Yusuke Kawatsu
-
-workspace=&quot;/root/ronggraph&quot;
-cmdpath=&quot;/usr/bin/docker-compose&quot;
-prog=&quot;ronggraph&quot;
-lockfile=&quot;/var/lock/ronggraph&quot;
-pidfile=&quot;/var/run/ronggraph.pid&quot;
-PATH=&quot;$PATH:/usr/local/bin&quot;
+  imports: [
+￼    CommonModule,
+￼    RouterModule,
+￼    ClarityModule,
+</code></pre><h4 id=74-更改各页面>7.4 更改各页面</h4><p>更改 <code>src/app/pages/dashboard/dashboard.component.ts</code>.</p><h3 id=8-添加echarts>8. 添加echarts</h3><p>安装angular对echarts的支持:</p><pre><code>$  cnpm install echarts -S
+$  cnpm install ngx-echarts -S
+$  cnpm install resize-observer-polyfill -S
+</code></pre><p>引入echarts:</p><pre><code>$ vim src/app/app.module.ts
+import * as echarts from 'echarts';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 
-start() {
-    [ -x $cmdpath ] || exit 5
-    echo -n $&quot;Starting $prog: &quot;
+  imports: [
+    BrowserModule,
+    NgxEchartsModule.forRoot({
+      echarts
+    }),
 
-    cd $workspace
-    $cmdpath up -d
-    $cmdpath down
-    retval=$?
-    pid=$!
-    echo
-    [ $retval -eq 0 ] &amp;&amp; touch $lockfile &amp;&amp; echo $pid &gt; $pidfile
+</code></pre><p>添加服务:</p><pre><code>$ ng generate service app
 
-    return $retval
-}
+CREATE src/app/app.service.spec.ts (342 bytes)
+CREATE src/app/app.service.ts (132 bytes)
 
-stop() {
-    [ -x $cmdpath ] || exit 5
-    echo -n $&quot;Stopping $prog: &quot;
-
-    cd $workspace
-    $cmdpath down
-    retval=$?
-    echo
-    [ $retval -eq 0 ] &amp;&amp; rm -f $lockfile &amp;&amp; rm -f $pidfile
-
-    return $retval
-}
-
-restart() {
-    stop
-    sleep 3
-    start
-}
-
-depend() {
-    need docker
-}
-
-</code></pre><p>Now add ronggraph to default update:</p><pre><code># rc-update add ronggraph default
-# halt
-</code></pre><p>Save the current status:</p><pre><code>root@rong320-1:~/lxdimages# lxc stop firstalpine
-root@rong320-1:~/lxdimages# lxc publish --public firstalpine --alias=ronggraph
-root@rong320-1:/mnt# lxc image ls
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+----------+------------------------------+
-|   ALIAS   | FINGERPRINT  | PUBLIC |               DESCRIPTION                | ARCHITECTURE |   TYPE    |   SIZE   |         UPLOAD DATE          |
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+----------+------------------------------+
-| alpine312 | 76560d125792 | no     | Alpinelinux 3.12 x86_64 (20201021_13:00) | x86_64       
-| CONTAINER | 2.40MB   | Oct 22, 2020 at 6:18am (UTC) |
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+----------+------------------------------+
-| ronggraph | b31788790460 | yes    | Alpinelinux 3.12 x86_64 (20201021_13:00) | x86_64       | CONTAINER | 619.40MB | Oct 22, 2020 at 8:05am (UTC) |
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+----------+------------------------------+
-</code></pre><p>launch new instance:</p><pre><code># lxc launch ronggraph ronggraph -p k8s
-# 
-</code></pre><p>Add forward rules:</p><pre><code>lxc config device add ronggraph myport80 proxy listen=tcp:0.0.0.0:80 connect=tcp:0.0.0.0:80
-lxc config device add ronggraph myport443 proxy listen=tcp:0.0.0.0:443 connect=tcp:0.0.0.0:443
-</code></pre><h3 id=arm64-workingtips>arm64 workingtips</h3><p>Under rpi archlinux64, install:</p><pre><code># pacman -Sy
-# pacman -S lxc lxd
-# systemctl enable lxd
-# systemctl start lxd
-</code></pre><p>Download images from:</p><pre><code>https://us.images.linuxcontainers.org/images/alpine/3.12/arm64/default/20201022_13:00/
-rootfs.squashfs
-lxd.tar.xz
-# lxc image import lxd.tar.xz rootfs.squashfs --alias alpine312
-# lxd init --preseed&lt;pre-rong/lxditems/lxd_snap/init.yaml
-# lxc profile create k8s
-# lxc profile edit k8s&lt;pre-rong/lxditems/lxdimages/k8s.yaml
-</code></pre><p><img src=/images/2020_10_23_09_55_43_629x378.jpg alt=/images/2020_10_23_09_55_43_629x378.jpg></p><p>Configure lxc for running:</p><pre><code>https://wiki.archlinux.org/index.php/Linux_Containers
-</code></pre><p>lxc Installation:</p><pre><code># ~ # sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
-~ # cat /etc/apk/repositories 
-http://mirrors.ustc.edu.cn/alpine/v3.12/main
-http://mirrors.ustc.edu.cn/alpine/v3.12/community
-Install docker/docker-compose, modify its startup
-</code></pre><p>lxc public will take a very long time!!!</p><pre><code># lxc ls
-+------+---------+------------------------------+------+-----------+-----------+
-| NAME |  STATE  |             IPV4             | IPV6 |   TYPE    | SNAPSHOTS |
-+------+---------+------------------------------+------+-----------+-----------+
-| king | RUNNING | 172.18.0.1 (br-74a26d2404f6) |      | CONTAINER | 0         |
-|      |         | 172.17.0.1 (docker0)         |      |           |           |
-|      |         | 10.150.132.185 (eth0)        |      |           |           |
-+------+---------+------------------------------+------+-----------+-----------+
-# lxc publish --public king --alias=ronggraph
-# lxc image ls
-+-----------+--------------+--------+-------------------------------------------+--------------+-----------+-----------+-------------------------------+
-|   ALIAS   | FINGERPRINT  | PUBLIC |                DESCRIPTION                | ARCHITECTURE |   TYPE    |   SIZE    |          UPLOAD DATE          |
-+-----------+--------------+--------+-------------------------------------------+--------------+-----------+-----------+-------------------------------+
-| alpine312 | 58ebec92505e | no     | Alpinelinux 3.12 aarch64 (20201022_13:00) | aarch64      | CONTAINER | 2.20MB    | Oct 23, 2020 at 1:52am (UTC)  |
-+-----------+--------------+--------+-------------------------------------------+--------------+-----------+-----------+-------------------------------+
-| ronggraph | 607287f518d4 | yes    | Alpinelinux 3.12 aarch64 (20201022_13:00) | aarch64      | CONTAINER | 2655.15MB | Oct 23, 2020 at 10:13am (UTC) |
-+-----------+--------------+--------+-------------------------------------------+--------------+-----------+-----------+-------------------------------+
-#  lxc image export ronggraph .
-# ls *.tar.gz
--rw-r--r--  1 root  root   2784123072 Oct 26 00:40 607287f518d40783ed968cd2f2434fba101d4332ccc16f1e66cfb43049208d57.tar.gz
-</code></pre><p>Transfer the tar.gz into the arm64 server, and run it.</p><pre><code># /snap/bin/lxc image import lxditems/lxdimages/607287f518d40783ed968cd2f2434fba101d4332ccc16f1e66cfb43049208d57.tar.gz --alias ronggraph
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/10/21/kodatabase/>koDatabase</a></h1><span class=post-date>Oct 21, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=ko-admin>ko admin</h3><p>Via following commands for recoving the user priviledge:</p><pre><code># podman exec -it rong_mysql /bin/bash
-</code></pre><p>Sql 操作:</p><pre><code>mysqlbash-4.2# mysql -uroot -p
-Enter password: 
-mysql&gt; use ko
-mysql&gt; update ko_user set is_active=1 where name='admin';
-mysql&gt; update ko_user set is_admin=1 where name='admin;
-</code></pre><p>Now go back to login page, you will use admin user for login.</p><h3 id=ko-cluster-import>ko cluster import</h3><p>Import cluster to ko:</p><pre><code>root@focal-1:/mnt/Rong_RongGraph/rong/4_addons# kubectl get sa -n kube-system | grep dashboard
-kubernetes-dashboard                 1         10m
-root@focal-1:/mnt/Rong_RongGraph/rong/4_addons# kubectl get secret -n kube-system | grep dashboard
-kubernetes-dashboard-certs                       Opaque                                0      10m
-kubernetes-dashboard-csrf                        Opaque                                1      10m
-kubernetes-dashboard-key-holder                  Opaque                                2      10m
-kubernetes-dashboard-token-mpf77                 kubernetes.io/service-account-token   3      10m
-root@focal-1:/mnt/Rong_RongGraph/rong/4_addons# kubectl -n kube-system describe secrets kubernetes-dashboard-token-mpf77
-Name:         kubernetes-dashboard-token-mpf77
-Namespace:    kube-system
-Labels:       &lt;none&gt;
-Annotations:  kubernetes.io/service-account.name: kubernetes-dashboard
-              kubernetes.io/service-account.uid: ff6cac3e-d90c-4990-bb90-e245ac762696
-
-Type:  kubernetes.io/service-account-token
-
-Data
-====
-ca.crt:     1025 bytes
-namespace:  11 bytes
-token:      xxxxxxx
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/10/16/kubeovnworkingtips/>KubeOVNWorkingTips</a></h1><span class=post-date>Oct 16, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=server-sidek8s>Server side(k8s)</h3><p><code>kkk.yaml</code> defined the subnet created via kubeovn</p><pre><code>apiVersion: kubeovn.io/v1
-kind: Subnet
-metadata:
-  name: etc
-spec:
-  protocol: IPv4
-  default: false
-  namespaces:
-  - etl
-  - etl1
-  cidrBlock: 100.64.0.0/16
-  gateway: 100.64.0.1
-  excludeIps:
-  - 100.64.0.1
-  private: false
-  gatewayType: distributed
-  natOutgoing: false
-</code></pre><p>Create the subnet via <code>kubectl create -f kkk.yaml</code>, then you could view the subnet via:</p><pre><code># kubectl get subnet
-NAME	PROTOCOL	CIDR		PRIVATE	NAT	DEFAULT	GATEWAYTYPE	USED AVAILABLE
-etc	IPV4		100.64.0.0/16	false	false	false	distributed	1	65532
-</code></pre><p>Create namespace via <code>kubectl create ns etl</code> and <code>kubectl create ns etl1</code>, then run a deployment in these 2 namespace:</p><pre><code># kubectl run nginxetl --image=nginx:1.17 --namespace etl
-# kubectl get pod -n etl -o wide
-The pod's ip address is 100.64.0.3
-</code></pre><h3 id=client-sideouter-space-machines>Client Side(outer space machines)</h3><p>Add route via:</p><pre><code># route add -net 100.64.0.0/16 gw 192.192.xxx.xxx
-# curl 100.64.0.3
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/38/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/38/>38</a></li><li class="page-item active"><a class=page-link href=/page/39/>39</a></li><li class=page-item><a class=page-link href=/page/40/>40</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/40/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/38/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/38/>38</a></li><li class="page-item active"><a class=page-link href=/page/39/>39</a></li><li class=page-item><a class=page-link href=/page/40/>40</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/40/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,198 +1,299 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/12/09/listening-pandora-under-linux/>Listening Pandora under linux</a></h1><span class=post-date>Dec 9, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>An script named &ldquo;piandbar&rdquo; could let you listen to pandora music in CLI:</p><pre><code>	$ yaourt -S pianobar
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/12/12/western-digits-green-disk-on-ubuntu/>Western Digital Green Disk on Ubuntu</a></h1><span class=post-date>Dec 12, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>The WD20EARS (and other sizes include 1.0 and 1.5 TB driver in the series) will attempt to park the read heads once every 8 seconds FOR THE LIFE OF THE HDD which is just horrible! To see if you are affected use the smartctl command (part of smartmontools). If the last column changes rapidly, this section applies to your drive.</p><pre><code>	# smartctl /dev/sdb -a | grep Load_Cycle
+	193 Load_Cycle_Count        0x0032   001   001   000    Old_age   Always       -       597115	
 
-</code></pre><p>Or in ubuntu:</p><pre><code>	$ apt-get install pianobar
+</code></pre><p>We have to disable this feature. Add lines to /etc/rc.local</p><pre><code>	hdparam -S 242 /dev/sda
+	exit 0
 
-</code></pre><p>The default configuration file could be found under ~/.config/pianobar:</p><pre><code>	$ cat ~/.config/pianobar/config 
-	user = xxx@xxx.com
-	password = xxxxxx
-	tls_fingerprint =
+</code></pre><p>The effect for upper comand is listed as:</p><pre><code>	# hdparm -S 242 /dev/sda
+	/dev/sda:
+	 setting standby to 242 (1 hours)
 
-</code></pre><p>The most cool functionality is it could automatically &ldquo;remember&rdquo; all of the played songs.<br>man pianobar could get more items, for example key-binding, etc. enjoy the music under CLI.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/12/08/raspberrypi-gpio-programming-on-archlinux/>raspberryPI GPIO Programming on ArchLinux</a></h1><span class=post-date>Dec 8, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Python Preparation
-Install python</p><pre><code>	$ pacman -S python
+</code></pre><p>By default the disk will standby when 1 hours reached, that will avoid our disk from broken.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/12/11/bbblackbian-yi-jiao-ben-jie-xi/>BBBlack编译脚本解析</a></h1><span class=post-date>Dec 11, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Preparation
+Download the &ldquo;linux-dev&rdquo; repository from github:</p><pre><code>	git clone git://github.com/RobertCNelson/linux-dev.git
 
-</code></pre><p>Install pip</p><pre><code>	$ pacman -S python-pip
+</code></pre><p>View the downloaded packages:</p><pre><code>	[Trusty@XXXyyy mykernel]$ du -hs linux-dev/
+	19M	linux-dev/
+	[Trusty@XXXyyy linux-dev]$ ls
+	build_deb.sh  build_kernel.sh  build_mainline.sh  LICENSE  patches  patch.sh  README  repo_maintenance  scripts  system.sh.sample  tools  version.sh
 
-</code></pre><p>Install virtualenv, before install virtualenv, be sure to update your time. 1970&rsquo;s time will get ssl error.</p><pre><code>	$ date -s &quot;8 Dec 2013 16:09:40&quot;
-	$ pip install --upgrade virtualenv virtualenvwrapper
+</code></pre><p>Switch to the 3.12 Branch:</p><pre><code>	git checkout origin/am33x-v3.12 -b tmp
+	[Trusty@XXXyyy linux-dev]$ ls
+	build_deb.sh  build_kernel.sh  LICENSE  patches  patch.sh  README  repo_maintenance  scripts  system.sh.sample  tools  version.sh
 
-</code></pre><p>Prepare virtualenv:</p><pre><code>	[root@alarmpi ~]# mkdir ~/pyv
-	[root@alarmpi ~]# vim ~/.virtualenvrc
-	export WORKON_HOME=&quot;/root/pyv&quot;
-	export PROJECT_HOME=&quot;/root/pyv&quot;
-	source /usr/bin/virtualenvwrapper.sh 
-	[root@alarmpi ~]# source ~/.virtualenvrc
+</code></pre><p>###Walk by lines
+Since we call ./build_kernel.sh will initialize the building, we will first see what&rsquo;s in this file<br>a. Create the deploy directory, Line 23-Line 25</p><pre><code>	DIR=$PWD
+	mkdir -p ${DIR}/deploy/
 
-</code></pre><p>Now your virtualenv is OK. Make a virtualenv for python2.7</p><pre><code>	$ mkvirtualenv --python=/usr/bin/python2.7 v27
-	cdvirtualenv
+</code></pre><p>Then the code goes to line 189, since all of the code between 25-189 are functions.</p><pre><code>	/bin/sh -e ${DIR}/tools/host_det.sh || { exit 1 ; }
 
-</code></pre><p>Add environment variables into your ~/.bashrc</p><pre><code>	export WORKON_HOME=$HOME/pyv
-	export PIP_VIRTUALENV_BASE=$WORKON_HOME
-	source /usr/bin/virtualenvwrapper.sh
+</code></pre><p>This line will call tools/host_det.sh to detect the host, the result is listed:</p><pre><code>	[Trusty@XXXyyy linux-dev]$ tools/host_det.sh 
+	which: no lsb_release in (/home/Trusty/.rvm/gems/ruby-1.9.3-p448/bin:/home/Trusty/.rvm/gems/ruby-1.9.3-p448@global/bin:/home/Trusty/.rvm/rubies/ruby-1.9.3-p448/bin:/home/Trusty/.rvm/bin:/media/y/embedded/cortex/gcc-arm-none-eabi-4_7-2013q3/bin:/home/Trusty/perl5/bin:/opt/cross/bin:/media/y/u-boot/4.3.2/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/bin/site_perl:/usr/bin/core_perl)
+	+ Detected build host []
+	+ host: [x86_64]
+	+ git HEAD commit: [858e7dbdedcb5d85d0e3b84323c5a6bfe6bd3b5e]
+In host_det.sh, the code lines between 6~381 are all functions, till line 381. 
+	if [ $(which lsb_release) ] ; then
+	         info &quot;Detected build host [`lsb_release -sd`]&quot;
+Following is the lsb_relase result, lsb_release is the linux standard base base package, which will provide enough infomations of the installed linux system. 
+	$ lsb_release
+	LSB Version:	:core-3.1-ia32:core-3.1-noarch:graphics-3.1-ia32:graphics-3.1-noarch
+	[Tomcat@MisteryPlace:  [] /opt/home/Tomcat]                                                                                        $ lsb_release -sd
+	&quot;Scientific Linux SL release 5.5 (Boron)&quot;
+	[Tomcat@MisteryPlace:  [] /opt/home/Tomcat]                                                                                        $ uname -m
+	i686
 
-</code></pre><p>Next time if you want to enter virtualenv, simply type:</p><pre><code>	$ workon v27
+</code></pre><p>Testing the host and the git head commit</p><pre><code>	info &quot;host: [`uname -m`]&quot;
+	info &quot;git HEAD commit: [`git rev-parse HEAD`]&quot;
 
-</code></pre><p>Install rpi.gpio</p><pre><code>	$ pip install rpi.gpio
+</code></pre><p>This script is for testing the known hosts which runs redhat/debian/suse, and verify if you have installed all of the package need to support kernel build.</p><p>Copy the system.sh.sample to current directory</p><pre><code>if [ ! -f ${DIR}/system.sh ] ; then
+	cp ${DIR}/system.sh.sample ${DIR}/system.sh
 
-</code></pre><p>###Use rpi.gpio on raspberryPI
-TBD. I don&rsquo;t know why but my raspberyPI can&rsquo;t work properly on 1602 LCD. So I begin to test GPIO
-###Use WiringPi for programming
-Preparation:</p><pre><code>	$ pacman -S git gcc make
+</code></pre><p>Next lines from 199 to 218 is to detect if the branches.list and branch.expired exists, if exists then some testing will be done.</p><pre><code>	if [ -f &quot;${DIR}/branches.list&quot; ] ; then
+		echo &quot;-----------------------------&quot;
+		echo &quot;Please checkout one of the active branches:&quot;
+		echo &quot;-----------------------------&quot;
+		cat ${DIR}/branches.list | grep -v INACTIVE
+		echo &quot;-----------------------------&quot;
+		exit
+	fi
 
-</code></pre><p>Download the packages:</p><pre><code>	$ git clone git://git.drogon.net/wiringPi
-	$ cd wiringPi
-	$ git pull origin
-	$ ./build
+</code></pre><p>Then go to line 220 and 221, unset 2 system variable</p><pre><code>	unset CC
+	unset LINUX_GIT
 
-</code></pre><p>Testing the WiringPi:</p><pre><code>	[root@alarmpi gpio]# ./gpio readall
-	+----------+-Rev1-+------+--------+------+-------+
-	| wiringPi | GPIO | Phys | Name   | Mode | Value |
-	+----------+------+------+--------+------+-------+
-	|      0   |  17  |  11  | GPIO 0 | OUT  | High  |
-	|      1   |  18  |  12  | GPIO 1 | IN   | Low   |
-	|      2   |  21  |  13  | GPIO 2 | IN   | Low   |
-	|      3   |  22  |  15  | GPIO 3 | IN   | Low   |
-	|      4   |  23  |  16  | GPIO 4 | IN   | Low   |
-	|      5   |  24  |  18  | GPIO 5 | IN   | Low   |
-	|      6   |  25  |  22  | GPIO 6 | IN   | Low   |
-	|      7   |   4  |   7  | GPIO 7 | IN   | Low   |
-	|      8   |   0  |   3  | SDA    | ALT0 | High  |
-	|      9   |   1  |   5  | SCL    | ALT0 | High  |
-	|     10   |   8  |  24  | CE0    | ALT0 | High  |
-	|     11   |   7  |  26  | CE1    | ALT0 | High  |
-	|     12   |  10  |  19  | MOSI   | ALT0 | Low   |
-	|     13   |   9  |  21  | MISO   | ALT0 | Low   |
-	|     14   |  11  |  23  | SCLK   | ALT0 | Low   |
-	|     15   |  14  |   8  | TxD    | ALT0 | High  |
-	|     16   |  15  |  10  | RxD    | ALT0 | High  |
-	+----------+------+------+--------+------+-------+
+</code></pre><p>Then run system.sh</p><pre><code>	. ${DIR}/system.sh
 
-</code></pre><p>Simply testing a LED tutorial:<br>Wiring image:<br><img src=/images/ledgpio.jpg alt=sourceledgpio.jpg></p><p>Then Writing following script:</p><pre><code>#!/bin/bash
-/root/wiringPi/gpio/gpio mode 0 out
-while true then
-do
-	/root/wiringPi/gpio/gpio write 0 1
-	sleep 1
-	/root/wiringPi/gpio/gpio write 0 0
-	sleep 1
-done
-
-</code></pre><p>Now you will get a shining LED.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/12/07/linux-sound/>Linux Sound</a></h1><span class=post-date>Dec 7, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###ALSA普通用户无声
-只有root才能听到声音，其他一概是哑巴，解决方案：</p><pre><code>	$ sudo apt-get install acl
-	$ sudo setfacl -m u:Your_Username:rw /dev/snd/*
-
-</code></pre><p>等于说赋予了普通用户(Your_Username)访问/dev/snd下所有设备的读写权限。这时候打开mplayer就可以听到MP3播放声了。
-###使用tsocks和ssh转发穿越防火墙</p><pre><code>	ssh -qTfnN -D 1394 xxx@xxx.xxx.xxx.xxx
-
-</code></pre><p>这样可以在本地打开一个socks代理，127.0.0.1:1394
-安装tsocks</p><pre><code>	$ sudo apt-get install tsocks
-
-</code></pre><p>配置tsocks</p><pre><code>	# vim /etc/tsocks.conf
-	# Local networks
-	# For this example this machine can directly access 192.168.0.0/255.255.255.0 
-	# (192.168.0.*) and 10.0.0.0/255.0.0.0 (10.*)
+</code></pre><p>Then we will prepare the gcc.</p><pre><code>	/bin/sh -e &quot;${DIR}/scripts/gcc.sh&quot; || { exit 1 ; }
+Switching to scripts/gcc.sh, the following lines will set the system variables, which will be used to choose the suitable linaro toolchain. 
+	. ${DIR}/system.sh
 	
-	local = 192.168.0.0/255.255.255.0
-	local = 10.0.0.0/255.0.0.0
-	server = 127.0.0.1
-	server_port = 1394
-	server_type = 5
+	#For:
+	#linaro_toolchain
+	. ${DIR}/version.sh
+Test the CC existence, if not then start building:
+	if [ &quot;x${CC}&quot; = &quot;x&quot; ] &amp;&amp; [ &quot;x${ARCH}&quot; != &quot;xarmv7l&quot; ] ; then
+		gcc_linaro_toolchain
+	fi
 
-</code></pre><p>试听音乐：</p><pre><code>	tsocks mplayer http://www.live365.com/play/wkhr
+</code></pre><p>The code are funny, because echo x${CC} is actually x , so the gcc_linaro_toolchain will surely be called.</p><pre><code>	$ echo ${linaro_toolchain}
+	cortex_gcc_4_8
 
-</code></pre><p>但是，用vlc总是提示失败。
-###安装archlinux for raspberryPI
-下载并解压得到img文件，而后：</p><pre><code>	[Trusty@XXXyyy arch_rasp]$ fdisk -l archlinux-hf-2013-07-22.img
+</code></pre><p>The variable {linaro_toolchain} is set via . version.sh, then the corresponding code lines will be called</p><pre><code>		cortex_gcc_4_8)
+			#https://launchpad.net/linaro-toolchain-binaries/+download
+			#https://launchpad.net/linaro-toolchain-binaries/trunk/2013.10/+download/gcc-linaro-arm-linux-gnueabihf-4.8-2013.10_linux.tar.xz
 	
-	Disk archlinux-hf-2013-07-22.img: 1.8 GiB, 1960837120 bytes, 3829760 sectors
-	Units: sectors of 1 * 512 = 512 bytes
-	Sector size (logical/physical): 512 bytes / 512 bytes
-	I/O size (minimum/optimal): 512 bytes / 512 bytes
-	Disklabel type: dos
-	Disk identifier: 0x00057540
+			gcc_version=&quot;4.8&quot;
+			release=&quot;2013.10&quot;
+			toolchain_name=&quot;gcc-linaro-arm-linux-gnueabihf&quot;
+			site=&quot;https://launchpad.net/linaro-toolchain-binaries&quot;
+			version=&quot;trunk/${release}&quot;
+			directory=&quot;${toolchain_name}-${gcc_version}-${release}_linux&quot;
+			filename=&quot;${directory}.tar.xz&quot;
+			datestamp=&quot;${release}-${toolchain_name}&quot;
+			untar=&quot;tar -xJf&quot;
 	
-	Device                       Boot     Start       End  Blocks  Id System
-	archlinux-hf-2013-07-22.img1           2048    186367   92160   c W95 FAT32 (LBA)
-	archlinux-hf-2013-07-22.img2         186368   3667967 1740800   5 Extended
-	archlinux-hf-2013-07-22.img5         188416   3667967 1739776  83 Linux
+			binary=&quot;bin/arm-linux-gnueabihf-&quot;
+			;;
+		*)
+			echo &quot;bug: maintainer forgot to set:&quot;
+			echo &quot;linaro_toolchain=\&quot;xzy\&quot; in version.sh&quot;
+			exit 1
+			;;
 
-</code></pre><p>拷贝出根分区：</p><pre><code>	$ mount ./archlinux-hf-2013-07-22.img -o offset=96468992 /mnt
-	$ tar cjvf mnt.tar.bz2 /mnt
+</code></pre><p>dl_gcc_generic will be called. download the corresponding packages from the linaro website.</p><p>After set the cross-compiler, we can get the kernel using git.sh, the git.sh is listed in scripts/git.sh</p><pre><code>	/bin/sh -e &quot;${DIR}/scripts/git.sh&quot; || { exit 1 ; }
 
-</code></pre><p>然后将mnt.tar.bz2解压到某硬盘分区，则可以用该硬盘启动raspberryPI</p><pre><code>	$ pacman -Syu --noconfirm
-	$ pacman -S tigervnc
-	$ pacman -S alsa-utils lxde mplayer vlc vim 
-   	$ pacman -S xf86-video-fbdev
-   	$ pacman -S alsa-utils alsa-firmware alsa-lib alsa-plugins
-	$ pacman -S sudo
-
-</code></pre><p>然后我们可以编辑出一个vncserver</p><pre><code>	$ vncserver
-	$ vim /root/.vnc/xstartup
-	[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources
-	xsetroot -solid grey
-	xterm -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp;
-	#twm &amp;
-	startlxde &amp;
-	$ vncserver -kill :1
-	$ vncserver
-
-</code></pre><p>添加普通用户的权限和vnc:</p><pre><code>	$ visudo
-	root ALL=(ALL) ALL
-	Trusty ALL=(ALL) ALL
-	Trusty ALL=(ALL) NOPASSWD: ALL
-
-</code></pre><p>###Start playing on boot
-每次允许自动登录：</p><pre><code>	[Trusty@XXXyyy ~]$ sudo mkdir /etc/systemd/system/getty@tty1.service.d
-	[Trusty@XXXyyy ~]$ cat /etc/systemd/system/getty\@tty1.service.d/autologin.conf 
-	[Service]
-	ExecStart=
-	ExecStart=-/usr/bin/agetty --autologin Trusty --noclear %I 38400 linux
-
-</code></pre><p>安装screen</p><pre><code>	$ pacman -S screen
-
-</code></pre><p>增加自定义服务：</p><pre><code>	[root@alarmpi ~]# cat /etc/systemd/system/radio.service
-	[Unit]
-	Description=My Radio
-	After=network.target
+</code></pre><p>In git.sh, detect the user&rsquo;s email and user&rsquo;s name:</p><pre><code>	unset git_config_user_email
+	git_config_user_email=$(git config --get user.email || true)
 	
-	[Service]
-	RemainAfterExit=yes
-	ExecStart=/usr/bin/autoradio &amp;
+	unset git_config_user_name
+	git_config_user_name=$(git config --get user.name || true)
+
+</code></pre><p>Then set using http or git, call git_kernel to git clone the corresponding resources from github.<br>git_kernel will call check_and_or_clone() to get the source code from the github.</p><pre><code>	git clone ${torvalds_linux} ${DIR}/ignore/linux-src
+
+</code></pre><p>and set the LINUX_GIT variable to</p><pre><code>	LINUX_GIT=&quot;${DIR}/ignore/linux-src&quot;
+
+</code></pre><p>The downloaded packages are so large, that it occupies 1.4G disk space.</p><pre><code>	[Trusty@XXXyyy ignore]$ du -hs *
+	1.4G	linux-src
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/12/11/debian-on-nfs/>Debian on NFS</a></h1><span class=post-date>Dec 11, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install some packages:</p><pre><code>	$ apt-get install usbutils alsa-base
+
+</code></pre><p>Use lsusb to view the installed usb equipments:</p><pre><code>	Bus 001 Device 006: ID 0e5c:6441 Bitland Information Technology Co., Ltd C-Media Sound Device
+
+</code></pre><p>Install modules to the filesystem, since our newly-installed filesytem doesn&rsquo;t contains the necessary modules:</p><pre><code>	$ pwd
+	/media/x/bbBlack/38/linux-dev/deploy
+
+</code></pre><p>Copy the firmware tar package and modules tar package to the nfs root directory</p><pre><code>	$ tar xzvf 3.8.13-bone30-modules.tar.gz  -C ./
+	$ tar xzvf ./3.8.13-bone30-firmware.tar.gz -C  ./lib/firmware/
+
+</code></pre><p>Reboot and Use aplay to view the installed sound card:</p><pre><code>	root@arm:/# aplay -l
+	**** List of PLAYBACK Hardware Devices ****
+	card 0: Black [TI BeagleBone Black], device 0: HDMI nxp-hdmi-hifi-0 []
+	  Subdevices: 1/1
+	  Subdevice #0: subdevice #0
+	card 1: U0xe5c0x6441 [USB Device 0xe5c:0x6441], device 0: USB Audio [USB Audio]
+	  Subdevices: 0/1
+	  Subdevice #0: subdevice #0
+
+</code></pre><p>Edit a new asound.conf, which will enable the system to use the usb audio as the default sound card:</p><pre><code>	root@arm:/# cat /etc/asound.conf
+	pcm.!default { 
+	type hw 
+	card 1
+	#device 0 
+	}
+	ctl.!default { 
+	type hw 
+	card  1
+	#device 0 
+	}
+
+</code></pre><p>Now you can use the mplayer to enjoy the sound from the console.
+If you want to grant the right to the ordinary user, Just use acl:</p><pre><code>	 setfacl -m u:debian:rw /dev/snd/*
+
+</code></pre><p>Now the user &ldquo;debian&rdquo; could also listen the music from the console.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/12/11/nfs-of-beaglebone/>NFS of beaglebone</a></h1><span class=post-date>Dec 11, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Serial Preparation
+The serial port image is as following:
+<img src=/images/serial1.jpg alt=serial1.jpg></p><p><img src=/images/serial2.jpg alt=serial2.jpg></p><p>###Failure information
+The bootup failure information is listed as following:</p><pre><code>	Running uenvcmd ...
+	reading zImage
+	3345240 bytes read in 383 ms (8.3 MiB/s)
+	reading /dtbs/am335x-boneblack.dtb
+	24884 bytes read in 10 ms (2.4 MiB/s)
 	
-	[Install]
-	WantedBy=multi-user.target 
+	Starting kernel ...
+	
+	Uncompressing Linux... done, booting the kernel.
+	
+	Error: unrecognized/unsupported machine ID (r1 = 0x00000e05).
+	
+	Available machine support:
+	
+	ID (hex)        NAME
+	ffffffff        Generic OMAP4 (Flattened Device Tree)
+	ffffffff        Generic AM33XX (Flattened Device Tree)
+	ffffffff        Generic OMAP3-GP (Flattened Device Tree)
+	ffffffff        Generic OMAP3 (Flattened Device Tree)
+	0000060a        OMAP3 Beagle Board
+	00000a9d        IGEP OMAP3 module
+	00000928        IGEP v2 board
+	00000ae7        OMAP4 Panda board
+	
+	Please check your kernel config and/or bootloader.
 
-</code></pre><p>编写autoradio脚本：</p><pre><code>	[root@alarmpi ~]# cat /usr/bin/autoradio 
-	#!/bin/bash
-	screen -d -m sudo -u Trusty cvlc --aout oss http://www.live365.com/play/wkhr --http-proxy=http://10.0.0.221:9001
+</code></pre><p>This is because the configuration file of the uEnv.txt is not right, the right one should be listed as following:</p><pre><code>	kernel_file=zImage
+	initrd_file=uInitrd
+	serverip=10.0.0.11
+	ipaddr=10.0.0.122
+	rootpath=/media/debianroot
+	console=ttyO0,115200n8
+	
+	loadzimage=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${kernel_file}
+	loadinitrd=load mmc ${mmcdev}:${mmcpart} 0x81000000 ${initrd_file}; setenv initrd_size ${filesize}
+	loadfdt=load mmc ${mmcdev}:${mmcpart} ${fdtaddr} /dtbs/${fdtfile}
+	
+	netargs=setenv bootargs console=${console} ${optargs} root=/dev/nfs nfsroot=${serverip}:${rootpath},vers=3 rw ip=${ipaddr}
+	#mmcargs=setenv bootargs console=${console} root=${mmcroot} rootfstype=${mmcrootfstype} ${optargs}
+	
+	#mmc uenvcmd
+	#uenvcmd=run loadzimage; run loadfdt; run mmcargs; bootz ${loadaddr} - ${fdtaddr}
+	
+	#just zImage
+	boot_ftd=run loadzimage; run loadfdt
+	uenvcmd=run boot_ftd; run netargs; bootz ${loadaddr} - ${fdtaddr}
 
-</code></pre><p>如果想添加管理</p><pre><code>	[root@alarmpi ~]# cat /usr/bin/autoradio 
-	#!/bin/bash
-	screen -d -m sudo -u Trusty cvlc --aout oss http://www.live365.com/play/wkhr --http-proxy=http://10.0.0.221:9001 --http-port=5202 --http-password=xxxxxx
+</code></pre><p>And remember to modify some files:</p><pre><code>	root@arm:~# cat /etc/network/interfaces
+	# interfaces(5) file used by ifup(8) and ifdown(8)
+	auto lo
+	iface lo inet loopback
+	
+	auto eth0
+	iface eth0 inet static
+	address 10.0.0.122
+	netmask 255.255.255.0
+	gateway 10.0.0.1
 
-</code></pre><p>好了，这个Internet Radio就写好了。Enjoy it!!!</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/12/06/enable-spice-for-qemu-virtual-machine/>Enable spice for qemu virtual machine</a></h1><span class=post-date>Dec 6, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Package Installation
-Install virt-viewer for browsing the virtual machine desktop. For default spicec is not OK.</p><pre><code>	$ pacman -S gtk-vnc
-	$ yaourt -S spice-gtk3
-	$ yaourt -S virt-viewer
-</code></pre><p>Install virt-manager</p><pre><code>	[root@DashArch Trusty]# pacman -S virt-manager 
-	[root@DashArch Trusty]# systemctl start libvirtd.service
-	[root@DashArch Trusty]# systemctl enable  libvirtd.service
-	ln -s '/usr/lib/systemd/system/libvirtd.service' '/etc/systemd/system/multi-user.target.wants/libvirtd.service'
-	[root@DashArch Trusty]# ps -ef | grep libvirt
-	root      8852     1  5 15:23 ?        00:00:00 /usr/bin/libvirtd -p /var/run/libvirtd.pid
-</code></pre><p>###启动支持spice Server的qemu
--vga qxl -spice port=5988,disable-ticketing将使能spice</p><pre><code>	./run-qemu -boot d  -m 1024 -enable-kvm -drive file=./fpgawindows.qcow2,if=ide -drive file=./fake.qcow2,if=virtio -cdrom ./virtio-win-0.1-74.iso -usb -vga qxl -spice port=5988,disable-ticketing -localtime
-</code></pre><p>在本地或者远程访问spice server:</p><pre><code>	$ spice -h 127.0.0.1 -p 5988
-</code></pre><p>但是ArchLinux上的X Server会出现问题，具体解决方案未明了。然而在Ubuntu上则是可以顺利访问的。
-###启动支持VNC的Qemu</p><pre><code>	./run-qemu -boot d  -m 1024 -enable-kvm -drive file=./fpgawindows.qcow2,if=ide -drive file=./fake.qcow2,if=virtio -cdrom ./virtio-win-0.1-74.iso -usb -vga std -nographic  -localtime -vnc :33
-启动后vncviewer :33则可连接到qemu的窗口
-</code></pre><p>###启动Qemu，以std方式
-全新启动：</p><pre><code>	./run-qemu -boot d  -m 1024 -enable-kvm -drive file=./fpgawindows.qcow2,if=ide -drive file=./fake.qcow2,if=virtio -cdrom ./virtio-win-0.1-74.iso -usb -vga std  -localtime `
+</code></pre><p>Add following lines in /etc/inittab:</p><pre><code>	T0:23:respawn:/sbin/getty -L ttyO0 115200 vt102
 
-</code></pre><p>保存状态： ctl+alt+2</p><pre><code>	$ savevm booted
+</code></pre><p>Next time when you boot up the beaglebone, it will use the NFS files.</p><p>Tips: when your ownership of su is not right, you will meet"set uid failed&rdquo; The solution is by Changing the ownership of the su used file;</p><pre><code>	chmod 4755 /bin/su
 
-</code></pre><p>启动到上一次保存的状态：</p><pre><code>	$  ./run-qemu -boot d  -m 1024 -enable-kvm -drive file=./fpgawindows.qcow2,if=ide -drive file=./fake.qcow2,if=virtio -cdrom ./virtio-win-0.1-74.iso -usb -vga std  -localtime --loadvm booted
+</code></pre><p>###NFS Server items
+/etc/exports file items:</p><pre><code>	/media/debianroot 10.0.0.1/24(rw,sync,no_subtree_check,no_root_squash) 10.0.0.11(rw,sync,no_subtree_check,no_root_squash)
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/12/06/install-qemu-virtio-driver-under-windows/>Install Qemu virtio driver under windows</a></h1><span class=post-date>Dec 6, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Download the iso file from the redhat repository:<br><a href=http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/images/images/bin/src/>http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/images/images/bin/src/</a><br>Start the qemu with the following command :</p><pre><code> 	./run-qemu -hda fpgawindows.qcow2 -m 1024 -cdrom ./virtio-win-0.1-74.iso -drive file=./fake.qcow2,if=ide
-</code></pre><p>In run-qemu, the actual command is:</p><pre><code>	qemu-system-i386 -net nic,model=virtio,macaddr=$macaddr -net tap,ifname=&quot;$IFACE&quot; $*
-</code></pre><p>Then, follow the following images to operate:</p><p><img src=/images/qemu1.jpg alt=qemu1.jpg></p><p><img src=/images/qemu2.jpg alt=qemu2.jpg></p><p><img src=/images/qemu3.jpg alt=qemu3.jpg></p><p><img src=/images/qemu4.jpg alt=qemu4.jpg></p><p><img src=/images/qemu5.jpg alt=qemu5.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/210/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/210/>210</a></li><li class="page-item active"><a class=page-link href=/page/211/>211</a></li><li class=page-item><a class=page-link href=/page/212/>212</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/235/>235</a></li><li class=page-item><a href=/page/212/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/235/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Restart the nfs server:</p><pre><code>	/etc/init.d/nfs-kernel-server
+	#or
+	service nfs-kernel-server restart
+
+</code></pre><p>tar files into your directory:</p><pre><code>	tar xvfp /media/nfs/beaglebone/debian-7.1-bare-armhf-2013-08-25/armhf-rootfs-debian-wheezy.tar  -C /media/debianroot/
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/12/10/beaglebone-boot-from-nfs/>BeagleBone boot from NFS</a></h1><span class=post-date>Dec 10, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###Building Preparation
+Create a new directory for stroing all of the items related to beaglebone.</p><pre><code>	cd /media/nfs/
+	mkdir beaglebone
+	cd beaglebone/
+
+</code></pre><p>Download the cross-compiler from linaro toolchain binary website. And add it to the environment variables.</p><pre><code>	wget -c https://launchpad.net/linaro-toolchain-binaries/trunk/2013.10/+download/gcc-linaro-arm-linux-gnueabihf-4.8-2013.10_linux.tar.xz
+	tar xJf gcc-linaro-arm-linux-gnueabihf-4.8-2013.10_linux.tar.xz
+	export CC=`pwd`/gcc-linaro-arm-linux-gnueabihf-4.8-2013.10_linux/bin/arm-linux-gnueabihf-
+	# Test the cross-compiler
+	${CC}gcc --version
+
+</code></pre><p>Checkout the U-boot:</p><pre><code>	git clone git://git.denx.de/u-boot.git
+	cd u-boot/
+	git checkout v2013.10 -b tmp
+
+</code></pre><p>Patching U-boot:</p><pre><code>	wget https://raw.github.com/eewiki/u-boot-patches/master/v2013.10/0001-am335x_evm-uEnv.txt-bootz-n-fixes.patch
+	patch -p1 &lt; 0001-am335x_evm-uEnv.txt-bootz-n-fixes.patch
+
+</code></pre><p>Configure and compile the U-boot:</p><pre><code>	make ARCH=arm CROSS_COMPILE=${CC} distclean
+	make ARCH=arm CROSS_COMPILE=${CC} am335x_evm_config
+	make ARCH=arm CROSS_COMPILE=${CC}
+
+</code></pre><p>Checkout the kernel:</p><pre><code>	git clone git://github.com/RobertCNelson/linux-dev.git
+	cd linux-dev
+	git checkout origin/am33x-v3.12 -b tmp
+
+</code></pre><p>Now we got our kernel and U-boot available. The next step is to build a filesystem:</p><pre><code>	wget -c https://rcn-ee.net/deb/minfs/raring/ubuntu-13.04-minimal-armhf-2013-08-25.tar.xz
+
+</code></pre><p>Prepare the mmc card.</p><pre><code>	export DISK=/dev/mmcblk0
+	[Trusty@XXXyyy beaglebone]$ sudo dd if=/dev/zero of=${DISK} bs=1M count=16
+	16+0 records in
+	16+0 records out
+	16777216 bytes (17 MB) copied, 4.84877 s, 3.5 MB/s 
+
+</code></pre><p>Use sfdisk for creating the partition layout.</p><pre><code>	sudo sfdisk --in-order --Linux --unit M ${DISK} &lt;&lt;-__EOF__
+	1,48,0xE,*
+	,,,-
+	__EOF__
+
+</code></pre><p>Format Partitions:</p><pre><code>	sudo mkfs.vfat -F 16 ${DISK}p1 -n boot
+	sudo mkfs.ext4 ${DISK}p2 -L rootfs
+
+</code></pre><p>Install Bootloader to the 1st partition of mmc card.</p><pre><code>	[Trusty@XXXyyy beaglebone]$ sudo mkdir -p /media/boot/
+	[Trusty@XXXyyy beaglebone]$ sudo mkdir -p /media/rootfs/
+	[Trusty@XXXyyy beaglebone]$ sudo mount ${DISK}p1 /media/boot/
+	[Trusty@XXXyyy beaglebone]$ sudo mount ${DISK}p2 /media/rootfs/
+	[Trusty@XXXyyy beaglebone]$ sudo cp -v ./u-boot/MLO /media/boot/
+	‘./u-boot/MLO’ -&gt; ‘/media/boot/MLO’
+	[Trusty@XXXyyy beaglebone]$ sudo cp -v ./u-boot/u-boot.img /media/boot/
+	‘./u-boot/u-boot.img’ -&gt; ‘/media/boot/u-boot.img’
+
+	[Trusty@XXXyyy linux-dev]$ vim uEnv.txt
+	[Trusty@XXXyyy linux-dev]$ sudo cp -v ./uEnv.txt /media/boot/
+	‘./uEnv.txt’ -&gt; ‘/media/boot/uEnv.txt’
+
+</code></pre><p>Copy Kernel:</p><pre><code>	[Trusty@XXXyyy beaglebone]$ sudo cp -v ./linux-dev/deploy/3.12.4-bone9.zImage /media/boot/zImage
+	‘./linux-dev/deploy/3.12.4-bone9.zImage’ -&gt; ‘/media/boot/zImage’
+
+</code></pre><p>Copy Root File System:</p><pre><code>	sudo tar xfvp ./ubuntu-13.04-minimal-armhf-2013-08-25/armhf-rootfs-ubuntu-raring.tar -C /media/rootfs/
+Installation of kernel and configuration of the filesystem.
+	sudo cp -v ./linux-dev/deploy/3.12.4-bone9.zImage /media/boot/zImage
+	sudo mkdir -p /media/boot/dtbs/
+	sudo tar xfov ./linux-dev/deploy/3.12.4-bone9-dtbs.tar.gz -C /media/boot/dtbs/
+	sudo tar xfv ./linux-dev/deploy/3.12.4-bone9-firmware.tar.gz  -C /media/rootfs/lib/firmware/
+	sudo tar xfv ./linux-dev/deploy/3.12.4-bone9-modules.tar.gz -C /media/rootfs/
+	sudo vim /media/rootfs/etc/fstab
+	sudo vim /media/rootfs/etc/network/interfaces 
+	sudo vim /media/rootfs/etc/udev/rules.d/70-persistent-net.rules
+	sudo vim /media/rootfs/etc/inittab
+	sudo vim /media/rootfs/etc/init/serial.conf
+	sudo umount /media/rootfs/
+	sudo umount /media/boot/
+
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/210/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/210/>210</a></li><li class="page-item active"><a class=page-link href=/page/211/>211</a></li><li class=page-item><a class=page-link href=/page/212/>212</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/212/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
