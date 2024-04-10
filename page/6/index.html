@@ -263,6 +263,46 @@ sudo update-alternatives --set c++ /usr/bin/g++
 </code></pre><p>Select default items:</p><pre><code>sudo update-alternatives --config gcc
 sudo update-alternatives --config g++
 </code></pre><h3 id=32-speedup-disk>32. speedup disk</h3><p>via disable fstrim on ubuntu:</p><pre><code>sudo systemctl disable fstrim.timer
+</code></pre><h3 id=33-github-actions-update>33. github actions update</h3><p><code>purplepalmdash/purplepalmdash.github.io</code>'s Deploy keys, add the new deploy keys:</p><p><img src=/images/2024_04_07_11_03_45_478x133.jpg alt=/images/2024_04_07_11_03_45_478x133.jpg></p><p><code>purplepalmdash/blogsource</code>'s Settings-> <code>Secrets and variables</code> -> <code>Actions</code>, add a new <code>ACTIONS_DEPLOY_KEY</code>:</p><p><img src=/images/2024_04_07_11_04_56_970x148.jpg alt=/images/2024_04_07_11_04_56_970x148.jpg></p><p>The first picture contains content from <code>id_ed25519.pub</code>, while the second is <code>id_ed25519</code>, which are generated via <code>ssh-keygen -t ed25519 -C "xxxxxx@gmail.com"</code>.</p><p>Change the file:</p><pre><code>$ cat .github/workflows/main.yml
+......
+
+     - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: purplepalmdash/purplepalmdash.github.io
+          publish_dir: ./src/public
+          publish_branch: master
+
+</code></pre><h3 id=34-wake-on-lan-configuration>34. wake-on-lan configuration</h3><p>Enable wake on lan for linux configuration, and make it permanently:</p><pre><code>test@2204:~$ sudo vim  /etc/systemd/system/wol.service 
+test@2204:~$ sudo systemctl daemon-reload
+test@2204:~$ sudo systemctl enable wol.service
+Created symlink /etc/systemd/system/basic.target.wants/wol.service → /etc/systemd/system/wol.service.
+test@2204:~$ cat /etc/systemd/system/wol.service
+[Unit]
+Description=Enable Wake On Lan
+
+[Service]
+Type=oneshot
+ExecStart = /sbin/ethtool --change enp1s0 wol g
+
+[Install]
+WantedBy=basic.target
+test@2204:~$ /sbin/ethtool --change enp1s0 wol g
+netlink error: Operation not permitted
+test@2204:~$ sudo /sbin/ethtool --change enp1s0 wol g
+test@2204:~$ sudo ethtool enp1s0 | grep Wake
+	Supports Wake-on: pumbg
+	Wake-on: g
+test@2204:~$ sudo shutdown -h now
+Connection to 192.168.1.40 closed by remote host.
+</code></pre><h3 id=35-update-grub2-not-working-for-efi>35. update-grub2 not working for efi</h3><p>solved via:</p><pre><code>grub-install --efi-directory=/boot/efi
+</code></pre><h3 id=36-ipxe-bootup-issue>36. ipxe bootup issue</h3><p>let realtek use its own efi file for bootup, solved via:</p><pre><code># vim /etc/dhcp/dhcpd.conf
+host st12400 {
+                        hardware ethernet 54:f6:c5:1f:23:bd;
+                        filename &quot;realtek.efi&quot;;
+                }
+# systemctl restart isc-dhcp-server
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
 cd Fooocus-MRE
 python3 -m venv fooocus_env
