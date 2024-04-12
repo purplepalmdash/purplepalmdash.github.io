@@ -1,5 +1,26 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/28/workingtipsonxengt/>WorkingtipsOnXenGT</a></h1><span class=post-date>Sep 28, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=hardware>hardware</h3><p>hardware:</p><pre><code>$ cat /proc/cpuinfo | grep model
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/10/25/workingtipsonucc/>WorkingTipsOnucc</a></h1><span class=post-date>Oct 25, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Create a inner networking for testing:</p><p><img src=/images/2022_10_25_09_48_58_519x557.jpg alt=/images/2022_10_25_09_48_58_519x557.jpg></p><p>Select the inner networking for imported vm:</p><p><img src=/images/2022_10_25_09_49_48_719x410.jpg alt=/images/2022_10_25_09_49_48_719x410.jpg></p><p>Change vm&rsquo;s ip address configuration:</p><p><img src=/images/2022_10_25_09_52_46_481x379.jpg alt=/images/2022_10_25_09_52_46_481x379.jpg></p><p>Check the changed ip configuration:</p><p><img src=/images/2022_10_25_09_53_37_639x193.jpg alt=/images/2022_10_25_09_53_37_639x193.jpg></p><p>visit <code>https://10.17.18.2</code> for changing ucc server configuration:</p><p><img src=/images/2022_10_25_09_54_54_541x562.jpg alt=/images/2022_10_25_09_54_54_541x562.jpg></p><p>Changed the <code>server address</code>:</p><p><img src=/images/2022_10_25_09_59_20_312x164.jpg alt=/images/2022_10_25_09_59_20_312x164.jpg></p><p>Change the dhcp service:</p><p><img src=/images/2022_10_25_10_01_51_448x397.jpg alt=/images/2022_10_25_10_01_51_448x397.jpg></p><p>Delete all of the registed server:</p><p><img src=/images/2022_10_25_10_04_49_817x322.jpg alt=/images/2022_10_25_10_04_49_817x322.jpg></p><h3 id=verification>Verification</h3><p>Create 2 vm images file under <code>/var/lib/libvirt/images</code>:</p><pre><code># qemu-img create -f qcow2 win1.qcow2 50G
+# qemu-img create -f qcow2 win2.qcow2 50G
+</code></pre><p>Manually import :</p><p><img src=/images/2022_10_25_10_10_19_423x263.jpg alt=/images/2022_10_25_10_10_19_423x263.jpg></p><p>2 core, 4096 MiB memory. Select win1.qcow2:</p><p><img src=/images/2022_10_25_10_11_07_396x234.jpg alt=/images/2022_10_25_10_11_07_396x234.jpg></p><p>uefi relatd configuration:</p><p><img src=/images/2022_10_25_10_13_03_786x544.jpg alt=/images/2022_10_25_10_13_03_786x544.jpg></p><p>Select Nic:</p><p><img src=/images/2022_10_25_10_13_28_581x324.jpg alt=/images/2022_10_25_10_13_28_581x324.jpg></p><p>Change the boot options:</p><p><img src=/images/2022_10_25_10_15_40_469x345.jpg alt=/images/2022_10_25_10_15_40_469x345.jpg></p><p>Configuration:</p><p><img src=/images/2022_10_25_10_20_34_465x219.jpg alt=/images/2022_10_25_10_20_34_465x219.jpg></p><p>Initialize the disk:</p><p><img src=/images/2022_10_25_10_21_09_1830x619.jpg alt=/images/2022_10_25_10_21_09_1830x619.jpg></p><p>Succeed:</p><p><img src=/images/2022_10_25_10_22_25_1172x265.jpg alt=/images/2022_10_25_10_22_25_1172x265.jpg></p><p>Login with <code>user1</code>:</p><p><img src=/images/2022_10_25_10_23_12_448x582.jpg alt=/images/2022_10_25_10_23_12_448x582.jpg></p><p>Select the <code>TCI</code> for downloading:</p><p><img src=/images/2022_10_25_10_23_46_541x315.jpg alt=/images/2022_10_25_10_23_46_541x315.jpg></p><h3 id=virtualbox-way>Virtualbox way</h3><p>Create vm and import:</p><p><img src=/images/2022_10_25_11_28_49_964x545.jpg alt=/images/2022_10_25_11_28_49_964x545.jpg></p><p>Import vm disk:</p><p><img src=/images/2022_10_25_11_30_03_1059x541.jpg alt=/images/2022_10_25_11_30_03_1059x541.jpg></p><p>Create network(without dhcp):</p><p><img src=/images/2022_10_25_11_31_46_520x218.jpg alt=/images/2022_10_25_11_31_46_520x218.jpg></p><p>Choose the network:</p><p><img src=/images/2022_10_25_11_32_23_802x439.jpg alt=/images/2022_10_25_11_32_23_802x439.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/30/workingtipsonproxmoxgvtg/>WorkingTipsOnProxmoxGVTG</a></h1><span class=post-date>Sep 30, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=change-configuration>Change configuration</h3><p>Change grub options:</p><pre><code># vi /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet&quot;
+TO
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet intel_iommu=on iommu=pt i915.enable_gvt=1&quot;
+
+# vi /etc/modules
+vfio
+vfio_iommu_type1
+vfio_pci
+vfio_virqfd
+kvmgt
+</code></pre><p>Update:</p><pre><code># update-grub2
+# update-initramfs -u -k all
+</code></pre><h3 id=check-status>Check status:</h3><p>Check iommu features:</p><pre><code># dmesg | grep -e DMAR -e IOMMU -e AMD-Vi
+# find /sys/kernel/iommu_groups/ -type l
+</code></pre><p>Get the VGA related:</p><pre><code>root@pve:~# lspci | grep -i vga
+00:02.0 VGA compatible controller: Intel Corporation HD Graphics 630 (rev 04)
+root@pve:~# ls /sys/bus/pci/devices/0000\:00\:02.0/mdev_supported_types/
+i915-GVTg_V5_4	i915-GVTg_V5_8
+</code></pre><h3 id=vm-installation>vm installation</h3><p>Create a vm (win7) like:</p><p><img src=/images/2022_09_30_10_01_06_720x245.jpg alt=/images/2022_09_30_10_01_06_720x245.jpg></p><p><img src=/images/2022_09_30_10_02_04_724x216.jpg alt=/images/2022_09_30_10_02_04_724x216.jpg></p><p>Add PCI device:</p><p><img src=/images/2022_09_30_10_03_54_614x173.jpg alt=/images/2022_09_30_10_03_54_614x173.jpg></p><p>hardware:</p><p><img src=/images/2022_09_30_10_04_22_961x349.jpg alt=/images/2022_09_30_10_04_22_961x349.jpg></p><p>Then install the windows in console.</p><p>Install &ldquo;Jianjizhi&rdquo; and test usage.</p><p><img src=/images/2022_09_30_10_30_50_943x660.jpg alt=/images/2022_09_30_10_30_50_943x660.jpg></p><p>Install intel video:</p><p><img src=/images/2022_09_30_10_31_52_599x404.jpg alt=/images/2022_09_30_10_31_52_599x404.jpg></p><p><img src=/images/2022_09_30_10_32_15_427x337.jpg alt=/images/2022_09_30_10_32_15_427x337.jpg></p><p>Select <code>Install this driver software anyway</code>:</p><p><img src=/images/2022_09_30_10_32_37_549x382.jpg alt=/images/2022_09_30_10_32_37_549x382.jpg></p><p>Select <code>reboot this computer now</code>:</p><p><img src=/images/2022_09_30_10_33_49_438x342.jpg alt=/images/2022_09_30_10_33_49_438x342.jpg></p><p>Status:</p><p><img src=/images/2022_09_30_10_43_27_657x467.jpg alt=/images/2022_09_30_10_43_27_657x467.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/09/28/workingtipsonxengt/>WorkingtipsOnXenGT</a></h1><span class=post-date>Sep 28, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=hardware>hardware</h3><p>hardware:</p><pre><code>$ cat /proc/cpuinfo | grep model
 model		: 60
 model name	: Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz
 $ free -g
@@ -511,119 +532,4 @@ CPU architecture: 8
 CPU variant	: 0x0
 CPU part	: 0xd08
 CPU revision	: 3
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/08/29/workingtipsonupgradingsg1drivercentos1810.qcow2/>WorkingTipsOnUpgradingSG1DriverCentOS1810.qcow2</a></h1><span class=post-date>Aug 29, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=vm>VM</h3><p>Import new image:</p><p><img src=/images/2022_08_29_10_25_29_498x422.jpg alt=/images/2022_08_29_10_25_29_498x422.jpg></p><p>Name it:</p><p><img src=/images/2022_08_29_10_26_09_467x332.jpg alt=/images/2022_08_29_10_26_09_467x332.jpg></p><p>Upgrade kernel to 4.19.12:</p><pre><code>$ ls
-kernel-4.19.12-1.x86_64.rpm  kernel-devel-4.19.12-1.x86_64.rpm  kernel-headers-4.19.12-1.x86_64.rpm  kmod-ukmd-4.19.12-20212.el7.x86_64.rpm
-$ rpm -ivh *.rpm
-$ vi /etc/default/grub
-Changed to 4.19.12 kernel
-$ grub2-mkconfig -o /boot/grub2/grub.cfg 
-$ sudo reboot
-</code></pre><p>Change the repository using iso:</p><pre><code># mount /dev/sr0 /mnt
-# cat /etc/yum.repos.d/local.repo
-[local]
-name=local
-baseurl=file:///mnt
-enabled=1
-gpgcheck=0
-# yum makecache
-</code></pre><p>Using official <code>install-sg1.sh</code> for installing to 4.19.112 kernel for fetching the dependencies.</p><h3 id=merge-steps>Merge steps</h3><p>安装官方驱动的过程中会编译出相应的文件，需要按照以下步骤进行更改:</p><pre><code># mkdir /root/merge
-# cp /root/rpmbuild/SRPMS/kmod-ukmd-4.19.112-20413.el7.centos.src.rpm /root/merge
-# cd /root/merge
-# mkdir kmod-ukmd-4.19.12.cpio
-# cd kmod-ukmd-4.19.12.cpio
-# rpm2cpio ../kmod-ukmd-4.19.112-20413.el7.centos.src.rpm | cpio -idmv
-# ls
-dg1_dmc_ver2_02.bin  dg1_guc_49.0.1.bin  dg1_huc_7.9.5.bin  kmod.spec  kmod-ukmd-4.19.112.tar.gz
-# tar xzvf kmod-ukmd-4.19.112.tar.gz
-# mv kmod-ukmd-4.19.112 kmod-ukmd-4.19.12
-# vim kmod.spec 
-Change 4.19.112-&gt;4.19.12
-# vim kmod-ukmd-4.19.12/kmod.spec
-Change 4.19.112-&gt;4.19.12
-# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_edid.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
-# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_probe_helper.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
-# cp /usr/src/kernels/4.19.12/drivers/gpu/drm/drm_vblank.c kmod-ukmd-4.19.12/orig/drivers/gpu/drm/
-# mv kmod-ukmd-4.19.112.tar.gz /tmp
-# tar czvf kmod-ukmd-4.19.12.tar.gz kmod-ukmd-4.19.12
-# rm -rf kmod-ukmd-4.19.12
-# ls
-dg1_dmc_ver2_02.bin  dg1_guc_49.0.1.bin  dg1_huc_7.9.5.bin  kmod.spec  kmod-ukmd-4.19.12.tar.gz
-# cd ..
-# tar czvf kmod-ukmd-4.19.12.cpio.tar.gz kmod-ukmd-4.19.12.cpio
-# ls
-kmod-ukmd-4.19.112-20413.el7.centos.src.rpm  kmod-ukmd-4.19.12.cpio  kmod-ukmd-4.19.12.cpio.tar.gz
-# mv /root/rpmbuild/SOURCES/ /root/rpmbuild/SOURCES.back &amp;&amp; mkdir -p /root/rpmbuild/SOURCES/
-# cp -ar /root/merge/kmod-ukmd-4.19.12.cpio/* /root/rpmbuild/SOURCES
-# cd /root/rpmbuild/SOURCES
-# vim /usr/src/kernels/4.19.12/include/linux/math64.h
-在文件末尾倒数第二行添加
-.....
-    #endif /* mul_u64_u32_div */
-    +++++ #define DIV64_U64_ROUND_UP(ll, d)	\
-    +++++	({ u64 _tmp = (d); div64_u64((ll) + _tmp - 1, _tmp); })
-    
-    #endif /* _LINUX_MATH64_H */
-
-# rpmbuild -bb kmod.spec
-# ls /root/rpmbuild/RPMS/x86_64
-kmod-ukmd-4.19.12-20413.el7.centos.x86_64.rpm
-</code></pre><h3 id=verification>Verification</h3><p>Install any 4.19.12 kernel, test the package <code>kmod-ukmd-4.19.12-20413.el7.centos.x86_64.rpm</code>.</p><pre><code>$ ls /dev/dri/
-card0  renderD128
-$ lsmod | grep i915
-i915_spi               20480  0 
-mtd                    57344  5 i915_spi
-i915                 1933312  0 
-drm_ukmd_kms_helper   188416  1 i915
-drm_ukmd              495616  3 drm_ukmd_kms_helper,i915
-drm_ukmd_compat        98304  3 drm_ukmd_kms_helper,i915,drm_ukmd
-video                  40960  1 i915
-i2c_algo_bit           16384  1 i915
-cec                    45056  1 i915
-mfd_core               16384  2 lpc_ich,i915
-</code></pre><p>Examine the kernel demsg:</p><pre><code>$ sudo dmesg | grep drm
-[sudo] password for ctctest: 
-[    7.776406] drm: loading out-of-tree module taints kernel.
-[    7.800836] Initialized drm/i915 compat module 20160105
-[    7.892916] [drm] i915 backporting
-[    7.893701] [drm] Intel graphics LMEM: [mem 0x00000000-0x1fb7fffff]
-[    7.893702] [drm] Intel graphics LMEM IO start: a00000000
-[    7.893702] [drm] Intel graphics LMEM size: 1fb800000
-[    7.893714] [drm] Intel graphics stolen LMEM: [mem 0x1fc000000-0x1ffffffff]
-[    7.893714] [drm] Intel graphics stolen LMEM IO start: bfc000000
-[    7.895015] i915 0000:07:00.0: [drm] Couldn't get system memory bandwidth
-[    7.895053] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
-[    7.895054] [drm] Driver supports precise vblank timestamp query.
-[    7.971850] i915 0000:07:00.0: [drm] Finished loading DMC firmware i915/dg1_dmc_ver2_02.bin (v2.2)
-[    7.994442] [drm] GuC communication enabled
-[    7.999403] i915 0000:07:00.0: [drm] GuC firmware i915/dg1_guc_49.0.1.bin version 49.0 submission:disabled
-[    7.999405] i915 0000:07:00.0: [drm] HuC firmware i915/dg1_huc_7.9.5.bin version 7.9 authenticated:yes
-[    8.001958] [drm] Initialized i915 1.6.0 20220718-8a58be7 for 0000:07:00.0 on minor 0
-[    8.003950] i915 0000:07:00.0: [drm] Cannot find any crtc or sizes
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/08/26/benchmarkonsg1/>BenchmarkOnSG1</a></h1><span class=post-date>Aug 26, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Start the redroid via:</p><pre><code># docker run -itd --name redroid4cores --memory-swappiness=0 --privileged   -p 5556:5555 --cpuset-cpus 0-3 -v /root/cpus/present:/sys/devices/system/cpu/present -v /root/cpus/online:/sys/devices/system/cpu/online -v /root/cpus/possible:/sys/devices/system/cpu/possible redroid12:latest redroid.fps=120 ro.sf.lcd_density=240 redroid.width=1080 redroid.height=1920 redroid.gpu.mode=host redroid.gpu.node=/dev/dri/renderD128 androidboot.use_memfd=1
-fe847de1c10fd9f28a358257b1c90c22884535a6d14c8867136bceea77cf140c
-root@ctctest-UniServer-R4900-G3:~# docker exec -it redroid4cores sh
-fe847de1c10f:/ # setprop sys.use_memfd 1 
-</code></pre><p><img src=/images/2022_08_26_11_10_15_585x711.jpg alt=/images/2022_08_26_11_10_15_585x711.jpg></p><p>Remove the other 3 socs:</p><pre><code># rm -rf /dev/dri/renderD129 /dev/dri/renderD130 /dev/dri/renderD131 
-# rm -rf /dev/dri/card1 /dev/dri/card2 /dev/dri/card3
-</code></pre><p>Rerun the benchmark, still the same:</p><p><img src=/images/2022_08_26_11_17_06_590x521.jpg alt=/images/2022_08_26_11_17_06_590x521.jpg></p><p>Remove the device:</p><pre><code># echo 1 &gt; /sys/bus/pci/devices/0000:b8:00.0/remove
-# echo 1 &gt; /sys/bus/pci/devices/0000:c2:00.0/remove
-# echo 1 &gt; /sys/bus/pci/devices/0000:bd:00.0/remove
-</code></pre><p>System hang.</p><p>Using udev for removing the socs:</p><pre><code># cat /etc/udev/rules.d/removesg1.rules 
-ACTION==&quot;add&quot;, KERNEL==&quot;0000:b8:00.0&quot;, SUBSYSTEM==&quot;pci&quot;, RUN+=&quot;/bin/sh -c 'echo 1 &gt; /sys/bus/pci/devices/0000:b8:00.0/remove'&quot;
-ACTION==&quot;add&quot;, KERNEL==&quot;0000:bd:00.0&quot;, SUBSYSTEM==&quot;pci&quot;, RUN+=&quot;/bin/sh -c 'echo 1 &gt; /sys/bus/pci/devices/0000:bd:00.0/remove'&quot;
-ACTION==&quot;add&quot;, KERNEL==&quot;0000:c2:00.0&quot;, SUBSYSTEM==&quot;pci&quot;, RUN+=&quot;/bin/sh -c 'echo 1 &gt; /sys/bus/pci/devices/0000:c2:00.0/remove'&quot;
-</code></pre><p>Examine the graphical cards:</p><pre><code># lspci | grep -i vga
-0000:05:00.0 VGA compatible controller: ASPEED Technology, Inc. ASPEED Graphics Family (rev 41)
-0000:b3:00.0 VGA compatible controller: Intel Corporation Device 4907 (rev 01)
-</code></pre><p>render nodes:</p><pre><code># ls /dev/dri/
-by-path  card0  renderD128
-# ls /dev/dri/by-path/ -l
-total 0
-lrwxrwxrwx 1 root root  8 8月  26 11:49 pci-0000:b3:00.0-card -&gt; ../card0
-lrwxrwxrwx 1 root root 13 8月  26 11:49 pci-0000:b3:00.0-render -&gt; ../renderD128
-</code></pre><p>Rerun the testing:</p><p><img src=/images/2022_08_26_11_57_38_588x761.jpg alt=/images/2022_08_26_11_57_38_588x761.jpg></p><h3 id=another-machine>Another machine</h3><p><img src=/images/2022_08_26_12_21_46_584x203.jpg alt=/images/2022_08_26_12_21_46_584x203.jpg></p><p>Turbo boost mode(avd) comparision:</p><p>non-turbo boost</p><p><img src=/images/2022_08_26_12_35_07_372x255.jpg alt=/images/2022_08_26_12_35_07_372x255.jpg></p><p>turbo boost(sg1):</p><p><img src=/images/2022_08_26_12_41_30_373x417.jpg alt=/images/2022_08_26_12_41_30_373x417.jpg></p><p>Turbo boot (t4):</p><p><img src=/images/2022_08_26_12_48_07_525x494.jpg alt=/images/2022_08_26_12_48_07_525x494.jpg></p><p>vnc(best perf mode):</p><p><img src=/images/2022_08_26_15_00_35_589x281.jpg alt=/images/2022_08_26_15_00_35_589x281.jpg></p><p>no vnc(best perf mode), no scrcpy:</p><p><img src=/images/2022_08_26_15_06_44_595x985.jpg alt=/images/2022_08_26_15_06_44_595x985.jpg></p><p>scrcpy with 15fps:</p><p><img src=/images/2022_08_26_15_22_06_528x261.jpg alt=/images/2022_08_26_15_22_06_528x261.jpg></p><p>scrcpy with 5fps:</p><p><img src=/images/2022_08_26_15_27_03_528x285.jpg alt=/images/2022_08_26_15_27_03_528x285.jpg></p><p>no scrcpy again:</p><p><img src=/images/2022_08_26_15_31_56_534x261.jpg alt=/images/2022_08_26_15_31_56_534x261.jpg></p><p>t4 with scrcpy:</p><p><img src=/images/2022_08_26_15_39_49_1029x473.jpg alt=/images/2022_08_26_15_39_49_1029x473.jpg></p><p>ampere t4 with scrcpy:</p><p><img src=/images/2022_08_26_15_49_37_480x918.jpg alt=/images/2022_08_26_15_49_37_480x918.jpg></p><p>Performance:</p><pre><code>cpupower frequency-set -g performance
-
-</code></pre><p>ampere t4 without scrcpy:</p><p><img src=/images/2022_08_26_16_58_06_469x380.jpg alt=/images/2022_08_26_16_58_06_469x380.jpg></p><p>should upgrade to oibaf? upgrading to stable.</p><pre><code>sudo add-apt-repository ppa:kisak/kisak-mesa
-sudo apt update
-sudo apt upgrade
-</code></pre><p>Next week, upgrading to 5.19.3</p><p>Even on 5.19.3, benchmark is very bad:</p><p><img src=/images/2022_08_29_11_37_21_502x253.jpg alt=/images/2022_08_29_11_37_21_502x253.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/17/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/17/>17</a></li><li class="page-item active"><a class=page-link href=/page/18/>18</a></li><li class=page-item><a class=page-link href=/page/19/>19</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/19/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/17/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/17/>17</a></li><li class="page-item active"><a class=page-link href=/page/18/>18</a></li><li class=page-item><a class=page-link href=/page/19/>19</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/19/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

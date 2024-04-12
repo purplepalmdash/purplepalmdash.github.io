@@ -1,5 +1,97 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/06/29/otrs-on-ubuntu/>OTRS on Ubuntu</a></h1><span class=post-date>Jun 29, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>First get the source code from official website, and untar it via:</p><pre><code>$ sudo tar xjvf otrs-3.3.8.tar.bz2 -C /opt/
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/07/03/smtp-problem-solving/>SMTP Problem Solving</a></h1><span class=post-date>Jul 3, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Recently I&rsquo;ve set up a ticket system, OTRS, which uses smtp for sending out email. It works well in my virtual machine, and in my own server. But when deploying it onto the lab PC, it cannot send out email via smtp. Following is the solving procedure for this problem.</p><h3 id=smtp-server>SMTP Server</h3><p>When Login into the server, following is how to using smtp for sending out email.</p><pre><code>$ telnet localhost 25
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+220 nxxxxx.xxx.fukcfuck-fugkock.com ESMTP Sendmail 8.14.5+Sun/8.13.3; Thu, 26 Jun 2014 06:43:37 -0500 (CDT)
+ehlo localhost
+250-nxxxxx.xxx.fukcfuck-fugkock.com Hello localhost [127.0.0.1], pleased to meet you
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-EXPN
+250-VERB
+250-8BITMIME
+250-SIZE
+250-DSN
+250-ETRN
+250-DELIVERBY
+250 HELP
+mail from: kkkkk@xxxxxx.xx.fugkock.com
+250 2.1.0 kkkkk@xxxxxx.xx.fugkock.com... Sender ok
+rcpt to:xxx_xxx.mao@fukcfuck-fugkock.com
+250 2.1.5 xxx_xxx.mao@fukcfuck-fugkock.com... Recipient ok
+data
+Subjet:354 Enter mail, end with &quot;.&quot; on a line by itself
+Hi,
+Are you there?
+regards,
+Admin
+.
+250 2.0.0 s5QBhbEu014970 Message accepted for delivery
+quit
+221 2.0.0 xxxxxx.xxx.fukcfuck-fugkock.com closing connection
+Connection to localhost closed by foreign host.
+
+</code></pre><h3 id=error-message>Error message</h3><p>When sending out the /var/log/messages will record the failure message, like:</p><pre><code>Jul  1 00:57:10 Linux01 OTRS-CGI-37[2757]: [Info][Kernel::System::CustomerUser::DB::CustomerUserAdd] CustomerUser: '9988@qq.com' created successfully (1)!
+Jul  1 00:57:10 Linux01 OTRS-CGI-37[2757]: [Notice][Kernel::System::CustomerUser::DB::SetPassword] CustomerUser: '9988@qq.com' changed password successfully!
+Jul  1 00:57:12 Linux01 OTRS-CGI-37[2757]: [Error][Kernel::System::Email::SMTP::Send][Line:139]: Can't send to '9988@qq.com': 5505.7.1 &lt;9988@qq.com&gt;... Relaying denied. IP name lookup failed [104.xxx.xxx.53]#012! Enable Net::SMTP debug for more info!
+Jul  1 00:57:12 Linux01 OTRS-CGI-37[2757]: [Info][Kernel::System::Email::Send] Error sending message
+
+</code></pre><p>It says the IP name lookup failed.</p><h3 id=bug-shooting>Bug Shooting</h3><p>Use tcpdump for capturing the package, comparing to the normal package.<br>It indicates the message &ldquo;IP name lookup failed [104.xxx.xxx.53]", so I guess this may caused by reverse refer of smtp server.</p><p>Use dnslookup for the correct record:</p><pre><code>[Trusty@Linux01 ~]$ nslookup 104.xxx.xxx.53
+Server:        104.xxx.xxx.xxx
+Address:    104.xxx.xxx.xxx#53
+
+** server can't find 53.xxx.xxx.104.in-addr.arpa.: NXDOMAIN
+
+=============================================================
+
+
+[Trusty@Linux01 ~]$ nslookup 104.xxx.xxx.240
+Server:        104.xxx.xxx.xxx
+Address:    104.xxx.xxx.xxx#53
+
+Non-authoritative answer:
+240.xxx.xxx.104.in-addr.arpa    name = xxxxxxxx.xx.fukcfuck-fugkock.com.
+
+</code></pre><p>So the solution is quite clear: If we give 104.xxx.xxx.140 a name, we could easily reached this machine from smtp server, thus the problem may be solved.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/07/03/turn-joggler-into-a-real-digital-picture-frame/>Turn Joggler into a real Digital Picture Frame</a></h1><span class=post-date>Jul 3, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>In fact Joggler initially is released as a digital picture frame, but I turned it into a linux server. Now It&rsquo;s time to turn this server back.</p><h3 id=change-runlevel>Change RunLevel</h3><p>Edit the gdm.conf file:</p><pre><code># cat /etc/init/gdm.conf
+# gdm - GNOME Display Manager
+#
+# The display manager service manages the X servers running on the
+# system, providing login and auto-login services
+
+description     &quot;GNOME Display Manager&quot;
+author          &quot;William Jon McCann &lt;mccann@jhu.edu&gt;&quot;
+
+start on ((filesystem
+           and runlevel [!06]
+           # Without 03, assume our default level is 03
+           #and runlevel [!03]
+
+</code></pre><p>To known your default run level, type:</p><pre><code># runlevel
+N 3
+
+</code></pre><p>Then reboot the joggler, to see if you could get the gdm window.</p><p>Disable auto-logon via:</p><pre><code>$ cat /etc/init/tty1.conf
+respawn
+#exec /sbin/mingetty -8 38400 tty1 Trusty -8 38400 tty1
+exec /sbin/getty -8 38400 tty1
+
+</code></pre><p>Install lightdm via:</p><pre><code>$ sudo apt-get install lightdm
+$ sudo dpkg-reconfigure lightdm
+
+</code></pre><p>Enable auto-login to lightdm:</p><pre><code>$ cat /etc/lightdm/lightdm.conf 
+[SeatDefaults]
+autologin-user=Trusty
+autologin-user-timeout=0
+greeter-session=lightdm-gtk-greeter
+user-session=xubuntu
+
+</code></pre><h3 id=enable-slideshow>Enable SlideShow</h3><p>Find out the resolution via following command:</p><pre><code>$ xrandr | grep '*'
+   800x480        60.0* 
+
+</code></pre><p>Install essential software:</p><pre><code>$ sudo apt-get install feh
+$ sudo apt-get install unclutter
+
+</code></pre><p>In fact using feh is not good enough for setting the screenSaver, at last I use xscreensaver, it has a mode of glslideshow, you can specify your own directory.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/06/29/otrs-on-ubuntu/>OTRS on Ubuntu</a></h1><span class=post-date>Jun 29, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>First get the source code from official website, and untar it via:</p><pre><code>$ sudo tar xjvf otrs-3.3.8.tar.bz2 -C /opt/
 $ cd /opt
 $ sudo mv otrs-3.3.8/ otrs
 
@@ -135,209 +227,5 @@ $ hardinfo
 </code></pre><h3 id=get-the-config-from-intel-doc>Get the config from Intel Doc</h3><p>Refer to following link:<br><a href=http://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units>http://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units</a>, for example, My cpu is Intel(R) Core(TM) i5-2520M , then find the &ldquo;Core i5-2xxxM&rdquo;, it shows the graphic card is HD Graphics 3000.</p><h3 id=configure-intel-graphics-card>Configure Intel Graphics Card</h3><p>Install driver:</p><pre><code>$ sudo pacman -S xf86-video-intel
 
 </code></pre><p>32-bit 3D Support:</p><pre><code>$ sudo pacman -S lib32-intel-dri
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/06/24/tmux-tips/>tmux tips</a></h1><span class=post-date>Jun 24, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Following is my tmux cheet sheet, it will be updated from time to time.<br>Create a new tmux session:</p><pre><code>$ tmux new
-
-</code></pre><p>Given session name:</p><pre><code>$ tmux new -s session-name
-
-</code></pre><p>Detach: <code>ctrl</code> + <code>b</code>, &lsquo;d`.<br>List existing session:</p><pre><code>$ tmux ls
-
-</code></pre><p>Attached to existing session:</p><pre><code>$ tmux a -t session-name
-
-</code></pre><p>Attached to first session:</p><pre><code>$ tmux a
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/06/18/database-in-node-dot-js/>Database In Node.js</a></h1><span class=post-date>Jun 18, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=mongodb>MongoDB</h3><p>Install MongoDB via:</p><pre><code>$ sudo pacman -S mongodb
-$ sudo systemctl start mongodb
-$ sudo systemctl enable mongodb
-$ mongodb
-
-</code></pre><p>Later I will cover this topic.</p><h3 id=mysql>MySQL</h3><h4 id=installation-of-mysql>Installation of MySQL</h4><p>The implementation chosen by Arch Linux is called MariaDB, install it via:</p><pre><code>$ sudo pacman -S mariadb 
-
-</code></pre><p>Configuration steps:</p><pre><code>$ sudo systemctl start mysqld.service
-[Trusty@~]$ sudo mysql_secure_installation
-/usr/bin/mysql_secure_installation: line 379: find_mysql_client: command not found
-
-NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
-      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
-
-In order to log into MariaDB to secure it, we'll need the current
-password for the root user.  If you've just installed MariaDB, and
-you haven't set the root password yet, the password will be blank,
-so you should just press enter here.
-
-Enter current password for root (enter for none): 
-OK, successfully used password, moving on...
-
-Setting the root password ensures that nobody can log into the MariaDB
-root user without the proper authorisation.
-
-Set root password? [Y/n] Y
-New password: 
-Re-enter new password: 
-Password updated successfully!
-Reloading privilege tables..
- ... Success!
-
-
-By default, a MariaDB installation has an anonymous user, allowing anyone
-to log into MariaDB without having to have a user account created for
-them.  This is intended only for testing, and to make the installation
-go a bit smoother.  You should remove them before moving into a
-production environment.
-
-Remove anonymous users? [Y/n] Y
- ... Success!
-
-Normally, root should only be allowed to connect from 'localhost'.  This
-ensures that someone cannot guess at the root password from the network.
-
-Disallow root login remotely? [Y/n] Y
- ... Success!
-
-By default, MariaDB comes with a database named 'test' that anyone can
-access.  This is also intended only for testing, and should be removed
-before moving into a production environment.
-
-Remove test database and access to it? [Y/n] Y
- - Dropping test database...
- ... Success!
- - Removing privileges on test database...
- ... Success!
-
-Reloading the privilege tables will ensure that all changes made so far
-will take effect immediately.
-
-Reload privilege tables now? [Y/n] Y
- ... Success!
-
-Cleaning up...
-
-All done!  If you've completed all of the above steps, your MariaDB
-installation should now be secure.
-
-Thanks for using MariaDB!
-
-</code></pre><p>Now you can login the mariadb via:</p><pre><code>$ mysql -u root -p
-MariaDB [(none)]&gt; SHOW DATABASES;
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-+--------------------+
-3 rows in set (0.00 sec)
-
-</code></pre><h4 id=nodejs-of-mariadb>Node.js of MariaDB</h4><h3 id=redis>Redis</h3><p>Running result:</p><pre><code>127.0.0.1:6379&gt; SET my.key test
-OK
-127.0.0.1:6379&gt; KEYS my.key
-1) &quot;my.key&quot;
-127.0.0.1:6379&gt; VALUES my.key
-(error) ERR unknown command 'VALUES'
-127.0.0.1:6379&gt; GET my.key
-&quot;test&quot;
-127.0.0.1:6379&gt; keys *
- 1) &quot;user:jeff@amazon.com:followers&quot;
- 2) &quot;user:jeff@amazon.com:follows&quot;
- 3) &quot;user:bill@microsoft.com:followers&quot;
- 4) &quot;mykey&quot;
- 5) &quot;rq:job:b9b76e04-8bb7-4652-83e9-4453de981554&quot;
- 6) &quot;rq:queue:default&quot;
- 7) &quot;user:mark@facebook.com:data&quot;
- 8) &quot;_kombu.binding.celeryev&quot;
- 9) &quot;user:fred@fedex.com:data&quot;
-10) &quot;user:jeff@amazon.com:data&quot;
-11) &quot;rq:queues&quot;
-12) &quot;user:bill@microsoft.com:follows&quot;
-13) &quot;_kombu.binding.celery&quot;
-14) &quot;my.key&quot;
-15) &quot;user:bill@microsoft.com:data&quot;
-127.0.0.1:6379&gt; KEYS my.key
-1) &quot;my.key&quot;
-127.0.0.1:6379&gt; SET online.users 0
-OK
-127.0.0.1:6379&gt; onlien.users
-(error) ERR unknown command 'onlien.users'
-127.0.0.1:6379&gt; online.users
-(error) ERR unknown command 'online.users'
-127.0.0.1:6379&gt; KEYS online.users
-1) &quot;online.users&quot;
-127.0.0.1:6379&gt; GET online.users
-&quot;0&quot;
-127.0.0.1:6379&gt; INCR online.users
-(integer) 1
-127.0.0.1:6379&gt; INCR onlien.users
-(integer) 1
-127.0.0.1:6379&gt; INCR online.users
-(integer) 2
-127.0.0.1:6379&gt; HSET profile.1 name Guillermo
-(integer) 1
-127.0.0.1:6379&gt; HGETALL profile.1
-1) &quot;name&quot;
-2) &quot;Guillermo&quot;
-127.0.0.1:6379&gt; HSET profile.1 last Rauch
-(integer) 1
-127.0.0.1:6379&gt; HGETALL profile.1
-1) &quot;name&quot;
-2) &quot;Guillermo&quot;
-3) &quot;last&quot;
-4) &quot;Rauch&quot;
-127.0.0.1:6379&gt; HSET profile.1 programmer 1
-(integer) 1
-127.0.0.1:6379&gt; HGETALL profile.1
-1) &quot;name&quot;
-2) &quot;Guillermo&quot;
-3) &quot;last&quot;
-4) &quot;Rauch&quot;
-5) &quot;programmer&quot;
-6) &quot;1&quot;
-127.0.0.1:6379&gt; HDEL profile.1 programmer
-(integer) 1
-127.0.0.1:6379&gt; HGETALL profile.1
-1) &quot;name&quot;
-2) &quot;Guillermo&quot;
-3) &quot;last&quot;
-4) &quot;Rauch&quot;
-127.0.0.1:6379&gt; RPSH profile.1.jobs &quot;job 1&quot;
-(error) ERR unknown command 'RPSH'
-127.0.0.1:6379&gt; RPUSH profile.1.jobs &quot;job 1&quot;
-(integer) 1
-127.0.0.1:6379&gt; HGET profile.1
-(error) ERR wrong number of arguments for 'hget' command
-127.0.0.1:6379&gt; HGETALL profile.1
-1) &quot;name&quot;
-2) &quot;Guillermo&quot;
-3) &quot;last&quot;
-4) &quot;Rauch&quot;
-127.0.0.1:6379&gt; LRANGE profile.1.jobs 0 -1
-1) &quot;job 1&quot;
-127.0.0.1:6379&gt; 
-127.0.0.1:6379&gt; RPUSH profile.1.jobs &quot;job 2&quot;
-(integer) 2
-127.0.0.1:6379&gt; LRANGE profile.1.jobs 0 -1
-1) &quot;job 1&quot;
-2) &quot;job 2&quot;
-127.0.0.1:6379&gt; RPUSH profile.1.jobs &quot;job 3&quot;
-(integer) 3
-127.0.0.1:6379&gt; LRANGE profile.1.jobs 0 -1
-1) &quot;job 1&quot;
-2) &quot;job 2&quot;
-3) &quot;job 3&quot;
-
-</code></pre><p>DataSet in Redis:</p><pre><code>127.0.0.1:6379&gt; SADD myset &quot;a member&quot;
-(integer) 1
-127.0.0.1:6379&gt; SMEMBERS myset
-1) &quot;a member&quot;
-127.0.0.1:6379&gt; SADD myset &quot;a second member&quot;
-(integer) 1
-127.0.0.1:6379&gt; SMEMEBERS myset
-(error) ERR unknown command 'SMEMEBERS'
-127.0.0.1:6379&gt; SMEMBERS myset
-1) &quot;a second member&quot;
-2) &quot;a member&quot;
-127.0.0.1:6379&gt; SREM myset &quot;a second member&quot;
-(integer) 1
-127.0.0.1:6379&gt; SMEMBERS myset
-1) &quot;a member&quot;
 
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/185/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/185/>185</a></li><li class="page-item active"><a class=page-link href=/page/186/>186</a></li><li class=page-item><a class=page-link href=/page/187/>187</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/187/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

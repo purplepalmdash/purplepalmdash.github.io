@@ -1,5 +1,80 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/07/17/iscsi-installed-debian-jessie/>ISCSI Installed Debian Jessie</a></h1><span class=post-date>Jul 17, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=freenas-installation-and-configuration>FreeNAS Installation And Configuration</h3><p>Install Procedure ignored, because it&rsquo;s simple.<br>Following steps are used for adding iscsi partition.</p><p><img src=/images/2015_07_17_14_25_57_558x549.jpg alt=/images/2015_07_17_14_25_57_558x549.jpg><br>Manually setup the volumn and now you could add your volumn into the FreeNAS System.</p><p>Configure iscsi:<br><img src=/images/2015_07_17_14_33_57_530x370.jpg alt=/images/2015_07_17_14_33_57_530x370.jpg><br>Add the name of <code>iqn.onecloud.iscsi</code>, next we add portal:<br><img src=/images/2015_07_17_14_35_12_617x403.jpg alt=/images/2015_07_17_14_35_12_617x403.jpg><br>Add Authorized Access Now:<br><img src=/images/2015_07_17_14_37_03_491x195.jpg alt=/images/2015_07_17_14_37_03_491x195.jpg><br>Add Initator:<br><img src=/images/2015_07_17_14_39_25_498x234.jpg alt=/images/2015_07_17_14_39_25_498x234.jpg><br>Create target:<br><img src=/images/2015_07_17_14_40_30_460x487.jpg alt=/images/2015_07_17_14_40_30_460x487.jpg><br>Add extent:<br><img src=/images/2015_07_17_14_41_55_559x613.jpg alt=/images/2015_07_17_14_41_55_559x613.jpg><br>LUM RPMs could also be spcified:<br><img src=/images/2015_07_17_14_42_51_386x351.jpg alt=/images/2015_07_17_14_42_51_386x351.jpg><br>Associate Targets:<br><img src=/images/2015_07_17_14_44_09_619x310.jpg alt=/images/2015_07_17_14_44_09_619x310.jpg></p><p>Enable the iscsi service:<br><img src=/images/2015_07_17_14_45_04_366x302.jpg alt=/images/2015_07_17_14_45_04_366x302.jpg></p><p>Better you change the IP Address into static IP address.</p><h3 id=install-debian-jessie-onto-iscsi-disk>Install Debian Jessie Onto ISCSI Disk:</h3><p>On a installed Ubuntu, I choose Ubuntu14.04, do following for connecting the exising created iscsi partition:</p><pre><code>$ sudo apt-get install -y open-iscsi gdisk
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/07/22/libvirtd-trouble-shooting-on-centos7-dot-1/>Libvirtd Trouble-Shooting On CentOS7.1</a></h1><span class=post-date>Jul 22, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=problem-description>Problem Description</h3><p>When upgraded from CentOS6.6 to CentOS7, the libvirtd will encounter following error:</p><p><img src=/images/2015_07_22_09_54_37_355x184.jpg alt=/images/2015_07_22_09_54_37_355x184.jpg></p><p>Simply remove:</p><pre><code># virsh edit nodename
+-     &lt;feature policy='require' name='invtsc'/&gt;
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/07/19/on-migration-of-kvm/>On Migration of KVM</a></h1><span class=post-date>Jul 19, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=migration>Migration</h3><p>First create the qemu based vm:</p><pre><code>$ pwd
+/media/arch/home/juju/img/migration
+$ qemu-img create -f qcow2 ubuntu1504.qcow2 100G
+$ sudo qemu-system-x86_64 -enable-kvm -m 512 -smp 4 -name ubuntu1504 -monitor stdio -boot c -drive file=/media/arch/home/juju/img/migration/ubuntu1504.qcow2,if=none,id=drive-virtio-disk0,boot=on -device virtio-blk-pci,bus=pci.0,addr=0x4,drive=drive-virtio-disk0,id=virtio-disk0 -drive file=/media/arch/home/dash/iso/ubuntu-15.04-server-amd64.iso,if=none,media=cdrom,id=drive-ide0-1-0 -device ide-drive,bus=ide.1,unit=0,drive=drive-ide0-1-0,id=ide0-1-0 -device virtio-net-pci,vlan=0,id=net0,mac=52:54:00:13:08:96 -net tap -vnc 127.0.0.1:3
+</code></pre><p>After Installation, startup the vm via(didn&rsquo;t attach the file):</p><pre><code>$ sudo qemu-system-x86_64 -enable-kvm -m 512 -smp 4 -name ubuntu1504 -monitor stdio -boot c -drive file=/media/arch/home/juju/img/migration/ubuntu1504.qcow2,if=none,id=drive-virtio-disk0,boot=on -device virtio-blk-pci,bus=pci.0,addr=0x4,drive=drive-virtio-disk0,id=virtio-disk0 -drive if=none,media=cdrom,id=drive-ide0-1-0 -device ide-drive,bus=ide.1,unit=0,drive=drive-ide0-1-0,id=ide0-1-0 -device virtio-net-pci,vlan=0,id=net0,mac=52:54:00:13:08:96 -net tap -vnc 127.0.0.1:3
+</code></pre><p>Use <code>top -d 1</code> for every second refreshed.</p><p>The same environment is set as the src machine.</p><pre><code>$ qemu-img create -f qcow2 dest.img 20G
+$ qemu-system-x86_64 -enable-kvm -m 512 -smp 4 -name ubuntu1504 -monitor stdio -boot c -drive file=/root/Code/dest.img,if=none,id=drive-virtio-disk0,boot=on -device virtio-blk-pci,bus=pci.0,addr=0x4,drive=drive-virtio-disk0,id=virtio-disk0 -drive if=none,media=cdrom,id=drive-ide0-1-0 -device ide-drive,bus=ide.1,unit=0,drive=drive-ide0-1-0,id=ide0-1-0 -device virtio-net-pci,vlan=0,id=net0,mac=52:54:00:13:08:96 -net tap -vnc 127.0.0.1:8
+(qemu) info status
+VM status: paused (inmigrate)
+</code></pre><p>Start migration in the src side via:</p><pre><code>(qemu) migrate -d -b tcp:192.168.1.18:8888
+(qemu) info migrate
+</code></pre><p>In destination machine, you can see the status of the migration.</p><p>After migration, the machine stays its top output to the terminal.</p><h3 id=trouble-shooting-on-newly-installed-arch>Trouble Shooting On Newly Installed Arch</h3><h4 id=bug1-virtual-network-start-fail>Bug1 virtual network start fail</h4><p>libvirt via virt-manager virtual network start failed.<br>Change:</p><pre><code>--- libvirt-1.2.16.orig/src/util/virfirewall.c  2015-05-23 08:56:12.000000000 -0400
++++ libvirt-1.2.16.new/src/util/virfirewall.c   2015-06-18 10:01:51.954157612 -0400
+@@ -932,14 +932,14 @@
+ 
+     virMutexLock(&amp;ruleLock);
+ 
+-    if (currentBackend == VIR_FIREWALL_BACKEND_AUTOMATIC) {
++//    if (currentBackend == VIR_FIREWALL_BACKEND_AUTOMATIC) {
+         /* a specific backend should have been set when the firewall
+          * object was created. If not, it means none was found.
+          */
+-        virReportError(VIR_ERR_INTERNAL_ERROR, &quot;%s&quot;,
+-                       _(&quot;Failed to initialize a valid firewall backend&quot;));
+-        goto cleanup;
+-    }
++//        virReportError(VIR_ERR_INTERNAL_ERROR, &quot;%s&quot;,
++//                       _(&quot;Failed to initialize a valid firewall backend&quot;));
++//        goto cleanup;
++//    }
+     if (!firewall || firewall-&gt;err == ENOMEM) {
+         virReportOOMError();
+         goto cleanup;
+</code></pre><p>For building the libvirt, do following:</p><pre><code># pacman -S abs base-devel
+# abs 
+# cp /var/abs/community/libvirt ~/Code/
+# sudo pacman -S lxc libiscsi open-iscsi perl-xml-xpath
+# cd ~/Code/libvirt
+# makepkg
+</code></pre><p>After makepkg, change the code as in above, tar it again, makepkg with following command <code>makepkg --skipchecksums</code>, this time it will generate a new tar.xz file. Install it via:</p><pre><code># pacman -U libvirt-1.2.17-1-x86_64.pkg.tar.xz
+</code></pre><h4 id=starting-network-out-of-memory>starting network out of memory</h4><p>Solve it via:</p><pre><code># pacman -S ebtables vde2
+# reboot
+</code></pre><p>Start again and this time is OK.</p><h4 id=bridge-configuration>Bridge Configuration</h4><pre><code>[root@Arch network]# pwd
+/etc/systemd/network
+[root@Arch network]# cat MyBridge.netdev 
+[NetDev]
+Name=br0
+MACAddress=52:54:00:91:e8:11
+Kind=bridge
+[root@Arch network]# cat MyBridge.network 
+[Match]
+Name=br0
+
+[Network]
+DNS=180.76.76.76,114.114.114.114
+
+[Address]
+Address=192.168.1.18/24
+
+[Route]
+Gateway=192.168.1.1
+[root@Arch network]# cat MyEth.network 
+[Match]
+Name=eth0
+
+[Network]
+Bridge=br0
+</code></pre><p>Now enable and start the systemd&rsquo;s networkd service via:</p><pre><code># systemctl enable systemd-networkd.service
+# reboot
+</code></pre><p>By this you could enable systemd on ArchLinux.</p><h3 id=easy-way>Easy way:</h3><p>Simply resolved this issue via:</p><pre><code># pacman -S firewalld
+# systemctl enable firewalld
+# systemctl start firewalld
+# pacman -Syu ebtables dnsmasq
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/07/17/iscsi-installed-debian-jessie/>ISCSI Installed Debian Jessie</a></h1><span class=post-date>Jul 17, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=freenas-installation-and-configuration>FreeNAS Installation And Configuration</h3><p>Install Procedure ignored, because it&rsquo;s simple.<br>Following steps are used for adding iscsi partition.</p><p><img src=/images/2015_07_17_14_25_57_558x549.jpg alt=/images/2015_07_17_14_25_57_558x549.jpg><br>Manually setup the volumn and now you could add your volumn into the FreeNAS System.</p><p>Configure iscsi:<br><img src=/images/2015_07_17_14_33_57_530x370.jpg alt=/images/2015_07_17_14_33_57_530x370.jpg><br>Add the name of <code>iqn.onecloud.iscsi</code>, next we add portal:<br><img src=/images/2015_07_17_14_35_12_617x403.jpg alt=/images/2015_07_17_14_35_12_617x403.jpg><br>Add Authorized Access Now:<br><img src=/images/2015_07_17_14_37_03_491x195.jpg alt=/images/2015_07_17_14_37_03_491x195.jpg><br>Add Initator:<br><img src=/images/2015_07_17_14_39_25_498x234.jpg alt=/images/2015_07_17_14_39_25_498x234.jpg><br>Create target:<br><img src=/images/2015_07_17_14_40_30_460x487.jpg alt=/images/2015_07_17_14_40_30_460x487.jpg><br>Add extent:<br><img src=/images/2015_07_17_14_41_55_559x613.jpg alt=/images/2015_07_17_14_41_55_559x613.jpg><br>LUM RPMs could also be spcified:<br><img src=/images/2015_07_17_14_42_51_386x351.jpg alt=/images/2015_07_17_14_42_51_386x351.jpg><br>Associate Targets:<br><img src=/images/2015_07_17_14_44_09_619x310.jpg alt=/images/2015_07_17_14_44_09_619x310.jpg></p><p>Enable the iscsi service:<br><img src=/images/2015_07_17_14_45_04_366x302.jpg alt=/images/2015_07_17_14_45_04_366x302.jpg></p><p>Better you change the IP Address into static IP address.</p><h3 id=install-debian-jessie-onto-iscsi-disk>Install Debian Jessie Onto ISCSI Disk:</h3><p>On a installed Ubuntu, I choose Ubuntu14.04, do following for connecting the exising created iscsi partition:</p><pre><code>$ sudo apt-get install -y open-iscsi gdisk
 [root:~]# iscsiadm -m discovery -t sendtargets -p 10.47.58.40
 10.47.58.40:3260,-1 iqn.onecloud.iscsi:iscsidisk1
 </code></pre><p>Login and listed the device :</p><pre><code>[root:~]# iscsiadm -m node -T 'iqn.onecloud.iscsi:iscsidisk1' -p 10.47.58.40 -l
@@ -125,79 +200,4 @@ subnet 172.16.10.0 netmask 255.255.255.0 {
 //..................
 $ sudo vim /etc/default/isc-dhcp-server
 INTERFACES=&quot;eth0&quot;
-</code></pre><p>Notice the IP address should be in the same ip address range.</p><p>After modification, simply use <code>cobbler sync</code> for syncing your changes, now restart the cobbler server, your operation should be the same as the above situations.</p><p>Also if you have playbooks of ansible which uses the static IP address, you also have to replace the IP related settings.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/07/07/wh-worktips-7/>WH Worktips(7)</a></h1><span class=post-date>Jul 7, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=cloudstack-agent-repository>Cloudstack Agent Repository</h3><p>Setup the CloudStack Agent Repository via:</p><pre><code># yum install yum-plugin-downloadonly
-# vim /etc/yum.repos.d/cloudstack.repo
-[cloudstack]
-name=cloudstack
-baseurl=http://cloudstack.apt-get.eu/rhel/4.3/
-enabled=1
-gpgcheck=0
-# mkdir Code
-# yum install --downloadonly --downloaddir=/root/Code/ cloud-agent
-</code></pre><p>Now all of the installation rpm packages has been downloaded to directory, simply upload them to a server, use <code>createrepo .</code> to generate the repository, and link them to nginx&rsquo;s root directory.<br>Mine is under:<br><a href=http://192.168.0.79/4.4.3CloudStackAgent/>http://192.168.0.79/4.4.3CloudStackAgent/</a></p><h3 id=agent-installation-steps>Agent Installation Steps</h3><p>In a new deployed machine:</p><pre><code># mv CentOS-* /root/
-[root@node161 yum.repos.d]# cat cloudstack.repo 
-[cloudstack]
-name=cloudstack
-baseurl=http://192.168.0.79/4.4.3CloudStackAgent/
-enabled=1
-gpgcheck=0
-# yum install -y cloud-agent
-</code></pre><p>Configure qemu and libvirt:</p><pre><code>[root@node161 yum.repos.d]# cp /etc/libvirt/qemu.conf /etc/libvirt/qemu.conf.orig
-[root@node161 yum.repos.d]# sed -i '/#vnc_listen = &quot;0.0.0.0&quot;/ a vnc_listen = &quot;0.0.0.0&quot;' /etc/libvirt/qemu.conf
-[root@node161 yum.repos.d]# diff -du /etc/libvirt/qemu.conf.orig /etc/libvirt/qemu.conf
-
-
-# cp /etc/libvirt/libvirtd.conf /etc/libvirt/libvirtd.conf.orig
-# sed -i '/#listen_tls = 0/ a listen_tls = 0' /etc/libvirt/libvirtd.conf
-# sed -i '/#listen_tcp = 1/ a listen_tcp = 1' /etc/libvirt/libvirtd.conf
-# sed -i '/#tcp_port = &quot;16509&quot;/ a tcp_port = &quot;16509&quot;' /etc/libvirt/libvirtd.conf
-# sed -i '/#auth_tcp = &quot;sasl&quot;/ a auth_tcp = &quot;none&quot;' /etc/libvirt/libvirtd.conf
-# sed -i '/#mdns_adv = 1/ a mdns_adv = 0' /etc/libvirt/libvirtd.conf
-# diff -du /etc/libvirt/libvirtd.conf.orig  /etc/libvirt/libvirtd.conf
-
-[root@node161 yum.repos.d]# cp /etc/sysconfig/libvirtd /etc/sysconfig/libvirtd.orig
-[root@node161 yum.repos.d]# sed -i '/#LIBVIRTD_ARGS=&quot;--listen&quot;/ a LIBVIRTD_ARGS=&quot;--listen&quot;' /etc/sysconfig/libvirtd
-[root@node161 yum.repos.d]# diff -du /etc/sysconfig/libvirtd.orig  /etc/sysconfig/libvirtd
-[root@node161 yum.repos.d]# rm -f /etc/libvirt/libvirtd.conf.orig 
-
-# cat /etc/hosts
-127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
-::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-127.0.0.1       node161
-</code></pre><p>Now you could add the host into the cloudstack management interface.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/07/06/add-private-nat-networking-in-xenserver/>Add Private NAT Networking In XenServer</a></h1><span class=post-date>Jul 6, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=create-networking-in-xencenter>Create Networking In XenCenter</h3><p>Create the networking under the XenCenter UI&rsquo;s tab &ldquo;Networking&rdquo;.</p><h3 id=networking-setting>Networking Setting</h3><p>Enable the ip forward:</p><pre><code># vim /etc/sysctl.conf
-net.ipv4.ip_forward = 1
-# sysctl -p 
-# cat /proc/sys/net/ipv4/ip_forward 
-1
-</code></pre><p>Use iptables for forwarding the network flow:</p><pre><code># iptables -A FORWARD --in-interface xapi0 -j ACCEPT
-# iptables --table nat -A POSTROUTING --out-interface eth0 -j MASQUERADE
-</code></pre><p>But this didn&rsquo;t bring up the internal networking, after discussing with college, edit the file:</p><pre><code>[root@xenserver-WolfHunter ~]# cat /etc/sysconfig/iptables
-+++++  *nat
-+++++  :PREROUTING ACCEPT [7019:539216]
-+++++  :INPUT ACCEPT [77:3825]
-+++++  :OUTPUT ACCEPT [104:6495]
-+++++  :POSTROUTING ACCEPT [53:3228]
-+++++  -A POSTROUTING -o xenbr0 -j MASQUERADE
-+++++  COMMIT
-*filter
-:INPUT ACCEPT [0:0]
-:FORWARD ACCEPT [0:0]
-:OUTPUT ACCEPT [0:0]
-:RH-Firewall-1-INPUT - [0:0]
--A INPUT -j RH-Firewall-1-INPUT
-++++ -A FORWARD -i xapi0 -j ACCEPT
--A FORWARD -j RH-Firewall-1-INPUT
--A RH-Firewall-1-INPUT -i lo -j ACCEPT
--A RH-Firewall-1-INPUT -p icmp --icmp-type any -j ACCEPT
-# DHCP for host internal networks (CA-6996)
--A RH-Firewall-1-INPUT -p udp -m udp --dport 67 --in-interface xenapi -j ACCEPT
--A RH-Firewall-1-INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-# Linux HA hearbeat (CA-9394)
--A RH-Firewall-1-INPUT -m conntrack --ctstate NEW -m udp -p udp --dport 694 -j ACCEPT
--A RH-Firewall-1-INPUT -m conntrack --ctstate NEW -m tcp -p tcp --dport 22 -j ACCEPT
--A RH-Firewall-1-INPUT -m conntrack --ctstate NEW -m tcp -p tcp --dport 80 -j ACCEPT
--A RH-Firewall-1-INPUT -m conntrack --ctstate NEW -m tcp -p tcp --dport 443 -j ACCEPT
--A RH-Firewall-1-INPUT -j REJECT --reject-with icmp-host-prohibited
-COMMIT
-
-</code></pre><p>Restart XenServer and waiting for verification.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/137/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/137/>137</a></li><li class="page-item active"><a class=page-link href=/page/138/>138</a></li><li class=page-item><a class=page-link href=/page/139/>139</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/139/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Notice the IP address should be in the same ip address range.</p><p>After modification, simply use <code>cobbler sync</code> for syncing your changes, now restart the cobbler server, your operation should be the same as the above situations.</p><p>Also if you have playbooks of ansible which uses the static IP address, you also have to replace the IP related settings.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/137/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/137/>137</a></li><li class="page-item active"><a class=page-link href=/page/138/>138</a></li><li class=page-item><a class=page-link href=/page/139/>139</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/139/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,5 +1,65 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/12/troubleshootingonhelm/>TroubleShootingOnhelm</a></h1><span class=post-date>Jan 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>这几天在试用helm，很有意思的包管理系统，让容器解决方案的落地门槛一下降了很多。然后我在搭建前端可视化的仓库解决方案，用到了monocular,
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/15/tipsonkismatictransfer/>TipsOnKismaticTransfer</a></h1><span class=post-date>Jan 15, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>主要记录生产环境的迁移，后期可以作为实际部署和安装时的文档参考。</p><h3 id=网络准备>网络准备</h3><p>创建一个<code>10.15.205.0/24</code>网络:</p><p><img src=/images/2018_01_15_11_46_51_334x401.jpg alt=/images/2018_01_15_11_46_51_334x401.jpg>
+由于在内网，故指定NAT与否都无所谓,
+在有Internet的环境中，可以指定为隔离环境，以模拟实际的现网环境:</p><p><img src=/images/2018_01_15_11_47_47_436x322.jpg alt=/images/2018_01_15_11_47_47_436x322.jpg></p><h3 id=镜像准备>镜像准备</h3><p>直接将镜像拷贝到内网，建立aptly虚拟机、registry
+mirror虚拟机即可。未来将对aptly虚拟机和registry虚拟机做合并操作。</p><p>基础镜像准备, 使用Ubuntu1604_base.qcow2镜像文件，做以下操作:</p><pre><code>0. qemu-system-x86_64 -net nic -net user,hostfwd=tcp::2288-:22 -hda xxxx.qcow2
+   -m 1024 --enable-kvm
+1. root密码修改
+2. root远程登录(/etc/ssh/sshd_config)
+3. /etc/hosts中添加`10.15.205.2	mirror.xxxx.com`条目，以使用registry mirror.
+4. 将免密码登录的公钥插入到操作系统中 
+5. 配置aptly的镜像服务器
+vim /etc/apt/sources.list
+deb http://10.15.205.3 xenial main
+deb http://10.15.205.3 kubernetes-xenial main
+deb [arch=amd64] http://10.15.205.3 xenial stable
+6. 导入aptly所需的签名
+cat mykey.asc | apt-key add -
+</code></pre><p>做完此操作后，保存基础镜像，创建出来相应的虚拟机。</p><p><img src=/images/2018_01_15_14_55_37_1058x179.jpg alt=/images/2018_01_15_14_55_37_1058x179.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/15/workingtipsonprivatehelmrepo/>WorkingTipsOnPrivateHelmRepo</a></h1><span class=post-date>Jan 15, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Create first chart named <code>nginxfirst</code> like following:</p><pre><code># mkdir nginxfirst
+# cd nginxfirst/
+# ls
+# helm create nginxfirst
+Creating nginxfirst
+# tree
+.
+└── nginxfirst
+    ├── charts
+    ├── Chart.yaml
+    ├── templates
+    │   ├── deployment.yaml
+    │   ├── _helpers.tpl
+    │   ├── ingress.yaml
+    │   ├── NOTES.txt
+    │   └── service.yaml
+    └── values.yaml
+
+3 directories, 7 files
+</code></pre><p>Edit the values.yaml file:</p><pre><code>replicaCount: 1
+image:
+  repository: mirror.teligen.com/nginx
+  tag: 1.7.9
+  pullPolicy: IfNotPresent
+service:
+  name: nginx
+  type: ClusterIP
+  externalPort: 80
+  internalPort: 80
+</code></pre><p>Keep others the same.</p><p><code>--dry-run</code> means you want to verificate the configuration.</p><p>Install this chart book via:</p><pre><code># helm install --name firstnginx . --set service.type=NodePort
+</code></pre><p>Get the URL via following command:</p><pre><code>NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath=&quot;{.spec.ports[0].nodePort}&quot; services firstnginx-nginxfirst)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath=&quot;{.items[0].status.addresses[0].address}&quot;)
+  echo http://$NODE_IP:$NODE_PORT
+</code></pre><p>Finally you will see a running nginx instance.</p><h3 id=package-and-serve>Package and Serve</h3><p>Package the modified package via following command:</p><pre><code>[root@DashSSD nginxfirst]# helm package .
+Successfully packaged chart and saved it to: /home/dash/Code/tmp/nginxfirst/nginxfirst/nginxfirst-0.1.0.tgz
+[root@DashSSD nginxfirst]# ls
+charts  Chart.yaml  nginxfirst-0.1.0.tgz  templates  values.yaml  values.yaml~
+[root@DashSSD nginxfirst]# helm lint
+==&gt; Linting .
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, no failures
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/12/troubleshootingonhelm/>TroubleShootingOnhelm</a></h1><span class=post-date>Jan 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>这几天在试用helm，很有意思的包管理系统，让容器解决方案的落地门槛一下降了很多。然后我在搭建前端可视化的仓库解决方案，用到了monocular,
 百思不得其解的是，在minikube上可以顺利部署成功的monocular,
 在自己搭建的基于Ubuntu搭建的k8s集群上就是不行。</p><p>解决方法： 用<code>kubectl get pods</code>来看，总是mongodb部署不成功。</p><p>用kubernetes dashboard查看pod失败的原因在与persistence volume mount不成功。</p><p>在minikube上用<code>kubectl get pv</code>和<code>kubectl get pvc</code>是可以看到完整的结果的，而且可以看到它使用的是hostpath的格式。</p><p>下载monocular的charts到本地，查看目录结构:</p><pre><code># helm fetch monocular/monocular
 # tree
@@ -472,269 +532,4 @@ following definition of the registry:</p><pre><code># vim /etc/hosts
 [root@DashSSD ubuntuone]# ./helm list
 NAME          	REVISION	UPDATED                 	STATUS  	CHART          	NAMESPACE
 wordpress-test	1       	Wed Jan 10 17:30:29 2018	DEPLOYED	wordpress-0.7.9	default  
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/07/workingtipsonkismatic/>WorkingTipsOnKismatic</a></h1><span class=post-date>Jan 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=网络规划>网络规划</h3><p>为了模拟kismatic完全离线安装，我们创建一个完全隔离的网络如下:</p><p><img src=/images/2018_01_07_15_01_42_420x391.jpg alt=/images/2018_01_07_15_01_42_420x391.jpg></p><p><img src=/images/2018_01_07_15_02_13_418x482.jpg alt=/images/2018_01_07_15_02_13_418x482.jpg></p><p>详细信息如下：</p><pre><code>10.15.205.1/24
-dhcp: 10.15.205.128 ~ 10.15.205.254
-部署节点:  10.15.205.2
-etcd01: 
-master01:
-worker01:
-</code></pre><p>说明：
-设置dhcp是为了让虚拟机在启动的时候自动获得一个地址，实际上在部署过程中我们都会手动修改节点的
-IP地址以与kismatic的配置相匹配。</p><h3 id=准备工作>准备工作</h3><h4 id=centos7-base镜像>CentOS7 Base镜像</h4><ul><li>CentOS 7: <code>CentOS-7-x86_64-Minimal-1708.iso</code> 最小化安装.<br>安装时注意事项： 不要选择swap分区，否则在默认部署kismatic时会提示失败。<br>安装完毕后，关闭selinux, 关闭firewalld服务。<br>将<code>kismaticuser.key.pub</code>注入到系统目录下,
-这里的系统目录指的是<code>/root/.ssh/authorized_keys</code>，
-或者自己用户的<code>/home/xxxxxx/.ssh/authorized_keys</code>.</li></ul><p>准备完毕后，关闭此虚拟机，将其虚拟磁盘作为base盘, 用于创建其他节点。</p><h4 id=部署节点仓库registry>部署节点(仓库+Registry)</h4><p>镜像节点是部署成功与否的关键，在这个节点上，我们将创建用于部署kismatic的所有
-CentOS仓库镜像，并搭建基于Docker Registry的私有仓库。</p><p>该节点设置为1核cpu，1G内存, IP为<code>10.15.205.2</code>。</p><pre><code>$ qemu-img create -f qcow2 -b CentOS7_Base/CentOS7Base.qcows2 Deployment.qcow2
-Formatting 'Deployment.qcow2', fmt=qcow2 size=214748364800 backing_file=CentOS7_Base/CentOS7Base.qcows2 cluster_size=65536 lazy_refcounts=off refcount_bits=16
-$ ls
-CentOS7_Base  Deployment.qcow2
-</code></pre><p>可以使用<code>nmtui</code>来更改其Ip地址/网关等, 注意地址填写为<code>10.15.205.2/24</code>.</p><p><img src=/images/2018_01_07_15_58_01_690x383.jpg alt=/images/2018_01_07_15_58_01_690x383.jpg></p><p>在主机(10.15.205.1，即我们运行libvirt/kvm的机器)上，从镜像回来的仓库目录下，用python建立一个简单的http服务器，用于初始化安装：</p><pre><code>$ ls
-base  docker  gluster  kubernetes  updates
-$ python2 -m SimpleHTTPServer 8666
-</code></pre><p>进入到虚拟机里，更改repo配置:</p><pre><code>[root@deployment yum.repos.d]# mkdir back
-[root@deployment yum.repos.d]# mv * back
-mv: cannot move ‘back’ to a subdirectory of itself, ‘back/back’
-[root@deployment yum.repos.d]# vim base.repo
-[base]
-name=Base
-baseurl=http://10.15.205.1:8666/base
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[updates]
-name=Updates
-baseurl=http://10.15.205.1:8666/updates
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[docker]
-name=Docker
-baseurl=http://10.15.205.1:8666/docker
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[kubernetes]
-name=Kubernetes
-baseurl=http://10.15.205.1:8666/kubernetes
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[gluster]
-name=gluster
-baseurl=http://10.15.205.1:8666/gluster
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[root@deployment yum.repos.d]# yum makecache
-</code></pre><p>该台服务器需担任两个角色，镜像服务器和仓库服务器，首先我们来配置仓库服务器:</p><pre><code># yum install yum-utils httpd createrepo
-# systemctl enable httpd
-# systemctl start httpd
-</code></pre><p>host机器上打开<code>http://10.15.205.2</code>, 看到以下画面说明仓库服务器安装成功:</p><p><img src=/images/2018_01_07_16_08_22_727x424.jpg alt=/images/2018_01_07_16_08_22_727x424.jpg></p><p>建立仓库很简单，参考:</p><p><a href=https://github.com/apprenda/kismatic/blob/master/docs/disconnected_install.md>https://github.com/apprenda/kismatic/blob/master/docs/disconnected_install.md</a></p><p>使用reposync将远端仓库的内容镜像到本地即可。</p><p>例如:</p><pre><code>[root@deployment html]# ls
-base  docker  gluster  kubernetes  updates
-[root@deployment html]# ls base/
-Packages  repodata
-</code></pre><p>则看到的仓库如下：</p><p><img src=/images/2018_01_07_16_11_31_472x291.jpg alt=/images/2018_01_07_16_11_31_472x291.jpg></p><p>接下来开始创建registry仓库，这里有一个bug，就是需要container-selinux-2.21-1.el7.noarch.rpm这个包。
-我们手动从网站下载，然后安装之:</p><pre><code># yum install -y container-selinux-2.21-1.el7.noarch.rpm
-# yum install -y docker-ce
-</code></pre><p>因为我们的服务需要用到<code>docker-compose</code>，短时间连通网络并安装<code>docker-compose</code>:</p><pre><code># wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
-# yum install -y python-pip
-# pip install docker-compose
-</code></pre><p>预装入本地镜像(以下的命令并不能真正运行，是我自己的批量导入脚本)。</p><pre><code>for i in `ls *.tar`
-do 
-	docker load&lt;$i
-	docker tag.....
-done
-</code></pre><p>我们将参考这篇文章来设置好docker-registry mirror:</p><p><a href=https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04>https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04</a></p><p>配置好以后的文件夹直接就可以迁移到别的机器上，事实上，我的位于Centos7服务器上的目录正是从一台Ubuntu
-机器上迁移过来的，注意在配置签名的时候需要指定域名，而后，在需使用该docker registry的机器上需要对应添加<code>/etc/hosts</code>中的条目:</p><pre><code># vim /etc/hosts
-10.15.205.2 mirror.xxxx.com
-# docker login mirror.xxxx.com
-Username (clouder): clouder
-Password: 
-Login Succeeded
-</code></pre><p>确认服务可用以后，我们可以使用systemd将docker-compose启动的服务添加为系统服务，这样每次重新
-启动机器后，我们的registry服务也将随机器启动而启动:</p><pre><code># vim /etc/systemd/system/docker-compose.service 
-[Unit]
-Description=DockerCompose
-After=docker.service
-Requires=docker.service
-
-[Service]
-ExecStart=/usr/bin/docker-compose -f /docker-registry/docker-compose.yml up -d
-
-[Install]
-WantedBy=multi-user.target
-# systemctl enable docker-compose.service
-# systemctl start docker-compose.service
-</code></pre><h4 id=节点机准备>节点机准备</h4><p>需要准备三台节点机，创建如下:</p><pre><code># qemu-img create -f qcow2 -b CentOS7_Base/CentOS7Base.qcows2 etcd01.qcow2
-# qemu-img create -f qcow2 -b CentOS7_Base/CentOS7Base.qcows2 master01.qcow2
-# qemu-img create -f qcow2 -b CentOS7_Base/CentOS7Base.qcows2 worker01.qcow2
-</code></pre><p>可以在已有的虚拟机基础上稍加修改，即可得到新的三台机器:</p><pre><code># sudo virsh dumpxml kismatic_deployment&gt;template.xml
-# cp template.xml etcd01.xml
-# vim etcd01.xml
-# sudo virsh define etcd01.xml
-Domain kismatic_etcd01 defined from etcd01.xml
-</code></pre><p>进入到系统后，配置仓库，配置好<code>/etc/hosts</code>下的条目，节点机即做完准备。</p><h3 id=部署>部署</h3><p>配置过程以后再写。</p><h3 id=使用集群>使用集群</h3><p>集群部署完成后，使用<code>./kismatic dashboard</code>来访问kubernetes的dashboard:</p><p><img src=/images/2018_01_08_16_11_55_550x654.jpg alt=/images/2018_01_08_16_11_55_550x654.jpg></p><p>根据提示配置好kubeconfig文件即可。</p><h3 id=镜像仓库使用>镜像仓库使用</h3><p>要使用镜像仓库作为集群的中心仓库，外围机器（用于上传和管理镜像的机器）需要做以下设置（以DEBIAN为例）：</p><pre><code># mkdir -p /usr/local/share/ca-certificates/docker-dev-cert/
-# cp KISMATIC_FOLDER/devdockerCA.crt /usr/local/share/ca-certificates/docker-dev-cert/
-# update-ca-certificates
-# systemctl restart docker
-# echo &quot;10.15.205.113 mirror.xxxx.com&quot;&gt;&gt;/etc/hosts
-# docker login mirror.xxxxx.com
-Username: clouder
-Password: 
-Login Succeeded
-</code></pre><p>Thus you could directly push images to the registry mirror.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/05/pdnsforarchlinux/>pdnsForArchLinux</a></h1><span class=post-date>Jan 5, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>For avoiding dns resolving pollution, I need to configure pdnsd for my
-archlinux workstation, following are the steps:</p><pre><code># pacman -S pdnsd
-# cp /usr/share/doc/pdnsd/pdnsd.conf /etc
-# vim /etc/pdnsd.conf
-</code></pre><p>The configuration file is listed as:</p><pre><code>global {
-	perm_cache=10240;
-	cache_dir=&quot;/var/cache/pdnsd&quot;;
-#	pid_file = /var/run/pdnsd.pid;
-	run_as=&quot;pdnsd&quot;;
-	server_ip = 127.0.0.1;  # Use eth0 here if you want to allow other
-				# machines on your network to query pdnsd.
-	server_port=53;
-	status_ctl = on;
-#	paranoid=on;       # This option reduces the chance of cache poisoning
-	                   # but may make pdnsd less efficient, unfortunately.
-	query_method=tcp_only;
-	#min_ttl=15m;       # Retain cached entries at least 15 minutes.
-	#max_ttl=1w;        # One week.
-	#timeout=10;        # Global timeout option (10 seconds).
-	#neg_domain_pol=on;
-	#udpbufsize=1024;   # Upper limit on the size of UDP messages.
-    neg_domain_pol = off;    
-    paranoid = on;    
-    par_queries = 1;    
-    min_ttl = 1d;    
-    max_ttl = 5d;    
-    timeout = 10; 
-}
-
-# The following section is most appropriate if you have a fixed connection to
-# the Internet and an ISP which provides good DNS servers.
-server {
-	label= &quot;routine&quot;;
-	ip = 223.5.5.5;  # Put your ISP's DNS-server address(es) here.
-#	proxy_only=on;     # Do not query any name servers beside your ISP's.
-	                   # This may be necessary if you are behind some
-	                   # kind of firewall and cannot receive replies
-	                   # from outside name servers.
-	timeout=5;         # Server timeout; this may be much shorter
-			   # that the global timeout option.
-#	uptest=if;         # Test if the network interface is active.
-#	interface=eth0;    # The name of the interface to check.
-#	interval=10m;      # Check every 10 minutes.
-#	purge_cache=off;   # Keep stale cache entries in case the ISP's
-#			   # DNS servers go offline.
-#	edns_query=yes;    # Use EDNS for outgoing queries to allow UDP messages
-#			   # larger than 512 bytes. May cause trouble with some
-#			   # legacy systems.
-#	exclude=.thepiratebay.org,  # If your ISP censors certain names, you may
-#		.thepiratebay.se,   # want to exclude them here, and provide an
-#		.piratebay.org,	    # alternative server section below that will
-#		.piratebay.se;	    # successfully resolve the names.
-   reject = 74.125.127.102,
-       74.125.155.102,  
-       74.125.39.102,  
-       74.125.39.113,  
-       209.85.229.138,  
-       128.121.126.139,  
-       159.106.121.75,  
-       169.132.13.103,  
-       192.67.198.6,  
-       202.106.1.2,  
-       202.181.7.85,  
-       203.161.230.171,  
-       203.98.7.65,  
-       207.12.88.98,  
-       208.56.31.43,  
-       209.145.54.50,  
-       209.220.30.174,  
-       209.36.73.33,  
-       211.94.66.147,  
-       213.169.251.35,  
-       216.221.188.182,  
-       216.234.179.13,  
-       243.185.187.39,  
-       37.61.54.158,  
-       4.36.66.178,  
-       46.82.174.68,  
-       59.24.3.173,  
-       64.33.88.161,  
-       64.33.99.47,  
-       64.66.163.251,  
-       65.104.202.252,  
-       65.160.219.113,  
-       66.45.252.237,  
-       69.55.52.253,  
-       72.14.205.104,  
-       72.14.205.99,  
-       78.16.49.15,  
-       8.7.198.45,  
-       93.46.8.89,  
-       37.61.54.158,  
-       243.185.187.39,  
-       190.93.247.4,  
-       190.93.246.4,  
-       190.93.245.4,  
-       190.93.244.4,  
-       65.49.2.178,  
-       189.163.17.5,  
-       23.89.5.60,  
-       49.2.123.56,  
-       54.76.135.1,  
-       77.4.7.92,  
-       118.5.49.6,  
-       159.24.3.173,  
-       188.5.4.96,  
-       197.4.4.12,  
-       220.250.64.24,  
-       243.185.187.30,  
-       249.129.46.48,  
-       253.157.14.165;  
-   reject_policy = fail;  
-   exclude = &quot;.google.com&quot;,  
-       &quot;.cn&quot;,
-       &quot;.baidu.com&quot;,
-       &quot;.qq.com&quot;,
-       &quot;.gstatic.com&quot;,  
-       &quot;.googleusercontent.com&quot;,  
-       &quot;.googlepages.com&quot;,  
-       &quot;.googlevideo.com&quot;,  
-       &quot;.googlecode.com&quot;,  
-       &quot;.googleapis.com&quot;,  
-       &quot;.googlesource.com&quot;,  
-       &quot;.googledrive.com&quot;,  
-       &quot;.ggpht.com&quot;,  
-       &quot;.youtube.com&quot;,  
-       &quot;.youtu.be&quot;,  
-       &quot;.ytimg.com&quot;,  
-       &quot;.twitter.com&quot;,  
-       &quot;.facebook.com&quot;,  
-       &quot;.fastly.net&quot;,  
-       &quot;.akamai.net&quot;,  
-       &quot;.akamaiedge.net&quot;,  
-       &quot;.akamaihd.net&quot;,  
-       &quot;.edgesuite.net&quot;,  
-       &quot;.edgekey.net&quot;;  
-}
-
-server {  
-   # Better setup dns server(DON'T USE PORT 53) on your own vps for faster proxying  
-   label = &quot;special&quot;;
-   ip = 208.67.222.222,208.67.220.220;
-   port = 5353;
-   proxy_only = on;  
-   timeout = 5;  
-}  
-</code></pre><p>Then you have to enable and start the pdnsd service via:</p><pre><code># systemctl enable pdnsd
-# systemctl start pdnsd
-# vim /etc/resolv.con
-nameserver 127.0.0.1
-# chattr +i /etc/resolv.conf
-</code></pre><p>you could use dig for testing your pdnsd configuration.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/80/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/80/>80</a></li><li class="page-item active"><a class=page-link href=/page/81/>81</a></li><li class=page-item><a class=page-link href=/page/82/>82</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/82/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/80/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/80/>80</a></li><li class="page-item active"><a class=page-link href=/page/81/>81</a></li><li class=page-item><a class=page-link href=/page/82/>82</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/82/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

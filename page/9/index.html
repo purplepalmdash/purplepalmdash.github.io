@@ -1,5 +1,109 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/08/31/hostapdonrtl8188ee/>HostapdOnRTL8188EE</a></h1><span class=post-date>Aug 31, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>lspci for getting the wireless card mode:</p><pre><code># lspci | grep -i wireless
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/10/11/win11idv/>win11idv</a></h1><span class=post-date>Oct 11, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p><img src=/images/2023_10_11_09_11_13_640x473.jpg alt=/images/2023_10_11_09_11_13_640x473.jpg></p><p><img src=/images/2023_10_11_09_13_04_662x235.jpg alt=/images/2023_10_11_09_13_04_662x235.jpg></p><p><code>shift + F10</code>, call the command window:</p><p><img src=/images/2023_10_11_09_13_36_601x187.jpg alt=/images/2023_10_11_09_13_36_601x187.jpg></p><pre><code>reg add &quot;HKLM\SYSTEM\Setup\LabConfig&quot; /v &quot;BypassTPMCheck&quot; /t REG_DWORD /d &quot;1&quot; /f
+reg add &quot;HKLM\SYSTEM\Setup\LabConfig&quot; /v &quot;BypassSecureBootCheck&quot; /t REG_DWORD /d &quot;1&quot; /f
+reg add &quot;HKLM\SYSTEM\Setup\LabConfig&quot; /v &quot;BypassRAMCheck&quot; /t REG_DWORD /d &quot;1&quot; /f
+reg add &quot;HKLM\SYSTEM\Setup\LabConfig&quot; /v &quot;BypassStorageCheck&quot; /t REG_DWORD /d &quot;1&quot; /f
+reg add &quot;HKLM\SYSTEM\Setup\LabConfig&quot; /v &quot;BypassCPUCheck&quot; /t REG_DWORD /d &quot;1&quot; /f
+reg add &quot;HKLM\SYSTEM\Setup\MoSetup&quot; /v &quot;AllowUpgradesWithUnsupportedTPMOrCPU&quot; /t REG_DWORD /d &quot;1&quot; /f
+</code></pre><p><img src=/images/2023_10_11_09_24_57_904x376.jpg alt=/images/2023_10_11_09_24_57_904x376.jpg></p><p><img src=/images/2023_10_11_09_25_16_658x488.jpg alt=/images/2023_10_11_09_25_16_658x488.jpg></p><p><img src=/images/2023_10_11_09_25_29_647x487.jpg alt=/images/2023_10_11_09_25_29_647x487.jpg></p><p><img src=/images/2023_10_11_09_25_59_599x166.jpg alt=/images/2023_10_11_09_25_59_599x166.jpg></p><p>Then continue.</p><p>Connection issue:</p><pre><code>shift + f10
+input : oobe\bypassnro
+</code></pre><p><img src=/images/2023_10_11_09_31_10_546x632.jpg alt=/images/2023_10_11_09_31_10_546x632.jpg></p><p>Upload to s3:</p><pre><code>root@dell2 ~]# aws --endpoint http://192.168.1.162:9000 s3 cp win11.qcow2 s3://tyy
+upload: ./win11.qcow2 to s3://tyy/win11.qcow2                       
+[root@dell2 ~]# aws --endpoint http://192.168.1.162:9000  s3 ls s3://tyy/win11.qcow2
+2023-10-11 09:40:09 12190482432 win11.qcow2
+</code></pre><h3 id=verification>verification</h3><p>failed, because it&rsquo;s <code>bios</code> mode:</p><p><img src=/images/2023_10_11_10_24_30_335x198.jpg alt=/images/2023_10_11_10_24_30_335x198.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/10/09/workingtipsonmvisor/>WorkingTipsOnmvisor</a></h1><span class=post-date>Oct 9, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=hardwareossoftware>Hardware/OS/Software</h3><p>nuc11 running Ubuntu 22.04:</p><pre><code>dash@dash-NUC11PAHi5:~$ lscpu | grep 1135
+型号名称：                          11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+dash@dash-NUC11PAHi5:~$ uname -a
+Linux dash-NUC11PAHi5 6.2.0-31-generic #31~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Aug 16 13:45:26 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+dash@dash-NUC11PAHi5:~$ cat /etc/issue
+Ubuntu 22.04.3 LTS \n \l
+</code></pre><h3 id=build-steps>Build Steps</h3><p>Install prerequisite packages:</p><pre><code>sudo apt update -y
+sudo apt install -y build-essential git meson protobuf-c-compiler autoconf automake libtool curl make g++ unzip protobuf-compiler  cmake uuid-dev pkg-config libyaml-cpp-dev libspice-client-glib-2.0-dev libpixman-1-dev libzstd-dev libasound2-dev libsdl2-dev libepoxy-dev
+</code></pre><p>Clone/build/install virglrender:</p><pre><code>unzip virglrenderer-main.zip
+cd virglrenderer-main/
+meson -Dprefix=/usr build
+cd build/
+sudo ninja install
+</code></pre><p>Clone/build/install mvisor:</p><pre><code>unzip mvisor-master.zip 
+cd mvisor-master/
+vim meson_options.txt
+    option('vgpu',
+      type: 'boolean',
+      value: true,
+      description: 'Enable VGPU device'
+meson setup build
+meson compile -C build
+./build/mvisor --version
+     MVisor: 2.5.2
+sudo cp build/mvisor /usr/bin/
+</code></pre><h3 id=vm-operations>VM Operations</h3><p>Folder content:</p><pre><code>$ pwd
+/home/dash/mvisorwin
+$ ls
+virtio-win-0.1.240.iso  win10.qcow2  zh-cn_windows_10_consumer_editions_version_22h2_updated_sep_2023_x64_dvd_4cde879b.iso
+</code></pre><p>Create the yaml via:</p><pre><code>$ cat default.yaml 
+name: Default configuration
+base: i440fx.yaml
+
+machine:
+  memory: 8G
+  vcpu: 4
+  # Set vcpu thread priority value [-20, 19]
+  # A higher value means a lower priority
+  priority: 1
+  # Turn on BIOS output and performance measurement
+  debug: No
+  # Turn on hypervisor to lower CPU usage (Hyper-V is used for Windows)
+  hypervisor: Yes
+
+objects:
+  - name: cmos
+    # gmtime for linux, localtime for windows
+    rtc: localtime
+
+  - class: qxl
+  - class: spice-agent
+  - class: qemu-guest-agent
+  - class: usb-tablet
+
+  - class: virtio-network
+    backend: uip
+    mac: 00:50:00:11:22:33
+    map: tcp:0.0.0.0:8022-:22
+
+  - class: ata-cdrom 
+    image: /home/dash/mvisorwin/zh-cn_windows_10_consumer_editions_version_22h2_updated_sep_2023_x64_dvd_4cde879b.iso
+  
+  - class: ata-cdrom
+    image: /home/dash/mvisorwin/virtio-win-0.1.240.iso
+
+  - class: virtio-block
+    image: /home/dash/mvisorwin/win10.qcow2
+    snapshot: No
+  
+  # - class: floppy
+  #   image: /data/images/floppy.img
+
+  # - class: virtio-block
+  #   image: /data/empty.qcow2
+  #   snapshot: No
+
+  # - class: virtio-fs
+  #   path: /tmp/fuse
+  #   disk_name: mvisor-fs
+  #   disk_size: 2G
+  #   inode_count: 200
+
+  # - class: vfio-pci
+  #   sysfs: /sys/bus/mdev/devices/c2e088ba-954f-11ec-8584-525400666f2b
+  #   debug: Yes
+
+  - class: virtio-vgpu
+    memory: 1G
+    staging: Yes
+    blob: No
+    node: /dev/dri/renderD128
+</code></pre><p>Start the machine via:</p><pre><code>mvisor -c default.yaml
+</code></pre><p><img src=/images/2023_10_09_22_36_53_1788x941.jpg alt=/images/2023_10_09_22_36_53_1788x941.jpg></p><p>After installation:</p><p><img src=/images/2023_10_09_22_44_45_399x442.jpg alt=/images/2023_10_09_22_44_45_399x442.jpg></p><p>Install virtio drivers:</p><p><img src=/images/2023_10_09_22_45_10_744x685.jpg alt=/images/2023_10_09_22_45_10_744x685.jpg></p><p>Install qxl driver:</p><p><img src=/images/2023_10_09_22_46_10_896x735.jpg alt=/images/2023_10_09_22_46_10_896x735.jpg></p><p>Qxl ready:</p><p><img src=/images/2023_10_09_22_46_29_482x236.jpg alt=/images/2023_10_09_22_46_29_482x236.jpg></p><p>virtio-vgpu:</p><p><img src=/images/2023_10_09_22_49_15_762x737.jpg alt=/images/2023_10_09_22_49_15_762x737.jpg></p><p>Enable the test sign driver:</p><p><img src=/images/2023_10_09_22_52_41_631x156.jpg alt=/images/2023_10_09_22_52_41_631x156.jpg></p><p>Reboot to make the driver take effect, install driver:</p><p><img src=/images/2023_10_09_22_54_13_1092x559.jpg alt=/images/2023_10_09_22_54_13_1092x559.jpg></p><p>Result:</p><p><img src=/images/2023_10_09_22_54_30_1029x484.jpg alt=/images/2023_10_09_22_54_30_1029x484.jpg></p><p>The Mvisor VGPU:</p><p><img src=/images/2023_10_09_22_55_03_1017x689.jpg alt=/images/2023_10_09_22_55_03_1017x689.jpg></p><p>but the gpu won&rsquo;t work</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/08/31/hostapdonrtl8188ee/>HostapdOnRTL8188EE</a></h1><span class=post-date>Aug 31, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>lspci for getting the wireless card mode:</p><pre><code># lspci | grep -i wireless
 01:00.0 Network controller: Realtek Semiconductor Co., Ltd. RTL8188EE Wireless Network Adapter (rev 01)
 </code></pre><p>Install the script:</p><pre><code>yay -S linux-wifi-hotspot
 </code></pre><p>Create the wifi via:</p><pre><code>systemctl enable --now create_ap
@@ -48,134 +152,4 @@ buidrockykernel   latest    207a4b57059e   5 seconds ago   1.94GB
 [mock@fa4d8f532c21 ~]$ rpm -Uvh kernel-5.15.113-200.el9.src.rpm 
 [mock@fa4d8f532c21 ~]$ cd rpmbuild/SPECS/
 [mock@fa4d8f532c21 SPECS]$ time rpmbuild -ba kernel.spec 2&gt;&amp;1 | tee build.log
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/08/10/build515kernelrpm/>Build515KernelRPM</a></h1><span class=post-date>Aug 10, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Using a docker instance:</p><pre><code>$ dnf config-manager --set-enabled crb
-$ yum install -y vim rpm-build python3-devel elfutils-devel  openssl-devel perl-generators pesign yum-utils bc bison bpftool dwarves flex gcc gcc-c++ git-core hmaccalc kmod m4 make net-tools perl-devel gcc-plugin-devel
-$ vim /etc/yum.repos.d/kernellongterm.repo
-[copr:copr.fedorainfracloud.org:kwizart:kernel-longterm-5.15]
-name=Copr repo for kernel-longterm-5.15 owned by kwizart
-baseurl=https://download.copr.fedorainfracloud.org/results/kwizart/kernel-longterm-5.15/epel-9-$basearch/
-type=rpm-md
-skip_if_unavailable=True
-gpgcheck=1
-gpgkey=https://download.copr.fedorainfracloud.org/results/kwizart/kernel-longterm-5.15/pubkey.gpg
-repo_gpgcheck=0
-enabled=1
-enabled_metadata=1
-$ yum makecache
-</code></pre><p>As mock, do following:</p><pre><code>$ yumdownloader --source kernel-longterm
-$ ls
-kernel-longterm-5.15.124-200.el9.src.rpm
-$ rpm -Uvh kernel-longterm-5.15.124-200.el9.src.rpm
-$ ls
-kernel-longterm-5.15.124-200.el9.src.rpm  rpmbuild
-</code></pre><p>Replace to <code>5.15.113-1</code>, then modify as following:</p><pre><code>$ cp linux-5.15.tar.xz ./rpmbuild/SOURCES/linux-5.15.tar.xz
-$ vim rpmbuild/SPECS/kernel.spec
-Line 135? 
-# Do we have a -stable update to apply?
-#%define stable_update 124
-%define stable_update 113
-
-%define rpmversion %{kversion}.%{stable_update}
-%define patchversion 5.15
-#%define pkgrelease 200
-%define pkgrelease 1
-1400 # released_kernel with possible stable updates
-1401 # This is special because the kernel spec is hell and nothing is consistent
-1402 #xzcat %{SOURCE5000} | patch -p1 -F1 -s
-1403 #xzcat %{SOURCE5000} | patch -p1 -F1 -s
-1404 git commit -a -m &quot;Stable update&quot;
-1405 
-1406 # Note: Even in the &quot;nopatches&quot; path some patches (build tweaks and compile
-1407 # fixes) will always get applied; see patch defition above for details
-1408 
-1409 #git am %{patches}                                                                                                                                                                                                                                      
-1410 #git am %{patches}
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/08/10/buildkernelonrockylinux92/>BuildKernelOnRockyLinux92</a></h1><span class=post-date>Aug 10, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=try-steps>Try Steps</h3><p>Replace the repository for speedup:</p><pre><code>sed -e 's|^mirrorlist=|#mirrorlist=|g'     -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g'     -i.bak     /etc/yum.repos.d/rocky-extras.repo     /etc/yum.repos.d/rocky.repo
-yum makecache
-</code></pre><p>Install docker:</p><pre><code>dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
-# replace all of the `download.docker.com` into `https://mirrors.ustc.edu.cn/docker-ce`
-yum makecache
-yum install -y docker-ce
-systemctl enable docker
-systemctl start docker
-</code></pre><p>Pull rockylinux9 and prepare building environment via:</p><pre><code>docker pull rockylinux:9
-docker run -it -v /root/source:/source rockylinux:9 /bin/bash
-sed -e 's|^mirrorlist=|#mirrorlist=|g'     -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g'     -i.bak     /etc/yum.repos.d/rocky-extras.repo     /etc/yum.repos.d/rocky.repo
-yum makecache
-yum install -y rpm-build rpmdevtools  dnf-plugins-core ncurses-devel make gcc bc bison flex elfutils-libelf-devel openssl-devel grub2 rpm-build rsync gcc vim yum-utils
-rpm -ivh kernel-5.15.113_lts2021_iotg-1.src.rpm
-useradd -m dash
-su dash
-$ cd 
-$ rpmdev-setuptree
-$ ls ~
-rpmbuild
-
-</code></pre><h3 id=rockylinux-way>RockyLinux Way</h3><p>Create docker instance:</p><pre><code>docker run -it -v /root/source:/source rockylinux:9 /bin/bash
-</code></pre><p>In docker, prepare for building kernel:</p><pre><code>sed -e 's|^mirrorlist=|#mirrorlist=|g'     -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g'     -i.bak     /etc/yum.repos.d/rocky-extras.repo     /etc/yum.repos.d/rocky.repo
-yum makecache
-yum install -y rpm-build rpmdevtools  dnf-plugins-core ncurses-devel make gcc bc bison flex elfutils-libelf-devel openssl-devel grub2 rpm-build rsync gcc vim yum-utils perl
-yum --enablerepo=crb install -y systemd-udev  asciidoc audit-libs-devel binutils-devel clang dwarves fuse-devel gcc-c++ gcc-plugin-devel git-core glibc-static java-devel kabi-dw kernel-rpm-macros libbabeltrace-devel libbpf-devel libcap-devel libcap-ng-devel libmnl-devel libnl3-devel libtraceevent-devel libtracefs-devel lld llvm lvm2 net-tools newt-devel numactl-devel pciutils-devel perl-devel python3-docutils system-sb-certs tpm2-tools xmlto elfutils-devel nss-tools perl-generators pesign python3-devel xz-devel
-# yum --enablerepo=crb install -y  kmod  patch  bash    tar  git-core  which bzip2  xz  findutils  gzip  m4  perl-interpreter  perl-Carp  perl-devel  perl-generators  make  diffutils  gawk gcc  binutils  redhat-rpm-config  hmaccalc  bison  flex  gcc-c++ net-tools  hostname  bc  elfutils-devel dwarves python3-devel gcc-plugin-devel bpftool rsync xmlto  asciidoc  python3-sphinx  python3-sphinx_rtd_theme  zlib-devel binutils-devel newt-devel  bison flex xz-devel audit-libs-devel java-devel libbabeltrace-devel libtraceevent-devel numactl-devel   gettext ncurses-devel libcap-devel libcap-ng-devel pciutils-devel python3-docutils zlib-devel binutils-devel clang llvm numactl-devel libcap-devel libcap-ng-devel rsync libmnl-devel rpm-build  elfutils kabi-dw openssl openssl-devel nss-tools pesign    xmlto asciidoc clang llvm lld
-
-
-yum install /source/WALinuxAgent-cvm-2.7.0.6-9.el9_2.1.rocky.0.noarch.rpm /source/systemd-boot-unsigned-252-14.el9_2.1.x86_64.rpm
-useradd -m mock
-su - mock
-</code></pre><p>Download the kernel src rpm:</p><pre><code>$ yumdownloader --source kernel
-$ ls -l -h
-total 139M
--rw-r--r--. 1 mock mock 139M Aug 10 06:30 kernel-5.14.0-284.25.1.el9_2.src.rpm
-$ rpm -Uvh kernel-5.14.0-284.25.1.el9_2.src.rpm 
-[mock@c51507a516d4 ~]$ cd ./rpmbuild/SPECS/
-[mock@c51507a516d4 SPECS]$ ls
-kernel.spec
-[mock@c51507a516d4 SPECS]$ time rpmbuild -ba kernel.spec 
-
-</code></pre><h3 id=intel-way>intel way</h3><p>using the <code>kernel-5.15.113-1.src.rpm</code> package we got following issue:</p><pre><code>Processing files: kernel-headers-5.15.113-1.x86_64
-Provides: kernel-headers = 5.15.113 kernel-headers = 5.15.113-1 kernel-headers(x86-64) = 5.15.113-1
-Requires(rpmlib): rpmlib(CompressedFileNames) &lt;= 3.0.4-1 rpmlib(FileDigests) &lt;= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) &lt;= 4.0-1
-Obsoletes: kernel-headers
-Processing files: kernel-devel-5.15.113-1.x86_64
-warning: absolute symlink: /lib/modules/5.15.113/build -&gt; /usr/src/kernels/5.15.113
-warning: absolute symlink: /lib/modules/5.15.113/source -&gt; /usr/src/kernels/5.15.113
-Provides: kernel-devel = 5.15.113-1 kernel-devel(x86-64) = 5.15.113-1
-Requires(rpmlib): rpmlib(CompressedFileNames) &lt;= 3.0.4-1 rpmlib(FileDigests) &lt;= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) &lt;= 4.0-1
-Processing files: kernel-debugsource-5.15.113-1.x86_64
-error: Could not open %files file /home/mock/rpmbuild/BUILD/kernel-5.15.113/debugsourcefiles.list: No such file or directory
-
-
-RPM build errors:
-    line 20: It's not recommended to have unversioned Obsoletes: Obsoletes: kernel-headers
-    absolute symlink: /lib/modules/5.15.113/build -&gt; /usr/src/kernels/5.15.113
-    absolute symlink: /lib/modules/5.15.113/source -&gt; /usr/src/kernels/5.15.113
-    Could not open %files file /home/mock/rpmbuild/BUILD/kernel-5.15.113/debugsourcefiles.list: No such file or directory
-
-</code></pre><h3 id=fedora-515-lts>fedora 5.15 lts</h3><p>Refers to <code>https://copr.fedorainfracloud.org/coprs/kwizart/kernel-longterm-5.15/</code>.</p><pre><code>yum install -y bpftool
-dnf copr enable kwizart/kernel-longterm-5.15
-yumdownloader --source kernel-longterm
-su - mock
-rpm -Uvh kernel-longterm-5.15.124-200.el9.src.rpm
-cd /home/mock/rpmbuild
-time rpmbuild -ba kernel.spec 
-</code></pre><p>build result:</p><pre><code>$ find . | grep rpm$
-./RPMS/x86_64/kernel-longterm-modules-internal-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-debug-devel-matched-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-debug-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-devel-matched-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-debug-modules-extra-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-modules-extra-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-debug-modules-internal-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-debug-debuginfo-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-debug-devel-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-debuginfo-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-devel-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-debug-modules-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-debuginfo-common-x86_64-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-modules-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-debug-core-5.15.124-200.el9.x86_64.rpm
-./RPMS/x86_64/kernel-longterm-core-5.15.124-200.el9.x86_64.rpm
-./SRPMS/kernel-longterm-5.15.124-200.el9.src.rpm
-</code></pre><h3 id=aug17>Aug17</h3><p>Enable perftools building, I think it failed because of the libebpf is too new comparing to 5.15.113 kernel. so changes to kerner&rsquo;s <code>tools/lib/bpf</code> version&rsquo;s libebpf-devel package for building.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/8/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/8/>8</a></li><li class="page-item active"><a class=page-link href=/page/9/>9</a></li><li class=page-item><a class=page-link href=/page/10/>10</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/10/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/8/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/8/>8</a></li><li class="page-item active"><a class=page-link href=/page/9/>9</a></li><li class=page-item><a class=page-link href=/page/10/>10</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/10/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
