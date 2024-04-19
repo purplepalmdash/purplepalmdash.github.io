@@ -1,5 +1,39 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/01/26/workingtipsonusingimgfileindocker/>WorkingTipsOnUsingimgFileInDocker</a></h1><span class=post-date>Jan 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>准备Img文件:</p><pre><code>$ wget https://mirrors.ustc.edu.cn/raspberry-pi-os-images/raspios_lite_arm64/images/raspios_lite_arm64-2023-12-11/2023-12-11-raspios-bookworm-arm64-lite.img.xz
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/02/01/workingtipsoncasaos/>WorkingTipsOnCasaOS</a></h1><span class=post-date>Feb 1, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install:</p><pre><code>curl -fsSL https://get.casaos.io | sudo bash
+</code></pre><p>Issue:</p><pre><code>[FAILED] rclone.service is not running, Please reinstall.
+</code></pre><p>Solved via:</p><pre><code>cp /bin/mkdir /usr/bin/mkdir
+cp /bin/rm /usr/bin/rm
+</code></pre><p>Re-run:</p><pre><code>curl -fsSL https://get.casaos.io | sudo bash
+</code></pre><p><img src=/images/2024_02_01_10_24_25_515x531.jpg alt=/images/2024_02_01_10_24_25_515x531.jpg></p><p>Using docker for running redroid:</p><pre><code>version: &quot;3&quot;
+services:
+  redroid:
+    image: redroid12:latest
+    stdin_open: true
+    tty: true
+    privileged: true
+    ports:
+      - &quot;5555:5555&quot;
+    volumes:
+    # 資料存放在目前目錄下
+      - ./redroid-12-data:/data
+    command:
+    # 禁用GPU硬體加速
+      - androidboot.redroid_gpu_mode=guest
+      - androidboot.use_memfd=1
+
+  scrcpy:
+    image: emptysuns/scrcpy-web:v0.1
+    privileged: true
+    ports:
+      - &quot;48000:8000&quot;
+    volumes:
+    # 資料存放在目前目錄下
+      - ./scrcpy-data:/data
+    links:
+    # always using myphone1
+      - redroid:myphone1
+</code></pre><p>Connect via:</p><pre><code>docker exec -it redroid_scrcpy_1 adb connect myphone1:5555
+</code></pre><p>做到casaos的编排里。</p><p><img src=/images/2024_02_01_11_24_14_796x805.jpg alt=/images/2024_02_01_11_24_14_796x805.jpg></p><p><img src=/images/2024_02_01_11_25_51_799x841.jpg alt=/images/2024_02_01_11_25_51_799x841.jpg></p><p><img src=/images/2024_02_01_11_26_41_796x796.jpg alt=/images/2024_02_01_11_26_41_796x796.jpg></p><p><img src=/images/2024_02_01_11_39_13_616x435.jpg alt=/images/2024_02_01_11_39_13_616x435.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/01/26/workingtipsonusingimgfileindocker/>WorkingTipsOnUsingimgFileInDocker</a></h1><span class=post-date>Jan 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>准备Img文件:</p><pre><code>$ wget https://mirrors.ustc.edu.cn/raspberry-pi-os-images/raspios_lite_arm64/images/raspios_lite_arm64-2023-12-11/2023-12-11-raspios-bookworm-arm64-lite.img.xz
 $ unxz 2023-12-11-raspios-bookworm-arm64-lite.img.xz 
 $ ls
 2023-12-11-raspios-bookworm-arm64-lite.img
@@ -145,21 +179,4 @@ JOBS=&quot;12&quot;
   301  sudo apt install -y libyajl-dev
   302  meson build -Dsystem=true -Ddriver_qemu=enabled -Ddriver_interface=enabled -Ddriver_libvirtd=enabled -Ddriver_remote=enabled -Ddriver_network=enabled --prefix=/usr
   303  history
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/01/15/workingtipsonronghe/>WorkingTipsOnRongHe</a></h1><span class=post-date>Jan 15, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=tips>Tips</h3><p>crontab items:</p><pre><code>@reboot /usr/bin/execpipe.sh
-</code></pre><p><code>execpipe</code> content:</p><pre><code>$ cat /usr/bin/execpipe.sh 
-#!/bin/bash
-while true; do eval &quot;$(cat  /mypipe)&quot; &amp;&gt; /mypipeoutput.txt;done
-#while true; do eval &quot;$(cat  /mypipe)&quot;;done
-</code></pre><p>Create the pipe via:</p><pre><code>$ ls / | grep mypipe
-mypipe
-mypipeoutput.txt
-</code></pre><h3 id=kernel-buildingvb>Kernel Building(VB)</h3><p>Build the kernel via:</p><pre><code>apt install -y git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison rsync kmod cpio unzip
-unzip kernel-config.zip
-cp kernel-config/x86_64_defconfig .config
-./scripts/config --disable DEBUG_INFO
-echo &quot;&quot; | make ARCH=x86_64 olddefconfig
-make ARCH=x86_64 -j16 LOCALVERSION=-lts2021-iotg  bindeb-pkg
-</code></pre><p>Kernel patch backport:</p><pre><code>drivers/gpu/drm/i915/display/intel_fbc.c, line 1029, not equal to tc's implementation
-
-/drivers/gpu/drm/i915# vim i915_driver.c, 存在较大不同
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/4/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class=page-item><a class=page-link href=/page/4/>4</a></li><li class="page-item active"><a class=page-link href=/page/5/>5</a></li><li class=page-item><a class=page-link href=/page/6/>6</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/237/>237</a></li><li class=page-item><a href=/page/6/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/237/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
