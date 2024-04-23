@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Technology on Dash</title><link>http://purplepalmdash.github.io/categories/technology/</link><description>Recent content in Technology on Dash</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 21 Apr 2024 10:52:16 +0800</lastBuildDate><atom:link href="http://purplepalmdash.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml"/><item><title>vhdxBasedWin10</title><link>http://purplepalmdash.github.io/blog/2024/04/21/vhdxbasedwin10/</link><pubDate>Sun, 21 Apr 2024 10:52:16 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/04/21/vhdxbasedwin10/</guid><description>1. install to vhdx in installation create a vdisk(expandable) and attach it for installation:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Technology on Dash</title><link>http://purplepalmdash.github.io/categories/technology/</link><description>Recent content in Technology on Dash</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 23 Apr 2024 19:20:58 +0800</lastBuildDate><atom:link href="http://purplepalmdash.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml"/><item><title>WorkingTipsOnvhdWindows</title><link>http://purplepalmdash.github.io/blog/2024/04/23/workingtipsonvhdwindows/</link><pubDate>Tue, 23 Apr 2024 19:20:58 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/04/23/workingtipsonvhdwindows/</guid><description>1. basic disk preparation Disk layout:
+Install disk :
+Choose efi and ext4 partition:
+edit visudo , install vim and opensshserver, update, then save this disk.
+sudo virsh undefine 0000_ventoyvhd qemu-img create -f qcow2 -b ventoyvhd.qcow2 -F qcow2 0000_win10vhd.qcow2 qemu-img create -f qcow2 -b ventoyvhd.qcow2 -F qcow2 0001_win11vhd.qcow2 2. win11 installed on vhd Select Professional:
+Select customized: ...
+Create vdisk using following commands:
+Refresh the disk(before):
+After refreshment:
+Select driver 1(80GB):</description></item><item><title>vhdxBasedWin10</title><link>http://purplepalmdash.github.io/blog/2024/04/21/vhdxbasedwin10/</link><pubDate>Sun, 21 Apr 2024 10:52:16 +0800</pubDate><guid>http://purplepalmdash.github.io/blog/2024/04/21/vhdxbasedwin10/</guid><description>1. install to vhdx in installation create a vdisk(expandable) and attach it for installation:
 then you found this attached vdisk:
 Create, to let windows create its layout:
 按照以上的方法无法安装到vhdx文件
