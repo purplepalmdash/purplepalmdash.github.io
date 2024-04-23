@@ -303,7 +303,49 @@ host st12400 {
                         filename &quot;realtek.efi&quot;;
                 }
 # systemctl restart isc-dhcp-server
-</code></pre><h3 id=37-win11-passwordless-login>37. win11 passwordless login</h3><p>Login without insert password:</p><p><img src=/images/2024_04_12_10_20_49_695x445.jpg alt=/images/2024_04_12_10_20_49_695x445.jpg></p><p><img src=/images/2024_04_12_10_21_12_548x589.jpg alt=/images/2024_04_12_10_21_12_548x589.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
+</code></pre><h3 id=37-win11-passwordless-login>37. win11 passwordless login</h3><p>Login without insert password:</p><p><img src=/images/2024_04_12_10_20_49_695x445.jpg alt=/images/2024_04_12_10_20_49_695x445.jpg></p><p><img src=/images/2024_04_12_10_21_12_548x589.jpg alt=/images/2024_04_12_10_21_12_548x589.jpg></p><h3 id=38-mii-tool-for-re-negotiate>38. mii-tool for re-negotiate</h3><p>steps:</p><pre><code>root@aiBox:/home/dash# mii-tool enp2s0
+enp2s0: negotiated 100baseTx-FD, link ok
+root@aiBox:/home/dash# mii-tool -r enp2s0
+restarting autonegotiation...
+root@aiBox:/home/dash# mii-tool enp2s0
+enp2s0: negotiated 1000baseT-FD flow-control, link ok
+
+</code></pre><h3 id=39--quickly-install-linuxloop>39 . quickly install linuxloop</h3><p>Change the content of <code>linuxloop</code>:</p><pre><code>chroot_Arch()
+{
+prepare_bootstrap=&quot;
+curl -l https://archlinux.org/mirrorlist/?ip_version=4 -o /etc/pacman.d/mirrorlist
+sed -i 's@#Server = https://mirrors.ustc.edu.cn@Server = https://mirrors.ustc.edu.cn@g' /etc/pacman.d/mirrorlist
+pacman -Syu --noconfirm --needed bash bash-completion btrfs-progs bzip2 ca-certificates coreutils cryptsetup curl dosfstools e2fsprogs efibootmgr gzip lsof nano openssl reflector sudo strace tar util-linux xz zstd
+&quot;
+
+cat &gt;&quot;${linuxloopsdir}&quot;/chroot/bootstrap/linuxloops/prepare_chroot &lt;&lt;PREPARE_CHROOT
+#!/bin/bash
+set -e
+#reflector --latest 10 --threads 10 --connection-timeout 1 --download-timeout 1 --protocol https --completion-percent 90 --sort rate --save /etc/pacman.d/mirrorlist --verbose
+echo 'Server = http://mirrors.ustc.edu.cn/archlinux/\$repo/os/\$arch'&gt;/etc/pacman.d/mirrorlist
+cat /etc/pacman.d/mirrorlist
+pacstrap -G /mnt base base-devel
+PREPARE_CHROOT
+chmod 0755 &quot;${linuxloopsdir}&quot;/chroot/bootstrap/linuxloops/prepare_chroot
+</code></pre><p>Host&rsquo;s <code>/etc/resolv.conf</code> should be set to <code>nameserver 223.5.5.5</code>.<br>Install via:</p><pre><code>test@vhdboot:~$ sudo bash ~/linuxloops -distro Arch -env None -dst /home/test/arch.img -s 30 
+menuentry 'Arch' --class 'arch' {
+	rmmod tpm
+	img_path=&quot;/home/test/arch.img&quot;
+	img_uuid=&quot;6ab60fa1-d874-4b84-99d9-8ac0230f0303&quot;
+	search --no-floppy --set=root --file &quot;${img_path}&quot;
+	loopback loop &quot;${img_path}&quot;
+	linuxloops_args=&quot;rdinit=/linuxloops img_path=${img_path} img_uuid=${img_uuid}&quot;
+	export linuxloops_args
+	if [ -f (loop,2)/grub2/grub.cfg ]; then
+		configfile (loop,2)/grub2/grub.cfg
+	else
+		configfile (loop,2)/grub/grub.cfg
+	fi
+}
+</code></pre><h3 id=40-enable-detect-os>40. enable detect os</h3><p>enable os-probe:</p><pre><code>$ sudo vim /etc/default/grub
+GRUB_DISABLE_OS_PROBER=false
+$ sudo update-grub2
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
 cd Fooocus-MRE
 python3 -m venv fooocus_env
 source fooocus_env/bin/activate
