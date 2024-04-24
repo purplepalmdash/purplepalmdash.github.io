@@ -1,5 +1,74 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/09/15/usbdisplaylinkworkinghowto/>USBDisplayLinkWorkingHowto</a></h1><span class=post-date>Sep 15, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=find-usb-equipment>Find USB Equipment</h3><p>Via lsusb we could find which usb equipment available:</p><pre><code>$ sudo lsusb -t 
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/09/27/joggleropenframe/>JogglerOpenFrame</a></h1><span class=post-date>Sep 27, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=reflash-latest-firmware>Reflash latest firmware</h3><p>Examine the disk and write the image to disk:</p><pre><code>Disk /dev/sdd：1.88 GiB，2021654528 字节，3948544 个扇区
+磁盘型号：                
+单元：扇区 / 1 * 512 = 512 字节
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+磁盘标签类型：dos
+磁盘标识符：0x2fbbe9fe
+
+设备       启动 起点    末尾    扇区  大小 Id 类型
+/dev/sdd1  *       0 1390591 1390592  679M  0 空
+/dev/sdd2        264  131335  131072   64M ef EFI (FAT-12/16/32)
+dash@archnvme:/media/sda $ cd ~/Downloads 
+dash@archnvme:~/Downloads $ sudo su   
+[root@archnvme Downloads]# gzip -dc reflash111_of.img.gz | dd of=/dev/sdd bs=1M
+</code></pre><p>Mount reflash&rsquo;s usb disk into computer:</p><pre><code>Mount the USB device on your system; you should see a volume named rfl-boot.
+On the rfl-boot volume there is a directory named reflash.
+Download the operating system image you would like to write, along with its MD5 file.
+Copy both the compressed .img.gz file and its .img.gz.md5 counterpart into the reflash directory.
+</code></pre><p>Now insert the flashed usb disk into joggler, then flash will begin.</p><p>After flashing, could poweron from flash.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/09/24/visualstudiocodemarkdownwriting/>VisualStudioCodeMarkdownWriting</a></h1><span class=post-date>Sep 24, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>Install microsoft visual studio code via:</p><pre><code>$ sudo vim /etc/pacman.conf
+[archlinuxcn]
+#The Chinese Arch Linux communities packages.
+SigLevel = Never
+Server   = http://repo.archlinuxcn.org/$arch
+$ sudo pacman -Sy
+$ sudo pacman -S visual-studio-code-bin
+</code></pre><h3 id=install-plugin>Install Plugin</h3><p>Install via:</p><p><img src=/images/2020_09_24_09_58_02_326x285.jpg alt=/images/2020_09_24_09_58_02_326x285.jpg></p><p>Install prince(for converting to pdf)via:</p><pre><code>$ sudo pacman -S prince-bin
+</code></pre><p>Configure the stylesheet for prince&rsquo;s generated output:</p><pre><code>$ cat ~/.mume/style.less
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */ 
+
+.markdown-preview.markdown-preview {
+  // modify your style here
+  // eg: background-color: blue;  
+  &amp;.prince {
+    @page {
+      //size: A4 landscape
+      size: A4 PortraitModes
+    }
+    @font-face {
+      font-family: sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      src: url(&quot;/usr/share/fonts/adobe-source-han-sans/SourceHanSansCN-Regular.otf&quot;)
+  }
+
+  @font-face {
+      font-family: sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      src: url(&quot;/usr/share/fonts/adobe-source-han-sans/SourceHanSansCN-Bold.otf&quot;)
+  }
+
+  @font-face {
+      font-family: sans-serif;
+      font-style: italic;
+      font-weight: normal;
+      src: url(&quot;/usr/share/fonts/adobe-source-code-pro/SourceCodePro-It.otf&quot;)
+      //src: url(&quot;/usr/share/fonts/adobe-source-han-sans/SourceHanSansCN-Regular.otf&quot;)
+  }
+
+  @font-face {
+      font-family: sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      src: url(&quot;/usr/share/fonts/adobe-source-code-pro/SourceCodePro-BoldIt.otf&quot;)
+      //src: url(&quot;/usr/share/fonts/adobe-source-han-sans/SourceHanSansCN-Bold.otf&quot;)
+  }
+  }
+}
+</code></pre><p>Or edit the css via <code>ctrl+shift+p</code> and Run <code>Markdown Preview Enhanced: Customize Css</code>, Insert the above code.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/09/15/usbdisplaylinkworkinghowto/>USBDisplayLinkWorkingHowto</a></h1><span class=post-date>Sep 15, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=find-usb-equipment>Find USB Equipment</h3><p>Via lsusb we could find which usb equipment available:</p><pre><code>$ sudo lsusb -t 
 /:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/8p, 10000M
     |__ Port 5: Dev 2, If 0, Class=Hub, Driver=hub/4p, 5000M
 /:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/16p, 480M
@@ -201,157 +270,4 @@ gists/pure-ftpd                                                            arm64
 </code></pre><p>运行以下命令配置pure-ftpd的权限，以及添加test用户，并刷新pure-ftpd本地配置文件:</p><pre><code> docker exec -it pure-ftpd chown ftpuser:ftpuser -R /home/ftpuser
  docker exec -it pure-ftpd pure-pw useradd test -m -u ftpuser -d /home/ftpuser/test
  docker exec -it pure-ftpd pure-pw mkdb
-</code></pre><h3 id=客户端>客户端</h3><p>举winscp ftp连接为例, 新建一个ftp连接:</p><p><img src=./images/2020_09_07_10_25_02_615x286.jpg alt=./images/2020_09_07_10_25_02_615x286.jpg></p><p>直接在winscp里拖拉实现上传下载:</p><p><img src=./images/2020_09_07_10_26_36_990x327.jpg alt=./images/2020_09_07_10_26_36_990x327.jpg></p><p>进度:</p><p><img src=./images/2020_09_07_10_29_46_649x286.jpg alt=./images/2020_09_07_10_29_46_649x286.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/08/27/offlinearm64desktopenvsetup/>OfflineArm64DesktopEnvSetup</a></h1><span class=post-date>Aug 27, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=download-via-docker>Download via docker</h3><p>Run a docker instance via:</p><pre><code>$ sudo docker run -v /mnt:/mnt -it ubuntu:focal-20200115 /bin/bash
-</code></pre><p>In docker instance, do following:</p><pre><code>rm -f /etc/apt/apt.conf.d/docker-clean
-sed -i 's/ports.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
-cd /mnt
-apt-get -d -o dir::cache=`pwd` -o Debug::NoLocking=1 install xubuntu-desktop xubuntu-core chromium-browser  firefox xrdp virt-manager ubuntu-wallpapers xubuntu-community-wallpapers xubuntu-community-wallpapers-focal xubuntu-wallpapers lxd lxc
-apt-get install -y snapd
-snap download lxd
-snap download chromium
-
-</code></pre><h3 id=transfer>Transfer</h3><p>Transfer these packages into the offline environments, and do following:</p><pre><code># cd ~/pkgs
-# dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
-</code></pre><h3 id=install>Install</h3><p>In a ubuntu base environment, do following:</p><pre><code># vim /etc/apt/sources.list
-deb [trusted=yes] file:///home/test/focal/ ./
-# apt-get update -y
-# apt-get install -y  xubuntu-desktop xubuntu-core  firefox xrdp virt-manager ubuntu-wallpapers xubuntu-community-wallpapers xubuntu-community-wallpapers-focal xubuntu-wallpapers
-</code></pre><h3 id=configure-xrdp>Configure xrdp</h3><p>Configure xrdp via:</p><pre><code>$ sudo systemctl status xrdp
-$ sudo adduser xrdp ssl-cert  
-$ sudo systemctl restart xrdp
-$ sudo ufw disable
-$ echo xfce4-session &gt;~/.xsession
-$ sudo vim /etc/xrdp/startwm.sh
-#!/bin/sh
-
-if [ -r /etc/default/locale ]; then
-  . /etc/default/locale
-  export LANG LANGUAGE
-fi
-
-startxfce4
-$ sudo systemctl restart xrdp
-</code></pre><p>So now you could use xfce4 as your remote desktop to linux.</p><h3 id=snapd-installation>snapd installation</h3><p>In docker run:</p><pre><code># sudo apt-get install -y snapd
-# snap download lxd
-# snap download chromium
-# snap download gtk-common-themes
-# snap download core
-# snap download core18
-</code></pre><p>Install sequence:</p><pre><code># snap install  (core/core18/gtk-common-themes/lxd/chromium)
-chromium_1253.snap  core18_1888.snap  core_9806.snap                 gtk-common-themes_1506.snap  lxd_16946.snap
-chromium_1253.assert  core18_1888.assert  core_9806.assert  gtk-common-themes_1506.assert  lxd_16946.assert   
-</code></pre><h3 id=updated>Updated</h3><p>xrdp configuration:</p><pre><code>#!/bin/sh -e
-
-# Install XRDP.
-sudo apt install -y xrdp
-sudo sed -e 's/^new_cursors=true/new_cursors=false/g' \
-     -i /etc/xrdp/xrdp.ini
-sudo systemctl enable xrdp
-sudo systemctl restart xrdp
-
-# Load Ubuntu config.
-echo &quot;xfce4-session&quot; &gt; ~/.xsession
-D=/usr/share/xfce4:/usr/share/xubuntu:/usr/local/share
-D=${D}:/usr/share:/var/lib/snapd/desktop:/usr/share
-cat &lt;&lt;EOF &gt; ~/.xsessionrc
-export XDG_SESSION_DESKTOP=xubuntu
-export XDG_DATA_DIRS=${D}
-export XDG_CONFIG_DIRS=/etc/xdg/xdg-xubuntu:/etc/xdg:/etc/xdg
-EOF
-
-# Disable light-locker for avoiding error.
-sudo cp /usr/bin/light-locker /usr/bin/light-locker.orig
-cat &lt;&lt;EOF | sudo tee /usr/bin/light-locker
-#!/bin/sh
-
-# The light-locker uses XDG_SESSION_PATH provided by lightdm.
-if [ ! -z &quot;\${XDG_SESSION_PATH}&quot; ]; then
-  /usr/bin/light-locker.orig
-else
-  # Disable light-locker in XRDP.
-  true
-fi
-EOF
-sudo chmod a+x /usr/bin/light-locker
-</code></pre><h3 id=final-script>Final script</h3><p>Final script is listed as following:</p><pre><code>#!/bin/bash
-sudo cp -r focal /home/test/
-echo 'deb [trusted=yes] file:///home/test/focal/ ./'|sudo tee -a /etc/apt/sources.list
-sudo apt-get update -y
-sudo apt-get install -y xubuntu-desktop xubuntu-core  firefox xrdp virt-manager ubuntu-wallpapers xubuntu-community-wallpapers xubuntu-community-wallpapers-focal xubuntu-wallpapers 
-sudo adduser xrdp ssl-cert  
-sudo systemctl restart xrdp
-sudo ufw disable
-
-sudo sed -e 's/^new_cursors=true/new_cursors=false/g' \
-	     -i /etc/xrdp/xrdp.ini
-sudo systemctl enable xrdp
-sudo systemctl restart xrdp
-
-# Load Ubuntu config.
-echo &quot;xfce4-session&quot; &gt; ~/.xsession
-D=/usr/share/xfce4:/usr/share/xubuntu:/usr/local/share
-D=${D}:/usr/share:/var/lib/snapd/desktop:/usr/share
-cat &lt;&lt;EOF &gt; ~/.xsessionrc
-export XDG_SESSION_DESKTOP=xubuntu
-export XDG_DATA_DIRS=${D}
-export XDG_CONFIG_DIRS=/etc/xdg/xdg-xubuntu:/etc/xdg:/etc/xdg
-EOF
-
-# Disable light-locker for avoiding error.
-sudo cp /usr/bin/light-locker /usr/bin/light-locker.orig
-cat &lt;&lt;EOF | sudo tee /usr/bin/light-locker
-#!/bin/sh
-
-# The light-locker uses XDG_SESSION_PATH provided by lightdm.
-if [ ! -z &quot;\${XDG_SESSION_PATH}&quot; ]; then
-  /usr/bin/light-locker.orig
-else
-  # Disable light-locker in XRDP.
-  true
-fi
-EOF
-sudo chmod a+x /usr/bin/light-locker
-
-# Install snapd
-sudo snap ack snap/chromium_1253.assert
-sudo snap ack snap/core18_1888.assert
-sudo snap ack snap/core_9806.assert
-sudo snap ack snap/gtk-common-themes_1506.assert
-sudo snap ack snap/lxd_16946.assert
-
-sudo snap install snap/core_9806.snap
-sudo snap install snap/core18_1888.snap
-sudo snap install snap/gtk-common-themes_1506.snap
-sudo snap install snap/chromium_1253.snap
-#sudo snap install snap/lxd_16946.snap
-
-</code></pre><p>New user will be added if you want to create new session.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/07/29/bbbhidworkingtips/>BBBHIDWorkingTips</a></h1><span class=post-date>Jul 29, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>Preparation</h3><p>The system is:</p><pre><code>debian@beaglebone:~$ cat /etc/issue
-Debian GNU/Linux 9 \n \l
-BeagleBoard.org Debian Stretch imgtec Image 2020-04-06
-Support: http://elinux.org/Beagleboard:BeagleBoneBlack_Debian
-default username:password is [debian:temppwd]
-debian@beaglebone:~$ uname -a
-Linux beaglebone 4.14.108-ti-r131 #1stretch SMP PREEMPT Tue Mar 24 19:18:37 UTC 2020 armv7l GNU/Linux
-</code></pre><p>Change password via <code>passwd</code>.<br>Enlarge the partition from 4GB to 32GB(32 GB disk)</p><pre><code>root@beaglebone:/home/debian# /opt/scripts/tools/grow_partition.sh 
-# vim /etc/network/interfaces
-auto eth0
-iface eth0 inet dhcp
-# reboot
-##### Checking #############
-debian@beaglebone:~$ df -h
-Filesystem      Size  Used Avail Use% Mounted on
-udev            217M     0  217M   0% /dev
-tmpfs            49M  5.2M   44M  11% /run
-/dev/mmcblk0p1   30G  2.5G   26G   9% /
-</code></pre><p>Edit the sources.list configuration:</p><pre><code>$ cat /etc/apt/sources.list
-deb http://mirrors.ustc.edu.cn/debian stretch main contrib non-free
-#deb-src http://mirrors.ustc.edu.cn/debian stretch main contrib non-free
-
-deb http://mirrors.ustc.edu.cn/debian stretch-updates main contrib non-free
-#deb-src http://mirrors.ustc.edu.cn/debian stretch-updates main contrib non-free
-
-deb http://mirrors.ustc.edu.cn/debian-security stretch/updates main contrib non-free
-#deb-src http://mirrors.ustc.edu.cn/debian-security stretch/updates main contrib non-free
-#  apt-get update -y 
-# apt-get install -y libudev-dev libusb-dev awesome iotop
-</code></pre><h3 id=usb-hid>USB HID</h3></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/42/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/42/>42</a></li><li class="page-item active"><a class=page-link href=/page/43/>43</a></li><li class=page-item><a class=page-link href=/page/44/>44</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/238/>238</a></li><li class=page-item><a href=/page/44/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/238/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><h3 id=客户端>客户端</h3><p>举winscp ftp连接为例, 新建一个ftp连接:</p><p><img src=./images/2020_09_07_10_25_02_615x286.jpg alt=./images/2020_09_07_10_25_02_615x286.jpg></p><p>直接在winscp里拖拉实现上传下载:</p><p><img src=./images/2020_09_07_10_26_36_990x327.jpg alt=./images/2020_09_07_10_26_36_990x327.jpg></p><p>进度:</p><p><img src=./images/2020_09_07_10_29_46_649x286.jpg alt=./images/2020_09_07_10_29_46_649x286.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/42/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/42/>42</a></li><li class="page-item active"><a class=page-link href=/page/43/>43</a></li><li class=page-item><a class=page-link href=/page/44/>44</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/238/>238</a></li><li class=page-item><a href=/page/44/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/238/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

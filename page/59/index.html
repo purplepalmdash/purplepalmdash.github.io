@@ -1,5 +1,181 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/21/workingtipsonffdl/>WorkingTipsOnFfDL</a></h1><span class=post-date>May 21, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=startpoint>StartPoint</h3><p>Working directory:</p><pre><code># /home/xxxx/Code/vagrant/ai_k8s/RONG/package/files/Rong
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/24/tipsonaimachine/>TipsOnAIMachine</a></h1><span class=post-date>May 24, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=硬件环境>硬件环境</h3><p>新购的神舟， Z7-KP7GH， CPU， i7-8750H， 内存24G， 显卡Nvidia GTX1060 6G.<br>8G 优盘用于系统安装.</p><h3 id=软件安装及适配>软件安装及适配</h3><p>ubuntu-18.04.2-desktop-amd64.iso, 写入优盘:</p><pre><code># sudo dd if=./ubuntu-18.04.2-desktop-amd64.iso of=/dev/sdc bs=1M &amp;&amp; sudo sync
+</code></pre><p>笔记本开机按DEL进入BIOS配置，选择U盘启动，遇到安装卡住的问题，解决方案如下：</p><pre><code>GRUB choose the Ubuntu, or Install Ubuntu (it depends, you will see it hopefully), go to it with the arrows and press the 'e' key.
+Here go to the line which contains quiet splash at the end and add  acpi=off after these words.
+Then press F10 to boot with these settings.
+</code></pre><p>安装中需要重新分区, 参考：</p><p><img src=/images/2019_05_24_10_41_45_771x380.jpg alt=/images/2019_05_24_10_41_45_771x380.jpg>
+这里新建了efi分区，并使用新建的分区用于安装操作系统，同时保留了原有的Windows操作系统，特别要注意的是关于bootloader的安装位置。</p><p>安装完毕后，由于是nvidia卡的原因，首次进入系统会卡住，这里我们需要再次修改GRUB进入系统:</p><pre><code>When you are in the GRUB menu, press E to enter the GRUB editor. Add nouveau.modeset=0 to the end of the line that starts with linux. After you've added it, press F10 to boot. Your system should start. After that, go to System Settings &gt; Software &amp; Updates &gt; Additional Drivers and then select the NVIDIA driver. Right now I'm using NVIDIA binary driver- version 367.57 from nvidia-367 (proprietary, tested).
+</code></pre><p>当前(2019-05-24)时，nvidia的驱动是nvida-driver-390.</p><p>现在重新启动机器，就可以正常进入系统并执行操作了。<br>显卡的测试可以参考<a href=https://linuxconfig.org/benchmark-your-graphics-card-on-linux>https://linuxconfig.org/benchmark-your-graphics-card-on-linux</a>
+时间的关系这里我就不做了。</p><h3 id=系统适配>系统适配</h3><p>安装必要的包:</p><pre><code># apt-get install -y openssh-server vim net-tools virt-manager vagrant
+vagrant-libvirt meld lm_sensors
+</code></pre><p>Install cuda:</p><pre><code># systemctl stop gdm
+# ./cuda_10.0.130_410.48_linux.run
+# vim ~/.bashrc
+export PATH=/usr/local/cuda-10.0/bin:$PATH
+# source ~/.bashrc
+# nvidia-smi 
+Mon May 27 08:40:56 2019       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 410.48                 Driver Version: 410.48                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 1060    Off  | 00000000:01:00.0 Off |                  N/A |
+| N/A   55C    P0    25W /  N/A |      0MiB /  6078MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+# nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2018 NVIDIA Corporation
+Built on Sat_Aug_25_21:08:01_CDT_2018
+Cuda compilation tools, release 10.0, V10.0.130
+# wget xxxxxxxxhttps://developer.nvidia.com/rdp/cudnn-archive
+# Get the following packages: cudnn-10.0-linux-x64-v7.5.0.56.tgz
+#  tar -zxvf cudnn-10.0-linux-x64-v7.4.2.24.tgz
+# 拷贝
+$ cd cudnn-10.0-linux-x64-v7.4.2.24
+$ sudo cp cuda/include/cudnn.h /usr/local/cuda-10.0/include
+$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda-10.0/lib64
+# 修改权限
+$ sudo chmod a+r /usr/local/cuda-10.0/include/cudnn.h /usr/local/cuda-10.0/lib64/libcudnn*
+$ vim ~/.bashrc
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH
+export CUDNN_PATH=&quot;/usr/local/cuda-10.0/lib64/libcudnn.so&quot;
+$ source ~/.bashrc
+$ echo -e '#include&quot;cudnn.h&quot;\n void main(){}' | nvcc -x c - -o /dev/null -lcudnn
+$ echo $?
+0
+</code></pre><p>Now upgrading your nvidia driver:</p><pre><code>$ sudo add-apt-repository ppa:graphics-drivers/ppa
+$ sudo apt update
+$ ubuntu-drivers devices
+$ sudo ubuntu-drivers autoinstall 
+$ sudo reboot
+After reboot....
+$ nvidia-smi 
+Mon May 27 09:07:16 2019       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 430.14       Driver Version: 430.14       CUDA Version: 10.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 1060    Off  | 00000000:01:00.0 Off |                  N/A |
+| N/A   49C    P0    26W /  N/A |    166MiB /  6078MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0      1970      G   /usr/lib/xorg/Xorg                            94MiB |
+|    0      2148      G   /usr/bin/gnome-shell                          69MiB |
++-----------------------------------------------------------------------------+
+</code></pre><p>Now your cuda and cudnn is installed OK. Cause nvidia&rsquo;s cuda will be older
+than the ppa&rsquo;s and will cause problems, we need to install driver after cuda
+installation.</p><h3 id=tensorflow>tensorflow</h3><p>Install pip and use pip for installing tensorflow:</p><pre><code>$ sudo apt-get install -y python-pip
+$ pip install tensorflow-gpu
+$ vim test.py
+import tensorflow as tf
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+print(sess.run(hello))
+$ python test.py
+2019-05-27 09:35:27.847206: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-05-27 09:35:27.952455: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:998] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-05-27 09:35:27.953302: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5643333f0dc0 executing computations on platform CUDA. Devices:
+2019-05-27 09:35:27.953344: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX 1060, Compute Capability 6.1
+2019-05-27 09:35:27.974107: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2208000000 Hz
+2019-05-27 09:35:27.975517: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x564333ab33b0 executing computations on platform Host. Devices:
+2019-05-27 09:35:27.975563: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): &lt;undefined&gt;, &lt;undefined&gt;
+2019-05-27 09:35:27.977344: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX 1060 major: 6 minor: 1 memoryClockRate(GHz): 1.6705
+pciBusID: 0000:01:00.0
+totalMemory: 5.94GiB freeMemory: 5.68GiB
+2019-05-27 09:35:27.977382: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-05-27 09:35:27.979140: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-05-27 09:35:27.979179: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-05-27 09:35:27.979193: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-05-27 09:35:27.979313: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5517 MB memory) -&gt; physical GPU (device: 0, name: GeForce GTX 1060, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Hello, TensorFlow!
+</code></pre><h3 id=remote-machine>remote machine</h3><p>Settings-> Sharing-> Screen Sharing:</p><p><img src=/images/2019_05_27_10_23_29_364x494.jpg alt=/images/2019_05_27_10_23_29_364x494.jpg></p><p>then setting:</p><pre><code>$ gsettings set org.gnome.Vino require-encryption false
+</code></pre><p>Now use vncviewer for viewing the 5900 port, you will get the remote screen.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/22/zfs/>ZFS</a></h1><span class=post-date>May 22, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=purpose>Purpose</h3><p>ZFS On proxmox, performance issue.</p><h3 id=steps>Steps</h3><h4 id=1-megaclisas-status>1. megaclisas-status</h4><p>The proxmox is in offline environment, so need to get the megaclisas-status
+packages installed ready.</p><pre><code># sudo docker run -it debian:9.4 /bin/bash
+root@f427df462cbd:/# cat /etc/debian_version 
+9.4
+root@f427df462cbd:/# apt-get install -y vim
+root@f427df462cbd:/# vim apt.conf.d/docker-clean 
+Comment all
+root@f427df462cbd:/# apt-get install -y wget gnupg2
+# wget -O - https://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key | apt-key add -
+# cat /etc/apt/sources.list
+deb http://deb.debian.org/debian stretch main
+deb http://security.debian.org/debian-security stretch/updates main
+deb http://deb.debian.org/debian stretch-updates main
+deb http://hwraid.le-vert.net/debian stretch main
+# apt-get update -y
+# apt-get install megaclisas-status
+# cd /var/cache/
+# find . | grep deb$ | xargs -I % cp % /root/deb/
+</code></pre><p>Transfer the debs into the promox machine, install it via:</p><pre><code># cd /root/deb/
+# dpkg -i daemon_0.6.4-1+b2_amd64.deb megacli*
+root@ks:~/deb# megaclisas-status 
+-- Controller information --
+-- ID | H/W Model | RAM    | Temp | BBU    | Firmware     
+c0    | SAS3108 | 1024MB | 64C  | Absent | FW: 24.7.0-0057 
+
+-- Array information --
+-- ID | Type   |    Size |  Strpsz |   Flags | DskCache |   Status |  OS Path | CacheCade |InProgress   
+c0u0  | RAID-1 |    558G |  256 KB |   RA,WT |  Default |  Optimal | /dev/sda | None      |None         
+c0u1  | RAID-5 |   7271G |  256 KB | ADRA,WT |  Default |  Optimal | /dev/sdb | None      |None         
+c0u2  | RAID-5 |   7271G |  256 KB | ADRA,WT |  Default |  Optimal | /dev/sdc | None      |None         
+c0u3  | RAID-5 |   7271G |  256 KB | ADRA,WT |  Default |  Optimal | /dev/sdd | None      |None         
+c0u4  | RAID-5 |   7271G |  256 KB | ADRA,WT |  Default |  Optimal | /dev/sde | None      |No
+</code></pre><p>Change the properties:</p><pre><code>root@ks:~/deb# megacli -LDGetProp -Cache -LALL -a0
+                                     
+Adapter 0-VD 0(target id: 0): Cache Policy:WriteThrough, ReadAhead, Direct, No Write Cache if bad BBU
+Adapter 0-VD 1(target id: 1): Cache Policy:WriteThrough, ReadAdaptive, Direct, No Write Cache if bad BBU
+Adapter 0-VD 2(target id: 2): Cache Policy:WriteThrough, ReadAdaptive, Direct, No Write Cache if bad BBU
+Adapter 0-VD 3(target id: 3): Cache Policy:WriteThrough, ReadAdaptive, Direct, No Write Cache if bad BBU
+Adapter 0-VD 4(target id: 4): Cache Policy:WriteThrough, ReadAdaptive, Direct, No Write Cache if bad BBU
+
+Exit Code: 0x00
+root@ks:~/deb# megacli -LDSetProp NORA -LALL -a0
+                                     
+Set Read Policy to NoReadAhead on Adapter 0, VD 0 (target id: 0) success
+Set Read Policy to NoReadAhead on Adapter 0, VD 1 (target id: 1) success
+Set Read Policy to NoReadAhead on Adapter 0, VD 2 (target id: 2) success
+Set Read Policy to NoReadAhead on Adapter 0, VD 3 (target id: 3) success
+Set Read Policy to NoReadAhead on Adapter 0, VD 4 (target id: 4) success
+
+Exit Code: 0x00
+root@ks:~/deb# megacli -LDGetProp -Cache -LALL -a0
+                                     
+Adapter 0-VD 0(target id: 0): Cache Policy:WriteThrough, ReadAheadNone, Direct, No Write Cache if bad BBU
+Adapter 0-VD 1(target id: 1): Cache Policy:WriteThrough, ReadAheadNone, Direct, No Write Cache if bad BBU
+Adapter 0-VD 2(target id: 2): Cache Policy:WriteThrough, ReadAheadNone, Direct, No Write Cache if bad BBU
+Adapter 0-VD 3(target id: 3): Cache Policy:WriteThrough, ReadAheadNone, Direct, No Write Cache if bad BBU
+Adapter 0-VD 4(target id: 4): Cache Policy:WriteThrough, ReadAheadNone, Direct, No Write Cache if bad BBU
+
+Exit Code: 0x00
+</code></pre><p>Hope this will greately improve performance.</p><p>Notice(For disk cache):</p><pre><code>Optional toppings for most LD configurations:
+WT :      WriteThrough   safer.  Only returns once data is written to disk.
+WB:       WriteBack       faster.  Returns as soon as data is is written to cache
+NORA :  No Read Ahead   vs
+RA:        ReadAhead   vs
+ADRA :   Adaptive ReadAhead where if the previous two requests were sequential, it pre-loads the next in sequence.
+Cached:  Cache reads.
+Direct:    Only the previous read is cached.
+-strpszM      : Stripe size      so -strpsz64 means 64kb stripe size.
+Hsp[E0:S0] : Choose this drive to be a hot-spare
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/21/workingtipsonffdl/>WorkingTipsOnFfDL</a></h1><span class=post-date>May 21, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=startpoint>StartPoint</h3><p>Working directory:</p><pre><code># /home/xxxx/Code/vagrant/ai_k8s/RONG/package/files/Rong
 # vagrant status
 Current machine states:
 
@@ -95,312 +271,4 @@ logging      es-data-es-data-efk-cluster-default-0     Bound    local-pv-7d48bf5
 logging      es-data-es-master-efk-cluster-default-0   Bound    local-pv-64a35d15   20Gi       RWO            fast-disks     4h17m
 monitoring   vol-alertmanager-res-alertmanager-0       Bound    local-pv-24ed6560   20Gi       RWO            fast-disks     4h21m
 monitoring   vol-prometheus-res-prometheus-0           Bound    local-pv-e998c4c2   20Gi       RWO            fast-disks     4h21m
-</code></pre><h3 id=tbd>TBD</h3><ol><li>Now to enlarge the disk?</li></ol></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/08/minimumrhel74dvd/>MinimumRHEL74DVD</a></h1><span class=post-date>May 8, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>In a minimum installed system, do following:</p><pre><code># mount /dev/sr0 /mnt
-# vim  /etc/yum.repos.d/local.repo 
-[local]
-name=local
-baseurl=file:///mnt
-enabled=1
-gpgcheck=0
-# yum makecache
-# cat /mnt/repodata/764ce0e938d43b3e9cb1bcca13cf71630aac0c44149f4a61548f642df3c70858-comps-Server.x86_64.xml
-</code></pre><p>Around Line 937-1031, get all of the packges:</p><pre><code># cat list1.txt | awk -F '&gt;' {'print $2'} | awk -F '&lt;' {'print $1'} 
-</code></pre><p>According to the output, install all of the packges:</p><pre><code>yum install -y Red_Hat_Enterprise_Linux-Release_Notes-7-en-US
-yum install -y audit
-.......
-yum install -y tboot
-yum install -y NetworkManager-config-server
-</code></pre><p>Now do following for getting all of the packages:</p><pre><code># for i in `rpm -qa`; do echo $i.rpm|xargs -I % cp /mnt/Packages/% /root/pkgs; done
-</code></pre><p>Added <code>Base</code> group:</p><pre><code># sed -n 483,632p /mnt/repodata/764ce0e938d43b3e9cb1bcca13cf71630aac0c44149f4a61548f642df3c70858-comps-Server.x86_64.xml  | awk -F '&gt;' {'print $2'} | awk -F '&lt;' {'print $1'} | xargs -I % yum install -y %
-# for i in `rpm -qa`; do echo $i.rpm|xargs -I % cp /mnt/Packages/% /root/pkgs; done
-</code></pre><p>Upload the Packages to building server, then:</p><pre><code># mv repodata/ /root/whole_repodata
-# mv Packages/ /root/whole_Packages
-# mv /root/thinrepodata/ repodata
-# mv /root/pkgs/ Packages
-# cp repodata/764ce0e938d43b3e9cb1bcca13cf71630aac0c44149f4a61548f642df3c70858-comps-Server.x86_64.xml .
-# createrepo -g 764ce0e938d43b3e9cb1bcca13cf71630aac0c44149f4a61548f642df3c70858-comps-Server.x86_64.xml  .
-# mkisofs -o /root/new.iso  -b isolinux/isolinux.bin -c isolinux/boot.cat --no-emul-boot --boot-load-size 4 --boot-info-table -J -R -V &quot;RHEL-7.4\x20Server.x86_64&quot; . 
-</code></pre><p>Your /root/new.iso will be much more smaller, cause it only contains <code>Core</code>
-and <code>Base</code> group packages.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/07/customizerhel74iso/>CustomizeRHEL74ISO</a></h1><span class=post-date>May 7, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=参考材料>参考材料</h3><p><a href=https://www.golinuxhub.com/2017/05/how-to-create-customized-bootable-boot.html>https://www.golinuxhub.com/2017/05/how-to-create-customized-bootable-boot.html</a></p><h3 id=目的>目的</h3><p>定制化rhel7.4安装ISO.</p><p>添加以下功能:</p><pre><code>1. 
-</code></pre><h3 id=准备>准备</h3><p>rhel7.4虚拟机一台，DVD安装光盘<code>rhel-server-7.4-x86_64-dvd.iso</code>已加载到/mnt目录:</p><pre><code>root@server128:/media/sdd/raw/Rong_win/upgrade/Rong1905-redhat$ vagrant ssh
-Last login: Tue May  7 09:23:02 2019 from 192.168.121.1
-[vagrant@k8s2100upgrade-1 ~]$ cat /etc/redhat-release 
-Red Hat Enterprise Linux Server release 7.4 (Maipo)
-[vagrant@k8s2100upgrade-1 ~]$ sudo mount /dev/sr0 /mnt
-mount: /dev/sr0 is write-protected, mounting read-only
-</code></pre><h3 id=步骤>步骤</h3><h4 id=1-准备编译服务器>1. 准备编译服务器</h4><p>准备工作目录，用于复制DVD中对应的目录结构以便于定制化:</p><pre><code># mkdir /root/geniso
-# mount /dev/sr0 /mnt
-# cp -rvf /mnt/* /root/geniso
-</code></pre><h4 id=2-定制化kickstart文件>2. 定制化kickstart文件</h4><p>先用一个样例文件用于安装, 后面再根据需要修改:</p><pre><code># Kickstart configuration for RHEL7.4
-
-#platform=x86, AMD64, or Intel EM64T
-# System authorization information
-auth  --enableshadow  --passalgo=sha512
-
-# Clear the Master Boot Record
-zerombr
-
-# Partition clearing information
-clearpart --drives=sda --all
-
-# Use text mode install
-#text
-graphical
-
-# Firewall configuration
-firewall --disabled
-
-# Run the Setup Agent on first boot
-firstboot --reconfig --enable
-
-# System keyboard
-keyboard us
-
-# System language
-lang en_US.UTF-8
-
-# Skipping input of key
-#key --skip
-
-# Installation logging level
-logging --level=info
-
-# Use NFS installation media
-cdrom
-
-# Network Information
-network --bootproto=static --hostname=my-linux --device=eth0 --gateway=1.2.3.1 --ip=1.2.3.4 --netmask=255.255.255.0 --noipv6 --nodns --onboot=on --activate
-
-# System bootloader configuration
-bootloader --location=mbr --driveorder=sda
-
-# The following is the partition information you requested
-ignoredisk --only-use=sda
-
-# Disk Partioning
-clearpart --all --initlabel
-autopart
-
-#Root password
-rootpw --iscrypted $6$KjCAXxUM2u5OcTtD$PcDbFkQCck97S6synqPIsxjHuOwQ1w5OENVE08l0gCG4fx3aW5DEl7Lw.1IjFflDT7iaESYUWKxO9877r7LAy0
-
-# SELinux configuration
-selinux --disabled
-# Do not configure the X Window System
-# Do not configure the X Window System
-skipx
-
-#Disabling kdump services, owing to few problems with current kexec package
-services --disabled kdump
-
-# System timezone
-timezone --utc Asia/Shanghai
-
-# Install OS instead of upgrade
-install
-
-# Reboot after installation
-reboot
-
-# list of packages to be installed
-%packages
-@ Core
-@ Base --nodefaults
-# packages deleted according to OS minimization
-%end
-</code></pre><p>其中密码可以通过以下命令来生成:</p><pre><code># python -c 'import crypt,getpass; print crypt.crypt(getpass.getpass())'
-Password: 
-</code></pre><p>将上面的文件命名为<code>ks.cfg</code>并拷贝到<code>/root/geniso</code>目录。</p><h4 id=3-更改grub菜单>3. 更改GRUB菜单</h4><p>更换目录至isolinux目录并添加写权限给GRUB定义文件:</p><pre><code># pwd
-/root/geniso/isolinux
-# chmod a+w isolinux.cfg
-</code></pre><p>在<code>isolinux.cfg</code>文件中查找到以下位置(约61行):</p><pre><code>label linux
-  menu label ^Install Red Hat Enterprise Linux 7.4
-  kernel vmlinuz
-  append initrd=initrd.img inst.stage2=hd:LABEL=RHEL-7.4\x20Server.x86_64 quiet
-</code></pre><p>更改为:</p><pre><code>label linux
-  menu label ^Install Red Hat Enterprise Linux 7.4
-  kernel vmlinuz
-  append initrd=initrd.img inst.stage2=hd:LABEL=RHEL-7.4\x20Server.x86_64 quiet
-
-label autolinux
-  menu label ^Auto Install Red Hat Enterprise Linux 7.4
-  kernel vmlinuz
-  append initrd=initrd.img inst.repo=cdrom ks=cdrom:/ks.cfg net.ifnames=0 biosdevname=0
-</code></pre><h4 id=4-生成iso>4. 生成ISO</h4><p>安装<code>genisoimage</code>包，用于编译ISO:</p><pre><code>[root@k8s2100upgrade-1 geniso]# cd Packages/
-[root@k8s2100upgrade-1 Packages]# rpm -Uvh libusal-1.1.11-23.el7.x86_64.rpm genisoimage-1.1.11-23.el7.x86_64.rpm 
-warning: libusal-1.1.11-23.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID fd431d51: NOKEY
-Preparing...                          ################################# [100%]
-Updating / installing...
-   1:libusal-1.1.11-23.el7            ################################# [ 50%]
-</code></pre><p>执行以下命令，将在<code>/root</code>下生成<code>new.iso</code>:</p><pre><code># cd /root/geniso
-# mkisofs -o /root/new.iso  -b isolinux/isolinux.bin -c isolinux/boot.cat --no-emul-boot --boot-load-size 4 --boot-info-table -J -R -V &quot;RHEL-7.4\x20Server.x86_64&quot; .
-</code></pre><h3 id=细调kickstart>细调kickstart</h3><h4 id=1-主机名>1. 主机名</h4><p>更改网络信息:</p><pre><code>network --bootproto=static --hostname=node ...............
-</code></pre><h4 id=2-添加用户密码>2. 添加用户/密码</h4><p>在ks.cfg最后添加以下，以便创建test和vagrant用户, test使用sudo时将免密码登录:</p><pre><code>%post
-groupadd vagrant -g 1001
-useradd test -g vagrant -G wheel -u 1001
-useradd vagrant -g vagrant -G wheel -u 1001
-echo &quot;test&quot; | passwd --stdin xxxxx
-echo &quot;vagrant&quot; | passwd --stdin vagrant
-echo &quot;test        ALL=(ALL)       NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers.d/test
-echo &quot;vagrant        ALL=(ALL)       NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers.d/test
-sed -i &quot;s/^.*requiretty/#Defaults requiretty/&quot; /etc/sudoers
-mkdir /home/vagrant/.ssh
-echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key&quot; &gt; /home/vagrant/.ssh/authorized_keys
-%end
-</code></pre><h4 id=3-预注入key>3. 预注入key</h4><p>接着注入key:</p><pre><code># Add user
-user --name=test --groups=wheel --plaintext --password=xxxxx
-
-# ssh key
-sshpw --username=root --sshkey 'ssh-rsa AAAAB3x......'
-</code></pre><h4 id=4-自动侦探第一块磁盘>4. 自动侦探第一块磁盘</h4><p>需要更改%pre中的选项</p><h4 id=5-添加testvagrant用户等>5. 添加test/vagrant用户等</h4><p>%post中需要有对应的更改</p><h3 id=kscfg完整版>ks.cfg完整版</h3><p>最终版本的ks.cfg如下：</p><pre><code># Kickstart configuration for RHEL7.4
-
-#platform=x86, AMD64, or Intel EM64T
-# System authorization information
-auth  --enableshadow  --passalgo=sha512
-
-# Use text mode install
-text
-#graphical
-
-# Firewall configuration
-firewall --disabled
-
-# Run the Setup Agent on first boot
-#firstboot --reconfig --enable
-firstboot --disable
-
-# System keyboard
-keyboard us
-
-# System language
-lang en_US.UTF-8
-
-# Skipping input of key
-#key --skip
-
-# Installation logging level
-logging --level=info
-
-# Use NFS installation media
-cdrom
-
-# Network Information
-network --bootproto=static --hostname=node --device=eth0 --gateway=1.2.3.1 --ip=1.2.3.4 --netmask=255.255.255.0 --noipv6 --nodns --onboot=on --activate
-
-# Include generated partition layout
-%include /tmp/part-include
-
-#Root password
-rootpw --iscrypted $6$KjCAXxUM2u5OcTtD$PcDbFkQCck97S6synqPIsxjHuOwQ1w5OENVE08l0gCG4fx3aW5DEl7Lw.1IjFflDT7iaESYUWKxO9877r7LAy0
-
-# SELinux configuration
-selinux --disabled
-# Do not configure the X Window System
-# Do not configure the X Window System
-skipx
-
-#Disabling kdump services, owing to few problems with current kexec package
-services --disabled kdump
-
-# System timezone
-timezone --utc Asia/Shanghai
-
-# Install OS instead of upgrade
-install
-
-# Reboot after installation
-reboot
-
-# list of packages to be installed
-%packages
-@ Core
-@ Base --nodefaults
-# packages deleted according to OS minimization
-%end
-
-################################################################################
-# Pre section
-################################################################################
-%pre
-#!/bin/bash
-# Set networking defaults.
-
-# Parse the Kernel boot options for overrides. (Key=Value)
-cmdline=($(cat /proc/cmdline))
-for cmd in ${cmdline[@]}; do 
-  if [[ &quot;$cmd&quot; =~ '=' ]]; then
-    eval &quot;$cmd&quot;
-  fi
-done
-
-# Enumerate all disks.
-disks=($(list-harddrives | awk '{ print $1 }'))
-sizes=($(list-harddrives | awk '{ print $2 }'))
-count=${#disks[@]}
-
-if grep -q -w &quot;noformat&quot; /proc/cmdline; then
-  # TODO: Do not format any attached disks.
-  true
-else
-  # Format all attached disks.
-  if grep -q -w &quot;nolvm&quot; /proc/cmdline; then
-    # TODO: Do not use LVM.
-    true
-  else
-    # Use LVM
-    i=0
-    pvs=
-    parts=
-    for disk in ${disks[@]}; do
-      # Only part the first disk
-      if (( $i == 1 )); then
-        break
-      fi
-      # End of Only part the first disk
-      parts=&quot;${parts}part pv.$i --grow --size=1 --ondisk=/dev/${disk}&quot;
-      pvs=&quot;$pvs pv.$i&quot;
-      let i=$i+1
-    done
-    pvs=(${pvs})
-    cat &gt; /tmp/part-include &lt;&lt; EOF
-# password
-bootloader --location=mbr --driveorder=${disks[0]} 
-zerombr
-clearpart --all
-part /boot --label=boot --fsoptions=nodev,nosuid,noexec --size=512 --asprimary --ondisk=/dev/${disks[0]}
-part pv.3 --size=100 --grow --ondisk=/dev/${disks[0]}
-volgroup vg0 pv.3
-#$parts
-#volgroup vg0 ${pvs[@]}
-# See CIS Benchmark / NSA SNAC guides for partitioning and fsoption explanations;
-# https://www.nsa.gov/ia/_files/os/redhat/rhel5-guide-i731.pdf
-# https://benchmarks.cisecurity.org/downloads/form/index.cfm?download=centos6.100
-# Requires ~16GB HDD
-logvol / --name=root --vgname=vg0 --size=15000 --grow
-EOF
-  fi
-fi
-%end
-################################################################################
-# Post section
-################################################################################
-
-%post
-groupadd vagrant -g 1001
-groupadd test -g 1002
-useradd test -g test -G wheel -u 1002
-useradd vagrant -g vagrant -G wheel -u 1001
-echo &quot;xxxxxxx&quot; | passwd --stdin test
-echo &quot;vagrant&quot; | passwd --stdin vagrant
-echo &quot;test        ALL=(ALL)       NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers.d/test
-echo &quot;vagrant        ALL=(ALL)       NOPASSWD: ALL&quot; &gt;&gt; /etc/sudoers.d/vagrant
-sed -i &quot;s/^.*requiretty/#Defaults requiretty/&quot; /etc/sudoers
-mkdir /home/vagrant/.ssh
-echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key&quot; &gt; /home/vagrant/.ssh/authorized_keys
-mkdir /root/.ssh
-echo &quot;ssh-rsa xagwoguwogu gwewg&quot;&gt;/root/.ssh/authorized_keys
-chmod 700 /root/.ssh
-chmod 400 /root/.ssh/authorized_keys
-%end
-
-</code></pre><h3 id=测试安装>测试安装</h3><p>因为我们指定了sda，因而我们这里先用virt-manager中的SATA驱动：</p><p><img src=/images/2019_05_07_09_55_31_537x372.jpg alt=/images/2019_05_07_09_55_31_537x372.jpg></p><p>启动光盘，来到安装界面:</p><p><img src=/images/2019_05_07_09_56_17_499x185.jpg alt=/images/2019_05_07_09_56_17_499x185.jpg></p><p>无需确认，一路安装直到安装完毕</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/58/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/58/>58</a></li><li class="page-item active"><a class=page-link href=/page/59/>59</a></li><li class=page-item><a class=page-link href=/page/60/>60</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/238/>238</a></li><li class=page-item><a href=/page/60/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/238/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><h3 id=tbd>TBD</h3><ol><li>Now to enlarge the disk?</li></ol></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/58/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/58/>58</a></li><li class="page-item active"><a class=page-link href=/page/59/>59</a></li><li class=page-item><a class=page-link href=/page/60/>60</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/238/>238</a></li><li class=page-item><a href=/page/60/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/238/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
