@@ -1,0 +1,77 @@
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>ChangeItemsOnVentoy &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="ChangeItemsOnVentoy"><meta name=keywords content="Technology"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>ChangeItemsOnVentoy</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Apr 24, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents></nav></div><p>Add custom menu after the default menu:</p><pre><code>root@vhdboot:/boot/efi/grub# diff grub.cfg grub.cfg.backback 
+2664,2666d2663
+&lt; if [ -e $vt_plugin_path/ventoy/ventoy_grub.cfg ]; then
+&lt;     source $vt_plugin_path/ventoy/ventoy_grub.cfg
+&lt; fi
+2675,2679c2672,2675
+&lt;     source $vt_plugin_path/ventoy/ventoy_grub.cfg
+&lt;     #menuentry &quot;$NO_ISO_MENU (Press enter to reboot ...)&quot; {
+&lt;     #    echo -e &quot;\n    Rebooting ... &quot;
+&lt;     #    reboot
+&lt;     #}
+---
+&gt;     menuentry &quot;$NO_ISO_MENU (Press enter to reboot ...)&quot; {
+&gt;         echo -e &quot;\n    Rebooting ... &quot;
+&gt;         reboot
+&gt;     }
+</code></pre><p>Ventoy configuration files:</p><pre><code>root@vhdboot:/boot/efi/grub# cat /mnt8/ventoy/ventoy.json 
+{
+    &quot;control&quot;: [
+	            { &quot;VTOY_MENU_LANGUAGE&quot;: &quot;zh_CN&quot; },
+		            { &quot;VTOY_MENU_TIMEOUT&quot;: &quot;3&quot; },
+        { &quot;VTOY_DEFAULT_SEARCH_ROOT&quot;: &quot;/HHHISO1&quot; }
+    ]
+}
+root@vhdboot:/boot/efi/grub# cat /mnt8/ventoy/ventoy_grub.cfg 
+menuentry 'Ubuntu' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-simple-d68c23a7-3d0b-4113-9127-8dac01ec1b29' {
+	insmod gzio
+	insmod part_gpt
+	insmod ext2
+	set root='hd0,gpt3'
+	if [ x$feature_platform_search_hint = xy ]; then
+	  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d68c23a7-3d0b-4113-9127-8dac01ec1b29
+	else
+	  search --no-floppy --fs-uuid --set=root d68c23a7-3d0b-4113-9127-8dac01ec1b29
+	fi
+	linux	/boot/vmlinuz-6.5.0-28-generic root=UUID=d68c23a7-3d0b-4113-9127-8dac01ec1b29 ro  quiet splash $vt_handoff
+	initrd	/boot/initrd.img-6.5.0-28-generic
+}
+
+menuentry &quot;Boot Windows10&quot; {    
+    set my_vhd_path=&quot;/HHHISO/win10.vhdx&quot;
+    
+    if search -n -s vdiskhd -f &quot;$my_vhd_path&quot;; then
+        vhdboot_common_func &quot;($vdiskhd)$my_vhd_path&quot;
+    else
+        echo &quot;$my_vhd_path not found&quot;
+    fi
+}
+
+menuentry &quot;Boot Windows11&quot; {    
+    set my_vhd_path=&quot;/HHHISO/win11.vhdx&quot;
+    
+    if search -n -s vdiskhd -f &quot;$my_vhd_path&quot;; then
+        vhdboot_common_func &quot;($vdiskhd)$my_vhd_path&quot;
+    else
+        echo &quot;$my_vhd_path not found&quot;
+    fi
+}
+
+
+menuentry 'Arch(linuxloop)' --class 'arch' {
+	rmmod tpm
+	img_path=&quot;/home/test/arch.img&quot;
+	img_uuid=&quot;6ab60fa1-d874-4b84-99d9-8ac0230f0303&quot;
+	search --no-floppy --set=root --file &quot;${img_path}&quot;
+	loopback loop &quot;${img_path}&quot;
+	linuxloops_args=&quot;rdinit=/linuxloops img_path=${img_path} img_uuid=${img_uuid}&quot;
+	export linuxloops_args
+	if [ -f (loop,2)/grub2/grub.cfg ]; then
+		configfile (loop,2)/grub2/grub.cfg
+	else
+		configfile (loop,2)/grub/grub.cfg
+	fi
+}
+
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

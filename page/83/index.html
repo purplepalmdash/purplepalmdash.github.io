@@ -1,5 +1,387 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/07/workingtipsonkismatic/>WorkingTipsOnKismatic</a></h1><span class=post-date>Jan 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=网络规划>网络规划</h3><p>为了模拟kismatic完全离线安装，我们创建一个完全隔离的网络如下:</p><p><img src=/images/2018_01_07_15_01_42_420x391.jpg alt=/images/2018_01_07_15_01_42_420x391.jpg></p><p><img src=/images/2018_01_07_15_02_13_418x482.jpg alt=/images/2018_01_07_15_02_13_418x482.jpg></p><p>详细信息如下：</p><pre><code>10.15.205.1/24
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/10/buildkismaticallinone/>BuildKismaticAllInOne</a></h1><span class=post-date>Jan 10, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=start>Start</h3><p>Build an virtual machine with 4-core/8G, change its ip address to
+<code>10.15.205.100</code>, hostname <code>allinone</code>.</p><pre><code># cd /etc/yum.repos.d/
+# mkdir back
+# mv *.repo back
+# curl http://10.15.205.2/base.repo&gt;base.repo
+# yum makecache
+</code></pre><p>Notice the base.repo is the repositories we get from the internet.</p><p>Edit the hostfile for adding the registry item(domain name to ip address).</p><pre><code># vim /etc/hosts
+10.15.205.2	mirror.xxxx.com
+</code></pre><p>Make sure you public key has been inserted into the
+<code>/root/.ssh/authorized_keys</code>, then create the directory for deployment:</p><pre><code>$ sudo cp -r kismatic_for_1015205 allinone
+$ cd allinone
+$ sudo rm -rf generated*
+</code></pre><h3 id=configuration>Configuration</h3><p>The example configuration file is listed as following:</p><pre><code>cluster:
+  name: kubernetes
+
+  # Set to true if the nodes have the required packages installed.
+  disable_package_installation: false
+
+  # Set to true if you are performing a disconnected installation.
+  disconnected_installation: true
+
+  # Networking configuration of your cluster.
+  networking:
+
+    # Kubernetes will assign pods IPs in this range. Do not use a range that is
+    # already in use on your local network!
+    pod_cidr_block: 172.16.0.0/16
+
+    # Kubernetes will assign services IPs in this range. Do not use a range
+    # that is already in use by your local network or pod network!
+    service_cidr_block: 172.20.0.0/16
+
+    # Set to true if your nodes cannot resolve each others' names using DNS.
+    update_hosts_files: true
+
+    # Set the proxy server to use for HTTP connections.
+    http_proxy: &quot;&quot;
+
+    # Set the proxy server to use for HTTPs connections.
+    https_proxy: &quot;&quot;
+
+    # List of host names and/or IPs that shouldn't go through any proxy.
+    # All nodes' 'host' and 'IPs' are always set.
+    no_proxy: &quot;&quot;
+
+  # Generated certs configuration.
+  certificates:
+
+    # Self-signed certificate expiration period in hours; default is 2 years.
+    expiry: 17520h
+
+    # CA certificate expiration period in hours; default is 2 years.
+    ca_expiry: 17520h
+
+  # SSH configuration for cluster nodes.
+  ssh:
+
+    # This user must be able to sudo without password.
+    #user: kismaticuser
+    user: root
+
+    # Absolute path to the ssh private key we should use to manage nodes.
+    ssh_key: /media/sda5/kismatic/allinone/kismaticuser.key
+    ssh_port: 22
+
+  # Override configuration of Kubernetes components.
+  kube_apiserver:
+    option_overrides: {}
+
+  kube_controller_manager:
+    option_overrides: {}
+
+  kube_scheduler:
+    option_overrides: {}
+
+  kube_proxy:
+    option_overrides: {}
+
+  kubelet:
+    option_overrides: {}
+
+  # Kubernetes cloud provider integration
+  cloud_provider:
+
+    # Options: 'aws','azure','cloudstack','fake','gce','mesos','openstack',
+    # 'ovirt','photon','rackspace','vsphere'.
+    # Leave empty for bare metal setups or other unsupported providers.
+    provider: &quot;&quot;
+
+    # Path to the config file, leave empty if provider does not require it.
+    config: &quot;&quot;
+
+# Docker daemon configuration of all cluster nodes
+docker:
+  logs:
+    driver: json-file
+    opts:
+      max-file: &quot;1&quot;
+      max-size: 50m
+
+  storage:
+
+    # Configure devicemapper in direct-lvm mode (RHEL/CentOS only).
+    direct_lvm:
+      enabled: false
+
+      # Path to the block device that will be used for direct-lvm mode. This
+      # device will be wiped and used exclusively by docker.
+      block_device: &quot;&quot;
+
+      # Set to true if you want to enable deferred deletion when using
+      # direct-lvm mode.
+      enable_deferred_deletion: false
+
+# If you want to use an internal registry for the installation or upgrade, you
+# must provide its information here. You must seed this registry before the
+# installation or upgrade of your cluster. This registry must be accessible from
+# all nodes on the cluster.
+docker_registry:
+
+  # IP or hostname and port for your registry.
+  server: &quot;mirror.teligen.com&quot;
+
+  # Absolute path to the certificate authority that should be trusted when
+  # connecting to your registry.
+  CA: &quot;/home/dash/devdockerCA.crt&quot;
+
+  # Leave blank for unauthenticated access.
+  username: &quot;clouder&quot;
+
+  # Leave blank for unauthenticated access.
+  password: &quot;engine&quot;
+
+# Add-ons are additional components that KET installs on the cluster.
+add_ons:
+  cni:
+    disable: false
+
+    # Selecting 'custom' will result in a CNI ready cluster, however it is up to
+    # you to configure a plugin after the install.
+    # Options: 'calico','weave','contiv','custom'.
+    provider: calico
+    options:
+      calico:
+
+        # Options: 'overlay','routed'.
+        mode: overlay
+
+        # Options: 'warning','info','debug'.
+        log_level: info
+
+        # MTU for the workload interface, configures the CNI config.
+        workload_mtu: 1500
+
+        # MTU for the tunnel device used if IPIP is enabled.
+        felix_input_mtu: 1440
+
+  dns:
+    disable: false
+
+  heapster:
+    disable: false
+    options:
+      heapster:
+        replicas: 2
+
+        # Specify kubernetes ServiceType. Defaults to 'ClusterIP'.
+        # Options: 'ClusterIP','NodePort','LoadBalancer','ExternalName'.
+        service_type: ClusterIP
+
+        # Specify the sink to store heapster data. Defaults to an influxdb pod
+        # running on the cluster.
+        sink: influxdb:http://heapster-influxdb.kube-system.svc:8086
+
+      influxdb:
+
+        # Provide the name of the persistent volume claim that you will create
+        # after installation. If not specified, the data will be stored in
+        # ephemeral storage.
+        pvc_name: &quot;&quot;
+
+  dashboard:
+    disable: false
+
+  package_manager:
+    disable: false
+
+    # Options: 'helm'
+    provider: helm
+
+  # The rescheduler ensures that critical add-ons remain running on the cluster.
+  rescheduler:
+    disable: false
+
+# Etcd nodes are the ones that run the etcd distributed key-value database.
+etcd:
+  expected_count: 1
+
+  # Provide the hostname and IP of each node. If the node has an IP for internal
+  # traffic, provide it in the internalip field. Otherwise, that field can be
+  # left blank.
+  nodes:
+  - host: &quot;allinone&quot;
+    ip: &quot;10.15.205.100&quot;
+    internalip: &quot;&quot;
+    labels: {}
+
+# Master nodes are the ones that run the Kubernetes control plane components.
+master:
+  expected_count: 1
+
+  # If you have set up load balancing for master nodes, enter the FQDN name here.
+  # Otherwise, use the IP address of a single master node.
+  load_balanced_fqdn: &quot;10.15.205.100&quot;
+
+  # If you have set up load balancing for master nodes, enter the short name here.
+  # Otherwise, use the IP address of a single master node.
+  load_balanced_short_name: &quot;10.15.205.100&quot;
+  nodes:
+  - host: &quot;allinone&quot;
+    ip: &quot;10.15.205.100&quot;
+    internalip: &quot;&quot;
+    labels: {}
+
+# Worker nodes are the ones that will run your workloads on the cluster.
+worker:
+  expected_count: 1
+  nodes:
+  - host: &quot;allinone&quot;
+    ip: &quot;10.15.205.100&quot;
+    internalip: &quot;&quot;
+    labels: {}
+
+# Ingress nodes will run the ingress controllers.
+ingress:
+  expected_count: 0 
+  nodes: []
+#  - host: &quot;&quot;
+#    ip: &quot;&quot;
+#    internalip: &quot;&quot;
+#    labels: {}
+#
+# Storage nodes will be used to create a distributed storage cluster that can
+# be consumed by your workloads.
+storage:
+  expected_count: 0
+  nodes: []
+
+# A set of NFS volumes for use by on-cluster persistent workloads
+nfs:
+  nfs_volume: []
+</code></pre><p>Deploy the whole cluster:</p><pre><code>sudo bash
+[root@xxxxxx allinone]# ./kismatic install apply
+
+Validating==========================================================================
+Reading installation plan file &quot;kismatic-cluster.yaml&quot;                          [OK]
+Validating installation plan file                                               [OK]
+Validating SSH connectivity to nodes                                            [OK]
+Configure Cluster Prerequisites                                                 [OK]
+Gather Node Facts
+</code></pre><p>Then you could get the running kubernetes.</p><h3 id=helm>helm</h3><p>helm, translation for chinese: <code>舵</code>.</p><p>Get started with helm:</p><pre><code># curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get &gt; get_helm.sh
+# chmod 777 get_helm.sh 
+# ./get_helm.sh 
+[root@allinone ~]# which helm
+/usr/local/bin/helm
+[root@allinone ~]# helm version
+Client: &amp;version.Version{SemVer:&quot;v2.7.2&quot;, GitCommit:&quot;8478fb4fc723885b155c924d1c8c410b7a9444e6&quot;, GitTreeState:&quot;clean&quot;}
+Error: cannot connect to Tiller
+</code></pre><p>This error message is because my k8s cluster is not stable. so re-install a
+new one.</p><h3 id=ubuntu-ways>Ubuntu ways</h3><p>For syncing the packages from the internet, then create a gpg key for
+publishing the repository:</p><pre><code># apt-get install -y haveged
+# gpg --gen-key
+gpg (GnuPG) 1.4.20; Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+Your selection? 1
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (2048) 
+Requested keysize is 2048 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      &lt;n&gt;  = key expires in n days
+      &lt;n&gt;w = key expires in n weeks
+      &lt;n&gt;m = key expires in n months
+      &lt;n&gt;y = key expires in n years
+Key is valid for? (0) 
+Key does not expire at all
+Is this correct? (y/N) y
+
+You need a user ID to identify your key; the software constructs the user ID
+from the Real Name, Comment and Email Address in this form:
+    &quot;Heinrich Heine (Der Dichter) &lt;heinrichh@duesseldorf.de&gt;&quot;
+
+Real name: dashyang
+Email address: xxxx@gmail.com
+Comment: somecommentshere
+You selected this USER-ID:
+    &quot;dashyang (somecommentshere) &lt;xxxx@gmail.com&gt;&quot;
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+You need a Passphrase to protect your secret key.
+
+gpg: gpg-agent is not available in this session
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+..+++++
+..+++++
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
++++++
+..+++++
+gpg: key F5510098 marked as ultimately trusted
+public and secret key created and signed.
+
+gpg: checking the trustdb
+gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+pub   2048R/F5510098 2018-01-10
+      Key fingerprint = 7F4C 405A F6EB B25D DEDF  10C9 9CAC DC20 F551 0098
+uid                  dashyang (somecommentshere) &lt;xxxx@gmail.com&gt;
+sub   2048R/7FE934CA 2018-01-10
+# gpg --list-keys
+/home/vagrant/.gnupg/pubring.gpg
+--------------------------------
+pub   2048R/F5510098 2018-01-10
+uid                  dashyang (somecommentshere) &lt;feipyang@gmail.com&gt;
+sub   2048R/7FE934CA 2018-01-10
+# aptly serve
+Serving published repositories, recommended apt sources list:
+
+# ./xenial [amd64, arm64, armhf, i386] publishes {main: [xenial-repo]: Merged from sources: 'ubuntu-main', 'gluster', 'docker'}
+deb http://vagrant:8080/ xenial main
+
+Starting web server at: :8080 (press Ctrl+C to quit)...
+</code></pre><p>Added it to systemd files:</p><pre><code># cat /etc/systemd/system/aptly.service 
+[Service]
+Type=simple
+ExecStart=/usr/bin/aptly -config /home/vagrant/.aptly.conf serve -listen=:80
+User=root
+# systemctl daemon-reload
+# systemctl enable aptly
+# systemctl start aptly
+</code></pre><p>Failed, why aptly could not be run.</p><p>Client usage:</p><pre><code># sudo vim /etc/ssh/sshd_config
+PermitRootLogin yes
+# vim /etc/network/interfaces
+Change ip addresss
+</code></pre><pre><code>First in server, export keys:   
+
+    # gpg --export --armor &gt;mypublic.pub
+    # cat mypublic.pub 
+    # scp mypublic.pub  root@10.15.205.200:/root/
+
+Then in clients import the keys:    
+
+
+        # cat mypublic.pub |apt-key add -
+        OK
+        root@ubuntu:/root# apt-key list
+        /etc/apt/trusted.gpg
+</code></pre><p>Then <code>sudo apt-get update</code> won&rsquo;t get any errors.</p><p>Thus you could have a server at the certain vm, convert this vm from
+virtualbox into qcow2 via following command.</p><pre><code># qemu-img convert -f vmdk -O qcow2 box-disk001.vmdk aptly_ubuntu.qcow2
+</code></pre><p>Start the registry server.</p><p>Create a new ubuntu server, enable the sshd login of root. Add repository, add
+following definition of the registry:</p><pre><code># vim /etc/hosts
+10.15.205.2	mirror.xxxxx.com
+</code></pre><p>Then add the kismaticuser.key.pub into the server&rsquo;s
+<code>/root/.ssh/authorized_keys</code>.</p><h3 id=helm-1>helm</h3><pre><code># helm search
+# helm list
+# helm install --name wordpress-test --set &quot;persistence.enabled=false,mariadb.persistence.enabled=false&quot; stable/wordpress
+# helm list
+[root@DashSSD ubuntuone]# ./helm list
+NAME          	REVISION	UPDATED                 	STATUS  	CHART          	NAMESPACE
+wordpress-test	1       	Wed Jan 10 17:30:29 2018	DEPLOYED	wordpress-0.7.9	default  
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/07/workingtipsonkismatic/>WorkingTipsOnKismatic</a></h1><span class=post-date>Jan 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=网络规划>网络规划</h3><p>为了模拟kismatic完全离线安装，我们创建一个完全隔离的网络如下:</p><p><img src=/images/2018_01_07_15_01_42_420x391.jpg alt=/images/2018_01_07_15_01_42_420x391.jpg></p><p><img src=/images/2018_01_07_15_02_13_418x482.jpg alt=/images/2018_01_07_15_02_13_418x482.jpg></p><p>详细信息如下：</p><pre><code>10.15.205.1/24
 dhcp: 10.15.205.128 ~ 10.15.205.254
 部署节点:  10.15.205.2
 etcd01: 
@@ -310,41 +692,4 @@ deploy:
   target_branch: master
 </code></pre><p>注意到上面的deploy环节，使用到了我们上面生成的token,
 而每次编译完成以后，直接推送到<code>purplepalmdash/purplepalmdash.github.io</code>仓库的master分支，按照github的说明，这个分支直接提供了博客网站。</p><h3 id=更改一些源文件>更改一些源文件</h3><p>现在github
-page已经完全支持https了，而之前我们的网站使用的是http方式，为此，我们的css文件配置需要有以下的修改，主要是在我的模板文件中定义:</p><p><img src=/images/2018_01_03_11_22_13_1072x880.jpg alt=/images/2018_01_03_11_22_13_1072x880.jpg></p><p>更改完毕以后，每次就可以使用https来访问网站了。</p><h3 id=travisci自编译>travisCI自编译</h3><p>去掉以前的travisCI配置，更新一个新的配置.</p><p><img src=/images/2018_01_03_11_23_37_482x392.jpg alt=/images/2018_01_03_11_23_37_482x392.jpg></p><p>完整的配置应该如下:</p><p><img src=/images/2018_01_03_11_24_02_847x734.jpg alt=/images/2018_01_03_11_24_02_847x734.jpg></p><p>现在每次针对代码库blogsource的提交，将自动触发博客的编译，并自动更新最终的页面。</p><h3 id=时间>时间</h3><p>每次的编译时间差不多在一分钟之内。</p><p><img src=/images/2018_01_03_11_25_24_846x393.jpg alt=/images/2018_01_03_11_25_24_846x393.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/03/belivefuture/>BeliveFuture</a></h1><span class=post-date>Jan 3, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>昨天的开发者头条年度开篇，用到了这首诗歌。这几年的时间里，大家知道的，国内的气氛每况愈
-下，查点像样的资料，没个像样的梯子压根都到达不了公正一点的搜索引擎。房价高企，每次路过
-像样点的小区都不敢看。这是我们所希望的将来吗？不是的。</p><p>所以，我只能坚定地相信未来，相信不屈不挠的努力，相信战胜死亡的年轻。相信未来、热爱生命
-。2018年我将迎来小生命的诞生，希望我的努力能给ta拼出一片像样的天空。</p><pre><code>当蜘蛛网无情地查封了我的炉台 
-当灰烬的余烟叹息着贫困的悲哀 
-我依然固执地铺平失望的灰烬 
-用美丽的雪花写下：相信未来 
-
-当我的紫葡萄化为深秋的露水 
-当我的鲜花依偎在别人的情怀 
-我依然固执地用凝霜的枯藤 
-在凄凉的大地上写下：相信未来 
-
-我要用手指那涌向天边的排浪 
-我要用手掌那托住太阳的大海 
-摇曳着曙光那枝温暖漂亮的笔杆 
-用孩子的笔体写下：相信未来 
-
-我之所以坚定地相信未来 
-是我相信未来人们的眼睛 
-她有拨开历史风尘的睫毛 
-她有看透岁月篇章的瞳孔 
-
-不管人们对于我们腐烂的皮肉 
-那些迷途的惆怅、失败的苦痛 
-是寄予感动的热泪、深切的同情 
-还是给以轻蔑的微笑、辛辣的嘲讽 
-
-我坚信人们对于我们的脊骨 
-那无数次的探索、迷途、失败和成功 
-一定会给予热情、客观、公正的评定 
-是的，我焦急地等待着他们的评定 
-
-朋友，坚定地相信未来吧 
-相信不屈不挠的努力 
-相信战胜死亡的年轻 
-相信未来、热爱生命 
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/82/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/82/>82</a></li><li class="page-item active"><a class=page-link href=/page/83/>83</a></li><li class=page-item><a class=page-link href=/page/84/>84</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/238/>238</a></li><li class=page-item><a href=/page/84/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/238/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+page已经完全支持https了，而之前我们的网站使用的是http方式，为此，我们的css文件配置需要有以下的修改，主要是在我的模板文件中定义:</p><p><img src=/images/2018_01_03_11_22_13_1072x880.jpg alt=/images/2018_01_03_11_22_13_1072x880.jpg></p><p>更改完毕以后，每次就可以使用https来访问网站了。</p><h3 id=travisci自编译>travisCI自编译</h3><p>去掉以前的travisCI配置，更新一个新的配置.</p><p><img src=/images/2018_01_03_11_23_37_482x392.jpg alt=/images/2018_01_03_11_23_37_482x392.jpg></p><p>完整的配置应该如下:</p><p><img src=/images/2018_01_03_11_24_02_847x734.jpg alt=/images/2018_01_03_11_24_02_847x734.jpg></p><p>现在每次针对代码库blogsource的提交，将自动触发博客的编译，并自动更新最终的页面。</p><h3 id=时间>时间</h3><p>每次的编译时间差不多在一分钟之内。</p><p><img src=/images/2018_01_03_11_25_24_846x393.jpg alt=/images/2018_01_03_11_25_24_846x393.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/82/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/82/>82</a></li><li class="page-item active"><a class=page-link href=/page/83/>83</a></li><li class=page-item><a class=page-link href=/page/84/>84</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/238/>238</a></li><li class=page-item><a href=/page/84/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/238/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
