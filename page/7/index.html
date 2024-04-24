@@ -303,14 +303,30 @@ host st12400 {
                         filename &quot;realtek.efi&quot;;
                 }
 # systemctl restart isc-dhcp-server
-</code></pre><h3 id=37-win11-passwordless-login>37. win11 passwordless login</h3><p>Login without insert password:</p><p><img src=/images/2024_04_12_10_20_49_695x445.jpg alt=/images/2024_04_12_10_20_49_695x445.jpg></p><p><img src=/images/2024_04_12_10_21_12_548x589.jpg alt=/images/2024_04_12_10_21_12_548x589.jpg></p><h3 id=38-mii-tool-for-re-negotiate>38. mii-tool for re-negotiate</h3><p>steps:</p><pre><code>root@aiBox:/home/dash# mii-tool enp2s0
+</code></pre><h3 id=37-win11-passwordless-login>37. win11 passwordless login</h3><p>Login without insert password:</p><p><img src=/images/2024_04_12_10_20_49_695x445.jpg alt=/images/2024_04_12_10_20_49_695x445.jpg></p><p><img src=/images/2024_04_12_10_21_12_548x589.jpg alt=/images/2024_04_12_10_21_12_548x589.jpg></p><h3 id=38-change-win11-behavior>38. change win11 behavior</h3><p>via:</p><pre><code>C:\Users\feipyang&gt;reg add &quot;HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32&quot; /f /ve
+操作成功完成。
+
+C:\Users\feipyang&gt;taskkill /f /im explorer.exe &amp; start explorer.exe
+成功: 已终止进程 &quot;explorer.exe&quot;，其 PID 为 10536。
+</code></pre><h3 id=39-7z-extract-files>39. 7z extract files</h3><p>via:</p><pre><code>7za x xxxx.7z
+</code></pre><h3 id=40-ast-resolution>40. ast resolution</h3><p>ast resolution:</p><pre><code>xrandr --newmode &quot;1440x900_59.90&quot;  106.29  1440 1520 1672 1904  900 901 904 932  -HSync +Vsync
+xrandr --addmode VGA-1 1440x900_59.90
+</code></pre><h3 id=41-win11-passwordless-login>41. win11 passwordless login</h3><p>Solved via:</p><pre><code>按win+R，打开运行，输入Control Userpasswords2，打开用户账户。
+用户账户设置.png
+
+打开该设置，取消选中该选项，点击应用，输入想要自动登录的账户和密码，即可开机后自动登录Windows。
+若此界面无该选项，按win+R，打开运行，输入regedit，打开注册表修改
+路径：计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\PasswordLess\Device
+这个路径下的DevicePasswordLessBuildVersion数值从2改成0，再次打开用户账户设置就有选项了。
+</code></pre><h3 id=42-windows-11-ignore-network-installation>42. Windows 11 ignore network installation</h3><p>via:</p><pre><code>OOBE\BYPASSNRO 
+</code></pre><h3 id=43-mii-tool-for-re-negotiate>43. mii-tool for re-negotiate</h3><p>steps:</p><pre><code>root@aiBox:/home/dash# mii-tool enp2s0
 enp2s0: negotiated 100baseTx-FD, link ok
 root@aiBox:/home/dash# mii-tool -r enp2s0
 restarting autonegotiation...
 root@aiBox:/home/dash# mii-tool enp2s0
 enp2s0: negotiated 1000baseT-FD flow-control, link ok
 
-</code></pre><h3 id=39--quickly-install-linuxloop>39 . quickly install linuxloop</h3><p>Change the content of <code>linuxloop</code>:</p><pre><code>chroot_Arch()
+</code></pre><h3 id=44--quickly-install-linuxloop>44 . quickly install linuxloop</h3><p>Change the content of <code>linuxloop</code>:</p><pre><code>chroot_Arch()
 {
 prepare_bootstrap=&quot;
 curl -l https://archlinux.org/mirrorlist/?ip_version=4 -o /etc/pacman.d/mirrorlist
@@ -342,7 +358,7 @@ menuentry 'Arch' --class 'arch' {
 		configfile (loop,2)/grub/grub.cfg
 	fi
 }
-</code></pre><h3 id=40-enable-detect-os>40. enable detect os</h3><p>enable os-probe:</p><pre><code>$ sudo vim /etc/default/grub
+</code></pre><h3 id=45-enable-detect-os>45. enable detect os</h3><p>enable os-probe:</p><pre><code>$ sudo vim /etc/default/grub
 GRUB_DISABLE_OS_PROBER=false
 $ sudo update-grub2
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
