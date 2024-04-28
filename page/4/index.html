@@ -1,5 +1,109 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/03/11/buildingcelanda/>BuildingCelanda</a></h1><span class=post-date>Mar 11, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>Software/OS:</p><pre><code>dash@buildCeladonUbuntu180406:~$ uname -a
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/03/26/workingtipsonopensora/>WorkingTipsOnOpenSora</a></h1><span class=post-date>Mar 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>Ubuntu22.04, with vfio pass-through nvidia card.</p><pre><code>$ sudo apt update -y &amp;&amp; sudo apt upgrade -y
+$ sudo apt install -y git git-lfs
+$ git lfs install
+
+</code></pre><p>Install miniconda:</p><pre><code>mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+~/miniconda3/bin/conda init bash
+
+</code></pre><p>Install cuda(12.1.1-1):</p><pre><code>wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb
+sudo dpkg -i cuda-keyring_1.0-1_all.deb
+sudo apt-get update
+sudo apt install cuda=12.1.1-1
+</code></pre><p>Activate the conda environment:</p><pre><code>conda create -n opensora python=3.10
+(base) dash@vfio2:~$ conda activate opensora
+(opensora) dash@vfio2
+pip3 install torch torchvision
+pip install packaging ninja
+pip install flash-attn --no-build-isolation
+pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings &quot;--build-option=--cpp_ext&quot; --config-settings &quot;--build-option=--cuda_ext&quot; git+https://github.com/NVIDIA/apex.git
+pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu121
+git clone https://github.com/hpcaitech/Open-Sora
+cd Open-Sora
+pip install -v .
+pip install gradio
+</code></pre><p>Issue:</p><pre><code>https://github.com/hpcaitech/Open-Sora/issues/209
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/03/18/joggler2024mar18/>Joggler2024mar18</a></h1><span class=post-date>Mar 18, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-flash>1. flash</h3><p>Download the <code>Download Debian Bookworm (Kernel 6.1) for OpenFrame (~196 MB)</code> from following website:</p><p><img src=/images/2024_03_18_09_40_27_798x306.jpg alt=/images/2024_03_18_09_40_27_798x306.jpg></p><p>Wrote it to usb disk:</p><pre><code>Disk /dev/sdb: 119.24 GiB, 128035676160 bytes, 250069680 sectors
+Disk model: D               
+Units: sectors of 1 * 512 = 512 bytes
+
+# gunzip -c /home/dash/Downloads/boo-ext2-1028-43-bookworm-6.1.82op.img.gz| dd of=/dev/sdb
+</code></pre><p>Insert the disk, boot into the system:</p><p><img src=/images/2024_03_18_10_22_53_915x491.jpg alt=/images/2024_03_18_10_22_53_915x491.jpg></p><p>Username/passwd is <code>of/joggler</code>.</p><h3 id=2-system-info>2. system info</h3><p>System info:</p><pre><code>root@openframe:/home/of# uname -a
+Linux openframe 6.1.82op #1 SMP PREEMPT_DYNAMIC Sat Mar 16 03:43:01 GMT 2024 i686 GNU/Linux
+root@openframe:/home/of# cat /etc/issue
+Debian Bookworm \n \l eth0:\4{eth0}
+</code></pre><h3 id=3-auto-login>3. Auto-Login</h3><p>Install byobu and enable it as the default login session:</p><pre><code># apt install -y byobu
+# byobu-enable
+</code></pre><p>Edit the <code>logind.conf</code> file:</p><pre><code>$ sudo vim /etc/systemd/logind.conf
+...
+[Login]
+NAutoVTs=1
+ReserveVT=2
+
+</code></pre><p>Enable the autologin in tty1:</p><pre><code>$ sudo mkdir /etc/systemd/system/getty@tty1.service.d/
+$ sudo  vim /etc/systemd/system/getty@tty1.service.d/override.conf
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --noissue --autologin of %I $TERM
+Type=idle
+</code></pre><p>Auto-start program in byobu:</p><pre><code>$ cat ~/.byobu/windows.tmux 
+new-session bash ; 
+new-window htop ;
+new-window top;
+</code></pre><p>Change the items in <code>/etc/fstab</code>:</p><pre><code>#tmpfs    /tmp                 tmpfs   noatime,size=192M     0    0
+#tmpfs    /var/cache/apt       tmpfs   noatime,size=256M     0    0
+#tmpfs    /var/lib/apt/lists   tmpfs   noatime,size=256M     0    0
+#tmpfs    /var/log             tmpfs   noatime,size=16M      0    0
+</code></pre><p>Create swap :</p><pre><code># dd if=/dev/zero of=/swapfile bs=1M count=2048
+# mkswap /swapfile 
+# chmod 600 /swapfile 
+# swapon /swapfile 
+# echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+</code></pre><h3 id=4-auto-monitor>4. Auto Monitor</h3><p>Install some packages:</p><pre><code>sudo apt install -y cmake build-essential git s-tui scdoc
+git clone https://github.com/ReimuNotMoe/ydotool.git
+cd ydotool
+mkdir build
+cd build
+cmake ..
+make -j `nproc`
+sudo make install
+</code></pre><p>Install ydotoold service:</p><pre><code>cp /usr/local/lib/systemd/user/ydotoold.service /etc/systemd/system/ydotoold.service
+systemctl enable ydotoold
+systemctl start ydotoold
+</code></pre><p>Always switch to next frame:</p><pre><code># cat /root/test.sh 
+ydotool key 29:1 56:1 59:1 59:0 56:0 29:0; sleep 2; 
+while true
+do
+        sleep 2
+        ydotool key 62:1 62:0
+done
+</code></pre><h3 id=5-share-on-web>5. share on web</h3><p>Get the latest <code>tty-share</code> from <code>https://github.com/elisescu/tty-share/releases</code>:</p><p>Put it under home directory, then add following lines in <code>.bashrc</code>:</p><pre><code>
+[[ $(tty) == '/dev/tty1' ]] &amp;&amp; /home/of/tty-share_linux-386 --listen 0.0.0.0:8188 --no-wait --command byobu 
+</code></pre><p>Then you should disable <code>byobu</code> for the default term:</p><pre><code>$ byobu-disable
+</code></pre><h3 id=6-switch>6. switch</h3><h4 id=61-not-working>6.1 not working</h4><p>Add auto switch tab on every reboot:</p><pre><code># crontab -e
+@reboot sleep 60 &amp;&amp; /usr/bin/myswitch.sh
+# cat /usr/bin//myswitch.sh 
+ydotool key 29:1 56:1 59:1 59:0 56:0 29:0; sleep 2; 
+while true
+do
+	sleep 5
+	ydotool key 62:1 62:0
+done
+</code></pre><h4 id=62-working>6.2 working</h4><p>Change the VT configurations:</p><pre><code>$ cat /etc/systemd/logind.conf 
+[Login]
+NAutoVTs=2
+ReserveVT=3
+$ cat /etc/systemd/system/getty@tty2.service.d/override.conf 
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --noissue --autologin of %I $TERM
+Type=idle
+</code></pre><p>Edit the autologin programs in <code>~/.bashrc</code>:</p><pre><code>[[ $(tty) == '/dev/tty2' ]] &amp;&amp; sudo /usr/bin/myswitch.sh
+</code></pre><p>enable the getty@tty2:</p><pre><code># sudo systemctl enable getty@tty2
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/03/11/buildingcelanda/>BuildingCelanda</a></h1><span class=post-date>Mar 11, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>Software/OS:</p><pre><code>dash@buildCeladonUbuntu180406:~$ uname -a
 Linux buildCeladonUbuntu180406 5.4.0-84-generic #94~18.04.1-Ubuntu SMP Thu Aug 26 23:17:46 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
 dash@buildCeladonUbuntu180406:~$ cat /etc/issue
 Ubuntu 18.04.6 LTS \n \l
@@ -138,52 +242,4 @@ virtio-win-0.1.208.iso  Win10_22H2_Chinese_Simplified_x64.iso
 -drive file=/root/Win10_22H2_Chinese_Simplified_x64.iso,media=cdrom -drive file=/root/virtio-win-0.1.208.iso,media=cdrom  \
 -vga none -nographic -netdev user,hostfwd=tcp::2288-:22,hostfwd=tcp::13389-:3389,id=net0 -device virtio-net-pci,netdev=net0,mac=11:22:33:44:55:66 \
 -monitor telnet:localhost:2222,server,nowait 
-</code></pre><p>You will get the installation window directly on Monitor, simply install the system, when system ready, get the latest i915 driver from intel website(<code>gfx_win_101.5333</code>).</p><h3 id=6-result>6. Result</h3><p>Device Driver:</p><p><img src=/images/2024_02_27_20_39_36_614x529.jpg alt=/images/2024_02_27_20_39_36_614x529.jpg></p><p>Task manager details:</p><p><img src=/images/2024_02_27_20_40_07_645x516.jpg alt=/images/2024_02_27_20_40_07_645x516.jpg></p><p>WebGL fish:</p><p><img src=/images/2024_02_27_20_38_53_567x400.jpg alt=/images/2024_02_27_20_38_53_567x400.jpg></p><p>Video decoding(1080p 60fps):</p><p><img src=/images/2024_02_27_20_45_05_1440x703.jpg alt=/images/2024_02_27_20_45_05_1440x703.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/02/27/quicklydumpami/>QuicklyDumpAMI</a></h1><span class=post-date>Feb 27, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=win10-quickstart>win10 Quickstart</h3><p>Quickly partition:</p><p><img src=/images/2024_02_27_08_52_43_703x505.jpg alt=/images/2024_02_27_08_52_43_703x505.jpg></p><p>Like following layout:</p><p><img src=/images/2024_02_27_08_53_19_777x119.jpg alt=/images/2024_02_27_08_53_19_777x119.jpg></p><p>Insert Cloudfirmware flash disk , copy the files:</p><p><img src=/images/2024_02_27_09_05_38_503x197.jpg alt=/images/2024_02_27_09_05_38_503x197.jpg></p><p><img src=/images/2024_02_27_09_05_50_543x494.jpg alt=/images/2024_02_27_09_05_50_543x494.jpg></p><p>Download the <code>AMI FIRMWARE UPDATE(AFU)</code> FROM:</p><p><code>https://www.ami.com/bios-uefi-utilities/</code></p><p><img src=/images/2024_02_27_09_59_36_289x147.jpg alt=/images/2024_02_27_09_59_36_289x147.jpg></p><p><img src=/images/2024_02_27_09_59_46_885x672.jpg alt=/images/2024_02_27_09_59_46_885x672.jpg></p><p>Click <code>save</code> to save the current rom:</p><p><img src=/images/2024_02_27_10_00_16_804x566.jpg alt=/images/2024_02_27_10_00_16_804x566.jpg></p><p>View the result:</p><p><img src=/images/2024_02_27_10_00_44_937x134.jpg alt=/images/2024_02_27_10_00_44_937x134.jpg></p><h3 id=extract-files>extract files</h3><p>Using <code>UBU_v1.79.17</code>:</p><p><img src=/images/2024_02_27_10_25_36_553x214.jpg alt=/images/2024_02_27_10_25_36_553x214.jpg></p><p>put <code>afuwin.rom</code> into this folder:</p><p><img src=/images/2024_02_27_10_26_20_704x397.jpg alt=/images/2024_02_27_10_26_20_704x397.jpg></p><p>Wait util scanning finished:</p><p><img src=/images/2024_02_27_10_28_12_671x454.jpg alt=/images/2024_02_27_10_28_12_671x454.jpg></p><p>Enter next step and Press <code>2</code>:</p><p><img src=/images/2024_02_27_10_29_08_589x619.jpg alt=/images/2024_02_27_10_29_08_589x619.jpg></p><p>Press <code>S</code> for share this:</p><p><img src=/images/2024_02_27_10_30_35_585x377.jpg alt=/images/2024_02_27_10_30_35_585x377.jpg></p><p><img src=/images/2024_02_27_10_30_51_538x511.jpg alt=/images/2024_02_27_10_30_51_538x511.jpg></p><p>Get the <code>IntelGopDriver.efi</code>:</p><p><img src=/images/2024_02_27_10_43_33_915x158.jpg alt=/images/2024_02_27_10_43_33_915x158.jpg></p><p>Extract using <code>edk2-BaseTools</code>:</p><pre><code>EfiRom.exe -f 0x8086 -i 0x46d1 -e IntelGopDriver.efi
-</code></pre><p><img src=/images/2024_02_27_10_50_30_1006x399.jpg alt=/images/2024_02_27_10_50_30_1006x399.jpg></p><p><img src=/images/2024_02_27_10_29_46_523x387.jpg alt=/images/2024_02_27_10_29_46_523x387.jpg></p><h3 id=pve-configuration>pve configuration</h3><pre><code>cd /etc/apt
-cp sources.list sources.list.back
-sed -i 's|^deb http://ftp.debian.org|deb https://mirrors.ustc.edu.cn|g' /etc/apt/sources.list
-sed -i 's|^deb http://security.debian.org|deb https://mirrors.ustc.edu.cn/debian-security|g' /etc/apt/sources.list
-sed -i 's|^deb https://enterprise.proxmox.com|deb https://mirrors.ustc.edu.cn|g' /etc/apt/sources.list.d/ceph.list
-sed -i 's|enterprise|no-subscription|g' /etc/apt/sources.list.d/ceph.list
-source /etc/os-release
-echo &quot;deb https://mirrors.ustc.edu.cn/proxmox/debian/pve $VERSION_CODENAME pve-no-subscription&quot; &gt; /etc/apt/sources.list.d/pve-no-subscription.list
-cp /usr/share/perl5/PVE/APLInfo.pm /usr/share/perl5/PVE/APLInfo.pm_back
-sed -i 's|http://download.proxmox.com|https://mirrors.ustc.edu.cn/proxmox|g' /usr/share/perl5/PVE/APLInfo.pm
-mv /etc/apt/sources.list.d/pve-enterprise.list /root
-</code></pre><p>添加概要信息:</p><pre><code>wget -q -O /root/pve_source.tar.gz 'https://bbs.x86pi.cn/file/topic/2023-11-28/file/01ac88d7d2b840cb88c15cb5e19d4305b2.gz' &amp;&amp; tar zxvf /root/pve_source.tar.gz &amp;&amp; /root/./pve_source
-</code></pre><p>Install vim:</p><pre><code>apt install -y vim 
-</code></pre><p>edit the grub and blacklists:</p><pre><code># vim /etc/default/grub
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet intel_iommu=on initcall_blacklist=sysfb_init&quot;
-# update-grub2
-# vim /etc/modprobe.d/pve-blacklist.conf
-blacklist nvidiafb
-blacklist amdgpu
-blacklist i915
-blacklist snd_hda_intel
-options vfio_iommu_type1 allow_unsafe_interrupts=1
-# update-initramfs -u -k all
-
-</code></pre><p><img src=/images/2024_02_27_11_31_32_642x219.jpg alt=/images/2024_02_27_11_31_32_642x219.jpg></p><p>Get the pciids:</p><pre><code>root@pve:~# lspci -D -nn | grep VGA
-0000:00:02.0 VGA compatible controller [0300]: Intel Corporation Alder Lake-N [UHD Graphics] [8086:46d1]
-root@pve:~# lspci -D -nn | grep Audio
-0000:00:1f.3 Audio device [0403]: Intel Corporation Device [8086:54c8]
-</code></pre><p>Prepare the rom files:</p><pre><code>root@pve:~/igd-main# cp gen12_gop.rom gen12_igd.rom /usr/share/kvm/
-root@pve:~/igd-main# pwd
-/root/igd-main
-# cp IntelGopDriver.rom /usr/share/kvm/
-</code></pre><h3 id=vm-setup>vm setup</h3><p>Configuration:</p><p><img src=/images/2024_02_27_11_52_11_718x277.jpg alt=/images/2024_02_27_11_52_11_718x277.jpg></p><p><img src=/images/2024_02_27_11_53_17_715x327.jpg alt=/images/2024_02_27_11_53_17_715x327.jpg></p><p><img src=/images/2024_02_27_11_53_52_632x308.jpg alt=/images/2024_02_27_11_53_52_632x308.jpg></p><p><img src=/images/2024_02_27_11_54_34_720x153.jpg alt=/images/2024_02_27_11_54_34_720x153.jpg></p><p><img src=/images/2024_02_27_11_55_09_727x215.jpg alt=/images/2024_02_27_11_55_09_727x215.jpg></p><p>Hardware Adjust:</p><p><img src=/images/2024_02_27_11_56_01_419x285.jpg alt=/images/2024_02_27_11_56_01_419x285.jpg></p><p>Add pci/usb devices:</p><p><img src=/images/2024_02_27_11_58_57_426x119.jpg alt=/images/2024_02_27_11_58_57_426x119.jpg></p><p>qemu commands:</p><pre><code>root       14422       1 99 12:04 ?        00:45:17 /usr/bin/kvm -id 100 -name win10,debug-threads=on -no-shutdown -chardev socket,id=qmp,path=/var/run/qemu-server/100.qmp,server=on,wait=off -mon chardev=qmp,mode=control -chardev socket,id=qmp-event,path=/var/run/qmeventd.sock,reconnect=5 -mon chardev=qmp-event,mode=control -pidfile /var/run/qemu-server/100.pid -daemonize -smbios type=1,uuid=b886e2ce-0caf-42a3-84db-d3568b369292 -drive if=pflash,unit=0,format=raw,readonly=on,file=/usr/share/pve-edk2-firmware//OVMF_CODE_4M.fd -drive if=pflash,unit=1,id=drive-efidisk0,format=qcow2,file=/var/lib/vz/images/100/vm-100-disk-0.qcow2 -smp 4,sockets=1,cores=4,maxcpus=4 -nodefaults -boot menu=on,strict=on,reboot-timeout=1000,splash=/usr/share/qemu-server/bootsplash.jpg -vga none -nographic -cpu host,hv_ipi,hv_relaxed,hv_reset,hv_runtime,hv_spinlocks=0x1fff,hv_stimer,hv_synic,hv_time,hv_vapic,hv_vpindex,+kvm_pv_eoi,+kvm_pv_unhalt -m 8192 -object iothread,id=iothread-virtioscsi0 -device pci-bridge,id=pci.1,chassis_nr=1,bus=pci.0,addr=0x1e -device pci-bridge,id=pci.2,chassis_nr=2,bus=pci.1,addr=0x1e -device pci-bridge,id=pci.3,chassis_nr=3,bus=pci.0,addr=0x5 -device vmgenid,guid=e489d935-fb57-482a-9c07-0a14cb77f1e7 -device piix3-usb-uhci,id=uhci,bus=pci.0,addr=0x1.0x2 -device qemu-xhci,p2=15,p3=15,id=xhci,bus=pci.1,addr=0x1b -device usb-tablet,id=tablet,bus=uhci.0,port=1 -device vfio-pci,host=0000:00:02.0,id=hostpci0,bus=pci.0,addr=0x2,romfile=/usr/share/kvm/gen12_igd.rom -device vfio-pci,host=0000:00:1f.3,id=hostpci1,bus=pci.0,addr=0x11,romfile=/usr/share/kvm/IntelGopDriver.rom -device usb-host,bus=xhci.0,port=1,hostbus=1,hostport=1,id=usb0 -device usb-host,bus=xhci.0,port=2,hostbus=1,hostport=4,id=usb1 -device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x3,free-page-reporting=on -iscsi initiator-name=iqn.1993-08.org.debian:01:7462d45a788 -drive file=/var/lib/vz/template/iso/virtio-win-0.1.208.iso,if=none,id=drive-ide0,media=cdrom,aio=io_uring -device ide-cd,bus=ide.0,unit=0,drive=drive-ide0,id=ide0,bootindex=102 -drive file=/var/lib/vz/template/iso/Win10_22H2_Chinese_Simplified_x64.iso,if=none,id=drive-ide2,media=cdrom,aio=io_uring -device ide-cd,bus=ide.1,unit=0,drive=drive-ide2,id=ide2,bootindex=101 -device virtio-scsi-pci,id=virtioscsi0,bus=pci.3,addr=0x1,iothread=iothread-virtioscsi0 -drive file=/var/lib/vz/images/100/vm-100-disk-1.qcow2,if=none,id=drive-scsi0,format=qcow2,cache=none,aio=io_uring,detect-zeroes=on -device scsi-hd,bus=virtioscsi0.0,channel=0,scsi-id=0,lun=0,drive=drive-scsi0,id=scsi0,bootindex=100 -netdev type=tap,id=net0,ifname=tap100i0,script=/var/lib/qemu-server/pve-bridge,downscript=/var/lib/qemu-server/pve-bridgedown,vhost=on -device virtio-net-pci,mac=BC:24:11:33:3E:BB,netdev=net0,bus=pci.0,addr=0x12,id=net0,rx_queue_size=1024,tx_queue_size=256 -rtc driftfix=slew,base=localtime -machine hpet=off,type=pc-i440fx-8.1+pve0 -global kvm-pit.lost_tick_policy=discard -set device.hostpci0.addr=02.0 -set device.hostpci0.x-igd-gms=0x2 -set device.hostpci0.x-igd-opregion=on
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/02/26/workingtipsonnvidiapassthrough3050/>WorkingTipsOnNvidiaPassthrough3050</a></h1><span class=post-date>Feb 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Edit the grub items:</p><pre><code># vim /etc/default/grub
-......
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;amd_iommu=on iommu=pt kvm.ignore_msrs=1 video=efifb:off&quot;
-......
-# update-grub2 &amp;&amp; reboot
-</code></pre><p>update the initramfs:</p><pre><code># vim /etc/initramfs-tools/modules 
-vfio
-vfio_iommu_type1
-vfio_pci
-vfio_virqfd
-# update-initramfs -u -k all
-</code></pre><p>Download the nvflash, and them dump the vbios:</p><pre><code>$ sudo ./nvflash --save vbios.rom
-</code></pre><p>patch the vbios.rom:</p><p>Using an hex editor to open the <code>vbios.rom</code>(via <code>bless vbios.rom</code>):</p><p><img src=/images/2024_02_26_11_14_14_915x418.jpg alt=/images/2024_02_26_11_14_14_915x418.jpg></p><p>Search the text <code>VIDEO</code>, place your cursor before the first U before the VIDEO we just searched, and select everything before it, delete all.</p><p><img src=/images/2024_02_26_11_16_26_490x175.jpg alt=/images/2024_02_26_11_16_26_490x175.jpg></p><p>Select the pci vfio equipments:</p><p><img src=/images/2024_02_26_11_16_42_258x92.jpg alt=/images/2024_02_26_11_16_42_258x92.jpg></p><p>romfile should be specified:</p><p><img src=/images/2024_02_26_11_17_24_731x235.jpg alt=/images/2024_02_26_11_17_24_731x235.jpg></p><pre><code>  &lt;rom file=&quot;/usr/share/OVMF/nvidia_vbios.rom&quot;/&gt;
-</code></pre><p>Now remove all of the virtual gpu(qxl, virtio-gpu, etc), use nvidia card for boot up. You will get the nvidia card once you installed the nvidia device drivers.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/3/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item active"><a class=page-link href=/page/4/>4</a></li><li class=page-item><a class=page-link href=/page/5/>5</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/238/>238</a></li><li class=page-item><a href=/page/5/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/238/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>You will get the installation window directly on Monitor, simply install the system, when system ready, get the latest i915 driver from intel website(<code>gfx_win_101.5333</code>).</p><h3 id=6-result>6. Result</h3><p>Device Driver:</p><p><img src=/images/2024_02_27_20_39_36_614x529.jpg alt=/images/2024_02_27_20_39_36_614x529.jpg></p><p>Task manager details:</p><p><img src=/images/2024_02_27_20_40_07_645x516.jpg alt=/images/2024_02_27_20_40_07_645x516.jpg></p><p>WebGL fish:</p><p><img src=/images/2024_02_27_20_38_53_567x400.jpg alt=/images/2024_02_27_20_38_53_567x400.jpg></p><p>Video decoding(1080p 60fps):</p><p><img src=/images/2024_02_27_20_45_05_1440x703.jpg alt=/images/2024_02_27_20_45_05_1440x703.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/3/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item active"><a class=page-link href=/page/4/>4</a></li><li class=page-item><a class=page-link href=/page/5/>5</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/5/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

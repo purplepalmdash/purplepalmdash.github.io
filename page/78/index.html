@@ -1,5 +1,266 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/27/gitlabciandgitbook/>gitlabciandgitbook</a></h1><span class=post-date>Mar 27, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境>环境</h3><p>gitlab搭建完毕，gitlabci配置完毕。<br>目的: 整合从代码到发布一条龙服务。</p><p>代码提交->生成中间制品pdf.<br>代码提交-> 更新静态网站.</p><h3 id=步骤>步骤</h3><p>创建一个新项目:</p><p><img src=/images/2018_03_27_16_19_37_576x192.jpg alt=/images/2018_03_27_16_19_37_576x192.jpg></p><p>命名该项目:</p><p><img src=/images/2018_03_27_16_20_02_605x466.jpg alt=/images/2018_03_27_16_20_02_605x466.jpg></p><p>将已有的代码(书)提交到代码仓库:</p><pre><code># git init
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/07/alpineoffline/>AlpineOffline</a></h1><span class=post-date>Apr 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=background>Background</h3><p>I want to run <code>play-with-docker</code> offline, so I have to setup the whole offline
+environment. In chapter 2 of <code>play-with-docker</code>, it requires building image
+using alpine, its command <code>apk add nodejs</code> requires internet-connection. In
+order to let the whole tutorial working offlinely, I have to setup an Alpine
+offline repository and let it working.</p><h3 id=vagrant-env>Vagrant Env</h3><p>The libvirt vagrant box is easy to download and run via following command:</p><pre><code># vagrant init generic/alpine37
+# vagrant up --provider=libvirt
+# vagrant ssh
+# cat /etc/issue
+Welcome to Alpine Linux 3.7
+Kernel \r on an \m (\l)
+</code></pre><h3 id=repository-server>Repository Server</h3><p>This server could reach internet, so it could get packages, and generate the
+installation repository.</p><p>Take <code>nodejs</code> for example, I will create its offline installation reository in
+this machine:</p><pre><code>#  apk add nodejs
+</code></pre><p>This command will download all of the nodejs related package under
+<code>/var/cache/apk</code>, then we could use these packages for installation:</p><pre><code># apk index -vU --allow-untrusted -o /etc/apk/cache/APKINDEX.tar.gz /etc/apk/cache/*.apk
+</code></pre><p>Using following scripts for generating symbolic <code>cheating</code> apks for
+installation:</p><pre><code>#!/bin/bash
+for f in $( cd /etc/apk/cache &amp;&amp; ls *.apk ); do g=$(echo ${f:0:-13}.apk); cd /etc/apk/cache; ln -s $f $g; done
+</code></pre><p>Your directory <code>/etc/apk/cache</code> will like following:</p><pre><code># ls -l -h | more
+total 98612
+-rw-r--r--    1 root     root       14.4K Apr  6 08:31 APKINDEX.tar.gz
+lrwxrwxrwx    1 root     root          28 Apr  6 08:32 abuild-3.1.0-r3.apk -&gt; abuild-3.1.0-r3.e1614238.apk
+-rw-r--r--    1 root     root       71.5K Apr  6 05:57 abuild-3.1.0-r3.e1614238.apk
+lrwxrwxrwx    1 root     root          26 Apr  6 08:32 acct-6.6.4-r0.apk -&gt; acct-6.6.4-r0.f2caf476.apk
+-rw-r--r--    1 root     root       57.7K Mar 22 17:31 acct-6.6.4-r0.f2caf476.apk
+-rw-r--r--    1 root     root        1.6K Mar 22 17:31 alpine-base-3.7.0-r0.6e79e3bb.apk
+lrwxrwxrwx    1 root     root          33 Apr  6 08:32 alpine-base-3.7.0-r0.apk -&gt; alpine-base-3.7.0-r0.6e79e3bb.apk
+</code></pre><p>Using following commands for uploading repository to http server:</p><pre><code>scp -r /var/cache/apk/ xxx@192.168.122.1:/var/download/myapk/
+</code></pre><p>In server <code>192.168.122.1</code>'s folder <code>/var/download/myapk</code>, do following
+operation:</p><pre><code># ln -s x86_64 noarch
+</code></pre><h3 id=client>Client</h3><p>In client, do following setting:</p><pre><code># vim  /etc/apk/repositories 
+    #https://dl-3.alpinelinux.org/alpine/v3.7/main
+    #https://mirror.leaseweb.com/alpine/v3.7/main
+    http://192.168.122.1/myapk
+</code></pre><p>Update the repository via following command:</p><pre><code># apk update --allow-untrusted
+fetch http://192.168.122.1/myapk/x86_64/APKINDEX.tar.gz
+OK: 110 distinct packages available
+</code></pre><p>Install nodejs via following commands:</p><pre><code># apk add nodejs --allow-untrusted
+(1/8) Installing nodejs-npm (8.9.3-r1)
+(2/8) Installing c-ares (1.13.0-r0)
+(3/8) Installing libcrypto1.0 (1.0.2o-r0)
+(4/8) Installing http-parser (2.7.1-r1)
+(5/8) Installing libssl1.0 (1.0.2o-r0)
+(6/8) Installing libstdc++ (6.4.0-r5)
+(7/8) Installing libuv (1.17.0-r0)
+(8/8) Installing nodejs (8.9.3-r1)
+Executing busybox-1.27.2-r8.trigger
+OK: 228 MiB in 82 packages
+</code></pre><h3 id=tbd>TBD</h3><p>You could add trusted signature to repository, but this will let you get the
+signature firstly.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/01/rpibenchmark/>rpibenchmark</a></h1><span class=post-date>Apr 1, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install via:</p><pre><code> $ git clone https://github.com/kdlucas/byte-unixbench.git
+Cloning into 'byte-unixbench'...
+remote: Counting objects: 204, done.
+remote: Total 204 (delta 0), reused 0 (delta 0), pack-reused 204
+Receiving objects: 100% (204/204), 198.85 KiB | 207.00 KiB/s, done.
+Resolving deltas: 100% (105/105), done.
+pi@raspberrypi:~ $ cd byte-unixbench/UnixBench/
+
+</code></pre><p>Run steps:</p><pre><code>pi@raspberrypi:~/byte-unixbench/UnixBench $ ./Run 
+gcc -o pgms/arithoh -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Darithoh src/arith.c 
+gcc -o pgms/register -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum='register int' src/arith.c 
+gcc -o pgms/short -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum=short src/arith.c 
+gcc -o pgms/int -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum=int src/arith.c 
+gcc -o pgms/long -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum=long src/arith.c 
+gcc -o pgms/float -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum=float src/arith.c 
+gcc -o pgms/double -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -Ddatum=double src/arith.c 
+gcc -o pgms/hanoi -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/hanoi.c 
+gcc -o pgms/syscall -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/syscall.c 
+gcc -o pgms/context1 -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/context1.c 
+gcc -o pgms/pipe -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/pipe.c 
+gcc -o pgms/spawn -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/spawn.c 
+gcc -o pgms/execl -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/execl.c 
+gcc -o pgms/dhry2 -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -DHZ= ./src/dhry_1.c ./src/dhry_2.c
+gcc -o pgms/dhry2reg -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -DHZ= -DREG=register ./src/dhry_1.c ./src/dhry_2.c
+gcc -o pgms/looper -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/looper.c 
+gcc -o pgms/fstime -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME src/fstime.c 
+gcc -o pgms/whetstone-double -Wall -pedantic -O3 -ffast-math -march=native -mtune=native -I ./src -DTIME -DDP -DGTODay -DUNIXBENCH src/whets.c -lm
+make all
+make[1]: Entering directory '/home/pi/byte-unixbench/UnixBench'
+make distr
+make[2]: Entering directory '/home/pi/byte-unixbench/UnixBench'
+Checking distribution of files
+./pgms  exists
+./src  exists
+./testdir  exists
+./tmp  exists
+./results  exists
+make[2]: Leaving directory '/home/pi/byte-unixbench/UnixBench'
+make programs
+make[2]: Entering directory '/home/pi/byte-unixbench/UnixBench'
+make[2]: Nothing to be done for 'programs'.
+make[2]: Leaving directory '/home/pi/byte-unixbench/UnixBench'
+make[1]: Leaving directory '/home/pi/byte-unixbench/UnixBench'
+sh: 1: 3dinfo: not found
+
+   #    #  #    #  #  #    #          #####   ######  #    #   ####   #    #
+   #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #
+   #    #  # #  #  #    ##            #####   #####   # #  #  #       ######
+   #    #  #  # #  #    ##            #    #  #       #  # #  #       #    #
+   #    #  #   ##  #   #  #           #    #  #       #   ##  #    #  #    #
+    ####   #    #  #  #    #          #####   ######  #    #   ####   #    #
+
+   Version 5.1.3                      Based on the Byte Magazine Unix Benchmark
+
+   Multi-CPU version                  Version 5 revisions by Ian Smith,
+                                      Sunnyvale, CA, USA
+   January 13, 2011                   johantheghost at yahoo period com
+
+------------------------------------------------------------------------------
+   Use directories for:
+      * File I/O tests (named fs***) = /home/pi/byte-unixbench/UnixBench/tmp
+      * Results                      = /home/pi/byte-unixbench/UnixBench/results
+------------------------------------------------------------------------------
+
+Use of uninitialized value in printf at ./Run line 1469.
+Use of uninitialized value in printf at ./Run line 1470.
+Use of uninitialized value in printf at ./Run line 1469.
+Use of uninitialized value in printf at ./Run line 1470.
+Use of uninitialized value in printf at ./Run line 1469.
+Use of uninitialized value in printf at ./Run line 1470.
+Use of uninitialized value in printf at ./Run line 1469.
+Use of uninitialized value in printf at ./Run line 1470.
+Use of uninitialized value in printf at ./Run line 1721.
+Use of uninitialized value in printf at ./Run line 1722.
+Use of uninitialized value in printf at ./Run line 1721.
+Use of uninitialized value in printf at ./Run line 1722.
+Use of uninitialized value in printf at ./Run line 1721.
+Use of uninitialized value in printf at ./Run line 1722.
+Use of uninitialized value in printf at ./Run line 1721.
+Use of uninitialized value in printf at ./Run line 1722.
+
+1 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10
+
+1 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10
+
+1 x Execl Throughput  1 2 3
+
+1 x File Copy 1024 bufsize 2000 maxblocks  1 2 3
+
+1 x File Copy 256 bufsize 500 maxblocks  1 2 3
+
+1 x File Copy 4096 bufsize 8000 maxblocks  1 2 3
+
+1 x Pipe Throughput  1 2 3 4 5 6^[[C 7 8 9 10
+
+1 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10
+
+1 x Process Creation  1 2 3
+
+1 x System Call Overhead  1 2 3 4 5 6 7 8 9 10
+
+1 x Shell Scripts (1 concurrent)  1 2 3
+
+1 x Shell Scripts (8 concurrent)  1 2 3
+
+4 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10
+
+4 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10
+
+4 x Execl Throughput  1 2 3
+
+4 x File Copy 1024 bufsize 2000 maxblocks  1 2 3
+
+4 x File Copy 256 bufsize 500 maxblocks  1 2 3
+
+4 x File Copy 4096 bufsize 8000 maxblocks  1 2 3
+
+4 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10
+
+4 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10
+
+4 x Process Creation  1 2 3
+
+4 x System Call Overhead  1 2 3 4 5 6 7 8 9 10
+
+4 x Shell Scripts (1 concurrent)  1 2 3
+
+4 x Shell Scripts (8 concurrent)  1 2 3
+
+========================================================================
+   BYTE UNIX Benchmarks (Version 5.1.3)
+
+   System: raspberrypi: GNU/Linux
+   OS: GNU/Linux -- 4.9.59-v7+ -- #1047 SMP Sun Oct 29 12:19:23 GMT 2017
+   Machine: armv7l (unknown)
+   Language: en_US.utf8 (charmap=&quot;UTF-8&quot;, collate=&quot;UTF-8&quot;)
+   CPU 0: ARMv7 Processor rev 4 (v7l) (0.0 bogomips)
+          
+   CPU 1: ARMv7 Processor rev 4 (v7l) (0.0 bogomips)
+          
+   CPU 2: ARMv7 Processor rev 4 (v7l) (0.0 bogomips)
+          
+   CPU 3: ARMv7 Processor rev 4 (v7l) (0.0 bogomips)
+          
+   12:29:03 up 6 min,  4 users,  load average: 0.16, 0.08, 0.02; runlevel 2018-03-07
+
+------------------------------------------------------------------------
+Benchmark Run: Sun Apr 01 2018 12:29:03 - 12:57:08
+4 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables        4333035.5 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     1060.4 MWIPS (9.9 s, 7 samples)
+Execl Throughput                                505.3 lps   (29.9 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        142961.6 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           41135.5 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        365027.4 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              282493.9 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                  58563.1 lps   (10.0 s, 7 samples)
+Process Creation                               2040.7 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   1910.4 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    545.6 lpm   (60.1 s, 2 samples)
+System Call Overhead                         572609.5 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0    4333035.5    371.3
+Double-Precision Whetstone                       55.0       1060.4    192.8
+Execl Throughput                                 43.0        505.3    117.5
+File Copy 1024 bufsize 2000 maxblocks          3960.0     142961.6    361.0
+File Copy 256 bufsize 500 maxblocks            1655.0      41135.5    248.6
+File Copy 4096 bufsize 8000 maxblocks          5800.0     365027.4    629.4
+Pipe Throughput                               12440.0     282493.9    227.1
+Pipe-based Context Switching                   4000.0      58563.1    146.4
+Process Creation                                126.0       2040.7    162.0
+Shell Scripts (1 concurrent)                     42.4       1910.4    450.6
+Shell Scripts (8 concurrent)                      6.0        545.6    909.3
+System Call Overhead                          15000.0     572609.5    381.7
+                                                                   ========
+System Benchmarks Index Score                                         293.0
+
+------------------------------------------------------------------------
+Benchmark Run: Sun Apr 01 2018 12:57:08 - 13:25:34
+4 CPUs in system; running 4 parallel copies of tests
+
+Dhrystone 2 using register variables       13303366.2 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     3615.2 MWIPS (11.6 s, 7 samples)
+Execl Throughput                               1843.0 lps   (30.0 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        177911.7 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           49727.3 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        479258.8 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              931248.6 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 163404.7 lps   (10.0 s, 7 samples)
+Process Creation                               4630.4 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   4356.6 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    529.4 lpm   (60.3 s, 2 samples)
+System Call Overhead                        2204195.4 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   13303366.2   1140.0
+Double-Precision Whetstone                       55.0       3615.2    657.3
+Execl Throughput                                 43.0       1843.0    428.6
+File Copy 1024 bufsize 2000 maxblocks          3960.0     177911.7    449.3
+File Copy 256 bufsize 500 maxblocks            1655.0      49727.3    300.5
+File Copy 4096 bufsize 8000 maxblocks          5800.0     479258.8    826.3
+Pipe Throughput                               12440.0     931248.6    748.6
+Pipe-based Context Switching                   4000.0     163404.7    408.5
+Process Creation                                126.0       4630.4    367.5
+Shell Scripts (1 concurrent)                     42.4       4356.6   1027.5
+Shell Scripts (8 concurrent)                      6.0        529.4    882.4
+System Call Overhead                          15000.0    2204195.4   1469.5
+                                                                   ========
+System Benchmarks Index Score                                         646.8
+
+</code></pre><h3 id=结果说明>结果说明</h3><p>测试的结果是一个指数值（index value，如520），这个值是测试系统的测试结果与一个基线系统测试结果比较得到的指数值，这样比原始值更容易得到参考价值，测试集合里面所有的测试得到的指数值结合起来得到整个系统的指数值。</p><p>UnixBench也支持多CPU系统的测试，默认的行为是测试两次，第一次是一个进程的测试，第二次是N份测试，N等于CPU个数。这样的设计是为了以下目标：</p><ul><li>测试系统的单任务性能</li><li>测试系统的多任务性能</li><li>测试系统并行处理的能力</li></ul></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/27/gitlabciandgitbook/>gitlabciandgitbook</a></h1><span class=post-date>Mar 27, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境>环境</h3><p>gitlab搭建完毕，gitlabci配置完毕。<br>目的: 整合从代码到发布一条龙服务。</p><p>代码提交->生成中间制品pdf.<br>代码提交-> 更新静态网站.</p><h3 id=步骤>步骤</h3><p>创建一个新项目:</p><p><img src=/images/2018_03_27_16_19_37_576x192.jpg alt=/images/2018_03_27_16_19_37_576x192.jpg></p><p>命名该项目:</p><p><img src=/images/2018_03_27_16_20_02_605x466.jpg alt=/images/2018_03_27_16_20_02_605x466.jpg></p><p>将已有的代码(书)提交到代码仓库:</p><pre><code># git init
 # git remote add origin http://192.168.109.2/root/mygitbook.git
 # git add .
 # git commit -m &quot;Initial commit&quot;
@@ -342,82 +603,4 @@ spec:
         backend:
           serviceName: nginx-dm
           servicePort: 80
-</code></pre><p>同样在外部添加<code>/etc/hosts</code>中的对应条目即可.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/16/iperfink8s/>iperfInk8s</a></h1><span class=post-date>Mar 16, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=yaml>yaml</h3><p>Like following:</p><pre><code># tcpprobe https://wiki.linuxfoundation.org/networking/tcpprobe
-# use: apt install module-init-tools
-# to install modprobe
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  annotations:
-    deployment.kubernetes.io/revision: &quot;1&quot;
-  generation: 1
-  labels:
-    run: ipref
-  name: ipref
-  namespace: default
-spec:
-  replicas: 12 # we have 10 nodes in a cluster hence 12 replicas
-  selector:
-    matchLabels:
-      run: ipref
-  template:
-    metadata:
-      labels:
-        run: ipref
-    spec:
-      containers:
-      - command:
-        - sleep
-        - &quot;infinity&quot;
-        image: networkstatic/iperf3
-        imagePullPolicy: Always
-        name: ipref
-        resources: {}
-        securityContext:
-          capabilities:
-            add:
-            - CAP_ALL
-          privileged: true
-        volumeMounts:
-          - mountPath: /dev
-            name: dev
-          - mountPath: /lib/modules
-            name: modules
-      volumes:
-      - name: dev
-        hostPath:
-          # directory location on host
-          path: /dev
-      - name: modules
-        hostPath:
-          # directory location on host
-          path: /lib/modules
-</code></pre><p>you should change the corresponding images and imagePullPolicy.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/12/ntpoffline/>ntpoffline</a></h1><span class=post-date>Mar 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=server>Server</h3><p>server side configuration:</p><pre><code># yum install -y ntpd
-# vim /etc/ntpd.conf
-</code></pre><p>The configuration file is listed as following:</p><pre><code>driftfile /var/lib/ntp/drift
-restrict default nomodify notrap nopeer noquery
-restrict 127.0.0.1 
-restrict ::1
-restrict 192.168.0.0 mask 255.255.0.0 nomodify notrap
-server 127.127.1.0  # local clock
-fudge 127.127.1.0  stratum 10
-includefile /etc/ntp/crypto/pw
-keys /etc/ntp/keys
-disable monitor
-</code></pre><p>Disable the chronyd service thus the ntpd could acts properly:</p><pre><code># systemctl disable chronyd
-# systemctl enable ntpd
-# systemctl start ntpd
-# systemctl disable firewalld
-</code></pre><h3 id=client>Client</h3><p>Install via:</p><pre><code># yum install -y ntpd
-</code></pre><p>Configuration file:</p><pre><code>driftfile /var/lib/ntp/drift
-restrict default nomodify notrap nopeer noquery
-restrict 127.0.0.1 
-restrict ::1
-server 192.168.122.200
-# 配置允许上游时间服务器主动修改本机的时间
-restrict 192.168.122.200 nomodify notrap noquery
-includefile /etc/ntp/crypto/pw
-keys /etc/ntp/keys
-disable monitor
-</code></pre><p>Also disable the chronyd service and enable the ntpd service. The client will
-automatically sync with the server <code>192.168.122.200</code>.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/77/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/77/>77</a></li><li class="page-item active"><a class=page-link href=/page/78/>78</a></li><li class=page-item><a class=page-link href=/page/79/>79</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/238/>238</a></li><li class=page-item><a href=/page/79/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/238/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>同样在外部添加<code>/etc/hosts</code>中的对应条目即可.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/77/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/77/>77</a></li><li class="page-item active"><a class=page-link href=/page/78/>78</a></li><li class=page-item><a class=page-link href=/page/79/>79</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/79/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,5 +1,167 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/03/12/workingtipsonrpixc/>WorkingTipsOnRPIXC</a></h1><span class=post-date>Mar 12, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目标>目标</h3><p>基于树莓派的arm64快速验证平台。</p><h3 id=系统准备>系统准备</h3><p>Ubuntu官网下载到<code>Ubuntu 20.04.2 LTS</code> 64位镜像:</p><p><a href=https://ubuntu.com/download/raspberry-pi>https://ubuntu.com/download/raspberry-pi</a></p><p><img src=/images/2021_03_12_09_45_02_1212x332.jpg alt=/images/2021_03_12_09_45_02_1212x332.jpg></p><p>插入tf卡，烧写img文件至tf卡中, Linux 命令为:</p><pre><code> $ sudo dd if=./ubuntu-20.04.2-preinstalled-server-arm64+raspi.img of=/dev/sdd bs=1M &amp;&amp; sudo sync
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/11/workingtipsonshrinkingccse/>WorkingTipsOnShrinkingCCSE</a></h1><span class=post-date>Apr 11, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=repository-shrinking>Repository Shrinking</h3><p>Create a new vm via following command:</p><pre><code># cd /var/lib/libvirt/qemu/save
+### Following is for creating a new vm for saving rpms
+# virsh dumpxml node1&gt;example.xml
+# vim example.xml 
+# qemu-img create -f qcow2 -b ccsebaseimage.qcow2 saverpms.qcow2 
+Formatting 'saverpms.qcow2', fmt=qcow2 size=536870912000 backing_file=ccsebaseimage.qcow2 cluster_size=65536 lazy_refcounts=off refcount_bits=16
+# virsh define example.xml 
+Domain nodetmp defined from example.xml
+# virsh start nodetmp
+Domain nodetmp started
+# virsh net-dhcp-leases default
+### Getting the ip address for nodetmp(10.17.18.199)
+# scp ./ccse-offline-files.tar.gz root@10.17.18.199:/home/
+# ssh root@10.17.18.199
+</code></pre><p>Following is on <code>10.17.18.199</code>:</p><pre><code>[root@first ~]# cd /home/
+[root@first home]# tar xzvf ccse-offline-files.tar.gz
+# vi /etc/yum.conf
+keepcache=1
+### Add a new vm disk (vdb)
+# fdisk /dev/vdb
+# mkfs.ext4 /dev/vdb1
+# mkdir /dcos
+# mount /dev/vdb1 /dcos
+# vi /etc/fstab 
+/dev/vdb1 /dcos                   ext4     defaults        0 0
+# mount -a
+# exit
+</code></pre><p>Bug-fix(lsof):</p><pre><code># scp ./Packages/lsof-4.87-6.el7.x86_64.rpm root@10.17.18.199:/root/
+</code></pre><p>Backup the vm disks on host machine:</p><pre><code># virsh destroy nodetmp
+# mv saverpms.qcow2 saverpms1.qcow2
+# qemu-img create -f qcow2 -b saverpms1.qcow2 saverpms.qcow2
+# virsh start nodetmp
+# ssh root@10.17.18.199
+</code></pre><p>Re-login, and run:</p><pre><code>#  rpm -ivh /root/lsof-4.87-6.el7.x86_64.rpm 
+# cd /home/ccse-xxxxxxxx
+# vi config/config.yaml
+common:
+  # 控制台和/或Harbor所在的主机IP
+  host: 10.17.18.199
+# vim ./files/offline-repo/ccse-centos7-base.repo
+	#[ccse-centos7-base]
+	#name=ccse-offline-repo
+	#baseurl=file://{centos7_base_repo_dir}
+	#enabled=1
+	#gpgcheck=0
+	[ccse-centos7-base]
+	name=Centos local yum repo for k8s
+	baseurl=http://10.17.18.2:8200/repo/x86_64/centos7-base
+	gpgcheck=0
+	enabled=1
+	proxy=_none_
+# ./deploy.sh install all 2&gt;&amp;1 | sudo tee install-log_`date &quot;+%Y%m%d%H%M&quot;`
+</code></pre><p>Notice, <code>10.17.18.2</code> is for existing ccse console.<br>After deployment, the cached rpms is listed as:</p><pre><code># find /var/cache | grep rpm$
+/var/cache/yum/x86_64/7/ccse-centos7-base/packages/audit-2.8.5-4.el7.x86_64.rpm
+/var/cache/yum/x86_64/7/ccse-centos7-base/packages/audit-libs-2.8.5-4.el7.x86_64.rpm
+/var/cache/yum/x86_64/7/ccse-centos7-base/packages/audit-libs-python-2.8.5-4.el7.x86_64.rpm
+/var/cache/yum/x86_64/7/ccse-centos7-base/packages/checkpolicy-2.5-8.el7.x86_64.rpm
+/var/cache/yum/x86_64/7/ccse-centos7-base/packages/libsemanage-python-2.5-14.el7.x86_64.rpm
+/var/cache/yum/x86_64/7/ccse-centos7-base/packages/policycoreutils-2.5-34.el7.x86_64.rpm
+/var/cache/yum/x86_64/7/ccse-centos7-base/packages/policycoreutils-python-2.5-34.el7.x86_64.rpm
+/var/cache/yum/x86_64/7/ccse-centos7-base/packages/python-IPy-0.75-6.el7.noarch.rpm
+/var/cache/yum/x86_64/7/ccse-centos7-base/packages/setools-libs-3.3.8-4.el7.x86_64.rpm
+/var/cache/yum/x86_64/7/ccse-centos7-base/packages/libcgroup-0.41-21.el7.x86_64.rpm
+/var/cache/yum/x86_64/7/ccse-centos7-base/packages/unzip-6.0-21.el7.x86_64.rpm
+</code></pre><p>Now enable the visit for ccse console(web ui):</p><pre><code># systemctl stop firewalld
+# systemctl disable firewalld
+# setenforce 0
+# vi /etc/selinux/config 
+SELINUX=disabled
+</code></pre><p>ccse webui:</p><p><img src=/images/2021_04_12_10_37_55_515x298.jpg alt=/images/2021_04_12_10_37_55_515x298.jpg></p><p>Create a new vm and added it on ccse webui, in newly added vm do following command:</p><pre><code># vi /etc/yum.conf 
+keepcached
+# systemctl stop firewalld
+# systemctl disable firewalld
+# setenforce 0
+# vi /etc/selinux/config 
+SELINUX=disabled
+</code></pre><p>Create a new cluster, and fetch the new vm&rsquo;s rpm cache:</p><pre><code>[root@first cache]# find . | grep rpm$
+./yum/x86_64/7/ccse-centos7-base/packages/audit-2.8.5-4.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/audit-libs-2.8.5-4.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/checkpolicy-2.5-8.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/audit-libs-python-2.8.5-4.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/libsemanage-python-2.5-14.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/libcgroup-0.41-21.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/policycoreutils-2.5-34.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/python-IPy-0.75-6.el7.noarch.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/setools-libs-3.3.8-4.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/policycoreutils-python-2.5-34.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/conntrack-tools-1.4.4-7.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/libnetfilter_cttimeout-1.0.0-7.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/libnetfilter_queue-1.0.2-2.el7_2.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/socat-1.7.3.2-2.el7.x86_64.rpm
+./yum/x86_64/7/ccse-centos7-base/packages/libnetfilter_cthelper-1.0.0-11.el7.x86_64.rpm
+./yum/x86_64/7/ccse-k8s/packages/container-selinux-2.119.1-1.c57a6f9.el7.noarch.rpm
+./yum/x86_64/7/ccse-k8s/packages/docker-ce-18.09.9-3.el7.x86_64.rpm
+./yum/x86_64/7/ccse-k8s/packages/containerd.io-1.2.13-3.2.el7.x86_64.rpm
+./yum/x86_64/7/ccse-k8s/packages/docker-ce-cli-18.09.9-3.el7.x86_64.rpm
+./yum/x86_64/7/ccse-k8s/packages/3f1db71d0bb6d72bc956d788ffee737714e5717c629b26355a2dcf1dba4ad231-kubelet-1.17.3-0.x86_64.rpm
+./yum/x86_64/7/ccse-k8s/packages/548a0dcd865c16a50980420ddfa5fbccb8b59621179798e6dc905c9bf8af3b34-kubernetes-cni-0.7.5-0.x86_64.rpm
+./yum/x86_64/7/ccse-k8s/packages/35625b6ab1da6c58ce4946742181c0dcf9ac9b6c2b5bea2c13eed4876024c342-kubectl-1.17.3-0.x86_64.rpm
+</code></pre><h3 id=harbor-shrinking>harbor shrinking</h3><p>Save the harbor images:</p><pre><code>[root@first ~]# docker save -o harbor.tar goharbor/chartmuseum-photon:v0.9.0-v1.8.6 goharbor/harbor-migrator:v1.8.6 goharbor/redis-photon:v1.8.6 goharbor/clair-photon:v2.1.0-v1.8.6 goharbor/notary-server-photon:v0.6.1-v1.8.6 goharbor/notary-signer-photon:v0.6.1-v1.8.6 goharbor/harbor-registryctl:v1.8.6 goharbor/registry-photon:v2.7.1-patch-2819-v1.8.6 goharbor/nginx-photon:v1.8.6 goharbor/harbor-log:v1.8.6 goharbor/harbor-jobservice:v1.8.6 goharbor/harbor-core:v1.8.6 goharbor/harbor-portal:v1.8.6 goharbor/harbor-db:v1.8.6 goharbor/prepare:v1.8.6
+[root@first ~]# ls -l -h harbor.tar 
+-rw-------. 1 root root 1.5G Apr 11 23:31 harbor.tar
+[root@first ~]# cp harbor.tar harbor.tar.back
+[root@first ~]# xz -T4 harbor.tar
+[root@first ~]# ls -l -h harbor.tar.*
+-rw-------. 1 root root 1.5G Apr 11 23:31 harbor.tar.back
+-rw-------. 1 root root 428M Apr 11 23:31 harbor.tar.xz
+</code></pre><h3 id=rpm>rpm</h3><p>rpms combine:</p><pre><code>[root@first rpms]# ls -l -h | wc -l
+12
+##### After transferring from working node
+#########################################
+[root@first rpms]# cp /tmp/rpms/* .
+cp: overwrite ‘./audit-2.8.5-4.el7.x86_64.rpm’? y
+cp: overwrite ‘./audit-libs-2.8.5-4.el7.x86_64.rpm’? y
+cp: overwrite ‘./audit-libs-python-2.8.5-4.el7.x86_64.rpm’? y
+cp: overwrite ‘./checkpolicy-2.5-8.el7.x86_64.rpm’? y
+cp: overwrite ‘./libcgroup-0.41-21.el7.x86_64.rpm’? y
+cp: overwrite ‘./libsemanage-python-2.5-14.el7.x86_64.rpm’? y
+cp: overwrite ‘./policycoreutils-2.5-34.el7.x86_64.rpm’? y
+cp: overwrite ‘./policycoreutils-python-2.5-34.el7.x86_64.rpm’? y
+cp: overwrite ‘./python-IPy-0.75-6.el7.noarch.rpm’? y
+cp: overwrite ‘./setools-libs-3.3.8-4.el7.x86_64.rpm’? y
+[root@first rpms]# ls -l -h | wc -l
+17
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/03/18/workingtipsonkata/>WorkingTipsOnKata</a></h1><span class=post-date>Mar 18, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=install--configuration>Install & Configuration</h3><p>Install kata on archlinux, first install snapd:</p><pre><code>$ yaourt snapd
+$ sudo systemctl enable --now snapd.socket
+</code></pre><p>Using snapd for installing kata:</p><pre><code>$ sudo snap install kata-containers --classic
+</code></pre><p>Check the kata-container runtimes:</p><pre><code>$ kata-containers.runtime --version
+kata-runtime  : 1.12.1
+   commit   : b967088a667018b7468a9f93d48cb81650e0dfa4
+   OCI specs: 1.0.1-dev
+$ which kata-containers.runtime
+/var/lib/snapd/snap/bin/kata-containers.runtime
+</code></pre><p>Add the kata container runtime for docker-ce:</p><pre><code>$ sudo mkdir -p /etc/systemd/system/docker.service.d
+$ sudo vim /etc/systemd/system/docker.service.d/kata-containers.conf 
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -D --add-runtime kata-runtime=/snap/kata-containers/current/usr/bin/kata-runtime
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+</code></pre><p>Check the docker info:</p><pre><code>$ docker info | grep Runtime
+ Runtimes: io.containerd.runc.v2 io.containerd.runtime.v1.linux kata-runtime runc
+ Default Runtime: runc
+</code></pre><h3 id=testing>Testing</h3><p>Run a busybox using kata-runtime:</p><pre><code>$ sudo docker run -ti --runtime kata-runtime busybox sh
+</code></pre><p>Checking the docker hardware(qemu):</p><pre><code>/ # free -m
+              total        used        free      shared  buff/cache   available
+Mem:           1993          26        1965           0           2        1948
+Swap:             0           0           0
+/ # uname -a
+Linux 172144f42ad4 5.4.60.container #1 SMP Wed Jan 20 17:43:09 UTC 2021 x86_64 GNU/Linux
+</code></pre><p>Comparing to runc busybox:</p><pre><code>$ sudo docker run -it busybox /bin/sh
+/ # free -m
+              total        used        free      shared  buff/cache   available
+Mem:          23932        3759       12883        1003        7289       18795
+Swap:          2047           0        2047
+/ # uname -a
+Linux 7d484813ddd3 5.10.16-arch1-1 #1 SMP PREEMPT Sat, 13 Feb 2021 20:50:18 +0000 x86_64 GNU/Linux
+</code></pre><p>Get the running qemu :</p><pre><code># ps -ef | grep qemu
+root      130733  130681  0 14:41 ?        00:00:03 /var/lib/snapd/snap/kata-containers/716/usr/bin/qemu-system-x86_64 -name sandbox-172144f42ad4130671d2f3282f84be7d33f17ec9f308234d9172162f6dac8a1f -uuid 07ebc86a-91a7-4180-accd-c9d1dbd3ac29 -machine pc,accel=kvm,kernel_irqchip,nvdimm -cpu host,pmu=off -qmp unix:/
+.....
+</code></pre><h3 id=useful-tips>Useful tips</h3><p>Get the kata env:</p><pre><code>$ kata-containers.runtime kata-env
+</code></pre><p>See if the system is ready for running kata:</p><pre><code>$ sudo kata-containers.runtime kata-check
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/03/12/workingtipsonrpixc/>WorkingTipsOnRPIXC</a></h1><span class=post-date>Mar 12, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目标>目标</h3><p>基于树莓派的arm64快速验证平台。</p><h3 id=系统准备>系统准备</h3><p>Ubuntu官网下载到<code>Ubuntu 20.04.2 LTS</code> 64位镜像:</p><p><a href=https://ubuntu.com/download/raspberry-pi>https://ubuntu.com/download/raspberry-pi</a></p><p><img src=/images/2021_03_12_09_45_02_1212x332.jpg alt=/images/2021_03_12_09_45_02_1212x332.jpg></p><p>插入tf卡，烧写img文件至tf卡中, Linux 命令为:</p><pre><code> $ sudo dd if=./ubuntu-20.04.2-preinstalled-server-arm64+raspi.img of=/dev/sdd bs=1M &amp;&amp; sudo sync
 记录了3108+1 的读入
 记录了3108+1 的写出
 3259499520字节（3.3 GB，3.0 GiB）已复制，79.1856 s，41.2 MB/s
@@ -391,99 +553,4 @@ root@vp1:/home/dash# grep ashmem /proc/misc
 </code></pre><h3 id=80-pipewire>80. pipewire</h3><p>Install and enable via:</p><pre><code>$ sudo pacman install -y pipewire
 $ systemctl --user enable pipewire pipewire-pulse pipewire-media-session
 $ systemctl --user restart pipewire pipewire-pulse pipewire-media-session
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/02/12/workingtipsonrpisharingdesktop/>WorkingTipsOnRPISharingDesktop</a></h1><span class=post-date>Feb 12, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=无线接入点配置>无线接入点配置</h3><h4 id=1-基本配置>1. 基本配置</h4><p>树莓派4B 8G版本，刷入了Ubuntu 20.04.2 arm64版本：</p><pre><code>ubuntu@rpi1:~$ cat /etc/issue
-Ubuntu 20.04.2 LTS \n \l
-
-ubuntu@rpi1:~$ uname -a
-Linux rpi1 5.4.0-1028-raspi #31-Ubuntu SMP PREEMPT Wed Jan 20 11:30:45 UTC 2021 aarch64 aarch64 aarch64 GNU/Linux
-</code></pre><h4 id=2-网络配置>2. 网络配置</h4><p>默认Ubuntu20.04采用netplan作为网络配置方式，一般情况下满足网络配置需求，然而在配置无线接入点的时候，需要固定wlan0 IP地址的情况下，netplan配置就不能成功，因为它在配置wlan0 固定IP地址时需要配置ssid。因而我们采用传统的ifupdown作为网络配置手段:</p><p>关闭netplan配置:</p><pre><code># mv /etc/netplan/50-cloud-init.yaml /root
-</code></pre><p>安装必要的软件:</p><pre><code># apt-get install -y resolvconf netctl ifupdown hostapd dnsmasq
-</code></pre><p>配置网络:</p><pre><code># vim /etc/network/interfaces
-    # Include files from /etc/network/interfaces.d:
-    source-directory /etc/network/interfaces.d
-    
-    source /etc/network/interfaces.d/*
-    
-    auto lo
-    iface lo inet loopback
-    
-    
-    auto eth0
-    iface eth0 inet dhcp
-    
-    auto wlan0
-    iface wlan0 inet static  
-        address 10.0.70.1
-            netmask 255.255.255.0
-# chmod 777 /etc/network/interfaces
-</code></pre><p>现在重新启动树莓派，发现eth0配置成功，然而wlan0尚未配置， 我们通过在crontab中配置定时任务的方法来配置wlan0:</p><pre><code># crontab -e 
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-
-@reboot sleep 120 &amp;&amp; /usr/bin/systemctl restart networking 
-</code></pre><p>使能crontab:</p><pre><code># systemctl enable cron
-</code></pre><h4 id=3-hostapd配置>3. hostapd配置</h4><p>配置hostapd(<code>/etc/hostapd/hostapd.conf</code>):</p><pre><code># the interface used by the AP
-interface=wlan0
-driver=nl80211
-# &quot;g&quot; simply means 2.4GHz band
-hw_mode=g
-# the channel to use
-channel=10
-# limit the frequencies used to those allowed in the country
-ieee80211d=1
-# the country code
-country_code=CN
-# 802.11n support
-ieee80211n=1
-# QoS support
-wmm_enabled=1
-# the name of the AP
-ssid=rpiwifi
-macaddr_acl=0
-# 1=wpa, 2=wep, 3=both
-auth_algs=1
-ignore_broadcast_ssid=0
-# WPA2 only
-wpa=2
-wpa_passphrase=xxxxxxxxxxxxx
-wpa_key_mgmt=WPA-PSK
-#wpa_pairwise=TKIP
-rsn_pairwise=CCMP
-</code></pre><p>编辑文件<code>/etc/default/hostapd</code>， 更改含有<code>DAEMON_CONF</code>的行为: <code>DAEMON_CONF="/etc/hostapd/hostapd.conf"</code>.</p><p>然而此时hostapd在启动以后并不会重新启动，我们需要在crontab中添加其自动启动.</p><pre><code># crontab -e
-@reboot sleep 120 &amp;&amp; /usr/bin/systemctl restart networking  &amp;&amp; systemctl restart hostapd
-
-</code></pre><h4 id=4-ip地址配置>4. IP地址配置</h4><p>此时hostapd无法给客户端配置IP地址，为此我们需要配置dnsmasq(<code>/etc/dnsmasq.conf</code>):</p><pre><code>#配置监听地址
-listen-address=127.0.0.1,10.0.70.1
-#配置DHCP分配段
-dhcp-range=10.0.70.50,10.0.70.150,12h
-dhcp-option=3,10.0.70.1
-</code></pre><h4 id=5-iptables配置>5. iptables配置</h4><p>编辑/etc/sysctl.conf并取消这一行的注释：</p><pre><code>net.ipv4.ip_forward=1
-</code></pre><p>为eth0出站流量添加伪装：</p><pre><code># sudo iptables -t nat -A  POSTROUTING -o eth0 -j MASQUERADE
-</code></pre><p>我们调节crontab为:</p><pre><code>@reboot sleep 30 &amp;&amp; /usr/bin/systemctl restart networking  &amp;&amp; systemctl restart hostapd &amp;&amp; /usr/sbin/iptables -t nat -A  POSTROUTING -o eth0 -j MASQUERADE
-
-</code></pre><p>到现在为止，我们应该可以配置出了一个随时可以访问internet的rpi接入点。</p><h3 id=后续需要注意点>后续需要注意点</h3><p>以该rpi为接入点，接入到某个网络中，然而该网络中的Internet是通过另台rpi的WIFI所共享的。</p><p>另台RPI上的无线连接通过<code>wifi-menu</code>来配置:</p><pre><code># apt-get install -y netctl
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/02/05/rpicluster/>RPICluster</a></h1><span class=post-date>Feb 5, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=flashing>Flashing</h3><p>Flash with following os:</p><pre><code>root@ubuntu:/home/ubuntu# uname -a
-Linux ubuntu 5.4.0-1028-raspi #31-Ubuntu SMP PREEMPT Wed Jan 20 11:30:45 UTC 2021 aarch64 aarch64 aarch64 GNU/Linux
-root@ubuntu:/home/ubuntu# cat /etc/issue
-Ubuntu 20.04.2 LTS \n \l
-</code></pre><p>Disable auto update:</p><pre><code># systemctl stop apt-daily.timer;systemctl disable apt-daily.timer ; systemctl stop apt-daily-upgrade.timer ; systemctl disable apt-daily-upgrade.timer; systemctl stop apt-daily.service;  systemctl mask apt-daily.service; systemctl daemon-reload
-</code></pre><p>Configure hostname:</p><pre><code># hostnamectl set-hostname rpi1
-# hostnamectl set-hostname rpi2
-</code></pre><p>Configure cn repository:</p><pre><code># vim /etc/apt/sources.list
-deb http://mirrors.ustc.edu.cn/ubuntu-ports/ focal main restricted universe multiverse
-# deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ focal main main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse
-# deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse
-# deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse
-# deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse
-# apt-get update -y
-</code></pre><p>Install some packages:</p><pre><code># apt-get install -y net-tools virt-manager lxde tightvncserver sshpass ssh-askpass
-# usermode -a -G kvm,libvirt  ubuntu
-</code></pre><p>Configure vnc</p><pre><code># vncserver
-# vim ~/.vnc/xstartup
-	#!/bin/sh
-	exec startlxde
-# vncserver -kill :1
-# vncserver
-</code></pre><p>In vnc we could use virt-manager.</p><p>Install new os:</p><p><img src=/images/2021_02_05_16_53_45_633x380.jpg alt=/images/2021_02_05_16_53_45_633x380.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/37/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/37/>37</a></li><li class="page-item active"><a class=page-link href=/page/38/>38</a></li><li class=page-item><a class=page-link href=/page/39/>39</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/238/>238</a></li><li class=page-item><a href=/page/39/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/238/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/37/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/37/>37</a></li><li class="page-item active"><a class=page-link href=/page/38/>38</a></li><li class=page-item><a class=page-link href=/page/39/>39</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/39/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

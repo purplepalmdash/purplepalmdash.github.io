@@ -1,0 +1,57 @@
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>InstallInpusOnUbuntu2004 &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="InstallInpusOnUbuntu2004"><meta name=keywords content="Technology"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>InstallInpusOnUbuntu2004</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Apr 28, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#1-installconfiguration>1. Install/Configuration</a></li><li><a href=#2-images>2. images</a></li></ul></li></ul></nav></div><h3 id=1-installconfiguration>1. Install/Configuration</h3><p>Import keyring:</p><pre><code>mkdir -p /etc/apt/keyrings/
+curl -fsSL https://pkgs.zabbly.com/key.asc -o /etc/apt/keyrings/zabbly.asc
+</code></pre><p>update repository and install inpus:</p><pre><code>apt update -y
+apt install -y incus
+ apt install -y incus-ui-canonical
+incus config set core.https_address :8443
+</code></pre><p>Generate cert file in browser:</p><p><img src=/images/2024_04_28_09_32_56_1083x755.jpg alt=/images/2024_04_28_09_32_56_1083x755.jpg></p><p>In incus server:</p><pre><code>root@hope:~# cp /home/dash/Downloads/incus-ui.crt ./Downloads/
+root@hope:~# incus config trust add-certificate Downloads/incus-ui.crt
+</code></pre><p>In browser:</p><p><img src=/images/2024_04_28_09_34_37_1035x384.jpg alt=/images/2024_04_28_09_34_37_1035x384.jpg></p><p>The import file should be:</p><p><img src=/images/2024_04_28_09_34_57_414x98.jpg alt=/images/2024_04_28_09_34_57_414x98.jpg></p><p>Then back to browser windows, confirm the imported cert:</p><p><img src=/images/2024_04_28_09_35_08_630x331.jpg alt=/images/2024_04_28_09_35_08_630x331.jpg></p><p>Your UI would be looks like:</p><p><img src=/images/2024_04_28_09_35_46_945x645.jpg alt=/images/2024_04_28_09_35_46_945x645.jpg></p><p>Add your user into incus group:</p><pre><code>sudo adduser dash incus-admin
+</code></pre><p>Init the incus:</p><pre><code>$ incus admin init
+Would you like to use clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (dir, lvm, lvmcluster, btrfs) [default=btrfs]: dir
+Would you like to create a new local network bridge? (yes/no) [default=yes]: 
+What should the new bridge be called? [default=incusbr0]: 
+What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+Would you like the server to be available over the network? (yes/no) [default=no]: 
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes]: no
+Would you like a YAML &quot;init&quot; preseed to be printed? (yes/no) [default=no]: 
+</code></pre><p>Create the first instance:</p><pre><code>incus launch images:ubuntu/22.04 first
+</code></pre><p>Finally we could remove lxd:</p><pre><code>$ sudo snap remove lxd
+</code></pre><h3 id=2-images>2. images</h3><p>list image:</p><pre><code>$ incus image list
++-------+--------------+--------+----------------------------------------+--------------+-----------+-----------+----------------------+
+| ALIAS | FINGERPRINT  | PUBLIC |              DESCRIPTION               | ARCHITECTURE |   TYPE    |   SIZE    |     UPLOAD DATE      |
++-------+--------------+--------+----------------------------------------+--------------+-----------+-----------+----------------------+
+|       | 8b2691953577 | no     | Debian bookworm amd64 (20240424_05:24) | x86_64       | CONTAINER | 94.50MiB  | 2024/04/28 02:09 UTC |
++-------+--------------+--------+----------------------------------------+--------------+-----------+-----------+----------------------+
+|       | 479d8812eada | no     | Ubuntu jammy amd64 (20240427_07:42)    | x86_64       | CONTAINER | 120.93MiB | 2024/04/28 01:55 UTC |
++-------+--------------+--------+----------------------------------------+--------------+-----------+-----------+----------------------+
+
+</code></pre><p>incus remote show images repositories:</p><pre><code>$ incus remote list
++-----------------+------------------------------------+---------------+-------------+--------+--------+--------+
+|      NAME       |                URL                 |   PROTOCOL    |  AUTH TYPE  | PUBLIC | STATIC | GLOBAL |
++-----------------+------------------------------------+---------------+-------------+--------+--------+--------+
+| images          | https://images.linuxcontainers.org | simplestreams | none        | YES    | NO     | NO     |
++-----------------+------------------------------------+---------------+-------------+--------+--------+--------+
+| local (current) | unix://                            | incus         | file access | NO     | YES    | NO     |
++-----------------+------------------------------------+---------------+-------------+--------+--------+--------+
+
+</code></pre><p>search images:</p><pre><code>$ incus image list images: bookworm
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+|             ALIAS              | FINGERPRINT  | PUBLIC |              DESCRIPTION               | ARCHITECTURE |      TYPE       |   SIZE    |     UPLOAD DATE      |
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+| debian/12 (7 more)             | 2b5e45154f58 | yes    | Debian bookworm amd64 (20240424_05:24) | x86_64       | VIRTUAL-MACHINE | 349.13MiB | 2024/04/24 00:00 UTC |
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+| debian/12 (7 more)             | 8b2691953577 | yes    | Debian bookworm amd64 (20240424_05:24) | x86_64       | CONTAINER       | 94.50MiB  | 2024/04/24 00:00 UTC |
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+| debian/12/arm64 (3 more)       | dbba0a514259 | yes    | Debian bookworm arm64 (20240424_05:24) | aarch64      | CONTAINER       | 91.50MiB  | 2024/04/24 00:00 UTC |
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+| debian/12/arm64 (3 more)       | e2fc3247a569 | yes    | Debian bookworm arm64 (20240424_05:24) | aarch64      | VIRTUAL-MACHINE | 338.21MiB | 2024/04/24 00:00 UTC |
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+....
+</code></pre><p>launch:</p><pre><code>incus launch -p default -p bridgeprofile images:debian/12 kissdebian
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
