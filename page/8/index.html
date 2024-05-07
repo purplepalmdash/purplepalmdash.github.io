@@ -427,4 +427,18 @@ sudo cp /media/sda/images/win11.vhdx /mnt8 &amp;&amp; sudo sync
 sudo umount /mnt8
 sudo qemu-nbd --disconnect /dev/nbd0
 sudo rmmod nbd
+</code></pre><h3 id=51-lxc-download-speedup>51. lxc download speedup</h3><p>via specify the mirror site:</p><pre><code>sudo lxc-create -n debian12 -t download -- --server mirrors.tuna.tsinghua.edu.cn/lxc-images -r bookworm
+</code></pre><p>or specify another mirror:</p><pre><code>mirrors.sdu.edu.cn/lxc-images
+</code></pre><h3 id=52-incus-tips-for-fog>52. incus tips for fog</h3><p>tips:</p><pre><code># 80(webadmin) port forwarding:    
+incus config device add fogincuschinese myport80 proxy listen=tcp:0.0.0.0:80 connect=tcp:127.0.0.1:80
+# 69(tftp) port(udp and tcp):    
+incus config device add fogincuschinese myport69 proxy listen=tcp:0.0.0.0:69 connect=tcp:127.0.0.1:69
+incus config device add fogincuschinese myport69udp proxy listen=udp:0.0.0.0:69 connect=udp:127.0.0.1:69
+# 2049(nfs) port (udp and tcp):    
+incus config device add fogincuschinese myport2049 proxy listen=tcp:0.0.0.0:2049 connect=tcp:127.0.0.1:2049
+incus config device add fogincuschinese myport2049udp proxy listen=udp:0.0.0.0:2049 connect=udp:127.0.0.1:2049
+# 111(portmap) port (udp and tcp):
+incus config device add fogincuschinese myport111 proxy listen=tcp:0.0.0.0:111 connect=tcp:127.0.0.1:111
+incus config device add fogincuschinese myport111udp proxy listen=udp:0.0.0.0:111 connect=udp:127.0.0.1:111
+# 67(dhcp) port (udp and tcp):
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/7/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/7/>7</a></li><li class="page-item active"><a class=page-link href=/page/8/>8</a></li><li class=page-item><a class=page-link href=/page/9/>9</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/9/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
