@@ -1,5 +1,193 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/03/13/%E7%94%A8superset%E5%8F%AF%E8%A7%86%E5%8C%96%E6%AD%A6%E6%B1%89%E8%82%BA%E7%82%8E%E6%95%B0%E6%8D%AE/>用Superset可视化武汉肺炎数据</a></h1><span class=post-date>Mar 13, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=前言>前言</h3><p>最近因为武汉肺炎的原因一直宅在家里，刷什么值得买的时候看到了一个玩mac mini server的哥们写的用superset可视化武汉肺炎的文章，照着做了一遍，将具体的步骤都写在了下面。后续做实际项目的BI内容可视化的时候可以用来参考。</p><p>该文章中也有少许操作步骤方面的错误，做的时候经常会卡在那里半天。当然如果按照下面记录的步骤来进行的话，这些问题应该不会出现。</p><h3 id=环境>环境</h3><p>涉及到的硬件、操作系统、软件等的情况列举如下：</p><pre><code>KVM虚拟机，4核，3G内存， 200G硬盘
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/03/14/onusingasciidoctorpdf/>OnUsingAsciidoctorPDF</a></h1><span class=post-date>Mar 14, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Records the steps for generating the chinese language version of linstor documentation.</p><h3 id=source-code-preparation>Source Code Preparation</h3><p>Clone the whole source tree from github:</p><pre><code>$ git clone https://github.com/LINBIT/linbit-documentation.git
+</code></pre><p>For I want to generate chinese version, I need <code>asciidoctorr-pdf-cjk-kai_gen_gothic</code> to be installed and also its fonts, so I changed the Dockerfile for generating the docker images which could support chinese language pdf generation:</p><pre><code># vim Dockerfile
+FROM debian:buster
+MAINTAINER Roland Kammerer &lt;roland.kammerer@linbit.com&gt;
+RUN groupadd --gid 1000 makedoc
+RUN useradd -u 1000 -g 1000 makedoc
+RUN apt-get update &amp;&amp; apt-get install -y make inkscape ruby po4a patch
+RUN gem install --pre asciidoctor-pdf
+RUN gem install --pre asciidoctor-pdf-cjk
+RUN gem install asciidoctor-pdf-cjk-kai_gen_gothic
+RUN asciidoctor-pdf-cjk-kai_gen_gothic-install
+USER makedoc
+# make dockerimage
+# sudo docker images | grep linbit
+linbit-documentation   latest              118d89f74702        47 hours ago        902MB
+</code></pre><p>Generate the po files:</p><pre><code># cd linbit-documentation-master
+# chmod 777 -R *
+# make UG9-pot-docker
+# cd UG9/en
+# ls *.pot
+about-linstor.pot              administration-manual.pot      docker-linstor.pot    features.pot          internals.pot            lvm.pot        opennebula-linstor.pot  pacemaker.pot        recent-changes.pot   xen.pot
+about.pot                      benchmark.pot                  docker.pot            fundamentals.pot      kubernetes.pot           man-pages.pot  opennebula.pot          proxmox-linstor.pot  rhcs.pot
+administration-drbdmanage.pot  build-install-from-source.pot  drbdmanage-more.pot   gfs.pot               latency.pot              more-info.pot  openstack-linstor.pot   proxmox.pot          throughput.pot
+administration-linstor.pot     configure.pot                  drbd-users-guide.pot  install-packages.pot  linstor-users-guide.pot  ocfs2.pot      openstack.pot           proxy.pot            troubleshooting.pot
+</code></pre><p>The pot (portable object template) which holds the tranlatable items. I wrote a simple python script which uses baidu api for translating them into chinese:</p><pre><code># cd UG9/en
+# vim autotrans.py
+import re
+import polib
+import sys
+import translators as ts
+
+# pot files should be passed in argv, e.g python autotrans.py example.pot
+print(&quot;#######################################################################3&quot;)
+print(&quot;#######################################################################3&quot;)
+print(&quot;#######################################################################3&quot;)
+print(&quot;################# Processing &quot;+ sys.argv[1] + &quot;###############################&quot;)
+print(&quot;#######################################################################3&quot;)
+print(&quot;#######################################################################3&quot;)
+print(&quot;#######################################################################3&quot;)
+print(&quot;#######################################################################3&quot;)
+po = polib.pofile(sys.argv[1])
+
+for entry in po:
+    # If contains '\n', then ignore translation
+    print(entry.msgid)
+    if &quot;\n&quot; in entry.msgid:
+        print(&quot;********************Ignore translation***********************&quot;)
+        entry.msgstr = entry.msgid
+    else:
+        # Normal texts should be translated. 
+        entry.msgstr = ts.baidu(entry.msgid, 'auto', 'zh-CN')
+    print(entry.msgstr)
+    # msgid is the origin one, while msgstr should be translated one. 
+    # &lt;&lt; some_text_here &gt;&gt; should be selected out
+    msgstr_links = []
+    msgid_links = []
+    # origin ones
+    msgid_links = re.findall(r&quot;(\&lt;\&lt;*.*?\&gt;\&gt;)&quot;, entry.msgid)
+    # translated ones, needs to be recover using origin ones.
+    msgstr_links = re.findall(r&quot;(\&lt;\&lt;*.*?\&gt;\&gt;)&quot;, entry.msgstr)
+    if len(msgstr_links)&gt;0:
+        ### only run in matched at least once
+        for i in range(0, len(msgstr_links)):
+            entry.msgstr = entry.msgstr.replace(msgstr_links[i], msgid_links[i])
+
+po.save('./cn/' + sys.argv[1])
+</code></pre><p>Use a shell wrapped commands for tranlating all of the pot files:</p><pre><code># for i in `ls *.pot`
+do
+python3 autotrans.py $i
+done
+</code></pre><p>The tranlation goes one-by-one, until all of the pot files has been translated.</p><p>Notice: the auto translation got many errors, you have to correct them manually.</p><h3 id=building-steps>Building steps</h3><p>I use ja language for start, cause japanese version has been translated:</p><pre><code># cd UG9
+# cp -r ja cn
+# cd cn/
+# rm -f *.po
+# cp ../cn/*.pot .
+</code></pre><p>Write a simple shell script for changing name from <code>pot</code> to <code>po</code>:</p><pre><code># vim rename.sh
+for i in `ls *.pot`
+do
+	name=`echo $i | awk -F '.' {'print $1'}`
+	mv $i $name.po
+done
+# chmod 777 rename.sh
+# ./rename.sh
+# rm -f rename.sh
+# ls *.po
+about-linstor.po              administration-manual.po      docker-linstor.po    features.po          internals.po            lvm.po        opennebula-linstor.po  pacemaker.po        recent-changes.po   xen.po
+about.po                      benchmark.po                  docker.po            fundamentals.po      kubernetes.po           man-pages.po  opennebula.po          proxmox-linstor.po  rhcs.po
+administration-drbdmanage.po  build-install-from-source.po  drbdmanage-more.po   gfs.po               latency.po              more-info.po  openstack-linstor.po   proxmox.po          throughput.po
+administration-linstor.po     configure.po                  drbd-users-guide.po  install-packages.po  linstor-users-guide.po  ocfs2.po      openstack.po           proxy.po            troubleshooting.po
+</code></pre><p>Add <code>cn</code> to <code>UG-top.mk</code>:</p><pre><code>- languages = en ja
++ languages = en ja cn
+</code></pre><p>Change <code>UG-build.mk</code> for adding <code>cn</code> selection:</p><pre><code># diff UG-build.mk  UG-build-back.mk 
+77c77
+&lt; 	if [ -d $(FONTDIR) ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;ja&quot; ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;cn&quot; ]; then \
+---
+&gt; 	if [ -d $(FONTDIR) ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;ja&quot; ]; then \
+83c83
+&lt; 	if [ -d $(FONTDIR) ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;ja&quot; ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;cn&quot; ]; then \
+---
+&gt; 	if [ -d $(FONTDIR) ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;ja&quot; ]; then \
+</code></pre><p>Change the Makefile for generating cn language pack:</p><pre><code># vim UG9/cn/Makefile
+ASCIIDOCTOR_ADD_OPTIONS=-r asciidoctor-pdf-cjk -r asciidoctor-pdf-cjk-kai_gen_gothic -a pdf-style=KaiGenGothicCN
+lang=cn
+
+include ../../UG-build-po.mk
+include ../../UG-build.mk
+</code></pre><p>Add the <code>default-theme.yml</code> under the <code>UG9/cn</code> folder, and changes its fonts to CN related fonts:</p><pre><code># docker run --rm --entrypoint /bin/sh linbit-documentation:latest -c &quot;cat /var/lib/gems/2.5.0/gems/asciidoctor-pdf-1.5.3/data/themes/default-theme.yml&quot; &gt; default-theme.yml
+# vim default-theme.yml
+font:
+  catalog:
+    # Noto Serif supports Latin, Latin-1 Supplement, Latin Extended-A, Greek, Cyrillic, Vietnamese &amp; an assortment of symbols
+    Noto Serif:
+      normal: KaiGenGothicCN-Regular.ttf
+      bold: KaiGenGothicCN-Bold.ttf
+      italic: KaiGenGothicCN-Regular-Italic.ttf
+      bold_italic: KaiGenGothicCN-Bold-Italic.ttf
+    # M+ 1mn supports ASCII and the circled numbers used for conums
+    M+ 1mn:
+      normal: KaiGenGothicCN-Regular.ttf
+      bold: KaiGenGothicCN-Bold.ttf
+      italic: KaiGenGothicCN-Regular-Italic.ttf
+      bold_italic: KaiGenGothicCN-Bold-Italic.ttf
+page:
+..........
+</code></pre><p>Change the patch files under <code>UG9/cn</code>:</p><pre><code># mv UG9/cn/drbd-users-guide.adoc-ja.patch UG9/cn/drbd-users-guide.adoc-cn.patch
+# vim UG9/cn/drbd-users-guide.adoc-cn.patch
+@@ -1,4 +1,23 @@
+ :doctype: article
++:lang: ja
++:chapter-label:
++:toc-title: 目录
++:preface-title: 前言标题
++:appendix-caption: 附录标题
++:caution-caption: 注意
++:example-caption: 示例标题
++:figure-caption: 图形标题
++:important-caption: 重要
++:last-update-label: 最終更新
++:listing-caption: 列表标题
++:manname-title: 人名 
++:note-caption: 注記
++:preface-title: 前言标题
++:table-caption: 表标题
++:tip-caption: 要点标题
++:untitled-label: 未命名标签
++:version-label: 版本标签
++:warning-caption: 警告
+ :source-highlighter: bash
+ :listing-caption: Listing
+ :icons: font
+</code></pre><p>Now change the permission for all of the folder, thus docker could have write priviledge to current folder:</p><pre><code># chmod a+w -R *
+#  make UG9-pdf-finalize-docker lang=cn
+</code></pre><p>By running <code>make UG9-pdf-finalize-docker</code> could generate chinese version&rsquo;s pdf, By running <code>make UG9-html-finalize-docker lang=cn</code> will generate chinese version&rsquo;s htmls.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/03/13/usingredashforvisualization/>UsingRedashForVisualization</a></h1><span class=post-date>Mar 13, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>Using redash for representing Wuhan&rsquo;s nCov dataset.</p><h3 id=environment>Environment</h3><p>Hardware/Software/OS is listed as following:</p><pre><code>kvm vm with 2cores and 3072MB memory plus 200G disk.
+Using docker/docker-compose for redash website.
+OS is ubuntu 18.04.3
+IP: 192.168.137.100
+</code></pre><h3 id=redash-bootstrap>Redash bootstrap</h3><p>Using the repository which located at:<br><a href=https://github.com/getredash/setup>https://github.com/getredash/setup</a></p><p>You have to git clone this repository and run setup.sh under the directory. After setup the docker-compose file located in <code>/opt/redash</code>, if you want to quickly setup another docker/docker-compose based environment, simply copy the folder and the related docker images to remote machine&rsquo;s <code>/opt/redash</code>, up and running again.</p><pre><code>root@node:/opt/redash# ls
+docker-compose.yml  env  postgres-data
+root@node:/opt/redash# docker-compose run --rm server create_db
+root@node:/opt/redash# docker-compose up -d
+Creating network &quot;redash_default&quot; with the default driver
+Creating redash_redis_1    ... done
+Creating redash_postgres_1 ... done
+Creating redash_scheduled_worker_1 ... done
+Creating redash_adhoc_worker_1     ... done
+Creating redash_scheduler_1        ... done
+Creating redash_server_1           ... done
+Creating redash_nginx_1            ... done
+</code></pre><p>The redash environment rested in 7 docker instance, could be examined using <code>docker ps</code>:</p><pre><code>root@node:/opt/redash# docker ps
+CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS                         NAMES
+1e701e0bb8d2        redash/nginx:latest          &quot;nginx -g 'daemon of…&quot;   6 minutes ago       Up 6 minutes        0.0.0.0:80-&gt;80/tcp, 443/tcp   redash_nginx_1
+5c00c609baa6        redash/redash:8.0.0.b32245   &quot;/app/bin/docker-ent…&quot;   7 minutes ago       Up 6 minutes        0.0.0.0:5000-&gt;5000/tcp        redash_server_1
+8dcd4c2db0f8        redash/redash:8.0.0.b32245   &quot;/app/bin/docker-ent…&quot;   7 minutes ago       Up 6 minutes        5000/tcp                      redash_scheduled_worker_1
+5d1dbd77f4ce        redash/redash:8.0.0.b32245   &quot;/app/bin/docker-ent…&quot;   7 minutes ago       Up 6 minutes        5000/tcp                      redash_adhoc_worker_1
+6d56d7cd9040        redash/redash:8.0.0.b32245   &quot;/app/bin/docker-ent…&quot;   7 minutes ago       Up 6 minutes        5000/tcp                      redash_scheduler_1
+c8efb3ff7437        postgres:9.6-alpine          &quot;docker-entrypoint.s…&quot;   7 minutes ago       Up 7 minutes        5432/tcp                      redash_postgres_1
+a78dd1b1727f        redis:5.0-alpine             &quot;docker-entrypoint.s…&quot;   7 minutes ago       Up 7 minutes        6379/tcp                      redash_redis_1
+</code></pre><p>Now visit the vm&rsquo;s 80 port you will see:</p><p><img src=/images/2020_03_13_22_52_24_544x553.jpg alt=/images/2020_03_13_22_52_24_544x553.jpg></p><p>After login you will get the following page:</p><p><img src=/images/2020_03_13_22_55_16_827x528.jpg alt=/images/2020_03_13_22_55_16_827x528.jpg></p><p>Until now your redash environment has been bootstraped.</p><h3 id=configure-data-source>Configure data source</h3><p>Click your username and select <code>Data Sources</code>:</p><p><img src=/images/2020_03_13_22_55_46_255x410.jpg alt=/images/2020_03_13_22_55_46_255x410.jpg></p><p>Click <code>New Data Source</code> button for adding a new data source:</p><p><img src=/images/2020_03_13_22_58_02_812x505.jpg alt=/images/2020_03_13_22_58_02_812x505.jpg></p><p>Select sqlite and you will be leading to following window:</p><p><img src=/images/2020_03_13_23_00_27_509x445.jpg alt=/images/2020_03_13_23_00_27_509x445.jpg></p><p>Fill in some infos for finishing:</p><p><img src=/images/2020_03_13_23_00_53_405x372.jpg alt=/images/2020_03_13_23_00_53_405x372.jpg></p><h3 id=get-sqlite-db>Get Sqlite db</h3><p>We take following page for refrence:</p><p><a href=https://discuss.redash.io/t/example-data-source-for-the-choropleth-maps/3696>https://discuss.redash.io/t/example-data-source-for-the-choropleth-maps/3696</a></p><p>First fetch the example sqlite db using following command:</p><p><img src=/images/2020_03_13_23_03_22_565x368.jpg alt=/images/2020_03_13_23_03_22_565x368.jpg></p><pre><code># wget https://dbhub.io/x/download/justinclift/DB4S%20daily%20users%20by%20country.sqlite?commit=28a554c2795170d5739b7a41df9baa2ad13b985b325d238bd869a14d1148f9ea
+# mv DB4S\ daily\ users\ by\ country.sqlite first.db
+</code></pre><p>Copy this db into following docker instance:</p><pre><code># docker cp first.db redash_scheduled_worker_1:/app
+# docker cp first.db redash_server_1:/app
+# docker cp first.db redash_adhoc_worker_1:/app
+# docker cp first.db redash_scheduler_1:/app
+</code></pre><p>Now click <code>Test Connection</code> you will get <code>Succeed</code>.</p><h3 id=create-query>Create Query</h3><p>Click <code>Create Query</code>, you will be leading to following window:</p><p><img src=/images/2020_03_13_23_10_34_613x380.jpg alt=/images/2020_03_13_23_10_34_613x380.jpg></p><p>Create a new query:</p><pre><code>SELECT country, users
+FROM query_6
+WHERE date = '2019-04-22'
+</code></pre><p><img src=/images/2020_03_13_23_13_35_681x275.jpg alt=/images/2020_03_13_23_13_35_681x275.jpg></p><p>Click <code>Execute</code> you will get the table listed as:</p><p><img src=/images/2020_03_13_23_13_59_1157x317.jpg alt=/images/2020_03_13_23_13_59_1157x317.jpg></p><p>Click <code>New Visualization</code> for editing the visualization:</p><p><img src=/images/2020_03_13_23_14_47_955x617.jpg alt=/images/2020_03_13_23_14_47_955x617.jpg></p><p>Edit like following:</p><p><img src=/images/2020_03_13_23_17_03_634x623.jpg alt=/images/2020_03_13_23_17_03_634x623.jpg></p><p>The map will be rendered like:</p><p><img src=/images/2020_03_13_23_17_39_922x579.jpg alt=/images/2020_03_13_23_17_39_922x579.jpg></p><p>Click <code>save</code> for saving the map, then rename this query:</p><p><img src=/images/2020_03_13_23_18_36_559x261.jpg alt=/images/2020_03_13_23_18_36_559x261.jpg></p><h3 id=dashboard>Dashboard</h3><p>Create the first dashboard:</p><p><img src=/images/2020_03_13_23_19_59_566x223.jpg alt=/images/2020_03_13_23_19_59_566x223.jpg></p><p>An empty dashboard:</p><p><img src=/images/2020_03_13_23_20_20_753x511.jpg alt=/images/2020_03_13_23_20_20_753x511.jpg></p><p>Click <code>Add Widget</code>, select our newly created map:</p><p><img src=/images/2020_03_13_23_20_39_676x251.jpg alt=/images/2020_03_13_23_20_39_676x251.jpg></p><p>Select the map:</p><p><img src=/images/2020_03_13_23_21_16_691x280.jpg alt=/images/2020_03_13_23_21_16_691x280.jpg></p><p>Effect:</p><p><img src=/images/2020_03_13_23_21_33_921x659.jpg alt=/images/2020_03_13_23_21_33_921x659.jpg></p><h3 id=conclusion>Conclusion</h3><p>Now we have created the first visualization in redash easily displayed a
+sqlite database, in next chapter we will take a look at how to display the
+nCov statistics.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/03/13/%E7%94%A8superset%E5%8F%AF%E8%A7%86%E5%8C%96%E6%AD%A6%E6%B1%89%E8%82%BA%E7%82%8E%E6%95%B0%E6%8D%AE/>用Superset可视化武汉肺炎数据</a></h1><span class=post-date>Mar 13, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=前言>前言</h3><p>最近因为武汉肺炎的原因一直宅在家里，刷什么值得买的时候看到了一个玩mac mini server的哥们写的用superset可视化武汉肺炎的文章，照着做了一遍，将具体的步骤都写在了下面。后续做实际项目的BI内容可视化的时候可以用来参考。</p><p>该文章中也有少许操作步骤方面的错误，做的时候经常会卡在那里半天。当然如果按照下面记录的步骤来进行的话，这些问题应该不会出现。</p><h3 id=环境>环境</h3><p>涉及到的硬件、操作系统、软件等的情况列举如下：</p><pre><code>KVM虚拟机，4核，3G内存， 200G硬盘
 Ubuntu18.04.3 x86_64
 docker/docker-compose
 </code></pre><h3 id=搭建superset>搭建superset</h3><p>通过 docker启动superset, 启动后监听 <code>8088</code> 端口:</p><pre><code># sudo docker run -d --name superset -p 8088:8088 amancevice/superset
@@ -696,27 +884,4 @@ via following command we could get landscape info:
 </code></pre><h1 id=landscape-sysinfo>landscape-sysinfo</h1><p>System load: 1.48 Temperature: 66.7 C
 Usage of /: 8.9% of 27.91GB Processes: 134
 Memory usage: 7% Users logged in: 1
-Swap usage: 0% IPv4 address for eth0: 192.168.1.191</p><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><p>6178707df429ac1cc84f27a300e54265b6bad107</p></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote><pre><code></code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/02/28/%E5%A6%82%E6%9E%9C%E4%BA%92%E8%81%94%E7%BD%91%E6%9C%89%E8%AE%B0%E5%BF%86/>如果互联网有记忆</a></h1><span class=post-date>Feb 28, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/life>Life</a></span><p>下午在家里等编译完成，忽然想看看有没有工具可以将微博上的文章都批量抓取下来，一搜，果然有：</p><p><a href=https://github.com/dataabc/weiboSpider>https://github.com/dataabc/weiboSpider</a></p><p>简单的配置以后开始了漫长的下载过程，</p><p><img src=/images/2020_02_28_15_24_29_774x758.jpg alt=/images/2020_02_28_15_24_29_774x758.jpg></p><p>分页后大概有1400多页，估计有半个小时就能生成归档。</p><p>微博近些年来被阉割得不行了，什么都不能说，偶尔看到的一点稍微敏感点的东西马上就无法访问。照此下去，没准哪一天它就突然被全网关停我一定都不会奇怪。我的微博账户早年因为寿光大水的话题多说了两句话已经被封。所以想用工具将以前说过的东西都保留下来。很多当时说过的话、转过的话题、有过的情绪，再看起来也只能嗟叹了。尽管如此，记忆还是应该被保留下来的。年老的时候偶尔翻起，会重温起年轻时的golden old days.</p><p>多么抓狂天真而幼稚的文字啊，也不亏我好好度完了这一生&mdash;-那时候的我一定会这么想吧。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/02/26/codechangesinofflinekubespray/>CodeChangesInOfflineKubespray</a></h1><span class=post-date>Feb 26, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>For setting listor storage on kubernetes offlinely.</p><h3 id=linstor-package-preparation>Linstor Package Preparation</h3><p>Fetch the deb pkgs in docker for offline usage:</p><pre><code>add-apt-repository ppa:linbit/linbit-drbd9-stack
-apt-get update
-
-apt install -y drbd-dkms drbd-utils
-</code></pre><p>Transfer the packages onto the deploy node and update the repository, then install in all of the nodes via:</p><pre><code># apt-get update -y &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y drbd-dkms drbd-utils 2&gt;&amp;1 
-</code></pre><p><code>noninteractive</code> make sure the postfix in default configuration.</p><h3 id=storage-preparation>Storage Preparation</h3><p>Create qcow2 files for vm usage:</p><pre><code># qemu-img create -f qcow2 /media/sda/listor1.qcow2 500G
-# qemu-img create -f qcow2 /media/sdb/listor1.qcow2 500G
-# qemu-img create -f qcow2 /media/sdc3/listor1.qcow2 500G
-</code></pre><p>Attach them to vms:</p><p><img src=/images/2020_02_29_11_00_05_541x322.jpg alt=/images/2020_02_29_11_00_05_541x322.jpg></p><p>Each of the node have the vdb installed:</p><pre><code># fdisk -l
-Disk /dev/vdb: 500 GiB, 536870912000 bytes, 1048576000 sectors
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-</code></pre><p>Create pv, vg, lv via following commands:</p><pre><code># pvcreate /dev/vdb &amp;&amp; vgcreate vg /dev/vdb &amp;&amp; lvcreate -l 100%FREE --thinpool vg/lvmthinpool
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/02/21/switchomegaconfiguration/>SwitchOmegaConfiguration</a></h1><span class=post-date>Feb 21, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=profile>profile</h3><p>Edit the example profile like following:</p><p><img src=/images/2020_02_21_10_35_50_847x480.jpg alt=/images/2020_02_21_10_35_50_847x480.jpg></p><p>Bypass List content:</p><pre><code>127.0.0.1
-::1
-localhost
-10.15.205.1/24
-192.168.0.0/16
-192.192.189.0/24
-*.com.cn
-10.192.0.0/16
-</code></pre><h3 id=auto-switch>Auto Switch</h3><p>Added configuration like following:</p><p><img src=/images/2020_02_21_11_02_27_837x514.jpg alt=/images/2020_02_21_11_02_27_837x514.jpg></p><p>Rules list url:</p><pre><code>https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/48/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/48/>48</a></li><li class="page-item active"><a class=page-link href=/page/49/>49</a></li><li class=page-item><a class=page-link href=/page/50/>50</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/50/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+Swap usage: 0% IPv4 address for eth0: 192.168.1.191</p><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><p>6178707df429ac1cc84f27a300e54265b6bad107</p></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote><pre><code></code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/02/28/%E5%A6%82%E6%9E%9C%E4%BA%92%E8%81%94%E7%BD%91%E6%9C%89%E8%AE%B0%E5%BF%86/>如果互联网有记忆</a></h1><span class=post-date>Feb 28, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/life>Life</a></span><p>下午在家里等编译完成，忽然想看看有没有工具可以将微博上的文章都批量抓取下来，一搜，果然有：</p><p><a href=https://github.com/dataabc/weiboSpider>https://github.com/dataabc/weiboSpider</a></p><p>简单的配置以后开始了漫长的下载过程，</p><p><img src=/images/2020_02_28_15_24_29_774x758.jpg alt=/images/2020_02_28_15_24_29_774x758.jpg></p><p>分页后大概有1400多页，估计有半个小时就能生成归档。</p><p>微博近些年来被阉割得不行了，什么都不能说，偶尔看到的一点稍微敏感点的东西马上就无法访问。照此下去，没准哪一天它就突然被全网关停我一定都不会奇怪。我的微博账户早年因为寿光大水的话题多说了两句话已经被封。所以想用工具将以前说过的东西都保留下来。很多当时说过的话、转过的话题、有过的情绪，再看起来也只能嗟叹了。尽管如此，记忆还是应该被保留下来的。年老的时候偶尔翻起，会重温起年轻时的golden old days.</p><p>多么抓狂天真而幼稚的文字啊，也不亏我好好度完了这一生&mdash;-那时候的我一定会这么想吧。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/48/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/48/>48</a></li><li class="page-item active"><a class=page-link href=/page/49/>49</a></li><li class=page-item><a class=page-link href=/page/50/>50</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/50/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,5 +1,158 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/07/alpineoffline/>AlpineOffline</a></h1><span class=post-date>Apr 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=background>Background</h3><p>I want to run <code>play-with-docker</code> offline, so I have to setup the whole offline
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/08/workingtipsonplaywithdocker2/>WorkingTipsOnPlayWithDocker2</a></h1><span class=post-date>Apr 8, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=migration>migration</h3><p>Really migrate this image into the inner intranet, without any internet
+connection.</p><h3 id=registry-changing>Registry Changing</h3><p>You have to comment the proxy definition, or your registry instance will
+restart frequently, thus your dind won&rsquo;t get working using registry.</p><pre><code># vim /root/data/config.yml
+	#proxy:
+		# remoteurl: https://registry-1.docker.io
+# docker restart docker-registry-proxy-2
+</code></pre><h3 id=systemd-definition>systemd definition</h3><p>Define following two systemd units:</p><pre><code># vim /etc/systemd/system/playwithdocker.service 
+[Unit]
+Description=playwithdocker
+After=docker.service
+Requires=docker.service
+
+[Service]
+Environment=GOPATH=/root/go/
+ExecStart=/usr/bin/docker-compose -f /root/go/src/github.com/play-with-docker/play-with-docker/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>This unit will start blog service automatically.</p><pre><code># vim /etc/systemd/system/playwithdockerblog.service 
+[Unit]
+Description=playwithdockerblog
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker-compose -f /root/Code/play-with-docker.github.io/docker-compose.yml up -d
+
+[Install]
+WantedBy=multi-user.target
+# systemctl enable playwithdocker.service
+# systemctl enable playwithdockerblog.service
+</code></pre><p>Next time the service will automatically start.</p><h3 id=offline-cssjs>Offline CSS/js</h3><p>bootstrap fonts:</p><pre><code># wget https://github.com/twbs/bootstrap/archive/v3.3.7.zip
+# unzip bootstrap-3.3.7.zip
+# cd fonts
+# mkdir ~/Code/play-with-docker.github.io/_site/fonts/
+# cp * ~/Code/play-with-docker.github.io/_site/fonts/
+</code></pre><p>Then your image will display correctly.</p><p><img src=/images/2018_04_08_16_15_38_518x362.jpg alt=/images/2018_04_08_16_15_38_518x362.jpg></p><h3 id=google-fonts>Google Fonts</h3><p>Download the Fonts description from the website, then put all of the related
+fonts under your local folder.</p><h3 id=dnsmasq>dnsmasq</h3><p>Download the rpm package via:</p><pre><code># yum install yum-plugin-downloadonly
+# yum reinstall --downloadonly --downloaddir=/root/rpms dnsmasq
+</code></pre><p>Transfer the package to intranet and install it. Then edit the configuration
+file of dnsmasq:</p><pre><code># vim /etc/dnsmasq.conf
+address=/192.192.189.114/192.192.189.114
+# systemclt enable dnsmasq &amp;&amp; systemctl start dnsmasq
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/07/workingtipsonplaywithdocker/>WorkingTipsOnPlayWithDocker</a></h1><span class=post-date>Apr 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><h4 id=qemu-image>Qemu Image</h4><p>Qemu image preparation:</p><pre><code># mkdir offline-play-with-docker
+# cd offline-play-with-docker 
+# qemu-img create -f qcow2 offline-play-with-docker.qcow2 200G
+Formatting 'offline-play-with-docker.qcow2', fmt=qcow2 size=214748364800 cluster_size=65536 lazy_refcounts=off refcount_bits=16
+</code></pre><h4 id=virt-manager-networking>Virt-manager Networking</h4><p>Network Name:</p><p><img src=/images/2018_04_07_10_33_34_346x179.jpg alt=/images/2018_04_07_10_33_34_346x179.jpg>
+Definition of IPV4:</p><p><img src=/images/2018_04_07_10_34_29_338x431.jpg alt=/images/2018_04_07_10_34_29_338x431.jpg></p><p>Warning:</p><p><img src=/images/2018_04_07_10_34_50_505x137.jpg alt=/images/2018_04_07_10_34_50_505x137.jpg></p><p>Isolation(Could be adjust to isolated):</p><p><img src=/images/2018_04_07_10_35_35_386x231.jpg alt=/images/2018_04_07_10_35_35_386x231.jpg></p><p>Create vm and specify vmworks:</p><p><img src=/images/2018_04_07_13_35_07_540x268.jpg alt=/images/2018_04_07_13_35_07_540x268.jpg></p><p>Install CentOS 7.4, partition like following:</p><p><img src=/images/2018_04_07_13_38_50_484x224.jpg alt=/images/2018_04_07_13_38_50_484x224.jpg></p><p><img src=/images/2018_04_07_13_39_10_650x209.jpg alt=/images/2018_04_07_13_39_10_650x209.jpg></p><h3 id=system>System</h3><p>Set the hostname via:</p><p><img src=/images/2018_04_07_14_35_11_543x279.jpg alt=/images/2018_04_07_14_35_11_543x279.jpg></p><p>Install mate desktop(for debugging purpose):</p><pre><code># wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+# yum --enablerepo=epel -y groups install &quot;MATE Desktop&quot;
+</code></pre><p>Install some tools:</p><pre><code># yum install -y vim wget python-pip gcc git nethogs
+# pip install shadowsocks
+# pip inststall --upgrade pip
+# yum install -y libevent-devel
+# build the redsocks for crossing the gfw!!!
+</code></pre><p>Now you could cross the firewall for installing the go or other
+staffs(crossing the gfw WILL let everything more smoothly).</p><p>Install docker-ce:</p><pre><code>#  yum install -y yum-utils \
+  device-mapper-persistent-data \
+  lvm2
+# yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+# yum install -y docker-ce
+</code></pre><p>Install docker-compose via pip:</p><pre><code># pip install docker-compose
+</code></pre><p>Start and enable docker:</p><pre><code># systemctl enable docker
+# systemctl start docker
+# docker swarm init
+</code></pre><p>You have to run <code>docker swarm init</code>, or you won&rsquo;t login into the
+play-with-docker.</p><p>Install golang:</p><pre><code># yum install -y golang
+# mkdir ~/go
+# vim ~/.bashrc
+export GOPATH=/root/go
+export PATH=$PATH:$GOPATH/bin
+</code></pre><p>Create the directory and clone the source code:</p><pre><code># mkdir ~/Code
+# cd Code
+# git clone https://github.com/play-with-docker/play-with-docker.git
+</code></pre><p>Build the <code>play-with-go</code>:</p><pre><code># go get -u github.com/golang/dep/cmd/dep
+# which dep
+/root/go/bin/dep
+# cd ~/Code/play-with-docker/
+# go get -v -d -t ./...
+# cd /root/go/src/github.com/play-with-docker/play-with-docker
+# dep ensure
+</code></pre><h3 id=fixed-ip>Fixed IP</h3><p>Fixed IP address then we could manually build the dind adjusting to this IP
+address:</p><p><img src=/images/2018_04_07_15_03_06_595x287.jpg alt=/images/2018_04_07_15_03_06_595x287.jpg></p><h3 id=local-registry>Local Registry</h3><p>In order to work offline, we have to use local repository.</p><pre><code># mkdir ~/data
+# cd ~/data
+# docker run -it --rm --entrypoint cat registry:2 /etc/docker/registry/config.yml &gt; config.yml
+# vim config.yml
+proxy:
+      remoteurl: https://registry-1.docker.io
+# mkdir ~/data/data
+# docker run -d --restart=always -p 5000:5000 --name docker-registry-proxy-2 -v /root/data/config.yml:/etc/docker/registry/config.yml -v /root/data/data:/var/lib/registry registry:2
+</code></pre><p>Now examine the docker registry running:</p><pre><code># docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+0ea38c808e8d        registry:2          &quot;/entrypoint.sh /etc…&quot;   2 seconds ago       Up 1 second         0.0.0.0:5000-&gt;5000/tcp   docker-registry-proxy-2
+</code></pre><h3 id=build-dind>Build dind</h3><p>dind is <code>docker in docker</code>, which is a docker image for running docker
+instance inside docker, we build it manually:</p><pre><code># vim
+/root/go/src/github.com/play-with-docker/play-with-docker/dockerfiles/dind/daemon.json
+    &quot;insecure-registries&quot;: [&quot;https://192.192.189.114:5000&quot;],
+# vim
+/root/go/src/github.com/play-with-docker/play-with-docker/dockerfiles/dind/Dockerfile
+......
+    /usr/sbin/sshd -o PermitRootLogin=yes -o PrintMotd=no 2&gt;/dev/null &amp;&amp; \
+    dockerd --registry-mirror=http://192.192.189.114:5000 &amp;&gt;/docker.log 
+......
+</code></pre><p>Build the image:</p><pre><code># docker build -t franela/dind:latest .
+# docker images | grep dind
+franela/dind        latest              7832d23a42c7        About a minute ago   439MB
+docker              stable-dind         d303f49c92a7        2 weeks ago          147MB
+</code></pre><p>This dind image could use local registry, so we only need to sync once, then
+we could let it running really offlinely.</p><h3 id=local-play-with-docker>Local play-with-docker</h3><p>Change the source code:</p><pre><code># cd /root/go/src/github.com/play-with-docker/play-with-docker
+# vim handlers/bootstrap.go +64
+- return false
++ return true
+# vim config/config.go
+ flag.StringVar(&amp;PlaygroundDomain, &quot;playground-domain&quot;, &quot;192.192.189.114&quot;, &quot;Domain to use for the playground&quot;)
+</code></pre><p><img src=/images/2018_04_07_15_32_59_766x271.jpg alt=/images/2018_04_07_15_32_59_766x271.jpg></p><p>Make sure your dnsmasq is running, then edit the <code>/etc/dnsmasq.conf</code> via:</p><pre><code>.................
+# Add local-only domains here, queries in these domains are answered
+# from /etc/hosts or DHCP only.
+#local=/localnet/
+address=/192.192.189.114/192.192.189.114
+address=/localhost/127.0.0.1
+.................
+</code></pre><p>Run <code>play-with-docker</code>:</p><pre><code># cd /root/go/src/github.com/play-with-docker/play-with-docker
+# docker-compose up
+</code></pre><p>Then use a browser to access this website:</p><p><img src=/images/2018_04_07_16_08_09_749x759.jpg alt=/images/2018_04_07_16_08_09_749x759.jpg></p><p>Examine the registry now:</p><p><img src=/images/2018_04_07_16_09_00_655x229.jpg alt=/images/2018_04_07_16_09_00_655x229.jpg></p><p>Then in host terminal, examine the downloaded registry cache:</p><pre><code>curl http://192.192.189.114:5000/v2/_catalog
+{&quot;repositories&quot;:[&quot;library/alpine&quot;,&quot;library/ubuntu&quot;]}
+</code></pre><h3 id=play-with-docker-classroom>play-with-docker classroom</h3><p>Clone the repository:</p><pre><code># cd ~/Code
+# git clone https://github.com/play-with-docker/play-with-docker.github.io.git
+# cd play-with-docker.github.io/
+# vim _config.yml
+pwdurl: http://192.192.189.114
+
+# mkdir _site
+# groupadd jekyll
+# useradd jekyll -m -g jekyll
+# chown jekyll:jekyll -R .
+# docker-compose up
+</code></pre><p>Now open the browser and see the result:</p><p><img src=/images/2018_04_07_16_49_34_794x532.jpg alt=/images/2018_04_07_16_49_34_794x532.jpg></p><h3 id=tips-for-docker-nginx>tips for docker-nginx</h3><pre><code># docker run --name docker-nginx -p 8333:80 -d -v /root/gcr:/usr/share/nginx/html jrelva/nginx-autoindex
+root@playwithdocker:/etc/systemd/system# cat mynginx.service 
+[Unit]
+Description=mynginx
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a docker-nginx
+ExecStop=/usr/bin/docker stop -t 2 docker-nginx
+
+[Install]
+WantedBy=multi-user.target
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/07/alpineoffline/>AlpineOffline</a></h1><span class=post-date>Apr 7, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=background>Background</h3><p>I want to run <code>play-with-docker</code> offline, so I have to setup the whole offline
 environment. In chapter 2 of <code>play-with-docker</code>, it requires building image
 using alpine, its command <code>apk add nodejs</code> requires internet-connection. In
 order to let the whole tutorial working offlinely, I have to setup an Alpine
@@ -338,269 +491,4 @@ Registering runner... succeeded                     runner=xy8MBdig
 Please enter the executor: docker-ssh+machine, docker, docker-ssh, shell, ssh, parallels, virtualbox, docker+machine, kubernetes:
 shell
 Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded! 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/20/workingtipsondockercomposeofflineinstall/>WorkingTipsOnDockerComposeOfflineInstall</a></h1><span class=post-date>Mar 20, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=步骤>步骤</h3><p>获取所需安装包的步骤如下：</p><pre><code>$ sudo docker run -it ubuntu:16.04 /bin/bash
-# 进入容器后的操作
-# rm -f /etc/apt/apt.conf.d/docker-clean
-# apt-get update
-# apt-get install docker-compose dpkg-dev
-</code></pre><p>获取所有的deb包并拷贝到某一目录下:</p><pre><code># cd /var/cache
-# find . | grep deb$ | xargs -I % cp % /root/pkgs
-# cd /root/pkgs
-# dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
-</code></pre><p>将整个目录拷贝到主机目录:</p><pre><code># sudo docker cp d1023d1b0a1f:/root/pkgs /xxxxxx/xxxxx
-# tar czvf /xxxx/xxxx.tar.gz /xxxxxx/xxxx
-</code></pre><h3 id=使用步骤>使用步骤</h3><p>下载地址:</p><pre><code>http://192.192.189.127/big.tar.gz
-</code></pre><p>下载所需要的大包，解压以后，得到以下四个文件:</p><pre><code># tar xzvf big.tar.gz
-# ls big
-images/ pkgs.tar.gz  docker-regsitry.tar.gz devdockerCA.crt
-</code></pre><p>取得pkgs.tar.gz, 将其放置在自己的网页服务器目录，如:<br><img src=/images/2018_03_20_09_22_07_724x495.jpg alt=/images/2018_03_20_09_22_07_724x495.jpg></p><p>配置节点的apt:</p><pre><code># vim /etc/apt/sources.list
-deb http://192.192.189.127/pkgs/	/
-# apt-update
-# apt-get install docker-compose
-</code></pre><p>这将安装docker-compose, docker, 安装完毕以后，docker-compose可以正常使用。</p><h3 id=载入镜像>载入镜像</h3><p>载入registry所需的registry:2镜像和nginx镜像:</p><pre><code># docker load&lt;images/1.tar
-# docker load&lt;images/2.tar
-</code></pre><h3 id=解压docker-compose目录添加服务>解压docker-compose目录，添加服务</h3><p>解压到指定目录(可为任意目录，这里以/docker-registry为例):</p><pre><code># tar xzvf docker-registry.tar.gz -C /
-# ls /docker-regsitry
-data	docker-compose.yml nginx
-</code></pre><p>创建systemd所需服务:</p><pre><code># vim /etc/systemd/system/docker-compose.service
-[Unit]
-Description=DockerCompose
-After=docker.service
-Requires=docker.service
-
-[Service]
-ExecStart=/usr/bin/docker-compose -f /docker-registry/docker-compose.yml up -d
-
-[Install]
-WantedBy=multi-user.target
-</code></pre><p>启动、使能docker-compose服务:</p><pre><code># sudo systemctl enable docker-compose.service
-# sudo systemctl start docker-compose.service
-# docker ps
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                          NAMES
-50d2ec00e967        nginx:1.9           &quot;nginx -g 'daemon ...&quot;   26 hours ago        Up 3 seconds        80/tcp, 0.0.0.0:443-&gt;443/tcp   dockerregistry_nginx_1
-e4e2cee1bf21        registry:2          &quot;/entrypoint.sh /e...&quot;   26 hours ago        Up 5 seconds        127.0.0.1:5000-&gt;5000/tcp       dockerregistry_registry_1
-</code></pre><p>如此即设置好了整个regitry服务。可以通过https://YourIP来访问，签名文件也可以在目录中找到(devdockerCA)。</p><h3 id=使用镜像仓库>使用镜像仓库</h3><p>Redhat rh74:</p><pre><code># mkdir -p /etc/docker/certs.d/mirror.xxxx.com
-# wget xxxxxx.xxxx.xxx.com/ca.crt
-# docker login -u xxxx -p xxxx mirror.xxxx.com
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/18/kismatcidisconnectdinstallationrhel74/>KismatciDisconnectdInstallationRHEL74</a></h1><span class=post-date>Mar 18, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>基于Redhat 7.4搭建Kismatic自动化部署Kubernetes环境。</p><h3 id=环境准备>环境准备</h3><p>软件:</p><pre><code>rhel-server-7.4-x86_64-dvd.iso
-virt-manager
-网络 10.172.173.0/24, 无dhcp.
-</code></pre><p>硬件:</p><pre><code>4-Core, 32G台式机, 磁盘，大约200G
-</code></pre><h3 id=部署节点机准备>部署节点机准备</h3><p>制作rhel74的基础镜像，虚拟机的制作过程同样可以适用于物理机器的部署流程.</p><p><img src=/images/2018_03_18_18_04_16_815x679.jpg alt=/images/2018_03_18_18_04_16_815x679.jpg></p><p>点击Installation destination, 分区:</p><p><img src=/images/2018_03_18_18_04_35_371x196.jpg alt=/images/2018_03_18_18_04_35_371x196.jpg></p><p>如下图所示，点击<code>I will configure partitioning</code>, 然后点击<code>Done</code>进入到分区界面:</p><p><img src=/images/2018_03_18_18_05_08_471x566.jpg alt=/images/2018_03_18_18_05_08_471x566.jpg></p><p>点击<code>Click here to create them automatically</code>:</p><p><img src=/images/2018_03_18_18_05_44_471x279.jpg alt=/images/2018_03_18_18_05_44_471x279.jpg></p><p>这里我们要删除swap分区，删除home分区，并手动调节root分区的大小，扩展到所有可用空间:</p><p><img src=/images/2018_03_18_18_06_45_508x309.jpg alt=/images/2018_03_18_18_06_45_508x309.jpg></p><p>调整root分区大小如下:</p><p><img src=/images/2018_03_18_18_07_12_657x299.jpg alt=/images/2018_03_18_18_07_12_657x299.jpg></p><p>点击两次<code>Done</code>按钮，出现警告:</p><p><img src=/images/2018_03_18_18_07_39_725x398.jpg alt=/images/2018_03_18_18_07_39_725x398.jpg></p><p>点击Accept，接受更改，进入到下一步， 配置<code>Network & Host Name</code>,</p><p><img src=/images/2018_03_18_18_08_21_567x271.jpg alt=/images/2018_03_18_18_08_21_567x271.jpg></p><p>如此进入到安装界面，设置Root用户密码和用户/用户密码(如果你想添加用户的话)即可完成安装。</p><h3 id=配置基本系统>配置基本系统</h3><p>selinux配置和防火墙配置, 禁用subscription:</p><pre><code># vi /etc/selinux/config
-SELINUX=disabled
-# systemctl disable firewalld
-# vim /etc/yum/pluginconf.d/subscription-manager.conf
-[main]
-enabled=0
-# mount /dev/sr0 /mnt
-# vim /etc/yum.repos.d/local.repo
-[local]
-name=local
-baseurl=file:///mnt
-enabled=1
-gpgcheck=0
-# yum install -y vim httpd
-</code></pre><p>现在保存基本系统，即可作为基础版本，供以后使用。</p><h3 id=http-server-and-docker-registry-server>http server and docker registry server</h3><p>创建镜像文件:</p><pre><code># qemu-img create -f qcow2  -b rhel74base/rhel74base.qcow2 rheldeployserver.qcow2
-</code></pre><p>以此镜像文件，建立一个1核1G的rhel7系统.</p><p><img src=./images/2018_03_18_21_15_52_398x415.jpg alt=./images/2018_03_18_21_15_52_398x415.jpg><br>成功启动系统后，同步镜像仓库，同步registry仓库(按照kismatic官方指南来),
-具体步骤如下:</p><pre><code>TBD
-</code></pre><p>配置镜像仓库:</p><pre><code># systemctl enable httpd
-# systemctl start httpd
-</code></pre><p>配置docker-registry</p><pre><code># tar xzvf docker-registry.tar.gz
-# mv docker-registry /
-</code></pre><p>安装必要的包:</p><pre><code># yum install -y net-tools createrepo wget
-</code></pre><p>创建repo:</p><pre><code># cd /var/www/html/
-# for i in `ls `
-do
-createrepo $i
-done
-# wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
-# yum makecache
-</code></pre><p>安装docker-compose:</p><pre><code># yum install -y python-pip
-# pip install docker-compose
-</code></pre><p>安装docker:</p><pre><code># yum install -y --setopt=obsoletes=0  docker-ce-17.03.0.ce-1.el7.centos
-# systemctl enable docker
-# systemctl start docker
-</code></pre><p>载入registry所需的镜像:</p><pre><code># docker load&lt;nginx.tar
-# docker load&lt;registry.tar
-# docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-registry            &lt;none&gt;              d1fd7d86a825        2 months ago        33.3 MB
-registry            2                   177391bcf802        3 months ago        33.3 MB
-nginx               1.9                 c8c29d842c09        22 months ago       183 MB
-</code></pre><p>配置docker-compose所需的系统级服务:</p><pre><code># vim  /etc/systemd/system/docker-compose.service
-[Unit]
-Description=DockerCompose
-After=docker.service
-Requires=docker.service
-
-[Service]
-ExecStart=/usr/bin/docker-compose -f /docker-registry/docker-compose.yml up -d
-
-[Install]
-WantedBy=multi-user.target
-# systemctl start docker-compose
-# systemctl enable docker-compose
-</code></pre><p>登录/使用registry mirror的方法:</p><pre><code># vim /etc/hosts
-192.168.205.13	mirror.xxxxx.com
-# vim /etc/hosts
-# docker login mirror.xxxx.com
-Username (clouder): clouder
-Password: 
-Login Succeeded
-</code></pre><p>现在随意更改网络后，配置好对应的地址，即可使用该虚拟机进行部署。整个镜像的大小大约40G.</p><h3 id=3-node-kubernetes>3-node kubernetes</h3><p>创建镜像文件:</p><pre><code># qemu-img create -f qcow2 -b rhel74base/rhel74base.qcow2 node1.qcow2
-# qemu-img create -f qcow2 -b rhel74base/rhel74base.qcow2 node2.qcow2
-# qemu-img create -f qcow2 -b rhel74base/rhel74base.qcow2 node3.qcow2
-</code></pre><p>CPU/内存配置：</p><p><img src=/images/2018_03_19_06_27_16_367x176.jpg alt=/images/2018_03_19_06_27_16_367x176.jpg></p><p>网络配置:</p><p><img src=/images/2018_03_19_06_27_33_371x264.jpg alt=/images/2018_03_19_06_27_33_371x264.jpg></p><p>node1, node2, node3:</p><pre><code>node1, 10.172.173.11
-node2, 10.172.173.12
-node3, 10.172.173.13
-</code></pre><h3 id=配置>配置</h3><p>三台机器上，分别添加<code>/etc/hosts</code>下的以下条目:</p><pre><code>10.172.173.2	mirror.xxxx.com
-</code></pre><p>其中<code>10.172.173.2</code>为我们配置的registry mirror服务器的地址。<br>然后就可以通过<code>kismatic-cluster.yaml</code>定义出对应的项，开始进行部署，部署完毕后我们得到一个拥有三个master的k8s集群.</p><pre><code>[root@node1 ~]# kubectl get nodes
-NAME      STATUS    ROLES     AGE       VERSION
-node1     Ready     master    2h        v1.9.0
-node2     Ready     master    2h        v1.9.0
-node3     Ready     master    2h        v1.9.0
-</code></pre><p>基于这个集群我们可以进行通用的开发。首先来配置高可用和ingress之类。</p><h3 id=边缘节点>边缘节点</h3><p>我们定义的边缘节点如下:</p><pre><code>node1, 10.172.173.11
-node2, 10.172.173.12
-node3, 10.172.173.13
-</code></pre><p>在三个节点上分别安装keepalived和ipvsadmin:</p><pre><code># yum install -y keepalived ipvsadm
-</code></pre><p>配置文件：</p><pre><code>[root@node1 mytraefik]# cat traefik.yaml 
-apiVersion: extensions/v1beta1
-kind: DaemonSet
-metadata:
-  name: traefik-ingress-lb
-  namespace: kube-system
-  labels:
-    k8s-app: traefik-ingress-lb
-spec:
-  template:
-    metadata:
-      labels:
-        k8s-app: traefik-ingress-lb
-        name: traefik-ingress-lb
-    spec:
-      terminationGracePeriodSeconds: 60
-      hostNetwork: true
-      restartPolicy: Always
-      serviceAccountName: ingress
-      containers:
-      - image: mirror.xxxxx.com/traefik:latest
-        imagePullPolicy: IfNotPresent
-        name: traefik-ingress-lb
-        resources:
-          limits:
-            cpu: 200m
-            memory: 30Mi
-          requests:
-            cpu: 100m
-            memory: 20Mi
-        ports:
-        - name: http
-          containerPort: 80
-          hostPort: 80
-        - name: admin
-          containerPort: 8580
-          hostPort: 8580
-        args:
-        - --web
-        - --web.address=:8580
-        - --kubernetes
-      nodeSelector:
-        edgenode: &quot;true&quot;
-[root@node1 mytraefik]# cat ui.yaml 
-apiVersion: v1
-kind: Service
-metadata:
-  name: traefik-web-ui
-  namespace: kube-system
-spec:
-  selector:
-    k8s-app: traefik-ingress-lb
-  ports:
-  - name: web
-    port: 80
-    targetPort: 8580
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: traefik-web-ui
-  namespace: kube-system
-spec:
-  rules:
-  - host: traefik-ui.local
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: traefik-web-ui
-          servicePort: web
-[root@node1 mytraefik]# cat ingress-rbac.yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: ingress
-  namespace: kube-system
-
----
-
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
-metadata:
-  name: ingress
-subjects:
-  - kind: ServiceAccount
-    name: ingress
-    namespace: kube-system
-roleRef:
-  kind: ClusterRole
-  name: cluster-admin
-  apiGroup: rbac.authorization.k8s.io
-</code></pre><p>创建服务:</p><pre><code># kubectl create -f ingress-rbac.yaml  traefik.yaml  ui.yaml
-</code></pre><p>现在只需要添加一行到<code>/etc/hosts</code>中，即可访问traefik的ui界面:</p><pre><code>10.172.173.100	traefik-ui.local
-</code></pre><p><img src=/images/2018_03_19_11_28_34_967x774.jpg alt=/images/2018_03_19_11_28_34_967x774.jpg></p><h3 id=nginx服务>nginx服务</h3><p>定义文件如下:</p><pre><code>[root@node1 mytraefik]# cat nginx.yaml 
-apiVersion: extensions/v1beta1 
-kind: Deployment 
-metadata: 
-  name: nginx-dm
-spec: 
-  replicas: 2
-  template: 
-    metadata: 
-      labels: 
-        name: nginx 
-    spec: 
-      containers: 
-        - name: nginx 
-          image: mirror.xxxx.com/nginx:latest 
-          imagePullPolicy: IfNotPresent
-          ports: 
-            - containerPort: 80
-
----
-apiVersion: v1 
-kind: Service
-metadata: 
-  name: nginx-dm 
-spec: 
-  ports: 
-    - port: 80
-      targetPort: 80
-      protocol: TCP 
-  selector: 
-    name: nginx
-You have new mail in /var/spool/mail/root
-[root@node1 mytraefik]# cat traefik-ingress.yaml 
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: traefik-ingress
-spec:
-  rules:
-  - host: nginx.xxxx.com
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: nginx-dm
-          servicePort: 80
-</code></pre><p>同样在外部添加<code>/etc/hosts</code>中的对应条目即可.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/77/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/77/>77</a></li><li class="page-item active"><a class=page-link href=/page/78/>78</a></li><li class=page-item><a class=page-link href=/page/79/>79</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/79/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/77/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/77/>77</a></li><li class="page-item active"><a class=page-link href=/page/78/>78</a></li><li class=page-item><a class=page-link href=/page/79/>79</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/79/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,5 +1,379 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/04/11/quicklyofflinehelmcharts/>QuicklyOfflineHelmCharts</a></h1><span class=post-date>Apr 11, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Following is the tips:</p><p>Create the minikube environment, and enable the helm/charts:</p><pre><code>#  minikube start --cpus 4 --memory 8192 --disk-size 60g
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/04/19/linux-tips-10/>Linux Tips 10</a></h1><span class=post-date>Apr 19, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/linuxtips>LinuxTips</a></span><h3 id=1-samba-mount>1. samba mount</h3><p>mount samba via:</p><pre><code># mount -t cifs //192.168.0.219/samba /mnt -o username=uuuu,password=ffff
+</code></pre><h3 id=2-centos-ansible>2. CentOS ansible</h3><p>On vps we start a docker instance via:</p><pre><code># docker run -it centos:7 /bin/bash
+# yum update -y
+# yum install -y epel-release
+# yum update -y
+# yum install -y python-pip
+# mkdir ~/ansible &amp;&amp; cd ~/ansible
+# pip download ansible
+# tar czvf ansible.tar.gz ansible
+</code></pre><p>Download the ansible.tar.gz to local, and transfer them into the centos
+offline machines, install ansible via:</p><pre><code># tar xzvf ansible.tar.gz
+# cd ansible
+# pip install --no-index --find-links . ansible
+# which ansible
+/usr/bin/ansible
+# ansible --version
+ansible 2.7.10
+</code></pre><p>Also you have to download the jinja2, upgrade to 2.10.1 version:</p><pre><code># pip download jinja2
+...
+# pip install --no-index --find-links . jinja2 --upgrade
+</code></pre><h3 id=3-fast-kubespray>3. Fast Kubespray</h3><p>Download the tar.gz, untar it, then modify the Vagrantfile, then <code>rm -f inventory/sample/hosts.ini</code>, then vagrant up you could get all of the packages
+and images downloaded to your vm.</p><p>Be sure to use firewall-less networking, and set the vm&rsquo;s resolv.conf to your
+firewall-less dns server.</p><pre><code># rm -f /etc/resolv.conf
+# echo &quot;nameserver 10.0.70.1&quot;&gt;/etc/resolv.conf
+</code></pre><h3 id=4-kubeadm-git-tree-state>4. kubeadm git tree state</h3><p>Modify the file <code>hack/lib/version.sh</code>:</p><pre><code>  if [[ -n ${KUBE_GIT_COMMIT-} ]] || KUBE_GIT_COMMIT=$(&quot;${git[@]}&quot; rev-parse &quot;HEAD^{commit}&quot; 2&gt;/dev/null); then
+    if [[ -z ${KUBE_GIT_TREE_STATE-} ]]; then
+      # Check if the tree is dirty.  default to dirty
+      if git_status=$(&quot;${git[@]}&quot; status --porcelain 2&gt;/dev/null) &amp;&amp; [[ -z ${git_status} ]]; then
+        KUBE_GIT_TREE_STATE=&quot;clean&quot;
+      else
+        KUBE_GIT_TREE_STATE=&quot;clean&quot;
+      fi
+    fi
+</code></pre><h3 id=5-pandoc-template>5. pandoc template</h3><p>For generating pdf:</p><pre><code># wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v1.2.2/Eisvogel-1.2.2.tar.gz
+# mkdir -p ~/.pandoc/templates
+# tar xzvf Eisvogel-1.2.2.tar.gz
+# cp eisvogenl.tex ~/.pandoc/templates/eisvogel.latex
+# cd ~/.pandoc/templates
+# wget https://raw.githubusercontent.com/tzengyuxio/pages/gh-pages/pandoc/pm-template.latex
+</code></pre><p>But this doesn&rsquo;t work at all.</p><h3 id=6-kubernetes-leader-election>6. kubernetes leader election</h3><p>Refers to:</p><pre><code>https://tunein.engineering/implementing-leader-election-for-kubernetes-pods-2477deef8f13
+https://github.com/kubernetes-retired/contrib/tree/master/election
+</code></pre><h3 id=7-reinstall-rpm-with-dependencies>7. reinstall rpm with dependencies</h3><p>via following command:</p><pre><code># yum reinstall $(repoquery --requires --recursive --resolve packagename)
+</code></pre><h3 id=8-dmesg-warning>8. dmesg warning</h3><p>After upgrading to newest kernel, I got some error message during dmesg:</p><pre><code>[118383.485389] e1000e 0000:00:19.0 enp0s25: Detected Hardware Unit Hang:
+                  TDH                  &lt;0&gt;
+                  TDT                  &lt;5&gt;
+                  next_to_use          &lt;5&gt;
+                  next_to_clean        &lt;0&gt;
+                buffer_info[next_to_clean]:
+                  time_stamp           &lt;102176c2b&gt;
+                  next_to_watch        &lt;0&gt;
+                  jiffies              &lt;1021c8e80&gt;
+                  next_to_watch.status &lt;0&gt;
+                MAC Status             &lt;80000&gt;
+                PHY Status             &lt;7949&gt;
+                PHY 1000BASE-T Status  &lt;0&gt;
+                PHY Extended Status    &lt;3000&gt;
+                PCI Status             &lt;10&gt;
+</code></pre><p>Solution is disable the TCP checksome offloading:</p><pre><code>$ sudo ethtool -K enp0s25 tx off rx off
+</code></pre><h3 id=9-proxmox-iotop>9. Proxmox iotop</h3><p>For installing iotop on Proxmox, do following:</p><pre><code>root@ks:~# cat /etc/issue
+
+------------------------------------------------------------------------------
+
+Welcome to the Proxmox Virtual Environment. Please use your web browser to 
+configure this server - connect to:
+
+  https://
+
+------------------------------------------------------------------------------
+
+root@ks:~# cat /etc/debian_version 
+9.4
+</code></pre><p>Find the debian version 9.4 is <code>stretch</code>, then we could find the package using
+google, and download iotop package then uploading to server and install it.</p><h3 id=10-bash-debugging>10. bash debugging</h3><p>Enable debugging for:</p><pre><code># bash -x ./bash_shell.sh
+</code></pre><h3 id=10-vncviewer-disable-send-key>10. vncviewer disable send key</h3><p>Via following commands:</p><pre><code>$ vncviewer 192.168.0.101:5900 -FullscreenSystemKeys=0
+</code></pre><h3 id=11-kubectl-run>11. kubectl run</h3><p>Avoid pulling images always, specify following parameter:</p><pre><code>--image-pull-policy
+</code></pre><h3 id=12-ssh-tunnel>12. ssh tunnel</h3><p>Using a tunnel for forwarding remote ssh port to local via:</p><pre><code>alias sshtunnel='ssh -L 0.0.0.0:10022:192.xxx.xxx.xxx:10022 dash@192.168.0.33'
+</code></pre><p>After you activated ssh tunnel, use <code>ssh -p 10022 root@localhost</code> for
+accessing.</p><h3 id=13-ifupdown>13. ifupdown</h3><p>When encounting following error in vagrant:</p><pre><code>/sbin/ifup 'eth1'
+
+Stdout from the command:
+
+
+
+Stderr from the command:
+
+bash: line 4: /sbin/ifdown: No such file or directory
+bash: line 20: /sbin/ifup: No such file or directory
+</code></pre><p>Install <code>apt-get install -y ifupdown</code>, you could fix your problem.</p><h3 id=14-usb-networking-issue>14. usb networking issue</h3><p>After upgrading to 5.1.6 kernel, my asix ethernet card won&rsquo;t working, install
+following packages for making it worked.</p><pre><code>$ yaourt asix-dkms
+</code></pre><h3 id=15-delegate-to-issue>15. delegate to issue</h3><p>When using kubespray you got delegate to issue, do following:</p><pre><code># export ANSIBLE_INVALID_TASK_ATTRIBUTE_FAILED=False
+# vagrant up --provider=libvirt
+</code></pre><h3 id=16-usb-ethernet-issue>16. usb ethernet issue</h3><p>via <code>lsusb -t</code> you could view the usb device tree and its speed.</p><h3 id=17-view-nvidia-gpu-temperature>17. view nvidia gpu temperature</h3><p>via :</p><pre><code>nvidia-smi -q -d temperature
+</code></pre><h3 id=18-pip-network-error>18. pip network error</h3><p>Install pip again via:</p><pre><code># curl https://bootstrap.pypa.io/get-pip.py | python
+
+</code></pre><h3 id=19-consola-issues>19. consola issues</h3><p>If you use gnome-terminal, then it&rsquo;s hard to choose yahei consola, so we have to use xfce4-terminal.</p><h3 id=20-use-cdrom-as-repository>20. Use cdrom as repository</h3><p>Following steps will use ubuntu iso for installation:</p><pre><code>sudo mkdir /aptoncd-mountpoint
+sudo mount /media/USB/aptoncd.iso ~/aptoncd-mountpoint -oloop
+sudo apt-cdrom -d=/aptoncd-mountpoint add
+</code></pre><h3 id=21-apt-get-down>21. apt-get down</h3><p>download the packages into /var/cache via:</p><pre><code># apt-get -d install xxxxxxxYourPackageName
+</code></pre><h3 id=22-ansible-warning>22. ansible warning</h3><p>How to resolve this warning.</p><pre><code> [WARNING]: flush_handlers task does not support when conditional
+
+</code></pre><h3 id=23-build-goharbor>23. build goharbor</h3><p>with chartmuseum support, do following:</p><pre><code># make package_offline GOBUILDIMAGE=golang:1.9.2 COMPILETAG=compile_golangimage  NOTARYFLAG=true
+</code></pre><p>Make on arm64 architecture:</p><pre><code>/media/sda/harbor/harbor-arm64-develop# make package_offline GOBUILDIMAGE=golang:1.9.2 COMPILETAG=compile_golangimage VERSIONTAG=1.7.0-arm64 PKGVERSIONTAG=1.7.0-arm64 CLAIRFLAG=true NOTARYFLAG=true CHARTFLAG=true
+</code></pre><h3 id=24-get-rpi-temperature>24. Get rpi temperature</h3><p>via following command:</p><pre><code>cpu=$(&lt;/sys/class/thermal/thermal_zone0/temp);echo &quot;$((cpu/1000)) c&quot;
+
+</code></pre><h3 id=25-force-dns-query-using-tcp>25. Force dns query using tcp</h3><p>Add following options into the <code>/etc/resolv.conf</code>:</p><pre><code>options use-vc
+nameserver 1.2.3.4
+</code></pre><h3 id=26-tips-on-friday>26. tips on Friday</h3><p>working progress:</p><pre><code>1. python-pip should be installed and docker-compose needed to be compile. 
+2. some packages are located in 128, also libssl/libssl-dev have to be added into the repository
+3. secure registry server not stable, why? 
+4. package dependency problem should be solved. 
+5. docker push is ok, now we could push to the registry. 
+6. harbor need to be verified. 
+</code></pre><h3 id=27-vncserver>27. VncServer</h3><p>not only listening on localhost, try following:</p><pre><code># vncserver -localhost no
+
+</code></pre><h3 id=28-delegate_to>28. delegate_to</h3><p>Newest ansible version(v2.8.1) has changed the feature, so we have to use following commands:</p><pre><code># ANSIBLE_INVALID_TASK_ATTRIBUTE_FAILED=False
+# ansible-playbook -i xxxx xxxx.cluster.yml
+</code></pre><h3 id=29-aarch64-vagrant-issue>29. aarch64 vagrant issue</h3><p>Encounter following:</p><pre><code>Error while creating domain: Error saving the server: Call to virDomainDefineXML failed: unsupported configuration: ACPI requires UEFI on this architecture
+</code></pre><p>pflash vs rom.</p><h3 id=30-copy-only-packagesgz-included>30. Copy only Packages.gz included</h3><p>via following commands:</p><pre><code>for i in `cat /root/Packages  | grep '^Package:' | awk {'print $2'}`
+do
+        echo cp $i&quot;_*.deb&quot; /root/pure/ | bash -
+
+        #cp $i_* /root/pure
+done
+
+</code></pre><h3 id=31-kubespray-openssl-issue>31. kubespray openssl issue</h3><p>Change the openssl signature for <code>v3_ext</code> definition.</p><pre><code>[ v3_ext ]
+authorityKeyIdentifier=keyid,issuer:always
+basicConstraints=CA:FALSE
+keyUsage=keyEncipherment,dataEncipherment
+extendedKeyUsage=serverAuth,clientAuth
+subjectAltName=@alt_names
+root@arm02:/media/md0/Rong1907/roles/etcd# grep -i &quot;v3_ext&quot; ./ -r
+./templates/openssl.conf.j2:[ v3_ext ]
+./templates/make-ssl-etcd.sh.j2:        openssl x509 -req -in member-${host}.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out member-${host}.pem -days {{certificates_duration}} -extensions v3_ext -extfile ${CONFIG} &gt; /dev/null 2&gt;&amp;1
+./templates/make-ssl-etcd.sh.j2:        openssl x509 -req -in admin-${host}.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out admin-${host}.pem -days {{certificates_duration}} -extensions v3_ext  -extfile ${CONFIG} &gt; /dev/null 2&gt;&amp;1
+./templates/make-ssl-etcd.sh.j2:        openssl x509 -req -in node-${host}.csr -CA ca.pem -CAkey ca-key.pem -CAcreateserial -out node-${host}.pem -days {{certificates_duration}} -extensions v3_ext  -extfile ${CONFIG} &gt; /dev/null 2&gt;&amp;1
+
+</code></pre><h3 id=32-run-commands-in-term>32. run commands in term</h3><p>In linux via:</p><pre><code># xterm -hold -e 'apropos editor' &amp; 
+</code></pre><h3 id=33-netdata-for-ubuntu-xenial>33. netdata for ubuntu xenial</h3><p>Using ppa version:</p><pre><code>sudo add-apt-repository ppa:sdeziel/ppa
+sudo apt-get update
+sudo apt-get install -y netdata
+</code></pre><h3 id=34-minikube-sshpassword>34. minikube ssh/password</h3><p>Default ssh username and password are <code>docker</code> and <code>tcuser</code>.</p><h3 id=35-disable-ipv6-on-ubuntu>35. disable ipv6 on ubuntu</h3><p>Edit the <code>/etc/default/grub</code>, add following definition:</p><pre><code>GRUB_CMDLINE_LINUX=&quot;ipv6.disable=1&quot;
+</code></pre><p>disable ipv6 will cause vagrant working, so I remove this line again, and fall back to ipv4/ipv6 co-exists.</p><h3 id=36-rsync-specify-ssh-ports>36. rsync specify ssh ports</h3><p>sync the remote with local directory:</p><pre><code>rsync -a -e 'ssh -p 1xxxx' --progress kubespray-2.11.0 root@192.xxx.xxx.xxx:/media/sdd/kubespray-2.11.0
+</code></pre><h3 id=37-ansible-docker-for-kubespray>37. ansible docker for kubespray</h3><p>For lacking the netaddr in ansible docker(lexauw/ansible-alpine:v2.7.9), do following steps:</p><pre><code>$ sudo docker run -it lexauw/ansible-alpine:v2.7.9 /bin/sh
+/ # pip3 install netaddr
+.....
+
+$ sudo docker commit d15d9a5910b4 core/ansible:v2.7.9
+</code></pre><p>Now using the <code>core/ansible:v2.7.9</code> for deployment, you will get through all of the playbooks.</p><h3 id=38-videocutter>38. videocutter</h3><p>Install on ubuntu:</p><pre><code>sudo add-apt-repository ppa:ozmartian/apps
+sudo apt-get update
+sudo apt-get install vidcutter
+
+</code></pre><h3 id=39-making-video>39. Making video</h3><p>vidcutter+gnome-subtitles+ffmpeg:</p><pre><code>$ ffmpeg -y -i gongjian.mp4 -vf subtitles=gongjiank8s.srt myoutput.mp4
+</code></pre><h3 id=40-wget-quite-and-overwrite>40. wget quite and overwrite</h3><p>via following parameters:</p><pre><code># wget -q http://xxxxxx -O /opt/bin/xxxxx
+</code></pre><h3 id=41-enable-bbr-on-ubuntu1804>41. Enable bbr on Ubuntu18.04</h3><p>Via following commands:</p><pre><code># echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf
+# echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf
+# sysctl -p
+net.core.default_qdisc = fq
+net.ipv4.tcp_congestion_control = bbr
+# sysctl net.ipv4.tcp_available_congestion_control
+net.ipv4.tcp_available_congestion_control = reno cubic bbr
+# lsmod | grep bbr
+tcp_bbr                20480  4
+# sudo sysctl net.core.default_qdisc
+fq
+</code></pre><p>当输出中 net.core.default_qdisc 为 fq 且 net.ipv4.tcp_available_congestion_control 包含 bbr 即表示内核已启用 BBR 算法。</p><h3 id=42-arm64-installation>42. arm64 Installation</h3><p>Desktop:</p><pre><code># apt-get install -y virt-manager xubuntu-desktop qemu-efi-aarch64 vnc4server chromium-browser
+# systemctl start libvirtd
+# systemctl enable libvirtd
+# vim ~/.vnc/xstartup
+xrdb $HOME/.Xresources
+startxfce4 &amp;
+# vncserver
+</code></pre><p>Thus you could get a vnc based virt-manager runnable environment.</p><h3 id=43-pip-install-via-requirements>43. pip install via requirements</h3><p>Download via:</p><pre><code>apt-get update -y                                                                                                        
+apt-get install -y python-pip python3-pip                                                                                
+mkdir pip                                                                                                                
+cd pip/                                                                                                                  
+vi requirements.txt                                                                                                      
+pip install --download=`pwd` -r requirements.txt                                                                         
+pip3 install --download=`pwd` ruamel.yaml                                                                                
+tar czvf pip.tar.gz pip                                 
+</code></pre><p>Install offlinely via:</p><pre><code>pip install --no-index --find-links=`pwd` -r requirements.txt 
+pip3 install --no-index --find-links=`pwd` ruamel.yaml
+</code></pre><p>Examine via:</p><pre><code>ansible --version
+</code></pre><h3 id=44-download-163-music>44. download 163 music</h3><p>via a pip3 installed packages:</p><pre><code>pip3 install pymusic-dl
+music-dl -u https://music.163.com/#/song?id=502043537
+</code></pre><h3 id=45-ffmpeg-transform-to-mp4>45. ffmpeg transform to mp4</h3><p>via:</p><pre><code>ffmpeg -i IMG_3125.MOV -vcodec h264 -acodec mp2  video1.mp4
+</code></pre><h3 id=46-get-repository-of-ubuntu>46. Get repository of ubuntu</h3><p>switch back to official repository mode:</p><pre><code>$ cd /etc/apt/
+$ sudo wget https://gist.githubusercontent.com/h0bbel/4b28ede18d65c3527b11b12fa36aa8d1/raw/a4ab1c13a92171822215143b1e3b3eb6add7a78d/sources.list
+</code></pre><h3 id=47-rdesktop-to-different-port>47. rdesktop to different port</h3><p>via:</p><pre><code>$ rdesktop xxx.xxx.xxx.xxx:Port
+</code></pre><h3 id=48-promtail-debug>48. promtail debug</h3><p>Testing:</p><pre><code># curl -H &quot;Content-Type: application/json&quot; -XPOST -s &quot;http://localhost:3100/api/prom/push&quot; --data-raw '{&quot;streams&quot;: [{ &quot;labels&quot;: &quot;{foo=\&quot;bar\&quot;}&quot;, &quot;entries&quot;: [{ &quot;ts&quot;: &quot;2019-10-21T08:28:06.801064-04:00&quot;, &quot;line&quot;: &quot;fizzbuzz&quot; }] }]}'
+ # curl &quot;http://localhost:3100/ready&quot;
+</code></pre><h3 id=49-run-es-in-docker>49. run es in docker</h3><p>Run following command:</p><pre><code>sudo docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; -v `pwd`:/usr/share/elasticsearch/data elasticsearch:6.8.4
+
+</code></pre><h3 id=50-alerta-quickstart>50. alerta quickstart</h3><p>Via docker-compose:</p><pre><code>version: '2.1'
+services:
+  web:
+    image: alerta/alerta-web
+    ports:
+      - &quot;8080:8080&quot;
+    depends_on:
+      - db
+    environment:
+      - DEBUG=1  # remove this line to turn DEBUG off
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/monitoring
+      - AUTH_REQUIRED=True
+      - ADMIN_USERS=admin,admin@alerta.io,devops@alerta.io #default password: alerta
+      - PLUGINS=reject,blackout,normalise,enhance
+    restart: always
+  db:
+    image: postgres
+    volumes:
+      - ./pg-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: monitoring
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    restart: always
+</code></pre><p>Then visiti <code>localhost:8080</code>, to get the api key, write the configuration file:</p><pre><code># vim ~/.alerta.conf 
+[DEFAULT]
+endpoint = http://localhost:8080/api
+key = gaoweugowuegouVkJjzSbNwnod3wiRuywdrYfmoyB40GyJmk
+[profile production]
+endpoint = http://localhost:8080/api
+key = gaoweugowuegouVkJjzSbNwnod3wiRuywdrYfmoyB40GyJmk
+</code></pre><p>Then pip install the cli tools:</p><pre><code># sudo pip3 install alerta
+# alerta send -r web01 -e HttpError -g Web -s major --attributes region=&quot;EU&quot; --environment Production -S fuck
+</code></pre><p>Now in the website you will see following alert available:</p><p><img src=/images/2019_10_29_17_08_40_906x282.jpg alt=/images/2019_10_29_17_08_40_906x282.jpg></p><p>Next step I will setup the alerta together with netdata and prometheus.</p><h3 id=51-setuid-issue>51. setuid issue</h3><p>Someone changed the priviledge of <code>/usr/bin/sudo</code> on server, thus every user in <code>sudo</code> group could not
+switch to root user via <code>sudo bash</code>, the solution is via:</p><pre><code># su root
+# chmod u+s /usr/bin/sudo
+Or:
+# chmod 4755 /usr/bin/sudo
+</code></pre><h3 id=52-awesome-focus-highlight>52. awesome focus highlight</h3><p>Via changing the awesome theme color:</p><pre><code># sudo vim /usr/share/awesome/themes/default/theme.lua
+--theme.bg_focus      = &quot;#535d6c&quot;
+theme.bg_focus      = &quot;#14EEEE&quot;
+# echo 'awesome.restart()' | awesome-client
+</code></pre><h3 id=53-minikube-items>53. minikube items</h3><p>Notice the metrics-scraper:</p><pre><code>NAMESPACE              NAME                                         READY     STATUS    RESTARTS   AGE
+kube-system            coredns-5644d7b6d9-lqpv2                     1/1       Running   0          3m
+kube-system            coredns-5644d7b6d9-nrbcp                     1/1       Running   0          3m
+kube-system            etcd-minikube                                1/1       Running   0          2m
+kube-system            kube-addon-manager-minikube                  1/1       Running   0          2m
+kube-system            kube-apiserver-minikube                      1/1       Running   0          2m
+kube-system            kube-controller-manager-minikube             1/1       Running   0          2m
+kube-system            kube-proxy-2fx6d                             1/1       Running   0          3m
+kube-system            kube-scheduler-minikube                      1/1       Running   0          2m
+kube-system            nginx-ingress-controller-57bf9855c8-b5w68    1/1       Running   0          3m
+kube-system            storage-provisioner                          1/1       Running   0          3m
+kubernetes-dashboard   dashboard-metrics-scraper-76585494d8-bn2cb   1/1       Running   0          3m
+kubernetes-dashboard   kubernetes-dashboard-57f4cb4545-jgpqz        1/1       Running   0          3m
+</code></pre><h3 id=54-boomaga>54. boomaga</h3><p>Boomaga could combine several print jobs into one pdf file.</p><h3 id=55-xz-with-multiple-context>55. xz with multiple context</h3><p>Via <code>xz -T4 big.tar</code>, then you will get 400% speed of the single xz file.</p><h3 id=56-reactjs-quickstart>56. react.js quickstart</h3><p>With the npm version 6 we could start using react.js:</p><pre><code>$  curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+$ npm -v
+6.11.3
+$ npm init react-app my-app
+</code></pre><h3 id=57-quickly-redsock-libvirt>57. Quickly redsock libvirt</h3><p>Via following command:</p><pre><code>$ sudo sysctl -w net.ipv4.conf.all.route_localnet=1
+$ sudo iptables -t nat -A PREROUTING -p tcp -s 10.133.108.191/24 -j DNAT --to-destination 127.0.0.1:12345
+</code></pre><p>Then the subnet of your libvirtd will get to internet via redsocks.</p><h3 id=58-etchosts-issue>58. etchosts issue</h3><p>kubespray when encountering etchosts issue, by setting from dhcp to static ip and setup the route could solve the issue.</p><h3 id=59-1604-to-1804-kubespray-items>59. 1604 to 1804 kubespray items</h3><p>Manually resolve the package dependencies:</p><pre><code># apt-get install -y openssh-server update-motd parted build-essential telnet tcpdump python ebtables libgeoip1
+</code></pre><h3 id=60-destroy-all-running-libvirt-items>60. destroy all running libvirt items</h3><p>via :</p><pre><code>virsh list | sed -n '1,2!p' | head -n -1 | awk {'print $1'}
+</code></pre><h3 id=61-find-the-modified-timestamp>61. find the modified timestamp</h3><p>via find options:</p><pre><code>find . -printf &quot;%T@ %Tc %p\n&quot; | sort -n
+
+</code></pre><h3 id=62-centos-vagrant>62. CentOS vagrant</h3><p>vagrant for centos7 added following items:</p><pre><code># visudo
+vagrant ALL=(ALL) NOPASSWD:ALL
+Defaults:vagrant !requiretty
+</code></pre><h3 id=63-helmchart-nfs-client>63. helm/chart nfs-client</h3><p>via following command:</p><pre><code>$ helm install nfs-client-provisioner-1.2.8.tgz --set nfs.server=10.147.191.1 --set nfs.path=/media/sdb/k8snfs --set storageClass.defaultClass=true
+</code></pre><h3 id=64-nfsd-issue>64. nfsd issue</h3><p>When using nfsd, it defaultly reject the connections from NATed vm&rsquo;s request, cause the port is over 1024, so you have to add following parameters into the nfsd configuration:</p><pre><code># vim /etc/exports
+/var/nfs *(rw,sync,no_root_squash,no_subtree_check,insecure)
+/media/md0/nfs *(rw,sync,no_root_squash,no_subtree_check,insecure)
+
+</code></pre><p><code>insecure</code> let you accept connections >1024, thus your nfs client could connect to nfsd server.</p><h3 id=65-git-ignore-big-files>65. git ignore big files</h3><p>Get the whole size:</p><pre><code>$ find . -size +2M  | tr '\n' ' '
+xxxx
+$ du -ch xxxx
+</code></pre><p>Add the file list into <code>gitignore</code> file:</p><pre><code>$ find . -size +2M | cat &gt;&gt; .gitignore
+</code></pre><h3 id=66-trouble-shooting-on-metrics-server>66. trouble shooting on metrics-server</h3><p>With k8s 1.13.5, metrics-server could not startup with tls error,</p><pre><code>....
+ 1 customresource_discovery_controller.go:203] Starting DiscoveryController
+I0920 16:35:36.878076       1 log.go:172] http: TLS handshake error from 192.192.185.98:47446: EOF
+I0920 16:35:36.878360       1 log.go:172] http: TLS handshake error from 192.192.185.98:47460: EOF
+....
+</code></pre><p>Copy the right one from kubespray 2.11.0, the newer configuration for metrics-server work properly.</p><p>Examine:</p><pre><code># kubectl get apiservice | grep metrics
+v1beta1.metrics.k8s.io                  kube-system/metrics-server   True        29m
+</code></pre><h3 id=67-reinstall-netdata>67. Reinstall netdata</h3><p>When reinstalling, encounter dpkg-statoverride issue. solved via following:</p><pre><code># bash &lt;(curl -Ss https://my-netdata.io/kickstart.sh)
+# dpkg-statoverride --remove /var/lib/netdata/registry
+# bash &lt;(curl -Ss https://my-netdata.io/kickstart.sh)
+</code></pre><p>Now re-install and we could got the netdata installed again.</p><h3 id=68-display-pss-hirieachy>68. display ps&rsquo;s hirieachy</h3><p>via <code>ps auxf</code> you could see a process&rsquo;s father/son, etc.</p><h3 id=69-git-ignore-last-commit>69. git ignore last commit</h3><p>via following command:</p><pre><code>$ git reset --soft HEAD~1
+
+</code></pre><h3 id=70-forward-to-vm>70. forward to vm</h3><p>via following command:</p><pre><code>$ iptables -I FORWARD -o virbr1 -d  192.168.111.36 -j ACCEPT
+$ iptables -t nat -I PREROUTING -p tcp --dport 9867 -j DNAT --to 192.168.111.36:22
+
+</code></pre><h3 id=71-coredns-issue>71. coredns issue</h3><p>issue:</p><pre><code>[root@k8s-node-1 ~]# kubectl logs -f -n kube-system coredns-9d85fb698-tnrgn
+.:53
+2019-04-29T12:26:42.180Z [INFO] plugin/reload: Running configuration MD5 =
+1335ba7188be742fe37cd05805faa0fa
+2019-04-29T12:26:42.180Z [INFO] CoreDNS-1.5.0
+2019-04-29T12:26:42.180Z [INFO] linux/amd64, go1.12.2, e3f9a80
+CoreDNS-1.5.0
+linux/amd64, go1.12.2, e3f9a80
+2019-04-29T12:26:48.181Z [ERROR] plugin/errors: 2
+8373768935828175380.8715076686105595443. HINFO: read udp
+10.233.113.56:51809-&gt;10.233.0.3:53: i/o timeout
+2019-04-29T12:26:51.181Z [ERROR] plugin/errors: 2
+8373768935828175380.8715076686105595443. HINFO: read udp
+10.233.113.56:52463-&gt;10.233.0.3:53: i/o timeout
+2019-04-29T12:26:52.181Z [ERROR] plugin/errors: 2
+8373768935828175380.8715076686105595443. HINFO: read udp
+10.233.113.56:44654-&gt;10.233.0.3:53: i/o timeout
+2019-04-29T12:26:53.181Z [ERROR] plugin/errors: 2
+8373768935828175380.8715076686105595443. HINFO: read udp
+10.233.113.56:35028-&gt;10.233.0.3:53: i/o timeout
+2019-04-29T12:26:56.181Z [ERROR] plugin/errors: 2
+8373768935828175380.8715076686105595443. HINFO: read udp
+10.233.113.56:44331-&gt;10.233.0.3:53: i/o timeout
+2019-04-29T12:26:59.182Z [ERROR] plugin/errors: 2
+8373768935828175380.8715076686105595443. HINFO: read udp
+10.233.113.56:38640-&gt;10.233.0.3:53: i/o timeout
+2019-04-29T12:27:02.182Z [ERROR] plugin/errors: 2
+8373768935828175380.8715076686105595443. HINFO: read udp
+10.233.113.56:57424-&gt;10.233.0.3:53: i/o timeout
+2019-04-29T12:27:05.182Z [ERROR] plugin/errors: 2
+8373768935828175380.8715076686105595443. HINFO: read udp
+10.233.113.56:56166-&gt;10.233.0.3:53: i/o timeout
+2019-04-29T12:27:08.182Z [ERROR] plugin/errors: 2
+8373768935828175380.8715076686105595443. HINFO: read udp
+10.233.113.56:59509-&gt;10.233.0.3:53: i/o timeout
+2019-04-29T12:27:11.183Z [ERROR] plugin/errors: 2
+8373768935828175380.8715076686105595443. HINFO: read udp
+10.233.113.56:56157-&gt;10.233.0.3:53: i/o timeout
+</code></pre><p>Solved via:</p><pre><code>
+WARNING: IPtables FORWARD policy is DROP. Consider enabling traffic forwarding
+with: sudo iptables -P FORWARD ACCEPT
+
+fixing it worked for me
+</code></pre><h3 id=72-virt-manager-issue>72. virt-manager issue</h3><p>After upgrading to newest virt-manager(archlinux), vm could not boot for
+<code>no bootable devices</code>, solved via:</p><pre><code># virsh edit xxxxx
+Added:    
+
+      &lt;source file='/media/sda/ovirt/node1.qcow2' index='2'/&gt;
++      &lt;backingStore type='file' index='3'&gt;
++        &lt;format type='qcow2'/&gt;
++        &lt;source file='/media/sda/ovirt/Base/ovirtBase.qcow2'/&gt;
++        &lt;backingStore/&gt;
++      &lt;/backingStore&gt;
+
+</code></pre><p>Then normally bootup the vm, the vm works properly.</p><h3 id=73-vagrant-plugin-install-speedup>73. vagrant plugin install speedup</h3><p>via following command:</p><pre><code># vagrant plugin install vagrant-scp --plugin-clean-sources --plugin-source https://gems.ruby-china.com/
+</code></pre><h3 id=74-vagrant-with-debug>74. vagrant with debug</h3><p>via following command:</p><pre><code>VAGRANT_LOG=debug VAGRANT_DEFAULT_PROVIDER=libvirt vagrant up
+</code></pre><h3 id=75-tips-for-building-wopi>75. Tips for building wopi</h3><p>Bypass skip tests:</p><pre><code>mvn clean package -DskipTests
+</code></pre><h3 id=76-pip-mirror-in-china>76. pip mirror in china</h3><p>edit:</p><pre><code>mkdir ~/.pip
+cat &lt;&lt;EOF &gt; ~/.pip/pip.conf
+ [global]
+ trusted-host =  mirrors.aliyun.com
+ index-url = http://mirrors.aliyun.com/pypi/simple
+EOF
+</code></pre><h3 id=77-using-bridge-in-libvirtd>77. using bridge in libvirtd</h3><p>Create br and set br&rsquo;s parameter:</p><pre><code>$ sudo brctl addbr libvirt0
+$ sudo brctl setfd libvirt0 0
+</code></pre><p>Then specify the shared device to libvirt0.</p><h3 id=78-xrandr-for-rotating-screen>78. xrandr for rotating screen</h3><p>rotate left and reback to normal:</p><pre><code># xrandr --output HDMI-0   --rotate left --mode 2560x1440  --right-of eDP-1-1
+# xrandr --output HDMI-0   --rotate normal --mode 2560x1440  --right-of eDP-1-1
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/04/12/tipsonk8sscheduler/>TipsOnK8SScheduler</a></h1><span class=post-date>Apr 12, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=问题>问题</h3><p>文章来源:<br><a href=https://blog.csdn.net/horsefoot/article/details/51577402>https://blog.csdn.net/horsefoot/article/details/51577402</a></p><p><img src=/images/2019_04_12_23_25_30_1078x550.jpg alt=/images/2019_04_12_23_25_30_1078x550.jpg></p><p>印象中我没有见过K8S中有这样的调度策略，那这个博客的提法是从何而来？</p><h3 id=追溯>追溯</h3><p>Google关键字，看到这个比较类似：</p><p><img src=/images/2019_04_12_23_29_24_763x231.jpg alt=/images/2019_04_12_23_29_24_763x231.jpg></p><p>fabric8(一个基于k8s的CI/CD平台)里的条目, 时间维度是16年3月：</p><p><img src=/images/2019_04_12_23_30_49_749x248.jpg alt=/images/2019_04_12_23_30_49_749x248.jpg></p><p>内中条目:</p><p><img src=/images/2019_04_12_23_31_52_900x349.jpg alt=/images/2019_04_12_23_31_52_900x349.jpg></p><p>看来k8s的proposal文档中确实有过这个条目，继续用不同关键字搜索,
+找到一个相关issue:</p><p><img src=/images/2019_04_12_23_33_13_648x245.jpg alt=/images/2019_04_12_23_33_13_648x245.jpg></p><p>点进去阅读此issue:</p><p><img src=/images/2019_04_12_23_36_41_756x610.jpg alt=/images/2019_04_12_23_36_41_756x610.jpg></p><p>半成品状态：</p><p><img src=/images/2019_04_12_23_39_19_627x477.jpg alt=/images/2019_04_12_23_39_19_627x477.jpg></p><p>issue被re-assign给另外的开发者, 最终被关闭：</p><p><img src=/images/2019_04_12_23_43_03_783x432.jpg alt=/images/2019_04_12_23_43_03_783x432.jpg></p><p>回到其父issue:</p><p>问题提出:</p><p><img src=/images/2019_04_13_00_36_30_695x251.jpg alt=/images/2019_04_13_00_36_30_695x251.jpg></p><pre><code>当预测错误时，必须有反馈。特别是，我认为重要的是，
+超过其请求的Pod（由于不正确的初始预测）比其请求下的
+其他pod更可能被杀死。这样，“设置初始限制”系统的故障
+似乎会影响特定的pod，而不是随机的pod，这使得诊断非常困难。
+
+一种方法是使系统OOM情况下的终止概率与请求量成比例。
+ @AnanyaKumar @vishh目前的实施有没有这个属性？
+</code></pre><p><img src=/images/2019_04_13_00_23_35_775x634.jpg alt=/images/2019_04_13_00_23_35_775x634.jpg></p><p>以上讨论解释了为何设置初始资源用量会带来更多问题：</p><pre><code>@erictune我看到你的观点，我同意设置限制会解决你的情况。
+ 另一方面，我可以想象一些其他情况，它将带来更多的麻烦。
+ 特别是当预先估计错误的时候，用户会观察到调度程序将意
+外杀死他的容器时。 因此，对资源的分配，采用设置限制的
+方式会带来更高的可靠性，我们无法从一开始就保证它。
+
+我认为每个人都同意设置请求(Request)应该改善整体体验，
+这可能不适用于设置限制(Limits)。 从长远来看，我们肯
+定想要设置两者，但我只会在第一个版本中设置Request（可
+能与v1.1不同），从用户收集一些反馈，然后在我们调整算法
+后最终添加设置限制。
+
+@vishh如果有两个容器超出他们的要求：哪一个将被杀死？ 
+超过请求'更多'或随机的一个？
+</code></pre><p>至此，即可以看到，作者文章中的提法应该是理解错误了，使用7天/30天等历史数据预估资源使用只是为了完成<code>Vertical pod auto-sizer</code>这个特性的开发，而提出的一种备选方案。</p><p>作者可能当时仅仅是看了Kubernetes社区开发中的一个开发特性的建议文档，就认为Kubernetes拥有了"预测资源需求量"的功能，事实上K8s的调度引擎从来不会去预估资源需求量。</p><p>&ldquo;vertical pod auto-sizer"这一特性一直到18年底才进入到alpha阶段，vpa特性的实现也不再是依靠16年时定义而实现。 在作者写文章的2016年，vpa试图根据当时用于收集容器指标的influxdb来实现预估代码，结果失败了；而influxdb+heapster应该是18年就被metric
+server所替代。当前处于alpha阶段的vpa特性也就依赖于metric server而实现。我们可以看到以下列出的代码变更：</p><p>含有文章中提法的代码目录于v1.1版中被引入，至v1.11版被删除。</p><p><img src=/images/2019_04_13_00_55_36_602x320.jpg alt=/images/2019_04_13_00_55_36_602x320.jpg></p><p>v1.10版后被从主线删除：</p><p><img src=/images/2019_04_13_00_56_54_564x542.jpg alt=/images/2019_04_13_00_56_54_564x542.jpg></p><h3 id=总结>总结</h3><p>从对issue的跟踪来看，应该是作者理解错了。预先估计资源用量从来不是Kubernetes定义资源需求的正确方法。<br>对于Kubernetes调度讲得比较好的一篇文章如下：</p><p><a href=http://dockone.io/article/2885>http://dockone.io/article/2885</a></p><p>官方对资源限制的参考页面如下：</p><p><a href=https://kubernetes.io/zh/docs/tasks/administer-cluster/cpu-memory-limit/>https://kubernetes.io/zh/docs/tasks/administer-cluster/cpu-memory-limit/</a><br>如果需要在生产环境中优化资源的使用，可以参考：</p><p><a href=https://www.yangcs.net/posts/optimizing-kubernetes-resource-allocation-production/>https://www.yangcs.net/posts/optimizing-kubernetes-resource-allocation-production/</a></p><h3 id=参考>参考</h3><p>Vertical pod auto-sizer, issue #10782:</p><p><a href=https://github.com/kubernetes/kubernetes/issues/10782>https://github.com/kubernetes/kubernetes/issues/10782</a></p><p>Setting Initial Resources, issue #12149:</p><p><a href=https://github.com/kubernetes/kubernetes/issues/12149>https://github.com/kubernetes/kubernetes/issues/12149</a></p><p>initial-resources.md:</p><p><a href=https://github.com/fabric8io/kansible/blob/master/vendor/k8s.io/kubernetes/docs/proposals/initial-resources.md>https://github.com/fabric8io/kansible/blob/master/vendor/k8s.io/kubernetes/docs/proposals/initial-resources.md</a></p><p>vpa 官方仓库：</p><p><a href=https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler>https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler</a></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/04/11/quicklyofflinehelmcharts/>QuicklyOfflineHelmCharts</a></h1><span class=post-date>Apr 11, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Following is the tips:</p><p>Create the minikube environment, and enable the helm/charts:</p><pre><code>#  minikube start --cpus 4 --memory 8192 --disk-size 60g
 # helm init
 </code></pre><p>Download the prometheus-operator from the official github repository, use
 <code>dependency update</code> for updating the dependency locally:</p><pre><code># cd prometheus-operator
@@ -81,81 +455,4 @@ ipv6 address via:</p><pre><code># ifconfig | grep inet6
 &quot;prefer_ipv6&quot;: true
 }
 
-</code></pre><p>Now restart the service of sss</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/03/22/tipsonforemanoncentos76/>TipsOnForemanOnCentOS76</a></h1><span class=post-date>Mar 22, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=prerequites>Prerequites</h3><p>System infos:</p><pre><code># cat /etc/redhat-release 
-CentOS Linux release 7.6.1810 (Core)
-# vi /etc/yum.conf
-keepcache=1
-#### Configure yum.conf and install some packages
-# yum install -y wget vim net-tools gcc
-#  vim /etc/seliconfig/config
-SELINUX=disabled
-# systemctl diable firewalld
-</code></pre><h3 id=install-foreman>Install foreman</h3><p>Configure host first:</p><pre><code># hostnamectl set-hostname foreman.fuck.com
-# vim /etc/hosts
-10.192.192.2	foreman.fuck.com
-</code></pre><p>Networking configuration like following(using nmtui):</p><p><img src=/images/2019_03_22_17_42_55_626x250.jpg alt=/images/2019_03_22_17_42_55_626x250.jpg></p><p>Install via:</p><pre><code># sudo yum -y install https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm
-# wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
-# sudo yum -y install https://yum.theforeman.org/releases/1.21/el7/x86_64/foreman-release.rpm
-# sudo yum -y install foreman-installer
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/03/14/foremantips/>ForemanTips</a></h1><span class=post-date>Mar 14, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=system>System</h3><p>Install Ubuntu 18.04, 4 Core/ 4G memory, 50 G disk.</p><p>Install with basic sshd support.</p><p><img src=/images/2019_03_14_15_20_12_676x259.jpg alt=/images/2019_03_14_15_20_12_676x259.jpg></p><p>Network planning:<br>10.192.189.0/24, no dhcp.</p><h3 id=network>Network</h3><p>Configure the networking via following commands:</p><pre><code># vim /etc/netplan/01-netcfg.yaml
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    enp1s0:
-      dhcp4: no
-      addresses: [10.192.189.2/24]
-      gateway4: 10.192.189.1
-      nameservers:
-        addresses: [223.5.5.5,180.76.76.76]
-
-# netplan --debug apply
-# systemctl disable systemd-resolved.service
-# systemctl stop systemd-resolved.service
-# rm -f /etc/resolv.conf 
-# echo nameserver 223.5.5.5&gt;/etc/resolv.conf
-</code></pre><p>Configure the hostname:</p><pre><code># sudo hostnamectl set-hostname foreman.fuck.com
-# echo &quot;10.192.189.2 foreman.fuck.com&quot; | sudo tee -a /etc/hosts
-</code></pre><h3 id=install-foreman>Install foreman</h3><p>Install foreman via following commands:</p><pre><code># hostnamectl set-hostname foreman.fuck.com
-# echo &quot;10.192.189.2 foreman.fuck.com&quot;| sudo tee -a /etc/hosts
-# apt-get update
-# apt-get update
-# sudo apt-get install ca-certificates
-# wget https://apt.puppetlabs.com/puppet5-release-bionic.deb
-# sudo dpkg -i puppet5-release-bionic.deb
-# rm puppet5-release-bionic.deb
-# echo &quot;deb http://deb.theforeman.org/ bionic 1.19&quot; | sudo tee /etc/apt/sources.list.d/foreman.list
-# echo &quot;deb http://deb.theforeman.org/ plugins 1.19&quot; | sudo tee -a /etc/apt/sources.list.d/foreman.list
-# apt-get -y install ca-certificates
-# wget -q https://deb.theforeman.org/pubkey.gpg -O- | sudo apt-key add -
-# apt-get update
-# sudo apt-get install foreman-installer
-# foreman-installer
-# foreman-installer  --enable-foreman-proxy  --foreman-proxy-tftp=true  --foreman-proxy-tftp-servername=10.192.189.2  --foreman-proxy-dhcp=true  --foreman-proxy-dhcp-interface=eth0  --foreman-proxy-dhcp-gateway=10.192.189.1  --foreman-proxy-dhcp-nameservers=&quot;10.192.189.2&quot;  --foreman-proxy-dhcp-range=&quot;10.192.189.100 10.192.189.200&quot;  --foreman-proxy-dns=true  --foreman-proxy-dns-interface=eth0  --foreman-proxy-dns-zone=fuck.com  --foreman-proxy-dns-reverse=189.192.10.in-addr.arpa  --foreman-proxy-dns-forwarders=8.8.8.8  --foreman-proxy-foreman-base-url=https://foreman.fuck.com  --foreman-proxy-oauth-consumer-key=ceqCFsvS8qrVRv8W3pb5yWNs6Prt9iZS  --foreman-proxy-oauth-consumer-secret=aYCHnyCzRXFuuy4nNXWthBKhPiNdfzJt
-</code></pre><p>Refers to:</p><p><img src=https://computingforgeeks.com/how-to-install-foreman-on-ubuntu-18-04-lts-bionic-beaver/ alt=https://computingforgeeks.com/how-to-install-foreman-on-ubuntu-18-04-lts-bionic-beaver/></p><p>Status:</p><p><img src=/images/2019_03_15_23_15_44_854x736.jpg alt=/images/2019_03_15_23_15_44_854x736.jpg></p><p>After a while, you will see the server has been detected and displayed in the
-webpage:</p><p><img src=/images/2019_03_15_23_37_32_875x410.jpg alt=/images/2019_03_15_23_37_32_875x410.jpg></p><h3 id=configuration-for-centos7>Configuration for CentOS7</h3><p>Download iso from mirror:</p><pre><code># wget http://mirrors.163.com/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso
-# mount -t iso9660 ./CentOS-7-x86_64-Minimal-1810.iso /mnt
-# cp -arv /mnt/* ./website
-</code></pre><p>Create docker based website:</p><pre><code># apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common
-# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-# apt-key fingerprint 0EBFCD88
-# add-apt-repository \
-   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable&quot;
-# apt-get update &amp;&amp; apt-get install -y docker-ce
-# docker pull jrelva/nginx-autoindex:latest
-# mkdir -p /opt/web
-# docker run --name docker-nginx -p 7888:80 -d --restart=always -v /opt/web:/usr/share/nginx/html jrelva/nginx-autoindex
-</code></pre><p>Host-> Installation Media, add new iso:</p><p><img src=/images/2019_03_15_23_56_29_649x328.jpg alt=/images/2019_03_15_23_56_29_649x328.jpg></p><p>Host-> Operating System, Create new os:</p><p><img src=/images/2019_03_15_23_57_21_872x270.jpg alt=/images/2019_03_15_23_57_21_872x270.jpg></p><p>Filled the description of the new os:</p><p><img src=/images/2019_03_15_23_58_12_551x583.jpg alt=/images/2019_03_15_23_58_12_551x583.jpg></p><p>Choose x86_64:</p><p><img src=/images/2019_03_15_23_58_45_477x425.jpg alt=/images/2019_03_15_23_58_45_477x425.jpg></p><p>Partition Tables we choose Kickstart default:</p><p><img src=/images/2019_03_15_23_59_12_569x363.jpg alt=/images/2019_03_15_23_59_12_569x363.jpg></p><p>Associate the installation media with our centos 7.6:</p><p><img src=/images/2019_03_16_00_00_29_545x369.jpg alt=/images/2019_03_16_00_00_29_545x369.jpg></p><p>Click submit, later we will choose template for provision.</p><p>Host-> Provision Templates, choose following templates and associate with
-CentOS7_x86_64:</p><p><img src=/images/2019_03_16_00_02_13_772x517.jpg alt=/images/2019_03_16_00_02_13_772x517.jpg></p><pre><code>kickstart default finish
-kickstart default
-kickstart default ipxe
-kickstart default pxelinux
-kickstart default use data
-</code></pre><p>Associate with template:</p><p><img src=/images/2019_03_16_00_04_55_609x330.jpg alt=/images/2019_03_16_00_04_55_609x330.jpg></p><p>Next we will configure the subnet and the foreman-proxy items.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/61/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/61/>61</a></li><li class="page-item active"><a class=page-link href=/page/62/>62</a></li><li class=page-item><a class=page-link href=/page/63/>63</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/63/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Now restart the service of sss</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/61/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/61/>61</a></li><li class="page-item active"><a class=page-link href=/page/62/>62</a></li><li class=page-item><a class=page-link href=/page/63/>63</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/63/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
