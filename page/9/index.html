@@ -345,6 +345,14 @@ incus config device add fogincuschinese myport67udp proxy listen=udp:0.0.0.0:67 
 | incusbr0 | macvlan  | YES     |      |      |             | 0       | CREATED |
 +----------+----------+---------+------+------+-------------+---------+---------+
 
+</code></pre><h3 id=55-incus-instance-network>55. incus instance network</h3><p>via:</p><pre><code># cat /etc/systemd/network/eth0.network 
+[Match]
+Name=eth0
+
+[Network]
+Address=10.17.18.34/24
+Gateway=10.17.18.1
+DNS=223.5.5.5
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
 cd Fooocus-MRE
 python3 -m venv fooocus_env
