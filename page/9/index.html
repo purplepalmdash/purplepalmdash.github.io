@@ -361,6 +361,14 @@ HKEY_LOCAL_MACHINE\SYSTEM\MountedDevices
 
 这个安装器可隐藏指定区 http://bbs.wuyou.net/forum.php?m ... 466&amp;ordertype=1
 
+</code></pre><h3 id=57-add-user-into-sudo>57. add user into sudo</h3><p>via:</p><pre><code>usermod -aG sudo xxx
+</code></pre><h3 id=58-disable-debian-grub-picture>58. disable debian grub picture</h3><p>via:</p><pre><code>mv /usr/share/images/desktop-base/desktop-grub.png /usr/share/images/desktop-base/desktop-grub.png.bak
+</code></pre><p>Edit the configuration of grub:</p><pre><code>GRUB_DEFAULT=&quot;Ventoy&quot;
+GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT=1
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet&quot;
+GRUB_CMDLINE_LINUX=&quot;&quot;
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
 cd Fooocus-MRE
 python3 -m venv fooocus_env
