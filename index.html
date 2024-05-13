@@ -38,6 +38,13 @@ Block 1, CTA-861 Extension Block:
     VIC  31:  1920x1080   50.000000 Hz  16:9     56.250 kHz    148.500000 MHz
 Checksum: 0x95
 
+</code></pre><p>Dmesg output:</p><pre><code>$ sudo dmesg | grep edid
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-6.1.0-18-amd64 root=UUID=f1fa5be7-1a17-46e3-ac0d-ab936027037e ro quiet drm.edid_firmware=Virtual-1:edid/edidno1080.bin
+[    0.014022] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-6.1.0-18-amd64 root=UUID=f1fa5be7-1a17-46e3-ac0d-ab936027037e ro quiet drm.edid_firmware=Virtual-1:edid/edidno1080.bin
+[    0.635432] [drm] features: -virgl +edid -resource_blob -host_visible
+[    0.635877] platform Virtual-1: firmware: direct-loading firmware edid/edidno1080.bin
+[    0.635885] [drm] Got external EDID base block and 1 extension from &quot;edid/edidno1080.bin&quot; for connector &quot;Virtual-1&quot;
+
 </code></pre><p><img src=/images/2024_05_13_10_31_17_647x580.jpg alt=/images/2024_05_13_10_31_17_647x580.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/05/08/workingtipsonincusbasedfogserver/>WorkingTipsOnIncusBasedFogServer</a></h1><span class=post-date>May 8, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-dhcpd服务器考虑>1. dhcpd服务器考虑</h3><h4 id=11-dhcpd在容器内出现的问题>1.1 dhcpd在容器内出现的问题</h4><p>因为incus内部使用的是私有网络，因此一旦将<code>isc-dhcp-server</code>启动在容器内，则只能监听容器内部的地址，而一旦更改子网定义为主机网络侧，则会出现dhcpd.conf检查错误:</p><pre><code>5月 08 08:58:44 fogincuschinese dhcpd[2532]: No subnet declaration for eth0 (10.147.148.100).
 5月 08 08:58:44 fogincuschinese dhcpd[2532]: ** Ignoring requests on eth0.  If this is not what
 5月 08 08:58:44 fogincuschinese dhcpd[2532]:    you want, please write a subnet declaration
