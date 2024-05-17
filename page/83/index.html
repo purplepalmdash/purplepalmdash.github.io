@@ -1,5 +1,51 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/18/storagepathusinglocalpath/>StoragePathUsingLocalPath</a></h1><span class=post-date>Jan 18, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>搭建monocular的时候，从其mongodb的charts变量定义文件<code>values.yaml</code>中，可以看到其对persistence的支持，即对持久化存储的支持：</p><pre><code>## Enable persistence using Persistent Volume Claims
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/18/workingtipsonhelmpackageing/>WorkingtipsOnhelmpackageing</a></h1><span class=post-date>Jan 18, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=change-the-tgz-files>Change the tgz files</h3><p>Via following scripts:</p><pre><code>for i in `ls *.tgz`
+do
+	echo $i
+	tar xzvf $i
+	mv $i $i.bak
+	cd wordpress
+	sed -i 's|serviceType: LoadBalancer|serviceType: ClusterIP|g' values.yaml
+	cd ..
+	helm package wordpress
+	rm -rf wordpress
+done
+</code></pre><p>Then copy all of the helmed tgz file to a new place.</p><h3 id=get-sha256sum-value>Get sha256sum value</h3><p>Get the sha256sum,</p><pre><code>sha256sum * | tac | awk {'print $1'}&gt;sha256sum.txt
+</code></pre><p>manually adjust its sequencees. Then form a file like following:</p><pre><code>    digest: 6dbf2c9394e216e691116ea5135cd5c83b55ce1bd199f23ab40ec6a8c426a7ea
+    digest: a017ad98dc9f727ea6c422be74f077557b8af35470033b61a7c7c11d6b2a1194
+    digest: fad50a4f5dcae6ce8af05634cb14fadb19b2018fe30521669d0e19a68192d2ec
+    digest: ae45690c85c733bd66db97cd859c40174c88932ff8e944852afe762dc62c47d0
+    digest: 5528dfda0b68cf7f00eecab4b56933e6935a01d680989f6e690a281492efce64
+    digest: 071f4af604b580c13ec1b53bf5ebf898d3d198bbecd616d309d71d94d7635b25
+    digest: 12de12908f3c8b61a1f68ea529a06ad402903bd4dea458cf335bf8e9dda3f290
+
+.......
+</code></pre><h3 id=get-the-indexyaml-digest>Get the index.yaml digest</h3><p>Via following command:</p><pre><code># cat index.yaml | grep digest&gt;kkkk.txt
+# cat kkkk.txt| more
+    digest: b33a1646e90963a387406f4857f312476b4615222a36e354f7b9e62a2971ce9e
+    digest: d54b28981ce97485a59d78acd43182e6d275efd451245c3420129d3cf2b1bfb5
+    digest: 88337f823951e048118e44dc7b7e1e6508dcac138612edff13bc63a3ec90a997
+    digest: 07f2323bc6559c973bd4f8deb3b5c83acb99c5aac93d2135b4f1690bf9a3be85
+    digest: 26d71a30ee0f845ff45854d96a69f18ded56038c473f13dcc43a572a7e9cd92d
+</code></pre><h3 id=replace-all-of-the-digest>Replace all of the digest</h3><p>Python scripts for doing this thing:</p><pre><code>findlines = open('originsha256sum.txt').read().split('\n')
+replacelines = open('modifiedsha256sum.txt').read().split('\n')
+find_replace = dict(zip(findlines, replacelines))
+
+with open('index.yaml') as data:
+    with open('newindex.yaml', 'w') as new_data:
+        for line in data:
+            for key in find_replace:
+                if key in line:
+                    line = line.replace(key, find_replace[key])
+            new_data.write(line)
+
+new_data.close()
+data.close()
+
+</code></pre><p>Using <code>python2 replace.py</code> you could get a new <code>newindex.yaml</code>, use this one
+for replacing your original <code>index.yaml</code> in your web-server, and also replace
+all of the charts file with your generated tgz files.</p><p>Now deploy the apps, you will get an ClusterIP equited rather than load
+balance equipped apps.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/18/storagepathusinglocalpath/>StoragePathUsingLocalPath</a></h1><span class=post-date>Jan 18, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>搭建monocular的时候，从其mongodb的charts变量定义文件<code>values.yaml</code>中，可以看到其对persistence的支持，即对持久化存储的支持：</p><pre><code>## Enable persistence using Persistent Volume Claims
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
 ##
 persistence:
@@ -131,50 +177,4 @@ charts  Chart.yaml  nginxfirst-0.1.0.tgz  templates  values.yaml  values.yaml~
 [INFO] Chart.yaml: icon is recommended
 
 1 chart(s) linted, no failures
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/12/troubleshootingonhelm/>TroubleShootingOnhelm</a></h1><span class=post-date>Jan 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>这几天在试用helm，很有意思的包管理系统，让容器解决方案的落地门槛一下降了很多。然后我在搭建前端可视化的仓库解决方案，用到了monocular,
-百思不得其解的是，在minikube上可以顺利部署成功的monocular,
-在自己搭建的基于Ubuntu搭建的k8s集群上就是不行。</p><p>解决方法： 用<code>kubectl get pods</code>来看，总是mongodb部署不成功。</p><p>用kubernetes dashboard查看pod失败的原因在与persistence volume mount不成功。</p><p>在minikube上用<code>kubectl get pv</code>和<code>kubectl get pvc</code>是可以看到完整的结果的，而且可以看到它使用的是hostpath的格式。</p><p>下载monocular的charts到本地，查看目录结构:</p><pre><code># helm fetch monocular/monocular
-# tree
-.
-├── charts
-│   └── mongodb
-│       ├── Chart.yaml
-│       ├── README.md
-│       ├── templates
-│       │   ├── deployment.yaml
-│       │   ├── _helpers.tpl
-│       │   ├── NOTES.txt
-│       │   ├── pvc.yaml
-│       │   ├── secrets.yaml
-│       │   └── svc.yaml
-│       └── values.yaml
-├── Chart.yaml
-├── README.md
-├── requirements.lock
-
-</code></pre><p>而后我们查看charts里关于持久化存储的声明，发现是在charts/mongodb下所设置的，</p><pre><code># cat values.yaml  | grep -i persistence -A5
-    ## Enable persistence using Persistent Volume Claims
-    ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
-    ##
-    persistence:
-      enabled: true
-      ## mongodb data Persistent Volume Storage Cla
-</code></pre><p>于是我们用以下的命令来重新安装此包:</p><pre><code># helm ls
-.... // panda stands for the installed helm instance
-# helm delete panda
-# helm install --name=monkey --set &quot;persistence.enabled=false,mongodb.persistence.enabled=false&quot;  monocular/monocular
-</code></pre><p>现在刷新系统，发现已经安装成功了:</p><pre><code># kubectl get pods
-NAME                                                        READY     STATUS    RESTARTS   AGE
-monkey-mongodb-66fd888d4-k66tg                              1/1       Running   0          19m
-monkey-monocular-api-5fd987957-rtmqq                        1/1       Running   6          19m
-monkey-monocular-api-5fd987957-wqxds                        1/1       Running   6          19m
-monkey-monocular-prerender-6b7cb5cc98-gxs8b                 1/1       Running   0          19m
-monkey-monocular-ui-8c776fd89-5hbcg                         1/1       Running   0          19m
-monkey-monocular-ui-8c776fd89-gz8jm                         1/1       Running   0          19m
-my-release-nginx-ingress-controller-74c748b9fb-9xtfv        1/1       Running   7          17h
-my-release-nginx-ingress-default-backend-64f764b667-gxkht   1/1       Running   4          17h
-# kubectl get ingress
-NAME               HOSTS     ADDRESS         PORTS     AGE
-monkey-monocular   *         10.15.205.200   80        20m
-</code></pre><p>打开网页，发现可以访问到monocular, 然而其charts列表暂时无法显示， why?</p><p>迅速部署应用，避免每次重新拉取镜像：</p><pre><code># helm install --name=tiger --set &quot;persistence.enabled=false,mongodb.persistence.enabled=false,pullPolicy=IfNotPresent,api.image.pullPolicy=IfNotPresent,ui.image.pullPolicy=IfNotPresent,prerender.image.pullPolicy=IfNotPresent&quot; monocular/monocular
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/82/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/82/>82</a></li><li class="page-item active"><a class=page-link href=/page/83/>83</a></li><li class=page-item><a class=page-link href=/page/84/>84</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/84/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/82/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/82/>82</a></li><li class="page-item active"><a class=page-link href=/page/83/>83</a></li><li class=page-item><a class=page-link href=/page/84/>84</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/240/>240</a></li><li class=page-item><a href=/page/84/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/240/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

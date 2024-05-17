@@ -1,5 +1,14 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/04/19/workingtipsonx11spice/>WorkingTipsOnx11spice</a></h1><span class=post-date>Apr 19, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation-steps>Installation Steps</h3><p>Install some necessary packages for building:</p><pre><code>$ sudo apt-get install -y build-essential autoconf xutils-dev libtool libgtk-3-dev libspice-server-dev build-essential
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/04/24/autopingopenwrt/>AutoPingOpenWRT</a></h1><span class=post-date>Apr 24, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>坐标广州，家里申请的公网IP地址如果隔段时间不使用的话会被回收，每次回收后都要打电话弄回来，如何自动的让公网IP不被回收呢，就需要每次从外部Ping或者Get某个服务。下面是实现步骤。</p><h3 id=前置条件>前置条件</h3><p>Call 10000, 人工服务，要求光猫上绑定公网IP,理由是家里装监控需要用到。</p><h3 id=光猫设置>光猫设置</h3><p>光猫上设置端口映射，如12222端口映射到某台OpenWRT的22端口.</p><h3 id=openwrt设备设置>OpenWRT设备设置</h3><p>OpenWRT的dropbear设置ssh key:</p><pre><code>cd /root/.ssh
+dropbearkey -t rsa -f ~/.ssh/id_rsa
+dropbearkey -y -f ~/.ssh/id_rsa | grep &quot;^ssh-rsa &quot; &gt;&gt; authorized_keys
+</code></pre><p>拷贝<code>authorized_keys</code>到远端vps的<code>authorized_keys</code>文件中，由此实现无密码登陆。</p><h3 id=撰写无码验证脚本>撰写无码验证脚本</h3><p>撰写<code>/overlay/remote.sh</code>文件如下:</p><pre><code>#!/bin/sh
+pIP=`wget -qO - http://icanhazip.com`
+ssh -i /root/.ssh/id_rsa -p2xxxx root@1x.xx.xx.xx &quot;ssh -p12222 -o StrictHostKeyChecking=no root@$pIP 'date'| tee /root/log.txt&quot;
+</code></pre><p>其中<code>1x.xx.xx.xx</code>为远端vps地址, <code>2xxxx</code>为远端vps的ssh端口。</p><pre><code># chmod 777 /overlay/remote.sh
+</code></pre><h3 id=openwrt-crontab>OpenWRT crontab</h3><p>编辑crontab任务如下:</p><pre><code># crontab -e
+@hourly /overlay/remote.sh
+</code></pre><h3 id=结论>结论</h3><p>由此实现了OpenWRT路由器上发起的每一个小时通过远程vps联会自己的公网地址上暴露的IP端口，由此可以保证公网IP永不过期.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/04/19/workingtipsonx11spice/>WorkingTipsOnx11spice</a></h1><span class=post-date>Apr 19, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation-steps>Installation Steps</h3><p>Install some necessary packages for building:</p><pre><code>$ sudo apt-get install -y build-essential autoconf xutils-dev libtool libgtk-3-dev libspice-server-dev build-essential
 $ apt-cache search xcb | awk {'print $1'} | xargs -I % sudo apt-get install -y %
 $ ./autogen.sh
 $ ./configure --prefix=/usr
@@ -377,107 +386,4 @@ Networking support -&gt; Networking options -&gt; Network packet filtering frame
 Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Core Netfilter configuration -&gt;  &quot;control group&quot; address type match support
 File Systems -&gt; Overlay filesystem support
 Device Driver -&gt; Android -&gt;  Android Binderfs filesystem
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/02/05/runredroidonandroidx86/>RunRedroidOnAndroidX86</a></h1><span class=post-date>Feb 5, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>This guideline shows how to run redroid on Android-x86.</p><h3 id=introduction>Introduction</h3><p>Redroid:</p><blockquote><p>ReDroid (Remote anDroid) is a GPU accelerated AIC (Android In Container) solution. You can boot many instances in Linux host (Docker, podman, k8s etc.). ReDroid supports both arm64 and amd64 architectures. ReDroid is suitable for Cloud Gaming, VMI (Virtual Mobile Infrastructure), Automation Test and more
-<a href=https://github.com/remote-android/redroid-doc#overview>https://github.com/remote-android/redroid-doc#overview</a></p></blockquote><p>Android-x86:</p><blockquote><p>Run Android on your PC. This is a project to port Android Open Source Project to x86 platform, formerly known as &ldquo;patch hosting for android x86 support&rdquo;.<br><a href=https://www.android-x86.org/>https://www.android-x86.org/</a></p></blockquote><h3 id=building-android-x86>Building Android-x86</h3><p>We use <code>pie</code>(based on aosp9) for startup:</p><pre><code># mkdir android-x86
-# cd android-x86
-# repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b pie-x86
-# repo sync --no-tags --no-clone-bundle -j18
-</code></pre><p>Or:</p><pre><code>repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b pie-x86 -m android-x86-9.0-r2.xml
-repo sync --no-tags --no-clone-bundle
-</code></pre><p>repo size:</p><pre><code># du -hs android-x86/
-79G	android-x86/
-# ls android-x86/
-Android.bp  bionic    bootstrap.bash  compatibility  dalvik       device    frameworks  kernel   libnativehelper  packages  platform_testing  sdk     test
-art         bootable  build           cts            development  external  hardware    libcore  Makefile         pdk       prebuilts         system  tools
-</code></pre><p>Make modification for rootdir, the aim is for enable binderfs:</p><pre><code># vim ./system/core/rootdir/init.rc
-    mount configfs none /config nodev noexec nosuid
-    chmod 0770 /config/sdcardfs
-    chown system package_info /config/sdcardfs
-
-+    # Mount binderfs
-+    mkdir /dev/binderfs
-+    mount binder binder /dev/binderfs stats=global
-+    chmod 0755 /dev/binderfs
-+ 
-+    # Mount fusectl
-+    mount fusectl none /sys/fs/fuse/connections
-+ 
-+    symlink /dev/binderfs/binder /dev/binder                                            
-+    symlink /dev/binderfs/hwbinder /dev/hwbinder
-+    symlink /dev/binderfs/vndbinder /dev/vndbinder
-+ 
-+    chmod 0666 /dev/binderfs/hwbinder
-+    chmod 0666 /dev/binderfs/binder
-+    chmod 0666 /dev/binderfs/vndbinder
-</code></pre><p>Build via:</p><pre><code># . build/envsetup.sh; lunch android_x86_64-userdebug
-# make iso_img TARGET_PRODUCT=android_x86_64 -j128
-</code></pre><p>Examine the build out iso files:</p><pre><code># ls -l -h out/target/product/x86_64/android_x86_64.iso
--rw-r--r-- 1 root root 725M Feb  5 02:02 out/target/product/x86_64/android_x86_64.iso
-</code></pre><h3 id=customization-kernel>Customization kernel</h3><p>customize the kernel via(See last section kernel configuration):</p><pre><code># cd kernel
-# make android-x86_64_defconfig
-# make menuconfig
-##### After make customization
-# cp arch/x86/configs/android-x86_64_defconfig arch/x86/configs/android-x86_64_defconfig.back
-# cp .config arch/x86/configs/android-x86_64_defconfig 
-</code></pre><p>Re-build the kernel and re-gen iso:</p><pre><code># cd kernel
-# make mrproper
-# cd ..
-# . build/envsetup.sh; lunch android_x86_64-userdebug
-# rm $OUT/obj/kernel/arch/x86/boot/bzImage
-# make iso_img TARGET_PRODUCT=android_x86_64 -j128
-</code></pre><h3 id=android-x86-installation>Android-x86 Installation</h3><p>Install Android-x86 in vm:</p><p><img src=/images/2022_02_05_16_38_45_562x474.jpg alt=/images/2022_02_05_16_38_45_562x474.jpg></p><p>Choose Partition:</p><p><img src=/images/2022_02_05_16_39_12_661x200.jpg alt=/images/2022_02_05_16_39_12_661x200.jpg></p><p>Choose GPT or not:</p><p><img src=/images/2022_02_05_16_56_29_367x174.jpg alt=/images/2022_02_05_16_56_29_367x174.jpg></p><p>cfdisk:</p><p><img src=/images/2022_02_05_17_00_19_740x423.jpg alt=/images/2022_02_05_17_00_19_740x423.jpg></p><p>create 200 GB primary disk:</p><p><img src=/images/2022_02_05_17_03_04_714x415.jpg alt=/images/2022_02_05_17_03_04_714x415.jpg></p><p>After write and quit, Choose partition:</p><p><img src=/images/2022_02_05_17_04_37_673x346.jpg alt=/images/2022_02_05_17_04_37_673x346.jpg></p><p>Format to ext4 format:</p><p><img src=/images/2022_02_05_17_05_03_534x174.jpg alt=/images/2022_02_05_17_05_03_534x174.jpg></p><p>Confirm:</p><p><img src=/images/2022_02_05_17_05_56_535x166.jpg alt=/images/2022_02_05_17_05_56_535x166.jpg></p><p>Formatting:</p><p><img src=/images/2022_02_05_17_06_17_642x152.jpg alt=/images/2022_02_05_17_06_17_642x152.jpg></p><p>Confirm:</p><p><img src=/images/2022_02_05_17_06_39_436x131.jpg alt=/images/2022_02_05_17_06_39_436x131.jpg></p><p>Read/Write:</p><p><img src=/images/2022_02_05_17_07_09_554x170.jpg alt=/images/2022_02_05_17_07_09_554x170.jpg></p><p>Installing status:</p><p><img src=/images/2022_02_05_17_07_19_642x156.jpg alt=/images/2022_02_05_17_07_19_642x156.jpg></p><p>Choose Reboot:</p><p><img src=/images/2022_02_05_17_08_10_480x191.jpg alt=/images/2022_02_05_17_08_10_480x191.jpg></p><h3 id=enable-docker>Enable docker</h3><p>Enable wifi:</p><p><img src=/images/2022_02_05_18_16_24_926x458.jpg alt=/images/2022_02_05_18_16_24_926x458.jpg></p><p>adb root and re-connect:</p><pre><code># adb connect 192.168.122.232
-connected to 192.168.122.232:5555
-# adb -s 192.168.122.232:5555 root
-restarting adbd as root
-# adb connect 192.168.122.232
-connected to 192.168.122.232:5555
-</code></pre><p>Create folder structure:</p><pre><code># adb shell
-x86_64:/ # mkdir /data/var                                                                                                                                 
-x86_64:/ # mkdir /data/docker/
-x86_64:/ # 
-</code></pre><p>Download docker-ce binary files from <code>https://</code>, extract them and upload them
-to android-x86 machine:</p><pre><code># adb push ~/Code/docker/* /data/docker/
-</code></pre><p>Prepare the dockerd running environment in <code>adb shell</code>:</p><pre><code>mount -o remount,rw /
-ln -s /data/docker/* /bin/
-ip rule add pref 1 from all lookup main
-ip rule add pref 2 from all lookup default
-ip route add default via 192.168.122.1 dev wlan0
-ip rule add from all lookup main pref 30000
-echo &quot;nameserver 223.5.5.5&quot;&gt;/etc/resolv.conf
-# mount cgroupfs
-mount -t tmpfs -o uid=0,gid=0,mode=0755 cgroup /sys/fs/cgroup
-cd /sys/fs/cgroup/
-mkdir -p cpu cpu acct blkio memory devices pids
-mount -n -t cgroup -o cpu cgroup cpu
-mount -n -t cgroup -o  cpuacct cgroup cpuacct
-mount -n -t cgroup -o  blkio cgroup blkio
-mount -n -t cgroup -o  memory cgroup memory
-mount -n -t cgroup -o  devices cgroup devices
-mount -n -t cgroup -o  pids cgroup pids
-</code></pre><p>Start the dockerd daemon:</p><pre><code># dockerd  --dns=223.5.5.5 --data-root=/data/var/ --ip=192.168.122.232 &amp; &gt;/data/dockerd-logfile 2&gt;&amp;1
-# docker images
-REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
-</code></pre><p>Start redroid docker instance:</p><pre><code># docker run -d --privileged -p 8888:5555 redroid/redroid:9.0.0-latest
-# docker ps
-CONTAINER ID   IMAGE                          COMMAND                  CREATED         STATUS         PORTS                            NAMES
-2efa5f6e987b   redroid/redroid:9.0.0-latest   &quot;/init qemu=1 androi…&quot;   5 seconds ago   Up 4 seconds   192.168.122.232:8888-&gt;5555/tcp   sweet_ishizaka
-</code></pre><h3 id=verification>Verification</h3><p>Connect and view screen via:</p><pre><code># adb connect 192.168.122.232:8888
-# scrcpy --serial 192.168.122.232:8888
-</code></pre><p><img src=/images/2022_02_06_09_34_35_427x768.jpg alt=/images/2022_02_06_09_34_35_427x768.jpg></p><p>Install apks via:</p><pre><code>$ adb -s 192.168.122.232:8888 install ~/apks/aaaaaaa.apk
-</code></pre><h3 id=kernel-configuration>Kernel configuration</h3><p>Configuration items(based on <code>android-x86_64_defconfig</code>):</p><pre><code>Generic setup -&gt; POSIX Message Queues
-Generic setup -&gt; Controller Group support -&gt; PIDs controller
-Generic setup -&gt; Controller Group support -&gt; Device controller
-Generic setup -&gt; Controller Group support -&gt; CPU controller -&gt; Group sheduling for SCHED_OTHER
-Generic setup -&gt; Controller Group support -&gt; CPU controller -&gt; CPU bandwidth provisioning for FAIR-GROUP_SCHED
-Generic setup -&gt; Controller Group support -&gt; CPU controller -&gt; Group sheduling for SCHED_RR/FIFO
-Generic setup -&gt; Controller Group support -&gt; Perf controller
-Generic setup -&gt; Namespaces support -&gt; User namespace
-Generic setup -&gt; Namespaces support -&gt; PID namespace
-Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Bridged IP/ARP packets fiiltering
-Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; IP virtual server support
-Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Core Netfilter configuration -&gt;  &quot;addrtype&quot; address type match support
-Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Core Netfilter configuration -&gt;  &quot;control group&quot; address type match support
-Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Core Netfilter configuration -&gt;  &quot;control group&quot; address type match support
-File Systems -&gt; Overlay filesystem support
-Device Driver -&gt; Android -&gt;  Android Binderfs filesystem
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/25/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/25/>25</a></li><li class="page-item active"><a class=page-link href=/page/26/>26</a></li><li class=page-item><a class=page-link href=/page/27/>27</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/239/>239</a></li><li class=page-item><a href=/page/27/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/239/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/25/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/25/>25</a></li><li class="page-item active"><a class=page-link href=/page/26/>26</a></li><li class=page-item><a class=page-link href=/page/27/>27</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/240/>240</a></li><li class=page-item><a href=/page/27/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/240/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
