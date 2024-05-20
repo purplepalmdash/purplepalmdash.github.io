@@ -483,7 +483,14 @@ sudo qemu-nbd --disconnect /dev/nbd0
 echo &quot;############### 4. Now start machine for fixing bootable in winPE&quot;
 
 </code></pre><h3 id=60-install-gnome-flashback>60. Install gnome flashback</h3><p>via:</p><pre><code>$ sudo apt install gnome-session-flashback
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
+</code></pre><h3 id=61-buildroot-chinese>61. buildroot chinese</h3><p>via:</p><pre><code>在buildroot目录下运行make menuconfig 命令，在Build options–&gt;Mirrors and Download locations 下设置国内源：
+
+BACKUP_SITE=&quot;https://mirrors.lzu.edu.cn/buildroot/&quot;
+KERNEL_MIRROR=&quot;https://mirror.bjtu.edu.cn/kernel/&quot;
+GNU_MIRROR=&quot;http://mirrors.nju.edu.cn/gnu/&quot;
+LUAROCKS_MIRROR=&quot;https://luarocks.cn&quot;
+CPAN_MIRROR=&quot;http://mirrors.nju.edu.cn/CPAN/&quot;
+</code></pre><p><code>BACKUP_SITE</code> could adjust to lzu.edu.cn repository</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
 cd Fooocus-MRE
 python3 -m venv fooocus_env
 source fooocus_env/bin/activate
