@@ -523,16 +523,16 @@ sudo fdisk -l
 sudo qemu-nbd --disconnect /dev/nbd0
 echo &quot;############### 4. Now start machine for fixing bootable in winPE&quot;
 
-</code></pre><h3 id=60-install-gnome-flashback>60. Install gnome flashback</h3><p>via:</p><pre><code>$ sudo apt install gnome-session-flashback
-</code></pre><h3 id=61-buildroot-chinese>61. buildroot chinese</h3><p>via:</p><pre><code>在buildroot目录下运行make menuconfig 命令，在Build options–&gt;Mirrors and Download locations 下设置国内源：
+</code></pre><h3 id=61-install-gnome-flashback>61. Install gnome flashback</h3><p>via:</p><pre><code>$ sudo apt install gnome-session-flashback
+</code></pre><h3 id=62-buildroot-chinese>62. buildroot chinese</h3><p>via:</p><pre><code>在buildroot目录下运行make menuconfig 命令，在Build options–&gt;Mirrors and Download locations 下设置国内源：
 
 BACKUP_SITE=&quot;https://mirrors.lzu.edu.cn/buildroot/&quot;
 KERNEL_MIRROR=&quot;https://mirror.bjtu.edu.cn/kernel/&quot;
 GNU_MIRROR=&quot;http://mirrors.nju.edu.cn/gnu/&quot;
 LUAROCKS_MIRROR=&quot;https://luarocks.cn&quot;
 CPAN_MIRROR=&quot;http://mirrors.nju.edu.cn/CPAN/&quot;
-</code></pre><p><code>BACKUP_SITE</code> could adjust to lzu.edu.cn repository</p><h3 id=62-xz-for-initram>62. xz for initram</h3><p>xz via following command:</p><pre><code>xz -C crc32 -z -c init &gt; init.xz
-</code></pre><h3 id=63-python-issue>63. python issue</h3><p>solved via:</p><pre><code>[test@minirocky92 ~]$ python
+</code></pre><p><code>BACKUP_SITE</code> could adjust to lzu.edu.cn repository</p><p><img src=/images/2024_05_20_19_22_20_777x320.jpg alt=/images/2024_05_20_19_22_20_777x320.jpg></p><h3 id=63-xz-for-initram>63. xz for initram</h3><p>xz via following command:</p><pre><code>xz -C crc32 -z -c init &gt; init.xz
+</code></pre><h3 id=64-python-issue>64. python issue</h3><p>solved via:</p><pre><code>[test@minirocky92 ~]$ python
 Python 3.9.16 (main, Dec  8 2022, 00:00:00) 
 [GCC 11.3.1 20221121 (Red Hat 11.3.1-4)] on linux
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
