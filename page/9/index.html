@@ -556,4 +556,22 @@ Enter to keep the current selection[+], or type selection number: 2
 Python 3.11.7 (main, Jan 22 2024, 00:00:00) [GCC 11.4.1 20231218 (Red Hat 11.4.1-3)] on linux
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt; quit()
+</code></pre><h3 id=64-rocklinux-use-cd-rom>64. rocklinux use cd-rom</h3><p>via:</p><pre><code>$ mount iso /mnt8
+$ cat /etc/yum.repos.d/local.repo 
+[local]
+name=local
+baseurl=file:///mnt8/BaseOS/
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+#gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Rocky-9
+
+[AppStream]
+name=AppStream Packages Rocky Linux 9
+metadata_expire=-1
+gpgcheck=1
+enabled=1
+baseurl=file:///mnt8/AppStream/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+$ yum install -y firefox xorg-x11-xauth
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/8/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/8/>8</a></li><li class="page-item active"><a class=page-link href=/page/9/>9</a></li><li class=page-item><a class=page-link href=/page/10/>10</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/240/>240</a></li><li class=page-item><a href=/page/10/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/240/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
