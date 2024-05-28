@@ -574,4 +574,33 @@ enabled=1
 baseurl=file:///mnt8/AppStream/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 $ yum install -y firefox xorg-x11-xauth
+</code></pre><h3 id=65-fog-datebase-tips>65. fog datebase tips</h3><p>recording tips:</p><pre><code># mysql -u fogmaster -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 2094
+Server version: 10.11.6-MariaDB-0+deb12u1 Debian 12
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]&gt; use fog
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [fog]&gt; select * from taskTypes;
+......
+MariaDB [fog]&gt; update taskTypes set ttKernelArgs='mode=switchsystem nextsystem=fetchvhdwin10' where ttId='32'
+    -&gt; ;
+Query OK, 1 row affected (0.005 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [fog]&gt; update taskTypes set ttKernelArgs='mode=switchsystem nextsystem=downloadvhdwin10' where ttId='33';
+Query OK, 1 row affected (0.006 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+</code></pre><p>Insert sentences:</p><pre><code> INSERT INTO taskTypes (ttID, ttName, ttDescription, ttIcon, ttKernel, ttKernelArgs, ttType, ttIsAdvanced, ttIsAccess, ttInitrd) VALUES ('32', 'Fetch Win10', 'Fetch Win10 vhd to nfs server', 'upload', '', 'mode=switchsystem nextsystem=fetchvhdwin10', 'fog', '1', 'both', '');
+ INSERT INTO taskTypes (ttID, ttName, ttDescription, ttIcon, ttKernel, ttKernelArgs, ttType, ttIsAdvanced, ttIsAccess, ttInitrd) VALUES ('33', 'Sync Win10', 'Sync Win10 vhd from nfs server', 'download', '', 'mode=switchsystem nextsystem=downloadvhdwin10', 'fog', '1', 'both', '');
+
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/8/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/8/>8</a></li><li class="page-item active"><a class=page-link href=/page/9/>9</a></li><li class=page-item><a class=page-link href=/page/10/>10</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/240/>240</a></li><li class=page-item><a href=/page/10/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/240/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
