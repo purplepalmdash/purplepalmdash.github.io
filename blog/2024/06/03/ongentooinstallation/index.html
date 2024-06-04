@@ -306,4 +306,166 @@ livecd ~ # blkid /dev/sda1 /dev/nvme0n1p1
 /dev/sda1: UUID=&quot;81A6-BFB2&quot; BLOCK_SIZE=&quot;512&quot; TYPE=&quot;vfat&quot; PARTLABEL=&quot;primary&quot; PARTUUID=&quot;be83585f-0239-4b8a-8931-674aaaadb69d&quot;
 /dev/nvme0n1p1: UUID=&quot;ddc06372-5d72-49a0-b617-b97128f8e3e6&quot; TYPE=&quot;crypto_LUKS&quot; PARTLABEL=&quot;primary&quot; PARTUUID=&quot;3635503c-78f0-44ce-8982-633ca20723ff&quot;
 
+</code></pre><p>Receive the gpg key:</p><pre><code>gpg --keyserver  pgp.mit.edu --recv-key 2D182910
+</code></pre><p>fetch the stage 3 file:</p><pre><code># cd /mnt/gentoo
+# wget https://mirrors.ustc.edu.cn/gentoo/releases/amd64/autobuilds/20240602T164858Z/stage3-amd64-desktop-openrc-20240602T164858Z.tar.xz
+</code></pre><p>untar the stage3 file:</p><pre><code>tar xvJpf stage3-amd64-*.tar.xz --xattrs-include='*.*' --numeric-owner
+rm -f stage3-amd64-desktop-openrc-20240602T164858Z.tar.xz
+</code></pre><p>Edit the bashrc:</p><pre><code>livecd /mnt/gentoo # cat /mnt/gentoo/root/.bashrc 
+export NUMCPUS=$(nproc)
+export NUMCPUSPLUSONE=$(( NUMCPUS + 1 ))
+export MAKEOPTS=&quot;-j${NUMCPUSPLUSONE} -l${NUMCPUS}&quot;
+export EMERGE_DEFAULT_OPTS=&quot;--jobs=${NUMCPUSPLUSONE} --load-average=${NUMCPUS}&quot;
+</code></pre><p>copy the <code>bashrc_profile</code>:</p><pre><code>cp -v /mnt/gentoo/etc/skel/.bash_profile /mnt/gentoo/root/
+</code></pre><p>edit the make.conf:</p><pre><code>livecd /mnt/gentoo # cat /mnt/gentoo/etc/portage/make.conf 
+# These settings were set by the catalyst build script that automatically
+# built this stage.
+# Please consult /usr/share/portage/config/make.conf.example for a more
+# detailed example.
+COMMON_FLAGS=&quot;-march=native -O2 -pipe&quot;
+CFLAGS=&quot;${COMMON_FLAGS}&quot;
+CXXFLAGS=&quot;${COMMON_FLAGS}&quot;
+FCFLAGS=&quot;${COMMON_FLAGS}&quot;
+FFLAGS=&quot;${COMMON_FLAGS}&quot;
+
+# NOTE: This stage was built with the bindist Use flag enabled
+
+# This sets the language of build output to English.
+# Please keep this setting intact when reporting bugs.
+#LC_MESSAGES=C.utf8
+
+# Note: MAKEOPTS and EMERGE_DEFAULT_OPTS are set in .bashrc
+
+# The following licence is required, in addition to @FREE, for GNOME.
+ACCEPT_LICENSE=&quot;CC-Sampling-Plus-1.0&quot;
+
+# WARNING: Changing your CHOST is not something that should be done lightly.
+# Please consult http://www.gentoo.org/doc/en/change-chost.xml before changing.
+CHOST=&quot;x86_64-pc-linux-gnu&quot;
+
+# Use the 'stable' branch - 'testing' no longer required for Gnome 3.
+# NB, amd64 is correct for both Intel and AMD 64-bit CPUs
+ACCEPT_KEYWORDS=&quot;amd64&quot;
+
+# Additional USE flags supplementary to those specified by the current profile.
+USE=&quot;&quot;
+CPU_FLAGS_X86=&quot;mmx mmxext sse sse2&quot;
+
+# Important Portage directories.
+PORTDIR=&quot;/var/db/repos/gentoo&quot;
+DISTDIR=&quot;/var/cache/distfiles&quot;
+PKGDIR=&quot;/var/cache/binpkgs&quot;
+
+# This sets the language of build output to English.
+# Please keep this setting intact when reporting bugs.
+LC_MESSAGES=C
+
+# Turn on logging - see http://gentoo-en.vfose.ru/wiki/Gentoo_maintenance.
+PORTAGE_ELOG_CLASSES=&quot;info warn error log qa&quot;
+# Echo messages after emerge, also save to /var/log/portage/elog
+PORTAGE_ELOG_SYSTEM=&quot;echo save&quot;
+
+# Ensure elogs saved in category subdirectories.
+# Build binary packages as a byproduct of each emerge, a useful backup.
+FEATURES=&quot;split-elog buildpkg&quot;
+
+# Settings for X11
+VIDEO_CARDS=&quot;intel i965&quot;
+INPUT_DEVICES=&quot;libinput&quot;
+</code></pre><p>Select ustc for the mirror, thus make.conf should be like following:</p><pre><code>livecd /mnt/gentoo # tail /mnt/gentoo/etc/portage/make.conf 
+# Ensure elogs saved in category subdirectories.
+# Build binary packages as a byproduct of each emerge, a useful backup.
+FEATURES=&quot;split-elog buildpkg&quot;
+
+# Settings for X11
+VIDEO_CARDS=&quot;intel i965&quot;
+INPUT_DEVICES=&quot;libinput&quot;
+
+GENTOO_MIRRORS=&quot;https://mirrors.ustc.edu.cn/gentoo/ \
+    rsync://rsync.mirrors.ustc.edu.cn/gentoo/&quot;
+
+</code></pre><p>Edit the <code>repos.conf/gentoo.conf</code>:</p><pre><code>livecd /mnt/gentoo # cp -v /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+
+
+livecd /mnt/gentoo # cat /mnt/gentoo/etc/portage/repos.conf/gentoo.conf 
+[DEFAULT]
+main-repo = gentoo
+
+[gentoo]
+location = /var/db/repos/gentoo
+sync-type = webrsync
+sync-uri = rsync://rsync.mirrors.ustc.edu.cn/gentoo-portage
+auto-sync = yes
+sync-rsync-verify-jobs = 1
+sync-rsync-verify-metamanifest = yes
+sync-rsync-verify-max-age = 3
+sync-openpgp-key-path = /usr/share/openpgp-keys/gentoo-release.asc
+sync-openpgp-keyserver = hkps://keys.gentoo.org
+sync-openpgp-key-refresh-retry-count = 40
+sync-openpgp-key-refresh-retry-overall-timeout = 1200
+sync-openpgp-key-refresh-retry-delay-exp-base = 2
+sync-openpgp-key-refresh-retry-delay-max = 60
+sync-openpgp-key-refresh-retry-delay-mult = 4
+sync-webrsync-verify-signature = yes
+
+</code></pre><p>Edit the dns file:</p><pre><code># cat /mnt/gentoo/etc/resolv.conf 
+nameserver 223.5.5.5
+</code></pre><p>Prepare for chroot:</p><pre><code>livecd /mnt/gentoo # mount -v -t proc none /mnt/gentoo/proc
+mount: none mounted on /mnt/gentoo/proc.
+livecd /mnt/gentoo # mount -v --rbind /sys /mnt/gentoo/sys
+mount: /sys bound on /mnt/gentoo/sys.
+livecd /mnt/gentoo # mount -v --rbind /dev /mnt/gentoo/dev
+mount: /dev bound on /mnt/gentoo/dev.
+livecd /mnt/gentoo # mount -v --make-rslave /mnt/gentoo/sys
+livecd /mnt/gentoo # mount -v --make-rslave /mnt/gentoo/dev
+</code></pre><p>chroot in:</p><pre><code>livecd /mnt/gentoo # chroot /mnt/gentoo /bin/bash
+livecd / # source /etc/profile
+livecd / # export PS1=&quot;(chroot) $PS1
+</code></pre><p>Sync and select profile:</p><pre><code> emaint sync --auto
+ eselect profile list
+ eselect profile set &quot;default/linux/amd64/17.1&quot;
+ emerge --info
+ grep -i useflag /var/db/repos/gentoo/profiles/use.desc
+ emerge --ask --verbose --oneshot portage
+
+</code></pre><p>set timezone and locale:</p><pre><code> echo &quot;Asia/Shanghai&quot;&gt;/etc/timezone
+ emerge -v --config sys-libs/timezone-data
+ nano -w /etc/locale.gen
+ locale-gen
+ eselect locale list
+ eselect locale set &quot;C&quot;
+ env-update &amp;&amp; source /etc/profile &amp;&amp; export PS1=&quot;(chroot) $PS1&quot;
+</code></pre><p>set cpu flags in make.conf:</p><pre><code>emerge --verbose --oneshot app-portage/cpuid2cpuflags
+cpuid2cpuflags
+nano -w /etc/portage/make.conf
+</code></pre><p>Update using portage:</p><pre><code>emerge --ask --verbose --update --deep --newuse @world
+</code></pre><p>build kernel:</p><pre><code>(chroot) livecd / # mkdir -p -v /etc/portage/package.license
+mkdir: created directory '/etc/portage/package.license'
+(chroot) livecd / # touch /etc/portage/package.license/zzz_via_autounmas
+echo &quot;sys-kernel/linux-firmware linux-fw-redistributable no-source-code&quot; &gt;&gt; /etc/portage/package.license/linux-firmware
+emerge --ask --verbose sys-kernel/gentoo-sources
+emerge --ask --verbose sys-kernel/linux-firmware
+(chroot) livecd / # readlink -v /usr/src/linux
+readlink: /usr/src/linux: No such file or directory
+(chroot) livecd / # eselect kernel list
+Available kernel symlink targets:
+  [1]   linux-6.6.30-gentoo
+(chroot) livecd / # eselect kernel set 1
+(chroot) livecd / # readlink -v /usr/src/linux
+linux-6.6.30-gentoo
+emerge --ask --verbose dev-vcs/git 
+ # cat /etc/portage/repos.conf/waffle-builds.conf
+[waffle-builds]
+ 
+# Various utility ebuilds for Gentoo on EFI
+# Maintainer: sakaki (sakaki@deciban.com)
+ 
+location = /usr/local/portage/waffle-builds
+sync-type = git
+sync-uri = https://github.com/FlyingWaffleDev/waffle-builds.git
+priority = 50
+auto-sync = yes
+(chroot) livecd / # emaint sync --repo waffle-builds
+(chroot) livecd / # echo &quot;*/*::waffle-builds ~amd64&quot;&gt;&gt; /etc/portage/package.accept_keywords/waffle-builds-repo
+
 </code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

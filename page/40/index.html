@@ -1,5 +1,6 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/02/13/linuxtips12/>LinuxTips12</a></h1><span class=post-date>Feb 13, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-vagrant-libvirt>1. vagrant-libvirt</h3><p>vagrant 2.2.14版中的一个包依赖BUG导致几乎所有的插件都没法装。解决方案是回归到旧版本的vagrant后安装vagrant-libvirt:</p><pre><code>$ sudo pacman -U /var/cache/pacman/pkg/vagrant-2.2.10-2-x86_64.pkg.tar.zst
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/02/22/workingtipsonha/>WorkingTIPSOnHA</a></h1><span class=post-date>Feb 22, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>目的: 设置RONG服务器的高可用性.</p><p>Install ipvsadm for every node:</p><pre><code># apt-get install -y ipvsadm
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/02/13/linuxtips12/>LinuxTips12</a></h1><span class=post-date>Feb 13, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-vagrant-libvirt>1. vagrant-libvirt</h3><p>vagrant 2.2.14版中的一个包依赖BUG导致几乎所有的插件都没法装。解决方案是回归到旧版本的vagrant后安装vagrant-libvirt:</p><pre><code>$ sudo pacman -U /var/cache/pacman/pkg/vagrant-2.2.10-2-x86_64.pkg.tar.zst
 $ vagrant --version
 Vagrant 2.2.10
 </code></pre><p>Install <code>vagrant-libvirt</code> via:</p><pre><code>$ vagrant plugin install vagrant-libvirt  --plugin-clean-sources --plugin-source  https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --debug
@@ -385,79 +386,4 @@ args: [&quot;3600000&quot;]
 # kubectl delete -f kkk.yaml
 # kubectl create -f kkk.yaml
 # kubectl scale deployment xxxx -replicas=4
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/01/25/directlyeditdeb/>DirectlyEditDEB</a></h1><span class=post-date>Jan 25, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>项目中有时需要对DEB包做些许修改，譬如，在离线场景下某些DEB包的<code>postinst</code>中有需要用在线方式下载可执行文件的情况，这种情况下可以借助<code>dpkg-deb</code>的解包/压缩命令来临时修改出一个含有所有离线文件的包，举<code>opennebula-node-firecracker</code>的包为例说明。</p><p><code>opennebula-node-firecracker</code>是用于在opennebula上运行轻量级VM <code>firecracker</code>的包，在线安装时它需要从<code>github</code>上拉取相应版本的<code>firecracker</code>及 <code>jailer</code>可执行文件，这让它在离线场景下无法安装成功。同时，因为它默认作为runtime的一种，其配置文件与<code>opennebula-node-kvm</code>里的某些配置文件相同，导致安装时无法继续，我们可以通过如下的方式修改此包，让其适配离线化安装。</p><h3 id=准备>准备</h3><p>在线场景下下载该包，并拷贝到工作目录, 解压:</p><pre><code># cp /var/cache/apt/archives/opennebula-node-firecracker_5.12.0.3-1.ce_amd64.deb .
-# mkdir tmp
-# dpkg-deb -R opennebula-node-firecracker_5.12.0.3-1.ce_amd64.deb tmp/
-</code></pre><p>主要目录结构如下:</p><pre><code>├── DEBIAN
-│   ├── conffiles
-│   ├── control
-│   ├── md5sums
-│   ├── postinst
-│   └── postrm
-├── etc
-│   ├── cron.d
-│   │   └── opennebula-node
-│   ├── sudoers.d
-│   │   └── opennebula-node-firecracker
-│   └── sysctl.d
-│       └── bridge-nf-call.conf
-├── srv
-│   └── jailer
-│       └── firecracker
-└── usr
-    ├── bin
-    │   └── svncterm_server
-    ├── sbin
-    │   ├── install-firecracker
-    │   ├── one-clean-firecracker-domain
-    │   └── one-prepare-firecracker-domain
-    └── share
-        └── doc
-            └── opennebula-node-firecracker
-                ├── changelog.Debian.gz
-                ├── copyright
-                └── NEWS.Debian.gz
-</code></pre><p>我们需要修改的要点如下:</p><pre><code>1. DEBIAN/conffiles, 含有此包需写入的配置文件。
-2. DEBIAN/md5sums, 含有可执行文件的md5校验码。
-3. DEBIAN/postinst, 包安装完成后需执行的脚本。
-4. etc/ 下是包安装后在主机上需添加的配置文件。
-5. usr/bin, usr/sbin，主机上需拷入的可执行文件。
-</code></pre><h3 id=修改>修改</h3><p>观察<code>DEBIAN/postinst</code>中含有以下条目:</p><pre><code># cat DEBIAN/postinst 
-#!/bin/sh
-
-set -e
-
-ONE_USER=oneadmin
-
-if [ &quot;$1&quot; = &quot;configure&quot; ]; then
-    # Install Firecracker + jailer
-    /usr/sbin/install-firecracker
-
-</code></pre><p>打开<code>install-firecracker</code>文件后观察其下载脚本为:</p><pre><code># cat usr/sbin/install-firecracker 
-#!/bin/sh
-....
-
-# Download version version of Firecracker
-curl -LOJ https://github.com/firecracker-microvm/firecracker/releases/download/${version}/firecracker-${version}-$(uname -m)
-mv firecracker-${version}-$(uname -m) /usr/bin/firecracker
-chmod +x /usr/bin/firecracker
-
-
-# Download version version of jailer
-curl -LOJ https://github.com/firecracker-microvm/firecracker/releases/download/${version}/jailer-${version}-$(uname -m)
-mv jailer-${version}-$(uname -m) /usr/bin/jailer
-chmod +x /usr/bin/jailer
-</code></pre><p>这里我们直接干掉所有的curl及mv脚本，把预先下载好的<code>firecracker</code>/<code>jailer</code>文件拷贝到安装目录即可。</p><pre><code># tree ../tmp/usr
-../tmp/usr
-├── bin
-+++ │   ├── firecracker
-+++ │   ├── jailer
-│   └── svncterm_server
-├── sbin
-│   ├── install-firecracker
-.....
-</code></pre><p>此外需要修改md5sums及干掉etc下重复的配置文件。而后压缩包。</p><h3 id=压缩包>压缩包</h3><p>一条命令:</p><pre><code># dpkg-deb -b tmp opennebula-node-firecracker_5.12.0.3-1.ce_fixed_amd64.deb
-</code></pre><p>检查新生成包的大小:</p><pre><code># ls -l -h *.deb
--rw-r--r-- 1 root root  24K Jan 25 09:06 opennebula-node-firecracker_5.12.0.3-1.ce_amd64.deb
--rw-r--r-- 1 root root 1.2M Jan 25 09:11 opennebula-node-firecracker_5.12.0.3-1.ce_fixed_amd64.deb
-</code></pre><p>使用<code>fixed</code>后的包安装，此时可忽略internet下载过程，且解决了包安装时的冲突问题。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/39/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/39/>39</a></li><li class="page-item active"><a class=page-link href=/page/40/>40</a></li><li class=page-item><a class=page-link href=/page/41/>41</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/240/>240</a></li><li class=page-item><a href=/page/41/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/240/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/39/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/39/>39</a></li><li class="page-item active"><a class=page-link href=/page/40/>40</a></li><li class=page-item><a class=page-link href=/page/41/>41</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/240/>240</a></li><li class=page-item><a href=/page/41/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/240/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
