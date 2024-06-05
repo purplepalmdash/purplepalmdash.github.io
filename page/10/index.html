@@ -584,6 +584,7 @@ gpgcheck=0
 解决：将/etc/bashrc脚本中的最后一行export TMOUT=300注释掉后，停止容器，再重新启动容器，可解决此问题。
 </code></pre><h3 id=68-luks>68. luks</h3><p>via:</p><pre><code>GRUB_CMDLINE_LINUX=&quot;dobtrfs crypt_root=UUID=dc715483-37db-4e5e-bcce-baa845e00a82 root=UUID=e15fb8af-ac6e-4e24-8fb6-195f080fc34b rd.luks.uuid=dc715483-37db-4e5e-bcce-baa845e00a82 rd.luks.key=/keyfile:UUID=e4880a42-fc87-4c3e-bbc5-defdc054e157&quot;
 
+</code></pre><h3 id=69-genkernel-all>69. genkernel all</h3><p>missing virtio driver, enable via:</p><pre><code>genkernel --virtio all
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
 cd Fooocus-MRE
 python3 -m venv fooocus_env
