@@ -1,5 +1,77 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/16/workingtipsonk8slvm/>WorkingTipsOnk8sLVM</a></h1><span class=post-date>Jan 16, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>Preparation</h3><p>Define ip address/gateway:</p><p><img src=/images/2018_01_16_10_31_58_494x339.jpg alt=/images/2018_01_16_10_31_58_494x339.jpg></p><p>Set hostname:</p><p><img src=/images/2018_01_16_10_32_18_439x180.jpg alt=/images/2018_01_16_10_32_18_439x180.jpg></p><p>Disk Preparation:</p><p><img src=/images/2018_01_16_10_36_09_758x404.jpg alt=/images/2018_01_16_10_36_09_758x404.jpg></p><h3 id=configuration>Configuration</h3><p>In kismatic, configure like following:</p><p><img src=/images/2018_01_16_10_39_10_819x493.jpg alt=/images/2018_01_16_10_39_10_819x493.jpg></p><p>Then install kismatic as usual.</p><h3 id=helm>helm</h3><p>When in offline-mode, <code>helm repo update</code> will failed.</p><p>Aim: install monocular in cluster.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/15/tipsonkismatictransfer/>TipsOnKismaticTransfer</a></h1><span class=post-date>Jan 15, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>主要记录生产环境的迁移，后期可以作为实际部署和安装时的文档参考。</p><h3 id=网络准备>网络准备</h3><p>创建一个<code>10.15.205.0/24</code>网络:</p><p><img src=/images/2018_01_15_11_46_51_334x401.jpg alt=/images/2018_01_15_11_46_51_334x401.jpg>
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/18/storagepathusinglocalpath/>StoragePathUsingLocalPath</a></h1><span class=post-date>Jan 18, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>搭建monocular的时候，从其mongodb的charts变量定义文件<code>values.yaml</code>中，可以看到其对persistence的支持，即对持久化存储的支持：</p><pre><code>## Enable persistence using Persistent Volume Claims
+## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+##
+persistence:
+  enabled: true
+  ## mongodb data Persistent Volume Storage Class
+  ## If defined, storageClassName: &lt;storageClass&gt;
+  ## If set to &quot;-&quot;, storageClassName: &quot;&quot;, which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS &amp; OpenStack)
+  ##
+  # storageClass: &quot;-&quot;
+  accessMode: ReadWriteOnce
+  size: 8Gi
+</code></pre><p>这个charts在下发的时候，请求了一块大小为8G的持久化存储空间，用于存放mongodb的数据。注释中也列出了支持持久化存储的一些解决方案，例如AWS,
+GKE, AWS和OpenStack。</p><h3 id=问题>问题</h3><p>通过helm安装这个包的时候，在minikube上安装成功，在自己搭建的环境上，却只能通过如下命令安装成功:</p><pre><code># helm install --name=tiger --set &quot;persistence.enabled=false,mongodb.persistence.enabled=false,pullPolicy=IfNotPresent,api.image.pullPolicy=IfNotPresent,ui.image.pullPolicy=IfNotPresent,prerender.image.pullPolicy=IfNotPresent&quot; monocular/monocular
+</code></pre><p>上面的命令禁用了mongodb的持久化存储选项，并设置了镜像的拉取规则。禁用持久化存储选项后，容器的存储空间在容器生命周期结束以后是无法保持的。为什么在minikube中可以部署的在自己的环境中却不能直接部署呢？</p><h3 id=调研>调研</h3><h4 id=minikube>minikube</h4><p>minikube使用了自己的hostpath实现，可以通过dashboard查看到，minikube默认的sc实际上是映射到/mnt的某个目录下。</p><h4 id=自己的k8s环境>自己的k8s环境</h4><p>首先在dashboard中我们并没有发现对应的条目，pv及pvc也没有创建出来。</p><pre><code>[root@DashSSD dash]# kubectl get pvc
+No resources found.
+[root@DashSSD dash]# kubectl get pv
+No resources found.
+[root@DashSSD dash]# kubectl get storageclass
+No resources found.
+</code></pre><h3 id=实现hostpath>实现hostpath</h3><p>在社区里找到的方案，链接如下:</p><p><a href=https://github.com/nailgun/k8s-hostpath-provisioner>https://github.com/nailgun/k8s-hostpath-provisioner</a></p><p>离线情况下安装流程:</p><pre><code># git clone https://github.com/nailgun/k8s-hostpath-provisioner
+# sudo docker pull gcr.io/google_containers/busybox:1.24 &amp;&amp; sudo docker save gcr.io/google_containers/busybox:1.24&gt;busybox.tar
+# sudo docker pull nailgun/k8s-hostpath-provisioner:latest &amp;&amp; sudo docker save nailgun/k8s-hostpath-provisioner:latest&gt;k8shostpath.tar
+</code></pre><p>将tar文件和目录传送到离线环境，首先安装镜像。</p><pre><code># docker load&lt;k8shostpath.tar &amp;&amp; docker load&lt;busybox.tar
+8f9199423bb0: Loading layer [==================================================&gt;] 41.73 MB/41.73 MB
+Loaded image: nailgun/k8s-hostpath-provisioner:latest
+2c84284818d1: Loading layer [==================================================&gt;] 1.312 MB/1.312 MB
+5f70bf18a086: Loading layer [==================================================&gt;] 1.024 kB/1.024 kB
+Loaded image: gcr.io/google_containers/busybox:1.24
+</code></pre><p>默认的example目录下的yaml定义文件我们需要做点修改，才能确保部署正确，首先修改ds.yaml，这个文件主要用于定义DaemonSet，
+我们需要对里面的image拉取原则进行定义：</p><pre><code>      containers:
+      - name: hostpath-provisioner
+        image: nailgun/k8s-hostpath-provisioner:latest
++++        imagePullPolicy: IfNotPresent
+</code></pre><p>接着修改sc.yaml，这里定义的是StorageClass, 设置为默认:</p><pre><code>metadata:
+  name: local-ssd
++++  annotations:
++++    storageclass.kubernetes.io/is-default-class: &quot;true&quot;
+</code></pre><p>创建本地存储目录，并定义为默认的storage class:</p><pre><code># kubectl create -f sa.yaml -f cluster-roles.yaml -f cluster-role-bindings.yaml -f ds.yaml
+# kubectl get ds -n kube-system | grep hostpath
+hostpath-provisioner   0         0         0         0            0           nailgun.name/hostpath=enabled   16s
+</code></pre><p>定义节点ubuntu为可以部署hostPath volumes的节点, 并检查label是否被设置成功:</p><pre><code># kubectl get nodes
+NAME      STATUS    ROLES     AGE       VERSION
+ubuntu    Ready     master    7d        v1.9.0
+# kubectl label node ubuntu nailgun.name/hostpath=enabled
+node &quot;ubuntu&quot; labeled
+# kubectl get nodes ubuntu --show-labels
+NAME      STATUS    ROLES     AGE       VERSION   LABELS
+ubuntu    Ready     master    7d        v1.9.0    beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kismatic/cni-provider=calico,kismatic/kube-proxy=true,kubernetes.io/hostname=ubuntu,nailgun.name/hostpath=enabled,node-role.kubernetes.io/master=
+</code></pre><p>在节点上注明可用的存储：</p><pre><code># kubectl annotate node ubuntu hostpath.nailgun.name/ssd=/data
+node &quot;ubuntu&quot; annotated
+</code></pre><p>接着创建sc(StorageClass), 并检查之:</p><pre><code># kubectl create -f sc.yaml
+storageclass &quot;local-ssd&quot; created
+# kubectl get sc
+NAME                  PROVISIONER             AGE
+local-ssd (default)   nailgun.name/hostpath   10s
+</code></pre><p>如果想测试pvc/pv，则:</p><pre><code># kubectl create -f pvc.yaml -f test-pod.yaml
+</code></pre><p>结果可以通过登录节点机器ubuntu来查看:</p><pre><code>root@ubuntu:/data# ls
+pvc-409fc19d-fbf3-11e7-b46e-525400e39849
+root@ubuntu:/data# ls
+pvc-409fc19d-fbf3-11e7-b46e-525400e39849
+root@ubuntu:/data# cat pvc-409fc19d-fbf3-11e7-b46e-525400e39849/test 
+hello
+</code></pre><p>pod周期完毕后，pv/pvc的定义如下:</p><pre><code># kubectl get pvc
+NAME        STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+local-ssd   Bound     pvc-409fc19d-fbf3-11e7-b46e-525400e39849   1Mi        RWX            local-ssd      2m
+# kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS    CLAIM               STORAGECLASS   REASON    AGE
+pvc-409fc19d-fbf3-11e7-b46e-525400e39849   1Mi        RWX            Delete           Bound     default/local-ssd   local-ssd                3m
+</code></pre><p>重启之后查看pv/pvc/sc，均保留在磁盘上。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/16/workingtipsonk8slvm/>WorkingTipsOnk8sLVM</a></h1><span class=post-date>Jan 16, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>Preparation</h3><p>Define ip address/gateway:</p><p><img src=/images/2018_01_16_10_31_58_494x339.jpg alt=/images/2018_01_16_10_31_58_494x339.jpg></p><p>Set hostname:</p><p><img src=/images/2018_01_16_10_32_18_439x180.jpg alt=/images/2018_01_16_10_32_18_439x180.jpg></p><p>Disk Preparation:</p><p><img src=/images/2018_01_16_10_36_09_758x404.jpg alt=/images/2018_01_16_10_36_09_758x404.jpg></p><h3 id=configuration>Configuration</h3><p>In kismatic, configure like following:</p><p><img src=/images/2018_01_16_10_39_10_819x493.jpg alt=/images/2018_01_16_10_39_10_819x493.jpg></p><p>Then install kismatic as usual.</p><h3 id=helm>helm</h3><p>When in offline-mode, <code>helm repo update</code> will failed.</p><p>Aim: install monocular in cluster.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/15/tipsonkismatictransfer/>TipsOnKismaticTransfer</a></h1><span class=post-date>Jan 15, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>主要记录生产环境的迁移，后期可以作为实际部署和安装时的文档参考。</p><h3 id=网络准备>网络准备</h3><p>创建一个<code>10.15.205.0/24</code>网络:</p><p><img src=/images/2018_01_15_11_46_51_334x401.jpg alt=/images/2018_01_15_11_46_51_334x401.jpg>
 由于在内网，故指定NAT与否都无所谓,
 在有Internet的环境中，可以指定为隔离环境，以模拟实际的现网环境:</p><p><img src=/images/2018_01_15_11_47_47_436x322.jpg alt=/images/2018_01_15_11_47_47_436x322.jpg></p><h3 id=镜像准备>镜像准备</h3><p>直接将镜像拷贝到内网，建立aptly虚拟机、registry
 mirror虚拟机即可。未来将对aptly虚拟机和registry虚拟机做合并操作。</p><p>基础镜像准备, 使用Ubuntu1604_base.qcow2镜像文件，做以下操作:</p><pre><code>0. qemu-system-x86_64 -net nic -net user,hostfwd=tcp::2288-:22 -hda xxxx.qcow2
@@ -105,49 +177,4 @@ my-release-nginx-ingress-default-backend-64f764b667-gxkht   1/1       Running   
 NAME               HOSTS     ADDRESS         PORTS     AGE
 monkey-monocular   *         10.15.205.200   80        20m
 </code></pre><p>打开网页，发现可以访问到monocular, 然而其charts列表暂时无法显示， why?</p><p>迅速部署应用，避免每次重新拉取镜像：</p><pre><code># helm install --name=tiger --set &quot;persistence.enabled=false,mongodb.persistence.enabled=false,pullPolicy=IfNotPresent,api.image.pullPolicy=IfNotPresent,ui.image.pullPolicy=IfNotPresent,prerender.image.pullPolicy=IfNotPresent&quot; monocular/monocular
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/11/helmworkingtips/>helmWorkingtips</a></h1><span class=post-date>Jan 11, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=minikube>minikube</h3><p>Install and initialization:</p><pre><code>$ sudo cp /media/sda5/kismatic/allinone/helm /usr/bin
-$ sudo chmod 777 /usr/bin/helm
-$ helm version
-Client: &amp;version.Version{SemVer:&quot;v2.7.2&quot;, GitCommit:&quot;8478fb4fc723885b155c924d1c8c410b7a9444e6&quot;, GitTreeState:&quot;clean&quot;}
-Error: cannot connect to Tiller
-$ helm init
-$HELM_HOME has been configured at /home/xxxx/.helm.
-
-Tiller (the Helm server-side component) has been installed into your Kubernetes Cluster.
-Happy Helming!
-$ helm repo update
-Hang tight while we grab the latest from your chart repositories...
-...Skip local chart repository
-...Successfully got an update from the &quot;stable&quot; chart repository
-Update Complete. ⎈ Happy Helming!⎈ 
-$ helm ls
-$ helm search
-</code></pre><h3 id=monocular>monocular</h3><p>In minikube, we should use hostNetwork mode:</p><p>Prerequisites:</p><pre><code>$ helm install stable/nginx-ingress --set controller.hostNetwork=true
-</code></pre><p>If on kismatic, run following:</p><pre><code>$ helm install stable/nginx-ingress --set controller.hostNetwork=true,rbac.create=true
-</code></pre><p>Then install the mocular via following commands:</p><pre><code>$ helm repo add monocular https://kubernetes-helm.github.io/monocular
-$ helm install monocular/monocular
-</code></pre><p>Check the installed packages and its running status:</p><pre><code>$ helm ls
-NAME             	REVISION	UPDATED                 	STATUS  	CHART               	NAMESPACE
-fallacious-jaguar	1       	Thu Jan 11 11:56:21 2018	DEPLOYED	nginx-ingress-0.8.23	default  
-incindiary-prawn 	1       	Thu Jan 11 11:58:42 2018	DEPLOYED	monocular-0.5.0     	default  
-$ kubectl get pods
-NAME                                                              READY     STATUS              RESTARTS   AGE
-fallacious-jaguar-nginx-ingress-controller-55cd4578cb-vpn2q       1/1       Running             0          3m
-fallacious-jaguar-nginx-ingress-default-backend-5b7d684c6fdzk2m   1/1       Running             0          3m
-hello-minikube-7844bdb9c6-596f9                                   1/1       Running             4          11d
-incindiary-prawn-mongodb-5d96bdcbc5-47js2                         0/1       ContainerCreating   0          37s
-incindiary-prawn-monocular-api-7758c78d8f-j64qx                   0/1       ContainerCreating   0          37s
-incindiary-prawn-monocular-api-7758c78d8f-kb7nq                   0/1       ContainerCreating   0          37s
-incindiary-prawn-monocular-prerender-65b576dd76-jwvmc             0/1       ContainerCreating   0          37s
-incindiary-prawn-monocular-ui-5545f44ffb-7557l                    0/1       ContainerCreating   0          37s
-incindiary-prawn-monocular-ui-5545f44ffb-bltmc                    0/1       ContainerCreating   0          37s
-</code></pre><p>Get the deployment:</p><pre><code># kubectl get pods --watch
-# kubectl get ingress
-NAME                         HOSTS     ADDRESS          PORTS     AGE
-incindiary-prawn-monocular   *         192.168.99.100   80        2h
-# firefox 192.168.99.100
-</code></pre><p>Displayed image:</p><h3 id=deploy-wordpress>Deploy Wordpress</h3><p>Deploy with following commands:</p><pre><code># helm install --name=wordpress-test1 --set &quot;persistence.enabled=false,mariadb.persistence.enabled=false,serviceType=ClusterIP&quot; stable/wordpress
-</code></pre><p>Examine the deployment:</p><pre><code># kubectl get pods | grep wordpress
-wordpress-test1-mariadb-56c66786cc-2nj8c                          0/1       PodInitializing     0          25s
-wordpress-test1-wordpress-6c949bdcb4-22fk4                        0/1       ContainerCreating   0          25s
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/83/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/83/>83</a></li><li class="page-item active"><a class=page-link href=/page/84/>84</a></li><li class=page-item><a class=page-link href=/page/85/>85</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/240/>240</a></li><li class=page-item><a href=/page/85/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/240/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
