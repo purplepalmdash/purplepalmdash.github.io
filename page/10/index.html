@@ -615,7 +615,72 @@ dpkg -i ubuntu-secure-boot_0.1.2_amd64.deb
 sudo mount /dev/mapper/vagrant-root ./mnt
 tar -C mnt -czf MyDisk.tar.gz .
 docker import MyDisk.tar.gz myimage:1.0
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
+</code></pre><h3 id=75-remove-essential-debs>75. remove essential debs</h3><p>via:</p><pre><code>apt-get remove xxxx --allow-remove-essential
+</code></pre><h3 id=76-workingtips-on-secure>76. workingTips On secure</h3><p>tips:</p><p>Preparation for grub make standalone:</p><pre><code>root@2204:~#     GPGPUBLICKEY=&quot;$(mktemp)&quot;
+    GRUBSTAGE=&quot;$(mktemp -d)&quot;
+    PASSPHRASEFILE=&quot;$(mktemp)&quot;
+    PEMPRIVATEKEY=&quot;$(mktemp)&quot;
+root@2204:~# echo $GPGPUBLICKEY $GRUBSTAGE $PASSPHRASEFILE $PEMPRIVATEKEY
+/tmp/tmp.aLahqwFjob /tmp/tmp.b2mwtaVeHn /tmp/tmp.EgoKRLWjSU /tmp/tmp.9MIZnHg73k
+root@2204:~# EFI_FILENAME=securegrubx64.efi
+root@2204:~# BOOTLOADER_ID=ubuntu
+root@2204:~# FORMAT=x86_64-efi
+root@2204:~# grub_modules=&quot;$(ls /usr/lib/grub/x86_64-efi/*.mod | awk -F / '{print $NF}' |  sed 's/\.mod//g')&quot;
+root@2204:~# echo $grub_modules
+acpi adler32 affs afs afsplitter ahci all_video aout appleldr archelp ata at_keyboard backtrace bfs bitmap bitmap_scale blocklist boot bsd bswap_test btrfs bufio cat cbfs cbls cbmemc cbtable cbtime chain cmdline_cat_test cmp cmp_test configfile cpio_be cpio cpuid crc64 cryptodisk crypto cs5536 ctz_test datehook date datetime diskfilter disk div div_test dm_nv echo efifwsetup efi_gop efinet efi_uga ehci elf eval exfat exfctest ext2 extcmd f2fs fat file fixvideo font fshelp functional_test gcry_arcfour gcry_blowfish gcry_camellia gcry_cast5 gcry_crc gcry_des gcry_dsa gcry_idea gcry_md4 gcry_md5 gcry_rfc2268 gcry_rijndael gcry_rmd160 gcry_rsa gcry_seed gcry_serpent gcry_sha1 gcry_sha256 gcry_sha512 gcry_tiger gcry_twofish gcry_whirlpool geli gettext gfxmenu gfxterm_background gfxterm_menu gfxterm gptsync gzio halt hashsum hdparm hello help hexdump hfs hfspluscomp hfsplus http iorw iso9660 jfs jpeg json keylayouts keystatus ldm legacycfg legacy_password_test linux16 linuxefi linux loadbios loadenv loopback lsacpi lsefimmap lsefi lsefisystab lsmmap ls lspci lssal luks2 luks lvm lzopio macbless macho mdraid09_be mdraid09 mdraid1x memdisk memrw minicmd minix2_be minix2 minix3_be minix3 minix_be minix mmap morse mpi msdospart mul_test multiboot2 multiboot nativedisk net newc nilfs2 normal ntfscomp ntfs odc offsetio ohci part_acorn part_amiga part_apple part_bsd part_dfly part_dvh part_gpt part_msdos part_plan part_sun part_sunpc parttool password password_pbkdf2 pata pbkdf2 pbkdf2_test pcidump pgp play png priority_queue probe procfs progress raid5rec raid6rec random rdmsr read reboot regexp reiserfs relocator romfs scsi search_fs_file search_fs_uuid search_label search serial setjmp setjmp_test setpci sfs shift_test signature_test sleep sleep_test smbios spkmodem squash4 strtoull_test syslinuxcfg tar terminal terminfo test_blockarg testload test testspeed tftp tga time tpm trig tr true udf ufs1_be ufs1 ufs2 uhci usb_keyboard usb usbms usbserial_common usbserial_ftdi usbserial_pl2303 usbserial_usbdebug usbtest video_bochs video_cirrus video_colors video_fb videoinfo video videotest_checksum videotest wrmsr xfs xnu xnu_uuid xnu_uuid_test xzio zfscrypt zfsinfo zfs zstd
+</code></pre><p>get the gpg keys:</p><pre><code>#  gpg --homedir  /etc/kkk-secure-boot/keys/ --list-keys
+/etc/kkk-secure-boot/keys/pubring.kbx
+---------------------------------------
+pub   rsa4096 2024-06-09 [SC]
+      xxxxxx
+uid           [ultimate] dash (sss secure boot EFI key) &lt;jooujj@gmail.com&gt;
+
+</code></pre><p>sig grub.cfg:</p><pre><code>$ cd $GRUBSTAGE/boot/grub
+$ ls
+grub.cfg
+$ gpg --homedir /etc/kkk-secure-boot/keys/ --default-key &quot;xxxxxxxxxxxxxxxxx&quot; --detach-sign ./grub.cfg
+$ ls 
+grub.cfg grub.cfg.sig
+</code></pre><p>Make standalone image:</p><pre><code># grub-mkstandalone --disable-shim-lock --directory=&quot;/usr/lib/grub/x86_64-efi&quot; --format=&quot;x86_64-efi&quot; --output=&quot;$GRUBSTAGE/$EFI_FILENAME&quot; --locales=&quot;en@quot&quot; --themes=&quot;&quot; --modules=&quot;$grub_modules&quot; --pubkey=$GPGPUBLICKEY &quot;boot/grub/grub.cfg=$GRUBSTAGE/boot/grub/grub.cfg&quot; &quot;boot/grub/grub.cfg.sig=$GRUBSTAGE/boot/grub/grub.cfg.sig&quot; -v
+</code></pre><p>Examine the result:</p><pre><code># ls $GRUBSTAGE/$EFI_FILENAME -l -h
+-rw-r--r-- 1 root root 8.0M  6月  9 17:29 /tmp/tmp.b2mwtaVeHn/securegrubx64.efi
+</code></pre><p>Save db.key OpenSSL key to an unencrypted file(remove passphrase):</p><pre><code># openssl rsa -in /etc/kkk-secure-boot/keys/db.key --out &quot;$PEMPRIVATEKEY&quot;
+Enter pass phrase for /etc/kkk-secure-boot/keys/db.key:
+writing RSA key
+root@2204:/etc/kkk-secure-boot/keys# file $PEMPRIVATEKEY
+/tmp/tmp.9MIZnHg73k: ASCII text
+</code></pre><p>Using this unencrypted file for signing the efi file:</p><pre><code># sbsign --key &quot;$PEMPRIVATEKEY&quot; --cert &quot;/etc/kkk-secure-boot/keys/db.crt&quot; --output /tmp/$EFI_FILENAME &quot;$GRUBSTAGE/$EFI_FILENAME&quot;
+Signing Unsigned original image
+# ls /tmp/$EFI_FILENAME -l -h
+-rw-r--r-- 1 root root 8.0M  6月  9 17:43 /tmp/securegrubx64.efi
+</code></pre><p>Create efi item:</p><pre><code>root@2204:/boot# efibootmgr --quiet --create --disk /dev/vda --part 1 --write-signature --label  &quot;myubuntu&quot; --loader &quot;\\EFI\\ubuntu\\securegrubx64.efi&quot;
+root@2204:/boot# efibootmgr 
+BootCurrent: 0004
+Timeout: 0 seconds
+BootOrder: 0005,0004,0003,0001,0000,0002
+Boot0000* UiApp
+Boot0001* UEFI Misc Device
+Boot0002* EFI Internal Shell
+Boot0003* ubuntu
+Boot0004* ubunt
+Boot0005* myubuntu
+
+</code></pre><p>Sign the initrd and kernel:</p><pre><code>$ cd /boot/
+$ gpg --homedir /etc/kkk-secure-boot/keys/ --default-key &quot;ggouweoguwe07DCDFF7D40DB0912F8&quot; --detach-sign vmlinuz-6.5.0-35-generic
+$ gpg --homedir /etc/kkk-secure-boot/keys/ --default-key &quot;ggouweoguwe07DCDFF7D40DB0912F8&quot; --detach-sign vmlinuz-6.5.0-18-generic
+$ gpg --homedir /etc/kkk-secure-boot/keys/ --default-key &quot;ggouweoguwe07DCDFF7D40DB0912F8&quot; --detach-sign initrd.img-6.5.0-18-generic
+$ gpg --homedir /etc/kkk-secure-boot/keys/ --default-key &quot;ggouweoguwe07DCDFF7D40DB0912F8&quot; --detach-sign initrd.img-6.5.0-35-generic
+$ ls -l -h vmlinuz-6.5.0-*
+-rw-r--r-- 1 root root 14M  2月 21 03:34 vmlinuz-6.5.0-18-generic
+-rw-r--r-- 1 root root 566  6月  9 17:52 vmlinuz-6.5.0-18-generic.sig
+-rw------- 1 root root 14M  5月  6 23:15 vmlinuz-6.5.0-35-generic
+-rw-r--r-- 1 root root 566  6月  9 17:52 vmlinuz-6.5.0-35-generic.sig
+$ ls -l -h initrd.img-6.5.0-*
+-rw-r--r-- 1 root root 67M  6月  7 21:38 initrd.img-6.5.0-18-generic
+-rw-r--r-- 1 root root 566  6月  9 17:52 initrd.img-6.5.0-18-generic.sig
+-rw-r--r-- 1 root root 68M  6月  8 18:31 initrd.img-6.5.0-35-generic
+-rw-r--r-- 1 root root 566  6月  9 17:52 initrd.img-6.5.0-35-generic.sig
+</code></pre><p>Sign this new generated efi file:</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
 cd Fooocus-MRE
 python3 -m venv fooocus_env
 source fooocus_env/bin/activate
