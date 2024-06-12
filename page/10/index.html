@@ -680,7 +680,18 @@ $ ls -l -h initrd.img-6.5.0-*
 -rw-r--r-- 1 root root 566  6月  9 17:52 initrd.img-6.5.0-18-generic.sig
 -rw-r--r-- 1 root root 68M  6月  8 18:31 initrd.img-6.5.0-35-generic
 -rw-r--r-- 1 root root 566  6月  9 17:52 initrd.img-6.5.0-35-generic.sig
-</code></pre><p>Sign this new generated efi file:</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
+</code></pre><p>Sign this new generated efi file:</p><h3 id=77-whatprovide-via-yum>77. whatprovide via yum</h3><p>find a file belongs to which rpm via:</p><pre><code># yum whatprovides '/usr/include/uuid/uuid.h'
+Last metadata expiration check: 0:30:14 ago on Tue Jun 11 10:03:15 2024.
+util-linux-devel-2.34-8.ky10.aarch64 : Development package for ${name}
+Repo        : @System
+Matched from:
+Filename    : /usr/include/uuid/uuid.h
+
+util-linux-devel-2.35.2-10.p10.ky10.aarch64 : Development package for ${name}
+Repo        : ks10-adv-os
+Matched from:
+Filename    : /usr/include/uuid/uuid.h
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/11/24/workingtipsonfooocusmre/>WorkingTipsOnfooocusMRE</a></h1><span class=post-date>Nov 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install steps:</p><pre><code>git clone https://github.com/MoonRide303/Fooocus-MRE.git
 cd Fooocus-MRE
 python3 -m venv fooocus_env
 source fooocus_env/bin/activate
