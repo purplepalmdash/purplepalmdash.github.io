@@ -49,6 +49,32 @@ sudo cp /usr/local/bin/curl /usr/bin/curl
 sudo ldconfig
 curl -V
 </code></pre><h3 id=5-nix-shell-install>5. nix-shell install</h3><p>install via:</p><pre><code>nix-shell '&lt;home-manager&gt;' -A install --option substituters https://mirrors.ustc.edu.cn/nix-channels/store
+</code></pre><h3 id=6-workingtips-for-nix-on-ubuntu>6. Workingtips for nix on ubuntu</h3><p>简单步骤:</p><pre><code>curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+nix-shell '&lt;home-manager&gt;' -A install
+nix run home-manager/master -- init --switch 
+sudo apt install seatd
+sudo usermod -a -G video $USER
+reboot
+nix profile install github:guibou/nixGL --impure
+home-manager switch --option substituters https://mirrors.ustc.edu.cn/nix-channels/store
+sudo apt-get install -y pipewire pipewire-pulse
+</code></pre><p>Also edit the limitation of <code>/etc/security/limits.conf</code>, as following.</p><p>Modification for nix files:</p><pre><code>$ vim ~/.config/home-manager/hyprland.nix
+                monitor=,1920x1080@60,auto,1
+......
+             master {
+                 # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
+# new_is_master = true
+                 new_status = slave
+$ vim ~/.config/home-manager/flake.nix
+    #hyprland.url = &quot;github:hyprwm/Hyprland&quot;;
+    hyprland.url = &quot;git+https://github.com/hyprwm/Hyprland?submodules=1&quot;;
+
+</code></pre><h3 id=7-limitation-linux>7. limitation linux</h3><p>enlarge via:</p><pre><code> /etc/security/limits.conf, add
+
+* soft nofile 1000001
+* hard nofile 1000001
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
