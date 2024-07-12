@@ -286,6 +286,8 @@ $ vim ~/.config/home-manager/flake.nix
 
 * soft nofile 1000001
 * hard nofile 1000001
+</code></pre><h3 id=8-pactrap-archlinux>8. pactrap archlinux</h3><p>Can&rsquo;t Pacstrap because of &ldquo;Corrupted&rdquo; packages, solved via:</p><pre><code>pacman -Sy archlinux-keyring
+sudo pacstrap -c /mnt base
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
