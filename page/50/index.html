@@ -1,5 +1,158 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/04/21/workingtipsonpython/>WorkingtipsOnpython</a></h1><span class=post-date>Apr 21, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Just recording:</p><pre><code>[root@3652a460ae13 apps]# python manage.py shell
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/05/06/workingtipsonkubespray-2.13.0/>WorkingtipsOnkubespray-2.13.0</a></h1><span class=post-date>May 6, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=vagrant-machine>Vagrant machine</h3><p>vagrant machine is created as <code>192.168.121.251</code>, 6-core, 8192 MB Memory, with base images ubuntu18.04.4</p><h3 id=steps>Steps</h3><p>Configure the <code>/etc/apt/sources.lists</code> for using cn repository, then install pip for python, then install the ansible environment:</p><pre><code># sudo apt-get install -y python-pip
+# sudo su
+# mkdir -p ~/.pip
+# vim ~/.pip/pip.conf
+[global]
+trusted-host =  mirrors.aliyun.com
+index-url = http://mirrors.aliyun.com/pypi/simple
+# tar xzvf kubespray-2.13.0.tar.gz
+# cd kubespray-2.13.0
+# pip install -r requirements.txt
+</code></pre><p>Configure the password-less login:</p><pre><code># vim /etc/ssh/sshd_config
+PermitRootLogin yes
+# systemctl restart sshd
+# ssh-keygen
+# ssh-copy-id root@192.168.121.251
+</code></pre><p>Make sure all of your networking environment could reach out of The fucking GreatFileWall.</p><p>Configure the inventory.ini for deploying:</p><pre><code># vim inventory/sample/inventory.ini
+[all]
+kubespray ansible_host=192.168.121.251 ip=192.168.121.251
+
+[kube-master]
+kubespray
+
+[etcd]
+kubespray
+
+[kube-node]
+kubespray
+
+[calico-rr]
+
+[k8s-cluster:children]
+kube-master
+kube-node
+calico-rr
+# ansible-playbook -i inventory/sample/hosts.ini cluster.yml
+</code></pre><p>By now we got all of the offline docker images and allmost all of the debs files, but we have install additional pkgs for our own offline purpose usage:</p><pre><code># apt-get install -y iputils-ping nethogs python-netaddr build-essential bind9 bind9utils nfs-common nfs-kernel-server ntpdate ntp tcpdump iotop unzip wget apt-transport-https socat rpcbind arping fping python-apt ipset ipvsadm pigz nginx docker-registry
+# apt-get install -y ./netdata_1.18.1_amd64_bionic.deb
+</code></pre><p>Transfer all of the offline debs files and rename it in Rong/ Directory and xz it as <code>1804debs.tar.xz</code>.</p><p>Replace(1804debs.tar.xz and <code>kube*</code>, and calicoctl/cni-plugin, docker.tar.gz):</p><pre><code># ls
+calicoctl                           gpg                    kubectl-v1.17.5-amd64
+cni-plugins-linux-amd64-v0.8.5.tgz  kubeadm-v1.17.5-amd64  kubelet-v1.17.5-amd64
+# cd ../for_master0/
+# ls
+1804debs.tar.xz  ansible-playbook_exe  docker-compose     docker.tar.gz
+ansible_exe      autoindex.tar.xz      dockerDebs.tar.gz  portable-ansible-v0.4.1-py2.tar.bz2
+</code></pre><p>Generate docker registry offline files(On existing cluster master0):</p><pre><code># systemctl stop docker-registry.servica
+# cd /var/lib/docker-registry
+# mv docker docker.back
+# systemctl start docker-registry.servica
+# docker push nginx:1.17
+# docker push kubernetesui/dashboard-amd64:v2.0.0
+# docker push k8s.gcr.io/kube-proxy:v1.17.5
+# docker push k8s.gcr.io/kube-apiserver:v1.17.5
+# docker push k8s.gcr.io/kube-controller-manager:v1.17.5
+# docker push k8s.gcr.io/kube-scheduler:v1.17.5
+# docker push k8s.gcr.io/k8s-dns-node-cache:1.15.12
+# docker push calico/cni:v3.13.2
+# docker push calico/kube-controllers:v3.13.2
+# docker push calico/node:v3.13.2
+# docker push kubernetesui/metrics-scraper:v1.0.4
+# docker push lachlanevenson/k8s-helm:v3.1.2
+# docker push k8s.gcr.io/addon-resizer:1.8.8
+# docker push coredns/coredns:1.6.5
+# docker push k8s.gcr.io/metrics-server-amd64:v0.3.6
+# docker push k8s.gcr.io/cluster-proportional-autoscaler-amd64:1.7.1
+# docker push quay.io/coreos/etcd:v3.3.12
+# docker push k8s.gcr.io/pause:3.1
+# systemctl stop docker-registry.servica
+# du -hs docker/
+484M	docker
+# tar czvf docker.tar.gz docker/
+</code></pre><p>Kubeadm signature:</p><pre><code># cd /root &amp;&amp; wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
+# tar xzvf go1.14.2.linux-amd64.tar.gz
+# vim /root/.profile
+PATH=&quot;$PATH:/root/go/bin/&quot;
+# source ~/.profile
+# go version
+go version go1.14.2 linux/amd64
+# wget https://github.com/kubernetes/kubernetes/archive/v1.17.5.zip
+# unzip v1.17.5.zip
+# cd kubernetes-1.17.5/
+</code></pre><p>Make code changes for timestamp:</p><pre><code># diff kubernetes-1.17.5/hack/lib/version.sh ../kubernetes-1.17.5/hack/lib/version.sh 
+47c47
+&lt;     KUBE_GIT_TREE_STATE=&quot;archive&quot;
+---
+&gt;     KUBE_GIT_TREE_STATE=&quot;clean&quot;
+64c64
+&lt;         KUBE_GIT_TREE_STATE=&quot;dirty&quot;
+---
+&gt;         KUBE_GIT_TREE_STATE=&quot;clean&quot;
+# diff kubernetes-1.17.5/cmd/kubeadm/app/constants/constants.go ../kubernetes-1.17.5/cmd/kubeadm/app/constants/constants.go
+47c47
+&lt;       CertificateValidity = time.Hour * 24 * 365
+---
+&gt;       CertificateValidity = time.Hour * 24 * 365 * 100
+# diff kubernetes-1.17.5/vendor/k8s.io/client-go/util/cert/cert.go ../kubernetes-1.17.5/vendor/k8s.io/client-go/util/cert/cert.go
+66c66
+&lt;               NotAfter:              now.Add(duration365d * 10).UTC(),
+---
+&gt;               NotAfter:              now.Add(duration365d * 100).UTC(),
+96c96
+&lt;       maxAge := time.Hour * 24 * 365          // one year self-signed certs
+---
+&gt;       maxAge := time.Hour * 24 * 365 * 100         // one year self-signed certs
+110c110
+&lt;               maxAge = 100 * time.Hour * 24 * 365 // 100 years fixtures
+---
+&gt;               maxAge = 100 * time.Hour * 24 * 365  // 100 years fixtures
+124c124
+&lt;               NotAfter:  validFrom.Add(maxAge),
+---
+&gt;               NotAfter:  validFrom.Add(maxAge * 100),
+152c152
+&lt;               NotAfter:  validFrom.Add(maxAge),
+---
+&gt;               NotAfter:  validFrom.Add(maxAge * 100),
+</code></pre><p>Make kubeadm binary files:</p><pre><code># make all WHAT=cmd/kubeadm
+# cd _output/bin
+# ls
+conversion-gen  deepcopy-gen  defaulter-gen  go2make  go-bindata  kubeadm  openapi-gen
+# ./kubeadm version
+kubeadm version: &amp;version.Info{Major:&quot;1&quot;, Minor:&quot;17&quot;, GitVersion:&quot;v1.17.5&quot;, GitCommit:&quot;e0fccafd69541e3750d460ba0f9743b90336f24f&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2020-05-06T03:23:16Z&quot;, GoVe
+rsion:&quot;go1.14.2&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+</code></pre><p>Code changes mainly in <code>1_preinstall</code> and <code>3_k8s</code>:</p><pre><code>Show diffs., TBD
+</code></pre><p>After hanges almost everything will be acts as in old versions.</p><h3 id=kubespray-changes>kubespray changes</h3><p>In new version we have to comment the:</p><pre><code># roles/kubespray-defaults/tasks/main.yaml
+# do not run gather facts when bootstrap-os in roles
+#- name: set fallback_ips
+#  include_tasks: fallback_ips.yml
+#  when:
+#    - &quot;'bootstrap-os' not in ansible_play_role_names&quot;
+#    - fallback_ips is not defined
+#  tags:
+#    - always
+#
+#- name: set no_proxy
+#  include_tasks: no_proxy.yml
+#  when:
+#    - &quot;'bootstrap-os' not in ansible_play_role_names&quot;
+#    - http_proxy is defined or https_proxy is defined
+#    - no_proxy is not defined
+#  tags:
+#    - always
+
+</code></pre><p>And also change the <code>container-engine</code>'s docker roles, thus we won&rsquo;t restart docker to keep the graphical installation on-going:</p><pre><code># cat container-engine/docker/handlers/main.yml 
+---
+- name: restart docker
+  command: echo &quot;HelloWorld&quot;
+
+#  command: /bin/true
+#  notify:
+#    - Docker | reload systemd
+#    - Docker | reload docker.socket
+#    - Docker | reload docker
+#    - Docker | wait for docker
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/04/21/workingtipsonpython/>WorkingtipsOnpython</a></h1><span class=post-date>Apr 21, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Just recording:</p><pre><code>[root@3652a460ae13 apps]# python manage.py shell
 Python 3.6.1 (default, Jun 29 2018, 02:56:19)                          
 Type 'copyright', 'credits' or 'license' for more information
 IPython 6.5.0 -- An enhanced Interactive Python. Type '?' for help. 
@@ -217,20 +370,4 @@ exec mate-session &amp;
 metacity&amp;
 mate-session
 # apt-get install -y xrdp
-</code></pre><p>Thus you could visit the remote desktop via <code>rdesktop</code></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/03/17/workingtipsonft/>WorkingTipsOnFT</a></h1><span class=post-date>Mar 17, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=tips>Tips</h3><p>官方默认的源是无法安装的</p><p><img src=/images/2020_03_17_16_23_16_910x466.jpg alt=/images/2020_03_17_16_23_16_910x466.jpg>
-备份后换成Ubuntu官方源:</p><pre><code># vim /etc/apt/sources.list
-deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial main multiverse restricted universe
-deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-backports main multiverse restricted universe
-deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-proposed main multiverse restricted universe
-deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-security main multiverse restricted universe
-deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-updates main multiverse restricted universe
-# sudo apt-get update -y
-</code></pre><p>成功。</p><h3 id=system>System</h3><p>Create a vm based on Ubuntu16.04.6, thus you get the qcow2 of the basic images. Copy another:</p><pre><code># cp ubuntu.qcow2 crack_FT.qcow2
-</code></pre><p>Create the disk image via dd:</p><pre><code>#  sudo dd if=/dev/sdc | gzip -c &gt; /media/sda/kylin_FT.img
-</code></pre><p>Then gunzip it in a very large disk system</p><h3 id=green-kfz>GREEN KFZ</h3><p>Working.</p><pre><code>1. all of the binarys are in portable mode.     
-2. ansible in portable.     
-3. docker/docker-compose in binary mode.   
-4. install-socat in docker images, arm64 distribution. 
-5. ignore installing any packages. 
-
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/49/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/49/>49</a></li><li class="page-item active"><a class=page-link href=/page/50/>50</a></li><li class=page-item><a class=page-link href=/page/51/>51</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/241/>241</a></li><li class=page-item><a href=/page/51/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/241/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Thus you could visit the remote desktop via <code>rdesktop</code></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/49/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/49/>49</a></li><li class="page-item active"><a class=page-link href=/page/50/>50</a></li><li class=page-item><a class=page-link href=/page/51/>51</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/241/>241</a></li><li class=page-item><a href=/page/51/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/241/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

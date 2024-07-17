@@ -1,5 +1,23 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/09/nixosonnuc11/>nixOSOnnuc11</a></h1><span class=post-date>Jul 9, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-安装>1. 安装</h3><p>启动光盘引导系统，进入到安装界面，更换nixos用户的密码后，远程ssh进入到安装界面后:</p><pre><code>nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixpkgs-unstable nixpkgs
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/17/workingtipsoncomfyuiubuntu2204/>WorkingTipsOnComfyUIUbuntu2204</a></h1><span class=post-date>Jul 17, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>Ubuntu22.04, with a6000, install steps:</p><pre><code>git clone https://github.com/comfyanonymous/ComfyUI.git
+cd ComfyUI
+conda create -n comfyui python=3.10
+conda activate comfyui
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip3 install torch torchvision torchaudio
+pip install -r requirements.txt 
+ cp extra_model_paths.yaml.example extra_model_paths.yaml
+ vim extra_model_paths.yaml
+ cd models/
+ ls
+ cd ..
+ vim extra_model_paths.yaml
+ python main.py --port 8188 --listen 192.168.1.7
+</code></pre><p>Install :</p><pre><code>sudo apt install nvidia-cudnn
+</code></pre><p>Install ComfyUI manager:</p><pre><code>goto ComfyUI/custom_nodes dir in terminal(cmd)
+git clone https://github.com/ltdrdata/ComfyUI-Manager.git
+Restart ComfyUI
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/09/nixosonnuc11/>nixOSOnnuc11</a></h1><span class=post-date>Jul 9, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-安装>1. 安装</h3><p>启动光盘引导系统，进入到安装界面，更换nixos用户的密码后，远程ssh进入到安装界面后:</p><pre><code>nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixpkgs-unstable nixpkgs
 nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixos-24.05 nixos
 nix-channel --list
 nix-channel --update
@@ -288,6 +306,13 @@ $ vim ~/.config/home-manager/flake.nix
 * hard nofile 1000001
 </code></pre><h3 id=8-pactrap-archlinux>8. pactrap archlinux</h3><p>Can&rsquo;t Pacstrap because of &ldquo;Corrupted&rdquo; packages, solved via:</p><pre><code>pacman -Sy archlinux-keyring
 sudo pacstrap -c /mnt base
+</code></pre><h3 id=9-nixos-dhcpd-issue>9. nixos dhcpd issue</h3><p>encounter following issue:</p><pre><code>       Failed assertions:
+       - The option definition `services.dhcpd4' in `/nix/store/yq5mkfx3b97iczs5a6lhjm14gkjx9795-source/configuration.nix' no longer has any effect; please remove it.
+       The dhcpd4 module has been removed because ISC DHCP reached its end of life.
+       See https://www.isc.org/blogs/isc-dhcp-eol/ for details.
+       Please switch to a different implementation like kea or dnsmasq.
+</code></pre><p>switch to new implementation:</p><h3 id=10-sybench-rocklinux>10. sybench rocklinux</h3><p>Install via:</p><pre><code>sudo yum install -y epel-release
+sudo yum install ./sysbench.....
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
@@ -550,128 +575,4 @@ sudo nix-env -iA nixpkgs.awesome
 
 
 sudo nixos-rebuild switch --option substituters https://mirrors.ustc.edu.cn/nix-channels/store
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/05/installcryptedgentoo/>InstallCryptedGentoo</a></h1><span class=post-date>Jun 5, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Partition:</p><pre><code>livecd ~ # lsblk
-NAME  MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
-loop0   7:0    0 479.7M  1 loop /mnt/livecd
-sr0    11:0    1 527.4M  0 rom  /mnt/cdrom
-vda   252:0    0    80G  0 disk 
-zram0 253:0    0     0B  0 disk 
-livecd ~ # parted /dev/vda
-GNU Parted 3.6
-Using /dev/vda
-Welcome to GNU Parted! Type 'help' to view a list of commands.
-(parted) mklabel gpt
-(parted) unit MiB                                                         
-(parted) mkpart primary 2 514
-(parted) mkpart primary 515 -1                                            
-(parted) name 1 boot                                                      
-(parted) name 2 luks                                                      
-(parted) set 1 boot on                                                    
-(parted) q                                                                
-Information: You may need to update /etc/fstab.
-</code></pre><p>Setup crypts:</p><pre><code>livecd ~ # cryptsetup luksFormat  /dev/vda2
-
-WARNING!
-========
-This will overwrite data on /dev/vda2 irrevocably.
-
-Are you sure? (Type 'yes' in capital letters): YES
-Enter passphrase for /dev/vda2: 
-Verify passphrase: 
-livecd ~ # cryptsetup open /dev/vda2 ct0
-Enter passphrase for /dev/vda2: 
-</code></pre><p>Mount to specified position:</p><pre><code>mkfs.btrfs /dev/mapper/ct0
-mkfs.vfat -F32 /dev/vda1
-mount /dev/mapper/ct0 /mnt/gentoo
-</code></pre><p>Using btrfs&rsquo;s subvolume function:</p><pre><code>btrfs subvolume create /mnt/gentoo/subvol-root
-btrfs subvolume create /mnt/gentoo/subvol-home
-btrfs subvolume create /mnt/gentoo/subvol-snapshots
-btrfs subvolume set-default /mnt/gentoo/subvol-root
-umount /mnt/gentoo
-mount /dev/mapper/ct0 /mnt/gentoo
-</code></pre><p>prepare chroot:</p><pre><code>cd /mnt/gentoo
-wget ......stage3
-tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
-</code></pre><p>specify jobs for building:</p><pre><code># nano /etc/portage/make.conf
-MAKEOPTS=&quot;-j17&quot;
-</code></pre><p>select mirror:</p><pre><code>mirrorselect -i -o &gt;&gt;/mnt/gentoo/etc/portage/make.conf
-</code></pre><p>Setup ebuild repository sync address:</p><pre><code># mkdir etc/portage/repos.conf
-# cp usr/share/portage/config/repos.conf etc/portage/repos.conf/gentoo.conf
-# cat etc/portage/repos.conf/gentoo.conf | grep uri
-sync-uri = rsync://rsync.mirrors.ustc.edu.cn/gentoo-portage
-cp -L /etc/resolv.conf etc/
-</code></pre><p>chroot-in:</p><pre><code>livecd /mnt/gentoo # mount --types proc /proc /mnt/gentoo/proc
-livecd /mnt/gentoo # mount --rbind /sys /mnt/gentoo/sys
-livecd /mnt/gentoo # mount --rbind /dev /mnt/gentoo/dev
-####  then
-chroot /mnt/gentoo
-. /etc/profile
-PS1=(chroot)$PS1
-</code></pre><p>Mount vda1 for kernel/bootloader installation:</p><pre><code>mount /dev/vda1 /boot
-</code></pre><p>Install gentoo ebuild repository:</p><pre><code>emerge-webrsync
-emerge --sync 
-</code></pre><p>Install and set editor:</p><pre><code>emerge -vj app-editors/vim
-eselect editor set 2
-. /etc/profile
-PS1=(chroot)$PS1
-</code></pre><p>update @world:</p><pre><code>eselect profile set 21
-USE=&quot;X initramfs cjk cups crypt udev alsa elogind zsh-completion bash-completion -consolekit&quot;
-emerge --ask --verbose --update --deep --changed-use @world
-</code></pre><p>Select the locale and timezone:</p><pre><code>echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone
-emerge --config sys-libs/timezone-data
-vim /etc/locale.gen
-locale-gen 
-eselect locale set 6
-env-update &amp;&amp; source /etc/profile &amp;&amp; export PS1=&quot;(chroot) $PS1&quot;
-</code></pre><p>Install firmware:</p><pre><code>mkdir -p /etc/portage/package.license
-echo 'sys-kernel/linux-firmware linux-fw-redistributable no-source-code' &gt;/etc/portage/package.license/linux-firmware
-echo 'sys-kernel/installkernel dracut' &gt;/etc/portage/package.use/installkernel
-emerge --ask sys-kernel/gentoo-sources
-emerge --ask sys-kernel/linux-firmware
-emerge --ask sys-apps/pciutils
-emerge --ask sys-kernel/genkernel
-</code></pre><p>Set kernel:</p><pre><code>(chroot) livecd / # readlink -v /usr/src/linux
-readlink: /usr/src/linux: No such file or directory
-(chroot) livecd / # eselect kernel list
-Available kernel symlink targets:
-  [1]   linux-6.6.30-gentoo
-(chroot) livecd / # eselect kernel set 1
-(chroot) livecd / # readlink -v /usr/src/linux
-linux-6.6.30-gentoo
-</code></pre><p>Build kernel:</p><pre><code>cd /usr/src/linux
- make menuconfig
- make -j17
- make modules_install &amp;&amp; make install
- genkernel --kernel-config=/usr/src/linux/.config initramfs
- blkid /dev/vda1&gt;&gt;/etc/fstab
- blkid /dev/mapper/ct0&gt;&gt;/etc/fstab
- vim /etc/fstab 
-#/dev/vda1: UUID=&quot;3D3E-221D&quot; BLOCK_SIZE=&quot;512&quot; TYPE=&quot;vfat&quot; PARTLABEL=&quot;boot&quot; PARTUUID=&quot;e0e7d44b-d78f-4c27-808a-c859ce8ead64&quot;
-UUID=&quot;3D3E-221D&quot;	/boot     vfat    rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 2
-#/dev/mapper/ct0: UUID=&quot;5f574106-322e-4f9f-8efd-c3615fcb237a&quot; UUID_SUB=&quot;0e96210f-49ac-4355-9237-dab1fb6eae93&quot; BLOCK_SIZE=&quot;4096&quot; TYPE=&quot;btrfs&quot;
-# rw,relatime,space_cache=v2,subvolid=256,subvol=/subvol-root
-UUID=&quot;5f574106-322e-4f9f-8efd-c3615fcb237a&quot;	/         btrfs   defaults,noatime,ssd,discard,subvolid=256,subvol=/subvol_root 0 1
-
-</code></pre><p>Install system packages:</p><pre><code>   66  emerge --ask sys-fs/cryptsetup
-   67  emerge --ask sys-process/cronie
-   68  emerge --ask app-admin/sysklogd
-   69  emerge --ask sysfs/btrfs-progs
-   70  emerge --ask sys-fs/btrfs-progs
-   71  emerge --ask net-misc/dhcpcd
-   72  emerge -av app-admin/sysklogd sys-fs/cryptsetup
-   73  rc-update add sysklogd default
-   74  rc-update add dhcpcd default
-   76  echo GRUB_PLATFORMS=&quot;efi-64&quot; &gt;&gt; /etc/portage/make.conf
-   77  emerge -av sys-boot/grub:2
-   79  mkdir /boot/efi/
-   80  ls /dev/disk/by-uuid/
-   81  ls /dev/disk/by-uuid/ -l -h
-   82  cat /etc/fstab 
-   83  vim /etc/default/grub 
-   84  vim /etc/default/grub 
-   85  mount -a
-   86  grub-install --target=x86_64-efi --boot-directory=/boot --efi-directory=/boot/efi/ --bootloader-id=Gentoo --debug
-   87  grub-mkconfig -o /boot/grub/grub.cfg
-   89  ls /boot/grub/
-   90  ls /boot/grub/grub.cfg 
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class="page-item disabled"><a class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class="page-item active"><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/241/>241</a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/241/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
