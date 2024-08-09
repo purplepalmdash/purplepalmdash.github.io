@@ -78,4 +78,8 @@ server=127.0.0.1#25533
 $ sudo systemctl restart dnsmasq
 </code></pre><p>Examine:</p><pre><code>$ dig www.google.com
 $ curl www.google.com
+</code></pre><p>Change the dncrypt-proxy listend socket:</p><pre><code>$ vim /lib/systemd/system/dnscrypt-proxy.socket
+[Socket]
+ListenStream=127.0.2.1:20153
+ListenDatagram=127.0.2.1:20153
 </code></pre><h3 id=3-reference-url>3. reference url</h3><p><code>https://dnscrypt.info/public-servers/</code></p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

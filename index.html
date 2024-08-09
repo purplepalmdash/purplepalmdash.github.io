@@ -1,5 +1,39 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/18/nvidiat4onryzenvfiotips/>nvidiat4OnRyzenVfioTips</a></h1><span class=post-date>Jul 18, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=host-preparation>Host Preparation</h3><p>Hardware information:</p><pre><code>root@hope:/etc/libvirt# sudo lspci -nn| grep -i nvidia
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/26/jumperconfiguration/>JumperConfiguration</a></h1><span class=post-date>Jul 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Ubuntu22.04 Install desktop version.</p><pre><code>sudo apt update -y
+sudo apt upgrade -y
+sudo apt install -y openssh-server tigervnc-standalone-server tigervnc-xorg-extension lxqt vim net-tools curl
+sudo systemctl set-default multi-user.target
+sudo reboot
+</code></pre><p>Configure vnc:</p><pre><code>$ vncpasswd
+</code></pre><p>Configure the vnc:</p><pre><code>test@jumper:~$ cat ~/.vnc/config 
+session=lxqt
+geometry=1920x1080
+localhost=no
+alwaysshared
+test@jumper:~$ cat /etc/tigervnc/vncserver.users 
+# TigerVNC User assignment
+#
+# This file assigns users to specific VNC display numbers.
+# The syntax is &lt;display&gt;=&lt;username&gt;. E.g.:
+#
+# :2=andrew
+# :3=lisa
+:1=test
+test@jumper:~$ sudo systemctl enable tigervncserver@:1
+Created symlink /etc/systemd/system/multi-user.target.wants/tigervncserver@:1.service → /lib/systemd/system/tigervncserver@.service.
+</code></pre><p>download the citrix workspace from websiste, and install them via:</p><pre><code>sudo dpkg -i icaclient_24.5.0.76_amd64.deb 
+sudo dpkg -i ctxusb_24.5.0.76_amd64.deb 
+</code></pre><p>Configure network in network manager.</p><pre><code>ens160: static ip 192.168.1.33
+ens192: dhcp from company networking. 
+</code></pre><p>Add crontab for sharing:</p><pre><code>root@jumper:/home/test# crontab -l
+@reboot sleep 10 &amp;&amp; /usr/bin/startsharing.sh
+root@jumper:/home/test# cat /usr/bin/startsharing.sh
+#!/bin/sh -e
+iptables -t nat -A POSTROUTING -o ens192 -j MASQUERADE
+iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i ens160 -o ens192 -j ACCEPT
+echo &quot;1&quot; &gt; /proc/sys/net/ipv4/ip_forward
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/18/nvidiat4onryzenvfiotips/>nvidiat4OnRyzenVfioTips</a></h1><span class=post-date>Jul 18, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=host-preparation>Host Preparation</h3><p>Hardware information:</p><pre><code>root@hope:/etc/libvirt# sudo lspci -nn| grep -i nvidia
 08:00.0 3D controller [0302]: NVIDIA Corporation TU104GL [Tesla T4] [10de:1eb8] (rev a1)
 root@hope:/etc/libvirt# lscpu | grep -i model
 Model:                              96
@@ -353,100 +387,4 @@ kvmd:
             - &quot;--resolution={resolution}&quot;
 ...
 </code></pre><p>Examine via:</p><pre><code>kvmd -m
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/01/linuxtips17/>LinuxTips17</a></h1><span class=post-date>Jul 1, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-liquorix-kernelzen>1. liquorix kernel(zen)</h3><p>Install on Ubuntu 22.04 via:</p><pre><code>curl -s 'https://liquorix.net/install-liquorix.sh' | sudo bash
-</code></pre><h3 id=2-pikvm-for-x86>2. pikvm for x86</h3><p>Tips(comment the brltty related items and reboot, then ttyUSB0 is avaiable):</p><pre><code>sudo vim /usr/lib/udev/rules.d/85-brltty.rules
-# ENV{PRODUCT}==&quot;1a86/7523/*&quot;, ENV{BRLTTY_BRAILLE_DRIVER}=&quot;bm&quot;, GOTO=&quot;brltty_usb_run&quot;
-sudo systemctl mask brltty.path
-sudo reboot
-</code></pre><p>Change to ubuntu22.04 and solved the problem.</p><h3 id=3-socket-5-proxy>3. socket 5 proxy</h3><p>Open the proxy via:</p><pre><code>ssh -N -D 0.0.0.0:10000 dash@localhost
-</code></pre><p>Then set the proxy in other machine for yum usage:</p><pre><code>$ vim /etc/yum.conf
-#proxy=socks5://10.23.119.200:10000
-</code></pre><h3 id=4-ubuntu2204-curl-issue>4. ubuntu22.04 curl issue</h3><p>Problem:</p><pre><code>OpenSSL Error messages: error:0A000126:SSL routines::unexpected eof while reading
-</code></pre><p>solved via:</p><pre><code>apt remove curl
-apt purge curl
-apt-get update
-apt-get install -y libssl-dev autoconf libtool make
-cd /usr/local/src
-wget https://curl.haxx.se/download/curl-7.88.1.zip
-unzip curl-7.88.1.zip
-cd curl-7.88.1
-./buildconf
-./configure --with-ssl 
-make
-sudo make install
-sudo cp /usr/local/bin/curl /usr/bin/curl
-sudo ldconfig
-curl -V
-</code></pre><h3 id=5-nix-shell-install>5. nix-shell install</h3><p>install via:</p><pre><code>nix-shell '&lt;home-manager&gt;' -A install --option substituters https://mirrors.ustc.edu.cn/nix-channels/store
-</code></pre><h3 id=6-workingtips-for-nix-on-ubuntu>6. Workingtips for nix on ubuntu</h3><p>简单步骤:</p><pre><code>curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
-nix-shell '&lt;home-manager&gt;' -A install
-nix run home-manager/master -- init --switch 
-sudo apt install seatd
-sudo usermod -a -G video $USER
-reboot
-nix profile install github:guibou/nixGL --impure
-home-manager switch --option substituters https://mirrors.ustc.edu.cn/nix-channels/store
-sudo apt-get install -y pipewire pipewire-pulse
-</code></pre><p>Also edit the limitation of <code>/etc/security/limits.conf</code>, as following.</p><p>Modification for nix files:</p><pre><code>$ vim ~/.config/home-manager/hyprland.nix
-                monitor=,1920x1080@60,auto,1
-......
-             master {
-                 # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-# new_is_master = true
-                 new_status = slave
-$ vim ~/.config/home-manager/flake.nix
-    #hyprland.url = &quot;github:hyprwm/Hyprland&quot;;
-    hyprland.url = &quot;git+https://github.com/hyprwm/Hyprland?submodules=1&quot;;
-
-</code></pre><h3 id=7-limitation-linux>7. limitation linux</h3><p>enlarge via:</p><pre><code> /etc/security/limits.conf, add
-
-* soft nofile 1000001
-* hard nofile 1000001
-</code></pre><h3 id=8-nix-dconf-issue>8. nix dconf issue</h3><p>problem:</p><pre><code>Activating dconfSettings
-dbus[13416]: Failed to start message bus: Configuration file needs one or more &lt;listen&gt; elements giving addresses
-dbus-run-session: EOF reading address from bus daemon
-</code></pre><p>Solved via:</p><pre><code>not solved, for centos's dbus is pretty old
-### 9. pactrap archlinux
-Can't Pacstrap because of &quot;Corrupted&quot; packages, solved via:     
-
-</code></pre><p>pacman -Sy archlinux-keyring
-sudo pacstrap -c /mnt base</p><pre><code>
-### 10. nixos dhcpd issue
-encounter following issue:      
-
-</code></pre><pre><code>   Failed assertions:
-   - The option definition `services.dhcpd4' in `/nix/store/yq5mkfx3b97iczs5a6lhjm14gkjx9795-source/configuration.nix' no longer has any effect; please remove it.
-   The dhcpd4 module has been removed because ISC DHCP reached its end of life.
-   See https://www.isc.org/blogs/isc-dhcp-eol/ for details.
-   Please switch to a different implementation like kea or dnsmasq.
-</code></pre><pre><code>switch to new implementation:     
-
-### 11. sybench rocklinux
-Install via:      
-
-</code></pre><p>sudo yum install -y epel-release
-sudo yum install ./sysbench&mldr;..</p><pre><code>
-### 12. x0vncserver
-Using x0vncserver for replacing nxplayer:      
-
-</code></pre><p>$ sudo pacman -S tigervnc
-$ vncpasswd
-$ vim ~/.xprofile
-x0vncserver -rfbauth ~/.vnc/passwd &</p><pre><code>
-### 13. git clone via socks proxy
-temp using socks proxy via:     
-
-</code></pre><p>git -c &ldquo;http.proxy=socks5h://127.0.0.1:21080&rdquo; clone <a href=https://github.com/Limitex/ComfyUI-Diffusers.git>https://github.com/Limitex/ComfyUI-Diffusers.git</a></p><pre><code>
-### 14. ignore ast kernel issue
-issue:      
-
-</code></pre><p>W: Possible missing firmware /lib/firmware/ast_dp501_fw.bin for module ast</p><pre><code>Solved via:     
-
-</code></pre><p>touch /lib/firmware/ast_dp501_fw.bin
-update-initramfs -u -k all</p><pre><code>
-### 15. watch sync status
-via:      
-
-</code></pre><p>watch -d grep -e Dirty: -e Writeback: /proc/meminfo</p><pre><code></code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class="page-item disabled"><a class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class="page-item active"><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class="page-item disabled"><a class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class="page-item active"><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

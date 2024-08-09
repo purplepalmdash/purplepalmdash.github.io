@@ -1,5 +1,30 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/07/02/arm64isocustomization/>Arm64ISOCustomization</a></h1><span class=post-date>Jul 2, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Make working directory:</p><pre><code>#  mkdir Rong1907iso
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/07/03/building-k8s-dns-node-cache-arm64/>Building k8s-dns-node-cache-arm64</a></h1><span class=post-date>Jul 3, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Clone the source code from github:</p><pre><code># git clone https://github.com/kubernetes/dns.git
+# git checkout tags/1.15.1 -b local_1.15.1
+</code></pre><p>Modify the source code:</p><pre><code># vim Makefile
+BINARIES := \
+    node-cache
+#    e2e \
+#    ginkgo \
+#    sidecar-e2e
+
+
+CONTAINER_BINARIES := \
+    node-cache
+
+ARCH ?= arm64
+</code></pre><p>Now building via:</p><pre><code># make build
+# make containers
+</code></pre><p>Will get error, now copy the generated node-cache file into destination directory:</p><pre><code># cp ./.go/bin/node-cache bin/arm64/
+</code></pre><p>Edit the dnsmasq&rsquo;s Makefile via:</p><pre><code># vim images/dnsmasq/Makefile
+</code></pre><p><img src=/images/2019_07_03_14_47_54_635x612.jpg alt=/images/2019_07_03_14_47_54_635x612.jpg></p><p>make will also get error, manually compile the dnsmasq:</p><pre><code># cd ./images/dnsmasq/_output/arm64/dnsmasq-2.78
+# make
+# cp src/dnsmasq ../docker
+</code></pre><p>Now go the project root directory and make containers:</p><pre><code># make containers
+# docker images  | grep dns
+staging-k8s.gcr.io/k8s-dns-dnsmasq-arm64      1.15.1-dirty         fbb04ccb60e6        About an hour ago   3.63MB
+staging-k8s.gcr.io/k8s-dns-node-cache-arm64   1.15.1-dirty         bf6131745b5e        About an hour ago   71.9MB
+</code></pre><p>Now replace the dns-node-cache default to our own build-out version we could enable node-cache working on arm64.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/07/02/arm64isocustomization/>Arm64ISOCustomization</a></h1><span class=post-date>Jul 2, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Make working directory:</p><pre><code>#  mkdir Rong1907iso
 # cd Rong1907iso/
 # cp ../ubuntu-18.04.2-server-arm64.iso .
 # cp -r ./iso/* ./newISO
@@ -181,68 +206,4 @@ drwx--x--x 14 root      root      4.0K Jun 26 04:13 docker.back
 nameserver 127.0.0.1
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/25/tipsonarmvirtmanager/>TipsOnARMVirtManager</a></h1><span class=post-date>Jun 25, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install following packages:</p><pre><code># apt-get install -y virt-manager 
 # sudo apt-get install -y qemu-efi-aarch64 qemu-efi-arm ovmf
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/25/tipsonraid10/>TipsOnRaid10</a></h1><span class=post-date>Jun 25, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Find how many disks are available in system:</p><pre><code># fdisk -l
-</code></pre><p>Examine the detailed info:</p><pre><code># lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
-NAME     SIZE FSTYPE  TYPE MOUNTPOINT
-loop0  876.9M iso9660 loop /media/cdrom
-sda    557.9G         disk 
-├─sda1   512M vfat    part /boot/efi
-└─sda2 557.4G ext4    part /
-sdb      3.7T         disk 
-sdc      3.7T         disk 
-sdd      3.7T         disk 
-sde      3.7T         disk 
-sdf      3.7T         disk 
-sdg      3.7T         disk 
-sdh      3.7T         disk 
-sdi      3.7T         disk 
-sdj      3.7T         disk 
-sdk      3.7T         disk 
-sdl      3.7T         disk 
-sdm      3.7T         disk
-</code></pre><p>Create the raid10 using following command:</p><pre><code>#  mdadm --create --verbose /dev/md0 --level=10 --raid-devices=12 /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg /dev/sdh /dev/sdi /dev/sdj /dev/sdk /dev/sdl /dev/sdm
-</code></pre><p>View the status, now you could use it:</p><pre><code>#  cat /proc/mdstat
-</code></pre><p>Make filesystem for using:</p><pre><code># mkfs.ext4 -F /dev/md0
-</code></pre><p>Create mount point and mount the md0:</p><pre><code># mkdir -p /media/md0
-# mount /dev/md0 /media/md0
-# df -h
-</code></pre><p>Add md items to mdadm configuration file, so next time bootup kernel will recognize it, also add fstab items:</p><pre><code>#  mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
-#  cat /etc/mdadm/mdadm.conf 
-#  update-initramfs -u
-#  echo '/dev/md0 /mnt/md0 ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
-#  cat /etc/fstab 
-</code></pre><p>Now view the lsblk output will show like following:</p><pre><code>lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
-NAME     SIZE FSTYPE            TYPE   MOUNTPOINT
-loop0  876.9M iso9660           loop   /media/cdrom
-sda    557.9G                   disk   
-├─sda1   512M vfat              part   /boot/efi
-└─sda2 557.4G ext4              part   /
-sdb      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-sdc      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-sdd      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-sde      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-sdf      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-sdg      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-sdh      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-sdi      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-sdj      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-sdk      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-sdl      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-sdm      3.7T linux_raid_member disk   
-└─md0   21.9T ext4              raid10 /media/md0
-</code></pre><h3 id=remove-md>remove md</h3><p>via:</p><pre><code>sudo mdadm --stop /dev/md0
-sudo mdadm --detail /dev/md0
-sudo mdadm --zero-superblock /dev/sdx
-sudo mv /etc/mdadm/mdadm.conf /etc/mdadm/mdadm.conf.bak
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/59/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/59/>59</a></li><li class="page-item active"><a class=page-link href=/page/60/>60</a></li><li class=page-item><a class=page-link href=/page/61/>61</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/61/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

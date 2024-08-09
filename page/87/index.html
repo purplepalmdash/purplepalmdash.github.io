@@ -1,5 +1,156 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/04/usecrontabforrunningtasks/>UseCrontabForRunningTasks</a></h1><span class=post-date>Jan 4, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>If I&rsquo;d wanna to run the same tasks on several machine at the certain time, I
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/05/pdnsforarchlinux/>pdnsForArchLinux</a></h1><span class=post-date>Jan 5, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>For avoiding dns resolving pollution, I need to configure pdnsd for my
+archlinux workstation, following are the steps:</p><pre><code># pacman -S pdnsd
+# cp /usr/share/doc/pdnsd/pdnsd.conf /etc
+# vim /etc/pdnsd.conf
+</code></pre><p>The configuration file is listed as:</p><pre><code>global {
+	perm_cache=10240;
+	cache_dir=&quot;/var/cache/pdnsd&quot;;
+#	pid_file = /var/run/pdnsd.pid;
+	run_as=&quot;pdnsd&quot;;
+	server_ip = 127.0.0.1;  # Use eth0 here if you want to allow other
+				# machines on your network to query pdnsd.
+	server_port=53;
+	status_ctl = on;
+#	paranoid=on;       # This option reduces the chance of cache poisoning
+	                   # but may make pdnsd less efficient, unfortunately.
+	query_method=tcp_only;
+	#min_ttl=15m;       # Retain cached entries at least 15 minutes.
+	#max_ttl=1w;        # One week.
+	#timeout=10;        # Global timeout option (10 seconds).
+	#neg_domain_pol=on;
+	#udpbufsize=1024;   # Upper limit on the size of UDP messages.
+    neg_domain_pol = off;    
+    paranoid = on;    
+    par_queries = 1;    
+    min_ttl = 1d;    
+    max_ttl = 5d;    
+    timeout = 10; 
+}
+
+# The following section is most appropriate if you have a fixed connection to
+# the Internet and an ISP which provides good DNS servers.
+server {
+	label= &quot;routine&quot;;
+	ip = 223.5.5.5;  # Put your ISP's DNS-server address(es) here.
+#	proxy_only=on;     # Do not query any name servers beside your ISP's.
+	                   # This may be necessary if you are behind some
+	                   # kind of firewall and cannot receive replies
+	                   # from outside name servers.
+	timeout=5;         # Server timeout; this may be much shorter
+			   # that the global timeout option.
+#	uptest=if;         # Test if the network interface is active.
+#	interface=eth0;    # The name of the interface to check.
+#	interval=10m;      # Check every 10 minutes.
+#	purge_cache=off;   # Keep stale cache entries in case the ISP's
+#			   # DNS servers go offline.
+#	edns_query=yes;    # Use EDNS for outgoing queries to allow UDP messages
+#			   # larger than 512 bytes. May cause trouble with some
+#			   # legacy systems.
+#	exclude=.thepiratebay.org,  # If your ISP censors certain names, you may
+#		.thepiratebay.se,   # want to exclude them here, and provide an
+#		.piratebay.org,	    # alternative server section below that will
+#		.piratebay.se;	    # successfully resolve the names.
+   reject = 74.125.127.102,
+       74.125.155.102,  
+       74.125.39.102,  
+       74.125.39.113,  
+       209.85.229.138,  
+       128.121.126.139,  
+       159.106.121.75,  
+       169.132.13.103,  
+       192.67.198.6,  
+       202.106.1.2,  
+       202.181.7.85,  
+       203.161.230.171,  
+       203.98.7.65,  
+       207.12.88.98,  
+       208.56.31.43,  
+       209.145.54.50,  
+       209.220.30.174,  
+       209.36.73.33,  
+       211.94.66.147,  
+       213.169.251.35,  
+       216.221.188.182,  
+       216.234.179.13,  
+       243.185.187.39,  
+       37.61.54.158,  
+       4.36.66.178,  
+       46.82.174.68,  
+       59.24.3.173,  
+       64.33.88.161,  
+       64.33.99.47,  
+       64.66.163.251,  
+       65.104.202.252,  
+       65.160.219.113,  
+       66.45.252.237,  
+       69.55.52.253,  
+       72.14.205.104,  
+       72.14.205.99,  
+       78.16.49.15,  
+       8.7.198.45,  
+       93.46.8.89,  
+       37.61.54.158,  
+       243.185.187.39,  
+       190.93.247.4,  
+       190.93.246.4,  
+       190.93.245.4,  
+       190.93.244.4,  
+       65.49.2.178,  
+       189.163.17.5,  
+       23.89.5.60,  
+       49.2.123.56,  
+       54.76.135.1,  
+       77.4.7.92,  
+       118.5.49.6,  
+       159.24.3.173,  
+       188.5.4.96,  
+       197.4.4.12,  
+       220.250.64.24,  
+       243.185.187.30,  
+       249.129.46.48,  
+       253.157.14.165;  
+   reject_policy = fail;  
+   exclude = &quot;.google.com&quot;,  
+       &quot;.cn&quot;,
+       &quot;.baidu.com&quot;,
+       &quot;.qq.com&quot;,
+       &quot;.gstatic.com&quot;,  
+       &quot;.googleusercontent.com&quot;,  
+       &quot;.googlepages.com&quot;,  
+       &quot;.googlevideo.com&quot;,  
+       &quot;.googlecode.com&quot;,  
+       &quot;.googleapis.com&quot;,  
+       &quot;.googlesource.com&quot;,  
+       &quot;.googledrive.com&quot;,  
+       &quot;.ggpht.com&quot;,  
+       &quot;.youtube.com&quot;,  
+       &quot;.youtu.be&quot;,  
+       &quot;.ytimg.com&quot;,  
+       &quot;.twitter.com&quot;,  
+       &quot;.facebook.com&quot;,  
+       &quot;.fastly.net&quot;,  
+       &quot;.akamai.net&quot;,  
+       &quot;.akamaiedge.net&quot;,  
+       &quot;.akamaihd.net&quot;,  
+       &quot;.edgesuite.net&quot;,  
+       &quot;.edgekey.net&quot;;  
+}
+
+server {  
+   # Better setup dns server(DON'T USE PORT 53) on your own vps for faster proxying  
+   label = &quot;special&quot;;
+   ip = 208.67.222.222,208.67.220.220;
+   port = 5353;
+   proxy_only = on;  
+   timeout = 5;  
+}  
+</code></pre><p>Then you have to enable and start the pdnsd service via:</p><pre><code># systemctl enable pdnsd
+# systemctl start pdnsd
+# vim /etc/resolv.con
+nameserver 127.0.0.1
+# chattr +i /etc/resolv.conf
+</code></pre><p>you could use dig for testing your pdnsd configuration.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/04/usecrontabforrunningtasks/>UseCrontabForRunningTasks</a></h1><span class=post-date>Jan 4, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>If I&rsquo;d wanna to run the same tasks on several machine at the certain time, I
 could do following tricks:</p><pre><code># crontab -l
 # crontab /root/mycron
 </code></pre><p>While you could set non-password login among those machines, and transfer the
@@ -132,8 +283,4 @@ deb http://192.168.0.100/arm64repo/mirror/ports.ubuntu.com/ xenial-proposed main
 # cp /usr/share/doc/hpcc/example/_hpccinf.txt hpccinf.txt
 ##### Edit this file
 # hpcc
-</code></pre><p>You could easily see the output.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/12/26/sas2208configuration/>sas2208configuration</a></h1><span class=post-date>Dec 26, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=configuration-steps>Configuration Steps</h3><p>Select the SAS Controller:</p><p><img src=/images/2017_12_26_11_46_56_643x143.jpg alt=/images/2017_12_26_11_46_56_643x143.jpg></p><p>Ignore the foreign configration, hit cancel:</p><p><img src=/images/2017_12_26_11_48_36_630x157.jpg alt=/images/2017_12_26_11_48_36_630x157.jpg></p><p>Display all of the disks:</p><p><img src=/images/2017_12_26_11_49_30_636x411.jpg alt=/images/2017_12_26_11_49_30_636x411.jpg></p><p>Select one disk(1T-Disk):</p><p><img src=/images/2017_12_26_11_51_50_630x436.jpg alt=/images/2017_12_26_11_51_50_630x436.jpg></p><p>Click configuration wizard:</p><p><img src=/images/2017_12_26_11_55_26_634x372.jpg alt=/images/2017_12_26_11_55_26_634x372.jpg></p><p>Select Configuration Method:</p><p><img src=/images/2017_12_26_11_56_26_633x290.jpg alt=/images/2017_12_26_11_56_26_633x290.jpg></p><p>Configure a new disk:</p><p><img src=/images/2017_12_26_11_59_41_629x344.jpg alt=/images/2017_12_26_11_59_41_629x344.jpg></p><p>Click &ldquo;Accept DG&rdquo; for accepting the configurations.</p><p><img src=/images/2017_12_26_12_00_42_633x354.jpg alt=/images/2017_12_26_12_00_42_633x354.jpg></p><p>Ignore add Span:</p><p><img src=/images/2017_12_26_12_02_42_638x362.jpg alt=/images/2017_12_26_12_02_42_638x362.jpg></p><p>Add to Span:</p><p><img src=/images/2017_12_26_12_04_03_633x341.jpg alt=/images/2017_12_26_12_04_03_633x341.jpg></p><p><img src=/images/2017_12_26_12_05_45_635x418.jpg alt=/images/2017_12_26_12_05_45_635x418.jpg></p><p><img src=/images/2017_12_26_12_06_39_634x435.jpg alt=/images/2017_12_26_12_06_39_634x435.jpg></p><p>Now you add successfully.</p><p>Click Accept:</p><p><img src=/images/2017_12_26_12_07_17_627x317.jpg alt=/images/2017_12_26_12_07_17_627x317.jpg></p><p>Click Save Configuration, and you will be asked to initialize the new virtual
-driver, click yes.</p><p><img src=/images/2017_12_26_12_08_48_567x190.jpg alt=/images/2017_12_26_12_08_48_567x190.jpg></p><p>Then save and reboot your system, your configuration will be done.</p><h3 id=system>System</h3><p>Install a new system under /dev/sde, then you could use following command for
-setting the grub configuration:</p><pre><code># os-prober
-# grub2-mkconfig -o /boot/grub2/grub.cfg
-</code></pre><p>Then you could get your newly installed system working.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/86/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/86/>86</a></li><li class="page-item active"><a class=page-link href=/page/87/>87</a></li><li class=page-item><a class=page-link href=/page/88/>88</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/88/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>You could easily see the output.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/86/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/86/>86</a></li><li class="page-item active"><a class=page-link href=/page/87/>87</a></li><li class=page-item><a class=page-link href=/page/88/>88</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/88/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
