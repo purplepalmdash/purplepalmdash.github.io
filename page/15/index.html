@@ -1,5 +1,48 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/08/10/buildkernelonrockylinux92/>BuildKernelOnRockyLinux92</a></h1><span class=post-date>Aug 10, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=try-steps>Try Steps</h3><p>Replace the repository for speedup:</p><pre><code>sed -e 's|^mirrorlist=|#mirrorlist=|g'     -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g'     -i.bak     /etc/yum.repos.d/rocky-extras.repo     /etc/yum.repos.d/rocky.repo
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/08/10/build515kernelrpm/>Build515KernelRPM</a></h1><span class=post-date>Aug 10, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Using a docker instance:</p><pre><code>$ dnf config-manager --set-enabled crb
+$ yum install -y vim rpm-build python3-devel elfutils-devel  openssl-devel perl-generators pesign yum-utils bc bison bpftool dwarves flex gcc gcc-c++ git-core hmaccalc kmod m4 make net-tools perl-devel gcc-plugin-devel
+$ vim /etc/yum.repos.d/kernellongterm.repo
+[copr:copr.fedorainfracloud.org:kwizart:kernel-longterm-5.15]
+name=Copr repo for kernel-longterm-5.15 owned by kwizart
+baseurl=https://download.copr.fedorainfracloud.org/results/kwizart/kernel-longterm-5.15/epel-9-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/kwizart/kernel-longterm-5.15/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+$ yum makecache
+</code></pre><p>As mock, do following:</p><pre><code>$ yumdownloader --source kernel-longterm
+$ ls
+kernel-longterm-5.15.124-200.el9.src.rpm
+$ rpm -Uvh kernel-longterm-5.15.124-200.el9.src.rpm
+$ ls
+kernel-longterm-5.15.124-200.el9.src.rpm  rpmbuild
+</code></pre><p>Replace to <code>5.15.113-1</code>, then modify as following:</p><pre><code>$ cp linux-5.15.tar.xz ./rpmbuild/SOURCES/linux-5.15.tar.xz
+$ vim rpmbuild/SPECS/kernel.spec
+Line 135? 
+# Do we have a -stable update to apply?
+#%define stable_update 124
+%define stable_update 113
+
+%define rpmversion %{kversion}.%{stable_update}
+%define patchversion 5.15
+#%define pkgrelease 200
+%define pkgrelease 1
+1400 # released_kernel with possible stable updates
+1401 # This is special because the kernel spec is hell and nothing is consistent
+1402 #xzcat %{SOURCE5000} | patch -p1 -F1 -s
+1403 #xzcat %{SOURCE5000} | patch -p1 -F1 -s
+1404 git commit -a -m &quot;Stable update&quot;
+1405 
+1406 # Note: Even in the &quot;nopatches&quot; path some patches (build tweaks and compile
+1407 # fixes) will always get applied; see patch defition above for details
+1408 
+1409 #git am %{patches}                                                                                                                                                                                                                                      
+1410 #git am %{patches}
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/08/10/buildkernelonrockylinux92/>BuildKernelOnRockyLinux92</a></h1><span class=post-date>Aug 10, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=try-steps>Try Steps</h3><p>Replace the repository for speedup:</p><pre><code>sed -e 's|^mirrorlist=|#mirrorlist=|g'     -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g'     -i.bak     /etc/yum.repos.d/rocky-extras.repo     /etc/yum.repos.d/rocky.repo
 yum makecache
 </code></pre><p>Install docker:</p><pre><code>dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
 # replace all of the `download.docker.com` into `https://mirrors.ustc.edu.cn/docker-ce`
@@ -125,59 +168,4 @@ In docker instance:
 </code></pre><p>Edit the node modules:</p><pre><code>root@938cedc55cde:~/meshcommander# vim node_modules/meshcommander/webserver.js 
 156         obj.app.listen(port, '0.0.0.0', function () { console.log(&quot;MeshCommander running on http://127.0.0.1:&quot; + port + '.'); });
 node node_modules/meshcommander/
-</code></pre><p>Visit the <code>https://ip:4080</code> you could reache the meshcommander webpage.</p><p><img src=/images/2023_08_04_09_31_09_640x215.jpg alt=/images/2023_08_04_09_31_09_640x215.jpg></p><p>Configuration:</p><p><img src=/images/2023_08_04_09_31_33_433x288.jpg alt=/images/2023_08_04_09_31_33_433x288.jpg></p><p>System Status:</p><p><img src=./images/2023_08_04_09_32_08_363x424.jpg alt=./images/2023_08_04_09_32_08_363x424.jpg></p><p>Attach an iso for Linux installation：</p><p>meshcommander is too old. switch to</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/07/24/usingclonezillaforinstallcentos7on5950x/>UsingCloneZillaForInstallCentOS7On5950x</a></h1><span class=post-date>Jul 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Boot the vm with clonezilla iso:</p><p><img src=/images/2023_07_24_14_03_07_486x413.jpg alt=/images/2023_07_24_14_03_07_486x413.jpg></p><p>Select sshfs for destination:</p><p><img src=/images/2023_07_24_14_05_00_701x167.jpg alt=/images/2023_07_24_14_05_00_701x167.jpg></p><p>Select which disk:</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/07/19/dockerizeuos/>DockerizeUOS</a></h1><span class=post-date>Jul 19, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install the server via :</p><p><img src=/images/2023_07_19_08_15_49_457x277.jpg alt=/images/2023_07_19_08_15_49_457x277.jpg></p><p>关机后，在host机器上，:</p><pre><code>apt install -y docker.io guestfish
-qemu-img convert -f qcow2 -O raw  uos10G.qcow2 uos10G.img
-guestfish -a uos10G.img --ro
-
-Welcome to guestfish, the guest filesystem shell for
-editing virtual machine filesystems and disk images.
-
-Type: ‘help’ for help on commands
-      ‘man’ to read the manual
-      ‘quit’ to quit the shell
-
-&gt;&lt;fs&gt; run
-&gt;&lt;fs&gt; list-filesystems
-/dev/sda1: ext4
-/dev/sda2: ext4
-&gt;&lt;fs&gt; mount /dev/sda2 /
-&gt;&lt;fs&gt; mount /dev/sda1 /boot
-&gt;&lt;fs&gt; tar-out / - | xz --best &gt;&gt; myuos.xz
-&gt;&lt;fs&gt; exit
- cat myuos.xz | docker import - uoskkk
-root@delli9:~# docker images
-REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
-uoskkk     latest    2fb3905a142f   18 seconds ago   1.68GB
-</code></pre><p>run into docker instance via:</p><pre><code>root@delli9:~# docker run -it uosctyun:latest /bin/bash
-[root@8d94931f1eb0 /]# cat /etc/issue
-\S
-Kernel \r on an \m
-[root@8d94931f1eb0 /]# cat /etc/uos-release 
-UOS Server Enterprise-C 20
-[root@8d94931f1eb0 /]# yum makecache
-</code></pre><p>使用方法, 绿色版安装docker:</p><pre><code>[root@uos ~]# tar xzvf docker-24.0.2.tgz 
-docker/
-docker/docker-proxy
-docker/containerd-shim-runc-v2
-docker/ctr
-docker/docker
-docker/docker-init
-docker/runc
-docker/dockerd
-docker/containerd
-[root@uos ~]# mv docker/* /usr/bin
-[root@uos ~]# dockerd&amp;
-
-</code></pre><p>在另一个终端上启动容器实例:</p><pre><code>[root@uos ~]# cat myuos.xz | docker import - uosxj
-sha256:e09cca9384977ce87a05d50a50134a8fa44607b19f4586222b835916dddb24a0
-[root@uos ~]# docker images
-REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
-uosxj        latest    e09cca938497   40 seconds ago   1.68GB
-[root@uos ~]# docker run --privileged -it uosxj /bin/bash
-[root@0bb3783f7e1e /]# yum makecache
-[root@0bb3783f7e1e /]# yum install -y qemu-kvm-ev
-[root@0bb3783f7e1e /]# /usr/libexec/qemu-kvm  --version
-QEMU emulator version 2.12.0 (qemu-kvm-ev-2.12.0-45.uelc20_2.01)
-Copyright (c) 2003-2017 Fabrice Bellard and the QEMU Project developers
-
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/14/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/14/>14</a></li><li class="page-item active"><a class=page-link href=/page/15/>15</a></li><li class=page-item><a class=page-link href=/page/16/>16</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/16/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Visit the <code>https://ip:4080</code> you could reache the meshcommander webpage.</p><p><img src=/images/2023_08_04_09_31_09_640x215.jpg alt=/images/2023_08_04_09_31_09_640x215.jpg></p><p>Configuration:</p><p><img src=/images/2023_08_04_09_31_33_433x288.jpg alt=/images/2023_08_04_09_31_33_433x288.jpg></p><p>System Status:</p><p><img src=./images/2023_08_04_09_32_08_363x424.jpg alt=./images/2023_08_04_09_32_08_363x424.jpg></p><p>Attach an iso for Linux installation：</p><p>meshcommander is too old. switch to</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/07/24/usingclonezillaforinstallcentos7on5950x/>UsingCloneZillaForInstallCentOS7On5950x</a></h1><span class=post-date>Jul 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Boot the vm with clonezilla iso:</p><p><img src=/images/2023_07_24_14_03_07_486x413.jpg alt=/images/2023_07_24_14_03_07_486x413.jpg></p><p>Select sshfs for destination:</p><p><img src=/images/2023_07_24_14_05_00_701x167.jpg alt=/images/2023_07_24_14_05_00_701x167.jpg></p><p>Select which disk:</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/14/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/14/>14</a></li><li class="page-item active"><a class=page-link href=/page/15/>15</a></li><li class=page-item><a class=page-link href=/page/16/>16</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/16/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
