@@ -152,7 +152,34 @@ sudo nixos-rebuild switch &ndash;option substituers <a href=https://mirror.sjtu.
 Steps:       
 
 </code></pre><p>curl -fsSL <a href=https://ollama.com/install.sh>https://ollama.com/install.sh</a> | sh
-ollama run llama3.1:8b</p><pre><code></code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
+ollama run llama3.1:8b</p><pre><code>
+### 20. offline kubespray issues
+Solved via:     
+
+</code></pre><p>tar xzvf ../off.tar.gz
+cd kubespray-offline-2.25.0-0/
+cd outputs/
+./extract-kubespray.sh
+cd kubespray-2.25.0/
+cd inventory/
+cp -r sample/ rong
+cd rong/
+vim inventory.ini
+cd ../../
+python3.11 -m venv ~/.venv/3.11
+source ~/.venv/3.11/bin/activate
+pip install -U pip
+pip install -r requirements.txt
+cp ../../offline.yml inventory/rong/group_vars/all/offline.yml
+vim inventory/rong/group_vars/all/offline.yml
+cp ~/new/kubespray-offline-2.25.0-0/outputs/playbook/offline-repo.yml .
+cp -r ~/new/kubespray-offline-2.25.0-0/outputs/playbook/roles/offline-repo/ roles/
+ansible-playbook -i inventory/rong/inventory.ini offline-repo.yml
+ansible-playbook -i inventory/rong/inventory.ini &ndash;become &ndash;become-user=root cluster.yml
+kubectl get nodes
+kubectl get po &ndash;all-namespaces
+vim /etc/systemd/resolved.conf
+reboot</p><pre><code></code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
 ......
