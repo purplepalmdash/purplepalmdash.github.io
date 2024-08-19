@@ -1,5 +1,22 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/08/13/workingtipsoningressspice/>WorkingTipsOnIngressSpice</a></h1><span class=post-date>Aug 13, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Load and push images:</p><pre><code> nerdctl load&lt;nginxslim.tar
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/08/19/pveonhygon/>PVEOnHygon</a></h1><span class=post-date>Aug 19, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=host-configuration>Host configuration</h3><p>Hardware Info:</p><pre><code># cat /proc/cpuinfo | grep -i &quot;model name&quot;
+model name	: Hygon C86 3350  8-core Processor
+</code></pre><p>Os Info:</p><pre><code>root@pve:~# cat /etc/debian_version 
+12.4
+root@pve:~# uname -a
+Linux pve 6.5.11-8-pve #1 SMP PREEMPT_DYNAMIC PMX 6.5.11-8 (2024-01-30T12:27Z) x86_64 GNU/Linux
+</code></pre><p>Modifications :</p><pre><code># cat /etc/default/grub | grep amd_iommu
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet iommu=pt amd_iommu=on initcall_blacklist=sysfb_init pcie_acs_override=downstream,multifunction&quot;
+# cat /etc/modules
+vfio
+vfio_iommu_type1
+vfio_pci
+vfio_virqfd
+# cat /etc/modprobe.d/vfio.conf
+options vfio-pci ids=1002:6611,1002:aab0
+options vfio-pci disable_idle_d3=1
+# update-initramfs -u -k all &amp;&amp; update-grub &amp;&amp; reboot
+</code></pre><h3 id=virtualization>virtualization</h3><p>Win10 configuration:</p><p><img src=/images/20240819_082807_x.jpg alt=/images/20240819_082807_x.jpg></p><p>you can get win10 working properly directly, but for win7, it could only boot into system, after driver installation, it will remains black and could not startup.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/08/13/workingtipsoningressspice/>WorkingTipsOnIngressSpice</a></h1><span class=post-date>Aug 13, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Load and push images:</p><pre><code> nerdctl load&lt;nginxslim.tar
  nerdctl tag gcr.io/google_containers/nginx-slim:0.8 localhost:35000/nginx-slim:0.8
  nerdctl push localhost:35000/nginx-slim:0.8
 </code></pre><p>Create the deployment:</p><pre><code># cat nginx01.yaml 
@@ -200,215 +217,4 @@ pip install -r requirements.txt
 </code></pre><p>Install ComfyUI manager:</p><pre><code>goto ComfyUI/custom_nodes dir in terminal(cmd)
 git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 Restart ComfyUI
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/09/nixosonnuc11/>nixOSOnnuc11</a></h1><span class=post-date>Jul 9, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-安装>1. 安装</h3><p>启动光盘引导系统，进入到安装界面，更换nixos用户的密码后，远程ssh进入到安装界面后:</p><pre><code>nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixpkgs-unstable nixpkgs
-nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixos-24.05 nixos
-nix-channel --list
-nix-channel --update
-nixos-rebuild --option substituters http://mirror.sjtu.edu.cn/nix-channels/store switch --upgrade
-</code></pre><p>对512G的nvme ssd进行分区:</p><pre><code>parted /dev/nvme0n1
-(可选) rm 2
-(可选) rm 1
-mklabel gpt
-mkpart ESP fat32 1MiB 256MiB
-set 1 esp on
-mkpart primary 256MiB -2GiB
-unit s
-mkpart primary linux-swap 972580864 100%
-quit
-</code></pre><p>磁盘分区如下:</p><pre><code>nvme0n1     259:0    0 465.8G  0 disk 
-├─nvme0n1p1 259:4    0   255M  0 part 
-├─nvme0n1p2 259:5    0 463.5G  0 part 
-└─nvme0n1p3 259:6    0     2G  0 part 
-</code></pre><p>创建文件系统:</p><pre><code>mkfs.fat -F32 /dev/nvme0n1p1 
-mkfs.btrfs -L nixos /dev/nvme0n1p2 
-mkswap -L swap /dev/nvme0n1p3
-</code></pre><p>创建btrfs的子卷:</p><pre><code>mount /dev/nvme0n1p2 /mnt
-btrfs subvolume create /mnt/root 
-btrfs subvolume create /mnt/home
-btrfs subvolume create /mnt/nix 
-umount /mnt 
-mount -o compress=zstd,subvol=root /dev/nvme0n1p2 /mnt
-mkdir /mnt/{home,nix,boot}
-mount -o compress=zstd,subvol=home /dev/nvme0n1p2 /mnt/home/
-mount -o compress=zstd,noatime,subvol=nix  /dev/nvme0n1p2  /mnt/nix
-mount /dev/nvme0n1p1 /mnt/boot
-swapon /dev/nvme0n1p3
-</code></pre><p>创建硬件配置文件并修改之:</p><pre><code>nixos-generate-config --root /mnt
-</code></pre><p><code>vim /mnt/etc/nixos/hardware-configuration.nix</code>, 更改以下的几行:</p><pre><code>19c19
-&lt;       options = [ &quot;subvol=root&quot; &quot;compress=zstd&quot;];
----
-&gt;       options = [ &quot;subvol=root&quot; ];
-25c25
-&lt;       options = [ &quot;subvol=home&quot; &quot;compress=zstd&quot;];
----
-&gt;       options = [ &quot;subvol=home&quot; ];
-31c31
-&lt;       options = [ &quot;subvol=nix&quot; &quot;compress=zstd&quot; &quot;noatime&quot;];
----
-&gt;       options = [ &quot;subvol=nix&quot; ];
-
-</code></pre><p>配置<code>configuration.nix</code>文件，下面记录它的内容，值得注意的是，这里禁用了某些后面需要打开的选项，因为如果一开始打开，则有可能安装失败:</p><pre><code># Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = &quot;gen11&quot;; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Set your time zone.
-  time.timeZone = &quot;Asia/Shanghai&quot;;
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = &quot;http://user:password@proxy:port/&quot;;
-  # networking.proxy.noProxy = &quot;127.0.0.1,localhost,internal.domain&quot;;
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = &quot;en_US.UTF-8&quot;;
-  # console = {
-  #   font = &quot;Lat2-Terminus16&quot;;
-  #   keyMap = &quot;us&quot;;
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  # Autologin for user dash
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  #services.displayManager.autoLogin.enable = true;
-  #services.displayManager.autoLogin.user = &quot;dash&quot;;
-  # Hyprland
-  #programs.hyprland.enable = true;
-  # zsh
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = &quot;us&quot;;
-  # services.xserver.xkb.options = &quot;eurosign:e,caps:escape&quot;;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.dash = {
-    isNormalUser = true;
-    extraGroups = [ &quot;wheel&quot; ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      firefox
-      tree
-    ];
-  };
-
-  security.sudo.extraRules= [
-    {  users = [ &quot;dash&quot; ];
-      commands = [
-         { command = &quot;ALL&quot; ;
-           options= [ &quot;NOPASSWD&quot; ]; # &quot;SETENV&quot; # Adding the following could be a good idea
-        }
-      ];
-    }
-  ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    git
-    dconf
-  ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = &quot;24.11&quot;; # Did you read the comment?
-
-  nix.settings.substituters = [
-    &quot;http://mirror.sjtu.edu.cn/nix-channels/store&quot;
-  ];
-
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-  #  &quot;qtwebkit-5.212.0-alpha4&quot;
-  ];
-#
-#  home-manager.users.dash = { pkgs, ... }: {
-#  home.stateVersion = &quot;24.11&quot;;  
-#  home.packages = [ ];
-#  };
-
-}
-
-</code></pre><p>执行以下命令开始安装到磁盘:</p><pre><code>nixos-install --option substituters https://mirror.sjtu.edu.cn/nix-channels/store
-</code></pre><p>创建用户的密码:</p><pre><code>nixos-enter
-passwd dash
-</code></pre><h3 id=2-配置>2. 配置</h3><p>更改<code>configuration.nix</code>，并从历史文件中拷贝相关文件到<code>/etc/nixos </code>目录下:</p><pre><code> vim configuration.nix
- cp /home/dash/nixos/flake.nix .
- cp /home/dash/nixos/hyprland.nix .
- cp /home/dash/nixos/home.nix .
- cp /home/dash/nixos/zsh.nix .
-</code></pre><p>使用以下命令重新编译出新环境</p><pre><code>dash@gen11:~/ &gt; sudo nixos-rebuild switch --option substituers https://mirror.sjtu.edu.cn/nix-channels/store
-</code></pre><h3 id=3-桌面切换awesome-hyprland>3. 桌面切换(awesome-hyprland)</h3></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class="page-item disabled"><a class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class="page-item active"><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class="page-item disabled"><a class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class="page-item active"><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
