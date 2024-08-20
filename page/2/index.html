@@ -408,7 +408,11 @@ ansible-playbook -i inventory/rong/inventory.ini &ndash;become &ndash;become-use
 kubectl get nodes
 kubectl get po &ndash;all-namespaces
 vim /etc/systemd/resolved.conf
-reboot</p><pre><code></code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
+reboot</p><pre><code>
+### 21. grep in linux root
+via:    
+
+</code></pre><p>grep -rli &ndash;exclude-dir={proc,boot,root,sys} &lsquo;xmlns:qemu=&rsquo; /</p><pre><code></code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
 ......
