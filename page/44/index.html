@@ -1,5 +1,81 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/12/29/turntorong/>TurnToRong</a></h1><span class=post-date>Dec 29, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>现场安装时，因为某些不可控的原因，可能无法安装定制化操作系统，此时可使用以下步骤，从最小化安装的Ubuntu18.04 转换为RONG节点:</p><p>以下操作以<code>Ubuntu18.04.5</code>为例说明，默认操作用户为安装时创建的用户<code>kkk</code>, 现场需要根据情况灵活调整。</p><ol><li>上传ISO到机器:</li></ol><pre><code># scp ./ubuntu-18.04.5-server-amd64-auto-xfs.iso kkk@192.168.122.32:/home/kkk
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/01/05/archinstallonusb/>ArchInstallOnUSB</a></h1><span class=post-date>Jan 5, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=hardware>Hardware</h3><p>320G usb disk, laptop(running archlinux already).</p><h3 id=steps>Steps</h3><p><code>fdisk</code> the usb disk and create with following partitions:</p><pre><code>$ sudo fdisk -l /dev/sdc
+Disk /dev/sdc：298.09 GiB，320072933376 字节，625142448 个扇区
+磁盘型号：Storage         
+单元：扇区 / 1 * 512 = 512 字节
+扇区大小(逻辑/物理)：512 字节 / 512 字节
+I/O 大小(最小/最佳)：512 字节 / 512 字节
+磁盘标签类型：dos
+磁盘标识符：0x112a2f3d
+
+设备       启动    起点      末尾      扇区   大小 Id 类型
+/dev/sdc1          2048   1050623   1048576   512M ef EFI (FAT-12/16/32)
+/dev/sdc2       1050624 625142447 624091824 297.6G 83 Linux
+
+</code></pre><p>Format the disk:</p><pre><code>$ $ sudo mkfs.fat -F32 /dev/sdc1
+mkfs.fat 4.1 (2017-01-24)
+$ sudo mkfs.ext4 /dev/sdc2
+</code></pre><p>Install <code>arch-install-scripts</code> on archlinux. Then mount the disk to install point:</p><pre><code>$ sudo mount /dev/sdc2 /mnt
+$ sudo mkdir -p /mnt/boot
+$ sudo mount /dev/sdc1 /mnt/boot
+</code></pre><p>Now use <code>pacstrap</code> for installing basic system onto usb disk:</p><pre><code>$ sudo pacstrap -c /mnt base linux linux-firmware base-devel
+</code></pre><p>Generate <code>/etc/fstab</code>:</p><pre><code># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+# vim /mnt/etc/fstab
+comment the swap partition
+</code></pre><p>chroot into /mnt:</p><pre><code># arch-chroot /mnt
+</code></pre><pre><code># ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+# pacman -S vim
+# vim /etc/locale.gen
+en_US.UTF-8 UTF-8  
+en_US ISO-8859-1  
+zh_CN.GB18030 GB18030  
+zh_CN.GBK GBK  
+zh_CN.UTF-8 UTF-8  
+zh_CN GB2312 
+# locale-gen
+# vim /etc/locale.conf
+LANG=en_US.UTF-8
+# vim /etc/hostname
+archusb
+# vim /etc/hosts 
+    # Static table lookup for hostnames.
+    # See hosts(5) for details.
+    127.0.0.1	localhost
+    ::1		localhost
+    127.0.1.1	archusb
+# pacman -S net-tools tcpdump iotop dhcpcd openssh dosfstools ntfs-3g amd-ucode intel-ucode grub efibootmgr
+# systemctl enable sshd
+# cat /etc/mkinitcpio.conf | grep block
+    #    HOOKS=(base udev autodetect block filesystems)
+    #    HOOKS=(base udev block filesystems)
+    #    HOOKS=(base udev block mdadm encrypt filesystems)
+    #    HOOKS=(base udev block lvm2 filesystems)
+    HOOKS=(base udev block keyboard autodetect modconf filesystems fsck)
+#  mkinitcpio -P
+# passwd
+</code></pre><p>Make grub configuration:</p><pre><code># grub-install --target=i386-pc /dev/sdc --recheck
+# grub-install --target=x86_64-efi --efi-directory=/boot/efi --removable --recheck
+</code></pre><p>Or(uefi mode):</p><pre><code>grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB 
+grub-mkconfig -o /boot/grub/grub.cfg 
+</code></pre><p>Support generic gpu:</p><pre><code># pacman -S xf86-video-vesa xf86-video-ati xf86-video-intel xf86-video-amdgpu xf86-video-nouveau xf86-video-fbdev
+</code></pre><p>Network configuration:</p><pre><code># pacman -S networkmanager
+# systemctl enable NetworkManager
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+</code></pre><p>Now you could use usb disk for booting up the system, enjoy it.</p><h3 id=libvirt-configuration>libvirt configuration</h3><p>Install iptables, etc.</p><pre><code># pacman -S ebtables iptables dnsmasq
+</code></pre><p>Configure bridge networking using network manager:</p><pre><code>$ nmcli connection add type bridge ifname br0 stp no
+$ nmcli connection add type bridge-slave ifname enp30s0 master br0
+</code></pre><p>Case static ip address:</p><pre><code>nmcli conn add type bridge ifname br0 ipv4.method manual ipv4.address &quot;10.137.149.5/24&quot; ipv4.gateway &quot;10.137.149.1&quot; ipv4.dns 223.5.5.5 
+nmcli connection add type bridge-slave ifname eth0 master br0
+</code></pre><p>Case dhcp(notice the bridge name):</p><pre><code>nmcli connection modify bridge-br0 ipv4.method auto
+</code></pre><p>Change mtu to 9000:</p><pre><code># nmcli connection modify bridge-slave-eth0 802-3-ethernet.mtu 9000
+# nmcli connection show bridge-slave-eth0 | grep mtu
+802-3-ethernet.mtu:                     9000
+
+</code></pre><p>iptables for libvirt:</p><pre><code># iptables -I FORWARD -m physdev --physdev-is-bridged -j ACCEPT
+# iptables-save -f /etc/iptables/iptables.rules
+# systemctl enable iptables.service
+</code></pre><p>Then your bridge could be use.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/12/29/turntorong/>TurnToRong</a></h1><span class=post-date>Dec 29, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>现场安装时，因为某些不可控的原因，可能无法安装定制化操作系统，此时可使用以下步骤，从最小化安装的Ubuntu18.04 转换为RONG节点:</p><p>以下操作以<code>Ubuntu18.04.5</code>为例说明，默认操作用户为安装时创建的用户<code>kkk</code>, 现场需要根据情况灵活调整。</p><ol><li>上传ISO到机器:</li></ol><pre><code># scp ./ubuntu-18.04.5-server-amd64-auto-xfs.iso kkk@192.168.122.32:/home/kkk
 kkk@192.168.122.32's password: 
 </code></pre><ol start=2><li>在机器上挂载iso:</li></ol><pre><code>kkk@ubuntu:~$ sudo mount ubuntu-18.04.5-server-amd64-auto-xfs.iso /media/cdrom
 [sudo] password for kkk: 
@@ -240,14 +316,4 @@ server {
 7. 切换回后，删除calico/kube-proxy/nginx-proxy等 pod
 8. 现在一切应该正常。
 
-</code></pre><p>SB的一个误操作，一两个小时就没有了，代价沉重。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/27/workingtipsonsvnclientindocker/>WorkingTipsOnSVNClientInDocker</a></h1><span class=post-date>Nov 27, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=prepare-docker-images>Prepare docker images</h3><p>pull ubuntu latest image:</p><pre><code># sudo docker run -it ubuntu:latest /bin/bash
-</code></pre><p>Install svn and related items in docker:</p><pre><code># sudo apt-get update -y
-# sudo apt-get install -y subversion language-pack-zh*
-# localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
-</code></pre><p>Commit the docker images:</p><pre><code># sudo docker commit 67ef51b2783e ubuntusvn:latest
-</code></pre><h3 id=run-docker-in-intranet>Run docker in Intranet</h3><p>Run svn commit in docker.</p><pre><code># docker run -it -v /media/xxxxxx:/mnt ubuntusvn:latest
-#  export LC_ALL=zh_CN.UTF_8
-# cd /mnt/cloud/
-# svn add xfsiso/ubuntu-18.04.5-server-amd64-auto-xfs.iso
-# svn ci -m &quot;Added ubuntu18.04.5 server iso&quot; --username=xxxxxx --password=xxxxxx123
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/43/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/43/>43</a></li><li class="page-item active"><a class=page-link href=/page/44/>44</a></li><li class=page-item><a class=page-link href=/page/45/>45</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/45/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>SB的一个误操作，一两个小时就没有了，代价沉重。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/43/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/43/>43</a></li><li class="page-item active"><a class=page-link href=/page/44/>44</a></li><li class=page-item><a class=page-link href=/page/45/>45</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/243/>243</a></li><li class=page-item><a href=/page/45/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/243/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

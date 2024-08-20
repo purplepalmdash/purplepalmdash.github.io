@@ -1,5 +1,133 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/08/13/puppet-on-archlinux-2/>Puppet on ArchLinux(2)</a></h1><span class=post-date>Aug 13, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=add-arch>Add Arch</h3><p>step1, add the hosts into /etc/hosts:</p><pre><code># Puppet 
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/08/27/lxc-computer-in-lab/>LXC Computer</a></h1><span class=post-date>Aug 27, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=network-configuration>Network Configuration</h3><p>Add the rules in udevd:</p><pre><code>linux-:~ # cd /etc/udev/rules.d/
+linux-:/etc/udev/rules.d # cat 10-network.rules
+SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, ATTR{address}==&quot;00:22:22:22:22&quot;, NAME=&quot;eth1&quot;
+SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, ATTR{address}==&quot;00:22:22:22:22&quot;, NAME=&quot;eth0&quot;
+SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, ATTR{address}==&quot;00:22:22:22:22&quot;, NAME=&quot;eth2&quot;
+SUBSYSTEM==&quot;net&quot;, ACTION==&quot;add&quot;, ATTR{address}==&quot;00:22:22:22:22&quot;, NAME=&quot;eth3&quot;
+
+</code></pre><p>Add following network configuration:</p><pre><code>linux-:/etc/sysconfig # cd network/
+linux-:/etc/sysconfig/network # cat ifcfg-eth0
+# Loopback (lo) configuration
+IPADDR=1xx.xx.xx.xxx
+NETMASK=255.255.255.0
+BROADCAST=1xx.xx.xx.xxx
+STARTMODE=auto
+USERCONTROL=yes
+FIREWALL=no
+
+</code></pre><p>Default Gateway Setup:</p><pre><code>linux-:~ # cat /etc/sysconfig/network/ifroute-br0
+# Destination     Dummy/Gateway     Netmask            Device
+#
+default		xxx.xxx.xx.1	    255.255.255.255	br0
+
+</code></pre><p>Restart computer then you got the fixed ip address in eth0.<br>Add the default route so we could get outside.</p><pre><code>vim routes
+xxx.xxx.xx.1 -eth0 
+or manually: 
+route add default gw xxx.xxx.xx.1 eth0
+
+</code></pre><p>Bridge Networking Configuration:</p><pre><code>linux-:/etc/sysconfig/network # cat ifcfg-br0
+STARTMODE='auto'
+BOOTPROTO='static'
+DNS1=xxx.xxx.xx.1
+GATEWAY=xxx.xxx.xx.1
+IPADDR=xxx.xxx.xx.59
+NETMASK=255.255.255.0
+ONBOOT=yes
+USERCONTROL='no'
+BRIDGE='yes'
+BRIDGE_PORTS='eth0'
+BRIDGE_AGEINGTIME='20'
+BRIDGE_FORWARDDELAY='0'
+BRIDGE_HELLOTIME='2'
+BRIDGE_MAXAGE='20'
+BRIDGE_PATHCOSTS='3'
+BRIDGE_STP='on'
+linux-:/etc/sysconfig/network # cat ifcfg-eth0
+BOOTPROTO='static'
+STARTMODE='ifplugd'
+IFPLUGD_PRIORITY='1'
+NAME = '1000 mBIT ETHERNET'
+USERCTL=no
+
+
+</code></pre><p>The route should changed to:</p><pre><code>route add default gw xxx.xxx.xx.1 br0
+
+</code></pre><h3 id=lxc-install>LXC Install</h3><p>Enable the free ways:</p><pre><code>ssh -C -L 127.0.0.1:9001:1xx.xxx.2xx:2xxxx root@1xx.xx.1xx.xxx
+
+</code></pre><p>Use zypper to install the container.</p><pre><code>zypper search lxc
+# zypper install lxc lxc-devel yast2-lxc libvirt-daemon-lxc libvirt-daemon-driver-lxc
+# lxc-checkconfig 
+# ls /usr/share/lxc/templates/
+
+</code></pre><p>Yes we have the opensuse specified configuraton.</p><p>Create The first Container:</p><pre><code>lxc-create -n ixxxxxSimulator1 -t /usr/share/lxc/templates/lxc-opensuse
+
+</code></pre><p>List the installed Container:</p><pre><code>linux-:~ # lxc-ls
+xxxxhxxSimulator1
+
+</code></pre><p>Username and password are <code>root</code>.</p><p>Start the lxc machine via:</p><pre><code>lxc-start -n xxxxxSimulator1
+
+</code></pre><h3 id=lxc-configuration>LXC Configuration</h3><p>No Network, Add it!<br>First we remove the desktop kernel. and use the default kernel</p><pre><code># uname -a
+Linux XXXXSimulator1 3.11.6-4-desktop 
+# zypper in kernel-default
+# zypper rm kernel-desktop
+# uname -a
+Linux linux- 3.11.10-21-default
+
+</code></pre><p>Enable the xfce4 for the default vnc server desktop:</p><pre><code>zypper in -t pattern xfce
+
+</code></pre><p>Change the default lxc configuraiton of network:</p><pre><code>$ vim /var/lib/lxc/XXXXSimulator1/config
+lxc.network.type = veth
+lxc.network.flags = up
+lxc.network.link = br0
+lxc.network.name = eth0
+
+</code></pre><p>Now if you start the lxc container, the network eth0 will be automatically started.</p><h3 id=lxc-expand>LXC Expand</h3><p>Duplicate LXC Machine.<br>This is strange when we directly call lxc-clone will cause failed silently:</p><pre><code> # lxc-clone -o XXXXSimulator1 -n XXXXSimulator2
+linux-:~ # echo $?
+1
+
+</code></pre><p>Then we use this:</p><pre><code># bash /usr/bin/lxc-clone -o XXXXSimulator1 -n XXXXSimulator2
+Tweaking configuration
+Copying rootfs...
+Updating rootfs...
+'XXXXSimulator2' created
+linux-:~ # lxc-ls
+XXXXSimulator1  XXXXSimulator2
+
+</code></pre><p>Change the XXXXSimulator2&rsquo;s configuration:</p><pre><code>$ vim /var/lib/lxc/XXXXSimulator2/config
+lxc.network.ipv4 = xxx.xxx.xx.67
+
+</code></pre><p>Now start the two LXC via:</p><pre><code># lxc-start  -n XXXXSimulator2
+# lxc-start  -n XXXXSimulator1
+[Trusty@Linux01 ~]$ ping -c 1 xxx.xxx.xx.66
+PING xxx.xxx.xx.66 (xxx.xxx.xx.66) 56(84) bytes of data.
+64 bytes from xxx.xxx.xx.66: icmp_seq=1 ttl=64 time=1.50 ms
+
+--- xxx.xxx.xx.66 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 1ms
+rtt min/avg/max/mdev = 1.506/1.506/1.506/0.000 ms
+[Trusty@Linux01 ~]$ ping -c 1 xxx.xxx.xx.67
+PING xxx.xxx.xx.67 (xxx.xxx.xx.67) 56(84) bytes of data.
+64 bytes from xxx.xxx.xx.67: icmp_seq=1 ttl=64 time=1.56 ms
+
+--- xxx.xxx.xx.67 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 1ms
+rtt min/avg/max/mdev = 1.567/1.567/1.567/0.000 ms
+
+</code></pre><p>Later we could configure the LXC, to let the container start at bootup, Or control its behavior.</p><h3 id=lxc-computer-configuration>LXC Computer Configuration</h3><p>The IP address and Default Gateway Configuration:</p><pre><code>lxc.network.type = veth
+lxc.network.flags = up
+lxc.network.link = br0
+lxc.network.name = eth0
+lxc.network.ipv4 = xxx.xxx.xx.59/24
+lxc.network.ipv4.gateway = xxx.xxx.xx.1
+
+</code></pre><p>Then start the LXC Container, you will see the ip address/netmask already configured.</p><h3 id=lxc-destroy>LXC Destroy</h3><p>Destroyed the unused Container2:</p><pre><code>linux-:~ # lxc-ls
+XXXXSimulator1  XXXXSimulator2
+linux-:~ # lxc-destroy -n XXXXSimulator2
+linux-:~ # lxc-ls
+XXXXSimulator1
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/08/13/puppet-on-archlinux-2/>Puppet on ArchLinux(2)</a></h1><span class=post-date>Aug 13, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=add-arch>Add Arch</h3><p>step1, add the hosts into /etc/hosts:</p><pre><code># Puppet 
 10.0.0.88	puppet
 10.0.0.89	client
 
@@ -196,39 +324,4 @@ book=# \q
  (1)
 (1 row)
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/08/10/lxc-archlinux-tutorial/>LXC ArchLinux Tutorial</a></h1><span class=post-date>Aug 10, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>Install <code>lxc</code>, <code>bridge-utils</code>, <code>netctl</code> from the official repository.</p><pre><code>$ sudo pacman -S lxc bridge-utils netctl
-
-</code></pre><p>For creating ArchLinux Container, install arch-install-scripts:</p><pre><code>$ sudo pacman -S arch-install-scripts
-
-</code></pre><p>Check Configurations:</p><pre><code>$ lxc-checkconfig
-
-</code></pre><h3 id=network-configuration>Network Configuration</h3><p>Since I use systemd for bridged network, so this step remains blank, the official Arch Wiki use netctl.</p><h3 id=creating-container-using-template>Creating Container Using Template</h3><p>List all of the available templates:</p><pre><code>$ ls /usr/share/lxc/templates 
-lxc-alpine     lxc-centos    lxc-fedora        lxc-oracle  lxc-ubuntu-cloud
-lxc-altlinux   lxc-cirros    lxc-gentoo        lxc-plamo
-lxc-archlinux  lxc-debian    lxc-openmandriva  lxc-sshd
-lxc-busybox    lxc-download  lxc-opensuse      lxc-ubuntu
-
-</code></pre><p>Now using the template for creating the Linux Container:</p><pre><code>$ sudo lxc-create -n Arch_Container -t /usr/share/lxc/templates/lxc-archlinux
-
-</code></pre><p>If the container is created successfully, it will indicates that you could use it from now.</p><h3 id=start-the-container>Start the Container</h3><p>List the installed Containers:</p><pre><code>$ sudo lxc-ls
-Arch_Container  
-
-</code></pre><p>Start the installed Container:</p><pre><code>$ sudo lxc-start -n Arch_Container
-
-</code></pre><p>The default username is root, and you will got a terminal window, now check the network configuration:</p><pre><code>[root@Arch_Container ~]# ip link show dev eth0
-5: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
-    link/ether xx:xx:xx:xx brd ff:ff:ff:ff:ff:ff
-
-</code></pre><p>Simply use <code>dhcpcd</code> we could get the ip address currently, and surely we can see this network configuration is OK now.<br>Enable the automatically dhcpcd at startup</p><pre><code>$ dhcpcd
-$ systemctl enable dhcpcd.service
-
-</code></pre><p>Now reboot you will notice the ip address has been configurated automatically.</p><h3 id=create-other-distributions>Create Other Distributions</h3><p>First you should install yum and debootstrap from AUR repository.</p><pre><code>$ yaourt -S yum
-$ yaourt -S debootstrap
-
-</code></pre><h4 id=fedora>Fedora</h4><p>Install Fedora or CentOS will failed, I don&rsquo;t know why.</p><h4 id=debian>Debian</h4><p>Install rxync first via:</p><pre><code>pacman -S rsync
-
-</code></pre><p>Some packages failed to download, so won&rsquo;t install.</p><p>After installed rsync, install debian container via:</p><pre><code>sudo lxc-create -n Debian_Container -t /usr/share/lxc/templates/lxc-debian
-
-</code></pre><p>Start the container via:</p><pre><code> sudo lxc-start -n Debian_Container
-
-</code></pre><p>The default username/password are root, In Debian network is not configured.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/187/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/187/>187</a></li><li class="page-item active"><a class=page-link href=/page/188/>188</a></li><li class=page-item><a class=page-link href=/page/189/>189</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/189/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/187/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/187/>187</a></li><li class="page-item active"><a class=page-link href=/page/188/>188</a></li><li class=page-item><a class=page-link href=/page/189/>189</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/243/>243</a></li><li class=page-item><a href=/page/189/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/243/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

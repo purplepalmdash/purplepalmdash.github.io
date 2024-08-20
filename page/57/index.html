@@ -1,5 +1,149 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/12/11/workingtipsonkubespraykongfuzi/>WorkingTipsOnKubesprayKongFuZi</a></h1><span class=post-date>Dec 11, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>Kubespray在离线环境下，完全不考虑包管理、docker升级的发行版。</p><h3 id=技术要点>技术要点</h3><ol><li>离线情况下的源仓库准备。</li><li>完全离线情况下ansible的执行。</li></ol><h3 id=环境准备与本文无关>环境准备(与本文无关)</h3><p>Ubuntu 16.04.2， 最小化安装后，做成vagrant box:</p><pre><code>$ sudo vim /etc/default/grub
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/12/19/kubespray2.12.0%E7%A6%BB%E7%BA%BF%E5%8C%96%E6%89%8B%E8%AE%B0/>kubespray2.12.0离线化手记</a></h1><span class=post-date>Dec 19, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Download the source code:</p><pre><code># wget https://github.com/kubernetes-sigs/kubespray/archive/v2.12.0.tar.gz
+</code></pre><p>Install ansible via old Rong/.</p><pre><code>$ scp -r Rong test@192.168.121.104:/home/test/
+$ cd ~/Rong
+$ sudo mv /etc/apt/sources.list /home/test/
+$ sudo ./bootstrap.sh
+$ sudo mv /home/test/sources.list /etc/apt/
+</code></pre><p>Change options:</p><pre><code>$ cd ~/kubespray-2.12.0
+$ cp ../deploy.key .
+$ ssh -i deploy.key root@192.168.121.104
+$ exit
+$ cp -rfp inventory/sample/ inventory/rong
+$ vim inventory/rong/hosts.ini
+[all]
+kubespray ansible_host=192.168.121.104 ansible_ssh_user=root ansible_ssh_private_key_file=./deploy.key  ip=192.168.121.104
+
+[kube-master]
+kubespray
+
+[etcd]
+kubespray
+
+[kube-node]
+kubespray
+
+[k8s-cluster:children]
+kube-master
+kube-node
+</code></pre><p>Add some configuration:</p><pre><code>$ vim group_vars/k8s-cluster/addons.yml 
+dashboard_enabled: true
+helm_enabled: true
+metrics_server_enabled: true
+</code></pre><h3 id=speedup>Speedup</h3><p>cross the gfw, host machine side:</p><pre><code>$ sudo iptables -t nat -A PREROUTING -p tcp -s 192.168.121.0/24 -j DNAT --to-destination 127.0.0.1:12345
+$ sudo sysctl -w net.ipv4.conf.all.route_localnet=1
+</code></pre><p>vm side:</p><pre><code>$ sudo vim /etc/resolv.conf
+nameserver 223.5.5.5
+nameserver 8.8.8.8
+</code></pre><h3 id=setup-cluster>Setup Cluster</h3><p>Via:</p><pre><code>$ ansible-playbook -i inventory/rong/hosts.ini cluster.yml
+</code></pre><h3 id=fetch-things>Fetch things</h3><p>Get all of the images:</p><pre><code># docker pull xueshanf/install-socat:latest
+# docker images | sed -n '1!p' | awk {'print $1&quot;:&quot;$2'} | tr '\n' ' '
+nginx:1.17 gcr.io/google-containers/k8s-dns-node-cache:1.15.8 gcr.io/google-containers/kube-proxy:v1.16.3 gcr.io/google-containers/kube-apiserver:v1.16.3 gcr.io/google-containers/kube-controller-manager:v1.16.3 gcr.io/google-containers/kube-scheduler:v1.16.3 lachlanevenson/k8s-helm:v2.16.1 gcr.io/kubernetes-helm/tiller:v2.16.1 coredns/coredns:1.6.0 calico/node:v3.7.3 calico/cni:v3.7.3 calico/kube-controllers:v3.7.3 gcr.io/google_containers/metrics-server-amd64:v0.3.3 gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0 gcr.io/google_containers/kubernetes-dashboard-amd64:v1.10.1 quay.io/coreos/etcd:v3.3.10 gcr.io/google-containers/addon-resizer:1.8.3 gcr.io/google-containers/pause:3.1 gcr.io/google_containers/pause-amd64:3.1 xueshanf/install-socat:latest
+# docker save -o k8simages.tar nginx:1.17 gcr.io/google-containers/k8s-dns-node-cache:1.15.8 gcr.io/google-containers/kube-proxy:v1.16.3 gcr.io/google-containers/kube-apiserver:v1.16.3 gcr.io/google-containers/kube-controller-manager:v1.16.3 gcr.io/google-containers/kube-scheduler:v1.16.3 lachlanevenson/k8s-helm:v2.16.1 gcr.io/kubernetes-helm/tiller:v2.16.1 coredns/coredns:1.6.0 calico/node:v3.7.3 calico/cni:v3.7.3 calico/kube-controllers:v3.7.3 gcr.io/google_containers/metrics-server-amd64:v0.3.3 gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0 gcr.io/google_containers/kubernetes-dashboard-amd64:v1.10.1 quay.io/coreos/etcd:v3.3.10 gcr.io/google-containers/addon-resizer:1.8.3 gcr.io/google-containers/pause:3.1 gcr.io/google_containers/pause-amd64:3.1 xueshanf/install-socat:latest; xz -T4 k8simages.tar
+</code></pre><p>Get debs:</p><pre><code># mkdir /home/test/debs
+# find . | grep deb$ | xargs -I % cp % /home/test/debs/
+</code></pre><p>Get temp files:</p><pre><code># ls /tmp/releases/
+calicoctl                           images/                             kubectl-v1.16.3-amd64               
+cni-plugins-linux-amd64-v0.8.1.tgz  kubeadm-v1.16.3-amd64               kubelet-v1.16.3-amd64     
+# cp /tmp/releases/* /home/test/file/
+</code></pre><h3 id=more-pkgs>More pkgs</h3><p>Use the old deb repository for installing ansible:</p><pre><code>$ cp old_1804debs.tar.xz ~/YourWebServer
+$ tar xJvf old_1804debs.tar.xz
+$ sudo vim /etc/apt/sources.list
+deb [trusted=yes]  http://192.168.122.1/ansible_bionic ./
+$ sudo apt-get update -y &amp;&amp; sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ansible python-netaddr
+</code></pre><p>more pkgs should be installed manually and copy to <code>/root/debs</code>:</p><pre><code># apt-get install -y iputils-ping nethogs python-netaddr build-essential bind9 bind9utils nfs-common nfs-kernel-server ntpdate ntp tcpdump iotop unzip wget apt-transport-https socat rpcbind arping fping python-apt ipset ipvsadm pigz nginx docker-registry
+# cd /root/debs
+# wget http://209.141.35.192/netdata_1.18.1_amd64_bionic.deb
+# apt-get install  ./netdata_1.18.1_amd64_bionic.deb
+# find /var/cache | grep deb$ | xargs -I % cp % ./
+# dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
+</code></pre><h3 id=offline-registry-setup>Offline registry setup</h3><p>On a running secureregistry server do following:</p><pre><code># systemctl stop secureregistryserver
+# cd /opt/local/secureregistryserver/
+# mv data data.back
+# docker-compose up
+# docker push xxxxx
+</code></pre><p>Your docker push item is listed as(v1.16.3):</p><pre><code>docker push gcr.io/google-containers/k8s-dns-node-cache:1.15.8
+docker push gcr.io/google-containers/kube-proxy:v1.16.3
+docker push gcr.io/google-containers/kube-apiserver:v1.16.3
+docker push gcr.io/google-containers/kube-controller-manager:v1.16.3
+docker push gcr.io/google-containers/kube-scheduler:v1.16.3
+docker push lachlanevenson/k8s-helm:v2.16.1
+docker push gcr.io/kubernetes-helm/tiller:v2.16.1
+docker push coredns/coredns:1.6.0
+docker push calico/node:v3.7.3
+docker push calico/cni:v3.7.3
+docker push calico/kube-controllers:v3.7.3
+docker push gcr.io/google_containers/metrics-server-amd64:v0.3.3
+docker push gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0
+docker push gcr.io/google_containers/kubernetes-dashboard-amd64:v1.10.1
+docker push quay.io/coreos/etcd:v3.3.10
+docker push gcr.io/google-containers/addon-resizer:1.8.3
+docker push gcr.io/google-containers/pause:3.1
+docker push gcr.io/google_containers/pause-amd64:3.1
+docker push xueshanf/install-socat:latest
+docker push nginx:1.17
+</code></pre><p>tar docker.tar.gz:</p><pre><code># cd /opt/local/secureregistryserver/data
+# tar czvf docker.tar.gz docker/
+
+</code></pre><h3 id=upgrade>Upgrade</h3><p>From v1.15.3 to v1.16.3, steps:</p><pre><code>$ pwd
+0_preinstall/roles/kube-deploy/files
+$ ls
+1604debs.tar.xz  1804debs.tar.xz  calicoctl-linux-amd64  cni-plugins-linux-amd64-v0.8.1.tgz  dns  docker-compose  docker.tar.gz  dockerDebs.tar.gz  gpg  hyperkube  kubeadm  nginx  ntp.conf
+</code></pre><p>Generate 1804debs.tar.xz and replace:</p><pre><code># cp -r /root/debs ./Rong
+# tar cJvf 1804debs.tar.xz Rong
+</code></pre><p>Calculate calicoctl/ , it&rsquo;s the same md5, so needn&rsquo;t replacement.</p><p><code>docker.tar.gz</code> should be replaced with the newer one.</p><p>Docker version upgradeed to 19.03.5, so we need to replace the old ones.</p><pre><code># tar xzvf dockerDebs.tar.gz  -C tmp/
+ubuntu/dists/bionic/pool/stable/amd64/containerd.io_1.2.10-2_amd64.deb
+ubuntu/dists/bionic/pool/stable/amd64/docker-ce-cli_19.03.3~3-0~ubuntu-bionic_amd64.deb
+ubuntu/dists/bionic/pool/stable/amd64/docker-ce_18.09.7~3-0~ubuntu-bionic_amd64.deb
+</code></pre><p>apt-mirror for syncing on internet:</p><pre><code>$ sudo vim /etc/apt/mirror.list
+set base_path    /media/sda/tmp/apt-mirror
+set nthreads     20
+set _tilde 0
+deb https://download.docker.com/linux/ubuntu bionic stable
+deb https://download.docker.com/linux/ubuntu xenial stable
+$ sudo apt-mirror
+
+</code></pre><p>Too slow for the fucking gfw!!!</p><p>After apt-mirror, we have to rsync using following command:</p><pre><code>$ pwd
+/media/sda/tmp/apt-mirror/mirror/download.docker.com/linux/ubuntu
+$ ls
+dists
+$ rsync -a -e 'ssh -p 2345 ' --progress dists/ root@192.168.111.11:/destination/ubuntu/dists/
+</code></pre><p>wget the gpg file:</p><pre><code>$ wget https://download.docker.com/linux/ubuntu/gpg
+$ tar czvf dockerDebs.tar.gz gpg ubuntu/
+$ ls -l -h dockerDebs.tar.gz
+-rw-r--r-- 1 root root 144M Dec 23 17:41 dockerDebs.tar.gz
+$ cp dockerDebs.tar.gz ~/0_preinstall/roles/kube-deploy/files
+</code></pre><p>Binary replacement:</p><pre><code>previsous:    
+ hyperkube  kubeadm  
+current:    
+kubeadm-v1.16.3-amd64 kubectl-v1.16.3-amd64 kubelet-v1.16.3-amd64
+</code></pre><p>Edit the file, since in v1.16.3 we didn&rsquo;t use hyperkube:</p><pre><code>$ vim deploy-ubuntu/tasks/main.yml
+  - name: &quot;upload static files to /usr/local/static&quot;
+    copy:
+      src: &quot;{{ item }}&quot;
+      dest: /usr/local/static/
+      owner: root
+      group: root
+      mode: 0777
+    with_items:
+      #- files/hyperkube
+      - files/calicoctl-linux-amd64
+      - files/kubeadm-v1.16.3-amd64
+      - files/kubectl-v1.16.3-amd64
+      - files/kubelet-v1.16.3-amd64
+      #- files/kubeadm
+      - files/cni-plugins-linux-amd64-v0.8.1.tgz
+      #- files/dockerDebs.tar.gz
+      - files/gpg
+</code></pre><p>Add sysctl items:</p><pre><code># vim ./roles/kubernetes/preinstall/tasks/0080-system-configurations.yml
+- name: set fs inotify.max_user_watches to 1048576
+  sysctl:
+    sysctl_file: &quot;{{ sysctl_file_path }}&quot;
+    name: fs.inotify.max_user_watches
+    value: 1048576
+    state: present
+    reload: yes
+</code></pre><p>Added some files like <code>./roles/kubernetes/preinstall/tasks/0000-xxx-ubuntu.yml</code>, minimum modifications to kubespray source code, you can use bcompare for viewing.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/12/11/workingtipsonkubespraykongfuzi/>WorkingTipsOnKubesprayKongFuZi</a></h1><span class=post-date>Dec 11, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=目的>目的</h3><p>Kubespray在离线环境下，完全不考虑包管理、docker升级的发行版。</p><h3 id=技术要点>技术要点</h3><ol><li>离线情况下的源仓库准备。</li><li>完全离线情况下ansible的执行。</li></ol><h3 id=环境准备与本文无关>环境准备(与本文无关)</h3><p>Ubuntu 16.04.2， 最小化安装后，做成vagrant box:</p><pre><code>$ sudo vim /etc/default/grub
 GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet&quot;
 GRUB_CMDLINE_LINUX=&quot;net.ifnames=0 biosdevname=0&quot;
 $ sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -498,148 +642,4 @@ export PATH=$PATH:$GOPATH/bin
 ./terraform-provider-libvirt e9ff32f1ec5825dcf05481cb7ef6a3b645696a4f-dirty
 Compiled against library: libvirt 3.0.0
 Using library: libvirt 3.0.0
-</code></pre><p>Now you got plugin compiled and ready to use on debian 9.0</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/12/03/%E7%94%A8terraform%E7%AE%A1%E7%90%86%E9%9B%86%E7%BE%A4%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/>用Terraform管理集群编译环境</a></h1><span class=post-date>Dec 3, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境>环境</h3><p>操作系统Ubuntu18.04.3<br>libvirtd (libvirt) 4.0.0</p><h3 id=迅速搭建>迅速搭建</h3><p>terraform下载并加入到系统目录:</p><pre><code>$ wget https://releases.hashicorp.com/terraform/0.12.17/terraform_0.12.17_linux_amd64.zip
-$  unzip terraform_0.12.17_linux_amd64.zip
-$ sudo mv terraform /usr/bin
-$ terraform version
-Terraform v0.12.17
-</code></pre><p>terraform-provider-libvirt下载并完成初始化(<code>https://github.com/dmacvicar/terraform-provider-libvirt/releases</code>):</p><pre><code>$ wget https://github.com/dmacvicar/terraform-provider-libvirt/releases/download/v0.6.0/terraform-provider-libvirt-0.6.0+git.1569597268.1c8597df.Ubuntu_18.04.amd64.tar.gz
-$ tar xzvf terraform-provider-libvirt-0.6.0+git.1569597268.1c8597df.Ubuntu_18.04.amd64.tar.gz
-$  terraform init
-Terraform initialized in an empty directory!
-
-The directory has no Terraform configuration files. You may begin working
-with Terraform immediately by creating Terraform configuration files.
-$ cd ~/.terraform.d
-$ mkdir plugins
-$ cp terraform-provider-libvirt plugins/
-</code></pre><h3 id=创建第一个环境>创建第一个环境</h3><p>创建工作目录:</p><pre><code>$ mkdir ~/projects/terraform
-$ cd ~/projects/terraform
-</code></pre><p>创建一个名为<code>libvirt.tf</code>的定义文件，定义在kvm上需要创建的虚拟机:</p><pre><code>provider &quot;libvirt&quot; {
-  uri = &quot;qemu:///system&quot;
-}
-
-resource &quot;libvirt_volume&quot; &quot;node1-qcow2&quot; {
-  name = &quot;node1-qcow2&quot;
-  pool = &quot;default&quot;
-  source = &quot;/media/sda/rong_ubuntu_180403.qcow2&quot;
-  format = &quot;qcow2&quot;
-}
-
-# Define KVM domain to create
-resource &quot;libvirt_domain&quot; &quot;node1&quot; {
-  name   = &quot;node1&quot;
-  memory = &quot;10240&quot;
-  vcpu   = 2
-
-  network_interface {
-    network_name = &quot;default&quot;
-  }
-
-  disk {
-    volume_id = libvirt_volume.node1-qcow2.id
-  }
-
-  console {
-    type = &quot;pty&quot;
-    target_type = &quot;serial&quot;
-    target_port = &quot;0&quot;
-  }
-
-  graphics {
-    type = &quot;spice&quot;
-    listen_type = &quot;address&quot;
-    autoport = true
-  }
-}
-</code></pre><p>初始化一个terraform工作目录, 而后生成并展示terraform执行计划，而后创建定义好的底层设施:</p><pre><code>$ terraform init
-$ terraform plan
-$ terraform apply
-</code></pre><p>销毁:</p><pre><code>$ terraform destroy 
-</code></pre><p>在apply和destroy时需要回答<code>yes</code>，如果需要跳过确认流程，则使用以下命令:</p><pre><code>$ terraform apply -auto-approve
-$ terraform destroy -auto-approve
-</code></pre><h3 id=cloud-init>cloud-init</h3><p>这个可以参考example下ubuntu的例子。</p><h3 id=multiple-vms>multiple vms</h3><p>参考样例如下:</p><pre><code>provider &quot;libvirt&quot; {
-  uri = &quot;qemu:///system&quot;
-}
-
-variable &quot;hosts&quot; {
-  default = 2
-}
-
-variable &quot;hostname_format&quot; {
-  type    = string
-  default = &quot;node%02d&quot;
-}
-
-resource &quot;libvirt_volume&quot; &quot;node-disk&quot; {
-  name             = &quot;node-${format(var.hostname_format, count.index + 1)}.qcow2&quot;
-  count            = var.hosts
-  base_volume_name = &quot;xxxxx180403_vagrant_box_image_0.img&quot;
-  pool             = &quot;default&quot;
-  format           = &quot;qcow2&quot;
-}
-
-resource &quot;libvirt_domain&quot; &quot;node&quot; {
-  count  = var.hosts
-  name   = format(var.hostname_format, count.index + 1)
-  vcpu   = 1
-  memory = 2048
-
-  disk {
-    volume_id = element(libvirt_volume.node-disk.*.id, count.index)
-  }
-
-  network_interface {
-    network_name   = &quot;default&quot;
-    mac            = &quot;52:54:00:00:00:a${count.index + 1}&quot;
-    wait_for_lease = true
-  }
-
-  graphics {
-    type = &quot;spice&quot;
-    listen_type = &quot;address&quot;
-    autoport = true
-  }
-}
-
-terraform {
-  required_version = &quot;&gt;= 0.12&quot;
-}
-</code></pre><p>值得注意的是，该定义文件中使用了dhcp地址绑定，为此我们需要定义如下的dhcp规则：</p><pre><code>$ sudo virsh net-dumpxml --network default
-&lt;network&gt;
-  &lt;name&gt;default&lt;/name&gt;
-  &lt;uuid&gt;c71715ac-90b5-483a-bb1c-6a40a5af1b56&lt;/uuid&gt;
-  &lt;forward mode='nat'&gt;
-    &lt;nat&gt;
-      &lt;port start='1024' end='65535'/&gt;
-    &lt;/nat&gt;
-  &lt;/forward&gt;
-  &lt;bridge name='virbr0' stp='on' delay='0'/&gt;
-  &lt;mac address='52:54:00:92:5c:47'/&gt;
-  &lt;ip address='192.168.122.1' netmask='255.255.255.0'&gt;
-    &lt;dhcp&gt;
-      &lt;range start='192.168.122.2' end='192.168.122.254'/&gt;
-      &lt;host mac='52:54:00:00:00:a1' name='node01' ip='192.168.122.171'/&gt;
-      &lt;host mac='52:54:00:00:00:a2' name='node02' ip='192.168.122.172'/&gt;
-      &lt;host mac='52:54:00:00:00:a3' name='node03' ip='192.168.122.173'/&gt;
-      &lt;host mac='52:54:00:00:00:a4' name='node04' ip='192.168.122.174'/&gt;
-      &lt;host mac='52:54:00:00:00:a5' name='node05' ip='192.168.122.175'/&gt;
-      &lt;host mac='52:54:00:00:00:a6' name='node06' ip='192.168.122.176'/&gt;
-      &lt;host mac='52:54:00:00:00:a7' name='node07' ip='192.168.122.177'/&gt;
-      &lt;host mac='52:54:00:00:00:a8' name='node08' ip='192.168.122.178'/&gt;
-      &lt;host mac='52:54:00:00:00:a9' name='node09' ip='192.168.122.179'/&gt;
-      &lt;host mac='52:54:00:00:00:aa' name='node10' ip='192.168.122.180'/&gt;
-    &lt;/dhcp&gt;
-  &lt;/ip&gt;
-&lt;/network&gt;
-</code></pre><p>重新定义的规则如下:</p><pre><code>$ sudo virsh net-dumpxml --network default&gt;default.xml
-修改
-$ sudo virsh net-define ./default.xml
-重新检查规则
-$ sudo virsh net-dumpxml --network default
-</code></pre><p>定义完毕以后，则我们在tf文件中定义的虚拟机会通过DHCP从default网络得到相应的IP地址，有利于后续的集群部署。</p><p>检查IP是否被分配的命令:</p><pre><code>$ sudo virsh net-dhcp-leases default
- Expiry Time          MAC address        Protocol  IP address                Hostname        Client ID or DUID
--------------------------------------------------------------------------------------------------------------------
- 2019-12-03 15:53:49  52:54:00:00:00:a1  ipv4      192.168.122.171/24        node01          01:52:54:00:00:00:a1
- 2019-12-03 15:53:49  52:54:00:00:00:a2  ipv4      192.168.122.172/24        node02          01:52:54:00:00:00:a2
-</code></pre><p>定义完该网络后，需要手动重启该网络才可以使得更改生效。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/56/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/56/>56</a></li><li class="page-item active"><a class=page-link href=/page/57/>57</a></li><li class=page-item><a class=page-link href=/page/58/>58</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/242/>242</a></li><li class=page-item><a href=/page/58/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/242/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Now you got plugin compiled and ready to use on debian 9.0</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/56/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/56/>56</a></li><li class="page-item active"><a class=page-link href=/page/57/>57</a></li><li class=page-item><a class=page-link href=/page/58/>58</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/243/>243</a></li><li class=page-item><a href=/page/58/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/243/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
