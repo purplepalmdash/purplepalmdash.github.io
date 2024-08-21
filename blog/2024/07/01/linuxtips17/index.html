@@ -175,4 +175,17 @@ issue:
 </code></pre><p>$ vim ~/.zshrc
 export ZSH=/home/dash/.oh-my-zsh
 COWPATH=/usr/share/cowsay/cows</p><pre><code>recreate the terminal, this time cowsay works properly.   
-</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+
+### 24. flux1-dev-bnb-nf4-v2
+Steps:    
+
+</code></pre><p>models:<br>(base) dash@comfyvm:~/Code/ComfyUI/models/checkpoints$ mv ~/flux1-dev-bnb-nf4-v2.safetensors .
+(base) dash@comfyvm:~/Code/ComfyUI/models/checkpoints$ pwd
+/home/dash/Code/ComfyUI/models/checkpoint</p><p>Custom model:<br>(base) dash@comfyvm:~/Code/ComfyUI/custom_nodes$ mv ~/ComfyUI_bitsandbytes_NF4-master.zip .
+(base) dash@comfyvm:~/Code/ComfyUI/custom_nodes$ unzip ComfyUI_bitsandbytes_NF4-master.zip
+Archive: ComfyUI_bitsandbytes_NF4-master.zip
+6c65152bc48b28fc44cec3aa44035a8eba400eb9
+creating: ComfyUI_bitsandbytes_NF4-master/
+inflating: ComfyUI_bitsandbytes_NF4-master/LICENSE.txt<br>inflating: ComfyUI_bitsandbytes_NF4-master/README.md<br>inflating: ComfyUI_bitsandbytes_NF4-master/<strong>init</strong>.py<br>extracting: ComfyUI_bitsandbytes_NF4-master/requirements.txt</p><p>$ conda activate comfyui
+(comfyui) dash@comfyvm:/opt/src/redsocks$ cd ~/Code/ComfyUI/
+(comfyui) dash@comfyvm:~/Code/ComfyUI$ python -s -m pip install -U bitsandbytes</p><pre><code></code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
