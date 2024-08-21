@@ -158,4 +158,12 @@ reboot</p><pre><code>
 ### 21. grep in linux root
 via:    
 
-</code></pre><p>grep -rli &ndash;exclude-dir={proc,boot,root,sys} &lsquo;xmlns:qemu=&rsquo; /</p><pre><code></code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>grep -rli &ndash;exclude-dir={proc,boot,root,sys} &lsquo;xmlns:qemu=&rsquo; /</p><pre><code>
+### 22. one-kvm-docker
+via:    
+
+</code></pre><p>docker run -itd -p443:443 -p80:80 &ndash;name pikvm-docker &ndash;device=/dev/ttyUSB0:/dev/kvmd-hid &ndash;device=/dev/video0:/dev/kvmd-video pikvm-ch9329:0.61</p><pre><code>
+![/images/20240821_095332_x.jpg](/images/20240821_095332_x.jpg)
+
+should use relative mouse.   
+</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
