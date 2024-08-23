@@ -55,6 +55,34 @@ if [ -z &quot;$DISPLAY&quot; ] &amp;&amp; [ &quot;$XDG_VTNR&quot; = 18 ]; then
 fi
 </code></pre><p>Added autologin:</p><pre><code> gpasswd -a test7 autologin
  for i in {8..20}; do gpasswd -a test$i autologin; done
+</code></pre><p>crontab for activating this:</p><pre><code>[root@archremote ~]# cat /usr/bin/chvtsh.sh 
+#!/bin/bash
+while ! ps -p $(pgrep Xorg) &gt; /dev/null; do
+  echo &quot;Waiting for xorg to start...&quot;&gt;&gt;/tmp/waitdone.txt
+  sleep 1
+done
+echo &quot;xorg started, switching to console 2&quot;&gt;&gt;/tmp/waitdone.txt
+sleep 15
+chvt 2
+sleep 5
+chvt 3
+sleep 5
+chvt 4
+sleep 5
+chvt 5
+sleep 5
+chvt 6
+sleep 5
+chvt 7
+systemctl start getty@tty7
+sleep 5
+chvt 8
+systemctl start getty@tty8
+sleep 5
+chvt 9
+systemctl start getty@tty9
+[root@archremote ~]# crontab -l
+@reboot sleep 10 &amp;&amp; /usr/bin/chvtsh.sh
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/08/20/icnhg/>IcnHg</a></h1><span class=post-date>Aug 20, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Modification on grub default parameters:</p><pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash iommu=pt amd_iommu=on initcall_blacklist=sysfb_init pcie_acs_override=downstream,multifunction&quot;
 </code></pre><p>Remove some items in nova:</p><pre><code>$ vim /etc/nova/nova.conf
 [libvirt]

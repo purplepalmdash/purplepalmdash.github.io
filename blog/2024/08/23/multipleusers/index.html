@@ -55,4 +55,32 @@ if [ -z &quot;$DISPLAY&quot; ] &amp;&amp; [ &quot;$XDG_VTNR&quot; = 18 ]; then
 fi
 </code></pre><p>Added autologin:</p><pre><code> gpasswd -a test7 autologin
  for i in {8..20}; do gpasswd -a test$i autologin; done
+</code></pre><p>crontab for activating this:</p><pre><code>[root@archremote ~]# cat /usr/bin/chvtsh.sh 
+#!/bin/bash
+while ! ps -p $(pgrep Xorg) &gt; /dev/null; do
+  echo &quot;Waiting for xorg to start...&quot;&gt;&gt;/tmp/waitdone.txt
+  sleep 1
+done
+echo &quot;xorg started, switching to console 2&quot;&gt;&gt;/tmp/waitdone.txt
+sleep 15
+chvt 2
+sleep 5
+chvt 3
+sleep 5
+chvt 4
+sleep 5
+chvt 5
+sleep 5
+chvt 6
+sleep 5
+chvt 7
+systemctl start getty@tty7
+sleep 5
+chvt 8
+systemctl start getty@tty8
+sleep 5
+chvt 9
+systemctl start getty@tty9
+[root@archremote ~]# crontab -l
+@reboot sleep 10 &amp;&amp; /usr/bin/chvtsh.sh
 </code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
