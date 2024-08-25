@@ -1,5 +1,107 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/21/linuxtips9/>LinuxTips9</a></h1><span class=post-date>May 21, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/linuxtips>LinuxTips</a></span><h3 id=1-build-maven-project>1. Build maven project</h3><p>For building the class, do <code>mvn compile</code>, for building the jar file, do <code>mvn package</code>, then you could get the jar under the <code>target</code> folder.</p><h3 id=2-sed-replace>2. sed replace</h3><p>via following commands:</p><pre><code># sed s/10.168.100.145/192.192.189.1/&lt;/home/dash/docker-compose.yml
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/22/oncustomizationofubuntuiso/>OnCustomizationOfUbuntuISO</a></h1><span class=post-date>May 22, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=install-cubic>Install cubic</h3><p>Install cubic via:</p><pre><code># apt-add-repository ppa:cubic-wizard/release
+# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
+# apt update &amp;&amp; apt install cubic
+</code></pre><h3 id=custom-packages>Custom Packages</h3><p>Install docker and docker-compose</p><pre><code># apt-get install -y docker.io docker-compose openssh-server
+# systemctl enable docker
+</code></pre><p>Pre-load docker images:</p><pre><code># vim /bin/loaddocker.sh
+if [[ $(sudo docker images | grep registry) ]]; then
+    echo &quot;there are files&quot;
+else
+    docker load&lt;/usr/local/images/1.tar
+    docker load&lt;/usr/local/images/2.tar
+    docker load&lt;/usr/local/images/3.tar
+    docker load&lt;/usr/local/images/4.tar
+fi
+# chmod 777 /bin/loaddocker.sh
+</code></pre><p>Add dockerload service</p><pre><code># vim /etc/systemd/system/dockerload.service 
+[Unit]
+Description=Docker load
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/bin/loaddocker.sh
+ExecStop=/usr/bin/echo hello
+
+[Install]
+WantedBy=multi-user.target
+
+</code></pre><p>Add this command to systemd:</p><pre><code># vim /etc/systemd/system/docker-infra.service
+[Unit]
+Description=Docker infra
+Requires=docker.service
+After=dockerload.service
+
+[Service]
+WorkingDirectory=/usr/local/compose/
+Type=idle
+Restart=always
+# Remove old container items
+ExecStartPre=/usr/bin/docker-compose -f /usr/local/compose/docker-compose.yml down
+# Compose up
+ExecStart=/usr/bin/docker-compose -f /usr/local/compose/docker-compose.yml up
+# Compose stop
+ExecStop=/usr/bin/docker-compose -f /usr/local/compose/docker-compose.yml stop
+
+[Install]
+WantedBy=multi-user.target
+
+# systemctl enable docker-infra.service
+</code></pre><p>Change the default interface to eth0/eth1, etc.</p><pre><code># vim /etc/default/grub
+net.ifnames=0 biosdevname=0
+# update-grub
+</code></pre><h3 id=remove-unnecessary-packages>Remove unnecessary packages</h3><p>Following:</p><pre><code>Amazon
+Libreoffice
+Mahjongg
+Mines
+Shotwell
+Sudoku
+totem
+totem-common
+vino
+transmission-gtk
+transmission-common
+remmina
+eog
+
+</code></pre><p>Disable ufw:</p><pre><code># ufw disable
+</code></pre><p>Remove command:</p><pre><code># apt-get purge   aisleriot eog gnome-mahjongg gnome-mines gnome-sudoku hplip libreoffice-avmedia-backend-gstreamer
+  libreoffice-base-core libreoffice-calc libreoffice-common libreoffice-core libreoffice-draw
+  libreoffice-gnome libreoffice-gtk3 libreoffice-impress libreoffice-math libreoffice-ogltrans
+  libreoffice-pdfimport libreoffice-style-breeze libreoffice-style-galaxy libreoffice-style-tango
+  libreoffice-writer  python3-uno remmina remmina-plugin-rdp
+  remmina-plugin-secret remmina-plugin-vnc thunderbird thunderbird-gnome-support totem totem-common
+  totem-plugins transmission-common transmission-gtk  vino
+
+</code></pre><h3 id=tips-for-centos>tips for centos</h3><pre><code>if [[ $(sudo docker images | grep registry) ]]; then
+    echo &quot;there are files&quot;
+else
+    docker load&lt;/usr/local/images/nginx.tar.bz2
+    docker load&lt;/usr/local/images/1.tar
+    docker load&lt;/usr/local/images/2.tar
+    docker load&lt;/usr/local/images/3.tar
+    docker load&lt;/usr/local/images/4.tar
+    docker run --name docker-nginx -p 8888:80 -d -v /usr/local/kismaticpkgs:/usr/share/nginx/html jrelva/nginx-autoindex
+    sed -i s/10.168.100.145/`hostname -I|awk '{print $1}'`/g /usr/local/compose/docker-compose.yml
+fi
+
+</code></pre><p>Add service:</p><pre><code># vim /etc/systemd/system/mynginx.service 
+[Unit]
+Description=mynginx
+Requires=docker.service
+After=docker-infra.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a docker-nginx
+ExecStop=/usr/bin/docker stop -t 2 docker-nginx
+
+[Install]
+WantedBy=multi-user.target
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/21/linuxtips9/>LinuxTips9</a></h1><span class=post-date>May 21, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/linuxtips>LinuxTips</a></span><h3 id=1-build-maven-project>1. Build maven project</h3><p>For building the class, do <code>mvn compile</code>, for building the jar file, do <code>mvn package</code>, then you could get the jar under the <code>target</code> folder.</p><h3 id=2-sed-replace>2. sed replace</h3><p>via following commands:</p><pre><code># sed s/10.168.100.145/192.192.189.1/&lt;/home/dash/docker-compose.yml
 </code></pre><h3 id=3-get-ip-for-ubuntu>3. get ip for ubuntu</h3><p>Ubuntu 14.04 ~ 18.04, via following command:</p><pre><code>hostname -I | awk '{print $1}'
 </code></pre><h3 id=4-view-systemd-logs>4. view systemd logs</h3><p>via following command:</p><pre><code># journalctl -u service-name.service -b
 </code></pre><h3 id=5-disable-unattended-upgrades>5. Disable unattended upgrades</h3><p>Under Ubuntu18.04/16.04, could do :</p><pre><code># systemctl disable unattended-upgrade.service
@@ -752,153 +854,4 @@ spec:
     - name: nfs-pvc
       persistentVolumeClaim:
         claimName: test-claim
-</code></pre><p>Verify them via install and delete them.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/01/ratelimitingoninstio/>RateLimitingOnInstio</a></h1><span class=post-date>May 1, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=service-example>Service Example</h3><p>The yaml file is directly taken from the official example of <code>helloworld</code>, but
-I remove the v2 deployment, thus the yaml file is listed as following:</p><pre><code>apiVersion: v1
-kind: Service
-metadata:
-  name: helloworld
-  labels:
-    app: helloworld
-spec:
-  type: NodePort
-  ports:
-  - port: 5000
-    name: http
-  selector:
-    app: helloworld
----
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: helloworld-v1
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: helloworld
-        version: v1
-    spec:
-      containers:
-      - name: helloworld
-        image: istio/examples-helloworld-v1
-        resources:
-          requests:
-            cpu: &quot;100m&quot;
-        imagePullPolicy: IfNotPresent #Always
-        ports:
-        - containerPort: 5000
-</code></pre><p>Use istioctl for injecting the sidecar, thus we could later use prometheus for
-monitoring its traffic flow:</p><pre><code># kubectl create -f &lt;(istioctl kube-inject -f helloworld.yaml)
-</code></pre><p>Examine the deployment/service/pods:</p><pre><code># kubectl get svc helloworld       
-NAME         TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE
-helloworld   NodePort   10.96.242.5   &lt;none&gt;        5000:31241/TCP   27m
-# kubectl get deployment helloworld-v1
-NAME            DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-helloworld-v1   1         1         1            1           27m
-# kubectl get pods | grep helloworld
-helloworld-v1-7d57446779-dctlv    2/2       Running   0          27m
-</code></pre><h3 id=make-ingress>Make ingress</h3><p>The <code>helloworld-ingress.yaml</code> is listed as following:</p><pre><code>apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: helloworld
-  annotations:
-    kubernetes.io/ingress.class: &quot;istio&quot;
-spec:
-  rules:
-  - http:
-      paths:
-      - path: /hello
-        backend:
-          serviceName: helloworld
-          servicePort: 5000
-</code></pre><p>Create the ingress and verify it:</p><pre><code># kubectl create -f helloworld-ingress.yaml
-# kubectl get ingress helloworld
-NAME         HOSTS     ADDRESS   PORTS     AGE
-helloworld   *                   80        1h
-# curl http://192.168.99.100:30039/hello
-Hello version: v1, instance: helloworld-v1-7d57446779-dctlv
-</code></pre><h3 id=rate-limiting>Rate Limiting</h3><p>Write following rete limiting yaml for defining its traffic:</p><pre><code>apiVersion: &quot;config.istio.io/v1alpha2&quot;
-kind: memquota
-metadata:
-  name: helloworldservicehandler
-  namespace: istio-system
-spec:
-  quotas:
-  - name: helloworldservicerequestcount.quota.istio-system
-    maxAmount: 5000
-    validDuration: 1s
-    # The first matching override is applied.
-    # A requestcount instance is checked against override dimensions.
-    overrides:
-    # The following override applies to 'helloworld' regardless
-    # of the source.
-    - dimensions:
-        destination: helloworld
-      maxAmount: 2
-      validDuration: 1s
-
----
-apiVersion: &quot;config.istio.io/v1alpha2&quot;
-kind: quota
-metadata:
-  name: helloworldservicerequestcount
-  namespace: istio-system
-spec:
-  dimensions:
-    source: source.labels[&quot;app&quot;] | source.service | &quot;unknown&quot;
-    sourceVersion: source.labels[&quot;version&quot;] | &quot;unknown&quot;
-    destination: destination.labels[&quot;app&quot;] | destination.service | &quot;unknown&quot;
-    destinationVersion: destination.labels[&quot;version&quot;] | &quot;unknown&quot;
-
----
-apiVersion: &quot;config.istio.io/v1alpha2&quot;
-kind: rule
-metadata:
-  name: helloworldservicequota
-  namespace: istio-system
-spec:
-  actions:
-  - handler: helloworldservicehandler.memquota
-    instances:
-    - helloworldservicerequestcount.quota
----
-apiVersion: config.istio.io/v1alpha2
-kind: QuotaSpec
-metadata:
-  creationTimestamp: null
-  name: helloworldservicerequest-count
-  namespace: istio-system
-spec:
-  rules:
-  - quotas:
-    - charge: 1
-      quota: RequestCount
----
-apiVersion: config.istio.io/v1alpha2
-kind: QuotaSpecBinding
-metadata:
-  creationTimestamp: null
-  name: helloworldservicerequest-count
-  namespace: istio-system
-spec:
-  quotaSpecs:
-  - name: helloworldservicerequest-count
-    namespace: istio-system
-  services:
-  - name: helloworld
-    namespace: default
-</code></pre><p>The above items define a 2 qps rate limiting.</p><h3 id=monitoring>Monitoring</h3><p>Use prometheus for monitoring the traffic, enable prometheus via:</p><pre><code># kubectl create -f ~/Code/istio-0.7.1/install/kubernetes/addons/prometheus.yaml
-</code></pre><p>You could configure the prometheus&rsquo;s service type to NodePort, thus you could
-directly access it.</p><p><img src=/images/2018_05_01_22_21_56_779x473.jpg alt=/images/2018_05_01_22_21_56_779x473.jpg></p><p>Make the traffic:</p><pre><code># while true; do curl -s -o /dev/null http://192.168.99.100:30039/hello;done
-</code></pre><p>Then view the prometheus via following:</p><pre><code># increase(istio_request_count{destination_service=&quot;helloworld.default.svc.cluster.local&quot;, response_code=&quot;429&quot;}[5m])
-</code></pre><p>Initial:</p><p><img src=/images/2018_05_01_22_24_18_764x343.jpg alt=/images/2018_05_01_22_24_18_764x343.jpg></p><p>After aboult 3 minutes:</p><p><img src=/images/2018_05_01_22_24_50_784x327.jpg alt=/images/2018_05_01_22_24_50_784x327.jpg></p><p>You could change the response code from <code>429</code> to <code>200</code>, this means you get the
-succeed rate.</p><h3 id=fetch-back-the-result>Fetch back the result</h3><p>Refers to:</p><p><a href=https://www.robustperception.io/prometheus-query-results-as-csv/>https://www.robustperception.io/prometheus-query-results-as-csv/</a></p><pre><code># wget https://raw.githubusercontent.com/RobustPerception/python_examples/master/csv/query_csv.py
-</code></pre><p>For querying the 429/200:</p><pre><code>#  python query_csv.py http://127.0.0.1:9090 'increase(istio_request_count{destination_service=&quot;helloworld.default.svc.cluster.local&quot;, response_code=&quot;429&quot;}[5m])'
-name,timestamp,value,connection_mtls,destination_service,destination_version,instance,job,response_code,source_service,source_version
-,1525185609.906,8145.762711864407,false,helloworld.default.svc.cluster.local,v1,172.17.0.10:42422,istio-mesh,429,istio-ingress.istio-system.svc.cluster.local,unknown
-#  python query_csv.py http://127.0.0.1:9090 'increase(istio_request_count{destination_service=&quot;helloworld.default.svc.cluster.local&quot;, response_code=&quot;200&quot;}[5m])'
-name,timestamp,value,connection_mtls,destination_service,destination_version,instance,job,response_code,source_service,source_version
-,1525185628.005,886.7796610169491,false,helloworld.default.svc.cluster.local,v1,172.17.0.10:42422,istio-mesh,200,istio-ingress.istio-system.svc.cluster.local,unknown
-</code></pre><p><code>8145</code> and <code>886</code> are the values for the query, we could use them for 2nd
-development.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/79/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/79/>79</a></li><li class="page-item active"><a class=page-link href=/page/80/>80</a></li><li class=page-item><a class=page-link href=/page/81/>81</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/243/>243</a></li><li class=page-item><a href=/page/81/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/243/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Verify them via install and delete them.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/79/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/79/>79</a></li><li class="page-item active"><a class=page-link href=/page/80/>80</a></li><li class=page-item><a class=page-link href=/page/81/>81</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/243/>243</a></li><li class=page-item><a href=/page/81/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/243/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

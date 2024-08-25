@@ -1,5 +1,43 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/02/19/troubleshootingonvmwarebasedvm/>TroubleShootingOnVMWareBasedVM</a></h1><span class=post-date>Feb 19, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>记录一下昨天遇到的一个问题：<br>同事的虚拟机(Ubuntu)自检失败，fsck总是不过，直接抛到initramfs的界面。</p><p>试图探索:<br>启动的时候按Shift键，到grub界面，以recovery模式启动，依然失败。看来是ext4的磁盘inode有错误。</p><p>解决方案：<br>用livecd启动系统，启动以后到系统里去fsck修复该文件系统。<br>gparted启动失败。<br>后面我们用的是一个CentOS7的livecd系统进入的系统,</p><pre><code># fsck -y /dev/mapper/lv_lv_root
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/02/19/notesonplaywithk8s/>NotesOnPlayWithK8s</a></h1><span class=post-date>Feb 19, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>早先在2018年做了一个离线版本的playwithk8s, 主要参考了:</p><p><a href=https://labs.play-with-k8s.com/>https://labs.play-with-k8s.com/</a></p><p>以及</p><p><a href=https://training.play-with-kubernetes.com/kubernetes-workshop/>https://training.play-with-kubernetes.com/kubernetes-workshop/</a></p><p>当时还写了一系列教程并形成了一个离线部署的ISO。那个ISO前几天有同事用，反映跑不起来。看了下问题，总结如下.</p><h3 id=dns问题>dns问题</h3><p>安装完的系统中，dnsmasq不能使用，需要通过以下步骤来修正:</p><pre><code># vim /etc/systemd/resolved.conf
+DNSStubListener=no
+# systemctl disable systemd-resolved.service
+# systemctl stop systemd-resolved.service
+# echo nameserver 192.168.0.15&gt;/etc/resolv.conf
+# apt-get install -y dnsmasq
+# systemctl enable dnsmasq
+# vim /etc/dnsmasq.conf
+address=/192.168.122.151/192.168.122.151
+address=/localhost/127.0.0.1
+# chattr +i /etc/resolv.conf
+# chattr -e /etc/resolv.conf
+# ufw disable
+# docker swarm leave
+# docker swarm init
+</code></pre><p>这样下来可以访问到界面，</p><p><img src=/images/2019_02_19_15_05_45_1065x630.jpg alt=/images/2019_02_19_15_05_45_1065x630.jpg></p><h3 id=kubeadm卡顿>kubeadm卡顿</h3><p>卡在init的时候，现象见上图。</p><p>问题分析，在docker版本为17.12.1-ce的系统上可正常运行。</p><p>ISO安装出来的docker版本为18.06.0-ce.</p><p>是否是docker版本与kubeadm不兼容?</p><p>kubeadm生成的文件(/etc/kubernetes):</p><p><img src=/images/2019_02_19_15_08_49_565x229.jpg alt=/images/2019_02_19_15_08_49_565x229.jpg></p><p>对比kube-apiserver.yaml, 发现imagePullPolicy的不同:</p><p><img src=/images/2019_02_19_15_10_09_1106x395.jpg alt=/images/2019_02_19_15_10_09_1106x395.jpg></p><p>这点也是很让人奇怪的，为什么同样的容器镜像版本,
+franela/k8s:latest会有如此的不同呢？
+一样的容器镜像派生出来的实例，应该说其内置的kubeadm生成的yaml编排文件是一样的，但是在我们的系统上，更新版本的docker下生成的yaml文件未带IfNotPresent的选项，导致kubeadm认为镜像不存在，报了超时错误。</p><h3 id=解决途径>解决途径</h3><p>最近没有时间来做这个事情，所以只能先写下自己的思路。</p><ol><li><p>用一个registry缓存所有的包(去掉docker
+load的环节），直接从cache里取回gcr.io的包。docker在启动的时候从cache里取东西回来。但是我不是很确定gcr.io是否可以像registry-1.docker.io一样被缓存下来。</p></li><li></li></ol><p>伪造gcr.io的签名，指向内部的registry仓库。这个可以仿照我的kubespray框架中的做法，骗过dind。</p><p>离线情况下玩docker，真是没事找事，一波三折啊！！！</p><h3 id=更新>更新</h3><p>最近没心思做别的事情，还是把这个PWK的离线给做了，记录一下步骤：</p><p>更新到新的play-with-kubernetes:</p><pre><code># git clone https://github.com/play-with-docker/play-with-kubernetes.github.io
+</code></pre><p>当然在这里我们要做适配，以允许其离线化 。</p><p>采用的franela/k8s版本大约是2018年年底的版本，</p><pre><code># franela/k8s              latest              c7038cbdbc5d        2 months ago        733MB
+</code></pre><p>因为这个容器镜像中的kubeadm版本已经升级到比较新的版本，需要重新下载镜像:</p><pre><code>k8s.gcr.io/kube-proxy-amd64                v1.11.7             e9a1134ab5aa        4 weeks ago         98.1MB
+k8s.gcr.io/kube-apiserver-amd64            v1.11.7             d82b2643a56a        4 weeks ago         187MB
+k8s.gcr.io/kube-controller-manager-amd64   v1.11.7             93fb4304c50c        4 weeks ago         155MB
+k8s.gcr.io/kube-scheduler-amd64            v1.11.7             52ea1e0a3e60        4 weeks ago         56.9MB
+weaveworks/weave-npc                       2.5.1               789b7f496034        4 weeks ago         49.6MB
+weaveworks/weave-kube                      2.5.1               1f394ae9e226        4 weeks ago         148MB
+k8s.gcr.io/coredns                         1.1.3               b3b94275d97c        9 months ago        45.6MB
+k8s.gcr.io/etcd-amd64                      3.2.18              b8df3b177be2        10 months ago       219MB
+k8s.gcr.io/pause                           3.1                 da86e6ba6ca1        14 months ago       742kB
+nginx                                      latest              05a60462f8ba        2 years ago         181MB
+</code></pre><p>同时需要更改kubeadm init的参数为:</p><pre><code># kubeadm init --apiserver-advertise-address $(hostname -i) --kubernetes-version=v1.11.7
+</code></pre><p>在多节点章节中，kubeaadm
+1.11.7与原先的calico3.1冲突，因而我们更新到了更新的3.5版本,
+因为docker-in-docker配备了两个网络，我们在calico.yaml中也需要指定IP范围，以确保BGP隧道建立在正确的网络接口上:</p><pre><code>            - name: CALICO_IPV4POOL_CIDR
+              value: &quot;192.168.0.0/16&quot;
+            - name: IP_AUTODETECTION_METHOD
+              value: &quot;interface=eth0.*&quot;
+
+</code></pre><p>到此，则新版本的playwithk8s更新完毕，总共花了5天时间。虽然有点磨人，但想起来这5天还是值得的。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/02/19/troubleshootingonvmwarebasedvm/>TroubleShootingOnVMWareBasedVM</a></h1><span class=post-date>Feb 19, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>记录一下昨天遇到的一个问题：<br>同事的虚拟机(Ubuntu)自检失败，fsck总是不过，直接抛到initramfs的界面。</p><p>试图探索:<br>启动的时候按Shift键，到grub界面，以recovery模式启动，依然失败。看来是ext4的磁盘inode有错误。</p><p>解决方案：<br>用livecd启动系统，启动以后到系统里去fsck修复该文件系统。<br>gparted启动失败。<br>后面我们用的是一个CentOS7的livecd系统进入的系统,</p><pre><code># fsck -y /dev/mapper/lv_lv_root
 </code></pre><p>扫描并自动修复(yes)磁盘上的inode错误。修复以后，用硬盘启动系统，可正常进入系统。避免了重新安装操作系统的开销。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/01/31/kubesprayto282/>kubesprayto282</a></h1><span class=post-date>Jan 31, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>Since kubespray has released v2.8.2, I write this article for recording steps
 of upgrding from v2.8.1 to v2.8.2 of my offline solution.</p><h3 id=prerequisites>Prerequisites</h3><p>Download the v2.8.2 release from:</p><p><a href=https://github.com/kubernetes-sigs/kubespray/releases>https://github.com/kubernetes-sigs/kubespray/releases</a></p><pre><code># wget https://github.com/kubernetes-sigs/kubespray/archive/v2.8.2.tar.gz
 # tar xzvf v2.8.2.tar.gz
@@ -552,112 +590,4 @@ prometheus-operator-1.9.0.tgz
 via:</p><pre><code>eval $(minikube docker-env)
 docker save -o prometheus-operator.tar grafana/grafana:5.4.3 quay.io/prometheus/node-exporter:v0.17.0 quay.io/coreos/prometheus-config-reloader:v0.26.0 quay.io/coreos/prometheus-operator:v0.26.0 quay.io/prometheus/alertmanager:v0.15.3 quay.io/prometheus/prometheus:v2.5.0 kiwigrid/k8s-sidecar:0.0.6 quay.io/coreos/kube-state-metrics:v1.4.0 quay.io/coreos/configmap-reload:v0.0.1
 xz prometheus-operator.tar
-</code></pre><p>Then we could write the offline scripts for deploying this helm/charts.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/01/22/workingtipsonubuntuglusterfs/>WorkingTipsOnUbuntuGlusterFS</a></h1><span class=post-date>Jan 22, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=install>Install</h3><p>In 4 nodes, install the latest glusterfs via:</p><pre><code>sudo add-apt-repository -y ppa:gluster/glusterfs-5
-sudo apt-get -y update
-sudo apt-get -y install glusterfs-server
-sudo apt-get -y install thin-provisioning-tools
-</code></pre><h3 id=configure>Configure</h3><p>See following steps for configurating the gluster in 4
-nodes(10.48.129.101~104):</p><pre><code>root@gluster-1:/home/vagrant# gluster peer status
-Number of Peers: 0
-root@gluster-1:/home/vagrant# gluster pool list
-UUID					Hostname 	State
-628ce8f2-622c-4be3-92b0-d8e5241d01b8	localhost	Connected 
-root@gluster-1:/home/vagrant# ifconfig eth1
-eth1      Link encap:Ethernet  HWaddr 52:54:00:c8:74:01  
-          inet addr:10.48.129.101  Bcast:10.48.129.255  Mask:255.255.255.0
-          inet6 addr: fe80::5054:ff:fec8:7401/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:2456 errors:0 dropped:17 overruns:0 frame:0
-          TX packets:103 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000 
-          RX bytes:126151 (126.1 KB)  TX bytes:10351 (10.3 KB)
-
-root@gluster-1:/home/vagrant# gluster peer probe 10.48.129.102
-peer probe: success. 
-root@gluster-1:/home/vagrant# gluster peer probe 10.48.129.103
-peer probe: success. 
-root@gluster-1:/home/vagrant# gluster peer probe 10.48.129.104
-peer probe: success. 
-root@gluster-1:/home/vagrant# gluster peer status
-Number of Peers: 3
-
-Hostname: 10.48.129.102
-Uuid: 52472b8f-b835-4038-b061-89229d825c42
-State: Peer in Cluster (Connected)
-
-Hostname: 10.48.129.103
-Uuid: 46161901-954a-4ffe-9aec-a8c14ceded03
-State: Peer in Cluster (Connected)
-
-Hostname: 10.48.129.104
-Uuid: a597a3ff-8c32-4a5a-b83d-1d25187afe31
-State: Peer in Cluster (Connected)
-</code></pre><p>After peer probe, the cluster is listed as following:</p><pre><code>root@gluster-1:/home/vagrant# gluster peer status
-Number of Peers: 3
-
-Hostname: 10.48.129.102
-Uuid: 52472b8f-b835-4038-b061-89229d825c42
-State: Peer in Cluster (Connected)
-
-Hostname: 10.48.129.103
-Uuid: 46161901-954a-4ffe-9aec-a8c14ceded03
-State: Peer in Cluster (Connected)
-
-Hostname: 10.48.129.104
-Uuid: a597a3ff-8c32-4a5a-b83d-1d25187afe31
-State: Peer in Cluster (Connected)
-root@gluster-1:/home/vagrant# gluster pool list
-UUID					Hostname     	State
-52472b8f-b835-4038-b061-89229d825c42	10.48.129.102	Connected 
-46161901-954a-4ffe-9aec-a8c14ceded03	10.48.129.103	Connected 
-a597a3ff-8c32-4a5a-b83d-1d25187afe31	10.48.129.104	Connected 
-628ce8f2-622c-4be3-92b0-d8e5241d01b8	localhost    	Connected 
-</code></pre><h3 id=heketi>heketi</h3><p>Download the heketi from:</p><pre><code># wget https://github.com/heketi/heketi/releases/download/v8.0.0/heketi-v8.0.0.linux.amd64.tar.gz
-# tar xzvf heketi-v8.0.0.linux.amd64.tar.gz
-# cd heketi
-# cp heketi heketi-cli /usr/bin
-</code></pre><p>Configuration:</p><pre><code># cd heketi
-# cp heketi.json heketi.json.back
-# vim heketi.json
-# mkdir -p /etc/heketi
-# cp heketi.json /etc/heketi
-</code></pre><p>Your content is listed as following:</p><pre><code>......
-#修改端口，防止端口冲突
-  &quot;port&quot;: &quot;18080&quot;,
-......
-#允许认证
-  &quot;use_auth&quot;: true,
-......
-#admin用户的key改为adminkey
-      &quot;key&quot;: &quot;adminkey&quot;
-......
-#修改执行插件为ssh，并配置ssh的所需证书，注意要能对集群中的机器免密ssh登陆，使用ssh-copy-id把pub key拷到每台glusterfs服务器上
-    &quot;executor&quot;: &quot;ssh&quot;,
-    &quot;sshexec&quot;: {
-      &quot;keyfile&quot;: &quot;/root/.ssh/id_rsa&quot;,
-      &quot;user&quot;: &quot;root&quot;,
-      &quot;port&quot;: &quot;22&quot;,
-      &quot;fstab&quot;: &quot;/etc/fstab&quot;
-    },
-......
-# 定义heketi数据库文件位置
-    &quot;db&quot;: &quot;/var/lib/heketi/heketi.db&quot;
-......
-#调整日志输出级别
-    &quot;loglevel&quot; : &quot;warning&quot;
-</code></pre><p>Now start the heketi server via:</p><pre><code># heketi --config=/etc/heketi/heketi.json
-</code></pre><p>Your server now is listening at <code>localhost:18080</code>, now use the cli for
-creating the cluster and volume.</p><pre><code># heketi-cli --server http://localhost:18080 --user admin --secret &quot;adminkey&quot; cluster list
-# heketi-cli --server http://localhost:18080 --user admin --secret &quot;adminkey&quot; cluster create
-# alias heketi-cli-admin='heketi-cli --server http://localhost:18080 --user admin --secret &quot;adminkey&quot;'
-# heketi-cli-admin node add --cluster &quot;360e5d504ff7cc18823d580bac55711a&quot; --management-host-name 10.48.129.101 --storage-host-name 10.48.129.101 --zone 1
-# heketi-cli-admin node add --cluster &quot;360e5d504ff7cc18823d580bac55711a&quot; --management-host-name 10.48.129.102 --storage-host-name 10.48.129.102 --zone 1
-# heketi-cli-admin node add --cluster &quot;360e5d504ff7cc18823d580bac55711a&quot; --management-host-name 10.48.129.103 --storage-host-name 10.48.129.103 --zone 1
-# heketi-cli-admin node add --cluster &quot;360e5d504ff7cc18823d580bac55711a&quot; --management-host-name 10.48.129.104 --storage-host-name 10.48.129.104 --zone 1
-# heketi-cli-admin --json device add --name=&quot;/dev/vdb&quot; --node &quot;f787daa4ff84461b11b7f7d00645dfdc&quot;
-# heketi-cli-admin --json device add --name=&quot;/dev/vdb&quot; --node &quot;16f738ee9822fb79c7b321c0b7ed1792&quot;
-# heketi-cli-admin --json device add --name=&quot;/dev/vdb&quot; --node &quot;c6b1f0ccfe1ff76a245012108c44043f&quot;
-# heketi-cli-admin --json device add --name=&quot;/dev/vdb&quot; --node &quot;2e631bedcb6b58c4b82bba31082531f1&quot;
-# heketi-cli-admin volume list
-# heketi-cli-admin volume create --size=10
-</code></pre><p>After it finishes, your volume will be created.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/67/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/67/>67</a></li><li class="page-item active"><a class=page-link href=/page/68/>68</a></li><li class=page-item><a class=page-link href=/page/69/>69</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/243/>243</a></li><li class=page-item><a href=/page/69/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/243/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Then we could write the offline scripts for deploying this helm/charts.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/67/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/67/>67</a></li><li class="page-item active"><a class=page-link href=/page/68/>68</a></li><li class=page-item><a class=page-link href=/page/69/>69</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/243/>243</a></li><li class=page-item><a href=/page/69/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/243/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
