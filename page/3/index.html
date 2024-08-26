@@ -228,6 +228,14 @@ libvirt configuration:
 </code></pre><p>win7, only in bios with Win7_hygon.iso, select q35. and install specified old win7 driver.</p><h3 id=26-archlinux-cn>26. archlinux cn</h3><p>Edit the <code>/etc/pacman.conf</code>:</p><pre><code>[archlinuxcn]
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 </code></pre><p>Then:</p><pre><code>$ sudo pacman -Sy archlinuxcn-keyring
+</code></pre><h3 id=27-bootrepair>27. bootrepair</h3><p>via:</p><pre><code>sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt update
+sudo apt install -y boot-repair &amp;&amp; boot-repair
+</code></pre><h3 id=28-nvidia-t4-qxl>28. nvidia t4 qxl</h3><p>Configuration items:</p><pre><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}
+EnableMsHybrid 1
+qxl: 
+EnableMsHybrid 2
+GridLicensedFeatures 7
+AdapterType should be removed.
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
