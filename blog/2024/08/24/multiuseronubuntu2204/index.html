@@ -20,6 +20,7 @@ $ chpasswd &lt; bulkpasswords
     ......
     # invoke global X session script
     #. /etc/X11/Xsession
+    XDG_SESSION_TYPE=x11
     exec dbus-run-session -- startxfce4
 # for i in {1..10}; do  cp xinitrc /home/test$i/.xinitrc; done
 </code></pre><p>Change the available ttys:</p><pre><code># vim /etc/systemd/logind.conf
@@ -41,6 +42,7 @@ fi
 </code></pre><p>autologin template file:</p><pre><code>[Service]
 Type=simple
 ExecStart=
+Environment=XDG_SESSION_TYPE=x11
 ExecStart=-/usr/sbin/agetty --skip-login --nonewline --noissue --autologin TOBEREPLACED --noclear %I $TERM
 </code></pre><p>Add autologin service:</p><pre><code>
 root@multi:~# cat autologin.conf 
