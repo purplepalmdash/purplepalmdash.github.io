@@ -498,6 +498,18 @@ Found linux image: /boot/vmlinuz-0-rescue-ad8ef31f6ef940a0b65f1f597ad06c3b
 Found initrd image: /boot/initramfs-0-rescue-ad8ef31f6ef940a0b65f1f597ad06c3b.img
 done
 You have new mail in /var/mail/root/
+</code></pre><h3 id=31-lenovo-bios-issue>31. lenovo bios issue</h3><p>Install win7:</p><pre><code>BIOS版本M31K开头的激活代码 AmiSetupWriter.efi 0x802 0x1 （CSM改为允许）
+BIOS版本M31K开头的激活代码 AmiSetupWriter.efi 0x802 0x1 （CSM改为允许）
+如果M31K开头的BIOS，独显为RTX 16系列和20系列输入以下三条命令
+AmiSetupWriter.efi 0x808 0x0 
+AmiSetupWriter.efi 0x80b 0x2
+AmiSetupWriter.efi 0x80c 0x2
+</code></pre><h3 id=32-detectgpu-fixed-code>32. detectgpu fixed code</h3><p>via:</p><pre><code># 1.7 remove pciroot related items
+reserveid=`lspci | grep -i vga | awk -F ':' {'print $1'}`
+prefixreserveid=&quot;0000:&quot;$reserveid
+echo &quot;/^${prefixreserveid}/&quot;'!d' &gt; /tmp/sedcmd.txt
+sed -i -f /tmp/sedcmd.txt /tmp/pciid
+sed -i -f /tmp/sedcmd.txt /tmp/devicedriver
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
