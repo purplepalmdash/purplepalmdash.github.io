@@ -510,6 +510,10 @@ prefixreserveid=&quot;0000:&quot;$reserveid
 echo &quot;/^${prefixreserveid}/&quot;'!d' &gt; /tmp/sedcmd.txt
 sed -i -f /tmp/sedcmd.txt /tmp/pciid
 sed -i -f /tmp/sedcmd.txt /tmp/devicedriver
+</code></pre><h3 id=33-pyqt-related>33. pyqt related</h3><pre><code>usermod -a -G kvm,libvirt idv
+python3 -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip3 install pyqt5==5.15.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
+python3 -c &quot;from PyQt5.Qt import PYQT_VERSION_STR; print(PYQT_VERSION_STR)&quot;
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
