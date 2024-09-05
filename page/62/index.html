@@ -1,5 +1,48 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/28/arm64kubesprayofflinetips/>arm64KubesprayOfflineTips</a></h1><span class=post-date>Jun 28, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=folder-structure>Folder structure</h3><p>Compare the downloaded source code to our offlined edition, make some changes.</p><pre><code>cluster.yml should added kube-deploy related items.   
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/07/02/arm64isocustomization/>Arm64ISOCustomization</a></h1><span class=post-date>Jul 2, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Make working directory:</p><pre><code>#  mkdir Rong1907iso
+# cd Rong1907iso/
+# cp ../ubuntu-18.04.2-server-arm64.iso .
+# cp -r ./iso/* ./newISO
+# cp -r ./iso/.disk ./newISO
+# umount ./iso
+# rm -f ubuntu-18.04.2-server-arm64.iso 
+# rm -rf iso/
+</code></pre><p>Add seed files under <code>preseed</code> directory, then edit the grub files:</p><pre><code>root@arm02:/home/test/Rong1907iso/newISO# ls preseed/
+cli.seed      hwe-ubuntu-server-minimal.seed    hwe-ubuntu-server.seed  fuck_auto.seed        ubuntu-server-minimal.seed    ubuntu-server.seed
+hwe-cli.seed  hwe-ubuntu-server-minimalvm.seed  fuck.seed            fuck_auto_multi.seed  ubuntu-server-minimalvm.seed
+root@arm02:/home/test/Rong1907iso/newISO# ls boot/grub/grub.cfg 
+boot/grub/grub.cfg
+</code></pre><p>Edit the grub file like following:</p><pre><code>set menu_color_normal=white/black
+set menu_color_highlight=black/yellow
+
+insmod gzio
+
+set timeout=10
+menuentry &quot;Auto Install Ubuntu Server(Manual-Partition)&quot; {
+        set gfxpayload=keep
+        linux   /install/vmlinuz auto-install/enable=true file=/cdrom/preseed/fuck.seed quiet ---
+        initrd  /install/initrd.gz
+}
+menuentry &quot;Auto Install Ubuntu Server(Auto-Partition-AllInOne)&quot; {
+        set gfxpayload=keep
+        linux   /install/vmlinuz auto-install/enable=true file=/cdrom/preseed/fuck_auto.seed quiet ---
+        initrd  /install/initrd.gz
+}
+menuentry &quot;Auto Install Ubuntu Server(Auto-Partition-Seperate)&quot; {
+        set gfxpayload=keep
+        linux   /install/vmlinuz auto-install/enable=true file=/cdrom/preseed/fuck_auto_multi.seed quiet ---
+        initrd  /install/initrd.gz
+}
+menuentry &quot;Install Ubuntu Server&quot; {
+        set gfxpayload=keep
+        linux   /install/vmlinuz  file=/cdrom/preseed/ubuntu-server.seed quiet ---
+        initrd  /install/initrd.gz
+}
+
+</code></pre><p>Make the iso via following command:</p><pre><code># xorriso -as mkisofs -r -checksum_algorithm_iso md5,sha1 -V 'Server 18.04.2 LTS arm64' -o ./fuck_ubuntu180402_arm64.iso -J -joliet-long -cache-inodes -e boot/grub/efi.img  -no-emul-boot -append_partition 2 0xef newISO/boot/grub/efi.img  -partition_cyl_align all newISO/
+root@arm02:/home/test/Rong1907iso# ls
+newISO  fuck_ubuntu180402_arm64.iso
+</code></pre><p>Using the <code>fuck_ubuntu180402_arm64.iso</code> you could install systme on arm64 based server.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/28/arm64kubesprayofflinetips/>arm64KubesprayOfflineTips</a></h1><span class=post-date>Jun 28, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=folder-structure>Folder structure</h3><p>Compare the downloaded source code to our offlined edition, make some changes.</p><pre><code>cluster.yml should added kube-deploy related items.   
 ansible.cfg should be modified.
 Added role/kube-deploy folder. 
 scale.yml/upgrade-cluster.yml should be modified. 
@@ -202,85 +245,4 @@ sdm      3.7T linux_raid_member disk
 sudo mdadm --detail /dev/md0
 sudo mdadm --zero-superblock /dev/sdx
 sudo mv /etc/mdadm/mdadm.conf /etc/mdadm/mdadm.conf.bak
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/24/workingtipsonarmkubespray/>WorkingTipsOnArmKubespray</a></h1><span class=post-date>Jun 24, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=emulation>Emulation</h3><p>Install uml-utilites for arm emulator networking:</p><pre><code># sudo apt-get install -y uml-utilities
-# sudo tunctl -u  dash -t tap0
-# sudo ifconfig tap0 192.168.101.1 up
-# echo 1 &gt; /proc/sys/net/ipv4/ip_forward
-# iptables -t nat -A POSTROUTING -o enp0s20f0u12u1 -j MASQUERADE
-# iptables -I FORWARD 1 -i tap0 -j ACCEPT
-# iptables -I FORWARD 1 -o tap0 -m state --state RELATED,ESTABLISHED -j ACCEPT
-</code></pre><p>Now your tap0 will be ready for working.</p><p>Install qemu for aarch64:</p><pre><code># apt-get install qemu-system-arm
-# which qemu-system-aarch64
-/usr/bin/qemu-system-aarch64
-</code></pre><p>Using emulator via:</p><pre><code>qemu-system-aarch64 -m 6024 -cpu cortex-a57  -M virt -nographic -pflash flash0.img -pflash flash1.img -drive if=none,file=bionic-server-cloudimg-arm64.img,id=hd0 -device virtio-blk-device,drive=hd0 -drive file=user-data.img,format=raw -net nic -net tap,ifname=tap0,script=no #-device virtio-net-device,netdev=net0,mac=52:54:00:12:34:56
-</code></pre><p>Too slow on x86. So I switches to arm based server.</p><h3 id=workingonarmserver>WorkingOnARMServer</h3><p>Mount iso and use it as the repository server:</p><pre><code>#  mount -t iso9660 -o loop ubuntu-18.04.2-server-arm64.iso /mnt
-# apt-cdrom -d=/mnt add
-#  cat /etc/apt/sources.list
-deb cdrom:[Ubuntu-Server 18.04.2 LTS _Bionic Beaver_ - Release arm64 (20190210)]/ bionic main r
-estricted
-# apt-get update -y
-# cp ubuntu-18.04.2-server-arm64.iso ubuntu-18.04.2-server-arm64-1.iso
-# mount -t iso9660 -o loop ./ubuntu-18.04.2-server-arm64-1.iso /media/cdrom
-</code></pre><p>Install some packages for qemu:</p><pre><code># apt-get install -y qemu-kvm build-essential 
-</code></pre><p>When offline, we use the offline repository:</p><pre><code># cd /root/armdebs
-# dpkg-scanpackages . /dev/null | gzip -9c &gt; Packages.gz
-# vim /etc/apt/sources.list
-deb [trusted=yes] file:///home/test/armdebs ./
-# apt-get update -y
-# apt-get install -y uml-utilities
-</code></pre><p>From now on we could use qemu-kvm for accessing our vm.</p><p>Run emulated vms and install kubernetes, successful.</p><h3 id=migration>Migration</h3><p>Notice, you should run following(pip download) on arm based machine!!!<br>On phsical machine, do following steps:</p><pre><code># apt-get install -y python-pip
-# mkdir piparmarm
-# cd piparmarm/
-# pip download ansible
-# pip download httplib2
-</code></pre><p>Transfer the <code>piparmarm</code> folder to your machine, install it via:</p><pre><code>root@arm01:~/piparmarm# pip install --no-index --find-links /home/test/piparmarm/ ansible httplib2
-root@arm01:~/piparmarm# which ansible
-/usr/local/bin/ansible
-root@arm01:~/piparmarm# ansible --version
-ansible 2.8.1
-  config file = None
-  configured module search path = [u'/home/test/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
-  ansible python module location = /usr/local/lib/python2.7/dist-packages/ansible
-  executable location = /usr/local/bin/ansible
-  python version = 2.7.15rc1 (default, Nov 12 2018, 14:31:15) [GCC 7.3.0]
-</code></pre><p>Install docker-ce(manually):</p><pre><code># apt-get install -y docker-ce python-netaddr
-# docker load&lt;allimages.tar
-</code></pre><p>Configure the hosts.ini, then run playbook:</p><pre><code># ansible-playbook -i inventory/sample/hosts.ini cluster.yml
-</code></pre><h3 id=helm-building>helm building</h3><p>helm docker image doesn&rsquo;t support arm64, thus we do following steps for rebuilding our own image:</p><pre><code># wget https://storage.googleapis.com/kubernetes-helm/helm-${HELM_LATEST_VERSION}-linux-arm64.tar.gz
-# tar xzvf helm-xxxxx-linux-arm64.tar.gz
-# mv linux-arm64/helm ~/dockerbuild
-# cd ~/dockerbuild
-# vim Dockerfile
-</code></pre><p>The Dockerfile we changes to following:</p><pre><code>FROM alpine
-
-LABEL maintainer=&quot;Lachlan Evenson &lt;lachlan.evenson@gmail.com&gt;&quot;
-
-ARG VCS_REF
-ARG BUILD_DATE
-
-# Metadata
-LABEL org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url=&quot;https://github.com/lachie83/k8s-helm&quot; \
-      org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.docker.dockerfile=&quot;/Dockerfile&quot;
-
-ENV HELM_LATEST_VERSION=&quot;v2.13.1&quot;
-
-COPY . /usr/local/bin
-
-ENTRYPOINT [&quot;helm&quot;]
-CMD [&quot;help&quot;]
-</code></pre><p>Build the image with following commands:</p><pre><code># docker image build -t lachlanevenson/k8s-helm:v2.13.1-arm64 .
-# docker save -o helmarm.tar lachlanevenson/k8s-helm:v2.13.1-arm64
-</code></pre><p>Using the arm64 based image we could setup helm on kubespray.</p><h3 id=harbor-on-arm64>harbor on arm64</h3><p>Install docker-compose via:</p><pre><code># pip download docker-compose
-# Install docker-compose in offline environment. 
-</code></pre><p>Clone the repository and extract it to:</p><pre><code># pwd
-/home/dash/Downloads/harbor-arm64/harbor-arm64-develop
-# cd make
-# ls
-checkenv.sh                     docker-compose.clair.yml   harbor.cfg  prepare
-common                          docker-compose.notary.tpl  install.sh  pushimage.sh
-docker-compose.chartmuseum.tpl  docker-compose.notary.yml  kubernetes
-docker-compose.chartmuseum.yml  docker-compose.tpl         migrations
-docker-compose.clair.tpl        docker-compose.yml         photon
-</code></pre><p>The docker-compose file exists under folder.</p><p>changed to using repository&rsquo;s docker-compose.<code> apt-get install -y docker-compose</code>.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/61/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/61/>61</a></li><li class="page-item active"><a class=page-link href=/page/62/>62</a></li><li class=page-item><a class=page-link href=/page/63/>63</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/243/>243</a></li><li class=page-item><a href=/page/63/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/243/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/61/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/61/>61</a></li><li class="page-item active"><a class=page-link href=/page/62/>62</a></li><li class=page-item><a class=page-link href=/page/63/>63</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/244/>244</a></li><li class=page-item><a href=/page/63/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/244/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
