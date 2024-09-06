@@ -644,4 +644,25 @@ test@tests-iMac-Pro-2 ~ % sysctl hw.memsize | awk '{print $2/1073741824}'
 
 23.0742
 
+</code></pre><h3 id=35-fh-vfio-items>35. fh vfio items</h3><p>Change vfio hooks via:</p><p><code>vfio-startup.sh</code>:</p><pre><code>systemctl stop graphical.target
+sleep 3
+systemctl stop gdm
+sleep 3 
+systemctl stop gdm3
+sleep 3
+killall --user idv
+sleep 5
+echo 0x1ec8 0x9810 | tee -a /sys/bus/pci/drivers/vfio-pci/new_id 
+sleep 2
+echo &quot;End of startup!&quot;
+</code></pre><p><code>vfio-teardown.sh</code>:</p><pre><code>sleep 3
+echo 0x1ec8 0x9810 &gt; /sys/bus/pci/drivers/vfio-pci/remove_id 
+sleep 1
+echo 1 &gt; /sys/bus/pci/devices/0000\:06\:00.0/remove 
+sleep 3
+echo 1 &gt; /sys/bus/pci/rescan 
+sleep 3
+systemctl start gdm
+
+echo &quot;End of teardown!&quot;
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class="page-item active"><a class=page-link href=/page/3/>3</a></li><li class=page-item><a class=page-link href=/page/4/>4</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/244/>244</a></li><li class=page-item><a href=/page/4/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/244/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
