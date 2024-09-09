@@ -1,5 +1,14 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/09/21/oagitlabk8s/>OAGitlabK8s</a></h1><span class=post-date>Sep 21, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=gitlabgitlab-runner>gitlab/gitlab-runner</h3><p>Install via:</p><pre><code>$ sudo yum install -y curl policycoreutils-python openssh-server
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/10/10/promoxsjenv/>PromoxSJEnv</a></h1><span class=post-date>Oct 10, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=virtual-disk>Virtual Disk</h3><p>Virtual CD-ROM:</p><p><img src=./images/2018_10_10_09_58_53_806x471.jpg alt=./images/2018_10_10_09_58_53_806x471.jpg></p><h3 id=disk>Disk</h3><p>Storage in Datacenter:</p><p><img src=/images/2018_10_10_11_13_42_1062x353.jpg alt=/images/2018_10_10_11_13_42_1062x353.jpg></p><p>Storage on node:</p><p><img src=/images/2018_10_10_11_14_06_1321x500.jpg alt=/images/2018_10_10_11_14_06_1321x500.jpg></p><p>Seems only occupy the first <code>/dev/sda</code>.</p><p>Remove the exising uneccessary lv and pv:</p><pre><code># lvremove /dev/1kbakvg/1kdf
+# vgremove 1kbakvg
+</code></pre><p>Add new volume group:</p><pre><code>Change from gpt to dos, fdisk /dev/sdb, press o
+# vgcreate vms /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf
+# vgdisplay | grep vms
+VG Name vms
+# lvcreate -L 1024G --thinpool vms_image_pool vms
+</code></pre><p>Add LVM-Thin:</p><p><img src=/images/2018_10_10_11_37_37_507x430.jpg alt=/images/2018_10_10_11_37_37_507x430.jpg>
+Or:</p><p><img src=/images/2018_10_10_11_47_16_616x234.jpg alt=/images/2018_10_10_11_47_16_616x234.jpg></p><h3 id=upload-cdroms>Upload cdroms</h3><p>To <code>/var/lib/vz/template/iso/</code></p><p>Create vm:</p><p><img src=/images/2018_10_10_11_58_20_693x228.jpg alt=/images/2018_10_10_11_58_20_693x228.jpg></p><p>Choose cd:</p><p><img src=/images/2018_10_10_11_58_33_708x249.jpg alt=/images/2018_10_10_11_58_33_708x249.jpg></p><p>Choose Disk Storage size:</p><p><img src=/images/2018_10_10_11_58_54_616x247.jpg alt=/images/2018_10_10_11_58_54_616x247.jpg></p><p>Cpus:</p><p><img src=/images/2018_10_10_11_59_31_627x181.jpg alt=/images/2018_10_10_11_59_31_627x181.jpg></p><p>Memory:</p><p><img src=/images/2018_10_10_11_59_45_478x199.jpg alt=/images/2018_10_10_11_59_45_478x199.jpg></p><p>Network:</p><p><img src=/images/2018_10_10_12_00_06_538x286.jpg alt=/images/2018_10_10_12_00_06_538x286.jpg></p><p>Then start the machine, begin install:</p><p><img src=/images/2018_10_10_12_01_10_745x572.jpg alt=/images/2018_10_10_12_01_10_745x572.jpg></p><h3 id=vms>vms</h3><p>Start on boot
+<img src=/images/2018_10_10_14_20_52_767x424.jpg alt=/images/2018_10_10_14_20_52_767x424.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/09/21/oagitlabk8s/>OAGitlabK8s</a></h1><span class=post-date>Sep 21, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=gitlabgitlab-runner>gitlab/gitlab-runner</h3><p>Install via:</p><pre><code>$ sudo yum install -y curl policycoreutils-python openssh-server
 $  sudo systemctl enable sshd
 $  sudo systemctl start sshd
 $  curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
@@ -387,113 +396,4 @@ clusters:
 =COUNTIF(C:C, &quot;部门二&quot;)
 =COUNTIF(C:C, &quot;部门三&quot;)
 =COUNTIF(C:C, &quot;部门四&quot;)
-</code></pre><p><img src=/images/2018_09_11_11_10_49_227x177.jpg alt=/images/2018_09_11_11_10_49_227x177.jpg></p><p>填好统计数目后，点击插入饼图:</p><p><img src=/images/2018_09_11_11_11_31_455x531.jpg alt=/images/2018_09_11_11_11_31_455x531.jpg></p><p>各位大佬实力对比图做起来也是相似的：</p><p><img src=/images/2018_09_11_11_13_14_445x281.jpg alt=/images/2018_09_11_11_13_14_445x281.jpg></p><p>偶尔做做这种图，想起了古惑仔：</p><p><img src=/images/2018_09_11_11_17_32_514x295.jpg alt=/images/2018_09_11_11_17_32_514x295.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/09/05/workingtipsonnodejsapp/>WorkingTipsOnNodeJSApp</a></h1><span class=post-date>Sep 5, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>最先是在VPS上用docker开发，遇到跨域问题，专用虚拟机开发。</p><pre><code># vagrant init bento/ubuntu-18.04
-更改IP为192.168.33.128/24, 2 Core/ 2G
-# vagrant up
-# vagrant ssh
-</code></pre><p>安装必要的开发环境。</p><pre><code># sudo apt-get install -y npm nodejs
-# npm install -g express
-# npm install -g express-generator
-# which express
-/usr/local/bin/express
-</code></pre><p>创建一个名称为<code>countdown</code>的express项目:</p><pre><code># express -v ejs countdown
-# cd countdown/
-# ls
-app.js  bin  package.json  public  routes  views
-</code></pre><p>安装依赖:</p><pre><code># npm install -d
-# npm install socket.io express --save
-</code></pre><p>此时可以查看<code>package.json</code>的内容:</p><pre><code>{
-  &quot;name&quot;: &quot;countdown&quot;,
-  &quot;version&quot;: &quot;0.0.0&quot;,
-  &quot;private&quot;: true,
-  &quot;scripts&quot;: {
-    &quot;start&quot;: &quot;node ./bin/www&quot;
-  },
-  &quot;dependencies&quot;: {
-    &quot;cookie-parser&quot;: &quot;~1.4.3&quot;,
-    &quot;debug&quot;: &quot;~2.6.9&quot;,
-    &quot;ejs&quot;: &quot;~2.5.7&quot;,
-    &quot;express&quot;: &quot;^4.16.3&quot;,
-    &quot;http-errors&quot;: &quot;~1.6.2&quot;,
-    &quot;morgan&quot;: &quot;~1.9.0&quot;,
-    &quot;socket.io&quot;: &quot;^2.1.1&quot;
-  }
-}
-</code></pre><p>我们需要使用layout(比较陈旧的用法），因而执行以下操作:</p><pre><code># npm install ejs-locals --save
-</code></pre><h3 id=代码更改>代码更改</h3><p>在<code>// view engine setup</code>前添加以下代码，作用是用于指定当前app的服务端口，并定义socket.io的模块引入：</p><pre><code>var engine = require('ejs-locals');
-
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
-//(server,{
-//  transports  : [ 'xhr-polling' ]
-//});
-
-server.listen(5000);
-</code></pre><p>// Todo: xhr-polling的意义？</p><p>在view engine setup中添加ejs-local的用法,
-我们这里将指定layout.ejs为我们模板中的布局文件:</p><pre><code>// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view options', { layout:'views/layout.ejs' });
-app.engine('ejs', engine);
-app.set('view engine', 'ejs');
-</code></pre><p>接着我们引入状态变量及对io的用法:</p><pre><code>// status indicator
-var status = &quot;All is well.&quot;;
-
-io.sockets.on('connection', function (socket) {  
-  io.sockets.emit('status', { status: status }); // note the use of io.socket
-s to emit but socket.on to listen
-  socket.on('reset', function (data) {
-    status = &quot;War is imminent!&quot;;
-    io.sockets.emit('status', { status: status });
-  });
-});
-
-module.exports = app;
-</code></pre><p>模板文件定义:</p><pre><code># cat views/layout.ejs 
-&lt;!DOCTYPE html&gt;  
-&lt;html lang=&quot;en&quot;&gt;  
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
-    &lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;
-
-    &lt;!-- HTML5 shim, for IE6-8 support of HTML elements --&gt;
-    &lt;!--[if lt IE 9]&gt;
-      &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
-    &lt;![endif]--&gt;
-
-    &lt;!-- styles --&gt;
-    &lt;link href=&quot;/stylesheets/main.css&quot; rel=&quot;stylesheet&quot;&gt;
-
-
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;%- body %&gt;
-    &lt;script src=&quot;/socket.io/socket.io.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;/javascripts/libs/jquery.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;/javascripts/main.js&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;  
-</code></pre><p>以及index.ejs:</p><pre><code># cat views/index.ejs 
-&lt;% layout('layout') -%&gt;
-
-&lt;div id=&quot;status&quot;&gt;&lt;/div&gt;  
-&lt;button id=&quot;reset&quot;&gt;Reset!&lt;/button&gt; 
-</code></pre><p>main.js的定义文件如下:</p><pre><code># vim public/javascripts/main.js
-var socket = io.connect(window.location.hostname);
-
-socket.on('status', function (data) {  
-    $('#status').html(data.status);
-});
-
-$('#reset').click(function() {
-    socket.emit('reset');
-});
-
-</code></pre><p>jquery.js文件如下:</p><pre><code># cd public/javascripts/
-# mkdir libs &amp;&amp; cd libs
-# wget https://code.jquery.com/jquery-3.3.1.js
-# mv jquery-3.3.1.js  jquery.js
-</code></pre><p>main.css文件同样也需要定义:</p><pre><code># vim public/stylesheets/main.css
-内容略过
-</code></pre><p>现在运行<code>node app.js</code>可以看到运行结果:</p><p><img src=/images/2018_09_05_15_26_04_464x176.jpg alt=/images/2018_09_05_15_26_04_464x176.jpg></p><h3 id=改进>改进</h3><p>timer的改进，具体的代码已经上传到github上。</p><p>Todo: 多个Timer的添加。<br>Todo: 跨域问题的解决。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/73/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/73/>73</a></li><li class="page-item active"><a class=page-link href=/page/74/>74</a></li><li class=page-item><a class=page-link href=/page/75/>75</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/244/>244</a></li><li class=page-item><a href=/page/75/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/244/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p><img src=/images/2018_09_11_11_10_49_227x177.jpg alt=/images/2018_09_11_11_10_49_227x177.jpg></p><p>填好统计数目后，点击插入饼图:</p><p><img src=/images/2018_09_11_11_11_31_455x531.jpg alt=/images/2018_09_11_11_11_31_455x531.jpg></p><p>各位大佬实力对比图做起来也是相似的：</p><p><img src=/images/2018_09_11_11_13_14_445x281.jpg alt=/images/2018_09_11_11_13_14_445x281.jpg></p><p>偶尔做做这种图，想起了古惑仔：</p><p><img src=/images/2018_09_11_11_17_32_514x295.jpg alt=/images/2018_09_11_11_17_32_514x295.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/73/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/73/>73</a></li><li class="page-item active"><a class=page-link href=/page/74/>74</a></li><li class=page-item><a class=page-link href=/page/75/>75</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/244/>244</a></li><li class=page-item><a href=/page/75/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/244/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
