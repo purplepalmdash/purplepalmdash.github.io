@@ -1,5 +1,5 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/03/17/working-tips-on-dimension/>Working Tips On Dimension</a></h1><span class=post-date>Mar 17, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=背景>背景</h3><p>最近在帮一个亲戚做企业类网站，最初方案是基于Docker化的WordPress，搭建好以后
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/04/06/coreos-cluster-on-libvirt/>CoreOS Cluster On Libvirt</a></h1><span class=post-date>Apr 6, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>ArchLinux, libvirt.<br>Libvirt network(NAT, NOT dhcp), 172.17.8.1/24.</p><h3 id=etcd-server>etcd server</h3><p>On ArchLinux, create a etcd server via following commands:</p><p><a href=http://purplepalmdash.github.io/blog/2016/12/21/trycoreos2/>http://purplepalmdash.github.io/blog/2016/12/21/trycoreos2/</a></p><p><code>ArchLinux etcd2 Example</code>.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/03/17/working-tips-on-dimension/>Working Tips On Dimension</a></h1><span class=post-date>Mar 17, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=背景>背景</h3><p>最近在帮一个亲戚做企业类网站，最初方案是基于Docker化的WordPress，搭建好以后
 一直不闻不问，思想可能是因为WP对于小白用户来说太过于复杂的缘故。</p><p>正好今天查看hugo的模板方案时，发现有一个很美观的静态页面叫Dimension, 于是起
 了把网站迁移到静态网站上的心思。</p><p>Dimension主题预览:</p><p><img src=/images/2017_03_17_19_27_38_439x324.jpg alt=/images/2017_03_17_19_27_38_439x324.jpg></p><h3 id=搭建环境>搭建环境</h3><p>首先从github下载源代码:</p><pre><code>$ git clone https://github.com/sethmacleod/dimension.git
 $ mkdir Website/themes
@@ -210,88 +210,4 @@ $ sudo docker-compose up -d
 后的自由，我深感断开网络后所获得的岂止是全身心的自由?
 没有网络的家里，带来的是一种失去已久的我曾经很熟悉的求学求知模式。眼下看来，我打算延续这种难得的自由, 继续
 无WIFI生存。。</p><p>有时我们费心所追求的东西，正是
-把我们身心自由束缚上的那一道金制的枷锁。</p><h3 id=无网络后的知识提升>无网络后的知识提升</h3><p>1、 更多的依赖于纸质资料，凭借对问题的领悟找寻解决方案。<br>2、 利用公司网络下载学习资料和搭建开发环境，用自己的笔记本上班，以便同步工作。<br>3、 1块钱800M的电信卡，不到万不得已的时候不开作弊模式。<br>4、 破解邻居WIFI，你懂得。<br>5、 实在不行就装回来1000块钱两年的真电信宽带吧。</p><p>说实话，我也有点好奇这样下去我能挺多久？</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2017/03/09/reading-digest-on-programming-interview/>Reading Digest On Programming Interview</a></h1><span class=post-date>Mar 9, 2017<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>最近扫了扫一本知名书《程序员面试宝典》。众所周知国内的面试都得要靠扫书来的嘛。</p><p>然而这本书上的有些习题，答案也未必为对，这里列举一个:</p><h3 id=cpu架构导致的sizeof>CPU架构导致的sizeof</h3><p>原题目如下:</p><pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-struct {
-	short a1;
-	short a2;
-	short a3;
-}A;
-struct {
-	long a1;
-	short a2;
-}B;
-
-int main(void)
-{
-	char *ss1= &quot;0123456789&quot;;
-	char ss2[]= &quot;0123456789&quot;;
-	char ss3[100] = &quot;0123456789&quot;;
-	int ss4[100];
-	char q1[]=&quot;abc&quot;;
-	char q2[]=&quot;a\n&quot;;
-	char *str1= (char*)malloc(100);
-	void *str2= (void*)malloc(100);
-
-	printf(&quot;Sizeof ss1 is %d\n&quot;, sizeof(ss1));
-	printf(&quot;Sizeof ss2 is %d\n&quot;, sizeof(ss2));
-	printf(&quot;Sizeof ss3 is %d\n&quot;, sizeof(ss3));
-	printf(&quot;Sizeof ss4 is %d\n&quot;, sizeof(ss4));
-	printf(&quot;Sizeof q1 is %d\n&quot;, sizeof(q1));
-	printf(&quot;Sizeof q2 is %d\n&quot;, sizeof(q2));
-	printf(&quot;Sizeof str1 is %d\n&quot;, sizeof(str1));
-	printf(&quot;Sizeof str2 is %d\n&quot;, sizeof(str2));
-	printf(&quot;Sizeof A is %d\n&quot;, sizeof(A));
-	printf(&quot;Sizeof B is %d\n&quot;, sizeof(B));
-
-	return 0;
-}
-</code></pre><p>在我的机器上的答案是:</p><pre><code>Sizeof ss1 is 8
-Sizeof ss2 is 11
-Sizeof ss3 is 100
-Sizeof ss4 is 400
-Sizeof q1 is 4
-Sizeof q2 is 3
-Sizeof str1 is 8
-Sizeof str2 is 8
-Sizeof A is 6
-Sizeof B is 16
-</code></pre><p>而原文答案则有差距，例如ss1的大小为4， str/str2的结果为4， B的大小为8.
-为什么？</p><p>我猜想是因为CPU架构的不同，64位系统与32位系统的不同而导致。</p><p>为了验证，我创建了一台virtualbox的32位Ubuntu16.04的机器， 验证结果:</p><pre><code>root@ubuntu:~# uname -a
-Linux ubuntu 4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:06:14 UTC 2016 i686 i686 i686 GNU/Linux
-root@ubuntu:~# ./test 
-Sizeof ss1 is 4
-Sizeof ss2 is 11
-Sizeof ss3 is 100
-Sizeof ss4 is 400
-Sizeof q1 is 4
-Sizeof q2 is 3
-Sizeof str1 is 4
-Sizeof str2 is 4
-Sizeof A is 6
-Sizeof B is 8
-</code></pre><p>由此可见，其答案局限于32位平台，不能单纯的盲从于参考答案。</p><h3 id=sizeofstring变化>sizeof(string)变化</h3><p>例子：</p><pre><code>#include &lt;iostream&gt;
-#include &lt;string&gt;
-using namespace std;
-
-int main()
-{
-	string strArr1[] = {&quot;Trend&quot;, &quot;Micro&quot;, &quot;Soft&quot;};
-	string *pStrArr1 = new string[2];
-	pStrArr1[0] = &quot;US&quot;;
-	pStrArr1[1] = &quot;CN&quot;;
-
-	for(int i = 0; i&lt;sizeof(strArr1)/sizeof(string); i++)
-		cout&lt;&lt;strArr1[i];
-	for(int j = 0; j&lt;sizeof(pStrArr1)/sizeof(string); j++)
-		cout&lt;&lt;pStrArr1[j];
-
-	cout&lt;&lt;endl;
-	cout&lt;&lt;sizeof(pStrArr1)&lt;&lt;endl;
-	cout&lt;&lt;sizeof(string)&lt;&lt;endl;
-	return 0;
-}
-</code></pre><p>实际的输出应该为:</p><pre><code>TrendMicroSoft
-8
-32
-</code></pre><p>这是因为库函数发生了变化，sizeof(string)的大小已经调整为32, 因而书里说的TrendMicroSoftUS是永远不会打印出来的。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/100/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/100/>100</a></li><li class="page-item active"><a class=page-link href=/page/101/>101</a></li><li class=page-item><a class=page-link href=/page/102/>102</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/244/>244</a></li><li class=page-item><a href=/page/102/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/244/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+把我们身心自由束缚上的那一道金制的枷锁。</p><h3 id=无网络后的知识提升>无网络后的知识提升</h3><p>1、 更多的依赖于纸质资料，凭借对问题的领悟找寻解决方案。<br>2、 利用公司网络下载学习资料和搭建开发环境，用自己的笔记本上班，以便同步工作。<br>3、 1块钱800M的电信卡，不到万不得已的时候不开作弊模式。<br>4、 破解邻居WIFI，你懂得。<br>5、 实在不行就装回来1000块钱两年的真电信宽带吧。</p><p>说实话，我也有点好奇这样下去我能挺多久？</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/100/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/100/>100</a></li><li class="page-item active"><a class=page-link href=/page/101/>101</a></li><li class=page-item><a class=page-link href=/page/102/>102</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/244/>244</a></li><li class=page-item><a href=/page/102/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/244/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
