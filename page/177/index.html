@@ -1,5 +1,18 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/18/enable-light-weighted-webserver/>Enable Light-Weighted WebServer</a></h1><span class=post-date>Nov 18, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=top-result>TOP Result</h3><p>Via top we saw:</p><pre><code> 2615 mysql     20   0  949.7m 450.7m   0.0  5.7   0:02.62 S mysqld  
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/20/share-mouse-between-archlinux-and-yosemite/>Share Mouse between ArchLinux &amp;amp; Yosemite</a></h1><span class=post-date>Nov 20, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=fixed-ip>Fixed IP</h3><p>First configure the IP for Yosemite on router, since the Archlinux takes the 221, Yosemite may use 220 for its fixed ip.</p><h3 id=archlinux-setting>ArchLinux Setting</h3><p>I use ArchLinux as the synergy server, so first install synergy via:</p><pre><code>$ sudo pacman -S synergy
+
+</code></pre><p>I want to place Yosemite at the right of the ArchLinux, So just configure the <code>/etc/hosts</code> like following.</p><pre><code>$ tail /etc/hosts
+# For setting Synergy
+10.0.0.220      Yosemite.lan            Yosemite
+
+</code></pre><p>Configuration:</p><pre><code>[root@kkkkttt kkkt]# cp /etc/synergy.conf.example /etc/synergy.conf
+
+</code></pre><p>For easily configure the synergy, download qsynergy.</p><pre><code>$ sudo pacman -S qsynergy
+
+</code></pre><p><img src=/images/synergyconfigure.jpg alt=/images/synergyconfigure.jpg><br>Then store its configuration to the <code>/etc/synergy.conf</code>.</p><p>Start the server and enable the server.</p><pre><code># systemctl enable synergys@mary
+# systemctl start synergys@mary
+
+</code></pre><h3 id=yosemite-setting>Yosemite Setting</h3><p>Download the SynergyKM from <a href=http://synergykm.com/>http://synergykm.com/</a>, and configure the SynergyKM connected to 10.0.0.221.<br>Also you have to check <code>Start at login</code></p><p>Now place the Yosemite at the left of the ArchLinux, your mouse and keyboard could be freely switching from 2 machines.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/18/enable-light-weighted-webserver/>Enable Light-Weighted WebServer</a></h1><span class=post-date>Nov 18, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=top-result>TOP Result</h3><p>Via top we saw:</p><pre><code> 2615 mysql     20   0  949.7m 450.7m   0.0  5.7   0:02.62 S mysqld  
 
 </code></pre><p>This caused too much memory be wasted while my blog uses the static pages.<br>Solution: I will use a light-weighted web-server.</p><h3 id=disable-xampp>Disable xampp</h3><p>Disble and remove the service of xampp via following command:</p><pre><code>[root@kkkktt kkk]# systemctl stop xampp.service
 [root@kkkktt kkk]# systemctl disable xampp.service
@@ -68,81 +81,4 @@ echo 1000000000 &gt; period
 echo  250000000 &gt; duty
 echo 1 &gt; run
 
-</code></pre><p>From now you could see the LED begin to flash. In fact using this pwm we could control servo motor:<br><a href=http://www.linux.com/learn/tutorials/776799-servo-control-from-the-beaglebone-black/>http://www.linux.com/learn/tutorials/776799-servo-control-from-the-beaglebone-black/</a></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2014/11/16/gpio-via-mmap/>EBC Exercises on BBB -GPIO Via Mmap</a></h1><span class=post-date>Nov 16, 2014<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=operate-on-device-tree>Operate On Device Tree</h3><p>Turn off the trigger and then shine on the LED USR3 via following command:</p><pre><code>root@arm:~# cd /sys/class/leds/beaglebone\:green\:usr3
-root@arm:/sys/class/leds/beaglebone:green:usr3# ls
-brightness  device  max_brightness  power  subsystem  trigger  uevent
-root@arm:/sys/class/leds/beaglebone:green:usr3# echo none &gt; trigger 
-root@arm:/sys/class/leds/beaglebone:green:usr3# echo 1 &gt; brightness
-
-</code></pre><p>We could find the gpio is attached to which pin:</p><pre><code># ./findGPIO.js USR3                                                                
-{ name: 'USR3',                                                                                         
- gpio: 56,                                                                                             
- led: 'usr3',                                                                                          
- mux: 'gpmc_a8',                                                                                       
- key: 'USR3',                                                                                          
- muxRegOffset: '0x060',                                                                                
- options:                                                                                              
-  [ 'gpmc_a8',                                                                                         
-    'gmii2_rxd3',                                                                                      
-    'rgmii2_rd3',                                                                                      
-    'mmc2_dat6',                                                                                       
-    'gpmc_a24',                                                                                        
-    'pr1_mii1_rxd0',                                                                                   
-    'mcasp0_aclkx',                                                                                    
-    'gpio1_24' ] }
-USR3 (gpio 56) mode: 7 (gpio1_24) 0x060 pullup
-pin 24 (44e10860): (MUX UNCLAIMED) (GPIO UNCLAIMED)
-
-</code></pre><p><code>gpio1_24</code> is what we want. Then refer Memory Map table in the Technical Reference Manual, its base address is 0x4804c000.</p><h3 id=devmem2>devmem2</h3><p>An easy way to read the contents of a memory location is with devmem2:</p><pre><code>root@arm:~/code/gpio# devmem2 0x4804c13c
-/dev/mem opened.
-Memory mapped at address 0xb6fea000.
-Value at address 0x4804C13C (0xb6fea13c): 0x9A00000
-
-</code></pre><p>Light ON the USR3 led:</p><pre><code>root@arm:~/code/gpio# devmem2 0x4804c190 w 0x01000000
-/dev/mem opened.
-Memory mapped at address 0xb6f52000.
-Value at address 0x4804C190 (0xb6f52190): 0x9800000
-Written 0x1000000; readback 0x1000000
-
-</code></pre><p>Light OFF the USR3 led:</p><pre><code>root@arm:~/code/gpio# devmem2 0x4804c194 w 0x01000000
-/dev/mem opened.
-Memory mapped at address 0xb6f1c000.
-Value at address 0x4804C194 (0xb6f1c194): 0x8A00000
-Written 0x1000000; readback 0x1000000
-
-</code></pre><h3 id=mmap-code>mmap code</h3><p>The critical Code:</p><pre><code>    int fd = open(&quot;/dev/mem&quot;, O_RDWR);
-
-    gpio_addr = mmap(0, GPIO1_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, GPIO1_START_ADDR);
-
-    gpio_oe_addr           = gpio_addr + GPIO_OE;
-    gpio_setdataout_addr   = gpio_addr + GPIO_SETDATAOUT;
-    gpio_cleardataout_addr = gpio_addr + GPIO_CLEARDATAOUT;
-
-    // Set USR3 to be an output pin
-    reg = *gpio_oe_addr;
-    printf(&quot;GPIO1 configuration: %X\n&quot;, reg);
-    reg &amp;= ~USR3;       // Set USR3 bit to 0
-    *gpio_oe_addr = reg;
-    printf(&quot;GPIO1 configuration: %X\n&quot;, reg);
-
-    printf(&quot;Start blinking LED USR3\n&quot;);
-    while(keepgoing) {
-        // printf(&quot;ON\n&quot;);
-        *gpio_setdataout_addr = USR3;
-        usleep(250000);
-        // printf(&quot;OFF\n&quot;);
-        *gpio_cleardataout_addr = USR3;
-        usleep(250000);
-    }
-
-</code></pre><p>Run the program and see its heartbeat:</p><pre><code># ./gpioToggle 
-Mapping 4804C000 - 4804E000 (size: 2000)
-GPIO mapped to 0xb6f91000
-GPIO OE mapped to 0xb6f91134
-GPIO SETDATAOUTADDR mapped to 0xb6f91194
-GPIO CLEARDATAOUT mapped to 0xb6f91190
-GPIO1 configuration: F60FFFFF
-GPIO1 configuration: F60FFFFF
-Start blinking LED USR3
-
-</code></pre><h3 id=gpiothru>gpioThru</h3><p>This example need to be clearly written later.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/176/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/176/>176</a></li><li class="page-item active"><a class=page-link href=/page/177/>177</a></li><li class=page-item><a class=page-link href=/page/178/>178</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/244/>244</a></li><li class=page-item><a href=/page/178/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/244/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>From now you could see the LED begin to flash. In fact using this pwm we could control servo motor:<br><a href=http://www.linux.com/learn/tutorials/776799-servo-control-from-the-beaglebone-black/>http://www.linux.com/learn/tutorials/776799-servo-control-from-the-beaglebone-black/</a></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/176/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/176/>176</a></li><li class="page-item active"><a class=page-link href=/page/177/>177</a></li><li class=page-item><a class=page-link href=/page/178/>178</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/244/>244</a></li><li class=page-item><a href=/page/178/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/244/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
