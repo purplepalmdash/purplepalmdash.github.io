@@ -5,4 +5,13 @@ $ sudo sed -i 's@//ports.ubuntu.com@//mirrors.ustc.edu.cn@g' /etc/apt/sources.li
 </code></pre><p><code>sudo apt update -y && sudo apt upgrade -y</code> , then reboot.</p><p>Build cuttlefish:</p><pre><code>git clone https://github.com/google/android-cuttlefish
 cd android-cuttlefish
 tools/buildutils/build_packages.sh
-</code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Install:</p><pre><code>sudo dpkg -i ./cuttlefish-base_*_*64.deb || sudo apt-get install -f
+sudo dpkg -i ./cuttlefish-user_*_*64.deb || sudo apt-get install -f
+sudo usermod -aG kvm,cvdnetwork,render $USER
+sudo apt install -y libvirglrenderer-dev libvirglrenderer1
+sudo reboot
+</code></pre><p>Prepare packages:</p><pre><code>mkdir cf
+cd cf
+tar xzvf /media/test/78739a87-9b0b-4935-902f-7d78cc09a076/home/test/cvd-host_package.tar.gz
+unzip /media/test/78739a87-9b0b-4935-902f-7d78cc09a076/home/test/aosp_cf_arm64_only_phone-img-11489887.zip 
+</code></pre><p>maybe should use <code>--gpu_mode=guest_swiftshader</code></p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
