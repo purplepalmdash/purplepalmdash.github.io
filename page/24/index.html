@@ -1,5 +1,237 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/02/17/workingtipsonvtdi915/>WorkingTipsOnVTDI915</a></h1><span class=post-date>Feb 17, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=记录步骤>记录步骤</h3><p>我看还是用私有的笔记来记录吧</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/02/12/workingtipsonrpivpnserver/>WorkingTipsOnRPIvpnServer</a></h1><span class=post-date>Feb 12, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=变更piap-pivpn>变更(piap->pivpn)</h3><p>主要修改如下:<br>本来用来做公司的AP,但是因为需要，弄成了家里的pivpn,</p><ol><li>关闭了hostapd:
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/02/25/caddystaticserver/>CaddyStaticServer</a></h1><span class=post-date>Feb 25, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install canddy on rpi via:</p><pre><code># sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https -y
+# apt-cache search caddy
+# curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+# sudo apt update
+# sudo apt-get install caddy -y
+</code></pre><p>Configuration files:</p><pre><code>$ cat /etc/caddy/Caddyfile 
+# The Caddyfile is an easy way to configure your Caddy web server.
+#
+# Unless the file starts with a global options block, the first
+# uncommented line is always the address of your site.
+#
+# To use your own domain name (with automatic HTTPS), first make
+# sure your domain's A/AAAA DNS records are properly pointed to
+# this machine's public IP, then replace &quot;:80&quot; below with your
+# domain name.
+
+:80 {
+	# Set this path to your site's directory.
+	root * /media/sda/ucc
+	# Enable the static file server.
+	file_server browse {
+	hide .git
+}
+
+basicauth * {
+cwgo gowugowuoguwougowugouwogue
+}
+	# Another common task is to set up a reverse proxy:
+	# reverse_proxy localhost:8080
+
+	# Or serve a PHP site through php-fpm:
+	# php_fastcgi localhost:9000
+}
+
+# Refer to the Caddy docs for more information:
+# https://caddyserver.com/docs/caddyfile
+
+</code></pre><p>The password could be generated via <code>caddy hash-password</code>.</p><p>Reload the server:</p><pre><code>$  sudo systemctl reload caddy
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/02/24/vtdlibvirtconfiguration/>vtdlibvirtconfiguration</a></h1><span class=post-date>Feb 24, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Install kde desktop environment:</p><pre><code>$ sudo apt install -y kubuntu-desktop
+</code></pre><p>Install libvirtd and remove default qemu, then install compiled qemu:</p><pre><code>$  sudo apt install -y libvirt-bin
+$  sudo apt remove qemu-system-x86
+// Go to   qemu source code: 
+#  make install 
+# qemu-system-x86_64 --version
+QEMU emulator version 4.2.0 (v4.2.0-dirty)
+Copyright (c) 2003-2019 Fabrice Bellard and the QEMU Project developers
+</code></pre><p>Install virt-manager for managing the vms:</p><pre><code>$ sudo apt install -y virt-manager
+$ sudo systemctl enable libvirtd
+$ sudo systemctl start libvirtd
+</code></pre><p>Install win10 using following configurations:</p><p><img src=/images/2023_02_24_16_15_04_428x466.jpg alt=/images/2023_02_24_16_15_04_428x466.jpg></p><p>vm configuration:</p><p><img src=/images/2023_02_24_16_15_25_391x206.jpg alt=/images/2023_02_24_16_15_25_391x206.jpg></p><p>Added the qemuargs:</p><pre><code>virt-xml win10 --edit --confirm --qemu-commandline '-set device.hostpci0.x-igd-gms=1'
+</code></pre><h3 id=libvirt-configuration>libvirt configuration</h3><p>libvirt hooks for pre-set vfio and post release vfio equipments:</p><pre><code>root@idv10:/etc/libvirt/hooks# cat qemu 
+#!/bin/bash
+
+OBJECT=&quot;$1&quot;
+OPERATION=&quot;$2&quot;
+
+if [[ $OBJECT == &quot;win10&quot; ]]; then
+	case &quot;$OPERATION&quot; in
+        	&quot;prepare&quot;)
+                systemctl start libvirt-nosleep@&quot;$OBJECT&quot;  2&gt;&amp;1 | tee -a /var/log/libvirt/custom_hooks.log
+                /bin/vfio-startup.sh 2&gt;&amp;1 | tee -a /var/log/libvirt/custom_hooks.log
+                ;;
+
+            &quot;release&quot;)
+                systemctl stop libvirt-nosleep@&quot;$OBJECT&quot;  2&gt;&amp;1 | tee -a /var/log/libvirt/custom_hooks.log  
+                /bin/vfio-teardown.sh 2&gt;&amp;1 | tee -a /var/log/libvirt/custom_hooks.log
+                ;;
+	esac
+fi
+root@idv10:/etc/libvirt/hooks# cat vfio-startup.sh 
+#!/bin/bash
+# Helpful to read output when debugging
+set -x
+
+long_delay=10
+medium_delay=5
+short_delay=1
+echo &quot;Beginning of startup!&quot;
+
+function stop_display_manager_if_running {
+    # Stop dm using systemd
+    if command -v systemctl; then
+        if systemctl is-active --quiet &quot;$1.service&quot; ; then
+            echo $1 &gt;&gt; /tmp/vfio-store-display-manager
+            systemctl stop &quot;$1.service&quot;
+        fi
+
+        while systemctl is-active --quiet &quot;$1.service&quot; ; do
+            sleep &quot;${medium_delay}&quot;
+        done
+
+        return
+    fi
+
+    # Stop dm using runit
+    if command -v sv; then
+        if sv status $1 ; then
+            echo $1 &gt;&gt; /tmp/vfio-store-display-manager
+            sv stop $1
+        fi
+    fi
+}
+
+
+# Stop currently running display manager
+if test -e &quot;/tmp/vfio-store-display-manager&quot; ; then
+    rm -f /tmp/vfio-store-display-manager
+fi
+
+stop_display_manager_if_running sddm
+stop_display_manager_if_running gdm
+stop_display_manager_if_running lightdm
+stop_display_manager_if_running lxdm
+stop_display_manager_if_running xdm
+stop_display_manager_if_running mdm
+stop_display_manager_if_running display-manager
+
+sleep &quot;${medium_delay}&quot;
+
+# Unbind VTconsoles if currently bound (adapted from https://www.kernel.org/doc/Documentation/fb/fbcon.txt)
+if test -e &quot;/tmp/vfio-bound-consoles&quot; ; then
+    rm -f /tmp/vfio-bound-consoles
+fi
+for (( i = 0; i &lt; 16; i++))
+do
+  if test -x /sys/class/vtconsole/vtcon${i}; then
+      if [ `cat /sys/class/vtconsole/vtcon${i}/name | grep -c &quot;frame buffer&quot;` \
+           = 1 ]; then
+	       echo 0 &gt; /sys/class/vtconsole/vtcon${i}/bind
+           echo &quot;Unbinding console ${i}&quot;
+           echo $i &gt;&gt; /tmp/vfio-bound-consoles
+      fi
+  fi
+done
+
+# Unbind EFI-Framebuffer
+if test -e &quot;/tmp/vfio-is-nvidia&quot; ; then
+    rm -f /tmp/vfio-is-nvidia
+fi
+
+if lsmod | grep &quot;nvidia&quot; &amp;&gt; /dev/null ; then
+    echo &quot;true&quot; &gt;&gt; /tmp/vfio-is-nvidia
+    echo efi-framebuffer.0 &gt; /sys/bus/platform/drivers/efi-framebuffer/unbind
+fi
+
+igd_id=&quot;8086 $(lspci -n|grep '0:02.0'|cut -d ':' -f4|cut -c 1-4)&quot;
+usb_id=&quot;8086 $(lspci -n|grep '00:14.0'|cut -d ':' -f4|cut -c 1-4)&quot;
+echo 0000:00:02.0 &gt; /sys/bus/pci/drivers/i915/unbind
+echo 0000:00:14.0 &gt; /sys/bus/pci/drivers/xhci_hcd/unbind
+if ! lsmod | grep &quot;vfio_pci&quot; &amp;&gt; /dev/null ; then
+    modprobe vfio-pci
+fi
+echo $igd_id &gt; /sys/bus/pci/drivers/vfio-pci/new_id
+echo $usb_id &gt; /sys/bus/pci/drivers/vfio-pci/new_id
+
+echo &quot;End of startup!&quot;
+root@idv10:/etc/libvirt/hooks# cat vfio-teardown.sh 
+#!/bin/bash
+set -x
+
+# on shutoff state then you could unbind the vfio-pcis 
+#sleep 20
+#a=&quot;fucku&quot;
+#until [[ $a == &quot;shut off&quot; ]]
+#do
+#	a=`virsh domstate win10`
+#	sleep 3
+#done
+
+ia_addr=&quot;0000:$(lspci|grep 'Audio'|grep 'Intel'|cut -c 1-7)&quot;
+usb_addr=&quot;0000:$(lspci|grep 'USB'|grep 'Intel'|cut -c 1-7)&quot;
+igd_id=&quot;8086 $(lspci -n|grep '0:02.0'|cut -d ':' -f4|cut -c 1-4)&quot;
+
+echo 0000:00:02.0 &gt; /sys/bus/pci/drivers/vfio-pci/unbind
+echo $ia_addr &gt; /sys/bus/pci/drivers/vfio-pci/unbind
+echo $usb_addr &gt; /sys/bus/pci/drivers/vfio-pci/unbind
+echo $igd_id &gt; /sys/bus/pci/drivers/vfio-pci/remove_id
+echo 0000:00:02.0 &gt; /sys/bus/pci/drivers/i915/bind
+echo $ia_addr &gt; /sys/bus/pci/drivers/snd_hda_intel/bind
+echo $usb_addr &gt;/sys/bus/pci/drivers/xhci_hcd/bind
+
+echo &quot;Beginning of teardown!&quot;
+
+sleep 10
+
+# Restart Display Manager
+input=&quot;/tmp/vfio-store-display-manager&quot;
+while read displayManager; do
+  if command -v systemctl; then
+    systemctl start &quot;$displayManager.service&quot;
+  else
+    if command -v sv; then
+      sv start $displayManager
+    fi
+  fi
+done &lt; &quot;$input&quot;
+
+# Rebind VT consoles (adapted from https://www.kernel.org/doc/Documentation/fb/fbcon.txt)
+input=&quot;/tmp/vfio-bound-consoles&quot;
+while read consoleNumber; do
+  if test -x /sys/class/vtconsole/vtcon${consoleNumber}; then
+      if [ `cat /sys/class/vtconsole/vtcon${consoleNumber}/name | grep -c &quot;frame buffer&quot;` \
+           = 1 ]; then
+    echo &quot;Rebinding console ${consoleNumber}&quot;
+	  echo 1 &gt; /sys/class/vtconsole/vtcon${consoleNumber}/bind
+      fi
+  fi
+done &lt; &quot;$input&quot;
+
+# Rebind framebuffer for nvidia
+if test -e &quot;/tmp/vfio-is-nvidia&quot; ; then
+  echo &quot;efi-framebuffer.0&quot; &gt; /sys/bus/platform/drivers/efi-framebuffer/bind
+fi
+
+
+echo &quot;End of teardown!&quot;
+
+</code></pre><h3 id=kde-reback>kde reback</h3><p>kde startup command in desktop, vm exit will send back to desktop.</p><h3 id=fix>fix</h3><p>some fixes:</p><pre><code>root@h3c:/etc/libvirt/hooks# chmod 777 *.sh
+root@h3c:/etc/libvirt/hooks# chmod 777 *
+root@h3c:/etc/libvirt/hooks# ln -s /etc/libvirt/hooks/vfio-startup.sh /bin/
+root@h3c:/etc/libvirt/hooks# ln -s /etc/libvirt/hooks/vfio-teardown.sh /bin/
+root@h3c:/etc/libvirt/hooks# ls -l -h /bin/vfio-*
+lrwxrwxrwx 1 root root 34 Feb 28 23:05 /bin/vfio-startup.sh -&gt; /etc/libvirt/hooks/vfio-startup.sh
+lrwxrwxrwx 1 root root 35 Feb 28 23:05 /bin/vfio-teardown.sh -&gt; /etc/libvirt/hooks/vfio-teardown.sh
+</code></pre><p>Add some systemd files:</p><pre><code>root@h3c:/etc/libvirt/hooks# cat /etc/systemd/system/libvirt-nosleep\@.service 
+[Unit]
+Description=Preventing sleep while libvirt domain &quot;%i&quot; is running
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/systemd-inhibit --what=sleep --why=&quot;Libvirt domain \&quot;%i\&quot; is running&quot; --who=%U --mode=block sleep infinity
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/02/17/workingtipsonvtdi915/>WorkingTipsOnVTDI915</a></h1><span class=post-date>Feb 17, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=记录步骤>记录步骤</h3><p>我看还是用私有的笔记来记录吧</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/02/12/workingtipsonrpivpnserver/>WorkingTipsOnRPIvpnServer</a></h1><span class=post-date>Feb 12, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=变更piap-pivpn>变更(piap->pivpn)</h3><p>主要修改如下:<br>本来用来做公司的AP,但是因为需要，弄成了家里的pivpn,</p><ol><li>关闭了hostapd:
 sudo systemctl disable hostapd</li><li>关闭了xray
 sudo systemctl disable xray</li><li>关闭了shadowsocks
 sudo systemctl disable shadowsocks</li><li>关闭了pdnsd
@@ -44,32 +276,4 @@ Type=Application
 X-GNOME-Autostart-Delay=10
 Categories=System;Utility;
 X-UKUI-AutoRestart=true;
-</code></pre><p>开始菜单中点击: <code>设置->应用->开机启动</code>, 点击<code>添加</code>，在弹出的<code>添加自定义程序</code>对话框中选择刚才创建的启动文件:</p><p><img src=/images/2023_02_08_09_58_44_821x488.jpg alt=/images/2023_02_08_09_58_44_821x488.jpg></p><p>点击确定后，开机启动项如下:</p><p><img src=/images/2023_02_08_09_59_50_903x343.jpg alt=/images/2023_02_08_09_59_50_903x343.jpg></p><p>重启后，桌面因为特效关闭的缘故，流畅度大有提升。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/01/04/workingtipsonpvesriov/>WorkingTipsOnPVESRIOV</a></h1><span class=post-date>Jan 4, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Change the repository for using chinese site:</p><pre><code>$ cat /etc/apt/sources.list
-deb http://mirrors.ustc.edu.cn/debian bullseye main contrib
-
-deb http://mirrors.ustc.edu.cn/debian bullseye-updates main contrib
-
-# security updates
-deb http://mirrors.ustc.edu.cn/debian-security bullseye-security main contrib
-</code></pre><p>Update to 5.19 kernel and linux-header:</p><pre><code>deb http://mirrors.ustc.edu.cn/debian bullseye main contrib
-
-deb http://mirrors.ustc.edu.cn/debian bullseye-updates main contrib
-
-# security updates
-deb http://mirrors.ustc.edu.cn/debian-security stable-security main contrib
-
-# no-subscription
-deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription
-
-</code></pre><p>Install kernel(via download):</p><pre><code>scp ./pve-headers-5.19.7-2-pve_5.19.7-2_amd64.deb pve-kernel-5.19.7-2-pve_5.19.7-2_amd64.deb root@192.168.1.52:~
-root@xxxx:~# dpkg -i pve-headers-5.19.7-2-pve_5.19.7-2_amd64.deb pve-kernel-5.19.7-2-pve_5.19.7-2_amd64.deb 
-reboot
-</code></pre><p>Install <code>dkms</code>, then install <code>i915-sriov-dkms</code>.</p><pre><code>tar -xvf i915-sriov-dkms.tar
-mv i915-sriov-dkms /usr/src
-dkms install -m i915-sriov -v dkms
-# dkms status
-i915-sriov, dkms, 5.19.7-2-pve, x86_64: installed
-</code></pre><p>Install sysfsutils:</p><pre><code>apt install sysfsutils -y
-echo &quot;devices/pci0000:00/0000:00:02.0/sriov_numvfs = 7&quot; &gt; /etc/sysfs.conf
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/12/26/novncoperationon4anetwork/>NoVNCOperationOn4ANetwork</a></h1><span class=post-date>Dec 26, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>因4A速度实在太慢，通过bmc远程安装系统基本上不可行。故采用在跳板机上启动novnc加持的桌面session的方式用来部署操作系统。</p><p>登陆跳板机<code>192.168.xx.xx</code>后，运行以下命令建立一个监听跳板机6080端口的<code>lxde</code>桌面环境（因跳板机是arm64环境，需要指定arm64后缀的镜像）:</p><pre><code>sudo docker run -p 6080:80 -e USER=doro -e PASSWORD=password -v /dev/shm:/dev/shm dorowu/ubuntu-desktop-lxde-vnc:focal-arm64
-</code></pre><p>通过xshell和proxifier建立全局代理后，在浏览器里直接访问<code>192.168.xx.xx:6080</code>即可访问到创建的桌面环境:</p><p><img src=/images/2022_12_26_21_21_39_1048x730.jpg alt=/images/2022_12_26_21_21_39_1048x730.jpg></p><p>在该桌面环境里可直接调用firefox下载相关镜像，并使用bmc挂载该镜像用于安装操作系统:</p><p><img src=/images/2022_12_26_21_24_22_1240x783.jpg alt=/images/2022_12_26_21_24_22_1240x783.jpg></p><p>因为安装介质都在同一数据中心内，所以安装时不会出明显卡顿，大约15～30分钟内即可安装成功。</p><p>安装完后的bmc界面:</p><p><img src=/images/2022_12_26_21_23_41_1018x495.jpg alt=/images/2022_12_26_21_23_41_1018x495.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/23/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/23/>23</a></li><li class="page-item active"><a class=page-link href=/page/24/>24</a></li><li class=page-item><a class=page-link href=/page/25/>25</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/25/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>开始菜单中点击: <code>设置->应用->开机启动</code>, 点击<code>添加</code>，在弹出的<code>添加自定义程序</code>对话框中选择刚才创建的启动文件:</p><p><img src=/images/2023_02_08_09_58_44_821x488.jpg alt=/images/2023_02_08_09_58_44_821x488.jpg></p><p>点击确定后，开机启动项如下:</p><p><img src=/images/2023_02_08_09_59_50_903x343.jpg alt=/images/2023_02_08_09_59_50_903x343.jpg></p><p>重启后，桌面因为特效关闭的缘故，流畅度大有提升。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/23/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/23/>23</a></li><li class="page-item active"><a class=page-link href=/page/24/>24</a></li><li class=page-item><a class=page-link href=/page/25/>25</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/25/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

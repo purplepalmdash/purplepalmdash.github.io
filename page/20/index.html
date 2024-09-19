@@ -1,5 +1,58 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/12/rockylinux91sriov/>RockyLinux91SRIOV</a></h1><span class=post-date>Jun 12, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=kernel>Kernel</h3><p>Install:</p><pre><code>tar xzvf linux-intel-lts.tar.gz
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/19/workingtipsonlibvirtbuild/>WorkingTipsOnLibvirtBuild</a></h1><span class=post-date>Jun 19, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p><code>libvirt-7.5.0</code>:</p><pre><code>yum makecache
+yum install -y epel-release
+yum install -y meson gcc qemu-kvm wget virt-install python36-docutils python-docutils glib2-devel gnutls-devel libxml2-devel libtirpc-devel
+meson --version
+0.55.1
+wget https://libvirt.org/sources/libvirt-7.5.0.tar.xz --no-check-certificate
+tar xJvf libvirt-7.5.0.tar.xz
+cd libvirt-7.5.0
+meson build --prefix=/usr
+ninja -C build
+#ninja -C build install
+</code></pre><p><code>libvirt-8.5.0</code>:</p><pre><code>yum install -y centos-release-scl
+yum install devtoolset-11 -y
+scl enable devtoolset-11 bash
+gcc --version
+gcc (GCC) 11.2.1 20220127 (Red Hat 11.2.1-9)
+meson build --prefix=/usr
+ninja -C build
+</code></pre><p>From <code>8.6.0</code>:</p><pre><code>meson.build:986:0: ERROR: Invalid version of dependency, need 'gnutls' ['&gt;=3.6.0'] found '3.3.29'.
+</code></pre><p>From <code>9.1.0</code>, Later will have meson version check:</p><pre><code>meson.build:1:0: ERROR: Meson version is 0.55.1 but project requires &gt;= 0.56.0
+</code></pre><h3 id=product-env>product env</h3><p>build and install via:</p><pre><code>yum install -y gnutls-devel
+yum install -y python36-docutils python-docutils glib2-devel gnutls-devel libxml2-devel libtirpc-devel
+meson build --prefix=/opt/local/
+ninja -C build
+ninja -C build install
+</code></pre><p>Change configuration files:</p><pre><code>vim /usr/lib/systemd/system/libvirtd.servic
+/usr/bin/libvirtd --&gt; /opt/local/bin/libvirtd
+reboot
+/opt/local/bin/virsh  list --all
+</code></pre><h3 id=rebuild>Rebuild</h3><p>Rebuild with full support:</p><pre><code>yum install -y netcf-devel libpciaccess-devel systemd-devel
+meson build -Dsystem=true -Ddriver_qemu=enabled -Ddriver_interface=enabled -Ddriver_libvirtd=enabled -Ddriver_remote=enabled -Ddriver_network=enabled --prefix=/usr
+ninja -C build install
+</code></pre><p>Edit the qemu configuration:</p><pre><code># vim /etc/libvirt/qemu.conf
+cgroup_device_acl = [
+    &quot;/dev/null&quot;, &quot;/dev/full&quot;, &quot;/dev/zero&quot;,
+    &quot;/dev/random&quot;, &quot;/dev/urandom&quot;,
+    &quot;/dev/ptmx&quot;, &quot;/dev/kvm&quot;, &quot;/dev/udmabuf&quot;
+]
+user = &quot;root&quot;
+group = &quot;root&quot;
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/16/onbuildlibvirt/>OnBuildLibvirt</a></h1><span class=post-date>Jun 16, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>System libs:</p><pre><code>libunistring-devel
+</code></pre><p>gnutls <code>>=3.6.0</code> is required for building libvirtd, thus:</p><pre><code>[root@buildgen10 gnutls-3.6.0]# ./configure --prefix=/usr
+  *** Libnettle 3.1 was not found.
+</code></pre><p>Nettle:</p><pre><code> wget https://ftp.gnu.org/gnu/nettle/nettle-3.1.1.tar.gz
+ tar xzvf nettle-3.1.1.tar.gz 
+ cd nettle-3.1.1
+ ./configure --prefix=/usr
+ make
+ make install
+</code></pre><p>Rebuild gnutls:</p><pre><code>./configure --prefix=/usr
+make -j8
+pkcs11_privkey.c:335:32: error: storage size of 'rsa_pss_params' isn't known
+  struct ck_rsa_pkcs_pss_params rsa_pss_params;
+</code></pre><p><a href=https://www.frytea.com/archives/546/>https://www.frytea.com/archives/546/</a></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/06/12/rockylinux91sriov/>RockyLinux91SRIOV</a></h1><span class=post-date>Jun 12, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=kernel>Kernel</h3><p>Install:</p><pre><code>tar xzvf linux-intel-lts.tar.gz
 yum install -y gcc openssl-devel bc rpm-build pciutils flex bison elfutils-libelf-devel
 cd linux-intel-lts
 make distclean
@@ -189,21 +242,4 @@ scl enable devtoolset-8 bash
 make -j8
 make install
 </code></pre><p>Change from default qemu to <code>/opt/local/bin/qemu-system-x86_64</code>, then start the machine.<br>You may also need virsh or other tools:</p><pre><code>yum install -y libvirt libvirt-python libguestfs-tools virt-install -y
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/05/08/gen12gpupassthrough/>Gen12GPUPassthrough</a></h1><span class=post-date>May 8, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p><code>Ubuntu 22.04.2</code> desktop cdrom installation on Gen12 machine.</p><pre><code>sudo apt update -y &amp;&amp; sudo apt upgrade -y
-sudo apt install -y openssh-server virt-manager qemu vim
-</code></pre><p>Edit the grub and initramfs-tools, and vfio:</p><pre><code>$ cat /etc/default/grub | grep CMDLINE_LINUX_DEFAULT
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet  intel_iommu=on intel_iommu=pt kvm.ignore_msrs=1 video=efifb:off,vesafb:off&quot;
-$ cat /etc/initramfs-tools/modules
-vfio
-vfio_iommu_type1
-vfio_pci
-vfio_virqfd
-$  echo &quot;options vfio-pci disable_vga=1&quot; &gt; /etc/modprobe.d/vfio.conf
-$ sudo update-grub2 &amp;&amp; sudo update-initramfs -u -k all
-$ sudo reboot
-</code></pre><p>Build ovmf:</p><pre><code>$ cp /home/idv/xxxxxxxxx/VBT/Vbt.bin OvmfPkg/Vbt/Vbt.bin 
-$ cp /home/idv/xxxxxxxxx/./IntelGopDriver/RELEASE_VS2015x86/X64/IntelGopDriver.efi OvmfPkg/IntelGop/IntelGopDriver.efi
-$ pwd
-/home/idv/Code/Intel_edk2/edk2_gen12
-Build the ovmf(follow the guideline)
-</code></pre><p>Install an ubuntu22.04 vm in host machine, with qxl/spice.</p><p>glmark2: score 1711</p><p>Install win11(shift+f10), use regedit for editing:</p><p><img src=/images/2023_05_08_11_23_09_794x480.jpg alt=/images/2023_05_08_11_23_09_794x480.jpg></p><p>Fallback and continue install:</p><p><img src=/images/2023_05_08_11_24_16_769x553.jpg alt=/images/2023_05_08_11_24_16_769x553.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/05/06/workingtipsongen12gvtd/>WorkingTipsONGen12GVTD</a></h1><span class=post-date>May 6, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p><img src=/images/2023_05_06_12_09_11_751x278.jpg alt=/images/2023_05_06_12_09_11_751x278.jpg></p><p>UEFI/i440fx:</p><p><img src=/images/2023_05_06_12_09_53_770x388.jpg alt=/images/2023_05_06_12_09_53_770x388.jpg></p><p>Virtio Block:</p><p><img src=/images/2023_05_06_12_10_16_723x433.jpg alt=/images/2023_05_06_12_10_16_723x433.jpg></p><p>4Core:</p><p><img src=/images/2023_05_06_12_10_36_757x512.jpg alt=/images/2023_05_06_12_10_36_757x512.jpg></p><p>Configuration:</p><p><img src=/images/2023_05_06_12_11_23_887x403.jpg alt=/images/2023_05_06_12_11_23_887x403.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/19/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/19/>19</a></li><li class="page-item active"><a class=page-link href=/page/20/>20</a></li><li class=page-item><a class=page-link href=/page/21/>21</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/21/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/19/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/19/>19</a></li><li class="page-item active"><a class=page-link href=/page/20/>20</a></li><li class=page-item><a class=page-link href=/page/21/>21</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/21/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,5 +1,274 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/02/05/runredroidonandroidx86/>RunRedroidOnAndroidX86</a></h1><span class=post-date>Feb 5, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>This guideline shows how to run redroid on Android-x86.</p><h3 id=introduction>Introduction</h3><p>Redroid:</p><blockquote><p>ReDroid (Remote anDroid) is a GPU accelerated AIC (Android In Container) solution. You can boot many instances in Linux host (Docker, podman, k8s etc.). ReDroid supports both arm64 and amd64 architectures. ReDroid is suitable for Cloud Gaming, VMI (Virtual Mobile Infrastructure), Automation Test and more
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/02/15/android10redroid/>Android10Redroid</a></h1><span class=post-date>Feb 15, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aosp-preparation>aosp preparation</h3><p>Prepare the <code>10.0.0_r33</code> aosp source via:</p><pre><code>repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-10.0.0_r33
+repo sync -j8
+</code></pre><p>Build via:</p><pre><code># vim build/target/product/AndroidProducts.mk
+.....
+COMMON_LUNCH_CHOICES := \
+    aosp_arm64-eng \
+    aosp_arm-eng \
+    aosp_x86_64-eng \
+    aosp_x86-eng \
+    sdk_phone_x86_64-userdebug \
+# source build/envsetup.sh
+# lunch sdk_phone_x86_64-userdebug
+# m -j128
+</code></pre><p>Then we could use emulator for operating the android 10 vm.</p><h3 id=kernel-prepartion>Kernel Prepartion</h3><p>Sync the 4.14.112 kernel via:</p><pre><code>git clone https://android.googlesource.com/kernel/goldfish.git
+cd goldfish/
+git checkout -b android-goldfish-4.14-gchips remotes/origin/android-goldfish-4.14-gchips
+vim security/selinux/include/classmap.h 
+vim scripts/selinux/mdp/mdp.c 
+vim scripts/selinux/genheaders/genheaders.c 
+cp arch/x86/configs/x86_64_ranchu_defconfig  arch/x86/configs/x86_64_emu_defconfig
+export PATH=$PATH:/root/Code/android10_redroid/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9/bin
+export ARCH=x86_64
+export CROSS_COMPILE=x86_64-linux-android-
+export REAL_CROSS_COMPILE=x86_64-linux-android-
+/root/Code/android10_redroid/prebuilts/qemu-kernel/build-kernel.sh --arch=x86_64
+cp /tmp/kernel-qemu/x86_64-4.14.112/kernel-qemu  ~/
+</code></pre><h3 id=kernel-customization>Kernel Customization</h3><p>Customize via:</p><pre><code># cd goldfish
+# make x86_64_emu_defconfig
+# make menuconfig
+</code></pre><p>Here you will see the kernel configuration window, make changes in it, then save and replace the <code>x86_64_emu_defconfig</code> configuration file.</p><p><img src=/images/2022_02_15_14_19_00_973x628.jpg alt=/images/2022_02_15_14_19_00_973x628.jpg></p><p>Detailed changes:</p><pre><code>Generic setup -&gt; POSIX Message Queues
+Generic setup -&gt; Controller Group support -&gt; PIDs controller
+Generic setup -&gt; Controller Group support -&gt; Device controller
+Generic setup -&gt; Controller Group support -&gt; CPU controller -&gt; Group sheduling for SCHED_OTHER
+Generic setup -&gt; Controller Group support -&gt; CPU controller -&gt; CPU bandwidth provisioning for FAIR-GROUP_SCHED
+Generic setup -&gt; Controller Group support -&gt; CPU controller -&gt; Group sheduling for SCHED_RR/FIFO
+Generic setup -&gt; Controller Group support -&gt; Perf controller
+Generic setup -&gt; Namespaces support -&gt; User namespace
+Generic setup -&gt; Namespaces support -&gt; PID namespace
+Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Bridged IP/ARP packets fiiltering
+Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; IP virtual server support
+Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Core Netfilter configuration -&gt;  &quot;addrtype&quot; address type match support
+Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Core Netfilter configuration -&gt;  &quot;control group&quot; address type match support
+Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Core Netfilter configuration -&gt;  &quot;control group&quot; address type match support
+File Systems -&gt; Overlay filesystem support
+</code></pre><p>But we lost the binderfs support in 4.14.112, have to change to other kernel version!</p><p>Migrating the binderfs to the kernel 4.14.112, steps remains to be written .</p><p>Refers to:</p><pre><code>https://github.com/purplepalmdash/binderfs_backport.git
+</code></pre><p>Start the emulator via:</p><pre><code># emulator -show-kernel -kernel /root/kernel-qemu -no-snapshot-load -selinux disabled
+</code></pre><p>Replace the kernel in aosp kernel source:</p><pre><code>cd /root/Code/android10_redroid/prebuilts/qemu-kernel/x86_64
+cp -r 4.14/ 4.14.back
+cp /root/kernel-qemu 4.14/kernel-qemu2 
+</code></pre><h3 id=binderfs-enable>binderfs enable</h3><p>aosp source code should add modification for enable binderfs.<br>Make modification for rootdir, the aim is for enable binderfs:</p><pre><code># vim ./system/core/rootdir/init.rc
+    mount configfs none /config nodev noexec nosuid
+    chmod 0770 /config/sdcardfs
+    chown system package_info /config/sdcardfs
+
++    # Mount binderfs
++    mkdir /dev/binderfs
++    mount binder binder /dev/binderfs stats=global
++    chmod 0755 /dev/binderfs
++ 
++    # Mount fusectl
++    mount fusectl none /sys/fs/fuse/connections
++ 
++    symlink /dev/binderfs/binder /dev/binder                                            
++    symlink /dev/binderfs/hwbinder /dev/hwbinder
++    symlink /dev/binderfs/vndbinder /dev/vndbinder
++ 
++    chmod 0666 /dev/binderfs/hwbinder
++    chmod 0666 /dev/binderfs/binder
++    chmod 0666 /dev/binderfs/vndbinder
+</code></pre><p>Recompile the aosp source code and get the new generated image</p><h3 id=docker-integration>Docker Integration</h3><p>Download the docker binary files and extract them to prebuilts folder:</p><pre><code>$ wget https://download.docker.com/linux/static/stable/x86_64/docker-20.10.8.tgz
+// Switch to aosp source tree
+$ cd prebuilts
+$ tar xzvf ~/docker-20.10.8.tgz -C .
+</code></pre><p>Add docker binary files into <code>system.img</code>, add them into <code>/system/bin</code> so that
+we could direct use them:</p><pre><code>$ vim  ./build/make/target/board/generic_x86_64/device.mk
+// At the end of the file
+PRODUCT_COPY_FILES += \
+    prebuilts/docker/containerd:system/bin/containerd \
+    prebuilts/docker/containerd-shim:system/bin/containerd-shim \
+    prebuilts/docker/containerd-shim-runc-v2:system/bin/containerd-shim-runc-v2 \
+    prebuilts/docker/ctr:system/bin/ctr \
+    prebuilts/docker/docker:system/bin/docker \
+    prebuilts/docker/dockerd:system/bin/dockerd \
+    prebuilts/docker/docker-init:system/bin/docker-init \
+    prebuilts/docker/docker-proxy:system/bin/docker-proxy \
+    prebuilts/docker/runc:system/bin/runc \
+$ vim build/target/product/sdk_phone_x86_64.mk
+// At the end of the file
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST := \
+    system/bin/containerd \
+    system/bin/containerd-shim \
+    system/bin/containerd-shim-runc-v2 \
+    system/bin/ctr \
+    system/bin/docker \
+    system/bin/dockerd \
+    system/bin/docker-init \
+    system/bin/docker-proxy \
+    system/bin/runc \
+</code></pre><p>Change the sepolicy for creating the docker runtime:</p><pre><code>$ vim system/sepolicy/prebuilts/api/29.0/private/file_contexts
+
+// Added /var,/run,/system/etc/docker definition under # Symlinks
+# Symlinks
+/bin                u:object_r:rootfs:s0
+/bugreports         u:object_r:rootfs:s0
+/charger            u:object_r:rootfs:s0
+/d                  u:object_r:rootfs:s0
+/etc                u:object_r:rootfs:s0
+/sdcard             u:object_r:rootfs:s0
+/var                u:object_r:rootfs:s0
+/run                u:object_r:rootfs:s0
+/system/etc/docker                u:object_r:system_file:s0
+
+$ vim system/sepolicy/private/file_contexts
+ /sdcard             u:object_r:rootfs:s0
+ /var             u:object_r:rootfs:s0
+ /run             u:object_r:rootfs:s0
+ /system/etc/docker             u:object_r:system_file:s0
+ 
+   # SELinux policy files
+
+$ vim system/core/rootdir/Android.mk
+
+     ln -sf /system/etc $(TARGET_ROOT_OUT)/etc; \
+     ln -sf /data/var $(TARGET_ROOT_OUT)/var; \
+     ln -sf /data/run $(TARGET_ROOT_OUT)/run; \
+     ln -sf /data/user_de/0/com.android.shell/files/bugreports $(TARGET_ROOT_OUT)/bugreports; 
+
+
+ # Since init.environ.rc is required for init and satisfies that requirement, we hijack it to create the symlink.
+ LOCAL_POST_INSTALL_CMD += ; ln -sf /system/bin/init $(TARGET_ROOT_OUT)/init
+ LOCAL_POST_INSTALL_CMD += ; ln -sf /data/docker $(TARGET_OUT)/etc/
+ LOCAL_POST_INSTALL_CMD += ; ln -sf /data/resolv.conf $(TARGET_OUT)/etc/resolv.conf
+</code></pre><p>Manually create the folders and make image again:</p><pre><code>$ mkdir -p out/target/product/generic_x86_64/data/run
+$ mkdir -p out/target/product/generic_x86_64/data/var
+$ mkdir -p out/target/product/generic_x86_64/data/docker
+$ echo &quot;nameserver 223.5.5.5&quot; &gt; out/target/product/generic_x86_64/data/resolv.conf
+$ make userdataimage -j50
+</code></pre><p>Restart the emulator, now it&rsquo;s free to use docker.</p><h3 id=create-emulator>Create emulator</h3><p>Start the emulator via:</p><pre><code># sudo tunctl
+# brctl addif virbr0 tap0
+# ip link set dev tap0 up
+# emulator -show-kernel -no-snapshot-load -selinux disabled  -qemu -cpu host -device virtio-net-pci,netdev=hn0,mac=52:55:00:d1:55:51   -netdev tap,id=hn0,ifname=tap0,script=no,downscript=no
+</code></pre><p>The added eth1 has no ip addr, use dhclient for getting the address from
+virbr0:</p><pre><code>adb root
+adb shell &quot;dhcpclient -i eth1 &amp;&quot;
+</code></pre><p>Check the ip addr for eth1:</p><pre><code>adb shell
+generic_x86_64:/ # ifconfig eth1
+eth1      Link encap:Ethernet  HWaddr 52:55:00:d1:55:51  Driver virtio_net
+          inet addr:192.168.122.124  Bcast:192.168.122.255  Mask:255.255.255.0 
+          inet6 addr: fe80::5055:ff:fed1:5551/64 Scope: Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:27 errors:0 dropped:0 overruns:0 frame:0 
+          TX packets:58 errors:0 dropped:0 overruns:0 carrier:0 
+          collisions:0 txqueuelen:1000 
+          RX bytes:2800 TX bytes:15341 
+</code></pre><p>Set the <code>/etc/resolv.conf</code>, cgroupfs, then start the dockerd manually:</p><pre><code>echo &quot;nameserver 223.5.5.5&quot;&gt;/etc/resolv.conf
+mount -t tmpfs -o uid=0,gid=0,mode=0755 cgroup /sys/fs/cgroup
+cd /sys/fs/cgroup/
+mkdir -p cpu cpu acct blkio memory devices pids
+mount -n -t cgroup -o cpu cgroup cpu
+mount -n -t cgroup -o  cpuacct cgroup cpuacct
+mount -n -t cgroup -o  blkio cgroup blkio
+mount -n -t cgroup -o  memory cgroup memory
+mount -n -t cgroup -o  devices cgroup devices
+mount -n -t cgroup -o  pids cgroup pids
+
+ip rule add from all lookup main pref 30000
+dockerd  --dns=223.5.5.5 --data-root=/data/var/ --ip=192.168.122.124 &amp; &gt;/data/dockerd-logfile 2&gt;&amp;1
+</code></pre><p>Start the redroid instance via:</p><pre><code>docker run -d --privileged -p 8888:5555 redroid/redroid:8.1.0-latest
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/02/07/runredroidonandroidx86cn/>RunRedroidOnAndroidX86CN</a></h1><span class=post-date>Feb 7, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>这篇指南将详细讲述如何在Android-x86上运行redroid容器。</p><h3 id=介绍>介绍</h3><p>Redroid:</p><blockquote><p>ReDroid (Remote anDroid) 是一种支持GPU加速的(容器中的Android)方案. 你可以在任意Linux主机(Docker, podman, k8s等)上使用。Redoird支持arm64及amd64架构，Redroid适用于云游， VMI(Virtual Mobile Infrstructure), 自动化测试及更多场景。<br><a href=https://github.com/remote-android/redroid-doc#overview>https://github.com/remote-android/redroid-doc#overview</a></p></blockquote><p>Android-x86:</p><blockquote><p>在PC上运行Android. 这个项目被用于将Android Open Source Project移植到x86平台上，项目前身为"patch hosting for android x86 support&rdquo;.<br><a href=https://www.android-x86.org/>https://www.android-x86.org/</a></p></blockquote><h3 id=编译-android-x86>编译 Android-x86</h3><p>我们从<code>pie</code>(aosp9)分支作为起点:</p><pre><code># mkdir android-x86
+# cd android-x86
+# repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b pie-x86
+# repo sync --no-tags --no-clone-bundle -j18
+</code></pre><p>或者，进一步指定其子版本(非master分支):</p><pre><code>repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b pie-x86 -m android-x86-9.0-r2.xml
+repo sync --no-tags --no-clone-bundle
+</code></pre><p>repo 大小为:</p><pre><code># du -hs android-x86/
+79G	android-x86/
+# ls android-x86/
+Android.bp  bionic    bootstrap.bash  compatibility  dalvik       device    frameworks  kernel   libnativehelper  packages  platform_testing  sdk     test
+art         bootable  build           cts            development  external  hardware    libcore  Makefile         pdk       prebuilts         system  tools
+</code></pre><p>对rootdir作修改，目的是为了启用binderfs:</p><pre><code># vim ./system/core/rootdir/init.rc
+    mount configfs none /config nodev noexec nosuid
+    chmod 0770 /config/sdcardfs
+    chown system package_info /config/sdcardfs
+
++    # Mount binderfs
++    mkdir /dev/binderfs
++    mount binder binder /dev/binderfs stats=global
++    chmod 0755 /dev/binderfs
++ 
++    # Mount fusectl
++    mount fusectl none /sys/fs/fuse/connections
++ 
++    symlink /dev/binderfs/binder /dev/binder                                            
++    symlink /dev/binderfs/hwbinder /dev/hwbinder
++    symlink /dev/binderfs/vndbinder /dev/vndbinder
++ 
++    chmod 0666 /dev/binderfs/hwbinder
++    chmod 0666 /dev/binderfs/binder
++    chmod 0666 /dev/binderfs/vndbinder
+</code></pre><p>使用以下命令编译出iso文件:</p><pre><code># . build/envsetup.sh; lunch android_x86_64-userdebug
+# make iso_img TARGET_PRODUCT=android_x86_64 -j128
+</code></pre><p>检查编译出的Iso文件:</p><pre><code># ls -l -h out/target/product/x86_64/android_x86_64.iso
+-rw-r--r-- 1 root root 725M Feb  5 02:02 out/target/product/x86_64/android_x86_64.iso
+</code></pre><h3 id=自定义内核>自定义内核</h3><p>自定义内核步骤如下(详细步骤见最后章节kernel configuration)：</p><pre><code># cd kernel
+# make android-x86_64_defconfig
+# make menuconfig
+##### After make customization
+# cp arch/x86/configs/android-x86_64_defconfig arch/x86/configs/android-x86_64_defconfig.back
+# cp .config arch/x86/configs/android-x86_64_defconfig 
+</code></pre><p>重新编译内核并生成iso文件:</p><pre><code># cd kernel
+# make mrproper
+# cd ..
+# . build/envsetup.sh; lunch android_x86_64-userdebug
+# rm $OUT/obj/kernel/arch/x86/boot/bzImage
+# make iso_img TARGET_PRODUCT=android_x86_64 -j128
+</code></pre><h3 id=android-x86-安装>Android-x86 安装</h3><p>在虚拟机中安装Android-x86:</p><p><img src=/images/2022_02_05_16_38_45_562x474.jpg alt=/images/2022_02_05_16_38_45_562x474.jpg></p><p>选择分区:</p><p><img src=/images/2022_02_05_16_39_12_661x200.jpg alt=/images/2022_02_05_16_39_12_661x200.jpg></p><p>是否选择GPT:</p><p><img src=/images/2022_02_05_16_56_29_367x174.jpg alt=/images/2022_02_05_16_56_29_367x174.jpg></p><p>cfdisk:</p><p><img src=/images/2022_02_05_17_00_19_740x423.jpg alt=/images/2022_02_05_17_00_19_740x423.jpg></p><p>创建一个200GB大小的主分区:</p><p><img src=/images/2022_02_05_17_03_04_714x415.jpg alt=/images/2022_02_05_17_03_04_714x415.jpg></p><p>选择Write, Quit后，在安装界面中选择分区进行安装:</p><p><img src=/images/2022_02_05_17_04_37_673x346.jpg alt=/images/2022_02_05_17_04_37_673x346.jpg></p><p>选择格式化为ext4格式:</p><p><img src=/images/2022_02_05_17_05_03_534x174.jpg alt=/images/2022_02_05_17_05_03_534x174.jpg></p><p>确认:</p><p><img src=/images/2022_02_05_17_05_56_535x166.jpg alt=/images/2022_02_05_17_05_56_535x166.jpg></p><p>继续格式化:</p><p><img src=/images/2022_02_05_17_06_17_642x152.jpg alt=/images/2022_02_05_17_06_17_642x152.jpg></p><p>确认:</p><p><img src=/images/2022_02_05_17_06_39_436x131.jpg alt=/images/2022_02_05_17_06_39_436x131.jpg></p><p>设置为可读/可写模式:</p><p><img src=/images/2022_02_05_17_07_09_554x170.jpg alt=/images/2022_02_05_17_07_09_554x170.jpg></p><p>开始安装:</p><p><img src=/images/2022_02_05_17_07_19_642x156.jpg alt=/images/2022_02_05_17_07_19_642x156.jpg></p><p>选择 Reboot, 完成安装:</p><p><img src=/images/2022_02_05_17_08_10_480x191.jpg alt=/images/2022_02_05_17_08_10_480x191.jpg></p><h3 id=使能-docker>使能 docker</h3><p>在Android-x86界面中，使能 wifi:</p><p><img src=/images/2022_02_05_18_16_24_926x458.jpg alt=/images/2022_02_05_18_16_24_926x458.jpg></p><p>adb root and re-connect:</p><pre><code># adb connect 192.168.122.232
+connected to 192.168.122.232:5555
+# adb -s 192.168.122.232:5555 root
+restarting adbd as root
+# adb connect 192.168.122.232
+connected to 192.168.122.232:5555
+</code></pre><p>创建docker工作目录:</p><pre><code># adb shell
+x86_64:/ # mkdir /data/var                                                                                                                                 
+x86_64:/ # mkdir /data/docker/
+x86_64:/ # 
+</code></pre><p>从docker-ce官方网站下载docker-ce二进制包， 将其本地解压后通过adb push命令上传到对应目录:</p><pre><code># adb push ~/Code/docker/* /data/docker/
+</code></pre><p>在<code>adb shell</code>命令行下准备dockerd工作环境:</p><pre><code>mount -o remount,rw /
+ln -s /data/docker/* /bin/
+ip rule add pref 1 from all lookup main
+ip rule add pref 2 from all lookup default
+ip route add default via 192.168.122.1 dev wlan0
+ip rule add from all lookup main pref 30000
+echo &quot;nameserver 223.5.5.5&quot;&gt;/etc/resolv.conf
+# mount cgroupfs
+mount -t tmpfs -o uid=0,gid=0,mode=0755 cgroup /sys/fs/cgroup
+cd /sys/fs/cgroup/
+mkdir -p cpu cpu acct blkio memory devices pids
+mount -n -t cgroup -o cpu cgroup cpu
+mount -n -t cgroup -o  cpuacct cgroup cpuacct
+mount -n -t cgroup -o  blkio cgroup blkio
+mount -n -t cgroup -o  memory cgroup memory
+mount -n -t cgroup -o  devices cgroup devices
+mount -n -t cgroup -o  pids cgroup pids
+</code></pre><p>使用以下命令启动dockerd守护进程:</p><pre><code># dockerd  --dns=223.5.5.5 --data-root=/data/var/ --ip=192.168.122.232 &amp; &gt;/data/dockerd-logfile 2&gt;&amp;1
+# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+</code></pre><p>此时可以启动redroid容器实例:</p><pre><code># docker run -d --privileged -p 8888:5555 redroid/redroid:9.0.0-latest
+# docker ps
+CONTAINER ID   IMAGE                          COMMAND                  CREATED         STATUS         PORTS                            NAMES
+2efa5f6e987b   redroid/redroid:9.0.0-latest   &quot;/init qemu=1 androi…&quot;   5 seconds ago   Up 4 seconds   192.168.122.232:8888-&gt;5555/tcp   sweet_ishizaka
+</code></pre><h3 id=验证>验证</h3><p>adb connect并使用scrcpy命令验证redroid实例是否运行正常:</p><pre><code># adb connect 192.168.122.232:8888
+# scrcpy --serial 192.168.122.232:8888
+</code></pre><p><img src=/images/2022_02_06_09_34_35_427x768.jpg alt=/images/2022_02_06_09_34_35_427x768.jpg></p><p>通过以下命令在redroid实例中安装apk:</p><pre><code>$ adb -s 192.168.122.232:8888 install ~/apks/aaaaaaa.apk
+</code></pre><h3 id=内核配置>内核配置</h3><p>需追加的内核配置项(基于arch/x86/configs下的 <code>android-x86_64_defconfig</code>):</p><pre><code>Generic setup -&gt; POSIX Message Queues
+Generic setup -&gt; Controller Group support -&gt; PIDs controller
+Generic setup -&gt; Controller Group support -&gt; Device controller
+Generic setup -&gt; Controller Group support -&gt; CPU controller -&gt; Group sheduling for SCHED_OTHER
+Generic setup -&gt; Controller Group support -&gt; CPU controller -&gt; CPU bandwidth provisioning for FAIR-GROUP_SCHED
+Generic setup -&gt; Controller Group support -&gt; CPU controller -&gt; Group sheduling for SCHED_RR/FIFO
+Generic setup -&gt; Controller Group support -&gt; Perf controller
+Generic setup -&gt; Namespaces support -&gt; User namespace
+Generic setup -&gt; Namespaces support -&gt; PID namespace
+Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Bridged IP/ARP packets fiiltering
+Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; IP virtual server support
+Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Core Netfilter configuration -&gt;  &quot;addrtype&quot; address type match support
+Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Core Netfilter configuration -&gt;  &quot;control group&quot; address type match support
+Networking support -&gt; Networking options -&gt; Network packet filtering framework (Netfilter) -&gt; Core Netfilter configuration -&gt;  &quot;control group&quot; address type match support
+File Systems -&gt; Overlay filesystem support
+Device Driver -&gt; Android -&gt;  Android Binderfs filesystem
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/02/05/runredroidonandroidx86/>RunRedroidOnAndroidX86</a></h1><span class=post-date>Feb 5, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>This guideline shows how to run redroid on Android-x86.</p><h3 id=introduction>Introduction</h3><p>Redroid:</p><blockquote><p>ReDroid (Remote anDroid) is a GPU accelerated AIC (Android In Container) solution. You can boot many instances in Linux host (Docker, podman, k8s etc.). ReDroid supports both arm64 and amd64 architectures. ReDroid is suitable for Cloud Gaming, VMI (Virtual Mobile Infrastructure), Automation Test and more
 <a href=https://github.com/remote-android/redroid-doc#overview>https://github.com/remote-android/redroid-doc#overview</a></p></blockquote><p>Android-x86:</p><blockquote><p>Run Android on your PC. This is a project to port Android Open Source Project to x86 platform, formerly known as &ldquo;patch hosting for android x86 support&rdquo;.<br><a href=https://www.android-x86.org/>https://www.android-x86.org/</a></p></blockquote><h3 id=building-android-x86>Building Android-x86</h3><p>We use <code>pie</code>(based on aosp9) for startup:</p><pre><code># mkdir android-x86
 # cd android-x86
 # repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b pie-x86
@@ -330,148 +599,4 @@ adb reboot
 </code></pre><h3 id=8-基本使用场景>8. 基本使用场景</h3><p>检验编译串号:<br><img src=/images/2022_02_03_10_18_02_498x265.jpg alt=/images/2022_02_03_10_18_02_498x265.jpg></p><p><code>控制中心</code>是用来切换双系统的快捷方式:</p><p><img src=/images/2022_02_03_10_26_40_346x397.jpg alt=/images/2022_02_03_10_26_40_346x397.jpg></p><p>点击<code>控制中心</code>后将出现<code>Start</code>按钮:</p><p><img src=/images/2022_02_03_10_27_56_236x459.jpg alt=/images/2022_02_03_10_27_56_236x459.jpg></p><p>点击<code>Start</code>按钮后，第二系统将启动:</p><p><img src=/images/2022_02_03_10_28_34_234x472.jpg alt=/images/2022_02_03_10_28_34_234x472.jpg></p><p>启动成功:</p><p><img src=/images/2022_02_03_10_29_19_233x477.jpg alt=/images/2022_02_03_10_29_19_233x477.jpg></p><p>再次点击<code>Start</code>按钮进入到第二系统:</p><p><img src=/images/2022_02_03_10_30_12_230x475.jpg alt=/images/2022_02_03_10_30_12_230x475.jpg></p><p>在第二系统中点击<code>控制中心</code>将提示推出该系统并回到主系统:</p><p><img src=/images/2022_02_03_10_31_09_231x479.jpg alt=/images/2022_02_03_10_31_09_231x479.jpg></p><p>退出后将回到第一系统的锁屏界面:</p><p><img src=/images/2022_02_03_10_31_44_235x479.jpg alt=/images/2022_02_03_10_31_44_235x479.jpg></p><h3 id=9-定制化>9. 定制化</h3><p>定制化1： 语言设置/输入法设置</p><p>定制化2：为双系统各自安装软件仓库:</p><pre><code>$ adb install apks/MobileAssistant_1.apk 
 Performing Streamed Install
 Success
-</code></pre><p>定制化3：为双系统安装更多的apks：</p><p>定制化4: 更改主题等</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/02/02/workingtipsoncellsonandroid10/>WorkingTipsOnCellsOnAndroid10</a></h1><span class=post-date>Feb 2, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-cells-src-preparation>1. cells src preparation</h3><p>Clone the cells source code via:</p><pre><code># mkdir -p ~/Code/show/cells
-# cd ~/Code/show/cells
-# git clone https://github.com/jianglin-code/cells-android10.git
-# cd cells-android10
-# ls
-cells  frameworks  kernel  README.md  system
-</code></pre><h3 id=2-aosp-10-src-preparation>2. aosp 10 src preparation</h3><p>Clone the specified aosp 10 version(<code>10.0.0_r33</code>):</p><pre><code># mkdir -p ~/Code/show/aosp10
-# cd ~/Code/show/aosp10
-# repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-10.0.0_r33
-# repo sync -j8
-</code></pre><h3 id=3-kernel-src-preparation>3. Kernel src preparation</h3><p>For pixel 3a, clone the kernel src via:</p><pre><code># mkdir -p ~/Code/show/android-kernel
-# cd ~/Code/show/android-kernel
-#  repo init --depth 1 -u https://aosp.tuna.tsinghua.edu.cn/kernel/manifest -b android-msm-bonito-4.9-android10
-# repo sync -j4
-# ls
-build  build.config  prebuilts  prebuilts-master  private
-# du -hs *
-732K	build
-0	build.config
-189M	prebuilts
-5.8G	prebuilts-master
-870M	private
-</code></pre><h3 id=4-driver-binary-preparation>4. Driver binary preparation</h3><p>Find the binary version from
-<code>https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds</code>:</p><pre><code>QQ2A.200305.002	android-10.0.0_r30	Android10	Pixel 2、Pixel 2 XL、Pixel 3、Pixel 3 XL、Pixel 3a、Pixel 3a XL	2020-03-05
-</code></pre><p>Downlod the driver binary from
-<code>https://developers.google.cn/android/drivers?hl=zh-cn#sargoqq2a.200405.005</code>:</p><p><img src=/images/2022_02_02_22_55_30_880x211.jpg alt=/images/2022_02_02_22_55_30_880x211.jpg></p><p>Copy the downloaded files to aosp10 src tree:</p><pre><code># cp extract-google_devices-sargo.sh extract-qcom-sargo.sh /root/Code/show/aosp10
-</code></pre><h3 id=5-build-kernel>5. Build kernel</h3><p>Replace the source code via:</p><pre><code># mv private/msm-google private/msm-google.back
-# cp -ar  ~/Code/show/cells/cells-android10/kernel/ private/msm-google
-</code></pre><p>Build the kernel via:</p><pre><code># cd private/msm-google
-# make mrproper
-# cd ../../
-# cp -r private/msm-google.back/techpack/ private/msm-google/
-# vim build/build.sh
-comment the line of soong_zip(line 798)
-# build/build.sh
-</code></pre><p>Examine the kernel out files:</p><pre><code># ls out/android-msm-pixel-4.9/dist/
-abi.prop  Image.lz4              kernel-uapi-headers.tar.gz  System.map  wlan.ko
-dtbo.img  kernel-headers.tar.gz  sdm670.dtb                  vmlinux
-</code></pre><h3 id=6-build-the-aosp>6. Build the aosp</h3><p>Extract the binary files:</p><pre><code># ./extract-google_devices-sargo.sh 
-# ./extract-qcom-sargo.sh 
-</code></pre><p>Replace the kernel:</p><pre><code># mv device/google/bonito-kernel/Image.lz4 device/google/bonito-kernel/Image.lz4.back
-# cp /root/Code/show/android-kernel/out/android-msm-pixel-4.9/dist/Image.lz4 device/google/bonito-kernel/Image.lz4
-</code></pre><p>Including the cells into building:</p><pre><code># cp -r /root/Code/show/cells/cells-android10/cells/ vendor/
-# vim device/google/bonito/device.mk
-Added at the last line:   
-$(call inherit-product-if-exists, vendor/cells/cells_build.mk)
-</code></pre><p>Building via:</p><pre><code># source build/envsetup.sh
-# lunch aosp_sargo-userdebug
-# vim frameworks/base/data/etc/privapp-permissions-platform.xml
-Added: 
-    &lt;privapp-permissions package=&quot;com.cells.cellswitch.secure&quot;&gt;
-        &lt;permission name=&quot;android.permission.BLUETOOTH_PRIVILEGED&quot;/&gt;
-    &lt;/privapp-permissions&gt;
-# vim vendor/cells/switchsystem/src/com/cells/cellswitch/secure/view/SwitchActivity.java
-Commentd: 
-//import android.os.CellsManager;
-//import android.os.ICellsManager;
-# cp -r /root/Code/show/aosp10back/frameworks/multidex/library/
-frameworks/multidex
-# m -j128
-</code></pre><p>The building will failed, solved via:</p><pre><code># development/vndk/tools/header-checker/utils/create_reference_dumps.py  -l libbinder &amp;&amp; development/vndk/tools/header-checker/utils/create_reference_dumps.py  -l libhwbinder_noltopgo &amp;&amp; development/vndk/tools/header-checker/utils/create_reference_dumps.py  -l libhidlbase &amp;&amp; m -j128
-</code></pre><p>Output:</p><pre><code># ls out/target/product/sargo/*.img
-out/target/product/sargo/boot-debug.img     out/target/product/sargo/ramdisk.img
-out/target/product/sargo/boot.img           out/target/product/sargo/ramdisk-recovery.img
-out/target/product/sargo/dtb.img            out/target/product/sargo/super_empty.img
-out/target/product/sargo/dtbo.img           out/target/product/sargo/system.img
-out/target/product/sargo/persist.img        out/target/product/sargo/system_other.img
-out/target/product/sargo/product.img        out/target/product/sargo/vbmeta.img
-out/target/product/sargo/ramdisk-debug.img  out/target/product/sargo/vendor.img
-</code></pre><p>Final size for building:</p><pre><code># du -hs *
-15G     android-kernel
-177G    aosp10
-2.4G    aosp10back
-6.0G    cells
-</code></pre><h3 id=7-flashing>7. Flashing</h3><p>With pixel 3a connected with usb:</p><pre><code>$ adb devices
-List of devices attached
-92UAY04L95	device
-
-$  adb reboot bootloader
-</code></pre><p>Flash with following command:</p><pre><code>$ fastboot devices
-92UAY04L95	fastboot
-$ export ANDROID_PRODUCT_OUT=/root/Code/show/aosp10/out/target/product/sargo
-$ fastboot flashall -w
---------------------------------------------
-Bootloader Version...: b4s4-0.2-6355063
-Baseband Version.....: g670-00042-200421-B-6414611
-Serial Number........: 92UAY04L95
---------------------------------------------
-Checking 'product'                                 OKAY [  0.058s]
-Setting current slot to 'b'                        OKAY [  0.138s]
-.....
-Erasing 'userdata'                                 OKAY [  0.311s]
-Erase successful, but not automatically formatting.
-File system type raw not supported.
-Erasing 'metadata'                                 OKAY [  0.006s]
-Erase successful, but not automatically formatting.
-File system type raw not supported.
-Rebooting                                          OKAY [  0.001s]
-Finished. Total time: 336.662s
-</code></pre><p>Flashing with wlan.ko, so that we could get wireless connection:</p><pre><code># disable-verity on the phone
-adb root
-adb disable-verity
-adb shell sync
-adb reboot
-
-# push module
-adb root
-adb remount
-adb push /media/nfs1/android-kernel/out/android-msm-pixel-4.9/dist/wlan.ko /vendor/lib/modules/
-
-# reboot phone
-adb reboot
-
-</code></pre><h3 id=8-basic-usage>8. Basic Usage</h3><p>View the build number:<br><img src=/images/2022_02_03_10_18_02_498x265.jpg alt=/images/2022_02_03_10_18_02_498x265.jpg></p><p><code>Control</code> is the switch for dual-system:</p><p><img src=/images/2022_02_03_10_26_40_346x397.jpg alt=/images/2022_02_03_10_26_40_346x397.jpg></p><p>Press <code>Control</code> shows the <code>Start</code> button:</p><p><img src=/images/2022_02_03_10_27_56_236x459.jpg alt=/images/2022_02_03_10_27_56_236x459.jpg></p><p>The second system is starting:</p><p><img src=/images/2022_02_03_10_28_34_234x472.jpg alt=/images/2022_02_03_10_28_34_234x472.jpg></p><p>After started:</p><p><img src=/images/2022_02_03_10_29_19_233x477.jpg alt=/images/2022_02_03_10_29_19_233x477.jpg></p><p>Press <code>Start</code> for entering the 2nd system:</p><p><img src=/images/2022_02_03_10_30_12_230x475.jpg alt=/images/2022_02_03_10_30_12_230x475.jpg></p><p>Press <code>Control</code> will show hints for Exit this system:</p><p><img src=/images/2022_02_03_10_31_09_231x479.jpg alt=/images/2022_02_03_10_31_09_231x479.jpg></p><p>After exit, the system will show on the screen lock:</p><p><img src=/images/2022_02_03_10_31_44_235x479.jpg alt=/images/2022_02_03_10_31_44_235x479.jpg></p><h3 id=9-customization>9. Customization</h3><p>Language setting.</p><p>Install software shop in both system.:</p><pre><code>$ adb install apks/MobileAssistant_1.apk 
-Performing Streamed Install
-Success
-</code></pre><p>Install more apks in both systems.</p><p>Changing the theme.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2022/01/29/buildaosp10kernel/>BuildAOSP10Kernel</a></h1><span class=post-date>Jan 29, 2022<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>为模拟器emulator编译aosp10的内核.</p><h3 id=内核源码获取>内核源码获取</h3><p>需要获取模拟器自身的内核代码，方法是通过<code>adb shell</code>进入到shell下运行<code>uname -a</code>。</p><p>尽量找和默认内核差不多的版本的内核进行编译，否则有可能编译出的内核无法启动系统。这里选择的是<code>4.14.112+</code>.</p><pre><code>$ git clone https://android.googlesource.com/kernel/goldfish.git
-$ git checkout -b android-goldfish-4.14-gchips remotes/origin/android-goldfish-4.14-gchips
-$ git branch 
-* android-goldfish-4.14-gchips
-  master
-</code></pre><p>获取的内核源码架构如下：</p><pre><code># ls
-arch                          build-kernel.sh  CREDITS        firmware  ipc      lib          modules.builtin  README    sound       verity_dev_keys.x509
-block                         built-in.o       crypto         fs        Kbuild   MAINTAINERS  modules.order    samples   System.map  virt
-build.config.goldfish.arm64   certs            Documentation  include   Kconfig  Makefile     Module.symvers   scripts   tools       vmlinux
-build.config.goldfish.x86_64  COPYING          drivers        init      kernel   mm           net              security  usr         vmlinux.o
-</code></pre><h3 id=内核编译链获取>内核编译链获取</h3><p>内核编译链在编译好的<code>aosp10</code>源码下，编译方法不再详细讲解。</p><pre><code># ls prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9/
-bin  COPYING  COPYING3  COPYING3.LIB  COPYING.LIB  COPYING.RUNTIME  lib  libexec  MODULE_LICENSE_GPL  NOTICE  OWNERS  repo.prop  x86_64-linux-android
-# ls prebuilts/qemu-kernel/build-kernel.sh
-prebuilts/qemu-kernel/build-kernel.sh
-</code></pre><h3 id=编译>编译</h3><p><code>android-goldfish-4.14-gchips</code>内核中需要做以下修改以通过编译:</p><pre><code># vim /security/selinux/include/classmap.h
-添加:
-    #include &lt;linux/socket.h&gt;
-# vim scripts/selinux/mdp/mdp.c 
-# scripts/selinux/genheaders/genheaders.c
-去掉头文件包含的 #include &lt;sys/socket.h&gt;
-</code></pre><p>编译配置:</p><pre><code>export PATH=$PATH:/home/xxxxx/Code/aosp10/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9/bin
-export ARCH=x86_64
-export CROSS_COMPILE=x86_64-linux-android-
-export REAL_CROSS_COMPILE=x86_64-linux-android-
-</code></pre><p>创建内核定义文件：</p><pre><code># cp arch/x86/configs/x86_64_ranchu_defconfig  arch/x86/configs/x86_64_emu_defconfig
-</code></pre><p>编译:</p><pre><code># /home/xxxx/Code/aosp10/prebuilts/qemu-kernel/build-kernel.sh --arch=x86_64
-</code></pre><p>最终编译成品:</p><pre><code># cp /tmp/kernel-qemu/x86_64-4.14.112/kernel-qemu  ~/
-</code></pre><h3 id=测试内核>测试内核</h3><p>emulator启动的时候显式指定所需的内核:</p><pre><code># emulator -show-kernel -kernel ~/kernel-qemu
-</code></pre><p>检测内核的方式同样是通过<code>adb shell</code>进入到命令行界面下查看内核。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/31/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/31/>31</a></li><li class="page-item active"><a class=page-link href=/page/32/>32</a></li><li class=page-item><a class=page-link href=/page/33/>33</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/33/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>定制化3：为双系统安装更多的apks：</p><p>定制化4: 更改主题等</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/31/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/31/>31</a></li><li class="page-item active"><a class=page-link href=/page/32/>32</a></li><li class=page-item><a class=page-link href=/page/33/>33</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/33/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,5 +1,504 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/19/workingtipsonportus/>WorkingTipsOnPortus</a></h1><span class=post-date>May 19, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>Runtime environment:</p><pre><code>OS: Ubuntu 14.04.3 LTS
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/22/oncustomizationofubuntuiso/>OnCustomizationOfUbuntuISO</a></h1><span class=post-date>May 22, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=install-cubic>Install cubic</h3><p>Install cubic via:</p><pre><code># apt-add-repository ppa:cubic-wizard/release
+# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6494C6D6997C215E
+# apt update &amp;&amp; apt install cubic
+</code></pre><h3 id=custom-packages>Custom Packages</h3><p>Install docker and docker-compose</p><pre><code># apt-get install -y docker.io docker-compose openssh-server
+# systemctl enable docker
+</code></pre><p>Pre-load docker images:</p><pre><code># vim /bin/loaddocker.sh
+if [[ $(sudo docker images | grep registry) ]]; then
+    echo &quot;there are files&quot;
+else
+    docker load&lt;/usr/local/images/1.tar
+    docker load&lt;/usr/local/images/2.tar
+    docker load&lt;/usr/local/images/3.tar
+    docker load&lt;/usr/local/images/4.tar
+fi
+# chmod 777 /bin/loaddocker.sh
+</code></pre><p>Add dockerload service</p><pre><code># vim /etc/systemd/system/dockerload.service 
+[Unit]
+Description=Docker load
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/bin/loaddocker.sh
+ExecStop=/usr/bin/echo hello
+
+[Install]
+WantedBy=multi-user.target
+
+</code></pre><p>Add this command to systemd:</p><pre><code># vim /etc/systemd/system/docker-infra.service
+[Unit]
+Description=Docker infra
+Requires=docker.service
+After=dockerload.service
+
+[Service]
+WorkingDirectory=/usr/local/compose/
+Type=idle
+Restart=always
+# Remove old container items
+ExecStartPre=/usr/bin/docker-compose -f /usr/local/compose/docker-compose.yml down
+# Compose up
+ExecStart=/usr/bin/docker-compose -f /usr/local/compose/docker-compose.yml up
+# Compose stop
+ExecStop=/usr/bin/docker-compose -f /usr/local/compose/docker-compose.yml stop
+
+[Install]
+WantedBy=multi-user.target
+
+# systemctl enable docker-infra.service
+</code></pre><p>Change the default interface to eth0/eth1, etc.</p><pre><code># vim /etc/default/grub
+net.ifnames=0 biosdevname=0
+# update-grub
+</code></pre><h3 id=remove-unnecessary-packages>Remove unnecessary packages</h3><p>Following:</p><pre><code>Amazon
+Libreoffice
+Mahjongg
+Mines
+Shotwell
+Sudoku
+totem
+totem-common
+vino
+transmission-gtk
+transmission-common
+remmina
+eog
+
+</code></pre><p>Disable ufw:</p><pre><code># ufw disable
+</code></pre><p>Remove command:</p><pre><code># apt-get purge   aisleriot eog gnome-mahjongg gnome-mines gnome-sudoku hplip libreoffice-avmedia-backend-gstreamer
+  libreoffice-base-core libreoffice-calc libreoffice-common libreoffice-core libreoffice-draw
+  libreoffice-gnome libreoffice-gtk3 libreoffice-impress libreoffice-math libreoffice-ogltrans
+  libreoffice-pdfimport libreoffice-style-breeze libreoffice-style-galaxy libreoffice-style-tango
+  libreoffice-writer  python3-uno remmina remmina-plugin-rdp
+  remmina-plugin-secret remmina-plugin-vnc thunderbird thunderbird-gnome-support totem totem-common
+  totem-plugins transmission-common transmission-gtk  vino
+
+</code></pre><h3 id=tips-for-centos>tips for centos</h3><pre><code>if [[ $(sudo docker images | grep registry) ]]; then
+    echo &quot;there are files&quot;
+else
+    docker load&lt;/usr/local/images/nginx.tar.bz2
+    docker load&lt;/usr/local/images/1.tar
+    docker load&lt;/usr/local/images/2.tar
+    docker load&lt;/usr/local/images/3.tar
+    docker load&lt;/usr/local/images/4.tar
+    docker run --name docker-nginx -p 8888:80 -d -v /usr/local/kismaticpkgs:/usr/share/nginx/html jrelva/nginx-autoindex
+    sed -i s/10.168.100.145/`hostname -I|awk '{print $1}'`/g /usr/local/compose/docker-compose.yml
+fi
+
+</code></pre><p>Add service:</p><pre><code># vim /etc/systemd/system/mynginx.service 
+[Unit]
+Description=mynginx
+Requires=docker.service
+After=docker-infra.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a docker-nginx
+ExecStop=/usr/bin/docker stop -t 2 docker-nginx
+
+[Install]
+WantedBy=multi-user.target
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/21/linuxtips9/>LinuxTips9</a></h1><span class=post-date>May 21, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/linuxtips>LinuxTips</a></span><h3 id=1-build-maven-project>1. Build maven project</h3><p>For building the class, do <code>mvn compile</code>, for building the jar file, do <code>mvn package</code>, then you could get the jar under the <code>target</code> folder.</p><h3 id=2-sed-replace>2. sed replace</h3><p>via following commands:</p><pre><code># sed s/10.168.100.145/192.192.189.1/&lt;/home/dash/docker-compose.yml
+</code></pre><h3 id=3-get-ip-for-ubuntu>3. get ip for ubuntu</h3><p>Ubuntu 14.04 ~ 18.04, via following command:</p><pre><code>hostname -I | awk '{print $1}'
+</code></pre><h3 id=4-view-systemd-logs>4. view systemd logs</h3><p>via following command:</p><pre><code># journalctl -u service-name.service -b
+</code></pre><h3 id=5-disable-unattended-upgrades>5. Disable unattended upgrades</h3><p>Under Ubuntu18.04/16.04, could do :</p><pre><code># systemctl disable unattended-upgrade.service
+</code></pre><h3 id=6-rhel-subscription>6. rhel subscription</h3><p>Via following steps:</p><pre><code>sudo subscription-manager remove --all
+sudo subscription-manager unregister
+sudo subscription-manager clean
+
+Now re-register the system, attach the subscriptions - execute these commands :
+
+sudo subscription-manager register
+sudo subscription-manager refresh
+sudo subscription-manager attach --auto
+
+Here are the commands to see which repos are enabled and what can be added :
+
+Execute sudo subscription-manager repos --list-enabled to see all actually enabled subscriptions.
+Execute sudo subscription-manager repos --list to see all subscriptions that are available for you.
+Execute sudo subscription-manager repos --enable &lt;repo&gt; if you want to add additional repos.
+</code></pre><h3 id=7-anaconda-issue>7. anaconda issue</h3><p>anaconda build rhel7 custom image Issue:</p><pre><code># dracut module 'anaconda' cannot be found or installed
+</code></pre><p>how to solve?</p><h3 id=8-kismatic-reset>8. kismatic reset</h3><p>via:</p><pre><code>./kismatic reset
+</code></pre><h3 id=9-kubernetes-pkgs>9. kubernetes pkgs</h3><p>Install via:</p><pre><code># vim /etc/yum.repos.d/kubernetes.repo
+ [kubernetes]
+ name=Kubernetes
+ baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+ enabled=1
+ gpgcheck=0
+ repo_gpgcheck=0
+</code></pre><h3 id=10-samba-in-archlinux>10. samba in ArchLinux</h3><pre><code># pacman -S samba
+# wget https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD
+# cp git..xxx /etc/samba/smb.conf
+# vim /etc/samba/smb.conf
+   log file = /var/log/samba/%m.log
+[myshare]
+   comment = Mary's and Fred's stuff
+   path = /var1/Nov14
+   valid users = dash
+   public = no
+   writable = yes
+   printable = no
+   create mask = 0765
+# systemctl enable smb
+# systemctl enable nmb
+# systemctl start smb
+# systemctl start nmb
+</code></pre><h3 id=11-tar-with-pigz>11. tar with pigz</h3><p>With pigz compression:</p><pre><code>tar cf - paths-to-archive | pigz -9 -p 32 &gt; archive.tar.gz
+
+</code></pre><h3 id=12-tips-for-centos>12. tips for centos</h3><ol><li>install from iso</li><li>sed the ip address.(isomaster)</li><li>pigz package needed to be installed first. (isomaster)</li></ol><h3 id=13-tmpfs-for-debian>13. tmpfs for debian</h3><p>via :</p><pre><code># vim /etc/fstab
+.....
+
+tmpfs	/tmp	tmpfs	nodev,nosuid,size=8G 0	0
+</code></pre><h3 id=14-kong-ingress-configuration>14. kong ingress configuration</h3><p>Rewrite ingress rulers:</p><pre><code>apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: anagram.api
+  annotations:
+    ingress.kubernetes.io/rewrite-target: &quot;/&quot;
+spec:
+  rules:
+  - host: anagram.api
+    http:
+      paths:
+      - path: /external
+        backend:
+          serviceName: anagram-svc
+          servicePort: 80
+---
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: anagram.api
+proxy:
+  path: /
+route:
+  strip_path: true
+</code></pre><h3 id=15-auto-restart-pdnsd>15. Auto Restart pdnsd</h3><p>The script for start pdnsd:</p><pre><code># cat /bin/pdnsd.sh 
+    touch /tmp/aaa.txt
+    if [[ $(ps -ef | grep -v grep | grep pdnsd) ]]; then
+    	echo &quot;pdnsd alive&quot;&gt;/tmp/aaa.txt
+    else
+    	echo &quot;not alive&quot;&gt;/tmp/aaa.txt
+    	systemctl start pdnsd
+    fi
+</code></pre><p>Add this script into crontab:</p><pre><code># crontab -e
+@reboot sleep 60 &amp;&amp; /bin/pdnsd.sh
+</code></pre><h3 id=16-python-simple-http-server>16. python simple http server</h3><p>python 3 syntax:</p><pre><code>python -m http.server 8000
+</code></pre><h3 id=17-cnpm-install-error>17. cnpm install error</h3><p>As normal user, you didn&rsquo;t have the priviledge for making soft link for cnpm.</p><p>As rooot user, do following:</p><pre><code>$ sudo npm cache clean --force
+$ sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
+$ which cnpm
+/usr/bin/cnpm
+
+</code></pre><h3 id=18-dnscrypt>18. dnscrypt</h3><p>start via, better enable it:</p><pre><code>sudo systemctl start dnscrypt-proxy.service
+</code></pre><h3 id=19-ubuntu-1804-vnc>19. Ubuntu 18.04 vnc</h3><p>Via following steps:</p><pre><code>install these packages
+
+# apt-get install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
+and use this xstartup file
+
+#!/bin/sh
+
+export XKL_XMODMAP_DISABLE=1
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+
+[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -iconic &amp;
+
+gnome-panel &amp;
+gnome-settings-daemon &amp;
+metacity &amp;
+nautilus &amp;
+gnome-terminal &amp;
+</code></pre><p>But you will add some tips:</p><pre><code>$ vim /usr/bin/gnome-panel-delay 
+!/bin/sh
+sleep 4 &amp;&amp; gnome-panel
+</code></pre><p>Replace <code>gnome-panel</code> with <code>gnome-panel-delay</code>.</p><h3 id=20-uefi-for-archlinux-qemu>20. uefi for archlinux qemu</h3><p>Install via:</p><pre><code>$ sudo pacman -S ovmf
+$ sudo vim /etc/libvirt/qemu.conf
+user=&quot;root&quot;
+group=&quot;root&quot;
+nvram = [
+    &quot;/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd&quot;
+]
+$ sudo systemctl restart libvirtd
+</code></pre><h3 id=21-unlock-proxmox>21. unlock proxmox</h3><p>via following command:</p><pre><code># qm unlock vm_id
+</code></pre><h3 id=22-back-to-work>22. Back to Work</h3><p>Edit <code>/etc/systemd/network/MyBridge.network</code>, change the ip address, then
+restart the networkd service via:</p><pre><code># systemclt restart systemd-networkd.service
+</code></pre><p>Then your briged br0 will turn back to the ip address you just changed.</p><h3 id=23-debian-upgrade-kernel>23. Debian upgrade kernel</h3><p>Via following commands:</p><pre><code># echo &quot;deb http://ftp.debian.org/debian stretch-backports main&quot; | tee -a /etc/apt/sources.list &gt; /dev/null
+# apt-get update
+# apt-cache search linux-image
+# apt-get -t stretch-backports install linux-image-4.11.0-0.bpo.1-amd64
+</code></pre><h3 id=24-samba-issue>24. samba issue</h3><p>From samba 4.8, the smbd, changed to smb, nmbd changed to nmb, so systemctl
+will changd to smb/nmb</p><h3 id=25-unzip-iconv>25. unzip iconv</h3><p>Chinese unzip:</p><pre><code>$ unzip-iconv
+$ unzip -O cp936  xxxx.zip
+</code></pre><p>thus you will get the chinese coded file extracted.</p><h3 id=26-quickly-setup-nodejs-dev>26. Quickly Setup NodeJS Dev</h3><p>In Conoha:</p><pre><code># docker run -it -p 5000:5000 ubuntu:latest /bin/bash
+# apt-get update
+# apt-get -y install vim
+Change archive.ubuntu.com to jp.archive.ubuntu.com
+# apt-get update
+# apt-get install -y nodejs npm
+# cd ~
+# mkdir Code
+# cd Code
+# mkdir node
+# npm config set prefix=$HOME/node
+# export PATH=$HOME/node/bin:$PATH
+# npm install -g express
+# npm install -g express-generator
+# which express
+# exporess defcon
+# cd defcon/
+# npm install -d
+# npm install socket.io express  
+# npm install -d
+</code></pre><p>You should follow</p><p><a href=https://github.com/robdodson/defcon>https://github.com/robdodson/defcon</a></p><p>Install with ejs template enabled:</p><pre><code># express -v ejs dash
+</code></pre><h3 id=27-registry-settinginsecure>27. registry setting(insecure)</h3><p>Xenial , via:</p><pre><code>Edit /etc/docker/daemon.json and update the key &quot;insecure-registries&quot;.
+e.g.
+    {
+        &quot;insecure-registries&quot; : [&quot;10.84.34.155:5000&quot;]
+    }
+</code></pre><h3 id=28-paccache-saveing>28. paccache Saveing</h3><p>Take care the directory size:</p><pre><code># pacman du -hs pkg 
+31G	pkg
+# pacman du -hs pkg 
+9.4G	pkg
+# pacman du -hs pkg 
+4.1G	pkg
+</code></pre><p>By following command you could saving the disk space(keep 3 or keep 1):</p><pre><code># sudo paccache -r -k 3
+# sudo paccache -r -k 1 
+</code></pre><h3 id=29-kvmvmware-issue>29. kvm/vmware issue</h3><p>kvm will be black-listed via vmware, solved via:</p><pre><code># cat /etc/modprobe.d/vmware.conf 
+blacklist kvm
+blacklist kvm-amd   # For AMD CPUs
+blacklist kvm-intel # For Intel CPUs
+</code></pre><p>Uninstall vmware via:</p><pre><code># vmware-installer -l
+Product Name         Product Version     
+==================== ====================
+vmware-workstation   12.0.0.2985596      
+# vmware-installer -u vmware-workstation --required
+</code></pre><p>Remove the service:</p><pre><code># rm /etc/systemd/system/vmware.service
+# rm /etc/systemd/system/vmware-usbarbitrator.service
+</code></pre><h3 id=30-ansible-for-installing-nfs-client>30. ansible for installing nfs-client</h3><p>Install methods:</p><pre><code># apt-get install nfs-common
+# vim local.ini
+# ansible-playbook -i local.ini nfsclient.yaml --extra-vars &quot;@roles/nfs-client/defaults/all.yaml&quot;
+</code></pre><h3 id=31-chartmuseum>31. chartmuseum</h3><p>Delete and upload again:</p><pre><code>#  curl -X DELETE portus.teligen.com:8988/api/charts/gitlab-runner/0.1.31
+# curl --data-binary &quot;@gitlab-runner-0.1.31.tgz&quot; http://portus.teligen.com:8988/api/charts
+</code></pre><h3 id=32-docker-volume-rm>32. docker volume rm</h3><p>Via following command:</p><pre><code># docker volume ls | sed -n '1!p' |awk {'print $2'} | xargs -I % docker volume rm %
+</code></pre><h3 id=33-generate-crtkey-in-one-line>33. Generate crt/key in one line</h3><p>Via following command:</p><pre><code># openssl req -new -newkey rsa:4096 -days 365 -nodes -x509     -subj &quot;/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com&quot;     -keyout www.example.com.key  -out www.example.com.cert
+</code></pre><h3 id=34-ubuntu-server-gui>34. Ubuntu Server GUI</h3><p>Install tasksel via:</p><pre><code># apt-get install -y tasksel
+# tasksel --list
+</code></pre><p>Install Ubuntu mate core via:</p><pre><code># tasksel install ubuntu-mate-core
+# service lightdm start
+</code></pre><p>Or Ubuntu/xubuntu-core/Lubuntu-core, etc, you could choose from the tasksel
+list.</p><h3 id=35-vncserver>35. vncserver</h3><p>For ArchLinux:</p><pre><code>export XKL_XMODMAP_DISABLE=1
+#exec startxfce4
+exec startlxde
+
+</code></pre><h3 id=36-internet-sharing>36. Internet Sharing</h3><p>For ArchLinux, 2 cards, enp0s29u1u2u7 is the card for connecting the internet,
+while the enp0s29u1u2u6 is the card for intranet. :</p><pre><code>➜  ~ sudo iptables -t nat -A POSTROUTING -o enp0s29u1u2u7 -j MASQUERADE
+➜  ~ sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+➜  ~ sudo iptables -A FORWARD -i enp0s29u1u2u6 -o enp0s29u1u2u7 -j ACCEPT
+
+</code></pre><h3 id=37-time-sync-in-archlinux>37. time-sync in archlinux</h3><p>ArchLinux ntp date.</p><pre><code># vim  /etc/systemd/timesyncd.conf
+[Time]
+NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
+FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
+# sudo systemctl enable systemd-timesyncd
+# timedatectl show-timesync --all
+</code></pre><h3 id=38-combine-pdf>38. Combine pdf</h3><p>The filename contains Chinese, so I have to do like following:</p><pre><code>$ ls -tr *.pdf | awk -v q=&quot;'&quot; {'print q$0q'}&gt;list.txt
+</code></pre><p>Then edit the list.txt</p><p><img src=/images/2018_10_26_11_38_59_945x451.jpg alt=/images/2018_10_26_11_38_59_945x451.jpg></p><p>Then your generated Combine.</p><pre><code>$ pdfunite in-1.pdf in-2.pdf in-n.pdf out.pdf
+</code></pre><p>Your generated out.pdf contains all of the pdfs.</p><h3 id=39-crontab-and-notify-send>39. crontab and notify-send</h3><p>Create <code>/bin/touchXdbus.sh</code> for getting the DBUS Session bus address:</p><pre><code>#!/bin/sh
+
+touch $HOME/.dbus/Xdbus
+chmod 600 $HOME/.dbus/Xdbus
+env | grep DBUS_SESSION_BUS_ADDRESS &gt; $HOME/.dbus/Xdbus
+echo 'export DBUS_SESSION_BUS_ADDRESS' &gt;&gt; $HOME/.dbus/Xdbus
+</code></pre><p>On Awesome startup, use <code>run_once</code> function for calling it:</p><pre><code>$ vim ~/.config/awesome/rc.lua
+run_once(&quot;/bin/touchXdbus.sh&quot;)
+</code></pre><p>Now in your crontab task you have to write like following:</p><pre><code>$ crontab -l
+10 9-18 * * * /bin/notify.sh
+$ cat /bin/notify.sh 
+    #!/bin/sh
+    + if [ -r &quot;$HOME/.dbus/Xdbus&quot; ]; then
+    +   . &quot;$HOME/.dbus/Xdbus&quot;
+    + fi
+    current_time=`date`
+    filename=&quot;/home/dash/tasks.txt&quot;
+    filecontent=`cat $filename`
+    
+    #### Until you click it, you won't get this window vanish #####
+    notify-send -u critical -t 0 &quot;$current_time, Stand UP, Boy&quot; &quot;$filecontent&quot;
+
+</code></pre><p>Now your notify-send will run properly.</p><h3 id=40-unxz>40. unxz</h3><p>Use unxz for uncompress xz compressed file.</p><h3 id=41-ansible-execute-time>41. ansible execute time</h3><p>Add following configurations to ansible.cfg:</p><pre><code>callback_whitelist = profile_tasks, timer
+</code></pre><h3 id=42-echo-server>42. echo server</h3><p>Run python echo server under kubernetes via:</p><pre><code># kubectl run myecho --image=echoserverpy:latest --replicas=3
+# kubectl expose deployment myecho --port=31113
+</code></pre><p>Edit for exposing UDP 31113 Port:</p><p><img src=/images/2018_11_29_10_58_51_392x318.jpg alt=/images/2018_11_29_10_58_51_392x318.jpg></p><p>Add NodePort definition:</p><p><img src=/images/2018_11_29_11_00_40_436x380.jpg alt=/images/2018_11_29_11_00_40_436x380.jpg></p><h3 id=43-reconfigure-keyboard>43. reconfigure keyboard</h3><p>reconfigure keyboard on ubuntu is :</p><pre><code># sudo dpkg-reconfigure keyboard-configuration
+</code></pre><h3 id=44-raid-issue>44. raid issue</h3><p>Deletes:</p><pre><code>#/opt/MegaRAID/MegaCli/MegaCli64 -CfgLdDel -L1 -a0
+</code></pre><p>List:</p><pre><code>MegaCli -LDInfo -LALL -aAll 【显示所有逻辑磁盘组信息】
+MegaCli -PDList -aAll 【显示所有的物理信息】
+</code></pre><h3 id=45-vagrant-libvirt>45. vagrant-libvirt</h3><p>Install via:</p><pre><code># yaourt vagrant-libvirt
+# vagrant plugin install /opt/vagrant/embedded/gems/cache/vagrant-libvirt-0.0.45.gem
+# vagrant plugin install vagrant-mutate
+#  vagrant plugin list
+vagrant-libvirt (0.0.45, global)
+  - Version Constraint: 0.0.45
+vagrant-mutate (1.2.0, global)
+</code></pre><p>After upgrading, do following:</p><pre><code># vagrant plugin install /opt/vagrant/embedded/gems/cache/vagrant-libvirt-0.0.45.gem
+# vagrant plugin install vagrant-mutate
+# yaourt vagrant-libvirt
+</code></pre><p>Then all of your plugins will work properly.</p><h3 id=46-apt-auto-update-disable>46. apt auto update disable</h3><p>disable via:</p><pre><code>systemctl stop apt-daily.timer
+systemctl disable apt-daily.timer
+systemctl disable apt-daily.service
+systemctl stop apt-daily-upgrade.timer
+systemctl disable apt-daily-upgrade.timer
+systemctl disable apt-daily-upgrade.service
+Or
+
+systemctl disable --now apt-daily{,-upgrade}.{timer,service}
+</code></pre><h3 id=47-openssl-inspect-lifetime-of-crt>47. openssl inspect lifetime of crt</h3><p>Via following commands:</p><pre><code>openssl x509 -in server.crt -noout -dates
+
+</code></pre><h3 id=48-vagrant-issue>48. Vagrant issue</h3><p>Vagrant-libvirt, sometimes you have to manually build the ruby-libvirt plugin,
+and copy the correspoding so file into the /opt/vagrant</p><h3 id=49-wrapped-lines-in-vim>49. wrapped lines in vim</h3><p>via following commands:</p><pre><code>
+First set your vim so that it understands that you want 80 characters:
+
+:set tw=80
+then, hilight the line:
+
+V
+and make vim reformat it:
+
+gq
+shareedit
+</code></pre><h3 id=51-format-several-disk>51. format several disk</h3><p>Using following command:</p><pre><code>set -e
+set -x
+for i in b c d e f g h i j k l; do
+sudo fdisk -u /dev/vd${i}&lt;&lt;EOF
+n
+p
+1
+
+
+w
+EOF
+done
+</code></pre><p>This command will format several disks, as you like.</p><h3 id=52-auto-change-password>52. Auto Change password</h3><p>Change password via following commands:</p><pre><code>
+
+$ openssl passwd -1 -salt 5RPVAd clear-text-passwd43
+
+$1$5RPVAd$vgsoSANybLDepv2ETcUH7.
+
+Then, copy the encrypted string to usermod. Make sure to wrap it with single quote.
+
+$ usermod -p '$1$5RPVAd$vgsoSANybLDepv2ETcUH7.' root
+
+Check it out in shadow file.
+
+$ grep root /etc/shadow
+</code></pre><h3 id=53-rsync-sync-repo>53. rsync sync repo</h3><p>syncing the ceph repository via following command:</p><pre><code># rsync -av --exclude &quot;ceph-debuginfo&quot; rsync://mirrors.ustc.edu.cn/ceph/rpm-luminous/el7/  `pwd`
+# rsync -av --exclude &quot;ceph-debuginfo&quot; rsync://rsync.mirrors.ustc.edu.cn/ceph/rpm-luminous/el7/  ./
+
+</code></pre><h3 id=54-pool-start>54. pool-start</h3><p>Via following command you could view and start the virsh pool:</p><pre><code>$ sudo virsh pool-list --all
+$ sudo virsh pool-start vagrantpool
+</code></pre><h3 id=55-minikube-start-specify-cpumemdisk>55. minikube start specify cpu/mem/disk</h3><p>via following method:</p><pre><code># minikube start --cpus 4 --memory 8192 --disk-size 60g
+</code></pre><h3 id=56-combine-lines-under-linux>56. Combine lines under linux</h3><p>Via tr command you could combine several lines into one line:</p><pre><code># some output | tr '\n' ','
+</code></pre><p>Replace the comma with some other characters.</p><h3 id=57-prometheus-for-k8s>57. prometheus for k8s</h3><p>URL:</p><p>from <a href=https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus>https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus</a></p><h3 id=58-virtualbox-tips>58. virtualbox tips</h3><p>Debian&rsquo;s virtualbox, 5.2 conflicts with kernel 4.17.0-9.bpo.1-amd64</p><h3 id=59-libvirts-bus-issue>59. libvirt&rsquo;s bus issue</h3><p>Changes to virtio bus:</p><pre><code>            lv.storage :file, :device =&gt; &quot;hd#{driverletters[d]}&quot;, :path =&gt; &quot;glusterdisk-#{i}-#{d}-#{DISK_UUID}.disk&quot;, :size =&gt; $kube_node_instances_with_disks_size, :bus =&gt; &quot;virtio&quot;
+
+</code></pre><h3 id=60-minimum-glusterfs-nodes>60. Minimum glusterfs nodes</h3><p>Comment the replcas items. and set the volume type to None:</p><pre><code>  volumetype: &quot;none&quot;
+#  volumetype: &quot;replicate:{{ hostvars[groups['glusterfs'][0]].replicate }}&quot;
+
+</code></pre><p>Or using heketi for creating the volume:</p><pre><code>heketi-cli volume create -size=100 -durabilty=none
+</code></pre><h3 id=61-history-without-number>61. history without number</h3><p>history without number using cut.</p><pre><code> history | cut -c 8-
+</code></pre><h3 id=62-tr-replace-newline>62. tr replace newline</h3><p>Via following commands:</p><pre><code>#  tr '\r\n' ' '
+</code></pre><h3 id=63-two-file-difference>63. two file difference</h3><p>via grep command you could do this:</p><pre><code># git -v -f before.txt after.txt
+</code></pre><h3 id=64-vimdiff-tips>64. vimdiff tips</h3><p>vimdiff tips.</p><pre><code>
+do (diff obtain) and dp (diff put) is what you need. Here is a small list of other helpful normal mode commands in this context.
+
+]c               - advance to the next block with differences
+[c               - reverse search for the previous block with differences
+do (diff obtain) - bring changes from the other file to the current file
+dp (diff put)    - send changes from the current file to the other file
+zo               - unfold/unhide text
+zc               - refold/rehide text
+zr               - unfold both files completely
+zm               - fold both files completely
+</code></pre><h3 id=65-pactree>65. pactree</h3><p>Using pactree for viewing the dependencies:</p><pre><code># sudo pacman -S pacman-contri
+# pactree xxxx
+</code></pre><p>Using -d(1~n) could viewing the depth of the dependencies.</p><h3 id=66-wifi-list>66. wifi list</h3><p>unblock the wifi via following commands:</p><pre><code>$rfkill list all
+0: hp-wifi: Wireless LAN
+	Soft blocked: yes
+	Hard blocked: no
+1: phy0: Wireless LAN
+	Soft blocked: yes
+	Hard blocked: yes
+
+$sudo rfkill unblock all
+</code></pre><h3 id=67-sed-disable-swap>67. sed disable swap</h3><p>edit /etc/fstab via:</p><pre><code># sudo sed -i '/ swap / s/^/#/' /etc/fstab
+
+</code></pre><h3 id=68-python-split>68. python split</h3><p>For using them in ambari-k8s, do following:</p><pre><code>&gt;&gt;&gt; long='nodes-1:10.222.129.101;nodes-2:10.222.129.102;nodes-3:10.222.129.103'
+&gt;&gt;&gt; map={}
+&gt;&gt;&gt; key=[]
+&gt;&gt;&gt; for i in long.split(&quot;;&quot;):
+...   key.append(i.split(&quot;:&quot;)[0])
+...   map[i.split(&quot;:&quot;)[0]]=i.split(&quot;:&quot;)[1]
+... 
+&gt;&gt;&gt; for i in key:
+...   print(i)
+... 
+nodes-1
+nodes-2
+nodes-3
+&gt;&gt;&gt; for i in key:
+...   print(i)
+...   print(map[i])
+... 
+nodes-1
+10.222.129.101
+nodes-2
+10.222.129.102
+nodes-3
+10.222.129.103
+
+</code></pre><h3 id=69-proxmox-configuration>69. proxmox Configuration</h3><p>For AI project, do following:</p><pre><code># vim /etc/network/interfaces
+auto lo
+iface lo inet loopback
+
+auto eno1
+#real IP address
+iface eno1 inet static
+        address  198.51.100.5
+        netmask  255.255.255.0
+        gateway  198.51.100.1
+
+auto vmbr0
+#private sub network
+iface vmbr0 inet static
+        address  10.10.10.1
+        netmask  255.255.255.0
+        bridge_ports none
+        bridge_stp off
+        bridge_fd 0
+
+        post-up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+        post-up   iptables -t nat -A POSTROUTING -s '10.10.10.0/24' -o eno1 -j MASQUERADE
+        post-down iptables -t nat -D POSTROUTING -s '10.10.10.0/24' -o eno1 -j MASQUERADE
+</code></pre><p>ZFS enabled when in installation.</p><h3 id=70-proxmox-inner-network>70. proxmox inner network</h3><p>Connecting inner network via:</p><pre><code>post-up iptables -t nat -A POSTROUTING -s 10.10.10.0/24 -o enp2s0f0 -j SNAT
+--to-source 192.192.18.44
+</code></pre><p>In every nodes:</p><pre><code>$ route add -net 10.10.10.0/24 gw 192.192.189.44
+</code></pre><h3 id=71-vagrant-libvirt>71. vagrant-libvirt</h3><p>Remove the vagrant-libvirt package installed via yaourt, then install plugin
+via:</p><pre><code># vagrant plugin install vagrant-libvirt
+</code></pre><p>You won&rsquo;t have the build issue.</p><h3 id=72-beyond-compare-linux>72. beyond compare Linux</h3><p>Reuse it after 30 day&rsquo;s trial:</p><pre><code>bcompare在ubuntu的配置文件的路径是：
+
+/home/xxx/.config/bcompare
+
+在该路径下找到 registry.dat删除即可
+
+rm registry.dat
+</code></pre><h3 id=73-forwarding-in-win>73. forwarding in Win</h3><p>Use following command for setting up tunnel under windows:</p><pre><code>netsh interface portproxy add v4tov4 listenport=4422 listenaddress=192.168.1.111 connectport=80 connectaddress=192.168.0.33
+To remove forwarding:
+netsh interface portproxy delete v4tov4 listenport=4422 listenaddress=192.168.1.111
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/19/workingtipsonportus/>WorkingTipsOnPortus</a></h1><span class=post-date>May 19, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>Runtime environment:</p><pre><code>OS: Ubuntu 14.04.3 LTS
 docker version: 18.03.1-ce
 docker-compose version: docker-compose version 1.21.2, build a133471
 IP: 192.192.189.53
@@ -355,166 +854,4 @@ spec:
     - name: nfs-pvc
       persistentVolumeClaim:
         claimName: test-claim
-</code></pre><p>Verify them via install and delete them.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/05/01/ratelimitingoninstio/>RateLimitingOnInstio</a></h1><span class=post-date>May 1, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=service-example>Service Example</h3><p>The yaml file is directly taken from the official example of <code>helloworld</code>, but
-I remove the v2 deployment, thus the yaml file is listed as following:</p><pre><code>apiVersion: v1
-kind: Service
-metadata:
-  name: helloworld
-  labels:
-    app: helloworld
-spec:
-  type: NodePort
-  ports:
-  - port: 5000
-    name: http
-  selector:
-    app: helloworld
----
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: helloworld-v1
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: helloworld
-        version: v1
-    spec:
-      containers:
-      - name: helloworld
-        image: istio/examples-helloworld-v1
-        resources:
-          requests:
-            cpu: &quot;100m&quot;
-        imagePullPolicy: IfNotPresent #Always
-        ports:
-        - containerPort: 5000
-</code></pre><p>Use istioctl for injecting the sidecar, thus we could later use prometheus for
-monitoring its traffic flow:</p><pre><code># kubectl create -f &lt;(istioctl kube-inject -f helloworld.yaml)
-</code></pre><p>Examine the deployment/service/pods:</p><pre><code># kubectl get svc helloworld       
-NAME         TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE
-helloworld   NodePort   10.96.242.5   &lt;none&gt;        5000:31241/TCP   27m
-# kubectl get deployment helloworld-v1
-NAME            DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-helloworld-v1   1         1         1            1           27m
-# kubectl get pods | grep helloworld
-helloworld-v1-7d57446779-dctlv    2/2       Running   0          27m
-</code></pre><h3 id=make-ingress>Make ingress</h3><p>The <code>helloworld-ingress.yaml</code> is listed as following:</p><pre><code>apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: helloworld
-  annotations:
-    kubernetes.io/ingress.class: &quot;istio&quot;
-spec:
-  rules:
-  - http:
-      paths:
-      - path: /hello
-        backend:
-          serviceName: helloworld
-          servicePort: 5000
-</code></pre><p>Create the ingress and verify it:</p><pre><code># kubectl create -f helloworld-ingress.yaml
-# kubectl get ingress helloworld
-NAME         HOSTS     ADDRESS   PORTS     AGE
-helloworld   *                   80        1h
-# curl http://192.168.99.100:30039/hello
-Hello version: v1, instance: helloworld-v1-7d57446779-dctlv
-</code></pre><h3 id=rate-limiting>Rate Limiting</h3><p>Write following rete limiting yaml for defining its traffic:</p><pre><code>apiVersion: &quot;config.istio.io/v1alpha2&quot;
-kind: memquota
-metadata:
-  name: helloworldservicehandler
-  namespace: istio-system
-spec:
-  quotas:
-  - name: helloworldservicerequestcount.quota.istio-system
-    maxAmount: 5000
-    validDuration: 1s
-    # The first matching override is applied.
-    # A requestcount instance is checked against override dimensions.
-    overrides:
-    # The following override applies to 'helloworld' regardless
-    # of the source.
-    - dimensions:
-        destination: helloworld
-      maxAmount: 2
-      validDuration: 1s
-
----
-apiVersion: &quot;config.istio.io/v1alpha2&quot;
-kind: quota
-metadata:
-  name: helloworldservicerequestcount
-  namespace: istio-system
-spec:
-  dimensions:
-    source: source.labels[&quot;app&quot;] | source.service | &quot;unknown&quot;
-    sourceVersion: source.labels[&quot;version&quot;] | &quot;unknown&quot;
-    destination: destination.labels[&quot;app&quot;] | destination.service | &quot;unknown&quot;
-    destinationVersion: destination.labels[&quot;version&quot;] | &quot;unknown&quot;
-
----
-apiVersion: &quot;config.istio.io/v1alpha2&quot;
-kind: rule
-metadata:
-  name: helloworldservicequota
-  namespace: istio-system
-spec:
-  actions:
-  - handler: helloworldservicehandler.memquota
-    instances:
-    - helloworldservicerequestcount.quota
----
-apiVersion: config.istio.io/v1alpha2
-kind: QuotaSpec
-metadata:
-  creationTimestamp: null
-  name: helloworldservicerequest-count
-  namespace: istio-system
-spec:
-  rules:
-  - quotas:
-    - charge: 1
-      quota: RequestCount
----
-apiVersion: config.istio.io/v1alpha2
-kind: QuotaSpecBinding
-metadata:
-  creationTimestamp: null
-  name: helloworldservicerequest-count
-  namespace: istio-system
-spec:
-  quotaSpecs:
-  - name: helloworldservicerequest-count
-    namespace: istio-system
-  services:
-  - name: helloworld
-    namespace: default
-</code></pre><p>The above items define a 2 qps rate limiting.</p><h3 id=monitoring>Monitoring</h3><p>Use prometheus for monitoring the traffic, enable prometheus via:</p><pre><code># kubectl create -f ~/Code/istio-0.7.1/install/kubernetes/addons/prometheus.yaml
-</code></pre><p>You could configure the prometheus&rsquo;s service type to NodePort, thus you could
-directly access it.</p><p><img src=/images/2018_05_01_22_21_56_779x473.jpg alt=/images/2018_05_01_22_21_56_779x473.jpg></p><p>Make the traffic:</p><pre><code># while true; do curl -s -o /dev/null http://192.168.99.100:30039/hello;done
-</code></pre><p>Then view the prometheus via following:</p><pre><code># increase(istio_request_count{destination_service=&quot;helloworld.default.svc.cluster.local&quot;, response_code=&quot;429&quot;}[5m])
-</code></pre><p>Initial:</p><p><img src=/images/2018_05_01_22_24_18_764x343.jpg alt=/images/2018_05_01_22_24_18_764x343.jpg></p><p>After aboult 3 minutes:</p><p><img src=/images/2018_05_01_22_24_50_784x327.jpg alt=/images/2018_05_01_22_24_50_784x327.jpg></p><p>You could change the response code from <code>429</code> to <code>200</code>, this means you get the
-succeed rate.</p><h3 id=fetch-back-the-result>Fetch back the result</h3><p>Refers to:</p><p><a href=https://www.robustperception.io/prometheus-query-results-as-csv/>https://www.robustperception.io/prometheus-query-results-as-csv/</a></p><pre><code># wget https://raw.githubusercontent.com/RobustPerception/python_examples/master/csv/query_csv.py
-</code></pre><p>For querying the 429/200:</p><pre><code>#  python query_csv.py http://127.0.0.1:9090 'increase(istio_request_count{destination_service=&quot;helloworld.default.svc.cluster.local&quot;, response_code=&quot;429&quot;}[5m])'
-name,timestamp,value,connection_mtls,destination_service,destination_version,instance,job,response_code,source_service,source_version
-,1525185609.906,8145.762711864407,false,helloworld.default.svc.cluster.local,v1,172.17.0.10:42422,istio-mesh,429,istio-ingress.istio-system.svc.cluster.local,unknown
-#  python query_csv.py http://127.0.0.1:9090 'increase(istio_request_count{destination_service=&quot;helloworld.default.svc.cluster.local&quot;, response_code=&quot;200&quot;}[5m])'
-name,timestamp,value,connection_mtls,destination_service,destination_version,instance,job,response_code,source_service,source_version
-,1525185628.005,886.7796610169491,false,helloworld.default.svc.cluster.local,v1,172.17.0.10:42422,istio-mesh,200,istio-ingress.istio-system.svc.cluster.local,unknown
-</code></pre><p><code>8145</code> and <code>886</code> are the values for the query, we could use them for 2nd
-development.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/04/29/workingtipsonistiodev/>WorkingTipsOnIstioDev</a></h1><span class=post-date>Apr 29, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=sample-svc>Sample SVC</h3><p>Create a sample svc using minikube:</p><pre><code># sudo docker save jrelva/nginx-autoindex&gt;autoindex.tar
-# eval $(minikube docker-env)
-# docker load&lt;autoindex.tar
-# kubectl run --image=jrelva/nginx-autoindex:latest nginx-autoindex --port=80 --image-pull-policy=IfNotPresent
-deployment &quot;nginx-autoindex&quot; created
-# kubectl get deployment
-NAME               DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-nginx-autoindex    1         1         1            1           6s
-# kubectl expose deployment nginx-autoindex --name nginx-autoindex-svc
-# kubectl get svc | grep nginx
-nginx-autoindex-svc   ClusterIP   10.107.181.75    &lt;none&gt;        80/TCP           29s
-</code></pre><p>Istio Configuration:</p><pre><code># kubectl get svc --all-namespaces | grep istio-ingress
-istio-system   istio-ingress          LoadBalancer   10.100.152.241   &lt;pending&gt;     80:30336/TCP,443:32004/TCP  
-</code></pre><h3 id=istio-ingress>Istio Ingress</h3></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/81/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/81/>81</a></li><li class="page-item active"><a class=page-link href=/page/82/>82</a></li><li class=page-item><a class=page-link href=/page/83/>83</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/83/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Verify them via install and delete them.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/81/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/81/>81</a></li><li class="page-item active"><a class=page-link href=/page/82/>82</a></li><li class=page-item><a class=page-link href=/page/83/>83</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/83/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
