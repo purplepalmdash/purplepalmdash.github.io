@@ -44,7 +44,10 @@ meson setup -Ddefault_library=static --prefix &quot;${PREFIX}&quot; build/
 meson install -C build
 </code></pre><p>rutabaga FFI￼:</p><pre><code>cd ~/Code
 git clone https://github.com/google/crosvm
-curl https://sh.rustup.rs -sSf | sh
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#curl https://sh.rustup.rs -sSf | sh
 source $HOME/.cargo/env
 source ~/.profile
 rustup toolchain list | grep -q 1.68.2-x86_64-unknown-linux-gnu || rustup toolchain install 1.68.2-x86_64-unknown-linux-gnu
@@ -73,7 +76,15 @@ sudo usermod -aG kvm,cvdnetwork,render $USER
 mkdir cf
 tar xzvf ../cvd-host_package.tar.gz &amp;&amp; unzip ../aosp_cf_arm64_only_phone-img-11489887.zip 
 sudo reboot
-</code></pre><p>should notice the aarch64 library replacement.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/18/cuttlefishrecords/>cuttlefishRecords</a></h1><span class=post-date>Sep 18, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-crosvm>1. crosvm</h3><p>Default command:</p><pre><code>HOME=$PWD ./bin/launch_cvd  -cpus 6 -memory_mb 8192 
+</code></pre><p>should notice the aarch64 library replacement.</p><h3 id=x86-tips>x86 tips</h3><p>qemu version:</p><pre><code>$ /home/test/Code/qemu/build/qemu-system-x86_64 --version
+QEMU emulator version 9.1.50 (v9.1.0-384-g2b81c04625)
+Copyright (c) 2003-2024 Fabrice Bellard and the QEMU Project developers
+test@debian:~/cf$ sudo chmod 777 /usr/bin/qemu-system-x86_64 
+test@debian:~/cf$ sudo cat /usr/bin/qemu-system-x86_64 
+#!/bin/bash
+/home/test/Code/qemu/build/qemu-system-x86_64 $@
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/18/cuttlefishrecords/>cuttlefishRecords</a></h1><span class=post-date>Sep 18, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-crosvm>1. crosvm</h3><p>Default command:</p><pre><code>HOME=$PWD ./bin/launch_cvd  -cpus 6 -memory_mb 8192 
 </code></pre><p>Result:</p><pre><code>vsoc_arm64_only:/ $ getprop | grep boot | grep com                                            
 [dev.bootcomplete]: [1]
 [ro.boot.hardware.hwcomposer.display_finder_mode]: [drm]
