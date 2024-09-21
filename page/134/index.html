@@ -1,5 +1,109 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/12/07/rundeck-tips/>Rundeck Tips</a></h1><span class=post-date>Dec 7, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>Install the rundeck under CentOS 7:</p><pre><code># rpm -Uvh http://repo.rundeck.org/latest.rpm
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/12/10/openvswitch-on-ubuntu14-dot-04/>OpenVswitch On Ubuntu14.04</a></h1><span class=post-date>Dec 10, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>Install openvswitch via:</p><pre><code># apt-get update
+# apt-get install -y openvswitch-common openvswitch-switch
+</code></pre><p>List the installed module via:</p><pre><code># lsmod | grep open
+openvswitch            66901  0 
+gre                    13808  1 openvswitch
+vxlan                  37619  1 openvswitch
+libcrc32c              12644  1 openvswitch
+# ovs-vsctl --version
+ovs-vsctl (Open vSwitch) 2.0.2
+Compiled May 13 2015 18:49:53
+</code></pre><h3 id=configuration>Configuration</h3><p>Edit the configuration of the networking:</p><pre><code>$ sudo vim /etc/network/interfaces
+###########################################
+## By using openVswitch, we enabled the following
+###########################################
+auto ovsbr0
+iface ovsbr0 inet static
+address 192.168.1.xx
+netmask 255.255.0.0
+gateway 192.168.1.xx
+dns-nameservers 223.5.5.5 180.76.76.76
+</code></pre><p>Now configure the ovs-switched bridge:</p><pre><code># ovs-vsctl add-br ovsbr0
+# ovs-vsctl list-br
+ovsbr0
+# ovs-vsctl add-port ovsbr0 eth0 &amp;&amp; reboot
+</code></pre><p>Now restart the computer you will get the ovs-bridged network running.</p><h3 id=bridged-with-vlan>Bridged With VLAN</h3><p>Add/Remove port of the ovs-bridged:</p><pre><code># ovs-vsctl add-port ovsbr0 tap0 tag=22
+# ovs-vsctl show
+901c2b29-0764-4370-8d06-168b18339236
+    Bridge &quot;ovsbr0&quot;
+        Port &quot;eth0&quot;
+            Interface &quot;eth0&quot;
+        Port &quot;tap0&quot;
+            tag: 22
+            Interface &quot;tap0&quot;
+        Port &quot;ovsbr0&quot;
+            Interface &quot;ovsbr0&quot;
+                type: internal
+    ovs_version: &quot;2.0.2&quot;
+# ovs-vsctl del-port ovsbr0 tap0
+</code></pre><p>If you want to remove the tag, then:</p><pre><code>ovs-vsctl set port vnet0 tag=100
+ovs-vsctl remove port vnet0 tag 100
+</code></pre><h3 id=vlan--openvswitch-virt-manager>VLAN / OpenVswitch/ virt-manager</h3><p>Dumpxml will displayed as following:</p><pre><code>    &lt;interface type='bridge'&gt;
+      &lt;mac address='52:54:00:0e:6b:d1'/&gt;
+      &lt;source bridge='ovsbr0'/&gt;
+      &lt;vlan trunk='yes'&gt;
+        &lt;tag id='22' nativeMode='untagged'/&gt;
+      &lt;/vlan&gt;
+      &lt;virtualport type='openvswitch'&gt;
+        &lt;parameters interfaceid='d5b7b981-8998-44c0-9344-0ade6b69ec1f'/&gt;
+      &lt;/virtualport&gt;
+      &lt;target dev='vnet0'/&gt;
+      &lt;model type='virtio'/&gt;
+      &lt;alias name='net0'/&gt;
+      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/&gt;
+    &lt;/interface&gt;
+    &lt;interface type='bridge'&gt;
+      &lt;mac address='52:54:00:3c:c9:24'/&gt;
+      &lt;source bridge='ovsbr0'/&gt;
+      &lt;vlan trunk='yes'&gt;
+        &lt;tag id='100' nativeMode='untagged'/&gt;
+      &lt;/vlan&gt;
+      &lt;virtualport type='openvswitch'&gt;
+        &lt;parameters interfaceid='06898d54-c0da-48c6-8b01-3307e70b995a'/&gt;
+      &lt;/virtualport&gt;
+      &lt;target dev='vnet1'/&gt;
+      &lt;model type='virtio'/&gt;
+      &lt;alias name='net1'/&gt;
+      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/&gt;
+    &lt;/interface&gt;
+    &lt;interface type='bridge'&gt;
+      &lt;mac address='52:54:00:7b:e7:b0'/&gt;
+      &lt;source bridge='ovsbr0'/&gt;
+      &lt;virtualport type='openvswitch'&gt;
+        &lt;parameters interfaceid='303c1f65-23ff-4017-93ba-f196ca1d05fb'/&gt;
+      &lt;/virtualport&gt;
+      &lt;target dev='vnet2'/&gt;
+      &lt;model type='virtio'/&gt;
+      &lt;alias name='net2'/&gt;
+      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/&gt;
+    &lt;/interface&gt;
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/12/08/tessera-how-to/>tessera how-to</a></h1><span class=post-date>Dec 8, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>Installation steps are listed as following:</p><pre><code># apt-get install -y python-virtualenv
+# git clone git@github.com:urbanairship/tessera.git
+# cd tessera
+# virtualenv .
+# . bin/activate
+# cd tessera-server/
+# pip install -r requirements.txt
+# pip install -r dev-requirements.txt
+# cd ../tessera-frontend
+# apt-get install -y npm
+# npm install -g grunt-cli
+# npm install
+# ln -s /usr/bin/nodejs /usr/bin/node
+# grunt
+# which inv
+/root/Code/second/tessera/bin/inv
+</code></pre><h3 id=start>Start</h3><p>Start the service via:</p><pre><code># cd /root/Code/second/tessera/tessera-server/
+# inv db.init
+# inv run &amp;
+# inv json.import 'demo/*'
+</code></pre><p>Open the browser and visit <code>http://localhost:5000</code>, you could see the tessera&rsquo;s web
+front.</p><p><img src=/images/2015_12_08_11_42_52_998x527.jpg alt=/images/2015_12_08_11_42_52_998x527.jpg></p><h3 id=import-graphite-data>Import Graphite Data</h3><pre><code>(tessera)root@monitorserver:~/Code/second/tessera/tessera-server# vim tessera/config.py 
+root@monitorserver:~/Code/second/tessera# cat tessera-server/tessera/config.py
+GRAPHITE_URL               = 'http://192.168.10.192'
+# inv graphite.import
+</code></pre><p>Now you could see the imported graphite data.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/12/07/rundeck-tips/>Rundeck Tips</a></h1><span class=post-date>Dec 7, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p>Install the rundeck under CentOS 7:</p><pre><code># rpm -Uvh http://repo.rundeck.org/latest.rpm
 # yum install rundeck
 </code></pre><h3 id=configuration>Configuration</h3><p>Configure some properties:</p><pre><code># vim /etc/rundeck/framework.properties
 framework.server.name = 192.168.0.79
@@ -102,61 +206,4 @@ Discovery started
 [bluetooth]# pair D0:13:1E:11:F5:45
 Attempting to pair with D0:13:1E:11:F5:45
 [bluetooth]# connect D0:13:1E:11:F5:45
-</code></pre><p>Now try to connect to the keyboard, yes you could use keyboard for typing.</p><h4 id=pan>PAN</h4><p>Network Aggregation Point - NAP</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/12/03/customize-surfacepro-kernel/>Customize SurfacePro Kernel</a></h1><span class=post-date>Dec 3, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=preparation>Preparation</h3><p>Get the kernel and patch file:</p><pre><code>To be Written
-</code></pre><h3 id=build>Build</h3><p>Prepare for compiliation:</p><pre><code>$ make mrproper
-</code></pre><p>Get the current running configuration:</p><pre><code>$ zcat /proc/config.gz &gt; .config
-$ make menuconfig
-$ make -j3
-$ make modules_install
-</code></pre><p>Install Kernel, you newly generated kernel will be named as
-<code>vmlinuz-4.1.13-surfacepro3</code>(Though surfacepro, surfacepro3 will remains its name) :</p><pre><code>$ sudo cp -v arch/x86/boot/bzImage /boot/vmlinuz-4.1.13-surfacepro3
-</code></pre><p>Generate the initial RAM disk:</p><pre><code>$ sudo mkinitcpio -k 4.1.13-surfacepro3 -c /etc/mkinitcpio.conf -g  \ 
-/boot/initramfs-4.1.13-surfacepro3.img
-</code></pre><p>Copy System.map, it contains a list of kernel symbols.</p><pre><code>$ sudo cp System.map /boot/System.map-4.1.13-surfacepro3
-$ sudo ln -sf /boot/System.map-4.1.13-surfacepro3 /boot/System.map
-</code></pre><p>Install the grub&rsquo;s configuration into grub.cfg:</p><pre><code>$ sudo vim /etc/default/grub
-Edit with the name specified
-$ sudo grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre><p>But still this modification didn&rsquo;t solve surfacepro&rsquo;s wireless problem. finally I have
-to fall back to using yaourt&rsquo;s surfac pro kernel.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/11/25/awesomes-battery-indicator/>Awesome's Battery Indicator</a></h1><span class=post-date>Nov 25, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=background>Background</h3><p>I installed ArchLinux+Awesome On my SurfacePro, while the charger of Surface Pro is not
-so tight to the pad. Thus I have to use a battery indicator in Awesome.</p><h3 id=software>Software</h3><p>Refers to:</p><p><a href=http://www.everythingisvoid.com/uncategorized/simple-battery-status-indicator-awesome-window-manager>http://www.everythingisvoid.com/uncategorized/simple-battery-status-indicator-awesome-window-manager</a></p><p>Install steps on ArchLinux:</p><pre><code>$ sudo pacman -S luarocks5.1 gobject-introspection acpi
-$ sudo luarocks-5.1 install battery_status
-</code></pre><p>You could manually run <code>show_battery_status</code> or add it into your own rc.lua file:</p><pre><code>$ vim ~/.config/awesome/rc.lua
-----.....................
-autorunApps =
-{
---.........
-&quot;synergyc 192.168.0.119&quot;,
-&quot;sudo echo 1240&gt;/sys/class/backlight/intel_backlight/brightness&quot;, 
-&quot;fcitx&quot;,
-&quot;show_battery_status&quot;, 
-----.....................
-</code></pre><p>Now restart the awesome you could see the battery indicator.</p><h3 id=add-charging-indicator>Add Charging Indicator</h3><p>First download the source code from github:</p><pre><code>$ git clone https://github.com/svarogg/battery_status
-</code></pre><p>Debug with luarocks loader:</p><pre><code>rocks-5.1   lua5.1 -lluarocks.loader
-Lua 5.1.5  Copyright (C) 1994-2012 Lua.org, PUC-Rio
-&gt; require(&quot;rex_posix&quot;)
-&gt; rex = require(&quot;rex_posix&quot;)
-&gt; battery_rex = rex.new([[([^,]{1,3})%]])
-&gt; rex=require(&quot;rex_posix&quot;)
-&gt; battery_rex=rex.new([[([^,]{1,3})%]])
-&gt; acpi=io.popen('acpi 2&gt;&amp;1')
-&gt; acpi_res = acpi:read(&quot;*line&quot;)
-&gt; acpi:close()
-&gt; print (acpi_res)
-Battery 0: Full, 100%
-&gt; percentage=battery_rex:match(acpi_res)
-&gt; print (percentage)
-100
-&gt; print(type(percentage))
-string
-&gt; print(type(tonumber(percentage)))
-number
-&gt; adapter = io.popen('acpi -a 2&gt;&amp;1')
-&gt; adapter_res = adapter:read(&quot;*line&quot;)
-&gt; adapter:close()
-&gt; print(adapter_res)
-Adapter 0: on-line
-&gt; charge_rex = rex.new([[(on|off)]])
-&gt; print(charge_rex:match(adapter_res))
-on
-</code></pre><p>We get the status of the charge, then update the corresponding icon to the systray.</p><p>The modified repository could be fetched from:</p><p><a href=https://github.com/purplepalmdash/Awesome-Battery-Indicator>https://github.com/purplepalmdash/Awesome-Battery-Indicator</a></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/133/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/133/>133</a></li><li class="page-item active"><a class=page-link href=/page/134/>134</a></li><li class=page-item><a class=page-link href=/page/135/>135</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/135/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Now try to connect to the keyboard, yes you could use keyboard for typing.</p><h4 id=pan>PAN</h4><p>Network Aggregation Point - NAP</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/133/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/133/>133</a></li><li class="page-item active"><a class=page-link href=/page/134/>134</a></li><li class=page-item><a class=page-link href=/page/135/>135</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/135/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

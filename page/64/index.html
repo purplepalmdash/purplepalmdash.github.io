@@ -1,5 +1,142 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/25/tipsonarmvirtmanager/>TipsOnARMVirtManager</a></h1><span class=post-date>Jun 25, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install following packages:</p><pre><code># apt-get install -y virt-manager 
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/28/arm64kubesprayofflinetips/>arm64KubesprayOfflineTips</a></h1><span class=post-date>Jun 28, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=folder-structure>Folder structure</h3><p>Compare the downloaded source code to our offlined edition, make some changes.</p><pre><code>cluster.yml should added kube-deploy related items.   
+ansible.cfg should be modified.
+Added role/kube-deploy folder. 
+scale.yml/upgrade-cluster.yml should be modified. 
+Added deploy.key for easy deployment. 
+roles/kubernetes-apps/ansible/defaults/main.yml, modified dashboard_skip_login condition
+roles/kubernetes-apps/ansible/templates/dashboard.yml.j2: NodePort modification
+roles/kubespray-defaults/defaults/main.yaml: enable_nodelocaldns:false(TBD)
+roles/download/defaults/main.yml: download position, for example hyperkube/kubeadm/cni/calicoctl etc. 
+/roles/kubernetes/master/templates/kubeadm-config.v1alpha3.yaml.j2: controllerManager listening port to 0.0.0.0
+roles/kubernetes/master/tasks/kubeadm-upgrade.yml: upgrade items to --force
+</code></pre><h3 id=todo-bootstrapsh>(Todo) bootstrap.sh</h3><p>Change the installation of ansible from apt-get to pip-cache</p><pre><code>#!/bin/sh
+## 
+OS_ID=`cat /etc/os-release | grep VERSION_CODENAME | awk -F '=' {'print $2'}`
+echo $OS_ID
+# xenial use 1604, bionic use 1804
+if [ &quot;$OS_ID&quot; = &quot;xenial&quot; ]; then
+	sudo tar xJvf ./roles/kube-deploy/files/1604debs.tar.xz -C /usr/local/
+else
+	sudo tar xJvf ./roles/kube-deploy/files/1804debs.tar.xz -C /usr/local/
+	sudo tar xJvf ./roles/kube-deploy/files/pip_ansible.tar.xz -C /usr/local/
+fi
+sudo echo &quot;deb [trusted=yes] file:///usr/local/static ./&quot;&gt;/etc/apt/sources.list
+sudo apt-get update -y
+# Install pip so we could use pip for installing ansible
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python-pip
+# Install ansible via ansible(version 2.8.1)
+sudo pip install --no-index --find-links /usr/local/pip_ansible ansible
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python-netaddr
+</code></pre><h3 id=kube-deploy-role>kube-deploy role</h3><p>Added the offline role, and replace the files.</p><p>Replace:</p><pre><code>nginx-autoindex.tar.xz 
+kubeadm(arm version)
+hyperkube(arm version)
+cni-plugins-arm64-v0.6.0.tgz(arm version)
+calicoctl(arm version)
+
+</code></pre><h3 id=nginx-autoindex>nginx-autoindex</h3><p>Find the Dockerfile, and build the arm64 based docker images via following commands:</p><pre><code># mkdir -p ~/code/autoindex
+# vim Dockerfile
+FROM nginx
+MAINTAINER Jason Kingsbury
+
+RUN sed -i 'N; s/root   \/usr\/share\/nginx\/html;\n        index  index.html index.htm;/root   \/usr\/share\/nginx\/html;\n        autoindex on;/' /etc/nginx/conf.d/default.conf
+# sudo docker build -t jrelva/nginx-autoindex:latest .
+# sudo docker  --name docker-nginx -p 7888:80 -d --restart=always -v `pwd`:/usr/share/nginx/html jrelva/nginx-autoindex
+</code></pre><p>Save and xz the docker images:</p><pre><code># sudo docker save jrelva/nginx-autoindex:latest&gt;autoindex.tar; sudo xz autoindex.tar
+</code></pre><p>Transfer the autoindex.tar.xz to folder.</p><pre><code>➜  files ls -l -h | grep autoindex
+-rwxr-xr-x  1 dash dash  26M 5月   7 16:40 autoindex.tar.xz
+➜  files pwd
+/home/dash/Code/kubsprayarm64/roles/kube-deploy/files
+➜  files ls -l -h | grep autoindex
+-rwxr-xr-x  1 dash dash  23M 6月  28 10:59 autoindex.tar.xz
+</code></pre><h3 id=secureregistryserver>secureregistryserver</h3><p>Change the docker-compose file, also pull the arm based docker images:</p><pre><code># docker pull registry:2
+# docker pull nginx:latest
+# docker save registry:2&gt;regsitry.tar; xz registry.tar
+# docker save nginx:latest&gt;nginx19.tar; xz nginx19.tar
+
+</code></pre><h3 id=verification>Verification</h3><p>Create a new virtual machine(18.04.2):</p><pre><code>$ qemu-img create -f qcow2 pure1804.qcow2 200G
+```'
+Install the system:    
+
+![/images/2019_06_28_12_10_54_469x237.jpg](/images/2019_06_28_12_10_54_469x237.jpg)
+
+
+### harbor offline
+With the harbor-offline-installer-1.7.0-arm64.tgz we could quickly setup the offline harbor environment:    
+
+</code></pre><h1 id=ls>ls</h1><p>common docker-compose.clair.yml docker-compose.yml harbor.cfg LICENSE prepare<br>docker-compose.chartmuseum.yml docker-compose.notary.yml harbor.1.7.0-arm64.tar.gz install.sh open_source_license</p><h1 id=vim-harborcfg>vim harbor.cfg</h1><h1 id=installsh---with-chartmuseum>./install.sh &ndash;with-chartmuseum</h1><h1 id=docker-ps>docker ps</h1><p>&mldr;..</p><pre><code>
+Login:    
+
+![/images/2019_06_28_12_19_39_475x380.jpg](/images/2019_06_28_12_19_39_475x380.jpg)
+
+Create user kubespray:    
+
+![/images/2019_06_28_12_19_59_447x368.jpg](/images/2019_06_28_12_19_59_447x368.jpg)
+
+Fill in user info:    
+
+![/images/2019_06_28_12_20_28_555x469.jpg](/images/2019_06_28_12_20_28_555x469.jpg)
+
+Create project:    
+
+![/images/2019_06_28_12_21_45_549x348.jpg](/images/2019_06_28_12_21_45_549x348.jpg)
+
+Projects:    
+
+![/images/2019_06_28_12_22_02_667x296.jpg](/images/2019_06_28_12_22_02_667x296.jpg)
+
+Add kubespray to kubesprayns as administrator:    
+
+![/images/2019_06_28_12_22_42_718x295.jpg](/images/2019_06_28_12_22_42_718x295.jpg)
+
+Now you could login with kubespray user:    
+
+![/images/2019_06_28_12_23_52_936x419.jpg](/images/2019_06_28_12_23_52_936x419.jpg)
+
+Now in docker-compose folder we just `docker-compose down` all of the service and backup our environment:    
+
+</code></pre><h1 id=docker-compose-down>docker-compose down</h1><p>Stopping nginx &mldr; done
+Stopping harbor-jobservice &mldr; done
+Stopping harbor-portal &mldr; done
+Stopping harbor-core &mldr; done
+Stopping redis &mldr; done
+Stopping harbor-adminserver &mldr; done
+Stopping harbor-db &mldr; done
+Stopping registry &mldr; done
+Stopping registryctl &mldr; done
+Stopping harbor-log &mldr;</p><h1 id=docker-save--o-harbortar-goharborchartmuseum-photonv071-170-arm64-goharborredis-photon170-arm64-goharborclair-photonv207-170-arm64-goharbornotary-server-photonv061-170-arm64-goharbornotary-signer-photonv061-170-arm64-goharborharbor-registryctl170-arm64-goharborregistry-photonv262-170-arm64-goharbornginx-photon170-arm64-goharborharbor-log170-arm64-goharborharbor-jobservice170-arm64-goharborharbor-core170-arm64-goharborharbor-portal170-arm64-goharborharbor-adminserver170-arm64-goharborharbor-db170-arm64>docker save -o harbor.tar goharbor/chartmuseum-photon:v0.7.1-1.7.0-arm64 goharbor/redis-photon:1.7.0-arm64 goharbor/clair-photon:v2.0.7-1.7.0-arm64 goharbor/notary-server-photon:v0.6.1-1.7.0-arm64 goharbor/notary-signer-photon:v0.6.1-1.7.0-arm64 goharbor/harbor-registryctl:1.7.0-arm64 goharbor/registry-photon:v2.6.2-1.7.0-arm64 goharbor/nginx-photon:1.7.0-arm64 goharbor/harbor-log:1.7.0-arm64 goharbor/harbor-jobservice:1.7.0-arm64 goharbor/harbor-core:1.7.0-arm64 goharbor/harbor-portal:1.7.0-arm64 goharbor/harbor-adminserver:1.7.0-arm64 goharbor/harbor-db:1.7.0-arm64</h1><h1 id=xz-harbortar>xz harbor.tar</h1><pre><code></code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/26/raspberrypiarm64/>RaspberryPIArm64</a></h1><span class=post-date>Jun 26, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>Replace the armhf(raspbain) with arm64 system.<br>Refers to:</p><p><a href=/home/dash/Code/blogsource-master/src/content/post/2019-06-26-RaspberryPIArm64.md>/home/dash/Code/blogsource-master/src/content/post/2019-06-26-RaspberryPIArm64.md</a></p><h3 id=installation>Installation</h3><p>Unxz the images and write to the tf card:</p><pre><code># unxz ubuntu-18.04.2-preinstalled-server-arm64+raspi3.img.xz
+# sudo dd if=./ubuntu-18.04.2-preinstalled-server-arm64+raspi3.img of=/dev/sdd bs=1M &amp;&amp; sudo sync
+</code></pre><h3 id=configuration>Configuration</h3><p>Configure the repository :</p><pre><code># vim /etc/apt/sources.list
+deb https://mirrors.ustc.edu.cn/ubuntu-ports/ bionic main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ bionic main main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse
+# sudo apt-get update -y
+# sudo apt-get upgrade -y
+# sudo hostnamectl set-hostname arm64
+# sudo apt-get install -y build-essential
+</code></pre><p>Install docker-ce for arm64:</p><pre><code>#  offline packages. 
+# apt-get install -y docker-ce
+# docker version
+# cd /var/lib
+# cp -r docker /media/sda/
+# mv docker docker.back
+# ln -s /media/sda/docker .
+# ls -l -h | grep docker
+lrwxrwxrwx  1 root      root        17 Jun 26 04:16 docker -&gt; /media/sda/docker
+drwxr-xr-x  2 root      root      4.0K Jun 26 04:13 docker-engine
+drwx--x--x 14 root      root      4.0K Jun 26 04:13 docker.back
+# systemctl start docker
+</code></pre><p>Building harbor:</p><pre><code># apt-get install -y docker-compose
+
+</code></pre><p>dns issue, install stubby:</p><pre><code># apt-get install -y stubby
+# vim /etc/resolv.conf
+nameserver 127.0.0.1
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/25/tipsonarmvirtmanager/>TipsOnARMVirtManager</a></h1><span class=post-date>Jun 25, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install following packages:</p><pre><code># apt-get install -y virt-manager 
 # sudo apt-get install -y qemu-efi-aarch64 qemu-efi-arm ovmf
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/25/tipsonraid10/>TipsOnRaid10</a></h1><span class=post-date>Jun 25, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Find how many disks are available in system:</p><pre><code># fdisk -l
 </code></pre><p>Examine the detailed info:</p><pre><code># lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
@@ -146,219 +283,4 @@ common                          docker-compose.notary.tpl  install.sh  pushimage
 docker-compose.chartmuseum.tpl  docker-compose.notary.yml  kubernetes
 docker-compose.chartmuseum.yml  docker-compose.tpl         migrations
 docker-compose.clair.tpl        docker-compose.yml         photon
-</code></pre><p>The docker-compose file exists under folder.</p><p>changed to using repository&rsquo;s docker-compose.<code> apt-get install -y docker-compose</code>.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/20/vmwarebasedkubeflow/>VmwareBasedKubeflow</a></h1><span class=post-date>Jun 20, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=vmware>Vmware</h3><p>Download and install Vmware workstation pro on Ubuntu:</p><pre><code># wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.1.0-13591040.x86_64.bundle
-# chmod 777 *.bundle
-# ./VMware-Workstation-Full-15.1.0-13591040.x86_64.bundle
-</code></pre><h3 id=vm-installation>VM Installation</h3><p>Create a new machine:</p><p><img src=/images/2019_06_20_14_48_31_623x305.jpg alt=/images/2019_06_20_14_48_31_623x305.jpg></p><p>Select iso:</p><p><img src=/images/2019_06_20_14_49_11_688x284.jpg alt=/images/2019_06_20_14_49_11_688x284.jpg></p><p>Personalize Linux:</p><p><img src=/images/2019_06_20_14_50_42_394x207.jpg alt=/images/2019_06_20_14_50_42_394x207.jpg></p><p>Select location:</p><p><img src=/images/2019_06_20_14_51_23_531x189.jpg alt=/images/2019_06_20_14_51_23_531x189.jpg></p><p>Specify processor:</p><p><img src=/images/2019_06_20_14_51_44_313x135.jpg alt=/images/2019_06_20_14_51_44_313x135.jpg></p><p>Specify Memory:</p><p><img src=/images/2019_06_20_14_52_14_506x278.jpg alt=/images/2019_06_20_14_52_14_506x278.jpg></p><p>Specify NAT:</p><p><img src=/images/2019_06_20_14_52_39_522x207.jpg alt=/images/2019_06_20_14_52_39_522x207.jpg></p><p>I/O Controller:</p><p><img src=/images/2019_06_20_14_52_58_399x153.jpg alt=/images/2019_06_20_14_52_58_399x153.jpg></p><p>Virtual Disk Type:</p><p><img src=/images/2019_06_20_14_53_15_255x146.jpg alt=/images/2019_06_20_14_53_15_255x146.jpg></p><p>Create a new disk:</p><p><img src=/images/2019_06_20_14_53_31_534x229.jpg alt=/images/2019_06_20_14_53_31_534x229.jpg></p><p>Specify 200GB:</p><p><img src=/images/2019_06_20_14_53_48_494x288.jpg alt=/images/2019_06_20_14_53_48_494x288.jpg></p><p>Disk File:</p><p><img src=/images/2019_06_20_14_54_01_508x152.jpg alt=/images/2019_06_20_14_54_01_508x152.jpg></p><p>Click Finish and begin installation.</p><p>When installation, click poweroff, and setting , remove the auto install iso:</p><p><img src=/images/2019_06_20_14_56_21_575x368.jpg alt=/images/2019_06_20_14_56_21_575x368.jpg></p><p>Uncheck <code>Connect at power on</code> for both Floppy and CD/DVD(SATA), then reboot, you will see
-our customized installation items, use them for installing:</p><p><img src=/images/2019_06_20_14_56_49_623x327.jpg alt=/images/2019_06_20_14_56_49_623x327.jpg></p><p>After installation, check the configured ip address:</p><p><img src=/images/2019_06_20_15_10_47_579x306.jpg alt=/images/2019_06_20_15_10_47_579x306.jpg></p><h3 id=system>System</h3><p>Default grub configuration:</p><pre><code># vim /etc/default/grub
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;net.ifnames=0 biosdevname=0&quot;
-# grub-mkconfig -o /boot/grub/grub.cfg
-# vim /etc/netplan/01-netcfg.yaml
-    eth0:
-      dhcp4: no
-      addresses: [172.16.107.17/24]
-      gateway4: 172.16.107.2
-</code></pre><p>Then reboot and use our ansible code for deploying.</p><h3 id=make-it-online>Make it Online</h3><p>Remove the dns items for <code>docker.io, quay.io, gcr.io, elastic.co</code>:</p><p><code>vim /etc/bind/named.conf.default-zones</code>:</p><p><img src=/images/2019_06_20_16_49_55_433x490.jpg alt=/images/2019_06_20_16_49_55_433x490.jpg></p><p>logout from our fake website:</p><pre><code>root@node0:/home/test# docker logout quay.io
-Removing login credentials for quay.io
-root@node0:/home/test# docker logout gcr.io
-Removing login credentials for gcr.io
-root@node0:/home/test# docker logout k8s.gcr.io
-Removing login credentials for k8s.gcr.io
-root@node0:/home/test# docker logout docker.elastic.co
-Removing login credentials for docker.elastic.co
-root@node0:/home/test# docker logout
-</code></pre><p>Remove the crt files and update the ca certification:</p><pre><code># cd /usr/local/share/ca-certificates/
-# mv server.crt /root
-# update-ca-certificates 
-# cd /etc/ssl/
-# cd certs/
-# rm -f server.pem 
-# update-ca-certificates 
-</code></pre><p>Then remove the items for bind9.</p><p>Now reboot the machine.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/03/tipsonaikubesprayusage/>TipsOnAIKubeSprayUsage</a></h1><span class=post-date>Jun 3, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=0-先决条件>0. 先决条件</h3><p>Rongv1905部署就绪的集群，运行操作系统为ubuntu18.04.2.</p><h3 id=1-部署准备>1. 部署准备</h3><p>AI部署框架使用ansible撰写。目录架构如下, 配置好hosts.ini:</p><pre><code># ls
-ai.yaml  ansible.cfg  deploy.key  hosts.ini  roles
-# cat hosts.ini
-[all]
-localnode-2 ansible_host=10.142.18.192 ansible_port=22 ansible_user='root' ansible_ssh_private_key_file=./deploy.key ip=10.142.18.192  ansible_ssh_user=root
-localnode-3 ansible_host=10.142.18.193 ansible_port=22 ansible_user='root' ansible_ssh_private_key_file=./deploy.key ip=10.142.18.193  ansible_ssh_user=root
-localnode-1 ansible_host=10.142.18.191 ansible_port=22 ansible_user='root' ansible_ssh_private_key_file=./deploy.key ip=10.142.18.191  ansible_ssh_user=root
-
-[kube-deploy]
-localnode-[1:1]
-
-[kube-master]
-localnode-[1:1]
-</code></pre><p>部署命令:</p><pre><code># ansible-playbook -i hosts.ini ai.yaml
-</code></pre><h3 id=2-使用>2. 使用</h3><h4 id=21-检查kubeflow组件>2.1 检查kubeflow组件</h4><p>部署完毕后，通过<code>kubectl get pods</code>命令查看当前集群中运行的kubeflow相关组件:</p><pre><code># kubectl get pods
-NAME                                                     READY   STATUS    RESTARTS   AGE
-ambassador-7df7dbd89b-64q5b                              2/2     Running   0          2m
-ambassador-7df7dbd89b-b97w6                              2/2     Running   0          2m
-ambassador-7df7dbd89b-gcdq7                              2/2     Running   0          2m
-centraldashboard-5d7d79659c-dr29w                        1/1     Running   0          2m
-inception-v1-d66f8848-lgz97                              1/1     Running   0          103s
-pytorch-operator-7b7958b799-vmks4                        1/1     Running   0          88s
-spartakus-volunteer-779867878-snvxz                      1/1     Running   0          2m
-tf-hub-0                                                 1/1     Running   0          2m
-tf-job-dashboard-554868c978-cknlz                        1/1     Running   0          2m
-tf-job-operator-v1alpha2-7f7cf4dc98-9txms                1/1     Running   0          2m
-</code></pre><p>通过<code>kubectl get svc</code>查看kubeflow引出的相关服务:</p><pre><code>NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)           AGE
-ambassador                  ClusterIP   10.233.35.161   &lt;none&gt;        80/TCP            28m
-ambassador-admin            ClusterIP   10.233.8.245    &lt;none&gt;        8877/TCP          28m
-ambassador-katacoda         NodePort    10.233.38.151   &lt;none&gt;        30080:30396/TCP   3s
-centraldashboard            ClusterIP   10.233.29.157   &lt;none&gt;        80/TCP            28m
-centraldashboard-katacoda   NodePort    10.233.9.5      &lt;none&gt;        8082:31421/TCP    3s
-k8s-dashboard               ClusterIP   10.233.3.208    &lt;none&gt;        443/TCP           28m
-kubernetes                  ClusterIP   10.233.0.1      &lt;none&gt;        443/TCP           19d
-tf-hub-0                    ClusterIP   None            &lt;none&gt;        8000/TCP          28m
-tf-hub-lb                   ClusterIP   10.233.32.120   &lt;none&gt;        80/TCP            28m
-tf-hub-lb-katacoda          NodePort    10.233.13.173   &lt;none&gt;        80:31039/TCP      3s
-tf-job-dashboard            ClusterIP   10.233.22.155   &lt;none&gt;        80/TCP            28m
-</code></pre><p>使用浏览器访问相应端口:<br>centraldashboard-katacoda: 31421, ambassador-katacoda: 30396:</p><p><img src=/images/2019_06_03_11_23_19_365x201.jpg alt=/images/2019_06_03_11_23_19_365x201.jpg></p><p>tf-hub-lb-katacoda:</p><p><img src=/images/2019_06_03_11_24_02_640x480.jpg alt=/images/2019_06_03_11_24_02_640x480.jpg></p><h4 id=22--jypyterhub>2.2 JypyterHub</h4><p>Kubeflow的关键组件之一是能够通过JupyterHub运行Jupyter笔记本电脑。 Jupyter Notebook是经典的数据科学工具，用于在浏览器中记录流程时运行内联脚本和代码片段。<br>可以使用kubectl get svc找到Load Balancer的IP地址,
-Jypyter的登录默认使用用户名admin和空白密码:</p><p><img src=/images/2019_06_03_11_34_33_374x377.jpg alt=/images/2019_06_03_11_34_33_374x377.jpg></p><p>在弹出的Spawner Options中，我们填入下列字段。</p><p>Kubeflow在内部使用gcr.io/kubeflow-images-public/tensorflow-1.8.0-notebook-cpu:v0.2.1
-Docker Image作为默认值。访问JupyterHub后，可以单击 Start My server按钮:</p><p><img src=/images/2019_06_03_11_36_38_480x303.jpg alt=/images/2019_06_03_11_36_38_480x303.jpg></p><pre><code>root@localnode-1:~# kubectl get pods -o wide | grep jupyter-admin
-jupyter-admin                                         1/1     Running   0          39s   10.233.125.9   localnode-1   &lt;none&gt;           &lt;none&gt;
-</code></pre><p>Spawn完毕后界面如下:</p><p><img src=/images/2019_06_03_11_39_04_782x214.jpg alt=/images/2019_06_03_11_39_04_782x214.jpg></p><p>现在可以通过pod访问JupyterHub。您现在可以无缝地使用环境。例如，要创建新笔记本，请选择New下拉列表，然后选择Python 3内核，如下所示。</p><p><img src=/images/2019_06_03_11_39_56_231x244.jpg alt=/images/2019_06_03_11_39_56_231x244.jpg></p><p>现在可以创建代码片段。要开始使用TensorFlow，请将下面的代码粘贴到第一个单元格并运行它。</p><pre><code>from __future__ import print_function
-
-import tensorflow as tf
-
-hello = tf.constant('Hello TensorFlow!')
-s = tf.Session()
-print(s.run(hello))
-</code></pre><p>运行结果如下：</p><p><img src=/images/2019_06_03_11_41_53_785x321.jpg alt=/images/2019_06_03_11_41_53_785x321.jpg></p><h4 id=23-部署tensorflow-jobtfjob>2.3 部署TensorFlow Job(TFJob)</h4><p>TfJob提供了一个Kubeflow自定义资源，可以在Kubernetes上轻松运行分布式或非分布式TensorFlow作业。 TFJob控制器为master，parameter servers和worker采用YAML规范来帮助运行分布式计算。</p><p>自定义资源定义（CRD）提供了以与内置Kubernetes资源相同的方式创建和管理TF作业的功能。 部署后，CRD可以配置TensorFlow job，允许用户专注于机器学习而不是基础设施。</p><h5 id=231-创建tfjob部署定义>2.3.1 创建TFJob部署定义</h5><p>要部署上一步中描述的TensorFlow工作负载，Kubeflow需要TFJob定义。 在这种情况下，可以通过运行cat example.yaml来查看它:</p><pre><code>apiVersion: &quot;kubeflow.org/v1alpha2&quot;
-kind: &quot;TFJob&quot;
-metadata:
-  name: &quot;example-job&quot;
-spec:
-  tfReplicaSpecs:
-    Master:
-      replicas: 1
-      restartPolicy: Never
-      template:
-        spec:
-          containers:
-            - name: tensorflow
-              image: gcr.io/tf-on-k8s-dogfood/tf_sample:dc944ff
-    Worker:
-      replicas: 1
-      restartPolicy: Never
-      template:
-        spec:
-          containers:
-            - name: tensorflow
-              image: gcr.io/tf-on-k8s-dogfood/tf_sample:dc944ff
-    PS:
-      replicas: 2
-      restartPolicy: Never
-      template:
-        spec:
-          containers:
-            - name: tensorflow
-              image: gcr.io/tf-on-k8s-dogfood/tf_sample:dc944ff
-</code></pre><p>以上yaml定义了三个组件:</p><p>Master: 每个job必须有一个master. Master将协调workers之间的训练操作的执行.<br>Worker: 每个job可以有0到N个workers.
-每个worker进程运行相同的模型，为参数服务器(Parameter Server)提供处理参数。<br>PS: 每个job可以有0到N个参数服务器(Parameter Server)，
-参数服务器使得用户可以将模型扩展到多台机器上。</p><h5 id=232-部署tfjob>2.3.2 部署TFJob</h5><p>TFJob可以用以下命令来创建:</p><pre><code># kubectl apply -f example.yaml
-</code></pre><p>通过部署job，Kubernetes将调度工作负载以跨可用节点执行。 作为部署的一部分，Kubeflow将使用所需的设置配置TensorFlow，以允许不同的组件进行通信。</p><h5 id=233-检查job进度及处理结果>2.3.3 检查Job进度及处理结果</h5><p>可以通过kubectl get tfjob查看TensorFlow作业的状态。 完成TensorFlow作业后，Master将标记为成功。 继续运行kubectl get tfjob命令以查看它何时完成。</p><p>Master负责协调作业的执行，并汇总结果。可以使用<code>kubectl get pods| grep completed</code>列出已完成的工作负载。</p><pre><code># kubectl get pods | grep Completed
-example-job-master-0                                  0/1     Completed   0          7m36s
-</code></pre><p>在此示例中，结果输出到STDOUT，可使用kubectl日志查看。</p><p>以下命令将输出结果：</p><pre><code># kubectl logs $(kubectl get pods | grep Completed | tr -s ' ' | cut -d ' ' -f 1)
-INFO:root:Tensorflow version: 1.3.0-rc2
-INFO:root:Tensorflow git version: v1.3.0-rc1-27-g2784b1c
-INFO:root:tf_config: {u'cluster': {u'worker': [u'example-job-worker-0.default.svc.cluster.local:2222'], u'ps': [u'example-job-ps-0.default.svc.cluster.local:2222', u'example-job-ps-1.default.svc.cluster.local:2222'], u'master': [u'example-job-master-0.default.svc.cluster.local:2222']}, u'task': {u'index': 0, u'type': u'master'}}
-</code></pre><p>可以在master, worker以及parameter servers上看到工作负载的执行结果。</p><h4 id=24-访问model-server>2.4 访问Model Server</h4><p>一旦训练完成，该模型可用于在新数据发布时对其进行预测。
-通过使用Kubeflow，可以通过将作业部署到Kubernetes基础结构，从而使得Model
-Server变得可用.</p><h5 id=241-部署trained-model-server>2.4.1 部署Trained Model Server</h5><p>Kubeflow tf-serving提供了服务TensorFlow模型的模板。 这可以通过使用Ksonnet定制和部署，并根据您的模型定义参数。</p><p>通过部署脚本已经部署完毕Model Server, 客户端可以链接并访问到trained data(训练好的数据), 可以查看pod信息:</p><pre><code>kubectl get pods
-
-......
-
-inception-v1-d66f8848-gq8hh                           1/1     Running     0          7m2s
-
-......
-
-</code></pre><p>上面的inception就是我们训练好的模型.</p><h5 id=242-例图像分类>2.4.2 例:图像分类</h5><p>在这个例子中，我们使用预先训练的Inception V3模型。 这是在ImageNet数据集上训练的架构。 ML任务是图像分类，而模型服务器及其客户端由Kubernetes处理。</p><p>要使用已发布的模型，您需要设置客户端。 这可以通过与其他工作相同的方式实现。 用于部署客户端的YAML文件可以通过<code>cat ~/model-client-job.yaml</code>来查看。 要部署它，请使用以下命令：</p><pre><code>kubectl apply -f ~/model-client-job.yaml
-</code></pre><p>文件内容:</p><pre><code># cat model-client-job.yaml 
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: model-client-job-katacoda
-spec:
-  template:
-    metadata:
-      name: model-client-job-katacoda
-    spec:
-      containers:
-      - name: model-client-job-katacoda
-        image: katacoda/tensorflow_serving:localimage
-        imagePullPolicy: Never
-        command:
-        - /bin/bash
-        - -c
-        args:
-        - /serving/bazel-bin/tensorflow_serving/example/inception_client
-          --server=inception:9000 --image=/data/katacoda.jpg
-      restartPolicy: Never
-</code></pre><p>如需查看<code>model-client-job</code>运行的状态，则运行:</p><pre><code>kubectl get pods
-</code></pre><p><img src=/images/2019_06_03_12_17_53_896x451.jpg alt=/images/2019_06_03_12_17_53_896x451.jpg></p><p>以下命令将输出图像分类的结果:</p><pre><code>kubectl logs $(kubectl get pods | grep Completed | tail -n1 |  tr -s ' ' | cut -d ' ' -f 1)
-</code></pre><p><img src=/images/2019_06_03_12_18_15_552x736.jpg alt=/images/2019_06_03_12_18_15_552x736.jpg></p><h3 id=3-部署pytorch>3. 部署pytorch</h3><h4 id=31-部署pytorch扩展>3.1 部署PyTorch扩展</h4><p>Kubeflow使用自定义资源定义（CRD）和运算符扩展了Kubernetes。 每个自定义资源都旨在支持机器学习工作负载的部署。 定义好资源后，Operator将处理部署请求。</p><p>使用<code>kubectl get crd</code>命令可以查看到自定义的PyTorch自定义资源已被创建:</p><pre><code># kubectl get crd
-NAME                       CREATED AT
-pytorchjobs.kubeflow.org   2019-06-03T04:19:22Z
-tfjobs.kubeflow.org        2019-06-03T02:46:43Z
-</code></pre><h4 id=32-部署pytorch工作负载>3.2 部署PyTorch工作负载</h4><p>使用打包好的容器镜像启动PyTorch，该镜像中已打包了分布式MNIST模型。模型的python代码可以在以下链接查看:</p><p><a href=https://github.com/kubeflow/pytorch-operator/blob/9605eb6783e3549654082ea4b18a9cb0391e8548/examples/dist-mnist/dist_mnist.py>https://github.com/kubeflow/pytorch-operator/blob/9605eb6783e3549654082ea4b18a9cb0391e8548/examples/dist-mnist/dist_mnist.py</a></p><p>要部署该训练模型，我们需要创建一个PyTorch Job， PyTorch
-Job中定义了需使用的容器镜像以及训练所需要启动的副本数,
-我们用于启动训练模型的yaml定义文件如下所示:</p><pre><code># cat pytorch_example.yaml 
-apiVersion: &quot;kubeflow.org/v1alpha1&quot;
-kind: &quot;PyTorchJob&quot;
-metadata:
-  name: &quot;distributed-mnist&quot;
-spec:
-  backend: &quot;tcp&quot;
-  masterPort: &quot;23456&quot;
-  replicaSpecs:
-    - replicas: 1
-      replicaType: MASTER
-      template:
-        spec:
-          containers:
-          - image: gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0
-            imagePullPolicy: IfNotPresent
-            name: pytorch
-          restartPolicy: OnFailure
-    - replicas: 3
-      replicaType: WORKER
-      template:
-        spec:
-          containers:
-          - image: gcr.io/kubeflow-ci/pytorch-dist-mnist_test:1.0
-            imagePullPolicy: IfNotPresent
-            name: pytorch
-          restartPolicy: OnFailure
-</code></pre><p>通过以下命令来创建训练任务:</p><pre><code># kubectl create -f pytorch_example.yaml
-</code></pre><p>Kubeflow PyTorch Operator和Kubernetes将安排工作负载并启动所需数量的副本。
-您可以使用kubectl get pods -l pytorch_job_name = distributed-mnist查看状态,
-使用此命令将看到一个master和3个worker被创建。</p><h4 id=33-查看进度>3.3 查看进度</h4><p>训练应该运行大约10个epochs(时期)，并且在CPU群集上需要5-10分钟。可以使用以下命令检查日志以查看训练进度:</p><pre><code>PODNAME=$(kubectl get pods -l pytorch_job_name=distributed-mnist,task_index=0 -o name)
-kubectl logs ${PODNAME}
-</code></pre><p>输出类似于以下内容：</p><pre><code>Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
-Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
-Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
-Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
-Processing...
-Done!
-Rank  0 , epoch  0 :  1.2745472780232237
-Rank  0 , epoch  1 :  0.5743547164872765
-</code></pre><p>您可以通过在节点上使用htop来了解训练如何利用所有的CPU内核。如果我们将其他节点添加到Kubernetes集群，则三个副本将分布在节点上并加快训练时间。</p><p>随着训练的进行，可以使用Kubectl查看状态以及训练何时完成。通过以yaml输出作业，可以查看执行的内部细节。这包括状态。</p><pre><code>kubectl get -o yaml pytorchjobs distributed-mnist
-kubectl get -o json pytorchjobs distributed-mnist  | jq .status
-kubectl get -o json pytorchjobs distributed-mnist  | jq .status.state
-</code></pre><p>训练结束后，结果如下所示：</p><pre><code>Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
-Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
-Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
-Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
-Processing...
-Done!
-Rank  0 , epoch  0 :  1.2745472780232237
-Rank  0 , epoch  1 :  0.5743547164872765
-Rank  0 , epoch  2 :  0.4351522875810737
-Rank  0 , epoch  3 :  0.36984553888662536
-Rank  0 , epoch  4 :  0.3216655456038045
-Rank  0 , epoch  5 :  0.2951831894356813
-Rank  0 , epoch  6 :  0.2750083558114448
-Rank  0 , epoch  7 :  0.2595048323273659
-Rank  0 , epoch  8 :  0.24862684973521526
-Rank  0 , epoch  9 :  0.22692083941101393
-</code></pre><p>可以看到，随着训练的进行，损失逐渐减小。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/63/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/63/>63</a></li><li class="page-item active"><a class=page-link href=/page/64/>64</a></li><li class=page-item><a class=page-link href=/page/65/>65</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/65/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>The docker-compose file exists under folder.</p><p>changed to using repository&rsquo;s docker-compose.<code> apt-get install -y docker-compose</code>.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/63/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/63/>63</a></li><li class="page-item active"><a class=page-link href=/page/64/>64</a></li><li class=page-item><a class=page-link href=/page/65/>65</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/65/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
