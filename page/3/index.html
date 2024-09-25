@@ -1,5 +1,82 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/04/onbuildingubuntukernel/>OnBuildingUbuntuKernel</a></h1><span class=post-date>Sep 4, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Before building, enable all of the deb-src items.</p><p>Steps:</p><pre><code>sudo apt build-dep linux linux-image-unsigned-$(uname -r)
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/05/xrdpxorgonubuntu2204/>xrdpxorgOnUbuntu2204</a></h1><span class=post-date>Sep 5, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install ubuntu 22.04 server, then :</p><pre><code>sudo apt update -y
+sudo apt upgrade -y
+sudo apt install -y ubuntu-desktop  nethogs 
+</code></pre><p>Edit:</p><pre><code>$ sudo vim /etc/X11/Xwrapper.config
+...
+allowed_users=anybody
+...
+</code></pre><p>Edit <code>nv_sock</code>:</p><pre><code>if [ ! -e /etc/modules-load.d/hv_sock.conf ]; then
+	echo &quot;hv_sock&quot; &gt; /etc/modules-load.d/hv_sock.conf
+fi
+</code></pre><p>Configure the policy xrdp session:</p><pre><code>cat &gt; /etc/polkit-1/rules.d/02-allow-colord.rules &lt;&lt;EOF
+polkit.addRule(function(action, subject) {
+    if ((action.id == &quot;org.freedesktop.color-manager.create-device&quot; ||
+         action.id == &quot;org.freedesktop.color-manager.modify-profile&quot; ||
+         action.id == &quot;org.freedesktop.color-manager.delete-device&quot; ||
+         action.id == &quot;org.freedesktop.color-manager.create-profile&quot; ||
+         action.id == &quot;org.freedesktop.color-manager.modify-profile&quot; ||
+         action.id == &quot;org.freedesktop.color-manager.delete-profile&quot;) &amp;&amp;
+        subject.isInGroup(&quot;users&quot;))
+    {
+        return polkit.Result.YES;
+    }
+});
+EOF
+</code></pre><p>Create user and edit xinitrc:</p><pre><code># cp /etc/X11/xinit/xinitrc ~/.xinitrc
+</code></pre><p>Build xrdp and xorgxrdp:</p><pre><code>apt install -y git make autoconf libtool intltool pkg-config nasm xserver-xorg-dev libssl-dev libpam0g-dev libjpeg-dev libfuse-dev libopus-dev libmp3lame-dev libxfixes-dev libxrandr-dev libgbm-dev libepoxy-dev libegl1-mesa-dev libx264-dev
+apt install -y libcap-dev libsndfile-dev libsndfile1-dev libspeex-dev libpulse-dev
+
+apt install -y libfdk-aac-dev
+apt install pulseaudio
+apt install xserver-xorg
+
+cd Code
+git clone --branch devel --recursive https://github.com/neutrinolabs/xrdp.git
+cd xrdp
+./bootstrap
+# Build with glamor explicitly enabled (does not appear to make a difference for core xrdp, but I kept this anyway)
+./configure --enable-x264 --enable-glamor --enable-rfxcodec --enable-mp3lame --enable-fdkaac --enable-opus --enable-pixman --enable-fuse --enable-jpeg --enable-ipv6
+# Control build statement (also works for me in Ubuntu 22.04, since it is xorgxrdp that actually links to glamor)
+#./configure --enable-x264 --enable-rfxcodec --enable-mp3lame --enable-fdkaac --enable-opus --enable-pixman --enable-fuse --enable-jpeg --enable-ipv6
+make -j4
+
+make install
+
+cd ~/Code
+git clone --branch devel --recursive https://github.com/neutrinolabs/xorgxrdp.git
+cd xorgxrdp
+
+echo &quot;-&gt; Building xorgxrdp:&quot;
+./bootstrap
+./configure --enable-glamor
+make -j4
+
+echo &quot;-&gt; Installing xorgxrdp:&quot;
+make install
+
+systemctl enable xrdp
+systemctl stop xrdp
+systemctl start xrdp
+
+sudo apt install gnome-tweaks -y
+# Permission weirdness fix
+sudo bash -c &quot;cat &gt;/etc/polkit-1/localauthority/50-local.d/45-allow.colord.pkla&quot; &lt;&lt;EOF
+[Allow Colord all Users]
+Identity=unix-user:*
+Action=org.freedesktop.color-manager.create-device;org.freedesktop.color-manager.create-profile;org.freedesktop.color-manager.delete-device;org.freedesktop.color-manager.delete-profile;org.freedesktop.color-manager.modify-device;org.freedesktop.color-manager.modify-profile
+ResultAny=no
+ResultInactive=no
+ResultActive=yes
+EOF
+</code></pre><p>Configure:</p><pre><code>$ sudo vim /etc/X11/xrdp/xorg.conf
+Section &quot;Module&quot;
+.....
+    Load &quot;glamoregl&quot;
+....
+</code></pre><p>Add user into render group:</p><pre><code>sudo usermod -aG render test1
+sudo usermod -aG video test1
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/04/onbuildingubuntukernel/>OnBuildingUbuntuKernel</a></h1><span class=post-date>Sep 4, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Before building, enable all of the deb-src items.</p><p>Steps:</p><pre><code>sudo apt build-dep linux linux-image-unsigned-$(uname -r)
 sudo apt install libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf llvm
 sudo apt install git
 
@@ -216,122 +293,4 @@ chvt 9
 systemctl start getty@tty9
 [root@archremote ~]# crontab -l
 @reboot sleep 10 &amp;&amp; /usr/bin/chvtsh.sh
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/08/20/icnhg/>IcnHg</a></h1><span class=post-date>Aug 20, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Modification on grub default parameters:</p><pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash iommu=pt amd_iommu=on initcall_blacklist=sysfb_init pcie_acs_override=downstream,multifunction&quot;
-</code></pre><p>Remove some items in nova:</p><pre><code>$ vim /etc/nova/nova.conf
-[libvirt]
-virt_type = kvm
-cpu_mode = host-passthrough
-qemu_envs = QEMU_AUDIO_DRV=pa,QEMU_PA_SERVER=/run/user/1000/pulse/native
-#qemu_envs = QEMU_AUDIO_DRV=pa
-#qemu_args = -set,device.hostdev0.x-igd-opregion=on, -set,device.hostdev0.x-igd-gms=2, -set,device.hostdev0.romfile=/usr/share/OVMF/adls-1085.rom, -set,device.hostdev0.multifunction=on
-</code></pre><p>Modification on libvirt hooks:</p><pre><code>$ vim /etc/libvirt/hook/vfio-startup
-......
-# 1. find the graphical card and its associated devices in the same pci slot, record its pci id
-# 1.1 find vgaid via lspci 
-vgaid=`lspci | grep -i vga | awk {'print $1'}`
-# 1.2 find iommu file in /sys 
-vgaiommufile=`find /sys/kernel/iommu_groups/ -type l | grep $vgaid`
-# 1.3 retrieve the iommu fold, which contains other device which should be processed in next step
-vgaiommudir=`dirname $vgaiommufile`
-# 1.4 record the system device driver in dic devicedriver
-declare -A devicedriver
-for i in `ls $vgaiommudir`; do devicedriver[$i]=`lspci -v -s $i | grep 'Kernel driver in use' | awk -F ': ' {'print $2'}`;done
-# 1.5 record the pciid in dic pciid
-declare -A pciid
-for i in `ls $vgaiommudir`; do pciid[$i]=`lspci -n -s $i | awk -F ' ' {'print $3'}`;done
-# 1.6 write devicedriver and pciid in /tmp
-rm -f /tmp/devicedriver
-rm -f /tmp/pciid
-for i in `echo &quot;${!devicedriver[@]}&quot;`; do echo $i &quot;${devicedriver[$i]}&quot;&gt;&gt;/tmp/devicedriver;done
-for i in `echo &quot;${!pciid[@]}&quot;`; do echo $i &quot;${pciid[$i]}&quot;&gt;&gt;/tmp/pciid;done
-
-# 2.  unbind the current activated device driver mode
-# example: echo &quot;0000:06:00.0&quot; &gt; /sys/bus/pci/drivers/amdgpu/unbind
-while IFS= read -r line; do
-  pci_no=$(echo &quot;$line&quot; | cut -d' ' -f1)
-  driver_name=$(echo &quot;$line&quot; | cut -d' ' -f2)
-  echo $pci_no &gt; /sys/bus/pci/drivers/$driver_name/unbind
-done &lt; /tmp/devicedriver
-
-# 3. echo new_id to vfio-pci
-# example echo $igd_id &gt; /sys/bus/pci/drivers/vfio-pci/new_id
-while IFS= read -r line; do
-  pci_id=$(echo &quot;$line&quot; | cut -d' ' -f2)
-  echo $pci_id &gt; /sys/bus/pci/drivers/vfio-pci/new_id
-done &lt; /tmp/pciid
-
-# Old Logical for gen10/gen12
-#igd_id=&quot;8086 $(lspci -n|grep '0:02.0'|cut -d ':' -f4|cut -c 1-4)&quot;
-#echo 0000:00:02.0 &gt; /sys/bus/pci/drivers/i915/unbind
-#if ! lsmod | grep &quot;vfio_pci&quot; &amp;&gt; /dev/null ; then
-#    modprobe vfio-pci
-#fi
-#echo $igd_id &gt; /sys/bus/pci/drivers/vfio-pci/new_id
-#echo $usb_id &gt; /sys/bus/pci/drivers/vfio-pci/new_id
-</code></pre><p>Also change teardown hook:</p><pre><code>$ vim /etc/libvirt/hook/vfio-teardown.sh
-
-
-# 1. unbind all of the vfio-pci items
-# Example:  echo $igd_id &gt; /sys/bus/pci/drivers/vfio-pci/remove_id
-while IFS= read -r line; do
-  pci_id=$(echo &quot;$line&quot; | cut -d' ' -f2)
-  echo $pci_id &gt; /sys/bus/pci/drivers/vfio-pci/remove_id
-done &lt; /tmp/pciid
-# 2. re-bind system device driver
-# example: echo &quot;0000:06:00.0&quot; &gt; /sys/bus/pci/drivers/radeon/unbind
-while IFS= read -r line; do
-  pci_no=$(echo &quot;$line&quot; | cut -d' ' -f1)
-  driver_name=$(echo &quot;$line&quot; | cut -d' ' -f2)
-  echo $pci_no &gt; /sys/bus/pci/drivers/$driver_name/bind
-done &lt; /tmp/devicedriver
-</code></pre><p>Change the nova&rsquo;s libvirt items:</p><pre><code>$ vim /usr/lib/python2.7/dist-packages/nova/virt/libvirt/driver.py
-        else:
-            with open('/tmp/pciid', 'r') as f:
-                for line in f:
-                    #print(line.strip().split(' ')[0])
-                    pci = vconfig.LibvirtConfigGuestHostdevPCI()
-                    pci_addr = (line.strip().split(' ')[0])
-                    pci.address = pci_addr
-                    dbs, sep, pci.function = pci_addr.partition('.')
-                    pci.domain, pci.bus, pci.slot = dbs.split(':')
-                    if CONF.libvirt.virt_type in ('xen', 'parallels',):
-                        pci.managed = 'no'
-                    if CONF.libvirt.virt_type in ('kvm', 'qemu'):
-                        pci.managed = 'yes'
-                    guest.add_device(pci)
-
-$ vim /usr/lib/python2.7/dist-packages/nova/virt/libvirt/config.py
-
-    def _format_os(self, root):
-        os = etree.Element(&quot;os&quot;)
-        type_node = self._text_node(&quot;type&quot;, self.os_type)
-        type_node.set(&quot;machine&quot;, &quot;pc-q35-8.0&quot;)
-
-# rm -f /usr/lib/python2.7/dist-packages/nova/virt/libvirt/driver.pyc 
-# rm -f /usr/lib/python2.7/dist-packages/nova/virt/libvirt/config.pyc 
-</code></pre><p>But this will cause the libvirt won&rsquo;t startup, cause it will need <code>/tmp/pciid</code> file available before creating vms, so we have to change the items for generating pciids:</p><pre><code>$ sudo vim /bin/detectgpu.sh
-
-#!/bin/bash
-# 1. find the graphical card and its associated devices in the same pci slot, record its pci id
-# 1.1 find vgaid via lspci 
-vgaid=`lspci | grep -i vga | awk {'print $1'}`
-# 1.2 find iommu file in /sys 
-vgaiommufile=`find /sys/kernel/iommu_groups/ -type l | grep $vgaid`
-# 1.3 retrieve the iommu fold, which contains other device which should be processed in next step
-vgaiommudir=`dirname $vgaiommufile`
-# 1.4 record the system device driver in dic devicedriver
-declare -A devicedriver
-for i in `ls $vgaiommudir`; do devicedriver[$i]=`lspci -v -s $i | grep 'Kernel driver in use' | awk -F ': ' {'print $2'}`;done
-# 1.5 record the pciid in dic pciid
-declare -A pciid
-for i in `ls $vgaiommudir`; do pciid[$i]=`lspci -n -s $i | awk -F ' ' {'print $3'}`;done
-# 1.6 write devicedriver and pciid in /tmp
-rm -f /tmp/devicedriver
-rm -f /tmp/pciid
-for i in `echo &quot;${!devicedriver[@]}&quot;`; do echo $i &quot;${devicedriver[$i]}&quot;&gt;&gt;/tmp/devicedriver;done
-for i in `echo &quot;${!pciid[@]}&quot;`; do echo $i &quot;${pciid[$i]}&quot;&gt;&gt;/tmp/pciid;done
-
-</code></pre><p>Now remove items in hooks&rsquo;s vfio-startup.sh.</p><p>Add this script in crontab:</p><pre><code>crontab -e
-added:   
-@reboot /bin/detectgpu.sh
-</code></pre><p>Finally we will get the amd 520 running on hygon machine.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class="page-item active"><a class=page-link href=/page/3/>3</a></li><li class=page-item><a class=page-link href=/page/4/>4</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/245/>245</a></li><li class=page-item><a href=/page/4/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/245/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class="page-item active"><a class=page-link href=/page/3/>3</a></li><li class=page-item><a class=page-link href=/page/4/>4</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/4/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
