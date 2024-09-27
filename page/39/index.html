@@ -1,5 +1,169 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/08/13/workingtipsonarchanbox/>WorkingTipsOnArchAnbox</a></h1><span class=post-date>Aug 13, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=vm-prepration>VM Prepration</h3><p>Download qcow2 from gitlab(arch built), then start a vm.<br>Update the mirrorlist from <code>https://archlinux.org/mirrorlist/</code></p><h3 id=steps>Steps</h3><p>Install yay:</p><pre><code>$ sudo pacman -Sy git fakeroot vim pacman-mirrorlist
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/08/17/workingtipsonopenwrtcrossgfw/>WorkingTipsOnOpenWRTCrossGFW</a></h1><span class=post-date>Aug 17, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=硬件配置>硬件配置</h3><p>2核2G, 虚拟机,
+其磁盘文件为<code>openwrt-21.02.0-rc3-x86-64-generic-ext4-combined.img</code>.</p><h3 id=网络配置>网络配置</h3><p>隔离网络:</p><p><img src=/images/2021_08_17_13_57_12_682x128.jpg alt=/images/2021_08_17_13_57_12_682x128.jpg></p><p>NAT网络:</p><p><img src=/images/2021_08_17_13_57_12_682x128.jpg alt=/images/2021_08_17_13_57_12_682x128.jpg></p><p>启动完毕后，安装以下opkg包:</p><pre><code># opkg install redsocks
+</code></pre><p>OpenWRT中配置：</p><p>Wan:</p><p><img src=./images/2021_08_17_13_59_55_881x449.jpg alt=./images/2021_08_17_13_59_55_881x449.jpg></p><p><img src=/images/2021_08_17_14_03_07_467x160.jpg alt=/images/2021_08_17_14_03_07_467x160.jpg></p><p>LAN:</p><p><img src=/images/2021_08_17_14_00_17_604x551.jpg alt=/images/2021_08_17_14_00_17_604x551.jpg></p><p><img src=/images/2021_08_17_14_02_14_508x152.jpg alt=/images/2021_08_17_14_02_14_508x152.jpg></p><p>Enable dhcp server:</p><p><img src=/images/2021_08_17_14_02_34_580x398.jpg alt=/images/2021_08_17_14_02_34_580x398.jpg></p><p>Devices:</p><p><img src=/images/2021_08_17_14_03_45_953x307.jpg alt=/images/2021_08_17_14_03_45_953x307.jpg></p><p><img src=/images/2021_08_17_14_04_05_478x424.jpg alt=/images/2021_08_17_14_04_05_478x424.jpg></p><p><img src=/images/2021_08_17_14_04_21_610x382.jpg alt=/images/2021_08_17_14_04_21_610x382.jpg></p><p>DNS:</p><p><img src=/images/2021_08_17_14_04_47_552x604.jpg alt=/images/2021_08_17_14_04_47_552x604.jpg></p><h3 id=redsocks-items>redsocks items</h3><p><code>/etc/redsocks.conf</code>:</p><pre><code>base {
+        // debug: connection progress &amp; client list on SIGUSR1
+        log_debug = off;
+
+        // info: start and end of client session
+        log_info = on;
+
+        /* possible `log' values are:
+         *   stderr
+         *   &quot;file:/path/to/file&quot;
+         *   syslog:FACILITY  facility is any of &quot;daemon&quot;, &quot;local0&quot;...&quot;local7&quot;
+         */
+        // log = stderr;
+        // log = &quot;file:/path/to/file&quot;;
+        log = &quot;syslog:local7&quot;;
+
+        // detach from console
+        daemon = on;
+
+        /* Change uid, gid and root directory, these options require root
+         * privilegies on startup.
+         * Note, your chroot may requre /etc/localtime if you write log to syslog.
+         * Log is opened before chroot &amp; uid changing.
+         */
+        // user = nobody;
+        // group = nobody;
+        // chroot = &quot;/var/chroot&quot;;
+
+        /* possible `redirector' values are:
+         *   iptables   - for Linux
+         *   ipf        - for FreeBSD
+         *   pf         - for OpenBSD
+         *   generic    - some generic redirector that MAY work
+         */
+        redirector = iptables;
+}
+
+redsocks {
+        /* `local_ip' defaults to 127.0.0.1 for security reasons,
+         * use 0.0.0.0 if you want to listen on every interface.
+         * `local_*' are used as port to redirect to.
+         */
+        local_ip = 192.168.89.254;
+        local_port = 12345;
+
+        // listen() queue length. Default value is SOMAXCONN and it should be
+        // good enough for most of us.
+        // listenq = 128; // SOMAXCONN equals 128 on my Linux box.
+
+        // `max_accept_backoff` is a delay to retry `accept()` after accept
+        // failure (e.g. due to lack of file descriptors). It's measured in
+        // milliseconds and maximal value is 65535. `min_accept_backoff` is
+        // used as initial backoff value and as a damper for `accept() after
+        // close()` logic.
+        // min_accept_backoff = 100;
+        // max_accept_backoff = 60000;
+
+        // `ip' and `port' are IP and tcp-port of proxy-server
+        // You can also use hostname instead of IP, only one (random)
+        // address of multihomed host will be used.
+        ip = 10.50.208.147;
+        port = 8118;
+
+
+        // known types: socks4, socks5, http-connect, http-relay
+        type = socks5;
+
+        // login = &quot;foobar&quot;;
+        // password = &quot;baz&quot;;
+}
+
+redudp {
+        // `local_ip' should not be 0.0.0.0 as it's also used for outgoing
+        // packets that are sent as replies - and it should be fixed
+        // if we want NAT to work properly.
+        local_ip = 127.0.0.1;
+        local_port = 10053;
+        // `ip' and `port' of socks5 proxy server.
+        ip = 10.0.0.1;
+       port = 1080;
+        login = username;
+        password = pazzw0rd;
+
+        // redsocks knows about two options while redirecting UDP packets at
+        // linux: TPROXY and REDIRECT.  TPROXY requires more complex routing
+        // configuration and fresh kernel (&gt;= 2.6.37 according to squid
+        // developers[1]) but has hack-free way to get original destination
+        // address, REDIRECT is easier to configure, but requires `dest_ip` and
+        // `dest_port` to be set, limiting packet redirection to single
+        // destination.
+        // [1] http://wiki.squid-cache.org/Features/Tproxy4
+        dest_ip = 8.8.8.8;
+        dest_port = 53;
+
+        udp_timeout = 30;
+        udp_timeout_stream = 180;
+}
+
+dnstc {
+        // fake and really dumb DNS server that returns &quot;truncated answer&quot; to
+        // every query via UDP, RFC-compliant resolver should repeat same query
+        // via TCP in this case.
+        local_ip = 127.0.0.1;
+        local_port = 5300;
+}
+
+// you can add more `redsocks' and `redudp' sections if you need.
+</code></pre><p><code>/etc/init.d/redsocks</code> content:</p><pre><code>##### /etc/init.d/redsocks######
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2007 OpenWrt.org
+
+START=90
+
+# check if configuration exists
+[ -e &quot;/etc/redsocks.conf&quot; ] || exit 0
+
+start() {
+        if [ -e &quot;/var/run/redsocks.pid&quot; ]; then
+                echo &quot;redsocks is already running&quot;
+                exit 0
+        fi
+
+        /bin/echo -n &quot;running redsocks ...&quot;
+
+        # startup the safety-wrapper for the daemon
+        /usr/sbin/redsocks -p /var/run/redsocks.pid
+
+        /bin/echo &quot; done&quot;
+}
+
+stop() {
+        if [ ! -e &quot;/var/run/redsocks.pid&quot; ]; then
+                echo &quot;redsocks is not running&quot;
+                exit 0
+        fi
+
+        /bin/echo -n &quot;stopping redsocks ...&quot;
+
+        # kill the process
+        /bin/kill $(cat /var/run/redsocks.pid)
+        rm /var/run/redsocks.pid
+
+        echo &quot; done&quot;
+}
+
+</code></pre><p>Iptables rules:</p><pre><code>iptables -t nat -N REDSOCKS
+# Ignore LANs IP address
+iptables -t nat -A REDSOCKS -d 0.0.0.0/8 -j RETURN
+iptables -t nat -A REDSOCKS -d 10.0.0.0/8 -j RETURN
+iptables -t nat -A REDSOCKS -d 127.0.0.0/8 -j RETURN
+iptables -t nat -A REDSOCKS -d 169.254.0.0/16 -j RETURN
+iptables -t nat -A REDSOCKS -d 172.16.0.0/12 -j RETURN
+iptables -t nat -A REDSOCKS -d 192.168.0.0/16 -j RETURN
+iptables -t nat -A REDSOCKS -d 224.0.0.0/4 -j RETURN
+iptables -t nat -A REDSOCKS -d 240.0.0.0/4 -j RETURN
+# Anything else should be redirected to redsocks's local port
+iptables -t nat -A REDSOCKS -p tcp -j REDIRECT --to-ports 12345
+iptables -t nat -I zone_lan_prerouting -j REDSOCKS
+</code></pre><p>Then with a reverse proxy you could cross gfw.<br>Reverse connect:</p><p>Internet machine(with 53 as its dns server):</p><pre><code>ssh -o GatewayPorts=true -f -N -T -R *:18888:localhost:18888 docker@10.xxxxx
+ssh -o GatewayPorts=true -f -N -T -R *:8118:10.10.3.19:1080 docker@10.xxxxxx
+sudo socat tcp-listen:18888,reuseaddr,fork udp:127.0.0.1:53
+</code></pre><p>Intranet machine:</p><pre><code>socat -T15 udp4-recvfrom:53,bind=10.xxx.xxx.xx,fork tcp:localhost:18888
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/08/13/workingtipsonarchanbox/>WorkingTipsOnArchAnbox</a></h1><span class=post-date>Aug 13, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=vm-prepration>VM Prepration</h3><p>Download qcow2 from gitlab(arch built), then start a vm.<br>Update the mirrorlist from <code>https://archlinux.org/mirrorlist/</code></p><h3 id=steps>Steps</h3><p>Install yay:</p><pre><code>$ sudo pacman -Sy git fakeroot vim pacman-mirrorlist
 $ sudo pacman -Sy base-devel
 $ cd /opt
 $ sudo git clone https://aur.archlinux.org/yay-git.git
@@ -333,4 +497,4 @@ $ chmod 777 ~/.config/awesome/autorun.sh
 $ exit
 exit
 $ exit
-</code></pre><p>现在重启后即可看到结果，其结果表现为，两路显示独立输出且进入到idv登录前界面。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/07/29/xcdesktop/>XCDesktop</a></h1><span class=post-date>Jul 29, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=installation>Installation</h3><p><img src=/images/2021_07_29_08_27_49_530x175.jpg alt=/images/2021_07_29_08_27_49_530x175.jpg></p><p><img src=/images/2021_07_29_08_42_23_830x712.jpg alt=/images/2021_07_29_08_42_23_830x712.jpg></p><p><img src=/images/2021_07_29_08_42_51_556x134.jpg alt=/images/2021_07_29_08_42_51_556x134.jpg></p><p><img src=/images/2021_07_29_08_43_25_583x696.jpg alt=/images/2021_07_29_08_43_25_583x696.jpg></p><p><img src=/images/2021_07_29_08_44_20_631x572.jpg alt=/images/2021_07_29_08_44_20_631x572.jpg></p><p><img src=/images/2021_07_29_08_44_38_512x87.jpg alt=/images/2021_07_29_08_44_38_512x87.jpg></p><p><img src=/images/2021_07_29_08_44_50_375x217.jpg alt=/images/2021_07_29_08_44_50_375x217.jpg></p><p><img src=/images/2021_07_29_08_45_02_533x427.jpg alt=/images/2021_07_29_08_45_02_533x427.jpg></p><p><img src=/images/2021_07_29_08_45_16_712x693.jpg alt=/images/2021_07_29_08_45_16_712x693.jpg></p><p><img src=/images/2021_07_29_08_45_26_654x677.jpg alt=/images/2021_07_29_08_45_26_654x677.jpg></p><p><img src=/images/2021_07_29_08_45_59_593x515.jpg alt=/images/2021_07_29_08_45_59_593x515.jpg></p><p><img src=/images/2021_07_29_08_48_10_406x506.jpg alt=/images/2021_07_29_08_48_10_406x506.jpg></p><p><img src=/images/2021_07_29_08_49_02_525x683.jpg alt=/images/2021_07_29_08_49_02_525x683.jpg></p><p><img src=/images/2021_07_29_08_49_23_586x678.jpg alt=/images/2021_07_29_08_49_23_586x678.jpg></p><p><img src=/images/2021_07_29_08_49_35_752x695.jpg alt=/images/2021_07_29_08_49_35_752x695.jpg></p><p><img src=/images/2021_07_29_08_49_52_649x708.jpg alt=/images/2021_07_29_08_49_52_649x708.jpg></p><p><img src=/images/2021_07_29_08_50_03_393x175.jpg alt=/images/2021_07_29_08_50_03_393x175.jpg></p><p><img src=/images/2021_07_29_08_51_54_968x748.jpg alt=/images/2021_07_29_08_51_54_968x748.jpg></p><p><img src=/images/2021_07_29_08_52_25_1031x786.jpg alt=./images/2021_07_29_08_52_25_1031x786.jpg></p><p><img src=/images/2021_07_29_08_53_54_1016x229.jpg alt=./images/2021_07_29_08_53_54_1016x229.jpg></p><p><img src=/images/2021_07_29_09_03_21_1020x764.jpg alt=/images/2021_07_29_09_03_21_1020x764.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/38/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/38/>38</a></li><li class="page-item active"><a class=page-link href=/page/39/>39</a></li><li class=page-item><a class=page-link href=/page/40/>40</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/40/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>现在重启后即可看到结果，其结果表现为，两路显示独立输出且进入到idv登录前界面。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/38/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/38/>38</a></li><li class="page-item active"><a class=page-link href=/page/39/>39</a></li><li class=page-item><a class=page-link href=/page/40/>40</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/40/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

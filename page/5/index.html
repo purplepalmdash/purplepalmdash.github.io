@@ -1,5 +1,39 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/18/nvidiat4onryzenvfiotips/>nvidiat4OnRyzenVfioTips</a></h1><span class=post-date>Jul 18, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=host-preparation>Host Preparation</h3><p>Hardware information:</p><pre><code>root@hope:/etc/libvirt# sudo lspci -nn| grep -i nvidia
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/26/jumperconfiguration/>JumperConfiguration</a></h1><span class=post-date>Jul 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Ubuntu22.04 Install desktop version.</p><pre><code>sudo apt update -y
+sudo apt upgrade -y
+sudo apt install -y openssh-server tigervnc-standalone-server tigervnc-xorg-extension lxqt vim net-tools curl
+sudo systemctl set-default multi-user.target
+sudo reboot
+</code></pre><p>Configure vnc:</p><pre><code>$ vncpasswd
+</code></pre><p>Configure the vnc:</p><pre><code>test@jumper:~$ cat ~/.vnc/config 
+session=lxqt
+geometry=1920x1080
+localhost=no
+alwaysshared
+test@jumper:~$ cat /etc/tigervnc/vncserver.users 
+# TigerVNC User assignment
+#
+# This file assigns users to specific VNC display numbers.
+# The syntax is &lt;display&gt;=&lt;username&gt;. E.g.:
+#
+# :2=andrew
+# :3=lisa
+:1=test
+test@jumper:~$ sudo systemctl enable tigervncserver@:1
+Created symlink /etc/systemd/system/multi-user.target.wants/tigervncserver@:1.service → /lib/systemd/system/tigervncserver@.service.
+</code></pre><p>download the citrix workspace from websiste, and install them via:</p><pre><code>sudo dpkg -i icaclient_24.5.0.76_amd64.deb 
+sudo dpkg -i ctxusb_24.5.0.76_amd64.deb 
+</code></pre><p>Configure network in network manager.</p><pre><code>ens160: static ip 192.168.1.33
+ens192: dhcp from company networking. 
+</code></pre><p>Add crontab for sharing:</p><pre><code>root@jumper:/home/test# crontab -l
+@reboot sleep 10 &amp;&amp; /usr/bin/startsharing.sh
+root@jumper:/home/test# cat /usr/bin/startsharing.sh
+#!/bin/sh -e
+iptables -t nat -A POSTROUTING -o ens192 -j MASQUERADE
+iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i ens160 -o ens192 -j ACCEPT
+echo &quot;1&quot; &gt; /proc/sys/net/ipv4/ip_forward
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/18/nvidiat4onryzenvfiotips/>nvidiat4OnRyzenVfioTips</a></h1><span class=post-date>Jul 18, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=host-preparation>Host Preparation</h3><p>Hardware information:</p><pre><code>root@hope:/etc/libvirt# sudo lspci -nn| grep -i nvidia
 08:00.0 3D controller [0302]: NVIDIA Corporation TU104GL [Tesla T4] [10de:1eb8] (rev a1)
 root@hope:/etc/libvirt# lscpu | grep -i model
 Model:                              96
@@ -353,389 +387,4 @@ kvmd:
             - &quot;--resolution={resolution}&quot;
 ...
 </code></pre><p>Examine via:</p><pre><code>kvmd -m
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/07/01/linuxtips17/>LinuxTips17</a></h1><span class=post-date>Jul 1, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-liquorix-kernelzen>1. liquorix kernel(zen)</h3><p>Install on Ubuntu 22.04 via:</p><pre><code>curl -s 'https://liquorix.net/install-liquorix.sh' | sudo bash
-</code></pre><h3 id=2-pikvm-for-x86>2. pikvm for x86</h3><p>Tips(comment the brltty related items and reboot, then ttyUSB0 is avaiable):</p><pre><code>sudo vim /usr/lib/udev/rules.d/85-brltty.rules
-# ENV{PRODUCT}==&quot;1a86/7523/*&quot;, ENV{BRLTTY_BRAILLE_DRIVER}=&quot;bm&quot;, GOTO=&quot;brltty_usb_run&quot;
-sudo systemctl mask brltty.path
-sudo reboot
-</code></pre><p>Change to ubuntu22.04 and solved the problem.</p><h3 id=3-socket-5-proxy>3. socket 5 proxy</h3><p>Open the proxy via:</p><pre><code>ssh -N -D 0.0.0.0:10000 dash@localhost
-</code></pre><p>Then set the proxy in other machine for yum usage:</p><pre><code>$ vim /etc/yum.conf
-#proxy=socks5://10.23.119.200:10000
-</code></pre><h3 id=4-ubuntu2204-curl-issue>4. ubuntu22.04 curl issue</h3><p>Problem:</p><pre><code>OpenSSL Error messages: error:0A000126:SSL routines::unexpected eof while reading
-</code></pre><p>solved via:</p><pre><code>apt remove curl
-apt purge curl
-apt-get update
-apt-get install -y libssl-dev autoconf libtool make
-cd /usr/local/src
-wget https://curl.haxx.se/download/curl-7.88.1.zip
-unzip curl-7.88.1.zip
-cd curl-7.88.1
-./buildconf
-./configure --with-ssl 
-make
-sudo make install
-sudo cp /usr/local/bin/curl /usr/bin/curl
-sudo ldconfig
-curl -V
-</code></pre><h3 id=5-nix-shell-install>5. nix-shell install</h3><p>install via:</p><pre><code>nix-shell '&lt;home-manager&gt;' -A install --option substituters https://mirrors.ustc.edu.cn/nix-channels/store
-</code></pre><h3 id=6-workingtips-for-nix-on-ubuntu>6. Workingtips for nix on ubuntu</h3><p>简单步骤:</p><pre><code>curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
-nix-shell '&lt;home-manager&gt;' -A install
-nix run home-manager/master -- init --switch 
-sudo apt install seatd
-sudo usermod -a -G video $USER
-reboot
-nix profile install github:guibou/nixGL --impure
-home-manager switch --option substituters https://mirrors.ustc.edu.cn/nix-channels/store
-sudo apt-get install -y pipewire pipewire-pulse
-</code></pre><p>Also edit the limitation of <code>/etc/security/limits.conf</code>, as following.</p><p>Modification for nix files:</p><pre><code>$ vim ~/.config/home-manager/hyprland.nix
-                monitor=,1920x1080@60,auto,1
-......
-             master {
-                 # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-# new_is_master = true
-                 new_status = slave
-$ vim ~/.config/home-manager/flake.nix
-    #hyprland.url = &quot;github:hyprwm/Hyprland&quot;;
-    hyprland.url = &quot;git+https://github.com/hyprwm/Hyprland?submodules=1&quot;;
-
-</code></pre><h3 id=7-limitation-linux>7. limitation linux</h3><p>enlarge via:</p><pre><code> /etc/security/limits.conf, add
-
-* soft nofile 1000001
-* hard nofile 1000001
-</code></pre><h3 id=8-nix-dconf-issue>8. nix dconf issue</h3><p>problem:</p><pre><code>Activating dconfSettings
-dbus[13416]: Failed to start message bus: Configuration file needs one or more &lt;listen&gt; elements giving addresses
-dbus-run-session: EOF reading address from bus daemon
-</code></pre><p>Solved via:</p><pre><code>not solved, for centos's dbus is pretty old
-### 9. pactrap archlinux
-Can't Pacstrap because of &quot;Corrupted&quot; packages, solved via:     
-
-</code></pre><p>pacman -Sy archlinux-keyring
-sudo pacstrap -c /mnt base</p><pre><code>
-### 10. nixos dhcpd issue
-encounter following issue:      
-
-</code></pre><pre><code>   Failed assertions:
-   - The option definition `services.dhcpd4' in `/nix/store/yq5mkfx3b97iczs5a6lhjm14gkjx9795-source/configuration.nix' no longer has any effect; please remove it.
-   The dhcpd4 module has been removed because ISC DHCP reached its end of life.
-   See https://www.isc.org/blogs/isc-dhcp-eol/ for details.
-   Please switch to a different implementation like kea or dnsmasq.
-</code></pre><pre><code>switch to new implementation:     
-
-### 11. sybench rocklinux
-Install via:      
-
-</code></pre><p>sudo yum install -y epel-release
-sudo yum install ./sysbench&mldr;..</p><pre><code>
-### 12. x0vncserver
-Using x0vncserver for replacing nxplayer:      
-
-</code></pre><p>$ sudo pacman -S tigervnc
-$ vncpasswd
-$ vim ~/.xprofile
-x0vncserver -rfbauth ~/.vnc/passwd &</p><pre><code>
-### 13. git clone via socks proxy
-temp using socks proxy via:     
-
-</code></pre><p>git -c &ldquo;http.proxy=socks5h://127.0.0.1:21080&rdquo; clone <a href=https://github.com/Limitex/ComfyUI-Diffusers.git>https://github.com/Limitex/ComfyUI-Diffusers.git</a></p><pre><code>
-### 14. ignore ast kernel issue
-issue:      
-
-</code></pre><p>W: Possible missing firmware /lib/firmware/ast_dp501_fw.bin for module ast</p><pre><code>Solved via:     
-
-</code></pre><p>touch /lib/firmware/ast_dp501_fw.bin
-update-initramfs -u -k all</p><pre><code>
-### 15. watch sync status
-via:      
-
-</code></pre><p>watch -d grep -e Dirty: -e Writeback: /proc/meminfo</p><pre><code>
-### 15. g++ update
-via:     
-
-</code></pre><p>2019 sudo apt install -y g++-12
-2020 ls -la /usr/bin | grep g++
-2021 sudo update-alternatives &ndash;install /usr/bin/g++ g++ /usr/bin/g++-11 10
-2022 sudo update-alternatives &ndash;install /usr/bin/g++ g++ /usr/bin/g++-12 20
-2023 sudo update-alternatives &ndash;install /usr/bin/c++ c++ /usr/bin/g++ 30</p><pre><code>
-### 16. set default opener
-Install:     
-
-</code></pre><p>perl-file-mimeinfo
-Or
-perl538Packages.FileMimeInfo</p><pre><code>Select the default opener for jpeg:     
-
-</code></pre><p>mimeopen -d photo.jpeg</p><pre><code>
-### 17. esxi usb nic
-`https://avojak.com/blog/2024/01/17/installing-esxi-with-usb-nic/`, 参考。    
-
-
-
-### 18. nixos citrix workspace
-Download the tar file from citrix:     
-
-</code></pre><p>sudo nixos-rebuild switch &ndash;option substituers <a href=https://mirror.sjtu.edu.cn/nix-channels/store>https://mirror.sjtu.edu.cn/nix-channels/store</a>
-nix-prefetch-url file:///home/dash/Downloads/linuxx64-24.5.0.76.tar.gz
-sudo nixos-rebuild switch &ndash;option substituers <a href=https://mirror.sjtu.edu.cn/nix-channels/store>https://mirror.sjtu.edu.cn/nix-channels/store</a></p><pre><code>
-### 19. Run llama3.1
-Steps:       
-
-</code></pre><p>curl -fsSL <a href=https://ollama.com/install.sh>https://ollama.com/install.sh</a> | sh
-ollama run llama3.1:8b</p><pre><code>
-### 20. offline kubespray issues
-Solved via:     
-
-</code></pre><p>tar xzvf ../off.tar.gz
-cd kubespray-offline-2.25.0-0/
-cd outputs/
-./setup-container.sh && ./start-nginx.sh && ./setup-offline.sh && ./setup-py.sh && ./start-registry.sh && ./load-push-all-images.sh && ./extract-kubespray.sh
-cd kubespray-2.25.0/
-cd inventory/
-cp -r sample/ rong
-cd rong/
-vim inventory.ini
-cd ../../
-python3.11 -m venv ~/.venv/3.11
-source ~/.venv/3.11/bin/activate
-pip install -U pip
-pip install -r requirements.txt
-cp ../../offline.yml inventory/rong/group_vars/all/offline.yml
-vim inventory/rong/group_vars/all/offline.yml
-cp ~/new/kubespray-offline-2.25.0-0/outputs/playbook/offline-repo.yml .
-cp -r ~/new/kubespray-offline-2.25.0-0/outputs/playbook/roles/offline-repo/ roles/
-ansible-playbook -i inventory/rong/inventory.ini offline-repo.yml
-ansible-playbook -i inventory/rong/inventory.ini &ndash;become &ndash;become-user=root cluster.yml
-kubectl get nodes
-kubectl get po &ndash;all-namespaces
-vim /etc/systemd/resolved.conf
-reboot</p><pre><code>
-### 21. grep in linux root
-via:    
-
-</code></pre><p>grep -rli &ndash;exclude-dir={proc,boot,root,sys} &lsquo;xmlns:qemu=&rsquo; /</p><pre><code>
-### 22. one-kvm-docker
-via:    
-
-</code></pre><p>docker run -itd -p443:443 -p80:80 &ndash;name pikvm-docker &ndash;device=/dev/ttyUSB0:/dev/kvmd-hid &ndash;device=/dev/video0:/dev/kvmd-video pikvm-ch9329:0.61</p><pre><code>
-![/images/20240821_095332_x.jpg](/images/20240821_095332_x.jpg)
-
-should use relative mouse.   
-
-### 23. cowsay issue
-issue:    
-
-</code></pre><p>cowsay: Could not find cowfile for &lsquo;default.cow&rsquo;!</p><pre><code>Solved via:   
-
-</code></pre><p>$ vim ~/.zshrc
-export ZSH=/home/dash/.oh-my-zsh
-COWPATH=/usr/share/cowsay/cows</p><pre><code>recreate the terminal, this time cowsay works properly.   
-
-### 24. flux1-dev-bnb-nf4-v2
-Steps:    
-
-</code></pre><p>models:<br>(base) dash@comfyvm:~/Code/ComfyUI/models/checkpoints$ mv ~/flux1-dev-bnb-nf4-v2.safetensors .
-(base) dash@comfyvm:~/Code/ComfyUI/models/checkpoints$ pwd
-/home/dash/Code/ComfyUI/models/checkpoint</p><p>Custom model:<br>(base) dash@comfyvm:~/Code/ComfyUI/custom_nodes$ mv ~/ComfyUI_bitsandbytes_NF4-master.zip .
-(base) dash@comfyvm:~/Code/ComfyUI/custom_nodes$ unzip ComfyUI_bitsandbytes_NF4-master.zip
-Archive: ComfyUI_bitsandbytes_NF4-master.zip
-6c65152bc48b28fc44cec3aa44035a8eba400eb9
-creating: ComfyUI_bitsandbytes_NF4-master/
-inflating: ComfyUI_bitsandbytes_NF4-master/LICENSE.txt<br>inflating: ComfyUI_bitsandbytes_NF4-master/README.md<br>inflating: ComfyUI_bitsandbytes_NF4-master/<strong>init</strong>.py<br>extracting: ComfyUI_bitsandbytes_NF4-master/requirements.txt</p><p>$ conda activate comfyui
-(comfyui) dash@comfyvm:/opt/src/redsocks$ cd ~/Code/ComfyUI/
-(comfyui) dash@comfyvm:~/Code/ComfyUI$ python -s -m pip install -U bitsandbytes</p><pre><code>### 25. hygon win7
-libvirt configuration:    
-
-</code></pre><pre><code>&lt;memballoon model='virtio'&gt;
-  &lt;address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/&gt;
-&lt;/memballoon&gt;
-</code></pre><pre><code>  &lt;os&gt;
-    &lt;type arch='x86_64' machine='pc-q35-8.2'&gt;hvm&lt;/type&gt;
-    &lt;boot dev='hd'/&gt;
-  &lt;/os&gt;
-</code></pre><p>hardware info:</p><pre><code>root@idv-P860:~# lspci | grep -i vga
-06:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Lexa PRO [Radeon 540/540X/550/550X / RX 540X/550/550X] (rev c7)
-</code></pre><p>win7, only in bios with Win7_hygon.iso, select q35. and install specified old win7 driver.</p><h3 id=26-archlinux-cn>26. archlinux cn</h3><p>Edit the <code>/etc/pacman.conf</code>:</p><pre><code>[archlinuxcn]
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
-</code></pre><p>Then:</p><pre><code>$ sudo pacman -Sy archlinuxcn-keyring
-</code></pre><h3 id=27-bootrepair>27. bootrepair</h3><p>via:</p><pre><code>sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt update
-sudo apt install -y boot-repair &amp;&amp; boot-repair
-</code></pre><h3 id=28-nvidia-t4-qxl>28. nvidia t4 qxl</h3><p>Configuration items:</p><pre><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}
-EnableMsHybrid 1
-qxl: 
-EnableMsHybrid 2
-GridLicensedFeatures 7
-AdapterType should be removed.
-</code></pre><h3 id=29-take-screenshot>29. take screenshot</h3><p>via:</p><pre><code>xfce4-screenshooter  -f --display=:2 -s /tmp/test3_5.jpg
-</code></pre><h3 id=30-kernel-lt>30. kernel-lt</h3><p>Install via:</p><pre><code>
-[root@cc-shhsh-x86-controller-1 ~]# yum --disablerepo=&quot;*&quot; --enablerepo=&quot;elrepo-kernel&quot; install kernel-lt
-Loaded plugins: fastestmirror
-Loading mirror speeds from cached hostfile
-Resolving Dependencies
---&gt; Running transaction check
----&gt; Package kernel-lt.x86_64 0:5.4.278-1.el7.elrepo will be installed
---&gt; Finished Dependency Resolution
-
-Dependencies Resolved
-
-=============================================================================================================================================================================================
- Package                                   Arch                                   Version                                                Repository                                     Size
-=============================================================================================================================================================================================
-Installing:
- kernel-lt                                 x86_64                                 5.4.278-1.el7.elrepo                                   elrepo-kernel                                  50 M
-
-Transaction Summary
-=============================================================================================================================================================================================
-Install  1 Package
-
-Total download size: 50 M
-Installed size: 230 M
-Is this ok [y/d/N]: y
-Downloading packages:
-kernel-lt-5.4.278-1.el7.elrepo.x86_64.rpm                                                                                                                             |  50 MB  00:00:01     
-Running transaction check
-Running transaction test
-Transaction test succeeded
-Running transaction
-  Installing : kernel-lt-5.4.278-1.el7.elrepo.x86_64                                                                                       
-</code></pre><p>Configure via:</p><pre><code>[root@cc-shhsh-x86-controller-1 ~]# ls /boot/vmlinuz-5.4.278-1.el7.elrepo.x86_64 
-/boot/vmlinuz-5.4.278-1.el7.elrepo.x86_64
-[root@cc-shhsh-x86-controller-1 ~]# grubby --set-default /boot/vmlinuz-5.4.278-1.el7.elrepo.x86_64 
-[root@cc-shhsh-x86-controller-1 ~]# grub2-mkconfig -o /boot/efi/EFI/
-BOOT/   centos/ 
-[root@cc-shhsh-x86-controller-1 ~]# grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
-Generating grub configuration file ...
-Found linux image: /boot/vmlinuz-5.4.278-1.el7.elrepo.x86_64
-Found initrd image: /boot/initramfs-5.4.278-1.el7.elrepo.x86_64.img
-Found linux image: /boot/vmlinuz-4.19.12-7_rc1.zdyun.x86_64
-Found initrd image: /boot/initramfs-4.19.12-7_rc1.zdyun.x86_64.img
-Found linux image: /boot/vmlinuz-4.19.12-1.ctyun.x86_64
-Found initrd image: /boot/initramfs-4.19.12-1.ctyun.x86_64.img
-Found linux image: /boot/vmlinuz-3.10.0-957.el7.x86_64
-Found initrd image: /boot/initramfs-3.10.0-957.el7.x86_64.img
-Found linux image: /boot/vmlinuz-0-rescue-ad8ef31f6ef940a0b65f1f597ad06c3b
-Found initrd image: /boot/initramfs-0-rescue-ad8ef31f6ef940a0b65f1f597ad06c3b.img
-done
-You have new mail in /var/mail/root/
-</code></pre><h3 id=31-lenovo-bios-issue>31. lenovo bios issue</h3><p>Install win7:</p><pre><code>BIOS版本M31K开头的激活代码 AmiSetupWriter.efi 0x802 0x1 （CSM改为允许）
-BIOS版本M31K开头的激活代码 AmiSetupWriter.efi 0x802 0x1 （CSM改为允许）
-如果M31K开头的BIOS，独显为RTX 16系列和20系列输入以下三条命令
-AmiSetupWriter.efi 0x808 0x0 
-AmiSetupWriter.efi 0x80b 0x2
-AmiSetupWriter.efi 0x80c 0x2
-</code></pre><h3 id=32-detectgpu-fixed-code>32. detectgpu fixed code</h3><p>via:</p><pre><code># 1.7 remove pciroot related items
-reserveid=`lspci | grep -i vga | awk -F ':' {'print $1'}`
-prefixreserveid=&quot;0000:&quot;$reserveid
-echo &quot;/^${prefixreserveid}/&quot;'!d' &gt; /tmp/sedcmd.txt
-sed -i -f /tmp/sedcmd.txt /tmp/pciid
-sed -i -f /tmp/sedcmd.txt /tmp/devicedriver
-</code></pre><h3 id=33-pyqt-related>33. pyqt related</h3><pre><code>usermod -a -G kvm,libvirt idv
-python3 -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
-pip3 install pyqt5==5.15.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
-python3 -c &quot;from PyQt5.Qt import PYQT_VERSION_STR; print(PYQT_VERSION_STR)&quot;
-</code></pre><h3 id=34-macos-usage>34. macos usage</h3><p>via:</p><pre><code>test@tests-iMac-Pro-2 ~ % sysctl -n hw.ncpu
-
-14
-test@tests-iMac-Pro-2 ~ % sysctl hw.memsize | awk '{print $1/1073741824}'
-
-0
-test@tests-iMac-Pro-2 ~ % sysctl hw.memsize
-hw.memsize: 24775753728
-test@tests-iMac-Pro-2 ~ % sysctl hw.memsize | awk '{print $2/1073741824}'
-
-23.0742
-
-</code></pre><h3 id=35-fh-vfio-items>35. fh vfio items</h3><p>Change vfio hooks via:</p><p><code>vfio-startup.sh</code>:</p><pre><code>systemctl stop graphical.target
-sleep 3
-systemctl stop gdm
-sleep 3 
-systemctl stop gdm3
-sleep 3
-killall --user idv
-sleep 5
-echo 0x1ec8 0x9810 | tee -a /sys/bus/pci/drivers/vfio-pci/new_id 
-sleep 2
-echo &quot;End of startup!&quot;
-</code></pre><p><code>vfio-teardown.sh</code>:</p><pre><code>sleep 3
-echo 0x1ec8 0x9810 &gt; /sys/bus/pci/drivers/vfio-pci/remove_id 
-sleep 1
-echo 1 &gt; /sys/bus/pci/devices/0000\:06\:00.0/remove 
-sleep 3
-echo 1 &gt; /sys/bus/pci/rescan 
-sleep 3
-systemctl start gdm
-
-echo &quot;End of teardown!&quot;
-</code></pre><h3 id=36-cuttlefish-building>36. cuttlefish building</h3><p>Building deb:</p><pre><code>git clone https://github.com/google/android-cuttlefish
-cd android-cuttlefish
-tools/buildutils/build_packages.sh 
-$ ls *.deb
-cuttlefish-base_1.0.0_arm64.deb         cuttlefish-orchestration_1.0.0_arm64.deb
-cuttlefish-common_1.0.0_arm64.deb       cuttlefish-user_1.0.0_arm64.deb
-cuttlefish-integration_1.0.0_arm64.deb
-</code></pre><p>Install deb:</p><pre><code>sudo dpkg -i ./cuttlefish-base_*_*64.deb || sudo apt-get install -f
-sudo dpkg -i ./cuttlefish-user_*_*64.deb || sudo apt-get install -f
-sudo usermod -aG kvm,cvdnetwork,render $USER
-sudo reboot
-</code></pre><p>getprop:</p><pre><code>dumpsys SurfaceFlinger | grep GLES
- ------------RE GLES------------
-</code></pre><h3 id=37-secure-boot-off>37. secure boot off</h3><p>via:</p><pre><code>&lt;loader readonly='yes' secure='no' type='pflash'&gt;/usr/share/OVMF/OVMF_CODE.fd&lt;/loader&gt;
-    &lt;nvram&gt;/var/lib/libvirt/qemu/nvram/centos-4.19-3_VARS.fd&lt;/nvram&gt;
-</code></pre><h3 id=38-ubuntuok>38. ubuntuOK</h3><p>via:</p><pre><code>  HOME=$PWD ./bin/launch_cvd  -gpu_mode  drm_virgl  -enable_gpu_udmabuf -cpus 4 -memory_mb  8192
-
-</code></pre><h3 id=39-update-gcc-in-debian-unstable>39. update gcc in debian unstable</h3><p>via:</p><pre><code>sudo apt install -y gcc-12
-sudo apt install g++-12
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 10
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 20
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 10
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 20
-sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30
-sudo update-alternatives --set /usr/bin/gcc
-sudo update-alternatives --set cc /usr/bin/gcc
-sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30
-sudo update-alternatives --set c++ /usr/bin/g++
-sudo update-alternatives --config gcc
-sudo update-alternatives --config g++
-</code></pre><h3 id=40-build-gfxstream-on-ubuntu2204>40. build gfxstream on ubuntu2204</h3><p>problems:</p><pre><code>test@ubuntu2204:~/Code/qemu/build/deps/gfxstream$ meson setup -Ddefault_library=static --prefix &quot;${PREFIX}&quot; build/ 
-The Meson build system
-Version: 0.61.2
-Source dir: /home/test/Code/qemu/build/deps/gfxstream
-Build dir: /home/test/Code/qemu/build/deps/gfxstream/build
-Build type: native build
-Project name: gfxstream
-Project version: 0.1.2
-C compiler for the host machine: cc (gcc 11.4.0 &quot;cc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0&quot;)
-C linker for the host machine: cc ld.bfd 2.38
-C++ compiler for the host machine: c++ (gcc 11.4.0 &quot;c++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0&quot;)
-C++ linker for the host machine: c++ ld.bfd 2.38
-Host machine cpu family: x86_64
-Host machine cpu: x86_64
-Program python3 found: YES (/usr/bin/python3)
-WARNING: Python files installed by Meson might not be found by python interpreter.
- This warning can be avoided by setting &quot;python.platlibdir&quot; option.
-WARNING: Python files installed by Meson might not be found by python interpreter.
- This warning can be avoided by setting &quot;python.purelibdir&quot; option.
-Found pkg-config: /usr/bin/pkg-config (0.29.2)
-Run-time dependency aemu_base found: YES 0.1.2
-Run-time dependency aemu_host_common found: YES 0.1.2
-Run-time dependency aemu_logging found: YES 0.1.2
-Run-time dependency aemu_snapshot found: YES 0.1.2
-Found CMake: /usr/bin/cmake (3.22.1)
-Run-time dependency dl found: NO (tried pkgconfig and cmake)
-
-host/meson.build:78:2: ERROR: Dependency &quot;dl&quot; not found, tried pkgconfig and cmake
-
-</code></pre><h3 id=41-problem-solving-with-policykit>41. problem solving with policykit</h3><p>building issue:</p><pre><code>terminal 1: 
-$ echo $??
-23783
-$ pkttyagent --process 23783
-Authentication is needed to run `/usr/bin/python3' as the super user
-Authenticating as: test
-Password: 
-==== AUTHENTICATION COMPLETE ===
-==== AUTHENTICATING FOR org.freedesktop.policykit.exec ===
-Authentication is needed to run `/usr/bin/python3' as the super user
-Authenticating as: test
-Password: 
-==== AUTHENTICATION COMPLETE ===
-
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/4/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class=page-item><a class=page-link href=/page/4/>4</a></li><li class="page-item active"><a class=page-link href=/page/5/>5</a></li><li class=page-item><a class=page-link href=/page/6/>6</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/6/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
