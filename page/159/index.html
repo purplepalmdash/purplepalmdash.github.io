@@ -1,5 +1,20 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/14/an-zhuang-icehouse-at-ubuntu14-dot-04-7/>安装Icehouse@Ubuntu14.04(7)</a></h1><span class=post-date>Apr 14, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>接下来在OpenStack Icehouse的基础上，部署OpenContrail, OpenContrail能提供更为强大的网络功能。<br>首先从Juniper的官网上下载安装文件:</p><pre><code>	contrail-install-packages_2.10-39~ubuntu-14-04icehouse_all.deb
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/14/an-zhuang-icehouse-at-ubuntu14-dot-04-6/>安装Icehouse@Ubuntu14.04(6)</a></h1><span class=post-date>Apr 14, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>这里我们安装horizon服务，使得我们对OpenStack的管理做到可视化.<br>###安装horizon
+在Controller节点上，安装需要的包:</p><pre><code>root@JunoController:~# apt-get -y install openstack-Trustyboard apache2 libapache2-mod-wsgi memcached python-memcache
+
+</code></pre><p>建议删除ubuntu提供的主题，这个主题会使得一些翻译失效:</p><pre><code>root@JunoController:~# apt-get remove --purge openstack-Trustyboard-ubuntu-theme
+
+</code></pre><p>配置DashBoard的本地配置文件:</p><pre><code>root@JunoController:~# vim /etc/openstack-Trustyboard/local_settings.py 
+    OPENSTACK_HOST = &quot;10.17.17.211&quot;
+    TIME_ZONE = &quot;Asia/Shanghai&quot;
+
+</code></pre><p>重新启动服务:</p><pre><code>root@JunoController:~# service apache2 restart
+root@JunoController:~# service memcached restart
+
+</code></pre><p>访问<code>http://10.17.17.211/horizon</code>登入到DashBoard以管理OpenStack.</p><h3 id=查看openstack版本>查看OpenStack版本</h3><p>节点机器起名错误，应该是IcehouseController/IcehouseCompute/IcehouseNetwork之类，但是这里可以通过以下命令来查看OpenStack安装的版本：</p><pre><code>root@JunoController:~# dpkg -l | grep nova-common
+ii  nova-common                         1:2014.1.4-0ubuntu2                   all          OpenStack Compute - common files
+
+</code></pre><p><code>2014.1.4</code>就是我们要关注的版本信息，在:<br><a href=https://wiki.openstack.org/wiki/Releases>https://wiki.openstack.org/wiki/Releases</a><br>可以查到，它属于Icehouse.<br><img src=/images/2015_04_14_11_58_39_490x203.jpg alt=/images/2015_04_14_11_58_39_490x203.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/14/an-zhuang-icehouse-at-ubuntu14-dot-04-7/>安装Icehouse@Ubuntu14.04(7)</a></h1><span class=post-date>Apr 14, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>接下来在OpenStack Icehouse的基础上，部署OpenContrail, OpenContrail能提供更为强大的网络功能。<br>首先从Juniper的官网上下载安装文件:</p><pre><code>	contrail-install-packages_2.10-39~ubuntu-14-04icehouse_all.deb
 
 </code></pre><p>Contrail可以被安装到已经部署好的OpenStack环境中，只要在安装Contrail的时候，根据已有的OpenStack组件的部署情况作相应的调整就可以。</p><h3 id=hook>Hook</h3><p>Contrail用到的钩子(Hook)有：<br><code>core_plugin</code> &ndash; 它被用在neutron的配置中，用于指向ContrailPlugin组件。<br><code>libvirt_vif_driver</code> &ndash; 它被用在nova计算节点配置中，用来指向Contrail的VRouterVIFDriver.<br><code>MQ broker IP and Port</code> &ndash; 如果现有的OpenStack提供RabbitMQ那么将相应的IP和端口在neutron和nova的配置中指过去。</p><h3 id=contrial部署涉及组建>Contrial部署涉及组建</h3><p>列举如下，对应的文件需要做修改，或者创建。</p><pre><code>api_service.conf - This file needs to be edited to provide details of existing OpenStack keystone.
 plugin.ini - This file needs proper keystone URL, token and credentials.
@@ -723,163 +738,4 @@ root@JunoController:~# service glance-api restart
 | 68f14900-8b25-4329-ad56-8fbd497c6812 | cirros-0.3.3-x86_64 | qcow2       | bare             | 13200896 | active |
 +--------------------------------------+---------------------+-------------+------------------+----------+--------+
 
-</code></pre><p>好了，现在glance服务可以使用了，接下来将创建compute节点和网络节点。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2015/04/13/an-zhuang-icehouse-at-ubuntu14-dot-04-4/>安装Icehouse@Ubuntu14.04(4)</a></h1><span class=post-date>Apr 13, 2015<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>这里将配置计算节点。计算节点我们使用了一台2G内存的虚拟机，并使用了嵌套虚拟化，可以通过<code>lscpu</code>来看到CPU的VMX/VT-X标志都已经被下发到虚拟机中。</p><h3 id=数据库准备>数据库准备</h3><p>使用下列命令来创建nova所需数据库:</p><pre><code>root@JunoController:~# mysql -u root -p
-Enter password: 
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 35
-Server version: 5.5.41-MariaDB-1ubuntu0.14.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2014, Oracle, MariaDB Corporation Ab and others.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-MariaDB [(none)]&gt; CREATE DATABASE nova;
-Query OK, 1 row affected (0.00 sec)
-
-MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'localhost' IDENTIFIED BY 'xxxx';
-Query OK, 0 rows affected (0.00 sec)
-
-MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'%' IDENTIFIED BY 'xxxx';
-Query OK, 0 rows affected (0.00 sec)
-
-MariaDB [(none)]&gt; flush privileges;
-Query OK, 0 rows affected (0.00 sec)
-
-MariaDB [(none)]&gt; quit
-Bye
-
-</code></pre><h3 id=nova用户>nova用户</h3><p>创建nova用户:</p><pre><code>root@JunoController:~# source ~/openstack/admin-openrc.sh
-root@JunoController:~# keystone user-create --name nova --pass xxxx
-+----------+----------------------------------+
-| Property |              Value               |
-+----------+----------------------------------+
-|  email   |                                  |
-| enabled  |               True               |
-|    id    | 845c22d1a781458a8b28ba54534b73dd |
-|   name   |               nova               |
-| username |               nova               |
-+----------+----------------------------------+
-
-</code></pre><p>制定nova属于service tenant, 并赋予admin权限:</p><pre><code>root@JunoController:~# keystone user-role-add --user nova --tenant service --role admin
-
-</code></pre><p>在keystone注册nova:</p><pre><code>root@JunoController:~# keystone service-create --name nova --type compute --description &quot;OpenStack Compute&quot;
-+-------------+----------------------------------+
-|   Property  |              Value               |
-+-------------+----------------------------------+
-| description |        OpenStack Compute         |
-|   enabled   |               True               |
-|      id     | 8733caba0b9742a39ee9ac53ad4d8e27 |
-|     name    |               nova               |
-|     type    |             compute              |
-+-------------+----------------------------------+
-
-</code></pre><p>在keystone注册nova end-point:</p><pre><code>root@JunoController:~# keystone endpoint-create --service-id $(keystone service-list | awk '/ compute / {print $2}') --publicurl http://10.17.17.211:8774/v2/%\(tenant_id\)s --internalurl http://10.17.17.211:8774/v2/%\(tenant_id\)s --adminurl http://10.17.17.211:8774/v2/%\(tenant_id\)s --region regionOne
-+-------------+-------------------------------------------+
-|   Property  |                   Value                   |
-+-------------+-------------------------------------------+
-|   adminurl  | http://10.17.17.211:8774/v2/%(tenant_id)s |
-|      id     |      d16c91bfacf2474ebee36314535a146f     |
-| internalurl | http://10.17.17.211:8774/v2/%(tenant_id)s |
-|  publicurl  | http://10.17.17.211:8774/v2/%(tenant_id)s |
-|    region   |                 regionOne                 |
-|  service_id |      8733caba0b9742a39ee9ac53ad4d8e27     |
-+-------------+-------------------------------------------+
-
-</code></pre><h3 id=compute服务安装>Compute服务安装</h3><h4 id=controller节点配置>Controller节点配置</h4><p>在Controller节点上，安装以下包:</p><pre><code>root@JunoController:~# apt-get -y install nova-api nova-cert nova-conductor nova-consoleauth nova-novncproxy nova-scheduler python-novaclient
-
-</code></pre><p>配置nova所需的配置文件:</p><pre><code># vim /etc/nova/nova.conf
-[database]
-connection = mysql://nova:xxxxx@10.17.17.211/nova
-
-[DEFAULT]
-....
-rpc_backend = rabbit
-rabbit_host = 10.17.17.211
-rabbit_password = xxxxxx
-my_ip=10.17.17.211
-vncserver_listen = 0.0.0.0
-vncserver_proxyclient_address = 10.17.17.211
-auth_strategy = keystone 
-
-[keystone_authtoken]
-auth_uri = http://10.17.17.211:5000
-auth_host = 10.17.17.211
-auth_port = 35357
-auth_protocol = http
-admin_tenant_name = service
-admin_user = nova
-admin_password = xxxx
-[glance]
-host=10.17.17.211
-
-</code></pre><p>删除sqlite3数据库:</p><pre><code>root@JunoController:~# rm /var/lib/nova/nova.sqlite 
-
-</code></pre><p>创建数据库：</p><pre><code>root@JunoController:~# su -s /bin/sh -c &quot;nova-manage db sync&quot; nova
-
-</code></pre><p>重启服务，使用nova检查本机可用镜像情况:</p><pre><code>root@JunoController:~# service nova-api restart
-root@JunoController:~# service nova-cert restart
-root@JunoController:~#  service nova-consoleauth restart
-root@JunoController:~# service nova-scheduler restart
-root@JunoController:~# service nova-conductor restart
-root@JunoController:~# service nova-novncproxy restart
-root@JunoController:~# nova image-list
-+--------------------------------------+---------------------+--------+--------+
-| ID                                   | Name                | Status | Server |
-+--------------------------------------+---------------------+--------+--------+
-| 68f14900-8b25-4329-ad56-8fbd497c6812 | cirros-0.3.3-x86_64 | ACTIVE |        |
-+--------------------------------------+---------------------+--------+--------+
-
-</code></pre><h4 id=compute节点安装>Compute节点安装</h4><p>安装下列包:</p><pre><code>root@JunoCompute:~#  apt-get -y install nova-compute sysfsutils
-
-</code></pre><p>配置:</p><pre><code>root@JunoCompute:~# vim /etc/nova/nova.conf 
-[DEFAULT]
-......
-auth_strategy = keystone
-rpc_backend = rabbit
-rabbit_host = 10.17.17.211
-rabbit_password = xxxx
-my_ip = 10.17.17.213
-vnc_enabled = True
-vncserver_listen = 0.0.0.0
-vncserver_proxyclient_address = 10.17.17.213
-novncproxy_base_url = http://10.17.17.211:6080/vnc_auto.html
-glance_host = 10.17.17.211
-
-[keystone_authtoken]
-auth_uri = http://10.17.17.211:5000
-auth_host = 10.17.17.211
-auth_port = 35357
-auth_protocol = http
-admin_tenant_name = service
-admin_user = nova
-admin_password = xxxx
-
-[database]
-#The SQLAlchemy connection string used to connect to the database
-connection = mysql://nova:xxxx@10.17.17.211/nova
-[glance]
-host=10.17.17.211
-
-</code></pre><p>看cpu硬件是否支持硬件加速:</p><pre><code>root@JunoCompute:~# egrep -c '(vmx|svm)' /proc/cpuinfo
-2
-
-</code></pre><p>如果支持加速，则配置nova-compute.conf为:</p><pre><code>root@JunoCompute:~# cat /etc/nova/nova-compute.conf
-[libvirt]
-virt_type=kvm
-
-</code></pre><p>删除不需要的nova.sqlite文件:</p><pre><code>root@JunoCompute:~# rm -f /var/lib/nova/nova.sqlite 
-
-</code></pre><p>重起nova服务:</p><pre><code>root@JunoCompute:~# service nova-compute restart
-
-</code></pre><h3 id=验证>验证</h3><p>在控制节点上,列出所有的service:</p><pre><code>root@JunoController:~# nova service-list
-+------------------+----------------+----------+---------+-------+----------------------------+-----------------+
-| Binary           | Host           | Zone     | Status  | State | Updated_at                 | Disabled Reason |
-+------------------+----------------+----------+---------+-------+----------------------------+-----------------+
-| nova-cert        | JunoController | internal | enabled | up    | 2015-04-13T10:16:10.000000 | -               |
-| nova-consoleauth | JunoController | internal | enabled | up    | 2015-04-13T10:16:12.000000 | -               |
-| nova-scheduler   | JunoController | internal | enabled | up    | 2015-04-13T10:16:05.000000 | -               |
-| nova-conductor   | JunoController | internal | enabled | up    | 2015-04-13T10:16:08.000000 | -               |
-| nova-compute     | JunoCompute    | nova     | enabled | up    | 2015-04-13T10:16:09.000000 | -               |
-+------------------+----------------+----------+---------+-------+----------------------------+-----------------+
-
-</code></pre><p>现在compute节点已经配置完了，接下来可以配置网络节点。配置完网络节点后，就可以启动虚拟机了。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/158/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/158/>158</a></li><li class="page-item active"><a class=page-link href=/page/159/>159</a></li><li class=page-item><a class=page-link href=/page/160/>160</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/160/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>好了，现在glance服务可以使用了，接下来将创建compute节点和网络节点。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/158/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/158/>158</a></li><li class="page-item active"><a class=page-link href=/page/159/>159</a></li><li class=page-item><a class=page-link href=/page/160/>160</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/160/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
