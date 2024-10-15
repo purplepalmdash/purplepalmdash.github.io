@@ -657,6 +657,15 @@ cd ../SPECS/
 time rpmbuild -ba kernel-lt-6.1.spec 
 </code></pre><h3 id=44-lxd-to-incus>44. lxd to incus</h3><p>via:</p><pre><code>lxd-to-incus --ignore-version-check
 </code></pre><h3 id=45-find-installed-gpus>45. find installed gpus</h3><p>via:</p><pre><code> lspci -nn | grep -i -E 'VGA|Display|3d' | grep -i -v &quot;intel&quot;
+</code></pre><h3 id=46-zkfd-related>46. zkfd related</h3><p>remove grub default items:</p><pre><code>cp -r /etc/default/grub.d/ /root
+vim *.cfg  # remove all of the unnecessary items
+</code></pre><p>remove all of the dkms:</p><pre><code>mv /usr/src /root
+mkdir -p /root/varlibdkms
+mv /var/lib/dkms/* /root/varlibdkms
+
+/usr/lib/dkms/dkms_autoinstaller start 5.4.0-100-generic
+</code></pre><h3 id=47-oneline-dkms>47. oneline dkms</h3><p>via:</p><pre><code>ls /boot/initrd.img-* | cut -d- -f2- | \
+    sudo xargs -n1 /usr/lib/dkms/dkms_autoinstaller start
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
