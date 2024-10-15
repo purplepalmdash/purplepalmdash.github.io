@@ -1,5 +1,122 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/13/workingtipsongpu/>WorkingTipsOnGpu</a></h1><span class=post-date>Apr 13, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-环境配置信息>1. 环境配置信息</h3><p>整个验证环境的配置信息如下:</p><pre><code>gpumaster: 10.168.100.2	4核16G
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/19/workingtipsongpuoncentos7/>WorkingTipsOnGPUOnCentOS7</a></h1><span class=post-date>Apr 19, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-先决条件>1. 先决条件</h3><p>各工作节点上需要保证内核为指定版本，并安装对应的<code>kernel-ml-devel/kernel-ml-headers/gcc</code>依赖包.</p><pre><code># uname -a
+Linux worker2 4.19.12-1.el7.elrepo.x86_64 #1 SMP Fri Dec 21 11:06:36 EST 2018 x86_64 x86_64 x86_64 GNU/Linux
+# rpm -e --nodeps kernel-headers
+# yum install -y kernel-ml-devel kernel-ml-headers gcc
+</code></pre><p>手动安装Nvidia驱动:</p><pre><code># ./NVIDIA-Linux-x86_64-460.32.03.run 
+Verifying archive integrity... OK
+Uncompressing NVIDIA Accelerated Graphics Driver for Linux-x86_64 460.32.03...........
+..........................................................
+..........................................................
+</code></pre><p>忽略该报错:</p><p><img src=/images/2021_04_19_16_53_12_622x250.jpg alt=/images/2021_04_19_16_53_12_622x250.jpg></p><p>选择<code>NO</code>, 忽略安装32位兼容包:</p><p><img src=/images/2021_04_19_16_53_55_639x172.jpg alt=/images/2021_04_19_16_53_55_639x172.jpg></p><p>按<code>OK</code>结束安装:</p><p><img src=/images/2021_04_19_16_54_23_623x183.jpg alt=/images/2021_04_19_16_54_23_623x183.jpg></p><p>检查驱动是否安装成功:</p><pre><code># nvidia-smi 
+Mon Apr 19 04:55:13 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-PCIE...  Off  | 00000000:00:08.0 Off |                  Off |
+| N/A   31C    P0    36W / 250W |      0MiB / 32510MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   1  Tesla V100-PCIE...  Off  | 00000000:00:0A.0 Off |                  Off |
+| N/A   31C    P0    35W / 250W |      0MiB / 32510MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+</code></pre><h3 id=2-ccse改动>2. ccse改动</h3><h4 id=21-创建新的离线库>2.1 创建新的离线库:</h4><p>引入<code>nvidia-docker2</code>相关的离线包并更新<code>k8s-offline-pkgs</code>仓库:</p><pre><code># cd k8s-offline-pkgs/
+# tar xzvf /root/nvidiadocker.tar.gz -C .
+libnvidia-container-tools-1.3.3-1.x86_64.rpm
+nvidia-docker2-2.5.0-1.noarch.rpm
+libnvidia-container1-1.3.3-1.x86_64.rpm
+nvidia-container-toolkit-1.4.2-2.x86_64.rpm
+nvidia-container-runtime-3.4.2-1.x86_64.rpm
+# createrepo .
+</code></pre><p>Ccse console节点上替换离线包:</p><pre><code>[root@first x86_64]# pwd
+/dcos/app/console/backend/webapps/repo/x86_64
+[root@first x86_64]# mv k8s-offline-pkgs/ k8s-offline-pkgs.back
+[root@first x86_64]# scp -r docker@10.168.100.1:/home/docker/k8s-offline-pkgs .
+</code></pre><p>Ccse代码改动, 仅添加<code>nvidia-docker2</code>的安装：</p><pre><code># vi /dcos/app/console/kubeadm-playbook/roles/util/docker/tasks/install.yml
+
+  - name: &lt;安装docker&gt;&lt;install-docker&gt; 安装 docker （ccse源）
+    shell: yum install -y docker-ce nvidia-docker2 --disablerepo=\* --enablerepo=ccse-k8s,ccse-centos7-base
+    when: &quot;yum_repo == 'ccse'&quot;
+# vi /dcos/app/console/kubeadm-playbook/roles/util/docker/templates/daemon.json.j2
+    { 
+    {% if custom_image_repository != '' %}{{ docker_insecure_registry_mirrors | indent(2,true) }}{% endif %}
+      &quot;storage-driver&quot;: &quot;{{ docker_storage_driver }}&quot;,
+      &quot;graph&quot;: &quot;{{ hosts_datadir_map[inventory_hostname] }}/docker&quot;,
+      &quot;log-driver&quot;: &quot;json-file&quot;,
+      &quot;log-opts&quot;: {
+                &quot;max-size&quot;: &quot;1g&quot;
+            },
+      &quot;default-runtime&quot;: &quot;nvidia&quot;,
+      &quot;runtimes&quot;: {
+          &quot;nvidia&quot;: {
+              &quot;path&quot;: &quot;/usr/bin/nvidia-container-runtime&quot;,
+              &quot;runtimeArgs&quot;: []
+          }
+      }
+    }
+
+</code></pre><h3 id=3-验证>3. 验证</h3><p>相关包位于<code>10.50.208.145</code>的<code>/home/docker</code>目录下的<code>nvidiadockerclassic.tar</code>:</p><pre><code># ls /home/docker/nvidiadockerclassic.tar  -l -h
+-rw-r--r-- 1 root root 187M Apr 19 17:49 /home/docker/nvidiadockerclassic.tar
+</code></pre><h4 id=31-镜像准备>3.1 镜像准备</h4><p>部署完毕后, ccse console节点上上传准备镜像:</p><pre><code># tar xvf nvidiadockerclassic.tar 
+nvidiadockerclassic/
+nvidiadockerclassic/nvidia-device-plugin.yml
+nvidiadockerclassic/k8sdeviceplugin.tar
+# cd nvidiadockerclassic
+# docker load&lt;k8sdeviceplugin.tar
+# docker tag nvcr.io/nvidia/k8s-device-plugin:v0.9.0 10.168.100.144:8021/nvcr.io/nvidia/k8s-device-plugin:v0.9.0
+# docker push 10.168.100.144:8021/nvcr.io/nvidia/k8s-device-plugin:v0.9.0
+</code></pre><h4 id=32-插件安装及验证>3.2 插件安装及验证</h4><p>master节点上create <code>nvidia-device-plugin.yml</code>文件:</p><pre><code># kubectl create -f nvidia-device-plugin.yml 
+</code></pre><p>验证device-plugin安装成功:</p><pre><code># kubectl  get po -A | grep device
+kube-system   nvidia-device-plugin-daemonset-9mhq7           1/1     Running   0          19s
+kube-system   nvidia-device-plugin-daemonset-m7txq           1/1     Running   0          19s
+# kubectl logs nvidia-device-plugin-daemonset-9mhq7 -n kube-system
+2021/04/19 09:53:23 Loading NVML
+2021/04/19 09:53:23 Starting FS watcher.
+2021/04/19 09:53:23 Starting OS watcher.
+2021/04/19 09:53:23 Retreiving plugins.
+2021/04/19 09:53:23 Starting GRPC server for 'nvidia.com/gpu'
+2021/04/19 09:53:23 Starting to serve 'nvidia.com/gpu' on /var/lib/kubelet/device-plugins/nvidia-gpu.sock
+2021/04/19 09:53:23 Registered device plugin for 'nvidia.com/gpu' with Kubelet
+</code></pre><p>测试:</p><pre><code># kubectl create -f test.yml
+# kubectl  get po -o wide
+NAME             READY   STATUS    RESTARTS   AGE   IP               NODE             NOMINATED NODE   READINESS GATES
+dcgmproftester   1/1     Running   0          19s   172.26.189.204   10.168.100.184   &lt;none&gt;           &lt;none&gt;
+# nvidia-smi 
+Mon Apr 19 05:54:55 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-PCIE...  Off  | 00000000:00:09.0 Off |                  Off |
+| N/A   56C    P0   218W / 250W |    493MiB / 32510MiB |     88%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A     14182      C   /usr/bin/dcgmproftester11         489MiB |
++-----------------------------------------------------------------------------+
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/04/13/workingtipsongpu/>WorkingTipsOnGpu</a></h1><span class=post-date>Apr 13, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-环境配置信息>1. 环境配置信息</h3><p>整个验证环境的配置信息如下:</p><pre><code>gpumaster: 10.168.100.2	4核16G
 gpunode1: 10.168.100.3	4核16G PCI直通B5:00 Tesla V100
 gpunode2: 10.168.100.4	4核16G PCI直通B2:00 Tesla V100
 </code></pre><p>节点的操作系统配置如下, CentOS 7.6最小化安装方式:</p><pre><code># uname -a
@@ -486,5 +603,4 @@ kube-system   kubernetes-dashboard-674bb5ff47-mw97w         0/1     ContainerCre
 kube-system   kubernetes-metrics-scraper-54fbb4d595-64b6j   0/1     ContainerCreating   0          23m
 kube-system   metrics-server-757968d55d-62czd               0/2     ContainerCreating   0          21m
 kube-system   tiller-deploy-75dc954ffd-psj68                0/1     ContainerCreating   0          22m
-</code></pre><p>同样的vm在华为的HI1616机器上表现正常。可见YINHE 麒麟 V10的系统bug较多，可能未曾适配过完整的硬件列表。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2021/02/22/workingtipsonha/>WorkingTIPSOnHA</a></h1><span class=post-date>Feb 22, 2021<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>目的: 设置RONG服务器的高可用性.</p><p>Install ipvsadm for every node:</p><pre><code># apt-get install -y ipvsadm
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/44/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/44/>44</a></li><li class="page-item active"><a class=page-link href=/page/45/>45</a></li><li class=page-item><a class=page-link href=/page/46/>46</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/46/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>同样的vm在华为的HI1616机器上表现正常。可见YINHE 麒麟 V10的系统bug较多，可能未曾适配过完整的硬件列表。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/44/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/44/>44</a></li><li class="page-item active"><a class=page-link href=/page/45/>45</a></li><li class=page-item><a class=page-link href=/page/46/>46</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/46/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

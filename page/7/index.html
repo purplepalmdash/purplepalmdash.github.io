@@ -1,5 +1,115 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/03/ongentooinstallation/>OnGentooInstallation</a></h1><span class=post-date>Jun 3, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-preparation>1. Preparation</h3><p>Start sshd:</p><pre><code>/etc/init.d/sshd start
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/04/buildinggrub2undereuler/>Buildinggrub2undereuler</a></h1><span class=post-date>Jun 4, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Using repo:</p><pre><code>[root@localhost yum.repos.d]#  cat openEuler_x86_64.repo 
+#Copyright (c) [2019] Huawei Technologies Co., Ltd.
+#generic-repos is licensed under the Mulan PSL v1.
+#You can use this software according to the terms and conditions of the Mulan PSL v1.
+#You may obtain a copy of Mulan PSL v1 at:
+#    http://license.coscl.org.cn/MulanPSL
+#THIS SOFTWARE IS PROVIDED ON AN &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR
+#IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR
+#PURPOSE.
+#See the Mulan PSL v1 for more details.
+[openEuler-everything]
+name=openEuler-everything
+baseurl=http://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS/everything/x86_64/
+enabled=1
+gpgcheck=0
+gpgkey=http://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS/everything/x86_64/RPM-GPG-KEY-openEuler
+
+[openEuler-EPOL]
+name=openEuler-epol
+baseurl=http://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS/EPOL/x86_64/
+enabled=1
+gpgcheck=0
+
+[openEuler-update]
+name=openEuler-update
+baseurl=http://repo.huaweicloud.com/openeuler/openEuler-20.03-LTS/update/x86_64/
+enabled=1
+gpgcheck=0
+[root@localhost yum.repos.d]# pwd
+/etc/yum.repos.d
+# yum makecache
+</code></pre><p>Install package:</p><pre><code>yum install -y elfutils-libelf-devel gcc gnu-efi gnu-efi-devel openssl-devel make git rpm-build
+yum install -y rpmdevtools* tree
+ rpmdev-setuptree
+[root@localhost ~]# ls
+anaconda-ks.cfg  rpmbuild
+cd ~/rpmbuild/SOURCES
+wget http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz
+cd ~/rpmbuild/SPECS
+vim hello.spec
+</code></pre><p>content is:</p><pre><code>Name:     hello
+Version:  2.10
+Release:  1%{?dist}
+Summary:  The &quot;Hello World&quot; program from GNU
+Summary(zh_CN): GNU Hello World program
+License:  GPLv3+
+URL:      http://ftp.gnu.org/gnu/hello
+Source0:  http://ftp.gnu.org/gnu/hello/%{name}-%{version}.tar.gz
+
+BuildRequires:  gettext
+Requires(post): info
+Requires(preun): info
+
+%description
+The &quot;Hello World&quot; program, done with all bells and whistles of a proper FOSS
+project, including configuration, build, internationalization, help files, etc.
+
+%description -l zh_CN
+The Hello World program contains all parts required by the FOSS project, including configuration, build, i18n, and help files.
+
+%prep
+%setup -q
+
+%build
+%configure
+make %{?_smp_mflags}
+
+%install
+make install DESTDIR=%{buildroot}
+%find_lang %{name}
+rm -f %{buildroot}/%{_infodir}/dir
+
+%post
+/sbin/install-info %{_infodir}/%{name}.info %{_infodir}/dir || :
+
+%preun
+if [ $1 = 0 ] ; then
+/sbin/install-info --delete %{_infodir}/%{name}.info %{_infodir}/dir || :
+fi
+
+%files -f %{name}.lang
+%doc AUTHORS ChangeLog NEWS README THANKS TODO
+%license COPYING
+%{_mandir}/man1/hello.1.*
+%{_infodir}/hello.info.*
+%{_bindir}/hello
+
+%changelog
+* Thu Dec 26 2019 Your Name &lt;youremail@xxx.xxx&gt; - 2.10-1
+- Update to 2.10
+* Sat Dec 3 2016 Your Name &lt;youremail@xxx.xxx&gt; - 2.9-1
+- Update to 2.9
+</code></pre><p>Building:</p><pre><code>rpmbuild -ba hello.spec 
+# tree ~/rpmbuild/*RPMS
+/root/rpmbuild/RPMS
+└── x86_64
+    ├── hello-2.10-1.x86_64.rpm
+    ├── hello-debuginfo-2.10-1.x86_64.rpm
+    └── hello-debugsource-2.10-1.x86_64.rpm
+/root/rpmbuild/SRPMS
+└── hello-2.10-1.src.rpm
+
+</code></pre><p>Download the source code and install:</p><pre><code>rpm -ivh grub2-2.02-73.oe1.src.rpm 
+cd rpmbuild/SPECS/
+yum install -y  bison bzip2-devel dejavu-sans-fonts device-mapper-devel flex freetype-devel gettext-devel help2man libusb-devel ncurses-devel pesign rpm-devel texinfo xz-devel
+$ vim /xxx/xx/grub.macros
+%{4}./grub-mkimage -O %{1} -o %{2}.orig                         \\\
+        -p /EFI/%{efi_vendor} -d grub-core ${GRUB_MODULES}      \
+%{4}./grub-mkimage -O %{1} -o %{3}.orig                         \\\
+        -p /EFI/BOOT -d grub-core ${GRUB_MODULES}
+</code></pre><p>Change <code>.orig</code> to ``, so you could mkimage, and also remove the latter lines which use <code>pesign</code></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/03/ongentooinstallation/>OnGentooInstallation</a></h1><span class=post-date>Jun 3, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-preparation>1. Preparation</h3><p>Start sshd:</p><pre><code>/etc/init.d/sshd start
 passwd root
 </code></pre><p>Remove the lvm via:</p><pre><code># dmsetup ls
 # dmsetup remove xxxxxx
@@ -567,161 +677,4 @@ Checksum: 0x95
 [    0.635877] platform Virtual-1: firmware: direct-loading firmware edid/edidno1080.bin
 [    0.635885] [drm] Got external EDID base block and 1 extension from &quot;edid/edidno1080.bin&quot; for connector &quot;Virtual-1&quot;
 
-</code></pre><p><img src=/images/2024_05_13_10_31_17_647x580.jpg alt=/images/2024_05_13_10_31_17_647x580.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/05/08/workingtipsonincusbasedfogserver/>WorkingTipsOnIncusBasedFogServer</a></h1><span class=post-date>May 8, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-dhcpd服务器考虑>1. dhcpd服务器考虑</h3><h4 id=11-dhcpd在容器内出现的问题>1.1 dhcpd在容器内出现的问题</h4><p>因为incus内部使用的是私有网络，因此一旦将<code>isc-dhcp-server</code>启动在容器内，则只能监听容器内部的地址，而一旦更改子网定义为主机网络侧，则会出现dhcpd.conf检查错误:</p><pre><code>5月 08 08:58:44 fogincuschinese dhcpd[2532]: No subnet declaration for eth0 (10.147.148.100).
-5月 08 08:58:44 fogincuschinese dhcpd[2532]: ** Ignoring requests on eth0.  If this is not what
-5月 08 08:58:44 fogincuschinese dhcpd[2532]:    you want, please write a subnet declaration
-5月 08 08:58:44 fogincuschinese dhcpd[2532]:    in your dhcpd.conf file for the network segment
-5月 08 08:58:44 fogincuschinese dhcpd[2532]:    to which interface eth0 is attached. **
-5月 08 08:58:44 fogincuschinese dhcpd[2532]: 
-5月 08 08:58:44 fogincuschinese dhcpd[2532]: 
-5月 08 08:58:44 fogincuschinese dhcpd[2532]: Not configured to listen on any interfaces!
-</code></pre><p>出现上述问题的原因在于：容器内eth0为<code>10.147.148.100</code>, 而主机侧为<code>192.168.1.0.24</code>, 无法写如下的配置文件(diff文件更改了默认dhcpd.conf中的监听网段) :</p><pre><code>root@fogincuschinese:~# diff /etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf.back 
-24c24
-&lt; subnet 192.168.1.0 netmask 255.255.255.0{
----
-&gt; subnet 10.147.148.0 netmask 255.255.255.0{
-26c26
-&lt;     range dynamic-bootp 192.168.1.50 192.168.1.90;
----
-&gt;     range dynamic-bootp 10.147.148.10 10.147.148.254;
-29c29
-&lt;     option routers 192.168.1.33;
----
-&gt;     option routers 10.147.148.1;
-31c31
-&lt;     next-server 192.168.1.40;
----
-&gt;     next-server 10.147.148.100;
-</code></pre><h4 id=12-dhcpd在主机上的实现>1.2 dhcpd在主机上的实现</h4><p>安装:</p><pre><code># apt install -y isc-dhcp-server
-</code></pre><p>配置，使能:</p><pre><code>$ sudo vim /etc/dhcp/dhcpd.conf 
-subnet 192.168.1.0 netmask 255.255.255.0{
-    option subnet-mask 255.255.255.0;
-    range dynamic-bootp 192.168.1.50 192.168.1.90;
-    default-lease-time 21600;
-    max-lease-time 43200;
-    option routers 192.168.1.33;
-    option domain-name-servers 223.5.5.5;
-    next-server 192.168.1.40;
-}
-$ sudo systemctl daemon-reload
-$ sudo systemctl start isc-dhcp-server
-$ sudo systemctl enable isc-dhcp-server
-</code></pre><p>需要对齐fogserver中的配置.</p><h3 id=2-tftpd服务>2. tftpd服务</h3><p>如果直接使用inpus中的容器，则因为tftp的通信协商机制中，会因为使用1024~65535的随机端口和客户端通信，而容器本身比较难搞定proxy, 而导致通信失败。<br>因此我们需要将tftpd也从里面搞出来， 在主机上实现。</p><p>但，如果做了这么多以后，还是容器吗？</p><p>所以上面的方式，未必适合</p><h3 id=3-macvlan网>3. macvlan网</h3><p>直接用macvlan直接覆盖。</p><p>注意替换IP：</p><pre><code>Change FOG Server IP Address
-Procedural Steps
-Follow appropriate steps for your Linux distribution to change the OS’s IP address.
-
-Update the ipaddress= field (and other fields if necessary) inside the /opt/fog/.fogsettings file. The .fogsettings file.
-
-Rerun the installer, you’ll need to use –recreate-CA and –recreate-keys keys as the installer provides a certificate with a Common Name based on the ip which will be shipped in the iPxe kernel and failed to load any https resources as the certificate isn’t valid anymore.
-
-Update the IP address inside /tftpboot/default.ipxe (look for the chain line i.e chain https://x.x.x.x/fog/service/ipxe/boot.php##params)
-
-Update the IP address for the storage node on the FOG system where you changed the IP address Web Interface -&gt; Storage Management
-
-Update the IP address on a any master storage node that may reference this FOG server Web Interface -&gt; Storage Management
-
-(For master server) Update the FOG_WEB_HOST value Web Interface -&gt; FOG Configuration -&gt; FOG Settings -&gt; Web Server -&gt; FOG_WEB_HOST
-
-(For master server) Update the FOG_TFTP_HOST value Web Interface -&gt; FOG Configuration -&gt; FOG Settings -&gt; TFTP Server -&gt; FOG_TFTP_HOST
-
-Optionaly if you have configured a dhcpd:
-
-Update IP addresses (fog and gateway) inside the /etc/dhcp/dhcpd.conf.
-
-Don’t forgot to check your /etc/export for nfs server as well as your apache2 configuration as the installer override it.
-</code></pre><h3 id=incus-快速启动流程>incus 快速启动流程</h3><ol><li>用户需要安装好incus.</li><li>导入镜像，配置网路。</li><li>快速开出实例，作为Pxe和部署服务器使用。</li></ol><p>Steps:</p><pre><code>dash@server:~$ tar xzvf incusdebs.tar.gz
-$ sudo chmod 777 -R incuddebs
-$ sudo apt install -y incus
-sudo adduser dash incus-admin
-
-</code></pre><p>init yaml:</p><pre><code>config:
-  images.auto_update_interval: &quot;0&quot;
-networks: []
-storage_pools:
-- config: {}
-  description: &quot;&quot;
-  name: default
-  driver: dir
-profiles:
-- config: {}
-  description: &quot;&quot;
-  devices:
-    root:
-      path: /
-      pool: default
-      type: disk
-  name: default
-projects: []
-cluster: null
-</code></pre><p>quickly init:</p><pre><code># cat init.sh 
-cat &lt;&lt;EOF | incus admin init --preseed
-config:
-  images.auto_update_interval: &quot;0&quot;
-networks: []
-storage_pools:
-- config: {}
-  description: &quot;&quot;
-  name: default
-  driver: dir
-profiles:
-- config: {}
-  description: &quot;&quot;
-  devices:
-    root:
-      path: /
-      pool: default
-      type: disk
-  name: default
-projects: []
-cluster: null
-EOF
-
-</code></pre><p>Create incusbr0(macvlan):</p><pre><code> incus network create incusbr0 --type=macvlan parent=enp7s0
-</code></pre><p>Edit profile default:</p><pre><code>cat default.yaml | incus profile edit default
-</code></pre><p>Add new profile:</p><pre><code>incus profile create nfs-server
-    cat nfs-server-profile.yaml | incus profile edit nfs-server
-</code></pre><p>另外的机器上导出镜像:</p><pre><code># incus publish fogincuschinese --alias fogAuto
-Instance published with fingerprint: 0a4a4299661f19d880a203031b4e7df88996a99be110979975633baf9504b1dc
-# incus image export fogAuto .
-Image exported successfully!           
-
-</code></pre><p>开始导入镜像:</p><pre><code># ls -l -h 0a4a4299661f19d880a203031b4e7df88996a99be110979975633baf9504b1dc.tar.gz 
--rw-rw-r-- 1 dash dash 857M May  8 09:06 0a4a4299661f19d880a203031b4e7df88996a99be110979975633baf9504b1dc.tar.gz
-root@server:/home/dash# incus image import 0a4a4299661f19d880a203031b4e7df88996a99be110979975633baf9504b1dc.tar.gz --alias fogAuto
-Image imported with fingerprint: 0a4a4299661f19d880a203031b4e7df88996a99be110979975633baf9504b1dc
-root@server:/home/dash# incus image list
-+---------+--------------+--------+----------------------------------------+--------------+-----------+-----------+----------------------+
-|  ALIAS  | FINGERPRINT  | PUBLIC |              DESCRIPTION               | ARCHITECTURE |   TYPE    |   SIZE    |     UPLOAD DATE      |
-+---------+--------------+--------+----------------------------------------+--------------+-----------+-----------+----------------------+
-| fogAuto | 0a4a4299661f | no     | Debian bookworm amd64 (20240506_05:24) | x86_64       | CONTAINER | 856.42MiB | 2024/05/08 09:08 UTC |
-+---------+--------------+--------+----------------------------------------+--------------+-----------+-----------+----------------------+
-
-</code></pre><p>开始开出第一个实例:</p><pre><code># LANG=zh_CN.UTF-8 incus launch fogAuto fogInstance  -p nfs-server -p default -c security.privileged=true -c raw.apparmor=&quot;mount fstype=rpc_pipefs, mount fstype=nfsd,&quot;
-Launching fogInstance
-root@server:/home/dash# incus  list        
-+-------------+---------+---------------------+------+-----------+-----------+
-|    NAME     |  STATE  |        IPV4         | IPV6 |   TYPE    | SNAPSHOTS |
-+-------------+---------+---------------------+------+-----------+-----------+
-| fogInstance | RUNNING | 192.168.1.44 (eth0) |      | CONTAINER | 0         |
-+-------------+---------+---------------------+------+-----------+-----------+
-root@server:/home/dash# incus exec fogInstance bash
-root@fogInstance:~# 
-
-</code></pre><p>进入到实例里开始重新部署为<code>192.168.1.46</code>:</p><pre><code>root@fogInstance:~# cd regen/
-root@fogInstance:~/regen# ls
-1_regen.sh  2_reinstall.sh  cn-fogproject-master  inventoy.ini	mysql.sh  regen.yml  templates
-root@fogInstance:~/regen# vim inventoy.ini 
-root@fogInstance:~/regen# ./1_regen.sh 
-
-PLAY [Write fogsettings] *********************************************************************************************************************************************************************
-
-...
-这里需要重启一次容器实例，非常快:   
-
-root@server:/home/dash# incus exec fogInstance bash
-root@fogInstance:~# cd regen/
-root@fogInstance:~/regen# ./2_reinstall.sh 
-
-</code></pre><p>push 镜像到相应位置:</p><pre><code>incus file push -pr idvnext/ fogInstance/images/idvnext/
-</code></pre><p>接下来就可以愉快的玩耍了。</p><h3 id=综合>综合</h3><p>传递文件:</p><pre><code>$ scp -r hostincus/ dash@192.168.1.38:~
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/6/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/6/>6</a></li><li class="page-item active"><a class=page-link href=/page/7/>7</a></li><li class=page-item><a class=page-link href=/page/8/>8</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/8/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p><img src=/images/2024_05_13_10_31_17_647x580.jpg alt=/images/2024_05_13_10_31_17_647x580.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/6/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/6/>6</a></li><li class="page-item active"><a class=page-link href=/page/7/>7</a></li><li class=page-item><a class=page-link href=/page/8/>8</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/8/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

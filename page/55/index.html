@@ -1,5 +1,120 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/04/01/quicktipsonterraformandlibvirtdonmultiple/>QuickTipsOnTerraformAndLibvirtdOnMultiple</a></h1><span class=post-date>Apr 1, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=terraform-configuration>terraform configuration</h3><p>On archlinux, it should be configured as following:</p><pre><code># sudo pacman -S terraform
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/04/21/workingtipsonpython/>WorkingtipsOnpython</a></h1><span class=post-date>Apr 21, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Just recording:</p><pre><code>[root@3652a460ae13 apps]# python manage.py shell
+Python 3.6.1 (default, Jun 29 2018, 02:56:19)                          
+Type 'copyright', 'credits' or 'license' for more information
+IPython 6.5.0 -- An enhanced Interactive Python. Type '?' for help. 
+                                                      
+In [1]: import requests
+   ...: import time
+   ...: 
+   ...: from kubeops_api.apps_client import AppsClient
+   ...: from kubeops_api.models.host import Host
+   ...: from kubeops_api.cluster_data import LokiContainer
+   ...: 
+   ...: 
+
+In [2]: import kubernetes.client
+   ...: import redis
+   ...: import json
+   ...: import logging
+   ...: import kubeoperator.settings
+   ...: import log.es
+   ...: import datetime, time
+   ...: import builtins
+   ...: 
+   ...: from kubernetes.client.rest import ApiException
+   ...: from kubeops_api.cluster_data import ClusterData, Pod, NameSpace, Node, Container, Deployment, StorageClass, PVC, Event
+   ...: from kubeops_api.models.cluster import Cluster
+   ...: from kubeops_api.prometheus_client import PrometheusClient
+   ...: from kubeops_api.models.host import Host
+   ...: from django.db.models import Q
+   ...: from kubeops_api.cluster_health_data import ClusterHealthData
+   ...: from django.utils import timezone
+   ...: from ansible_api.models.inventory import Host as C_Host
+   ...: from common.ssh import SSHClient, SshConfig
+   ...: from message_center.message_client import MessageClient
+   ...: from kubeops_api.utils.date_encoder import DateEncoder
+   ...: 
+   ...: 
+
+In [3]: 
+
+In [3]: project_name = &quot;kingston&quot;
+
+In [4]: cluster = Cluster.objects.get(name=project_name)
+
+In [5]: host = &quot;loki.apps.kingston.mydomain.com&quot;
+
+In [6]: config = {
+   ...:   'host': host,
+   ...:   'cluster': cluster
+   ...: }
+
+In [7]: 
+
+In [7]: print(config)
+{'host': 'loki.apps.kingston.mydomain.com', 'cluster': &lt;Cluster: kingston&gt;}
+
+In [8]: prom_client = PrometheusClient(config)
+
+In [9]: label_url = &quot;http://loki.apps.kingston.mydomain.com/loki/api/v1/label/container_name/values&quot;
+
+In [10]: app_client = AppsClient(cluster=cluster)
+
+In [11]:  label_query_url = label_url.format(host=&quot;loki.apps.kingston.mydomain.com&quot;)
+
+In [12]: label_req = app_client.get('loki', label_query_url)
+
+In [13]: label_req.ok
+Out[13]: True
+
+In [14]: now = time.time()
+
+In [15]: end = int(round(now * 1000 * 1000000))
+
+In [16]: start = int(round(now * 1000 - 3600000) * 1000000)
+
+In [17]: label_req_json = label_req.json()
+
+In [18]: print(label_req_json)
+{'status': 'success', 'data': ['autoscaler', 'calico-kube-controllers', 'calico-node', 'chartmuseum', 'chartsvc', 'controller', 'coredns', 'dashboard', 'grafana', 'install-cni', 'kube-apiserver', 'kube-controller-manager', 'kube-proxy', 'kube-scheduler', 'kubeapps-plus-mongodb', 'kubernetes-dashboard', 'loki', 'metrics-server', 'metrics-server-nanny', 'nfs-client-provisioner', 'nginx', 'node-problem-detector', 'prometheus-alertmanager', 'prometheus-alertmanager-configmap-reload', 'prometheus-kube-state-metrics', 'prometheus-node-exporter', 'prometheus-server', 'prometheus-server-configmap-reload', 'promtail', 'proxy', 'registry', 'registry-ui', 'sync', 'tiller', 'traefik-ingress-lb']}
+
+In [19]: values = label_req_json.get('data', [])
+
+In [20]: print(values)
+['autoscaler', 'calico-kube-controllers', 'calico-node', 'chartmuseum', 'chartsvc', 'controller', 'coredns', 'dashboard', 'grafana', 'install-cni', 'kube-apiserver', 'kube-controller-manager', 'kube-proxy', 'kube-scheduler', 'kubeapps-plus-mongodb', 'kubernetes-dashboard', 'loki', 'metrics-server', 'metrics-server-nanny', 'nfs-client-provisioner', 'nginx', 'node-problem-detector', 'prometheus-alertmanager', 'prometheus-alertmanager-configmap-reload', 'prometheus-kube-state-metrics', 'prometheus-node-exporter', 'prometheus-server', 'prometheus-server-configmap-reload', 'promtail', 'proxy', 'registry', 'registry-ui', 'sync', 'tiller', 'traefik-ingress-lb']
+
+In [21]: for name in values:
+    ...:     error_count = 0
+    ...:     prom_url = 'http://{host}/api/prom/query?limit=1000&amp;query={{container_name=&quot;{name}&quot;}}&amp;start={start}&amp;end={end}'
+    ...:     prom_query_url = prom_url.format(host=&quot;loki.apps.kingston.mydomain.com&quot;, name=name, start=start, end=end)
+    ...:     prom_req = app_client.get('loki', prom_query_url)
+    ...:     if prom_req.ok:
+    ...:         prom_req_json = prom_req.json()
+    ...:         streams = prom_req_json.get('streams', [])
+    ...:         for stream in streams:
+    ...:             entries = stream.get('entries', [])
+    ...:             for entry in entries:
+    ...:                 line = entry.get('line', None)
+    ...:                 print(line)
+
+
+In [29]: for name in values:                                                                                                             
+    ...:     error_count = 0                                   
+    ...:     prom_url = 'http://{host}/api/prom/query?limit=1000&amp;query={{container_name=&quot;{name}&quot;}}&amp;start={start}&amp;end={end}'
+    ...:     prom_query_url = prom_url.format(host=&quot;loki.apps.kingston.mydomain.com&quot;, name=name, start=start, end=end)
+    ...:     prom_req = app_client.get('loki', prom_query_url)
+    ...:     if prom_req.ok:
+    ...:         prom_req_json = prom_req.json()
+    ...:         streams = prom_req_json.get('streams', [])
+    ...:         for stream in streams:
+    ...:             entries = stream.get('entries', [])
+    ...:             for entry in entries:
+    ...:                 line = entry.get('line', None)
+    ...:                 if line is not None and 'level=error' in line:
+    ...:                     error_count = error_count + 1
+
+</code></pre><p>Thus you could fetch the correct python logs for kubeoperator</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/04/01/quicktipsonterraformandlibvirtdonmultiple/>QuickTipsOnTerraformAndLibvirtdOnMultiple</a></h1><span class=post-date>Apr 1, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=terraform-configuration>terraform configuration</h3><p>On archlinux, it should be configured as following:</p><pre><code># sudo pacman -S terraform
 $ yaourt terraform-libvirt
 </code></pre><p>manually create the folder and copy some plugins into the folder:</p><pre><code>$ mkdir -p ~/.terraform.d/plugins
 $ cp xxxx ~/.terraform.d/plugins
@@ -118,156 +233,4 @@ deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-updates main multiverse rest
 4. install-socat in docker images, arm64 distribution. 
 5. ignore installing any packages. 
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/03/14/onusingasciidoctorpdf/>OnUsingAsciidoctorPDF</a></h1><span class=post-date>Mar 14, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Records the steps for generating the chinese language version of linstor documentation.</p><h3 id=source-code-preparation>Source Code Preparation</h3><p>Clone the whole source tree from github:</p><pre><code>$ git clone https://github.com/LINBIT/linbit-documentation.git
-</code></pre><p>For I want to generate chinese version, I need <code>asciidoctorr-pdf-cjk-kai_gen_gothic</code> to be installed and also its fonts, so I changed the Dockerfile for generating the docker images which could support chinese language pdf generation:</p><pre><code># vim Dockerfile
-FROM debian:buster
-MAINTAINER Roland Kammerer &lt;roland.kammerer@linbit.com&gt;
-RUN groupadd --gid 1000 makedoc
-RUN useradd -u 1000 -g 1000 makedoc
-RUN apt-get update &amp;&amp; apt-get install -y make inkscape ruby po4a patch
-RUN gem install --pre asciidoctor-pdf
-RUN gem install --pre asciidoctor-pdf-cjk
-RUN gem install asciidoctor-pdf-cjk-kai_gen_gothic
-RUN asciidoctor-pdf-cjk-kai_gen_gothic-install
-USER makedoc
-# make dockerimage
-# sudo docker images | grep linbit
-linbit-documentation   latest              118d89f74702        47 hours ago        902MB
-</code></pre><p>Generate the po files:</p><pre><code># cd linbit-documentation-master
-# chmod 777 -R *
-# make UG9-pot-docker
-# cd UG9/en
-# ls *.pot
-about-linstor.pot              administration-manual.pot      docker-linstor.pot    features.pot          internals.pot            lvm.pot        opennebula-linstor.pot  pacemaker.pot        recent-changes.pot   xen.pot
-about.pot                      benchmark.pot                  docker.pot            fundamentals.pot      kubernetes.pot           man-pages.pot  opennebula.pot          proxmox-linstor.pot  rhcs.pot
-administration-drbdmanage.pot  build-install-from-source.pot  drbdmanage-more.pot   gfs.pot               latency.pot              more-info.pot  openstack-linstor.pot   proxmox.pot          throughput.pot
-administration-linstor.pot     configure.pot                  drbd-users-guide.pot  install-packages.pot  linstor-users-guide.pot  ocfs2.pot      openstack.pot           proxy.pot            troubleshooting.pot
-</code></pre><p>The pot (portable object template) which holds the tranlatable items. I wrote a simple python script which uses baidu api for translating them into chinese:</p><pre><code># cd UG9/en
-# vim autotrans.py
-import re
-import polib
-import sys
-import translators as ts
-
-# pot files should be passed in argv, e.g python autotrans.py example.pot
-print(&quot;#######################################################################3&quot;)
-print(&quot;#######################################################################3&quot;)
-print(&quot;#######################################################################3&quot;)
-print(&quot;################# Processing &quot;+ sys.argv[1] + &quot;###############################&quot;)
-print(&quot;#######################################################################3&quot;)
-print(&quot;#######################################################################3&quot;)
-print(&quot;#######################################################################3&quot;)
-print(&quot;#######################################################################3&quot;)
-po = polib.pofile(sys.argv[1])
-
-for entry in po:
-    # If contains '\n', then ignore translation
-    print(entry.msgid)
-    if &quot;\n&quot; in entry.msgid:
-        print(&quot;********************Ignore translation***********************&quot;)
-        entry.msgstr = entry.msgid
-    else:
-        # Normal texts should be translated. 
-        entry.msgstr = ts.baidu(entry.msgid, 'auto', 'zh-CN')
-    print(entry.msgstr)
-    # msgid is the origin one, while msgstr should be translated one. 
-    # &lt;&lt; some_text_here &gt;&gt; should be selected out
-    msgstr_links = []
-    msgid_links = []
-    # origin ones
-    msgid_links = re.findall(r&quot;(\&lt;\&lt;*.*?\&gt;\&gt;)&quot;, entry.msgid)
-    # translated ones, needs to be recover using origin ones.
-    msgstr_links = re.findall(r&quot;(\&lt;\&lt;*.*?\&gt;\&gt;)&quot;, entry.msgstr)
-    if len(msgstr_links)&gt;0:
-        ### only run in matched at least once
-        for i in range(0, len(msgstr_links)):
-            entry.msgstr = entry.msgstr.replace(msgstr_links[i], msgid_links[i])
-
-po.save('./cn/' + sys.argv[1])
-</code></pre><p>Use a shell wrapped commands for tranlating all of the pot files:</p><pre><code># for i in `ls *.pot`
-do
-python3 autotrans.py $i
-done
-</code></pre><p>The tranlation goes one-by-one, until all of the pot files has been translated.</p><p>Notice: the auto translation got many errors, you have to correct them manually.</p><h3 id=building-steps>Building steps</h3><p>I use ja language for start, cause japanese version has been translated:</p><pre><code># cd UG9
-# cp -r ja cn
-# cd cn/
-# rm -f *.po
-# cp ../cn/*.pot .
-</code></pre><p>Write a simple shell script for changing name from <code>pot</code> to <code>po</code>:</p><pre><code># vim rename.sh
-for i in `ls *.pot`
-do
-	name=`echo $i | awk -F '.' {'print $1'}`
-	mv $i $name.po
-done
-# chmod 777 rename.sh
-# ./rename.sh
-# rm -f rename.sh
-# ls *.po
-about-linstor.po              administration-manual.po      docker-linstor.po    features.po          internals.po            lvm.po        opennebula-linstor.po  pacemaker.po        recent-changes.po   xen.po
-about.po                      benchmark.po                  docker.po            fundamentals.po      kubernetes.po           man-pages.po  opennebula.po          proxmox-linstor.po  rhcs.po
-administration-drbdmanage.po  build-install-from-source.po  drbdmanage-more.po   gfs.po               latency.po              more-info.po  openstack-linstor.po   proxmox.po          throughput.po
-administration-linstor.po     configure.po                  drbd-users-guide.po  install-packages.po  linstor-users-guide.po  ocfs2.po      openstack.po           proxy.po            troubleshooting.po
-</code></pre><p>Add <code>cn</code> to <code>UG-top.mk</code>:</p><pre><code>- languages = en ja
-+ languages = en ja cn
-</code></pre><p>Change <code>UG-build.mk</code> for adding <code>cn</code> selection:</p><pre><code># diff UG-build.mk  UG-build-back.mk 
-77c77
-&lt; 	if [ -d $(FONTDIR) ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;ja&quot; ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;cn&quot; ]; then \
----
-&gt; 	if [ -d $(FONTDIR) ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;ja&quot; ]; then \
-83c83
-&lt; 	if [ -d $(FONTDIR) ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;ja&quot; ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;cn&quot; ]; then \
----
-&gt; 	if [ -d $(FONTDIR) ] &amp;&amp; [ &quot;$(lang)&quot; != &quot;ja&quot; ]; then \
-</code></pre><p>Change the Makefile for generating cn language pack:</p><pre><code># vim UG9/cn/Makefile
-ASCIIDOCTOR_ADD_OPTIONS=-r asciidoctor-pdf-cjk -r asciidoctor-pdf-cjk-kai_gen_gothic -a pdf-style=KaiGenGothicCN
-lang=cn
-
-include ../../UG-build-po.mk
-include ../../UG-build.mk
-</code></pre><p>Add the <code>default-theme.yml</code> under the <code>UG9/cn</code> folder, and changes its fonts to CN related fonts:</p><pre><code># docker run --rm --entrypoint /bin/sh linbit-documentation:latest -c &quot;cat /var/lib/gems/2.5.0/gems/asciidoctor-pdf-1.5.3/data/themes/default-theme.yml&quot; &gt; default-theme.yml
-# vim default-theme.yml
-font:
-  catalog:
-    # Noto Serif supports Latin, Latin-1 Supplement, Latin Extended-A, Greek, Cyrillic, Vietnamese &amp; an assortment of symbols
-    Noto Serif:
-      normal: KaiGenGothicCN-Regular.ttf
-      bold: KaiGenGothicCN-Bold.ttf
-      italic: KaiGenGothicCN-Regular-Italic.ttf
-      bold_italic: KaiGenGothicCN-Bold-Italic.ttf
-    # M+ 1mn supports ASCII and the circled numbers used for conums
-    M+ 1mn:
-      normal: KaiGenGothicCN-Regular.ttf
-      bold: KaiGenGothicCN-Bold.ttf
-      italic: KaiGenGothicCN-Regular-Italic.ttf
-      bold_italic: KaiGenGothicCN-Bold-Italic.ttf
-page:
-..........
-</code></pre><p>Change the patch files under <code>UG9/cn</code>:</p><pre><code># mv UG9/cn/drbd-users-guide.adoc-ja.patch UG9/cn/drbd-users-guide.adoc-cn.patch
-# vim UG9/cn/drbd-users-guide.adoc-cn.patch
-@@ -1,4 +1,23 @@
- :doctype: article
-+:lang: ja
-+:chapter-label:
-+:toc-title: 目录
-+:preface-title: 前言标题
-+:appendix-caption: 附录标题
-+:caution-caption: 注意
-+:example-caption: 示例标题
-+:figure-caption: 图形标题
-+:important-caption: 重要
-+:last-update-label: 最終更新
-+:listing-caption: 列表标题
-+:manname-title: 人名 
-+:note-caption: 注記
-+:preface-title: 前言标题
-+:table-caption: 表标题
-+:tip-caption: 要点标题
-+:untitled-label: 未命名标签
-+:version-label: 版本标签
-+:warning-caption: 警告
- :source-highlighter: bash
- :listing-caption: Listing
- :icons: font
-</code></pre><p>Now change the permission for all of the folder, thus docker could have write priviledge to current folder:</p><pre><code># chmod a+w -R *
-#  make UG9-pdf-finalize-docker lang=cn
-</code></pre><p>By running <code>make UG9-pdf-finalize-docker</code> could generate chinese version&rsquo;s pdf, By running <code>make UG9-html-finalize-docker lang=cn</code> will generate chinese version&rsquo;s htmls.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/54/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/54/>54</a></li><li class="page-item active"><a class=page-link href=/page/55/>55</a></li><li class=page-item><a class=page-link href=/page/56/>56</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/56/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/54/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/54/>54</a></li><li class="page-item active"><a class=page-link href=/page/55/>55</a></li><li class=page-item><a class=page-link href=/page/56/>56</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/56/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
