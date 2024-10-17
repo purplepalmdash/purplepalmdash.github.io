@@ -666,6 +666,13 @@ mv /var/lib/dkms/* /root/varlibdkms
 /usr/lib/dkms/dkms_autoinstaller start 5.4.0-100-generic
 </code></pre><h3 id=47-oneline-dkms>47. oneline dkms</h3><p>via:</p><pre><code>ls /boot/initrd.img-* | cut -d- -f2- | \
     sudo xargs -n1 /usr/lib/dkms/dkms_autoinstaller start
+</code></pre><h3 id=48-pve-lxc-download>48. pve lxc download</h3><p>tips:</p><pre><code># pveam update
+# pveam available
+# pveam download local ubuntu-22.04-standard_22.04-1_amd64.tar.zst
+downloading http://download.proxmox.com/images/system/ubuntu-22.04-standard_22.04-1_amd64.tar.zst to /var/lib/vz/template/cache/ubuntu-22.04-standard_22.04-1_amd64.tar.zst
+</code></pre><p>template:</p><pre><code>root@pve:/var/lib/vz/template/cache# scp ubuntu-22.04-standard_22.04-1_amd64.tar.zst dash@192.168.1.7:/media/big/
+
+</code></pre><h3 id=49-pure-lxc-related>49. pure lxc related</h3><p>via:</p><pre><code>  188  sudo lxc-create -n ubuntu2204 -t download -- --dist ubuntu --release jammy --arch amd64
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
