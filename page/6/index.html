@@ -673,7 +673,24 @@ downloading http://download.proxmox.com/images/system/ubuntu-22.04-standard_22.0
 </code></pre><p>template:</p><pre><code>root@pve:/var/lib/vz/template/cache# scp ubuntu-22.04-standard_22.04-1_amd64.tar.zst dash@192.168.1.7:/media/big/
 
 </code></pre><h3 id=49-pure-lxc-related>49. pure lxc related</h3><p>via:</p><pre><code>  188  sudo lxc-create -n ubuntu2204 -t download -- --dist ubuntu --release jammy --arch amd64
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
+</code></pre><h3 id=50-disable-apparmor>50. disable apparmor</h3><p>via:</p><pre><code>root@debianonlyroot:~# cat /proc/cmdline
+BOOT_IMAGE=/boot/vmlinuz-6.1.0-25-amd64 root=UUID=d96e2a44-3ce5-4a4a-899a-0e47f1ad3e50 ro quiet ipv6.disable=1 apparmor=0
+root@debianonlyroot:~# cat /sys/module/apparmor/parameters/enabled
+N
+root@debianonlyroot:~# aa-status
+apparmor module is loaded.
+apparmor filesystem is not mounted.
+root@debianonlyroot:~# 
+</code></pre><p>disable steps:</p><pre><code>$ sudo mkdir -p /etc/default/grub.d
+$ echo 'GRUB_CMDLINE_LINUX_DEFAULT=&quot;$GRUB_CMDLINE_LINUX_DEFAULT apparmor=0&quot;' \
+  | sudo tee /etc/default/grub.d/apparmor.cfg
+$ sudo update-grub
+$ sudo reboot
+</code></pre><h3 id=51-fedora-arm64-group>51. fedora arm64 group</h3><p>steps:</p><pre><code>lvextend -l +100%FREE /dev/mapper/fedora-root
+xfs_growfs /dev/fedora/root 
+</code></pre><h3 id=52-view-sync-status>52. view sync status</h3><p>via:</p><pre><code>watch -d grep -e Dirty: -e Writeback: /proc/meminfo
+
+</code></pre><p><img src=/images/20241024_181125_x.jpg alt=/images/20241024_181125_x.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
 ......
