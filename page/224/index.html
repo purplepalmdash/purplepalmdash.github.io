@@ -1,5 +1,90 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/30/stm32zhong-de-systick/>STM32中的Systick</a></h1><span class=post-date>Nov 30, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Cortx-M3特有的SysTick可以很方便的实现定时。系统始终的频率和开启系统时钟中断主要在RCC.c里进行设置：</p><pre><code>	//SYSTICK分频--1ms的系统时钟中断
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/30/rtc-on-stm32/>RTC on STM32</a></h1><span class=post-date>Nov 30, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>RTC(Real Time Clock) 在STM32中可以理解为内置的一个部件，和传说中的DS1302是有差别的。尽管官方发布的程序可以将RTC搞成一个万年历。<br>###配置RTC
+RTC需要顺带使用后备寄存器， 因为RTC是一个简单的秒中断定时器，关于年日月分秒的信息需要在掉电保存时依然放在某个地方，这个地方就是STM32的后备寄存器。配置好以后，尽管系统关电，依靠板子上的后备电池，依然可以保存32768的晶振和后备寄存器的数据。<br>配置RTC的方法：</p><pre><code>	#include &quot;stm32f10x_bkp.h&quot;
+	#include &quot;stm32f10x_pwr.h&quot;
+	#include &quot;stm32f10x_rtc.h&quot;
+	//使能一些外设
+		RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE);
+		PWR_BackupAccessCmd(ENABLE);
+
+</code></pre><p>###判断RTC是否被配置过
+下面的函数被用于判断RTC是否被配置过：</p><pre><code>/**************************************************************
+** 函数名:TestRtc
+** 功能:测试RTC用
+** 注意事项:用于显示RTC是否已经设置过.
+***************************************************************/
+void TestRtc(void)
+{
+	if(RTC_Blank)
+	{
+		USART1_Puts(&quot;The Time is not set\r\n&quot;);
+	}
+	else
+	{
+		USART1_Puts(&quot;Time Setted.\r\n&quot;);
+	}
+}
+
+</code></pre><p>这个函数判断RTC_Blank全局变量的值，而全局变量的值则在配置RTC的时候被设定。</p><pre><code>void RTC_Configuration(void)
+{
+  //......
+	if(BKP_ReadBackupRegister(BKP_DR1) != 0xA5A5)
+		{
+	//......
+			RTC_Blank=1;	//这个标志代表RTC是没有预设的(或者说是没有上纽扣电池)
+	
+		}
+
+</code></pre><p>如果RTC后备寄存器的值为设定为0xA5A5，则代表RTC已经被设置过。否则，我们认为它处于未被设置过的状态。<br>###使用RTC的秒中断
+在NVIC中，需要有下列的定义，以标识RTC的秒中断。</p><pre><code>	/* RTC */
+	NVIC_InitStructure.NVIC_IRQChannel = RTC_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&amp;NVIC_InitStructure);
+
+</code></pre><p>对应的中断响应例程则定义在stm32f10x_it.c中：</p><pre><code>/*******************************************************************************
+* Function Name  : RTC_IRQHandler    RTC中断
+* Description    : 
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+extern volatile bool Sec;	//1S标志
+void RTC_IRQHandler(void)
+{
+	if(RTC_GetITStatus(RTC_IT_SEC) != RESET) //RTC发生了秒中断（也有可能是溢出或者闹钟中断)
+	{
+		RTC_ClearITPendingBit(RTC_IT_SEC);
+		Sec=TRUE;
+		
+		//以免RTC计数溢出,这里限制了RTC计数值的大小.0x0001517f实际就是一天的秒数
+		if(RTC_GetCounter() &gt;= 0x0001517f)	
+		{
+			RTC_SetCounter(0x0);
+		}
+	}
+}
+
+</code></pre><p>而在main.c中，则根据Sec的值来闪烁LED1灯。</p><pre><code>	for(;;)
+	{
+		if(Sec == 1)
+		{
+			Sec = 0;
+			GPIOA-&gt;ODR^=GPIO_Pin_8;
+		}
+	}
+
+</code></pre><p>Test:</p><pre><code>	for(;;)
+	{
+		if(Sec == 1)
+		{
+			Sec = 0;
+			GPIOA-&gt;ODR^=GPIO_Pin_8;
+		}
+	}
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/30/stm32zhong-de-systick/>STM32中的Systick</a></h1><span class=post-date>Nov 30, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Cortx-M3特有的SysTick可以很方便的实现定时。系统始终的频率和开启系统时钟中断主要在RCC.c里进行设置：</p><pre><code>	//SYSTICK分频--1ms的系统时钟中断
 	if (SysTick_Config(SystemCoreClock / 1000))
   	{
   	  	/* Capture error */
@@ -243,89 +328,4 @@ SPI接口是Motorola 首先提出的全双工三线同步串行外围接口，�
 		CSLCDS_H;
 	}
 
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/2013/11/28/guan-yu-stm32ban-shang-de-12864ye-jing-3/>关于STM32板上的12864液晶(3)</a></h1><span class=post-date>Nov 28, 2013<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>###如何控制液晶屏幕
-ASCII码的可打印字符的范围在0x20 ~ 0x7f之间， 0x20 是空格字符，0x7f是delete字符。 最开始我们需要在内存中建立一张关于可打印字符的表。用于表示在液晶屏幕上如何显示出该字符，即该字符的点阵排列。<br>下图是可以打印的ASCII/Unicode 0-127的值：</p><p><img src=/images/ascii.jpg alt=ascii.jpg></p><p>点阵数组：</p><pre><code>	const u8 Asii8[] = {
-		0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-		0x06,0x5F,0x06,0x00,0x00,0x07,0x03,0x00,
-		0x07,0x03,0x00,0x24,0x7E,0x24,0x7E,0x24,
-		0x00,0x24,0x2B,0x6A,0x12,0x00,0x00,0x63,
-		0x13,0x08,0x64,0x63,0x00,0x36,0x49,0x56,
-
-</code></pre><p>来个例子：</p><pre><code>	#: 0x00, 0x24, 0x7e, 0x24, 0x7e, 0x24
-	00000000
-	00100100
-	01111110
-	00100100
-	01111110
-	00100100
-
-</code></pre><p>对应的1代表将该点的液晶点点上。<br>要注意，实际的显示应该是倒过来的，即： 把你的脖子顺时针转90度看上面的二进制表达式。</p><p>在LCD上设置需要写入的坐标，</p><pre><code>	/**************************************************************
-	**函数名 :LcdSetXP
-	**功能:设置坐标**
-	**注意事项:这里设置的坐标不是X,Y,而是X,PAGE.因为黑白屏一次写入的数据为8个点,而且为竖
-	**			式写入,故纵坐标是以页为单位,64个点共8页
-	***************************************************************/
-	void LcdSetXP(u8 x,u8 page)
-	{
-		LcdCmd((page&amp;0x07)+0xb0);	//设置页指针
-	    LcdCmd((x&gt;&gt;4)|0x10);
-	    LcdCmd(x&amp;0x0f);
-	}
-
-</code></pre><p>128X64的屏幕一共有8192个点， 每一个字符用48个点来表示，即8X6。所以每一个字的X坐标长度应该是6, 而Y坐标应该是8. 一个page代表8个点。<br>考虑下面代码:</p><pre><code>	LcdSetXP(0,1);
-	LcdChar8('T');
-	LcdChar8('E');
-	LcdChar8('S');
-	LcdChar8('T');
-	LcdChar8(' ');
-	LcdChar8('O');
-	LcdChar8('K');
-	LcdChar8('!');
-
-	LcdSetXP(0,2);
-	LcdChar8('T');
-	LcdSetXP(6,2);
-	LcdChar8('E');
-	LcdSetXP(24,2);
-	LcdChar8('S');
-	LcdChar8('T');
-	LcdChar8(' ');
-	LcdChar8('O');
-	LcdChar8('K');
-	LcdChar8('!');
-
-</code></pre><p>得到的结果应该是：<br>TEST OK!<br>TE ST OK!<br>对应上面的解释不难明白在屏幕上填写字符的原理。</p><p>有关在屏幕上写字符的函数是：</p><pre><code>/**************************************************************
-**函数名 :LcdChar8
-**功能:写一个宽6高8的ASCII
-**注意事项:这里忽略了坐标的设置,此函数作为子函数被其他函数调用,使用前需要设置坐标
-			使用内部的点阵表
-***************************************************************/
-void LcdChar8(char chr)
-{
-	u8 i;
-	u8* p_data;
-
-	/* 0x20 is the space character
-	 * 0x7f is the delete character
-	 * Seems all of the printable character are listed in the global array
-	 */
-	if((chr&lt;0x20)||(chr&gt;0x7f))
-	{
-		return;
-	}
-
-	/* Asii8 is the global variable(Glbal Array), So now we retrieve the
-	 * character's address via first address plus the (asii code number)*6
-	 * Because, each entry size if 6, all of the entry start from 0x20
-	 */
-	p_data = (u8*)Asii8 + (chr-0x20)*6;	//要写字符的首地址
-
-	for(i=0;i&lt;6;i++)
-	{
-		LcdDat(*p_data++);
-	}
-}
-
-</code></pre><p>举例说明， !的字符表示为
-00000000<br>00000000<br>00000110<br>01011111<br>00000110<br>00000000<br>则看起来应该像：
-000100<br>001110<br>000100<br>000000<br>000100<br>000000<br>把1想象为点，就能对应想象出!在屏幕上的样子。</p><p>原有的代码中关于GPIO初始化的时候，多初始化了一个PB14口，删除后一切正常。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class="page-item active"><a class=page-link href=/page/224/>224</a></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/246/>246</a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/246/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/223/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/223/>223</a></li><li class="page-item active"><a class=page-link href=/page/224/>224</a></li><li class=page-item><a class=page-link href=/page/225/>225</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/247/>247</a></li><li class=page-item><a href=/page/225/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/247/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
