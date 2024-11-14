@@ -459,6 +459,13 @@ xfs_growfs /dev/fedora/root
 </code></pre><p>solved via:</p><pre><code>Added cgroup parameter to boot cmdline:     
 systemd.unified_cgroup_hierarchy=0
 update-grub2 &amp;&amp; reboot
+</code></pre><h3 id=55-kylin-lightdm>55. kylin lightdm</h3><p>configuration via:</p><pre><code># cat /etc/lightdm/lightdm.conf
+[LightDM]
+minimum-vt=8
+[SeatDefaults]
+autologin-guest=false
+autologin-user=test
+autologin-user-timeout=0
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
