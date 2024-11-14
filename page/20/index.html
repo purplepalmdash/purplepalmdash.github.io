@@ -1,5 +1,92 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/08/09/workingtipsoniventoy/>WorkingTipsOniventoy</a></h1><span class=post-date>Aug 9, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Create the server:</p><pre><code>cd Downloads
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/08/10/buildkernelonrockylinux92/>BuildKernelOnRockyLinux92</a></h1><span class=post-date>Aug 10, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=try-steps>Try Steps</h3><p>Replace the repository for speedup:</p><pre><code>sed -e 's|^mirrorlist=|#mirrorlist=|g'     -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g'     -i.bak     /etc/yum.repos.d/rocky-extras.repo     /etc/yum.repos.d/rocky.repo
+yum makecache
+</code></pre><p>Install docker:</p><pre><code>dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+# replace all of the `download.docker.com` into `https://mirrors.ustc.edu.cn/docker-ce`
+yum makecache
+yum install -y docker-ce
+systemctl enable docker
+systemctl start docker
+</code></pre><p>Pull rockylinux9 and prepare building environment via:</p><pre><code>docker pull rockylinux:9
+docker run -it -v /root/source:/source rockylinux:9 /bin/bash
+sed -e 's|^mirrorlist=|#mirrorlist=|g'     -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g'     -i.bak     /etc/yum.repos.d/rocky-extras.repo     /etc/yum.repos.d/rocky.repo
+yum makecache
+yum install -y rpm-build rpmdevtools  dnf-plugins-core ncurses-devel make gcc bc bison flex elfutils-libelf-devel openssl-devel grub2 rpm-build rsync gcc vim yum-utils
+rpm -ivh kernel-5.15.113_lts2021_iotg-1.src.rpm
+useradd -m dash
+su dash
+$ cd 
+$ rpmdev-setuptree
+$ ls ~
+rpmbuild
+
+</code></pre><h3 id=rockylinux-way>RockyLinux Way</h3><p>Create docker instance:</p><pre><code>docker run -it -v /root/source:/source rockylinux:9 /bin/bash
+</code></pre><p>In docker, prepare for building kernel:</p><pre><code>sed -e 's|^mirrorlist=|#mirrorlist=|g'     -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g'     -i.bak     /etc/yum.repos.d/rocky-extras.repo     /etc/yum.repos.d/rocky.repo
+yum makecache
+yum install -y rpm-build rpmdevtools  dnf-plugins-core ncurses-devel make gcc bc bison flex elfutils-libelf-devel openssl-devel grub2 rpm-build rsync gcc vim yum-utils perl
+yum --enablerepo=crb install -y systemd-udev  asciidoc audit-libs-devel binutils-devel clang dwarves fuse-devel gcc-c++ gcc-plugin-devel git-core glibc-static java-devel kabi-dw kernel-rpm-macros libbabeltrace-devel libbpf-devel libcap-devel libcap-ng-devel libmnl-devel libnl3-devel libtraceevent-devel libtracefs-devel lld llvm lvm2 net-tools newt-devel numactl-devel pciutils-devel perl-devel python3-docutils system-sb-certs tpm2-tools xmlto elfutils-devel nss-tools perl-generators pesign python3-devel xz-devel
+# yum --enablerepo=crb install -y  kmod  patch  bash    tar  git-core  which bzip2  xz  findutils  gzip  m4  perl-interpreter  perl-Carp  perl-devel  perl-generators  make  diffutils  gawk gcc  binutils  redhat-rpm-config  hmaccalc  bison  flex  gcc-c++ net-tools  hostname  bc  elfutils-devel dwarves python3-devel gcc-plugin-devel bpftool rsync xmlto  asciidoc  python3-sphinx  python3-sphinx_rtd_theme  zlib-devel binutils-devel newt-devel  bison flex xz-devel audit-libs-devel java-devel libbabeltrace-devel libtraceevent-devel numactl-devel   gettext ncurses-devel libcap-devel libcap-ng-devel pciutils-devel python3-docutils zlib-devel binutils-devel clang llvm numactl-devel libcap-devel libcap-ng-devel rsync libmnl-devel rpm-build  elfutils kabi-dw openssl openssl-devel nss-tools pesign    xmlto asciidoc clang llvm lld
+
+
+yum install /source/WALinuxAgent-cvm-2.7.0.6-9.el9_2.1.rocky.0.noarch.rpm /source/systemd-boot-unsigned-252-14.el9_2.1.x86_64.rpm
+useradd -m mock
+su - mock
+</code></pre><p>Download the kernel src rpm:</p><pre><code>$ yumdownloader --source kernel
+$ ls -l -h
+total 139M
+-rw-r--r--. 1 mock mock 139M Aug 10 06:30 kernel-5.14.0-284.25.1.el9_2.src.rpm
+$ rpm -Uvh kernel-5.14.0-284.25.1.el9_2.src.rpm 
+[mock@c51507a516d4 ~]$ cd ./rpmbuild/SPECS/
+[mock@c51507a516d4 SPECS]$ ls
+kernel.spec
+[mock@c51507a516d4 SPECS]$ time rpmbuild -ba kernel.spec 
+
+</code></pre><h3 id=intel-way>intel way</h3><p>using the <code>kernel-5.15.113-1.src.rpm</code> package we got following issue:</p><pre><code>Processing files: kernel-headers-5.15.113-1.x86_64
+Provides: kernel-headers = 5.15.113 kernel-headers = 5.15.113-1 kernel-headers(x86-64) = 5.15.113-1
+Requires(rpmlib): rpmlib(CompressedFileNames) &lt;= 3.0.4-1 rpmlib(FileDigests) &lt;= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) &lt;= 4.0-1
+Obsoletes: kernel-headers
+Processing files: kernel-devel-5.15.113-1.x86_64
+warning: absolute symlink: /lib/modules/5.15.113/build -&gt; /usr/src/kernels/5.15.113
+warning: absolute symlink: /lib/modules/5.15.113/source -&gt; /usr/src/kernels/5.15.113
+Provides: kernel-devel = 5.15.113-1 kernel-devel(x86-64) = 5.15.113-1
+Requires(rpmlib): rpmlib(CompressedFileNames) &lt;= 3.0.4-1 rpmlib(FileDigests) &lt;= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) &lt;= 4.0-1
+Processing files: kernel-debugsource-5.15.113-1.x86_64
+error: Could not open %files file /home/mock/rpmbuild/BUILD/kernel-5.15.113/debugsourcefiles.list: No such file or directory
+
+
+RPM build errors:
+    line 20: It's not recommended to have unversioned Obsoletes: Obsoletes: kernel-headers
+    absolute symlink: /lib/modules/5.15.113/build -&gt; /usr/src/kernels/5.15.113
+    absolute symlink: /lib/modules/5.15.113/source -&gt; /usr/src/kernels/5.15.113
+    Could not open %files file /home/mock/rpmbuild/BUILD/kernel-5.15.113/debugsourcefiles.list: No such file or directory
+
+</code></pre><h3 id=fedora-515-lts>fedora 5.15 lts</h3><p>Refers to <code>https://copr.fedorainfracloud.org/coprs/kwizart/kernel-longterm-5.15/</code>.</p><pre><code>yum install -y bpftool
+dnf copr enable kwizart/kernel-longterm-5.15
+yumdownloader --source kernel-longterm
+su - mock
+rpm -Uvh kernel-longterm-5.15.124-200.el9.src.rpm
+cd /home/mock/rpmbuild
+time rpmbuild -ba kernel.spec 
+</code></pre><p>build result:</p><pre><code>$ find . | grep rpm$
+./RPMS/x86_64/kernel-longterm-modules-internal-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-debug-devel-matched-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-debug-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-devel-matched-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-debug-modules-extra-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-modules-extra-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-debug-modules-internal-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-debug-debuginfo-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-debug-devel-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-debuginfo-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-devel-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-debug-modules-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-debuginfo-common-x86_64-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-modules-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-debug-core-5.15.124-200.el9.x86_64.rpm
+./RPMS/x86_64/kernel-longterm-core-5.15.124-200.el9.x86_64.rpm
+./SRPMS/kernel-longterm-5.15.124-200.el9.src.rpm
+</code></pre><h3 id=aug17>Aug17</h3><p>Enable perftools building, I think it failed because of the libebpf is too new comparing to 5.15.113 kernel. so changes to kerner&rsquo;s <code>tools/lib/bpf</code> version&rsquo;s libebpf-devel package for building.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/08/09/workingtipsoniventoy/>WorkingTipsOniventoy</a></h1><span class=post-date>Aug 9, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Create the server:</p><pre><code>cd Downloads
 mkdir iventory
 cd iventory
 tar xzvf ../iventoy-1.0.17-linux-free.tar.gz
@@ -92,13 +179,5 @@ uosxj        latest    e09cca938497   40 seconds ago   1.68GB
 [root@0bb3783f7e1e /]# /usr/libexec/qemu-kvm  --version
 QEMU emulator version 2.12.0 (qemu-kvm-ev-2.12.0-45.uelc20_2.01)
 Copyright (c) 2003-2017 Fabrice Bellard and the QEMU Project developers
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2023/07/03/3vmsbenchmark/>3VMsBenchmark</a></h1><span class=post-date>Jul 3, 2023<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Create 3 disk files:</p><pre><code> qemu-img create -f qcow2 -b win.qcow2 -F qcow2 vm1.qcow2
- qemu-img create -f qcow2 -b win.qcow2 -F qcow2 vm2.qcow2
- qemu-img create -f qcow2 -b win.qcow2 -F qcow2 vm3.qcow2
-</code></pre><p>Create vm1/vm2/vm3.</p><p>Start and detect the spice:</p><pre><code>netstat -anp | grep 590
-tcp        0      0 0.0.0.0:5902            0.0.0.0:*               LISTEN      7307/qemu-system-x8 
-tcp        0      0 0.0.0.0:5900            0.0.0.0:*               LISTEN      6813/qemu-system-x8 
-tcp        0      0 0.0.0.0:5901            0.0.0.0:*               LISTEN      7101/qemu-system-x8 
 
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/19/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/19/>19</a></li><li class="page-item active"><a class=page-link href=/page/20/>20</a></li><li class=page-item><a class=page-link href=/page/21/>21</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/247/>247</a></li><li class=page-item><a href=/page/21/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/247/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

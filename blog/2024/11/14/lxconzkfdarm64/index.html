@@ -1,0 +1,88 @@
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>lxconzkfdarm64 &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><meta name=description content="lxconzkfdarm64"><meta name=keywords content="Technology"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=post><h1>lxconzkfdarm64</h1><p align=right><a href=javascript:genPostShot()>TurnToJPG --> <i class="fa fa-camera-retro fa-2x"></i></a><a id=test></a></p><hr><span class=post-date>Nov 14, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><div id=_toc class=toc><nav id=TableOfContents><ul><li><ul><li><a href=#kylin-lxc>kylin lxc</a></li></ul></li></ul></nav></div><p>Install lxc:</p><pre><code># apt install -y lxc lxcfs
+</code></pre><p>Edit common configuration:</p><pre><code>$ sudo vim /usr/share/lxc/config/common.conf
+#lxc.cgroup.devices.deny = a
+lxc.cgroup.devices.allow = a
+......
+### /dev/random
+lxc.cgroup.devices.allow = c 1:8 rwm
+### tty0, tty1, tty7, tty8
+lxc.cgroup.devices.allow = c 4:0 rwm
+lxc.cgroup.devices.allow = c 4:1 rwm
+lxc.cgroup.devices.allow = c 4:7 rwm
+lxc.cgroup.devices.allow = c 4:8 rwm
+......
+lxc.cgroup2.devices.allow = c *:* m
+lxc.cgroup2.devices.allow = b *:* m
+......
+### fuse
+lxc.cgroup2.devices.allow = c 10:229 rwm
+### customization
+## graphics. /dev/dri
+lxc.cgroup2.devices.allow = c 226:0 rwm
+lxc.cgroup2.devices.allow = c 226:128 rwm
+## graphics. /dev/fb0
+lxc.cgroup2.devices.allow = c 29:0 rwm
+## tty0, 1, 7, 8
+lxc.cgroup2.devices.allow = c 4:0 rwm
+lxc.cgroup2.devices.allow = c 4:1 rwm
+lxc.cgroup2.devices.allow = c 4:7 rwm
+lxc.cgroup2.devices.allow = c 4:8 rwm
+......
+# Setup the default mounts
+#lxc.mount.auto = cgroup:mixed proc:mixed sys:mixed
+lxc.mount.auto = cgroup:mixed proc:rw sys:mixed
+</code></pre><p>Prepare the environment:</p><pre><code>chmod 777 /dev/tty* &amp;&amp; chmod 777 -R /dev/dri/ &amp;&amp; chmod 777 /dev/fb0
+</code></pre><p>Create the uos lxc instance:</p><pre><code>lxc-create -t local -n uoslxc -- -m /root/meta.tar.xz -f /root/uoslxc.tar.xz
+</code></pre><p>Edit the lxc config:</p><pre><code># vim /var/lib/lxc/uoslxc/config
+
+......
+lxc.mount.entry = /dev/fb0 dev/fb0 none bind,optional,create=file
+lxc.mount.entry = /dev/dri dev/dri none bind,optional,create=dir
+lxc.mount.entry = /dev/dri/renderD128 dev/renderD128 none bind,optional,create=file
+### allow tty8
+lxc.mount.entry = /dev/tty7 dev/tty7 none bind,optional,create=file
+lxc.mount.entry = /dev/tty8 dev/tty8 none bind,optional,create=file
+lxc.mount.entry = /dev/tty0 dev/tty0 none bind,optional,create=file
+#lxc.mount.entry = /dev/tty1 dev/tty1 none bind,optional,create=file
+#lxc.mount.entry = /dev/tty2 dev/tty2 none bind,optional,create=file
+#lxc.mount.entry = /dev/tty3 dev/tty3 none bind,optional,create=file
+### allow all of the input
+lxc.mount.entry = /dev/input dev/input none bind,optional,create=dir
+### allow all of the snd
+lxc.mount.entry = /dev/snd dev/snd none bind,optional,create=dir
+
+</code></pre><p>Edit the lxc guest configuration:</p><pre><code>root@zkfdhost:~# vim /var/lib/lxc/uoslxc/rootfs/etc/fstab 
+# /dev/vda1 LABEL=EFI
+#UUID=5474-499A      	/boot/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro	0 2
+
+root@zkfdhost:~# vim /var/lib/lxc/uoslxc/rootfs/etc/lightdm/lightdm.conf 
+...
+[LightDM]
+.....
+minimum-vt=8
+...
+</code></pre><p>Start the instance:</p><pre><code># lxc-start -n uoslxc
+</code></pre><p>X crash because xorg is not compatible with xorg:</p><pre><code>$ cat /var/log/lightdm/x-0.log
+...
+(==) Log file: &quot;/var/log/Xorg.0.log&quot;, Time: Thu Nov 14 09:35:42 2024
+(==) Using config directory: &quot;/etc/X11/xorg.conf.d&quot;
+(==) Using system config directory &quot;/usr/share/X11/xorg.conf.d&quot;
+(EE) 
+(EE) Backtrace:
+(EE) 0: /usr/lib/xorg/Xorg (OsLookupColor+0x1a8) [0x599130]
+(EE) 
+(EE) Segmentation fault at address 0x0
+(EE) 
+Fatal server error:
+(EE) Caught signal 11 (Segmentation fault). Server aborting
+(EE) 
+(EE) 
+...
+</code></pre><p>Solution, changes to Ramfb:</p><p><img src=/images/20241114_093758_x.jpg alt=/images/20241114_093758_x.jpg></p><p>Successful screenshot:</p><p><img src=/images/20241114_093905_x.jpg alt=/images/20241114_093905_x.jpg></p><h3 id=kylin-lxc>kylin lxc</h3><p>Create via:</p><pre><code>root@zkfdhost:~# lxc-create -t local -n kylinlxc  -- -m /root/meta.tar.xz -f /root/kylinv10arm.tar.xz
+
+</code></pre><p>problem:</p><pre><code>root@zkfdhost:~# lxc-start -n kylinlxc -F
+[!!!!!!] Kylin kernel check failed!, freezing.
+Freezing execution.
+
+</code></pre><p>因为kylin是基于ubuntu16.04来做的，可以尝试将systemd替换，直接替换.</p></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
