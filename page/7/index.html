@@ -466,6 +466,8 @@ minimum-vt=8
 autologin-guest=false
 autologin-user=test
 autologin-user-timeout=0
+</code></pre><h3 id=56-lxc-sound-issue>56. lxc sound issue</h3><p>solved via:</p><pre><code>/usr/bin/pactl load-module module-alsa-card device_id=1 ; /usr/bin/pactl load-module module-alsa-card device_id=0
+
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
