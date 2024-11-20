@@ -1,5 +1,89 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/21/promoxzfstips/>Promoxzfstips</a></h1><span class=post-date>Jan 21, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>之前:</p><p><img src=/images/2020_01_21_16_18_33_1171x255.jpg alt=/images/2020_01_21_16_18_33_1171x255.jpg></p><p>ssh登录:</p><p><code>./MegaCli64 -LDInfo -LALL -aAll</code>查看VD信息， 其中VD0（600G）不需要动.</p><p><img src=/images/2020_01_21_16_20_59_871x328.jpg alt=/images/2020_01_21_16_20_59_871x328.jpg></p><p><code>./MegaCli64 -PDList -aAll | grep -i adapter</code>得到adapter数值:</p><p><img src=/images/2020_01_21_16_22_31_783x47.jpg alt=/images/2020_01_21_16_22_31_783x47.jpg></p><p>删除VD1-VD3:</p><pre><code># ./MegaCli64 -cfglddel -L1 -a0
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/02/10/upgradekernelforrhel74/>UpgradeKernelForRHEL74</a></h1><span class=post-date>Feb 10, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=online-steps>Online Steps</h3><p>rhel74, default kernel is:</p><pre><code># uname -a
+Linux node 3.10.0-693.el7.x86_64 #1 SMP Thu Jul 6 19:56:57 EDT 2017 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre><p>Configure repo and install newer kernel:</p><pre><code># rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+# wget https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm
+# rpm -ivh elrepo-release-7.0-4.el7.elrepo.noarch.rpm
+# yum update -y
+# yum --disablerepo=&quot;*&quot; --enablerepo=&quot;elrepo-kernel&quot; list available
+Loaded plugins: product-id, search-disabled-repos, subscription-manager
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+elrepo-kernel                                                                                                                          | 2.9 kB  00:00:00     
+elrepo-kernel/primary_db                                                                                                               | 1.9 MB  00:00:58     
+Available Packages
+kernel-lt.x86_64                                                               4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-devel.x86_64                                                         4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-doc.noarch                                                           4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-headers.x86_64                                                       4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-tools.x86_64                                                         4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-tools-libs.x86_64                                                    4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-lt-tools-libs-devel.x86_64                                              4.4.213-1.el7.elrepo                                              elrepo-kernel
+kernel-ml-devel.x86_64                                                         5.5.2-1.el7.elrepo                                                elrepo-kernel
+kernel-ml-doc.noarch                                                           5.5.2-1.el7.elrepo                                                elrepo-kernel
+kernel-ml-headers.x86_64                                                       5.5.2-1.el7.elrepo                                                elrepo-kernel
+kernel-ml-tools.x86_64                                                         5.5.2-1.el7.elrepo                                                elrepo-kernel
+kernel-ml-tools-libs.x86_64                                                    5.5.2-1.el7.elrepo                                                elrepo-kernel
+kernel-ml-tools-libs-devel.x86_64                                              5.5.2-1.el7.elrepo                                                elrepo-kernel
+perf.x86_64                                                                    5.5.2-1.el7.elrepo                                                elrepo-kernel
+python-perf.x86_64                                                             5.5.2-1.el7.elrepo                                                elrepo-kernel
+# yum --enablerepo=elrepo-kernel install kernel-ml
+# sudo sed -i 's/^GRUB_DEFAULT.*/GRUB_DEFAULT=0/' /etc/default/grub
+# sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+# sudo reboot
+</code></pre><p>Check the kernel version is <code>5.5.2-1</code>:</p><pre><code># uname -a
+Linux node 5.5.2-1.el7.elrepo.x86_64 #1 SMP Tue Feb 4 16:29:48 EST 2020 x86_64 x86_64 x86_64 GNU/Linux
+# cat /etc/redhat-release 
+Red Hat Enterprise Linux Server release 7.4 (Maipo)
+</code></pre><h3 id=offline-steps>Offline Steps</h3><p>Scp the rpm into the server and install it via:</p><pre><code># scp ./kernel-ml-5.5.2-1.el7.elrepo.x86_64.rpm vagrant@xxx.xxx.xxx.xxx:/home/vagrant
+# ssh into xxx.xxx.xxx.xxx
+...................
+$ sudo sed -i 's/^GRUB_DEFAULT.*/GRUB_DEFAULT=0/' /etc/default/grub
+$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.5.2-1.el7.elrepo.x86_64
+Found initrd image: /boot/initramfs-5.5.2-1.el7.elrepo.x86_64.img
+Found linux image: /boot/vmlinuz-3.10.0-693.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-693.el7.x86_64.img
+Found linux image: /boot/vmlinuz-0-rescue-61b21bac36de423f82052de06e3a892b
+Found initrd image:
+/boot/initramfs-0-rescue-61b21bac36de423f82052de06e3a892b.img
+done
+$ sudo reboot
+</code></pre><p>Check:</p><pre><code>$ uname -a
+Linux node 5.5.2-1.el7.elrepo.x86_64 #1 SMP Tue Feb 4 16:29:48 EST 2020 x86_64 x86_64 x86_64 GNU/Linux
+$ cat /etc/redhat-release 
+Red Hat Enterprise Linux Server release 7.4 (Maipo)
+</code></pre><h3 id=related-packages>Related packages</h3><p>Manually download them from
+<code>http://elrepo.reloumirrors.net/kernel/el7/x86_64/RPMS/</code>, related rpms is
+listed as:</p><pre><code># pwd
+/media/sda/rhel74NewKernel
+# ls
+kernel-ml-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-tools-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-devel-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-tools-libs-devel-5.5.2-1.el7.elrepo.x86_64.rpm
+</code></pre><h3 id=中文更新步骤>中文更新步骤</h3><p>主线内核可从
+<code>http://elrepo.reloumirrors.net/kernel/el7/x86_64/RPMS/</code>下载，文件列表如下：</p><pre><code># pwd
+/media/sda/rhel74NewKernel
+# ls
+kernel-ml-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-headers-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-tools-libs-devel-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-devel-5.5.2-1.el7.elrepo.x86_64.rpm
+kernel-ml-tools-5.5.2-1.el7.elrepo.x86_64.rpm
+</code></pre><p>注： 如果只需要升级内核，则只需要 <code>kernel-ml-5.5.2-1.el7.elrepo.x86_64.rpm</code>
+一个包就足够，如果编译时需要内核头文件依赖，则有可能需要其他几个包。可以根据需要自行安装。</p><p>离线更新，上传包到rhel74服务器上，:</p><pre><code># scp ./*.rpm vagrant@xxx.xxx.xxx.xxx:/home/vagrant
+# ssh into xxx.xxx.xxx.xxx
+...................
+$ sudo yum install -y ./kernel-ml-5.5.2-1.el7.elrepo.x86_64.rpm
+$ sudo sed -i 's/^GRUB_DEFAULT.*/GRUB_DEFAULT=0/' /etc/default/grub
+$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+$ sudo reboot
+</code></pre><p>检查更新后结果:</p><pre><code>$ uname -a
+Linux node 5.5.2-1.el7.elrepo.x86_64 #1 SMP Tue Feb 4 16:29:48 EST 2020 x86_64 x86_64 x86_64 GNU/Linux
+$ cat /etc/redhat-release 
+Red Hat Enterprise Linux Server release 7.4 (Maipo)
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/21/promoxzfstips/>Promoxzfstips</a></h1><span class=post-date>Jan 21, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>之前:</p><p><img src=/images/2020_01_21_16_18_33_1171x255.jpg alt=/images/2020_01_21_16_18_33_1171x255.jpg></p><p>ssh登录:</p><p><code>./MegaCli64 -LDInfo -LALL -aAll</code>查看VD信息， 其中VD0（600G）不需要动.</p><p><img src=/images/2020_01_21_16_20_59_871x328.jpg alt=/images/2020_01_21_16_20_59_871x328.jpg></p><p><code>./MegaCli64 -PDList -aAll | grep -i adapter</code>得到adapter数值:</p><p><img src=/images/2020_01_21_16_22_31_783x47.jpg alt=/images/2020_01_21_16_22_31_783x47.jpg></p><p>删除VD1-VD3:</p><pre><code># ./MegaCli64 -cfglddel -L1 -a0
 # ./MegaCli64 -cfglddel -L2 -a0
 # ./MegaCli64 -cfglddel -L3 -a0
 </code></pre><p>当前VD：</p><p><img src=/images/2020_01_21_16_23_26_850x391.jpg alt=/images/2020_01_21_16_23_26_850x391.jpg></p><p>查看PD对应磁盘:</p><pre><code># ./MegaCli64 -PDList -aAll | more
@@ -177,44 +261,4 @@ syslog:!:18074::::::
 </code></pre><p>如果没有有效token的话，可以手动创建一个:</p><pre><code># kubectl token create
 </code></pre><p>token应该看起来像<code>6dihyb.d09sbgae8ph2atjw</code>.</p><p>ssh到每一个工作节点上，重新连接到master节点上:</p><pre><code># kubeadm join --token=&lt;上一布获取的token&gt;  &lt;master节点IP&gt;:&lt;默认为6443端口&gt; --node-name &lt;master节点node名称&gt;
 </code></pre><p>重新连接后，可以在master节点上验证是否连接成功：</p><pre><code># kubectl get nodes
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/06/kubeadmssladjust/>KubeadmSSLAdjust</a></h1><span class=post-date>Jan 6, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=检查>检查</h3><p>一年过期的集群（即将过期):</p><pre><code>root@node:/home/test# cd /etc/kubernetes/ssl
-root@node:/etc/kubernetes/ssl# for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
-notAfter=Jun 13 02:57:27 2020 GMT
-notAfter=Jun 13 02:57:28 2020 GMT
-notAfter=Jun 11 02:57:27 2029 GMT
-notAfter=Jun 11 02:57:28 2029 GMT
-notAfter=Jun 13 02:57:29 2020 GMT
-</code></pre><p>获得该集群信息:</p><pre><code># kubectl get nodes -o wide
-NAME           STATUS   ROLES    AGE    VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
-k8s-master-1   Ready    master   206d   v1.12.4   192.192.185.63   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
-k8s-master-2   Ready    node     89d    v1.12.4   192.192.185.64   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
-k8s-node-1     Ready    node     111d   v1.12.4   192.192.185.65   &lt;none&gt;        Ubuntu 16.04.6 LTS   4.15.0-45-generic   docker://18.6.1
-k8s-node-2     Ready    node     206d   v1.12.4   192.192.185.66   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
-k8s-node-3     Ready    node     201d   v1.12.4   192.192.189.61   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
-</code></pre><p>renew apiserver certs:</p><pre><code># kubeadm alpha phase certs renew apiserver --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml
-#  for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
-notAfter=Jun 13 02:57:27 2020 GMT
-notAfter=Jan  5 09:30:17 2021 GMT
-notAfter=Jun 11 02:57:27 2029 GMT
-notAfter=Jun 11 02:57:28 2029 GMT
-notAfter=Jun 13 02:57:29 2020 GMT
-
-</code></pre><pre><code># cd /etc/kubernetes/
-
-# ln -s ssl pki
-
-# kubeadm alpha phase certs renew apiserver --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml --cert-dir=/etc/kubernetes/ssl
-
-# kubeadm alpha phase certs renew apiserver-kubelet-client  --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml --cert-dir=/etc/kubernetes/ssl
-
-# kubeadm alpha phase certs renew front-proxy-client --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml --cert-dir=/etc/kubernetes/ssl
-</code></pre><pre><code>root@node:/etc/kubernetes/ssl# !2036
-for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
-notAfter=Jan  5 09:36:10 2021 GMT
-notAfter=Jan  5 09:30:46 2021 GMT
-notAfter=Jun 11 02:57:27 2029 GMT
-notAfter=Jun 11 02:57:28 2029 GMT
-notAfter=Jan  5 09:37:14 2021 GMT
-
-</code></pre><pre><code>kubeadm alpha phase kubeconfig all --apiserver-advertise-address=192.192.185.63
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/58/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/58/>58</a></li><li class="page-item active"><a class=page-link href=/page/59/>59</a></li><li class=page-item><a class=page-link href=/page/60/>60</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/247/>247</a></li><li class=page-item><a href=/page/60/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/247/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

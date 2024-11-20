@@ -1,5 +1,54 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/27/rebuildgfxqemutips/>rebuildgfxqemutips</a></h1><span class=post-date>Sep 27, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Tips:</p><pre><code>   31  cd ~/fuck/
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/10/14/lxdonfedora/>lxdonfedora</a></h1><span class=post-date>Oct 14, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install steps:</p><pre><code>sudo dnf install snapd
+sudo ln -s /var/lib/snapd/snap /snap
+snap version
+sudo systemctl restart snapd.service
+sudo snap install lxd
+sudo snap enable lxd
+sudo snap services lxd
+sudo snap start lxd
+</code></pre><p>Add user:</p><pre><code>sudo usermod -a -G lxd test
+newgrp lxd
+</code></pre><p>logout and login again.<br>init steps:</p><pre><code>lxtest@localhost:~$ lxd init
+Would you like to use LXD clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (powerflex, btrfs, ceph, dir, lvm) [default=btrfs]: 
+Create a new BTRFS pool? (yes/no) [default=yes]: 
+Would you like to use an existing empty block device (e.g. a disk or partition)? (yes/no) [default=no]: 
+Size in GiB of the new loop device (1GiB minimum) [default=5GiB]: 20GiB
+Would you like to connect to a MAAS server? (yes/no) [default=no]: 
+Would you like to create a new local network bridge? (yes/no) [default=yes]: 
+What should the new bridge be called? [default=lxdbr0]: 
+What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: none
+Would you like the LXD server to be available over the network? (yes/no) [default=no]: 
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes]: 
+Would you like a YAML &quot;lxd init&quot; preseed to be printed? (yes/no) [default=no]:
+</code></pre><p>show infos:</p><pre><code>test@localhost:~$ lxc list
+To start your first container, try: lxc launch ubuntu:24.04
+Or for a virtual machine: lxc launch ubuntu:24.04 --vm
+
++------+-------+------+------+------+-----------+
+| NAME | STATE | IPV4 | IPV6 | TYPE | SNAPSHOTS |
++------+-------+------+------+------+-----------+
+test@localhost:~$ lxc network list
++----------+----------+---------+---------------+------+-------------+---------+---------+
+|   NAME   |   TYPE   | MANAGED |     IPV4      | IPV6 | DESCRIPTION | USED BY |  STATE  |
++----------+----------+---------+---------------+------+-------------+---------+---------+
+| enp6s0u4 | physical | NO      |               |      |             | 0       |         |
++----------+----------+---------+---------------+------+-------------+---------+---------+
+| lxdbr0   | bridge   | YES     | 10.12.66.1/24 | none |             | 1       | CREATED |
++----------+----------+---------+---------------+------+-------------+---------+---------+
+| virbr0   | bridge   | NO      |               |      |             | 0       |         |
++----------+----------+---------+---------------+------+-------------+---------+---------+
+
+</code></pre><p>search images via:</p><pre><code>lxc image alias list images: | grep -i arm64
+</code></pre><p>launch instance:</p><pre><code>$ lxc launch images:debian/12/arm64 debian-12
+Creating debian-12
+Retrieving image: metadata: 100% (1.54GB/s)
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/27/rebuildgfxqemutips/>rebuildgfxqemutips</a></h1><span class=post-date>Sep 27, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Tips:</p><pre><code>   31  cd ~/fuck/
    32  ls
    33  git clone https://android.googlesource.com/platform/hardware/google/aemu
    34  cd aemu/
@@ -466,110 +515,5 @@ qemu-system-gui-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb     qemu-user-static-dbgsym_
 qemu-system-mips_9.0.2+ds-1~bpo12+1_amd64.deb           qemu-utils_9.0.2+ds-1~bpo12+1_amd64.deb
 qemu-system-mips-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb    qemu-utils-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb
 qemu-system-misc_9.0.2+ds-1~bpo12+1_amd64.deb
-
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/19/buildqemurutabaga_gfx/>BuildQemurutabaga_gfx</a></h1><span class=post-date>Sep 19, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install with <code>debian-12.7.0-amd64-DVD-1.iso</code>. Select gnome/desktop/ssh server.</p><p><img src=/images/20240919_084808_x.jpg alt=/images/20240919_084808_x.jpg></p><p><img src=/images/20240919_085715_x.jpg alt=/images/20240919_085715_x.jpg></p><h3 id=x86-steps>x86 steps</h3><p>Configure the repository and update/upgrade:</p><pre><code>root@debian:~# cat /etc/apt/sources.list
-# 默认注释了源码仓库，如有需要可自行取消注释
-deb http://mirrors.ustc.edu.cn/debian bookworm main contrib non-free non-free-firmware
-# deb-src http://mirrors.ustc.edu.cn/debian bookworm main contrib non-free non-free-firmware
-deb http://mirrors.ustc.edu.cn/debian bookworm-updates main contrib non-free non-free-firmware
-# deb-src http://mirrors.ustc.edu.cn/debian bookworm-updates main contrib non-free non-free-firmware
-
-# backports 软件源，请按需启用
-# deb http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware
-# deb-src http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware
-# apt install -y nethogs vim iptables
-</code></pre><p>Install necessary packages:</p><pre><code> apt install -y ninja-build pkg-config libgbm1 libglib2.0-dev bridge-utils libfdt-dev libpixman-1-dev libssl-dev libsdl1.2-dev libspice-server-dev autoconf libtool xtightvncviewer tightvncserver x11vnc uuid-runtime uuid uml-utilities liblzma-dev libc6-dev libdrm-dev libgbm-dev spice-client-gtk libgtk2.0-dev libusb-1.0-0-dev libepoxy-dev libaio-dev libgtk-3-dev ovmf libsdl2-dev libegl-mesa0
-apt install -y {libpulse,libdrm,libglm,libstb,libegl,libgles,libvulkan,vulkan-validationlayers}-dev 
-apt install -y libepoxy-dev libgbm-dev cmake curl python3-venv git build-essential meson
-</code></pre><p>Prepare the code structure:</p><pre><code>mkdir Code
-cd Code
-git clone https://gitlab.com/qemu-project/qemu.git
-</code></pre><p>Build libvirglrenderer:</p><pre><code>export PREFIX=&quot;$(pwd)&quot;/prefix
-git clone https://gitlab.freedesktop.org/virgl/virglrenderer.git
-cd virglrenderer
-meson setup -Dprefix=$PREFIX -Dlibdir=lib build
-cd build
-ninja install
-</code></pre><p>build aemu (dependencies) Steps:</p><pre><code>cd qemu
-mkdir -p build/deps/prefix
-cd build/deps
-export PREFIX=&quot;$(pwd)&quot;/prefix
-export CMAKE_INSTALL_PREFIX=&quot;${PREFIX}&quot;
-export PKG_CONFIG_PATH=&quot;${PREFIX}/lib/pkgconfig&quot;:&quot;${PREFIX}/lib/x86_64-linux-gnu/pkgconfig&quot;
-git clone https://android.googlesource.com/platform/hardware/google/aemu
-cd aemu/
-cmake -DAEMU_COMMON_GEN_PKGCONFIG=ON \
-      -DAEMU_COMMON_BUILD_CONFIG=gfxstream \
-      -DENABLE_VKCEREAL_TESTS=OFF \
-      --install-prefix &quot;${PREFIX}&quot; \
-      -B build
-cmake --build build -j
-cmake --install build --prefix &quot;${CMAKE_INSTALL_PREFIX}&quot;
-</code></pre><p>build gfxstream steps:</p><pre><code>cd ..
-git clone https://android.googlesource.com/platform/hardware/google/gfxstream
-cd gfxstream/
-meson setup -Ddefault_library=static --prefix &quot;${PREFIX}&quot; build/ 
-meson install -C build
-</code></pre><p>rutabaga FFI￼:</p><pre><code>cd ~/Code
-git clone https://github.com/google/crosvm
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-#curl https://sh.rustup.rs -sSf | sh
-source $HOME/.cargo/env
-source ~/.profile
-rustup toolchain list | grep -q 1.68.2-x86_64-unknown-linux-gnu || rustup toolchain install 1.68.2-x86_64-unknown-linux-gnu
-cd crosvm
-git reset --hard cd04b6198dc89104de7748043585cf38c56cb626
-export RUSTFLAGS='-Clink-arg=-L='&quot;${PREFIX}&quot;/lib/x86_64-linux-gnu/
-cd rutabaga_gfx/ffi
-make
-make prefix=&quot;${PREFIX}&quot; install
-</code></pre><p>Build qemu:</p><pre><code>mkdir -p /opt/local
-cd ~/Code/qemu/build
-export CFLAGS=&quot;-I${PREFIX}/include -L${PREFIX}/lib&quot; # needed for rutabaga_gfx_ffi.h
-#../configure --enable-system --enable-tools --enable-vhost-user --enable-slirp --enable-kvm --enable-debug --target-list=x86_64-softmmu --enable-rutabaga-gfx --prefix=/opt/local/
-../configure --enable-system --enable-tools --enable-vhost-user --enable-slirp --enable-kvm --enable-debug --target-list=aarch64-softmmu --enable-rutabaga-gfx
-make -j$(nproc)
-su root
-</code></pre><p>￼
-￼</p><h3 id=cuttlefish-build>cuttlefish build</h3><p>Steps:</p><pre><code>usermod -aG sudo test
-cd ~/Code
-git clone https://github.com/google/android-cuttlefish
-cd android-cuttlefish
-tools/buildutils/build_packages.sh
-sudo dpkg -i ./cuttlefish-base_*_*64.deb || sudo apt-get install -f
-sudo dpkg -i ./cuttlefish-user_*_*64.deb || sudo apt-get install -f
-sudo usermod -aG kvm,cvdnetwork,render $USER
-mkdir cf
-tar xzvf ../cvd-host_package.tar.gz &amp;&amp; unzip ../aosp_cf_arm64_only_phone-img-11489887.zip 
-sudo reboot
-</code></pre><p>should notice the aarch64 library replacement.</p><h3 id=x86-tips>x86 tips</h3><p>qemu version:</p><pre><code>$ /home/test/Code/qemu/build/qemu-system-x86_64 --version
-QEMU emulator version 9.1.50 (v9.1.0-384-g2b81c04625)
-Copyright (c) 2003-2024 Fabrice Bellard and the QEMU Project developers
-test@debian:~/cf$ sudo chmod 777 /usr/bin/qemu-system-x86_64 
-test@debian:~/cf$ sudo cat /usr/bin/qemu-system-x86_64 
-#!/bin/bash
-/home/test/Code/qemu/build/qemu-system-x86_64 $@
-
-</code></pre><h3 id=ubuntu2204-issue>Ubuntu2204 issue</h3><p>When building gfxstream host:</p><pre><code>git clone https://android.googlesource.com/platform/hardware/google/gfxstream
-cd gfxstream/
-meson setup host-build/
-</code></pre><p>Get error:</p><pre><code>Run-time dependency dl found: NO (tried pkgconfig and cmake)
-
-host/meson.build:78:2: ERROR: Dependency &quot;dl&quot; not found, tried pkgconfig and cmake
-
-</code></pre><p>cmake:</p><pre><code> 307  sudo apt remove cmake
-  308  sudo apt install libssl-dev
-  309  cd ..
-  310  ls
-  311  wget https://cmake.org/files/v3.29/cmake-3.29.2.tar.gz
-  312  tar -xzvf cmake-3.29.2.tar.gz
-  313  cd cmake-3.29.2
-  314  export OPENSSL_ROOT_DIR=/usr/include/openssl
-  315  ./bootstrap
-  316  make -j$(nproc)
-  317  sudo make install
-  318  which cmake
 
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class="page-item active"><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/247/>247</a></li><li class=page-item><a href=/page/3/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/247/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
