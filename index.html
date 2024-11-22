@@ -31,8 +31,8 @@ mkdir build
 cp ~/config_backuprocky8 build/.config
 make menuconfig O=./build
 make LOCALVERSION=&quot;-rain&quot; -j `nproc` O=./build bindeb-pkg
-
-
+</code></pre><p>Change to 510:</p><pre><code>The same building steps as above.
+disable CONFIG_FORTIFY=y, when you want to enable xxx_mac 
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/11/14/lxconzkfdarm64/>lxconzkfdarm64</a></h1><span class=post-date>Nov 14, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install lxc:</p><pre><code># apt install -y lxc lxcfs
 </code></pre><p>Edit common configuration:</p><pre><code>$ sudo vim /usr/share/lxc/config/common.conf
 #lxc.cgroup.devices.deny = a

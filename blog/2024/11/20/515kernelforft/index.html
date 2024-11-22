@@ -8,6 +8,6 @@ mkdir build
 cp ~/config_backuprocky8 build/.config
 make menuconfig O=./build
 make LOCALVERSION=&quot;-rain&quot; -j `nproc` O=./build bindeb-pkg
-
-
+</code></pre><p>Change to 510:</p><pre><code>The same building steps as above.
+disable CONFIG_FORTIFY=y, when you want to enable xxx_mac 
 </code></pre></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

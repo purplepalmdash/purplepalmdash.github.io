@@ -709,6 +709,19 @@ vfio-pci
 vfio_iommu_type1
 vfio_pci
 # systemctl status systemd-modules-load.service
+</code></pre><h3 id=58-git-diff>58. git diff</h3><p>steps:</p><pre><code>1. get the source code
+git init
+git add .
+git commit -m 'initial'
+git tag -a initial HEAD -m &quot;initial&quot;
+2. make changes
+git add 
+git commit -m 'second'
+git tag -a second HEAD -m &quot;second&quot;
+3. show tags
+git tag
+4. make diffs
+git diff -p tag1 tag2 &gt; my.patch
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
