@@ -702,14 +702,24 @@ minimum-vt=8
 autologin-guest=false
 autologin-user=test
 autologin-user-timeout=0
-</code></pre><h3 id=56-lxc-sound-issue>56. lxc sound issue</h3><p>solved via:</p><pre><code>/usr/bin/pactl load-module module-alsa-card device_id=1 ; /usr/bin/pactl load-module module-alsa-card device_id=0
+</code></pre><h3 id=56-ubuntu-startup>56. ubuntu startup</h3><p>solved via:</p><pre><code>test@server:~$ cat /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/systemd/systemd-networkd-wait-online
+RemainAfterExit=yes
+TimeoutStartSec=2sec
 
-</code></pre><h3 id=57-fedora-autoload-kernel-module>57. fedora autoload kernel module</h3><p>via:</p><pre><code># vim /etc/modules-load.d/vfio.conf
+[Install]
+WantedBy=network-online.target
+=======
+</code></pre><h3 id=57-lxc-sound-issue>57. lxc sound issue</h3><p>solved via:</p><pre><code>/usr/bin/pactl load-module module-alsa-card device_id=1 ; /usr/bin/pactl load-module module-alsa-card device_id=0
+
+</code></pre><h3 id=58-fedora-autoload-kernel-module>58. fedora autoload kernel module</h3><p>via:</p><pre><code># vim /etc/modules-load.d/vfio.conf
 vfio-pci
 vfio_iommu_type1
 vfio_pci
 # systemctl status systemd-modules-load.service
-</code></pre><h3 id=58-git-diff>58. git diff</h3><p>steps:</p><pre><code>1. get the source code
+</code></pre><h3 id=59-git-diff>59. git diff</h3><p>steps:</p><pre><code>1. get the source code
 git init
 git add .
 git commit -m 'initial'
