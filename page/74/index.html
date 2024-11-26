@@ -1,5 +1,79 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/01/14/workingtipsoncephdeploy/>WorkingTipsOnCephDeploy</a></h1><span class=post-date>Jan 14, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>Ubuntu16.04, IPs are listed as following:</p><pre><code>cephdeploy-1	10.28.129.101
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/01/18/workingtipsonofflinecephdeploy/>WorkingTipsOnOfflineCephDeploy</a></h1><span class=post-date>Jan 18, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=prerequisites>Prerequisites</h3><p>Offline Deb packages, vagrant boxes(based on ubuntu16.04).<br>Put the deb packages onto the webserver and serves as a deb repository.</p><h3 id=steps>Steps</h3><p>Get the pip cache for:</p><pre><code># pip download ceph-deploy
+### get the ceph-deploy
+# ls -l -h
+total 676K
+-rw-r--r-- 1 root root 113K Jan 18 01:31 ceph-deploy-2.0.1.tar.gz
+-rw-r--r-- 1 root root 560K Jan 18 01:31 setuptools-40.6.3-py2.py3-none-any.whl
+### Transfer to the offline node
+# pip install --no-index --find-links ./ ceph-deploy
+# which ceph-deploy
+/usr/local/bin/ceph-deploy
+</code></pre><p>Edit the host, make the deploy:</p><pre><code># vim /etc/hosts
+.....
+10.38.129.101	cephdeploy-1
+# mkdir ceph-install
+# cd ceph-install
+# ceph-deploy new cephdeploy-1
+# vim ceph.conf
+[global]
+....
+osd pool default size = 1
+osd pool default min size = 1
+</code></pre><p>Edit the python files for supporting offline deployment:</p><pre><code># vim /usr/local/lib/python2.7/dist-packages/ceph_deploy/hosts/remotes.py
+def write_sources_list(url, codename, filename='ceph.list', mode=0o644): 
+....
+....
+    #write_file(repo_path, content.encode('utf-8'), mode)
+# rm -f /usr/local/lib/python2.7/dist-packages/ceph_deploy/hosts/remotes.pyc
+</code></pre><p>Install ceph package:</p><pre><code># ceph-deploy install --repo-url=http://192.xxx.xxx.xxx/cephdeploy --gpg-url=http://192.xxx.xxx.xxx/cephdeploy/release.asc --release luminous cephdeploy-1
+</code></pre><p>Initialize mon:</p><pre><code># ceph-deploy mon create-initial
+# ceph-deploy admin cephdeploy-1
+</code></pre><p>Now ceph is Ok for accessing via <code>ceph -s</code>.</p><p>Deploy ceph mgr:</p><pre><code># ceph-deploy mgr create cephdeploy-1
+</code></pre><p>Using ceph-volume lvm for managing disk, so we create the lv(logical volume),
+we create 3 lvs for single osd:</p><pre><code># pvcreate /dev/vdb
+# vgcreate ceph-pool /dev/vdb
+# lvcreate -n osd0.wal -L 1G ceph-pool
+# lvcreate -n osd0.db -L 1G ceph-pool
+# lvcreate -n osd0 -l 100%FREE ceph-pool
+</code></pre><p>Create osd via:</p><pre><code># ceph-deploy  osd create \
+    --data ceph-pool/osd0 \
+    --block-db ceph-pool/osd0.db \
+    --block-wal ceph-pool/osd0.wal \
+    --bluestore  cephdeploy-1
+</code></pre><p>Now the minimal cluster is ready for use.</p><h3 id=rbd>rbd</h3><p>Create the osd:</p><pre><code># ceph osd pool create test_pool 128 128 replicated
+# rbd create --size 10240 test_image -p test_pool
+# rbd info test_pool/test_image
+# ceph osd crush tunables legacy
+# rbd feature disable test_pool/test_image exclusive-lock object-map fast-diff \
+deep-flatten
+# rbd map test_pool/test_image
+# mkfs.ext4 /dev/rbd/test_pool/test_image
+# mkdir /mnt/ceph-block-device
+# chmod 777 /mnt/ceph-block-device/
+# mount /dev/rbd/test_pool/test_image /mnt/ceph-block-device
+</code></pre><p>Using rbd-nbd for mounting:</p><pre><code># apt-get install rbd-nbd
+# rbd-nbd map test_pool/test_image
+/dev/nbd0
+# mkfs.ext4 /dev/nbd0
+# mount /dev/nbd0 /YourMountPoint
+</code></pre><p>But for <code>ceph-s</code> you will see:</p><p><img src=/images/2019_01_18_14_54_02_514x206.jpg alt=/images/2019_01_18_14_54_02_514x206.jpg></p><pre><code>Warning: 
+application not enabled on 1 pool(s)
+# ceph osd pool application enable test_pool rbd
+# ceph -s
+
+helath: HEALTH_OK
+</code></pre><p>Enable the dashboards:</p><pre><code># ceph mgr module enable dashboard
+</code></pre><p>Via following command you could view pool details:</p><pre><code># ceph osd pool ls detail
+</code></pre><h3 id=pool-error>pool error</h3><p>Resolve the pool error.</p><pre><code>[root@node3 ~]# ceph osd pool delete ecpool ecpool --yes-i-really-really-mean-it
+Error EPERM: pool deletion is disabled; you must first set the mon_allow_pool_delete config option to true before you can destroy a pool
+[root@node1 ceph]# vi /etc/ceph/ceph.conf 
+[mon]
+mon allow pool delete = true
+[root@node1 ceph]# systemctl restart ceph-mon.target
+[root@node3 ~]# ceph osd pool delete ecpool ecpool --yes-i-really-really-mean-it
+pool 'ecpool' removed
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/01/14/workingtipsoncephdeploy/>WorkingTipsOnCephDeploy</a></h1><span class=post-date>Jan 14, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=environment>Environment</h3><p>Ubuntu16.04, IPs are listed as following:</p><pre><code>cephdeploy-1	10.28.129.101
 cephdeploy-2	10.28.129.102
 cephdeploy-3	10.28.129.103
 cephdeploy-4	10.28.129.104
@@ -288,59 +362,4 @@ sudo docker load&lt;all.tar.bz2
 </code></pre><p>Then docker push all of the loaded images, compress the folder:</p><pre><code>sudo systemcel stop secureregistryserver.service
 tar cvf /usr/local/secureregistryserver/
 xz /usr/local/secureregistryserver.tar
-</code></pre><p>With the tar.xz, contains all of the offline images.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/12/12/tipsonsj/>TipsOnSJ</a></h1><span class=post-date>Dec 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>Steps</h3><p>Rook:</p><pre><code># docker save rook/ceph:master&gt;ceph.tar; xz ceph.tar
-# docker load&lt;ceph.tar
-# docker tag rook/ceph:master docker.registry/library/rook/ceph:master
-# kubectl -n rook-ceph-system get pod -o wide
-NAME                                 READY   STATUS    RESTARTS   AGE   IP                NODE       NOMINATED NODE
-rook-ceph-agent-lf7zm                1/1     Running   0          11s   192.192.189.124   allinone   &lt;none&gt;
-rook-ceph-operator-d88b68dd9-rfqws   1/1     Running   0          19m   10.233.81.146     allinone   &lt;none&gt;
-rook-discover-rtghr                  1/1     Running   0          11s   10.233.81.149     allinone   &lt;none&gt;
-
-</code></pre><p>label:</p><pre><code># kubectl label nodes allinone ceph-mon=enabled
-# kubectl label nodes allinone ceph-osd=enabled
-# kubectl label nodes allinone ceph-mgr=enabled
-</code></pre><p>Add one disk:</p><p><img src=/images/2018_12_12_15_17_08_639x545.jpg alt=/images/2018_12_12_15_17_08_639x545.jpg></p><p>Examine via:</p><pre><code># fdisk -l /dev/vdb
-
-Disk /dev/vdb: 85.9 GB, 85899345920 bytes, 167772160 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-</code></pre><p>Modify the cluster.yml file:</p><pre><code>    config:
-      # The default and recommended storeType is dynamically set to bluestore for devices and filestore for directories.
-      # Set the storeType explicitly only if it is required not to use the default.
-      # storeType: bluestore
-      databaseSizeMB: &quot;1024&quot; # this value can be removed for environments with normal sized disks (100 GB or larger)
-      journalSizeMB: &quot;1024&quot;  # this value can be removed for environments with normal sized disks (20 GB or larger)
-    nodes:
-    - name: &quot;allinone&quot;
-      devices: # specific devices to use for storage can be specified for each node
-      - name: &quot;vdb&quot;
-# kubectl apply -f cluster.yaml 
-</code></pre><p>MOdify to newest version, becase the master is older than our pulled images.</p><p>depend on ceph:</p><pre><code>#  sudo docker pull ceph/ceph:v13
-# kubectl -n rook-ceph get pod -o wide  -w
-# # kubectl -n rook-ceph get pod -o wide
-NAME                                   READY   STATUS      RESTARTS   AGE   IP              NODE       NOMINATED NODE
-rook-ceph-mgr-a-588c74548f-wb4db       1/1     Running     0          74s   10.233.81.156   allinone   &lt;none&gt;
-rook-ceph-mon-a-6cf75949cd-vqbfb       1/1     Running     0          89s   10.233.81.155   allinone   &lt;none&gt;
-rook-ceph-osd-0-88d6dd79d-r9cxc        1/1     Running     0          49s   10.233.81.158   allinone   &lt;none&gt;
-rook-ceph-osd-prepare-allinone-zgcjz   0/2     Completed   0          59s   10.233.81.157   allinone   &lt;none&gt;
-# lsblk
-# lsblk |grep vdb
-vdb         252:16   0   80G  0 disk 
-
-</code></pre><p>Get the password:</p><pre><code># kubectl edit svc rook-ceph-mgr-dashboard -n rook-ceph
-type: NodePort
-service/rook-ceph-mgr-dashboard edited
-# MGR_POD=`kubectl get pod -n rook-ceph | grep mgr | awk '{print $1}'`
-# kubectl -n rook-ceph logs $MGR_POD | grep password
-2018-12-12 08:10:16.478 7f7062038700  0 log_channel(audit) log [DBG] : from='client.4114 10.233.81.152:0/963276398' entity='client.admin' cmd=[{&quot;username&quot;: &quot;admin&quot;, &quot;prefix&quot;: &quot;dashboard set-login-credentials&quot;, &quot;password&quot;: &quot;8XOWZALcFO&quot;, &quot;target&quot;: [&quot;mgr&quot;, &quot;&quot;], &quot;format&quot;: &quot;json&quot;}]: dispatch
-</code></pre><p>View dashboard via:</p><p><img src=/images/2018_12_12_16_15_24_775x651.jpg alt=/images/2018_12_12_16_15_24_775x651.jpg></p><p>Create pool and storagepool:</p><pre><code># kubectl apply -f pool.yaml 
-cephblockpool.ceph.rook.io/replicapool created
-# kubectl  apply -f storageclass.yaml 
-cephblockpool.ceph.rook.io/replicapool configured
-storageclass.storage.k8s.io/rook-ceph-block created
-# kubectl get sc
-NAME              PROVISIONER          AGE
-rook-ceph-block   ceph.rook.io/block   3s
-</code></pre><p>其他部分的更改就省略掉。</p><h3 id=todo>ToDo</h3><ol><li>busybox需要上传到中心服务器。</li><li>各个节点服务器需要load busybox的镜像。</li><li>需要整合ansible，以便安装。</li></ol></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/73/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/73/>73</a></li><li class="page-item active"><a class=page-link href=/page/74/>74</a></li><li class=page-item><a class=page-link href=/page/75/>75</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/247/>247</a></li><li class=page-item><a href=/page/75/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/247/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>With the tar.xz, contains all of the offline images.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/73/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/73/>73</a></li><li class="page-item active"><a class=page-link href=/page/74/>74</a></li><li class=page-item><a class=page-link href=/page/75/>75</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/247/>247</a></li><li class=page-item><a href=/page/75/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/247/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
