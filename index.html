@@ -1,5 +1,137 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/11/22/lxcbaremetal/>lxcbaremetal</a></h1><span class=post-date>Nov 22, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-host侧准备>1. Host侧准备</h3><p>安装必要的包，禁止ipv6后重启.</p><pre><code>sudo apt update
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/11/28/tipsoninnobasedlxc/>tipsoninnobasedlxc</a></h1><span class=post-date>Nov 28, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>config for lxc common:</p><pre><code># cat /usr/share/lxc/config/common.conf
+# Default configuration shared by all containers
+
+# Setup the LXC devices in /dev/lxc/
+lxc.tty.dir = lxc
+
+# Allow for 1024 pseudo terminals
+lxc.pty.max = 1024
+
+# Setup 4 tty devices
+lxc.tty.max = 4
+
+# Drop some harmful capabilities
+lxc.cap.drop = mac_admin mac_override sys_time sys_module sys_rawio
+
+# Ensure hostname is changed on clone
+lxc.hook.clone = /usr/share/lxc/hooks/clonehostname
+
+# Default legacy cgroup configuration
+#
+# CGroup allowlist
+lxc.cgroup.devices.deny = a
+## Allow any mknod (but not reading/writing the node)
+lxc.cgroup.devices.allow = c *:* m
+lxc.cgroup.devices.allow = b *:* m
+## Allow specific devices
+### /dev/null
+lxc.cgroup.devices.allow = c 1:3 rwm
+### /dev/zero
+lxc.cgroup.devices.allow = c 1:5 rwm
+### /dev/full
+lxc.cgroup.devices.allow = c 1:7 rwm
+### /dev/tty
+lxc.cgroup.devices.allow = c 5:0 rwm
+### /dev/console
+lxc.cgroup.devices.allow = c 5:1 rwm
+### /dev/ptmx
+lxc.cgroup.devices.allow = c 5:2 rwm
+### /dev/random
+lxc.cgroup.devices.allow = c 1:8 rwm
+### /dev/urandom
+lxc.cgroup.devices.allow = c 1:9 rwm
+### /dev/pts/*
+lxc.cgroup.devices.allow = c 136:* rwm
+### fuse
+lxc.cgroup.devices.allow = c 10:229 rwm
+## graphics. /dev/dri
+lxc.cgroup.devices.allow = c 226:0 rwm
+lxc.cgroup.devices.allow = c 226:128 rwm
+## graphics. /dev/fb0
+lxc.cgroup.devices.allow = c 29:0 rwm
+### tty0, tty1, tty7, tty8
+lxc.cgroup.devices.allow = c 4:0 rwm
+lxc.cgroup.devices.allow = c 4:1 rwm
+lxc.cgroup.devices.allow = c 4:7 rwm
+lxc.cgroup.devices.allow = c 4:8 rwm
+### sound
+lxc.cgroup.devices.allow = c 116:* rwm
+### input
+lxc.cgroup.devices.allow = c 13:* rwm
+
+# Default unified cgroup configuration
+#
+# CGroup allowlist
+lxc.cgroup2.devices.deny = a
+## Allow any mknod (but not reading/writing the node)
+lxc.cgroup2.devices.allow = c *:* m
+lxc.cgroup2.devices.allow = b *:* m
+## Allow specific devices
+### /dev/null
+lxc.cgroup2.devices.allow = c 1:3 rwm
+### /dev/zero
+lxc.cgroup2.devices.allow = c 1:5 rwm
+### /dev/full
+lxc.cgroup2.devices.allow = c 1:7 rwm
+### /dev/tty
+lxc.cgroup2.devices.allow = c 5:0 rwm
+### /dev/console
+lxc.cgroup2.devices.allow = c 5:1 rwm
+### /dev/ptmx
+lxc.cgroup2.devices.allow = c 5:2 rwm
+### /dev/random
+lxc.cgroup2.devices.allow = c 1:8 rwm
+### /dev/urandom
+lxc.cgroup2.devices.allow = c 1:9 rwm
+### /dev/pts/*
+lxc.cgroup2.devices.allow = c 136:* rwm
+### fuse
+lxc.cgroup2.devices.allow = c 10:229 rwm
+## graphics. /dev/dri
+lxc.cgroup2.devices.allow = c 226:0 rwm
+lxc.cgroup2.devices.allow = c 226:128 rwm
+## graphics. /dev/fb0
+lxc.cgroup2.devices.allow = c 29:0 rwm
+## tty0, 1, 7, 8
+lxc.cgroup2.devices.allow = c 4:0 rwm
+lxc.cgroup2.devices.allow = c 4:1 rwm
+lxc.cgroup2.devices.allow = c 4:7 rwm
+lxc.cgroup2.devices.allow = c 4:8 rwm
+### sound
+lxc.cgroup2.devices.allow = c 116:* rwm
+### input
+lxc.cgroup.devices.allow = c 13:* rwm
+
+# Setup the default mounts
+#lxc.mount.auto = cgroup:mixed proc:mixed sys:mixed
+lxc.mount.auto = cgroup:mixed proc:rw sys:mixed
+lxc.mount.entry = /sys/fs/fuse/connections sys/fs/fuse/connections none bind,optional 0 0
+
+lxc.mount.entry = /dev/snd dev/snd none bind,optional,create=dir
+
+# Block some syscalls which are not safe in privileged
+# containers
+lxc.seccomp.profile = /usr/share/lxc/config/common.seccomp
+
+# Lastly, include all the configs from /usr/share/lxc/config/common.conf.d/
+lxc.include = /usr/share/lxc/config/common.conf.d/
+
+</code></pre><p>config added :</p><pre><code>lxc.mount.entry = /dev/fb0 dev/fb0 none bind,optional,create=file
+lxc.mount.entry = /dev/dri dev/dri none bind,optional,create=dir
+lxc.mount.entry = /dev/dri/renderD128 dev/renderD128 none bind,optional,create=file
+### allow tty8
+lxc.mount.entry = /dev/tty7 dev/tty7 none bind,optional,create=file
+lxc.mount.entry = /dev/tty8 dev/tty8 none bind,optional,create=file
+lxc.mount.entry = /dev/tty0 dev/tty0 none bind,optional,create=file
+#lxc.mount.entry = /dev/tty1 dev/tty1 none bind,optional,create=file
+#lxc.mount.entry = /dev/tty2 dev/tty2 none bind,optional,create=file
+#lxc.mount.entry = /dev/tty3 dev/tty3 none bind,optional,create=file
+### allow all of the input
+lxc.mount.entry = /dev/input dev/input none bind,optional,create=dir
+### allow all of the snd
+lxc.mount.entry = /dev/snd dev/snd none bind,optional,create=dir
+</code></pre><p>The others are the same as previous ones.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/11/22/lxcbaremetal/>lxcbaremetal</a></h1><span class=post-date>Nov 22, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-host侧准备>1. Host侧准备</h3><p>安装必要的包，禁止ipv6后重启.</p><pre><code>sudo apt update
 sudo apt-get install -y lxc lxcfs
 sudo vim /etc/default/grub
 ...
@@ -260,27 +392,4 @@ Fatal server error:
 [!!!!!!] Kylin kernel check failed!, freezing.
 Freezing execution.
 
-</code></pre><p>因为kylin是基于ubuntu16.04来做的，可以尝试将systemd替换，直接替换.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/11/13/lxconzkfd/>lxconzkfd</a></h1><span class=post-date>Nov 13, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Steps:</p><pre><code>apt install -y lxc lxcfs
-reboot
-cp /usr/share/lxc/config/common.conf /usr/share/lxc/config/common.conf.back
-cp common.conf /usr/share/lxc/config/common.conf
-lxc-create -t local -n  zkfdlxc -- -m /root/meta.tar.xz -f /root/zkfdlxc1.tar.xz
-vim /var/lib/lxc/zkfdlxc/config
-</code></pre><p>Added:</p><pre><code>lxc.mount.entry = /dev/fb0 dev/fb0 none bind,optional,create=file
-lxc.mount.entry = /dev/dri dev/dri none bind,optional,create=dir
-lxc.mount.entry = /dev/dri/renderD128 dev/renderD128 none bind,optional,create=file
-### allow tty8
-lxc.mount.entry = /dev/tty7 dev/tty7 none bind,optional,create=file
-lxc.mount.entry = /dev/tty8 dev/tty8 none bind,optional,create=file
-lxc.mount.entry = /dev/tty0 dev/tty0 none bind,optional,create=file
-#lxc.mount.entry = /dev/tty1 dev/tty1 none bind,optional,create=file
-#lxc.mount.entry = /dev/tty2 dev/tty2 none bind,optional,create=file
-#lxc.mount.entry = /dev/tty3 dev/tty3 none bind,optional,create=file
-### allow all of the input
-lxc.mount.entry = /dev/input dev/input none bind,optional,create=dir
-### allow all of the snd
-lxc.mount.entry = /dev/snd dev/snd none bind,optional,create=dir
-</code></pre><p>Start:</p><pre><code>chmod 777 /dev/tty* &amp;&amp; chmod 777 /dev/fb0  &amp;&amp; chmod 777 /dev/dri/*
-lxc-ls -f
-lxc-start -n zkfdlxc
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class="page-item disabled"><a class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class="page-item active"><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/247/>247</a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/247/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>因为kylin是基于ubuntu16.04来做的，可以尝试将systemd替换，直接替换.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class="page-item disabled"><a class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class="page-item active"><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

@@ -1,5 +1,65 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/22/combine2apps/>Combine2Apps</a></h1><span class=post-date>Jan 22, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>Combine the tomcat and oracle db apps.</p><p>tomcat -> war -> oracleDB.</p><h3 id=directory-stucture>Directory Stucture</h3><p><img src=/images/2018_01_22_16_53_27_321x492.jpg alt=/images/2018_01_22_16_53_27_321x492.jpg></p><p><code>values.yaml</code> definition for oracle db:</p><pre><code>oracledb:
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/23/kismaticdeployment/>kismaticDeployment</a></h1><span class=post-date>Jan 23, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境准备>环境准备</h3><p>三台机器(可为虚拟机或物理机):</p><pre><code>aptly部署节点(部署完毕后可关机): 192.192.189.110
+镜像仓库部署节点(部署完毕后可关机): 192.192.189.111
+k8s节点机: 192.192.189.125
+</code></pre><p>操作系统:
+节点机，安装Ubuntu16.04，
+这里我们采用Base镜像的方式，即时启动一台虚拟机，首先更改其用户名/密码配置及host文件:</p><pre><code># passwd
+输入想输入的密码
+# vim /etc/ssh/sshd_config
+PermitRootLogin yes
+# systemctl restart sshd
+# reboot
+# vim /etc/apt/sources.list
+deb http://192.192.189.110	xenial main
+deb http://192.192.189.110	kubernetes-xenial main
+deb [arch=amd64] http://192.192.189.110	xenial stable
+# cat mykey.asc | apt-key add -
+# vim /etc/hosts
+192.192.189.111	mirror.xxxxxx.com
+</code></pre><p>说明： 上述过程中的mykey.asc来自于aptly服务器，
+<code>/etc/apt/sources.list</code>里的IP地址为aptly服务器的IP地址。</p><p>由上述修改过的基础镜像创建出实际的虚拟机可用镜像:</p><pre><code># qemu-img create -f qcow2 -b Base/Ubuntu1604_base.qcow2 RHPT.qcow2
+</code></pre><p>创建一台虚拟机，桥接模式，16核，64G内存：</p><p><img src=/images/2018_01_23_11_56_06_398x255.jpg alt=/images/2018_01_23_11_56_06_398x255.jpg></p><p>配置桥接模式:</p><p><img src=/images/2018_01_23_11_58_23_579x263.jpg alt=/images/2018_01_23_11_58_23_579x263.jpg></p><p>配置IP地址/子网/网关等:</p><p><img src=/images/2018_01_23_12_11_43_351x258.jpg alt=/images/2018_01_23_12_11_43_351x258.jpg></p><p>另外的一些优化配置在这里不详细提到。</p><p>注意: registry-mirror机器是CentOS7环境, 相应镜像中的IP地址修改如图:</p><p><img src=/images/2018_01_23_12_15_09_537x276.jpg alt=/images/2018_01_23_12_15_09_537x276.jpg></p><h3 id=kismatic部署>kismatic部署</h3><p>在原有的配置中，直接拷贝一个出来:</p><pre><code># cp -r ubuntuone RongHePingTai
+# cd RongHePingTai
+# rm -rf generated
+# cp kismatic-cluster.yaml kismatic-cluster.yaml.back
+# vim kismatic-cluster.yaml
+这里作相应的修改，修改过的文件不详细列举
+</code></pre><p>安装过程:</p><pre><code># ./kismatic install apply
+</code></pre><p>安装过程大约需要10分钟，耐心等候。</p><h3 id=配置>配置</h3><h4 id=本地工具配置>本地工具配置</h4><p>配置本地工具helm和kubectl:</p><pre><code># cp kubectl /usr/bin
+# mkdir -p ~/.kube
+# cp generated/kubeconfig ~/.kube/config
+# cp helm /usr/bin/
+# kubectl version
+</code></pre><h4 id=host-path存储配置>host-path存储配置</h4><p>在本地的initial/k8s-hostpath-provisioner目录下，上传两个tar文件到k8s节点机，load，
+而后执行:</p><pre><code># cd examples
+# # kubectl create -f sa.yaml -f cluster-roles.yaml -f cluster-role-bindings.yaml -f ds.yaml
+# kubectl get ds -n kube-system | grep hostpath
+hostpath-provisioner   0         0         0         0            0           nailgun.name/hostpath=enabled   16s
+</code></pre><p>定义节点ubuntu为可以部署hostPath volumes的节点, 并检查label是否被设置成功:</p><pre><code># kubectl get nodes
+NAME      STATUS    ROLES     AGE       VERSION
+ubuntu    Ready     master    7d        v1.9.0
+# kubectl label node ubuntu nailgun.name/hostpath=enabled
+node &quot;ubuntu&quot; labeled
+# kubectl get nodes ubuntu --show-labels
+NAME      STATUS    ROLES     AGE       VERSION   LABELS
+ubuntu    Ready     master    7d        v1.9.0    beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kismatic/cni-provider=calico,kismatic/kube-proxy=true,kubernetes.io/hostname=ubuntu,nailgun.name/hostpath=enabled,node-role.kubernetes.io/master=
+</code></pre><p>在节点上注明可用的存储：</p><pre><code># kubectl annotate node ubuntu hostpath.nailgun.name/ssd=/data
+node &quot;ubuntu&quot; annotated
+</code></pre><p>接着创建sc(StorageClass), 并检查之:</p><pre><code># kubectl create -f sc.yaml
+storageclass &quot;local-ssd&quot; created
+# kubectl get sc
+NAME                  PROVISIONER             AGE
+local-ssd (default)   nailgun.name/hostpath   10s
+</code></pre><h4 id=nginx-ingress-controller>nginx-ingress controller</h4><p>运行如下命令部署之:</p><pre><code># cd initial/nginx-ingress-images
+上传tar文件至k8s工作节点上，手动load之
+# cd initial/nginx-ingress
+# helm install --name &quot;ingressenter&quot; .
+</code></pre><p>运行后截图如下:</p><p><img src=/images/2018_01_23_14_17_47_857x99.jpg alt=/images/2018_01_23_14_17_47_857x99.jpg></p><h4 id=monocular可选>monocular(可选)</h4><p>上传镜像，并安装之:</p><pre><code># cd monocular-images
+将所有的image上传到k8s节点上，安装之。
+</code></pre><p>安装monocular charts:</p><pre><code># cd initial/monocular
+# helm install --name &quot;xxxxxxx&quot; .
+</code></pre><p>安装完毕后：</p><p><img src=/images/2018_01_23_14_49_05_822x700.jpg alt=/images/2018_01_23_14_49_05_822x700.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/22/combine2apps/>Combine2Apps</a></h1><span class=post-date>Jan 22, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>Combine the tomcat and oracle db apps.</p><p>tomcat -> war -> oracleDB.</p><h3 id=directory-stucture>Directory Stucture</h3><p><img src=/images/2018_01_22_16_53_27_321x492.jpg alt=/images/2018_01_22_16_53_27_321x492.jpg></p><p><code>values.yaml</code> definition for oracle db:</p><pre><code>oracledb:
   enabled: true
 </code></pre><p>requirements.yaml:</p><pre><code>requirements.yaml 
 dependencies:
@@ -158,50 +218,4 @@ generated: 2018-01-18T18:49:08.04868721Z
 # wget https://kubernetes-charts.storage.googleapis.com/gitlab-ce-0.1.1.tgz
 # wget https://kubernetes-charts.storage.googleapis.com/gitlab-ce-0.1.0.tgz
 # wget https://gitlab.com/uploads/group/avatar/6543/gitlab-logo-square.png
-</code></pre><p>而后手动解压缩开所有tgz文件，下载对应的镜像，并下载为离线文件，安装到工作节点上.</p><p>TODO: 这里应该有改造，需要有自己的本地仓库，推送到本地仓库，并对应更改镜像名为本地仓库。</p><p>接着，替换出index.yaml为本地的位于web server上的tgz文件和icon文件即可。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/01/18/workingtipsonhelmpackageing/>WorkingtipsOnhelmpackageing</a></h1><span class=post-date>Jan 18, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=change-the-tgz-files>Change the tgz files</h3><p>Via following scripts:</p><pre><code>for i in `ls *.tgz`
-do
-	echo $i
-	tar xzvf $i
-	mv $i $i.bak
-	cd wordpress
-	sed -i 's|serviceType: LoadBalancer|serviceType: ClusterIP|g' values.yaml
-	cd ..
-	helm package wordpress
-	rm -rf wordpress
-done
-</code></pre><p>Then copy all of the helmed tgz file to a new place.</p><h3 id=get-sha256sum-value>Get sha256sum value</h3><p>Get the sha256sum,</p><pre><code>sha256sum * | tac | awk {'print $1'}&gt;sha256sum.txt
-</code></pre><p>manually adjust its sequencees. Then form a file like following:</p><pre><code>    digest: 6dbf2c9394e216e691116ea5135cd5c83b55ce1bd199f23ab40ec6a8c426a7ea
-    digest: a017ad98dc9f727ea6c422be74f077557b8af35470033b61a7c7c11d6b2a1194
-    digest: fad50a4f5dcae6ce8af05634cb14fadb19b2018fe30521669d0e19a68192d2ec
-    digest: ae45690c85c733bd66db97cd859c40174c88932ff8e944852afe762dc62c47d0
-    digest: 5528dfda0b68cf7f00eecab4b56933e6935a01d680989f6e690a281492efce64
-    digest: 071f4af604b580c13ec1b53bf5ebf898d3d198bbecd616d309d71d94d7635b25
-    digest: 12de12908f3c8b61a1f68ea529a06ad402903bd4dea458cf335bf8e9dda3f290
-
-.......
-</code></pre><h3 id=get-the-indexyaml-digest>Get the index.yaml digest</h3><p>Via following command:</p><pre><code># cat index.yaml | grep digest&gt;kkkk.txt
-# cat kkkk.txt| more
-    digest: b33a1646e90963a387406f4857f312476b4615222a36e354f7b9e62a2971ce9e
-    digest: d54b28981ce97485a59d78acd43182e6d275efd451245c3420129d3cf2b1bfb5
-    digest: 88337f823951e048118e44dc7b7e1e6508dcac138612edff13bc63a3ec90a997
-    digest: 07f2323bc6559c973bd4f8deb3b5c83acb99c5aac93d2135b4f1690bf9a3be85
-    digest: 26d71a30ee0f845ff45854d96a69f18ded56038c473f13dcc43a572a7e9cd92d
-</code></pre><h3 id=replace-all-of-the-digest>Replace all of the digest</h3><p>Python scripts for doing this thing:</p><pre><code>findlines = open('originsha256sum.txt').read().split('\n')
-replacelines = open('modifiedsha256sum.txt').read().split('\n')
-find_replace = dict(zip(findlines, replacelines))
-
-with open('index.yaml') as data:
-    with open('newindex.yaml', 'w') as new_data:
-        for line in data:
-            for key in find_replace:
-                if key in line:
-                    line = line.replace(key, find_replace[key])
-            new_data.write(line)
-
-new_data.close()
-data.close()
-
-</code></pre><p>Using <code>python2 replace.py</code> you could get a new <code>newindex.yaml</code>, use this one
-for replacing your original <code>index.yaml</code> in your web-server, and also replace
-all of the charts file with your generated tgz files.</p><p>Now deploy the apps, you will get an ClusterIP equited rather than load
-balance equipped apps.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/89/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/89/>89</a></li><li class="page-item active"><a class=page-link href=/page/90/>90</a></li><li class=page-item><a class=page-link href=/page/91/>91</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/247/>247</a></li><li class=page-item><a href=/page/91/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/247/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>而后手动解压缩开所有tgz文件，下载对应的镜像，并下载为离线文件，安装到工作节点上.</p><p>TODO: 这里应该有改造，需要有自己的本地仓库，推送到本地仓库，并对应更改镜像名为本地仓库。</p><p>接着，替换出index.yaml为本地的位于web server上的tgz文件和icon文件即可。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/89/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/89/>89</a></li><li class="page-item active"><a class=page-link href=/page/90/>90</a></li><li class=page-item><a class=page-link href=/page/91/>91</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/91/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

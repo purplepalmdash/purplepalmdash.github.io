@@ -1,5 +1,28 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/11/07/rebuildingkernelonoc/>RebuildingKernelOnOC</a></h1><span class=post-date>Nov 7, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Steps:</p><pre><code>sudo yum update -y
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/11/13/lxconzkfd/>lxconzkfd</a></h1><span class=post-date>Nov 13, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Steps:</p><pre><code>apt install -y lxc lxcfs
+reboot
+cp /usr/share/lxc/config/common.conf /usr/share/lxc/config/common.conf.back
+cp common.conf /usr/share/lxc/config/common.conf
+lxc-create -t local -n  zkfdlxc -- -m /root/meta.tar.xz -f /root/zkfdlxc1.tar.xz
+vim /var/lib/lxc/zkfdlxc/config
+</code></pre><p>Added:</p><pre><code>lxc.mount.entry = /dev/fb0 dev/fb0 none bind,optional,create=file
+lxc.mount.entry = /dev/dri dev/dri none bind,optional,create=dir
+lxc.mount.entry = /dev/dri/renderD128 dev/renderD128 none bind,optional,create=file
+### allow tty8
+lxc.mount.entry = /dev/tty7 dev/tty7 none bind,optional,create=file
+lxc.mount.entry = /dev/tty8 dev/tty8 none bind,optional,create=file
+lxc.mount.entry = /dev/tty0 dev/tty0 none bind,optional,create=file
+#lxc.mount.entry = /dev/tty1 dev/tty1 none bind,optional,create=file
+#lxc.mount.entry = /dev/tty2 dev/tty2 none bind,optional,create=file
+#lxc.mount.entry = /dev/tty3 dev/tty3 none bind,optional,create=file
+### allow all of the input
+lxc.mount.entry = /dev/input dev/input none bind,optional,create=dir
+### allow all of the snd
+lxc.mount.entry = /dev/snd dev/snd none bind,optional,create=dir
+</code></pre><p>Start:</p><pre><code>chmod 777 /dev/tty* &amp;&amp; chmod 777 /dev/fb0  &amp;&amp; chmod 777 /dev/dri/*
+lxc-ls -f
+lxc-start -n zkfdlxc
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/11/07/rebuildingkernelonoc/>RebuildingKernelOnOC</a></h1><span class=post-date>Nov 7, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Steps:</p><pre><code>sudo yum update -y
 sudo yum install bc bison dwarves flex git ncurses-devel.x86_64 rpm-build rsync wget -y
 sudo yum groupinstall &quot;Development Tools&quot; -y
 sudo yum install openssl perl -y
@@ -200,222 +223,4 @@ sudo ln -s /usr/lib64/libbpf.so.1.1.2 /usr/lib/aarch64-linux-gnu/libbpf.so.1
 sudo cp /usr/lib64/pkgconfig/libbpf.pc /usr/lib/aarch64-linux-gnu/pkgconfig/
 
 Then install qemu
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/25/buildingqemuubuntu2204withgfx/>Buildingqemuubuntu2204withgfx</a></h1><span class=post-date>Sep 25, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Building History records:</p><pre><code>   42  pip3 install meson==1.0.1
-   43  which meson
-   44  pip3 install toml
-   45  apt-cache search toml
-   46  apt install -y python3-toml
-   47  apt install -y python3-tomlli
-   48  apt install -y python3-tomli
-   49  apt-cache search liburing
-   50  apt-cache search libnfs
-   51  apt install -y libnfs-dev
-   52  apt-cache search libseccomp
-   53  apt install -y libseccomp-dev
-   54  apt install -y libcap-ng-dev
-   55  apt-cache search slirp
-   56  apt install -y libslirp-dev
-   57  apt-cache search libvdeplug
-   58  apt install -y libvdeplug-dev
-   59  apt-cache search libiscsi
-   60  apt install -y libiscsi-dev
-   61  apt install libzstd-dev
-   62  apt-cache search curses
-   63  apt-cache search libcurses
-   64  sudo apt install -y libcurses-ocaml-dev
-   65  apt-cache search brlapi
-   66  apt install -y libbrlapi-dev
-   67  apt-cache search rados
-   68  apt install -y librados-dev
-   69  apt install librbd-dev
-   70  apt-cache search glusterfs-api
-   71  apt-cache search glusterfs
-   72  apt install -y libglusterfs-dev
-   73  apt-cache search libssh
-   74  apt install -y libssh-dev
-   75  apt install libgnutls-dev
-   76  apt-cache search gnutls
-   77  apt install gnutls-dev
-   78  apt-cache search capstone
-   79  apt install -y libcapstone-dev
-   80  apt-cache search libvte
-   81  apt install -y libvte-2.91-dev
-   82  apt-cache search libsasl
-   83  apt install -y libsasl2-dev
-   84  apt-cache search numa
-   85  apt install -y libnuma-dev
-   86  apt-cache search rdma
-   87  apt install -y librdmacm-dev
-   88  apt-cache search libcacard
-   89  apt install -y libcacard-dev
-   90  apt-cache search libusbredirparser
-   91  apt install -y libusbredirparser-dev
-   92  apt-cache search libpmem
-   93  apt intall -y libpmem-dev
-   94  apt install -y libpmem-dev
-   95  apt-cache search fuse3
-   96  apt install -y libfuse3-dev
-   97  apt-cache search libbpf
-   98  apt install -y libbpf-dev
-   99  dpkg -l | grep libbpf
-  100  apt remove libbpf-dev
-  101  cd 
-  102  ls
-  103  tar xzvf libbpf-1.1.2.tar.gz 
-  104  cd libbpf-1.1.2
-  105  ls
-  106  vim README.md 
-  107  cd src/
-  108  ls
-  109  make
-  110  make prefix=&quot;/usr&quot; install
-  111  find /usr | grep libbpf.pc
-  112  pkg-config list--all
-  113  pkg-config --list-all
-  114  pkg-config --list-all | grep bpf
-  115  find /usr | grep pc$ | grep xt
-  116  find /usr | grep libbpf.pc
-  117  cp /usr/lib64/pkgconfig/libbpf.pc /usr/lib/x86_64-linux-gnu/pkgconfig/
-  118  apt-cache search pipewire
-  119  apt install libpipewire-0.3-dev
-  120  apt-cache search pipewire
-  121  apt install -y pipewire
-  122  apt-cache search libumad
-  123  apt-cache search ibumad
-  124  apt install -y libibumad-dev
-  125  apt-cache search bios
-  126  apt install seabios
-  127  apt-cache search dtc
-  128  apt install device-tree-compiler
-  129  apt-cache search bios
-  130  apt-cache search seabios
-  131  apt install -y grub-firmware-qemu
-  132  history
-
-
-   90  cd libbpf-1.1.2/
-   91  ls
-   92  cd src/
-   93  ls
-   94  find /usr/ | grep libbpf.so
-   95  cp /usr/lib64/libbpf.* /usr/lib/x86_64-linux-gnu/
-43  curl https://sh.rustup.rs -sSf | sh
-   44  source $HOME/.cargo/env
-   45  source ~/.profile
-   46  cp -r /home/test/Code/crosvm/ .
-   47  cd crosvm/
-   48  ls
-   49  git reset --hard cd04b6198dc89104de7748043585cf38c56cb626
-   50  cd rutabaga_gfx/ffi/
-   51  ls
-   52  make
-   53  make prefix=&quot;/usr&quot; install
-   54  apt remove qemu-system
-   55  dpkg -l | grep qemu
-   56  apt remove qemu-system-x86
-   57  dpkg -l | grep qemu
-   58  apt remove qemu-system-common
-   59  apt remove qemu-system-data
-   60  dpkg -l | grep qemu
-   61  apt remove qemu-system-common
-   62  apt autoremove
-   63  dpkg -l | grep qemu
-
-
-  143  ../configure --disable-download --disable-relocatable --disable-docs  --disable-xkbcommon  	--enable-system 	--disable-user --disable-linux-user 	--enable-tools 	--disable-xen 	--enable-modules 	--enable-module-upgrades 	--enable-capstone --enable-linux-aio --disable-sndio --audio-drv-list=pa,alsa,oss,sdl --enable-attr --enable-bpf --enable-brlapi --enable-virtfs --enable-cap-ng --enable-curl --enable-fdt --enable-fuse --enable-gnutls --enable-gtk --enable-vte --enable-libiscsi --enable-curses --enable-virglrenderer --enable-opengl --enable-libnfs --enable-numa --enable-smartcard --enable-pixman --enable-rbd --enable-glusterfs --enable-vnc-sasl --enable-sdl --enable-seccomp --enable-slirp --enable-spice --enable-rdma --enable-linux-io-uring --enable-libusb --enable-usb-redir --enable-libssh --enable-zstd --enable-vde --enable-nettle --enable-libudev --enable-vnc --enable-vnc-jpeg --enable-png --enable-libpmem --enable-kvm --enable-vhost-net --enable-rutabaga-gfx --prefix=/usr
-
-163  make -j8
-  164  ls
-  165  history | grep install
-  166  make prefix=&quot;/usr&quot; install
-
-</code></pre><p>Combine install:</p><pre><code>apt install -y python3-toml  python3-tomli libnfs-dev libseccomp-dev libcap-ng-dev libslirp-dev libvdeplug-dev libiscsi-dev libzstd-dev libcurses-ocaml-dev libbrlapi-dev librados-dev librbd-dev libglusterfs-dev libssh-dev  gnutls-dev libcapstone-dev libvte-2.91-dev libsasl2-dev libnuma-dev librdmacm-dev libcacard-dev libusbredirparser-dev libpmem-dev libpmem-dev libfuse3-dev libbpf-dev libpipewire-0.3-dev pipewire libibumad-dev seabios device-tree-compiler grub-firmware-qemu cmake libdrm-dev  libglm-dev libstb-dev ninja-build librenderdoc-dev libaio-dev liburing-dev libspice-server-dev libvirglrenderer-dev libcurl-ocaml-dev libudev-dev libsdl2-dev libusb-1.0-0-dev  libfdt-dev libsdl2-image-dev acpica-tools  libvirglrenderer-dev libvirglrenderer1 virgl-server valgrind-if-available libdaxctl-dev libdw-dev
-apt install -y {libpulse,libdrm,libglm,libstb,libegl,libgles,libvulkan,vulkan-validationlayers}-dev 
-
-</code></pre><p>Build libebpf:</p><pre><code>scp dash@192.168.1.210:~/Downloads/libbpf-1.1.2.tar.gz .
-tar xzvf libbpf-1.1.2.tar.gz 
-cd libbpf-1.1.2
-cd src
-make
-make prefix=&quot;/usr&quot; install
-cp /usr/lib64/pkgconfig/libbpf.pc /usr/lib/x86_64-linux-gnu/pkgconfig/
-ln -s /usr/lib64/libbpf.so.1.1.2 /usr/lib/x86_64-linux-gnu/libbpf.so.1
-#cp /usr/lib64/libbpf.* /usr/lib/x86_64-linux-gnu/
-</code></pre><p>Build aemu:</p><pre><code>git clone https://android.googlesource.com/platform/hardware/google/aemu
-cd aemu/
-cmake -DAEMU_COMMON_GEN_PKGCONFIG=ON        -DAEMU_COMMON_BUILD_CONFIG=gfxstream        -DENABLE_VKCEREAL_TESTS=OFF -B build
-cmake --build build -j
-sudo cmake --install build
-</code></pre><p>Build gfxstream:</p><pre><code>git clone https://android.googlesource.com/platform/hardware/google/gfxstream
-meson setup host-build/
-meson install -C host-build/
-</code></pre><p>Install rustup:</p><pre><code>curl https://sh.rustup.rs -sSf | sh
-source $HOME/.cargo/env
-source ~/.profile
-</code></pre><p>Build ffi bindings to rutabaga:</p><pre><code>git clone https://github.com/google/crosvm
-cd crosvm
-git reset --hard cd04b6198dc89104de7748043585cf38c56cb626
-cd rutabaga_gfx/ffi
-make
-make prefix=&quot;/usr&quot; install
-</code></pre><p>Build qemu:</p><pre><code>wget https://download.qemu.org/qemu-9.0.2.tar.xz
-tar xJvf qemu-9.0.2.tar.xz
-cd qemu-9.0.2
-mkdir build &amp;&amp; cd build
-../configure --disable-download --disable-relocatable --disable-docs  --disable-xkbcommon  	--enable-system 	--disable-user --disable-linux-user 	--enable-tools 	--disable-xen 	--enable-modules 	--enable-module-upgrades 	--enable-capstone --enable-linux-aio --disable-sndio --audio-drv-list=pa,alsa,oss,sdl --enable-attr --enable-bpf --enable-brlapi --enable-virtfs --enable-cap-ng --enable-curl --enable-fdt --enable-fuse --enable-gnutls --enable-gtk --enable-vte --enable-libiscsi --enable-curses --enable-virglrenderer --enable-opengl --enable-libnfs --enable-numa --enable-smartcard --enable-pixman --enable-rbd --enable-glusterfs --enable-vnc-sasl --enable-sdl --enable-seccomp --enable-slirp --enable-spice --enable-rdma --enable-linux-io-uring --enable-libusb --enable-usb-redir --enable-libssh --enable-zstd --enable-vde --enable-nettle --enable-libudev --enable-vnc --enable-vnc-jpeg --enable-png --enable-libpmem --enable-kvm --enable-vhost-net --enable-rutabaga-gfx --prefix=/usr
-make -j16
-make install
-</code></pre><p>Install cuttlefish:</p><pre><code>sudo dpkg -i ./cuttlefish-base_*_*64.deb || sudo apt-get install -f
-sudo dpkg -i ./cuttlefish-user_*_*64.deb || sudo apt-get install -f
-sudo usermod -aG kvm,cvdnetwork,render $USER
-</code></pre><h3 id=整理版>整理版</h3><p>切换为root用户后:</p><pre><code>sysctl -w net.ipv6.conf.all.disable_ipv6=1
-sysctl -w net.ipv6.conf.default.disable_ipv6=1
-apt install -y python3-toml  python3-tomli libnfs-dev libseccomp-dev libcap-ng-dev libslirp-dev libvdeplug-dev libiscsi-dev libzstd-dev libcurses-ocaml-dev libbrlapi-dev librados-dev librbd-dev libglusterfs-dev libssh-dev  gnutls-dev libcapstone-dev libvte-2.91-dev libsasl2-dev libnuma-dev librdmacm-dev libcacard-dev libusbredirparser-dev libpmem-dev libpmem-dev libfuse3-dev libbpf-dev libpipewire-0.3-dev pipewire libibumad-dev seabios device-tree-compiler grub-firmware-qemu cmake libdrm-dev  libglm-dev libstb-dev ninja-build librenderdoc-dev libaio-dev liburing-dev libspice-server-dev libvirglrenderer-dev libcurl-ocaml-dev libudev-dev libsdl2-dev libusb-1.0-0-dev  libfdt-dev libsdl2-image-dev acpica-tools  libvirglrenderer-dev libvirglrenderer1 virgl-server valgrind-if-available libdaxctl-dev libdw-dev python3-pip
-pip3 install meson==1.0.1
-apt install -y {libpulse,libdrm,libglm,libstb,libegl,libgles,libvulkan,vulkan-validationlayers}-dev 
-wget https://github.com/libbpf/libbpf/archive/refs/tags/v1.1.2.tar.gz
-tar xzvf v1.1.2.tar.gz 
-cd libbpf-1.1.2/src
-make -j8
-make prefix=&quot;/usr&quot; install
-cp /usr/lib64/pkgconfig/libbpf.pc /usr/lib/x86_64-linux-gnu/pkgconfig/
-ln -s /usr/lib64/libbpf.so.1.1.2 /usr/lib/x86_64-linux-gnu/libbpf.so.1
-cd ~
-git clone https://android.googlesource.com/platform/hardware/google/aemu
-export PREFIX=&quot;/usr&quot;
-cmake -DAEMU_COMMON_GEN_PKGCONFIG=ON       -DAEMU_COMMON_BUILD_CONFIG=gfxstream       -DENABLE_VKCEREAL_TESTS=OFF       --install-prefix &quot;${PREFIX}&quot;       -B build
-cmake --build build -j
-cmake --install build --prefix &quot;/usr&quot;
-cd ~
-git clone https://android.googlesource.com/platform/hardware/google/gfxstream
-cd gfxstream
-meson setup -Ddefault_library=static --prefix &quot;${PREFIX}&quot; build/ 
-meson install -C build
-cd ~
-curl https://sh.rustup.rs -sSf | sh
-source $HOME/.cargo/env
-source ~/.profile
-git clone https://github.com/google/crosvm
-cd crosvm
-git reset --hard cd04b6198dc89104de7748043585cf38c56cb626
-cd rutabaga_gfx/ffi
-make
-make prefix=&quot;/usr&quot; install
-cd ~
-wget https://download.qemu.org/qemu-9.0.2.tar.xz
-tar xJvf qemu-9.0.2.tar.xz
-cd qemu-9.0.2
-mkdir build &amp;&amp; cd build
-../configure --disable-download --disable-relocatable --disable-docs  --disable-xkbcommon  	--enable-system 	--disable-user --disable-linux-user 	--enable-tools 	--disable-xen 	--enable-modules 	--enable-module-upgrades 	--enable-capstone --enable-linux-aio --disable-sndio --audio-drv-list=pa,alsa,oss,sdl --enable-attr --enable-bpf --enable-brlapi --enable-virtfs --enable-cap-ng --enable-curl --enable-fdt --enable-fuse --enable-gnutls --enable-gtk --enable-vte --enable-libiscsi --enable-curses --enable-virglrenderer --enable-opengl --enable-libnfs --enable-numa --enable-smartcard --enable-pixman --enable-rbd --enable-glusterfs --enable-vnc-sasl --enable-sdl --enable-seccomp --enable-slirp --enable-spice --enable-rdma --enable-linux-io-uring --enable-libusb --enable-usb-redir --enable-libssh --enable-zstd --enable-vde --enable-nettle --enable-libudev --enable-vnc --enable-vnc-jpeg --enable-png --enable-libpmem --enable-kvm --enable-vhost-net --enable-rutabaga-gfx --prefix=/usr
-make -j16
-make install
-git clone https://gitlab.freedesktop.org/virgl/virglrenderer.git
-cd virglrenderer/
-git checkout virglrenderer-1.0.1
-meson setup build/
-meson install -C build/
-sudo dpkg -i ./cuttlefish-base_*_*64.deb || sudo apt-get install -f
-sudo dpkg -i ./cuttlefish-user_*_*64.deb || sudo apt-get install -f
-sudo usermod -aG kvm,cvdnetwork,render $USER
-
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class="page-item active"><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/247/>247</a></li><li class=page-item><a href=/page/3/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/247/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class="page-item active"><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/3/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
