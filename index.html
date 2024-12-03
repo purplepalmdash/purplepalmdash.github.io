@@ -16,7 +16,33 @@ sudo useradd -m test1
 sudo useradd -m test2
 sudo ltsp initrd
 </code></pre><h3 id=测试>测试</h3><p><img src=/images/20241203_114432_x.jpg alt=/images/20241203_114432_x.jpg></p><p>4C 4G：</p><p><img src=/images/20241203_114456_x.jpg alt=/images/20241203_114456_x.jpg></p><p>命名:</p><p><img src=/images/20241203_114516_x.jpg alt=/images/20241203_114516_x.jpg>
-网络:</p><p><img src=/images/20241203_114552_x.jpg alt=/images/20241203_114552_x.jpg></p><p>引导:</p><p><img src=/images/20241203_114613_x.jpg alt=/images/20241203_114613_x.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/11/28/tipsoninnobasedlxc/>tipsoninnobasedlxc</a></h1><span class=post-date>Nov 28, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>config for lxc common:</p><pre><code># cat /usr/share/lxc/config/common.conf
+网络:</p><p><img src=/images/20241203_114552_x.jpg alt=/images/20241203_114552_x.jpg></p><p>引导:</p><p><img src=/images/20241203_114613_x.jpg alt=/images/20241203_114613_x.jpg></p><h3 id=virtualbox创建镜像>virtualbox创建镜像</h3><p><img src=/images/20241203_142035_x.jpg alt=/images/20241203_142035_x.jpg></p><p><img src=/images/20241203_142130_x.jpg alt=/images/20241203_142130_x.jpg></p><p><img src=/images/20241203_142428_x.jpg alt=/images/20241203_142428_x.jpg></p><p><img src=/images/20241203_142443_x.jpg alt=/images/20241203_142443_x.jpg></p><p><img src=/images/20241203_142550_x.jpg alt=/images/20241203_142550_x.jpg></p><p>pre-allocate Full size:</p><p><img src=/images/20241203_142609_x.jpg alt=/images/20241203_142609_x.jpg></p><p>10G size:</p><p><img src=/images/20241203_142629_x.jpg alt=/images/20241203_142629_x.jpg></p><p><img src=/images/20241203_142908_x.jpg alt=/images/20241203_142908_x.jpg></p><p>enable 3d acceleration.</p><p>虚机分区:</p><p><img src=/images/20241203_143521_x.jpg alt=/images/20241203_143521_x.jpg></p><p>其他按默认安装完毕。</p><p>gnome桌面:</p><p><img src=/images/20241203_143731_x.jpg alt=/images/20241203_143731_x.jpg></p><p>进入系统后，关闭lock/sleep等选项。</p><pre><code>cd /srv/ltsp/
+ls
+rm -f debian12_1.img 
+ln -s /home/test/ubuntu1-flat.vmdk ./ubuntu1.img
+ltsp image ubuntu1
+ltsp ipxe
+</code></pre><p>Next time reboot then you could enter ubuntu1.</p><p>debian got some errors.</p><p>kylin problem:</p><pre><code>root@ltscserver:/srv/ltsp# ln -s /home/test/kylin-flat.vmdk ./kylin.img
+root@ltscserver:/srv/ltsp# ltsp image kylin
+Running: losetup -rP /dev/loop6 /srv/ltsp/kylin.img
+Running: mount -t tmpfs -o mode=0755 tmpfs /tmp/tmp.sV6xy2UAD1/tmpfs
+Running: mount -t ext4 -o ro,noload /dev/loop6p1 /tmp/tmp.sV6xy2UAD1/tmpfs/0/looproot
+Running: mount -t overlay -o upperdir=/tmp/tmp.sV6xy2UAD1/tmpfs/0/up,lowerdir=/tmp/tmp.sV6xy2UAD1/tmpfs/0/looproot,workdir=/tmp/tmp.sV6xy2UAD1/tmpfs/0/work /tmp/tmp.sV6xy2UAD1/tmpfs /tmp/tmp.sV6xy2UAD1/root/
+Cleaning up kylin before mksquashfs...
+Traceback (most recent call last):
+  File &quot;/usr/share/ltsp/client/login/pwmerge&quot;, line 440, in &lt;module&gt;
+    main(sys.argv)
+  File &quot;/usr/share/ltsp/client/login/pwmerge&quot;, line 434, in main
+    pwm = PwMerge(args[0], args[1], args[2], **dopts)
+  File &quot;/usr/share/ltsp/client/login/pwmerge&quot;, line 117, in __init__
+    self.dpasswd, self.dgroup = self.read_dir(ddir, dur or dgr)
+  File &quot;/usr/share/ltsp/client/login/pwmerge&quot;, line 151, in read_dir
+    with open(&quot;{}/passwd&quot;.format(xdir), &quot;r&quot;) as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmp.sV6xy2UAD1/root/etc/passwd'
+LTSP command failed: /usr/share/ltsp/client/login/pwmerge --ltsp --quiet /tmp/tmp.sV6xy2UAD1/root/tmp/pwempty /tmp/tmp.sV6xy2UAD1/root/etc /tmp/tmp.sV6xy2UAD1/root/tmp/pwmerged
+Aborting ltsp
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/11/28/tipsoninnobasedlxc/>tipsoninnobasedlxc</a></h1><span class=post-date>Nov 28, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>config for lxc common:</p><pre><code># cat /usr/share/lxc/config/common.conf
 # Default configuration shared by all containers
 
 # Setup the LXC devices in /dev/lxc/
