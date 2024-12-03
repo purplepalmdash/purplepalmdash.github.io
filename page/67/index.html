@@ -1,5 +1,69 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/24/workingtipsonarmkubespray/>WorkingTipsOnArmKubespray</a></h1><span class=post-date>Jun 24, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=emulation>Emulation</h3><p>Install uml-utilites for arm emulator networking:</p><pre><code># sudo apt-get install -y uml-utilities
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/25/tipsonraid10/>TipsOnRaid10</a></h1><span class=post-date>Jun 25, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Find how many disks are available in system:</p><pre><code># fdisk -l
+</code></pre><p>Examine the detailed info:</p><pre><code># lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
+NAME     SIZE FSTYPE  TYPE MOUNTPOINT
+loop0  876.9M iso9660 loop /media/cdrom
+sda    557.9G         disk 
+├─sda1   512M vfat    part /boot/efi
+└─sda2 557.4G ext4    part /
+sdb      3.7T         disk 
+sdc      3.7T         disk 
+sdd      3.7T         disk 
+sde      3.7T         disk 
+sdf      3.7T         disk 
+sdg      3.7T         disk 
+sdh      3.7T         disk 
+sdi      3.7T         disk 
+sdj      3.7T         disk 
+sdk      3.7T         disk 
+sdl      3.7T         disk 
+sdm      3.7T         disk
+</code></pre><p>Create the raid10 using following command:</p><pre><code>#  mdadm --create --verbose /dev/md0 --level=10 --raid-devices=12 /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg /dev/sdh /dev/sdi /dev/sdj /dev/sdk /dev/sdl /dev/sdm
+</code></pre><p>View the status, now you could use it:</p><pre><code>#  cat /proc/mdstat
+</code></pre><p>Make filesystem for using:</p><pre><code># mkfs.ext4 -F /dev/md0
+</code></pre><p>Create mount point and mount the md0:</p><pre><code># mkdir -p /media/md0
+# mount /dev/md0 /media/md0
+# df -h
+</code></pre><p>Add md items to mdadm configuration file, so next time bootup kernel will recognize it, also add fstab items:</p><pre><code>#  mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
+#  cat /etc/mdadm/mdadm.conf 
+#  update-initramfs -u
+#  echo '/dev/md0 /mnt/md0 ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
+#  cat /etc/fstab 
+</code></pre><p>Now view the lsblk output will show like following:</p><pre><code>lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
+NAME     SIZE FSTYPE            TYPE   MOUNTPOINT
+loop0  876.9M iso9660           loop   /media/cdrom
+sda    557.9G                   disk   
+├─sda1   512M vfat              part   /boot/efi
+└─sda2 557.4G ext4              part   /
+sdb      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+sdc      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+sdd      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+sde      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+sdf      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+sdg      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+sdh      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+sdi      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+sdj      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+sdk      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+sdl      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+sdm      3.7T linux_raid_member disk   
+└─md0   21.9T ext4              raid10 /media/md0
+</code></pre><h3 id=remove-md>remove md</h3><p>via:</p><pre><code>sudo mdadm --stop /dev/md0
+sudo mdadm --detail /dev/md0
+sudo mdadm --zero-superblock /dev/sdx
+sudo mv /etc/mdadm/mdadm.conf /etc/mdadm/mdadm.conf.bak
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/06/24/workingtipsonarmkubespray/>WorkingTipsOnArmKubespray</a></h1><span class=post-date>Jun 24, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=emulation>Emulation</h3><p>Install uml-utilites for arm emulator networking:</p><pre><code># sudo apt-get install -y uml-utilities
 # sudo tunctl -u  dash -t tap0
 # sudo ifconfig tap0 192.168.101.1 up
 # echo 1 &gt; /proc/sys/net/ipv4/ip_forward
@@ -555,56 +619,4 @@ Rank  0 , epoch  6 :  0.2750083558114448
 Rank  0 , epoch  7 :  0.2595048323273659
 Rank  0 , epoch  8 :  0.24862684973521526
 Rank  0 , epoch  9 :  0.22692083941101393
-</code></pre><p>可以看到，随着训练的进行，损失逐渐减小。</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/05/30/troubleshootingonpromoxissue/>TroubleShootingOnPromoxIssue</a></h1><span class=post-date>May 30, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=problem>Problem</h3><p>2 months ago I set a proxmox environment for a team which used as a dev
-environment, for quickly snapshot and migration I choose zfs for the
-filesystem, the structure is listed as following:</p><p><img src=/images/2019_05_30_16_54_05_656x311.jpg alt=/images/2019_05_30_16_54_05_656x311.jpg></p><p>But this environment got very slow i/o speed, I find the reason is because zfs
-shouldn&rsquo;t rely on raid card.</p><p>Which worse is: today after reboot, the grub runs into grub rescue:</p><p><img src=/images/2019_05_30_16_55_53_385x62.jpg alt=/images/2019_05_30_16_55_53_385x62.jpg></p><p>but you could not reached the /boot folder:</p><p><img src=/images/2019_05_30_16_56_21_319x73.jpg alt=/images/2019_05_30_16_56_21_319x73.jpg></p><h3 id=solution>Solution</h3><p>Raid Card configuration, change 01:22 and 01:23 from hotspare to raid1:</p><p><img src=/images/2019_05_30_16_59_58_484x180.jpg alt=/images/2019_05_30_16_59_58_484x180.jpg></p><p>to:</p><p><img src=/images/2019_05_30_17_00_11_495x152.jpg alt=/images/2019_05_30_17_00_11_495x152.jpg></p><p>Create new VD:</p><p><img src=/images/2019_05_30_17_00_41_561x278.jpg alt=/images/2019_05_30_17_00_41_561x278.jpg></p><p>Select these 2 disks:</p><p><img src=/images/2019_05_30_17_00_55_686x337.jpg alt=/images/2019_05_30_17_00_55_686x337.jpg></p><p>Select boot device(notice Boot device):</p><p><img src=/images/2019_05_30_17_01_45_703x397.jpg alt=/images/2019_05_30_17_01_45_703x397.jpg></p><p>Now Reinstall proxmox to VD 5.</p><h3 id=system-configuration>System Configuration</h3><p>Remove the <code>data</code> lv:</p><pre><code># lvremove /dev/mapper/data
-</code></pre><p>Create a new lv via:</p><pre><code># lvcreate -n lv_root -L 150G pve
-# mkfs.ext4 /dev/mapper/pve-lv_root
-</code></pre><p>Now mount the zfs pools via:</p><pre><code># zpool import -a
-# zpool status
-# zfs create -o canmount=noauto =o mountpoint=/mnt rpool/pve....
-# zfs mount rpool/pve.....
-</code></pre><p>Create new mount point and copy the old system into new:</p><pre><code># mkdir /mnt1
-# mount /dev/mapper/pve-lv_root /mnt1
-# cp -arp /mnt/* /mnt1/
-</code></pre><p>Now you have to change the grub.cfg:</p><pre><code># vim /boot/grub/grub.cfg
-if [ &quot;${next_entry}&quot; ] ; then
-   set default=&quot;${next_entry}&quot;
-   set next_entry=
-   save_env next_entry
-   set boot_once=true
-else
-   set default=&quot;2&quot;
-fi
-
-
-
-menuentry &quot;Our Proxmox Boot Recovery&quot; {
-	load_video
-	insmod gzio
-	if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
-	insmod part_gpt
-	insmod lvm
-	insmod ext2
-	set root='lvmid/ySIDEN-2G0X-DU6A-p0q8-cXsW-o6ja-IyhXuc/0M8yUI-yNQJ-Ntx8-8cfE-3g9k-0sOb-SDWfQe'
-	if [ x$feature_platform_search_hint = xy ]; then
-	  search --no-floppy --fs-uuid --set=root --hint='lvmid/ySIDEN-2G0X-DU6A-p0q8-cXsW-o6ja-IyhXuc/0M8yUI-yNQJ-Ntx8-8cfE-3g9k-0sOb-SDWfQe'  4fb86e38-eeae-
-489a-b45e-3e5cc8055654
-	else
-	  search --no-floppy --fs-uuid --set=root 4fb86e38-eeae-489a-b45e-3e5cc8055654
-	fi
-	echo	'Loading Linux 4.15.17-1-pve ...'
-	linux	/boot/vmlinuz-4.15.17-1-pve root=/dev/mapper/pve-lv_root ro  quiet
-	echo	'Loading initial ramdisk ...'
-	initrd	/boot/initrd.img-4.15.17-1-pve
-}
-menuentry &quot;Memory test (memtest86+)&quot; {
-	insmod part_gpt
-</code></pre><p>Edit the fstab:</p><pre><code>$ vim /mnt1/etc/fstab 
-# &lt;file system&gt; &lt;mount point&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;pass&gt;
-/dev/pve/lv_root / ext4 errors=remount-ro 0 1
-/dev/pve/swap none swap sw 0 0
-proc /proc proc defaults 0 0
-</code></pre><p>Now reboot the system you will get into the newly-created lvm based system,
-and run an ext4 based OS which acts the same as the old ones.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/66/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/66/>66</a></li><li class="page-item active"><a class=page-link href=/page/67/>67</a></li><li class=page-item><a class=page-link href=/page/68/>68</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/68/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>可以看到，随着训练的进行，损失逐渐减小。</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/66/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/66/>66</a></li><li class="page-item active"><a class=page-link href=/page/67/>67</a></li><li class=page-item><a class=page-link href=/page/68/>68</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/68/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
