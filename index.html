@@ -42,6 +42,11 @@ FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmp.sV6xy2UAD1/roo
 LTSP command failed: /usr/share/ltsp/client/login/pwmerge --ltsp --quiet /tmp/tmp.sV6xy2UAD1/root/tmp/pwempty /tmp/tmp.sV6xy2UAD1/root/etc /tmp/tmp.sV6xy2UAD1/root/tmp/pwmerged
 Aborting ltsp
 
+</code></pre><h3 id=kylin-tips>kylin tips</h3><p>Add repository:</p><pre><code>wget https://ltsp.org/misc/ltsp-ubuntu-ppa-focal.list -O /etc/apt/sources.list.d/ltsp-ubuntu-ppa-focal.list
+wget https://ltsp.org/misc/ltsp_ubuntu_ppa.gpg -O /etc/apt/trusted.gpg.d/ltsp_ubuntu_ppa.gpg
+apt update
+sudo apt install --install-recommends ltsp ltsp-binaries dnsmasq nfs-kernel-server openssh-server squashfs-tools ethtool net-tools epoptes
+sudo gpasswd -a test epoptes
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/11/28/tipsoninnobasedlxc/>tipsoninnobasedlxc</a></h1><span class=post-date>Nov 28, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>config for lxc common:</p><pre><code># cat /usr/share/lxc/config/common.conf
 # Default configuration shared by all containers
 
