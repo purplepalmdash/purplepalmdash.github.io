@@ -1,5 +1,142 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/18/cuttlefishrecords/>cuttlefishRecords</a></h1><span class=post-date>Sep 18, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-crosvm>1. crosvm</h3><p>Default command:</p><pre><code>HOME=$PWD ./bin/launch_cvd  -cpus 6 -memory_mb 8192 
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/21/rebuildqemuondebian/>RebuildQemuOnDebian</a></h1><span class=post-date>Sep 21, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Steps:</p><pre><code>$ vim /etc/apt/sources.list
+Add:  
+ deb http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware
+ deb-src http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware
+$ sudo apt build-dep qemu-system
+$ mkdir -p ~/qemu &amp;&amp; cd qemu
+$ apt source qemu-system
+$ cd qemu-9.0.2+ds
+$ dpkg-buildpackage -rfakeroot -uc -b
+</code></pre><p>After building, the debs is listed as:</p><pre><code>test@buildqemu:~/qemu$ ls
+qemu-9.0.2+ds                                           qemu-system-misc-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu_9.0.2+ds-1~bpo12+1_amd64.buildinfo                 qemu-system-modules-opengl_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu_9.0.2+ds-1~bpo12+1_amd64.changes                   qemu-system-modules-opengl-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu_9.0.2+ds-1~bpo12+1.debian.tar.xz                   qemu-system-modules-spice_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu_9.0.2+ds-1~bpo12+1.dsc                             qemu-system-modules-spice-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu_9.0.2+ds.orig.tar.xz                               qemu-system-ppc_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-block-extra_9.0.2+ds-1~bpo12+1_amd64.deb           qemu-system-ppc-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-block-extra-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb    qemu-system-sparc_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-guest-agent_9.0.2+ds-1~bpo12+1_amd64.deb           qemu-system-sparc-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-guest-agent-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb    qemu-system-x86_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-system_9.0.2+ds-1~bpo12+1_amd64.deb                qemu-system-x86-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-system-arm_9.0.2+ds-1~bpo12+1_amd64.deb            qemu-system-xen_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-system-arm-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb     qemu-system-xen-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-system-common_9.0.2+ds-1~bpo12+1_amd64.deb         qemu-user_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-system-common-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb  qemu-user-binfmt_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-system-data_9.0.2+ds-1~bpo12+1_all.deb             qemu-user-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-system-gui_9.0.2+ds-1~bpo12+1_amd64.deb            qemu-user-static_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-system-gui-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb     qemu-user-static-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-system-mips_9.0.2+ds-1~bpo12+1_amd64.deb           qemu-utils_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-system-mips-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb    qemu-utils-dbgsym_9.0.2+ds-1~bpo12+1_amd64.deb
+qemu-system-misc_9.0.2+ds-1~bpo12+1_amd64.deb
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/19/buildqemurutabaga_gfx/>BuildQemurutabaga_gfx</a></h1><span class=post-date>Sep 19, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Install with <code>debian-12.7.0-amd64-DVD-1.iso</code>. Select gnome/desktop/ssh server.</p><p><img src=/images/20240919_084808_x.jpg alt=/images/20240919_084808_x.jpg></p><p><img src=/images/20240919_085715_x.jpg alt=/images/20240919_085715_x.jpg></p><h3 id=x86-steps>x86 steps</h3><p>Configure the repository and update/upgrade:</p><pre><code>root@debian:~# cat /etc/apt/sources.list
+# 默认注释了源码仓库，如有需要可自行取消注释
+deb http://mirrors.ustc.edu.cn/debian bookworm main contrib non-free non-free-firmware
+# deb-src http://mirrors.ustc.edu.cn/debian bookworm main contrib non-free non-free-firmware
+deb http://mirrors.ustc.edu.cn/debian bookworm-updates main contrib non-free non-free-firmware
+# deb-src http://mirrors.ustc.edu.cn/debian bookworm-updates main contrib non-free non-free-firmware
+
+# backports 软件源，请按需启用
+# deb http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware
+# deb-src http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware
+# apt install -y nethogs vim iptables
+</code></pre><p>Install necessary packages:</p><pre><code> apt install -y ninja-build pkg-config libgbm1 libglib2.0-dev bridge-utils libfdt-dev libpixman-1-dev libssl-dev libsdl1.2-dev libspice-server-dev autoconf libtool xtightvncviewer tightvncserver x11vnc uuid-runtime uuid uml-utilities liblzma-dev libc6-dev libdrm-dev libgbm-dev spice-client-gtk libgtk2.0-dev libusb-1.0-0-dev libepoxy-dev libaio-dev libgtk-3-dev ovmf libsdl2-dev libegl-mesa0
+apt install -y {libpulse,libdrm,libglm,libstb,libegl,libgles,libvulkan,vulkan-validationlayers}-dev 
+apt install -y libepoxy-dev libgbm-dev cmake curl python3-venv git build-essential meson
+</code></pre><p>Prepare the code structure:</p><pre><code>mkdir Code
+cd Code
+git clone https://gitlab.com/qemu-project/qemu.git
+</code></pre><p>Build libvirglrenderer:</p><pre><code>export PREFIX=&quot;$(pwd)&quot;/prefix
+git clone https://gitlab.freedesktop.org/virgl/virglrenderer.git
+cd virglrenderer
+meson setup -Dprefix=$PREFIX -Dlibdir=lib build
+cd build
+ninja install
+</code></pre><p>build aemu (dependencies) Steps:</p><pre><code>cd qemu
+mkdir -p build/deps/prefix
+cd build/deps
+export PREFIX=&quot;$(pwd)&quot;/prefix
+export CMAKE_INSTALL_PREFIX=&quot;${PREFIX}&quot;
+export PKG_CONFIG_PATH=&quot;${PREFIX}/lib/pkgconfig&quot;:&quot;${PREFIX}/lib/x86_64-linux-gnu/pkgconfig&quot;
+git clone https://android.googlesource.com/platform/hardware/google/aemu
+cd aemu/
+cmake -DAEMU_COMMON_GEN_PKGCONFIG=ON \
+      -DAEMU_COMMON_BUILD_CONFIG=gfxstream \
+      -DENABLE_VKCEREAL_TESTS=OFF \
+      --install-prefix &quot;${PREFIX}&quot; \
+      -B build
+cmake --build build -j
+cmake --install build --prefix &quot;${CMAKE_INSTALL_PREFIX}&quot;
+</code></pre><p>build gfxstream steps:</p><pre><code>cd ..
+git clone https://android.googlesource.com/platform/hardware/google/gfxstream
+cd gfxstream/
+meson setup -Ddefault_library=static --prefix &quot;${PREFIX}&quot; build/ 
+meson install -C build
+</code></pre><p>rutabaga FFI￼:</p><pre><code>cd ~/Code
+git clone https://github.com/google/crosvm
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#curl https://sh.rustup.rs -sSf | sh
+source $HOME/.cargo/env
+source ~/.profile
+rustup toolchain list | grep -q 1.68.2-x86_64-unknown-linux-gnu || rustup toolchain install 1.68.2-x86_64-unknown-linux-gnu
+cd crosvm
+git reset --hard cd04b6198dc89104de7748043585cf38c56cb626
+export RUSTFLAGS='-Clink-arg=-L='&quot;${PREFIX}&quot;/lib/x86_64-linux-gnu/
+cd rutabaga_gfx/ffi
+make
+make prefix=&quot;${PREFIX}&quot; install
+</code></pre><p>Build qemu:</p><pre><code>mkdir -p /opt/local
+cd ~/Code/qemu/build
+export CFLAGS=&quot;-I${PREFIX}/include -L${PREFIX}/lib&quot; # needed for rutabaga_gfx_ffi.h
+#../configure --enable-system --enable-tools --enable-vhost-user --enable-slirp --enable-kvm --enable-debug --target-list=x86_64-softmmu --enable-rutabaga-gfx --prefix=/opt/local/
+../configure --enable-system --enable-tools --enable-vhost-user --enable-slirp --enable-kvm --enable-debug --target-list=aarch64-softmmu --enable-rutabaga-gfx
+make -j$(nproc)
+su root
+</code></pre><p>￼
+￼</p><h3 id=cuttlefish-build>cuttlefish build</h3><p>Steps:</p><pre><code>usermod -aG sudo test
+cd ~/Code
+git clone https://github.com/google/android-cuttlefish
+cd android-cuttlefish
+tools/buildutils/build_packages.sh
+sudo dpkg -i ./cuttlefish-base_*_*64.deb || sudo apt-get install -f
+sudo dpkg -i ./cuttlefish-user_*_*64.deb || sudo apt-get install -f
+sudo usermod -aG kvm,cvdnetwork,render $USER
+mkdir cf
+tar xzvf ../cvd-host_package.tar.gz &amp;&amp; unzip ../aosp_cf_arm64_only_phone-img-11489887.zip 
+sudo reboot
+</code></pre><p>should notice the aarch64 library replacement.</p><h3 id=x86-tips>x86 tips</h3><p>qemu version:</p><pre><code>$ /home/test/Code/qemu/build/qemu-system-x86_64 --version
+QEMU emulator version 9.1.50 (v9.1.0-384-g2b81c04625)
+Copyright (c) 2003-2024 Fabrice Bellard and the QEMU Project developers
+test@debian:~/cf$ sudo chmod 777 /usr/bin/qemu-system-x86_64 
+test@debian:~/cf$ sudo cat /usr/bin/qemu-system-x86_64 
+#!/bin/bash
+/home/test/Code/qemu/build/qemu-system-x86_64 $@
+
+</code></pre><h3 id=ubuntu2204-issue>Ubuntu2204 issue</h3><p>When building gfxstream host:</p><pre><code>git clone https://android.googlesource.com/platform/hardware/google/gfxstream
+cd gfxstream/
+meson setup host-build/
+</code></pre><p>Get error:</p><pre><code>Run-time dependency dl found: NO (tried pkgconfig and cmake)
+
+host/meson.build:78:2: ERROR: Dependency &quot;dl&quot; not found, tried pkgconfig and cmake
+
+</code></pre><p>cmake:</p><pre><code> 307  sudo apt remove cmake
+  308  sudo apt install libssl-dev
+  309  cd ..
+  310  ls
+  311  wget https://cmake.org/files/v3.29/cmake-3.29.2.tar.gz
+  312  tar -xzvf cmake-3.29.2.tar.gz
+  313  cd cmake-3.29.2
+  314  export OPENSSL_ROOT_DIR=/usr/include/openssl
+  315  ./bootstrap
+  316  make -j$(nproc)
+  317  sudo make install
+  318  which cmake
+
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/18/cuttlefishrecords/>cuttlefishRecords</a></h1><span class=post-date>Sep 18, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-crosvm>1. crosvm</h3><p>Default command:</p><pre><code>HOME=$PWD ./bin/launch_cvd  -cpus 6 -memory_mb 8192 
 </code></pre><p>Result:</p><pre><code>vsoc_arm64_only:/ $ getprop | grep boot | grep com                                            
 [dev.bootcomplete]: [1]
 [ro.boot.hardware.hwcomposer.display_finder_mode]: [drm]
@@ -668,113 +805,4 @@ General setup  ---&gt;
 
 </code></pre><p>Verification:</p><pre><code>qemu-system-x86_64 -m 1G -M q35 -serial stdio -bios coreboot/coreboot/build/coreboot.rom
 
-</code></pre><p><img src=/images/2024_09_12_23_39_50_715x430.jpg alt=/images/2024_09_12_23_39_50_715x430.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/11/cuttlefishonrpi/>CuttlefishOnRPI</a></h1><span class=post-date>Sep 11, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Change sshd configuration:</p><pre><code>$ sudo cat /etc/ssh/sshd_config.d/50-cloud-init.conf 
-PasswordAuthentication yes
-$ sudo sed -i 's@//ports.ubuntu.com@//mirrors.ustc.edu.cn@g' /etc/apt/sources.list.d/ubuntu.sources
-</code></pre><p><code>sudo apt update -y && sudo apt upgrade -y</code> , then reboot.</p><p>Build cuttlefish:</p><pre><code>git clone https://github.com/google/android-cuttlefish
-cd android-cuttlefish
-tools/buildutils/build_packages.sh
-</code></pre><p>Install:</p><pre><code>sudo dpkg -i ./cuttlefish-base_*_*64.deb || sudo apt-get install -f
-sudo dpkg -i ./cuttlefish-user_*_*64.deb || sudo apt-get install -f
-sudo usermod -aG kvm,cvdnetwork,render $USER
-sudo apt install -y libvirglrenderer-dev libvirglrenderer1
-sudo reboot
-</code></pre><p>Prepare packages:</p><pre><code>mkdir cf
-cd cf
-tar xzvf /media/test/78739a87-9b0b-4935-902f-7d78cc09a076/home/test/cvd-host_package.tar.gz
-unzip /media/test/78739a87-9b0b-4935-902f-7d78cc09a076/home/test/aosp_cf_arm64_only_phone-img-11489887.zip 
-</code></pre><p>maybe should use <code>--gpu_mode=guest_swiftshader</code></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/09/09/autostartv2/>AutoStartV2</a></h1><span class=post-date>Sep 9, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>source code is listed as following:</p><pre><code>import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QHBoxLayout, QLabel, QRadioButton
-from PyQt5.QtCore import Qt
-import subprocess
-
-class MyWidget(QWidget):
-    def __init__(self):
-        super().__init__()
-        
-        self.radiobuttons = []  # 在__init__中定义radiobuttons列表
-        
-        self.initUI()
-
-    def initUI(self):
-        self.setWindowTitle('IDV-Multi-kvm虚拟机管理器')
-        self.showMaximized() # 初始化窗口大小并最大化
-
-        layout = QVBoxLayout()
-        self.setLayout(layout)
-
-        radio_button_layout = QHBoxLayout()
-        
-        output = subprocess.check_output(['virsh', 'list','--all', '--name']).decode('utf-8').splitlines()
-        
-        for i, line in enumerate(output[:-1]):
-            self.radiobuttons.append(QRadioButton(line))
-            radio_button_layout.addWidget(self.radiobuttons[i])
-        
-        layout.addLayout(radio_button_layout)  # 将button添加到主界面中
-        
-        button_layout = QHBoxLayout()
-        self.start_button = QPushButton('启动选中的虚拟机')
-        self.start_button.setStyleSheet(&quot;background-color: green; color: white&quot;) # 设置背景颜色为绿色和字体颜色为白色
-        self.start_button.setMinimumWidth(self.width() // 3) 
-        self.start_button.setMaximumWidth(self.width() // 3)
-        self.start_button.clicked.connect(self.start_vmmachine)
-
-        
-        shutdown_button = QPushButton('IDV物理机关机', clicked=lambda: self.shutdown())
-        shutdown_button.setStyleSheet(&quot;background-color: red; color: white&quot;) # 设置背景颜色为红色和字体颜色为白色
-        shutdown_button.setMinimumWidth(self.width() // 3) 
-        shutdown_button.setMaximumWidth(self.width() // 3)
-        self.start_button.clicked.connect(self.shutdown)
-        
-        close_button = QPushButton('退出IDV管理程序', clicked=self.close)
-        close_button.setStyleSheet(&quot;background-color: blue; color: white&quot;) # 设置背景颜色为蓝色和字体颜色为白色
-        close_button.setMinimumWidth(self.width() // 3) 
-        close_button.setMaximumWidth(self.width() // 3)
-        
-        button_layout.addWidget(self.start_button)
-        button_layout.addWidget(shutdown_button)
-        button_layout.addWidget(close_button)
-
-        layout.addLayout(button_layout)  # 将button添加到主界面中
-        
-        self.show()
-
-    def start_vmmachine(self):
-        #selected_radio_button = [i for i in self.findChildren(QRadioButton)][0]
-        for i, button in enumerate(self.findChildren(QRadioButton)):
-            if button.isChecked():
-                selected_radio_button = [i for i in self.radiobuttons][i]
-                vm_name = selected_radio_button.text()
-                print(&quot;********&quot;)
-                print(vm_name)
-                subprocess.run(['virsh', 'start', vm_name])
-                break
-
-    def shutdown(self):
-        subprocess.run(['shutdown', '-h', 'now'])
-        
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = MyWidget()
-    sys.exit(app.exec_())
-
-</code></pre><p>qemu hook changes:</p><pre><code>$ cat qemumodified_hook 
-#!/bin/bash
-OBJECT=&quot;$1&quot;
-OPERATION=&quot;$2&quot;
-INSTANCE=&quot;instance-00000001&quot;
-#INSTANCE=&quot;win10&quot;
-if [[ $OBJECT == &quot;$INSTANCE&quot; || $OBJECT == &quot;ubuntu2404&quot; || $OBJECT == &quot;UOS&quot; || $OBJECT == &quot;zkfd&quot; || $OBJECT == &quot;Kylin&quot;   || $OBJECT == &quot;Win10&quot; || $OBJECT == &quot;Win11&quot; ]]; then
-        case &quot;$OPERATION&quot; in
-                &quot;prepare&quot;)
-                /bin/vfio-startup.sh 2&gt;&amp;1 | tee -a /var/log/libvirt/custom_hooks.log
-                ;;
-            &quot;release&quot;)
-                /bin/vfio-teardown.sh 2&gt;&amp;1 | tee -a /var/log/libvirt/custom_hooks.log
-                ;;
-        esac
-fi
-
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/3/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item active"><a class=page-link href=/page/4/>4</a></li><li class=page-item><a class=page-link href=/page/5/>5</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/5/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p><img src=/images/2024_09_12_23_39_50_715x430.jpg alt=/images/2024_09_12_23_39_50_715x430.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/3/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item active"><a class=page-link href=/page/4/>4</a></li><li class=page-item><a class=page-link href=/page/5/>5</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/5/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

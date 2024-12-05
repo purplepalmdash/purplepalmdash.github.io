@@ -1,5 +1,50 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/06/workingtipsonkubeadmissue/>WorkingTipsOnKubeadmIssue</a></h1><span class=post-date>Jan 6, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境>环境</h3><p>IP地址: 10.0.2.15<br>主机名: node1<br>集群部署于2020年1月6日，kubeadm ssl签名有效期为1年。<br>手动调整虚拟机时间为2021年3月3日后，ssl签名失效， kubelet无法启动。</p><h3 id=问题>问题</h3><p>kubeadm ssl签名过期后kubelet进程无法启动：</p><pre><code>root@node1:/etc/kubernetes/ssl# systemctl status kubelet
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/09/workingtipsonkubeadmssltwo/>WorkingTipsOnkubeadmsslTwo</a></h1><span class=post-date>Jan 9, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=补充>补充</h3><p>重启后，在更新过签名的节点上，验证是否可以获取所有的节点, 并列举出当前可用的更新过后的token:</p><pre><code># kubectl get nodes
+# kubectl token list
+</code></pre><p>如果没有有效token的话，可以手动创建一个:</p><pre><code># kubectl token create
+</code></pre><p>token应该看起来像<code>6dihyb.d09sbgae8ph2atjw</code>.</p><p>ssh到每一个工作节点上，重新连接到master节点上:</p><pre><code># kubeadm join --token=&lt;上一布获取的token&gt;  &lt;master节点IP&gt;:&lt;默认为6443端口&gt; --node-name &lt;master节点node名称&gt;
+</code></pre><p>重新连接后，可以在master节点上验证是否连接成功：</p><pre><code># kubectl get nodes
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/06/kubeadmssladjust/>KubeadmSSLAdjust</a></h1><span class=post-date>Jan 6, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=检查>检查</h3><p>一年过期的集群（即将过期):</p><pre><code>root@node:/home/test# cd /etc/kubernetes/ssl
+root@node:/etc/kubernetes/ssl# for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
+notAfter=Jun 13 02:57:27 2020 GMT
+notAfter=Jun 13 02:57:28 2020 GMT
+notAfter=Jun 11 02:57:27 2029 GMT
+notAfter=Jun 11 02:57:28 2029 GMT
+notAfter=Jun 13 02:57:29 2020 GMT
+</code></pre><p>获得该集群信息:</p><pre><code># kubectl get nodes -o wide
+NAME           STATUS   ROLES    AGE    VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+k8s-master-1   Ready    master   206d   v1.12.4   192.192.185.63   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
+k8s-master-2   Ready    node     89d    v1.12.4   192.192.185.64   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
+k8s-node-1     Ready    node     111d   v1.12.4   192.192.185.65   &lt;none&gt;        Ubuntu 16.04.6 LTS   4.15.0-45-generic   docker://18.6.1
+k8s-node-2     Ready    node     206d   v1.12.4   192.192.185.66   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
+k8s-node-3     Ready    node     201d   v1.12.4   192.192.189.61   &lt;none&gt;        Ubuntu 16.04.4 LTS   4.4.0-116-generic   docker://18.6.1
+</code></pre><p>renew apiserver certs:</p><pre><code># kubeadm alpha phase certs renew apiserver --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml
+#  for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
+notAfter=Jun 13 02:57:27 2020 GMT
+notAfter=Jan  5 09:30:17 2021 GMT
+notAfter=Jun 11 02:57:27 2029 GMT
+notAfter=Jun 11 02:57:28 2029 GMT
+notAfter=Jun 13 02:57:29 2020 GMT
+
+</code></pre><pre><code># cd /etc/kubernetes/
+
+# ln -s ssl pki
+
+# kubeadm alpha phase certs renew apiserver --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml --cert-dir=/etc/kubernetes/ssl
+
+# kubeadm alpha phase certs renew apiserver-kubelet-client  --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml --cert-dir=/etc/kubernetes/ssl
+
+# kubeadm alpha phase certs renew front-proxy-client --config=/etc/kubernetes/kubeadm-config.v1alpha3.yaml --cert-dir=/etc/kubernetes/ssl
+</code></pre><pre><code>root@node:/etc/kubernetes/ssl# !2036
+for i in `ls *.crt`; do openssl x509 -in $i -noout -dates; done | grep notAfter
+notAfter=Jan  5 09:36:10 2021 GMT
+notAfter=Jan  5 09:30:46 2021 GMT
+notAfter=Jun 11 02:57:27 2029 GMT
+notAfter=Jun 11 02:57:28 2029 GMT
+notAfter=Jan  5 09:37:14 2021 GMT
+
+</code></pre><pre><code>kubeadm alpha phase kubeconfig all --apiserver-advertise-address=192.192.185.63
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/01/06/workingtipsonkubeadmissue/>WorkingTipsOnKubeadmIssue</a></h1><span class=post-date>Jan 6, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=环境>环境</h3><p>IP地址: 10.0.2.15<br>主机名: node1<br>集群部署于2020年1月6日，kubeadm ssl签名有效期为1年。<br>手动调整虚拟机时间为2021年3月3日后，ssl签名失效， kubelet无法启动。</p><h3 id=问题>问题</h3><p>kubeadm ssl签名过期后kubelet进程无法启动：</p><pre><code>root@node1:/etc/kubernetes/ssl# systemctl status kubelet
 ● kubelet.service - Kubernetes Kubelet Server
    Loaded: loaded (/etc/systemd/system/kubelet.service; enabled; vendor preset: enabled)
    Active: activating (auto-restart) (Result: exit-code) since Tue 2021-03-02 16:04:46 UTC; 5s ago
@@ -148,127 +193,4 @@ build-full-packages:
     - ansible-playbook -i  /etc/ansible/terraform.py 1_k8s/cluster.yml --extra-vars @kiking-vars.yml --flush-cache
     - ansible-playbook -i  /etc/ansible/terraform.py 2_addons/addons.yml --extra-vars @kiking-vars.yml --extra-vars &quot;kubesphere_role=kubesphere/kubesphere&quot; --extra-vars &quot;external_nfsd_server=xx.xx.xxx.166&quot; --extra-vars &quot;external_nfsd_path=/media/md0/nfs/tftmp&quot;  --flush-cache
     - date&gt;&gt;time.txt
-</code></pre><p>Thus you could run the terraform enabled environment for gitlab ci/cd</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/12/31/workingtipsonnextcloud/>WorkingTipsOnNextCloud</a></h1><span class=post-date>Dec 31, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=docker-compose-file>docker-compose file</h3><p>File content:</p><pre><code>version: '2'
-services: 
-  nextcloud_db:
-    image: mariadb
-    container_name: nextcloud_db
-    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
-    volumes:
-      - ./db:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=mysql12345678
-      - MYSQL_PASSWORD=mysql12345678
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-    restart: always
-
-  nextcloud:
-    image: nextcloud
-    container_name: nextcloud_web
-    ports:
-      - &quot;10388:80&quot;
-    environment:
-      - UID=1000
-      - GID=1000
-      - UPLOAD_MAX_SIZE=5G
-      - APC_SHM_SIZE=128M
-      - OPCACHE_MEM_SIZE=128
-      - CRON_PERIOD=15m
-      - TZ=Aisa/Shanghai
-      - NEXTCLOUD_ADMIN_USER=admin
-      - NEXTCLOUD_ADMIN_PASSWORD=xxxxxxxxxxxxxxxx
-      - NEXTCLOUD_TRUSTED_DOMAINS=&quot;*&quot;
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_PASSWORD=mysql12345678
-      - MYSQL_HOST=nextcloud_db
-    volumes:
-      - ./nextcloud:/var/www/html
-    restart: always
-</code></pre><h3 id=systemd-file>systemd file</h3><p><code>/etc/systemd/system/nextcloud.service</code></p><pre><code>[Unit]
-Description=nextcloud
-Requires=docker.service
-After=docker.service
-
-[Service]
-WorkingDirectory=/media/sdb/nextcloud
-Type=idle
-Restart=always
-# Remove old container items
-ExecStartPre=/usr/bin/docker-compose -f /media/sdb/nextcloud/docker-compose.yml down
-# Compose up
-ExecStart=/usr/bin/docker-compose -f /media/sdb/nextcloud/docker-compose.yml up
-# Compose stop
-ExecStop=/usr/bin/docker-compose -f /media/sdb/nextcloud/docker-compose.yml stop
-
-[Install]
-WantedBy=multi-user.target
-</code></pre><p>Enable and start the service thus you got the nextcloud server at <code>http://YourIP:10388/</code>, login with admin/xxxxxxxx</p><h3 id=upload-and-update>Upload and update</h3><p>upload the files into correspondding location and update the cache:</p><pre><code># chmod 777 -R /media/sdb/nextcloud/nextcloud/data/xxxxx/files/xxxxx_Static/
-# docker exec -u www-data nextcloud_web php occ files:scan --all
-</code></pre><p>by now your nextcloud will update properly.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2019/12/30/tipsongreeninstallationmonitoring/>TipsOnGreenInstallationMonitoring</a></h1><span class=post-date>Dec 30, 2019<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=aim>AIM</h3><p>monitoring using green installation(prometheus and netdata)</p><h3 id=netdata>Netdata</h3><p>Download the run.gz from official release:</p><pre><code># curl https://github.com/netdata/netdata/releases/download/v1.19.0/netdata-v1.19.0.gz.run&gt;netdata-v1.19.0.gz.run
-# chmod 777 *.run
-# ./netdata-v1.19.0.gz.run --accept
-</code></pre><p>Todo:</p><p>why could not be installed via: <code>curl xxx/xxx.gz.run | bash</code> ?</p><p>Tips: Pass parameter to bash:</p><pre><code># curl xxxx/xxx.gz.run | bash -s -- --accept
-</code></pre><h3 id=prometheus>Prometheus</h3><p>Install makeself via <code>apt-get install -y makeself</code>, later we will use it for createing install.run package.</p><p>Folder structure:</p><pre><code>$ tree node_exporter 
-node_exporter
-├── install_node_exporter.sh
-└── node_exporter
-</code></pre><p>Edit the <code>install_node_exporter.sh</code> file:</p><pre><code>#!/bin/sh -e
-
-_check_root () {
-    if [ $(id -u) -ne 0 ]; then
-        echo &quot;Please run as root&quot; &gt;&amp;2;
-        exit 1;
-    fi
-}
-
-_check_root
-
-mkdir -p /opt/node_exporter
-cp node_exporter /opt/node_exporter/
-
-if [ -x &quot;$(command -v systemctl)&quot; ]; then
-    cat &lt;&lt; EOF &gt; /lib/systemd/system/node-exporter.service
-[Unit]
-Description=Prometheus agent
-After=network.target
-StartLimitIntervalSec=0
-
-[Service]
-Type=simple
-Restart=always
-RestartSec=1
-ExecStart=/opt/node_exporter/node_exporter
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-    systemctl enable node-exporter
-    systemctl start node-exporter
-elif [ -x &quot;$(command -v chckconfig)&quot; ]; then
-    cat &lt;&lt; EOF &gt;&gt; /etc/inittab
-::respawn:/opt/node_exporter/node_exporter
-EOF
-elif [ -x &quot;$(command -v initctl)&quot; ]; then
-    cat &lt;&lt; EOF &gt; /etc/init/node-exporter.conf
-start on runlevel [23456]
-stop on runlevel [016]
-exec /opt/node_exporter/node_exporter
-respawn
-EOF
-
-    initctl reload-configuration
-    stop node-exporter || true &amp;&amp; start node-exporter
-else
-    echo &quot;No known service management found&quot; &gt;&amp;2;
-    exit 1;
-fi
-</code></pre><p>While <code>node_exporter</code> is downloaded from github.</p><p>Make install.run:</p><pre><code># makeself ./node_exporter ./node_exporter_0.18.1.run &quot;SFX installer for node_exporter(0.18.1)&quot; ./install_node_exporter.sh
-</code></pre><p>Thus we get the <code>run</code> file for installing:</p><pre><code>$ ls
-node_exporter/  node_exporter_0.18.1.run
-</code></pre><p>We can install it via <code>./node_exporter_0.18.1.run</code>.</p><h3 id=post-installation>post-installation</h3><p>Be sure to open the ports banned by firewall, take centos6 for example:</p><pre><code>$   iptables -I INPUT -p tcp --dport 9100 -j ACCEPT
-$   iptables -I INPUT -p tcp --dport 19999 -j ACCEPT
-$ service iptables save
-</code></pre><p>In centos6, netdata will cause system restart hold for 1 minutes.</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/60/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/60/>60</a></li><li class="page-item active"><a class=page-link href=/page/61/>61</a></li><li class=page-item><a class=page-link href=/page/62/>62</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/62/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>Thus you could run the terraform enabled environment for gitlab ci/cd</p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/60/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/60/>60</a></li><li class="page-item active"><a class=page-link href=/page/61/>61</a></li><li class=page-item><a class=page-link href=/page/62/>62</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/62/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

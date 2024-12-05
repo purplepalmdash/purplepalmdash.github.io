@@ -1,5 +1,27 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/09/clarity%E4%B8%8Eangularcli/>Clarity与AngularCLI</a></h1><span class=post-date>Nov 9, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>今天来看看如何使用Angular CLI集成Clarity。</p><p>Clarity是什么？官方介绍如下:</p><blockquote><p>Project Clarity是一个开源的设计系统，它汇集了UX准则，HTML/CSS框架和Angular 2组件。 Clarity适用于设计人员和开发人员。</p></blockquote><h3 id=1-先决条件>1. 先决条件</h3><p>本指南需要Angular CLI全局安装， 使用以下命令安装最新版本的angular:</p><pre><code>$ npm install -g  @angular/cli@latest
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/19/workingtipsoncs414/>WorkingTipsOnCS414</a></h1><span class=post-date>Nov 19, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=system-preparation>System Preparation</h3><p>Install CentOS7.7, minimal mode, then enable root login, login with root.</p><p>Disable <code>UseDNS</code> in <code>sshd</code> configuration.</p><pre><code>[root@cs ~]# cat /etc/yum.conf 
+[main]
+cachedir=/var/cache/yum/$basearch/$releasever
+keepcache=1
+# yum upate -y
+# yum install vim bridge-utils net-tools -y
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/12/workingtipsonnpgv2/>WorkingTipsOnNpgV2</a></h1><span class=post-date>Nov 12, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=安装echarts依赖>安装echarts依赖</h3><p>Via following commands:</p><pre><code>cnpm install echarts -S     
+cnpm install ngx-echarts -S
+ cnpm install resize-observer-polyfill -S
+</code></pre><p>如果后面出现 <code>NullInjectorError: No provider for ElementRef!</code>的问题，则重复执行:</p><pre><code>npm install echarts -S
+npm install ngx-echarts -S
+npm install resize-observer-polyfill -D
+</code></pre><h3 id=创建echarts模块>创建echarts模块</h3><p>创建一个名为<code>echarts</code>的子app:</p><pre><code>$ ng g c echarts                         
+Your global Angular CLI version (10.2.0) is greater than your local
+version (8.3.28). The local Angular CLI version is used.
+
+To disable this warning use &quot;ng config -g cli.warnings.versionMismatch false&quot;.
+CREATE src/app/echarts/echarts.component.css (0 bytes)
+CREATE src/app/echarts/echarts.component.html (22 bytes)
+CREATE src/app/echarts/echarts.component.spec.ts (635 bytes)
+CREATE src/app/echarts/echarts.component.ts (273 bytes)
+UPDATE src/app/app.module.ts (6586 bytes)
+</code></pre><h3 id=添加导航>添加导航</h3><p>添加echarts到导航栏中.</p><p><img src=/images/2020_11_13_10_31_34_879x655.jpg alt=/images/2020_11_13_10_31_34_879x655.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/11/09/clarity%E4%B8%8Eangularcli/>Clarity与AngularCLI</a></h1><span class=post-date>Nov 9, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>今天来看看如何使用Angular CLI集成Clarity。</p><p>Clarity是什么？官方介绍如下:</p><blockquote><p>Project Clarity是一个开源的设计系统，它汇集了UX准则，HTML/CSS框架和Angular 2组件。 Clarity适用于设计人员和开发人员。</p></blockquote><h3 id=1-先决条件>1. 先决条件</h3><p>本指南需要Angular CLI全局安装， 使用以下命令安装最新版本的angular:</p><pre><code>$ npm install -g  @angular/cli@latest
 </code></pre><h3 id=2-创建新项目>2. 创建新项目</h3><p>现在<code>ng</code>命令应当是可用的, 我们使用<code>ng new</code>命令来创建一个新的Angular CLI项目:</p><pre><code>$ ng new myclarity
 </code></pre><p>在弹出的选项中默认回车接受预设选项，此命令运行完毕后我们将得到一个<code>myclarity</code>的目录， 进入到此目录下运行<code>ng serve</code>，我们将得到标准的angular项目预览页.</p><pre><code>$ cd myclarity
 $ ng serve
@@ -364,250 +386,4 @@ error: 工作区中下列未跟踪的文件将会因为检出操作而被覆盖�
   （使用 &quot;git push&quot; 来发布您的本地提交）
 (master) $ pwd
 /media/sda/git/pure/kubespray
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/10/28/workingtipsonrongrobot/>WorkingTipsOnRongRobot</a></h1><span class=post-date>Oct 28, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=azure-devops>Azure DevOps</h3><p>Create a new project:</p><p><img src=/images/2020_10_28_08_37_20_634x542.jpg alt=/images/2020_10_28_08_37_20_634x542.jpg></p><p>Add the ssh-key into project:</p><p><img src=/images/2020_10_28_08_31_38_457x200.jpg alt=/images/2020_10_28_08_31_38_457x200.jpg></p><p>Configure the time/locale:</p><p><img src=/images/2020_10_28_08_32_41_584x548.jpg alt=/images/2020_10_28_08_32_41_584x548.jpg></p><h3 id=repos>Repos</h3><p>Create a new repository and set the remote branch:</p><pre><code># mkdir RongRobot
-# cd RongRobot
-# vim README.md
-# git init
-# git add .
-# git commit -m &quot;First Commit&quot;
-# git remote add origin git@ssh.dev.azure.com:v3/purplepalm/RongRobot/RongRobot
-# git push -u origin --all
-</code></pre><p>View status on azure devops:</p><p><img src=/images/2020_10_28_08_41_24_1023x408.jpg alt=/images/2020_10_28_08_41_24_1023x408.jpg></p><p>Click <code>Set up build</code> for setup the pipeline:</p><p><img src=/images/2020_10_28_08_42_18_317x141.jpg alt=/images/2020_10_28_08_42_18_317x141.jpg></p><p>Starter pipeline:</p><p><img src=/images/2020_10_28_08_42_48_518x262.jpg alt=/images/2020_10_28_08_42_48_518x262.jpg></p><p>Edit something:</p><p><img src=/images/2020_10_28_08_43_34_791x555.jpg alt=/images/2020_10_28_08_43_34_791x555.jpg></p><h3 id=codes>Codes</h3><p>Write your own azure pipelines for doing these .</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/10/22/workingtipsinronggraphinlxd/>WorkingTipsInRonggraphInLXD</a></h1><span class=post-date>Oct 22, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=lxd-environment>lxd environment</h3><p>Install lxd(Offline):</p><pre><code>snap download core
-snap download core18
-snap download lxd
-snap ack core18_1885.assert; snap ack core_10185.assert; snap ack lxd_17936.assert
-snap install core18_1885.snap ; snap install core_10185.snap ; snap install lxd_17936.snap
-dpkg -i ./lxd_1%3a0.9_all.deb
-which lxc
-which lxd
-</code></pre><p>Show lxc images:</p><pre><code>root@rong320-1:~/lxd# lxc image list
-If this is your first time running LXD on this machine, you should also run: lxd init
-To start your first instance, try: lxc launch ubuntu:18.04
-
-+-------+-------------+--------+-------------+--------------+------+------+-------------+
-| ALIAS | FINGERPRINT | PUBLIC | DESCRIPTION | ARCHITECTURE | TYPE | SIZE | UPLOAD DATE |
-+-------+-------------+--------+-------------+--------------+------+------+-------------+
-</code></pre><p>Download lxd images:</p><pre><code>https://us.images.linuxcontainers.org/images/alpine/3.12/amd64/default/20201021_13:00/
-Download
-rootfs.squashfs lxd.tar.xz 
-root@rong320-1:~/lxdimages# ls
-lxd.tar.xz  rootfs.squashfs
-root@rong320-1:~/lxdimages# lxc image import lxd.tar.xz rootfs.squashfs --alias alpine312
-Image imported with fingerprint: 76560d125792d7710d70f41b060e81f0bd4d83f1cc4e8dbd43fc371e5dea27bf
-root@rong320-1:~/lxdimages# lxc image list
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+--------+------------------------------+
-|   ALIAS   | FINGERPRINT  | PUBLIC |               DESCRIPTION                | ARCHITECTURE |   TYPE    |  SIZE  |         UPLOAD DATE          |
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+--------+------------------------------+
-| alpine312 | 76560d125792 | no     | Alpinelinux 3.12 x86_64 (20201021_13:00) | x86_64       | CONTAINER | 2.40MB | Oct 22, 2020 at 3:48am (UTC) |
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+--------+------------------------------+
-</code></pre><dl><dt>Auto Config the lxd(<a href=https://discuss.linuxcontainers.org/t/usage-of-lxd-init-preseed/1069/3>https://discuss.linuxcontainers.org/t/usage-of-lxd-init-preseed/1069/3</a>)</dt><dt>(<a href=https://lxd.readthedocs.io/en/latest/preseed/>https://lxd.readthedocs.io/en/latest/preseed/</a>)</dt><dd></dd></dl><pre><code>cat &lt;&lt;EOF | lxd init --preseed
-config:
-  core.https_address: 10.137.149.161:9199
-  images.auto_update_interval: 15
-networks:
-- name: lxdbr0
-  type: bridge
-  config:
-    ipv4.address: auto
-    ipv6.address: none
-EOF
-root@rong320-1:~/lxdimages# cat storages.yml 
-storage_pools:
-- name: default
-  driver: dir
-  config:
-    source: &quot;&quot;
-root@rong320-1:~/lxdimages# lxd init --preseed&lt;./storages.yml
-
-root@rong320-1:~/lxdimages# cat profiles.yml 
-profiles:
-- name: default
-  devices:
-    root:
-      path: /
-      pool: default
-      type: disk
-    eth0:
-      nictype: bridged
-      parent: lxdbr0
-      type: nic
-root@rong320-1:~/lxdimages# lxd init --preseed&lt;profiles.yml
-
-</code></pre><p>Now we could check the default lxd bridges(lxdbr0).</p><h3 id=dockerdocker-compose-in-alpine>Docker/Docker-compose in alpine</h3><p>Create a new profile named <code>k8s</code>:</p><pre><code># lxc launch alpine312 firstalpine -p k8s
-</code></pre><p>Create the first alpine instance:</p><pre><code># lxc launch alpine312 firstalpine
-Creating firstalpine
-Starting firstalpine           
-# lxc ls
-+-------------+---------+---------------------+------+-----------+-----------+
-|    NAME     |  STATE  |        IPV4         | IPV6 |   TYPE    | SNAPSHOTS |
-+-------------+---------+---------------------+------+-----------+-----------+
-| firstalpine | RUNNING | 10.31.47.210 (eth0) |      | CONTAINER | 0         |
-+-------------+---------+---------------------+------+-----------+-----------+
-root@rong320-1:~/lxdimages# lxc exec firstalpine /bin/sh
-~ # cat /etc/issue
-Welcome to Alpine Linux 3.12
-Kernel \r on an \m (\l)
-</code></pre><p>Configure repository:</p><pre><code> # echo &quot;https://mirrors.aliyun.com/alpine/v3.12/main/&quot; &gt; /etc/apk/repositories
- # echo &quot;https://mirrors.aliyun.com/alpine/v3.12/community/&quot; &gt;&gt; /etc/apk/repositories
-# apk update
-# apk add docker-engine docker-compose docker-cli
-</code></pre><p>Create the <code>cgroups-patch</code> file under <code>/etc/init.d</code>:</p><pre><code>#!/sbin/openrc-run
-
-description=&quot;Mount the control groups for Docker&quot;
-
-depend()
-{
-    keyword -docker
-    need sysfs cgroups
-}
-
-start()
-{
-    if [ -d /sys/fs/cgroup ]; then
-        mkdir -p /sys/fs/cgroup/cpu,cpuacct
-        mkdir -p /sys/fs/cgroup/net_cls,net_prio
-
-        mount -n -t cgroup cgroup /sys/fs/cgroup/cpu,cpuacct -o rw,nosuid,nodev,noexec,relatime,cpu,cpuacct
-        mount -n -t cgroup cgroup /sys/fs/cgroup/net_cls,net_prio -o rw,nosuid,nodev,noexec,relatime,net_cls,net_prio
-
-        if ! mountinfo -q /sys/fs/cgroup/openrc; then
-            local agent=&quot;${RC_LIBEXECDIR}/sh/cgroup-release-agent.sh&quot;
-            mkdir -p /sys/fs/cgroup/openrc
-            mount -n -t cgroup -o none,nodev,noexec,nosuid,name=systemd,release_agent=&quot;$agent&quot; openrc /sys/fs/cgroup/openrc
-        fi
-    fi
-
-    return 0
-}
-
-</code></pre><p>Added the auto-start and reboot:</p><pre><code># rc-update add cgroups-patch boot
-# vim /etc/init.d/docker
-.....
-start_pre() {
-        #checkpath -f -m 0644 -o root:docker &quot;$DOCKER_ERRFILE&quot; &quot;$DOCKER_OUTFILE&quot;
-        echo &quot;fucku&quot;
-}
-.....
-# rc-service docker start
-# rc-update add docker default
-# reboot
-After reboot, check docker version
-</code></pre><p>push files into lxc instance:</p><pre><code># lxc file push -r podmanitems/ firstalpine/root/
-load all images
-# docker images
-~ # docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-rong/ui             master              66ad16eb15c5        20 minutes ago      28.9MB
-rong/server         master              8150777ead18        23 hours ago        301MB
-rong/kobe           master              2d0a03d6cedb        2 days ago          231MB
-rong/nginx          1.19.2-amd64        7e4d58f0e5f3        5 weeks ago         133MB
-rong/webkubectl     v2.6.0-amd64        4aa634837fea        2 months ago        349MB
-rong/mysql-server   8.0.21-amd64        8a3a24ad33be        3 months ago        366MB
-# lxc file push ronggraph.tar firstalpine/root/
-# tar xzvf /root/ronggraph.tar
-</code></pre><p>Should write a start definition for ronggraph:</p><pre><code>#!/sbin/openrc-run
-#
-# author: Yusuke Kawatsu
-
-workspace=&quot;/root/ronggraph&quot;
-cmdpath=&quot;/usr/bin/docker-compose&quot;
-prog=&quot;ronggraph&quot;
-lockfile=&quot;/var/lock/ronggraph&quot;
-pidfile=&quot;/var/run/ronggraph.pid&quot;
-PATH=&quot;$PATH:/usr/local/bin&quot;
-
-
-start() {
-    [ -x $cmdpath ] || exit 5
-    echo -n $&quot;Starting $prog: &quot;
-
-    cd $workspace
-    $cmdpath up -d
-    $cmdpath down
-    retval=$?
-    pid=$!
-    echo
-    [ $retval -eq 0 ] &amp;&amp; touch $lockfile &amp;&amp; echo $pid &gt; $pidfile
-
-    return $retval
-}
-
-stop() {
-    [ -x $cmdpath ] || exit 5
-    echo -n $&quot;Stopping $prog: &quot;
-
-    cd $workspace
-    $cmdpath down
-    retval=$?
-    echo
-    [ $retval -eq 0 ] &amp;&amp; rm -f $lockfile &amp;&amp; rm -f $pidfile
-
-    return $retval
-}
-
-restart() {
-    stop
-    sleep 3
-    start
-}
-
-depend() {
-    need docker
-}
-
-</code></pre><p>Now add ronggraph to default update:</p><pre><code># rc-update add ronggraph default
-# halt
-</code></pre><p>Save the current status:</p><pre><code>root@rong320-1:~/lxdimages# lxc stop firstalpine
-root@rong320-1:~/lxdimages# lxc publish --public firstalpine --alias=ronggraph
-root@rong320-1:/mnt# lxc image ls
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+----------+------------------------------+
-|   ALIAS   | FINGERPRINT  | PUBLIC |               DESCRIPTION                | ARCHITECTURE |   TYPE    |   SIZE   |         UPLOAD DATE          |
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+----------+------------------------------+
-| alpine312 | 76560d125792 | no     | Alpinelinux 3.12 x86_64 (20201021_13:00) | x86_64       
-| CONTAINER | 2.40MB   | Oct 22, 2020 at 6:18am (UTC) |
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+----------+------------------------------+
-| ronggraph | b31788790460 | yes    | Alpinelinux 3.12 x86_64 (20201021_13:00) | x86_64       | CONTAINER | 619.40MB | Oct 22, 2020 at 8:05am (UTC) |
-+-----------+--------------+--------+------------------------------------------+--------------+-----------+----------+------------------------------+
-</code></pre><p>launch new instance:</p><pre><code># lxc launch ronggraph ronggraph -p k8s
-# 
-</code></pre><p>Add forward rules:</p><pre><code>lxc config device add ronggraph myport80 proxy listen=tcp:0.0.0.0:80 connect=tcp:0.0.0.0:80
-lxc config device add ronggraph myport443 proxy listen=tcp:0.0.0.0:443 connect=tcp:0.0.0.0:443
-</code></pre><h3 id=arm64-workingtips>arm64 workingtips</h3><p>Under rpi archlinux64, install:</p><pre><code># pacman -Sy
-# pacman -S lxc lxd
-# systemctl enable lxd
-# systemctl start lxd
-</code></pre><p>Download images from:</p><pre><code>https://us.images.linuxcontainers.org/images/alpine/3.12/arm64/default/20201022_13:00/
-rootfs.squashfs
-lxd.tar.xz
-# lxc image import lxd.tar.xz rootfs.squashfs --alias alpine312
-# lxd init --preseed&lt;pre-rong/lxditems/lxd_snap/init.yaml
-# lxc profile create k8s
-# lxc profile edit k8s&lt;pre-rong/lxditems/lxdimages/k8s.yaml
-</code></pre><p><img src=/images/2020_10_23_09_55_43_629x378.jpg alt=/images/2020_10_23_09_55_43_629x378.jpg></p><p>Configure lxc for running:</p><pre><code>https://wiki.archlinux.org/index.php/Linux_Containers
-</code></pre><p>lxc Installation:</p><pre><code># ~ # sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
-~ # cat /etc/apk/repositories 
-http://mirrors.ustc.edu.cn/alpine/v3.12/main
-http://mirrors.ustc.edu.cn/alpine/v3.12/community
-Install docker/docker-compose, modify its startup
-</code></pre><p>lxc public will take a very long time!!!</p><pre><code># lxc ls
-+------+---------+------------------------------+------+-----------+-----------+
-| NAME |  STATE  |             IPV4             | IPV6 |   TYPE    | SNAPSHOTS |
-+------+---------+------------------------------+------+-----------+-----------+
-| king | RUNNING | 172.18.0.1 (br-74a26d2404f6) |      | CONTAINER | 0         |
-|      |         | 172.17.0.1 (docker0)         |      |           |           |
-|      |         | 10.150.132.185 (eth0)        |      |           |           |
-+------+---------+------------------------------+------+-----------+-----------+
-# lxc publish --public king --alias=ronggraph
-# lxc image ls
-+-----------+--------------+--------+-------------------------------------------+--------------+-----------+-----------+-------------------------------+
-|   ALIAS   | FINGERPRINT  | PUBLIC |                DESCRIPTION                | ARCHITECTURE |   TYPE    |   SIZE    |          UPLOAD DATE          |
-+-----------+--------------+--------+-------------------------------------------+--------------+-----------+-----------+-------------------------------+
-| alpine312 | 58ebec92505e | no     | Alpinelinux 3.12 aarch64 (20201022_13:00) | aarch64      | CONTAINER | 2.20MB    | Oct 23, 2020 at 1:52am (UTC)  |
-+-----------+--------------+--------+-------------------------------------------+--------------+-----------+-----------+-------------------------------+
-| ronggraph | 607287f518d4 | yes    | Alpinelinux 3.12 aarch64 (20201022_13:00) | aarch64      | CONTAINER | 2655.15MB | Oct 23, 2020 at 10:13am (UTC) |
-+-----------+--------------+--------+-------------------------------------------+--------------+-----------+-----------+-------------------------------+
-#  lxc image export ronggraph .
-# ls *.tar.gz
--rw-r--r--  1 root  root   2784123072 Oct 26 00:40 607287f518d40783ed968cd2f2434fba101d4332ccc16f1e66cfb43049208d57.tar.gz
-</code></pre><p>Transfer the tar.gz into the arm64 server, and run it.</p><pre><code># /snap/bin/lxc image import lxditems/lxdimages/607287f518d40783ed968cd2f2434fba101d4332ccc16f1e66cfb43049208d57.tar.gz --alias ronggraph
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/50/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/50/>50</a></li><li class="page-item active"><a class=page-link href=/page/51/>51</a></li><li class=page-item><a class=page-link href=/page/52/>52</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/52/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

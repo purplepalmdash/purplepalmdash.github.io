@@ -1,5 +1,67 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/05/28/workingtipsongreenmonitor/>WorkingTipsOnGreenMonitor</a></h1><span class=post-date>May 28, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=netdata>Netdata</h3><p>Netdata 二进制 download:</p><p><a href=https://github.com/netdata/netdata/releases>https://github.com/netdata/netdata/releases</a></p><p>选择 <code>netdata-v1.22.1.gz.run</code>, 安装:</p><pre><code># chmod netdata-v1.22.1.gz.run
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/06/14/workingtipsharbor2.0/>WorkingTipsHarbor2.0</a></h1><span class=post-date>Jun 14, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=download-installation-files>Download Installation files</h3><p>From following url:</p><p><a href=https://github.com/goharbor/harbor/releases/download/v2.0.0/harbor-offline-installer-v2.0.0.tgz>https://github.com/goharbor/harbor/releases/download/v2.0.0/harbor-offline-installer-v2.0.0.tgz</a></p><h3 id=config-install>Config, Install</h3><p>make new cert files via:</p><pre><code>TBD
+</code></pre><p>Modify the <code>harbor.yml</code> file:</p><pre><code>5c5
+&lt; hostname: portus.fugouou.com
+---
+&gt; hostname: reg.mydomain.com
+15c15
+&lt;   port: 5000
+---
+&gt;   port: 443
+17,18c17,18
+&lt;   certificate: /data/cert/portus.crt
+&lt;   private_key: /data/cert/portus.key
+---
+&gt;   certificate: /your/certificate/path
+&gt;   private_key: /your/private/key/path
+29c29
+&lt; external_url: https://portus.fugouou.com:5000
+---
+&gt; # external_url: https://reg.mydomain.com:8433
+78c78
+&lt;   skip_update: true
+---
+&gt;   skip_update: false
+</code></pre><p>use the newly generated cert files:</p><pre><code># mkdir -p /data/cert
+# cp ***.crt ***.key /data/cert
+</code></pre><p>Trivy offline database import:</p><pre><code># ls /data/trivy-adapter/trivy/*
+/data/trivy-adapter/trivy/metadata.json  /data/trivy-adapter/trivy/trivy.db
+
+/data/trivy-adapter/trivy/db:
+metadata.json  trivy.db
+# chmod a+w -R /data/trivy-adapter/trivy/db
+</code></pre><p>Install via:</p><pre><code># ./install.sh --with-trivy --with-notary --with-chartmuseum
+# docker ps
+afe49ec2a626        goharbor/harbor-jobservice:v2.0.0      &quot;/harbor/entrypoint.…&quot;   14 minutes ago      Up 14 minutes (healthy)                                                                          harbor-jobservice
+7ecf87cdc70b        goharbor/nginx-photon:v2.0.0           &quot;nginx -g 'daemon of…&quot;   14 minutes ago      Up 14 minutes (healthy)   0.0.0.0:4443-&gt;4443/tcp, 0.0.0.0:80-&gt;8080/tcp, 0.0.0.0:5000-&gt;8443/tcp   nginx
+41fee7abd2a1        goharbor/notary-server-photon:v2.0.0   &quot;/bin/sh -c 'migrate…&quot;   14 minutes ago      Up 14 minutes                                                                                    notary-server
+0f635fccd2fe        goharbor/notary-signer-photon:v2.0.0   &quot;/bin/sh -c 'migrate…&quot;   14 minutes ago      Up 14 minutes                                                                                    notary-signer
+ebcd78417fdf        goharbor/harbor-core:v2.0.0            &quot;/harbor/entrypoint.…&quot;   14 minutes ago      Up 14 minutes (healthy)                                                                          harbor-core
+28cca5aa3325        goharbor/trivy-adapter-photon:v2.0.0   &quot;/home/scanner/entry…&quot;   14 minutes ago      Up 14 minutes (healthy)   8080/tcp                                                               trivy-adapter
+7823c38b71e9        goharbor/registry-photon:v2.0.0        &quot;/home/harbor/entryp…&quot;   14 minutes ago      Up 14 minutes (healthy)   5000/tcp                                                               registry
+38b6bc813268        goharbor/harbor-portal:v2.0.0          &quot;nginx -g 'daemon of…&quot;   14 minutes ago      Up 14 minutes (healthy)   8080/tcp                                                               harbor-portal
+ba6c5f9473b9        goharbor/redis-photon:v2.0.0           &quot;redis-server /etc/r…&quot;   14 minutes ago      Up 14 minutes (healthy)   6379/tcp                                                               redis
+8ce7deffd0c8        goharbor/harbor-registryctl:v2.0.0     &quot;/home/harbor/start.…&quot;   14 minutes ago      Up 14 minutes (healthy)                                                                          registryctl
+bd3085fb3b97        goharbor/chartmuseum-photon:v2.0.0     &quot;./docker-entrypoint…&quot;   14 minutes ago      Up 14 minutes (healthy)   9999/tcp                                                               chartmuseum
+d3e90aa5d4d8        goharbor/harbor-db:v2.0.0              &quot;/docker-entrypoint.…&quot;   14 minutes ago      Up 14 minutes (healthy)   5432/tcp                                                               harbor-db
+1b989340ff76        goharbor/harbor-log:v2.0.0             &quot;/bin/sh -c /usr/loc…&quot;   14 minutes ago      Up 14 minutes (healthy)   127.0.0.1:1514-&gt;10514/tcp                                              harbor-log
+</code></pre><h3 id=configure-and-use>Configure and use</h3><p>In every node running docker doing(Ubuntu):</p><pre><code># cp gwougou.crt  /usr/local/share/ca-certificates
+# update-ca-certificates
+# systemctl restart docker
+# docker login -uadmin -pHarbor12345 xagowu.gowugoe.com
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/06/09/convertqcow2todockerimage/>ConvertQcow2ToDockerImage</a></h1><span class=post-date>Jun 9, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=create-vm>Create vm</h3><p>Create vm disks:</p><pre><code># qemu-img create -f qcow2 2004.qcow2 6G
+</code></pre><p>Install system into this qcow2 files with your customized settings.</p><h3 id=convert>Convert</h3><p>Convert into img file:</p><pre><code>$ qemu-img convert -f vmdk -O raw 2004.qcow2 2004.img
+</code></pre><p>Using guestfish for converting into docker images:</p><pre><code>$ sudo guestfish -a 2004.img --ro
+$ &gt;&lt;fs&gt; run
+$ &gt;&lt;fs&gt; list-filesystems
+/dev/sda1: ext4
+/dev/sda2: unknown
+/dev/sda5: swap
+$ &gt;&lt;fs&gt; mount /dev/sda1 /
+$ &gt;&lt;fs&gt; tar-out / - | xz --best &gt;&gt; my2004.xz
+$ &gt;&lt;fs&gt; exit
+$ cat my2004.xz | docker import - YourImagesName
+</code></pre><p>Now push it into dockerhub, next time you could use it freely.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/05/28/workingtipsongreenmonitor/>WorkingTipsOnGreenMonitor</a></h1><span class=post-date>May 28, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=netdata>Netdata</h3><p>Netdata 二进制 download:</p><p><a href=https://github.com/netdata/netdata/releases>https://github.com/netdata/netdata/releases</a></p><p>选择 <code>netdata-v1.22.1.gz.run</code>, 安装:</p><pre><code># chmod netdata-v1.22.1.gz.run
 # ./netdata-v1.22.1.gz.run --accept
 # chkconfig netdata on
 </code></pre><h3 id=node_exporter>node_exporter</h3><p>二进制 download:</p><p><a href=https://github.com/prometheus/node_exporter/releases>https://github.com/prometheus/node_exporter/releases</a></p><p>选择 <code>node_exporter-1.0.0.linux-amd64.tar.gz</code> 安装:</p><pre><code>#  tar xzvf node_exporter-1.0.0.linux-amd64.tar.gz
@@ -185,158 +247,4 @@ rsion:&quot;go1.14.2&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&
 #    - Docker | reload docker.socket
 #    - Docker | reload docker
 #    - Docker | wait for docker
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/04/21/workingtipsonpython/>WorkingtipsOnpython</a></h1><span class=post-date>Apr 21, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Just recording:</p><pre><code>[root@3652a460ae13 apps]# python manage.py shell
-Python 3.6.1 (default, Jun 29 2018, 02:56:19)                          
-Type 'copyright', 'credits' or 'license' for more information
-IPython 6.5.0 -- An enhanced Interactive Python. Type '?' for help. 
-                                                      
-In [1]: import requests
-   ...: import time
-   ...: 
-   ...: from kubeops_api.apps_client import AppsClient
-   ...: from kubeops_api.models.host import Host
-   ...: from kubeops_api.cluster_data import LokiContainer
-   ...: 
-   ...: 
-
-In [2]: import kubernetes.client
-   ...: import redis
-   ...: import json
-   ...: import logging
-   ...: import kubeoperator.settings
-   ...: import log.es
-   ...: import datetime, time
-   ...: import builtins
-   ...: 
-   ...: from kubernetes.client.rest import ApiException
-   ...: from kubeops_api.cluster_data import ClusterData, Pod, NameSpace, Node, Container, Deployment, StorageClass, PVC, Event
-   ...: from kubeops_api.models.cluster import Cluster
-   ...: from kubeops_api.prometheus_client import PrometheusClient
-   ...: from kubeops_api.models.host import Host
-   ...: from django.db.models import Q
-   ...: from kubeops_api.cluster_health_data import ClusterHealthData
-   ...: from django.utils import timezone
-   ...: from ansible_api.models.inventory import Host as C_Host
-   ...: from common.ssh import SSHClient, SshConfig
-   ...: from message_center.message_client import MessageClient
-   ...: from kubeops_api.utils.date_encoder import DateEncoder
-   ...: 
-   ...: 
-
-In [3]: 
-
-In [3]: project_name = &quot;kingston&quot;
-
-In [4]: cluster = Cluster.objects.get(name=project_name)
-
-In [5]: host = &quot;loki.apps.kingston.mydomain.com&quot;
-
-In [6]: config = {
-   ...:   'host': host,
-   ...:   'cluster': cluster
-   ...: }
-
-In [7]: 
-
-In [7]: print(config)
-{'host': 'loki.apps.kingston.mydomain.com', 'cluster': &lt;Cluster: kingston&gt;}
-
-In [8]: prom_client = PrometheusClient(config)
-
-In [9]: label_url = &quot;http://loki.apps.kingston.mydomain.com/loki/api/v1/label/container_name/values&quot;
-
-In [10]: app_client = AppsClient(cluster=cluster)
-
-In [11]:  label_query_url = label_url.format(host=&quot;loki.apps.kingston.mydomain.com&quot;)
-
-In [12]: label_req = app_client.get('loki', label_query_url)
-
-In [13]: label_req.ok
-Out[13]: True
-
-In [14]: now = time.time()
-
-In [15]: end = int(round(now * 1000 * 1000000))
-
-In [16]: start = int(round(now * 1000 - 3600000) * 1000000)
-
-In [17]: label_req_json = label_req.json()
-
-In [18]: print(label_req_json)
-{'status': 'success', 'data': ['autoscaler', 'calico-kube-controllers', 'calico-node', 'chartmuseum', 'chartsvc', 'controller', 'coredns', 'dashboard', 'grafana', 'install-cni', 'kube-apiserver', 'kube-controller-manager', 'kube-proxy', 'kube-scheduler', 'kubeapps-plus-mongodb', 'kubernetes-dashboard', 'loki', 'metrics-server', 'metrics-server-nanny', 'nfs-client-provisioner', 'nginx', 'node-problem-detector', 'prometheus-alertmanager', 'prometheus-alertmanager-configmap-reload', 'prometheus-kube-state-metrics', 'prometheus-node-exporter', 'prometheus-server', 'prometheus-server-configmap-reload', 'promtail', 'proxy', 'registry', 'registry-ui', 'sync', 'tiller', 'traefik-ingress-lb']}
-
-In [19]: values = label_req_json.get('data', [])
-
-In [20]: print(values)
-['autoscaler', 'calico-kube-controllers', 'calico-node', 'chartmuseum', 'chartsvc', 'controller', 'coredns', 'dashboard', 'grafana', 'install-cni', 'kube-apiserver', 'kube-controller-manager', 'kube-proxy', 'kube-scheduler', 'kubeapps-plus-mongodb', 'kubernetes-dashboard', 'loki', 'metrics-server', 'metrics-server-nanny', 'nfs-client-provisioner', 'nginx', 'node-problem-detector', 'prometheus-alertmanager', 'prometheus-alertmanager-configmap-reload', 'prometheus-kube-state-metrics', 'prometheus-node-exporter', 'prometheus-server', 'prometheus-server-configmap-reload', 'promtail', 'proxy', 'registry', 'registry-ui', 'sync', 'tiller', 'traefik-ingress-lb']
-
-In [21]: for name in values:
-    ...:     error_count = 0
-    ...:     prom_url = 'http://{host}/api/prom/query?limit=1000&amp;query={{container_name=&quot;{name}&quot;}}&amp;start={start}&amp;end={end}'
-    ...:     prom_query_url = prom_url.format(host=&quot;loki.apps.kingston.mydomain.com&quot;, name=name, start=start, end=end)
-    ...:     prom_req = app_client.get('loki', prom_query_url)
-    ...:     if prom_req.ok:
-    ...:         prom_req_json = prom_req.json()
-    ...:         streams = prom_req_json.get('streams', [])
-    ...:         for stream in streams:
-    ...:             entries = stream.get('entries', [])
-    ...:             for entry in entries:
-    ...:                 line = entry.get('line', None)
-    ...:                 print(line)
-
-
-In [29]: for name in values:                                                                                                             
-    ...:     error_count = 0                                   
-    ...:     prom_url = 'http://{host}/api/prom/query?limit=1000&amp;query={{container_name=&quot;{name}&quot;}}&amp;start={start}&amp;end={end}'
-    ...:     prom_query_url = prom_url.format(host=&quot;loki.apps.kingston.mydomain.com&quot;, name=name, start=start, end=end)
-    ...:     prom_req = app_client.get('loki', prom_query_url)
-    ...:     if prom_req.ok:
-    ...:         prom_req_json = prom_req.json()
-    ...:         streams = prom_req_json.get('streams', [])
-    ...:         for stream in streams:
-    ...:             entries = stream.get('entries', [])
-    ...:             for entry in entries:
-    ...:                 line = entry.get('line', None)
-    ...:                 if line is not None and 'level=error' in line:
-    ...:                     error_count = error_count + 1
-
-</code></pre><p>Thus you could fetch the correct python logs for kubeoperator</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2020/04/01/quicktipsonterraformandlibvirtdonmultiple/>QuickTipsOnTerraformAndLibvirtdOnMultiple</a></h1><span class=post-date>Apr 1, 2020<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=terraform-configuration>terraform configuration</h3><p>On archlinux, it should be configured as following:</p><pre><code># sudo pacman -S terraform
-$ yaourt terraform-libvirt
-</code></pre><p>manually create the folder and copy some plugins into the folder:</p><pre><code>$ mkdir -p ~/.terraform.d/plugins
-$ cp xxxx ~/.terraform.d/plugins
-$ ls ~/.terraform.d/plugins
-terraform-provider-ansible
-</code></pre><h3 id=libvirtd-configurationubuntu>libvirtd configuration(Ubuntu)</h3><p>qemu configuration(Or terraform will complain priviledge):</p><pre><code># vim /etc/libvirt/qemu.conf
-security_driver = &quot;none&quot;
-</code></pre><p>libvirtd configuration:</p><pre><code>$ vim /etc/default/libvirtd
-libvirtd_opts=&quot;-l&quot;
-$ vim /etc/libvirt/libvirtd.conf
-listen_tls = 0
-listen_tcp = 1
-tcp_port = &quot;16509&quot;
-listen_addr = &quot;0.0.0.0&quot;
-auth_tcp = &quot;none&quot;
-</code></pre><p>If you want to use bridge networking, make sure the following configuration is in
-sysctl:</p><pre><code># cat &gt;&gt; /etc/sysctl.conf &lt;&lt;EOF
-net.bridge.bridge-nf-call-ip6tables = 0
-net.bridge.bridge-nf-call-iptables = 0
-net.bridge.bridge-nf-call-arptables = 0
-EOF
-# sysctl -p /etc/sysctl.conf
-</code></pre><h3 id=dnsmasq-dhcpd-configuration>dnsmasq dhcpd configuration</h3><p>In order to configure the dhcpd in bridged networking , we have to configure the
-dnsmasq server on gateway machine:</p><pre><code># vim /etc/dnsmasq.conf
-bind-interfaces
-dhcp-range=10.137.149.100,10.137.149.200,12h
-dhcp-option=3,10.137.149.1
-dhcp-authoritative
-interface=enp3s0
-# systemctl restart dnsmasq
-</code></pre><h3 id=terraform-networking>terraform networking</h3><p>Configure network parameter:</p><pre><code># vim main.tf
-  network_interface {
-		#network_name   = &quot;default&quot;
-		bridge = &quot;br0&quot;
-    hostname   = &quot;${var.VM_HOSTNAME}-${count.index + 1}&quot;
-    wait_for_lease = true
-  }
-# terraform apply
 </code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/55/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/55/>55</a></li><li class="page-item active"><a class=page-link href=/page/56/>56</a></li><li class=page-item><a class=page-link href=/page/57/>57</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/57/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
