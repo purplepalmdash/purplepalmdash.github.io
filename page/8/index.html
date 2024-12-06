@@ -738,6 +738,22 @@ git diff -p tag1 tag2 &gt; my.patch
   108  umount /mnt
   109  ltsp image /
 </code></pre><h3 id=61-force-overwrite>61. force overwrite</h3><p>apt when conflicts:</p><pre><code>-o Dpkg::Options::=&quot;--force-overwrite&quot; 
+</code></pre><h3 id=62-dkms-issue>62. dkms issue</h3><p>solved via:</p><pre><code>$ sudo vim /etc/kernel/postinst.d/dkms
+# We're passed the version of the kernel being installed
+inst_kern=$1
+
++if [ &quot;$1&quot; = &quot;5.4.xxxxxx&quot; ]; then
+uname_s=$(uname -s)
+
+......
+
+    echo &quot;      please install the $header_pkg package to fix this.&quot; &gt;&amp;2
+fi
++else
++	echo &quot;fucku&quot;
++	exit
++fi
+</code></pre><h3 id=63-drblpush-push>63. drblpush push</h3><p>solved via:</p><pre><code>apt remove thunderbird --purge &amp;&amp; drblpush -c /etc/drbl/drblpush.conf
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
