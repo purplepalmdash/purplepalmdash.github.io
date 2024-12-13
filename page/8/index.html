@@ -772,6 +772,16 @@ fi
 +	exit
 +fi
 </code></pre><h3 id=63-drblpush-push>63. drblpush push</h3><p>solved via:</p><pre><code>apt remove thunderbird --purge &amp;&amp; drblpush -c /etc/drbl/drblpush.conf
+</code></pre><h3 id=64-virsh-attach-device>64. virsh attach device</h3><p>via:</p><pre><code>root@zkfd:/home/test# virsh attach-device win10 --file usb.xml --current
+成功附加设备
+
+root@zkfd:/home/test# cat usb.xml 
+  &lt;hostdev mode='subsystem' type='usb' managed='yes'&gt;
+      &lt;source&gt;
+        &lt;vendor id='0x30fa'/&gt;
+        &lt;product id='0x0300'/&gt;
+      &lt;/source&gt;
+    &lt;/hostdev&gt;
 </code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/06/26/installingnixos/>InstallingNixOS</a></h1><span class=post-date>Jun 26, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=steps>steps</h3><p>Enable sshd:</p><pre><code>$ passwd 
 Change the password
 $ ssh nixos@xxx.xxx.xx.xx
