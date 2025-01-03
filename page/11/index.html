@@ -1,5 +1,60 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/04/25/safebootloadertips/>safebootloaderTips</a></h1><span class=post-date>Apr 25, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>From Makefile:</p><pre><code>O ?= ./build
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/04/28/installinpusonubuntu2004/>InstallInpusOnUbuntu2004</a></h1><span class=post-date>Apr 28, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-installconfiguration>1. Install/Configuration</h3><p>Import keyring:</p><pre><code>mkdir -p /etc/apt/keyrings/
+curl -fsSL https://pkgs.zabbly.com/key.asc -o /etc/apt/keyrings/zabbly.asc
+</code></pre><p>update repository and install inpus:</p><pre><code>apt update -y
+apt install -y incus
+ apt install -y incus-ui-canonical
+incus config set core.https_address :8443
+</code></pre><p>Generate cert file in browser:</p><p><img src=/images/2024_04_28_09_32_56_1083x755.jpg alt=/images/2024_04_28_09_32_56_1083x755.jpg></p><p>In incus server:</p><pre><code>root@hope:~# cp /home/dash/Downloads/incus-ui.crt ./Downloads/
+root@hope:~# incus config trust add-certificate Downloads/incus-ui.crt
+</code></pre><p>In browser:</p><p><img src=/images/2024_04_28_09_34_37_1035x384.jpg alt=/images/2024_04_28_09_34_37_1035x384.jpg></p><p>The import file should be:</p><p><img src=/images/2024_04_28_09_34_57_414x98.jpg alt=/images/2024_04_28_09_34_57_414x98.jpg></p><p>Then back to browser windows, confirm the imported cert:</p><p><img src=/images/2024_04_28_09_35_08_630x331.jpg alt=/images/2024_04_28_09_35_08_630x331.jpg></p><p>Your UI would be looks like:</p><p><img src=/images/2024_04_28_09_35_46_945x645.jpg alt=/images/2024_04_28_09_35_46_945x645.jpg></p><p>Add your user into incus group:</p><pre><code>sudo adduser dash incus-admin
+</code></pre><p>Init the incus:</p><pre><code>$ incus admin init
+Would you like to use clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (dir, lvm, lvmcluster, btrfs) [default=btrfs]: dir
+Would you like to create a new local network bridge? (yes/no) [default=yes]: 
+What should the new bridge be called? [default=incusbr0]: 
+What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+Would you like the server to be available over the network? (yes/no) [default=no]: 
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes]: no
+Would you like a YAML &quot;init&quot; preseed to be printed? (yes/no) [default=no]: 
+</code></pre><p>Create the first instance:</p><pre><code>incus launch images:ubuntu/22.04 first
+</code></pre><p>Finally we could remove lxd:</p><pre><code>$ sudo snap remove lxd
+</code></pre><h3 id=2-images>2. images</h3><p>list image:</p><pre><code>$ incus image list
++-------+--------------+--------+----------------------------------------+--------------+-----------+-----------+----------------------+
+| ALIAS | FINGERPRINT  | PUBLIC |              DESCRIPTION               | ARCHITECTURE |   TYPE    |   SIZE    |     UPLOAD DATE      |
++-------+--------------+--------+----------------------------------------+--------------+-----------+-----------+----------------------+
+|       | 8b2691953577 | no     | Debian bookworm amd64 (20240424_05:24) | x86_64       | CONTAINER | 94.50MiB  | 2024/04/28 02:09 UTC |
++-------+--------------+--------+----------------------------------------+--------------+-----------+-----------+----------------------+
+|       | 479d8812eada | no     | Ubuntu jammy amd64 (20240427_07:42)    | x86_64       | CONTAINER | 120.93MiB | 2024/04/28 01:55 UTC |
++-------+--------------+--------+----------------------------------------+--------------+-----------+-----------+----------------------+
+
+</code></pre><p>incus remote show images repositories:</p><pre><code>$ incus remote list
++-----------------+------------------------------------+---------------+-------------+--------+--------+--------+
+|      NAME       |                URL                 |   PROTOCOL    |  AUTH TYPE  | PUBLIC | STATIC | GLOBAL |
++-----------------+------------------------------------+---------------+-------------+--------+--------+--------+
+| images          | https://images.linuxcontainers.org | simplestreams | none        | YES    | NO     | NO     |
++-----------------+------------------------------------+---------------+-------------+--------+--------+--------+
+| local (current) | unix://                            | incus         | file access | NO     | YES    | NO     |
++-----------------+------------------------------------+---------------+-------------+--------+--------+--------+
+
+</code></pre><p>search images:</p><pre><code>$ incus image list images: bookworm
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+|             ALIAS              | FINGERPRINT  | PUBLIC |              DESCRIPTION               | ARCHITECTURE |      TYPE       |   SIZE    |     UPLOAD DATE      |
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+| debian/12 (7 more)             | 2b5e45154f58 | yes    | Debian bookworm amd64 (20240424_05:24) | x86_64       | VIRTUAL-MACHINE | 349.13MiB | 2024/04/24 00:00 UTC |
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+| debian/12 (7 more)             | 8b2691953577 | yes    | Debian bookworm amd64 (20240424_05:24) | x86_64       | CONTAINER       | 94.50MiB  | 2024/04/24 00:00 UTC |
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+| debian/12/arm64 (3 more)       | dbba0a514259 | yes    | Debian bookworm arm64 (20240424_05:24) | aarch64      | CONTAINER       | 91.50MiB  | 2024/04/24 00:00 UTC |
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+| debian/12/arm64 (3 more)       | e2fc3247a569 | yes    | Debian bookworm arm64 (20240424_05:24) | aarch64      | VIRTUAL-MACHINE | 338.21MiB | 2024/04/24 00:00 UTC |
++--------------------------------+--------------+--------+----------------------------------------+--------------+-----------------+-----------+----------------------+
+....
+</code></pre><p>launch:</p><pre><code>incus launch -p default -p bridgeprofile images:debian/12 kissdebian
+</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/04/25/safebootloadertips/>safebootloaderTips</a></h1><span class=post-date>Apr 25, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>From Makefile:</p><pre><code>O ?= ./build
 ......
 $O/bootx64.efi: $O/chainload/loader.efi $O/vmlinuz $O/initrd.cpio.xz
 	$O/chainload/unify-kernel $@ \
@@ -130,81 +185,4 @@ Server = https://mirrors.ustc.edu.cn/archlinuxarm/$arch/$repo
 mount -o rw,remount -t ext4  /
 mount -t nfs 192.168.1.8:/media/sda /media/nfs
 systemctl start docker
-</code></pre></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/04/23/workingtipsonvhdwindows/>WorkingTipsOnvhdWindows</a></h1><span class=post-date>Apr 23, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=1-basic-disk-preparation>1. basic disk preparation</h3><p>Disk layout:</p><p><img src=/images/2024_04_23_19_21_10_808x560.jpg alt=/images/2024_04_23_19_21_10_808x560.jpg></p><p>Install disk :</p><p><img src=/images/2024_04_23_19_21_47_713x325.jpg alt=/images/2024_04_23_19_21_47_713x325.jpg></p><p>Choose efi and ext4 partition:</p><p><img src=/images/2024_04_23_19_22_31_841x584.jpg alt=/images/2024_04_23_19_22_31_841x584.jpg></p><p>edit visudo , install vim and opensshserver, update, then save this disk.</p><pre><code>sudo virsh undefine 0000_ventoyvhd
-qemu-img create -f qcow2 -b ventoyvhd.qcow2 -F qcow2 0000_win10vhd.qcow2
-qemu-img create -f qcow2 -b ventoyvhd.qcow2 -F qcow2 0001_win11vhd.qcow2
-</code></pre><h3 id=2-win11-installed-on-vhd>2. win11 installed on vhd</h3><p>Select <code>Professional</code>:</p><p><img src=/images/2024_04_23_19_36_27_624x486.jpg alt=/images/2024_04_23_19_36_27_624x486.jpg></p><p>Select <code>customized: ...</code></p><p><img src=/images/2024_04_23_19_37_31_757x483.jpg alt=/images/2024_04_23_19_37_31_757x483.jpg></p><p>Create vdisk using following commands:</p><p><img src=/images/2024_04_23_19_39_52_786x514.jpg alt=/images/2024_04_23_19_39_52_786x514.jpg></p><p>Refresh the disk(before):</p><p><img src=/images/2024_04_23_19_40_11_596x458.jpg alt=/images/2024_04_23_19_40_11_596x458.jpg></p><p>After refreshment:</p><p><img src=/images/2024_04_23_19_40_30_625x472.jpg alt=/images/2024_04_23_19_40_30_625x472.jpg></p><p>Select driver 1(80GB):</p><p><img src=/images/2024_04_23_19_40_50_653x482.jpg alt=/images/2024_04_23_19_40_50_653x482.jpg></p><p>Begin installation:</p><p><img src=/images/2024_04_23_19_41_08_411x276.jpg alt=/images/2024_04_23_19_41_08_411x276.jpg></p><p>启动，蓝屏。切换到intel cpu的盒子上，安装成功，失败的为ryzen 5600G</p><h3 id=3-win10-installed-on-vhd>3. win10 installed on vhd</h3><p>Create the disk vhd name <code>win10.vhd</code>:</p><p><img src=/images/2024_04_23_19_51_49_625x482.jpg alt=/images/2024_04_23_19_51_49_625x482.jpg></p><h3 id=4-提取文件>4. 提取文件</h3><p>从bios里选择<code>ubuntu</code>,</p><p><img src=/images/2024_04_23_21_14_19_578x400.jpg alt=/images/2024_04_23_21_14_19_578x400.jpg></p><p>mount以后得到vhd文件:</p><p><img src=/images/2024_04_23_21_15_15_673x269.jpg alt=/images/2024_04_23_21_15_15_673x269.jpg></p><p>Transfer via scp :</p><pre><code>test@vhdboot:/media/test/1A73550D25C2D3BC$ scp ./win11.vhdx dash@192.168.1.214:/media/sda/images/
-dash@192.168.1.214's password: 
-test@vhdboot:~$ df -h | grep sda2
-/dev/sda2       402G   13G  390G   4% /media/test/1A73550D25C2D3BC
-# ls /root/*.tar.gz
-/root/EFI_AfterInstallWin11.tar.gz  /root/EFI.tar.gz
-root@vhdboot:/boot/efi# scp /root/*.tar.gz dash@192.168.1.214:~
-
-### this two files is created via following command
-# (After installed )
-# tar czvf /root/EFI_AfterInstallWin11.tar.gz EFI/
-# (before installation)
-# tar czvf /root/EFI.tar.gz EFI/
-</code></pre><p>Now shutdown this vm and begin for vhdboot(using ventoy).</p><p>Also do the same for win10.vhd:</p><p><img src=/images/2024_04_23_21_22_19_573x374.jpg alt=/images/2024_04_23_21_22_19_573x374.jpg></p><h3 id=5-vhdbootventoy>5. vhdboot(ventoy)</h3><p>Download the files from <code>pan.baidu.com</code>:</p><p><img src=/images/2024_04_23_21_22_19_573x374.jpg alt=/images/2024_04_23_21_22_19_573x374.jpg></p><p>Create a new vm:</p><pre><code># qemu-img create -f qcow2 -b ventoyvhd.qcow2 -F qcow2 combinevhd.qcow2
-
-</code></pre><p>Set to uefi machine:</p><p><img src=/images/2024_04_23_22_12_35_556x202.jpg alt=/images/2024_04_23_22_12_35_556x202.jpg></p><p>using br0 for networking:</p><p><img src=/images/2024_04_23_22_12_59_583x358.jpg alt=/images/2024_04_23_22_12_59_583x358.jpg></p><p>Comparing the files:</p><p><img src=/images/2024_04_23_22_32_17_1527x608.jpg alt=/images/2024_04_23_22_32_17_1527x608.jpg></p><p>Prepare the files:</p><pre><code> scp dash@192.168.1.214:/media/sda/images/win11.vhdx .
- scp dash@192.168.1.214:~/EFI_AfterInstallWin11.tar.gz .
-</code></pre><p>unzip ventoy:</p><pre><code>7z x -ovt/ Ventoy-1.0.91-手工部署.7z
-</code></pre><p>copy ventoy files to EFI partition:</p><pre><code>$ sudo ls /boot/efi
-EFI
-$ sudo ls /boot/efi/EFI
-BOOT  ubuntu
-$ sudo cp -r grub/ tool/ ventoy/ vtldr  /boot/efi/
-$ sudo ls /boot/efi/
-EFI  grub  tool  ventoy  vtldr
-$ sudo cp -r EFI/VENTOY/ /boot/efi/EFI/
-$ sudo ls /boot/efi/EFI
-BOOT  ubuntu  VENTOY
-</code></pre><p>Disable secure boot, then set following :</p><pre><code>test@vhdboot:~$ cat /etc/grub.d/99_ventoy 
-#!/bin/sh
-exec tail -n +3 $0
-menuentry 'ventoy' --class 'arch' {
-	insmod part_gpt
-	insmod fat
-	set root='hd0,gpt1'
-	chainloader /EFI/VENTOY/grubx64_real.efi
-}
-$ sudo grub-mkconfig -o /boot/grub/grub.cfg 
-</code></pre><p>Set vhdboot:</p><pre><code># unzip ventoy_vhdboot.zip
-# cp ventoy_vhdboot/Win10Based/ventoy_vhdboot.img /boot/efi/ventoy/
-</code></pre><p><img src=/images/2024_04_23_23_42_41_958x613.jpg alt=/images/2024_04_23_23_42_41_958x613.jpg></p><p>这里非常完美的进入了系统。</p><p>msconfig查看，似乎也没有错</p><p><img src=/images/2024_04_23_23_44_10_1035x678.jpg alt=/images/2024_04_23_23_44_10_1035x678.jpg></p><p>现在重新验证一下win10.vhd:</p><pre><code>test@vhdboot:/mnt8/HHHISO$ scp dash@192.168.1.214:~/win10.vhdx .
-</code></pre><p><img src=/images/2024_04_23_23_47_51_939x471.jpg alt=/images/2024_04_23_23_47_51_939x471.jpg></p><h3 id=z-tips-on-install-win11>z. tips on install win11</h3><p>无法安装win11时的解决方案：</p><pre><code>1.按“Win+R”打开“运行”，输入“regedit”并按“回车”。
-
-提示：如果在安装过程中遇到“这台电脑无法运行Windows 11”错误，你可以按“Shift+F10”打开命令提示符，然后输入“regedit”打开注册表。
-
-2. 在注册表编辑器中，导航到计算机\HKEY_LOCAL_MACHINE\SYSTEM\Setup，右键点击Setup文件夹创建一个新项，并将其命名为“LabConfig”。
-
-LabConfig
- 
-3. 在LabConfig中，右键点击空白处创建一个新的DWORD(32位)值并将其命名为“BypassTPMCheck”。
-
-BypassTPMCheck
- 
-4. 双击它并将“数值数据”更改为1，然后点击“确定”。
-
-修改数值数据
- 
-5. 以同样的方式创建另一个DWORD，并命名为“BypassRAMCheck”，将其“数值数据”更改为1并点击“确定”。
-
-BypassRAMCheck
- 
-6. 以同样的方式创建另一个DWORD，命名为“SecureBootCheck” 将其“数值数据”更改为1并点击“确定”。
-</code></pre><p>跳过联网：</p><pre><code>oobe\bypassnro
-</code></pre><p>创建vhdk:</p><pre><code>press Shift + F10 keys to open a command prompt.
-
-Type diskpart into the command prompt.
-
-use &quot;list volume&quot; and identify the drive letter of the newly created partition for the windows image.
-
-Type create vdisk file=&quot;&lt;drive letter&gt;:\&lt;file name&gt;.vhdx&quot; maximum=&lt;size in MB&gt; type=fixed
-Type create vdisk file=&quot;&lt;drive letter&gt;:\&lt;file name&gt;.vhdx&quot; maximum=&lt;size in MB&gt; type=expandable
-
-Then run attach vdisk and then exit to exit diskpart.
-
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/10/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/10/>10</a></li><li class="page-item active"><a class=page-link href=/page/11/>11</a></li><li class=page-item><a class=page-link href=/page/12/>12</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/12/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/10/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/10/>10</a></li><li class="page-item active"><a class=page-link href=/page/11/>11</a></li><li class=page-item><a class=page-link href=/page/12/>12</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/249/>249</a></li><li class=page-item><a href=/page/12/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/249/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

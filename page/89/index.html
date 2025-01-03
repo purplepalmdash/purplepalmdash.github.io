@@ -1,5 +1,33 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/12/fabric8/>fabric8</a></h1><span class=post-date>Mar 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=什么是fabric8>什么是fabric8</h3><p>fabric8是一个开源集成开发平台，为基于Kubernetes和Jenkins的微服务提供持续发布。可以认为它是一个对Java友好的开源微服务管理平台.</p><p>fabric8也可以被视为是一个微服务DevOps平台。Fabric8提供了一个完全集成的开源微服务平台，可在任何的Kubernetes和OpenShift环境中开箱即用。</p><p><img src=/images/2018_03_12_09_03_57_1027x410.jpg alt=/images/2018_03_12_09_03_57_1027x410.jpg></p><p>参考:</p><p><a href=https://jimmysong.io/posts/fabric8-introduction/>https://jimmysong.io/posts/fabric8-introduction/</a></p><h3 id=搭建过程archlinux>搭建过程(ArchLinux)</h3><p>安装必要的包:</p><pre><code>$ sudo pacman -S libvirt qemu dnsmasq ebtables
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/12/ntpoffline/>ntpoffline</a></h1><span class=post-date>Mar 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=server>Server</h3><p>server side configuration:</p><pre><code># yum install -y ntpd
+# vim /etc/ntpd.conf
+</code></pre><p>The configuration file is listed as following:</p><pre><code>driftfile /var/lib/ntp/drift
+restrict default nomodify notrap nopeer noquery
+restrict 127.0.0.1 
+restrict ::1
+restrict 192.168.0.0 mask 255.255.0.0 nomodify notrap
+server 127.127.1.0  # local clock
+fudge 127.127.1.0  stratum 10
+includefile /etc/ntp/crypto/pw
+keys /etc/ntp/keys
+disable monitor
+</code></pre><p>Disable the chronyd service thus the ntpd could acts properly:</p><pre><code># systemctl disable chronyd
+# systemctl enable ntpd
+# systemctl start ntpd
+# systemctl disable firewalld
+</code></pre><h3 id=client>Client</h3><p>Install via:</p><pre><code># yum install -y ntpd
+</code></pre><p>Configuration file:</p><pre><code>driftfile /var/lib/ntp/drift
+restrict default nomodify notrap nopeer noquery
+restrict 127.0.0.1 
+restrict ::1
+server 192.168.122.200
+# 配置允许上游时间服务器主动修改本机的时间
+restrict 192.168.122.200 nomodify notrap noquery
+includefile /etc/ntp/crypto/pw
+keys /etc/ntp/keys
+disable monitor
+</code></pre><p>Also disable the chronyd service and enable the ntpd service. The client will
+automatically sync with the server <code>192.168.122.200</code>.</p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/03/12/fabric8/>fabric8</a></h1><span class=post-date>Mar 12, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=什么是fabric8>什么是fabric8</h3><p>fabric8是一个开源集成开发平台，为基于Kubernetes和Jenkins的微服务提供持续发布。可以认为它是一个对Java友好的开源微服务管理平台.</p><p>fabric8也可以被视为是一个微服务DevOps平台。Fabric8提供了一个完全集成的开源微服务平台，可在任何的Kubernetes和OpenShift环境中开箱即用。</p><p><img src=/images/2018_03_12_09_03_57_1027x410.jpg alt=/images/2018_03_12_09_03_57_1027x410.jpg></p><p>参考:</p><p><a href=https://jimmysong.io/posts/fabric8-introduction/>https://jimmysong.io/posts/fabric8-introduction/</a></p><h3 id=搭建过程archlinux>搭建过程(ArchLinux)</h3><p>安装必要的包:</p><pre><code>$ sudo pacman -S libvirt qemu dnsmasq ebtables
 </code></pre><p>将自己的用户添加到<code>kvm</code>和<code>libvirt</code>用户组:</p><pre><code>$ sudo usemod -a -G kvm,libvirt &lt;username&gt;
 </code></pre><p>更新<code>/etc/libvirt/qemu.conf</code>中关于libvirt的配置:</p><pre><code>$ sudo sed -r 's/group=&quot;.+&quot;/group=&quot;kvm&quot;/1' /etc/libvirt/qemu.conf &gt; /etc/libvirt/qemu.conf
 </code></pre><p>更新当前的session，以适配用户组改动:</p><pre><code>$ newgrp libvirt
@@ -175,40 +203,4 @@ AAAAB3NzaC1yc2EAAAADAQABAA
 kube-system
 </code></pre><p>将<code>type:ClusterIP</code> 改为 <code>type:NodePort</code>.</p><p>外部访问则是通过:</p><pre><code># ./kubectl --kubeconfig generated/kubeconfig get svc kubernetes-dashboard -n
 kube-system
-</code></pre><p>得到kubernetes-dashboard的NodePort端口即可.</p><p><img src=./images/2018_02_11_11_35_39_698x721.jpg alt=./images/2018_02_11_11_35_39_698x721.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2018/02/09/tipsonkubeadm/>tipsonkubeadm</a></h1><span class=post-date>Feb 9, 2018<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><h3 id=repo>Repo</h3><p>Use kismatic&rsquo;s offline repository for deploying, CentOS 7.4.1708:</p><pre><code>[base]
-name=Base
-baseurl=http://10.15.205.2/base
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[updates]
-name=updates
-baseurl=http://10.15.205.2/updates
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[docker]
-name=docker
-baseurl=http://10.15.205.2/docker
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[kubernetes]
-name=kubernetes
-baseurl=http://10.15.205.2/kubernetes
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-[gluster]
-name=gluster
-baseurl=http://10.15.205.2/gluster
-enabled=1
-gpgcheck=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-</code></pre><p>Then install docker-ce via:</p><pre><code># yum install -y --setopt=obsoletes=0  docker-ce-17.03.0.ce-1.el7.centos
-# systemctl enable docker &amp;&amp; systemctl start docker
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/88/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/88/>88</a></li><li class="page-item active"><a class=page-link href=/page/89/>89</a></li><li class=page-item><a class=page-link href=/page/90/>90</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/248/>248</a></li><li class=page-item><a href=/page/90/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/248/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p>得到kubernetes-dashboard的NodePort端口即可.</p><p><img src=./images/2018_02_11_11_35_39_698x721.jpg alt=./images/2018_02_11_11_35_39_698x721.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class=page-item><a href=/page/88/ class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class=page-item><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/88/>88</a></li><li class="page-item active"><a class=page-link href=/page/89/>89</a></li><li class=page-item><a class=page-link href=/page/90/>90</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/249/>249</a></li><li class=page-item><a href=/page/90/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/249/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
