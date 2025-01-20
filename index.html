@@ -1,5 +1,83 @@
 <!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en lang=en-us><head><meta name=generator content="Hugo 0.64.0"><link href=http://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Dash &#183; Dash</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/poole-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-overrides.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/hyde-a.css?ref=abc124"><link rel=stylesheet href="https://purplepalmdash.github.io/css/custom-additions.css?ref=abc124"><link rel=stylesheet href=https://purplepalmdash.github.io/css/highlight/googlecode.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/docco.min.css><script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js></script><script type=text/javascript src=/js/html2canvas.js></script><script type=text/javascript>function genPostShot(){var rightNow=new Date();var imageName=rightNow.toISOString().slice(0,16).replace(/(-)|(:)|(T)/g,"");imageName+='.jpg'
-html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2025/01/03/vfiogpuissue/>vfiogpuissue</a></h1><span class=post-date>Jan 3, 2025<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>When <code>reboot</code> in vm, the host virsh command show this vm paused</p><pre><code>root@idv:/var/lib/libvirt/images# virsh list
+html2canvas(document.getElementsByClassName('post'),{background:'#FFFFFF',onrendered:function(canvas){$('#test').attr('href',canvas.toDataURL("image/jpeg"));$('#test').attr('download',imageName);$('#test')[0].click();}});};</script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><link rel=apple-touch-icon-precomposed sizes=144x144 href="http://purplepalmdash.github.io/touch-icon-144-precomposed.png?ref=abc124"><link href="http://purplepalmdash.github.io/favicon.png?ref=abc124" rel=icon><link href=%7balternate%20%7bRSS%20application/rss+xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20http://purplepalmdash.github.io/index.xml%7d rel=alternate type=application/rss+xml title="Dash &#183; Dash"><meta name=description content><meta name=keywords content="unix,virtualization,embedded,linux"></head><body class=theme-base-0c><div class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><img src=http://purplepalmdash.github.io/images/mylogo.jpeg alt=gravatar><h1><a href=http://purplepalmdash.github.io/>很惭愧，就做了一点微小的工作</a></h1><a href=http://purplepalmdash.github.io/><p>Dash</p></a></div><ul class=sidebar-nav><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/post/>All Posts</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/technology/>Technology</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/life/>Life</a></li><li class=sidebar-nav-item><a href=http://purplepalmdash.github.io/categories/linuxtips/>LinuxTips</a></li></ul><ul class=sidebar-nav><li class=sidebar-nav-item><a href=https://github.com/purplepalmdash><i class="fa fa-github-square fa-3x"></i></a><a href=https://cn.linkedin.com/in/yang-feipeng-1b909319><i class="fa fa-linkedin-square fa-3x"></i></a><a href=https://plus.google.com/u/0/106572959364703833986><i class="fa fa-google-plus-square fa-3x"></i></a><a href=https://www.facebook.com/yang.feipeng><i class="fa fa-facebook-square fa-3x"></i></a><a href=https://twitter.com/dashwillfly><i class="fa fa-twitter-square fa-3x"></i></a></li></ul></div></div><div class="content container"><div class=posts><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2025/01/20/mdbookworkflow/>mdbookworkflow</a></h1><span class=post-date>Jan 20, 2025<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Steps for publishing to github pages using mdbook.</p><pre><code>$ mkdir lxcDesktop
+$ cd lxcDesktop
+$ mkbook init
+Do you want a .gitignore to be created? (y/n)
+y
+What title would you like to give the book? 
+lxc-desktop
+2025-01-20 22:36:48 [INFO] (mdbook::book::init): Creating a new book with stub content
+
+All done, no errors...
+$ tree -a
+.
+├── book
+├── book.toml
+├── .gitignore
+└── src
+    ├── chapter_1.md
+    └── SUMMARY.md
+
+3 directories, 4 files
+$ mkdir .github
+$ cd .github
+$ mkdir workflows
+$ cd workflows
+$ vim PublishMySite.yml
+</code></pre><p>Content for <code>PublishMySite.yml</code>:</p><pre><code>name: PublishMySite
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called &quot;build&quot;
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Build markdown files to a static site.
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: &quot;latest&quot;
+      - run: mdbook build . --dest-dir ./book # --dest-dir is relative to &lt;dir&gt;
+
+      # Publish the static site to gh-pages branch.
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN}}
+          publish_dir: ./book
+          publish_branch: gh-pages
+</code></pre><p>Back to repository:</p><pre><code>git init
+git add .
+git commit -m &quot;init&quot;
+</code></pre><p>meanwhile, on github, do following steps:</p><pre><code>GitHub &gt; New Repository
+
+GitHub &gt; Repository &gt; Settings &gt; Actions &gt; General &gt;
+
+Actions permissions: Allow all actions and reusable workflows
+Workflow permissions: Read and write permissions
+Click Save
+</code></pre><p>Commit to remote branch:</p><pre><code>git remote add origin git@github.com:purplepalmdash/lxcDesktop.git
+git branch -M main
+git pull --rebase origin main
+git push origin main
+</code></pre><p>On github, do following:</p><pre><code>GitHub &gt; Repository &gt; Settings &gt; Pages &gt; Branch &gt; gh-pages &gt; Click Save
+</code></pre><p>The result is shown as in following picture:</p><p><img src=/images/2025_01_20_23_52_16_1233x385.jpg alt=/images/2025_01_20_23_52_16_1233x385.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2025/01/03/vfiogpuissue/>vfiogpuissue</a></h1><span class=post-date>Jan 3, 2025<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>When <code>reboot</code> in vm, the host virsh command show this vm paused</p><pre><code>root@idv:/var/lib/libvirt/images# virsh list
  Id   Name         State
 ---------------------------
  1    ubuntu2004   paused
@@ -108,67 +186,4 @@ sudo apt update
 sudo apt install -y drbl
 </code></pre><p>配置:</p><pre><code>ufw disable
 sudo drblsrv -i
-</code></pre><p><img src=/images/20241205_164835_x.jpg alt=/images/20241205_164835_x.jpg></p><p><img src=/images/20241205_164853_x.jpg alt=/images/20241205_164853_x.jpg></p><p><img src=/images/20241205_164934_x.jpg alt=/images/20241205_164934_x.jpg></p></div><div class=post><h1 class=post-title><a href=http://purplepalmdash.github.io/blog/2024/12/05/ltspbaremetalinstall/>ltspbaremetalInstall</a></h1><span class=post-date>Dec 5, 2024<br><a class=a_cat href=http://purplepalmdash.github.io/categories/technology>Technology</a></span><p>Hardware/OS/Software info:</p><pre><code>dash@i9server:~$ cat /etc/issue
-Ubuntu 22.04.5 LTS \n \l
-
-dash@i9server:~$ uname -a
-Linux i9server 6.8.0-49-generic #49~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Nov  6 17:42:15 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
-dash@i9server:~$ lsblk
-NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
-loop0         7:0    0    64M  1 loop /snap/core20/2379
-loop1         7:1    0  63.7M  1 loop /snap/core20/2434
-loop2         7:2    0    87M  1 loop /snap/lxd/29351
-loop3         7:3    0  89.4M  1 loop /snap/lxd/31333
-loop4         7:4    0  38.8M  1 loop /snap/snapd/21759
-loop5         7:5    0  44.3M  1 loop /snap/snapd/23258
-sda           8:0    0   1.8T  0 disk 
-└─sda1        8:1    0   1.8T  0 part 
-sr0          11:0    1  1024M  0 rom  
-nvme0n1     259:0    0 476.9G  0 disk 
-├─nvme0n1p1 259:1    0     1G  0 part /boot/efi
-└─nvme0n1p2 259:2    0 475.9G  0 part /
-dash@i9server:~$ free -m
-               total        used        free      shared  buff/cache   available
-Mem:           64079         565       60533           2        2981       62859
-Swap:           8191           0        8191
-dash@i9server:~$ cat /proc/cpuinfo | grep -i model
-model		: 165
-model name	: Intel(R) Core(TM) i9-10900 CPU @ 2.80GHz
-</code></pre><p>Install ltsp:</p><pre><code>sudo add-apt-repository ppa:ltsp
-sudo apt update
-sudo apt install --install-recommends ltsp ltsp-binaries dnsmasq nfs-kernel-server openssh-server squashfs-tools ethtool net-tools epoptes
-sudo gpasswd -a dash epoptes
-</code></pre><p>Prepare the image:</p><pre><code># ls *.img -l -h
--rw-r--r-- 1 dash dash 4.0G Dec  5 02:33 kylin.img
--rw-r--r-- 1 dash dash 2.6G Dec  5 02:35 ubuntu2004.img
--rw-r--r-- 1 dash dash 3.2G Dec  5 02:34 uos613.img
--rw-r--r-- 1 dash dash 4.4G Dec  5 02:34 zkfd613.img
-</code></pre><p>Create the dns/dhcp, import the images:</p><pre><code>ltsp dnsmasq --proxy-dhcp=0
-vim  /etc/dnsmasq.d/ltsp-dnsmasq.conf
-    dhcp-range=192.168.1.34,192.168.1.250,600h
-mkdir /srv/ltsp &amp;&amp; cd /srv/ltsp
-ln -s /home/dash/ubuntu2004.img .
-ltsp image ubuntu2004
-ltsp ipxe
-ltsp nfs
-    Installed /usr/share/ltsp/server/nfs/ltsp-nfs.exports in /etc/exports.d/ltsp-nfs.exports
-ltsp initrd
-useradd -m test1
-useradd -m test2
-passwd test1
-passwd test2
-
-</code></pre><p>more images:</p><pre><code> rm -f *.img
- ln -s /home/dash/uos613.img .
- ltsp image uos613 &amp;&amp; ltsp ipxe &amp;&amp; ltsp initrd
- rm -f *.img
- ln -s /home/dash/zkfd613.img .
- ltsp image zkfd613 &amp;&amp; ltsp ipxe &amp;&amp; ltsp initrd
- rm -f *.img
- ln -s /home/dash/kylin.img .
- ltsp image kylin &amp;&amp; ltsp ipxe &amp;&amp; ltsp initrd
-</code></pre><p>Result: zkfd behaves bad</p><p>deepin image:</p><pre><code>cd /srv/ltsp
-ln -s /var/lib/libvirt/trueimages/deepin.img .
-ltsp image deepin &amp;&amp; ltsp ipxe &amp;&amp; ltsp initrd
-
-</code></pre></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class="page-item disabled"><a class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class="page-item active"><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/249/>249</a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/249/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><p><img src=/images/20241205_164835_x.jpg alt=/images/20241205_164835_x.jpg></p><p><img src=/images/20241205_164853_x.jpg alt=/images/20241205_164853_x.jpg></p><p><img src=/images/20241205_164934_x.jpg alt=/images/20241205_164934_x.jpg></p></div><ul class=pagination><li class=page-item><a href=/ class=page-link aria-label=First><span aria-hidden=true>&#171;&#171;</span></a></li><li class="page-item disabled"><a class=page-link aria-label=Previous><span aria-hidden=true>&#171;</span></a></li><li class="page-item active"><a class=page-link href=/>1</a></li><li class=page-item><a class=page-link href=/page/2/>2</a></li><li class=page-item><a class=page-link href=/page/3/>3</a></li><li class="page-item disabled"><span aria-hidden=true>&nbsp;&mldr;&nbsp;</span></li><li class=page-item><a class=page-link href=/page/249/>249</a></li><li class=page-item><a href=/page/2/ class=page-link aria-label=Next><span aria-hidden=true>&#187;</span></a></li><li class=page-item><a href=/page/249/ class=page-link aria-label=Last><span aria-hidden=true>&#187;&#187;</span></a></li></ul></div></div><script src=http://purplepalmdash.github.io/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
